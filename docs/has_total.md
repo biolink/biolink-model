@@ -10,8 +10,6 @@ total number of things in a particular reference set
 
 URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)
 
-
-
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)

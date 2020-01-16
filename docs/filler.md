@@ -10,8 +10,6 @@ The value in a property-value tuple
 
 URI: [biolink:filler](https://w3id.org/biolink/vocab/filler)
 
-
-
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [NamedThing](NamedThing.md)

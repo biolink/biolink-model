@@ -5,18 +5,13 @@ title: biolink:expressed_in
 
 # Type: expressed_in
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between a gene or gene product and an anatomical entity in which it is expressed
 
 URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
-
-RO:0002206
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

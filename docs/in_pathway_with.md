@@ -5,15 +5,13 @@ title: biolink:in_pathway_with
 
 # Type: in_pathway_with
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two genes or gene products that are part of in the same biological pathway
 
 URI: [biolink:in_pathway_with](https://w3id.org/biolink/vocab/in_pathway_with)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

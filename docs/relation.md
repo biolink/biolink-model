@@ -10,17 +10,6 @@ the relationship type by which a subject is connected to an object in an associa
 
 URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
 
-rdf:predicate
-{: .mapping-label }
-
-owl:annotatedProperty
-{: .mapping-label }
-
-OBAN:association_has_predicate
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [Uriorcurie](types/Uriorcurie.md)

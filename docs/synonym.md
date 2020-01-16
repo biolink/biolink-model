@@ -5,15 +5,13 @@ title: biolink:synonym
 
 # Type: synonym
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 Alternate human-readable names for a thing
 
 URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

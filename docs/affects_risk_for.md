@@ -5,15 +5,13 @@ title: biolink:affects_risk_for
 
 # Type: affects_risk_for
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two entities where exposure to one entity alters the chance of developing the other
 
 URI: [biolink:affects_risk_for](https://w3id.org/biolink/vocab/affects_risk_for)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

@@ -5,15 +5,13 @@ title: biolink:has_attribute_type
 
 # Type: has_attribute_type
 
+samples
+{: .samples-subset-label }
+
 
 connects an attribute to a class that describes it
 
 URI: [biolink:has_attribute_type](https://w3id.org/biolink/vocab/has_attribute_type)
-
-
-samples
-{: .samples-subset-label }
-
 
 ## Domain and Range
 

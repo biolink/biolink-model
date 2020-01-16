@@ -10,11 +10,6 @@ title: biolink:regulates
 
 URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 
-WD:P128
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)

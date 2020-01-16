@@ -5,24 +5,13 @@ title: biolink:precedes
 
 # Type: precedes
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two processes, where one completes before the other begins
 
 URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
-
-BFO:0000063
-{: .mapping-label }
-
-SEMMEDDB:PRECEDES
-{: .mapping-label }
-
-WD:P156
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

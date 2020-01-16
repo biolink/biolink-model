@@ -10,11 +10,6 @@ title: biolink:title
 
 URI: [biolink:title](https://w3id.org/biolink/vocab/title)
 
-dct:title
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [DataSetVersion](DataSetVersion.md) ->  <sub>OPT</sub> [String](types/String.md)

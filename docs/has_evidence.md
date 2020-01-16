@@ -10,11 +10,6 @@ connects an association to an instance of supporting evidence
 
 URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
 
-RO:0002558
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [EvidenceType](EvidenceType.md)

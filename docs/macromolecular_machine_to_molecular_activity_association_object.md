@@ -10,8 +10,6 @@ title: biolink:macromolecular_machine_to_molecular_activity_association_object
 
 URI: [biolink:macromolecular_machine_to_molecular_activity_association_object](https://w3id.org/biolink/vocab/macromolecular_machine_to_molecular_activity_association_object)
 
-
-
 ## Domain and Range
 
 [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) ->  <sub>REQ</sub> [MolecularActivity](MolecularActivity.md)

@@ -5,18 +5,13 @@ title: biolink:located_in
 
 # Type: located_in
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
 
 URI: [biolink:located_in](https://w3id.org/biolink/vocab/located_in)
-
-RO:0001025
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

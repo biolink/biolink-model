@@ -10,11 +10,6 @@ title: biolink:source_version
 
 URI: [biolink:source_version](https://w3id.org/biolink/vocab/source_version)
 
-pav:version
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [SourceFile](SourceFile.md) ->  <sub>OPT</sub> [String](types/String.md)

@@ -10,11 +10,6 @@ description of chemical compound based on element symbols
 
 URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_formula)
 
-WD:P274
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [ChemicalFormulaValue](types/ChemicalFormulaValue.md)

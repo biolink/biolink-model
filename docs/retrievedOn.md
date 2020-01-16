@@ -10,11 +10,6 @@ title: biolink:retrievedOn
 
 URI: [biolink:retrievedOn](https://w3id.org/biolink/vocab/retrievedOn)
 
-pav:retrievedOn
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [SourceFile](SourceFile.md) ->  <sub>OPT</sub> [Date](types/Date.md)

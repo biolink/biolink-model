@@ -5,18 +5,13 @@ title: biolink:name
 
 # Type: name
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 A human-readable name for a thing
 
 URI: [biolink:name](https://w3id.org/biolink/vocab/name)
-
-rdfs:label
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

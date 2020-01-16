@@ -5,15 +5,13 @@ title: biolink:affects_response_to
 
 # Type: affects_response_to
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
 
 URI: [biolink:affects_response_to](https://w3id.org/biolink/vocab/affects_response_to)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

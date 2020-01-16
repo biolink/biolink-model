@@ -10,8 +10,6 @@ title: biolink:molecular_activity_has_output
 
 URI: [biolink:molecular_activity_has_output](https://w3id.org/biolink/vocab/molecular_activity_has_output)
 
-
-
 ## Domain and Range
 
 [MolecularActivity](MolecularActivity.md) ->  <sub>0..*</sub> [ChemicalSubstance](ChemicalSubstance.md)

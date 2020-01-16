@@ -5,18 +5,13 @@ title: biolink:colocalizes_with
 
 # Type: colocalizes_with
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two entities that are observed to be located in the same place.
 
 URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
-
-RO:00002325
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

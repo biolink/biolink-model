@@ -10,8 +10,6 @@ Used to characterize and specify the phenotypic abnormalities defined in the Phe
 
 URI: [biolink:clinical_modifier_qualifier](https://w3id.org/biolink/vocab/clinical_modifier_qualifier)
 
-
-
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [ClinicalModifier](ClinicalModifier.md)

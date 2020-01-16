@@ -10,17 +10,6 @@ connects an association to the subject of the association. For example, in a gen
 
 URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
 
-rdf:subject
-{: .mapping-label }
-
-owl:annotatedSource
-{: .mapping-label }
-
-OBAN:association_has_subject
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [NamedThing](NamedThing.md)

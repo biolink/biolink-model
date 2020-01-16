@@ -10,11 +10,6 @@ the process or entity that the receptor is being exposed to
 
 URI: [biolink:has_stressor](https://w3id.org/biolink/vocab/has_stressor)
 
-ExO:0000000
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [ExposureEvent](ExposureEvent.md) ->  <sub>OPT</sub> [String](types/String.md)

@@ -10,11 +10,6 @@ connects an association to the agent (person, organization or group) that provid
 
 URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
 
-pav:providedBy
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [Provider](Provider.md)

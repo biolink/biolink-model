@@ -10,8 +10,6 @@ title: biolink:has_zygosity
 
 URI: [biolink:has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
 
-
-
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Zygosity](Zygosity.md)

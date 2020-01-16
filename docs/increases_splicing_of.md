@@ -5,15 +5,13 @@ title: biolink:increases_splicing_of
 
 # Type: increases_splicing_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA
 
 URI: [biolink:increases_splicing_of](https://w3id.org/biolink/vocab/increases_splicing_of)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

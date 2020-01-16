@@ -10,14 +10,6 @@ A relationship that is asserted between two named things
 
 URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 
-owl:ObjectProperty
-{: .mapping-label }
-
-SEMMEDDB:ASSOCIATED_WITH
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)

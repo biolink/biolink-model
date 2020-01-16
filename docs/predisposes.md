@@ -5,18 +5,13 @@ title: biolink:predisposes
 
 # Type: predisposes
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two entities where exposure to one entity increases the chance of developing the other
 
 URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
-
-SEMMEDDB:PREDISPOSES
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

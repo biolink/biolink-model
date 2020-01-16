@@ -5,15 +5,13 @@ title: biolink:increases_mutation_rate_of
 
 # Type: increases_mutation_rate_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
 
 URI: [biolink:increases_mutation_rate_of](https://w3id.org/biolink/vocab/increases_mutation_rate_of)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

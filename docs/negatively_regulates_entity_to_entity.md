@@ -5,21 +5,13 @@ title: biolink:negatively_regulates_entity_to_entity
 
 # Type: negatively_regulates_entity_to_entity
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
 URI: [biolink:negatively_regulates_entity_to_entity](https://w3id.org/biolink/vocab/negatively_regulates_entity_to_entity)
-
-RO:0002449
-{: .mapping-label }
-
-SEMMEDDB:INHIBITS
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

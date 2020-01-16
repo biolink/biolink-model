@@ -5,24 +5,13 @@ title: biolink:occurs_in
 
 # Type: occurs_in
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between a process and a material entity or site within which the process occurs
 
 URI: [biolink:occurs_in](https://w3id.org/biolink/vocab/occurs_in)
-
-BFO:0000066
-{: .mapping-label }
-
-SEMMEDDB:OCCURS_IN
-{: .mapping-label }
-
-SEMMEDDB:PROCESS_OF
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

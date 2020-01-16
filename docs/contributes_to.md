@@ -5,18 +5,13 @@ title: biolink:contributes_to
 
 # Type: contributes_to
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
 
 URI: [biolink:contributes_to](https://w3id.org/biolink/vocab/contributes_to)
-
-RO:0002326
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

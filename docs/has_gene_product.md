@@ -5,21 +5,13 @@ title: biolink:has_gene_product
 
 # Type: has_gene_product
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between a gene and a transcribed and/or translated product generated from it
 
 URI: [biolink:has_gene_product](https://w3id.org/biolink/vocab/has_gene_product)
-
-RO:0002205
-{: .mapping-label }
-
-WD:P688
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

@@ -10,11 +10,6 @@ the process that results in the stressor coming into direct contact with the rec
 
 URI: [biolink:has_route](https://w3id.org/biolink/vocab/has_route)
 
-ExO:0000055
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [ExposureEvent](ExposureEvent.md) ->  <sub>OPT</sub> [String](types/String.md)

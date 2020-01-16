@@ -10,11 +10,6 @@ the organism or organism part being exposed
 
 URI: [biolink:has_receptor](https://w3id.org/biolink/vocab/has_receptor)
 
-ExO:0000001
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [ExposureEvent](ExposureEvent.md) ->  <sub>OPT</sub> [OrganismalEntity](OrganismalEntity.md)

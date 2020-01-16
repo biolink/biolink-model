@@ -5,15 +5,13 @@ title: biolink:has_qualitative_value
 
 # Type: has_qualitative_value
 
+samples
+{: .samples-subset-label }
+
 
 connects an attribute to a value
 
 URI: [biolink:has_qualitative_value](https://w3id.org/biolink/vocab/has_qualitative_value)
-
-
-samples
-{: .samples-subset-label }
-
 
 ## Domain and Range
 

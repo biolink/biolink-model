@@ -5,15 +5,13 @@ title: biolink:decreases_secretion_of
 
 # Type: decreases_secretion_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
 
 URI: [biolink:decreases_secretion_of](https://w3id.org/biolink/vocab/decreases_secretion_of)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

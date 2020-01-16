@@ -5,18 +5,13 @@ title: biolink:disrupts
 
 # Type: disrupts
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
 
 URI: [biolink:disrupts](https://w3id.org/biolink/vocab/disrupts)
-
-SEMMEDDB:DISRUPTS
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

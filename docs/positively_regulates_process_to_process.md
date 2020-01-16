@@ -10,11 +10,6 @@ title: biolink:positively_regulates_process_to_process
 
 URI: [biolink:positively_regulates_process_to_process](https://w3id.org/biolink/vocab/positively_regulates_process_to_process)
 
-RO:0002213
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [Occurrent](Occurrent.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)

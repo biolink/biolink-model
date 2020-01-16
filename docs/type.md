@@ -10,11 +10,6 @@ title: biolink:type
 
 URI: [biolink:type](https://w3id.org/biolink/vocab/type)
 
-rdf:type
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)

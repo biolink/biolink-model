@@ -5,21 +5,13 @@ title: biolink:in_taxon
 
 # Type: in_taxon
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 connects a thing to a class representing a taxon
 
 URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
-
-RO:0002162
-{: .mapping-label }
-
-WD:P703
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

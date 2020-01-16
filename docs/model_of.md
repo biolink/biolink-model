@@ -5,18 +5,13 @@ title: biolink:model_of
 
 # Type: model_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
 
 URI: [biolink:model_of](https://w3id.org/biolink/vocab/model_of)
-
-RO:0003301
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

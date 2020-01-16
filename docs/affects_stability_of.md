@@ -5,15 +5,13 @@ title: biolink:affects_stability_of
 
 # Type: affects_stability_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest
 
 URI: [biolink:affects_stability_of](https://w3id.org/biolink/vocab/affects_stability_of)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

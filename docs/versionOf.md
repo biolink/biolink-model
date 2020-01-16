@@ -10,11 +10,6 @@ title: biolink:versionOf
 
 URI: [biolink:versionOf](https://w3id.org/biolink/vocab/versionOf)
 
-dct:isVersionOf
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [DataSetVersion](DataSetVersion.md) ->  <sub>OPT</sub> [DataSet](DataSet.md)

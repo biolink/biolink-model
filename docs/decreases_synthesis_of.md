@@ -5,15 +5,13 @@ title: biolink:decreases_synthesis_of
 
 # Type: decreases_synthesis_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other
 
 URI: [biolink:decreases_synthesis_of](https://w3id.org/biolink/vocab/decreases_synthesis_of)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

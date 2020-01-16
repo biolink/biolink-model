@@ -10,17 +10,6 @@ connects an association to the object of the association. For example, in a gene
 
 URI: [biolink:object](https://w3id.org/biolink/vocab/object)
 
-rdf:object
-{: .mapping-label }
-
-owl:annotatedTarget
-{: .mapping-label }
-
-OBAN:association_has_object
-{: .mapping-label }
-
-
-
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [NamedThing](NamedThing.md)

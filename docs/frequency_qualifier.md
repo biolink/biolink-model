@@ -10,8 +10,6 @@ a qualifier used in a phenotypic association to state how frequent the phenotype
 
 URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qualifier)
 
-
-
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [FrequencyValue](FrequencyValue.md)

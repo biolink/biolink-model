@@ -5,24 +5,13 @@ title: biolink:part_of
 
 # Type: part_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between parts and wholes (material entities or processes)
 
 URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
-
-BFO:0000050
-{: .mapping-label }
-
-SEMMEDDB:PART_OF
-{: .mapping-label }
-
-WD:P361
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

@@ -5,15 +5,13 @@ title: biolink:affects_localization_of
 
 # Type: affects_localization_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest
 
 URI: [biolink:affects_localization_of](https://w3id.org/biolink/vocab/affects_localization_of)
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

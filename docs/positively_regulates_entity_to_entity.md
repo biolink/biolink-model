@@ -5,21 +5,13 @@ title: biolink:positively_regulates_entity_to_entity
 
 # Type: positively_regulates_entity_to_entity
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
 URI: [biolink:positively_regulates_entity_to_entity](https://w3id.org/biolink/vocab/positively_regulates_entity_to_entity)
-
-RO:0002450
-{: .mapping-label }
-
-SEMMEDDB:STIMULATES
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

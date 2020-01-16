@@ -5,18 +5,13 @@ title: biolink:description
 
 # Type: description
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 a human-readable description of a thing
 
 URI: [biolink:description](https://w3id.org/biolink/vocab/description)
-
-dcterms:description
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

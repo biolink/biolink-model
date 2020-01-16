@@ -5,24 +5,13 @@ title: biolink:subclass_of
 
 # Type: subclass_of
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between two classes where the domain class is a specialization of the range class
 
 URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
-
-rdfs:subClassOf
-{: .mapping-label }
-
-SEMMEDDB:IS_A
-{: .mapping-label }
-
-WD:P279
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 

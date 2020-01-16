@@ -5,21 +5,13 @@ title: biolink:has_participant
 
 # Type: has_participant
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 holds between a process and a continuant, where the continuant is somehow involved in the process
 
 URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
-
-RO:0000057
-{: .mapping-label }
-
-WD:P2283
-{: .mapping-label }
-
-
-translator_minimal
-{: .translator_minimal-subset-label }
-
 
 ## Domain and Range
 
