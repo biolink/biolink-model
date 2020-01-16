@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Pathway
 ---
 
@@ -11,16 +11,16 @@ title: biolink:Pathway
 URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
 
 GO:0007165
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:010526
-{: .mapping-label }
+{: .mappinglabel }
 
 PW:0000001
-{: .mapping-label }
+{: .mappinglabel }
 
 WD:Q4915012
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalToPathwayAssociation]-%20object%201..1>\[Pathway&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[BiologicalProcess]^-\[Pathway])
 

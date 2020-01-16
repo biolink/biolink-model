@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:object
+---
 
 # Type: object
 
@@ -5,6 +9,15 @@
 connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
 URI: [biolink:object](https://w3id.org/biolink/vocab/object)
+
+rdf:object
+{: .mapping-label }
+
+owl:annotatedTarget
+{: .mapping-label }
+
+OBAN:association_has_object
+{: .mapping-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:affects_splicing_of
+---
 
 # Type: affects_splicing_of
 
@@ -5,6 +9,9 @@
 holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA
 
 URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splicing_of)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:sex_qualifier
+---
 
 # Type: sex_qualifier
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_phenotype
+---
 
 # Type: has_phenotype
 
@@ -5,6 +9,12 @@
 holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
 
 URI: [biolink:has_phenotype](https://w3id.org/biolink/vocab/has_phenotype)
+
+RO:0002200
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Procedure
 ---
 
@@ -11,49 +11,49 @@ A series of actions conducted in a certain order or manner
 URI: [biolink:Procedure](https://w3id.org/biolink/vocab/Procedure)
 
 UMLSSG:PROC
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T058
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:hlca
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T059
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:lbpr
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T060
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:diap
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T061
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:topp
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T062
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:resa
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T063
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:mbrt
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T065
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:edac
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[Procedure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

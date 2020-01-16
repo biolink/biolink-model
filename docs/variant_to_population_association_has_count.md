@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:variant_to_population_association_has_count
+---
 
 # Type: variant_to_population_association_has_count
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:decreases_folding_of
+---
 
 # Type: decreases_folding_of
 
@@ -5,6 +9,9 @@
 holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other
 
 URI: [biolink:decreases_folding_of](https://w3id.org/biolink/vocab/decreases_folding_of)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:versionOf
+---
 
 # Type: versionOf
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:versionOf](https://w3id.org/biolink/vocab/versionOf)
+
+dct:isVersionOf
+{: .mapping-label }
 
 
 ## Domain and Range

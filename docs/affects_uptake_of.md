@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:affects_uptake_of
+---
 
 # Type: affects_uptake_of
 
@@ -5,6 +9,9 @@
 holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
 
 URI: [biolink:affects_uptake_of](https://w3id.org/biolink/vocab/affects_uptake_of)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

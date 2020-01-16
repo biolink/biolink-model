@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:homologous_to
+---
 
 # Type: homologous_to
 
@@ -5,6 +9,15 @@
 holds between two biological entities that have common evolutionary origin
 
 URI: [biolink:homologous_to](https://w3id.org/biolink/vocab/homologous_to)
+
+RO:HOM0000001
+{: .mapping-label }
+
+SIO:010302
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:PhenotypicFeature
 ---
 
@@ -11,13 +11,13 @@ title: biolink:PhenotypicFeature
 URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
 
 UPHENO:0001001
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:010056
-{: .mapping-label }
+{: .mappinglabel }
 
 WD:Q169872
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[PhenotypicFeature&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[EntityToPhenotypicFeatureAssociation]-%20object%201..1>\[PhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature])
 

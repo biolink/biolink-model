@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_chemical_formula
+---
 
 # Type: has_chemical_formula
 
@@ -5,6 +9,9 @@
 description of chemical compound based on element symbols
 
 URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_formula)
+
+WD:P274
+{: .mapping-label }
 
 
 ## Domain and Range

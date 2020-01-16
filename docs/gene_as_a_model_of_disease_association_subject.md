@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:gene_as_a_model_of_disease_association_subject
+---
 
 # Type: gene_as_a_model_of_disease_association_subject
 

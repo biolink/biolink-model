@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_output
+---
 
 # Type: has_output
 
@@ -5,6 +9,12 @@
 holds between a process and a continuant, where the continuant is an output of the process
 
 URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
+
+RO:0002234
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

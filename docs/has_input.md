@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_input
+---
 
 # Type: has_input
 
@@ -5,6 +9,15 @@
 holds between a process and a continuant, where the continuant is an input into the process
 
 URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
+
+RO:0002233
+{: .mapping-label }
+
+SEMMEDDB:USES
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

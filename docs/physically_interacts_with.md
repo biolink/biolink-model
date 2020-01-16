@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:physically_interacts_with
+---
 
 # Type: physically_interacts_with
 
@@ -5,6 +9,15 @@
 holds between two entities that make physical contact as part of some interaction
 
 URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physically_interacts_with)
+
+WD:P129
+{: .mapping-label }
+
+SEMMEDDB:INTERACTS_WITH
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

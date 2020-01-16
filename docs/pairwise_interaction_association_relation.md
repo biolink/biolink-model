@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:pairwise_interaction_association_relation
+---
 
 # Type: pairwise_interaction_association_relation
 

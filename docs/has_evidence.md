@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_evidence
+---
 
 # Type: has_evidence
 
@@ -5,6 +9,9 @@
 connects an association to an instance of supporting evidence
 
 URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
+
+RO:0002558
+{: .mapping-label }
 
 
 ## Domain and Range

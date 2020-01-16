@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:MaterialSample
 ---
 
@@ -11,10 +11,10 @@ A sample is a limited quantity of something (e.g. an individual or set of indivi
 URI: [biolink:MaterialSample](https://w3id.org/biolink/vocab/MaterialSample)
 
 OBI:0000747
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:001050
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]<has%20attribute%200..*-%20\[MaterialSample&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MaterialSampleDerivationAssociation]-%20subject%201..1>\[MaterialSample],%20\[MaterialSampleToThingAssociation]-%20subject%201..1>\[MaterialSample],%20\[MaterialSample]uses%20-.->\[SubjectOfInvestigation],%20\[MaterialSample]uses%20-.->\[PhysicalEntity],%20\[NamedThing]^-\[MaterialSample])
 

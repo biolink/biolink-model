@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:InformationContentEntity
 ---
 
@@ -11,76 +11,76 @@ a piece of information that typically describes some piece of biology or is used
 URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/InformationContentEntity)
 
 IAO:0000030
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSG:CONC
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T077
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:cnce
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T078
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:idcn
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T079
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:tmco
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T080
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:qlco
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T081
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:qnco
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T082
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:spco
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T089
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:rnlw
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T102
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:grpa
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T169
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:ftcn
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T171
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:lang
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T185
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:clas
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[Publication],%20\[InformationContentEntity]^-\[EvidenceType],%20\[InformationContentEntity]^-\[ConfidenceLevel],%20\[NamedThing]^-\[InformationContentEntity])
 

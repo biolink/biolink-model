@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:capable_of
+---
 
 # Type: capable_of
 
@@ -5,6 +9,12 @@
 holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
 
 URI: [biolink:capable_of](https://w3id.org/biolink/vocab/capable_of)
+
+RO:0002215
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

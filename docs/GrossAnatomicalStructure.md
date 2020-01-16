@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:GrossAnatomicalStructure
 ---
 
@@ -11,43 +11,43 @@ title: biolink:GrossAnatomicalStructure
 URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/vocab/GrossAnatomicalStructure)
 
 UBERON:0010000
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:010046
-{: .mapping-label }
+{: .mappinglabel }
 
 WD:Q4936952
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T017
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:anst
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T021
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:ffas
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T023
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:bpoc
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T024
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:tisu
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T018
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:emst
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GrossAnatomicalStructure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure])
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:treatment_has_part
+---
 
 # Type: treatment_has_part
 

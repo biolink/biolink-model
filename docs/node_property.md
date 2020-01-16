@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:node_property
+---
 
 # Type: node_property
 

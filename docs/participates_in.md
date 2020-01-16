@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:participates_in
+---
 
 # Type: participates_in
 
@@ -5,6 +9,12 @@
 holds between a continuant and a process, where the continuant is somehow involved in the process
 
 URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
+
+RO:0000056
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

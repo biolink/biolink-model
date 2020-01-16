@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:severity_qualifier
+---
 
 # Type: severity_qualifier
 

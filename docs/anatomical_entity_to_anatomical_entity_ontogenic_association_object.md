@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_object
+---
 
 # Type: anatomical_entity_to_anatomical_entity_ontogenic_association_object
 

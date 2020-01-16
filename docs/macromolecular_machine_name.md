@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:macromolecular_machine_name
+---
 
 # Type: macromolecular_machine_name
 

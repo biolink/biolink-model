@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:stage_qualifier
+---
 
 # Type: stage_qualifier
 

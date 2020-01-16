@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:correlated_with
+---
 
 # Type: correlated_with
 
@@ -5,6 +9,12 @@
 holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
 
 URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
+
+RO:0002610
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

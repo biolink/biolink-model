@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Drug
 ---
 
@@ -11,16 +11,16 @@ A substance intended for use in the diagnosis, cure, mitigation, treatment, or p
 URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 WD:Q12140
-{: .mapping-label }
+{: .mappinglabel }
 
 CHEBI:23888
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T200
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:clnd
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Drug&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalSubstance]^-\[Drug])
 

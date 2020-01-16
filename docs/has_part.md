@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_part
+---
 
 # Type: has_part
 
@@ -5,6 +9,15 @@
 holds between wholes and their parts (material entities or processes)
 
 URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
+
+BFO:0000051
+{: .mapping-label }
+
+WD:P527
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

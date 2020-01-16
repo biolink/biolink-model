@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:relation
+---
 
 # Type: relation
 
@@ -5,6 +9,15 @@
 the relationship type by which a subject is connected to an object in an association
 
 URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
+
+rdf:predicate
+{: .mapping-label }
+
+owl:annotatedProperty
+{: .mapping-label }
+
+OBAN:association_has_predicate
+{: .mapping-label }
 
 
 ## Domain and Range

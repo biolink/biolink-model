@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Disease
 ---
 
@@ -11,76 +11,76 @@ title: biolink:Disease
 URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 
 MONDO:0000001
-{: .mapping-label }
+{: .mappinglabel }
 
 WD:Q12136
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:010299
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSG:DISO
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T019
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:cgab
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T020
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:acab
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T037
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:inpo
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T046
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:patf
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T047
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:dsyn
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T048
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:mobd
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T049
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:comd
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T184
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:sosy
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T190
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:anab
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T191
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:neop
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Disease&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DiseaseToExposureAssociation]-%20subject%201..1>\[Disease],%20\[DiseaseToThingAssociation]-%20subject%201..1>\[Disease],%20\[DiseaseOrPhenotypicFeature]^-\[Disease])
 

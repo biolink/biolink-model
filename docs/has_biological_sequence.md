@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_biological_sequence
+---
 
 # Type: has_biological_sequence
 

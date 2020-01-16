@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:decreases_activity_of
+---
 
 # Type: decreases_activity_of
 
@@ -5,6 +9,9 @@
 holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest
 
 URI: [biolink:decreases_activity_of](https://w3id.org/biolink/vocab/decreases_activity_of)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

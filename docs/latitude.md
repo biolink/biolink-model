@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:latitude
+---
 
 # Type: latitude
 
@@ -5,6 +9,9 @@
 latitude
 
 URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
+
+wgs:lat
+{: .mapping-label }
 
 
 ## Domain and Range

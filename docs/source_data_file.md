@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:source_data_file
+---
 
 # Type: source_data_file
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:source_data_file](https://w3id.org/biolink/vocab/source_data_file)
+
+dcterms:source
+{: .mapping-label }
 
 
 ## Domain and Range

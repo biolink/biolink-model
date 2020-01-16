@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:population_to_population_association_relation
+---
 
 # Type: population_to_population_association_relation
 

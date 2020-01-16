@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:gene_to_gene_product_relationship_relation
+---
 
 # Type: gene_to_gene_product_relationship_relation
 

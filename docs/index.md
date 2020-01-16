@@ -1,5 +1,5 @@
 
-# Biolink_Model schema
+# Biolink Model schema
 
 
 Entity and association taxonomy and datamodel for life-sciences data

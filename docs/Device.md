@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Device
 ---
 
@@ -11,25 +11,25 @@ A thing made or adapted for a particular purpose, especially a piece of mechanic
 URI: [biolink:Device](https://w3id.org/biolink/vocab/Device)
 
 UMLSSG:DEVI
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T074
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:medd
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T075
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:resd
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T203
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:drdd
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Device&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

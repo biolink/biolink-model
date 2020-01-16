@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:chemical_to_chemical_derivation_association_change_is_catalyzed_by
+---
 
 # Type: chemical_to_chemical_derivation_association_change_is_catalyzed_by
 

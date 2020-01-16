@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:RNAProduct
 ---
 
@@ -11,13 +11,13 @@ title: biolink:RNAProduct
 URI: [biolink:RNAProduct](https://w3id.org/biolink/vocab/RNAProduct)
 
 CHEBI:33697
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:010450
-{: .mapping-label }
+{: .mappinglabel }
 
 WD:Q11053
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[RNAProduct&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[RNAProduct]^-\[NoncodingRNAProduct],%20\[RNAProduct]^-\[RNAProductIsoform],%20\[GeneProduct]^-\[RNAProduct])
 

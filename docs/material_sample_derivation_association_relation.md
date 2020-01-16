@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:material_sample_derivation_association_relation
+---
 
 # Type: material_sample_derivation_association_relation
 

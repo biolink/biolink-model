@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:change_is_catalyzed_by
+---
 
 # Type: change_is_catalyzed_by
 

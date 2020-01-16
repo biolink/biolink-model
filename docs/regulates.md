@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:regulates
+---
 
 # Type: regulates
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
+
+WD:P128
+{: .mapping-label }
 
 
 ## Domain and Range

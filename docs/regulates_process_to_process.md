@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:regulates_process_to_process
+---
 
 # Type: regulates_process_to_process
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regulates_process_to_process)
+
+RO:0002211
+{: .mapping-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:interacting_molecules_category
+---
 
 # Type: interacting_molecules_category
 

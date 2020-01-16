@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:type
+---
 
 # Type: type
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:type](https://w3id.org/biolink/vocab/type)
+
+rdf:type
+{: .mapping-label }
 
 
 ## Domain and Range

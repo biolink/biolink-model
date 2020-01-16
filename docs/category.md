@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:category
+---
 
 # Type: category
 
@@ -5,6 +9,12 @@
 Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
 
 URI: [biolink:category](https://w3id.org/biolink/vocab/category)
+
+rdfs:subClassOf
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

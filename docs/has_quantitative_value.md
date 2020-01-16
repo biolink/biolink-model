@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_quantitative_value
+---
 
 # Type: has_quantitative_value
 
@@ -5,6 +9,12 @@
 connects an attribute to a value
 
 URI: [biolink:has_quantitative_value](https://w3id.org/biolink/vocab/has_quantitative_value)
+
+qud:quantityValue
+{: .mapping-label }
+
+samples
+{: .samples-subset-label }
 
 
 ## Domain and Range

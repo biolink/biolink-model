@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:positively_regulates_process_to_process
+---
 
 # Type: positively_regulates_process_to_process
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:positively_regulates_process_to_process](https://w3id.org/biolink/vocab/positively_regulates_process_to_process)
+
+RO:0002213
+{: .mapping-label }
 
 
 ## Domain and Range

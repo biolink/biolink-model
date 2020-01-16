@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:PhysiologicalProcess
 ---
 
@@ -11,55 +11,55 @@ title: biolink:PhysiologicalProcess
 URI: [biolink:PhysiologicalProcess](https://w3id.org/biolink/vocab/PhysiologicalProcess)
 
 UMLSSG:PHYS
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T032
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:orga
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T039
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:phsf
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T040
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:orgf
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T041
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:menp
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T042
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:ortf
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T043
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:celf
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T045
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:genf
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T201
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:clna
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcess]^-\[PhysiologicalProcess&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

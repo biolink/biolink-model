@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:ActivityAndBehavior
 ---
 
@@ -11,61 +11,61 @@ Activity or behavior of any independent integral living, organization or mechani
 URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBehavior)
 
 UMLSSG:ACTI
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T051
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:evnt
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T052
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:acty
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T053
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:bhvr
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T054
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:socb
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T055
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:inbe
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T056
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:dora
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T057
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:ocac
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T064
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:gora
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T066
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:mcha
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[ActivityAndBehavior&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

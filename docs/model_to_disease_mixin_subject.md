@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:model_to_disease_mixin_subject
+---
 
 # Type: model_to_disease_mixin_subject
 

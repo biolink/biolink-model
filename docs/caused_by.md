@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:caused_by
+---
 
 # Type: caused_by
 
@@ -5,6 +9,12 @@
 holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
 
 URI: [biolink:caused_by](https://w3id.org/biolink/vocab/caused_by)
+
+WD:P828
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

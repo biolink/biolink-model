@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Genome
 ---
 
@@ -11,13 +11,13 @@ A genome is the sum of genetic material within a cell or virion.
 URI: [biolink:Genome](https://w3id.org/biolink/vocab/Genome)
 
 SO:0001026
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:000984
-{: .mapping-label }
+{: .mappinglabel }
 
 WD:Q7020
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Genome&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenomicEntity]^-\[Genome])
 

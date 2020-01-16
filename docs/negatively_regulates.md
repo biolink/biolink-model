@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:negatively_regulates
+---
 
 # Type: negatively_regulates
 

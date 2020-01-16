@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:full_name
+---
 
 # Type: full_name
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:treated_by
+---
 
 # Type: treated_by
 
@@ -5,6 +9,15 @@
 holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
 
 URI: [biolink:treated_by](https://w3id.org/biolink/vocab/treated_by)
+
+RO:0002302
+{: .mapping-label }
+
+WD:P2176
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:location_of
+---
 
 # Type: location_of
 
@@ -5,6 +9,18 @@
 holds between material entity or site and a material entity that is located within it (but not considered a part of it)
 
 URI: [biolink:location_of](https://w3id.org/biolink/vocab/location_of)
+
+RO:0001015
+{: .mapping-label }
+
+SEMMEDDB:LOCATION_OF
+{: .mapping-label }
+
+WD:276
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:paralogous_to
+---
 
 # Type: paralogous_to
 
@@ -5,6 +9,12 @@
 a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
 
 URI: [biolink:paralogous_to](https://w3id.org/biolink/vocab/paralogous_to)
+
+RO:HOM0000011
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

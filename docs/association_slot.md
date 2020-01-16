@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:association_slot
+---
 
 # Type: association_slot
 

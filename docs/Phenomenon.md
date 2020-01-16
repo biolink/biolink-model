@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Phenomenon
 ---
 
@@ -11,43 +11,43 @@ a fact or situation that is observed to exist or happen, especially one whose ca
 URI: [biolink:Phenomenon](https://w3id.org/biolink/vocab/Phenomenon)
 
 UMLSSG:PHEN
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T034
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:lbtr
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T038
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:biof
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T067
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:phpr
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T068
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:hcpp
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T069
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:eehu
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T070
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:npop
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[Phenomenon&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

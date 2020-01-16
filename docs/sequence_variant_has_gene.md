@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:sequence_variant_has_gene
+---
 
 # Type: sequence_variant_has_gene
 

@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:CellLine
 ---
 
@@ -11,7 +11,7 @@ title: biolink:CellLine
 URI: [biolink:CellLine](https://w3id.org/biolink/vocab/CellLine)
 
 CLO:0000031
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CellLineToThingAssociation]-%20subject%201..1>\[CellLine&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[OrganismalEntity]^-\[CellLine])
 

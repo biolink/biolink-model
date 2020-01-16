@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:increases_folding_of
+---
 
 # Type: increases_folding_of
 
@@ -5,6 +9,9 @@
 holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other
 
 URI: [biolink:increases_folding_of](https://w3id.org/biolink/vocab/increases_folding_of)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

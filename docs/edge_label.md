@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:edge_label
+---
 
 # Type: edge_label
 

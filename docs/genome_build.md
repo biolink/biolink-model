@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:genome_build
+---
 
 # Type: genome_build
 

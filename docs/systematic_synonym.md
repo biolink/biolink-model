@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:systematic_synonym
+---
 
 # Type: systematic_synonym
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:related_to
+---
 
 # Type: related_to
 
@@ -5,6 +9,12 @@
 A relationship that is asserted between two named things
 
 URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
+
+owl:ObjectProperty
+{: .mapping-label }
+
+SEMMEDDB:ASSOCIATED_WITH
+{: .mapping-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:orthologous_to
+---
 
 # Type: orthologous_to
 
@@ -5,6 +9,15 @@
 a homology relationship between entities (typically genes) that diverged after a speciation event.
 
 URI: [biolink:orthologous_to](https://w3id.org/biolink/vocab/orthologous_to)
+
+RO:HOM0000017
+{: .mapping-label }
+
+WD:P684
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

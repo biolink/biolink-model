@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:frequency_qualifier
+---
 
 # Type: frequency_qualifier
 

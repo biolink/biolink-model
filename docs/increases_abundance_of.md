@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:increases_abundance_of
+---
 
 # Type: increases_abundance_of
 
@@ -5,6 +9,9 @@
 holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
 
 URI: [biolink:increases_abundance_of](https://w3id.org/biolink/vocab/increases_abundance_of)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

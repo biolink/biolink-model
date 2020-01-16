@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:positively_regulates
+---
 
 # Type: positively_regulates
 

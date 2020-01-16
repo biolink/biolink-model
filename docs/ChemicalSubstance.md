@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:ChemicalSubstance
 ---
 
@@ -11,127 +11,127 @@ May be a chemical entity or a formulation with a chemical entity as active ingre
 URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstance)
 
 SIO:010004
-{: .mapping-label }
+{: .mappinglabel }
 
 WD:Q79529
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T167
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:sbst
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSG:CHEM
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T103
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:chem
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T104
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:chvs
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T109
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:orch
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T114
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:nnon
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T120
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:chvf
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T121
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:phsu
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T122
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:bodm
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T123
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:bacs
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T125
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:horm
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T126
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:enzy
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T127
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:vita
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T129
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:imft
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T130
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:irda
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T131
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:hops
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T192
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:rcpt
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T195
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:antb
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T196
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:elii
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T197
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:inch
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[ChemicalSubstance&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalToChemicalAssociation]-%20object%201..1>\[ChemicalSubstance],%20\[ChemicalToChemicalDerivationAssociation]-%20object%201..1>\[ChemicalSubstance],%20\[ChemicalToChemicalDerivationAssociation]-%20subject%201..1>\[ChemicalSubstance],%20\[ChemicalToThingAssociation]-%20subject%201..1>\[ChemicalSubstance],%20\[MolecularActivity]-%20has%20input%200..*>\[ChemicalSubstance],%20\[MolecularActivity]-%20has%20output%200..*>\[ChemicalSubstance],%20\[ChemicalSubstance]^-\[Metabolite],%20\[ChemicalSubstance]^-\[Drug],%20\[ChemicalSubstance]^-\[Carbohydrate],%20\[MolecularEntity]^-\[ChemicalSubstance])
 

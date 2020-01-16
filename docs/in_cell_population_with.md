@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:in_cell_population_with
+---
 
 # Type: in_cell_population_with
 
@@ -5,6 +9,9 @@
 holds between two genes or gene products that are expressed in the same cell type or population
 
 URI: [biolink:in_cell_population_with](https://w3id.org/biolink/vocab/in_cell_population_with)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

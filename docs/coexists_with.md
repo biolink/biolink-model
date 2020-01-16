@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:coexists_with
+---
 
 # Type: coexists_with
 
@@ -5,6 +9,12 @@
 holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
 
 URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
+
+SEMMEDDB:COEXISTS_WITH
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

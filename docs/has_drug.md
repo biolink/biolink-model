@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_drug
+---
 
 # Type: has_drug
 

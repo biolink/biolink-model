@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:distribution
+---
 
 # Type: distribution
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:distribution](https://w3id.org/biolink/vocab/distribution)
+
+void:Dataset
+{: .mapping-label }
 
 
 ## Domain and Range

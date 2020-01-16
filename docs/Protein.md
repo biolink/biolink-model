@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Protein
 ---
 
@@ -11,25 +11,25 @@ A gene product that is composed of a chain of amino acid sequences and is produc
 URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
 PR:000000001
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:010043
-{: .mapping-label }
+{: .mappinglabel }
 
 WD:Q8054
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T087
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:amas
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T116
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:aapp
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Protein&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[Protein]^-\[ProteinIsoform],%20\[GeneProduct]^-\[Protein])
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_molecular_consequence
+---
 
 # Type: has_molecular_consequence
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:regulates_entity_to_entity
+---
 
 # Type: regulates_entity_to_entity
 
@@ -5,6 +9,12 @@
 
 
 URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulates_entity_to_entity)
+
+RO:0002448
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

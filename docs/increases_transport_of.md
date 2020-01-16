@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:increases_transport_of
+---
 
 # Type: increases_transport_of
 
@@ -5,6 +9,9 @@
 holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
 
 URI: [biolink:increases_transport_of](https://w3id.org/biolink/vocab/increases_transport_of)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

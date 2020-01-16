@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Transcript
 ---
 
@@ -11,10 +11,10 @@ An RNA synthesized on a DNA or RNA template by an RNA polymerase
 URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 SO:0000673
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:010450
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Transcript&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExonToTranscriptRelationship]-%20object%201..1>\[Transcript],%20\[TranscriptToGeneRelationship]-%20subject%201..1>\[Transcript],%20\[GenomicEntity]^-\[Transcript])
 

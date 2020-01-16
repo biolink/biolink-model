@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_receptor
+---
 
 # Type: has_receptor
 
@@ -5,6 +9,9 @@
 the organism or organism part being exposed
 
 URI: [biolink:has_receptor](https://w3id.org/biolink/vocab/has_receptor)
+
+ExO:0000001
+{: .mapping-label }
 
 
 ## Domain and Range

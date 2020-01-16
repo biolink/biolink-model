@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:negatively_regulates_process_to_process
+---
 
 # Type: negatively_regulates_process_to_process
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:negatively_regulates_process_to_process](https://w3id.org/biolink/vocab/negatively_regulates_process_to_process)
+
+RO:0002212
+{: .mapping-label }
 
 
 ## Domain and Range

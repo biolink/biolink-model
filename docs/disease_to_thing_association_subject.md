@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:disease_to_thing_association_subject
+---
 
 # Type: disease_to_thing_association_subject
 

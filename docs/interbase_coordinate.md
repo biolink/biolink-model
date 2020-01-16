@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:interbase_coordinate
+---
 
 # Type: interbase_coordinate
 

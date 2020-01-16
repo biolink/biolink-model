@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:CodingSequence
 ---
 
@@ -11,10 +11,10 @@ title: biolink:CodingSequence
 URI: [biolink:CodingSequence](https://w3id.org/biolink/vocab/CodingSequence)
 
 SO:0000316
-{: .mapping-label }
+{: .mappinglabel }
 
 SIO:001390
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[CodingSequence&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenomicEntity]^-\[CodingSequence])
 

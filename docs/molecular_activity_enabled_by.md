@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:molecular_activity_enabled_by
+---
 
 # Type: molecular_activity_enabled_by
 

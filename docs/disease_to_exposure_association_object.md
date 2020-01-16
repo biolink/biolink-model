@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:disease_to_exposure_association_object
+---
 
 # Type: disease_to_exposure_association_object
 

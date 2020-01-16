@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:aggregate_statistic
+---
 
 # Type: aggregate_statistic
 

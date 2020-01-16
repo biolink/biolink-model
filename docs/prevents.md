@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:prevents
+---
 
 # Type: prevents
 
@@ -5,6 +9,15 @@
 holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
 
 URI: [biolink:prevents](https://w3id.org/biolink/vocab/prevents)
+
+RO:0002599
+{: .mapping-label }
+
+SEMMEDDB:PREVENTS
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

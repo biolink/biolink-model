@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:gene_associated_with_condition
+---
 
 # Type: gene_associated_with_condition
 
@@ -5,6 +9,12 @@
 holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
 
 URI: [biolink:gene_associated_with_condition](https://w3id.org/biolink/vocab/gene_associated_with_condition)
+
+WD:P2293
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:association_id
+---
 
 # Type: association_id
 
@@ -5,6 +9,9 @@
 A unique identifier for an association
 
 URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:creation_date
+---
 
 # Type: creation_date
 
@@ -5,6 +9,9 @@
 date on which thing was created. This can be applied to nodes or edges
 
 URI: [biolink:creation_date](https://w3id.org/biolink/vocab/creation_date)
+
+dcterms:created
+{: .mapping-label }
 
 
 ## Domain and Range

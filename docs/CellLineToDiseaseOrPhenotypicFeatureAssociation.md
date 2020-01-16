@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation
 ---
 

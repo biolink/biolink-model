@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:ChemicalExposure
 ---
 
@@ -11,7 +11,7 @@ A chemical exposure is an intake of a particular chemical substance
 URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 
 ECTO:9000000
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalExposure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[DrugExposure],%20\[ExposureEvent]^-\[ChemicalExposure])
 

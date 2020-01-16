@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:clinical_modifier_qualifier
+---
 
 # Type: clinical_modifier_qualifier
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:has_route
+---
 
 # Type: has_route
 
@@ -5,6 +9,9 @@
 the process that results in the stressor coming into direct contact with the receptor
 
 URI: [biolink:has_route](https://w3id.org/biolink/vocab/has_route)
+
+ExO:0000055
+{: .mapping-label }
 
 
 ## Domain and Range

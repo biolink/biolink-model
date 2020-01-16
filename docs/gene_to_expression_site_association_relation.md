@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:gene_to_expression_site_association_relation
+---
 
 # Type: gene_to_expression_site_association_relation
 

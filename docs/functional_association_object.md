@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:functional_association_object
+---
 
 # Type: functional_association_object
 

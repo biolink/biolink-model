@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:OrganismTaxon
 ---
 
@@ -11,7 +11,7 @@ title: biolink:OrganismTaxon
 URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
 WD:Q16521
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ThingWithTaxon]-%20in%20taxon%200..*>\[OrganismTaxon&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[OntologyClass]^-\[OrganismTaxon])
 

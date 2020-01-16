@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:gene_to_gene_association_object
+---
 
 # Type: gene_to_gene_association_object
 

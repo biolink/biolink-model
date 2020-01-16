@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:longitude
+---
 
 # Type: longitude
 
@@ -5,6 +9,9 @@
 longitude
 
 URI: [biolink:longitude](https://w3id.org/biolink/vocab/longitude)
+
+wgs:long
+{: .mapping-label }
 
 
 ## Domain and Range

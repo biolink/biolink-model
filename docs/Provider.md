@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Provider
 ---
 
@@ -11,31 +11,31 @@ person, group, organization or project that provides a piece of information
 URI: [biolink:Provider](https://w3id.org/biolink/vocab/Provider)
 
 UMLSSG:ORGA
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T092
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:orgt
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T093
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:hcro
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T094
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:pros
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T095
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:shro
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20provided%20by%200..1>\[Provider&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AdministrativeEntity]^-\[Provider])
 

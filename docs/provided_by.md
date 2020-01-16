@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:provided_by
+---
 
 # Type: provided_by
 
@@ -5,6 +9,9 @@
 connects an association to the agent (person, organization or group) that provided it
 
 URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
+
+pav:providedBy
+{: .mapping-label }
 
 
 ## Domain and Range

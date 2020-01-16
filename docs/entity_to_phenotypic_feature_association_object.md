@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:entity_to_phenotypic_feature_association_object
+---
 
 # Type: entity_to_phenotypic_feature_association_object
 

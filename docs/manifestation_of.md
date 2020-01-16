@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:manifestation_of
+---
 
 # Type: manifestation_of
 
@@ -5,6 +9,15 @@
 used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
 
 URI: [biolink:manifestation_of](https://w3id.org/biolink/vocab/manifestation_of)
+
+SEMMEDDB:MANIFESTATION_OF
+{: .mapping-label }
+
+WD:P1557
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

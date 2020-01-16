@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:disease_or_phenotypic_feature_association_to_thing_association_subject
+---
 
 # Type: disease_or_phenotypic_feature_association_to_thing_association_subject
 

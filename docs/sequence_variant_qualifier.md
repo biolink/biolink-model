@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:sequence_variant_qualifier
+---
 
 # Type: sequence_variant_qualifier
 

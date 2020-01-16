@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:ExposureEvent
 ---
 
@@ -11,7 +11,7 @@ A feature of the environment of an organism that influences one or more phenotyp
 URI: [biolink:ExposureEvent](https://w3id.org/biolink/vocab/ExposureEvent)
 
 SIO:000955
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DiseaseToExposureAssociation]-%20object%201..1>\[ExposureEvent&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExposureEventToPhenotypicFeatureAssociation]-%20subject%201..1>\[ExposureEvent],%20\[ExposureEvent]^-\[Treatment],%20\[ExposureEvent]^-\[ChemicalExposure],%20\[BiologicalEntity]^-\[ExposureEvent])
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:title
+---
 
 # Type: title
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:title](https://w3id.org/biolink/vocab/title)
+
+dct:title
+{: .mapping-label }
 
 
 ## Domain and Range

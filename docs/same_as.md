@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:same_as
+---
 
 # Type: same_as
 
@@ -5,6 +9,21 @@
 holds between two entities that are considered equivalent to each other
 
 URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
+
+owl:equivalentClass
+{: .mapping-label }
+
+owl:sameAs
+{: .mapping-label }
+
+skos:exactMatch
+{: .mapping-label }
+
+WD:P2888
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

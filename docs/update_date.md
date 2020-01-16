@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:update_date
+---
 
 # Type: update_date
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:quantifier_qualifier
+---
 
 # Type: quantifier_qualifier
 

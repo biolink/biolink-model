@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:Onset
 ---
 
@@ -11,7 +11,7 @@ The age group in which manifestations appear
 URI: [biolink:Onset](https://w3id.org/biolink/vocab/Onset)
 
 HP:0003674
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[Onset&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[Onset],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[Onset],%20\[Attribute]^-\[Onset])
 

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:treats
+---
 
 # Type: treats
 
@@ -5,6 +9,21 @@
 holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
 
 URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
+
+RO:0002606
+{: .mapping-label }
+
+RO:0003307
+{: .mapping-label }
+
+SEMMEDDB:TREATS
+{: .mapping-label }
+
+WD:P2175
+{: .mapping-label }
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 ## Domain and Range

@@ -1,3 +1,7 @@
+---
+parent: "Browse Biolink Model"
+title: biolink:retrievedOn
+---
 
 # Type: retrievedOn
 
@@ -5,6 +9,9 @@
 
 
 URI: [biolink:retrievedOn](https://w3id.org/biolink/vocab/retrievedOn)
+
+pav:retrievedOn
+{: .mapping-label }
 
 
 ## Domain and Range

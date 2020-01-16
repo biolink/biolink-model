@@ -1,5 +1,5 @@
 ---
-parent: "Browse biolink_model"
+parent: "Browse Biolink Model"
 title: biolink:GeographicLocation
 ---
 
@@ -11,13 +11,13 @@ a location that can be described in lat/long coordinates
 URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocation)
 
 UMLSSG:GEOG
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSST:geoa
-{: .mapping-label }
+{: .mappinglabel }
 
 UMLSSC:T083
-{: .mapping-label }
+{: .mappinglabel }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeographicLocation&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[GeographicLocationAtTime],%20\[PlanetaryEntity]^-\[GeographicLocation])
 
