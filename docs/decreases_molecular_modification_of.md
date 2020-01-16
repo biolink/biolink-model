@@ -10,6 +10,7 @@ holds between two molecular entities where the action or effect of one leads to 
 
 URI: [biolink:decreases_molecular_modification_of](https://w3id.org/biolink/vocab/decreases_molecular_modification_of)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -10,6 +10,7 @@ holds between two genes or gene products that are part of (or code for products 
 
 URI: [biolink:in_complex_with](https://w3id.org/biolink/vocab/in_complex_with)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

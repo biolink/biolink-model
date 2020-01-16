@@ -20,6 +20,7 @@ OBAN:association_has_predicate
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [Uriorcurie](types/Uriorcurie.md)

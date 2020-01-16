@@ -13,6 +13,7 @@ URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
 SEMMEDDB:COEXISTS_WITH
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

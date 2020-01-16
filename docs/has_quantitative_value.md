@@ -13,6 +13,7 @@ URI: [biolink:has_quantitative_value](https://w3id.org/biolink/vocab/has_quantit
 qud:quantityValue
 {: .mapping-label }
 
+
 samples
 {: .samples-subset-label }
 

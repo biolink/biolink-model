@@ -11,6 +11,7 @@ title: biolink:chemical_to_chemical_association_object
 URI: [biolink:chemical_to_chemical_association_object](https://w3id.org/biolink/vocab/chemical_to_chemical_association_object)
 
 
+
 ## Domain and Range
 
 [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) ->  <sub>REQ</sub> [ChemicalSubstance](ChemicalSubstance.md)

@@ -13,6 +13,7 @@ URI: [biolink:disrupts](https://w3id.org/biolink/vocab/disrupts)
 SEMMEDDB:DISRUPTS
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -11,7 +11,7 @@ Any intermediate or product resulting from metabolism. Includes primary and seco
 URI: [biolink:Metabolite](https://w3id.org/biolink/vocab/Metabolite)
 
 CHEBI:25212
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Metabolite&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalSubstance]^-\[Metabolite])
 

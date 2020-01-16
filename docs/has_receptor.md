@@ -14,6 +14,7 @@ ExO:0000001
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [ExposureEvent](ExposureEvent.md) ->  <sub>OPT</sub> [OrganismalEntity](OrganismalEntity.md)

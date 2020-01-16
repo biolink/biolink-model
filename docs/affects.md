@@ -13,6 +13,7 @@ URI: [biolink:affects](https://w3id.org/biolink/vocab/affects)
 SEMMEDDB:AFFECTS
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -13,6 +13,7 @@ URI: [biolink:category](https://w3id.org/biolink/vocab/category)
 rdfs:subClassOf
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

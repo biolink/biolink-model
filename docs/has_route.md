@@ -14,6 +14,7 @@ ExO:0000055
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [ExposureEvent](ExposureEvent.md) ->  <sub>OPT</sub> [String](types/String.md)

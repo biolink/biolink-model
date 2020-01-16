@@ -13,6 +13,7 @@ URI: [biolink:has_phenotype](https://w3id.org/biolink/vocab/has_phenotype)
 RO:0002200
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -11,10 +11,10 @@ title: biolink:MicroRNA
 URI: [biolink:MicroRNA](https://w3id.org/biolink/vocab/MicroRNA)
 
 SIO:001397
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q310899
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[MicroRNA&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[NoncodingRNAProduct]^-\[MicroRNA])
 

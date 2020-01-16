@@ -10,6 +10,7 @@ An IRI for the node. This is determined by the id using expansion rules.
 
 URI: [biolink:iri](https://w3id.org/biolink/vocab/iri)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

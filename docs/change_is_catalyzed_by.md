@@ -11,6 +11,7 @@ hyperedge connecting an association between two causally connected entities (for
 URI: [biolink:change_is_catalyzed_by](https://w3id.org/biolink/vocab/change_is_catalyzed_by)
 
 
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>0..*</sub> [MacromolecularMachine](MacromolecularMachine.md)

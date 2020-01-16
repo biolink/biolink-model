@@ -11,6 +11,7 @@ title: biolink:exon_to_transcript_relationship_subject
 URI: [biolink:exon_to_transcript_relationship_subject](https://w3id.org/biolink/vocab/exon_to_transcript_relationship_subject)
 
 
+
 ## Domain and Range
 
 [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) ->  <sub>REQ</sub> [Exon](Exon.md)

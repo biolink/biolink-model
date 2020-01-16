@@ -11,31 +11,31 @@ person, group, organization or project that provides a piece of information
 URI: [biolink:Provider](https://w3id.org/biolink/vocab/Provider)
 
 UMLSSG:ORGA
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T092
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:orgt
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T093
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:hcro
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T094
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:pros
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T095
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:shro
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20provided%20by%200..1>\[Provider&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AdministrativeEntity]^-\[Provider])
 

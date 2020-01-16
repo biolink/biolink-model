@@ -14,6 +14,7 @@ RO:0002558
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [EvidenceType](EvidenceType.md)

@@ -19,6 +19,7 @@ SEMMEDDB:LOCATION_OF
 WD:276
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

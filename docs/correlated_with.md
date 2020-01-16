@@ -13,6 +13,7 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 RO:0002610
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

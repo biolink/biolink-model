@@ -13,6 +13,7 @@ URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
 RO:00002325
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

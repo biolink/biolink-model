@@ -11,43 +11,43 @@ title: biolink:GrossAnatomicalStructure
 URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/vocab/GrossAnatomicalStructure)
 
 UBERON:0010000
-{: .mappinglabel }
+{: .mapping-label }
 
 SIO:010046
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q4936952
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T017
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:anst
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T021
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:ffas
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T023
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:bpoc
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T024
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:tisu
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T018
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:emst
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GrossAnatomicalStructure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure])
 

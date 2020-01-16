@@ -19,6 +19,7 @@ SEMMEDDB:PART_OF
 WD:P361
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -11,7 +11,7 @@ A named entity that is either a part of an organism, a whole organism, populatio
 URI: [biolink:OrganismalEntity](https://w3id.org/biolink/vocab/OrganismalEntity)
 
 WD:Q7239
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismalEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[PopulationOfIndividualOrganisms],%20\[OrganismalEntity]^-\[LifeStage],%20\[OrganismalEntity]^-\[IndividualOrganism],%20\[OrganismalEntity]^-\[CellLine],%20\[OrganismalEntity]^-\[AnatomicalEntity],%20\[BiologicalEntity]^-\[OrganismalEntity])
 

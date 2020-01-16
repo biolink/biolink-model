@@ -11,13 +11,13 @@ A region of the transcript sequence within a gene which is not removed from the 
 URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 
 SO:0000147
-{: .mappinglabel }
+{: .mapping-label }
 
 SIO:010445
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q373027
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Exon&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExonToTranscriptRelationship]-%20subject%201..1>\[Exon],%20\[GenomicEntity]^-\[Exon])
 

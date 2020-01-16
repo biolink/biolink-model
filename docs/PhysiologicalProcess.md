@@ -11,55 +11,55 @@ title: biolink:PhysiologicalProcess
 URI: [biolink:PhysiologicalProcess](https://w3id.org/biolink/vocab/PhysiologicalProcess)
 
 UMLSSG:PHYS
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T032
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:orga
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T039
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:phsf
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T040
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:orgf
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T041
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:menp
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T042
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:ortf
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T043
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:celf
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T045
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:genf
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T201
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:clna
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcess]^-\[PhysiologicalProcess&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

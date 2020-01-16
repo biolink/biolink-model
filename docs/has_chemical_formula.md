@@ -14,6 +14,7 @@ WD:P274
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [ChemicalFormulaValue](types/ChemicalFormulaValue.md)

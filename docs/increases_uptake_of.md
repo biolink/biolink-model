@@ -10,6 +10,7 @@ holds between two molecular entities where the action or effect of one increases
 
 URI: [biolink:increases_uptake_of](https://w3id.org/biolink/vocab/increases_uptake_of)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

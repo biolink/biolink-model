@@ -11,7 +11,7 @@ An association between either a disease or a phenotypic feature and an anatomica
 URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
 
 NCIT:R100
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[DiseaseOrPhenotypicFeature]<subject(i)%201..1-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[AnatomicalEntity]<object%201..1-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]^-\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation])
 

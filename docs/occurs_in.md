@@ -19,6 +19,7 @@ SEMMEDDB:OCCURS_IN
 SEMMEDDB:PROCESS_OF
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

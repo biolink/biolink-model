@@ -16,6 +16,7 @@ WD:P129
 SEMMEDDB:INTERACTS_WITH
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

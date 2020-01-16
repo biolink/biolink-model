@@ -11,7 +11,7 @@ Level of confidence in a statement
 URI: [biolink:ConfidenceLevel](https://w3id.org/biolink/vocab/ConfidenceLevel)
 
 CIO:0000028
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity]^-\[ConfidenceLevel&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

@@ -11,6 +11,7 @@ A high-level grouping for the relationship type. AKA minimal predicate. This is 
 URI: [biolink:edge_label](https://w3id.org/biolink/vocab/edge_label)
 
 
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [LabelType](types/LabelType.md)

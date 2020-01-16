@@ -11,133 +11,133 @@ title: biolink:IndividualOrganism
 URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrganism)
 
 SIO:010000
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q795052
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSG:LIVB
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T001
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:orgm
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T002
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:plnt
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T004
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:fngs
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T005
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:virs
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T007
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:bact
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T008
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:anim
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T010
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:vtbt
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T011
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:amph
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T012
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:bird
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T013
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:fish
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T014
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:rept
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T015
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:mamm
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T016
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:humn
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T096
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:grup
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T097
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:prog
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T099
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:famg
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T100
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:aggp
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T101
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:podg
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T194
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:arch
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T204
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:euka
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[IndividualOrganism&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[IndividualOrganism]uses%20-.->\[ThingWithTaxon],%20\[IndividualOrganism]^-\[Case],%20\[OrganismalEntity]^-\[IndividualOrganism])
 

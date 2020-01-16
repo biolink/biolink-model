@@ -14,6 +14,7 @@ WD:P128
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)

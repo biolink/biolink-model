@@ -22,6 +22,7 @@ SEMMEDDB:TREATS
 WD:P2175
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

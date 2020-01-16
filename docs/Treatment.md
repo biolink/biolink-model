@@ -11,10 +11,10 @@ A treatment is targeted at a disease or phenotype and may involve multiple drug 
 URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
 
 OGMS:0000090
-{: .mappinglabel }
+{: .mapping-label }
 
 SIO:001398
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1>\[Treatment&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExposureEvent]^-\[Treatment])
 

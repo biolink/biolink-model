@@ -11,49 +11,49 @@ A series of actions conducted in a certain order or manner
 URI: [biolink:Procedure](https://w3id.org/biolink/vocab/Procedure)
 
 UMLSSG:PROC
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T058
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:hlca
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T059
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:lbpr
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T060
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:diap
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T061
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:topp
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T062
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:resa
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T063
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:mbrt
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T065
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:edac
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[Procedure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

@@ -14,6 +14,7 @@ rdf:type
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)

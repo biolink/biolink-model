@@ -11,16 +11,16 @@ A substance intended for use in the diagnosis, cure, mitigation, treatment, or p
 URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 WD:Q12140
-{: .mappinglabel }
+{: .mapping-label }
 
 CHEBI:23888
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T200
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:clnd
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Drug&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalSubstance]^-\[Drug])
 

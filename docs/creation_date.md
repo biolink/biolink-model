@@ -14,6 +14,7 @@ dcterms:created
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Date](types/Date.md)

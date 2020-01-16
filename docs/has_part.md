@@ -16,6 +16,7 @@ BFO:0000051
 WD:P527
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

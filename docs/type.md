@@ -14,6 +14,7 @@ rdf:type
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)

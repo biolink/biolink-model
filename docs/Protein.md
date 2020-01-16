@@ -11,25 +11,25 @@ A gene product that is composed of a chain of amino acid sequences and is produc
 URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
 PR:000000001
-{: .mappinglabel }
+{: .mapping-label }
 
 SIO:010043
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q8054
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T087
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:amas
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T116
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:aapp
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Protein&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[Protein]^-\[ProteinIsoform],%20\[GeneProduct]^-\[Protein])
 

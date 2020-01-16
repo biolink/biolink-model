@@ -13,6 +13,7 @@ URI: [biolink:expresses](https://w3id.org/biolink/vocab/expresses)
 RO:0002292
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

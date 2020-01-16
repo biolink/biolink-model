@@ -13,6 +13,7 @@ URI: [biolink:name](https://w3id.org/biolink/vocab/name)
 rdfs:label
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

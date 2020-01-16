@@ -13,6 +13,7 @@ URI: [biolink:contributes_to](https://w3id.org/biolink/vocab/contributes_to)
 RO:0002326
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

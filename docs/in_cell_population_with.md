@@ -10,6 +10,7 @@ holds between two genes or gene products that are expressed in the same cell typ
 
 URI: [biolink:in_cell_population_with](https://w3id.org/biolink/vocab/in_cell_population_with)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

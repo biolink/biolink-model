@@ -13,6 +13,7 @@ URI: [biolink:enabled_by](https://w3id.org/biolink/vocab/enabled_by)
 RO:0002333
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

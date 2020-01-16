@@ -13,6 +13,7 @@ URI: [biolink:capable_of](https://w3id.org/biolink/vocab/capable_of)
 RO:0002215
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

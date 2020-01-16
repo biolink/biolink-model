@@ -11,6 +11,7 @@ title: biolink:molecular_activity_enabled_by
 URI: [biolink:molecular_activity_enabled_by](https://w3id.org/biolink/vocab/molecular_activity_enabled_by)
 
 
+
 ## Domain and Range
 
 [MolecularActivity](MolecularActivity.md) ->  <sub>0..*</sub> [MacromolecularMachine](MacromolecularMachine.md)

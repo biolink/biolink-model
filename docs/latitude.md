@@ -14,6 +14,7 @@ wgs:lat
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Float](types/Float.md)

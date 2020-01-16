@@ -13,6 +13,7 @@ URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
 SEMMEDDB:PREDISPOSES
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

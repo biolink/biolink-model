@@ -13,6 +13,7 @@ URI: [biolink:located_in](https://w3id.org/biolink/vocab/located_in)
 RO:0001025
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -10,6 +10,7 @@ holds between two molecular entities where the action or effect of one impacts t
 
 URI: [biolink:affects_secretion_of](https://w3id.org/biolink/vocab/affects_secretion_of)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

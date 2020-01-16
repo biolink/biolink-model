@@ -10,6 +10,7 @@ holds between a molecular entity and an mRNA where the action or effect of the m
 
 URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splicing_of)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

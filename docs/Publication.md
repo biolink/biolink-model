@@ -11,13 +11,13 @@ Any published piece of information. Can refer to a whole publication, or to a pa
 URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 IAO:0000311
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T170
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:inpr
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20publications%200..*>\[Publication&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[InformationContentEntity]^-\[Publication])
 

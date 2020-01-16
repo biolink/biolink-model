@@ -13,6 +13,7 @@ URI: [biolink:actively_involved_in](https://w3id.org/biolink/vocab/actively_invo
 RO:0002331
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

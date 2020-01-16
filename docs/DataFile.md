@@ -11,7 +11,7 @@ title: biolink:DataFile
 URI: [biolink:DataFile](https://w3id.org/biolink/vocab/DataFile)
 
 EFO:0004095
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DataSetVersion]-%20source%20data%20file%200..1>\[DataFile&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DataFile]^-\[SourceFile],%20\[NamedThing]^-\[DataFile])
 

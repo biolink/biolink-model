@@ -13,6 +13,7 @@ URI: [biolink:molecularly_interacts_with](https://w3id.org/biolink/vocab/molecul
 RO:0002436
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

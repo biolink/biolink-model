@@ -19,6 +19,7 @@ SEMMEDDB:IS_A
 WD:P279
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

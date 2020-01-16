@@ -11,6 +11,7 @@ a qualifier used in a phenotypic association to state how severe the phenotype i
 URI: [biolink:severity_qualifier](https://w3id.org/biolink/vocab/severity_qualifier)
 
 
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [SeverityValue](SeverityValue.md)

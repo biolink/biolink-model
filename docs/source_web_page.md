@@ -14,6 +14,7 @@ dcterms:source
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [DataSetSummary](DataSetSummary.md) ->  <sub>OPT</sub> [String](types/String.md)

@@ -16,6 +16,7 @@ RO:0002449
 SEMMEDDB:INHIBITS
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

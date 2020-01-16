@@ -13,6 +13,7 @@ URI: [biolink:interacts_with](https://w3id.org/biolink/vocab/interacts_with)
 RO:0002434
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

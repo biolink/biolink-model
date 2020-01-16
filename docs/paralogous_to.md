@@ -13,6 +13,7 @@ URI: [biolink:paralogous_to](https://w3id.org/biolink/vocab/paralogous_to)
 RO:HOM0000011
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

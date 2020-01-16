@@ -11,19 +11,19 @@ A location in or around a cell
 URI: [biolink:CellularComponent](https://w3id.org/biolink/vocab/CellularComponent)
 
 GO:0005575
-{: .mappinglabel }
+{: .mapping-label }
 
 SIO:001400
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q5058355
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T026
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:celc
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[CellularComponent&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1>\[CellularComponent],%20\[AnatomicalEntity]^-\[CellularComponent])
 

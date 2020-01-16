@@ -11,13 +11,13 @@ a location that can be described in lat/long coordinates
 URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocation)
 
 UMLSSG:GEOG
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:geoa
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T083
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeographicLocation&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[GeographicLocationAtTime],%20\[PlanetaryEntity]^-\[GeographicLocation])
 

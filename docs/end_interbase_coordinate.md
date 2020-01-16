@@ -11,6 +11,7 @@ title: biolink:end_interbase_coordinate
 URI: [biolink:end_interbase_coordinate](https://w3id.org/biolink/vocab/end_interbase_coordinate)
 
 
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)

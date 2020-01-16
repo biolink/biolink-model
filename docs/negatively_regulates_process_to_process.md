@@ -14,6 +14,7 @@ RO:0002212
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [Occurrent](Occurrent.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)

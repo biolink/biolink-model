@@ -10,6 +10,7 @@ A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a
 
 URI: [biolink:id](https://w3id.org/biolink/vocab/id)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

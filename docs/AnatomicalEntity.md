@@ -11,37 +11,37 @@ A subcellular location, cell type or gross anatomical part
 URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/vocab/AnatomicalEntity)
 
 SIO:010046
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q4936952
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSG:ANAT
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T022
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:bdsy
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T029
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:blor
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T030
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:bsoj
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T031
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:bdsu
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[AnatomicalEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20subject%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20subject%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20subject%201..1>\[AnatomicalEntity],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[GeneToExpressionSiteAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[AnatomicalEntity]uses%20-.->\[ThingWithTaxon],%20\[AnatomicalEntity]uses%20-.->\[PhysicalEntity],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure],%20\[AnatomicalEntity]^-\[CellularComponent],%20\[AnatomicalEntity]^-\[Cell],%20\[OrganismalEntity]^-\[AnatomicalEntity])
 

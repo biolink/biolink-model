@@ -13,6 +13,7 @@ URI: [biolink:derives_from](https://w3id.org/biolink/vocab/derives_from)
 RO:0001000
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

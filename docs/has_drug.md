@@ -11,6 +11,7 @@ connects an entity to a single drug
 URI: [biolink:has_drug](https://w3id.org/biolink/vocab/has_drug)
 
 
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Drug](Drug.md)

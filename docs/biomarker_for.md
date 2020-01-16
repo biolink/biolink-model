@@ -13,6 +13,7 @@ URI: [biolink:biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
 RO:0002607
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

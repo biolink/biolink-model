@@ -11,43 +11,43 @@ a fact or situation that is observed to exist or happen, especially one whose ca
 URI: [biolink:Phenomenon](https://w3id.org/biolink/vocab/Phenomenon)
 
 UMLSSG:PHEN
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T034
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:lbtr
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T038
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:biof
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T067
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:phpr
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T068
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:hcpp
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T069
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:eehu
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T070
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:npop
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[Phenomenon&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 

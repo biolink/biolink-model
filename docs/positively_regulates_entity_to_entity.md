@@ -16,6 +16,7 @@ RO:0002450
 SEMMEDDB:STIMULATES
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

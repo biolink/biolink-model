@@ -19,6 +19,7 @@ SEMMEDDB:PRECEDES
 WD:P156
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

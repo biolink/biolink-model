@@ -11,16 +11,16 @@ title: biolink:Pathway
 URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
 
 GO:0007165
-{: .mappinglabel }
+{: .mapping-label }
 
 SIO:010526
-{: .mappinglabel }
+{: .mapping-label }
 
 PW:0000001
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q4915012
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalToPathwayAssociation]-%20object%201..1>\[Pathway&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[BiologicalProcess]^-\[Pathway])
 

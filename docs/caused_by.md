@@ -13,6 +13,7 @@ URI: [biolink:caused_by](https://w3id.org/biolink/vocab/caused_by)
 WD:P828
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

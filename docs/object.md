@@ -20,6 +20,7 @@ OBAN:association_has_object
 {: .mapping-label }
 
 
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [NamedThing](NamedThing.md)

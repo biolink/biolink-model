@@ -11,22 +11,22 @@ title: biolink:Cell
 URI: [biolink:Cell](https://w3id.org/biolink/vocab/Cell)
 
 GO:0005623
-{: .mappinglabel }
+{: .mapping-label }
 
 CL:0000000
-{: .mappinglabel }
+{: .mapping-label }
 
 SIO:010001
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q7868
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T025
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:cell
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Cell&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AnatomicalEntity]^-\[Cell])
 

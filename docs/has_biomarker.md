@@ -10,6 +10,7 @@ holds between a disease or phenotypic feature and a measurable molecular entity 
 
 URI: [biolink:has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

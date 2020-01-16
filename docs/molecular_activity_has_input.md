@@ -11,6 +11,7 @@ title: biolink:molecular_activity_has_input
 URI: [biolink:molecular_activity_has_input](https://w3id.org/biolink/vocab/molecular_activity_has_input)
 
 
+
 ## Domain and Range
 
 [MolecularActivity](MolecularActivity.md) ->  <sub>0..*</sub> [ChemicalSubstance](ChemicalSubstance.md)

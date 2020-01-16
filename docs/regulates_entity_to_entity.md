@@ -13,6 +13,7 @@ URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulat
 RO:0002448
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

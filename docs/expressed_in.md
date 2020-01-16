@@ -13,6 +13,7 @@ URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
 RO:0002206
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

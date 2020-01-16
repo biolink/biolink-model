@@ -10,6 +10,7 @@ holds between two molecular entities where the action or effect of one changes t
 
 URI: [biolink:affects_localization_of](https://w3id.org/biolink/vocab/affects_localization_of)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

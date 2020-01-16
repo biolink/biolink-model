@@ -16,6 +16,7 @@ RO:0002599
 SEMMEDDB:PREVENTS
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

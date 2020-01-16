@@ -13,6 +13,7 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 RO:0002234
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -19,6 +19,7 @@ WD:P1056
 SEMMEDDB:PRODUCES
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

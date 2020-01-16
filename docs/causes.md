@@ -19,6 +19,7 @@ SEMMEDDB:CAUSES
 WD:P1542
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -11,13 +11,13 @@ A collection of individuals from the same taxonomic class distinguished by one o
 URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
 
 SIO:001061
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T098
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:popg
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[PopulationOfIndividualOrganisms&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[PopulationToPopulationAssociation]-%20object%201..1>\[PopulationOfIndividualOrganisms],%20\[PopulationToPopulationAssociation]-%20subject%201..1>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]-%20object%201..1>\[PopulationOfIndividualOrganisms],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[PopulationOfIndividualOrganisms])
 

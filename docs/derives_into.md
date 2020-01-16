@@ -16,6 +16,7 @@ RO:0001001
 SEMMEDDB:CONVERTS_TO
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -11,19 +11,19 @@ A gene, gene product, small molecule or macromolecule (including protein complex
 URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
 SIO:010341
-{: .mappinglabel }
+{: .mapping-label }
 
 WD:Q43460564
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSG:GENE
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T085
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:mosq
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[MolecularEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GeneToGoTermAssociation]-%20subject%201..1>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20object%201..1>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20subject%201..1>\[MolecularEntity],%20\[MolecularEntity]uses%20-.->\[ThingWithTaxon],%20\[MolecularEntity]uses%20-.->\[PhysicalEntity],%20\[MolecularEntity]^-\[GenomicEntity],%20\[MolecularEntity]^-\[GeneFamily],%20\[MolecularEntity]^-\[ChemicalSubstance],%20\[BiologicalEntity]^-\[MolecularEntity])
 

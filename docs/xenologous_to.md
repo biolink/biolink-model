@@ -13,6 +13,7 @@ URI: [biolink:xenologous_to](https://w3id.org/biolink/vocab/xenologous_to)
 RO:HOM0000018
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

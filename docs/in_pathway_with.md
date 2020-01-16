@@ -10,6 +10,7 @@ holds between two genes or gene products that are part of in the same biological
 
 URI: [biolink:in_pathway_with](https://w3id.org/biolink/vocab/in_pathway_with)
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

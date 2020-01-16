@@ -22,6 +22,7 @@ skos:exactMatch
 WD:P2888
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

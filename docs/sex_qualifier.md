@@ -11,6 +11,7 @@ a qualifier used in a phenotypic association to state whether the association is
 URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
 
 
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [BiologicalSex](BiologicalSex.md)

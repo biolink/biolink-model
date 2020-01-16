@@ -16,6 +16,7 @@ SEMMEDDB:MANIFESTATION_OF
 WD:P1557
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

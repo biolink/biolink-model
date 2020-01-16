@@ -11,6 +11,7 @@ title: biolink:drug_exposure_has_drug
 URI: [biolink:drug_exposure_has_drug](https://w3id.org/biolink/vocab/drug_exposure_has_drug)
 
 
+
 ## Domain and Range
 
 [DrugExposure](DrugExposure.md) ->  <sub>1..*</sub> [ChemicalSubstance](ChemicalSubstance.md)

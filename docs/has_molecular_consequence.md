@@ -11,6 +11,7 @@ connects a sequence variant to a class describing the molecular consequence. E.g
 URI: [biolink:has_molecular_consequence](https://w3id.org/biolink/vocab/has_molecular_consequence)
 
 
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [OntologyClass](OntologyClass.md)

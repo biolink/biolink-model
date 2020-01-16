@@ -13,6 +13,7 @@ URI: [biolink:genetically_interacts_with](https://w3id.org/biolink/vocab/genetic
 RO:0002435
 {: .mapping-label }
 
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

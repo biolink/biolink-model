@@ -11,61 +11,61 @@ Activity or behavior of any independent integral living, organization or mechani
 URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBehavior)
 
 UMLSSG:ACTI
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T051
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:evnt
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T052
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:acty
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T053
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:bhvr
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T054
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:socb
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T055
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:inbe
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T056
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:dora
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T057
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:ocac
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T064
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:gora
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSSC:T066
-{: .mappinglabel }
+{: .mapping-label }
 
 UMLSST:mcha
-{: .mappinglabel }
+{: .mapping-label }
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[ActivityAndBehavior&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 
