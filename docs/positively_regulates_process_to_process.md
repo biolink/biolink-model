@@ -1,5 +1,5 @@
 ---
-parent: "Browse Biolink Model"
+parent: Browse Biolink Model
 title: biolink:positively_regulates_process_to_process
 ---
 

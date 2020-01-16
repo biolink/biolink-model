@@ -1,5 +1,5 @@
 ---
-parent: "Browse Biolink Model"
+parent: Browse Biolink Model
 title: biolink:macromolecular_machine_to_biological_process_association_object
 ---
 

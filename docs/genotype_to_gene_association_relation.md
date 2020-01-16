@@ -1,5 +1,5 @@
 ---
-parent: "Browse Biolink Model"
+parent: Browse Biolink Model
 title: biolink:genotype_to_gene_association_relation
 ---
 

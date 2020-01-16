@@ -1,5 +1,5 @@
 ---
-parent: "Browse Biolink Model"
+parent: Browse Biolink Model
 title: biolink:molecular_activity_has_input
 ---
 

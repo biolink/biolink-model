@@ -1,5 +1,5 @@
 ---
-parent: "Browse Biolink Model"
+parent: Browse Biolink Model
 title: biolink:affects_mutation_rate_of
 ---
 

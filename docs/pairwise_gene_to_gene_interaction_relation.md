@@ -1,5 +1,5 @@
 ---
-parent: "Browse Biolink Model"
+parent: Browse Biolink Model
 title: biolink:pairwise_gene_to_gene_interaction_relation
 ---
 

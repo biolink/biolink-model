@@ -1,5 +1,5 @@
 ---
-parent: "Browse Biolink Model"
+parent: Browse Biolink Model
 title: biolink:gene_to_expression_site_association_stage_qualifier
 ---
 

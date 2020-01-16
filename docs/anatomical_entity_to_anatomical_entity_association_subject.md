@@ -1,5 +1,5 @@
 ---
-parent: "Browse Biolink Model"
+parent: Browse Biolink Model
 title: biolink:anatomical_entity_to_anatomical_entity_association_subject
 ---
 
