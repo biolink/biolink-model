@@ -50,8 +50,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
             with redirect_stdout(ixfile):
-                print(f'---\ntitle: {self.doc_root_title}\n---')
-                #self.frontmatter(f"{self.schema.name.title()} schema")
+                self.frontmatter(**{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2})
                 self.para(be(self.schema.description))
 
                 self.header(3, 'Classes')
@@ -90,7 +89,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             with redirect_stdout(clsfile):
                 class_curi = self.namespaces.uri_or_curie_for(self.namespaces._base, camelcase(cls.name))
                 class_uri = self.namespaces.uri_for(class_curi)
-                print(f'---\nparent: "{self.doc_root_title}"\ntitle: {class_curi}\n---')
+                self.frontmatter(**{'parent': self.doc_root_title, 'title': class_curi})
                 self.element_header(cls, cls.name, class_curi, class_uri)
                 for m in cls.mappings:
                     self.badges(m, 'mapping-label')
@@ -166,7 +165,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             with redirect_stdout(slotfile):
                 slot_curie = self.namespaces.uri_or_curie_for(self.namespaces._base, underscore(slot.name))
                 slot_uri = self.namespaces.uri_for(slot_curie)
-                print(f'---\nparent: "Browse {self.schema.name}"\ntitle: {slot_curie}\n---')
+                #print(f'---\nparent: "Browse {self.schema.name}"\ntitle: {slot_curie}\n---')
+                self.frontmatter(**{'parent': self.doc_root_title, 'title': slot_curie})
                 self.element_header(slot,aliased_slot_name, slot_curie, slot_uri)
                 self.mappings(slot)
                 for m in slot.mappings:
@@ -197,9 +197,15 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                         self.bullet(f' reifies: {self.slot_link(slot.subproperty_of)}')
                 self.element_properties(slot)
 
+    def frontmatter(self, **kwargs) -> None:
+        print('---')
+        for k,v in kwargs.items():
+            print(f'{k}: {v}')
+        print('---')
+
     def element_header(self, obj: Element, name: str, curie: str, uri: str) -> None:
         simple_name = curie.split(':', 1)[1]
-        self.frontmatter(f"Type: {simple_name}" + (f" _(deprecated)_" if obj.deprecated else ""))
+        self.header(1, f"Type: {simple_name}" + (f" _(deprecated)_" if obj.deprecated else ""))
         self.para(be(obj.description))
         print(f'URI: [{curie}]({uri})')
         print()
