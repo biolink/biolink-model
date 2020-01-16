@@ -20,8 +20,68 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
     valid_formats = ["md"]
     visit_all_class_slots = False
 
+    doc_root_title = None
+
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], **kwargs) -> None:
         super().__init__(schema, **kwargs)
+
+    def visit_schema(self, directory: str = None, classes: Set[ClassDefinitionName] = None, image_dir: bool = False,
+                     noimages: bool = False, **_) -> None:
+        self.gen_classes = classes if classes else []
+        for cls in self.gen_classes:
+            if cls not in self.schema.classes:
+                raise ValueError("Unknown class name: {cls}")
+        if self.gen_classes:
+            self.gen_classes_neighborhood = self.neighborhood(list(self.gen_classes))
+
+        self.directory = directory
+        if directory:
+            os.makedirs(directory, exist_ok=True)
+        elif image_dir:
+            raise ValueError(f"Image directory can only be used with '-d' option")
+        if image_dir:
+            self.image_directory = os.path.join(directory, 'images')
+            if not noimages:
+                os.makedirs(self.image_directory, exist_ok=True)
+        self.noimages = noimages
+        self.types_directory = os.path.join(directory, 'types')
+        os.makedirs(self.types_directory, exist_ok=True)
+        self.doc_root_title = f'Browse {self.schema.name.title()}'
+
+        with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
+            with redirect_stdout(ixfile):
+                print(f'---\ntitle: {self.doc_root_title}\n---')
+                #self.frontmatter(f"{self.schema.name.title()} schema")
+                self.para(be(self.schema.description))
+
+                self.header(3, 'Classes')
+                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
+                    if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
+                        self.class_hier(cls)
+
+                self.header(3, 'Mixins')
+                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
+                    if cls.mixin and self.is_secondary_ref(cls.name):
+                        self.class_hier(cls)
+
+                self.header(3, 'Slots')
+                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
+                    if not slot.is_a and self.is_secondary_ref(slot.name):
+                        self.pred_hier(slot)
+
+                self.header(3, 'Types')
+                self.header(4, 'Built in')
+                for builtin_name in sorted(self.synopsis.typebases.keys()):
+                    self.bullet(f'**{builtin_name}**')
+                self.header(4, 'Defined')
+                for typ in sorted(self.schema.types.values(), key=lambda t: t.name):
+                    if self.is_secondary_ref(typ.name):
+                        if typ.typeof:
+                            typ_typ = self.type_link(typ.typeof)
+                        else:
+                            typ_typ = f'**{typ.base}**'
+
+                        self.bullet(self.type_link(typ, after_link=f' ({typ_typ})', use_desc=True))
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         if self.gen_classes and cls.name not in self.gen_classes:
@@ -30,10 +90,10 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             with redirect_stdout(clsfile):
                 class_curi = self.namespaces.uri_or_curie_for(self.namespaces._base, camelcase(cls.name))
                 class_uri = self.namespaces.uri_for(class_curi)
-                print(f'---\nparent: "Browse {self.schema.name}"\ntitle: {class_curi}\n---')
+                print(f'---\nparent: "{self.doc_root_title}"\ntitle: {class_curi}\n---')
                 self.element_header(cls, cls.name, class_curi, class_uri)
                 for m in cls.mappings:
-                    self.badges(m, 'mappinglabel')
+                    self.badges(m, 'mapping-label')
 
                 if self.image_directory:
                     yg = YumlGenerator(self)
@@ -111,6 +171,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 self.mappings(slot)
                 for m in slot.mappings:
                     self.badges(m, 'mapping-label')
+                print()
                 for s in slot.in_subset:
                     self.badges(s, f'{s}-subset-label')
 
