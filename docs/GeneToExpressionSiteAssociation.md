@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:GeneToExpressionSiteAssociation
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: GeneToExpressionSiteAssociation

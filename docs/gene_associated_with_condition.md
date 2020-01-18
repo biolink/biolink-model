@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:gene_associated_with_condition
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: gene_associated_with_condition

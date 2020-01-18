@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:affects_response_to
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: affects_response_to

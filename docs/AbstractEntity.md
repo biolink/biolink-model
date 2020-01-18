@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:AbstractEntity
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: AbstractEntity

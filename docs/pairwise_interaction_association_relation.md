@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:pairwise_interaction_association_relation
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: pairwise_interaction_association_relation

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:interacting_molecules_category
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: interacting_molecules_category

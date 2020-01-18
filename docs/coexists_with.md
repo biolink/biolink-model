@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:coexists_with
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: coexists_with

@@ -1,7 +1,8 @@
 ---
-parent: Classes
+parent: Mixins
 title: biolink:FrequencyQuantifier
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: FrequencyQuantifier

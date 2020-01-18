@@ -2,6 +2,7 @@
 parent: Types
 title: https://w3id.org/biolink/vocab/biolinkml:types/Ncname
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: //w3id.org/biolink/vocab/biolinkml:types/Ncname

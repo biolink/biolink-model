@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:has_part
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: has_part

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:case_to_thing_association_subject
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: case_to_thing_association_subject

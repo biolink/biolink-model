@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:GeneToGeneAssociation
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: GeneToGeneAssociation

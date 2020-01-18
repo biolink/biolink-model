@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:genotype_to_phenotypic_feature_association_relation
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: genotype_to_phenotypic_feature_association_relation

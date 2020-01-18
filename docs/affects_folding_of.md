@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:affects_folding_of
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: affects_folding_of

@@ -1,7 +1,8 @@
 ---
-parent: Classes
+parent: Mixins
 title: biolink:SpecificityQuantifier
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: SpecificityQuantifier

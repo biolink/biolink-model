@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:molecular_activity_enabled_by
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: molecular_activity_enabled_by

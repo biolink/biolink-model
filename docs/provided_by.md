@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:provided_by
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: provided_by

@@ -1,7 +1,8 @@
 ---
-parent: Classes
+parent: Mixins
 title: biolink:EntityToFeatureOrDiseaseQualifiers
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: EntityToFeatureOrDiseaseQualifiers

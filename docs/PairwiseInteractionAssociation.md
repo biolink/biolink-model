@@ -1,7 +1,8 @@
 ---
-parent: Classes
+parent: Mixins
 title: biolink:PairwiseInteractionAssociation
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: PairwiseInteractionAssociation

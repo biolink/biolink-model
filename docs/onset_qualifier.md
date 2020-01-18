@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:onset_qualifier
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: onset_qualifier

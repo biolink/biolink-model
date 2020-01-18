@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:chemical_to_thing_association_subject
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: chemical_to_thing_association_subject

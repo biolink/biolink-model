@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:interbase_coordinate
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: interbase_coordinate

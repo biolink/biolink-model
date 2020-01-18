@@ -2,6 +2,7 @@
 parent: Types
 title: biolink:Unit
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: Unit

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:genome_build
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: genome_build

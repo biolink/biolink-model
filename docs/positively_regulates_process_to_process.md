@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:positively_regulates_process_to_process
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: positively_regulates_process_to_process

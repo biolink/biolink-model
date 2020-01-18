@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:DataSet
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: DataSet

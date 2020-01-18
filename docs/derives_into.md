@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:derives_into
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: derives_into

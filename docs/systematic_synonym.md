@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:systematic_synonym
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: systematic_synonym

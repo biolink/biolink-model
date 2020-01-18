@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:MacromolecularMachineToBiologicalProcessAssociation
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: MacromolecularMachineToBiologicalProcessAssociation

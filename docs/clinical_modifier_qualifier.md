@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:clinical_modifier_qualifier
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: clinical_modifier_qualifier

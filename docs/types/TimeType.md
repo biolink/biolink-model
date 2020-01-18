@@ -2,6 +2,7 @@
 parent: Types
 title: biolink:TimeType
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: TimeType

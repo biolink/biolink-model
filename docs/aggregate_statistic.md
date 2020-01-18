@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:aggregate_statistic
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: aggregate_statistic

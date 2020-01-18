@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:end_interbase_coordinate
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: end_interbase_coordinate

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:variant_to_population_association_subject
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: variant_to_population_association_subject

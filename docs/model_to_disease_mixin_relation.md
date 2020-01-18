@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:model_to_disease_mixin_relation
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: model_to_disease_mixin_relation

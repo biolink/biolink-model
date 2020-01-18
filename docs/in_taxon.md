@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:in_taxon
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: in_taxon

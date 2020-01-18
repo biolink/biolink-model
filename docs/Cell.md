@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:Cell
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: Cell

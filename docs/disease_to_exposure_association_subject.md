@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:disease_to_exposure_association_subject
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: disease_to_exposure_association_subject

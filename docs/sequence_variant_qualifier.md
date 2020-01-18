@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:sequence_variant_qualifier
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: sequence_variant_qualifier

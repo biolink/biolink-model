@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:disrupts
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: disrupts

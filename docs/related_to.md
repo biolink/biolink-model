@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:related_to
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: related_to

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:genetically_interacts_with
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: genetically_interacts_with

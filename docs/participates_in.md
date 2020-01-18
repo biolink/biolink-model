@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:participates_in
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: participates_in

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:regulates
 grand_parent: Browse Biolink Model
+nav_exclude: true
 ---
 
 # Type: regulates
