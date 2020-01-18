@@ -7,6 +7,7 @@ title: biolink:quantifier_qualifier
 
 Subset:
 
+
 A measurable quantity for the object of the association
 
 URI: [biolink:quantifier_qualifier](https://w3id.org/biolink/vocab/quantifier_qualifier)

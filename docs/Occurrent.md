@@ -11,6 +11,7 @@ A processual entity
 URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 
 Mappings:
+
 BFO:0000003
 {: .mapping-label }
 

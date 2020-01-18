@@ -11,6 +11,7 @@ title: biolink:PhenotypicFeature
 URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
 
 Mappings:
+
 UPHENO:0001001
 {: .mapping-label }
 

@@ -7,6 +7,7 @@ title: biolink:timepoint
 
 Subset:
 
+
 a point in time
 
 URI: [biolink:timepoint](https://w3id.org/biolink/vocab/timepoint)

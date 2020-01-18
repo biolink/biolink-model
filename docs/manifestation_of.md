@@ -6,6 +6,7 @@ title: biolink:manifestation_of
 # Type: manifestation_of
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

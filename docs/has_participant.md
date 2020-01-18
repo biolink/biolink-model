@@ -6,6 +6,7 @@ title: biolink:has_participant
 # Type: has_participant
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

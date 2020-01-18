@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:variant_to_disease_association_relation](https://w3id.org/biolink/vocab/variant_to_disease_association_relation)
 
 ## Domain and Range

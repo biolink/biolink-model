@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:negatively_regulates_process_to_process](https://w3id.org/biolink/vocab/negatively_regulates_process_to_process)
 
 ## Domain and Range

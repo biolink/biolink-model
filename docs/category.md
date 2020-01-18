@@ -6,6 +6,7 @@ title: biolink:category
 # Type: category
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

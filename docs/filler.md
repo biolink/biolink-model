@@ -7,6 +7,7 @@ title: biolink:filler
 
 Subset:
 
+
 The value in a property-value tuple
 
 URI: [biolink:filler](https://w3id.org/biolink/vocab/filler)

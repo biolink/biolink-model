@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:negatively_regulates](https://w3id.org/biolink/vocab/negatively_regulates)
 
 ## Domain and Range

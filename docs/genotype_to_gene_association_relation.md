@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:genotype_to_gene_association_relation](https://w3id.org/biolink/vocab/genotype_to_gene_association_relation)
 
 ## Domain and Range

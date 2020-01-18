@@ -7,6 +7,7 @@ title: biolink:node_property
 
 Subset:
 
+
 A grouping for any property that holds between a node and a value
 
 URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)

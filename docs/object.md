@@ -7,6 +7,7 @@ title: biolink:object
 
 Subset:
 
+
 connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
 URI: [biolink:object](https://w3id.org/biolink/vocab/object)

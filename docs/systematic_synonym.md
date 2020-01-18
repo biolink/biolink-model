@@ -7,6 +7,7 @@ title: biolink:systematic_synonym
 
 Subset:
 
+
 more commonly used for gene symbols in yeast
 
 URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_synonym)

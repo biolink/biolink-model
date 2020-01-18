@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:sequence_feature_relationship_object](https://w3id.org/biolink/vocab/sequence_feature_relationship_object)
 
 ## Domain and Range

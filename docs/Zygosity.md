@@ -11,6 +11,7 @@ title: biolink:Zygosity
 URI: [biolink:Zygosity](https://w3id.org/biolink/vocab/Zygosity)
 
 Mappings:
+
 GENO:0000133
 {: .mapping-label }
 

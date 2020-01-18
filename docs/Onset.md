@@ -11,6 +11,7 @@ The age group in which manifestations appear
 URI: [biolink:Onset](https://w3id.org/biolink/vocab/Onset)
 
 Mappings:
+
 HP:0003674
 {: .mapping-label }
 

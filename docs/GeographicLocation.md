@@ -11,6 +11,7 @@ a location that can be described in lat/long coordinates
 URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocation)
 
 Mappings:
+
 UMLSSG:GEOG
 {: .mapping-label }
 

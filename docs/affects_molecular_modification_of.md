@@ -6,6 +6,7 @@ title: biolink:affects_molecular_modification_of
 # Type: affects_molecular_modification_of
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

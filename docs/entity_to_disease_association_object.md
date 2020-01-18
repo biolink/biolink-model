@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:entity_to_disease_association_object](https://w3id.org/biolink/vocab/entity_to_disease_association_object)
 
 ## Domain and Range

@@ -7,6 +7,7 @@ title: biolink:provided_by
 
 Subset:
 
+
 connects an association to the agent (person, organization or group) that provided it
 
 URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)

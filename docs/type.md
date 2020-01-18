@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:type](https://w3id.org/biolink/vocab/type)
 
 ## Domain and Range

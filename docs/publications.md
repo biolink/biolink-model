@@ -7,6 +7,7 @@ title: biolink:publications
 
 Subset:
 
+
 connects an association to publications supporting the association
 
 URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)

@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:aggregate_statistic](https://w3id.org/biolink/vocab/aggregate_statistic)
 
 ## Domain and Range

@@ -11,6 +11,7 @@ title: biolink:DataFile
 URI: [biolink:DataFile](https://w3id.org/biolink/vocab/DataFile)
 
 Mappings:
+
 EFO:0004095
 {: .mapping-label }
 

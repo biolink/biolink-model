@@ -6,6 +6,7 @@ title: biolink:biomarker_for
 # Type: biomarker_for
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

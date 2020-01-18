@@ -7,6 +7,7 @@ title: biolink:latitude
 
 Subset:
 
+
 latitude
 
 URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)

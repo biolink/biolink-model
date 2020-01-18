@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:retrievedOn](https://w3id.org/biolink/vocab/retrievedOn)
 
 ## Domain and Range

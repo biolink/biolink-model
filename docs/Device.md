@@ -11,6 +11,7 @@ A thing made or adapted for a particular purpose, especially a piece of mechanic
 URI: [biolink:Device](https://w3id.org/biolink/vocab/Device)
 
 Mappings:
+
 UMLSSG:DEVI
 {: .mapping-label }
 

@@ -6,6 +6,7 @@ title: biolink:affects_risk_for
 # Type: affects_risk_for
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

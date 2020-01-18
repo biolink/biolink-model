@@ -6,6 +6,7 @@ title: biolink:expresses
 # Type: expresses
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

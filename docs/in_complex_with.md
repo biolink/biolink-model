@@ -6,6 +6,7 @@ title: biolink:in_complex_with
 # Type: in_complex_with
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

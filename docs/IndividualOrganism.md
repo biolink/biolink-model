@@ -11,6 +11,7 @@ title: biolink:IndividualOrganism
 URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrganism)
 
 Mappings:
+
 SIO:010000
 {: .mapping-label }
 

@@ -11,6 +11,7 @@ title: biolink:FrequencyQuantifier
 URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuantifier)
 
 Mappings:
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
 
 ## Parents

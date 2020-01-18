@@ -6,6 +6,7 @@ title: biolink:model_of
 # Type: model_of
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

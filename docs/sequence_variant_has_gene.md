@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:sequence_variant_has_gene](https://w3id.org/biolink/vocab/sequence_variant_has_gene)
 
 ## Domain and Range

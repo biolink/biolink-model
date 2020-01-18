@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:gene_to_go_term_association_object](https://w3id.org/biolink/vocab/gene_to_go_term_association_object)
 
 ## Domain and Range

@@ -6,6 +6,7 @@ title: biolink:derives_into
 # Type: derives_into
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

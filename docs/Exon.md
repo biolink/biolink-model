@@ -11,6 +11,7 @@ A region of the transcript sequence within a gene which is not removed from the 
 URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 
 Mappings:
+
 SO:0000147
 {: .mapping-label }
 

@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_regulates)
 
 ## Domain and Range

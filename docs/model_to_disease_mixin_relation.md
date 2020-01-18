@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:model_to_disease_mixin_relation](https://w3id.org/biolink/vocab/model_to_disease_mixin_relation)
 
 ## Domain and Range

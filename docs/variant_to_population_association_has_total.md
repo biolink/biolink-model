@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:variant_to_population_association_has_total](https://w3id.org/biolink/vocab/variant_to_population_association_has_total)
 
 ## Domain and Range

@@ -6,6 +6,7 @@ title: biolink:increases_response_to
 # Type: increases_response_to
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

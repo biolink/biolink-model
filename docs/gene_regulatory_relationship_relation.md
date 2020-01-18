@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:gene_regulatory_relationship_relation](https://w3id.org/biolink/vocab/gene_regulatory_relationship_relation)
 
 ## Domain and Range

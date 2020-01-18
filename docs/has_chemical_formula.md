@@ -7,6 +7,7 @@ title: biolink:has_chemical_formula
 
 Subset:
 
+
 description of chemical compound based on element symbols
 
 URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_formula)

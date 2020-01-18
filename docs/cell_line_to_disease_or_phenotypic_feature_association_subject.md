@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:cell_line_to_disease_or_phenotypic_feature_association_subject](https://w3id.org/biolink/vocab/cell_line_to_disease_or_phenotypic_feature_association_subject)
 
 ## Domain and Range

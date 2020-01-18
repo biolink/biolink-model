@@ -11,6 +11,7 @@ A union of gene, gene product, and macromolecular complex. These are the basic u
 URI: [biolink:MacromolecularMachine](https://w3id.org/biolink/vocab/MacromolecularMachine)
 
 Mappings:
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[MacromolecularMachine&#124;name:symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[ChemicalToChemicalDerivationAssociation]-%20change%20is%20catalyzed%20by%200..*>\[MacromolecularMachine],%20\[FunctionalAssociation]-%20subject%201..1>\[MacromolecularMachine],%20\[MolecularActivity]-%20enabled%20by%200..*>\[MacromolecularMachine],%20\[MacromolecularMachine]^-\[MacromolecularComplex],%20\[MacromolecularMachine]^-\[GeneOrGeneProduct],%20\[GenomicEntity]^-\[MacromolecularMachine])
 
 ## Parents

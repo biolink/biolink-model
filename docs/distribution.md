@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:distribution](https://w3id.org/biolink/vocab/distribution)
 
 ## Domain and Range

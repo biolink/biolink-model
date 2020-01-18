@@ -6,6 +6,7 @@ title: biolink:has_phenotype
 # Type: has_phenotype
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

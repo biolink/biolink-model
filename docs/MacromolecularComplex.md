@@ -11,6 +11,7 @@ title: biolink:MacromolecularComplex
 URI: [biolink:MacromolecularComplex](https://w3id.org/biolink/vocab/MacromolecularComplex)
 
 Mappings:
+
 SIO:010046
 {: .mapping-label }
 

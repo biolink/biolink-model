@@ -11,6 +11,7 @@ An entity that has the role of being studied in an investigation, study, or expe
 URI: [biolink:SubjectOfInvestigation](https://w3id.org/biolink/vocab/SubjectOfInvestigation)
 
 Mappings:
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MaterialSample]uses%20-.->\[SubjectOfInvestigation])
 
 ## Mixin for

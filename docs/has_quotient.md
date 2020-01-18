@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
 
 ## Domain and Range

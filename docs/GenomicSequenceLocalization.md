@@ -11,6 +11,7 @@ A relationship between a sequence feature and an entity it is localized to. The 
 URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/GenomicSequenceLocalization)
 
 Mappings:
+
 faldo:location
 {: .mapping-label }
 

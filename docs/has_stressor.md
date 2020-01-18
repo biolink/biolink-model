@@ -7,6 +7,7 @@ title: biolink:has_stressor
 
 Subset:
 
+
 the process or entity that the receptor is being exposed to
 
 URI: [biolink:has_stressor](https://w3id.org/biolink/vocab/has_stressor)

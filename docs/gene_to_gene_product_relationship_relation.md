@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:gene_to_gene_product_relationship_relation](https://w3id.org/biolink/vocab/gene_to_gene_product_relationship_relation)
 
 ## Domain and Range

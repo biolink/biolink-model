@@ -6,6 +6,7 @@ title: biolink:has_part
 # Type: has_part
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -11,6 +11,7 @@ a fact or situation that is observed to exist or happen, especially one whose ca
 URI: [biolink:Phenomenon](https://w3id.org/biolink/vocab/Phenomenon)
 
 Mappings:
+
 UMLSSG:PHEN
 {: .mapping-label }
 

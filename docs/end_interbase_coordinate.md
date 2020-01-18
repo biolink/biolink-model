@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:end_interbase_coordinate](https://w3id.org/biolink/vocab/end_interbase_coordinate)
 
 ## Domain and Range

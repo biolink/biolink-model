@@ -7,6 +7,7 @@ title: biolink:has_total
 
 Subset:
 
+
 total number of things in a particular reference set
 
 URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)

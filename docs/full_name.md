@@ -7,6 +7,7 @@ title: biolink:full_name
 
 Subset:
 
+
 a long-form human readable name for a thing
 
 URI: [biolink:full_name](https://w3id.org/biolink/vocab/full_name)

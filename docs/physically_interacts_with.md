@@ -6,6 +6,7 @@ title: biolink:physically_interacts_with
 # Type: physically_interacts_with
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

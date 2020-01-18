@@ -6,6 +6,7 @@ title: biolink:synonym
 # Type: synonym
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

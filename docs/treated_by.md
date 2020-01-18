@@ -6,6 +6,7 @@ title: biolink:treated_by
 # Type: treated_by
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

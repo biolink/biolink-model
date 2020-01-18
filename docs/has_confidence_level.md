@@ -7,6 +7,7 @@ title: biolink:has_confidence_level
 
 Subset:
 
+
 connects an association to a qualitative term denoting the level of confidence
 
 URI: [biolink:has_confidence_level](https://w3id.org/biolink/vocab/has_confidence_level)

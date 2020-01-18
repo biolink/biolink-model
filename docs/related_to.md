@@ -7,6 +7,7 @@ title: biolink:related_to
 
 Subset:
 
+
 A relationship that is asserted between two named things
 
 URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)

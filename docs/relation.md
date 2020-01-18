@@ -7,6 +7,7 @@ title: biolink:relation
 
 Subset:
 
+
 the relationship type by which a subject is connected to an object in an association
 
 URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)

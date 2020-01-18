@@ -7,6 +7,7 @@ title: biolink:has_biological_sequence
 
 Subset:
 
+
 connects a genomic feature to its sequence
 
 URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biological_sequence)

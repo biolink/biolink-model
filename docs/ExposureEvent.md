@@ -11,6 +11,7 @@ A feature of the environment of an organism that influences one or more phenotyp
 URI: [biolink:ExposureEvent](https://w3id.org/biolink/vocab/ExposureEvent)
 
 Mappings:
+
 SIO:000955
 {: .mapping-label }
 

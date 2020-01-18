@@ -7,6 +7,7 @@ title: biolink:association_type
 
 Subset:
 
+
 connects an association to the type of association (e.g. gene to phenotype)
 
 URI: [biolink:association_type](https://w3id.org/biolink/vocab/association_type)

@@ -11,6 +11,7 @@ title: biolink:CellLine
 URI: [biolink:CellLine](https://w3id.org/biolink/vocab/CellLine)
 
 Mappings:
+
 CLO:0000031
 {: .mapping-label }
 

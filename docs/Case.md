@@ -11,6 +11,7 @@ An individual organism that has a patient role in some clinical context.
 URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
 
 Mappings:
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Case&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[CaseToThingAssociation]-%20subject%201..1>\[Case],%20\[IndividualOrganism]^-\[Case])
 
 ## Parents

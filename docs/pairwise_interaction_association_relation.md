@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:pairwise_interaction_association_relation](https://w3id.org/biolink/vocab/pairwise_interaction_association_relation)
 
 ## Domain and Range

@@ -11,6 +11,7 @@ A gene, gene product, small molecule or macromolecule (including protein complex
 URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
 Mappings:
+
 SIO:010341
 {: .mapping-label }
 

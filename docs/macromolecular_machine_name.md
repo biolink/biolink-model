@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:macromolecular_machine_name](https://w3id.org/biolink/vocab/macromolecular_machine_name)
 
 ## Domain and Range

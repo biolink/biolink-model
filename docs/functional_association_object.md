@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:functional_association_object](https://w3id.org/biolink/vocab/functional_association_object)
 
 ## Domain and Range

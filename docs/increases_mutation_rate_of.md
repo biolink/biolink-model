@@ -6,6 +6,7 @@ title: biolink:increases_mutation_rate_of
 # Type: increases_mutation_rate_of
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

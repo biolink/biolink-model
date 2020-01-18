@@ -7,6 +7,7 @@ title: biolink:has_drug
 
 Subset:
 
+
 connects an entity to a single drug
 
 URI: [biolink:has_drug](https://w3id.org/biolink/vocab/has_drug)

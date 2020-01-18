@@ -7,6 +7,7 @@ title: biolink:has_count
 
 Subset:
 
+
 number of things with a particular property
 
 URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)

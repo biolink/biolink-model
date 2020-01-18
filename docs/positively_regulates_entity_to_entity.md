@@ -6,6 +6,7 @@ title: biolink:positively_regulates_entity_to_entity
 # Type: positively_regulates_entity_to_entity
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

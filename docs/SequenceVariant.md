@@ -11,6 +11,7 @@ An allele that varies in its sequence from what is considered the reference alle
 URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
 Mappings:
+
 GENO:0000002
 {: .mapping-label }
 

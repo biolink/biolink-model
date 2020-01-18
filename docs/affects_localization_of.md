@@ -6,6 +6,7 @@ title: biolink:affects_localization_of
 # Type: affects_localization_of
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

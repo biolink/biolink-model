@@ -6,6 +6,7 @@ title: biolink:affects
 # Type: affects
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

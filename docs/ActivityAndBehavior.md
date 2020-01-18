@@ -11,6 +11,7 @@ Activity or behavior of any independent integral living, organization or mechani
 URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBehavior)
 
 Mappings:
+
 UMLSSG:ACTI
 {: .mapping-label }
 

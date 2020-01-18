@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:exon_to_transcript_relationship_object](https://w3id.org/biolink/vocab/exon_to_transcript_relationship_object)
 
 ## Domain and Range

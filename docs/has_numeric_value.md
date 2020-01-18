@@ -6,6 +6,7 @@ title: biolink:has_numeric_value
 # Type: has_numeric_value
 
 Subset:
+
 samples
 {: .samples-subset-label }
 

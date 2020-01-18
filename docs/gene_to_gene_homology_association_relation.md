@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:gene_to_gene_homology_association_relation](https://w3id.org/biolink/vocab/gene_to_gene_homology_association_relation)
 
 ## Domain and Range

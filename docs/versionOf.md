@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:versionOf](https://w3id.org/biolink/vocab/versionOf)
 
 ## Domain and Range

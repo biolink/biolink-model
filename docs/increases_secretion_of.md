@@ -6,6 +6,7 @@ title: biolink:increases_secretion_of
 # Type: increases_secretion_of
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -6,6 +6,7 @@ title: biolink:description
 # Type: description
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

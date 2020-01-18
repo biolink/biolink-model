@@ -6,6 +6,7 @@ title: biolink:disrupts
 # Type: disrupts
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -6,6 +6,7 @@ title: biolink:decreases_metabolic_processing_of
 # Type: decreases_metabolic_processing_of
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

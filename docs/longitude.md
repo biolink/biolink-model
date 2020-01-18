@@ -7,6 +7,7 @@ title: biolink:longitude
 
 Subset:
 
+
 longitude
 
 URI: [biolink:longitude](https://w3id.org/biolink/vocab/longitude)

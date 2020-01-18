@@ -7,6 +7,7 @@ title: biolink:sex_qualifier
 
 Subset:
 
+
 a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
 
 URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)

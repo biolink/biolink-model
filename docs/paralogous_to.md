@@ -6,6 +6,7 @@ title: biolink:paralogous_to
 # Type: paralogous_to
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

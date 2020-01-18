@@ -6,6 +6,7 @@ title: biolink:molecularly_interacts_with
 # Type: molecularly_interacts_with
 
 Subset:
+
 translator_minimal
 {: .translator_minimal-subset-label }
 

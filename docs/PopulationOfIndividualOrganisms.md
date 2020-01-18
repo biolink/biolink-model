@@ -11,6 +11,7 @@ A collection of individuals from the same taxonomic class distinguished by one o
 URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
 
 Mappings:
+
 SIO:001061
 {: .mapping-label }
 

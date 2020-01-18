@@ -7,6 +7,7 @@ title: biolink:interbase_coordinate
 
 Subset:
 
+
 TODO
 
 URI: [biolink:interbase_coordinate](https://w3id.org/biolink/vocab/interbase_coordinate)

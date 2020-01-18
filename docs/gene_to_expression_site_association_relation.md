@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:gene_to_expression_site_association_relation](https://w3id.org/biolink/vocab/gene_to_expression_site_association_relation)
 
 ## Domain and Range

@@ -9,6 +9,7 @@ Subset:
 
 
 
+
 URI: [biolink:molecular_activity_has_input](https://w3id.org/biolink/vocab/molecular_activity_has_input)
 
 ## Domain and Range
