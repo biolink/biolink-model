@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:disease_to_exposure_association_object
 ---
 

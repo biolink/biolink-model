@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:sequence_variant_modulates_treatment_association_object
 ---
 

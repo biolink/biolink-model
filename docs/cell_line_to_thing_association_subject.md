@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:cell_line_to_thing_association_subject
 ---
 

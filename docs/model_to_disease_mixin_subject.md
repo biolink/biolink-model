@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:model_to_disease_mixin_subject
 ---
 

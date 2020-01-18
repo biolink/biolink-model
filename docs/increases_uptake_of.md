@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:increases_uptake_of
 ---
 

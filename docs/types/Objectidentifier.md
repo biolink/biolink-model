@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Types
 title: https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier
 ---
 

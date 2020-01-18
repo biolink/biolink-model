@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Classes
 title: biolink:VariantToPhenotypicFeatureAssociation
 ---
 

@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:macromolecular_machine_to_molecular_activity_association_object
 ---
 

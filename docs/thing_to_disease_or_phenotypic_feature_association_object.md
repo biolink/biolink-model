@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:thing_to_disease_or_phenotypic_feature_association_object
 ---
 

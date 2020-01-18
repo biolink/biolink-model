@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:negatively_regulates_entity_to_entity
 ---
 

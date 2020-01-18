@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Types
 title: biolink:NarrativeText
 ---
 

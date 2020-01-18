@@ -1,5 +1,5 @@
 ---
-parent: Browse Biolink Model
+parent: Slots
 title: biolink:genotype_to_genotype_part_association_object
 ---
 
