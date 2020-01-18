@@ -5,6 +5,7 @@ title: biolink:has_quantitative_value
 
 # Type: has_quantitative_value
 
+Subset:
 samples
 {: .samples-subset-label }
 

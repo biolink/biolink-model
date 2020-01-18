@@ -5,6 +5,7 @@ title: biolink:correlated_with
 
 # Type: correlated_with
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

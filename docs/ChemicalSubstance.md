@@ -10,6 +10,7 @@ May be a chemical entity or a formulation with a chemical entity as active ingre
 
 URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstance)
 
+Mappings:
 SIO:010004
 {: .mapping-label }
 

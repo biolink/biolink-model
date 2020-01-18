@@ -5,6 +5,7 @@ title: biolink:has_quotient
 
 # Type: has_quotient
 
+Subset:
 
 
 

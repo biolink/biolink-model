@@ -5,6 +5,7 @@ title: biolink:gene_regulatory_relationship_relation
 
 # Type: gene_regulatory_relationship_relation
 
+Subset:
 
 
 

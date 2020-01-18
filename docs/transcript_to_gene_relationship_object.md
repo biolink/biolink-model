@@ -5,6 +5,7 @@ title: biolink:transcript_to_gene_relationship_object
 
 # Type: transcript_to_gene_relationship_object
 
+Subset:
 
 
 

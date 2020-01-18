@@ -5,6 +5,7 @@ title: biolink:has_confidence_level
 
 # Type: has_confidence_level
 
+Subset:
 
 connects an association to a qualitative term denoting the level of confidence
 

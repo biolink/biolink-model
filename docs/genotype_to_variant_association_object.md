@@ -5,6 +5,7 @@ title: biolink:genotype_to_variant_association_object
 
 # Type: genotype_to_variant_association_object
 
+Subset:
 
 
 

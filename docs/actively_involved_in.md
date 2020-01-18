@@ -5,6 +5,7 @@ title: biolink:actively_involved_in
 
 # Type: actively_involved_in
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -10,6 +10,7 @@ title: biolink:Cell
 
 URI: [biolink:Cell](https://w3id.org/biolink/vocab/Cell)
 
+Mappings:
 GO:0005623
 {: .mapping-label }
 

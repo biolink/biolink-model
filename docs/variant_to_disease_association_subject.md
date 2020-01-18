@@ -5,6 +5,7 @@ title: biolink:variant_to_disease_association_subject
 
 # Type: variant_to_disease_association_subject
 
+Subset:
 
 
 

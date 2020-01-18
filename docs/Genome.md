@@ -10,6 +10,7 @@ A genome is the sum of genetic material within a cell or virion.
 
 URI: [biolink:Genome](https://w3id.org/biolink/vocab/Genome)
 
+Mappings:
 SO:0001026
 {: .mapping-label }
 

@@ -5,6 +5,7 @@ title: biolink:located_in
 
 # Type: located_in
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

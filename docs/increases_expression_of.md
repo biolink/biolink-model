@@ -5,6 +5,7 @@ title: biolink:increases_expression_of
 
 # Type: increases_expression_of
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

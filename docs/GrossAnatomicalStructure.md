@@ -10,6 +10,7 @@ title: biolink:GrossAnatomicalStructure
 
 URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/vocab/GrossAnatomicalStructure)
 
+Mappings:
 UBERON:0010000
 {: .mapping-label }
 

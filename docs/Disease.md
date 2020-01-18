@@ -10,6 +10,7 @@ title: biolink:Disease
 
 URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 
+Mappings:
 MONDO:0000001
 {: .mapping-label }
 

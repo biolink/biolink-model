@@ -5,6 +5,7 @@ title: biolink:disease_or_phenotypic_feature_association_to_thing_association_su
 
 # Type: disease_or_phenotypic_feature_association_to_thing_association_subject
 
+Subset:
 
 
 

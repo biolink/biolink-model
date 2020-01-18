@@ -5,6 +5,7 @@ title: biolink:increases_splicing_of
 
 # Type: increases_splicing_of
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

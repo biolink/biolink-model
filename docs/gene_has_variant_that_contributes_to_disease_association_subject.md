@@ -5,6 +5,7 @@ title: biolink:gene_has_variant_that_contributes_to_disease_association_subject
 
 # Type: gene_has_variant_that_contributes_to_disease_association_subject
 
+Subset:
 
 
 

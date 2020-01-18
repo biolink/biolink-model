@@ -10,6 +10,7 @@ title: biolink:NoncodingRNAProduct
 
 URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAProduct)
 
+Mappings:
 SIO:001235
 {: .mapping-label }
 

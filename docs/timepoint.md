@@ -5,6 +5,7 @@ title: biolink:timepoint
 
 # Type: timepoint
 
+Subset:
 
 a point in time
 

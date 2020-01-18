@@ -5,6 +5,7 @@ title: biolink:longitude
 
 # Type: longitude
 
+Subset:
 
 longitude
 

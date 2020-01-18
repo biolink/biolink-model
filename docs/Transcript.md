@@ -10,6 +10,7 @@ An RNA synthesized on a DNA or RNA template by an RNA polymerase
 
 URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
+Mappings:
 SO:0000673
 {: .mapping-label }
 

@@ -5,6 +5,7 @@ title: biolink:end_interbase_coordinate
 
 # Type: end_interbase_coordinate
 
+Subset:
 
 
 

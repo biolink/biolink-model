@@ -5,6 +5,7 @@ title: biolink:increases_localization_of
 
 # Type: increases_localization_of
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

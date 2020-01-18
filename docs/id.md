@@ -5,6 +5,7 @@ title: biolink:id
 
 # Type: id
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

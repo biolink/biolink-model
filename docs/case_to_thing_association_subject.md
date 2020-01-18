@@ -5,6 +5,7 @@ title: biolink:case_to_thing_association_subject
 
 # Type: case_to_thing_association_subject
 
+Subset:
 
 
 

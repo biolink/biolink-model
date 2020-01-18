@@ -10,6 +10,7 @@ an ontology class that describes a functional aspect of a gene, gene prodoct or 
 
 URI: [biolink:GeneOntologyClass](https://w3id.org/biolink/vocab/GeneOntologyClass)
 
+Mappings:
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FunctionalAssociation]-%20object%201..1>\[GeneOntologyClass&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GeneToGoTermAssociation]-%20object%201..1>\[GeneOntologyClass],%20\[OntologyClass]^-\[GeneOntologyClass])
 
 ## Parents

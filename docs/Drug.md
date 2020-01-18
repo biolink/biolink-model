@@ -10,6 +10,7 @@ A substance intended for use in the diagnosis, cure, mitigation, treatment, or p
 
 URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
+Mappings:
 WD:Q12140
 {: .mapping-label }
 

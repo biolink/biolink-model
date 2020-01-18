@@ -10,6 +10,7 @@ A subcellular location, cell type or gross anatomical part
 
 URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/vocab/AnatomicalEntity)
 
+Mappings:
 SIO:010046
 {: .mapping-label }
 

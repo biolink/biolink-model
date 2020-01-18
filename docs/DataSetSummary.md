@@ -10,6 +10,7 @@ title: biolink:DataSetSummary
 
 URI: [biolink:DataSetSummary](https://w3id.org/biolink/vocab/DataSetSummary)
 
+Mappings:
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DistributionLevel]<distribution(i)%200..1-%20\[DataSetSummary&#124;source_web_page:string%20%3F;title(i):string%20%3F;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DataSet]<versionOf(i)%200..1-%20\[DataSetSummary],%20\[DataFile]<source%20data%20file(i)%200..1-%20\[DataSetSummary],%20\[DataSetVersion]^-\[DataSetSummary])
 
 ## Parents

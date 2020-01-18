@@ -5,6 +5,7 @@ title: biolink:prevents
 
 # Type: prevents
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

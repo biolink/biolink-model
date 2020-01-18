@@ -5,6 +5,7 @@ title: biolink:has_evidence
 
 # Type: has_evidence
 
+Subset:
 
 connects an association to an instance of supporting evidence
 

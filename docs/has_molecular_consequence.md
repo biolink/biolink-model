@@ -5,6 +5,7 @@ title: biolink:has_molecular_consequence
 
 # Type: has_molecular_consequence
 
+Subset:
 
 connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
 

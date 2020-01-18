@@ -5,6 +5,7 @@ title: biolink:severity_qualifier
 
 # Type: severity_qualifier
 
+Subset:
 
 a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
 

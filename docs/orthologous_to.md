@@ -5,6 +5,7 @@ title: biolink:orthologous_to
 
 # Type: orthologous_to
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

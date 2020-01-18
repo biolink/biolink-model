@@ -5,6 +5,7 @@ title: biolink:creation_date
 
 # Type: creation_date
 
+Subset:
 
 date on which thing was created. This can be applied to nodes or edges
 

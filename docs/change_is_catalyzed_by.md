@@ -5,6 +5,7 @@ title: biolink:change_is_catalyzed_by
 
 # Type: change_is_catalyzed_by
 
+Subset:
 
 hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
 

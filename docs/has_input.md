@@ -5,6 +5,7 @@ title: biolink:has_input
 
 # Type: has_input
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

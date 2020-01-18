@@ -10,6 +10,7 @@ person, group, organization or project that provides a piece of information
 
 URI: [biolink:Provider](https://w3id.org/biolink/vocab/Provider)
 
+Mappings:
 UMLSSG:ORGA
 {: .mapping-label }
 

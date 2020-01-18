@@ -5,6 +5,7 @@ title: biolink:frequency_qualifier
 
 # Type: frequency_qualifier
 
+Subset:
 
 a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
 

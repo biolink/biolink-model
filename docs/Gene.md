@@ -10,6 +10,7 @@ title: biolink:Gene
 
 URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
+Mappings:
 SO:0000704
 {: .mapping-label }
 

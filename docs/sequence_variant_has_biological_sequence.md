@@ -5,6 +5,7 @@ title: biolink:sequence_variant_has_biological_sequence
 
 # Type: sequence_variant_has_biological_sequence
 
+Subset:
 
 
 

@@ -5,6 +5,7 @@ title: biolink:has_attribute_type
 
 # Type: has_attribute_type
 
+Subset:
 samples
 {: .samples-subset-label }
 

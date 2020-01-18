@@ -10,6 +10,7 @@ title: biolink:GeneToDiseaseAssociation
 
 URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDiseaseAssociation)
 
+Mappings:
 SIO:000983
 {: .mapping-label }
 

@@ -5,6 +5,7 @@ title: biolink:macromolecular_machine_to_molecular_activity_association_object
 
 # Type: macromolecular_machine_to_molecular_activity_association_object
 
+Subset:
 
 
 

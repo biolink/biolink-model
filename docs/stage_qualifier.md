@@ -5,6 +5,7 @@ title: biolink:stage_qualifier
 
 # Type: stage_qualifier
 
+Subset:
 
 stage at which expression takes place
 

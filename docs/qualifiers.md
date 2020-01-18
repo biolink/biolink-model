@@ -5,6 +5,7 @@ title: biolink:qualifiers
 
 # Type: qualifiers
 
+Subset:
 
 connects an association to qualifiers that modify or qualify the meaning of that association
 

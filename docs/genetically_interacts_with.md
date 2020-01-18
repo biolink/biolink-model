@@ -5,6 +5,7 @@ title: biolink:genetically_interacts_with
 
 # Type: genetically_interacts_with
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

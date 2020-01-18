@@ -5,6 +5,7 @@ title: biolink:has_drug
 
 # Type: has_drug
 
+Subset:
 
 connects an entity to a single drug
 

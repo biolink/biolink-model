@@ -5,6 +5,7 @@ title: biolink:gene_to_phenotypic_feature_association_subject
 
 # Type: gene_to_phenotypic_feature_association_subject
 
+Subset:
 
 
 

@@ -5,6 +5,7 @@ title: biolink:has_route
 
 # Type: has_route
 
+Subset:
 
 the process that results in the stressor coming into direct contact with the receptor
 

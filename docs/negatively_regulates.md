@@ -5,6 +5,7 @@ title: biolink:negatively_regulates
 
 # Type: negatively_regulates
 
+Subset:
 
 
 

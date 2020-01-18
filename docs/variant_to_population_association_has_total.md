@@ -5,6 +5,7 @@ title: biolink:variant_to_population_association_has_total
 
 # Type: variant_to_population_association_has_total
 
+Subset:
 
 
 

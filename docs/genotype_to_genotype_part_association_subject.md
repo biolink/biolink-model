@@ -5,6 +5,7 @@ title: biolink:genotype_to_genotype_part_association_subject
 
 # Type: genotype_to_genotype_part_association_subject
 
+Subset:
 
 
 

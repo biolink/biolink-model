@@ -5,6 +5,7 @@ title: biolink:regulates_entity_to_entity
 
 # Type: regulates_entity_to_entity
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

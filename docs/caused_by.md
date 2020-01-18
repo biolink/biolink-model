@@ -5,6 +5,7 @@ title: biolink:caused_by
 
 # Type: caused_by
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

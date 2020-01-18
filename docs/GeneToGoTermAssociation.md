@@ -10,6 +10,7 @@ title: biolink:GeneToGoTermAssociation
 
 URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTermAssociation)
 
+Mappings:
 http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
 {: .mapping-label }
 

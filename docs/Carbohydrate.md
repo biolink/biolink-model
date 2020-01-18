@@ -10,6 +10,7 @@ title: biolink:Carbohydrate
 
 URI: [biolink:Carbohydrate](https://w3id.org/biolink/vocab/Carbohydrate)
 
+Mappings:
 UMLSSC:T088
 {: .mapping-label }
 

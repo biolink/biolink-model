@@ -5,6 +5,7 @@ title: biolink:iri
 
 # Type: iri
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

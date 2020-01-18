@@ -5,6 +5,7 @@ title: biolink:has_stressor
 
 # Type: has_stressor
 
+Subset:
 
 the process or entity that the receptor is being exposed to
 

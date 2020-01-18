@@ -10,6 +10,7 @@ An attribute corresponding to the phenotypic sex of the individual, based upon t
 
 URI: [biolink:PhenotypicSex](https://w3id.org/biolink/vocab/PhenotypicSex)
 
+Mappings:
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[PhenotypicSex&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[PhenotypicSex],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[PhenotypicSex],%20\[BiologicalSex]^-\[PhenotypicSex])
 
 ## Parents

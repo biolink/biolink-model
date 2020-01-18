@@ -10,6 +10,7 @@ title: biolink:ClinicalIntervention
 
 URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/vocab/ClinicalIntervention)
 
+Mappings:
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalEntity]^-\[ClinicalIntervention&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 
 ## Parents

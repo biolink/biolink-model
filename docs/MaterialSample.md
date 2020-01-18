@@ -10,6 +10,7 @@ A sample is a limited quantity of something (e.g. an individual or set of indivi
 
 URI: [biolink:MaterialSample](https://w3id.org/biolink/vocab/MaterialSample)
 
+Mappings:
 OBI:0000747
 {: .mapping-label }
 

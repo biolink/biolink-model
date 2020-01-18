@@ -5,6 +5,7 @@ title: biolink:affects_response_to
 
 # Type: affects_response_to
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -5,6 +5,7 @@ title: biolink:filler
 
 # Type: filler
 
+Subset:
 
 The value in a property-value tuple
 

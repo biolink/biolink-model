@@ -5,6 +5,7 @@ title: biolink:type
 
 # Type: type
 
+Subset:
 
 
 

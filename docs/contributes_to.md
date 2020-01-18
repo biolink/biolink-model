@@ -5,6 +5,7 @@ title: biolink:contributes_to
 
 # Type: contributes_to
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

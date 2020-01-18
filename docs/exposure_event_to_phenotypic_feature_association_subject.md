@@ -5,6 +5,7 @@ title: biolink:exposure_event_to_phenotypic_feature_association_subject
 
 # Type: exposure_event_to_phenotypic_feature_association_subject
 
+Subset:
 
 
 

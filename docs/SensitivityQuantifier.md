@@ -10,6 +10,7 @@ title: biolink:SensitivityQuantifier
 
 URI: [biolink:SensitivityQuantifier](https://w3id.org/biolink/vocab/SensitivityQuantifier)
 
+Mappings:
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[SensitivityQuantifier])
 
 ## Parents

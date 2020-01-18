@@ -5,6 +5,7 @@ title: biolink:has_gene_product
 
 # Type: has_gene_product
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

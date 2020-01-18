@@ -5,6 +5,7 @@ title: biolink:has_zygosity
 
 # Type: has_zygosity
 
+Subset:
 
 
 

@@ -5,6 +5,7 @@ title: biolink:has_receptor
 
 # Type: has_receptor
 
+Subset:
 
 the organism or organism part being exposed
 

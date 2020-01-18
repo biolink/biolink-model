@@ -5,6 +5,7 @@ title: biolink:association_slot
 
 # Type: association_slot
 
+Subset:
 
 any slot that relates an association to another entity
 

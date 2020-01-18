@@ -5,6 +5,7 @@ title: biolink:gene_to_go_term_association_object
 
 # Type: gene_to_go_term_association_object
 
+Subset:
 
 
 

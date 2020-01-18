@@ -5,6 +5,7 @@ title: biolink:decreases_stability_of
 
 # Type: decreases_stability_of
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

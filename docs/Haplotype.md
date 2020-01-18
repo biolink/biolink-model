@@ -10,6 +10,7 @@ A set of zero or more Alleles on a single instance of a Sequence[VMC]
 
 URI: [biolink:Haplotype](https://w3id.org/biolink/vocab/Haplotype)
 
+Mappings:
 GENO:0000871
 {: .mapping-label }
 

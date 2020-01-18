@@ -5,6 +5,7 @@ title: biolink:precedes
 
 # Type: precedes
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

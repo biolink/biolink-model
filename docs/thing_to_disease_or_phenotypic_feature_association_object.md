@@ -5,6 +5,7 @@ title: biolink:thing_to_disease_or_phenotypic_feature_association_object
 
 # Type: thing_to_disease_or_phenotypic_feature_association_object
 
+Subset:
 
 
 

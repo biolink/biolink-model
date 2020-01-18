@@ -5,6 +5,7 @@ title: biolink:decreases_expression_of
 
 # Type: decreases_expression_of
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

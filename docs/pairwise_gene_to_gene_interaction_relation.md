@@ -5,6 +5,7 @@ title: biolink:pairwise_gene_to_gene_interaction_relation
 
 # Type: pairwise_gene_to_gene_interaction_relation
 
+Subset:
 
 
 

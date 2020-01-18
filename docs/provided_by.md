@@ -5,6 +5,7 @@ title: biolink:provided_by
 
 # Type: provided_by
 
+Subset:
 
 connects an association to the agent (person, organization or group) that provided it
 

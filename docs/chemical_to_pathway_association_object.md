@@ -5,6 +5,7 @@ title: biolink:chemical_to_pathway_association_object
 
 # Type: chemical_to_pathway_association_object
 
+Subset:
 
 
 

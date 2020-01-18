@@ -5,6 +5,7 @@ title: biolink:affects_uptake_of
 
 # Type: affects_uptake_of
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

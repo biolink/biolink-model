@@ -5,6 +5,7 @@ title: biolink:pairwise_interaction_association_object
 
 # Type: pairwise_interaction_association_object
 
+Subset:
 
 
 

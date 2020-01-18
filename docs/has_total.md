@@ -5,6 +5,7 @@ title: biolink:has_total
 
 # Type: has_total
 
+Subset:
 
 total number of things in a particular reference set
 

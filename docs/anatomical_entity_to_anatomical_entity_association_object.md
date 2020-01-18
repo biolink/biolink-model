@@ -5,6 +5,7 @@ title: biolink:anatomical_entity_to_anatomical_entity_association_object
 
 # Type: anatomical_entity_to_anatomical_entity_association_object
 
+Subset:
 
 
 

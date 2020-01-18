@@ -5,6 +5,7 @@ title: biolink:increases_synthesis_of
 
 # Type: increases_synthesis_of
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -10,6 +10,7 @@ The functional molecular product of a single gene. Gene products are either prot
 
 URI: [biolink:GeneProduct](https://w3id.org/biolink/vocab/GeneProduct)
 
+Mappings:
 WD:Q424689
 {: .mapping-label }
 

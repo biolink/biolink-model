@@ -5,6 +5,7 @@ title: biolink:has_percentage
 
 # Type: has_percentage
 
+Subset:
 
 equivalent to has quotient multiplied by 100
 

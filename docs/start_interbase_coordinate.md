@@ -5,6 +5,7 @@ title: biolink:start_interbase_coordinate
 
 # Type: start_interbase_coordinate
 
+Subset:
 
 
 

@@ -10,6 +10,7 @@ title: biolink:EnvironmentalProcess
 
 URI: [biolink:EnvironmentalProcess](https://w3id.org/biolink/vocab/EnvironmentalProcess)
 
+Mappings:
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentalProcess&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]uses%20-.->\[Occurrent],%20\[PlanetaryEntity]^-\[EnvironmentalProcess])
 
 ## Parents

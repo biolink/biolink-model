@@ -5,6 +5,7 @@ title: biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_rela
 
 # Type: anatomical_entity_to_anatomical_entity_ontogenic_association_relation
 
+Subset:
 
 
 

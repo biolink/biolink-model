@@ -5,6 +5,7 @@ title: biolink:same_as
 
 # Type: same_as
 
+Subset:
 translator_minimal
 {: .translator_minimal-subset-label }
 
