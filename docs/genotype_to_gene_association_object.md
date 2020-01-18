@@ -5,8 +5,6 @@ title: biolink:genotype_to_gene_association_object
 
 # Type: genotype_to_gene_association_object
 
-Subset:
-
 
 
 

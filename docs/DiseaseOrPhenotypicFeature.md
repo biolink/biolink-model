@@ -10,8 +10,6 @@ Either one of a disease or an individual phenotypic feature. Some knowledge reso
 
 URI: [biolink:DiseaseOrPhenotypicFeature](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature)
 
-Mappings:
-
 UMLSSC:T033
 {: .mapping-label }
 

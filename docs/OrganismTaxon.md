@@ -10,8 +10,6 @@ title: biolink:OrganismTaxon
 
 URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
-Mappings:
-
 WD:Q16521
 {: .mapping-label }
 

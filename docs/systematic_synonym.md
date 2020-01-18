@@ -5,8 +5,6 @@ title: biolink:systematic_synonym
 
 # Type: systematic_synonym
 
-Subset:
-
 
 more commonly used for gene symbols in yeast
 

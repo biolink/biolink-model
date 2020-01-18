@@ -10,8 +10,6 @@ a piece of information that typically describes some piece of biology or is used
 
 URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/InformationContentEntity)
 
-Mappings:
-
 IAO:0000030
 {: .mapping-label }
 

@@ -5,8 +5,6 @@ title: biolink:gene_to_gene_association_subject
 
 # Type: gene_to_gene_association_subject
 
-Subset:
-
 
 
 

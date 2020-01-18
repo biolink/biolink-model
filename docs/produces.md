@@ -5,8 +5,6 @@ title: biolink:produces
 
 # Type: produces
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

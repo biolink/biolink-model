@@ -10,8 +10,6 @@ Any published piece of information. Can refer to a whole publication, or to a pa
 
 URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
-Mappings:
-
 IAO:0000311
 {: .mapping-label }
 

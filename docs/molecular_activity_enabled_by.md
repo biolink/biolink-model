@@ -5,8 +5,6 @@ title: biolink:molecular_activity_enabled_by
 
 # Type: molecular_activity_enabled_by
 
-Subset:
-
 
 
 

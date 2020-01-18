@@ -5,8 +5,6 @@ title: biolink:predisposes
 
 # Type: predisposes
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -5,8 +5,6 @@ title: biolink:full_name
 
 # Type: full_name
 
-Subset:
-
 
 a long-form human readable name for a thing
 

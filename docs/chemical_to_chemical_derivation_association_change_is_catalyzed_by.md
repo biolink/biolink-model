@@ -5,8 +5,6 @@ title: biolink:chemical_to_chemical_derivation_association_change_is_catalyzed_b
 
 # Type: chemical_to_chemical_derivation_association_change_is_catalyzed_by
 
-Subset:
-
 
 
 

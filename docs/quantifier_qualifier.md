@@ -5,8 +5,6 @@ title: biolink:quantifier_qualifier
 
 # Type: quantifier_qualifier
 
-Subset:
-
 
 A measurable quantity for the object of the association
 

@@ -5,8 +5,6 @@ title: biolink:decreases_mutation_rate_of
 
 # Type: decreases_mutation_rate_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

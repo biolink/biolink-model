@@ -5,8 +5,6 @@ title: biolink:gene_to_disease_association_subject
 
 # Type: gene_to_disease_association_subject
 
-Subset:
-
 
 
 

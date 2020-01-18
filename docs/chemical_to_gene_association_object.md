@@ -5,8 +5,6 @@ title: biolink:chemical_to_gene_association_object
 
 # Type: chemical_to_gene_association_object
 
-Subset:
-
 
 
 

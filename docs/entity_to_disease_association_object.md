@@ -5,8 +5,6 @@ title: biolink:entity_to_disease_association_object
 
 # Type: entity_to_disease_association_object
 
-Subset:
-
 
 
 

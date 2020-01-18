@@ -5,8 +5,6 @@ title: biolink:gene_to_gene_homology_association_relation
 
 # Type: gene_to_gene_homology_association_relation
 
-Subset:
-
 
 
 

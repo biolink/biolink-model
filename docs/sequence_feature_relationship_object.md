@@ -5,8 +5,6 @@ title: biolink:sequence_feature_relationship_object
 
 # Type: sequence_feature_relationship_object
 
-Subset:
-
 
 
 

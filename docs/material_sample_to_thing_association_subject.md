@@ -5,8 +5,6 @@ title: biolink:material_sample_to_thing_association_subject
 
 # Type: material_sample_to_thing_association_subject
 
-Subset:
-
 
 
 

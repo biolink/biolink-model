@@ -5,8 +5,6 @@ title: biolink:relation
 
 # Type: relation
 
-Subset:
-
 
 the relationship type by which a subject is connected to an object in an association
 

@@ -5,8 +5,6 @@ title: biolink:publications
 
 # Type: publications
 
-Subset:
-
 
 connects an association to publications supporting the association
 

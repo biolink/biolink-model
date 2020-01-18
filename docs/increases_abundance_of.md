@@ -5,8 +5,6 @@ title: biolink:increases_abundance_of
 
 # Type: increases_abundance_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

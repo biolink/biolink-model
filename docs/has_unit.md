@@ -5,8 +5,6 @@ title: biolink:has_unit
 
 # Type: has_unit
 
-Subset:
-
 samples
 {: .samples-subset-label }
 

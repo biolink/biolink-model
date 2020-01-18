@@ -10,8 +10,6 @@ A treatment is targeted at a disease or phenotype and may involve multiple drug 
 
 URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
 
-Mappings:
-
 OGMS:0000090
 {: .mapping-label }
 

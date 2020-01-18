@@ -5,8 +5,6 @@ title: biolink:expressed_in
 
 # Type: expressed_in
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

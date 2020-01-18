@@ -5,8 +5,6 @@ title: biolink:node_property
 
 # Type: node_property
 
-Subset:
-
 
 A grouping for any property that holds between a node and a value
 

@@ -10,8 +10,6 @@ A property or characteristic of an entity. For example, an apple may have proper
 
 URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
-Mappings:
-
 SIO:000614
 {: .mapping-label }
 

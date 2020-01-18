@@ -5,8 +5,6 @@ title: biolink:interacting_molecules_category
 
 # Type: interacting_molecules_category
 
-Subset:
-
 
 
 

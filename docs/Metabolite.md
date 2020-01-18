@@ -10,8 +10,6 @@ Any intermediate or product resulting from metabolism. Includes primary and seco
 
 URI: [biolink:Metabolite](https://w3id.org/biolink/vocab/Metabolite)
 
-Mappings:
-
 CHEBI:25212
 {: .mapping-label }
 

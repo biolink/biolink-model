@@ -5,8 +5,6 @@ title: biolink:source_data_file
 
 # Type: source_data_file
 
-Subset:
-
 
 
 

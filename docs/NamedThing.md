@@ -10,8 +10,6 @@ a databased entity or concept/class
 
 URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
 
-Mappings:
-
 WD:Q35120
 {: .mapping-label }
 

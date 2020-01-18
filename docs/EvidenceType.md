@@ -10,8 +10,6 @@ Class of evidence that supports an association
 
 URI: [biolink:EvidenceType](https://w3id.org/biolink/vocab/EvidenceType)
 
-Mappings:
-
 ECO:0000000
 {: .mapping-label }
 

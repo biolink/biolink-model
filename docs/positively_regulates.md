@@ -5,8 +5,6 @@ title: biolink:positively_regulates
 
 # Type: positively_regulates
 
-Subset:
-
 
 
 

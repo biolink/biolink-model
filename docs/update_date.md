@@ -5,8 +5,6 @@ title: biolink:update_date
 
 # Type: update_date
 
-Subset:
-
 
 date on which thing was updated. This can be applied to nodes or edges
 

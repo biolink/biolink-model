@@ -5,8 +5,6 @@ title: biolink:subclass_of
 
 # Type: subclass_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

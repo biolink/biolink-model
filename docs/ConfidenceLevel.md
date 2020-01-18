@@ -10,8 +10,6 @@ Level of confidence in a statement
 
 URI: [biolink:ConfidenceLevel](https://w3id.org/biolink/vocab/ConfidenceLevel)
 
-Mappings:
-
 CIO:0000028
 {: .mapping-label }
 

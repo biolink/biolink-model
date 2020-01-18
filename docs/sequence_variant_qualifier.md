@@ -5,8 +5,6 @@ title: biolink:sequence_variant_qualifier
 
 # Type: sequence_variant_qualifier
 
-Subset:
-
 
 a qualifier used in an association where the variant
 

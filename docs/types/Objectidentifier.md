@@ -1,3 +1,7 @@
+---
+parent: Browse Biolink Model
+title: https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier
+---
 
 # Type: //w3id.org/biolink/vocab/biolinkml:types/Objectidentifier
 
@@ -10,10 +14,3 @@ URI: [https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier](https://w
 | --- | --- | --- |
 | Root (builtin) type | | **ElementIdentifier** |
 | Representation | | str |
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Comments:** | | Used for inheritence and type checking |
-

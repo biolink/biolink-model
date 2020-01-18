@@ -10,8 +10,6 @@ title: biolink:Pathway
 
 URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
 
-Mappings:
-
 GO:0007165
 {: .mapping-label }
 

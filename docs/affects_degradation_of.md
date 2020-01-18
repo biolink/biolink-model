@@ -5,8 +5,6 @@ title: biolink:affects_degradation_of
 
 # Type: affects_degradation_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

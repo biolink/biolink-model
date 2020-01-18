@@ -5,8 +5,6 @@ title: biolink:versionOf
 
 # Type: versionOf
 
-Subset:
-
 
 
 

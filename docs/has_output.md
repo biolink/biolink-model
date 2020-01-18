@@ -5,8 +5,6 @@ title: biolink:has_output
 
 # Type: has_output
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

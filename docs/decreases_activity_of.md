@@ -5,8 +5,6 @@ title: biolink:decreases_activity_of
 
 # Type: decreases_activity_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

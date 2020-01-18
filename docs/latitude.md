@@ -5,8 +5,6 @@ title: biolink:latitude
 
 # Type: latitude
 
-Subset:
-
 
 latitude
 

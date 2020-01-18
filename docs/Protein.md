@@ -10,8 +10,6 @@ A gene product that is composed of a chain of amino acid sequences and is produc
 
 URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
-Mappings:
-
 PR:000000001
 {: .mapping-label }
 

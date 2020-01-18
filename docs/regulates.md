@@ -5,8 +5,6 @@ title: biolink:regulates
 
 # Type: regulates
 
-Subset:
-
 
 
 

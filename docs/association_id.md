@@ -5,8 +5,6 @@ title: biolink:association_id
 
 # Type: association_id
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

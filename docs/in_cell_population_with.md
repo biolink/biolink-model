@@ -5,8 +5,6 @@ title: biolink:in_cell_population_with
 
 # Type: in_cell_population_with
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

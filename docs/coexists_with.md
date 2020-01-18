@@ -5,8 +5,6 @@ title: biolink:coexists_with
 
 # Type: coexists_with
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

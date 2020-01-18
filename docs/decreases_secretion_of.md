@@ -5,8 +5,6 @@ title: biolink:decreases_secretion_of
 
 # Type: decreases_secretion_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -5,8 +5,6 @@ title: biolink:association_type
 
 # Type: association_type
 
-Subset:
-
 
 connects an association to the type of association (e.g. gene to phenotype)
 

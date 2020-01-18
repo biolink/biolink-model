@@ -5,8 +5,6 @@ title: biolink:exon_to_transcript_relationship_object
 
 # Type: exon_to_transcript_relationship_object
 
-Subset:
-
 
 
 

@@ -5,8 +5,6 @@ title: biolink:sequence_variant_modulates_treatment_association_subject
 
 # Type: sequence_variant_modulates_treatment_association_subject
 
-Subset:
-
 
 
 

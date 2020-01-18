@@ -165,15 +165,14 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             with redirect_stdout(slotfile):
                 slot_curie = self.namespaces.uri_or_curie_for(self.namespaces._base, underscore(slot.name))
                 slot_uri = self.namespaces.uri_for(slot_curie)
-                #print(f'---\nparent: "Browse {self.schema.name}"\ntitle: {slot_curie}\n---')
                 self.frontmatter(**{'parent': self.doc_root_title, 'title': slot_curie})
-                self.element_header(slot,aliased_slot_name, slot_curie, slot_uri)
-                self.mappings(slot)
-                for m in slot.mappings:
-                    self.badges(m, 'mapping-label')
-                print()
+                simple_name = slot_curie.split(':', 1)[1]
+                self.header(1, f"Type: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
                 for s in slot.in_subset:
                     self.badges(s, f'{s}-subset-label')
+
+                self.para(be(slot.description))
+                print(f'URI: [{slot_curie}]({slot_uri})')
 
                 self.header(2, 'Domain and Range')
                 print(f'{self.class_link(slot.domain)} ->{self.predicate_cardinality(slot)} '

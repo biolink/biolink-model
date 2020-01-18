@@ -1,3 +1,7 @@
+---
+parent: Browse Biolink Model
+title: biolink:IdentifierType
+---
 
 # Type: IdentifierType
 

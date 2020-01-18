@@ -10,8 +10,6 @@ any grouping of multiple genes or gene products related by common descent
 
 URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
-Mappings:
-
 SIO:001380
 {: .mapping-label }
 

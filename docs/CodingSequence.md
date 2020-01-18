@@ -10,8 +10,6 @@ title: biolink:CodingSequence
 
 URI: [biolink:CodingSequence](https://w3id.org/biolink/vocab/CodingSequence)
 
-Mappings:
-
 SO:0000316
 {: .mapping-label }
 

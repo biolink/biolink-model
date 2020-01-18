@@ -5,8 +5,6 @@ title: biolink:interacts_with
 
 # Type: interacts_with
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

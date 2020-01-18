@@ -5,8 +5,6 @@ title: biolink:clinical_modifier_qualifier
 
 # Type: clinical_modifier_qualifier
 
-Subset:
-
 
 Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
 

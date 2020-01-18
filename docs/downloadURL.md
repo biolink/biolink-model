@@ -5,8 +5,6 @@ title: biolink:downloadURL
 
 # Type: downloadURL
 
-Subset:
-
 
 
 

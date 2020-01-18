@@ -5,8 +5,6 @@ title: biolink:colocalizes_with
 
 # Type: colocalizes_with
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

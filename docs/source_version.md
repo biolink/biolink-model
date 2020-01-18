@@ -5,8 +5,6 @@ title: biolink:source_version
 
 # Type: source_version
 
-Subset:
-
 
 
 

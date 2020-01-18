@@ -5,8 +5,6 @@ title: biolink:functional_association_object
 
 # Type: functional_association_object
 
-Subset:
-
 
 
 

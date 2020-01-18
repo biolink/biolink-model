@@ -5,8 +5,6 @@ title: biolink:increases_transport_of
 
 # Type: increases_transport_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

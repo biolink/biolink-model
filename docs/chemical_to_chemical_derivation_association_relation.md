@@ -5,8 +5,6 @@ title: biolink:chemical_to_chemical_derivation_association_relation
 
 # Type: chemical_to_chemical_derivation_association_relation
 
-Subset:
-
 
 
 

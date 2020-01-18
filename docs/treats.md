@@ -5,8 +5,6 @@ title: biolink:treats
 
 # Type: treats
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

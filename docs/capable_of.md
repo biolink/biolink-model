@@ -5,8 +5,6 @@ title: biolink:capable_of
 
 # Type: capable_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

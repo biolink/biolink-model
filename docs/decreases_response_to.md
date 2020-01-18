@@ -5,8 +5,6 @@ title: biolink:decreases_response_to
 
 # Type: decreases_response_to
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

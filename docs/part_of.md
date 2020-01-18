@@ -5,8 +5,6 @@ title: biolink:part_of
 
 # Type: part_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

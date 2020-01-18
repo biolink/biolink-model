@@ -5,8 +5,6 @@ title: biolink:disease_or_phenotypic_feature_association_to_location_association
 
 # Type: disease_or_phenotypic_feature_association_to_location_association_object
 
-Subset:
-
 
 
 

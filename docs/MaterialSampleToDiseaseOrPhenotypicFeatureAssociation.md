@@ -10,8 +10,6 @@ An association between a material sample and a disease or phenotype
 
 URI: [biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation)
 
-Mappings:
-
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],%20\[NamedThing]<object(i)%201..1-%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[MaterialSampleToThingAssociation],%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation])
 
 ## Parents

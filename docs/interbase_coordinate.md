@@ -5,8 +5,6 @@ title: biolink:interbase_coordinate
 
 # Type: interbase_coordinate
 
-Subset:
-
 
 TODO
 

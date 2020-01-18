@@ -5,8 +5,6 @@ title: biolink:onset_qualifier
 
 # Type: onset_qualifier
 
-Subset:
-
 
 a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
 

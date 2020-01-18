@@ -5,8 +5,6 @@ title: biolink:macromolecular_machine_to_cellular_component_association_object
 
 # Type: macromolecular_machine_to_cellular_component_association_object
 
-Subset:
-
 
 
 

@@ -10,8 +10,6 @@ Used to characterize and specify the phenotypic abnormalities defined in the Phe
 
 URI: [biolink:ClinicalModifier](https://w3id.org/biolink/vocab/ClinicalModifier)
 
-Mappings:
-
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[ClinicalModifier&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[ClinicalModifier],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[ClinicalModifier],%20\[Attribute]^-\[ClinicalModifier])
 
 ## Parents

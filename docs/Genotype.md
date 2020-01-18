@@ -10,8 +10,6 @@ An information content entity that describes a genome by specifying the total va
 
 URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 
-Mappings:
-
 GENO:0000536
 {: .mapping-label }
 

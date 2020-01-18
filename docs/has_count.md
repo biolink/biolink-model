@@ -5,8 +5,6 @@ title: biolink:has_count
 
 # Type: has_count
 
-Subset:
-
 
 number of things with a particular property
 

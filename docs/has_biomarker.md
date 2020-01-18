@@ -5,8 +5,6 @@ title: biolink:has_biomarker
 
 # Type: has_biomarker
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

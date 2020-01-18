@@ -5,8 +5,6 @@ title: biolink:genomic_sequence_localization_object
 
 # Type: genomic_sequence_localization_object
 
-Subset:
-
 
 
 

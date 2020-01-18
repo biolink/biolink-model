@@ -10,8 +10,6 @@ A location in or around a cell
 
 URI: [biolink:CellularComponent](https://w3id.org/biolink/vocab/CellularComponent)
 
-Mappings:
-
 GO:0005575
 {: .mapping-label }
 

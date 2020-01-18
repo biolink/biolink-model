@@ -5,8 +5,6 @@ title: biolink:genotype_to_thing_association_subject
 
 # Type: genotype_to_thing_association_subject
 
-Subset:
-
 
 
 

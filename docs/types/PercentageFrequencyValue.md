@@ -1,3 +1,7 @@
+---
+parent: Browse Biolink Model
+title: biolink:PercentageFrequencyValue
+---
 
 # Type: PercentageFrequencyValue
 

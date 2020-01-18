@@ -5,8 +5,6 @@ title: biolink:negatively_regulates_process_to_process
 
 # Type: negatively_regulates_process_to_process
 
-Subset:
-
 
 
 

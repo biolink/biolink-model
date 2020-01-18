@@ -5,8 +5,6 @@ title: biolink:negatively_regulates_entity_to_entity
 
 # Type: negatively_regulates_entity_to_entity
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

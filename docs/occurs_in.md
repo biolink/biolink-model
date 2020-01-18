@@ -5,8 +5,6 @@ title: biolink:occurs_in
 
 # Type: occurs_in
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

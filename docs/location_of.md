@@ -5,8 +5,6 @@ title: biolink:location_of
 
 # Type: location_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

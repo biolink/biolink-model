@@ -10,8 +10,6 @@ An association between either a disease or a phenotypic feature and an anatomica
 
 URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
 
-Mappings:
-
 NCIT:R100
 {: .mapping-label }
 

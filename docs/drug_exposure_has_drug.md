@@ -5,8 +5,6 @@ title: biolink:drug_exposure_has_drug
 
 # Type: drug_exposure_has_drug
 
-Subset:
-
 
 
 

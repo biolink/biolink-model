@@ -5,8 +5,6 @@ title: biolink:regulates_process_to_process
 
 # Type: regulates_process_to_process
 
-Subset:
-
 
 
 

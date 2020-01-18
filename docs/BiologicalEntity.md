@@ -10,8 +10,6 @@ title: biolink:BiologicalEntity
 
 URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
-Mappings:
-
 WD:Q28845870
 {: .mapping-label }
 

@@ -10,8 +10,6 @@ an entity that can either be directly located on a genome (gene, transcript, exo
 
 URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
-Mappings:
-
 SO:0000110
 {: .mapping-label }
 

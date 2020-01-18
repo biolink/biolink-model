@@ -10,8 +10,6 @@ title: biolink:MicroRNA
 
 URI: [biolink:MicroRNA](https://w3id.org/biolink/vocab/MicroRNA)
 
-Mappings:
-
 SIO:001397
 {: .mapping-label }
 

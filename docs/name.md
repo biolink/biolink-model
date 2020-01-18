@@ -5,8 +5,6 @@ title: biolink:name
 
 # Type: name
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

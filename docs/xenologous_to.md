@@ -5,8 +5,6 @@ title: biolink:xenologous_to
 
 # Type: xenologous_to
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

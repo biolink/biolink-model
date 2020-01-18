@@ -5,8 +5,6 @@ title: biolink:in_taxon
 
 # Type: in_taxon
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

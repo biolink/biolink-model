@@ -10,8 +10,6 @@ title: biolink:RNAProduct
 
 URI: [biolink:RNAProduct](https://w3id.org/biolink/vocab/RNAProduct)
 
-Mappings:
-
 CHEBI:33697
 {: .mapping-label }
 

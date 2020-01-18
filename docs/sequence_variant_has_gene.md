@@ -5,8 +5,6 @@ title: biolink:sequence_variant_has_gene
 
 # Type: sequence_variant_has_gene
 
-Subset:
-
 
 
 

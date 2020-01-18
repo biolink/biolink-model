@@ -5,8 +5,6 @@ title: biolink:population_to_population_association_subject
 
 # Type: population_to_population_association_subject
 
-Subset:
-
 
 
 

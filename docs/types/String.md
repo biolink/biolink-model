@@ -1,3 +1,7 @@
+---
+parent: Browse Biolink Model
+title: https://w3id.org/biolink/vocab/biolinkml:types/String
+---
 
 # Type: //w3id.org/biolink/vocab/biolinkml:types/String
 

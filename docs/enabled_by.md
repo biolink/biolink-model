@@ -5,8 +5,6 @@ title: biolink:enabled_by
 
 # Type: enabled_by
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

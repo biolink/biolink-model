@@ -5,8 +5,6 @@ title: biolink:cell_line_to_thing_association_subject
 
 # Type: cell_line_to_thing_association_subject
 
-Subset:
-
 
 
 

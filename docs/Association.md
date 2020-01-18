@@ -10,8 +10,6 @@ A typed association between two entities, supported by evidence
 
 URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
-Mappings:
-
 OBAN:association
 {: .mapping-label }
 

@@ -5,8 +5,6 @@ title: biolink:increases_folding_of
 
 # Type: increases_folding_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

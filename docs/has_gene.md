@@ -5,8 +5,6 @@ title: biolink:has_gene
 
 # Type: has_gene
 
-Subset:
-
 
 connects an entity to a single gene
 

@@ -10,8 +10,6 @@ title: biolink:PhysiologicalProcess
 
 URI: [biolink:PhysiologicalProcess](https://w3id.org/biolink/vocab/PhysiologicalProcess)
 
-Mappings:
-
 UMLSSG:PHYS
 {: .mapping-label }
 

@@ -5,8 +5,6 @@ title: biolink:affects_abundance_of
 
 # Type: affects_abundance_of
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

@@ -10,8 +10,6 @@ title: biolink:VariantToThingAssociation
 
 URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantToThingAssociation)
 
-Mappings:
-
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[VariantToThingAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[VariantToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[VariantToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[VariantToThingAssociation],%20\[NamedThing]<object(i)%201..1-%20\[VariantToThingAssociation],%20\[SequenceVariant]<subject%201..1-%20\[VariantToThingAssociation],%20\[VariantToPopulationAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToPhenotypicFeatureAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToDiseaseAssociation]uses%20-.->\[VariantToThingAssociation],%20\[Association]^-\[VariantToThingAssociation])
 
 ## Parents

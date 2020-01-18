@@ -5,8 +5,6 @@ title: biolink:in_pathway_with
 
 # Type: in_pathway_with
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

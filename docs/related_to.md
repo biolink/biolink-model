@@ -5,8 +5,6 @@ title: biolink:related_to
 
 # Type: related_to
 
-Subset:
-
 
 A relationship that is asserted between two named things
 

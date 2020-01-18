@@ -10,8 +10,6 @@ An execution of a molecular function carried out by a gene product or macromolec
 
 URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivity)
 
-Mappings:
-
 GO:0003674
 {: .mapping-label }
 

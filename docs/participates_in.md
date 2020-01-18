@@ -5,8 +5,6 @@ title: biolink:participates_in
 
 # Type: participates_in
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

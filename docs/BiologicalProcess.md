@@ -10,8 +10,6 @@ One or more causally connected executions of molecular functions
 
 URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProcess)
 
-Mappings:
-
 GO:0008150
 {: .mapping-label }
 

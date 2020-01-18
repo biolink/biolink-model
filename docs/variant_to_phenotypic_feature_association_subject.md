@@ -5,8 +5,6 @@ title: biolink:variant_to_phenotypic_feature_association_subject
 
 # Type: variant_to_phenotypic_feature_association_subject
 
-Subset:
-
 
 
 

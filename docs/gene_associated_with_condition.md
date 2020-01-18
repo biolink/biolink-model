@@ -5,8 +5,6 @@ title: biolink:gene_associated_with_condition
 
 # Type: gene_associated_with_condition
 
-Subset:
-
 translator_minimal
 {: .translator_minimal-subset-label }
 

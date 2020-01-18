@@ -5,8 +5,6 @@ title: biolink:gene_to_expression_site_association_subject
 
 # Type: gene_to_expression_site_association_subject
 
-Subset:
-
 
 
 

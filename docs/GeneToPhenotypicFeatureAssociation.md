@@ -10,8 +10,6 @@ title: biolink:GeneToPhenotypicFeatureAssociation
 
 URI: [biolink:GeneToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation)
 
-Mappings:
-
 http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
 {: .mapping-label }
 
