@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:FrequencyQualifierMixin
+grand_parent: Browse Biolink Model
 ---
 
 # Type: FrequencyQualifierMixin

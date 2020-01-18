@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:in_pathway_with
+grand_parent: Browse Biolink Model
 ---
 
 # Type: in_pathway_with

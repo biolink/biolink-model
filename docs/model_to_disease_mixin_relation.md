@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:model_to_disease_mixin_relation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: model_to_disease_mixin_relation

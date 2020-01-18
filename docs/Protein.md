@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Protein
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Protein

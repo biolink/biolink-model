@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:EvidenceType
+grand_parent: Browse Biolink Model
 ---
 
 # Type: EvidenceType

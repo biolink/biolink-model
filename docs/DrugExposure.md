@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:DrugExposure
+grand_parent: Browse Biolink Model
 ---
 
 # Type: DrugExposure

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:MaterialSampleToThingAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: MaterialSampleToThingAssociation

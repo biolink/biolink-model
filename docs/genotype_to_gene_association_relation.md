@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:genotype_to_gene_association_relation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: genotype_to_gene_association_relation

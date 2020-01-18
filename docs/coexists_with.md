@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:coexists_with
+grand_parent: Browse Biolink Model
 ---
 
 # Type: coexists_with

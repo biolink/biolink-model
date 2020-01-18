@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:affects_mutation_rate_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: affects_mutation_rate_of

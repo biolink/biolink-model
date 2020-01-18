@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Haplotype
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Haplotype

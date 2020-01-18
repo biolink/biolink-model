@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:DiseaseToThingAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: DiseaseToThingAssociation

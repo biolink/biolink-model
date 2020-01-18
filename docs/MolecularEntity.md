@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:MolecularEntity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: MolecularEntity

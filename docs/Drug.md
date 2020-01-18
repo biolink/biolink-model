@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Drug
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Drug

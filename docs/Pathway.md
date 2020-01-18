@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Pathway
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Pathway

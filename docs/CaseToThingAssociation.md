@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:CaseToThingAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: CaseToThingAssociation

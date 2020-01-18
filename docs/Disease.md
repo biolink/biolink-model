@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Disease
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Disease

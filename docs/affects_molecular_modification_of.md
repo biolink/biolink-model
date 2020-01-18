@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:affects_molecular_modification_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: affects_molecular_modification_of

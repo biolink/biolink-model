@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GenomicEntity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GenomicEntity

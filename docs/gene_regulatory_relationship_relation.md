@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:gene_regulatory_relationship_relation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: gene_regulatory_relationship_relation

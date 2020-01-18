@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:affects_transport_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: affects_transport_of

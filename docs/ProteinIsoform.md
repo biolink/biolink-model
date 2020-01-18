@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ProteinIsoform
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ProteinIsoform

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Exon
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Exon

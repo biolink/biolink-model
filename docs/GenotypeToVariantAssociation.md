@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GenotypeToVariantAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GenotypeToVariantAssociation

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Attribute
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Attribute

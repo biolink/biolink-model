@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:NoncodingRNAProduct
+grand_parent: Browse Biolink Model
 ---
 
 # Type: NoncodingRNAProduct

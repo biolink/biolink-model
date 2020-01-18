@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:timepoint
+grand_parent: Browse Biolink Model
 ---
 
 # Type: timepoint

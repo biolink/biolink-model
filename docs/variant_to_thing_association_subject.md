@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:variant_to_thing_association_subject
+grand_parent: Browse Biolink Model
 ---
 
 # Type: variant_to_thing_association_subject

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:PairwiseInteractionAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: PairwiseInteractionAssociation

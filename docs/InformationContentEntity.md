@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:InformationContentEntity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: InformationContentEntity

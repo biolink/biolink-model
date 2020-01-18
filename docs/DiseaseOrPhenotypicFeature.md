@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:DiseaseOrPhenotypicFeature
+grand_parent: Browse Biolink Model
 ---
 
 # Type: DiseaseOrPhenotypicFeature

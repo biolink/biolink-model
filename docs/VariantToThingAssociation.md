@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:VariantToThingAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: VariantToThingAssociation

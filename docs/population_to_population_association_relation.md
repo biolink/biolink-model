@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:population_to_population_association_relation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: population_to_population_association_relation

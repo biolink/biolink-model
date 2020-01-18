@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Device
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Device

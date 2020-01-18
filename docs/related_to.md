@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:related_to
+grand_parent: Browse Biolink Model
 ---
 
 # Type: related_to

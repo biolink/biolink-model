@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GenomicSequenceLocalization
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GenomicSequenceLocalization

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Metabolite
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Metabolite

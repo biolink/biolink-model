@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: DiseaseOrPhenotypicFeatureAssociationToLocationAssociation

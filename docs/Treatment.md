@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Treatment
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Treatment

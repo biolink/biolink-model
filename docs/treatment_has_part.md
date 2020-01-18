@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:treatment_has_part
+grand_parent: Browse Biolink Model
 ---
 
 # Type: treatment_has_part

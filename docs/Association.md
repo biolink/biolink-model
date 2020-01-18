@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Association
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Association

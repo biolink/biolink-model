@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:EntityToDiseaseAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: EntityToDiseaseAssociation

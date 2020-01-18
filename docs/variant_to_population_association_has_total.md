@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:variant_to_population_association_has_total
+grand_parent: Browse Biolink Model
 ---
 
 # Type: variant_to_population_association_has_total

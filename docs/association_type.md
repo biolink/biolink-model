@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:association_type
+grand_parent: Browse Biolink Model
 ---
 
 # Type: association_type

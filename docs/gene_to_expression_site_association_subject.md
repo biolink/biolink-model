@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:gene_to_expression_site_association_subject
+grand_parent: Browse Biolink Model
 ---
 
 # Type: gene_to_expression_site_association_subject

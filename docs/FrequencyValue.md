@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:FrequencyValue
+grand_parent: Browse Biolink Model
 ---
 
 # Type: FrequencyValue

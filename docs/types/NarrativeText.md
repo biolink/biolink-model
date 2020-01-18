@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:NarrativeText
+grand_parent: Browse Biolink Model
 ---
 
 # Type: NarrativeText

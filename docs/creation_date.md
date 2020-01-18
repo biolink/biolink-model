@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:creation_date
+grand_parent: Browse Biolink Model
 ---
 
 # Type: creation_date

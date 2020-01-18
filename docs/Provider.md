@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Provider
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Provider

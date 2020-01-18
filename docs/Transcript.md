@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Transcript
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Transcript

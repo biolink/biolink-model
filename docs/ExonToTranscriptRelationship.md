@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ExonToTranscriptRelationship
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ExonToTranscriptRelationship

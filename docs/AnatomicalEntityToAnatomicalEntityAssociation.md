@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:AnatomicalEntityToAnatomicalEntityAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: AnatomicalEntityToAnatomicalEntityAssociation

@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:start_interbase_coordinate
+grand_parent: Browse Biolink Model
 ---
 
 # Type: start_interbase_coordinate

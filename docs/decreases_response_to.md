@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:decreases_response_to
+grand_parent: Browse Biolink Model
 ---
 
 # Type: decreases_response_to

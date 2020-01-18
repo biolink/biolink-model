@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:disease_to_thing_association_subject
+grand_parent: Browse Biolink Model
 ---
 
 # Type: disease_to_thing_association_subject

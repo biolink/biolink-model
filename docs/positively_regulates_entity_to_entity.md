@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:positively_regulates_entity_to_entity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: positively_regulates_entity_to_entity

@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:homologous_to
+grand_parent: Browse Biolink Model
 ---
 
 # Type: homologous_to

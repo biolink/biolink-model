@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:SymbolType
+grand_parent: Browse Biolink Model
 ---
 
 # Type: SymbolType

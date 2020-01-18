@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:BiologicalSequence
+grand_parent: Browse Biolink Model
 ---
 
 # Type: BiologicalSequence

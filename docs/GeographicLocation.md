@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeographicLocation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeographicLocation

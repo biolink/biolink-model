@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:decreases_folding_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: decreases_folding_of

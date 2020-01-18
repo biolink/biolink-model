@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneOntologyClass
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneOntologyClass

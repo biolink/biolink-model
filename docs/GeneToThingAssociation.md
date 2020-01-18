@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneToThingAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneToThingAssociation

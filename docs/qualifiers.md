@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:qualifiers
+grand_parent: Browse Biolink Model
 ---
 
 # Type: qualifiers

@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:has_biomarker
+grand_parent: Browse Biolink Model
 ---
 
 # Type: has_biomarker

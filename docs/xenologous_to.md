@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:xenologous_to
+grand_parent: Browse Biolink Model
 ---
 
 # Type: xenologous_to

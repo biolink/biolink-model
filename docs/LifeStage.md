@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:LifeStage
+grand_parent: Browse Biolink Model
 ---
 
 # Type: LifeStage

@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:TimeType
+grand_parent: Browse Biolink Model
 ---
 
 # Type: TimeType

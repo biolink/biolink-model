@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Gene
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Gene

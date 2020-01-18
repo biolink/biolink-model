@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:participates_in
+grand_parent: Browse Biolink Model
 ---
 
 # Type: participates_in

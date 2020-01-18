@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:RNAProductIsoform
+grand_parent: Browse Biolink Model
 ---
 
 # Type: RNAProductIsoform

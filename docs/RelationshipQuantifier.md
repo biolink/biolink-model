@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:RelationshipQuantifier
+grand_parent: Browse Biolink Model
 ---
 
 # Type: RelationshipQuantifier

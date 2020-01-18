@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ClinicalModifier
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ClinicalModifier

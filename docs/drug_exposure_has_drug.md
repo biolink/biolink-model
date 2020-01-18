@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:drug_exposure_has_drug
+grand_parent: Browse Biolink Model
 ---
 
 # Type: drug_exposure_has_drug

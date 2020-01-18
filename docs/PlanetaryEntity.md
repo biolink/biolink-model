@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:PlanetaryEntity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: PlanetaryEntity

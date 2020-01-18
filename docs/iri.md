@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:iri
+grand_parent: Browse Biolink Model
 ---
 
 # Type: iri

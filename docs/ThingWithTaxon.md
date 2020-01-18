@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ThingWithTaxon
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ThingWithTaxon

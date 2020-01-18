@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:BiologicalProcessOrActivity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: BiologicalProcessOrActivity

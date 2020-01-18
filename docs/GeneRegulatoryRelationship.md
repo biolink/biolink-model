@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneRegulatoryRelationship
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneRegulatoryRelationship

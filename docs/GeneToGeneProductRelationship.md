@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneToGeneProductRelationship
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneToGeneProductRelationship

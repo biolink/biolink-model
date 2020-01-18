@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:disrupts
+grand_parent: Browse Biolink Model
 ---
 
 # Type: disrupts

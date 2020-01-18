@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:SpecificityQuantifier
+grand_parent: Browse Biolink Model
 ---
 
 # Type: SpecificityQuantifier

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:SensitivityQuantifier
+grand_parent: Browse Biolink Model
 ---
 
 # Type: SensitivityQuantifier

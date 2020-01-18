@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:cell_line_to_disease_or_phenotypic_feature_association_subject
+grand_parent: Browse Biolink Model
 ---
 
 # Type: cell_line_to_disease_or_phenotypic_feature_association_subject

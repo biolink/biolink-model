@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ActivityAndBehavior
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ActivityAndBehavior

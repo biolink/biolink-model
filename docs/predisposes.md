@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:predisposes
+grand_parent: Browse Biolink Model
 ---
 
 # Type: predisposes

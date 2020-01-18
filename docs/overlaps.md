@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:overlaps
+grand_parent: Browse Biolink Model
 ---
 
 # Type: overlaps

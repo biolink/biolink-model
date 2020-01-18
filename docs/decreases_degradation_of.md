@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:decreases_degradation_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: decreases_degradation_of

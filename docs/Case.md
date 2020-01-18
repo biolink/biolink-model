@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Case
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Case

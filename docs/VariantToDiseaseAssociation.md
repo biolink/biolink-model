@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:VariantToDiseaseAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: VariantToDiseaseAssociation

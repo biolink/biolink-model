@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:expressed_in
+grand_parent: Browse Biolink Model
 ---
 
 # Type: expressed_in

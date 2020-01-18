@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneToExpressionSiteAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneToExpressionSiteAssociation

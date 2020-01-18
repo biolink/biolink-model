@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneToPhenotypicFeatureAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneToPhenotypicFeatureAssociation

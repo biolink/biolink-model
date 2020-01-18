@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:decreases_localization_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: decreases_localization_of

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneGrouping
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneGrouping

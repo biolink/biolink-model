@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:RNAProduct
+grand_parent: Browse Biolink Model
 ---
 
 # Type: RNAProduct

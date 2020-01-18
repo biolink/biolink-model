@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:IdentifierType
+grand_parent: Browse Biolink Model
 ---
 
 # Type: IdentifierType

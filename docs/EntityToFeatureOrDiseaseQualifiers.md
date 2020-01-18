@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:EntityToFeatureOrDiseaseQualifiers
+grand_parent: Browse Biolink Model
 ---
 
 # Type: EntityToFeatureOrDiseaseQualifiers

@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:regulates_process_to_process
+grand_parent: Browse Biolink Model
 ---
 
 # Type: regulates_process_to_process

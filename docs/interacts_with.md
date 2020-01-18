@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:interacts_with
+grand_parent: Browse Biolink Model
 ---
 
 # Type: interacts_with

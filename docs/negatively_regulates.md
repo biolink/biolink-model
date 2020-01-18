@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:negatively_regulates
+grand_parent: Browse Biolink Model
 ---
 
 # Type: negatively_regulates

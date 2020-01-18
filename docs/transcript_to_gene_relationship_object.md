@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:transcript_to_gene_relationship_object
+grand_parent: Browse Biolink Model
 ---
 
 # Type: transcript_to_gene_relationship_object

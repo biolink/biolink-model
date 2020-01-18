@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ExposureEventToPhenotypicFeatureAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ExposureEventToPhenotypicFeatureAssociation

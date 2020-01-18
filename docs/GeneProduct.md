@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneProduct
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneProduct

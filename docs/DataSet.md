@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:DataSet
+grand_parent: Browse Biolink Model
 ---
 
 # Type: DataSet

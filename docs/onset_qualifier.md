@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:onset_qualifier
+grand_parent: Browse Biolink Model
 ---
 
 # Type: onset_qualifier

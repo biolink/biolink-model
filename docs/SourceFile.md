@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:SourceFile
+grand_parent: Browse Biolink Model
 ---
 
 # Type: SourceFile

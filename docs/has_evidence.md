@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:has_evidence
+grand_parent: Browse Biolink Model
 ---
 
 # Type: has_evidence

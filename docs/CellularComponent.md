@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:CellularComponent
+grand_parent: Browse Biolink Model
 ---
 
 # Type: CellularComponent

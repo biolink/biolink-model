@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:in_complex_with
+grand_parent: Browse Biolink Model
 ---
 
 # Type: in_complex_with

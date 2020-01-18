@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:increases_metabolic_processing_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: increases_metabolic_processing_of

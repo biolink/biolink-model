@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:expresses
+grand_parent: Browse Biolink Model
 ---
 
 # Type: expresses

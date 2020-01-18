@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:sequence_variant_id
+grand_parent: Browse Biolink Model
 ---
 
 # Type: sequence_variant_id

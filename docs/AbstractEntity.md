@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:AbstractEntity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: AbstractEntity

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Cell
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Cell

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ClinicalIntervention
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ClinicalIntervention

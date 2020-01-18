@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:correlated_with
+grand_parent: Browse Biolink Model
 ---
 
 # Type: correlated_with

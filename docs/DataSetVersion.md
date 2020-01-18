@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:DataSetVersion
+grand_parent: Browse Biolink Model
 ---
 
 # Type: DataSetVersion

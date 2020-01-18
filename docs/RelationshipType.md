@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:RelationshipType
+grand_parent: Browse Biolink Model
 ---
 
 # Type: RelationshipType

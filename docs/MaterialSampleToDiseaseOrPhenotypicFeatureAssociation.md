@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: MaterialSampleToDiseaseOrPhenotypicFeatureAssociation

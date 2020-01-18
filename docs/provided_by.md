@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:provided_by
+grand_parent: Browse Biolink Model
 ---
 
 # Type: provided_by

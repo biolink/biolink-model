@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GrossAnatomicalStructure
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GrossAnatomicalStructure

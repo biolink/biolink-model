@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:OrganismalEntity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: OrganismalEntity

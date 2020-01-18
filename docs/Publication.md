@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Publication
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Publication

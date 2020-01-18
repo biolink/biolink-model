@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:QuantityValue
+grand_parent: Browse Biolink Model
 ---
 
 # Type: QuantityValue

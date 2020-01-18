@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneAsAModelOfDiseaseAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneAsAModelOfDiseaseAssociation

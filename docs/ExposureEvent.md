@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ExposureEvent
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ExposureEvent

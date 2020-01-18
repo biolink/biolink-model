@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ChemicalToGeneAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ChemicalToGeneAssociation

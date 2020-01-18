@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:has_gene_product
+grand_parent: Browse Biolink Model
 ---
 
 # Type: has_gene_product

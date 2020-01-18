@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:Quotient
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Quotient

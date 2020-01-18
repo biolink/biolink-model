@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:VariantToPopulationAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: VariantToPopulationAssociation

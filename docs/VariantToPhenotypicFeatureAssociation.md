@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:VariantToPhenotypicFeatureAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: VariantToPhenotypicFeatureAssociation

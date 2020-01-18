@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:located_in
+grand_parent: Browse Biolink Model
 ---
 
 # Type: located_in

@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:paralogous_to
+grand_parent: Browse Biolink Model
 ---
 
 # Type: paralogous_to

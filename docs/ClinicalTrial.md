@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ClinicalTrial
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ClinicalTrial

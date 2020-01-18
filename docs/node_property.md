@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:node_property
+grand_parent: Browse Biolink Model
 ---
 
 # Type: node_property

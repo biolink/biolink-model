@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:PercentageFrequencyValue
+grand_parent: Browse Biolink Model
 ---
 
 # Type: PercentageFrequencyValue

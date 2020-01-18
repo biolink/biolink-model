@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:DataFile
+grand_parent: Browse Biolink Model
 ---
 
 # Type: DataFile

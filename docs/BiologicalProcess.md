@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:BiologicalProcess
+grand_parent: Browse Biolink Model
 ---
 
 # Type: BiologicalProcess

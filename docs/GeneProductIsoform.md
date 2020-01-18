@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneProductIsoform
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneProductIsoform

@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:publications
+grand_parent: Browse Biolink Model
 ---
 
 # Type: publications

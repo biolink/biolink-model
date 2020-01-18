@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:SeverityValue
+grand_parent: Browse Biolink Model
 ---
 
 # Type: SeverityValue

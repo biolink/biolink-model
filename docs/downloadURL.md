@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:downloadURL
+grand_parent: Browse Biolink Model
 ---
 
 # Type: downloadURL

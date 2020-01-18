@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:SequenceVariantModulatesTreatmentAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: SequenceVariantModulatesTreatmentAssociation

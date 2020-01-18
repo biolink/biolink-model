@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:prevents
+grand_parent: Browse Biolink Model
 ---
 
 # Type: prevents

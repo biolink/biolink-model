@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:PhysicalEntity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: PhysicalEntity

@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:has_unit
+grand_parent: Browse Biolink Model
 ---
 
 # Type: has_unit

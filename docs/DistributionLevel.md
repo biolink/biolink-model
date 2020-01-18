@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:DistributionLevel
+grand_parent: Browse Biolink Model
 ---
 
 # Type: DistributionLevel

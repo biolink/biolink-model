@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:SequenceVariant
+grand_parent: Browse Biolink Model
 ---
 
 # Type: SequenceVariant

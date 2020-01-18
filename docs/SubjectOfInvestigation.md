@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:SubjectOfInvestigation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: SubjectOfInvestigation

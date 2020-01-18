@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ModelToDiseaseMixin
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ModelToDiseaseMixin

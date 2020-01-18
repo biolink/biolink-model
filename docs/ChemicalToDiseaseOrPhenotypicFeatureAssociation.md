@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ChemicalToDiseaseOrPhenotypicFeatureAssociation

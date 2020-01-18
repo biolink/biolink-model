@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:MicroRNA
+grand_parent: Browse Biolink Model
 ---
 
 # Type: MicroRNA

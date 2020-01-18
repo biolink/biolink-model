@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:ChemicalToPathwayAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: ChemicalToPathwayAssociation

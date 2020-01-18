@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:decreases_stability_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: decreases_stability_of

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:FrequencyQuantifier
+grand_parent: Browse Biolink Model
 ---
 
 # Type: FrequencyQuantifier

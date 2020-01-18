@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Phenomenon
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Phenomenon

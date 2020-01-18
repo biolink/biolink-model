@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:caused_by
+grand_parent: Browse Biolink Model
 ---
 
 # Type: caused_by

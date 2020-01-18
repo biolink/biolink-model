@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:GeneToGeneHomologyAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: GeneToGeneHomologyAssociation

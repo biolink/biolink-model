@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:MacromolecularMachine
+grand_parent: Browse Biolink Model
 ---
 
 # Type: MacromolecularMachine

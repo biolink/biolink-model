@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Carbohydrate
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Carbohydrate

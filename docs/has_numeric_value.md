@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:has_numeric_value
+grand_parent: Browse Biolink Model
 ---
 
 # Type: has_numeric_value

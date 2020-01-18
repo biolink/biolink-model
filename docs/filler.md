@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:filler
+grand_parent: Browse Biolink Model
 ---
 
 # Type: filler

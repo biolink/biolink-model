@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: CellLineToDiseaseOrPhenotypicFeatureAssociation

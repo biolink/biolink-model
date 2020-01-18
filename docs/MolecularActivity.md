@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:MolecularActivity
+grand_parent: Browse Biolink Model
 ---
 
 # Type: MolecularActivity

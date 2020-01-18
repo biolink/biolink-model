@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:in_cell_population_with
+grand_parent: Browse Biolink Model
 ---
 
 # Type: in_cell_population_with

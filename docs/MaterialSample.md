@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:MaterialSample
+grand_parent: Browse Biolink Model
 ---
 
 # Type: MaterialSample

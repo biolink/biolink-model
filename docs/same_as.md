@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:same_as
+grand_parent: Browse Biolink Model
 ---
 
 # Type: same_as

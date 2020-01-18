@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:CellLine
+grand_parent: Browse Biolink Model
 ---
 
 # Type: CellLine

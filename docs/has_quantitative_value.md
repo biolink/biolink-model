@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:has_quantitative_value
+grand_parent: Browse Biolink Model
 ---
 
 # Type: has_quantitative_value

@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:BiologicalSex
+grand_parent: Browse Biolink Model
 ---
 
 # Type: BiologicalSex

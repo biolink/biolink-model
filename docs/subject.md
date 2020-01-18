@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:subject
+grand_parent: Browse Biolink Model
 ---
 
 # Type: subject

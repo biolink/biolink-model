@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:PhenotypicSex
+grand_parent: Browse Biolink Model
 ---
 
 # Type: PhenotypicSex

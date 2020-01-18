@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:chemical_to_chemical_derivation_association_relation
+grand_parent: Browse Biolink Model
 ---
 
 # Type: chemical_to_chemical_derivation_association_relation

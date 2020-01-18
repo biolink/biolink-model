@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:manifestation_of
+grand_parent: Browse Biolink Model
 ---
 
 # Type: manifestation_of

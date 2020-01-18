@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:Occurrent
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Occurrent

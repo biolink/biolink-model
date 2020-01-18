@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:name
+grand_parent: Browse Biolink Model
 ---
 
 # Type: name

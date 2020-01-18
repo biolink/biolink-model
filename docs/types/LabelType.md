@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:LabelType
+grand_parent: Browse Biolink Model
 ---
 
 # Type: LabelType

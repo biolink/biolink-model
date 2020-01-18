@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:PairwiseGeneToGeneInteraction
+grand_parent: Browse Biolink Model
 ---
 
 # Type: PairwiseGeneToGeneInteraction

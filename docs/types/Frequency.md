@@ -1,6 +1,7 @@
 ---
 parent: Types
 title: biolink:Frequency
+grand_parent: Browse Biolink Model
 ---
 
 # Type: Frequency

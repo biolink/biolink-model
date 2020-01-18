@@ -1,6 +1,7 @@
 ---
 parent: Slots
 title: biolink:has_biological_sequence
+grand_parent: Browse Biolink Model
 ---
 
 # Type: has_biological_sequence

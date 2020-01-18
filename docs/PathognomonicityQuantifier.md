@@ -1,6 +1,7 @@
 ---
 parent: Classes
 title: biolink:PathognomonicityQuantifier
+grand_parent: Browse Biolink Model
 ---
 
 # Type: PathognomonicityQuantifier
