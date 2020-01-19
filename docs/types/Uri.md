@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Uri
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Uri
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Uri
 
 
 a complete URI

@@ -230,7 +230,10 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         print('---')
 
     def element_header(self, obj: Element, name: str, curie: str, uri: str) -> None:
-        simple_name = curie.split(':', 1)[1]
+        if curie.startswith('http'):
+            simple_name = curie
+        else:
+            simple_name = curie.split(':', 1)[1]
         self.header(1, f"Type: {simple_name}" + (f" _(deprecated)_" if obj.deprecated else ""))
         self.para(be(obj.description))
         print(f'URI: [{curie}]({uri})')

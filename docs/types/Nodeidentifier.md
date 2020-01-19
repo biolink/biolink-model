@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Nodeidentifier
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Nodeidentifier
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Nodeidentifier
 
 
 A URI, CURIE or BNODE that represents a node in a model.

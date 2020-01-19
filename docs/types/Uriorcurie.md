@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Uriorcurie
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie
 
 
 a URI or a CURIE

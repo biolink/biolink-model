@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Date
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Date
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Date
 
 
 a date (year, month and day) in an idealized calendar

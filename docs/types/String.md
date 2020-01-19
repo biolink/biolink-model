@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/String
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/String
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/String
 
 
 A character string

@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Float
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Float
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Float
 
 
 A real number that conforms to the xsd:float specification

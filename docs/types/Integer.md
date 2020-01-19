@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Integer
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Integer
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Integer
 
 
 An integer

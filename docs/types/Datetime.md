@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Datetime
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Datetime
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Datetime
 
 
 The combination of a date and time

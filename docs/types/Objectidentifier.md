@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Objectidentifier
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier
 
 
 A URI or CURIE that represents an object in the model.

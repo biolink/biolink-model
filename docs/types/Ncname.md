@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Ncname
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Ncname
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Ncname
 
 
 Prefix part of CURIE

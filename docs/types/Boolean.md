@@ -4,7 +4,7 @@ title: https://w3id.org/biolink/vocab/biolinkml:types/Boolean
 grand_parent: Browse Biolink Model
 ---
 
-# Type: //w3id.org/biolink/vocab/biolinkml:types/Boolean
+# Type: https://w3id.org/biolink/vocab/biolinkml:types/Boolean
 
 
 A binary (true or false) value
