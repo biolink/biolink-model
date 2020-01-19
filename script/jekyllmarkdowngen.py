@@ -54,21 +54,29 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 self.para(be(self.schema.description))
 
                 self.header(3, 'Classes')
+                with open(os.path.join(directory, 'Classes.md'), 'w') as file:
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Classes\nhas_children: true\nnav_order: 1\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
                         self.class_hier(cls)
 
                 self.header(3, 'Mixins')
+                with open(os.path.join(directory, 'Mixins.md'), 'w') as file:
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 2\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     if cls.mixin and self.is_secondary_ref(cls.name):
                         self.class_hier(cls)
 
                 self.header(3, 'Slots')
+                with open(os.path.join(directory, 'Slots.md'), 'w') as file:
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 3\n---')
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     if not slot.is_a and self.is_secondary_ref(slot.name):
                         self.pred_hier(slot)
 
                 self.header(3, 'Types')
+                with open(os.path.join(directory, 'Types.md'), 'w') as file:
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 4\n---')
                 self.header(4, 'Built in')
                 for builtin_name in sorted(self.synopsis.typebases.keys()):
                     self.bullet(f'**{builtin_name}**')
@@ -89,7 +97,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             with redirect_stdout(clsfile):
                 class_curi = self.namespaces.uri_or_curie_for(self.namespaces._base, camelcase(cls.name))
                 class_uri = self.namespaces.uri_for(class_curi)
-                self.frontmatter(**{'parent': self.doc_root_title, 'title': class_curi})
+                self.frontmatter(**{'parent': 'Mixins' if cls.mixin else 'Classes', 'title': class_curi, 'grand_parent': self.doc_root_title})
                 self.element_header(cls, cls.name, class_curi, class_uri)
                 for m in cls.mappings:
                     self.badges(m, 'mapping-label')
@@ -103,7 +111,9 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     img_url = yg.serialize(classes=[cls.name])\
                         .replace('[', '\\[').replace('?', '%3F').replace(' ', '%20')
 
+                self.horizontal_line()
                 print(f'![img]({img_url})')
+                self.horizontal_line()
                 self.mappings(cls)
 
                 if cls.is_a is not None:
@@ -165,7 +175,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             with redirect_stdout(slotfile):
                 slot_curie = self.namespaces.uri_or_curie_for(self.namespaces._base, underscore(slot.name))
                 slot_uri = self.namespaces.uri_for(slot_curie)
-                self.frontmatter(**{'parent': self.doc_root_title, 'title': slot_curie})
+                self.frontmatter(**{'parent': 'Slots', 'title': slot_curie, 'grand_parent': self.doc_root_title})
                 simple_name = slot_curie.split(':', 1)[1]
                 self.header(1, f"Type: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
                 for s in slot.in_subset:
@@ -196,6 +206,23 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                         self.bullet(f' reifies: {self.slot_link(slot.subproperty_of)}')
                 self.element_properties(slot)
 
+    def visit_type(self, typ: TypeDefinition) -> None:
+        with open(self.dir_path(typ), 'w') as typefile:
+            with redirect_stdout(typefile):
+                full_path = sfx(self.namespaces._base) + (sfx(typ.imported_from) if typ.imported_from else '')
+                type_curie = self.namespaces.uri_or_curie_for(full_path, camelcase(typ.name))
+                type_uri = self.namespaces.uri_for(type_curie)
+                self.frontmatter(**{'parent': 'Types', 'title': type_curie, 'grand_parent': self.doc_root_title})
+                self.element_header(typ, typ.name, type_curie, type_uri)
+
+                print("|  |  |  |")
+                print("| --- | --- | --- |")
+                if typ.typeof:
+                    print(f"| Parent type | | {self.class_type_link(typ.typeof)} |")
+                print(f"| Root (builtin) type | | **{typ.base}** |")
+                if typ.repr:
+                    print(f"| Representation | | {typ.repr} |")
+
     def frontmatter(self, **kwargs) -> None:
         print('---')
         for k,v in kwargs.items():
@@ -213,6 +240,9 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         print(text)
         print(f"{{: .{style} }}")
         print()
+
+    def horizontal_line(self):
+        print('\n---\n')
 
 
 @shared_arguments(JekyllMarkdownGenerator)
