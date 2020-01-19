@@ -2,7 +2,6 @@
 parent: Mixins
 title: biolink:ThingWithTaxon
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ThingWithTaxon
@@ -12,7 +11,13 @@ A mixin that can be used on any entity with a taxon
 
 URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[ThingWithTaxon],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[MolecularEntity]uses%20-.->\[ThingWithTaxon],%20\[LifeStage]uses%20-.->\[ThingWithTaxon],%20\[IndividualOrganism]uses%20-.->\[ThingWithTaxon],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20\[AnatomicalEntity]uses%20-.->\[ThingWithTaxon])
+
+---
+
 
 ## Mixin for
 

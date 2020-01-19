@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:NoncodingRNAProduct
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: NoncodingRNAProduct
@@ -15,7 +14,13 @@ URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAPr
 SIO:001235
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[NoncodingRNAProduct&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[NoncodingRNAProduct]^-\[MicroRNA],%20\[RNAProduct]^-\[NoncodingRNAProduct])
+
+---
+
 
 ## Parents
 

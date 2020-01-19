@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:full_name
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: full_name

@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:correlated_with
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: correlated_with

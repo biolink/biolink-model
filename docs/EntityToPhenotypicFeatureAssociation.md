@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:EntityToPhenotypicFeatureAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: EntityToPhenotypicFeatureAssociation
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[EntityToPhenotypicFeatureAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[EntityToPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[EntityToPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[PhenotypicFeature]<object%201..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[EntityToPhenotypicFeatureAssociation]uses%20-.->\[EntityToFeatureOrDiseaseQualifiers],%20\[VariantToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[ExposureEventToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[CaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EntityToPhenotypicFeatureAssociation])
+
+---
+
 
 ## Parents
 

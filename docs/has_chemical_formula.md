@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:has_chemical_formula
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: has_chemical_formula

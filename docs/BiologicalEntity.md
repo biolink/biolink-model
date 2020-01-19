@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:BiologicalEntity
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: BiologicalEntity
@@ -21,7 +20,13 @@ UMLSSC:T050
 UMLSST:emod
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[OrganismalEntity],%20\[BiologicalEntity]^-\[MolecularEntity],%20\[BiologicalEntity]^-\[ExposureEvent],%20\[BiologicalEntity]^-\[DiseaseOrPhenotypicFeature],%20\[BiologicalEntity]^-\[BiologicalProcessOrActivity],%20\[NamedThing]^-\[BiologicalEntity])
+
+---
+
 
 ## Parents
 

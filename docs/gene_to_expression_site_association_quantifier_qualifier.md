@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:gene_to_expression_site_association_quantifier_qualifier
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: gene_to_expression_site_association_quantifier_qualifier

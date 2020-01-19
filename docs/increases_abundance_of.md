@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:increases_abundance_of
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: increases_abundance_of

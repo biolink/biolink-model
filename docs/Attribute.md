@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Attribute
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Attribute
@@ -15,7 +14,13 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 SIO:000614
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value%200..1-%20\[Attribute&#124;id:identifier_type;name:label_type;category:iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value%200..*-++\[Attribute],%20\[OntologyClass]<has%20attribute%20type%200..1-%20\[Attribute],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[Attribute]^-\[Zygosity],%20\[Attribute]^-\[SeverityValue],%20\[Attribute]^-\[Onset],%20\[Attribute]^-\[FrequencyValue],%20\[Attribute]^-\[ClinicalModifier],%20\[Attribute]^-\[BiologicalSex],%20\[AbstractEntity]^-\[Attribute])
+
+---
+
 
 ## Parents
 

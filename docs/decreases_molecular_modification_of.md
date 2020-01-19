@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:decreases_molecular_modification_of
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: decreases_molecular_modification_of

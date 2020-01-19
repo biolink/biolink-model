@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:gene_to_go_term_association_object
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: gene_to_go_term_association_object

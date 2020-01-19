@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Device
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Device
@@ -33,7 +32,13 @@ UMLSSC:T203
 UMLSST:drdd
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Device&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+
+---
+
 
 ## Parents
 

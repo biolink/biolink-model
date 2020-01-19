@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:genomic_sequence_localization_object
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: genomic_sequence_localization_object

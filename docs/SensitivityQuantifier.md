@@ -2,7 +2,6 @@
 parent: Mixins
 title: biolink:SensitivityQuantifier
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: SensitivityQuantifier
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:SensitivityQuantifier](https://w3id.org/biolink/vocab/SensitivityQuantifier)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[SensitivityQuantifier])
+
+---
+
 
 ## Parents
 

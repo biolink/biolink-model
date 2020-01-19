@@ -2,7 +2,6 @@
 parent: Mixins
 title: biolink:FrequencyQualifierMixin
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: FrequencyQualifierMixin
@@ -12,7 +11,13 @@ Qualifier for frequency type associations
 
 URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/vocab/FrequencyQualifierMixin)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQualifierMixin],%20\[FrequencyQualifierMixin]^-\[EntityToFeatureOrDiseaseQualifiers])
+
+---
+
 
 ## Children
 

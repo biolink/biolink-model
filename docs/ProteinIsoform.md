@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ProteinIsoform
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ProteinIsoform
@@ -12,7 +11,13 @@ Represents a protein that is a specific isoform of the canonical or reference pr
 
 URI: [biolink:ProteinIsoform](https://w3id.org/biolink/vocab/ProteinIsoform)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[ProteinIsoform&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[ProteinIsoform]uses%20-.->\[GeneProductIsoform],%20\[Protein]^-\[ProteinIsoform])
+
+---
+
 
 ## Parents
 

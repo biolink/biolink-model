@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:retrievedOn
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: retrievedOn

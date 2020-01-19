@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ChemicalToDiseaseOrPhenotypicFeatureAssociation
@@ -15,7 +14,13 @@ URI: [biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/
 SIO:000993
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[DiseaseOrPhenotypicFeature]<object%201..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[ChemicalToDiseaseOrPhenotypicFeatureAssociation])
+
+---
+
 
 ## Parents
 

@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:DataSetVersion
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: DataSetVersion
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:DataSetVersion](https://w3id.org/biolink/vocab/DataSetVersion)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DistributionLevel]<distribution%200..1-%20\[DataSetVersion&#124;title:string%20%3F;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DataSet]<versionOf%200..1-%20\[DataSetVersion],%20\[DataFile]<source%20data%20file%200..1-%20\[DataSetVersion],%20\[DataSetVersion]^-\[DistributionLevel],%20\[DataSetVersion]^-\[DataSetSummary],%20\[DataSet]^-\[DataSetVersion])
+
+---
+
 
 ## Parents
 

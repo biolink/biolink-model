@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:CaseToThingAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: CaseToThingAssociation
@@ -12,7 +11,13 @@ An abstract association for use where the case is the subject
 
 URI: [biolink:CaseToThingAssociation](https://w3id.org/biolink/vocab/CaseToThingAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[CaseToThingAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[CaseToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[CaseToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[CaseToThingAssociation],%20\[NamedThing]<object(i)%201..1-%20\[CaseToThingAssociation],%20\[Case]<subject%201..1-%20\[CaseToThingAssociation],%20\[CaseToPhenotypicFeatureAssociation]uses%20-.->\[CaseToThingAssociation],%20\[Association]^-\[CaseToThingAssociation])
+
+---
+
 
 ## Parents
 

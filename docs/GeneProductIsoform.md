@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:GeneProductIsoform
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: GeneProductIsoform
@@ -12,7 +11,13 @@ This is an abstract class that can be mixed in with different kinds of gene prod
 
 URI: [biolink:GeneProductIsoform](https://w3id.org/biolink/vocab/GeneProductIsoform)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GeneProductIsoform&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[ProteinIsoform]uses%20-.->\[GeneProductIsoform],%20\[RNAProductIsoform]uses%20-.->\[GeneProductIsoform],%20\[GeneProduct]^-\[GeneProductIsoform])
+
+---
+
 
 ## Parents
 

@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:MolecularEntity
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: MolecularEntity
@@ -27,7 +26,13 @@ UMLSSC:T085
 UMLSST:mosq
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[MolecularEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GeneToGoTermAssociation]-%20subject%201..1>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20object%201..1>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20subject%201..1>\[MolecularEntity],%20\[MolecularEntity]uses%20-.->\[ThingWithTaxon],%20\[MolecularEntity]uses%20-.->\[PhysicalEntity],%20\[MolecularEntity]^-\[GenomicEntity],%20\[MolecularEntity]^-\[GeneFamily],%20\[MolecularEntity]^-\[ChemicalSubstance],%20\[BiologicalEntity]^-\[MolecularEntity])
+
+---
+
 
 ## Parents
 

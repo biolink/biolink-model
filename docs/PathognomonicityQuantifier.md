@@ -2,7 +2,6 @@
 parent: Mixins
 title: biolink:PathognomonicityQuantifier
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: PathognomonicityQuantifier
@@ -12,7 +11,13 @@ A relationship quantifier between a variant or symptom and a disease, which is h
 
 URI: [biolink:PathognomonicityQuantifier](https://w3id.org/biolink/vocab/PathognomonicityQuantifier)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SpecificityQuantifier]^-\[PathognomonicityQuantifier])
+
+---
+
 
 ## Parents
 

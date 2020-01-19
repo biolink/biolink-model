@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:variant_to_disease_association_object
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: variant_to_disease_association_object

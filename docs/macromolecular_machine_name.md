@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:macromolecular_machine_name
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: macromolecular_machine_name

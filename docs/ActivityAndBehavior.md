@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ActivityAndBehavior
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ActivityAndBehavior
@@ -69,7 +68,13 @@ UMLSSC:T066
 UMLSST:mcha
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[ActivityAndBehavior&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+
+---
+
 
 ## Parents
 

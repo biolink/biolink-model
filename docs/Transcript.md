@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Transcript
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Transcript
@@ -18,7 +17,13 @@ SO:0000673
 SIO:010450
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Transcript&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExonToTranscriptRelationship]-%20object%201..1>\[Transcript],%20\[TranscriptToGeneRelationship]-%20subject%201..1>\[Transcript],%20\[GenomicEntity]^-\[Transcript])
+
+---
+
 
 ## Parents
 

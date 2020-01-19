@@ -2,7 +2,6 @@
 parent: Mixins
 title: biolink:SpecificityQuantifier
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: SpecificityQuantifier
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:SpecificityQuantifier](https://w3id.org/biolink/vocab/SpecificityQuantifier)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SpecificityQuantifier]^-\[PathognomonicityQuantifier],%20\[RelationshipQuantifier]^-\[SpecificityQuantifier])
+
+---
+
 
 ## Parents
 

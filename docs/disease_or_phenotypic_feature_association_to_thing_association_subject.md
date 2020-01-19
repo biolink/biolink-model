@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:disease_or_phenotypic_feature_association_to_thing_association_subject
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: disease_or_phenotypic_feature_association_to_thing_association_subject

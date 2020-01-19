@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Occurrent
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Occurrent
@@ -15,7 +14,13 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 BFO:0000003
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularActivity]uses%20-.->\[Occurrent&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[EnvironmentalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]uses%20-.->\[Occurrent],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[Occurrent]^-\[Procedure],%20\[Occurrent]^-\[Phenomenon],%20\[Occurrent]^-\[ActivityAndBehavior],%20\[NamedThing]^-\[Occurrent])
+
+---
+
 
 ## Parents
 

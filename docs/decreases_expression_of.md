@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:decreases_expression_of
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: decreases_expression_of

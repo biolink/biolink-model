@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:EvidenceType
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: EvidenceType
@@ -15,7 +14,13 @@ URI: [biolink:EvidenceType](https://w3id.org/biolink/vocab/EvidenceType)
 ECO:0000000
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity]^-\[EvidenceType&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+
+---
+
 
 ## Parents
 

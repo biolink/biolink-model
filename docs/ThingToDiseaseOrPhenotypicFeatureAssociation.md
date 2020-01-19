@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ThingToDiseaseOrPhenotypicFeatureAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ThingToDiseaseOrPhenotypicFeatureAssociation
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:ThingToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ThingToDiseaseOrPhenotypicFeatureAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[DiseaseOrPhenotypicFeature]<object%201..1-%20\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[ThingToDiseaseOrPhenotypicFeatureAssociation])
+
+---
+
 
 ## Parents
 

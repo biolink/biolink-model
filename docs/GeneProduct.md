@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:GeneProduct
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: GeneProduct
@@ -15,7 +14,13 @@ URI: [biolink:GeneProduct](https://w3id.org/biolink/vocab/GeneProduct)
 WD:Q424689
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GeneProduct&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[GeneToGeneProductRelationship]-%20object%201..1>\[GeneProduct],%20\[GeneProduct]^-\[Protein],%20\[GeneProduct]^-\[GeneProductIsoform],%20\[GeneProduct]^-\[RNAProduct],%20\[GeneOrGeneProduct]^-\[GeneProduct])
+
+---
+
 
 ## Parents
 

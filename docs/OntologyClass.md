@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:OntologyClass
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: OntologyClass
@@ -12,7 +11,13 @@ a concept or class in an ontology, vocabulary or thesaurus
 
 URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20association%20type%200..1>\[OntologyClass&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1>\[OntologyClass],%20\[Attribute]-%20has%20attribute%20type%200..1>\[OntologyClass],%20\[Association]-%20qualifiers%200..*>\[OntologyClass],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[OntologyClass]^-\[RelationshipType],%20\[OntologyClass]^-\[OrganismTaxon],%20\[OntologyClass]^-\[GeneOntologyClass],%20\[NamedThing]^-\[OntologyClass])
+
+---
+
 
 ## Parents
 

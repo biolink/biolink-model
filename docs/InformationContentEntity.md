@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:InformationContentEntity
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: InformationContentEntity
@@ -84,7 +83,13 @@ UMLSSC:T185
 UMLSST:clas
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[Publication],%20\[InformationContentEntity]^-\[EvidenceType],%20\[InformationContentEntity]^-\[ConfidenceLevel],%20\[NamedThing]^-\[InformationContentEntity])
+
+---
+
 
 ## Parents
 

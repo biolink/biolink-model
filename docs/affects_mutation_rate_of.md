@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:affects_mutation_rate_of
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: affects_mutation_rate_of

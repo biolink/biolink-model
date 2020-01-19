@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:gene_has_variant_that_contributes_to_disease_association_subject
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: gene_has_variant_that_contributes_to_disease_association_subject

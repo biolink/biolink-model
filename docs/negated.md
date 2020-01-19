@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:negated
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: negated

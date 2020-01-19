@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:contributes_to
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: contributes_to

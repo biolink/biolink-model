@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:precedes
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: precedes

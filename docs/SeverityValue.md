@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:SeverityValue
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: SeverityValue
@@ -12,7 +11,13 @@ describes the severity of a phenotypic feature or disease
 
 URI: [biolink:SeverityValue](https://w3id.org/biolink/vocab/SeverityValue)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[SeverityValue&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[SeverityValue],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[SeverityValue],%20\[Attribute]^-\[SeverityValue])
+
+---
+
 
 ## Parents
 

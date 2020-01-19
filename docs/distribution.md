@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:distribution
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: distribution

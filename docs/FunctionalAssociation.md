@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:FunctionalAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: FunctionalAssociation
@@ -12,7 +11,13 @@ An association between a macromolecular machine (gene, gene product or complex o
 
 URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[FunctionalAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[FunctionalAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[FunctionalAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[FunctionalAssociation],%20\[GeneOntologyClass]<object%201..1-%20\[FunctionalAssociation],%20\[MacromolecularMachine]<subject%201..1-%20\[FunctionalAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToMolecularActivityAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToCellularComponentAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation],%20\[Association]^-\[FunctionalAssociation])
+
+---
+
 
 ## Parents
 

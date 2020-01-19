@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Gene
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Gene
@@ -21,7 +20,13 @@ SIO:010035
 WD:Q7187
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Gene&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[GeneToGeneProductRelationship]-%20subject%201..1>\[Gene],%20\[GenotypeToGeneAssociation]-%20object%201..1>\[Gene],%20\[SequenceVariant]-%20has%20gene%200..*>\[Gene],%20\[TranscriptToGeneRelationship]-%20object%201..1>\[Gene],%20\[GeneOrGeneProduct]^-\[Gene])
+
+---
+
 
 ## Parents
 

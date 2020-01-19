@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:regulates_entity_to_entity
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: regulates_entity_to_entity

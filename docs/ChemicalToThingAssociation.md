@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ChemicalToThingAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ChemicalToThingAssociation
@@ -12,7 +11,13 @@ An interaction between a chemical entity and another entity
 
 URI: [biolink:ChemicalToThingAssociation](https://w3id.org/biolink/vocab/ChemicalToThingAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToThingAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToThingAssociation],%20\[NamedThing]<object(i)%201..1-%20\[ChemicalToThingAssociation],%20\[ChemicalSubstance]<subject%201..1-%20\[ChemicalToThingAssociation],%20\[ChemicalToPathwayAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToGeneAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToChemicalAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToThingAssociation])
+
+---
+
 
 ## Parents
 

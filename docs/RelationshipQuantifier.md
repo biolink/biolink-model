@@ -2,7 +2,6 @@
 parent: Mixins
 title: biolink:RelationshipQuantifier
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: RelationshipQuantifier
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:RelationshipQuantifier](https://w3id.org/biolink/vocab/RelationshipQuantifier)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[SpecificityQuantifier],%20\[RelationshipQuantifier]^-\[SensitivityQuantifier],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
+
+---
+
 
 ## Children
 

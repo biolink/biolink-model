@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:genotype_to_genotype_part_association_relation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: genotype_to_genotype_part_association_relation

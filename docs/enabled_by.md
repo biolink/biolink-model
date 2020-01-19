@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:enabled_by
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: enabled_by

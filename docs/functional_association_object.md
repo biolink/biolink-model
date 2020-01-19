@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:functional_association_object
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: functional_association_object

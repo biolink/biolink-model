@@ -2,7 +2,6 @@
 parent: Types
 title: biolink:BiologicalSequence
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: BiologicalSequence

@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ChemicalSubstance
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ChemicalSubstance
@@ -135,7 +134,13 @@ UMLSSC:T197
 UMLSST:inch
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[ChemicalSubstance&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalToChemicalAssociation]-%20object%201..1>\[ChemicalSubstance],%20\[ChemicalToChemicalDerivationAssociation]-%20object%201..1>\[ChemicalSubstance],%20\[ChemicalToChemicalDerivationAssociation]-%20subject%201..1>\[ChemicalSubstance],%20\[ChemicalToThingAssociation]-%20subject%201..1>\[ChemicalSubstance],%20\[MolecularActivity]-%20has%20input%200..*>\[ChemicalSubstance],%20\[MolecularActivity]-%20has%20output%200..*>\[ChemicalSubstance],%20\[ChemicalSubstance]^-\[Metabolite],%20\[ChemicalSubstance]^-\[Drug],%20\[ChemicalSubstance]^-\[Carbohydrate],%20\[MolecularEntity]^-\[ChemicalSubstance])
+
+---
+
 
 ## Parents
 

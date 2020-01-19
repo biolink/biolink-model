@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ClinicalIntervention
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ClinicalIntervention
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/vocab/ClinicalIntervention)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalEntity]^-\[ClinicalIntervention&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+
+---
+
 
 ## Parents
 

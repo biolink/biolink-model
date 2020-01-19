@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:RNAProduct
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: RNAProduct
@@ -21,7 +20,13 @@ SIO:010450
 WD:Q11053
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[RNAProduct&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[RNAProduct]^-\[NoncodingRNAProduct],%20\[RNAProduct]^-\[RNAProductIsoform],%20\[GeneProduct]^-\[RNAProduct])
+
+---
+
 
 ## Parents
 

@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:entity_to_disease_association_object
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: entity_to_disease_association_object

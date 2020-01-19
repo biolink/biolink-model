@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:stage_qualifier
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: stage_qualifier

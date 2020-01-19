@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:update_date
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: update_date

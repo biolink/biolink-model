@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:CellLineToThingAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: CellLineToThingAssociation
@@ -12,7 +11,13 @@ An relationship between a cell line and another entity
 
 URI: [biolink:CellLineToThingAssociation](https://w3id.org/biolink/vocab/CellLineToThingAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[CellLineToThingAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[CellLineToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[CellLineToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[CellLineToThingAssociation],%20\[NamedThing]<object(i)%201..1-%20\[CellLineToThingAssociation],%20\[CellLine]<subject%201..1-%20\[CellLineToThingAssociation],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[CellLineToThingAssociation],%20\[Association]^-\[CellLineToThingAssociation])
+
+---
+
 
 ## Parents
 

@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:gene_regulatory_relationship_object
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: gene_regulatory_relationship_object

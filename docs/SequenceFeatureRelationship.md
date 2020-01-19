@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:SequenceFeatureRelationship
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: SequenceFeatureRelationship
@@ -12,7 +11,13 @@ For example, a particular exon is part of a particular transcript or gene
 
 URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/SequenceFeatureRelationship)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[SequenceFeatureRelationship&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[SequenceFeatureRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[SequenceFeatureRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[SequenceFeatureRelationship],%20\[GenomicEntity]<object%201..1-%20\[SequenceFeatureRelationship],%20\[GenomicEntity]<subject%201..1-%20\[SequenceFeatureRelationship],%20\[SequenceFeatureRelationship]^-\[TranscriptToGeneRelationship],%20\[SequenceFeatureRelationship]^-\[GeneToGeneProductRelationship],%20\[SequenceFeatureRelationship]^-\[ExonToTranscriptRelationship],%20\[Association]^-\[SequenceFeatureRelationship])
+
+---
+
 
 ## Parents
 

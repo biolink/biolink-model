@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ChemicalToGeneAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ChemicalToGeneAssociation
@@ -15,7 +14,13 @@ URI: [biolink:ChemicalToGeneAssociation](https://w3id.org/biolink/vocab/Chemical
 SIO:001257
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToGeneAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToGeneAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToGeneAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToGeneAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[ChemicalToGeneAssociation],%20\[GeneOrGeneProduct]<object%201..1-%20\[ChemicalToGeneAssociation],%20\[ChemicalToGeneAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToGeneAssociation])
+
+---
+
 
 ## Parents
 

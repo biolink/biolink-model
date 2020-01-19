@@ -2,7 +2,6 @@
 parent: Types
 title: biolink:IriType
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: IriType

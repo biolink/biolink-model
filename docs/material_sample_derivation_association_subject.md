@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:material_sample_derivation_association_subject
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: material_sample_derivation_association_subject

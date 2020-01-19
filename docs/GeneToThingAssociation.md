@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:GeneToThingAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: GeneToThingAssociation
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:GeneToThingAssociation](https://w3id.org/biolink/vocab/GeneToThingAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToThingAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToThingAssociation],%20\[NamedThing]<object(i)%201..1-%20\[GeneToThingAssociation],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneToThingAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[GeneToThingAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[GeneToThingAssociation],%20\[Association]^-\[GeneToThingAssociation])
+
+---
+
 
 ## Parents
 

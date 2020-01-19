@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:has_input
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: has_input

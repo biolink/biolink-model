@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:anatomical_entity_to_anatomical_entity_association_subject
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: anatomical_entity_to_anatomical_entity_association_subject

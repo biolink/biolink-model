@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:affects_splicing_of
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: affects_splicing_of

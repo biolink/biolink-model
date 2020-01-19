@@ -2,7 +2,6 @@
 parent: Mixins
 title: biolink:PairwiseInteractionAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: PairwiseInteractionAssociation
@@ -12,7 +11,13 @@ An interaction at the molecular level between two physical entities
 
 URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/PairwiseInteractionAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[PairwiseInteractionAssociation&#124;relation:uriorcurie;id:nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[PairwiseInteractionAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[PairwiseInteractionAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[PairwiseInteractionAssociation],%20\[MolecularEntity]<object%201..1-%20\[PairwiseInteractionAssociation],%20\[MolecularEntity]<subject%201..1-%20\[PairwiseInteractionAssociation],%20\[PairwiseGeneToGeneInteraction]uses%20-.->\[PairwiseInteractionAssociation],%20\[Association]^-\[PairwiseInteractionAssociation])
+
+---
+
 
 ## Parents
 

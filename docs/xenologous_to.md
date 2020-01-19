@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:xenologous_to
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: xenologous_to

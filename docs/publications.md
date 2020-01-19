@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:publications
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: publications

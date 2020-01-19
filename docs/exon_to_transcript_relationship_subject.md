@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:exon_to_transcript_relationship_subject
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: exon_to_transcript_relationship_subject

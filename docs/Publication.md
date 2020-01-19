@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Publication
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Publication
@@ -21,7 +20,13 @@ UMLSSC:T170
 UMLSST:inpr
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20publications%200..*>\[Publication&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[InformationContentEntity]^-\[Publication])
+
+---
+
 
 ## Parents
 

@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:sequence_feature_relationship_object
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: sequence_feature_relationship_object

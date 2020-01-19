@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:PhysicalEntity
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: PhysicalEntity
@@ -12,7 +11,13 @@ An entity that has physical properties such as mass, volume, or charge
 
 URI: [biolink:PhysicalEntity](https://w3id.org/biolink/vocab/PhysicalEntity)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularEntity]uses%20-.->\[PhysicalEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MaterialSample]uses%20-.->\[PhysicalEntity],%20\[AnatomicalEntity]uses%20-.->\[PhysicalEntity],%20\[NamedThing]^-\[PhysicalEntity])
+
+---
+
 
 ## Parents
 

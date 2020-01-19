@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:GenomicEntity
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: GenomicEntity
@@ -27,7 +26,13 @@ UMLSSC:T086
 UMLSST:nusq
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GenomicEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenomicSequenceLocalization]-%20object%201..1>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20subject%201..1>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20object%201..1>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20subject%201..1>\[GenomicEntity],%20\[GenomicEntity]^-\[Transcript],%20\[GenomicEntity]^-\[SequenceVariant],%20\[GenomicEntity]^-\[MacromolecularMachine],%20\[GenomicEntity]^-\[Haplotype],%20\[GenomicEntity]^-\[Genotype],%20\[GenomicEntity]^-\[Genome],%20\[GenomicEntity]^-\[Exon],%20\[GenomicEntity]^-\[CodingSequence],%20\[MolecularEntity]^-\[GenomicEntity])
+
+---
+
 
 ## Parents
 

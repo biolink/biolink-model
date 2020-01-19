@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Genome
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Genome
@@ -21,7 +20,13 @@ SIO:000984
 WD:Q7020
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Genome&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenomicEntity]^-\[Genome])
+
+---
+
 
 ## Parents
 

@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:affects_uptake_of
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: affects_uptake_of

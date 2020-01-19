@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Protein
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Protein
@@ -33,7 +32,13 @@ UMLSSC:T116
 UMLSST:aapp
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Protein&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[Protein]^-\[ProteinIsoform],%20\[GeneProduct]^-\[Protein])
+
+---
+
 
 ## Parents
 

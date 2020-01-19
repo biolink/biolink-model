@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Zygosity
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Zygosity
@@ -15,7 +14,13 @@ URI: [biolink:Zygosity](https://w3id.org/biolink/vocab/Zygosity)
 GENO:0000133
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[Zygosity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[Zygosity],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[Zygosity],%20\[Attribute]^-\[Zygosity])
+
+---
+
 
 ## Parents
 

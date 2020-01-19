@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:sequence_variant_modulates_treatment_association_subject
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: sequence_variant_modulates_treatment_association_subject

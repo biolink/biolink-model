@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:edge_label
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: edge_label

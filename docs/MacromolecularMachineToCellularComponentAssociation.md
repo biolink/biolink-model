@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:MacromolecularMachineToCellularComponentAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: MacromolecularMachineToCellularComponentAssociation
@@ -12,7 +11,13 @@ A functional association between a macromolecular machine (gene, gene product or
 
 URI: [biolink:MacromolecularMachineToCellularComponentAssociation](https://w3id.org/biolink/vocab/MacromolecularMachineToCellularComponentAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[MacromolecularMachineToCellularComponentAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[MacromolecularMachine]<subject(i)%201..1-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[CellularComponent]<object%201..1-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToCellularComponentAssociation])
+
+---
+
 
 ## Parents
 

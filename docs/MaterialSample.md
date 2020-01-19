@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:MaterialSample
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: MaterialSample
@@ -18,7 +17,13 @@ OBI:0000747
 SIO:001050
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]<has%20attribute%200..*-%20\[MaterialSample&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MaterialSampleDerivationAssociation]-%20subject%201..1>\[MaterialSample],%20\[MaterialSampleToThingAssociation]-%20subject%201..1>\[MaterialSample],%20\[MaterialSample]uses%20-.->\[SubjectOfInvestigation],%20\[MaterialSample]uses%20-.->\[PhysicalEntity],%20\[NamedThing]^-\[MaterialSample])
+
+---
+
 
 ## Parents
 

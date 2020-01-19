@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:change_is_catalyzed_by
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: change_is_catalyzed_by

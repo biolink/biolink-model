@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Disease
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Disease
@@ -84,7 +83,13 @@ UMLSSC:T191
 UMLSST:neop
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Disease&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DiseaseToExposureAssociation]-%20subject%201..1>\[Disease],%20\[DiseaseToThingAssociation]-%20subject%201..1>\[Disease],%20\[DiseaseOrPhenotypicFeature]^-\[Disease])
+
+---
+
 
 ## Parents
 

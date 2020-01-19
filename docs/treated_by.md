@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:treated_by
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: treated_by

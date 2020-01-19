@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:MaterialSampleDerivationAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: MaterialSampleDerivationAssociation
@@ -12,7 +11,13 @@ An association between a material sample and the material entity it is derived f
 
 URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/vocab/MaterialSampleDerivationAssociation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[MaterialSampleDerivationAssociation&#124;relation:uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[MaterialSampleDerivationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[MaterialSampleDerivationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[MaterialSampleDerivationAssociation],%20\[NamedThing]<object%201..1-%20\[MaterialSampleDerivationAssociation],%20\[MaterialSample]<subject%201..1-%20\[MaterialSampleDerivationAssociation],%20\[Association]^-\[MaterialSampleDerivationAssociation])
+
+---
+
 
 ## Parents
 

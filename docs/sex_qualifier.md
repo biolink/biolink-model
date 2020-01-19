@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:sex_qualifier
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: sex_qualifier

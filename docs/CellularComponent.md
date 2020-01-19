@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:CellularComponent
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: CellularComponent
@@ -27,7 +26,13 @@ UMLSSC:T026
 UMLSST:celc
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[CellularComponent&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1>\[CellularComponent],%20\[AnatomicalEntity]^-\[CellularComponent])
+
+---
+
 
 ## Parents
 

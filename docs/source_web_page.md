@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:source_web_page
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: source_web_page

@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:BiologicalProcessOrActivity
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: BiologicalProcessOrActivity
@@ -12,7 +11,13 @@ Either an individual molecular activity, or a collection of causally connected m
 
 URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/BiologicalProcessOrActivity)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcessOrActivity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess],%20\[BiologicalEntity]^-\[BiologicalProcessOrActivity])
+
+---
+
 
 ## Parents
 

@@ -2,7 +2,6 @@
 parent: Mixins
 title: biolink:SubjectOfInvestigation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: SubjectOfInvestigation
@@ -12,7 +11,13 @@ An entity that has the role of being studied in an investigation, study, or expe
 
 URI: [biolink:SubjectOfInvestigation](https://w3id.org/biolink/vocab/SubjectOfInvestigation)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MaterialSample]uses%20-.->\[SubjectOfInvestigation])
+
+---
+
 
 ## Mixin for
 

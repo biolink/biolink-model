@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:has_total
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: has_total

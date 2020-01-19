@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:gene_to_phenotypic_feature_association_subject
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: gene_to_phenotypic_feature_association_subject

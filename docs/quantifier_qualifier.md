@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:quantifier_qualifier
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: quantifier_qualifier

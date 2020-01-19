@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:ChemicalToPathwayAssociation
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: ChemicalToPathwayAssociation
@@ -15,7 +14,13 @@ URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/vocab/Chemi
 SIO:001250
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToPathwayAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToPathwayAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToPathwayAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToPathwayAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[ChemicalToPathwayAssociation],%20\[Pathway]<object%201..1-%20\[ChemicalToPathwayAssociation],%20\[ChemicalToPathwayAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToPathwayAssociation])
+
+---
+
 
 ## Parents
 

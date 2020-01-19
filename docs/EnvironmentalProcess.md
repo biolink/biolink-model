@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:EnvironmentalProcess
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: EnvironmentalProcess
@@ -12,7 +11,13 @@ nav_exclude: true
 
 URI: [biolink:EnvironmentalProcess](https://w3id.org/biolink/vocab/EnvironmentalProcess)
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentalProcess&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]uses%20-.->\[Occurrent],%20\[PlanetaryEntity]^-\[EnvironmentalProcess])
+
+---
+
 
 ## Parents
 

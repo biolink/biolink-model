@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:colocalizes_with
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: colocalizes_with

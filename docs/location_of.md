@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:location_of
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: location_of

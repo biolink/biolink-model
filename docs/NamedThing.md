@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:NamedThing
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: NamedThing
@@ -42,7 +41,13 @@ UMLSSC:T168
 UMLSST:food
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]-%20has%20qualitative%20value%200..1>\[NamedThing&#124;id:identifier_type;name:label_type;category:iri_type%20%2B],%20\[MaterialSampleDerivationAssociation]-%20object%201..1>\[NamedThing],%20\[Association]-%20object%201..1>\[NamedThing],%20\[Association]-%20subject%201..1>\[NamedThing],%20\[VariantToDiseaseAssociation]-%20object%201..1>\[NamedThing],%20\[VariantToDiseaseAssociation]-%20subject%201..1>\[NamedThing],%20\[NamedThing]^-\[PlanetaryEntity],%20\[NamedThing]^-\[PhysicalEntity],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Occurrent],%20\[NamedThing]^-\[MaterialSample],%20\[NamedThing]^-\[InformationContentEntity],%20\[NamedThing]^-\[Device],%20\[NamedThing]^-\[DataSet],%20\[NamedThing]^-\[DataFile],%20\[NamedThing]^-\[ClinicalEntity],%20\[NamedThing]^-\[BiologicalEntity],%20\[NamedThing]^-\[AdministrativeEntity])
+
+---
+
 
 ## Children
 

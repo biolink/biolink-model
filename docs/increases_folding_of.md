@@ -2,7 +2,6 @@
 parent: Slots
 title: biolink:increases_folding_of
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: increases_folding_of

@@ -2,7 +2,6 @@
 parent: Classes
 title: biolink:Drug
 grand_parent: Browse Biolink Model
-nav_exclude: true
 ---
 
 # Type: Drug
@@ -24,7 +23,13 @@ UMLSSC:T200
 UMLSST:clnd
 {: .mapping-label }
 
+
+---
+
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Drug&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalSubstance]^-\[Drug])
+
+---
+
 
 ## Parents
 
