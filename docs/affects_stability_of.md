@@ -1,10 +1,11 @@
 
-# Slot: affects stability of
+# Type: affects stability of
 
 
 holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest
 
 URI: [biolink:affects_stability_of](https://w3id.org/biolink/vocab/affects_stability_of)
+
 
 ## Domain and Range
 
@@ -47,3 +48,10 @@ URI: [biolink:affects_stability_of](https://w3id.org/biolink/vocab/affects_stabi
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

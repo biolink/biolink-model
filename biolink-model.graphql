@@ -425,6 +425,25 @@ type CellularComponent
     inTaxon: [OrganismTaxon]
   }
 
+type ChemicalExposure
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+    hasPhenotype: [PhenotypicFeature]
+    hasReceptor: OrganismalEntity
+    hasStressor: String
+    hasRoute: String
+  }
+
 type ChemicalSubstance
   {
     id: IdentifierType!
@@ -498,7 +517,7 @@ type ChemicalToChemicalAssociation implements ChemicalToThingAssociation
     subject: NamedThing!
     relation: Uriorcurie!
     object: ChemicalSubstance!
-    id: IdentifierType!
+    id: Nodeidentifier!
     negated: Boolean
     associationType: OntologyClass
     qualifiers: [OntologyClass]
@@ -513,7 +532,7 @@ type ChemicalToChemicalDerivationAssociation
     subject: ChemicalSubstance!
     relation: Uriorcurie!
     object: ChemicalSubstance!
-    id: IdentifierType!
+    id: Nodeidentifier!
     negated: Boolean
     associationType: OntologyClass
     qualifiers: [OntologyClass]
@@ -888,6 +907,21 @@ interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation
     edgeLabel: LabelType!
   }
 
+type DiseaseToExposureAssociation
+  {
+    subject: Disease!
+    relation: Uriorcurie!
+    object: ExposureEvent!
+    id: Nodeidentifier!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+    associationSlot: String
+    edgeLabel: LabelType!
+  }
+
 type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation
   {
     subject: NamedThing!
@@ -1025,7 +1059,10 @@ type DrugExposure
     description: NarrativeText
     systematicSynonym: [LabelType]
     hasPhenotype: [PhenotypicFeature]
-    drug: [ChemicalSubstance]!
+    hasReceptor: OrganismalEntity
+    hasStressor: String
+    hasRoute: String
+    hasDrug: [ChemicalSubstance]!
   }
 
 interface EntityToDiseaseAssociation
@@ -1061,41 +1098,6 @@ type EntityToPhenotypicFeatureAssociation implements EntityToFeatureOrDiseaseQua
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     description: NarrativeText
-  }
-
-type Environment
-  {
-    id: IdentifierType!
-    name: LabelType!
-    category: [IriType]!
-    relatedTo: [NamedThing]
-    interactsWith: [NamedThing]
-    nodeProperty: String
-    iri: IriType
-    synonym: [LabelType]
-    fullName: LabelType
-    description: NarrativeText
-    systematicSynonym: [LabelType]
-    hasPhenotype: [PhenotypicFeature]
-  }
-
-type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation
-  {
-    subject: Environment!
-    relation: Uriorcurie!
-    object: NamedThing!
-    id: Nodeidentifier!
-    negated: Boolean
-    associationType: OntologyClass
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    providedBy: Provider
-    associationSlot: String
-    edgeLabel: LabelType!
-    sexQualifier: BiologicalSex
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
   }
 
 type EnvironmentalFeature
@@ -1230,6 +1232,44 @@ type ExonToTranscriptRelationship
     providedBy: Provider
     associationSlot: String
     edgeLabel: LabelType!
+  }
+
+type ExposureEvent
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+    hasPhenotype: [PhenotypicFeature]
+    hasReceptor: OrganismalEntity
+    hasStressor: String
+    hasRoute: String
+  }
+
+type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation
+  {
+    subject: ExposureEvent!
+    relation: Uriorcurie!
+    object: NamedThing!
+    id: Nodeidentifier!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+    associationSlot: String
+    edgeLabel: LabelType!
+    sexQualifier: BiologicalSex
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
   }
 
 interface FrequencyQualifierMixin
@@ -2583,67 +2623,6 @@ interface MaterialSampleToThingAssociation
     edgeLabel: LabelType!
   }
 
-type MaterialSample implements SubjectOfInvestigation, PhysicalEntity
-  {
-    id: IdentifierType!
-    name: LabelType!
-    category: [IriType]!
-    relatedTo: [NamedThing]
-    interactsWith: [NamedThing]
-    nodeProperty: String
-    iri: IriType
-    synonym: [LabelType]
-    fullName: LabelType
-    description: NarrativeText
-    systematicSynonym: [LabelType]
-    hasAttribute: [Attribute]
-  }
-
-type MaterialSampleDerivationAssociation
-  {
-    subject: MaterialSample!
-    relation: Uriorcurie!
-    object: NamedThing!
-    id: IdentifierType!
-    negated: Boolean
-    associationType: OntologyClass
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    providedBy: Provider
-    associationSlot: String
-    edgeLabel: LabelType!
-  }
-
-type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
-  {
-    subject: NamedThing!
-    relation: Uriorcurie!
-    object: NamedThing!
-    id: IdentifierType!
-    negated: Boolean
-    associationType: OntologyClass
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    providedBy: Provider
-    associationSlot: String
-    edgeLabel: LabelType!
-  }
-
-interface MaterialSampleToThingAssociation
-  {
-    subject: MaterialSample!
-    relation: Uriorcurie!
-    object: NamedThing!
-    id: IdentifierType!
-    negated: Boolean
-    associationType: OntologyClass
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    providedBy: Provider
-    associationSlot: String
-    edgeLabel: LabelType!
-  }
-
 type Metabolite
   {
     id: IdentifierType!
@@ -2912,6 +2891,7 @@ type NamedThing
     predisposes: [NamedThing]
     contributesTo: [NamedThing]
     causes: [NamedThing]
+    causedBy: [NamedThing]
     prevents: [NamedThing]
     occursIn: [NamedThing]
     locatedIn: [NamedThing]
@@ -2942,6 +2922,7 @@ type NamedThing
     timepoint: TimeType
     hasBiologicalSequence: BiologicalSequence
     hasMolecularConsequence: [OntologyClass]
+    hasDrug: Drug
     hasGene: Gene
     hasZygosity: Zygosity
     filler: NamedThing
@@ -3949,8 +3930,11 @@ type Treatment
     description: NarrativeText
     systematicSynonym: [LabelType]
     hasPhenotype: [PhenotypicFeature]
+    hasReceptor: OrganismalEntity
+    hasStressor: String
+    hasRoute: String
     treats: [DiseaseOrPhenotypicFeature]!
-    hasExposureParts: [DrugExposure]!
+    hasPart: [DrugExposure]!
   }
 
 type VariantToDiseaseAssociation implements VariantToThingAssociation, EntityToDiseaseAssociation

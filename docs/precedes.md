@@ -1,10 +1,11 @@
 
-# Slot: precedes
+# Type: precedes
 
 
 holds between two processes, where one completes before the other begins
 
 URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
+
 
 ## Domain and Range
 
@@ -29,3 +30,13 @@ URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
  * [Phenomenon](Phenomenon.md)
  * [PhysiologicalProcess](PhysiologicalProcess.md)
  * [Procedure](Procedure.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | BFO:0000063 |
+|  | | SEMMEDDB:PRECEDES |
+|  | | WD:P156 |
+| **In Subsets:** | | translator_minimal |
+

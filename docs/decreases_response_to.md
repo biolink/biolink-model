@@ -1,10 +1,11 @@
 
-# Slot: decreases response to
+# Type: decreases response to
 
 
 holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
 
 URI: [biolink:decreases_response_to](https://w3id.org/biolink/vocab/decreases_response_to)
+
 
 ## Domain and Range
 
@@ -45,3 +46,10 @@ URI: [biolink:decreases_response_to](https://w3id.org/biolink/vocab/decreases_re
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

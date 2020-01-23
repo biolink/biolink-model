@@ -1,10 +1,11 @@
 
-# Slot: has quantitative value
+# Type: has quantitative value
 
 
 connects an attribute to a value
 
 URI: [biolink:has_quantitative_value](https://w3id.org/biolink/vocab/has_quantitative_value)
+
 
 ## Domain and Range
 
@@ -27,3 +28,11 @@ URI: [biolink:has_quantitative_value](https://w3id.org/biolink/vocab/has_quantit
  * [PhenotypicSex](PhenotypicSex.md)
  * [SeverityValue](SeverityValue.md)
  * [Zygosity](Zygosity.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | qud:quantityValue |
+| **In Subsets:** | | samples |
+

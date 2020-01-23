@@ -1,10 +1,11 @@
 
-# Slot: overlaps
+# Type: overlaps
 
 
 holds between entties that overlap in their extents (materials or processes)
 
 URI: [biolink:overlaps](https://w3id.org/biolink/vocab/overlaps)
+
 
 ## Domain and Range
 
@@ -22,3 +23,11 @@ URI: [biolink:overlaps](https://w3id.org/biolink/vocab/overlaps)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002131 |
+| **In Subsets:** | | translator_minimal |
+

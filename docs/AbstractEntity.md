@@ -1,10 +1,11 @@
 
-# Class: abstract entity
+# Type: abstract entity
 
 
 Any thing that is not a process or a physical mass-bearing entity
 
 URI: [biolink:AbstractEntity](https://w3id.org/biolink/vocab/AbstractEntity)
+
 
 ![img](images/AbstractEntity.png)
 

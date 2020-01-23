@@ -1,10 +1,11 @@
 
-# Slot: regulates, process to process
+# Type: regulates, process to process
 
 
 
 
 URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regulates_process_to_process)
+
 
 ## Domain and Range
 
@@ -31,3 +32,10 @@ URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regul
  * [Phenomenon](Phenomenon.md)
  * [PhysiologicalProcess](PhysiologicalProcess.md)
  * [Procedure](Procedure.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002211 |
+

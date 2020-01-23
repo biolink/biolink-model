@@ -1,10 +1,11 @@
 
-# Slot: has gene
+# Type: has gene
 
 
-connects and entity to a single gene
+connects an entity to a single gene
 
 URI: [biolink:has_gene](https://w3id.org/biolink/vocab/has_gene)
+
 
 ## Domain and Range
 
@@ -16,7 +17,7 @@ URI: [biolink:has_gene](https://w3id.org/biolink/vocab/has_gene)
 
 ## Children
 
- *  [has gene](sequence_variant_has_gene.md)
+ *  [sequence variant➞has gene](sequence_variant_has_gene.md)
 
 ## Used by
 

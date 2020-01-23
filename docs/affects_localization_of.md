@@ -1,10 +1,11 @@
 
-# Slot: affects localization of
+# Type: affects localization of
 
 
 holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest
 
 URI: [biolink:affects_localization_of](https://w3id.org/biolink/vocab/affects_localization_of)
+
 
 ## Domain and Range
 
@@ -47,3 +48,10 @@ URI: [biolink:affects_localization_of](https://w3id.org/biolink/vocab/affects_lo
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

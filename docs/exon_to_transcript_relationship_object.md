@@ -1,10 +1,11 @@
 
-# Slot: object
+# Type: exon to transcript relationship_object
 
 
 
 
 URI: [biolink:exon_to_transcript_relationship_object](https://w3id.org/biolink/vocab/exon_to_transcript_relationship_object)
+
 
 ## Domain and Range
 
@@ -12,7 +13,7 @@ URI: [biolink:exon_to_transcript_relationship_object](https://w3id.org/biolink/v
 
 ## Parents
 
- *  is_a: [object](sequence_feature_relationship_object.md)
+ *  is_a: [sequence feature relationship➞object](sequence_feature_relationship_object.md)
 
 ## Children
 

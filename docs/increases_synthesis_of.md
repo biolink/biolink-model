@@ -1,10 +1,11 @@
 
-# Slot: increases synthesis of
+# Type: increases synthesis of
 
 
 holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other
 
 URI: [biolink:increases_synthesis_of](https://w3id.org/biolink/vocab/increases_synthesis_of)
+
 
 ## Domain and Range
 
@@ -45,3 +46,10 @@ URI: [biolink:increases_synthesis_of](https://w3id.org/biolink/vocab/increases_s
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

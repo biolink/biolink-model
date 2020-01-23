@@ -1,14 +1,15 @@
 
-# Slot: phase
+# Type: phase
 
 
 TODO
 
 URI: [biolink:phase](https://w3id.org/biolink/vocab/phase)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 

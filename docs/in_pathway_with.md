@@ -1,10 +1,11 @@
 
-# Slot: in pathway with
+# Type: in pathway with
 
 
 holds between two genes or gene products that are part of in the same biological pathway
 
 URI: [biolink:in_pathway_with](https://w3id.org/biolink/vocab/in_pathway_with)
+
 
 ## Domain and Range
 
@@ -29,3 +30,10 @@ URI: [biolink:in_pathway_with](https://w3id.org/biolink/vocab/in_pathway_with)
  * [NoncodingRNAProduct](NoncodingRNAProduct.md)
  * [Protein](Protein.md)
  * [ProteinIsoform](ProteinIsoform.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

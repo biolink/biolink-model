@@ -1,14 +1,15 @@
 
-# Slot: downloadURL
+# Type: downloadURL
 
 
 
 
 URI: [biolink:downloadURL](https://w3id.org/biolink/vocab/downloadURL)
 
+
 ## Domain and Range
 
-[DistributionLevel](DistributionLevel.md) ->  <sub>OPT</sub> [String](String.md)
+[DistributionLevel](DistributionLevel.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -20,3 +21,10 @@ URI: [biolink:downloadURL](https://w3id.org/biolink/vocab/downloadURL)
 ## Used by
 
  * [DistributionLevel](DistributionLevel.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dct:downloadURL |
+

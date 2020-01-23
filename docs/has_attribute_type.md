@@ -1,10 +1,11 @@
 
-# Slot: has attribute type
+# Type: has attribute type
 
 
 connects an attribute to a class that describes it
 
 URI: [biolink:has_attribute_type](https://w3id.org/biolink/vocab/has_attribute_type)
+
 
 ## Domain and Range
 
@@ -27,3 +28,10 @@ URI: [biolink:has_attribute_type](https://w3id.org/biolink/vocab/has_attribute_t
  * [PhenotypicSex](PhenotypicSex.md)
  * [SeverityValue](SeverityValue.md)
  * [Zygosity](Zygosity.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | samples |
+

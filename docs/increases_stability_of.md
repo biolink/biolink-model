@@ -1,10 +1,11 @@
 
-# Slot: increases stability of
+# Type: increases stability of
 
 
 holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest
 
 URI: [biolink:increases_stability_of](https://w3id.org/biolink/vocab/increases_stability_of)
+
 
 ## Domain and Range
 
@@ -45,3 +46,10 @@ URI: [biolink:increases_stability_of](https://w3id.org/biolink/vocab/increases_s
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

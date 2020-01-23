@@ -1,10 +1,11 @@
 
-# Class: entity to disease association
+# Type: entity to disease association
 
 
 mixin class for any association whose object (target node) is a disease
 
 URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityToDiseaseAssociation)
+
 
 ![img](images/EntityToDiseaseAssociation.png)
 
@@ -26,5 +27,5 @@ URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityT
 
 ### Domain for slot:
 
- * [object](entity_to_disease_association_object.md)  <sub>REQ</sub>
+ * [entity to disease association➞object](entity_to_disease_association_object.md)  <sub>REQ</sub>
     * range: [Disease](Disease.md)

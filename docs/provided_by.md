@@ -1,10 +1,11 @@
 
-# Slot: provided by
+# Type: provided by
 
 
 connects an association to the agent (person, organization or group) that provided it
 
 URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
+
 
 ## Domain and Range
 
@@ -35,11 +36,12 @@ URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
  * [ChemicalToThingAssociation](ChemicalToThingAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
@@ -75,3 +77,10 @@ URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  * [VariantToThingAssociation](VariantToThingAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | pav:providedBy |
+

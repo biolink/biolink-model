@@ -1,10 +1,11 @@
 
-# Slot: predisposes
+# Type: predisposes
 
 
 holds between two entities where exposure to one entity increases the chance of developing the other
 
 URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
+
 
 ## Domain and Range
 
@@ -20,3 +21,11 @@ URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | SEMMEDDB:PREDISPOSES |
+| **In Subsets:** | | translator_minimal |
+

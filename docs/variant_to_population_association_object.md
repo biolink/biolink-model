@@ -1,10 +1,11 @@
 
-# Slot: object
+# Type: variant to population association_object
 
 
 
 
 URI: [biolink:variant_to_population_association_object](https://w3id.org/biolink/vocab/variant_to_population_association_object)
+
 
 ## Domain and Range
 

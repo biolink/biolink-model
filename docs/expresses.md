@@ -1,10 +1,11 @@
 
-# Slot: expresses
+# Type: expresses
 
 
 holds between an anatomical entity and gene or gene product that is expressed there
 
 URI: [biolink:expresses](https://w3id.org/biolink/vocab/expresses)
+
 
 ## Domain and Range
 
@@ -23,3 +24,11 @@ URI: [biolink:expresses](https://w3id.org/biolink/vocab/expresses)
  * [Cell](Cell.md)
  * [CellularComponent](CellularComponent.md)
  * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002292 |
+| **In Subsets:** | | translator_minimal |
+

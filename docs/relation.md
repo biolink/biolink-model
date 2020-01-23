@@ -1,14 +1,15 @@
 
-# Slot: relation
+# Type: relation
 
 
 the relationship type by which a subject is connected to an object in an association
 
 URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
 
+
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
+[Association](Association.md) ->  <sub>REQ</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 
@@ -16,23 +17,23 @@ URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
 
 ## Children
 
- *  [relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)
- *  [relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)
- *  [relation](chemical_to_chemical_derivation_association_relation.md)
- *  [relation](gene_regulatory_relationship_relation.md)
- *  [relation](gene_to_expression_site_association_relation.md)
- *  [relation](gene_to_gene_homology_association_relation.md)
- *  [relation](gene_to_gene_product_relationship_relation.md)
- *  [relation](genotype_to_gene_association_relation.md)
- *  [relation](genotype_to_genotype_part_association_relation.md)
- *  [relation](genotype_to_phenotypic_feature_association_relation.md)
- *  [relation](genotype_to_variant_association_relation.md)
- *  [relation](material_sample_derivation_association_relation.md)
- *  [relation](model_to_disease_mixin_relation.md)
- *  [relation](pairwise_gene_to_gene_interaction_relation.md)
- *  [relation](pairwise_interaction_association_relation.md)
- *  [relation](population_to_population_association_relation.md)
- *  [relation](variant_to_disease_association_relation.md)
+ *  [anatomical entity to anatomical entity ontogenic association➞relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)
+ *  [anatomical entity to anatomical entity part of association➞relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)
+ *  [chemical to chemical derivation association➞relation](chemical_to_chemical_derivation_association_relation.md)
+ *  [gene regulatory relationship➞relation](gene_regulatory_relationship_relation.md)
+ *  [gene to expression site association➞relation](gene_to_expression_site_association_relation.md)
+ *  [gene to gene homology association➞relation](gene_to_gene_homology_association_relation.md)
+ *  [gene to gene product relationship➞relation](gene_to_gene_product_relationship_relation.md)
+ *  [genotype to gene association➞relation](genotype_to_gene_association_relation.md)
+ *  [genotype to genotype part association➞relation](genotype_to_genotype_part_association_relation.md)
+ *  [genotype to phenotypic feature association➞relation](genotype_to_phenotypic_feature_association_relation.md)
+ *  [genotype to variant association➞relation](genotype_to_variant_association_relation.md)
+ *  [material sample derivation association➞relation](material_sample_derivation_association_relation.md)
+ *  [model to disease mixin➞relation](model_to_disease_mixin_relation.md)
+ *  [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)
+ *  [pairwise interaction association➞relation](pairwise_interaction_association_relation.md)
+ *  [population to population association➞relation](population_to_population_association_relation.md)
+ *  [variant to disease association➞relation](variant_to_disease_association_relation.md)
 
 ## Used by
 
@@ -52,11 +53,12 @@ URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
  * [ChemicalToThingAssociation](ChemicalToThingAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
@@ -93,3 +95,14 @@ URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  * [VariantToThingAssociation](VariantToThingAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Local names:** | | annotation predicate (ga4gh) |
+|  | | predicate (translator) |
+| **Mappings:** | | rdf:predicate |
+|  | | owl:annotatedProperty |
+|  | | OBAN:association_has_predicate |
+

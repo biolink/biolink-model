@@ -1,10 +1,11 @@
 
-# Slot: stage qualifier
+# Type: gene to expression site association_stage qualifier
 
 
 
 
 URI: [biolink:gene_to_expression_site_association_stage_qualifier](https://w3id.org/biolink/vocab/gene_to_expression_site_association_stage_qualifier)
+
 
 ## Domain and Range
 

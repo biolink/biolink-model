@@ -1,10 +1,11 @@
 
-# Slot: has gene product
+# Type: has gene product
 
 
 holds between a gene and a transcribed and/or translated product generated from it
 
 URI: [biolink:has_gene_product](https://w3id.org/biolink/vocab/has_gene_product)
+
 
 ## Domain and Range
 
@@ -20,3 +21,12 @@ URI: [biolink:has_gene_product](https://w3id.org/biolink/vocab/has_gene_product)
 ## Used by
 
  * [Gene](Gene.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002205 |
+|  | | WD:P688 |
+| **In Subsets:** | | translator_minimal |
+

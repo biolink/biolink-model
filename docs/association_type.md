@@ -1,10 +1,11 @@
 
-# Slot: association type
+# Type: association type
 
 
 connects an association to the type of association (e.g. gene to phenotype)
 
 URI: [biolink:association_type](https://w3id.org/biolink/vocab/association_type)
+
 
 ## Domain and Range
 
@@ -35,11 +36,12 @@ URI: [biolink:association_type](https://w3id.org/biolink/vocab/association_type)
  * [ChemicalToThingAssociation](ChemicalToThingAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
@@ -75,3 +77,10 @@ URI: [biolink:association_type](https://w3id.org/biolink/vocab/association_type)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  * [VariantToThingAssociation](VariantToThingAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | rdf:type |
+

@@ -1,10 +1,11 @@
 
-# Class: frequency qualifier mixin
+# Type: frequency qualifier mixin
 
 
-Qualifier for freqency type associations
+Qualifier for frequency type associations
 
 URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/vocab/FrequencyQualifierMixin)
+
 
 ![img](images/FrequencyQualifierMixin.png)
 

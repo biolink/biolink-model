@@ -1,10 +1,11 @@
 
-# Class: thing with taxon
+# Type: thing with taxon
 
 
 A mixin that can be used on any entity with a taxon
 
 URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
+
 
 ![img](images/ThingWithTaxon.png)
 

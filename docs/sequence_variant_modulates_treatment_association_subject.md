@@ -1,10 +1,11 @@
 
-# Slot: subject
+# Type: sequence variant modulates treatment association_subject
 
 
 
 
 URI: [biolink:sequence_variant_modulates_treatment_association_subject](https://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_subject)
+
 
 ## Domain and Range
 

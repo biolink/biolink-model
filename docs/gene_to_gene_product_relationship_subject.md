@@ -1,10 +1,11 @@
 
-# Slot: subject
+# Type: gene to gene product relationship_subject
 
 
 
 
 URI: [biolink:gene_to_gene_product_relationship_subject](https://w3id.org/biolink/vocab/gene_to_gene_product_relationship_subject)
+
 
 ## Domain and Range
 
@@ -12,7 +13,7 @@ URI: [biolink:gene_to_gene_product_relationship_subject](https://w3id.org/biolin
 
 ## Parents
 
- *  is_a: [subject](sequence_feature_relationship_subject.md)
+ *  is_a: [sequence feature relationship➞subject](sequence_feature_relationship_subject.md)
 
 ## Children
 

@@ -1,10 +1,11 @@
 
-# Slot: subject
+# Type: gene to thing association_subject
 
 
 
 
 URI: [biolink:gene_to_thing_association_subject](https://w3id.org/biolink/vocab/gene_to_thing_association_subject)
+
 
 ## Domain and Range
 

@@ -16,7 +16,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "drug"
+    "has_drug"
 })
 public class DrugExposure {
 
@@ -25,17 +25,17 @@ public class DrugExposure {
      * (Required)
      * 
      */
-    @JsonProperty("drug")
-    private List<String> drug = new ArrayList<String>();
+    @JsonProperty("has_drug")
+    private List<String> hasDrug = new ArrayList<String>();
 
     /**
      * 
      * (Required)
      * 
      */
-    @JsonProperty("drug")
-    public List<String> getDrug() {
-        return drug;
+    @JsonProperty("has_drug")
+    public List<String> getHasDrug() {
+        return hasDrug;
     }
 
     /**
@@ -43,19 +43,19 @@ public class DrugExposure {
      * (Required)
      * 
      */
-    @JsonProperty("drug")
-    public void setDrug(List<String> drug) {
-        this.drug = drug;
+    @JsonProperty("has_drug")
+    public void setHasDrug(List<String> hasDrug) {
+        this.hasDrug = hasDrug;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("drug", drug).toString();
+        return new ToStringBuilder(this).append("hasDrug", hasDrug).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(drug).toHashCode();
+        return new HashCodeBuilder().append(hasDrug).toHashCode();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class DrugExposure {
             return false;
         }
         DrugExposure rhs = ((DrugExposure) other);
-        return new EqualsBuilder().append(drug, rhs.drug).isEquals();
+        return new EqualsBuilder().append(hasDrug, rhs.hasDrug).isEquals();
     }
 
 }

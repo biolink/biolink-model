@@ -1,10 +1,11 @@
 
-# Slot: related to
+# Type: related to
 
 
 A relationship that is asserted between two named things
 
 URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
+
 
 ## Domain and Range
 
@@ -17,6 +18,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 
  *  [affects](affects.md)
  *  [affects risk for](affects_risk_for.md)
+ *  [caused by](caused_by.md)
  *  [coexists with](coexists_with.md)
  *  [contributes to](contributes_to.md)
  *  [correlated with](correlated_with.md)
@@ -62,6 +64,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
  * [Cell](Cell.md)
  * [CellLine](CellLine.md)
  * [CellularComponent](CellularComponent.md)
+ * [ChemicalExposure](ChemicalExposure.md)
  * [ChemicalSubstance](ChemicalSubstance.md)
  * [ClinicalEntity](ClinicalEntity.md)
  * [ClinicalIntervention](ClinicalIntervention.md)
@@ -79,11 +82,11 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
  * [DistributionLevel](DistributionLevel.md)
  * [Drug](Drug.md)
  * [DrugExposure](DrugExposure.md)
- * [Environment](Environment.md)
  * [EnvironmentalFeature](EnvironmentalFeature.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [EvidenceType](EvidenceType.md)
  * [Exon](Exon.md)
+ * [ExposureEvent](ExposureEvent.md)
  * [FrequencyValue](FrequencyValue.md)
  * [Gene](Gene.md)
  * [GeneFamily](GeneFamily.md)
@@ -136,3 +139,11 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
  * [Transcript](Transcript.md)
  * [Treatment](Treatment.md)
  * [Zygosity](Zygosity.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | owl:ObjectProperty |
+|  | | SEMMEDDB:ASSOCIATED_WITH |
+

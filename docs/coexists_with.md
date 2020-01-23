@@ -1,10 +1,11 @@
 
-# Slot: coexists with
+# Type: coexists with
 
 
 holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
 
 URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
+
 
 ## Domain and Range
 
@@ -24,3 +25,11 @@ URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | SEMMEDDB:COEXISTS_WITH |
+| **In Subsets:** | | translator_minimal |
+

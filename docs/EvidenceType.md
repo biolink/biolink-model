@@ -1,10 +1,11 @@
 
-# Class: evidence type
+# Type: evidence type
 
 
 Class of evidence that supports an association
 
 URI: [biolink:EvidenceType](https://w3id.org/biolink/vocab/EvidenceType)
+
 
 ![img](images/EvidenceType.png)
 
@@ -23,16 +24,24 @@ URI: [biolink:EvidenceType](https://w3id.org/biolink/vocab/EvidenceType)
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [IdentifierType](types/IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
+    * range: [IriType](types/IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | evidence code |
+| **Mappings:** | | ECO:0000000 |
+

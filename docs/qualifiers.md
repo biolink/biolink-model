@@ -1,10 +1,11 @@
 
-# Slot: qualifiers
+# Type: qualifiers
 
 
 connects an association to qualifiers that modify or qualify the meaning of that association
 
 URI: [biolink:qualifiers](https://w3id.org/biolink/vocab/qualifiers)
+
 
 ## Domain and Range
 
@@ -35,11 +36,12 @@ URI: [biolink:qualifiers](https://w3id.org/biolink/vocab/qualifiers)
  * [ChemicalToThingAssociation](ChemicalToThingAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
@@ -75,3 +77,10 @@ URI: [biolink:qualifiers](https://w3id.org/biolink/vocab/qualifiers)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  * [VariantToThingAssociation](VariantToThingAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Local names:** | | annotation qualifier (ga4gh) |
+

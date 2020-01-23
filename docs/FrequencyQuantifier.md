@@ -1,10 +1,11 @@
 
-# Class: frequency quantifier
+# Type: frequency quantifier
 
 
 
 
 URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuantifier)
+
 
 ![img](images/FrequencyQuantifier.png)
 

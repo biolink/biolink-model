@@ -105,7 +105,7 @@ json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.owl: biolink-model.yaml env.lock
-	pipenv run gen-owl -o $@ $<
+#	pipenv run gen-owl -o $@ $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~

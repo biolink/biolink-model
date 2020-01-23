@@ -1,10 +1,11 @@
 
-# Slot: increases expression of
+# Type: increases expression of
 
 
 holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest
 
 URI: [biolink:increases_expression_of](https://w3id.org/biolink/vocab/increases_expression_of)
+
 
 ## Domain and Range
 
@@ -45,3 +46,10 @@ URI: [biolink:increases_expression_of](https://w3id.org/biolink/vocab/increases_
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

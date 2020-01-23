@@ -1,10 +1,11 @@
 
-# Slot: increases molecular modification of
+# Type: increases molecular modification of
 
 
 holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
 
 URI: [biolink:increases_molecular_modification_of](https://w3id.org/biolink/vocab/increases_molecular_modification_of)
+
 
 ## Domain and Range
 
@@ -45,3 +46,10 @@ URI: [biolink:increases_molecular_modification_of](https://w3id.org/biolink/voca
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

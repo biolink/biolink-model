@@ -1,10 +1,11 @@
 
-# Class: macromolecular machine to biological process association
+# Type: macromolecular machine to biological process association
 
 
 A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
 
 URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation)
+
 
 ![img](images/MacromolecularMachineToBiologicalProcessAssociation.png)
 
@@ -20,7 +21,7 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
 
 ### Own
 
- * [object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>
+ * [macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>
     * range: [BiologicalProcess](BiologicalProcess.md)
 
 ### Inherited from association:
@@ -31,20 +32,20 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
     * inherited from: [Association](Association.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [Uriorcurie](Uriorcurie.md)
+    * range: [Uriorcurie](types/Uriorcurie.md)
     * inherited from: [Association](Association.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
     * inherited from: [Association](Association.md)
- * [id](association_id.md)  <sub>REQ</sub>
+ * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [Nodeidentifier](Nodeidentifier.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: [Boolean](Boolean.md)
+    * range: [Boolean](types/Boolean.md)
     * inherited from: [Association](Association.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
@@ -65,14 +66,14 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
 
 ### Inherited from functional association:
 
- * [subject](functional_association_subject.md)  <sub>REQ</sub>
+ * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
     * range: [MacromolecularMachine](MacromolecularMachine.md)
     * inherited from: [FunctionalAssociation](FunctionalAssociation.md)
- * [object](functional_association_object.md)  <sub>REQ</sub>
+ * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
     * range: [GeneOntologyClass](GeneOntologyClass.md)
     * inherited from: [FunctionalAssociation](FunctionalAssociation.md)
 
 ### Domain for slot:
 
- * [object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>
+ * [macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>
     * range: [BiologicalProcess](BiologicalProcess.md)

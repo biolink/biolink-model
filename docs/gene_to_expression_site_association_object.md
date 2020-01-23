@@ -1,10 +1,11 @@
 
-# Slot: object
+# Type: gene to expression site association_object
 
 
 
 
 URI: [biolink:gene_to_expression_site_association_object](https://w3id.org/biolink/vocab/gene_to_expression_site_association_object)
+
 
 ## Domain and Range
 

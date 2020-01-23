@@ -1,10 +1,11 @@
 
-# Slot: colocalizes with
+# Type: colocalizes with
 
 
 holds between two entities that are observed to be located in the same place.
 
 URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
+
 
 ## Domain and Range
 
@@ -20,3 +21,11 @@ URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:00002325 |
+| **In Subsets:** | | translator_minimal |
+

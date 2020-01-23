@@ -1,10 +1,11 @@
 
-# Slot: affects splicing of
+# Type: affects splicing of
 
 
 holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA
 
 URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splicing_of)
+
 
 ## Domain and Range
 
@@ -47,3 +48,10 @@ URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splici
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

@@ -1,14 +1,15 @@
 
-# Slot: node property
+# Type: node property
 
 
 A grouping for any property that holds between a node and a value
 
 URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -16,7 +17,7 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
 ## Children
 
  *  [aggregate statistic](aggregate_statistic.md)
- *  [id](association_id.md)
+ *  [association➞id](association_id.md)
  *  [category](category.md)
  *  [creation date](creation_date.md)
  *  [description](description.md)
@@ -27,7 +28,11 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
  *  [genome build](genome_build.md)
  *  [has biological sequence](has_biological_sequence.md)
  *  [has chemical formula](has_chemical_formula.md)
+ *  [has drug](has_drug.md)
  *  [has gene](has_gene.md)
+ *  [has receptor](has_receptor.md)
+ *  [has route](has_route.md)
+ *  [has stressor](has_stressor.md)
  *  [has zygosity](has_zygosity.md)
  *  [id](id.md)
  *  [interbase coordinate](interbase_coordinate.md)
@@ -65,6 +70,7 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
  * [Cell](Cell.md)
  * [CellLine](CellLine.md)
  * [CellularComponent](CellularComponent.md)
+ * [ChemicalExposure](ChemicalExposure.md)
  * [ChemicalSubstance](ChemicalSubstance.md)
  * [ClinicalEntity](ClinicalEntity.md)
  * [ClinicalIntervention](ClinicalIntervention.md)
@@ -82,11 +88,11 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
  * [DistributionLevel](DistributionLevel.md)
  * [Drug](Drug.md)
  * [DrugExposure](DrugExposure.md)
- * [Environment](Environment.md)
  * [EnvironmentalFeature](EnvironmentalFeature.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [EvidenceType](EvidenceType.md)
  * [Exon](Exon.md)
+ * [ExposureEvent](ExposureEvent.md)
  * [FrequencyValue](FrequencyValue.md)
  * [Gene](Gene.md)
  * [GeneFamily](GeneFamily.md)

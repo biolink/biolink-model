@@ -1,10 +1,11 @@
 
-# Slot: affects metabolic processing of
+# Type: affects metabolic processing of
 
 
 holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
 
 URI: [biolink:affects_metabolic_processing_of](https://w3id.org/biolink/vocab/affects_metabolic_processing_of)
+
 
 ## Domain and Range
 
@@ -47,3 +48,10 @@ URI: [biolink:affects_metabolic_processing_of](https://w3id.org/biolink/vocab/af
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

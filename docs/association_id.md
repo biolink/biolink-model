@@ -1,14 +1,15 @@
 
-# Slot: id
+# Type: association_id
 
 
 A unique identifier for an association
 
 URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
 
+
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>REQ</sub> [Nodeidentifier](Nodeidentifier.md)
+[Association](Association.md) ->  <sub>REQ</sub> [Nodeidentifier](types/Nodeidentifier.md)
 
 ## Parents
 
@@ -16,7 +17,7 @@ URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
 
 ## Children
 
- *  [id](pairwise_interaction_association_id.md)
+ *  [pairwise interaction association➞id](pairwise_interaction_association_id.md)
 
 ## Used by
 
@@ -36,11 +37,12 @@ URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
  * [ChemicalToThingAssociation](ChemicalToThingAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
@@ -75,3 +77,10 @@ URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  * [VariantToThingAssociation](VariantToThingAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

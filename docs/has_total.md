@@ -1,14 +1,15 @@
 
-# Slot: has total
+# Type: has total
 
 
 total number of things in a particular reference set
 
 URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Integer](Integer.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 
@@ -16,7 +17,7 @@ URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)
 
 ## Children
 
- *  [has total](variant_to_population_association_has_total.md)
+ *  [variant to population association➞has total](variant_to_population_association_has_total.md)
 
 ## Used by
 

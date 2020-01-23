@@ -1,10 +1,11 @@
 
-# Slot: affects activity of
+# Type: affects activity of
 
 
 holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest
 
 URI: [biolink:affects_activity_of](https://w3id.org/biolink/vocab/affects_activity_of)
+
 
 ## Domain and Range
 
@@ -47,3 +48,10 @@ URI: [biolink:affects_activity_of](https://w3id.org/biolink/vocab/affects_activi
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

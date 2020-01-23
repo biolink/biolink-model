@@ -1,10 +1,11 @@
 
-# Class: specificity quantifier
+# Type: specificity quantifier
 
 
 
 
 URI: [biolink:SpecificityQuantifier](https://w3id.org/biolink/vocab/SpecificityQuantifier)
+
 
 ![img](images/SpecificityQuantifier.png)
 

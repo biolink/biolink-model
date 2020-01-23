@@ -1,10 +1,11 @@
 
-# Slot: clinical modifier qualifier
+# Type: clinical modifier qualifier
 
 
 Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
 
 URI: [biolink:clinical_modifier_qualifier](https://w3id.org/biolink/vocab/clinical_modifier_qualifier)
+
 
 ## Domain and Range
 

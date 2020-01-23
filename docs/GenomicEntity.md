@@ -1,10 +1,11 @@
 
-# Class: genomic entity
+# Type: genomic entity
 
 
 an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
 
 URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
+
 
 ![img](images/GenomicEntity.png)
 
@@ -29,12 +30,12 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
  *  **[MolecularEntity](MolecularEntity.md)** *[affects mutation rate of](affects_mutation_rate_of.md)*  <sub>0..*</sub>  **[GenomicEntity](GenomicEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[decreases expression of](decreases_expression_of.md)*  <sub>0..*</sub>  **[GenomicEntity](GenomicEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[decreases mutation rate of](decreases_mutation_rate_of.md)*  <sub>0..*</sub>  **[GenomicEntity](GenomicEntity.md)**
- *  **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[object](genomic_sequence_localization_object.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
- *  **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[subject](genomic_sequence_localization_subject.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[genomic sequence localization➞object](genomic_sequence_localization_object.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[genomic sequence localization➞subject](genomic_sequence_localization_subject.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[increases expression of](increases_expression_of.md)*  <sub>0..*</sub>  **[GenomicEntity](GenomicEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[increases mutation rate of](increases_mutation_rate_of.md)*  <sub>0..*</sub>  **[GenomicEntity](GenomicEntity.md)**
- *  **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[object](sequence_feature_relationship_object.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
- *  **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[subject](sequence_feature_relationship_subject.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[sequence feature relationship➞object](sequence_feature_relationship_object.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[sequence feature relationship➞subject](sequence_feature_relationship_subject.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
 
 ## Attributes
 
@@ -43,17 +44,17 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [IdentifierType](types/IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
+    * range: [IriType](types/IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
 
@@ -64,3 +65,15 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
     * range: [OrganismTaxon](OrganismTaxon.md)
     * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | sequence feature |
+| **Mappings:** | | SO:0000110 |
+|  | | UMLSSC:T028 |
+|  | | UMLSST:gngm |
+|  | | UMLSSC:T086 |
+|  | | UMLSST:nusq |
+

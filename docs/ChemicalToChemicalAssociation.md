@@ -1,10 +1,11 @@
 
-# Class: chemical to chemical association
+# Type: chemical to chemical association
 
 
 A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 
 URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation)
+
 
 ![img](images/ChemicalToChemicalAssociation.png)
 
@@ -28,7 +29,7 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
 ### Own
 
- * [object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
+ * [chemical to chemical association➞object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ### Inherited from association:
@@ -39,20 +40,20 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
     * inherited from: [Association](Association.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [Uriorcurie](Uriorcurie.md)
+    * range: [Uriorcurie](types/Uriorcurie.md)
     * inherited from: [Association](Association.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
     * inherited from: [Association](Association.md)
- * [id](association_id.md)  <sub>REQ</sub>
+ * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: [Boolean](Boolean.md)
+    * range: [Boolean](types/Boolean.md)
     * inherited from: [Association](Association.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
@@ -73,5 +74,5 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
 ### Domain for slot:
 
- * [object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
+ * [chemical to chemical association➞object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
     * range: [ChemicalSubstance](ChemicalSubstance.md)

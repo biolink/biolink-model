@@ -1,10 +1,11 @@
 
-# Slot: object
+# Type: genotype to genotype part association_object
 
 
 
 
 URI: [biolink:genotype_to_genotype_part_association_object](https://w3id.org/biolink/vocab/genotype_to_genotype_part_association_object)
+
 
 ## Domain and Range
 

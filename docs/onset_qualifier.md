@@ -1,10 +1,11 @@
 
-# Slot: onset qualifier
+# Type: onset qualifier
 
 
 a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
 
 URI: [biolink:onset_qualifier](https://w3id.org/biolink/vocab/onset_qualifier)
+
 
 ## Domain and Range
 
@@ -25,7 +26,7 @@ URI: [biolink:onset_qualifier](https://w3id.org/biolink/vocab/onset_qualifier)
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
  * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)

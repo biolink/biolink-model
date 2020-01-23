@@ -1,10 +1,11 @@
 
-# Class: subject of investigation
+# Type: subject of investigation
 
 
 An entity that has the role of being studied in an investigation, study, or experiment
 
 URI: [biolink:SubjectOfInvestigation](https://w3id.org/biolink/vocab/SubjectOfInvestigation)
+
 
 ![img](images/SubjectOfInvestigation.png)
 

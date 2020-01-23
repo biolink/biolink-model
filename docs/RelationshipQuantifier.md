@@ -1,10 +1,11 @@
 
-# Class: relationship quantifier
+# Type: relationship quantifier
 
 
 
 
 URI: [biolink:RelationshipQuantifier](https://w3id.org/biolink/vocab/RelationshipQuantifier)
+
 
 ![img](images/RelationshipQuantifier.png)
 

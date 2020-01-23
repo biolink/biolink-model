@@ -1,10 +1,11 @@
 
-# Slot: positively regulates, process to process
+# Type: positively regulates, process to process
 
 
 
 
 URI: [biolink:positively_regulates_process_to_process](https://w3id.org/biolink/vocab/positively_regulates_process_to_process)
+
 
 ## Domain and Range
 
@@ -20,3 +21,10 @@ URI: [biolink:positively_regulates_process_to_process](https://w3id.org/biolink/
 ## Used by
 
  * [Occurrent](Occurrent.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002213 |
+

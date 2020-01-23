@@ -1,10 +1,11 @@
 
-# Slot: has output
+# Type: has output
 
 
 holds between a process and a continuant, where the continuant is an output of the process
 
 URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
+
 
 ## Domain and Range
 
@@ -16,7 +17,7 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 
 ## Children
 
- *  [has output](molecular_activity_has_output.md)
+ *  [molecular activity➞has output](molecular_activity_has_output.md)
 
 ## Used by
 
@@ -30,3 +31,11 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
  * [Phenomenon](Phenomenon.md)
  * [PhysiologicalProcess](PhysiologicalProcess.md)
  * [Procedure](Procedure.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002234 |
+| **In Subsets:** | | translator_minimal |
+

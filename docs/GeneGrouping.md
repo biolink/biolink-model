@@ -1,10 +1,11 @@
 
-# Class: gene grouping
+# Type: gene grouping
 
 
 any grouping of multiple genes or gene products
 
 URI: [biolink:GeneGrouping](https://w3id.org/biolink/vocab/GeneGrouping)
+
 
 ![img](images/GeneGrouping.png)
 

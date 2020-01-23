@@ -1,14 +1,15 @@
 
-# Slot: category
+# Type: category
 
 
 Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
 
 URI: [biolink:category](https://w3id.org/biolink/vocab/category)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>1..*</sub> [IriType](IriType.md)
+[NamedThing](NamedThing.md) ->  <sub>1..*</sub> [IriType](types/IriType.md)
 
 ## Parents
 
@@ -34,6 +35,7 @@ URI: [biolink:category](https://w3id.org/biolink/vocab/category)
  * [Cell](Cell.md)
  * [CellLine](CellLine.md)
  * [CellularComponent](CellularComponent.md)
+ * [ChemicalExposure](ChemicalExposure.md)
  * [ChemicalSubstance](ChemicalSubstance.md)
  * [ClinicalEntity](ClinicalEntity.md)
  * [ClinicalIntervention](ClinicalIntervention.md)
@@ -51,11 +53,11 @@ URI: [biolink:category](https://w3id.org/biolink/vocab/category)
  * [DistributionLevel](DistributionLevel.md)
  * [Drug](Drug.md)
  * [DrugExposure](DrugExposure.md)
- * [Environment](Environment.md)
  * [EnvironmentalFeature](EnvironmentalFeature.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [EvidenceType](EvidenceType.md)
  * [Exon](Exon.md)
+ * [ExposureEvent](ExposureEvent.md)
  * [FrequencyValue](FrequencyValue.md)
  * [Gene](Gene.md)
  * [GeneFamily](GeneFamily.md)
@@ -108,3 +110,11 @@ URI: [biolink:category](https://w3id.org/biolink/vocab/category)
  * [Transcript](Transcript.md)
  * [Treatment](Treatment.md)
  * [Zygosity](Zygosity.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | rdfs:subClassOf |
+| **In Subsets:** | | translator_minimal |
+

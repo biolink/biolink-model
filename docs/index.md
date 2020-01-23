@@ -36,8 +36,9 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
     * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
     * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
+       * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md) - An association between an exposure event and a disease
     * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
-    * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+    * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
     * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
        * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
        * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
@@ -86,8 +87,9 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
           * [Disease](Disease.md)
           * [PhenotypicFeature](PhenotypicFeature.md)
-       * [Environment](Environment.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-          * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
+       * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+          * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
+             * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
           * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
        * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
           * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
@@ -162,7 +164,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
  * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
     * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
- * [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for freqency type associations
+ * [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for frequency type associations
     * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
        * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
  * [FrequencyQuantifier](FrequencyQuantifier.md)
@@ -187,7 +189,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [association slot](association_slot.md) - any slot that relates an association to another entity
     * [association type](association_type.md) - connects an association to the type of association (e.g. gene to phenotype)
     * [change is catalyzed by](change_is_catalyzed_by.md) - hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
-       * [change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)
+       * [chemical to chemical derivation association➞change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)
     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
     * [edge label](edge_label.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
     * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
@@ -195,148 +197,159 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
     * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
     * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-       * [object](anatomical_entity_to_anatomical_entity_association_object.md)
-          * [object](anatomical_entity_to_anatomical_entity_ontogenic_association_object.md)
-          * [object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)
-       * [object](chemical_to_chemical_association_object.md)
-          * [object](chemical_to_chemical_derivation_association_object.md)
-       * [object](chemical_to_disease_or_phenotypic_feature_association_object.md)
-       * [object](chemical_to_gene_association_object.md)
-       * [object](chemical_to_pathway_association_object.md)
-       * [object](disease_or_phenotypic_feature_association_to_location_association_object.md)
-       * [object](entity_to_disease_association_object.md)
-       * [object](entity_to_phenotypic_feature_association_object.md)
-       * [object](functional_association_object.md)
-          * [object](gene_to_go_term_association_object.md)
-          * [object](macromolecular_machine_to_biological_process_association_object.md)
-          * [object](macromolecular_machine_to_cellular_component_association_object.md)
-          * [object](macromolecular_machine_to_molecular_activity_association_object.md)
-       * [object](gene_regulatory_relationship_object.md)
-       * [object](gene_to_expression_site_association_object.md)
-       * [object](gene_to_gene_association_object.md)
-       * [object](genomic_sequence_localization_object.md)
-       * [object](genotype_to_gene_association_object.md)
-       * [object](genotype_to_genotype_part_association_object.md)
-       * [object](genotype_to_variant_association_object.md)
-       * [object](material_sample_derivation_association_object.md)
-       * [object](pairwise_interaction_association_object.md)
-       * [object](population_to_population_association_object.md)
-       * [object](sequence_feature_relationship_object.md)
-          * [object](exon_to_transcript_relationship_object.md)
-          * [object](gene_to_gene_product_relationship_object.md)
-          * [object](transcript_to_gene_relationship_object.md)
-       * [object](sequence_variant_modulates_treatment_association_object.md)
-       * [object](thing_to_disease_or_phenotypic_feature_association_object.md)
-       * [object](variant_to_disease_association_object.md)
-       * [object](variant_to_population_association_object.md)
+       * [anatomical entity to anatomical entity association➞object](anatomical_entity_to_anatomical_entity_association_object.md)
+          * [anatomical entity to anatomical entity ontogenic association➞object](anatomical_entity_to_anatomical_entity_ontogenic_association_object.md)
+          * [anatomical entity to anatomical entity part of association➞object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)
+       * [chemical to chemical association➞object](chemical_to_chemical_association_object.md)
+          * [chemical to chemical derivation association➞object](chemical_to_chemical_derivation_association_object.md)
+       * [chemical to disease or phenotypic feature association➞object](chemical_to_disease_or_phenotypic_feature_association_object.md)
+       * [chemical to gene association➞object](chemical_to_gene_association_object.md)
+       * [chemical to pathway association➞object](chemical_to_pathway_association_object.md)
+       * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md)
+       * [disease to exposure association➞object](disease_to_exposure_association_object.md)
+       * [entity to disease association➞object](entity_to_disease_association_object.md)
+       * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)
+       * [functional association➞object](functional_association_object.md)
+          * [gene to go term association➞object](gene_to_go_term_association_object.md)
+          * [macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)
+          * [macromolecular machine to cellular component association➞object](macromolecular_machine_to_cellular_component_association_object.md)
+          * [macromolecular machine to molecular activity association➞object](macromolecular_machine_to_molecular_activity_association_object.md)
+       * [gene regulatory relationship➞object](gene_regulatory_relationship_object.md)
+       * [gene to expression site association➞object](gene_to_expression_site_association_object.md)
+       * [gene to gene association➞object](gene_to_gene_association_object.md)
+       * [genomic sequence localization➞object](genomic_sequence_localization_object.md)
+       * [genotype to gene association➞object](genotype_to_gene_association_object.md)
+       * [genotype to genotype part association➞object](genotype_to_genotype_part_association_object.md)
+       * [genotype to variant association➞object](genotype_to_variant_association_object.md)
+       * [material sample derivation association➞object](material_sample_derivation_association_object.md)
+       * [pairwise interaction association➞object](pairwise_interaction_association_object.md)
+       * [population to population association➞object](population_to_population_association_object.md)
+       * [sequence feature relationship➞object](sequence_feature_relationship_object.md)
+          * [exon to transcript relationship➞object](exon_to_transcript_relationship_object.md)
+          * [gene to gene product relationship➞object](gene_to_gene_product_relationship_object.md)
+          * [transcript to gene relationship➞object](transcript_to_gene_relationship_object.md)
+       * [sequence variant modulates treatment association➞object](sequence_variant_modulates_treatment_association_object.md)
+       * [thing to disease or phenotypic feature association➞object](thing_to_disease_or_phenotypic_feature_association_object.md)
+       * [variant to disease association➞object](variant_to_disease_association_object.md)
+       * [variant to population association➞object](variant_to_population_association_object.md)
     * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * [provided by](provided_by.md) - connects an association to the agent (person, organization or group) that provided it
     * [publications](publications.md) - connects an association to publications supporting the association
     * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
     * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
-       * [quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)
+       * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)
     * [relation](relation.md) - the relationship type by which a subject is connected to an object in an association
-       * [relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)
-       * [relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)
-       * [relation](chemical_to_chemical_derivation_association_relation.md)
-       * [relation](gene_regulatory_relationship_relation.md)
-       * [relation](gene_to_expression_site_association_relation.md)
-       * [relation](gene_to_gene_homology_association_relation.md)
-       * [relation](gene_to_gene_product_relationship_relation.md)
-       * [relation](genotype_to_gene_association_relation.md)
-       * [relation](genotype_to_genotype_part_association_relation.md)
-       * [relation](genotype_to_phenotypic_feature_association_relation.md)
-       * [relation](genotype_to_variant_association_relation.md)
-       * [relation](material_sample_derivation_association_relation.md)
-       * [relation](model_to_disease_mixin_relation.md)
-       * [relation](pairwise_gene_to_gene_interaction_relation.md)
-       * [relation](pairwise_interaction_association_relation.md)
-       * [relation](population_to_population_association_relation.md)
-       * [relation](variant_to_disease_association_relation.md)
+       * [anatomical entity to anatomical entity ontogenic association➞relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)
+       * [anatomical entity to anatomical entity part of association➞relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)
+       * [chemical to chemical derivation association➞relation](chemical_to_chemical_derivation_association_relation.md)
+       * [gene regulatory relationship➞relation](gene_regulatory_relationship_relation.md)
+       * [gene to expression site association➞relation](gene_to_expression_site_association_relation.md)
+       * [gene to gene homology association➞relation](gene_to_gene_homology_association_relation.md)
+       * [gene to gene product relationship➞relation](gene_to_gene_product_relationship_relation.md)
+       * [genotype to gene association➞relation](genotype_to_gene_association_relation.md)
+       * [genotype to genotype part association➞relation](genotype_to_genotype_part_association_relation.md)
+       * [genotype to phenotypic feature association➞relation](genotype_to_phenotypic_feature_association_relation.md)
+       * [genotype to variant association➞relation](genotype_to_variant_association_relation.md)
+       * [material sample derivation association➞relation](material_sample_derivation_association_relation.md)
+       * [model to disease mixin➞relation](model_to_disease_mixin_relation.md)
+       * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)
+       * [pairwise interaction association➞relation](pairwise_interaction_association_relation.md)
+       * [population to population association➞relation](population_to_population_association_relation.md)
+       * [variant to disease association➞relation](variant_to_disease_association_relation.md)
     * [sequence variant qualifier](sequence_variant_qualifier.md) - a qualifier used in an association where the variant
     * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
     * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     * [stage qualifier](stage_qualifier.md) - stage at which expression takes place
-       * [stage qualifier](gene_to_expression_site_association_stage_qualifier.md)
+       * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)
     * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-       * [subject](anatomical_entity_to_anatomical_entity_association_subject.md)
-          * [subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)
-          * [subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)
-       * [subject](case_to_thing_association_subject.md)
-       * [subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)
-       * [subject](cell_line_to_thing_association_subject.md)
-       * [subject](chemical_to_chemical_derivation_association_subject.md)
-       * [subject](chemical_to_thing_association_subject.md)
-       * [subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)
-       * [subject](disease_to_thing_association_subject.md)
-       * [subject](environment_to_phenotypic_feature_association_subject.md)
-       * [subject](functional_association_subject.md)
-          * [subject](gene_to_go_term_association_subject.md)
-       * [subject](gene_regulatory_relationship_subject.md)
-       * [subject](gene_to_disease_association_subject.md)
-          * [subject](gene_as_a_model_of_disease_association_subject.md)
-          * [subject](gene_has_variant_that_contributes_to_disease_association_subject.md)
-       * [subject](gene_to_expression_site_association_subject.md)
-       * [subject](gene_to_gene_association_subject.md)
-       * [subject](gene_to_phenotypic_feature_association_subject.md)
-       * [subject](gene_to_thing_association_subject.md)
-       * [subject](genomic_sequence_localization_subject.md)
-       * [subject](genotype_to_gene_association_subject.md)
-       * [subject](genotype_to_genotype_part_association_subject.md)
-       * [subject](genotype_to_phenotypic_feature_association_subject.md)
-       * [subject](genotype_to_thing_association_subject.md)
-       * [subject](genotype_to_variant_association_subject.md)
-       * [subject](material_sample_derivation_association_subject.md)
-       * [subject](material_sample_to_thing_association_subject.md)
-       * [subject](model_to_disease_mixin_subject.md)
-       * [subject](pairwise_interaction_association_subject.md)
-       * [subject](population_to_population_association_subject.md)
-       * [subject](sequence_feature_relationship_subject.md)
-          * [subject](exon_to_transcript_relationship_subject.md)
-          * [subject](gene_to_gene_product_relationship_subject.md)
-          * [subject](transcript_to_gene_relationship_subject.md)
-       * [subject](sequence_variant_modulates_treatment_association_subject.md)
-       * [subject](variant_to_disease_association_subject.md)
-       * [subject](variant_to_phenotypic_feature_association_subject.md)
-       * [subject](variant_to_population_association_subject.md)
-       * [subject](variant_to_thing_association_subject.md)
- * [drug](drug.md)
+       * [anatomical entity to anatomical entity association➞subject](anatomical_entity_to_anatomical_entity_association_subject.md)
+          * [anatomical entity to anatomical entity ontogenic association➞subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)
+          * [anatomical entity to anatomical entity part of association➞subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)
+       * [case to thing association➞subject](case_to_thing_association_subject.md)
+       * [cell line to disease or phenotypic feature association➞subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)
+       * [cell line to thing association➞subject](cell_line_to_thing_association_subject.md)
+       * [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)
+       * [chemical to thing association➞subject](chemical_to_thing_association_subject.md)
+       * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)
+       * [disease to thing association➞subject](disease_to_thing_association_subject.md)
+          * [disease to exposure association➞subject](disease_to_exposure_association_subject.md)
+       * [exposure event to phenotypic feature association➞subject](exposure_event_to_phenotypic_feature_association_subject.md)
+       * [functional association➞subject](functional_association_subject.md)
+          * [gene to go term association➞subject](gene_to_go_term_association_subject.md)
+       * [gene regulatory relationship➞subject](gene_regulatory_relationship_subject.md)
+       * [gene to disease association➞subject](gene_to_disease_association_subject.md)
+          * [gene as a model of disease association➞subject](gene_as_a_model_of_disease_association_subject.md)
+          * [gene has variant that contributes to disease association➞subject](gene_has_variant_that_contributes_to_disease_association_subject.md)
+       * [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)
+       * [gene to gene association➞subject](gene_to_gene_association_subject.md)
+       * [gene to phenotypic feature association➞subject](gene_to_phenotypic_feature_association_subject.md)
+       * [gene to thing association➞subject](gene_to_thing_association_subject.md)
+       * [genomic sequence localization➞subject](genomic_sequence_localization_subject.md)
+       * [genotype to gene association➞subject](genotype_to_gene_association_subject.md)
+       * [genotype to genotype part association➞subject](genotype_to_genotype_part_association_subject.md)
+       * [genotype to phenotypic feature association➞subject](genotype_to_phenotypic_feature_association_subject.md)
+       * [genotype to thing association➞subject](genotype_to_thing_association_subject.md)
+       * [genotype to variant association➞subject](genotype_to_variant_association_subject.md)
+       * [material sample derivation association➞subject](material_sample_derivation_association_subject.md)
+       * [material sample to thing association➞subject](material_sample_to_thing_association_subject.md)
+       * [model to disease mixin➞subject](model_to_disease_mixin_subject.md)
+       * [pairwise interaction association➞subject](pairwise_interaction_association_subject.md)
+       * [population to population association➞subject](population_to_population_association_subject.md)
+       * [sequence feature relationship➞subject](sequence_feature_relationship_subject.md)
+          * [exon to transcript relationship➞subject](exon_to_transcript_relationship_subject.md)
+          * [gene to gene product relationship➞subject](gene_to_gene_product_relationship_subject.md)
+          * [transcript to gene relationship➞subject](transcript_to_gene_relationship_subject.md)
+       * [sequence variant modulates treatment association➞subject](sequence_variant_modulates_treatment_association_subject.md)
+       * [variant to disease association➞subject](variant_to_disease_association_subject.md)
+       * [variant to phenotypic feature association➞subject](variant_to_phenotypic_feature_association_subject.md)
+       * [variant to population association➞subject](variant_to_population_association_subject.md)
+       * [variant to thing association➞subject](variant_to_thing_association_subject.md)
+ * [deprecated element has exact replacement](deprecated_element_has_exact_replacement.md) - When an element is deprecated, it can be automatically replaced by this uri or curie
+ * [deprecated element has possible replacement](deprecated_element_has_possible_replacement.md) - When an element is deprecated, it can be potentially replaced by this uri or curie
  * [has attribute](has_attribute.md) - connects any named thing to an attribute
  * [has attribute type](has_attribute_type.md) - connects an attribute to a class that describes it
- * [has exposure parts](has_exposure_parts.md)
  * [has numeric value](has_numeric_value.md) - connects a quantity value to a number
  * [has qualitative value](has_qualitative_value.md) - connects an attribute to a value
  * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
  * [has unit](has_unit.md) - connects a quantity value to a unit
  * [interacting molecules category](interacting_molecules_category.md)
+ * [mappings](mappings.md) - A list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.
+    * [close mappings](close_mappings.md) - A list of terms from different schemas or terminology systems that have close meaning.
+    * [exact mappings](exact_mappings.md) - A list of terms from different schemas or terminology systems that have identical meaning.
+    * [related mappings](related_mappings.md) - A list of terms from different schemas or terminology systems that have related meaning.
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
     * [aggregate statistic](aggregate_statistic.md)
        * [has count](has_count.md) - number of things with a particular property
-          * [has count](variant_to_population_association_has_count.md)
+          * [variant to population association➞has count](variant_to_population_association_has_count.md)
        * [has percentage](has_percentage.md) - equivalent to has quotient multiplied by 100
        * [has quotient](has_quotient.md)
-          * [has quotient](variant_to_population_association_has_quotient.md)
+          * [variant to population association➞has quotient](variant_to_population_association_has_quotient.md)
        * [has total](has_total.md) - total number of things in a particular reference set
-          * [has total](variant_to_population_association_has_total.md)
-    * [id](association_id.md) - A unique identifier for an association
-       * [id](pairwise_interaction_association_id.md)
+          * [variant to population association➞has total](variant_to_population_association_has_total.md)
+    * [association➞id](association_id.md) - A unique identifier for an association
+       * [pairwise interaction association➞id](pairwise_interaction_association_id.md)
     * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
     * [description](description.md) - a human-readable description of a thing
-       * [description](entity_to_phenotypic_feature_association_description.md)
+       * [entity to phenotypic feature association➞description](entity_to_phenotypic_feature_association_description.md)
     * [distribution](distribution.md)
     * [downloadURL](downloadURL.md)
     * [filler](filler.md) - The value in a property-value tuple
     * [full name](full_name.md) - a long-form human readable name for a thing
     * [genome build](genome_build.md) - TODO
     * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
-       * [has biological sequence](sequence_variant_has_biological_sequence.md)
+       * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md)
     * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
-    * [has gene](has_gene.md) - connects and entity to a single gene
-       * [has gene](sequence_variant_has_gene.md)
+    * [has drug](has_drug.md) - connects an entity to a single drug
+       * [drug exposure➞has drug](drug_exposure_has_drug.md)
+    * [has gene](has_gene.md) - connects an entity to a single gene
+       * [sequence variant➞has gene](sequence_variant_has_gene.md)
+    * [has receptor](has_receptor.md) - the organism or organism part being exposed
+    * [has route](has_route.md) - the process that results in the stressor coming into direct contact with the receptor
+    * [has stressor](has_stressor.md) - the process or entity that the receptor is being exposed to
     * [has zygosity](has_zygosity.md)
     * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-       * [id](sequence_variant_id.md)
+       * [sequence variant➞id](sequence_variant_id.md)
     * [interbase coordinate](interbase_coordinate.md) - TODO
        * [end interbase coordinate](end_interbase_coordinate.md)
        * [start interbase coordinate](start_interbase_coordinate.md)
@@ -344,7 +357,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [latitude](latitude.md) - latitude
     * [longitude](longitude.md) - longitude
     * [name](name.md) - A human-readable name for a thing
-       * [name](macromolecular_machine_name.md)
+       * [macromolecular machine➞name](macromolecular_machine_name.md)
     * [phase](phase.md) - TODO
     * [retrievedOn](retrievedOn.md)
     * [source data file](source_data_file.md)
@@ -421,6 +434,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
        * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
        * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
+    * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
     * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
        * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
        * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
@@ -440,11 +454,11 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
     * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
        * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
-          * [enabled by](molecular_activity_enabled_by.md)
+          * [molecular activity➞enabled by](molecular_activity_enabled_by.md)
        * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
-          * [has input](molecular_activity_has_input.md)
+          * [molecular activity➞has input](molecular_activity_has_input.md)
        * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
-          * [has output](molecular_activity_has_output.md)
+          * [molecular activity➞has output](molecular_activity_has_output.md)
     * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
     * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
        * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
@@ -462,6 +476,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
     * [overlaps](overlaps.md) - holds between entties that overlap in their extents (materials or processes)
        * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
+          * [treatment➞has part](treatment_has_part.md)
        * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
     * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
        * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
@@ -492,28 +507,28 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 #### Defined
 
- * [BiologicalSequence](BiologicalSequence.md)  ([String](String.md)) 
- * [Boolean](Boolean.md)  (**Bool**)  - A binary (true or false) value
- * [ChemicalFormulaValue](ChemicalFormulaValue.md)  (**str**)  - A chemical formula
- * [Date](Date.md)  (**XSDDate**)  - a date (year, month and day) in an idealized calendar
- * [Datetime](Datetime.md)  (**XSDDateTime**)  - The combination of a date and time
- * [Double](Double.md)  (**float**)  - A real number that conforms to the xsd:double specification
- * [Float](Float.md)  (**float**)  - A real number that conforms to the xsd:float specification
- * [Frequency](Frequency.md)  ([String](String.md)) 
- * [IdentifierType](IdentifierType.md)  (**ElementIdentifier**)  - A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form
- * [Integer](Integer.md)  (**int**)  - An integer
- * [IriType](IriType.md)  ([Uriorcurie](Uriorcurie.md))  - An IRI
- * [LabelType](LabelType.md)  ([String](String.md))  - A string that provides a human-readable name for a thing
- * [NarrativeText](NarrativeText.md)  ([String](String.md))  - A string that provides a human-readable description of something
- * [Ncname](Ncname.md)  (**NCName**)  - Prefix part of CURIE
- * [Nodeidentifier](Nodeidentifier.md)  (**NodeIdentifier**)  - A URI, CURIE or BNODE that represents a node in a model.
- * [Objectidentifier](Objectidentifier.md)  (**ElementIdentifier**)  - A URI or CURIE that represents an object in the model.
- * [PercentageFrequencyValue](PercentageFrequencyValue.md)  ([Double](Double.md)) 
- * [Quotient](Quotient.md)  ([Double](Double.md)) 
- * [String](String.md)  (**str**)  - A character string
- * [SymbolType](SymbolType.md)  ([String](String.md)) 
- * [Time](Time.md)  (**XSDTime**)  - A time object represents a (local) time of day, independent of any particular day
- * [TimeType](TimeType.md)  ([Time](Time.md)) 
- * [Unit](Unit.md)  ([String](String.md)) 
- * [Uri](Uri.md)  (**URI**)  - a complete URI
- * [Uriorcurie](Uriorcurie.md)  (**URIorCURIE**)  - a URI or a CURIE
+ * [BiologicalSequence](types/BiologicalSequence.md)  ([String](types/String.md)) 
+ * [Boolean](types/Boolean.md)  (**Bool**)  - A binary (true or false) value
+ * [ChemicalFormulaValue](types/ChemicalFormulaValue.md)  (**str**)  - A chemical formula
+ * [Date](types/Date.md)  (**XSDDate**)  - a date (year, month and day) in an idealized calendar
+ * [Datetime](types/Datetime.md)  (**XSDDateTime**)  - The combination of a date and time
+ * [Double](types/Double.md)  (**float**)  - A real number that conforms to the xsd:double specification
+ * [Float](types/Float.md)  (**float**)  - A real number that conforms to the xsd:float specification
+ * [Frequency](types/Frequency.md)  ([String](types/String.md)) 
+ * [IdentifierType](types/IdentifierType.md)  (**ElementIdentifier**)  - A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form
+ * [Integer](types/Integer.md)  (**int**)  - An integer
+ * [IriType](types/IriType.md)  ([Uriorcurie](types/Uriorcurie.md))  - An IRI
+ * [LabelType](types/LabelType.md)  ([String](types/String.md))  - A string that provides a human-readable name for a thing
+ * [NarrativeText](types/NarrativeText.md)  ([String](types/String.md))  - A string that provides a human-readable description of something
+ * [Ncname](types/Ncname.md)  (**NCName**)  - Prefix part of CURIE
+ * [Nodeidentifier](types/Nodeidentifier.md)  (**NodeIdentifier**)  - A URI, CURIE or BNODE that represents a node in a model.
+ * [Objectidentifier](types/Objectidentifier.md)  (**ElementIdentifier**)  - A URI or CURIE that represents an object in the model.
+ * [PercentageFrequencyValue](types/PercentageFrequencyValue.md)  ([Double](types/Double.md)) 
+ * [Quotient](types/Quotient.md)  ([Double](types/Double.md)) 
+ * [String](types/String.md)  (**str**)  - A character string
+ * [SymbolType](types/SymbolType.md)  ([String](types/String.md)) 
+ * [Time](types/Time.md)  (**XSDTime**)  - A time object represents a (local) time of day, independent of any particular day
+ * [TimeType](types/TimeType.md)  ([Time](types/Time.md)) 
+ * [Unit](types/Unit.md)  ([String](types/String.md)) 
+ * [Uri](types/Uri.md)  (**URI**)  - a complete URI
+ * [Uriorcurie](types/Uriorcurie.md)  (**URIorCURIE**)  - a URI or a CURIE
