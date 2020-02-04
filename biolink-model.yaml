@@ -1154,6 +1154,9 @@ slots:
     mappings:
       - GENO:0000840
       - GENO:0000841
+      - NCIT:R176
+      - PHAROS:gene_involved
+      - hetio:ASSOCIATES_DaG
 
   affects risk for:
     is_a: related to
@@ -1616,9 +1619,13 @@ slots:
       - GAMMA:adduct
       - GAMMA:antibody
 
+  #The following are proposed new predictes
+
   affects expression in:
     mappings:
       - GTEx:affects_expression_in
+
+  #Predicates relating variants to genes
 
   is missense variant of:
     description: holds between a sequence variant and a gene, such the sequence variant
@@ -1676,23 +1683,7 @@ slots:
       - SNPEFF:non_coding_transcript_exon_variant
       - SNPEFF:intron_variant
 
-  disease to gene association:
-    description: holds between a disease and a related gene
-    is_a: association
-    mappings:
-      - NCIT:R176
-      - PHAROS:gene_involved
-      - hetio:ASSOCIATES_DaG
-
-  results in motion of:
-    description: holds between a process and an entity that moves as a result of the
-      process
-    domain: process
-    range: entity
-
-  results in developmental progression of:
-    description: holds between a developmental process and the anatomical output of
-      that process
+  #relating disease to process
 
   disease has basis in:
     description: A relation that holds between a disease and an entity where the state
@@ -1701,6 +1692,10 @@ slots:
     mappings:
       - mondo#disease:has:basis:in:development:of
       - mondo#disease:has:basis:in:accumulation:of
+
+  #These may be pushable to causal relationships, but seem important for clarity
+  # Also because causes adverse event tends to be very noisy and it's useful to be able
+  # to distinguish it.  maybe not the best way to do that though.
 
   causes adverse event:
     description: holds between a drug and a disease or phenotype that can be caused
@@ -1714,6 +1709,9 @@ slots:
     mappings:
      - DrugCentral:0000001
 
+  #The remaining new slots are here because we ran across them somewhere and they didn't seem
+  # to map well to anything else.
+
   has not completed:
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
@@ -1726,9 +1724,6 @@ slots:
     mappings:
     - cl#has:completed
 
-  mereotopologically related to:
-    description: A mereological relationship or a topological relationship
-
   decreases molecular interaction:
     description: indicates that the source decreases the molecular interaction between
       the target and some other molecular entity
@@ -1740,9 +1735,6 @@ slots:
       the target and some other molecular entity
     mappings:
     - CTD:increases_molecular_interaction_with
-
-  spatially disjoint from:
-    description: holds between two entities that have no spatial overlap
 
   produced by:
     is_a: related to
@@ -1764,6 +1756,8 @@ slots:
     mappings:
       - cl#lacks:part
       - cl#lacks:plasma:membrane:part
+
+  #End proposed slots
 
 
 
