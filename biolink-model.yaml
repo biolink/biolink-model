@@ -1583,6 +1583,20 @@ slots:
     multivalued: true
     range: publication
 
+  genomic perturbations:
+    description: >-
+      One or more genomic perturbation that defines a multi gene perturbation
+    is_a: association slot
+    multivalued: true
+    range: genomic perturbation
+
+  genes:
+    description: >-
+      One or more genes associated with an association
+    is_a: association slot
+    multivalued: true
+    range: gene
+
   change is catalyzed by:
     is_a: association slot
     multivalued: true
@@ -2822,6 +2836,25 @@ classes:
     mappings:
       - "rdf:Statement"
       - "owl:Axiom"
+
+  perturbation:
+    is_a: association
+    description: >-
+      Some perturbation
+
+  multi gene perturbation:
+    is_a: perturbation
+    description: >-
+      A perturbation that is caused by two or more genes
+    slots:
+      - genomic perturbations
+
+  genomic perturbation:
+    is_a: association
+    description: >-
+      A genomic perturbation that affects one or more genes
+    slots:
+      - genes
 
   genotype to genotype part association:
     is_a: association
