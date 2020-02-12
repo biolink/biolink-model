@@ -333,3 +333,6 @@ attempts to model all of biology in an object model.
 
 Currently as far as we know there is no existing reference datamodel that is flexible enough to be used here.
 
+### How do I use Biolink Model YAML programatically?
+
+For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [biolink-model-toolkit](https://github.com/biolink/biolink-model-toolkit/). It provides a convenience methods for traversing Biolink Model.
