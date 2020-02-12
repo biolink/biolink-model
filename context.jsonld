@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-09-19 08:32\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-02-12 14:06\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": {
@@ -8,6 +8,7 @@
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://thebiogrid.org/",
       "BioSample": "http://example.org/UNKNOWN/BioSample/",
+      "CAID": "http://example.org/UNKNOWN/CAID/",
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
       "CHEMBL.COMPOUND": "http://identifiers.org/chembl.compound/",
       "CHEMBL.TARGET": "http://identifiers.org/chembl.target/",
@@ -16,33 +17,51 @@
       "CL": "http://purl.obolibrary.org/obo/CL_",
       "CLO": "http://purl.obolibrary.org/obo/CLO_",
       "ClinVar": "http://www.ncbi.nlm.nih.gov/clinvar/",
+      "DBSNP": "http://identifiers.org/dbsnp/",
+      "DOID": "http://purl.obolibrary.org/obo/DOID_",
+      "DRUGBANK": "http://identifiers.org/drugbank/",
       "ECO": "http://purl.obolibrary.org/obo/ECO_",
       "ECTO": "http://example.org/UNKNOWN/ECTO/",
       "EFO": "http://purl.obolibrary.org/obo/EFO_",
       "ENSEMBL": "http://ensembl.org/id/",
+      "ExO": "http://example.org/UNKNOWN/ExO/",
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
       "GENO": "http://purl.obolibrary.org/obo/GENO_",
       "GO": "http://purl.obolibrary.org/obo/GO_",
       "GOLD.META": "http://identifiers.org/gold.meta/",
+      "GTOPDB": "http://example.org/UNKNOWN/GTOPDB/",
       "HANCESTRO": "http://example.org/UNKNOWN/HANCESTRO/",
       "HGNC": "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=",
+      "HGVS": "http://example.org/UNKNOWN/HGVS/",
+      "HMDB": "http://www.hmdb.ca/metabolites/",
       "HP": "http://purl.obolibrary.org/obo/HP_",
       "IAO": "http://purl.obolibrary.org/obo/IAO_",
+      "INCHI": "http://identifiers.org/inchi/",
+      "INCHIKEY": "http://identifiers.org/inchikey/",
+      "IUPHAR": "http://example.org/UNKNOWN/IUPHAR/",
       "IntAct": "http://example.org/UNKNOWN/IntAct/",
+      "KEGG": "http://identifiers.org/kegg/",
+      "MEDDRA": "http://purl.bioontology.org/ontology/MEDDRA/",
+      "MESH": "http://purl.obolibrary.org/obo/MESH_",
       "MGI": "http://www.informatics.jax.org/accession/MGI:",
       "MIR": "http://identifiers.org/mir/",
       "MONDO": "http://purl.obolibrary.org/obo/MONDO_",
+      "MYVARIANT_HG19": "http://example.org/UNKNOWN/MYVARIANT_HG19/",
+      "MYVARIANT_HG38": "http://example.org/UNKNOWN/MYVARIANT_HG38/",
       "NCBIGene": "http://www.ncbi.nlm.nih.gov/gene/",
       "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
       "OBAN": "http://purl.org/oban/",
       "OBI": "http://purl.obolibrary.org/obo/OBI_",
       "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
       "OIO": "http://www.geneontology.org/formats/oboInOwl#",
-      "OMIM": "https://omim.org/entry/",
+      "OMIM": "http://purl.obolibrary.org/obo/OMIM_",
+      "ORPHANET": "http://identifiers.org/orphanet/",
       "PANTHER": "http://www.pantherdb.org/panther/family.do?clsAccession=",
+      "PHARMGKB": "http://example.org/UNKNOWN/PHARMGKB/",
       "PMID": "http://www.ncbi.nlm.nih.gov/pubmed/",
       "PO": "http://purl.obolibrary.org/obo/PO_",
       "PR": "http://purl.obolibrary.org/obo/PR_",
+      "PUBCHEM": "http://example.org/UNKNOWN/PUBCHEM/",
       "PW": "http://purl.obolibrary.org/obo/PW_",
       "PomBase": "https://www.pombase.org/spombe/result/",
       "RHEA": "http://identifiers.org/rhea/",
@@ -52,16 +71,21 @@
       "SEMMEDDB": "http://example.org/UNKNOWN/SEMMEDDB/",
       "SGD": "https://www.yeastgenome.org/locus/",
       "SIO": "http://semanticscience.org/resource/SIO_",
+      "SMPDB": "http://smpdb.ca/view/",
       "SO": "http://purl.obolibrary.org/obo/SO_",
       "UBERON": "http://purl.obolibrary.org/obo/UBERON_",
+      "UMLS": "http://linkedlifedata.com/resource/umls/id/",
       "UMLSSC": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/",
       "UMLSSG": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/",
       "UMLSST": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/",
+      "UNII": "http://fdasis.nlm.nih.gov/srs/unii/",
+      "UNIPROTKB": "http://example.org/UNKNOWN/UNIPROTKB/",
       "UPHENO": "http://purl.obolibrary.org/obo/UPHENO_",
-      "UniProtKB": "https://www.uniprot.org/uniprot/",
+      "UniProtKB": "http://identifiers.org/uniprot/",
       "VMC": "http://example.org/UNKNOWN/VMC/",
       "WB": "http://identifiers.org/wb/",
       "WD": "http://example.org/UNKNOWN/WD/",
+      "WIKIPATHWAYS": "http://identifiers.org/wikipathways/",
       "ZFIN": "http://zfin.org/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
       "dct": "http://example.org/UNKNOWN/dct/",
@@ -155,6 +179,9 @@
       "category": {
          "@type": "@id",
          "@id": "rdfs:subClassOf"
+      },
+      "caused_by": {
+         "@type": "@id"
       },
       "causes": {
          "@type": "@id",
@@ -300,6 +327,9 @@
       "has_count": {
          "@type": "xsd:integer"
       },
+      "has_drug": {
+         "@type": "@id"
+      },
       "has_evidence": {
          "@type": "@id",
          "@id": "RO:0002558"
@@ -348,6 +378,16 @@
       },
       "has_quotient": {
          "@type": "xsd:double"
+      },
+      "has_receptor": {
+         "@type": "@id",
+         "@id": "ExO:0000001"
+      },
+      "has_route": {
+         "@id": "ExO:0000055"
+      },
+      "has_stressor": {
+         "@id": "ExO:0000000"
       },
       "has_total": {
          "@type": "xsd:integer"
@@ -654,6 +694,9 @@
       "CellularComponent": {
          "@id": "GO:0005575"
       },
+      "ChemicalExposure": {
+         "@id": "ECTO:9000000"
+      },
       "ChemicalSubstance": {
          "@id": "SIO:010004"
       },
@@ -690,14 +733,14 @@
       "DrugExposure": {
          "@id": "ECTO:0000509"
       },
-      "Environment": {
-         "@id": "SIO:000955"
-      },
       "EvidenceType": {
          "@id": "ECO:0000000"
       },
       "Exon": {
          "@id": "SO:0000147"
+      },
+      "ExposureEvent": {
+         "@id": "SIO:000955"
       },
       "Gene": {
          "@id": "SO:0000704"

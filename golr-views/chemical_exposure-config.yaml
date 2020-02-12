@@ -1,7 +1,8 @@
+description: A chemical exposure is an intake of a particular chemical substance
 display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- biosample
+- chemical exposure
 document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- biosample
+- chemical exposure
 fields:
 - description: A unique identifier for a thing. Must be either a CURIE shorthand for
     a URI or a complete URI
@@ -64,11 +65,19 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has phenotype
   id: has_phenotype
-- cardinality: multi
-  description: connects a thing to a class representing a taxon
+- description: the organism or organism part being exposed
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - in taxon
-  id: in_taxon
-id: biosample
+  - has receptor
+  id: has_receptor
+- description: the process or entity that the receptor is being exposed to
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has stressor
+  id: has_stressor
+- description: the process that results in the stressor coming into direct contact
+    with the receptor
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has route
+  id: has_route
+id: chemical_exposure
 schema_generating: true
 weight: 20

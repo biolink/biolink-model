@@ -23,6 +23,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "aggregate_statistic",
     "capable_of",
     "category",
+    "caused_by",
     "causes",
     "coexists_with",
     "colocalizes_with",
@@ -39,6 +40,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "has_biological_sequence",
     "has_chemical_formula",
     "has_count",
+    "has_drug",
     "has_gene",
     "has_molecular_consequence",
     "has_part",
@@ -123,6 +125,13 @@ public class NamedThing {
     @JsonProperty("category")
     @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
     private List<String> category = new ArrayList<String>();
+    /**
+     * holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+     * 
+     */
+    @JsonProperty("caused_by")
+    @JsonPropertyDescription("holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other")
+    private List<String> causedBy = new ArrayList<String>();
     /**
      * holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
      * 
@@ -231,11 +240,18 @@ public class NamedThing {
     @JsonPropertyDescription("number of things with a particular property")
     private String hasCount;
     /**
-     * connects and entity to a single gene
+     * connects an entity to a single drug
+     * 
+     */
+    @JsonProperty("has_drug")
+    @JsonPropertyDescription("connects an entity to a single drug")
+    private String hasDrug;
+    /**
+     * connects an entity to a single gene
      * 
      */
     @JsonProperty("has_gene")
-    @JsonPropertyDescription("connects and entity to a single gene")
+    @JsonPropertyDescription("connects an entity to a single gene")
     private String hasGene;
     /**
      * connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
@@ -602,6 +618,24 @@ public class NamedThing {
     }
 
     /**
+     * holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+     * 
+     */
+    @JsonProperty("caused_by")
+    public List<String> getCausedBy() {
+        return causedBy;
+    }
+
+    /**
+     * holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+     * 
+     */
+    @JsonProperty("caused_by")
+    public void setCausedBy(List<String> causedBy) {
+        this.causedBy = causedBy;
+    }
+
+    /**
      * holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
      * 
      */
@@ -882,7 +916,25 @@ public class NamedThing {
     }
 
     /**
-     * connects and entity to a single gene
+     * connects an entity to a single drug
+     * 
+     */
+    @JsonProperty("has_drug")
+    public String getHasDrug() {
+        return hasDrug;
+    }
+
+    /**
+     * connects an entity to a single drug
+     * 
+     */
+    @JsonProperty("has_drug")
+    public void setHasDrug(String hasDrug) {
+        this.hasDrug = hasDrug;
+    }
+
+    /**
+     * connects an entity to a single gene
      * 
      */
     @JsonProperty("has_gene")
@@ -891,7 +943,7 @@ public class NamedThing {
     }
 
     /**
-     * connects and entity to a single gene
+     * connects an entity to a single gene
      * 
      */
     @JsonProperty("has_gene")
@@ -1605,12 +1657,12 @@ public class NamedThing {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("activelyInvolvedIn", activelyInvolvedIn).append("affects", affects).append("affectsRiskFor", affectsRiskFor).append("aggregateStatistic", aggregateStatistic).append("capableOf", capableOf).append("category", category).append("causes", causes).append("coexistsWith", coexistsWith).append("colocalizesWith", colocalizesWith).append("contributesTo", contributesTo).append("creationDate", creationDate).append("derivesFrom", derivesFrom).append("derivesInto", derivesInto).append("description", description).append("disrupts", disrupts).append("endInterbaseCoordinate", endInterbaseCoordinate).append("filler", filler).append("fullName", fullName).append("genomeBuild", genomeBuild).append("hasBiologicalSequence", hasBiologicalSequence).append("hasChemicalFormula", hasChemicalFormula).append("hasCount", hasCount).append("hasGene", hasGene).append("hasMolecularConsequence", hasMolecularConsequence).append("hasPart", hasPart).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("hasZygosity", hasZygosity).append("homologousTo", homologousTo).append("id", id).append("interactsWith", interactsWith).append("interbaseCoordinate", interbaseCoordinate).append("iri", iri).append("latitude", latitude).append("locatedIn", locatedIn).append("locationOf", locationOf).append("longitude", longitude).append("manifestationOf", manifestationOf).append("modelOf", modelOf).append("name", name).append("negativelyRegulates", negativelyRegulates).append("nodeProperty", nodeProperty).append("occursIn", occursIn).append("orthologousTo", orthologousTo).append("overlaps", overlaps).append("paralogousTo", paralogousTo).append("partOf", partOf).append("participatesIn", participatesIn).append("phase", phase).append("physicallyInteractsWith", physicallyInteractsWith).append("positivelyRegulates", positivelyRegulates).append("predisposes", predisposes).append("prevents", prevents).append("produces", produces).append("regulates", regulates).append("relatedTo", relatedTo).append("sameAs", sameAs).append("startInterbaseCoordinate", startInterbaseCoordinate).append("synonym", synonym).append("systematicSynonym", systematicSynonym).append("timepoint", timepoint).append("type", type).append("updateDate", updateDate).append("xenologousTo", xenologousTo).toString();
+        return new ToStringBuilder(this).append("activelyInvolvedIn", activelyInvolvedIn).append("affects", affects).append("affectsRiskFor", affectsRiskFor).append("aggregateStatistic", aggregateStatistic).append("capableOf", capableOf).append("category", category).append("causedBy", causedBy).append("causes", causes).append("coexistsWith", coexistsWith).append("colocalizesWith", colocalizesWith).append("contributesTo", contributesTo).append("creationDate", creationDate).append("derivesFrom", derivesFrom).append("derivesInto", derivesInto).append("description", description).append("disrupts", disrupts).append("endInterbaseCoordinate", endInterbaseCoordinate).append("filler", filler).append("fullName", fullName).append("genomeBuild", genomeBuild).append("hasBiologicalSequence", hasBiologicalSequence).append("hasChemicalFormula", hasChemicalFormula).append("hasCount", hasCount).append("hasDrug", hasDrug).append("hasGene", hasGene).append("hasMolecularConsequence", hasMolecularConsequence).append("hasPart", hasPart).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("hasZygosity", hasZygosity).append("homologousTo", homologousTo).append("id", id).append("interactsWith", interactsWith).append("interbaseCoordinate", interbaseCoordinate).append("iri", iri).append("latitude", latitude).append("locatedIn", locatedIn).append("locationOf", locationOf).append("longitude", longitude).append("manifestationOf", manifestationOf).append("modelOf", modelOf).append("name", name).append("negativelyRegulates", negativelyRegulates).append("nodeProperty", nodeProperty).append("occursIn", occursIn).append("orthologousTo", orthologousTo).append("overlaps", overlaps).append("paralogousTo", paralogousTo).append("partOf", partOf).append("participatesIn", participatesIn).append("phase", phase).append("physicallyInteractsWith", physicallyInteractsWith).append("positivelyRegulates", positivelyRegulates).append("predisposes", predisposes).append("prevents", prevents).append("produces", produces).append("regulates", regulates).append("relatedTo", relatedTo).append("sameAs", sameAs).append("startInterbaseCoordinate", startInterbaseCoordinate).append("synonym", synonym).append("systematicSynonym", systematicSynonym).append("timepoint", timepoint).append("type", type).append("updateDate", updateDate).append("xenologousTo", xenologousTo).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(partOf).append(capableOf).append(systematicSynonym).append(hasChemicalFormula).append(interbaseCoordinate).append(locationOf).append(prevents).append(coexistsWith).append(positivelyRegulates).append(type).append(hasTotal).append(relatedTo).append(interactsWith).append(predisposes).append(overlaps).append(id).append(hasMolecularConsequence).append(longitude).append(phase).append(nodeProperty).append(hasPart).append(creationDate).append(contributesTo).append(paralogousTo).append(physicallyInteractsWith).append(locatedIn).append(manifestationOf).append(derivesInto).append(name).append(produces).append(modelOf).append(updateDate).append(latitude).append(activelyInvolvedIn).append(description).append(hasGene).append(hasCount).append(occursIn).append(startInterbaseCoordinate).append(synonym).append(hasQuotient).append(causes).append(hasBiologicalSequence).append(aggregateStatistic).append(affectsRiskFor).append(endInterbaseCoordinate).append(disrupts).append(iri).append(homologousTo).append(colocalizesWith).append(derivesFrom).append(affects).append(fullName).append(orthologousTo).append(xenologousTo).append(hasPercentage).append(participatesIn).append(regulates).append(genomeBuild).append(hasZygosity).append(negativelyRegulates).append(filler).append(category).append(sameAs).append(timepoint).toHashCode();
+        return new HashCodeBuilder().append(partOf).append(capableOf).append(systematicSynonym).append(hasChemicalFormula).append(interbaseCoordinate).append(locationOf).append(prevents).append(coexistsWith).append(positivelyRegulates).append(type).append(hasTotal).append(relatedTo).append(interactsWith).append(predisposes).append(overlaps).append(id).append(hasMolecularConsequence).append(longitude).append(phase).append(nodeProperty).append(hasPart).append(causedBy).append(creationDate).append(contributesTo).append(paralogousTo).append(physicallyInteractsWith).append(locatedIn).append(manifestationOf).append(derivesInto).append(name).append(produces).append(modelOf).append(updateDate).append(latitude).append(activelyInvolvedIn).append(description).append(hasGene).append(hasCount).append(occursIn).append(startInterbaseCoordinate).append(synonym).append(hasQuotient).append(causes).append(hasBiologicalSequence).append(hasDrug).append(aggregateStatistic).append(affectsRiskFor).append(endInterbaseCoordinate).append(disrupts).append(iri).append(homologousTo).append(colocalizesWith).append(derivesFrom).append(affects).append(fullName).append(orthologousTo).append(xenologousTo).append(hasPercentage).append(participatesIn).append(regulates).append(genomeBuild).append(hasZygosity).append(negativelyRegulates).append(filler).append(category).append(sameAs).append(timepoint).toHashCode();
     }
 
     @Override
@@ -1622,7 +1674,7 @@ public class NamedThing {
             return false;
         }
         NamedThing rhs = ((NamedThing) other);
-        return new EqualsBuilder().append(partOf, rhs.partOf).append(capableOf, rhs.capableOf).append(systematicSynonym, rhs.systematicSynonym).append(hasChemicalFormula, rhs.hasChemicalFormula).append(interbaseCoordinate, rhs.interbaseCoordinate).append(locationOf, rhs.locationOf).append(prevents, rhs.prevents).append(coexistsWith, rhs.coexistsWith).append(positivelyRegulates, rhs.positivelyRegulates).append(type, rhs.type).append(hasTotal, rhs.hasTotal).append(relatedTo, rhs.relatedTo).append(interactsWith, rhs.interactsWith).append(predisposes, rhs.predisposes).append(overlaps, rhs.overlaps).append(id, rhs.id).append(hasMolecularConsequence, rhs.hasMolecularConsequence).append(longitude, rhs.longitude).append(phase, rhs.phase).append(nodeProperty, rhs.nodeProperty).append(hasPart, rhs.hasPart).append(creationDate, rhs.creationDate).append(contributesTo, rhs.contributesTo).append(paralogousTo, rhs.paralogousTo).append(physicallyInteractsWith, rhs.physicallyInteractsWith).append(locatedIn, rhs.locatedIn).append(manifestationOf, rhs.manifestationOf).append(derivesInto, rhs.derivesInto).append(name, rhs.name).append(produces, rhs.produces).append(modelOf, rhs.modelOf).append(updateDate, rhs.updateDate).append(latitude, rhs.latitude).append(activelyInvolvedIn, rhs.activelyInvolvedIn).append(description, rhs.description).append(hasGene, rhs.hasGene).append(hasCount, rhs.hasCount).append(occursIn, rhs.occursIn).append(startInterbaseCoordinate, rhs.startInterbaseCoordinate).append(synonym, rhs.synonym).append(hasQuotient, rhs.hasQuotient).append(causes, rhs.causes).append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(aggregateStatistic, rhs.aggregateStatistic).append(affectsRiskFor, rhs.affectsRiskFor).append(endInterbaseCoordinate, rhs.endInterbaseCoordinate).append(disrupts, rhs.disrupts).append(iri, rhs.iri).append(homologousTo, rhs.homologousTo).append(colocalizesWith, rhs.colocalizesWith).append(derivesFrom, rhs.derivesFrom).append(affects, rhs.affects).append(fullName, rhs.fullName).append(orthologousTo, rhs.orthologousTo).append(xenologousTo, rhs.xenologousTo).append(hasPercentage, rhs.hasPercentage).append(participatesIn, rhs.participatesIn).append(regulates, rhs.regulates).append(genomeBuild, rhs.genomeBuild).append(hasZygosity, rhs.hasZygosity).append(negativelyRegulates, rhs.negativelyRegulates).append(filler, rhs.filler).append(category, rhs.category).append(sameAs, rhs.sameAs).append(timepoint, rhs.timepoint).isEquals();
+        return new EqualsBuilder().append(partOf, rhs.partOf).append(capableOf, rhs.capableOf).append(systematicSynonym, rhs.systematicSynonym).append(hasChemicalFormula, rhs.hasChemicalFormula).append(interbaseCoordinate, rhs.interbaseCoordinate).append(locationOf, rhs.locationOf).append(prevents, rhs.prevents).append(coexistsWith, rhs.coexistsWith).append(positivelyRegulates, rhs.positivelyRegulates).append(type, rhs.type).append(hasTotal, rhs.hasTotal).append(relatedTo, rhs.relatedTo).append(interactsWith, rhs.interactsWith).append(predisposes, rhs.predisposes).append(overlaps, rhs.overlaps).append(id, rhs.id).append(hasMolecularConsequence, rhs.hasMolecularConsequence).append(longitude, rhs.longitude).append(phase, rhs.phase).append(nodeProperty, rhs.nodeProperty).append(hasPart, rhs.hasPart).append(causedBy, rhs.causedBy).append(creationDate, rhs.creationDate).append(contributesTo, rhs.contributesTo).append(paralogousTo, rhs.paralogousTo).append(physicallyInteractsWith, rhs.physicallyInteractsWith).append(locatedIn, rhs.locatedIn).append(manifestationOf, rhs.manifestationOf).append(derivesInto, rhs.derivesInto).append(name, rhs.name).append(produces, rhs.produces).append(modelOf, rhs.modelOf).append(updateDate, rhs.updateDate).append(latitude, rhs.latitude).append(activelyInvolvedIn, rhs.activelyInvolvedIn).append(description, rhs.description).append(hasGene, rhs.hasGene).append(hasCount, rhs.hasCount).append(occursIn, rhs.occursIn).append(startInterbaseCoordinate, rhs.startInterbaseCoordinate).append(synonym, rhs.synonym).append(hasQuotient, rhs.hasQuotient).append(causes, rhs.causes).append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(hasDrug, rhs.hasDrug).append(aggregateStatistic, rhs.aggregateStatistic).append(affectsRiskFor, rhs.affectsRiskFor).append(endInterbaseCoordinate, rhs.endInterbaseCoordinate).append(disrupts, rhs.disrupts).append(iri, rhs.iri).append(homologousTo, rhs.homologousTo).append(colocalizesWith, rhs.colocalizesWith).append(derivesFrom, rhs.derivesFrom).append(affects, rhs.affects).append(fullName, rhs.fullName).append(orthologousTo, rhs.orthologousTo).append(xenologousTo, rhs.xenologousTo).append(hasPercentage, rhs.hasPercentage).append(participatesIn, rhs.participatesIn).append(regulates, rhs.regulates).append(genomeBuild, rhs.genomeBuild).append(hasZygosity, rhs.hasZygosity).append(negativelyRegulates, rhs.negativelyRegulates).append(filler, rhs.filler).append(category, rhs.category).append(sameAs, rhs.sameAs).append(timepoint, rhs.timepoint).isEquals();
     }
 
 }

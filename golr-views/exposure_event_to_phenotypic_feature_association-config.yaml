@@ -1,12 +1,12 @@
 description: Any association between an environment and a phenotypic feature, where
   being in the environment influences the phenotype
 display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- environment to phenotypic feature association
+- exposure event to phenotypic feature association
 document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- environment to phenotypic feature association
+- exposure event to phenotypic feature association
 fields:
 - display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - environment to phenotypic feature association_subject
+  - exposure event to phenotypic feature association_subject
   id: subject
 - description: the relationship type by which a subject is connected to an object
     in an association
@@ -75,6 +75,6 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - onset qualifier
   id: onset_qualifier
-id: environment_to_phenotypic_feature_association
+id: exposure_event_to_phenotypic_feature_association
 schema_generating: true
 weight: 20

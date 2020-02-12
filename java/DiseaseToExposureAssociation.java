@@ -7,17 +7,25 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
- * EnvironmentToPhenotypicFeatureAssociation
+ * DiseaseToExposureAssociation
  * <p>
- * Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+ * An association between an exposure event and a disease
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "object",
     "subject"
 })
-public class EnvironmentToPhenotypicFeatureAssociation {
+public class DiseaseToExposureAssociation {
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("object")
+    private String object;
     /**
      * 
      * (Required)
@@ -25,6 +33,26 @@ public class EnvironmentToPhenotypicFeatureAssociation {
      */
     @JsonProperty("subject")
     private String subject;
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("object")
+    public String getObject() {
+        return object;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("object")
+    public void setObject(String object) {
+        this.object = object;
+    }
 
     /**
      * 
@@ -48,12 +76,12 @@ public class EnvironmentToPhenotypicFeatureAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("object", object).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(subject).toHashCode();
+        return new HashCodeBuilder().append(subject).append(object).toHashCode();
     }
 
     @Override
@@ -61,11 +89,11 @@ public class EnvironmentToPhenotypicFeatureAssociation {
         if (other == this) {
             return true;
         }
-        if ((other instanceof EnvironmentToPhenotypicFeatureAssociation) == false) {
+        if ((other instanceof DiseaseToExposureAssociation) == false) {
             return false;
         }
-        EnvironmentToPhenotypicFeatureAssociation rhs = ((EnvironmentToPhenotypicFeatureAssociation) other);
-        return new EqualsBuilder().append(subject, rhs.subject).isEquals();
+        DiseaseToExposureAssociation rhs = ((DiseaseToExposureAssociation) other);
+        return new EqualsBuilder().append(subject, rhs.subject).append(object, rhs.object).isEquals();
     }
 
 }

@@ -6,16 +6,16 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
- * Environment
+ * ChemicalExposure
  * <p>
- * A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ * A chemical exposure is an intake of a particular chemical substance
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
 
 })
-public class Environment {
+public class ChemicalExposure {
 
 
     @Override
@@ -33,10 +33,10 @@ public class Environment {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Environment) == false) {
+        if ((other instanceof ChemicalExposure) == false) {
             return false;
         }
-        Environment rhs = ((Environment) other);
+        ChemicalExposure rhs = ((ChemicalExposure) other);
         return new EqualsBuilder().isEquals();
     }
 

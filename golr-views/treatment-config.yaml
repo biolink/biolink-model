@@ -66,6 +66,19 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has phenotype
   id: has_phenotype
+- description: the organism or organism part being exposed
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has receptor
+  id: has_receptor
+- description: the process or entity that the receptor is being exposed to
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has stressor
+  id: has_stressor
+- description: the process that results in the stressor coming into direct contact
+    with the receptor
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has route
+  id: has_route
 - cardinality: multi
   description: holds between a therapeutic procedure or chemical substance and a disease
     or phenotypic feature that it is used to treat
@@ -74,8 +87,8 @@ fields:
   id: treats
 - cardinality: multi
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - has exposure parts
-  id: has_exposure_parts
+  - treatment_has part
+  id: has_part
 id: treatment
 schema_generating: true
 weight: 20

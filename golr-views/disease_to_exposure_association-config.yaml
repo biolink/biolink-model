@@ -1,23 +1,19 @@
-description: An association between a biosample and a disease or phenotype
+description: An association between an exposure event and a disease
 display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- biosample to disease or phenotypic feature association
+- disease to exposure association
 document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- biosample to disease or phenotypic feature association
+- disease to exposure association
 fields:
-- description: connects an association to the subject of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - subject
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - disease to exposure association_subject
   id: subject
 - description: the relationship type by which a subject is connected to an object
     in an association
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - relation
   id: relation
-- description: connects an association to the object of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - object
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - disease to exposure association_object
   id: object
 - description: A unique identifier for an association
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
@@ -56,6 +52,6 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - edge label
   id: edge_label
-id: biosample_to_disease_or_phenotypic_feature_association
+id: disease_to_exposure_association
 schema_generating: true
 weight: 20

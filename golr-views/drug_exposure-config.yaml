@@ -65,10 +65,23 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has phenotype
   id: has_phenotype
+- description: the organism or organism part being exposed
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has receptor
+  id: has_receptor
+- description: the process or entity that the receptor is being exposed to
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has stressor
+  id: has_stressor
+- description: the process that results in the stressor coming into direct contact
+    with the receptor
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has route
+  id: has_route
 - cardinality: multi
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - drug
-  id: drug
+  - drug exposure_has drug
+  id: has_drug
 id: drug_exposure
 schema_generating: true
 weight: 20

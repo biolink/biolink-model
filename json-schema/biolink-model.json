@@ -167,6 +167,13 @@
          },
          "type": "array"
       },
+      "caused_by": {
+         "description": "holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "causes": {
          "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",
          "items": {
@@ -360,12 +367,6 @@
       "downloadURL": {
          "type": "string"
       },
-      "drug": {
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
       "edge_label": {
          "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
          "type": "string"
@@ -458,18 +459,16 @@
          "description": "number of things with a particular property",
          "type": "string"
       },
+      "has_drug": {
+         "description": "connects an entity to a single drug",
+         "type": "string"
+      },
       "has_evidence": {
          "description": "connects an association to an instance of supporting evidence",
          "type": "string"
       },
-      "has_exposure_parts": {
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
       "has_gene": {
-         "description": "connects and entity to a single gene",
+         "description": "connects an entity to a single gene",
          "type": "string"
       },
       "has_gene_product": {
@@ -541,6 +540,18 @@
          "type": "array"
       },
       "has_quotient": {
+         "type": "string"
+      },
+      "has_receptor": {
+         "description": "the organism or organism part being exposed",
+         "type": "string"
+      },
+      "has_route": {
+         "description": "the process that results in the stressor coming into direct contact with the receptor",
+         "type": "string"
+      },
+      "has_stressor": {
+         "description": "the process or entity that the receptor is being exposed to",
          "type": "string"
       },
       "has_total": {
@@ -1449,6 +1460,12 @@
          "title": "CellularComponent",
          "type": "object"
       },
+      "ChemicalExposure": {
+         "description": "A chemical exposure is an intake of a particular chemical substance",
+         "properties": {},
+         "title": "ChemicalExposure",
+         "type": "object"
+      },
       "ChemicalSubstance": {
          "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
          "properties": {},
@@ -1662,20 +1679,25 @@
          "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
          "type": "object"
       },
+      "DiseaseToExposureAssociation": {
+         "description": "An association between an exposure event and a disease",
+         "properties": {
+            "object": {
+               "required": true,
+               "type": "string"
+            },
+            "subject": {
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "DiseaseToExposureAssociation",
+         "type": "object"
+      },
       "DiseaseToPhenotypicFeatureAssociation": {
          "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way",
          "properties": {},
          "title": "DiseaseToPhenotypicFeatureAssociation",
-         "type": "object"
-      },
-      "DistributionLevel": {
-         "description": "",
-         "properties": {
-            "downloadURL": {
-               "type": "string"
-            }
-         },
-         "title": "DistributionLevel",
          "type": "object"
       },
       "DistributionLevel": {
@@ -1697,7 +1719,7 @@
       "DrugExposure": {
          "description": "A drug exposure is an intake of a particular chemical substance",
          "properties": {
-            "drug": {
+            "has_drug": {
                "items": {
                   "type": "string"
                },
@@ -1706,23 +1728,6 @@
             }
          },
          "title": "DrugExposure",
-         "type": "object"
-      },
-      "Environment": {
-         "description": "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
-         "properties": {},
-         "title": "Environment",
-         "type": "object"
-      },
-      "EnvironmentToPhenotypicFeatureAssociation": {
-         "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype",
-         "properties": {
-            "subject": {
-               "required": true,
-               "type": "string"
-            }
-         },
-         "title": "EnvironmentToPhenotypicFeatureAssociation",
          "type": "object"
       },
       "EnvironmentalFeature": {
@@ -1799,8 +1804,38 @@
          "title": "ExonToTranscriptRelationship",
          "type": "object"
       },
+      "ExposureEvent": {
+         "description": "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
+         "properties": {
+            "has_receptor": {
+               "description": "the organism or organism part being exposed",
+               "type": "string"
+            },
+            "has_route": {
+               "description": "the process that results in the stressor coming into direct contact with the receptor",
+               "type": "string"
+            },
+            "has_stressor": {
+               "description": "the process or entity that the receptor is being exposed to",
+               "type": "string"
+            }
+         },
+         "title": "ExposureEvent",
+         "type": "object"
+      },
+      "ExposureEventToPhenotypicFeatureAssociation": {
+         "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype",
+         "properties": {
+            "subject": {
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "ExposureEventToPhenotypicFeatureAssociation",
+         "type": "object"
+      },
       "FrequencyQualifierMixin": {
-         "description": "Qualifier for freqency type associations",
+         "description": "Qualifier for frequency type associations",
          "properties": {
             "frequency_qualifier": {
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -2820,6 +2855,13 @@
                "required": true,
                "type": "array"
             },
+            "caused_by": {
+               "description": "holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "causes": {
                "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",
                "items": {
@@ -2904,8 +2946,12 @@
                "description": "number of things with a particular property",
                "type": "string"
             },
+            "has_drug": {
+               "description": "connects an entity to a single drug",
+               "type": "string"
+            },
             "has_gene": {
-               "description": "connects and entity to a single gene",
+               "description": "connects an entity to a single gene",
                "type": "string"
             },
             "has_molecular_consequence": {
@@ -3490,7 +3536,7 @@
       "Treatment": {
          "description": "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'",
          "properties": {
-            "has_exposure_parts": {
+            "has_part": {
                "items": {
                   "type": "string"
                },
@@ -3574,7 +3620,7 @@
          "type": "object"
       }
    },
-   "title": "biolink_model",
+   "title": "Biolink-Model",
    "type": "object"
 }
 
