@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/biolink/biolink-model.svg?branch=master)](https://travis-ci.org/biolink/biolink-model)
 [![DOI](https://zenodo.org/badge/112995625.svg)](https://zenodo.org/badge/latestdoi/112995625) [![Join the chat at https://gitter.im/biolink-model/community](https://badges.gitter.im/biolink-model/community.svg)](https://gitter.im/biolink-model/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-![bl](images/biolink-logo.png)
+<img src="images/biolink-logo.png" width="20%">
 
 # BioLink Model
 
