@@ -123,7 +123,7 @@ slots:
     mappings:
       - SEMMEDDB:ASSOCIATED_WITH
       - BFO:0000054
-      - core#protects
+      - UBERON_CORE:protects
       - GOREL:0002005
       - GOREL:0012006
 
@@ -206,7 +206,7 @@ slots:
     mappings:
       - CTD:increases_abundance_of
       - CTD:increases^abundance
-      - ubergraph-axioms.ofn#is:increase:of
+      - ubergraph-axioms.ofn:is_increase_of
 
   decreases abundance of:
     description: >-
@@ -219,7 +219,7 @@ slots:
     mappings:
       - CTD:decreases_abundance_of
       - CTD:decreases^abundance
-      - ubergraph-axioms.ofn#is:decrease:of
+      - ubergraph-axioms.ofn:is_decrease_of
 
   affects activity of:
     description: >-
@@ -1037,7 +1037,7 @@ slots:
     mappings:
       - SIO:010302
       - SIO:010302
-      - core#sexually:homologous:to
+      - UBERON_CORE:sexually_homologous_to
 
   paralogous to:
     is_a: homologous to
@@ -1087,26 +1087,26 @@ slots:
       - BSPO:0015007
       - BSPO:0015008
       - BSPO:0015014
-      - core#anastomoses:with
-      - core#anteriorly:connected:to
-      - core#posteriorly:connected:to
-      - core#channel:for
-      - core#channels:from
-      - core#channels:into
-      - core#conduit:for
-      - core#distally:connected:to
-      - core#extends:fibers:into
-      - core#filtered:through
-      - core#indirectly:supplies
-      - core#proximally:connected:to
-      - core#synapsed:by
-      - core#transitively:anteriorly:connected:to
-      - core#transitively:connected:to
-      - core#transitively:distally:connected:to
-      - core#transitively:proximally:connected:to
+      - UBERON_CORE:anastomoses_with
+      - UBERON_CORE:anteriorly_connected_to
+      - UBERON_CORE:posteriorly_connected_to
+      - UBERON_CORE:channel_for
+      - UBERON_CORE:channels_from
+      - UBERON_CORE:channels_into
+      - UBERON_CORE:conduit_for
+      - UBERON_CORE:distally_connected_to
+      - UBERON_CORE:extends_fibers_into
+      - UBERON_CORE:filtered_through
+      - UBERON_CORE:indirectly_supplies
+      - UBERON_CORE:proximally_connected_to
+      - UBERON_CORE:synapsed_by
+      - UBERON_CORE:transitively_anteriorly_connected_to
+      - UBERON_CORE:transitively_connected_to
+      - UBERON_CORE:transitively_distally_connected_to
+      - UBERON_CORE:transitively_proximally_connected_to
       - BSPO:0015009
       - BSPO:0015012
-      - bspo#parallel:to
+      - BSPO:parallel_to
 
   in pathway with:
     description: >-
@@ -1196,7 +1196,7 @@ slots:
     mappings:
       - SEMMEDDB:CAUSES
       - WD:P1542
-      - mondo#disease:triggers      
+      - MONDO:disease_triggers
 
   caused by:
     description: >-
@@ -1226,7 +1226,7 @@ slots:
       - WD:P2175
       - CTD:therapeutic
       - CTD:negativecorrelation
-      - mondo#disease:responds:to
+      - MONDO:disease_responds_to
 
   prevents :
     is_a: affects risk for
@@ -1335,7 +1335,7 @@ slots:
     mappings:
       - SEMMEDDB:OCCURS_IN
       - SEMMEDDB:PROCESS_OF
-      - core#site:of
+      - UBERON_CORE:site_of
 
   located in:
     is_a: related to
@@ -1363,9 +1363,9 @@ slots:
       - BSPO:0015101
       - BSPO:0015102
       - BSPO:0015202
-      - core#in:central:side:of
-      - core#in:innermost:side:of
-      - core#in:outermost:side:of
+      - UBERON_CORE:in_central_side_of
+      - UBERON_CORE:in_innermost_side_of
+      - UBERON_CORE:in_outermost_side_of
 
   location of:
     is_a: related to
@@ -1423,9 +1423,9 @@ slots:
       - BSPO:0001108
       - BSPO:0001113
       - BSPO:0001115
-      - core#layer:part:of
-      - core#subdivision:of
-      - core#trunk:part:of
+      - UBERON_CORE:layer_part_of
+      - UBERON_CORE:subdivision_of
+      - UBERON_CORE:trunk_part_of
 
   has participant:
     is_a: related to
@@ -1691,8 +1691,8 @@ slots:
       of the entity has contribution to the disease.
     is_a: related to
     mappings:
-      - mondo#disease:has:basis:in:development:of
-      - mondo#disease:has:basis:in:accumulation:of
+      - MONDO:disease_has_basis_in_development_of
+      - MONDO:disease_has_basis_in_accumulation_of
 
   #These may be pushable to causal relationships, but seem important for clarity
   # Also because causes adverse event tends to be very noisy and it's useful to be able
@@ -1717,13 +1717,13 @@ slots:
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
     mappings:
-      - cl#has:not:completed
+      - CL:has_not_completed
 
   has completed:
     description: holds between an entity and a process that the entity is capable of
       and has completed
     mappings:
-    - cl#has:completed
+    - CL:has_completed
 
   decreases molecular interaction:
     description: indicates that the source decreases the molecular interaction between
@@ -1747,16 +1747,16 @@ slots:
 
   has increased amount:
     mappings:
-      - cl#has:high:plasma:membrane:amount
+      - CL:has_high_plasma_membrane_amount
 
   has decreased amount:
     mappings:
-      - cl#has:low:plasma:membrane:amount
+      - CL:has_low_plasma_membrane_amount
   
   lacks part:
     mappings:
-      - cl#lacks:part
-      - cl#lacks:plasma:membrane:part
+      - CL:lacks_part
+      - CL:lacks_plasma_membrane_part
 
   #End proposed slots
 
