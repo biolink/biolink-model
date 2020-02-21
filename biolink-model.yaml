@@ -180,7 +180,7 @@ slots:
       - GO:acts_on_population_of
       - GOREL:0001006
       - CTD:inferred
-      - CTD:prediction/hypothesis
+      - CTD:prediction_hypothesis
       - UPHENO:0000001
 
   affects abundance of:
@@ -193,7 +193,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_abundance_of
-      - CTD:affects^abundance
+      - CTD:affects_abundance
 
   increases abundance of:
     description: >-
@@ -205,7 +205,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_abundance_of
-      - CTD:increases^abundance
+      - CTD:increases_abundance
       - ubergraph-axioms.ofn:is_increase_of
 
   decreases abundance of:
@@ -218,7 +218,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_abundance_of
-      - CTD:decreases^abundance
+      - CTD:decreases_abundance
       - ubergraph-axioms.ofn:is_decrease_of
 
   affects activity of:
@@ -231,7 +231,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_activity_of
-      - CTD:affects^activity
+      - CTD:affects_activity
       - GAMMA:allosteric_modulator
       - GAMMA:modulator
       - GAMMA:regulator
@@ -246,7 +246,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_activity_of
-      - CTD:increases^activity
+      - CTD:increases_activity
       - GAMMA:activator
       - GAMMA:partial_agonist
       - GAMMA:agonist
@@ -269,7 +269,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_activity_of
-      - CTD:decreases^activity
+      - CTD:decreases_activity
       - GAMMA:allosteric_antagonist
       - GAMMA:partial_antagonist
       - GAMMA:antagonist
@@ -300,7 +300,7 @@ slots:
     range: genomic entity
     mappings:
       - CTD:affects_expression_of
-      - CTD:affects^expression
+      - CTD:affects_expression
 
   increases expression of:
     description: >-
@@ -312,7 +312,7 @@ slots:
     range: genomic entity
     mappings:
       - CTD:increases_expression_of
-      - CTD:increases^expression
+      - CTD:increases_expression
       - GTEx:increases_expression_of
 
   decreases expression of:
@@ -325,7 +325,7 @@ slots:
     range: genomic entity
     mappings:
       - CTD:decreases_expression_of
-      - CTD:decreases^expression
+      - CTD:decreases_expression
       - GTEx:decreases_expression_of
 
   affects folding of:
@@ -338,7 +338,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_folding_of
-      - CTD:affects^folding
+      - CTD:affects_folding
 
   increases folding of:
     description: >-
@@ -350,7 +350,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_folding_of
-      - CTD:increases^folding
+      - CTD:increases_folding
 
   decreases folding of:
     description: >-
@@ -362,7 +362,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_folding_of
-      - CTD:decreases^folding
+      - CTD:decreases_folding
 
   affects localization of:
     description: >-
@@ -374,7 +374,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_localization_of
-      - CTD:affects^localization
+      - CTD:affects_localization
       - GAMMA:storage
       - GOREL:0002003
 
@@ -388,7 +388,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_localization_of
-      - CTD:increases^localization
+      - CTD:increases_localization
 
   decreases localization of:
     description: >-
@@ -400,7 +400,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_localization_of
-      - CTD:decreases^localization
+      - CTD:decreases_localization
 
   affects metabolic processing of:
     description: >-
@@ -412,7 +412,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_metabolic_processing_of
-      - CTD:affects^metabolic processing
+      - CTD:affects_metabolic_processing
       - GAMMA:catalytic_activity
 
   increases metabolic processing of:
@@ -425,7 +425,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_metabolic_processing_of
-      - CTD:increases^metabolic processing
+      - CTD:increases_metabolic_processing
 
   decreases metabolic processing of:
     description: >-
@@ -437,7 +437,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_metabolic_processing_of
-      - CTD:decreases^metabolic processing
+      - CTD:decreases_metabolic_processing
 
   affects molecular modification of:
     description: >-
@@ -449,37 +449,37 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_molecular_modification_of
-      - CTD:affects^acetylation
-      - CTD:affects^acylation
-      - CTD:affects^alkylation
-      - CTD:affects^amination
-      - CTD:affects^carbamoylation
-      - CTD:affects^ethylation
-      - CTD:affects^glutathionylation
-      - CTD:affects^glycation
-      - CTD:affects^glycosylation
-      - CTD:affects^glucuronidation
-      - CTD:affects^N-linked glycosylation
-      - CTD:affects^O-linked glycosylation
-      - CTD:affects^hydroxylation
-      - CTD:affects^lipidation
-      - CTD:affects^farnesylation
-      - CTD:affects^geranoylation
-      - CTD:affects^myristoylation
-      - CTD:affects^palmitoylation
-      - CTD:affects^prenylation
-      - CTD:affects^methylation
-      - CTD:affects^nitrosation
-      - CTD:affects^nucleotidylation
-      - CTD:affects^phosphorylation
-      - CTD:affects^ribosylation
-      - CTD:affects^ADP-ribosylation
-      - CTD:affects^sulfation
-      - CTD:affects^sumoylation
-      - CTD:affects^ubiquitination
-      - CTD:affects^oxidation
-      - CTD:affects^reduction
-      - CTD:affects^carboxylation
+      - CTD:affects_acetylation
+      - CTD:affects_acylation
+      - CTD:affects_alkylation
+      - CTD:affects_amination
+      - CTD:affects_carbamoylation
+      - CTD:affects_ethylation
+      - CTD:affects_glutathionylation
+      - CTD:affects_glycation
+      - CTD:affects_glycosylation
+      - CTD:affects_glucuronidation
+      - CTD:affects_N-linked_glycosylation
+      - CTD:affects_O-linked_glycosylation
+      - CTD:affects_hydroxylation
+      - CTD:affects_lipidation
+      - CTD:affects_farnesylation
+      - CTD:affects_geranoylation
+      - CTD:affects_myristoylation
+      - CTD:affects_palmitoylation
+      - CTD:affects_prenylation
+      - CTD:affects_methylation
+      - CTD:affects_nitrosation
+      - CTD:affects_nucleotidylation
+      - CTD:affects_phosphorylation
+      - CTD:affects_ribosylation
+      - CTD:affects_ADP-ribosylation
+      - CTD:affects_sulfation
+      - CTD:affects_sumoylation
+      - CTD:affects_ubiquitination
+      - CTD:affects_oxidation
+      - CTD:affects_reduction
+      - CTD:affects_carboxylation
 
   increases molecular modification of:
     description: >-
@@ -491,37 +491,37 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_molecular_modification_of
-      - CTD:increases^acetylation
-      - CTD:increases^acylation
-      - CTD:increases^alkylation
-      - CTD:increases^amination
-      - CTD:increases^carbamoylation
-      - CTD:increases^ethylation
-      - CTD:increases^glutathionylation
-      - CTD:increases^glycation
-      - CTD:increases^glycosylation
-      - CTD:increases^glucuronidation
-      - CTD:increases^N-linked glycosylation
-      - CTD:increases^O-linked glycosylation
-      - CTD:increases^hydroxylation
-      - CTD:increases^lipidation
-      - CTD:increases^farnesylation
-      - CTD:increases^geranoylation
-      - CTD:increases^myristoylation
-      - CTD:increases^palmitoylation
-      - CTD:increases^prenylation
-      - CTD:increases^methylation
-      - CTD:increases^nitrosation
-      - CTD:increases^nucleotidylation
-      - CTD:increases^phosphorylation
-      - CTD:increases^ribosylation
-      - CTD:increases^ADP-ribosylation
-      - CTD:increases^sulfation
-      - CTD:increases^sumoylation
-      - CTD:increases^ubiquitination
-      - CTD:increases^oxidation
-      - CTD:increases^reduction
-      - CTD:increases^carboxylation
+      - CTD:increases_acetylation
+      - CTD:increases_acylation
+      - CTD:increases_alkylation
+      - CTD:increases_amination
+      - CTD:increases_carbamoylation
+      - CTD:increases_ethylation
+      - CTD:increases_glutathionylation
+      - CTD:increases_glycation
+      - CTD:increases_glycosylation
+      - CTD:increases_glucuronidation
+      - CTD:increases_N-linked_glycosylation
+      - CTD:increases_O-linked_glycosylation
+      - CTD:increases_hydroxylation
+      - CTD:increases_lipidation
+      - CTD:increases_farnesylation
+      - CTD:increases_geranoylation
+      - CTD:increases_myristoylation
+      - CTD:increases_palmitoylation
+      - CTD:increases_prenylation
+      - CTD:increases_methylation
+      - CTD:increases_nitrosation
+      - CTD:increases_nucleotidylation
+      - CTD:increases_phosphorylation
+      - CTD:increases_ribosylation
+      - CTD:increases_ADP-ribosylation
+      - CTD:increases_sulfation
+      - CTD:increases_sumoylation
+      - CTD:increases_ubiquitination
+      - CTD:increases_oxidation
+      - CTD:increases_reduction
+      - CTD:increases_carboxylation
       - GAMMA:acetylation
       - GAMMA:oxidizer
 
@@ -535,37 +535,37 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_molecular_modification_of
-      - CTD:decreases^acetylation
-      - CTD:decreases^acylation
-      - CTD:decreases^alkylation
-      - CTD:decreases^amination
-      - CTD:decreases^carbamoylation
-      - CTD:decreases^ethylation
-      - CTD:decreases^glutathionylation
-      - CTD:decreases^glycation
-      - CTD:decreases^glycosylation
-      - CTD:decreases^glucuronidation
-      - CTD:decreases^N-linked glycosylation
-      - CTD:decreases^O-linked glycosylation
-      - CTD:decreases^hydroxylation
-      - CTD:decreases^lipidation
-      - CTD:decreases^farnesylation
-      - CTD:decreases^geranoylation
-      - CTD:decreases^myristoylation
-      - CTD:decreases^palmitoylation
-      - CTD:decreases^prenylation
-      - CTD:decreases^methylation
-      - CTD:decreases^nitrosation
-      - CTD:decreases^nucleotidylation
-      - CTD:decreases^phosphorylation
-      - CTD:decreases^ribosylation
-      - CTD:decreases^ADP-ribosylation
-      - CTD:decreases^sulfation
-      - CTD:decreases^sumoylation
-      - CTD:decreases^ubiquitination
-      - CTD:decreases^oxidation
-      - CTD:decreases^reduction
-      - CTD:decreases^carboxylation
+      - CTD:decreases_acetylation
+      - CTD:decreases_acylation
+      - CTD:decreases_alkylation
+      - CTD:decreases_amination
+      - CTD:decreases_carbamoylation
+      - CTD:decreases_ethylation
+      - CTD:decreases_glutathionylation
+      - CTD:decreases_glycation
+      - CTD:decreases_glycosylation
+      - CTD:decreases_glucuronidation
+      - CTD:decreases_N-linked_glycosylation
+      - CTD:decreases_O-linked_glycosylation
+      - CTD:decreases_hydroxylation
+      - CTD:decreases_lipidation
+      - CTD:decreases_farnesylation
+      - CTD:decreases_geranoylation
+      - CTD:decreases_myristoylation
+      - CTD:decreases_palmitoylation
+      - CTD:decreases_prenylation
+      - CTD:decreases_methylation
+      - CTD:decreases_nitrosation
+      - CTD:decreases_nucleotidylation
+      - CTD:decreases_phosphorylation
+      - CTD:decreases_ribosylation
+      - CTD:decreases_ADP-ribosylation
+      - CTD:decreases_sulfation
+      - CTD:decreases_sumoylation
+      - CTD:decreases_ubiquitination
+      - CTD:decreases_oxidation
+      - CTD:decreases_reduction
+      - CTD:decreases_carboxylation
       - GAMMA:deoxidizer
 
   affects synthesis of:
@@ -578,7 +578,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_synthesis_of
-      - CTD:affects^chemical synthesis
+      - CTD:affects_chemical_synthesis
 
   increases synthesis of:
     description: >-
@@ -590,7 +590,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_synthesis_of
-      - CTD:increases^chemical synthesis
+      - CTD:increases_chemical_synthesis
 
   decreases synthesis of:
     description: >-
@@ -602,7 +602,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_synthesis_of
-      - CTD:decreases^chemical synthesis
+      - CTD:decreases_chemical_synthesis
       - GAMMA:inhibition_of_synthesis
 
   affects degradation of:
@@ -615,9 +615,9 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_degradation_of
-      - CTD:affects^degradation
-      - CTD:affects^cleavage
-      - CTD:affects^hydrolysis
+      - CTD:affects_degradation
+      - CTD:affects_cleavage
+      - CTD:affects_hydrolysis
 
   increases degradation of:
     description: >-
@@ -629,9 +629,9 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_degradation_of
-      - CTD:increases^degradation
-      - CTD:increases^cleavage
-      - CTD:increases^hydrolysis
+      - CTD:increases_degradation
+      - CTD:increases_cleavage
+      - CTD:increases_hydrolysis
       - GAMMA:substrate
       - GOREL:0002004
 
@@ -645,9 +645,9 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_degradation_of
-      - CTD:decreases^degradation
-      - CTD:decreases^cleavage
-      - CTD:decreases^hydrolysis
+      - CTD:decreases_degradation
+      - CTD:decreases_cleavage
+      - CTD:decreases_hydrolysis
 
   affects mutation rate of:
     description: >-
@@ -659,7 +659,7 @@ slots:
     range: genomic entity
     mappings:
       - CTD:affects_mutation_rate_of
-      - CTD:affects^mutagenesis
+      - CTD:affects_mutagenesis
 
   increases mutation rate of:
     description: >-
@@ -671,7 +671,7 @@ slots:
     range: genomic entity
     mappings:
       - CTD:increases_mutation_rate_of
-      - CTD:increases^mutagenesis
+      - CTD:increases_mutagenesis
 
   decreases mutation rate of:
     description: >-
@@ -683,7 +683,7 @@ slots:
     range: genomic entity
     mappings:
       - CTD:decreases_mutation_rate_of
-      - CTD:decreases^mutagenesis
+      - CTD:decreases_mutagenesis
 
   affects response to:
     description: >-
@@ -695,7 +695,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_response_to
-      - CTD:affects^response to substance
+      - CTD:affects_response_to_substance
 
   increases response to:
     description: >-
@@ -707,7 +707,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_response_to
-      - CTD:increases^response to substance
+      - CTD:increases_response_to_substance
 
   decreases response to:
     description: >-
@@ -719,7 +719,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_response_to
-      - CTD:decreases^response to substance
+      - CTD:decreases_response_to_substance
       - GAMMA:desensitize_the_target
 
   affects splicing of:
@@ -732,8 +732,8 @@ slots:
     range: transcript
     mappings:
       - CTD:affects_splicing_of
-      - CTD:affects^RNA splicing
-      - CTD:affects^splicing
+      - CTD:affects_RNA_splicing
+      - CTD:affects_splicing
 
   increases splicing of:
     description: >-
@@ -745,8 +745,8 @@ slots:
     range: transcript
     mappings:
       - CTD:increases_splicing_of
-      - CTD:increases^RNA splicing
-      - CTD:increases^splicing
+      - CTD:increases_RNA_splicing
+      - CTD:increases_splicing
 
   decreases splicing of:
     description: >-
@@ -758,8 +758,8 @@ slots:
     range: transcript
     mappings:
       - CTD:decreases_splicing_of
-      - CTD:decreases^RNA splicing
-      - CTD:decreases^splicing
+      - CTD:decreases_RNA_splicing
+      - CTD:decreases_splicing
 
   affects stability of:
     description: >-
@@ -771,7 +771,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_stability_of
-      - CTD:affects^stability
+      - CTD:affects_stability
       - GAMMA:stabilization
 
   increases stability of:
@@ -784,7 +784,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_stability_of
-      - CTD:increases^stability
+      - CTD:increases_stability
 
   decreases stability of:
     description: >-
@@ -796,7 +796,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_stability_of
-      - CTD:decreases^stability
+      - CTD:decreases_stability
 
   affects transport of:
     description: >-
@@ -808,7 +808,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_transport_of
-      - CTD:affects^transport
+      - CTD:affects_transport
 
   increases transport of:
     description: >-
@@ -820,7 +820,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_transport_of
-      - CTD:increases^transport
+      - CTD:increases_transport
       - GAMMA:carrier
       - GAMMA:transporter
 
@@ -834,7 +834,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_transport_of
-      - CTD:decreases^transport
+      - CTD:decreases_transport
 
   affects secretion of:
     description: >-
@@ -846,8 +846,8 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_secretion_of
-      - CTD:affects^secretion
-      - CTD:affects^export
+      - CTD:affects_secretion
+      - CTD:affects_export
 
   increases secretion of:
     description: >-
@@ -859,8 +859,8 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_secretion_of
-      - CTD:increases^secretion
-      - CTD:increases^export
+      - CTD:increases_secretion
+      - CTD:increases_export
 
   decreases secretion of:
     description: >-
@@ -872,8 +872,8 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_secretion_of
-      - CTD:decreases^secretion
-      - CTD:decreases^export
+      - CTD:decreases_secretion
+      - CTD:decreases_export
 
   affects uptake of:
     description: >-
@@ -885,8 +885,8 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_uptake_of
-      - CTD:affects^uptake
-      - CTD:affects^import
+      - CTD:affects_uptake
+      - CTD:affects_import
 
   increases uptake of:
     description: >-
@@ -898,8 +898,8 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_uptake_of
-      - CTD:increases^uptake
-      - CTD:increases^import
+      - CTD:increases_uptake
+      - CTD:increases_import
 
   decreases uptake of:
     description: >-
@@ -911,8 +911,8 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_uptake_of
-      - CTD:decreases^uptake
-      - CTD:decreases^import
+      - CTD:decreases_uptake
+      - CTD:decreases_import
 
   regulates:
     is_a: affects
@@ -986,7 +986,7 @@ slots:
       - SEMMEDDB:STIMULATES
       - hetio:UPREGULATES_AuG
       - hetio:UPREGULATES_DuG
-      - GO:acts_upstream_of_or_within_positive_effect 
+      - GO:acts_upstream_of_or_within_positive_effect
 
   negatively regulates, entity to entity:
     aliases: ['activity directly negatively regulates activity of']
@@ -1182,7 +1182,7 @@ slots:
       - translator_minimal
     slot_uri: RO:0002326
     mappings:
-      - CTD:marker/mechanism
+      - CTD:marker_mechanism
       - CTD:positivecorrelation
 
   causes:
@@ -1598,12 +1598,12 @@ slots:
       - SIO:000203
       - chembio:interacts
       - CTD:interacts_with
-      - CTD:affects^binding
+      - CTD:affects_binding
       - PHAROS:drug_targets
       - GAMMA:interacts_with
       - GAMMA:antibody_binding
       - GAMMA:other
-      - GAMMA:other/unknown
+      - GAMMA:other_unknown
       - GAMMA:pharmacological_chaperone
       - GAMMA:releasing_agent
       - GAMMA:kd
