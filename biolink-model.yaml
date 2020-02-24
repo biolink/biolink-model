@@ -193,7 +193,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_abundance_of
-      - CTD:affects_abundance
 
   increases abundance of:
     description: >-
@@ -205,7 +204,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_abundance_of
-      - CTD:increases_abundance
       - ubergraph-axioms.ofn:is_increase_of
 
   decreases abundance of:
@@ -218,7 +216,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_abundance_of
-      - CTD:decreases_abundance
       - ubergraph-axioms.ofn:is_decrease_of
 
   affects activity of:
@@ -231,7 +228,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_activity_of
-      - CTD:affects_activity
       - GAMMA:allosteric_modulator
       - GAMMA:modulator
       - GAMMA:regulator
@@ -246,7 +242,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_activity_of
-      - CTD:increases_activity
       - GAMMA:activator
       - GAMMA:partial_agonist
       - GAMMA:agonist
@@ -269,7 +264,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_activity_of
-      - CTD:decreases_activity
       - GAMMA:allosteric_antagonist
       - GAMMA:partial_antagonist
       - GAMMA:antagonist
@@ -300,7 +294,6 @@ slots:
     range: genomic entity
     mappings:
       - CTD:affects_expression_of
-      - CTD:affects_expression
 
   increases expression of:
     description: >-
@@ -312,7 +305,6 @@ slots:
     range: genomic entity
     mappings:
       - CTD:increases_expression_of
-      - CTD:increases_expression
       - GTEx:increases_expression_of
 
   decreases expression of:
@@ -325,7 +317,6 @@ slots:
     range: genomic entity
     mappings:
       - CTD:decreases_expression_of
-      - CTD:decreases_expression
       - GTEx:decreases_expression_of
 
   affects folding of:
@@ -338,7 +329,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_folding_of
-      - CTD:affects_folding
 
   increases folding of:
     description: >-
@@ -350,7 +340,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_folding_of
-      - CTD:increases_folding
 
   decreases folding of:
     description: >-
@@ -362,7 +351,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_folding_of
-      - CTD:decreases_folding
 
   affects localization of:
     description: >-
@@ -374,7 +362,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_localization_of
-      - CTD:affects_localization
       - GAMMA:storage
       - GOREL:0002003
 
@@ -388,7 +375,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_localization_of
-      - CTD:increases_localization
 
   decreases localization of:
     description: >-
@@ -400,7 +386,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_localization_of
-      - CTD:decreases_localization
 
   affects metabolic processing of:
     description: >-
@@ -412,7 +397,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_metabolic_processing_of
-      - CTD:affects_metabolic_processing
       - GAMMA:catalytic_activity
 
   increases metabolic processing of:
@@ -425,7 +409,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_metabolic_processing_of
-      - CTD:increases_metabolic_processing
 
   decreases metabolic processing of:
     description: >-
@@ -437,7 +420,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_metabolic_processing_of
-      - CTD:decreases_metabolic_processing
 
   affects molecular modification of:
     description: >-
@@ -771,7 +753,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_stability_of
-      - CTD:affects_stability
       - GAMMA:stabilization
 
   increases stability of:
@@ -784,7 +765,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_stability_of
-      - CTD:increases_stability
 
   decreases stability of:
     description: >-
@@ -796,7 +776,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_stability_of
-      - CTD:decreases_stability
 
   affects transport of:
     description: >-
@@ -808,7 +787,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_transport_of
-      - CTD:affects_transport
 
   increases transport of:
     description: >-
@@ -820,7 +798,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_transport_of
-      - CTD:increases_transport
       - GAMMA:carrier
       - GAMMA:transporter
 
@@ -834,7 +811,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_transport_of
-      - CTD:decreases_transport
 
   affects secretion of:
     description: >-
@@ -846,7 +822,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_secretion_of
-      - CTD:affects_secretion
       - CTD:affects_export
 
   increases secretion of:
@@ -859,7 +834,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_secretion_of
-      - CTD:increases_secretion
       - CTD:increases_export
 
   decreases secretion of:
@@ -872,7 +846,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_secretion_of
-      - CTD:decreases_secretion
       - CTD:decreases_export
 
   affects uptake of:
@@ -885,7 +858,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_uptake_of
-      - CTD:affects_uptake
       - CTD:affects_import
 
   increases uptake of:
@@ -898,7 +870,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_uptake_of
-      - CTD:increases_uptake
       - CTD:increases_import
 
   decreases uptake of:
@@ -911,7 +882,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_uptake_of
-      - CTD:decreases_uptake
       - CTD:decreases_import
 
   regulates:
