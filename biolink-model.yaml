@@ -304,8 +304,7 @@ slots:
     domain: molecular entity
     range: genomic entity
     mappings:
-      - CTD:increases_expression_of
-      - GTEx:increases_expression_of
+      - CTD:increases_expression_of      
 
   decreases expression of:
     description: >-
@@ -317,7 +316,6 @@ slots:
     range: genomic entity
     mappings:
       - CTD:decreases_expression_of
-      - GTEx:decreases_expression_of
 
   affects folding of:
     description: >-
@@ -560,7 +558,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_synthesis_of
-      - CTD:affects_chemical_synthesis
 
   increases synthesis of:
     description: >-
@@ -572,7 +569,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_synthesis_of
-      - CTD:increases_chemical_synthesis
 
   decreases synthesis of:
     description: >-
@@ -584,7 +580,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_synthesis_of
-      - CTD:decreases_chemical_synthesis
       - GAMMA:inhibition_of_synthesis
 
   affects degradation of:
@@ -597,7 +592,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_degradation_of
-      - CTD:affects_degradation
       - CTD:affects_cleavage
       - CTD:affects_hydrolysis
 
@@ -611,7 +605,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_degradation_of
-      - CTD:increases_degradation
       - CTD:increases_cleavage
       - CTD:increases_hydrolysis
       - GAMMA:substrate
@@ -627,7 +620,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_degradation_of
-      - CTD:decreases_degradation
       - CTD:decreases_cleavage
       - CTD:decreases_hydrolysis
 
@@ -677,7 +669,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_response_to
-      - CTD:affects_response_to_substance
 
   increases response to:
     description: >-
@@ -689,7 +680,6 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_response_to
-      - CTD:increases_response_to_substance
 
   decreases response to:
     description: >-
@@ -715,7 +705,6 @@ slots:
     mappings:
       - CTD:affects_splicing_of
       - CTD:affects_RNA_splicing
-      - CTD:affects_splicing
 
   increases splicing of:
     description: >-
@@ -728,7 +717,6 @@ slots:
     mappings:
       - CTD:increases_splicing_of
       - CTD:increases_RNA_splicing
-      - CTD:increases_splicing
 
   decreases splicing of:
     description: >-
@@ -741,7 +729,6 @@ slots:
     mappings:
       - CTD:decreases_splicing_of
       - CTD:decreases_RNA_splicing
-      - CTD:decreases_splicing
 
   affects stability of:
     description: >-
@@ -1005,7 +992,6 @@ slots:
       - translator_minimal
     slot_uri: RO:HOM0000001
     mappings:
-      - SIO:010302
       - SIO:010302
       - UBERON_CORE:sexually_homologous_to
 
@@ -1292,8 +1278,6 @@ slots:
     slot_uri: RO:0002200
     mappings:
       - hetio:PRESENTS_DpS
-      - GAMMA:0000002
-      - gwascatalog:has_phenotype
 
   occurs in:
     is_a: related to
@@ -1317,7 +1301,6 @@ slots:
     slot_uri: RO:0001025
     mappings:
       - GO:regulates_o_occurs_in
-      - quick_go:is_active_in
       - BSPO:0000107
       - BSPO:0000108
       - BSPO:0000120
@@ -1452,9 +1435,6 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: RO:0002331
-    mappings:
-    - biolink:gene_get_process
-    - biolink:gene_get_process_or_function
 
   capable of:
     is_a: actively involved in
@@ -1464,8 +1444,6 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: RO:0002215
-    mappings:
-      - biolink:gene_get_function
 
   enabled by:
     is_a: has participant
