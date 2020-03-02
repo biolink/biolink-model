@@ -1235,18 +1235,6 @@ slots:
     range: identifier type
     required: true
 
-  association_id:
-    is_a: node property
-    identifier: true
-    description: >-
-        A unique identifier for an association
-    in_subset:
-        - translator_minimal
-    domain: association
-    range: nodeidentifier
-    ifabsent: bnode
-    alias: id
-
   iri:
     is_a: node property
     description: >-
@@ -1324,6 +1312,17 @@ slots:
     aliases: ['edge property', 'statement property']
     description: >-
       any slot that relates an association to another entity
+
+  association_id:
+    is_a: association slot
+    identifier: true
+    description: >-
+        A unique identifier for an association
+    in_subset:
+        - translator_minimal
+    domain: association
+    range: identifier type
+    alias: id
 
   subject:
     is_a: association slot
