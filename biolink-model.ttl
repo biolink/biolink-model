@@ -187,34 +187,34 @@
         "rdfs",
         "skos",
         "xsd" ;
-    meta:generation_date "2020-02-12 14:15"^^xsd:dateTime ;
+    meta:generation_date "2020-03-02 14:34"^^xsd:dateTime ;
     meta:id <https://w3id.org/biolink/biolink-model> ;
     meta:imports biolinkml:types ;
     meta:metamodel_version "1.4.1" ;
-    meta:prefixes [ meta:prefix_prefix "UMLSSC" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
-        [ meta:prefix_prefix "UMLSST" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
-        [ meta:prefix_prefix "OBAN" ;
-            meta:prefix_reference <http://purl.org/oban/> ],
+    meta:prefixes [ meta:prefix_prefix "xsd" ;
+            meta:prefix_reference xsd: ],
         [ meta:prefix_prefix "biolink" ;
             meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
-        [ meta:prefix_prefix "biolinkml" ;
-            meta:prefix_reference biolinkml: ],
+        [ meta:prefix_prefix "OBAN" ;
+            meta:prefix_reference <http://purl.org/oban/> ],
+        [ meta:prefix_prefix "shex" ;
+            meta:prefix_reference <http://www.w3.org/ns/shex#> ],
+        [ meta:prefix_prefix "metatype" ;
+            meta:prefix_reference <https://w3id.org/biolink/biolinkml/type/> ],
+        [ meta:prefix_prefix "qud" ;
+            meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
+        [ meta:prefix_prefix "UMLSST" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
+        [ meta:prefix_prefix "SIO" ;
+            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
         [ meta:prefix_prefix "UMLSSG" ;
             meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ],
         [ meta:prefix_prefix "wgs" ;
             meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
-        [ meta:prefix_prefix "SIO" ;
-            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
-        [ meta:prefix_prefix "shex" ;
-            meta:prefix_reference <http://www.w3.org/ns/shex#> ],
-        [ meta:prefix_prefix "xsd" ;
-            meta:prefix_reference xsd: ],
-        [ meta:prefix_prefix "metatype" ;
-            meta:prefix_reference <https://w3id.org/biolink/biolinkml/type/> ],
-        [ meta:prefix_prefix "qud" ;
-            meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ] ;
+        [ meta:prefix_prefix "biolinkml" ;
+            meta:prefix_reference biolinkml: ],
+        [ meta:prefix_prefix "UMLSSC" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ] ;
     meta:slots <https://w3id.org/biolink/vocab/actively_involved_in>,
         <https://w3id.org/biolink/vocab/affects>,
         <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -510,8 +510,8 @@
         <https://w3id.org/biolink/vocab/versionOf>,
         <https://w3id.org/biolink/vocab/xenologous_to> ;
     meta:source_file "biolink-model.yaml" ;
-    meta:source_file_date "Wed Feb 12 13:56:44 2020"^^xsd:dateTime ;
-    meta:source_file_size 118114 ;
+    meta:source_file_date "Mon Mar  2 14:29:05 2020"^^xsd:dateTime ;
+    meta:source_file_size 118098 ;
     meta:subsets <https://w3id.org/biolink/vocab/samples>,
         <https://w3id.org/biolink/vocab/testing>,
         <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -1071,6 +1071,14 @@
     meta:imported_from "https://w3id.org/biolink/biolinkml/types" ;
     meta:repr "str" ;
     meta:uri xsd:string .
+
+<https://w3id.org/biolink/vocab/nodeidentifier> a meta:TypeDefinition ;
+    skos:definition "A URI, CURIE or BNODE that represents a node in a model." ;
+    skos:inScheme biolinkml:types ;
+    meta:base "NodeIdentifier" ;
+    meta:imported_from "https://w3id.org/biolink/biolinkml/types" ;
+    meta:repr "str" ;
+    meta:uri <http://www.w3.org/ns/shex#nonLiteral> .
 
 <https://w3id.org/biolink/vocab/objectidentifier> a meta:TypeDefinition ;
     skos:definition "A URI or CURIE that represents an object in the model." ;
@@ -3118,11 +3126,10 @@
     meta:alias "id" ;
     meta:domain <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
     meta:identifier true ;
-    meta:ifabsent "bnode" ;
     meta:is_a <https://w3id.org/biolink/vocab/association_id> ;
     meta:is_usage_slot true ;
     meta:owner <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
-    meta:range <https://w3id.org/biolink/vocab/nodeidentifier> ;
+    meta:range <https://w3id.org/biolink/vocab/identifier_type> ;
     meta:required true ;
     meta:slot_uri <https://w3id.org/biolink/vocab/id> .
 
@@ -4091,12 +4098,6 @@
     meta:range <https://w3id.org/biolink/vocab/unit> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/has_unit> .
 
-<https://w3id.org/biolink/vocab/identifier_type> a meta:TypeDefinition ;
-    skos:definition "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    meta:base "ElementIdentifier" ;
-    meta:uri xsd:anyURI .
-
 <https://w3id.org/biolink/vocab/manifestation_of> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome" ;
@@ -4163,11 +4164,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "activity directly negatively regulates activity of" ;
-            meta:local_name_source "ro" ],
-        [ a meta:LocalName ;
             skos:altLabel "negatively regulates" ;
-            meta:local_name_source "translator" ] ;
+            meta:local_name_source "translator" ],
+        [ a meta:LocalName ;
+            skos:altLabel "activity directly negatively regulates activity of" ;
+            meta:local_name_source "ro" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/negatively_regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/negatively_regulates_entity_to_entity> ;
@@ -4185,14 +4186,6 @@
     meta:owner <https://w3id.org/biolink/vocab/negatively_regulates_process_to_process> ;
     meta:range <https://w3id.org/biolink/vocab/Occurrent> ;
     meta:slot_uri <http://purl.obolibrary.org/obo/RO_0002212> .
-
-<https://w3id.org/biolink/vocab/nodeidentifier> a meta:TypeDefinition ;
-    skos:definition "A URI, CURIE or BNODE that represents a node in a model." ;
-    skos:inScheme biolinkml:types ;
-    meta:base "NodeIdentifier" ;
-    meta:imported_from "https://w3id.org/biolink/biolinkml/types" ;
-    meta:repr "str" ;
-    meta:uri <http://www.w3.org/ns/shex#nonLiteral> .
 
 <https://w3id.org/biolink/vocab/occurs_in> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -4836,10 +4829,10 @@
     meta:is_a <https://w3id.org/biolink/vocab/OrganismalEntity> ;
     meta:local_names [ a meta:LocalName ;
             skos:altLabel "population" ;
-            meta:local_name_source "agr" ],
+            meta:local_name_source "ga4gh" ],
         [ a meta:LocalName ;
             skos:altLabel "population" ;
-            meta:local_name_source "ga4gh" ] ;
+            meta:local_name_source "agr" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/ThingWithTaxon> ;
     meta:slots <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/description>,
@@ -5664,6 +5657,12 @@
     meta:owner <https://w3id.org/biolink/vocab/has_zygosity> ;
     meta:range <https://w3id.org/biolink/vocab/Zygosity> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/has_zygosity> .
+
+<https://w3id.org/biolink/vocab/identifier_type> a meta:TypeDefinition ;
+    skos:definition "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    meta:base "ElementIdentifier" ;
+    meta:uri xsd:anyURI .
 
 <https://w3id.org/biolink/vocab/integer> a meta:TypeDefinition ;
     skos:definition "An integer" ;
@@ -7536,11 +7535,11 @@
         <wd:Q15304597> ;
     skos:note "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" ;
     meta:alt_descriptions [ a meta:AltDescription ;
-            skos:definition "A contiguous change at a Location" ;
-            meta:source "VMC" ],
-        [ a meta:AltDescription ;
             skos:definition "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition" ;
-            meta:source "AGR" ] ;
+            meta:source "AGR" ],
+        [ a meta:AltDescription ;
+            skos:definition "A contiguous change at a Location" ;
+            meta:source "VMC" ] ;
     meta:class_uri <http://purl.obolibrary.org/obo/GENO_0000002> ;
     meta:id_prefixes "CAID",
         "CIViC",
@@ -8758,10 +8757,9 @@
     meta:alias "id" ;
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:identifier true ;
-    meta:ifabsent "bnode" ;
-    meta:is_a <https://w3id.org/biolink/vocab/node_property> ;
+    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
-    meta:range <https://w3id.org/biolink/vocab/nodeidentifier> ;
+    meta:range <https://w3id.org/biolink/vocab/identifier_type> ;
     meta:required true ;
     meta:slot_uri <https://w3id.org/biolink/vocab/id> .
 
@@ -9089,11 +9087,11 @@
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "node with incoming relationship" ;
-            meta:local_name_source "neo4j" ],
-        [ a meta:LocalName ;
             skos:altLabel "descriptor" ;
-            meta:local_name_source "ga4gh" ] ;
+            meta:local_name_source "ga4gh" ],
+        [ a meta:LocalName ;
+            skos:altLabel "node with incoming relationship" ;
+            meta:local_name_source "neo4j" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:required true ;
