@@ -1662,7 +1662,7 @@ slots:
       - Aeolus:0000001
 
   contraindicated for:
-    is_a: chemical to disease or phenotypic feature association
+    is_a: related to
     description: Holds between a drug and a disease or phenotype, such that a person
       with that disease should not be treated with the drug.
     mappings:
@@ -1672,14 +1672,14 @@ slots:
   # to map well to anything else.
 
   has not completed:
-    is_a: association
+    is_a: related to
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
     mappings:
       - CL:has_not_completed
 
   has completed:
-    is_a: association
+    is_a: related to
     description: holds between an entity and a process that the entity is capable of
       and has completed
     mappings:
