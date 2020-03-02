@@ -1112,7 +1112,6 @@ slots:
       - GENO:0000840
       - GENO:0000841
       - NCIT:R176
-      - PHAROS:gene_involved
       - hetio:ASSOCIATES_DaG
 
   affects risk for:
@@ -1249,8 +1248,6 @@ slots:
       - translator_minimal
     inverse: expresses
     slot_uri: RO:0002206
-    mappings:
-      - GTEx:gene_to_expression_site_association
 
   expresses:
     is_a: related to
@@ -1493,6 +1490,7 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: RO:0003000
+    inverse: produced by
     mappings:
       - WD:P1056
       - SEMMEDDB:PRODUCES
@@ -1540,6 +1538,7 @@ slots:
       - WD:P279
 
   directly interacts with:
+    is_a: interacts with
     description: Holds between molecular entities that phyically and directly interact
       with each other
     mappings:
@@ -1571,12 +1570,16 @@ slots:
   #The following are proposed new predictes
 
   affects expression in:
+     is_a: affects
+     description: Holds between a variant and an anatomical entity where the expression of the variant
+       is located in.
     mappings:
       - GTEx:affects_expression_in
 
   #Predicates relating variants to genes
 
   is missense variant of:
+    is_a: related to
     description: holds between a sequence variant and a gene, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
     mappings:
@@ -1586,6 +1589,7 @@ slots:
       - SNPEFF:structural_interaction_variant
 
   is synonymous variant of:
+    is_a: related to
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
     mappings:
@@ -1595,6 +1599,7 @@ slots:
       - SNPEFF:stop_retained_variant
 
   is nonsense variant of:
+    is_a: related to
     description: holds between a sequence variant and a gene, such the sequence variant
       results in a premature stop codon
     mappings:
@@ -1605,6 +1610,7 @@ slots:
       - SNPEFF:frameshift_variant
 
   is splice site variant of:
+    is_a: related to
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the canonical splice site of one of the gene's exons.
     mappings:
@@ -1614,6 +1620,7 @@ slots:
       - SNPEFF:splice_donor_variant
 
   is nearby variant of:
+    is_a: related to
     description: holds between a sequence variant and a gene sequence that the variant
       is genomically close to.
     mappings:
@@ -1622,6 +1629,7 @@ slots:
       - SNPEFF:upstream_gene_variant
 
   is non coding variant of:
+    is_a: related to
     description: holds between a sequence variant and a gene, where the variant does
       not affect the coding sequence
     mappings:
@@ -1647,12 +1655,14 @@ slots:
   # to distinguish it.  maybe not the best way to do that though.
 
   causes adverse event:
+    is_a: causes
     description: holds between a drug and a disease or phenotype that can be caused
       by the drug
     mappings:
       - Aeolus:0000001
 
   contraindicated for:
+    is_a: chemical to disease or phenotypic feature association
     description: Holds between a drug and a disease or phenotype, such that a person
       with that disease should not be treated with the drug.
     mappings:
@@ -1662,24 +1672,28 @@ slots:
   # to map well to anything else.
 
   has not completed:
+    is_a: association
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
     mappings:
       - CL:has_not_completed
 
   has completed:
+    is_a: association
     description: holds between an entity and a process that the entity is capable of
       and has completed
     mappings:
     - CL:has_completed
 
   decreases molecular interaction:
+    is_a: molecularly interacts with
     description: indicates that the source decreases the molecular interaction between
       the target and some other molecular entity
     mappings:
     - CTD:decreases_molecular_interaction_with
 
   increases molecular interaction:
+    is_a: molecularly interacts with
     description: indicates that the source increases the molecular interaction between
       the target and some other molecular entity
     mappings:
@@ -1687,21 +1701,27 @@ slots:
 
   produced by:
     is_a: related to
+    inverse: produces
+
   in linkage disequilibrium with:
+    is_a: related to
     description: holds between two sequence variants, the presence of which are correlated
       in a population
     mappings:
       - NCIT:C16798
 
   has increased amount:
+    is_a: related to
     mappings:
       - CL:has_high_plasma_membrane_amount
 
   has decreased amount:
+    is_a: related to
     mappings:
       - CL:has_low_plasma_membrane_amount
   
   lacks part:
+    is_a: related to
     mappings:
       - CL:lacks_part
       - CL:lacks_plasma_membrane_part
