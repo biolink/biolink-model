@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:variant_to_population_association_has_count
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

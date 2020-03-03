@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:macromolecular_machine_to_biological_process_association_object
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

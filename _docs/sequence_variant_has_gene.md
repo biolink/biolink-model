@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:sequence_variant_has_gene
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

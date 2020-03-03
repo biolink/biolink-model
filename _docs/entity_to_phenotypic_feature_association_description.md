@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:entity_to_phenotypic_feature_association_description
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:chemical_to_disease_or_phenotypic_feature_association_object
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

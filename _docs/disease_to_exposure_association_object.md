@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:disease_to_exposure_association_object
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

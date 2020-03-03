@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:clinical_modifier_qualifier
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

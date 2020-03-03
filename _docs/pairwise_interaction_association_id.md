@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:pairwise_interaction_association_id
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

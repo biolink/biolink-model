@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:affects_abundance_of
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

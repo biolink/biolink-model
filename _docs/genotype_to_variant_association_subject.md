@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:genotype_to_variant_association_subject
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

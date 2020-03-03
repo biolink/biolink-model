@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:in_pathway_with
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

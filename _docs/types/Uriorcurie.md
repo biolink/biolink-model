@@ -1,7 +1,7 @@
 ---
 parent: Types
 title: https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

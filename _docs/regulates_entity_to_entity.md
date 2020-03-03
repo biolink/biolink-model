@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:regulates_entity_to_entity
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

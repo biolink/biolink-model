@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:genomic_sequence_localization_subject
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

@@ -1,7 +1,7 @@
 ---
 parent: Classes
 title: biolink:ClinicalIntervention
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

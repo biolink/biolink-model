@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:has_confidence_level
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

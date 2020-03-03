@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:same_as
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

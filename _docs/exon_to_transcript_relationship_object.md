@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:exon_to_transcript_relationship_object
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

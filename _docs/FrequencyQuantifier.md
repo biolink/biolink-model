@@ -1,7 +1,7 @@
 ---
 parent: Mixins
 title: biolink:FrequencyQuantifier
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

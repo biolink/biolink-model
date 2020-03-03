@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:gene_associated_with_condition
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

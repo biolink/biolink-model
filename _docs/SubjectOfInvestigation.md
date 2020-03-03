@@ -1,7 +1,7 @@
 ---
 parent: Mixins
 title: biolink:SubjectOfInvestigation
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

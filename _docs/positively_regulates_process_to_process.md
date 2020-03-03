@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: biolink:positively_regulates_process_to_process
-grand_parent: Browse Biolink-Model
+grand_parent: Browse Biolink Model
 layout: default
 ---
 

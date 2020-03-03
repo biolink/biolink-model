@@ -46,7 +46,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         self.noimages = noimages
         self.types_directory = os.path.join(directory, 'types')
         os.makedirs(self.types_directory, exist_ok=True)
-        self.doc_root_title = f'Browse {self.schema.name.title()}'
+        self.doc_root_title = f'Browse {self.schema.name.title().replace("-", " ")}'
 
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
             with redirect_stdout(ixfile):
