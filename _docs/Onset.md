@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:Onset
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: Onset

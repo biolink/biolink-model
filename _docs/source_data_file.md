@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:source_data_file
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: source_data_file

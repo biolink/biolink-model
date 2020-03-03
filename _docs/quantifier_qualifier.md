@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:quantifier_qualifier
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: quantifier_qualifier

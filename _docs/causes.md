@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:causes
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: causes

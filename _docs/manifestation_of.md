@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:manifestation_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: manifestation_of

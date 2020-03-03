@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:GeographicLocationAtTime
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: GeographicLocationAtTime

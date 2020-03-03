@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:versionOf
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: versionOf

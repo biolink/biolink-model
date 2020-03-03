@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:association_id
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: association_id

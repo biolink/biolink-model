@@ -2,6 +2,7 @@
 parent: Types
 title: biolink:NarrativeText
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: NarrativeText

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:overlaps
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: overlaps

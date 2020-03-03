@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:increases_response_to
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: increases_response_to

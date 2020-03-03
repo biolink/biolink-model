@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:decreases_metabolic_processing_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: decreases_metabolic_processing_of

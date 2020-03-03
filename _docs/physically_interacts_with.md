@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:physically_interacts_with
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: physically_interacts_with

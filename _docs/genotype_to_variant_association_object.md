@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:genotype_to_variant_association_object
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: genotype_to_variant_association_object

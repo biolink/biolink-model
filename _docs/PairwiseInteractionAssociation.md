@@ -2,6 +2,7 @@
 parent: Mixins
 title: biolink:PairwiseInteractionAssociation
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: PairwiseInteractionAssociation

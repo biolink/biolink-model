@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:frequency_qualifier
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: frequency_qualifier

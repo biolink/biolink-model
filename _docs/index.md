@@ -2,6 +2,7 @@
 title: Browse Biolink-Model
 has_children: true
 nav_order: 2
+layout: default
 ---
 
 Entity and association taxonomy and datamodel for life-sciences data

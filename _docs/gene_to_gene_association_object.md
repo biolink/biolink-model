@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:gene_to_gene_association_object
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: gene_to_gene_association_object

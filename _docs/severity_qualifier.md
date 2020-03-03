@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:severity_qualifier
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: severity_qualifier

@@ -2,6 +2,7 @@
 parent: Types
 title: biolink:ChemicalFormulaValue
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: ChemicalFormulaValue

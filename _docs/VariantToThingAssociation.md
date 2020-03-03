@@ -2,6 +2,7 @@
 parent: Mixins
 title: biolink:VariantToThingAssociation
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: VariantToThingAssociation

@@ -2,6 +2,7 @@
 parent: Mixins
 title: biolink:ThingWithTaxon
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: ThingWithTaxon

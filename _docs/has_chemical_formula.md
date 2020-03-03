@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:has_chemical_formula
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: has_chemical_formula

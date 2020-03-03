@@ -2,6 +2,7 @@
 parent: Mixins
 title: biolink:SensitivityQuantifier
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: SensitivityQuantifier

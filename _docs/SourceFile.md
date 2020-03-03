@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:SourceFile
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: SourceFile

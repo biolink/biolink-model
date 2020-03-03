@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: anatomical_entity_to_anatomical_entity_ontogenic_association_relation

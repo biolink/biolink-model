@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:contributes_to
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: contributes_to

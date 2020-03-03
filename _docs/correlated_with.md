@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:correlated_with
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: correlated_with

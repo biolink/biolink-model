@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:AnatomicalEntity
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: AnatomicalEntity

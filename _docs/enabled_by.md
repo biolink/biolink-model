@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:enabled_by
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: enabled_by

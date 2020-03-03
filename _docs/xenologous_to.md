@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:xenologous_to
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: xenologous_to

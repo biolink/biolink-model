@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:location_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: location_of

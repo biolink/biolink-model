@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:iri
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: iri

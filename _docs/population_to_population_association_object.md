@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:population_to_population_association_object
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: population_to_population_association_object

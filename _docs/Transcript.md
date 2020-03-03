@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:Transcript
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: Transcript

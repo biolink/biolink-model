@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:macromolecular_machine_to_cellular_component_association_object
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: macromolecular_machine_to_cellular_component_association_object

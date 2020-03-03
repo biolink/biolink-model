@@ -2,6 +2,7 @@
 parent: Types
 title: biolink:IriType
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: IriType

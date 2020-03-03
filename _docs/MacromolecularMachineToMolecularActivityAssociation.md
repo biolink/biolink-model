@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:MacromolecularMachineToMolecularActivityAssociation
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: MacromolecularMachineToMolecularActivityAssociation

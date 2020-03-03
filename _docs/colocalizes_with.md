@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:colocalizes_with
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: colocalizes_with

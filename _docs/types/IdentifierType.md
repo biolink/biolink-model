@@ -2,6 +2,7 @@
 parent: Types
 title: biolink:IdentifierType
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: IdentifierType

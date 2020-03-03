@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:has_evidence
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: has_evidence

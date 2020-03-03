@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:GenotypeToThingAssociation
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: GenotypeToThingAssociation

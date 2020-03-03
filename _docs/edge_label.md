@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:edge_label
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: edge_label

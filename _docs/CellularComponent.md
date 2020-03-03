@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:CellularComponent
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: CellularComponent

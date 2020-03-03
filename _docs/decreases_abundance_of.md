@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:decreases_abundance_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: decreases_abundance_of

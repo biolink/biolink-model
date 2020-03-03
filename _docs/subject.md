@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:subject
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: subject

@@ -2,6 +2,7 @@
 parent: Mixins
 title: biolink:EntityToDiseaseAssociation
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: EntityToDiseaseAssociation

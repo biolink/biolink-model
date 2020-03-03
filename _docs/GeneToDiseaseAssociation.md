@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:GeneToDiseaseAssociation
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: GeneToDiseaseAssociation

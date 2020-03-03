@@ -2,6 +2,7 @@
 parent: Classes
 title: biolink:OntologyClass
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: OntologyClass

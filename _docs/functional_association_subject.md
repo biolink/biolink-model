@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:functional_association_subject
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: functional_association_subject

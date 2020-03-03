@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:decreases_splicing_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: decreases_splicing_of

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:occurs_in
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: occurs_in

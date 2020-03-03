@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:retrievedOn
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: retrievedOn

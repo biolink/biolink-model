@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:cell_line_to_thing_association_subject
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: cell_line_to_thing_association_subject

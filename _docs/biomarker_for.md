@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:biomarker_for
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: biomarker_for

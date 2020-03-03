@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:onset_qualifier
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: onset_qualifier

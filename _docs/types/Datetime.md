@@ -2,6 +2,7 @@
 parent: Types
 title: https://w3id.org/biolink/vocab/biolinkml:types/Datetime
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: https://w3id.org/biolink/vocab/biolinkml:types/Datetime

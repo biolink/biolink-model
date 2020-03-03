@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:affects_localization_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: affects_localization_of

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:gene_as_a_model_of_disease_association_subject
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: gene_as_a_model_of_disease_association_subject

@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:affects_risk_for
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: affects_risk_for

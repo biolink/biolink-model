@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:subclass_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: subclass_of

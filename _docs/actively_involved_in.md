@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:actively_involved_in
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: actively_involved_in

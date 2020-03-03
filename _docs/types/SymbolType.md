@@ -2,6 +2,7 @@
 parent: Types
 title: biolink:SymbolType
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: SymbolType

@@ -2,6 +2,7 @@
 parent: Mixins
 title: biolink:PathognomonicityQuantifier
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: PathognomonicityQuantifier

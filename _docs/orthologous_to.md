@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:orthologous_to
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: orthologous_to

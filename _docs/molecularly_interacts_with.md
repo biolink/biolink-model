@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:molecularly_interacts_with
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: molecularly_interacts_with

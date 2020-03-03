@@ -2,6 +2,7 @@
 parent: Types
 title: biolink:BiologicalSequence
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: BiologicalSequence

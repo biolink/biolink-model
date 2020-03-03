@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:predisposes
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: predisposes

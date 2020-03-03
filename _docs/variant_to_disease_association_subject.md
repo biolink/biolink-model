@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:variant_to_disease_association_subject
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: variant_to_disease_association_subject

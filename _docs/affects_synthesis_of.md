@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:affects_synthesis_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: affects_synthesis_of

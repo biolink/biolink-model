@@ -2,6 +2,7 @@
 parent: Slots
 title: biolink:increases_activity_of
 grand_parent: Browse Biolink-Model
+layout: default
 ---
 
 # Type: increases_activity_of
