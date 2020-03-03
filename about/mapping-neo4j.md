@@ -1,4 +1,8 @@
-# Mapping to Neo4J
+---
+parent: "Mapping to a graph store"
+---
+
+# Mapping BioLink Model to a Neo4j property graph
 
 This document describes how a Neo4j database is mapped to the BioLink
 model. Although specific to Neo4j, this should hold for any Property

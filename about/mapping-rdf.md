@@ -1,4 +1,8 @@
-# Mapping to RDF
+---
+parent: "Mapping to a graph store"
+---
+
+# Mapping BioLink Model to a RDF triple store
 
 
 This is similar to the [Neo4J mapping](mapping-neo4j.html). One
