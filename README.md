@@ -4,7 +4,7 @@
 
 <img src="images/biolink-logo.png" width="20%">
 
-# BioLink Model
+# Biolink Model
 
 
 Quickstart docs:
