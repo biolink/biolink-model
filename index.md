@@ -23,7 +23,7 @@ The schema is expressed as a [yaml file](https://github.com/biolink/biolink-mode
 
 ## Datamodel
 
-The schema assumes a property graph, where nodes represent individual entities, and edges represent associations between nodes. The biolink model provides a schema for both nodes and edges.
+The schema assumes a property graph, where nodes represent individual entities, and edges represent associations between nodes. The biolink model provides a schema for both nodes and edges. More details about the BioLink model can be found in [this presentation](https://docs.google.com/presentation/d/1_jI2PC4tZAM3V_ukJLmEf0wUzqmNx_z-hyihDzee7sY/edit#slide=id.p).
 
 ### Nodes
 
@@ -38,7 +38,7 @@ The schema assumes a property graph, where nodes represent individual entities, 
  * [Slots](docs#slots) - slots are used to collectively refer to, both, node and edge properties.
     * [node property](docs/node_property.html) - all node properties are a sub class of 'node property'
     * [association slot](docs/association_slot.html) - all edge properties are a sub class of 'association slot'
- 
+
 
 See the [Datamodel index](docs/) for a list nodes, edges, and slots.
 
