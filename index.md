@@ -10,60 +10,102 @@ A high level datamodel of biological entities ([genes](docs/Gene), [diseases](do
 [phenotypes](docs/Phenotype), [pathways](docs/Pathway), [individuals](docs/IndividualOrganism), [substances](docs/ChemicalSubstance), etc) and their
 [associations](docs/Association).
 
-One of the main uses of the model is as a way of standardizing types
-and relational structures in knowledge graphs (KGs), where the KG may
-be either a property graph or RDF.
+Biolink Model is designed as a way of standardizing types and relational structures in knowledge graphs (KGs), 
+where the KG may be either a property graph or RDF triple store.
 
-The schema is expressed as a [yaml file](https://github.com/biolink/biolink-model/blob/master/biolink-model.yaml), which is translated into:
+The schema is expressed as a [YAML](https://github.com/biolink/biolink-model/blob/master/biolink-model.yaml), which is translated into:
 
  * Individual pages for each class in the model, e.g [https://w3id.org/biolink/vocab/Gene](https://w3id.org/biolink/vocab/Gene)
  * An [OWL ontology](biolink-model.owl), also available on [bioportal](https://bioportal.bioontology.org/ontologies/BLM)
+ * [Python dataclasses](biolink/model.py), also available on [PyPI](https://pypi.org/project/biolink-model/)
  * [ShEx](biolink-model.shex) (RDF shape constraints)
- * (Experimental) [graphql](biolink-model.graphql), [protobuf](biolink-model.proto), [json-schema](json-schema/biolink-model.json)
+ * [graphql](biolink-model.graphql) (Experimental)
+ * [protobuf](biolink-model.proto) (Experimental)
+ * [json-schema](json-schema/biolink-model.json) (Experimental) 
+
 
 ## Datamodel
 
-The schema assumes a property graph, where nodes represent individual entities, and edges represent associations between nodes. The biolink model provides a schema for both nodes and edges.
+The schema assumes a property graph, where nodes represent individual entities, and edges represent associations 
+between entities. Biolink Model provides a schema for representing both nodes and edges.
 
-### Nodes
 
- * [named thing](docs/NamedThing.html) - all nodes are a sub class of 'named thing'
+The model itself can be divided into three parts,
+* Entities (Nodes)
+* Associations (Edges)
+* Properties (Slots)
 
-### Edges
+### Entities
 
- * [association](docs/Association.html) - all edges are a sub class of 'association'
+A entity corresponds to a database entity or a concept.
+
+> represented as a node in a property graph.
+
+All typed entities are a sub class of [biolink:NamedThing](docs/NamedThing).
+ 
+
+Each entity has,
+- its own unique stable URI
+- mappings to other ontologies (SIO, SO, etc.)
+- List of valid ID prefixes
+
+These entity types are higher level terms that can be used to categorize nodes in a KG. 
+
+For more detailed typing, one can use specific terms from an ontology.
+
+
+
+### Associations
+
+A typed association between two entities, usually supported by evidence and provenance.
+
+> represented as an edge/relationship between two nodes, in a property graph.
+
+All edges are a sub class of [biolink:Association](docs/Association).
+
+An association connects a subject node and an object node via a relation property.
+The nature of the association is defined based on the relation property.
+
+Certain associations can have additional properties like **provided_by**, **evidence**, **publications**.
+
 
 ### Slots
 
- * [Slots](docs#slots) - slots are used to collectively refer to, both, node and edge properties.
-    * [node property](docs/node_property.html) - all node properties are a sub class of 'node property'
-    * [association slot](docs/association_slot.html) - all edge properties are a sub class of 'association slot'
- 
+[Slots](docs#slots) are used to collectively refer to, both, node and edge properties.
 
-See the [Datamodel index](docs/) for a list nodes, edges, and slots.
+There are two types of slots defined in the model,
+    * [node property](docs/node_property) - all node properties are a sub class of [biolink:node property](docs/node_property)
+    * [association slot](docs/association_slot) - all edge properties are a sub class of [biolink:association slot](docs/association_slot)
+
+
+See the [Datamodel index](docs/) for a list entities, associations, and slots.
 
 
 # Identifiers
 
-See [biolink json-ld context](context.jsonld) to see CURIE prefix mappings.
+See [Biolink Model JSON-LD context](context.jsonld) for a list of CURIE prefix mappings.
 
-The includes prefix expansions such as:
+These include prefix expansions such as:
 
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
       "NCBIGene": "http://www.ncbi.nlm.nih.gov/gene/",
       "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
 
-Following the JSON-LD context standard.
 
-Note that we do not curate these in biolink. Rather we take these from upstream sources, via prefixcommons biocontexts. We specify a priority order of upstream sources in cases where conflicts may occur. See the [default_curi_maps](https://biolink.github.io/biolinkml/docs/default_curi_maps) tag at the top of the [biolink-model.yaml](biolink-model.yaml) file. We also specify a small set of top-level overrides via the [prefixes](https://biolink.github.io/biolinkml/docs/prefixes) tag at the top.
+**Note:** We do not curate these in Biolink Model. Rather we take these from upstream sources, 
+via PrefixCommons. We specify a priority order of upstream sources in cases where conflicts may occur. 
+See the [default_curi_maps](https://biolink.github.io/biolinkml/docs/default_curi_maps) tag at the 
+top of the [biolink-model.yaml](biolink-model.yaml). 
+
+We also specify a small set of top-level prefix overrides via the [prefixes](https://biolink.github.io/biolinkml/docs/prefixes) 
+tag at the top of the YAML.
 
 
-# BioLink model representation
+# Biolink Model representation
 
-## Neo4J representation
+Biolink Model aims at representing knowledge in a graph form regardless of the graph representation used.
 
-See [mapping to neo4j](about/mapping-neo4j.html)
+Following are some recommendations when attempting to use Biolink Model with each style of representation. 
 
-## RDF representation
-
-See [mapping to RDF](about/mapping-rdf.html)
+* Neo4J: see [Mapping to Neo4j](about/mapping-neo4j)
+* RDF: see [Mapping to RDF](about/mapping-rdf)
