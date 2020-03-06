@@ -1,6 +1,31 @@
 CHANGES
 =======
 
+v.1.3.0
+-------
+
+* association_id property should be an association property
+* Added or updated id_prefixes for many types
+* add caused by property as inverse of causes
+* Chemical structure --> chemical substance
+* adding has-output
+* OBAN to all upper case.  Fix Issue #271
+* Adding RHEA to prefixes that can be used for reactions, #269
+* First pass at chem2chem associations and hyperedges to catalysts,
+* fixes #269
+* adding node properties for exposure events
+* added new associations for exposures
+* identifier type changed to anyURI and linked to metamodel ElementIdentifier
+* iri type changed to support both URI or Curie
+* changed subclass of to reference an iri instead of a defined ontology class, and made it multivalued
+* association_id now defaults to bnode so it doesn't have to be supplied
+* range of association slot is named thing (meaning that it has to be typed in the model)
+* systematic synonym changed to multivalued
+* changed subject and object of association to named thing instead of just a iri
+* changed relation type to uriorcurie vs. straight uri
+* moved association_id in the association class so the creation order is subject, relation, object instead of association_id, subject, relation, object
+
+	
 v1.2.5
 ------
 
