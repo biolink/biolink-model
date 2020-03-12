@@ -1,27 +1,13 @@
----
-parent: Classes
-title: biolink:ConfidenceLevel
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ConfidenceLevel
+# Type: confidence level
 
 
 Level of confidence in a statement
 
 URI: [biolink:ConfidenceLevel](https://w3id.org/biolink/vocab/ConfidenceLevel)
 
-CIO:0000028
-{: .mapping-label }
 
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity]^-\[ConfidenceLevel&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/ConfidenceLevel.png)
 
 ## Parents
 

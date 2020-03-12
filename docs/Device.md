@@ -1,45 +1,13 @@
----
-parent: Classes
-title: biolink:Device
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Device
+# Type: device
 
 
 A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 
 URI: [biolink:Device](https://w3id.org/biolink/vocab/Device)
 
-UMLSSG:DEVI
-{: .mapping-label }
 
-UMLSSC:T074
-{: .mapping-label }
-
-UMLSST:medd
-{: .mapping-label }
-
-UMLSSC:T075
-{: .mapping-label }
-
-UMLSST:resd
-{: .mapping-label }
-
-UMLSSC:T203
-{: .mapping-label }
-
-UMLSST:drdd
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Device&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/Device.png)
 
 ## Parents
 

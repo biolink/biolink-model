@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:genomic_sequence_localization_subject
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: genomic_sequence_localization_subject
+# Type: genomic sequence localization_subject
 
 
 
 
 URI: [biolink:genomic_sequence_localization_subject](https://w3id.org/biolink/vocab/genomic_sequence_localization_subject)
+
 
 ## Domain and Range
 

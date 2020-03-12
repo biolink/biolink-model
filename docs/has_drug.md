@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_drug
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_drug
+# Type: has drug
 
 
 connects an entity to a single drug
 
 URI: [biolink:has_drug](https://w3id.org/biolink/vocab/has_drug)
+
 
 ## Domain and Range
 

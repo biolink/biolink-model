@@ -1,69 +1,13 @@
----
-parent: Classes
-title: biolink:Procedure
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Procedure
+# Type: procedure
 
 
 A series of actions conducted in a certain order or manner
 
 URI: [biolink:Procedure](https://w3id.org/biolink/vocab/Procedure)
 
-UMLSSG:PROC
-{: .mapping-label }
 
-UMLSSC:T058
-{: .mapping-label }
-
-UMLSST:hlca
-{: .mapping-label }
-
-UMLSSC:T059
-{: .mapping-label }
-
-UMLSST:lbpr
-{: .mapping-label }
-
-UMLSSC:T060
-{: .mapping-label }
-
-UMLSST:diap
-{: .mapping-label }
-
-UMLSSC:T061
-{: .mapping-label }
-
-UMLSST:topp
-{: .mapping-label }
-
-UMLSSC:T062
-{: .mapping-label }
-
-UMLSST:resa
-{: .mapping-label }
-
-UMLSSC:T063
-{: .mapping-label }
-
-UMLSST:mbrt
-{: .mapping-label }
-
-UMLSSC:T065
-{: .mapping-label }
-
-UMLSST:edac
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[Procedure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/Procedure.png)
 
 ## Parents
 

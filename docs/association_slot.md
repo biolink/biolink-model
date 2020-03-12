@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:association_slot
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: association_slot
+# Type: association slot
 
 
 any slot that relates an association to another entity
 
 URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
+
 
 ## Domain and Range
 
@@ -22,7 +17,6 @@ URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
 ## Children
 
  *  [association type](association_type.md)
- *  [association➞id](association_id.md)
  *  [change is catalyzed by](change_is_catalyzed_by.md)
  *  [clinical modifier qualifier](clinical_modifier_qualifier.md)
  *  [edge label](edge_label.md)

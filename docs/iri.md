@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:iri
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: iri
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 An IRI for the node. This is determined by the id using expansion rules.
 
 URI: [biolink:iri](https://w3id.org/biolink/vocab/iri)
+
 
 ## Domain and Range
 

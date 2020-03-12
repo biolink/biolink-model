@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:drug_exposure_has_drug
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: drug_exposure_has_drug
+# Type: drug exposure_has drug
 
 
 
 
 URI: [biolink:drug_exposure_has_drug](https://w3id.org/biolink/vocab/drug_exposure_has_drug)
+
 
 ## Domain and Range
 

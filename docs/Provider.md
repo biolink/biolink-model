@@ -1,51 +1,13 @@
----
-parent: Classes
-title: biolink:Provider
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Provider
+# Type: provider
 
 
 person, group, organization or project that provides a piece of information
 
 URI: [biolink:Provider](https://w3id.org/biolink/vocab/Provider)
 
-UMLSSG:ORGA
-{: .mapping-label }
 
-UMLSSC:T092
-{: .mapping-label }
-
-UMLSST:orgt
-{: .mapping-label }
-
-UMLSSC:T093
-{: .mapping-label }
-
-UMLSST:hcro
-{: .mapping-label }
-
-UMLSSC:T094
-{: .mapping-label }
-
-UMLSST:pros
-{: .mapping-label }
-
-UMLSSC:T095
-{: .mapping-label }
-
-UMLSST:shro
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20provided%20by%200..1>\[Provider&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AdministrativeEntity]^-\[Provider])
-
----
-
+![img](images/Provider.png)
 
 ## Parents
 

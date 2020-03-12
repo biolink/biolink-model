@@ -1,30 +1,13 @@
----
-parent: Classes
-title: biolink:DrugExposure
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: DrugExposure
+# Type: drug exposure
 
 
 A drug exposure is an intake of a particular chemical substance
 
 URI: [biolink:DrugExposure](https://w3id.org/biolink/vocab/DrugExposure)
 
-ECTO:0000509
-{: .mapping-label }
 
-SIO:001005
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalExposure]^-\[DrugExposure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/DrugExposure.png)
 
 ## Parents
 

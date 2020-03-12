@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:sequence_variant_id
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: sequence_variant_id
+# Type: sequence variant_id
 
 
 
 
 URI: [biolink:sequence_variant_id](https://w3id.org/biolink/vocab/sequence_variant_id)
+
 
 ## Domain and Range
 

@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:subject
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: subject
 
@@ -11,6 +5,7 @@ layout: default
 connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
 URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
+
 
 ## Domain and Range
 
@@ -29,7 +24,6 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
  *  [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)
  *  [chemical to thing association➞subject](chemical_to_thing_association_subject.md)
  *  [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)
- *  [disease to exposure association➞subject](disease_to_exposure_association_subject.md)
  *  [disease to thing association➞subject](disease_to_thing_association_subject.md)
  *  [exposure event to phenotypic feature association➞subject](exposure_event_to_phenotypic_feature_association_subject.md)
  *  [functional association➞subject](functional_association_subject.md)

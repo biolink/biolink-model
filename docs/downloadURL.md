@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:downloadURL
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: downloadURL
 
@@ -11,6 +5,7 @@ layout: default
 
 
 URI: [biolink:downloadURL](https://w3id.org/biolink/vocab/downloadURL)
+
 
 ## Domain and Range
 

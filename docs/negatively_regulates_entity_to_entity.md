@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:negatively_regulates_entity_to_entity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: negatively_regulates_entity_to_entity
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: negatively regulates, entity to entity
 
 
 
 
 URI: [biolink:negatively_regulates_entity_to_entity](https://w3id.org/biolink/vocab/negatively_regulates_entity_to_entity)
+
 
 ## Domain and Range
 

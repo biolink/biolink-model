@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:chemical_to_chemical_derivation_association_relation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: chemical_to_chemical_derivation_association_relation
+# Type: chemical to chemical derivation association_relation
 
 
 
 
 URI: [biolink:chemical_to_chemical_derivation_association_relation](https://w3id.org/biolink/vocab/chemical_to_chemical_derivation_association_relation)
+
 
 ## Domain and Range
 

@@ -1,30 +1,13 @@
----
-parent: Classes
-title: biolink:Treatment
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Treatment
+# Type: treatment
 
 
 A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
 
 URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
 
-OGMS:0000090
-{: .mapping-label }
 
-SIO:001398
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1>\[Treatment&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExposureEvent]^-\[Treatment])
-
----
-
+![img](images/Treatment.png)
 
 ## Parents
 

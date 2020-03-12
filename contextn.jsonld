@@ -1,7 +1,6 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-03-02 14:34\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-03-12 14:02\nSchema: Biolink_Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
-      "_comments": null,
       "type": "@type",
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://thebiogrid.org/",
@@ -85,19 +84,19 @@
       "WD": "http://example.org/UNKNOWN/WD/",
       "WIKIPATHWAYS": "http://identifiers.org/wikipathways/",
       "ZFIN": "http://zfin.org/",
+      "biolink": "https://w3id.org/biolink/vocab/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
       "dct": "http://example.org/UNKNOWN/dct/",
       "dcterms": "http://purl.org/dc/terms/",
       "dictyBase": "http://dictybase.org/gene/",
       "faldo": "http://biohackathon.org/resource/faldo#",
-      "metatype": "https://w3id.org/biolink/biolinkml/type/",
+      "meta": "https://w3id.org/biolink/biolinkml/meta/",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
       "qud": "http://qudt.org/1.1/schema/qudt#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-      "shex": "http://www.w3.org/ns/shex#",
-      "skos": "https://www.w3.org/TR/skos-reference/#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
       "void": "http://rdfs.org/ns/void#",
       "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -184,6 +183,10 @@
       "clinical_modifier_qualifier": {
          "@type": "@id"
       },
+      "close_mappings": {
+         "@type": "@id",
+         "@id": "meta:close_mappings"
+      },
       "coexists_with": {
          "@type": "@id"
       },
@@ -247,6 +250,14 @@
       "decreases_uptake_of": {
          "@type": "@id"
       },
+      "deprecated_element_has_exact_replacement": {
+         "@type": "@id",
+         "@id": "meta:deprecated_element_has_exact_replacement"
+      },
+      "deprecated_element_has_possible_replacement": {
+         "@type": "@id",
+         "@id": "meta:deprecated_element_has_possible_replacement"
+      },
       "derives_from": {
          "@type": "@id"
       },
@@ -261,6 +272,10 @@
       },
       "enabled_by": {
          "@type": "@id"
+      },
+      "exact_mappings": {
+         "@type": "@id",
+         "@id": "meta:exact_mappings"
       },
       "expressed_in": {
          "@type": "@id"
@@ -436,6 +451,10 @@
       "manifestation_of": {
          "@type": "@id"
       },
+      "mappings": {
+         "@type": "@id",
+         "@id": "meta:mappings"
+      },
       "model_of": {
          "@type": "@id"
       },
@@ -522,6 +541,10 @@
       },
       "regulates_process_to_process": {
          "@type": "@id"
+      },
+      "related_mappings": {
+         "@type": "@id",
+         "@id": "meta:related_mappings"
       },
       "related_to": {
          "@type": "@id"

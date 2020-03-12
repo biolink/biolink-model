@@ -1,36 +1,13 @@
----
-parent: Classes
-title: biolink:Pathway
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Pathway
+# Type: pathway
 
 
 
 
 URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
 
-GO:0007165
-{: .mapping-label }
 
-SIO:010526
-{: .mapping-label }
-
-PW:0000001
-{: .mapping-label }
-
-WD:Q4915012
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalToPathwayAssociation]-%20object%201..1>\[Pathway&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[BiologicalProcess]^-\[Pathway])
-
----
-
+![img](images/Pathway.png)
 
 ## Parents
 

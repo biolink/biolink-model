@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:related_to
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: related_to
+# Type: related to
 
 
 A relationship that is asserted between two named things
 
 URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
+
 
 ## Domain and Range
 

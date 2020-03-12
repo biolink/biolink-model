@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_count
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_count
+# Type: has count
 
 
 number of things with a particular property
 
 URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
+
 
 ## Domain and Range
 

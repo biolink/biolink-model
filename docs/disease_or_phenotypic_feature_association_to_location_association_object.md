@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:disease_or_phenotypic_feature_association_to_location_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: disease_or_phenotypic_feature_association_to_location_association_object
+# Type: disease or phenotypic feature association to location association_object
 
 
 
 
 URI: [biolink:disease_or_phenotypic_feature_association_to_location_association_object](https://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_location_association_object)
+
 
 ## Domain and Range
 

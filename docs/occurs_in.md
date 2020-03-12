@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:occurs_in
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: occurs_in
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: occurs in
 
 
 holds between a process and a material entity or site within which the process occurs
 
 URI: [biolink:occurs_in](https://w3id.org/biolink/vocab/occurs_in)
+
 
 ## Domain and Range
 

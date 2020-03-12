@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:has_numeric_value
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_numeric_value
-
-samples
-{: .samples-subset-label }
+# Type: has numeric value
 
 
 connects a quantity value to a number
 
 URI: [biolink:has_numeric_value](https://w3id.org/biolink/vocab/has_numeric_value)
+
 
 ## Domain and Range
 

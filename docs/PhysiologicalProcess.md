@@ -1,75 +1,13 @@
----
-parent: Classes
-title: biolink:PhysiologicalProcess
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: PhysiologicalProcess
+# Type: physiological process
 
 
 
 
 URI: [biolink:PhysiologicalProcess](https://w3id.org/biolink/vocab/PhysiologicalProcess)
 
-UMLSSG:PHYS
-{: .mapping-label }
 
-UMLSSC:T032
-{: .mapping-label }
-
-UMLSST:orga
-{: .mapping-label }
-
-UMLSSC:T039
-{: .mapping-label }
-
-UMLSST:phsf
-{: .mapping-label }
-
-UMLSSC:T040
-{: .mapping-label }
-
-UMLSST:orgf
-{: .mapping-label }
-
-UMLSSC:T041
-{: .mapping-label }
-
-UMLSST:menp
-{: .mapping-label }
-
-UMLSSC:T042
-{: .mapping-label }
-
-UMLSST:ortf
-{: .mapping-label }
-
-UMLSSC:T043
-{: .mapping-label }
-
-UMLSST:celf
-{: .mapping-label }
-
-UMLSSC:T045
-{: .mapping-label }
-
-UMLSST:genf
-{: .mapping-label }
-
-UMLSSC:T201
-{: .mapping-label }
-
-UMLSST:clna
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcess]^-\[PhysiologicalProcess&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/PhysiologicalProcess.png)
 
 ## Parents
 

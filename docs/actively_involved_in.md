@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:actively_involved_in
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: actively_involved_in
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: actively involved in
 
 
 holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
 
 URI: [biolink:actively_involved_in](https://w3id.org/biolink/vocab/actively_involved_in)
+
 
 ## Domain and Range
 

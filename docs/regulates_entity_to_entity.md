@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:regulates_entity_to_entity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: regulates_entity_to_entity
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: regulates, entity to entity
 
 
 
 
 URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulates_entity_to_entity)
+
 
 ## Domain and Range
 

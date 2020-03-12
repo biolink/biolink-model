@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:aggregate_statistic
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: aggregate_statistic
+# Type: aggregate statistic
 
 
 
 
 URI: [biolink:aggregate_statistic](https://w3id.org/biolink/vocab/aggregate_statistic)
+
 
 ## Domain and Range
 

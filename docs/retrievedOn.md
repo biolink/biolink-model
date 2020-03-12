@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:retrievedOn
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: retrievedOn
 
@@ -11,6 +5,7 @@ layout: default
 
 
 URI: [biolink:retrievedOn](https://w3id.org/biolink/vocab/retrievedOn)
+
 
 ## Domain and Range
 

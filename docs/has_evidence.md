@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_evidence
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_evidence
+# Type: has evidence
 
 
 connects an association to an instance of supporting evidence
 
 URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
+
 
 ## Domain and Range
 

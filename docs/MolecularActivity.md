@@ -1,33 +1,13 @@
----
-parent: Classes
-title: biolink:MolecularActivity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: MolecularActivity
+# Type: molecular activity
 
 
 An execution of a molecular function carried out by a gene product or macromolecular complex.
 
 URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivity)
 
-GO:0003674
-{: .mapping-label }
 
-UMLSSC:T044
-{: .mapping-label }
-
-UMLSST:moft
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachine]<enabled%20by%200..*-%20\[MolecularActivity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalSubstance]<has%20output%200..*-%20\[MolecularActivity],%20\[ChemicalSubstance]<has%20input%200..*-%20\[MolecularActivity],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1>\[MolecularActivity],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity])
-
----
-
+![img](images/MolecularActivity.png)
 
 ## Parents
 

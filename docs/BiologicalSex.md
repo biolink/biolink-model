@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:BiologicalSex
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: BiologicalSex
+# Type: biological sex
 
 
 
@@ -13,12 +7,7 @@ layout: default
 URI: [biolink:BiologicalSex](https://w3id.org/biolink/vocab/BiologicalSex)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[BiologicalSex&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[BiologicalSex],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[BiologicalSex],%20\[BiologicalSex]^-\[PhenotypicSex],%20\[BiologicalSex]^-\[GenotypicSex],%20\[Attribute]^-\[BiologicalSex])
-
----
-
+![img](images/BiologicalSex.png)
 
 ## Parents
 

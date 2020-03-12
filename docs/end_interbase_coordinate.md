@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:end_interbase_coordinate
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: end_interbase_coordinate
+# Type: end interbase coordinate
 
 
 
 
 URI: [biolink:end_interbase_coordinate](https://w3id.org/biolink/vocab/end_interbase_coordinate)
+
 
 ## Domain and Range
 

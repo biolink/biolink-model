@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:AdministrativeEntity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: AdministrativeEntity
+# Type: administrative entity
 
 
 
@@ -13,12 +7,7 @@ layout: default
 URI: [biolink:AdministrativeEntity](https://w3id.org/biolink/vocab/AdministrativeEntity)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AdministrativeEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[Provider],%20\[NamedThing]^-\[AdministrativeEntity])
-
----
-
+![img](images/AdministrativeEntity.png)
 
 ## Parents
 

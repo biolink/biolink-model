@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:gene_to_expression_site_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: gene_to_expression_site_association_object
+# Type: gene to expression site association_object
 
 
 
 
 URI: [biolink:gene_to_expression_site_association_object](https://w3id.org/biolink/vocab/gene_to_expression_site_association_object)
+
 
 ## Domain and Range
 

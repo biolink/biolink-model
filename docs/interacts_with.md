@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:interacts_with
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: interacts_with
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: interacts with
 
 
 holds between any two entities that directly or indirectly interact with each other
 
 URI: [biolink:interacts_with](https://w3id.org/biolink/vocab/interacts_with)
+
 
 ## Domain and Range
 

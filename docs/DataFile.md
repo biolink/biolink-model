@@ -1,27 +1,13 @@
----
-parent: Classes
-title: biolink:DataFile
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: DataFile
+# Type: data file
 
 
 
 
 URI: [biolink:DataFile](https://w3id.org/biolink/vocab/DataFile)
 
-EFO:0004095
-{: .mapping-label }
 
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DataSetVersion]-%20source%20data%20file%200..1>\[DataFile&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DataFile]^-\[SourceFile],%20\[NamedThing]^-\[DataFile])
-
----
-
+![img](images/DataFile.png)
 
 ## Parents
 

@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:gene_to_go_term_association_subject
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: gene_to_go_term_association_subject
+# Type: gene to go term association_subject
 
 
 
 
 URI: [biolink:gene_to_go_term_association_subject](https://w3id.org/biolink/vocab/gene_to_go_term_association_subject)
+
 
 ## Domain and Range
 

@@ -1,36 +1,13 @@
----
-parent: Classes
-title: biolink:Drug
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Drug
+# Type: drug
 
 
 A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 
 URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
-WD:Q12140
-{: .mapping-label }
 
-CHEBI:23888
-{: .mapping-label }
-
-UMLSSC:T200
-{: .mapping-label }
-
-UMLSST:clnd
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Drug&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalSubstance]^-\[Drug])
-
----
-
+![img](images/Drug.png)
 
 ## Parents
 

@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:has_gene_product
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_gene_product
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: has gene product
 
 
 holds between a gene and a transcribed and/or translated product generated from it
 
 URI: [biolink:has_gene_product](https://w3id.org/biolink/vocab/has_gene_product)
+
 
 ## Domain and Range
 

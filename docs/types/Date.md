@@ -1,11 +1,5 @@
----
-parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Date
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Date
+# Type: date
 
 
 a date (year, month and day) in an idealized calendar

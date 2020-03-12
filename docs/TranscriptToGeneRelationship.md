@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:TranscriptToGeneRelationship
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: TranscriptToGeneRelationship
+# Type: transcript to gene relationship
 
 
 A gene is a collection of transcripts
@@ -13,12 +7,7 @@ A gene is a collection of transcripts
 URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/TranscriptToGeneRelationship)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[TranscriptToGeneRelationship&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[TranscriptToGeneRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[TranscriptToGeneRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[TranscriptToGeneRelationship],%20\[Gene]<object%201..1-%20\[TranscriptToGeneRelationship],%20\[Transcript]<subject%201..1-%20\[TranscriptToGeneRelationship],%20\[SequenceFeatureRelationship]^-\[TranscriptToGeneRelationship])
-
----
-
+![img](images/TranscriptToGeneRelationship.png)
 
 ## Parents
 
@@ -53,7 +42,7 @@ URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/Trans
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

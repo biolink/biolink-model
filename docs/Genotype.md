@@ -1,30 +1,13 @@
----
-parent: Classes
-title: biolink:Genotype
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Genotype
+# Type: genotype
 
 
 An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
 
 URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 
-GENO:0000536
-{: .mapping-label }
 
-SIO:001079
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Genotype&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenotypeToGeneAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20object%201..1>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToThingAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToVariantAssociation]-%20subject%201..1>\[Genotype],%20\[GenomicEntity]^-\[Genotype])
-
----
-
+![img](images/Genotype.png)
 
 ## Parents
 

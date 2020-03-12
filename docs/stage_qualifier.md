@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:stage_qualifier
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: stage_qualifier
+# Type: stage qualifier
 
 
 stage at which expression takes place
 
 URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
+
 
 ## Domain and Range
 

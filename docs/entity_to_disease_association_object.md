@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:entity_to_disease_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: entity_to_disease_association_object
+# Type: entity to disease association_object
 
 
 
 
 URI: [biolink:entity_to_disease_association_object](https://w3id.org/biolink/vocab/entity_to_disease_association_object)
+
 
 ## Domain and Range
 

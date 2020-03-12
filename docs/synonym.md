@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:synonym
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: synonym
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 Alternate human-readable names for a thing
 
 URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
+
 
 ## Domain and Range
 

@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:GeographicLocationAtTime
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GeographicLocationAtTime
+# Type: geographic location at time
 
 
 a location that can be described in lat/long coordinates, for a particular time
@@ -13,12 +7,7 @@ a location that can be described in lat/long coordinates, for a particular time
 URI: [biolink:GeographicLocationAtTime](https://w3id.org/biolink/vocab/GeographicLocationAtTime)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeographicLocation]^-\[GeographicLocationAtTime&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/GeographicLocationAtTime.png)
 
 ## Parents
 

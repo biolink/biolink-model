@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:molecular_activity_enabled_by
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: molecular_activity_enabled_by
+# Type: molecular activity_enabled by
 
 
 
 
 URI: [biolink:molecular_activity_enabled_by](https://w3id.org/biolink/vocab/molecular_activity_enabled_by)
+
 
 ## Domain and Range
 

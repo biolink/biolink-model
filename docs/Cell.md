@@ -1,42 +1,13 @@
----
-parent: Classes
-title: biolink:Cell
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Cell
+# Type: cell
 
 
 
 
 URI: [biolink:Cell](https://w3id.org/biolink/vocab/Cell)
 
-GO:0005623
-{: .mapping-label }
 
-CL:0000000
-{: .mapping-label }
-
-SIO:010001
-{: .mapping-label }
-
-WD:Q7868
-{: .mapping-label }
-
-UMLSSC:T025
-{: .mapping-label }
-
-UMLSST:cell
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Cell&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AnatomicalEntity]^-\[Cell])
-
----
-
+![img](images/Cell.png)
 
 ## Parents
 

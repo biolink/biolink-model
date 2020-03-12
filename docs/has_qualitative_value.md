@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:has_qualitative_value
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_qualitative_value
-
-samples
-{: .samples-subset-label }
+# Type: has qualitative value
 
 
 connects an attribute to a value
 
 URI: [biolink:has_qualitative_value](https://w3id.org/biolink/vocab/has_qualitative_value)
+
 
 ## Domain and Range
 

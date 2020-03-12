@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:population_to_population_association_relation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: population_to_population_association_relation
+# Type: population to population association_relation
 
 
 
 
 URI: [biolink:population_to_population_association_relation](https://w3id.org/biolink/vocab/population_to_population_association_relation)
+
 
 ## Domain and Range
 

@@ -1,11 +1,5 @@
----
-parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie
+# Type: uriorcurie
 
 
 a URI or a CURIE

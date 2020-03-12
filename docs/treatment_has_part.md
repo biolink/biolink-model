@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:treatment_has_part
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: treatment_has_part
+# Type: treatment_has part
 
 
 
 
 URI: [biolink:treatment_has_part](https://w3id.org/biolink/vocab/treatment_has_part)
+
 
 ## Domain and Range
 

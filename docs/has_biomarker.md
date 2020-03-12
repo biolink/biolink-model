@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:has_biomarker
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_biomarker
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: has biomarker
 
 
 holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
 
 URI: [biolink:has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
+
 
 ## Domain and Range
 

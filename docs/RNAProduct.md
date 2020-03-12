@@ -1,33 +1,13 @@
----
-parent: Classes
-title: biolink:RNAProduct
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: RNAProduct
+# Type: RNA product
 
 
 
 
 URI: [biolink:RNAProduct](https://w3id.org/biolink/vocab/RNAProduct)
 
-CHEBI:33697
-{: .mapping-label }
 
-SIO:010450
-{: .mapping-label }
-
-WD:Q11053
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[RNAProduct&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[RNAProduct]^-\[NoncodingRNAProduct],%20\[RNAProduct]^-\[RNAProductIsoform],%20\[GeneProduct]^-\[RNAProduct])
-
----
-
+![img](images/RNAProduct.png)
 
 ## Parents
 

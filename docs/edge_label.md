@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:edge_label
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: edge_label
+# Type: edge label
 
 
 A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
 
 URI: [biolink:edge_label](https://w3id.org/biolink/vocab/edge_label)
+
 
 ## Domain and Range
 

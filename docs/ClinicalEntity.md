@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:ClinicalEntity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ClinicalEntity
+# Type: clinical entity
 
 
 Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
@@ -13,12 +7,7 @@ Any entity or process that exists in the clinical domain and outside the biologi
 URI: [biolink:ClinicalEntity](https://w3id.org/biolink/vocab/ClinicalEntity)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[ClinicalTrial],%20\[ClinicalEntity]^-\[ClinicalIntervention],%20\[NamedThing]^-\[ClinicalEntity])
-
----
-
+![img](images/ClinicalEntity.png)
 
 ## Parents
 

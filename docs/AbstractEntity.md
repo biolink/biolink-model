@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:AbstractEntity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: AbstractEntity
+# Type: abstract entity
 
 
 Any thing that is not a process or a physical mass-bearing entity
@@ -13,12 +7,7 @@ Any thing that is not a process or a physical mass-bearing entity
 URI: [biolink:AbstractEntity](https://w3id.org/biolink/vocab/AbstractEntity)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AbstractEntity]^-\[QuantityValue],%20\[AbstractEntity]^-\[Attribute])
-
----
-
+![img](images/AbstractEntity.png)
 
 ## Children
 

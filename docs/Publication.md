@@ -1,33 +1,13 @@
----
-parent: Classes
-title: biolink:Publication
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Publication
+# Type: publication
 
 
 Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
 
 URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
-IAO:0000311
-{: .mapping-label }
 
-UMLSSC:T170
-{: .mapping-label }
-
-UMLSST:inpr
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20publications%200..*>\[Publication&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[InformationContentEntity]^-\[Publication])
-
----
-
+![img](images/Publication.png)
 
 ## Parents
 

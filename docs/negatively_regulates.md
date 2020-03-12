@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:negatively_regulates
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: negatively_regulates
+# Type: negatively regulates
 
 
 
 
 URI: [biolink:negatively_regulates](https://w3id.org/biolink/vocab/negatively_regulates)
+
 
 ## Domain and Range
 

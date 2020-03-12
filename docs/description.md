@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:description
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: description
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 a human-readable description of a thing
 
 URI: [biolink:description](https://w3id.org/biolink/vocab/description)
+
 
 ## Domain and Range
 

@@ -1,11 +1,5 @@
----
-parent: Mixins
-title: biolink:SensitivityQuantifier
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: SensitivityQuantifier
+# Type: sensitivity quantifier
 
 
 
@@ -13,12 +7,7 @@ layout: default
 URI: [biolink:SensitivityQuantifier](https://w3id.org/biolink/vocab/SensitivityQuantifier)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[SensitivityQuantifier])
-
----
-
+![img](images/SensitivityQuantifier.png)
 
 ## Parents
 

@@ -1,27 +1,13 @@
----
-parent: Classes
-title: biolink:ChemicalExposure
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ChemicalExposure
+# Type: chemical exposure
 
 
 A chemical exposure is an intake of a particular chemical substance
 
 URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 
-ECTO:9000000
-{: .mapping-label }
 
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalExposure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[DrugExposure],%20\[ExposureEvent]^-\[ChemicalExposure])
-
----
-
+![img](images/ChemicalExposure.png)
 
 ## Parents
 

@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:participates_in
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: participates_in
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: participates in
 
 
 holds between a continuant and a process, where the continuant is somehow involved in the process
 
 URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
+
 
 ## Domain and Range
 

@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:onset_qualifier
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: onset_qualifier
+# Type: onset qualifier
 
 
 a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
 
 URI: [biolink:onset_qualifier](https://w3id.org/biolink/vocab/onset_qualifier)
+
 
 ## Domain and Range
 

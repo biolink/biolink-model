@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:category
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: category
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
 
 URI: [biolink:category](https://w3id.org/biolink/vocab/category)
+
 
 ## Domain and Range
 

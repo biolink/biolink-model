@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:publications
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: publications
 
@@ -11,6 +5,7 @@ layout: default
 connects an association to publications supporting the association
 
 URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
+
 
 ## Domain and Range
 

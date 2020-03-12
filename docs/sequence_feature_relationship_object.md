@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:sequence_feature_relationship_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: sequence_feature_relationship_object
+# Type: sequence feature relationship_object
 
 
 
 
 URI: [biolink:sequence_feature_relationship_object](https://w3id.org/biolink/vocab/sequence_feature_relationship_object)
+
 
 ## Domain and Range
 

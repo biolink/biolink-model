@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:affects_synthesis_of
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: affects_synthesis_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: affects synthesis of
 
 
 holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other
 
 URI: [biolink:affects_synthesis_of](https://w3id.org/biolink/vocab/affects_synthesis_of)
+
 
 ## Domain and Range
 

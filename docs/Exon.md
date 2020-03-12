@@ -1,33 +1,13 @@
----
-parent: Classes
-title: biolink:Exon
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Exon
+# Type: exon
 
 
 A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 
 URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 
-SO:0000147
-{: .mapping-label }
 
-SIO:010445
-{: .mapping-label }
-
-WD:Q373027
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Exon&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExonToTranscriptRelationship]-%20subject%201..1>\[Exon],%20\[GenomicEntity]^-\[Exon])
-
----
-
+![img](images/Exon.png)
 
 ## Parents
 

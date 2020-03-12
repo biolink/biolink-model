@@ -1,33 +1,13 @@
----
-parent: Classes
-title: biolink:GeneFamily
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GeneFamily
+# Type: gene family
 
 
 any grouping of multiple genes or gene products related by common descent
 
 URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
-SIO:001380
-{: .mapping-label }
 
-NCIT:C20130
-{: .mapping-label }
-
-WD:Q417841
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GeneFamily&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GeneFamily]uses%20-.->\[GeneGrouping],%20\[MolecularEntity]^-\[GeneFamily])
-
----
-
+![img](images/GeneFamily.png)
 
 ## Parents
 

@@ -1,45 +1,13 @@
----
-parent: Classes
-title: biolink:Protein
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Protein
+# Type: protein
 
 
 A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
 URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
-PR:000000001
-{: .mapping-label }
 
-SIO:010043
-{: .mapping-label }
-
-WD:Q8054
-{: .mapping-label }
-
-UMLSSC:T087
-{: .mapping-label }
-
-UMLSST:amas
-{: .mapping-label }
-
-UMLSSC:T116
-{: .mapping-label }
-
-UMLSST:aapp
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Protein&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[Protein]^-\[ProteinIsoform],%20\[GeneProduct]^-\[Protein])
-
----
-
+![img](images/Protein.png)
 
 ## Parents
 

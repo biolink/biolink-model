@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:variant_to_disease_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: variant_to_disease_association_object
+# Type: variant to disease association_object
 
 
 
 
 URI: [biolink:variant_to_disease_association_object](https://w3id.org/biolink/vocab/variant_to_disease_association_object)
+
 
 ## Domain and Range
 

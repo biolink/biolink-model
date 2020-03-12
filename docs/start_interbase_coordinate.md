@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:start_interbase_coordinate
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: start_interbase_coordinate
+# Type: start interbase coordinate
 
 
 
 
 URI: [biolink:start_interbase_coordinate](https://w3id.org/biolink/vocab/start_interbase_coordinate)
+
 
 ## Domain and Range
 

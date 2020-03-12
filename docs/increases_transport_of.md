@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:increases_transport_of
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: increases_transport_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: increases transport of
 
 
 holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
 
 URI: [biolink:increases_transport_of](https://w3id.org/biolink/vocab/increases_transport_of)
+
 
 ## Domain and Range
 

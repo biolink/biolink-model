@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:pairwise_interaction_association_relation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: pairwise_interaction_association_relation
+# Type: pairwise interaction association_relation
 
 
 
 
 URI: [biolink:pairwise_interaction_association_relation](https://w3id.org/biolink/vocab/pairwise_interaction_association_relation)
+
 
 ## Domain and Range
 

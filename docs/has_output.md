@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:has_output
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_output
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: has output
 
 
 holds between a process and a continuant, where the continuant is an output of the process
 
 URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
+
 
 ## Domain and Range
 

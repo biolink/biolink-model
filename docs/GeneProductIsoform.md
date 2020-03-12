@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:GeneProductIsoform
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GeneProductIsoform
+# Type: gene product isoform
 
 
 This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
@@ -13,12 +7,7 @@ This is an abstract class that can be mixed in with different kinds of gene prod
 URI: [biolink:GeneProductIsoform](https://w3id.org/biolink/vocab/GeneProductIsoform)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GeneProductIsoform&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[ProteinIsoform]uses%20-.->\[GeneProductIsoform],%20\[RNAProductIsoform]uses%20-.->\[GeneProductIsoform],%20\[GeneProduct]^-\[GeneProductIsoform])
-
----
-
+![img](images/GeneProductIsoform.png)
 
 ## Parents
 

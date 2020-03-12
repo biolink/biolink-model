@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:gene_to_gene_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: gene_to_gene_association_object
+# Type: gene to gene association_object
 
 
 
 
 URI: [biolink:gene_to_gene_association_object](https://w3id.org/biolink/vocab/gene_to_gene_association_object)
+
 
 ## Domain and Range
 

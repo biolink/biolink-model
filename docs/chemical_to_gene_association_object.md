@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:chemical_to_gene_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: chemical_to_gene_association_object
+# Type: chemical to gene association_object
 
 
 
 
 URI: [biolink:chemical_to_gene_association_object](https://w3id.org/biolink/vocab/chemical_to_gene_association_object)
+
 
 ## Domain and Range
 

@@ -1,63 +1,13 @@
----
-parent: Classes
-title: biolink:Phenomenon
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Phenomenon
+# Type: phenomenon
 
 
 a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 
 URI: [biolink:Phenomenon](https://w3id.org/biolink/vocab/Phenomenon)
 
-UMLSSG:PHEN
-{: .mapping-label }
 
-UMLSSC:T034
-{: .mapping-label }
-
-UMLSST:lbtr
-{: .mapping-label }
-
-UMLSSC:T038
-{: .mapping-label }
-
-UMLSST:biof
-{: .mapping-label }
-
-UMLSSC:T067
-{: .mapping-label }
-
-UMLSST:phpr
-{: .mapping-label }
-
-UMLSSC:T068
-{: .mapping-label }
-
-UMLSST:hcpp
-{: .mapping-label }
-
-UMLSSC:T069
-{: .mapping-label }
-
-UMLSST:eehu
-{: .mapping-label }
-
-UMLSSC:T070
-{: .mapping-label }
-
-UMLSST:npop
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[Phenomenon&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/Phenomenon.png)
 
 ## Parents
 

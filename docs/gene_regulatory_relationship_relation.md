@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:gene_regulatory_relationship_relation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: gene_regulatory_relationship_relation
+# Type: gene regulatory relationship_relation
 
 
 
 
 URI: [biolink:gene_regulatory_relationship_relation](https://w3id.org/biolink/vocab/gene_regulatory_relationship_relation)
+
 
 ## Domain and Range
 

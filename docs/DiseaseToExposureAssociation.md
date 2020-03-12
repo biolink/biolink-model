@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:DiseaseToExposureAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: DiseaseToExposureAssociation
+# Type: disease to exposure association
 
 
 An association between an exposure event and a disease
@@ -13,12 +7,7 @@ An association between an exposure event and a disease
 URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/DiseaseToExposureAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[DiseaseToExposureAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[DiseaseToExposureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[DiseaseToExposureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[DiseaseToExposureAssociation],%20\[ExposureEvent]<object%201..1-%20\[DiseaseToExposureAssociation],%20\[Disease]<subject%201..1-%20\[DiseaseToExposureAssociation],%20\[DiseaseToThingAssociation]^-\[DiseaseToExposureAssociation])
-
----
-
+![img](images/DiseaseToExposureAssociation.png)
 
 ## Parents
 
@@ -53,7 +42,7 @@ URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/Disea
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:functional_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: functional_association_object
+# Type: functional association_object
 
 
 
 
 URI: [biolink:functional_association_object](https://w3id.org/biolink/vocab/functional_association_object)
+
 
 ## Domain and Range
 

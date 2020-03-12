@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:positively_regulates
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: positively_regulates
+# Type: positively regulates
 
 
 
 
 URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_regulates)
+
 
 ## Domain and Range
 

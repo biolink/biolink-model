@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:GeneToExpressionSiteAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GeneToExpressionSiteAssociation
+# Type: gene to expression site association
 
 
 An association between a gene and an expression site, possibly qualified by stage/timing info.
@@ -13,12 +7,7 @@ An association between a gene and an expression site, possibly qualified by stag
 URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToExpressionSiteAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToExpressionSiteAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToExpressionSiteAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToExpressionSiteAssociation],%20\[OntologyClass]<quantifier%20qualifier%200..1-%20\[GeneToExpressionSiteAssociation],%20\[LifeStage]<stage%20qualifier%200..1-%20\[GeneToExpressionSiteAssociation],%20\[AnatomicalEntity]<object%201..1-%20\[GeneToExpressionSiteAssociation],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneToExpressionSiteAssociation],%20\[Association]^-\[GeneToExpressionSiteAssociation])
-
----
-
+![img](images/GeneToExpressionSiteAssociation.png)
 
 ## Parents
 
@@ -59,7 +48,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

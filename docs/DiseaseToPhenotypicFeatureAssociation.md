@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:DiseaseToPhenotypicFeatureAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: DiseaseToPhenotypicFeatureAssociation
+# Type: disease to phenotypic feature association
 
 
 An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
@@ -13,12 +7,7 @@ An association between a disease and a phenotypic feature in which the phenotypi
 URI: [biolink:DiseaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[DiseaseToPhenotypicFeatureAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[NamedThing]<object(i)%201..1-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[DiseaseToThingAssociation],%20\[Association]^-\[DiseaseToPhenotypicFeatureAssociation])
-
----
-
+![img](images/DiseaseToPhenotypicFeatureAssociation.png)
 
 ## Parents
 
@@ -48,7 +37,7 @@ URI: [biolink:DiseaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

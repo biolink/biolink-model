@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:part_of
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: part_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: part of
 
 
 holds between parts and wholes (material entities or processes)
 
 URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
+
 
 ## Domain and Range
 

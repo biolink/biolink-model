@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:ClinicalTrial
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ClinicalTrial
+# Type: clinical trial
 
 
 
@@ -13,12 +7,7 @@ layout: default
 URI: [biolink:ClinicalTrial](https://w3id.org/biolink/vocab/ClinicalTrial)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalEntity]^-\[ClinicalTrial&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/ClinicalTrial.png)
 
 ## Parents
 

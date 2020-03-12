@@ -1,27 +1,13 @@
----
-parent: Classes
-title: biolink:CellLine
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: CellLine
+# Type: cell line
 
 
 
 
 URI: [biolink:CellLine](https://w3id.org/biolink/vocab/CellLine)
 
-CLO:0000031
-{: .mapping-label }
 
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CellLineToThingAssociation]-%20subject%201..1>\[CellLine&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[OrganismalEntity]^-\[CellLine])
-
----
-
+![img](images/CellLine.png)
 
 ## Parents
 

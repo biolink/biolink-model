@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:ExonToTranscriptRelationship
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ExonToTranscriptRelationship
+# Type: exon to transcript relationship
 
 
 A transcript is formed from multiple exons
@@ -13,12 +7,7 @@ A transcript is formed from multiple exons
 URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonToTranscriptRelationship)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ExonToTranscriptRelationship&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ExonToTranscriptRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ExonToTranscriptRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ExonToTranscriptRelationship],%20\[Transcript]<object%201..1-%20\[ExonToTranscriptRelationship],%20\[Exon]<subject%201..1-%20\[ExonToTranscriptRelationship],%20\[SequenceFeatureRelationship]^-\[ExonToTranscriptRelationship])
-
----
-
+![img](images/ExonToTranscriptRelationship.png)
 
 ## Parents
 
@@ -53,7 +42,7 @@ URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonT
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:increases_secretion_of
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: increases_secretion_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: increases secretion of
 
 
 holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
 
 URI: [biolink:increases_secretion_of](https://w3id.org/biolink/vocab/increases_secretion_of)
+
 
 ## Domain and Range
 

@@ -1,96 +1,13 @@
----
-parent: Classes
-title: biolink:Disease
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: Disease
+# Type: disease
 
 
 
 
 URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 
-MONDO:0000001
-{: .mapping-label }
 
-WD:Q12136
-{: .mapping-label }
-
-SIO:010299
-{: .mapping-label }
-
-UMLSSG:DISO
-{: .mapping-label }
-
-UMLSSC:T019
-{: .mapping-label }
-
-UMLSST:cgab
-{: .mapping-label }
-
-UMLSSC:T020
-{: .mapping-label }
-
-UMLSST:acab
-{: .mapping-label }
-
-UMLSSC:T037
-{: .mapping-label }
-
-UMLSST:inpo
-{: .mapping-label }
-
-UMLSSC:T046
-{: .mapping-label }
-
-UMLSST:patf
-{: .mapping-label }
-
-UMLSSC:T047
-{: .mapping-label }
-
-UMLSST:dsyn
-{: .mapping-label }
-
-UMLSSC:T048
-{: .mapping-label }
-
-UMLSST:mobd
-{: .mapping-label }
-
-UMLSSC:T049
-{: .mapping-label }
-
-UMLSST:comd
-{: .mapping-label }
-
-UMLSSC:T184
-{: .mapping-label }
-
-UMLSST:sosy
-{: .mapping-label }
-
-UMLSSC:T190
-{: .mapping-label }
-
-UMLSST:anab
-{: .mapping-label }
-
-UMLSSC:T191
-{: .mapping-label }
-
-UMLSST:neop
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Disease&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DiseaseToExposureAssociation]-%20subject%201..1>\[Disease],%20\[DiseaseToThingAssociation]-%20subject%201..1>\[Disease],%20\[DiseaseOrPhenotypicFeature]^-\[Disease])
-
----
-
+![img](images/Disease.png)
 
 ## Parents
 

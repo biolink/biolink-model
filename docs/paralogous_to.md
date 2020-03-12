@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:paralogous_to
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: paralogous_to
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: paralogous to
 
 
 a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
 
 URI: [biolink:paralogous_to](https://w3id.org/biolink/vocab/paralogous_to)
+
 
 ## Domain and Range
 

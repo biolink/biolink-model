@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_zygosity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_zygosity
+# Type: has zygosity
 
 
 
 
 URI: [biolink:has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
+
 
 ## Domain and Range
 

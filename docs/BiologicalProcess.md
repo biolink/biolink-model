@@ -1,33 +1,13 @@
----
-parent: Classes
-title: biolink:BiologicalProcess
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: BiologicalProcess
+# Type: biological process
 
 
 One or more causally connected executions of molecular functions
 
 URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProcess)
 
-GO:0008150
-{: .mapping-label }
 
-SIO:000006
-{: .mapping-label }
-
-WD:Q2996394
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1>\[BiologicalProcess&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcess]^-\[PhysiologicalProcess],%20\[BiologicalProcess]^-\[Pathway],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess])
-
----
-
+![img](images/BiologicalProcess.png)
 
 ## Parents
 

@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:GeneToGeneAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GeneToGeneAssociation
+# Type: gene to gene association
 
 
 abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
@@ -13,12 +7,7 @@ abstract parent class for different kinds of gene-gene or gene product to gene p
 URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToGeneAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToGeneAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToGeneAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToGeneAssociation],%20\[GeneOrGeneProduct]<object%201..1-%20\[GeneToGeneAssociation],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneToGeneAssociation],%20\[GeneToGeneAssociation]^-\[PairwiseGeneToGeneInteraction],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation],%20\[Association]^-\[GeneToGeneAssociation])
-
----
-
+![img](images/GeneToGeneAssociation.png)
 
 ## Parents
 
@@ -58,7 +47,7 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

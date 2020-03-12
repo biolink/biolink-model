@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_route
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_route
+# Type: has route
 
 
 the process that results in the stressor coming into direct contact with the receptor
 
 URI: [biolink:has_route](https://w3id.org/biolink/vocab/has_route)
+
 
 ## Domain and Range
 

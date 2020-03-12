@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:predisposes
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: predisposes
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 holds between two entities where exposure to one entity increases the chance of developing the other
 
 URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
+
 
 ## Domain and Range
 

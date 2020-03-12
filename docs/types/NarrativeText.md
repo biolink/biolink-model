@@ -1,11 +1,5 @@
----
-parent: Types
-title: biolink:NarrativeText
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: NarrativeText
+# Type: narrative text
 
 
 A string that provides a human-readable description of something

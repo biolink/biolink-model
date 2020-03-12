@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:chemical_to_disease_or_phenotypic_feature_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: chemical_to_disease_or_phenotypic_feature_association_object
+# Type: chemical to disease or phenotypic feature association_object
 
 
 
 
 URI: [biolink:chemical_to_disease_or_phenotypic_feature_association_object](https://w3id.org/biolink/vocab/chemical_to_disease_or_phenotypic_feature_association_object)
+
 
 ## Domain and Range
 

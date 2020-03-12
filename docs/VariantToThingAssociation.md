@@ -1,11 +1,5 @@
----
-parent: Mixins
-title: biolink:VariantToThingAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: VariantToThingAssociation
+# Type: variant to thing association
 
 
 
@@ -13,12 +7,7 @@ layout: default
 URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantToThingAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[VariantToThingAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[VariantToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[VariantToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[VariantToThingAssociation],%20\[NamedThing]<object(i)%201..1-%20\[VariantToThingAssociation],%20\[SequenceVariant]<subject%201..1-%20\[VariantToThingAssociation],%20\[VariantToPopulationAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToPhenotypicFeatureAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToDiseaseAssociation]uses%20-.->\[VariantToThingAssociation],%20\[Association]^-\[VariantToThingAssociation])
-
----
-
+![img](images/VariantToThingAssociation.png)
 
 ## Parents
 
@@ -57,7 +46,7 @@ URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantT
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:GenotypeToGenotypePartAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GenotypeToGenotypePartAssociation
+# Type: genotype to genotype part association
 
 
 Any association between one genotype and a genotypic entity that is a sub-component of it
@@ -13,12 +7,7 @@ Any association between one genotype and a genotypic entity that is a sub-compon
 URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToGenotypePartAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToGenotypePartAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToGenotypePartAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToGenotypePartAssociation],%20\[Genotype]<object%201..1-%20\[GenotypeToGenotypePartAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToGenotypePartAssociation],%20\[Association]^-\[GenotypeToGenotypePartAssociation])
-
----
-
+![img](images/GenotypeToGenotypePartAssociation.png)
 
 ## Parents
 
@@ -55,7 +44,7 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

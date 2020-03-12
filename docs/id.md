@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:id
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: id
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
 
 URI: [biolink:id](https://w3id.org/biolink/vocab/id)
+
 
 ## Domain and Range
 

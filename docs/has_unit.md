@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:has_unit
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_unit
-
-samples
-{: .samples-subset-label }
+# Type: has unit
 
 
 connects a quantity value to a unit
 
 URI: [biolink:has_unit](https://w3id.org/biolink/vocab/has_unit)
+
 
 ## Domain and Range
 

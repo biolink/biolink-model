@@ -1,81 +1,13 @@
----
-parent: Classes
-title: biolink:ActivityAndBehavior
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ActivityAndBehavior
+# Type: activity and behavior
 
 
 Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
 URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBehavior)
 
-UMLSSG:ACTI
-{: .mapping-label }
 
-UMLSSC:T051
-{: .mapping-label }
-
-UMLSST:evnt
-{: .mapping-label }
-
-UMLSSC:T052
-{: .mapping-label }
-
-UMLSST:acty
-{: .mapping-label }
-
-UMLSSC:T053
-{: .mapping-label }
-
-UMLSST:bhvr
-{: .mapping-label }
-
-UMLSSC:T054
-{: .mapping-label }
-
-UMLSST:socb
-{: .mapping-label }
-
-UMLSSC:T055
-{: .mapping-label }
-
-UMLSST:inbe
-{: .mapping-label }
-
-UMLSSC:T056
-{: .mapping-label }
-
-UMLSST:dora
-{: .mapping-label }
-
-UMLSSC:T057
-{: .mapping-label }
-
-UMLSST:ocac
-{: .mapping-label }
-
-UMLSSC:T064
-{: .mapping-label }
-
-UMLSST:gora
-{: .mapping-label }
-
-UMLSSC:T066
-{: .mapping-label }
-
-UMLSST:mcha
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[ActivityAndBehavior&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/ActivityAndBehavior.png)
 
 ## Parents
 

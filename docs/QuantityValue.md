@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:QuantityValue
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: QuantityValue
+# Type: quantity value
 
 
 A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
@@ -13,12 +7,7 @@ A value of an attribute that is quantitative and measurable, expressed as a comb
 URI: [biolink:QuantityValue](https://w3id.org/biolink/vocab/QuantityValue)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]++-%20has%20quantitative%20value%200..*>\[QuantityValue&#124;has_unit:unit%20%3F;has_numeric_value:double%20%3F],%20\[AbstractEntity]^-\[QuantityValue])
-
----
-
+![img](images/QuantityValue.png)
 
 ## Parents
 

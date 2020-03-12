@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:GenotypeToVariantAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GenotypeToVariantAssociation
+# Type: genotype to variant association
 
 
 Any association between a genotype and a sequence variant.
@@ -13,12 +7,7 @@ Any association between a genotype and a sequence variant.
 URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/GenotypeToVariantAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToVariantAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToVariantAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToVariantAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToVariantAssociation],%20\[SequenceVariant]<object%201..1-%20\[GenotypeToVariantAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToVariantAssociation],%20\[Association]^-\[GenotypeToVariantAssociation])
-
----
-
+![img](images/GenotypeToVariantAssociation.png)
 
 ## Parents
 
@@ -55,7 +44,7 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

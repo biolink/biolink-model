@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:variant_to_population_association_has_count
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: variant_to_population_association_has_count
+# Type: variant to population association_has count
 
 
 
 
 URI: [biolink:variant_to_population_association_has_count](https://w3id.org/biolink/vocab/variant_to_population_association_has_count)
+
 
 ## Domain and Range
 

@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:RNAProductIsoform
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: RNAProductIsoform
+# Type: RNA product isoform
 
 
 Represents a protein that is a specific isoform of the canonical or reference RNA
@@ -13,12 +7,7 @@ Represents a protein that is a specific isoform of the canonical or reference RN
 URI: [biolink:RNAProductIsoform](https://w3id.org/biolink/vocab/RNAProductIsoform)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[RNAProductIsoform&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[RNAProductIsoform]uses%20-.->\[GeneProductIsoform],%20\[RNAProduct]^-\[RNAProductIsoform])
-
----
-
+![img](images/RNAProductIsoform.png)
 
 ## Parents
 

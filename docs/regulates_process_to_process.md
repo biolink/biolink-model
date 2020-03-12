@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:regulates_process_to_process
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: regulates_process_to_process
+# Type: regulates, process to process
 
 
 
 
 URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regulates_process_to_process)
+
 
 ## Domain and Range
 

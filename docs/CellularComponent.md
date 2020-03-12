@@ -1,39 +1,13 @@
----
-parent: Classes
-title: biolink:CellularComponent
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: CellularComponent
+# Type: cellular component
 
 
 A location in or around a cell
 
 URI: [biolink:CellularComponent](https://w3id.org/biolink/vocab/CellularComponent)
 
-GO:0005575
-{: .mapping-label }
 
-SIO:001400
-{: .mapping-label }
-
-WD:Q5058355
-{: .mapping-label }
-
-UMLSSC:T026
-{: .mapping-label }
-
-UMLSST:celc
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[CellularComponent&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1>\[CellularComponent],%20\[AnatomicalEntity]^-\[CellularComponent])
-
----
-
+![img](images/CellularComponent.png)
 
 ## Parents
 

@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:CaseToThingAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: CaseToThingAssociation
+# Type: case to thing association
 
 
 An abstract association for use where the case is the subject
@@ -13,12 +7,7 @@ An abstract association for use where the case is the subject
 URI: [biolink:CaseToThingAssociation](https://w3id.org/biolink/vocab/CaseToThingAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[CaseToThingAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[CaseToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[CaseToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[CaseToThingAssociation],%20\[NamedThing]<object(i)%201..1-%20\[CaseToThingAssociation],%20\[Case]<subject%201..1-%20\[CaseToThingAssociation],%20\[CaseToPhenotypicFeatureAssociation]uses%20-.->\[CaseToThingAssociation],%20\[Association]^-\[CaseToThingAssociation])
-
----
-
+![img](images/CaseToThingAssociation.png)
 
 ## Parents
 
@@ -55,7 +44,7 @@ URI: [biolink:CaseToThingAssociation](https://w3id.org/biolink/vocab/CaseToThing
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

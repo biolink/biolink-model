@@ -1,9 +1,6 @@
----
-title: Browse Biolink Model
-has_children: true
-nav_order: 2
-layout: default
----
+
+# Biolink_Model schema
+
 
 Entity and association taxonomy and datamodel for life-sciences data
 
@@ -191,8 +188,6 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [association slot](association_slot.md) - any slot that relates an association to another entity
     * [association type](association_type.md) - connects an association to the type of association (e.g. gene to phenotype)
-    * [association➞id](association_id.md) - A unique identifier for an association
-       * [pairwise interaction association➞id](pairwise_interaction_association_id.md)
     * [change is catalyzed by](change_is_catalyzed_by.md) - hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
        * [chemical to chemical derivation association➞change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)
     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
@@ -276,8 +271,8 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)
        * [chemical to thing association➞subject](chemical_to_thing_association_subject.md)
        * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)
-       * [disease to exposure association➞subject](disease_to_exposure_association_subject.md)
        * [disease to thing association➞subject](disease_to_thing_association_subject.md)
+          * [disease to exposure association➞subject](disease_to_exposure_association_subject.md)
        * [exposure event to phenotypic feature association➞subject](exposure_event_to_phenotypic_feature_association_subject.md)
        * [functional association➞subject](functional_association_subject.md)
           * [gene to go term association➞subject](gene_to_go_term_association_subject.md)
@@ -309,6 +304,8 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [variant to phenotypic feature association➞subject](variant_to_phenotypic_feature_association_subject.md)
        * [variant to population association➞subject](variant_to_population_association_subject.md)
        * [variant to thing association➞subject](variant_to_thing_association_subject.md)
+ * [deprecated element has exact replacement](deprecated_element_has_exact_replacement.md) - When an element is deprecated, it can be automatically replaced by this uri or curie
+ * [deprecated element has possible replacement](deprecated_element_has_possible_replacement.md) - When an element is deprecated, it can be potentially replaced by this uri or curie
  * [has attribute](has_attribute.md) - connects any named thing to an attribute
  * [has attribute type](has_attribute_type.md) - connects an attribute to a class that describes it
  * [has numeric value](has_numeric_value.md) - connects a quantity value to a number
@@ -316,6 +313,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
  * [has unit](has_unit.md) - connects a quantity value to a unit
  * [interacting molecules category](interacting_molecules_category.md)
+ * [mappings](mappings.md) - A list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.
+    * [close mappings](close_mappings.md) - A list of terms from different schemas or terminology systems that have close meaning.
+    * [exact mappings](exact_mappings.md) - A list of terms from different schemas or terminology systems that have identical meaning.
+    * [related mappings](related_mappings.md) - A list of terms from different schemas or terminology systems that have related meaning.
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
     * [aggregate statistic](aggregate_statistic.md)
        * [has count](has_count.md) - number of things with a particular property
@@ -325,6 +326,8 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [variant to population association➞has quotient](variant_to_population_association_has_quotient.md)
        * [has total](has_total.md) - total number of things in a particular reference set
           * [variant to population association➞has total](variant_to_population_association_has_total.md)
+    * [association➞id](association_id.md) - A unique identifier for an association
+       * [pairwise interaction association➞id](pairwise_interaction_association_id.md)
     * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
     * [description](description.md) - a human-readable description of a thing

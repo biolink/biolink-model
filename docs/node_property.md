@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:node_property
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: node_property
+# Type: node property
 
 
 A grouping for any property that holds between a node and a value
 
 URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
+
 
 ## Domain and Range
 
@@ -22,6 +17,7 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
 ## Children
 
  *  [aggregate statistic](aggregate_statistic.md)
+ *  [association➞id](association_id.md)
  *  [category](category.md)
  *  [creation date](creation_date.md)
  *  [description](description.md)

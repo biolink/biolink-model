@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:exon_to_transcript_relationship_subject
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: exon_to_transcript_relationship_subject
+# Type: exon to transcript relationship_subject
 
 
 
 
 URI: [biolink:exon_to_transcript_relationship_subject](https://w3id.org/biolink/vocab/exon_to_transcript_relationship_subject)
+
 
 ## Domain and Range
 

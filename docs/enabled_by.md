@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:enabled_by
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: enabled_by
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: enabled by
 
 
 holds between a process and a physical entity, where the physical entity executes the process
 
 URI: [biolink:enabled_by](https://w3id.org/biolink/vocab/enabled_by)
+
 
 ## Domain and Range
 

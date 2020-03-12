@@ -1,11 +1,5 @@
----
-parent: Types
-title: biolink:ChemicalFormulaValue
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ChemicalFormulaValue
+# Type: chemical formula value
 
 
 A chemical formula

@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:treats
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: treats
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
 
 URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
+
 
 ## Domain and Range
 

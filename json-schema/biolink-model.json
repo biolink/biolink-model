@@ -192,6 +192,13 @@
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
          "type": "string"
       },
+      "close_mappings": {
+         "description": "A list of terms from different schemas or terminology systems that have close meaning.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "coexists_with": {
          "description": "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region",
          "items": {
@@ -336,6 +343,14 @@
          },
          "type": "array"
       },
+      "deprecated_element_has_exact_replacement": {
+         "description": "When an element is deprecated, it can be automatically replaced by this uri or curie",
+         "type": "string"
+      },
+      "deprecated_element_has_possible_replacement": {
+         "description": "When an element is deprecated, it can be potentially replaced by this uri or curie",
+         "type": "string"
+      },
       "derives_from": {
          "description": "holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity",
          "items": {
@@ -380,6 +395,13 @@
       },
       "end_interbase_coordinate": {
          "type": "string"
+      },
+      "exact_mappings": {
+         "description": "A list of terms from different schemas or terminology systems that have identical meaning.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "expressed_in": {
          "description": "holds between a gene or gene product and an anatomical entity in which it is expressed",
@@ -763,6 +785,13 @@
          },
          "type": "array"
       },
+      "mappings": {
+         "description": "A list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "model_of": {
          "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.",
          "items": {
@@ -948,6 +977,13 @@
          "type": "array"
       },
       "regulates_process_to_process": {
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "related_mappings": {
+         "description": "A list of terms from different schemas or terminology systems that have related meaning.",
          "items": {
             "type": "string"
          },
@@ -3620,7 +3656,7 @@
          "type": "object"
       }
    },
-   "title": "Biolink-Model",
+   "title": "Biolink_Model",
    "type": "object"
 }
 

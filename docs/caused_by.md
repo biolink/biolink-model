@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:caused_by
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: caused_by
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: caused by
 
 
 holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
 
 URI: [biolink:caused_by](https://w3id.org/biolink/vocab/caused_by)
+
 
 ## Domain and Range
 

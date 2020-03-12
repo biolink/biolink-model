@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:overlaps
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: overlaps
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 holds between entties that overlap in their extents (materials or processes)
 
 URI: [biolink:overlaps](https://w3id.org/biolink/vocab/overlaps)
+
 
 ## Domain and Range
 

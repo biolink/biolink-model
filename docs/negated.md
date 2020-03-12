@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:negated
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: negated
 
@@ -11,6 +5,7 @@ layout: default
 if set to true, then the association is negated i.e. is not true
 
 URI: [biolink:negated](https://w3id.org/biolink/vocab/negated)
+
 
 ## Domain and Range
 

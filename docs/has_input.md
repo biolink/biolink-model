@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:has_input
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_input
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: has input
 
 
 holds between a process and a continuant, where the continuant is an input into the process
 
 URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
+
 
 ## Domain and Range
 

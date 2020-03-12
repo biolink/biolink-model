@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:gene_to_gene_homology_association_relation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: gene_to_gene_homology_association_relation
+# Type: gene to gene homology association_relation
 
 
 
 
 URI: [biolink:gene_to_gene_homology_association_relation](https://w3id.org/biolink/vocab/gene_to_gene_homology_association_relation)
+
 
 ## Domain and Range
 

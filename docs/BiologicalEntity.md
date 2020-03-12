@@ -1,33 +1,13 @@
----
-parent: Classes
-title: biolink:BiologicalEntity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: BiologicalEntity
+# Type: biological entity
 
 
 
 
 URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
-WD:Q28845870
-{: .mapping-label }
 
-UMLSSC:T050
-{: .mapping-label }
-
-UMLSST:emod
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[OrganismalEntity],%20\[BiologicalEntity]^-\[MolecularEntity],%20\[BiologicalEntity]^-\[ExposureEvent],%20\[BiologicalEntity]^-\[DiseaseOrPhenotypicFeature],%20\[BiologicalEntity]^-\[BiologicalProcessOrActivity],%20\[NamedThing]^-\[BiologicalEntity])
-
----
-
+![img](images/BiologicalEntity.png)
 
 ## Parents
 

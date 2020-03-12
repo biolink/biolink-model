@@ -1,27 +1,19 @@
----
-parent: Slots
-title: biolink:association_id
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: association_id
-
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
 A unique identifier for an association
 
 URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
 
+
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>REQ</sub> [IdentifierType](types/IdentifierType.md)
+[Association](Association.md) ->  <sub>REQ</sub> [Nodeidentifier](types/Nodeidentifier.md)
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [node property](node_property.md)
 
 ## Children
 

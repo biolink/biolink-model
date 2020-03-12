@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:GeneToGeneHomologyAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GeneToGeneHomologyAssociation
+# Type: gene to gene homology association
 
 
 A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
@@ -13,12 +7,7 @@ A homology association between two genes. May be orthology (in which case the sp
 URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToGeneHomologyAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToGeneHomologyAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToGeneHomologyAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToGeneHomologyAssociation],%20\[GeneOrGeneProduct]<object(i)%201..1-%20\[GeneToGeneHomologyAssociation],%20\[GeneOrGeneProduct]<subject(i)%201..1-%20\[GeneToGeneHomologyAssociation],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation])
-
----
-
+![img](images/GeneToGeneHomologyAssociation.png)
 
 ## Parents
 
@@ -51,7 +40,7 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

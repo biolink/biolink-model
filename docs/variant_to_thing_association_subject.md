@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:variant_to_thing_association_subject
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: variant_to_thing_association_subject
+# Type: variant to thing association_subject
 
 
 
 
 URI: [biolink:variant_to_thing_association_subject](https://w3id.org/biolink/vocab/variant_to_thing_association_subject)
+
 
 ## Domain and Range
 

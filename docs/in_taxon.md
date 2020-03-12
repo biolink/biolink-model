@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:in_taxon
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: in_taxon
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: in taxon
 
 
 connects a thing to a class representing a taxon
 
 URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
+
 
 ## Domain and Range
 

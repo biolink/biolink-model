@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:provided_by
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: provided_by
+# Type: provided by
 
 
 connects an association to the agent (person, organization or group) that provided it
 
 URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
+
 
 ## Domain and Range
 

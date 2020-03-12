@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:versionOf
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: versionOf
 
@@ -11,6 +5,7 @@ layout: default
 
 
 URI: [biolink:versionOf](https://w3id.org/biolink/vocab/versionOf)
+
 
 ## Domain and Range
 

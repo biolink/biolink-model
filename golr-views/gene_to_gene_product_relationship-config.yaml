@@ -1,54 +1,41 @@
 description: A gene is transcribed and potentially translated to a gene product
-display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- gene to gene product relationship
-document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- gene to gene product relationship
+display_name: gene to gene product relationship
+document_category: gene to gene product relationship
 fields:
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - gene to gene product relationship_subject
+- display_name: gene to gene product relationship_subject
   id: subject
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - gene to gene product relationship_relation
+- display_name: gene to gene product relationship_relation
   id: relation
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - gene to gene product relationship_object
+- display_name: gene to gene product relationship_object
   id: object
 - description: A unique identifier for an association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association_id
+  display_name: association_id
   id: id
 - description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - negated
+  display_name: negated
   id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association type
+  display_name: association type
   id: association_type
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - qualifiers
+  display_name: qualifiers
   id: qualifiers
 - cardinality: multi
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - publications
+  display_name: publications
   id: publications
 - description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - provided by
+  display_name: provided by
   id: provided_by
 - description: any slot that relates an association to another entity
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association slot
+  display_name: association slot
   id: association_slot
 - description: A high-level grouping for the relationship type. AKA minimal predicate.
     This is analogous to category for nodes.
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - edge label
+  display_name: edge label
   id: edge_label
 id: gene_to_gene_product_relationship
 schema_generating: true

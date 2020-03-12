@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:creation_date
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: creation_date
+# Type: creation date
 
 
 date on which thing was created. This can be applied to nodes or edges
 
 URI: [biolink:creation_date](https://w3id.org/biolink/vocab/creation_date)
+
 
 ## Domain and Range
 

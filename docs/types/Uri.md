@@ -1,11 +1,5 @@
----
-parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Uri
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Uri
+# Type: uri
 
 
 a complete URI

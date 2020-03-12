@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:disease_to_exposure_association_object
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: disease_to_exposure_association_object
+# Type: disease to exposure association_object
 
 
 
 
 URI: [biolink:disease_to_exposure_association_object](https://w3id.org/biolink/vocab/disease_to_exposure_association_object)
+
 
 ## Domain and Range
 

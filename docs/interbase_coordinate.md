@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:interbase_coordinate
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: interbase_coordinate
+# Type: interbase coordinate
 
 
 TODO
 
 URI: [biolink:interbase_coordinate](https://w3id.org/biolink/vocab/interbase_coordinate)
+
 
 ## Domain and Range
 

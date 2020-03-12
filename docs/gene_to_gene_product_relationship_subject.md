@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:gene_to_gene_product_relationship_subject
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: gene_to_gene_product_relationship_subject
+# Type: gene to gene product relationship_subject
 
 
 
 
 URI: [biolink:gene_to_gene_product_relationship_subject](https://w3id.org/biolink/vocab/gene_to_gene_product_relationship_subject)
+
 
 ## Domain and Range
 

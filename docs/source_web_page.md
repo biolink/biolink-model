@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:source_web_page
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: source_web_page
+# Type: source web page
 
 
 
 
 URI: [biolink:source_web_page](https://w3id.org/biolink/vocab/source_web_page)
+
 
 ## Domain and Range
 

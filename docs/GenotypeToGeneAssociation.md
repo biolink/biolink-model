@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:GenotypeToGeneAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GenotypeToGeneAssociation
+# Type: genotype to gene association
 
 
 Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
@@ -13,12 +7,7 @@ Any association between a genotype and a gene. The genotype have have multiple v
 URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/GenotypeToGeneAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToGeneAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToGeneAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToGeneAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToGeneAssociation],%20\[Gene]<object%201..1-%20\[GenotypeToGeneAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToGeneAssociation],%20\[Association]^-\[GenotypeToGeneAssociation])
-
----
-
+![img](images/GenotypeToGeneAssociation.png)
 
 ## Parents
 
@@ -55,7 +44,7 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

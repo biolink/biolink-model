@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:decreases_splicing_of
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: decreases_splicing_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: decreases splicing of
 
 
 holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA
 
 URI: [biolink:decreases_splicing_of](https://w3id.org/biolink/vocab/decreases_splicing_of)
+
 
 ## Domain and Range
 

@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:title
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: title
 
@@ -11,6 +5,7 @@ layout: default
 
 
 URI: [biolink:title](https://w3id.org/biolink/vocab/title)
+
 
 ## Domain and Range
 

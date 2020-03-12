@@ -1,36 +1,13 @@
----
-parent: Classes
-title: biolink:SequenceVariant
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: SequenceVariant
+# Type: sequence variant
 
 
 An allele that varies in its sequence from what is considered the reference allele at that locus.
 
 URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
-GENO:0000002
-{: .mapping-label }
 
-WD:Q15304597
-{: .mapping-label }
-
-SIO:010277
-{: .mapping-label }
-
-VMC:Allele
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[SequenceVariant&#124;id:identifier_type;has_biological_sequence:biological_sequence%20%3F;name(i):label_type;category(i):iri_type%20%2B],%20\[Gene]<has%20gene%200..*-%20\[SequenceVariant],%20\[GenotypeToVariantAssociation]-%20object%201..1>\[SequenceVariant],%20\[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1>\[SequenceVariant],%20\[VariantToPhenotypicFeatureAssociation]-%20subject%201..1>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20subject%201..1>\[SequenceVariant],%20\[VariantToThingAssociation]-%20subject%201..1>\[SequenceVariant],%20\[GenomicEntity]^-\[SequenceVariant])
-
----
-
+![img](images/SequenceVariant.png)
 
 ## Parents
 

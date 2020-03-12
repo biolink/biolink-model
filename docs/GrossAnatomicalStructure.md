@@ -1,63 +1,13 @@
----
-parent: Classes
-title: biolink:GrossAnatomicalStructure
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GrossAnatomicalStructure
+# Type: gross anatomical structure
 
 
 
 
 URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/vocab/GrossAnatomicalStructure)
 
-UBERON:0010000
-{: .mapping-label }
 
-SIO:010046
-{: .mapping-label }
-
-WD:Q4936952
-{: .mapping-label }
-
-UMLSSC:T017
-{: .mapping-label }
-
-UMLSST:anst
-{: .mapping-label }
-
-UMLSSC:T021
-{: .mapping-label }
-
-UMLSST:ffas
-{: .mapping-label }
-
-UMLSSC:T023
-{: .mapping-label }
-
-UMLSST:bpoc
-{: .mapping-label }
-
-UMLSSC:T024
-{: .mapping-label }
-
-UMLSST:tisu
-{: .mapping-label }
-
-UMLSSC:T018
-{: .mapping-label }
-
-UMLSST:emst
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GrossAnatomicalStructure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure])
-
----
-
+![img](images/GrossAnatomicalStructure.png)
 
 ## Parents
 

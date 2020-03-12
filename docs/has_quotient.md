@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_quotient
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_quotient
+# Type: has quotient
 
 
 
 
 URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
+
 
 ## Domain and Range
 

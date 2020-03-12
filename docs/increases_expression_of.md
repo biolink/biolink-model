@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:increases_expression_of
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: increases_expression_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: increases expression of
 
 
 holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest
 
 URI: [biolink:increases_expression_of](https://w3id.org/biolink/vocab/increases_expression_of)
+
 
 ## Domain and Range
 

@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:entity_to_phenotypic_feature_association_description
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: entity_to_phenotypic_feature_association_description
+# Type: entity to phenotypic feature association_description
 
 
 
 
 URI: [biolink:entity_to_phenotypic_feature_association_description](https://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_description)
+
 
 ## Domain and Range
 

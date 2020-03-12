@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_gene
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_gene
+# Type: has gene
 
 
 connects an entity to a single gene
 
 URI: [biolink:has_gene](https://w3id.org/biolink/vocab/has_gene)
+
 
 ## Domain and Range
 

@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:phase
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: phase
 
@@ -11,6 +5,7 @@ layout: default
 TODO
 
 URI: [biolink:phase](https://w3id.org/biolink/vocab/phase)
+
 
 ## Domain and Range
 

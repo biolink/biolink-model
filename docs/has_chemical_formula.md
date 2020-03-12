@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_chemical_formula
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_chemical_formula
+# Type: has chemical formula
 
 
 description of chemical compound based on element symbols
 
 URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_formula)
+
 
 ## Domain and Range
 

@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:frequency_qualifier
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: frequency_qualifier
+# Type: frequency qualifier
 
 
 a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
 
 URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qualifier)
+
 
 ## Domain and Range
 

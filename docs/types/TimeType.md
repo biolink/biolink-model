@@ -1,11 +1,5 @@
----
-parent: Types
-title: biolink:TimeType
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: TimeType
+# Type: time type
 
 
 

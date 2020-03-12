@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:distribution
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: distribution
 
@@ -11,6 +5,7 @@ layout: default
 
 
 URI: [biolink:distribution](https://w3id.org/biolink/vocab/distribution)
+
 
 ## Domain and Range
 

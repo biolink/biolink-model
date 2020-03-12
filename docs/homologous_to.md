@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:homologous_to
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: homologous_to
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: homologous to
 
 
 holds between two biological entities that have common evolutionary origin
 
 URI: [biolink:homologous_to](https://w3id.org/biolink/vocab/homologous_to)
+
 
 ## Domain and Range
 

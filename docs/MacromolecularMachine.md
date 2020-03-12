@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:MacromolecularMachine
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: MacromolecularMachine
+# Type: macromolecular machine
 
 
 A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
@@ -13,12 +7,7 @@ A union of gene, gene product, and macromolecular complex. These are the basic u
 URI: [biolink:MacromolecularMachine](https://w3id.org/biolink/vocab/MacromolecularMachine)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[MacromolecularMachine&#124;name:symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[ChemicalToChemicalDerivationAssociation]-%20change%20is%20catalyzed%20by%200..*>\[MacromolecularMachine],%20\[FunctionalAssociation]-%20subject%201..1>\[MacromolecularMachine],%20\[MolecularActivity]-%20enabled%20by%200..*>\[MacromolecularMachine],%20\[MacromolecularMachine]^-\[MacromolecularComplex],%20\[MacromolecularMachine]^-\[GeneOrGeneProduct],%20\[GenomicEntity]^-\[MacromolecularMachine])
-
----
-
+![img](images/MacromolecularMachine.png)
 
 ## Parents
 

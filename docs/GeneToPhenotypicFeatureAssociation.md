@@ -1,27 +1,13 @@
----
-parent: Classes
-title: biolink:GeneToPhenotypicFeatureAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: GeneToPhenotypicFeatureAssociation
+# Type: gene to phenotypic feature association
 
 
 
 
 URI: [biolink:GeneToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation)
 
-http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
-{: .mapping-label }
 
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToPhenotypicFeatureAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToPhenotypicFeatureAssociation],%20\[NamedThing]<object(i)%201..1-%20\[GeneToPhenotypicFeatureAssociation],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[GeneToThingAssociation],%20\[Association]^-\[GeneToPhenotypicFeatureAssociation])
-
----
-
+![img](images/GeneToPhenotypicFeatureAssociation.png)
 
 ## Parents
 
@@ -59,7 +45,7 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

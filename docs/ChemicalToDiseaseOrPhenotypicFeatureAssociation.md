@@ -1,27 +1,13 @@
----
-parent: Classes
-title: biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ChemicalToDiseaseOrPhenotypicFeatureAssociation
+# Type: chemical to disease or phenotypic feature association
 
 
 An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
 
 URI: [biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
 
-SIO:000993
-{: .mapping-label }
 
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[DiseaseOrPhenotypicFeature]<object%201..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[ChemicalToDiseaseOrPhenotypicFeatureAssociation])
-
----
-
+![img](images/ChemicalToDiseaseOrPhenotypicFeatureAssociation.png)
 
 ## Parents
 
@@ -59,7 +45,7 @@ SIO:000993
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

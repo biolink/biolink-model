@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:molecular_activity_has_output
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: molecular_activity_has_output
+# Type: molecular activity_has output
 
 
 
 
 URI: [biolink:molecular_activity_has_output](https://w3id.org/biolink/vocab/molecular_activity_has_output)
+
 
 ## Domain and Range
 

@@ -1,96 +1,13 @@
----
-parent: Classes
-title: biolink:InformationContentEntity
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: InformationContentEntity
+# Type: information content entity
 
 
 a piece of information that typically describes some piece of biology or is used as support.
 
 URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/InformationContentEntity)
 
-IAO:0000030
-{: .mapping-label }
 
-UMLSSG:CONC
-{: .mapping-label }
-
-UMLSSC:T077
-{: .mapping-label }
-
-UMLSST:cnce
-{: .mapping-label }
-
-UMLSSC:T078
-{: .mapping-label }
-
-UMLSST:idcn
-{: .mapping-label }
-
-UMLSSC:T079
-{: .mapping-label }
-
-UMLSST:tmco
-{: .mapping-label }
-
-UMLSSC:T080
-{: .mapping-label }
-
-UMLSST:qlco
-{: .mapping-label }
-
-UMLSSC:T081
-{: .mapping-label }
-
-UMLSST:qnco
-{: .mapping-label }
-
-UMLSSC:T082
-{: .mapping-label }
-
-UMLSST:spco
-{: .mapping-label }
-
-UMLSSC:T089
-{: .mapping-label }
-
-UMLSST:rnlw
-{: .mapping-label }
-
-UMLSSC:T102
-{: .mapping-label }
-
-UMLSST:grpa
-{: .mapping-label }
-
-UMLSSC:T169
-{: .mapping-label }
-
-UMLSST:ftcn
-{: .mapping-label }
-
-UMLSSC:T171
-{: .mapping-label }
-
-UMLSST:lang
-{: .mapping-label }
-
-UMLSSC:T185
-{: .mapping-label }
-
-UMLSST:clas
-{: .mapping-label }
-
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[Publication],%20\[InformationContentEntity]^-\[EvidenceType],%20\[InformationContentEntity]^-\[ConfidenceLevel],%20\[NamedThing]^-\[InformationContentEntity])
-
----
-
+![img](images/InformationContentEntity.png)
 
 ## Parents
 

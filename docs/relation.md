@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:relation
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: relation
 
@@ -11,6 +5,7 @@ layout: default
 the relationship type by which a subject is connected to an object in an association
 
 URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
+
 
 ## Domain and Range
 

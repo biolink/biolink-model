@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:ChemicalToChemicalDerivationAssociation
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ChemicalToChemicalDerivationAssociation
+# Type: chemical to chemical derivation association
 
 
 A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
@@ -20,12 +14,7 @@ A causal relationship between two chemical entities, where the subject represent
 URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToChemicalDerivationAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[MacromolecularMachine]<change%20is%20catalyzed%20by%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalSubstance]<object%201..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalSubstance]<subject%201..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalToChemicalAssociation]^-\[ChemicalToChemicalDerivationAssociation])
-
----
-
+![img](images/ChemicalToChemicalDerivationAssociation.png)
 
 ## Parents
 
@@ -64,7 +53,7 @@ URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/
     * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

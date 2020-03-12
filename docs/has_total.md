@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_total
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_total
+# Type: has total
 
 
 total number of things in a particular reference set
 
 URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)
+
 
 ## Domain and Range
 

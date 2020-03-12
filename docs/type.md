@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:type
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: type
 
@@ -11,6 +5,7 @@ layout: default
 
 
 URI: [biolink:type](https://w3id.org/biolink/vocab/type)
+
 
 ## Domain and Range
 

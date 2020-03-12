@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:longitude
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: longitude
 
@@ -11,6 +5,7 @@ layout: default
 longitude
 
 URI: [biolink:longitude](https://w3id.org/biolink/vocab/longitude)
+
 
 ## Domain and Range
 

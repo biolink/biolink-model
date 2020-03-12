@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:regulates
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: regulates
 
@@ -11,6 +5,7 @@ layout: default
 
 
 URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
+
 
 ## Domain and Range
 

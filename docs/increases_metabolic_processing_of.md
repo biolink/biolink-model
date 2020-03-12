@@ -1,19 +1,11 @@
----
-parent: Slots
-title: biolink:increases_metabolic_processing_of
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: increases_metabolic_processing_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Type: increases metabolic processing of
 
 
 holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
 
 URI: [biolink:increases_metabolic_processing_of](https://w3id.org/biolink/vocab/increases_metabolic_processing_of)
+
 
 ## Domain and Range
 

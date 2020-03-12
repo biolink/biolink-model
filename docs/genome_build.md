@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:genome_build
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: genome_build
+# Type: genome build
 
 
 TODO
 
 URI: [biolink:genome_build](https://w3id.org/biolink/vocab/genome_build)
+
 
 ## Domain and Range
 

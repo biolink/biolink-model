@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:sequence_variant_qualifier
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: sequence_variant_qualifier
+# Type: sequence variant qualifier
 
 
 a qualifier used in an association where the variant
 
 URI: [biolink:sequence_variant_qualifier](https://w3id.org/biolink/vocab/sequence_variant_qualifier)
+
 
 ## Domain and Range
 

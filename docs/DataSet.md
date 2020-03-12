@@ -1,27 +1,13 @@
----
-parent: Classes
-title: biolink:DataSet
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: DataSet
+# Type: data set
 
 
 
 
 URI: [biolink:DataSet](https://w3id.org/biolink/vocab/DataSet)
 
-IAO:0000100
-{: .mapping-label }
 
-
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DataSetVersion]-%20versionOf%200..1>\[DataSet&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DataSet]^-\[DataSetVersion],%20\[NamedThing]^-\[DataSet])
-
----
-
+![img](images/DataSet.png)
 
 ## Parents
 

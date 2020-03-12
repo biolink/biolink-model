@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:has_biological_sequence
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: has_biological_sequence
+# Type: has biological sequence
 
 
 connects a genomic feature to its sequence
 
 URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biological_sequence)
+
 
 ## Domain and Range
 

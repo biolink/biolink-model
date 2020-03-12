@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:source_data_file
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: source_data_file
+# Type: source data file
 
 
 
 
 URI: [biolink:source_data_file](https://w3id.org/biolink/vocab/source_data_file)
+
 
 ## Domain and Range
 

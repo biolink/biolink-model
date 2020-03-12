@@ -1,9 +1,3 @@
----
-parent: Slots
-title: biolink:latitude
-grand_parent: Browse Biolink Model
-layout: default
----
 
 # Type: latitude
 
@@ -11,6 +5,7 @@ layout: default
 latitude
 
 URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
+
 
 ## Domain and Range
 

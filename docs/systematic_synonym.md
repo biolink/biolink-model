@@ -1,16 +1,11 @@
----
-parent: Slots
-title: biolink:systematic_synonym
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: systematic_synonym
+# Type: systematic synonym
 
 
 more commonly used for gene symbols in yeast
 
 URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_synonym)
+
 
 ## Domain and Range
 

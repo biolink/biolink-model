@@ -1,11 +1,5 @@
----
-parent: Classes
-title: biolink:ClinicalIntervention
-grand_parent: Browse Biolink Model
-layout: default
----
 
-# Type: ClinicalIntervention
+# Type: clinical intervention
 
 
 
@@ -13,12 +7,7 @@ layout: default
 URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/vocab/ClinicalIntervention)
 
 
----
-
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalEntity]^-\[ClinicalIntervention&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
-
----
-
+![img](images/ClinicalIntervention.png)
 
 ## Parents
 
