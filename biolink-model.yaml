@@ -1,5 +1,5 @@
 id: https://w3id.org/biolink/biolink-model
-name: Biolink-Model
+name: Biolink_Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -10,10 +10,11 @@ prefixes:
   SIO: http://semanticscience.org/resource/SIO_
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
   qud: http://qudt.org/1.1/schema/qudt#
+  skos: http://www.w3.org/2004/02/skos/core#
   UMLSSG: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/
   UMLSST: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/
   UMLSSC: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/
-  
+
 default_prefix: biolink
 default_range: string
 
@@ -46,6 +47,7 @@ subsets:
 
 imports:
   - biolinkml:types
+  - biolinkml:mappings
 
 types:
 
@@ -1235,6 +1237,18 @@ slots:
     range: identifier type
     required: true
 
+  association_id:
+    is_a: node property
+    identifier: true
+    description: >-
+        A unique identifier for an association
+    in_subset:
+        - translator_minimal
+    domain: association
+    range: nodeidentifier
+    ifabsent: bnode
+    alias: id
+
   iri:
     is_a: node property
     description: >-
@@ -1312,17 +1326,6 @@ slots:
     aliases: ['edge property', 'statement property']
     description: >-
       any slot that relates an association to another entity
-
-  association_id:
-    is_a: association slot
-    identifier: true
-    description: >-
-        A unique identifier for an association
-    in_subset:
-        - translator_minimal
-    domain: association
-    range: identifier type
-    alias: id
 
   subject:
     is_a: association slot
@@ -1589,7 +1592,7 @@ slots:
     description: >-
       hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in
       that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
-      
+
   has biological sequence:
     is_a: node property
     description: >-
@@ -1744,7 +1747,7 @@ classes:
     slots:
       - has unit
       - has numeric value
-      
+
   ## ------
   ## THINGS
   ## ------
@@ -2029,7 +2032,7 @@ classes:
     mixin: true
     description: >-
       An entity that has the role of being studied in an investigation, study, or experiment
-      
+
   material sample:
     aliases: ['biospecimen', 'sample', 'biosample', 'physical sample']
     is_a: named thing
@@ -3080,7 +3083,7 @@ classes:
         description: >-
           this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the
           subject chemical to transform into the object chemical
-        
+
   chemical to disease or phenotypic feature association:
     is_a: association
     class_uri: SIO:000993
@@ -3173,19 +3176,6 @@ classes:
       - thing to disease or phenotypic feature association
     description: >-
       An association between a material sample and a disease or phenotype
-
-  disease to exposure association:
-    is_a: disease to thing association
-    defining_slots:
-      - subject
-      - object
-    description: >-
-      An association between an exposure event and a disease
-    slot_usage:
-      subject:
-        range: disease
-      object:
-        range: exposure event
 
   frequency qualifier mixin:
     mixin: true
@@ -3305,6 +3295,18 @@ classes:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
 
+  disease to exposure association:
+    is_a: disease to thing association
+    defining_slots:
+      - subject
+      - object
+    description: >-
+      An association between an exposure event and a disease
+    slot_usage:
+      subject:
+        range: disease
+      object:
+        range: exposure event
 
   genotype to phenotypic feature association:
     is_a: association
