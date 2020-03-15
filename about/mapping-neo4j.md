@@ -16,7 +16,7 @@ For mapping to RDF graphs refer to [Mapping to RDF](mapping-rdf).
 
 All nodes in the Neo4j database should be to [NamedThing](../docs/NamedThing).
 
-BioLink Model defines a typology of nodes, all of which inherit from [NamedThing](../docs/NamedThing).
+Biolink Model defines a typology of nodes, all of which inherit from [NamedThing](../docs/NamedThing).
 
 Nodes in Neo4j (and property graphs in general) may have *node properties*.
 
@@ -108,7 +108,7 @@ For example, the generic property [negated](../docs/negated) which logically neg
 
 ### Association types
 
-BioLink includes a hierarchy of [Association](../docs/Association.html).
+Biolink Model includes a hierarchy of [Association](../docs/Association.html).
 
 > **Note:** This is distinct from the relation hierarchy, although in some cases they parallel one another.
 

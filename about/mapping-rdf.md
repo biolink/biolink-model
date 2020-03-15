@@ -14,7 +14,7 @@ named graphs to attach information to a triple.
 
 Each node in a graph corresponds to an RDF resource.
 
-BioLink Model defines a typology of nodes, all of which inherit from [biolink:NamedThing](../docs/NamedThing).
+Biolink Model defines a typology of nodes, all of which inherit from [biolink:NamedThing](../docs/NamedThing).
 
 Core properties for a node:
  - [biolink:id](../docs/id)
