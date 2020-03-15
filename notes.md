@@ -70,7 +70,7 @@ git merge master
 
 Now regenerate the markdown,
 ```bash
-python script/jekyllmarkdowngen.py
+make jekyll-docs
 ```
 
 This should regenerate all the Jekyll formatted markdown in /docs folder.

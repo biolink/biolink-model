@@ -14,7 +14,13 @@ from biolinkml.utils.generator import Generator, shared_arguments
 
 from biolinkml.utils.typereferences import References
 
+import argparse
+
 class JekyllMarkdownGenerator(MarkdownGenerator):
+    """
+    Extends biolinkml.generators.markdowngen.MarkdownGenerator to add new styles
+    and override certain existing styles.
+    """
     generatorname = os.path.basename(__file__)
     generatorversion = "0.1.1"
     valid_formats = ["md"]
@@ -247,13 +253,9 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
     def horizontal_line(self):
         print('\n---\n')
 
-
-@shared_arguments(JekyllMarkdownGenerator)
-@click.command()
-@click.option("--dir", "-d", help="Output directory")
-def cli(yamlfile, dir, img, **kwargs):
-    """ Generate markdown documentation of a biolink model """
-    JekyllMarkdownGenerator(yamlfile, **kwargs).serialize(directory=dir, image_dir=img, **kwargs)
-
 if __name__ == "__main__":
-    JekyllMarkdownGenerator(yamlfile='biolink-model.yaml', schema='biolink-model.yaml').serialize(directory='docs')
+    parser = argparse.ArgumentParser(description='A generator for creating Jekyll style markdown')
+    parser.add_argument('--yaml',  help='the YAML file', required=True)
+    parser.add_argument('--dir', help='the destination folder', required=True)
+    args = parser.parse_args()
+    JekyllMarkdownGenerator(yamlfile=args.yaml, schema=args.yaml).serialize(directory=args.dir)
