@@ -6,7 +6,7 @@ nav_order: 3
 
 The Biolink Model is defined as a YAML. Any changes or edits are to be made to this YAML.
 
-We make use of [biolinkml](https://github.com/biolink/biolinkml) library to generate various artifacts from the YAML. 
+We make use of [BiolinkML](https://github.com/biolink/biolinkml) library to generate various artifacts from the YAML.
 
 
 ## Installation
@@ -50,23 +50,23 @@ make context.jsonld
 
 To build the documentation site,
 
-#### Switch to gh-pages branch
+### Switch to gh-pages branch
 
 First ensure that you are on `gh-pages` branch,
 ```bash
 git checkout gh-pages
 ```
 
-#### Merge master
+### Merge master
 
 Now, merge `master` branch to get the latest changes,
 ```bash
 git merge master
 ```
 
-> Ensure there is no merge conflicts and that the merge was successful.
+> **Note:** Ensure there is no merge conflicts and that the merge was successful.
 
-#### Generate markdown
+### Generate markdown
 
 Now regenerate the markdown,
 ```bash
@@ -75,7 +75,7 @@ python script/jekyllmarkdowngen.py
 
 This should regenerate all the Jekyll formatted markdown in /docs folder.
 
-#### Commit all the changes
+### Commit all the changes
 
 Now add the `/docs` folder, commit and push.
 ```bash
