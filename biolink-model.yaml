@@ -1077,13 +1077,24 @@ slots:
       - translator_minimal
     slot_uri: RO:0002215
 
+  enables:
+    is_a: has participant
+    description: >-
+      holds between a physical entity and a process, where the physical entity executes the process
+    range: biological process or activity
+    in_subset:
+      - translator_minimal
+    inverse: enabled by
+    slot_uri: RO:0002327
+
   enabled by:
     is_a: has participant
     description: >-
       holds between a process and a physical entity, where the physical entity executes the process
-    range: biological process or activity
+    domain: biological process or activity
     in_subset:
       - translator_minimal
+    inverse: enables
     slot_uri: RO:0002333
 
   derives into:
