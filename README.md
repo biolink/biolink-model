@@ -74,7 +74,7 @@ representing Biolink model in a Neo4j database.
 
 ### RDF Mapping
 
-Refer to [mapping to RDF](https://biolink.github.io/biolink-model/about/mapping-rdf.html) for strategies on
+Refer to [mapping to RDF and RDF*](https://biolink.github.io/biolink-model/about/mapping-rdf.html) for strategies on
 representing Biolink model in a RDF triple store.
 
 
