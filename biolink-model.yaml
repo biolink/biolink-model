@@ -1413,6 +1413,20 @@ slots:
       connects an association to the type of association (e.g. gene to phenotype)
     slot_uri: rdf:type
 
+  chi squared statistic:
+    is_a: association slot
+    range: float
+    description: >-
+      represents the chi-squared statistic computed from observations
+    slot_uri: STATO:0000030
+
+  p value:
+    is_a: association slot
+    range: float
+    description: >-
+      A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+    slot_uri: OBI:0000175
+
   creation date:
     is_a: node property
     range: date
