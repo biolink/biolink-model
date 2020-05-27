@@ -15,7 +15,7 @@ URI: [biolink:RelationshipQuantifier](https://w3id.org/biolink/vocab/Relationshi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[SpecificityQuantifier],%20\[RelationshipQuantifier]^-\[SensitivityQuantifier],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipQuantifier]%5E-[SpecificityQuantifier],%20[RelationshipQuantifier]%5E-[SensitivityQuantifier],%20[RelationshipQuantifier]%5E-[FrequencyQuantifier])
 
 ---
 

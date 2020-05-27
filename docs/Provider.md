@@ -42,7 +42,7 @@ UMLSST:shro
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20provided%20by%200..1>\[Provider&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AdministrativeEntity]^-\[Provider])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20provided%20by%200..1%3E[Provider%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[AdministrativeEntity]%5E-[Provider])
 
 ---
 

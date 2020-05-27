@@ -24,10 +24,14 @@ WD:Q11053
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[RNAProduct&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[RNAProduct]^-\[NoncodingRNAProduct],%20\[RNAProduct]^-\[RNAProductIsoform],%20\[GeneProduct]^-\[RNAProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[RNAProduct%7Cname(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20[RNAProduct]%5E-[NoncodingRNAProduct],%20[RNAProduct]%5E-[RNAProductIsoform],%20[GeneProduct]%5E-[RNAProduct])
 
 ---
 
+
+## Identifier prefixes
+
+ * RNAcentral
 
 ## Parents
 

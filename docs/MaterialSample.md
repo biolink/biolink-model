@@ -21,10 +21,15 @@ SIO:001050
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]<has%20attribute%200..*-%20\[MaterialSample&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MaterialSampleDerivationAssociation]-%20subject%201..1>\[MaterialSample],%20\[MaterialSampleToThingAssociation]-%20subject%201..1>\[MaterialSample],%20\[MaterialSample]uses%20-.->\[SubjectOfInvestigation],%20\[MaterialSample]uses%20-.->\[PhysicalEntity],%20\[NamedThing]^-\[MaterialSample])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]%3Chas%20attribute%200..*-%20[MaterialSample%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample],%20[MaterialSampleToThingAssociation]-%20subject%201..1%3E[MaterialSample],%20[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],%20[MaterialSample]uses%20-.-%3E[PhysicalEntity],%20[NamedThing]%5E-[MaterialSample])
 
 ---
 
+
+## Identifier prefixes
+
+ * BioSample
+ * GOLD.META
 
 ## Parents
 

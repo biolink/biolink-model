@@ -21,7 +21,7 @@ SIO:001079
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Genotype&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenotypeToGeneAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20object%201..1>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToThingAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToVariantAssociation]-%20subject%201..1>\[Genotype],%20\[GenomicEntity]^-\[Genotype])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[Genotype%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[GenotypeToGeneAssociation]-%20subject%201..1%3E[Genotype],%20[GenotypeToGenotypePartAssociation]-%20object%201..1%3E[Genotype],%20[GenotypeToGenotypePartAssociation]-%20subject%201..1%3E[Genotype],%20[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Genotype],%20[GenotypeToThingAssociation]-%20subject%201..1%3E[Genotype],%20[GenotypeToVariantAssociation]-%20subject%201..1%3E[Genotype],%20[GenomicEntity]%5E-[Genotype])
 
 ---
 

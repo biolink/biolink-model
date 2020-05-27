@@ -24,10 +24,14 @@ UMLSST:popg
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[PopulationOfIndividualOrganisms&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[PopulationToPopulationAssociation]-%20object%201..1>\[PopulationOfIndividualOrganisms],%20\[PopulationToPopulationAssociation]-%20subject%201..1>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]-%20object%201..1>\[PopulationOfIndividualOrganisms],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[PopulationOfIndividualOrganisms])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..*-%20[PopulationOfIndividualOrganisms%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[PopulationToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],%20[PopulationToPopulationAssociation]-%20subject%201..1%3E[PopulationOfIndividualOrganisms],%20[VariantToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],%20[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],%20[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms])
 
 ---
 
+
+## Identifier prefixes
+
+ * HANCESTRO
 
 ## Parents
 

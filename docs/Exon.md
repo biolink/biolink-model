@@ -24,7 +24,7 @@ WD:Q373027
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Exon&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExonToTranscriptRelationship]-%20subject%201..1>\[Exon],%20\[GenomicEntity]^-\[Exon])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[Exon%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[ExonToTranscriptRelationship]-%20subject%201..1%3E[Exon],%20[GenomicEntity]%5E-[Exon])
 
 ---
 

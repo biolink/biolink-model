@@ -27,10 +27,21 @@ VMC:Allele
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[SequenceVariant&#124;id:identifier_type;has_biological_sequence:biological_sequence%20%3F;name(i):label_type;category(i):iri_type%20%2B],%20\[Gene]<has%20gene%200..*-%20\[SequenceVariant],%20\[GenotypeToVariantAssociation]-%20object%201..1>\[SequenceVariant],%20\[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1>\[SequenceVariant],%20\[VariantToPhenotypicFeatureAssociation]-%20subject%201..1>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20subject%201..1>\[SequenceVariant],%20\[VariantToThingAssociation]-%20subject%201..1>\[SequenceVariant],%20\[GenomicEntity]^-\[SequenceVariant])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[SequenceVariant%7Cid:identifier_type;has_biological_sequence:biological_sequence%20%3F;name(i):label_type;category(i):iri_type%20%2B],%20[Gene]%3Chas%20gene%200..*-%20[SequenceVariant],%20[GenotypeToVariantAssociation]-%20object%201..1%3E[SequenceVariant],%20[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1%3E[SequenceVariant],%20[VariantToPhenotypicFeatureAssociation]-%20subject%201..1%3E[SequenceVariant],%20[VariantToPopulationAssociation]-%20subject%201..1%3E[SequenceVariant],%20[VariantToThingAssociation]-%20subject%201..1%3E[SequenceVariant],%20[GenomicEntity]%5E-[SequenceVariant])
 
 ---
 
+
+## Identifier prefixes
+
+ * CAID
+ * ClinVar
+ * WD
+ * CIViC
+ * HGVS
+ * DBSNP
+ * MYVARIANT_HG19
+ * MYVARIANT_HG38
 
 ## Parents
 

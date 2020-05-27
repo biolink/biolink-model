@@ -36,10 +36,16 @@ UMLSST:aapp
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Protein&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[Protein]^-\[ProteinIsoform],%20\[GeneProduct]^-\[Protein])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[Protein%7Cname(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20[Protein]%5E-[ProteinIsoform],%20[GeneProduct]%5E-[Protein])
 
 ---
 
+
+## Identifier prefixes
+
+ * UniProtKB
+ * PR
+ * ENSEMBL
 
 ## Parents
 

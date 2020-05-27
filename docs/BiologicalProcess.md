@@ -24,10 +24,15 @@ WD:Q2996394
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1>\[BiologicalProcess&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcess]^-\[PhysiologicalProcess],%20\[BiologicalProcess]^-\[Pathway],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[BiologicalProcess]uses%20-.-%3E[Occurrent],%20[BiologicalProcess]%5E-[PhysiologicalProcess],%20[BiologicalProcess]%5E-[Pathway],%20[BiologicalProcessOrActivity]%5E-[BiologicalProcess])
 
 ---
 
+
+## Identifier prefixes
+
+ * GO
+ * Reactome
 
 ## Parents
 

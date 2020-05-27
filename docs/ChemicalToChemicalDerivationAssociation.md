@@ -22,7 +22,7 @@ URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToChemicalDerivationAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[MacromolecularMachine]<change%20is%20catalyzed%20by%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalSubstance]<object%201..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalSubstance]<subject%201..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalToChemicalAssociation]^-\[ChemicalToChemicalDerivationAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by(i)%200..1-%20[ChemicalToChemicalDerivationAssociation%7Crelation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20[Publication]%3Cpublications(i)%200..*-%20[ChemicalToChemicalDerivationAssociation],%20[OntologyClass]%3Cqualifiers(i)%200..*-%20[ChemicalToChemicalDerivationAssociation],%20[OntologyClass]%3Cassociation%20type(i)%200..1-%20[ChemicalToChemicalDerivationAssociation],%20[MacromolecularMachine]%3Cchange%20is%20catalyzed%20by%200..*-%20[ChemicalToChemicalDerivationAssociation],%20[ChemicalSubstance]%3Cobject%201..1-%20[ChemicalToChemicalDerivationAssociation],%20[ChemicalSubstance]%3Csubject%201..1-%20[ChemicalToChemicalDerivationAssociation],%20[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation])
 
 ---
 

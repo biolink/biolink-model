@@ -15,7 +15,7 @@ URI: [biolink:SpecificityQuantifier](https://w3id.org/biolink/vocab/SpecificityQ
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SpecificityQuantifier]^-\[PathognomonicityQuantifier],%20\[RelationshipQuantifier]^-\[SpecificityQuantifier])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SpecificityQuantifier]%5E-[PathognomonicityQuantifier],%20[RelationshipQuantifier]%5E-[SpecificityQuantifier])
 
 ---
 

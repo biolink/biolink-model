@@ -15,7 +15,7 @@ URI: [biolink:ClinicalModifier](https://w3id.org/biolink/vocab/ClinicalModifier)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[ClinicalModifier&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[ClinicalModifier],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[ClinicalModifier],%20\[Attribute]^-\[ClinicalModifier])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%3Chas%20qualitative%20value(i)%200..1-%20[ClinicalModifier%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[QuantityValue]%3Chas%20quantitative%20value(i)%200..*-++[ClinicalModifier],%20[OntologyClass]%3Chas%20attribute%20type(i)%200..1-%20[ClinicalModifier],%20[Attribute]%5E-[ClinicalModifier])
 
 ---
 

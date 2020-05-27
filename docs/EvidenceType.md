@@ -18,7 +18,7 @@ ECO:0000000
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity]^-\[EvidenceType&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity]%5E-[EvidenceType%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 
 ---
 

@@ -21,7 +21,7 @@ VMC:Haplotype
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Haplotype&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenomicEntity]^-\[Haplotype])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[Haplotype%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[GenomicEntity]%5E-[Haplotype])
 
 ---
 

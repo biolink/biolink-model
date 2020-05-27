@@ -138,10 +138,24 @@ UMLSST:inch
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[ChemicalSubstance&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalToChemicalAssociation]-%20object%201..1>\[ChemicalSubstance],%20\[ChemicalToChemicalDerivationAssociation]-%20object%201..1>\[ChemicalSubstance],%20\[ChemicalToChemicalDerivationAssociation]-%20subject%201..1>\[ChemicalSubstance],%20\[ChemicalToThingAssociation]-%20subject%201..1>\[ChemicalSubstance],%20\[MolecularActivity]-%20has%20input%200..*>\[ChemicalSubstance],%20\[MolecularActivity]-%20has%20output%200..*>\[ChemicalSubstance],%20\[ChemicalSubstance]^-\[Metabolite],%20\[ChemicalSubstance]^-\[Drug],%20\[ChemicalSubstance]^-\[Carbohydrate],%20\[MolecularEntity]^-\[ChemicalSubstance])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[ChemicalSubstance%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance],%20[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],%20[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],%20[ChemicalToThingAssociation]-%20subject%201..1%3E[ChemicalSubstance],%20[MolecularActivity]-%20has%20input%200..*%3E[ChemicalSubstance],%20[MolecularActivity]-%20has%20output%200..*%3E[ChemicalSubstance],%20[ChemicalSubstance]%5E-[Metabolite],%20[ChemicalSubstance]%5E-[Drug],%20[ChemicalSubstance]%5E-[Carbohydrate],%20[MolecularEntity]%5E-[ChemicalSubstance])
 
 ---
 
+
+## Identifier prefixes
+
+ * CHEBI
+ * CHEMBL.COMPOUND
+ * DRUGBANK
+ * PUBCHEM
+ * MESH
+ * HMDB
+ * INCHI
+ * INCHIKEY
+ * UNII
+ * KEGG
+ * GTOPDB
 
 ## Parents
 

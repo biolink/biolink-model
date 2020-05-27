@@ -15,7 +15,7 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[PopulationToPopulationAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[PopulationToPopulationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[PopulationToPopulationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[PopulationToPopulationAssociation],%20\[PopulationOfIndividualOrganisms]<object%201..1-%20\[PopulationToPopulationAssociation],%20\[PopulationOfIndividualOrganisms]<subject%201..1-%20\[PopulationToPopulationAssociation],%20\[Association]^-\[PopulationToPopulationAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by(i)%200..1-%20[PopulationToPopulationAssociation%7Crelation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20[Publication]%3Cpublications(i)%200..*-%20[PopulationToPopulationAssociation],%20[OntologyClass]%3Cqualifiers(i)%200..*-%20[PopulationToPopulationAssociation],%20[OntologyClass]%3Cassociation%20type(i)%200..1-%20[PopulationToPopulationAssociation],%20[PopulationOfIndividualOrganisms]%3Cobject%201..1-%20[PopulationToPopulationAssociation],%20[PopulationOfIndividualOrganisms]%3Csubject%201..1-%20[PopulationToPopulationAssociation],%20[Association]%5E-[PopulationToPopulationAssociation])
 
 ---
 

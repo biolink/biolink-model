@@ -15,7 +15,7 @@ URI: [biolink:SourceFile](https://w3id.org/biolink/vocab/SourceFile)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DataFile]^-\[SourceFile&#124;source_version:string%20%3F;retrievedOn:date%20%3F;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DataFile]%5E-[SourceFile%7Csource_version:string%20%3F;retrievedOn:date%20%3F;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 
 ---
 

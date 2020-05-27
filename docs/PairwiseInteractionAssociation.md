@@ -15,7 +15,7 @@ URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/Pai
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[PairwiseInteractionAssociation&#124;relation:uriorcurie;id:identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[PairwiseInteractionAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[PairwiseInteractionAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[PairwiseInteractionAssociation],%20\[MolecularEntity]<object%201..1-%20\[PairwiseInteractionAssociation],%20\[MolecularEntity]<subject%201..1-%20\[PairwiseInteractionAssociation],%20\[PairwiseGeneToGeneInteraction]uses%20-.->\[PairwiseInteractionAssociation],%20\[Association]^-\[PairwiseInteractionAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by(i)%200..1-%20[PairwiseInteractionAssociation%7Crelation:uriorcurie;id:identifier_type;negated(i):boolean%20%3F],%20[Publication]%3Cpublications(i)%200..*-%20[PairwiseInteractionAssociation],%20[OntologyClass]%3Cqualifiers(i)%200..*-%20[PairwiseInteractionAssociation],%20[OntologyClass]%3Cassociation%20type(i)%200..1-%20[PairwiseInteractionAssociation],%20[MolecularEntity]%3Cobject%201..1-%20[PairwiseInteractionAssociation],%20[MolecularEntity]%3Csubject%201..1-%20[PairwiseInteractionAssociation],%20[PairwiseGeneToGeneInteraction]uses%20-.-%3E[PairwiseInteractionAssociation],%20[Association]%5E-[PairwiseInteractionAssociation])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:PathognomonicityQuantifier](https://w3id.org/biolink/vocab/Pathogn
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SpecificityQuantifier]^-\[PathognomonicityQuantifier])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SpecificityQuantifier]%5E-[PathognomonicityQuantifier])
 
 ---
 

@@ -24,10 +24,14 @@ UMLSST:inpr
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20publications%200..*>\[Publication&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[InformationContentEntity]^-\[Publication])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20publications%200..*%3E[Publication%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[InformationContentEntity]%5E-[Publication])
 
 ---
 
+
+## Identifier prefixes
+
+ * PMID
 
 ## Parents
 

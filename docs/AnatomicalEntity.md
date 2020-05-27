@@ -48,10 +48,15 @@ UMLSST:bdsu
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[AnatomicalEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20subject%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20subject%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20subject%201..1>\[AnatomicalEntity],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[GeneToExpressionSiteAssociation]-%20object%201..1>\[AnatomicalEntity],%20\[AnatomicalEntity]uses%20-.->\[ThingWithTaxon],%20\[AnatomicalEntity]uses%20-.->\[PhysicalEntity],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure],%20\[AnatomicalEntity]^-\[CellularComponent],%20\[AnatomicalEntity]^-\[Cell],%20\[OrganismalEntity]^-\[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..*-%20[AnatomicalEntity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[AnatomicalEntityToAnatomicalEntityAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityAssociation]-%20subject%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20subject%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20subject%201..1%3E[AnatomicalEntity],%20[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[GeneToExpressionSiteAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon],%20[AnatomicalEntity]uses%20-.-%3E[PhysicalEntity],%20[AnatomicalEntity]%5E-[GrossAnatomicalStructure],%20[AnatomicalEntity]%5E-[CellularComponent],%20[AnatomicalEntity]%5E-[Cell],%20[OrganismalEntity]%5E-[AnatomicalEntity])
 
 ---
 
+
+## Identifier prefixes
+
+ * UBERON
+ * UMLS
 
 ## Parents
 

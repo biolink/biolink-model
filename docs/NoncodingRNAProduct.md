@@ -18,10 +18,16 @@ SIO:001235
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[NoncodingRNAProduct&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[NoncodingRNAProduct]^-\[MicroRNA],%20\[RNAProduct]^-\[NoncodingRNAProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[NoncodingRNAProduct%7Cname(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20[NoncodingRNAProduct]%5E-[MicroRNA],%20[RNAProduct]%5E-[NoncodingRNAProduct])
 
 ---
 
+
+## Identifier prefixes
+
+ * RNAcentral
+ * NCBIGene
+ * ENSEMBL
 
 ## Parents
 

@@ -30,10 +30,14 @@ UMLSST:celc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[CellularComponent&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1>\[CellularComponent],%20\[AnatomicalEntity]^-\[CellularComponent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[CellularComponent%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1%3E[CellularComponent],%20[AnatomicalEntity]%5E-[CellularComponent])
 
 ---
 
+
+## Identifier prefixes
+
+ * GO
 
 ## Parents
 

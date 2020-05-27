@@ -21,7 +21,7 @@ SIO:001005
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalExposure]^-\[DrugExposure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalExposure]%5E-[DrugExposure%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
 
 ---
 

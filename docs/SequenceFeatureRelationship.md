@@ -15,7 +15,7 @@ URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/Sequen
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[SequenceFeatureRelationship&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[SequenceFeatureRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[SequenceFeatureRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[SequenceFeatureRelationship],%20\[GenomicEntity]<object%201..1-%20\[SequenceFeatureRelationship],%20\[GenomicEntity]<subject%201..1-%20\[SequenceFeatureRelationship],%20\[SequenceFeatureRelationship]^-\[TranscriptToGeneRelationship],%20\[SequenceFeatureRelationship]^-\[GeneToGeneProductRelationship],%20\[SequenceFeatureRelationship]^-\[ExonToTranscriptRelationship],%20\[Association]^-\[SequenceFeatureRelationship])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by(i)%200..1-%20[SequenceFeatureRelationship%7Crelation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20[Publication]%3Cpublications(i)%200..*-%20[SequenceFeatureRelationship],%20[OntologyClass]%3Cqualifiers(i)%200..*-%20[SequenceFeatureRelationship],%20[OntologyClass]%3Cassociation%20type(i)%200..1-%20[SequenceFeatureRelationship],%20[GenomicEntity]%3Cobject%201..1-%20[SequenceFeatureRelationship],%20[GenomicEntity]%3Csubject%201..1-%20[SequenceFeatureRelationship],%20[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],%20[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],%20[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],%20[Association]%5E-[SequenceFeatureRelationship])
 
 ---
 

@@ -18,7 +18,7 @@ SIO:001250
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToPathwayAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToPathwayAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToPathwayAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToPathwayAssociation],%20\[NamedThing]<subject(i)%201..1-%20\[ChemicalToPathwayAssociation],%20\[Pathway]<object%201..1-%20\[ChemicalToPathwayAssociation],%20\[ChemicalToPathwayAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToPathwayAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by(i)%200..1-%20[ChemicalToPathwayAssociation%7Crelation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20[Publication]%3Cpublications(i)%200..*-%20[ChemicalToPathwayAssociation],%20[OntologyClass]%3Cqualifiers(i)%200..*-%20[ChemicalToPathwayAssociation],%20[OntologyClass]%3Cassociation%20type(i)%200..1-%20[ChemicalToPathwayAssociation],%20[NamedThing]%3Csubject(i)%201..1-%20[ChemicalToPathwayAssociation],%20[Pathway]%3Cobject%201..1-%20[ChemicalToPathwayAssociation],%20[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToThingAssociation],%20[Association]%5E-[ChemicalToPathwayAssociation])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:EntityToFeatureOrDiseaseQualifiers](https://w3id.org/biolink/vocab
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EntityToPhenotypicFeatureAssociation]uses%20-.->\[EntityToFeatureOrDiseaseQualifiers],%20\[EntityToFeatureOrDiseaseQualifiers]^-\[EntityToDiseaseAssociation],%20\[FrequencyQualifierMixin]^-\[EntityToFeatureOrDiseaseQualifiers])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[EntityToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToFeatureOrDiseaseQualifiers],%20[EntityToFeatureOrDiseaseQualifiers]%5E-[EntityToDiseaseAssociation],%20[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiers])
 
 ---
 

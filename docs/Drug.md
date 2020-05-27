@@ -27,7 +27,7 @@ UMLSST:clnd
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Drug&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalSubstance]^-\[Drug])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[Drug%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[ChemicalSubstance]%5E-[Drug])
 
 ---
 

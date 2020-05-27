@@ -21,7 +21,7 @@ UMLSST:fndg
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[DiseaseOrPhenotypicFeature&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject%201..1>\[DiseaseOrPhenotypicFeature],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]-%20subject%201..1>\[DiseaseOrPhenotypicFeature],%20\[ThingToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]^-\[Disease],%20\[BiologicalEntity]^-\[DiseaseOrPhenotypicFeature])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..*-%20[DiseaseOrPhenotypicFeature%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject%201..1%3E[DiseaseOrPhenotypicFeature],%20[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1%3E[DiseaseOrPhenotypicFeature],%20[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]-%20subject%201..1%3E[DiseaseOrPhenotypicFeature],%20[ThingToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1%3E[DiseaseOrPhenotypicFeature],%20[DiseaseOrPhenotypicFeature]uses%20-.-%3E[ThingWithTaxon],%20[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],%20[DiseaseOrPhenotypicFeature]%5E-[Disease],%20[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature])
 
 ---
 

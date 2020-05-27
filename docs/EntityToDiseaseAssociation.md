@@ -15,7 +15,7 @@ URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[EntityToFeatureOrDiseaseQualifiers]^-\[EntityToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],%20[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],%20[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],%20[EntityToFeatureOrDiseaseQualifiers]%5E-[EntityToDiseaseAssociation])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:GeneOntologyClass](https://w3id.org/biolink/vocab/GeneOntologyClas
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FunctionalAssociation]-%20object%201..1>\[GeneOntologyClass&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GeneToGoTermAssociation]-%20object%201..1>\[GeneOntologyClass],%20\[OntologyClass]^-\[GeneOntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[FunctionalAssociation]-%20object%201..1%3E[GeneOntologyClass%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[GeneToGoTermAssociation]-%20object%201..1%3E[GeneOntologyClass],%20[OntologyClass]%5E-[GeneOntologyClass])
 
 ---
 

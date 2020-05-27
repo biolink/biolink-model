@@ -15,7 +15,7 @@ URI: [biolink:PlanetaryEntity](https://w3id.org/biolink/vocab/PlanetaryEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PlanetaryEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[GeographicLocation],%20\[PlanetaryEntity]^-\[EnvironmentalProcess],%20\[PlanetaryEntity]^-\[EnvironmentalFeature],%20\[NamedThing]^-\[PlanetaryEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]%5E-[GeographicLocation],%20[PlanetaryEntity]%5E-[EnvironmentalProcess],%20[PlanetaryEntity]%5E-[EnvironmentalFeature],%20[NamedThing]%5E-[PlanetaryEntity])
 
 ---
 

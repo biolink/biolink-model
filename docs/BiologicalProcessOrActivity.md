@@ -15,10 +15,15 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcessOrActivity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess],%20\[BiologicalEntity]^-\[BiologicalProcessOrActivity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalProcessOrActivity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]uses%20-.-%3E[Occurrent],%20[BiologicalProcessOrActivity]%5E-[MolecularActivity],%20[BiologicalProcessOrActivity]%5E-[BiologicalProcess],%20[BiologicalEntity]%5E-[BiologicalProcessOrActivity])
 
 ---
 
+
+## Identifier prefixes
+
+ * GO
+ * Reactome
 
 ## Parents
 

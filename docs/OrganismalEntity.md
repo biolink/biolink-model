@@ -18,7 +18,7 @@ WD:Q7239
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismalEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[PopulationOfIndividualOrganisms],%20\[OrganismalEntity]^-\[LifeStage],%20\[OrganismalEntity]^-\[IndividualOrganism],%20\[OrganismalEntity]^-\[CellLine],%20\[OrganismalEntity]^-\[AnatomicalEntity],%20\[BiologicalEntity]^-\[OrganismalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]%5E-[PopulationOfIndividualOrganisms],%20[OrganismalEntity]%5E-[LifeStage],%20[OrganismalEntity]%5E-[IndividualOrganism],%20[OrganismalEntity]%5E-[CellLine],%20[OrganismalEntity]%5E-[AnatomicalEntity],%20[BiologicalEntity]%5E-[OrganismalEntity])
 
 ---
 

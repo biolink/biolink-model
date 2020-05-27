@@ -21,7 +21,7 @@ SIO:010450
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Transcript&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExonToTranscriptRelationship]-%20object%201..1>\[Transcript],%20\[TranscriptToGeneRelationship]-%20subject%201..1>\[Transcript],%20\[GenomicEntity]^-\[Transcript])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[Transcript%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript],%20[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],%20[GenomicEntity]%5E-[Transcript])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[MaterialSampleDerivationAssociation&#124;relation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[MaterialSampleDerivationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[MaterialSampleDerivationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[MaterialSampleDerivationAssociation],%20\[NamedThing]<object%201..1-%20\[MaterialSampleDerivationAssociation],%20\[MaterialSample]<subject%201..1-%20\[MaterialSampleDerivationAssociation],%20\[Association]^-\[MaterialSampleDerivationAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by(i)%200..1-%20[MaterialSampleDerivationAssociation%7Crelation:uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20[Publication]%3Cpublications(i)%200..*-%20[MaterialSampleDerivationAssociation],%20[OntologyClass]%3Cqualifiers(i)%200..*-%20[MaterialSampleDerivationAssociation],%20[OntologyClass]%3Cassociation%20type(i)%200..1-%20[MaterialSampleDerivationAssociation],%20[NamedThing]%3Cobject%201..1-%20[MaterialSampleDerivationAssociation],%20[MaterialSample]%3Csubject%201..1-%20[MaterialSampleDerivationAssociation],%20[Association]%5E-[MaterialSampleDerivationAssociation])
 
 ---
 

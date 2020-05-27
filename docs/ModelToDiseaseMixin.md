@@ -15,7 +15,7 @@ URI: [biolink:ModelToDiseaseMixin](https://w3id.org/biolink/vocab/ModelToDisease
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[ModelToDiseaseMixin])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin])
 
 ---
 

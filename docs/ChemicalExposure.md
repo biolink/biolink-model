@@ -18,7 +18,7 @@ ECTO:9000000
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalExposure&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[DrugExposure],%20\[ExposureEvent]^-\[ChemicalExposure])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalExposure%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]%5E-[DrugExposure],%20[ExposureEvent]%5E-[ChemicalExposure])
 
 ---
 

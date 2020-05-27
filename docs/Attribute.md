@@ -18,7 +18,7 @@ SIO:000614
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value%200..1-%20\[Attribute&#124;id:identifier_type;name:label_type;category:iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value%200..*-++\[Attribute],%20\[OntologyClass]<has%20attribute%20type%200..1-%20\[Attribute],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[Attribute]^-\[Zygosity],%20\[Attribute]^-\[SeverityValue],%20\[Attribute]^-\[Onset],%20\[Attribute]^-\[FrequencyValue],%20\[Attribute]^-\[ClinicalModifier],%20\[Attribute]^-\[BiologicalSex],%20\[AbstractEntity]^-\[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cid:identifier_type;name:label_type;category:iri_type%20%2B],%20[QuantityValue]%3Chas%20quantitative%20value%200..*-++[Attribute],%20[OntologyClass]%3Chas%20attribute%20type%200..1-%20[Attribute],%20[Attribute]uses%20-.-%3E[OntologyClass],%20[Attribute]%5E-[Zygosity],%20[Attribute]%5E-[SeverityValue],%20[Attribute]%5E-[Onset],%20[Attribute]%5E-[FrequencyValue],%20[Attribute]%5E-[ClinicalModifier],%20[Attribute]%5E-[BiologicalSex],%20[AbstractEntity]%5E-[Attribute])
 
 ---
 

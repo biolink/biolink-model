@@ -30,7 +30,7 @@ UMLSST:nusq
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GenomicEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenomicSequenceLocalization]-%20object%201..1>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20subject%201..1>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20object%201..1>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20subject%201..1>\[GenomicEntity],%20\[GenomicEntity]^-\[Transcript],%20\[GenomicEntity]^-\[SequenceVariant],%20\[GenomicEntity]^-\[MacromolecularMachine],%20\[GenomicEntity]^-\[Haplotype],%20\[GenomicEntity]^-\[Genotype],%20\[GenomicEntity]^-\[Genome],%20\[GenomicEntity]^-\[Exon],%20\[GenomicEntity]^-\[CodingSequence],%20\[MolecularEntity]^-\[GenomicEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[GenomicEntity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[GenomicSequenceLocalization]-%20object%201..1%3E[GenomicEntity],%20[GenomicSequenceLocalization]-%20subject%201..1%3E[GenomicEntity],%20[SequenceFeatureRelationship]-%20object%201..1%3E[GenomicEntity],%20[SequenceFeatureRelationship]-%20subject%201..1%3E[GenomicEntity],%20[GenomicEntity]%5E-[Transcript],%20[GenomicEntity]%5E-[SequenceVariant],%20[GenomicEntity]%5E-[MacromolecularMachine],%20[GenomicEntity]%5E-[Haplotype],%20[GenomicEntity]%5E-[Genotype],%20[GenomicEntity]%5E-[Genome],%20[GenomicEntity]%5E-[Exon],%20[GenomicEntity]%5E-[CodingSequence],%20[MolecularEntity]%5E-[GenomicEntity])
 
 ---
 

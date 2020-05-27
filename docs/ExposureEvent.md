@@ -18,7 +18,7 @@ SIO:000955
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DiseaseToExposureAssociation]-%20object%201..1>\[ExposureEvent&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExposureEventToPhenotypicFeatureAssociation]-%20subject%201..1>\[ExposureEvent],%20\[ExposureEvent]^-\[Treatment],%20\[ExposureEvent]^-\[ChemicalExposure],%20\[BiologicalEntity]^-\[ExposureEvent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseToExposureAssociation]-%20object%201..1%3E[ExposureEvent%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[ExposureEventToPhenotypicFeatureAssociation]-%20subject%201..1%3E[ExposureEvent],%20[ExposureEvent]%5E-[Treatment],%20[ExposureEvent]%5E-[ChemicalExposure],%20[BiologicalEntity]%5E-[ExposureEvent])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:BiologicalSex](https://w3id.org/biolink/vocab/BiologicalSex)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[BiologicalSex&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[BiologicalSex],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[BiologicalSex],%20\[BiologicalSex]^-\[PhenotypicSex],%20\[BiologicalSex]^-\[GenotypicSex],%20\[Attribute]^-\[BiologicalSex])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%3Chas%20qualitative%20value(i)%200..1-%20[BiologicalSex%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[QuantityValue]%3Chas%20quantitative%20value(i)%200..*-++[BiologicalSex],%20[OntologyClass]%3Chas%20attribute%20type(i)%200..1-%20[BiologicalSex],%20[BiologicalSex]%5E-[PhenotypicSex],%20[BiologicalSex]%5E-[GenotypicSex],%20[Attribute]%5E-[BiologicalSex])
 
 ---
 

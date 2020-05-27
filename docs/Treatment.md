@@ -21,7 +21,7 @@ SIO:001398
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1>\[Treatment&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExposureEvent]^-\[Treatment])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[ExposureEvent]%5E-[Treatment])
 
 ---
 

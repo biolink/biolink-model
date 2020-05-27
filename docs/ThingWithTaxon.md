@@ -15,7 +15,7 @@ URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[ThingWithTaxon],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[MolecularEntity]uses%20-.->\[ThingWithTaxon],%20\[LifeStage]uses%20-.->\[ThingWithTaxon],%20\[IndividualOrganism]uses%20-.->\[ThingWithTaxon],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20\[AnatomicalEntity]uses%20-.->\[ThingWithTaxon])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..*-%20[ThingWithTaxon],%20[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],%20[MolecularEntity]uses%20-.-%3E[ThingWithTaxon],%20[LifeStage]uses%20-.-%3E[ThingWithTaxon],%20[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],%20[DiseaseOrPhenotypicFeature]uses%20-.-%3E[ThingWithTaxon],%20[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuant
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQuantifier],%20[RelationshipQuantifier]%5E-[FrequencyQuantifier])
 
 ---
 

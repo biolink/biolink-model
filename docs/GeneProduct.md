@@ -18,10 +18,16 @@ WD:Q424689
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GeneProduct&#124;name(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20\[GeneToGeneProductRelationship]-%20object%201..1>\[GeneProduct],%20\[GeneProduct]^-\[Protein],%20\[GeneProduct]^-\[GeneProductIsoform],%20\[GeneProduct]^-\[RNAProduct],%20\[GeneOrGeneProduct]^-\[GeneProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[GeneProduct%7Cname(i):symbol_type;id(i):identifier_type;category(i):iri_type%20%2B],%20[GeneToGeneProductRelationship]-%20object%201..1%3E[GeneProduct],%20[GeneProduct]%5E-[Protein],%20[GeneProduct]%5E-[GeneProductIsoform],%20[GeneProduct]%5E-[RNAProduct],%20[GeneOrGeneProduct]%5E-[GeneProduct])
 
 ---
 
+
+## Identifier prefixes
+
+ * UNIPROTKB
+ * GTOPDB
+ * PR
 
 ## Parents
 

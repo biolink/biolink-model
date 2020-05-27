@@ -15,7 +15,7 @@ URI: [biolink:AdministrativeEntity](https://w3id.org/biolink/vocab/Administrativ
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AdministrativeEntity&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[Provider],%20\[NamedThing]^-\[AdministrativeEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[AdministrativeEntity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]%5E-[Provider],%20[NamedThing]%5E-[AdministrativeEntity])
 
 ---
 

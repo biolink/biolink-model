@@ -15,7 +15,7 @@ URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/vocab/FrequencyQ
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQualifierMixin],%20\[FrequencyQualifierMixin]^-\[EntityToFeatureOrDiseaseQualifiers])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin],%20[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiers])
 
 ---
 

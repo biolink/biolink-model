@@ -15,7 +15,7 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToGeneAssociation&#124;relation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToGeneAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToGeneAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToGeneAssociation],%20\[GeneOrGeneProduct]<object%201..1-%20\[GeneToGeneAssociation],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneToGeneAssociation],%20\[GeneToGeneAssociation]^-\[PairwiseGeneToGeneInteraction],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation],%20\[Association]^-\[GeneToGeneAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by(i)%200..1-%20[GeneToGeneAssociation%7Crelation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20[Publication]%3Cpublications(i)%200..*-%20[GeneToGeneAssociation],%20[OntologyClass]%3Cqualifiers(i)%200..*-%20[GeneToGeneAssociation],%20[OntologyClass]%3Cassociation%20type(i)%200..1-%20[GeneToGeneAssociation],%20[GeneOrGeneProduct]%3Cobject%201..1-%20[GeneToGeneAssociation],%20[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToGeneAssociation],%20[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],%20[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation],%20[Association]%5E-[GeneToGeneAssociation])
 
 ---
 

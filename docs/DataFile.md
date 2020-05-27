@@ -18,7 +18,7 @@ EFO:0004095
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DataSetVersion]-%20source%20data%20file%200..1>\[DataFile&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[DataFile]^-\[SourceFile],%20\[NamedThing]^-\[DataFile])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DataSetVersion]-%20source%20data%20file%200..1%3E[DataFile%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[DataFile]%5E-[SourceFile],%20[NamedThing]%5E-[DataFile])
 
 ---
 
