@@ -114,8 +114,13 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     img_url = os.path.join('images', os.path.basename(yg.output_file_name))
                 else:
                     yg = YumlGenerator(self)
-                    img_url = yg.serialize(classes=[cls.name])\
-                        .replace('[', '\\[').replace('?', '%3F').replace(' ', '%20')
+                    img_url = yg.serialize(classes=[cls.name])
+
+                img_url = img_url.replace(' ', '%20')
+                img_url = img_url.replace('<', '%3C')
+                img_url = img_url.replace('^', '%5E')
+                img_url = img_url.replace('>', '%3E')
+                img_url = img_url.replace('&#124;', '%7C')
 
                 self.horizontal_line()
                 print(f'![img]({img_url})')
