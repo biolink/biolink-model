@@ -1,40 +1,105 @@
-# Mapping to RDF
+---
+parent: "Mapping to a graph store"
+---
+
+# Mapping Biolink Model to a RDF and RDF*
+
+This document describes how Biolink is to be used in the context of
+RDF, either in storage in a triplestore, or in serialization to one of
+the RDF syntaxes, such as turtle.
+
+In RDF, a graph is a collection of triples `<S P O>` (subject
+predicate object). The S and P must be RDF _resources_ (nodes). The O
+can be a literal or a resource.
+
+Graphs are organized into collections of Named Graphs. Each triple can be conceived of as a quad `<S P O G>`.
+
+## Node and node properties
+
+Each node in a graph corresponds to an RDF resource.
+
+Biolink Model defines a typology of nodes, all of which inherit from [biolink:NamedThing](../docs/NamedThing).
+
+Core properties for a node:
+ - [biolink:id](../docs/id)
+ - [biolink:iri](../docs/iri)
+ - [biolink:name](../docs/name)
+ - [biolink:category](../docs/category)
+
+The [biolink:id](../docs/id) MUST be provided and MUST be a CURIE, which maps to the resource IRI/URI 
+using a standard prefix expansion. The RDF graph MAY include the CURIE short-form represented 
+with the predicate `dcterms:identifier` where the CURIE itself is a literal.
+
+The [biolink:name](../docs/name) field SHOULD correspond to a concise label for the entity, and maps 
+to `rdfs:label`.
+
+For example, the biolink node with ID `MONDO:0001083` and name
+`Fanconi syndrome` will be expressed in RDF (turtle syntax) as:
+
+```turtle
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+
+MONDO:0001083 rdfs:label "Fanconi syndrome"
+```
+
+When the CURIEs are expanded this will be rendered as:
+
+```turtle
+<http://purl.obolibrary.org/obo/MONDO_0001083> <http://www.w3.org/2000/01/rdf-schema#label> "Fanconi syndrome" .
+```
 
 
-This is similar to the [Neo4J mapping](mapping-neo4j.html). One
-difference is that Neo4J uses a property-graph model, whereas a RDF
-graph is a triple store, and must employ a technique such as
-reification or named graphs to attach information to the triple.
+### Types and Categories
 
-## Nodes
+To define the type of a node, you can use the `rdf:type` to link to a specific node type. You MAY use
+the predicate [biolink:category](../docs/category) to represent additional categories for that node. 
 
-Each node in a graph corresponds to an RDF resource. See [named
-thing](../docs/NamedThing.html) for the base class.
+The rdf:type triples MAY be partitioned into separate named
+graphs. For example, it can be convenient to put the direct rdf:type
+assertion in the main graph and the inferred/index (ie asserted plus
+inferred) in a separate 'inferred' graph.
 
-The `id` field is a CURIE, which maps to the resource IRI/URI using a
-standard prefix expansion. The RDF graph MAY include the CURIE
-shortform using a triple with `dcterms:identifier` as predicate and the
-CURIE as a literal.
+### Additional node properties
 
-The `name` field maps to `rdfs:label`.
+You MAY provide as many additional properties as required.
+These SHOULD come from a registered list of properties for that node type.
 
-## Types and Categories
+## Edge and edge properties
 
-TBD: use rdf:type or include additional category
+An edge maps to an RDF triple where both the subject and object are nodes representing Biolink entities.
 
-## Mapping Edges
+RDF reification is used for representing edge properties. RDF*
+provides a convenient syntax for abstracting over this.
 
-An edge maps to an RDF triple.
+So for example, an edge between x and y with edge label p and an
+additional edge property `publication=PMID:123` would be represented
+in RDF* as:
 
-See [named thing](../docs/Association.html) for a list of generic
-properties that are associated with an edge.
+```
+:x :p :y <<bl:publication http://identifiers.org/pmid/123>>
+```
 
-### OBAN Reification
+This is syntactic sugar for the more verbose reification triples:
 
-### Wikidata Reification
+```
+:x :p :y .
+[a rdf:Statement ;
+   rdf:subject :x ;
+   rdf:predicate :p ;
+   rdf:object :y ;
+   bl:publication http://identifiers.org/pmid/123 ].
+```
 
-### Standard RDF Reification
 
-### Use of NamedGraphs
+See [biolink:Association](../docs/Association) for a taxonomy of associations defined by the model, and 
+to see a list of generic properties that are associated with an edge.
 
-Examples: nanopubs
+
+## Comparison to Neo4J mapping
+
+The mapping is similar to [Mapping to Neo4j](mapping-neo4j). Differences include:
+
+ * Neo4j uses a Property Graph (PG) model. In RDF reification is used. RDF* provides a PG later
+ * In the Neo4J mapping, ids are represented as CURIEs. In RDF URIs are first class entities.
+ * There is a built-in concept of category in Neo4j, called labels. In RDF this is modeled as another node property (rdf:type)
