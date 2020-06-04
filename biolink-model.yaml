@@ -3174,6 +3174,20 @@ classes:
     description: >-
       An association between a material sample and a disease or phenotype
 
+  disease to thing association:
+    abstract: true
+    is_a: association
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: disease
+        description: "disease class"
+        values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+
   disease to exposure association:
     is_a: disease to thing association
     defining_slots:
@@ -3290,21 +3304,6 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
           - value: MP:0013229
             description: "abnormal brain ventricle size"
-
-  disease to thing association:
-    abstract: true
-    is_a: association
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: disease
-        description: "disease class"
-        values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
-        examples:
-          - value: MONDO:0017314
-            description: "Ehlers-Danlos syndrome, vascular type"
-
 
   genotype to phenotypic feature association:
     is_a: association

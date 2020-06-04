@@ -1,6 +1,6 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.1
-# Generation date: 2019-09-19 08:29
-# Schema: biolink_model
+# Generation date: 2020-06-04 16:26
+# Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
 # description: Entity and association taxonomy and datamodel for life-sciences data
@@ -22,6 +22,7 @@ metamodel_version = "1.4.1"
 BFO = Namespace('http://purl.obolibrary.org/obo/BFO_')
 BIOGRID = Namespace('http://thebiogrid.org/')
 BIOSAMPLE = Namespace('http://example.org/UNKNOWN/BioSample/')
+CAID = Namespace('http://example.org/UNKNOWN/CAID/')
 CHEBI = Namespace('http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL_COMPOUND = Namespace('http://identifiers.org/chembl.compound/')
 CHEMBL_TARGET = Namespace('http://identifiers.org/chembl.target/')
@@ -30,32 +31,51 @@ CIVIC = Namespace('http://example.org/UNKNOWN/CIViC/')
 CL = Namespace('http://purl.obolibrary.org/obo/CL_')
 CLO = Namespace('http://purl.obolibrary.org/obo/CLO_')
 CLINVAR = Namespace('http://www.ncbi.nlm.nih.gov/clinvar/')
+DBSNP = Namespace('http://identifiers.org/dbsnp/')
+DOID = Namespace('http://purl.obolibrary.org/obo/DOID_')
+DRUGBANK = Namespace('http://identifiers.org/drugbank/')
 ECO = Namespace('http://purl.obolibrary.org/obo/ECO_')
 ECTO = Namespace('http://example.org/UNKNOWN/ECTO/')
 EFO = Namespace('http://purl.obolibrary.org/obo/EFO_')
 ENSEMBL = Namespace('http://ensembl.org/id/')
+EXO = Namespace('http://example.org/UNKNOWN/ExO/')
 FAO = Namespace('http://purl.obolibrary.org/obo/FAO_')
 GENO = Namespace('http://purl.obolibrary.org/obo/GENO_')
 GO = Namespace('http://purl.obolibrary.org/obo/GO_')
 GOLD_META = Namespace('http://identifiers.org/gold.meta/')
+GTOPDB = Namespace('http://example.org/UNKNOWN/GTOPDB/')
 HANCESTRO = Namespace('http://example.org/UNKNOWN/HANCESTRO/')
 HGNC = Namespace('http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=')
+HGVS = Namespace('http://example.org/UNKNOWN/HGVS/')
+HMDB = Namespace('http://www.hmdb.ca/metabolites/')
 HP = Namespace('http://purl.obolibrary.org/obo/HP_')
 IAO = Namespace('http://purl.obolibrary.org/obo/IAO_')
+INCHI = Namespace('http://identifiers.org/inchi/')
+INCHIKEY = Namespace('http://identifiers.org/inchikey/')
+IUPHAR = Namespace('http://example.org/UNKNOWN/IUPHAR/')
 INTACT = Namespace('http://example.org/UNKNOWN/IntAct/')
+KEGG = Namespace('http://identifiers.org/kegg/')
+MEDDRA = Namespace('http://purl.bioontology.org/ontology/MEDDRA/')
+MESH = Namespace('http://purl.obolibrary.org/obo/MESH_')
 MGI = Namespace('http://www.informatics.jax.org/accession/MGI:')
 MIR = Namespace('http://identifiers.org/mir/')
 MONDO = Namespace('http://purl.obolibrary.org/obo/MONDO_')
+MYVARIANT_HG19 = Namespace('http://example.org/UNKNOWN/MYVARIANT_HG19/')
+MYVARIANT_HG38 = Namespace('http://example.org/UNKNOWN/MYVARIANT_HG38/')
 NCBIGENE = Namespace('http://www.ncbi.nlm.nih.gov/gene/')
 NCIT = Namespace('http://purl.obolibrary.org/obo/NCIT_')
 OBAN = Namespace('http://purl.org/oban/')
 OBI = Namespace('http://purl.obolibrary.org/obo/OBI_')
 OGMS = Namespace('http://purl.obolibrary.org/obo/OGMS_')
 OIO = Namespace('http://www.geneontology.org/formats/oboInOwl#')
+OMIM = Namespace('http://purl.obolibrary.org/obo/OMIM_')
+ORPHANET = Namespace('http://identifiers.org/orphanet/')
 PANTHER = Namespace('http://www.pantherdb.org/panther/family.do?clsAccession=')
+PHARMGKB = Namespace('http://example.org/UNKNOWN/PHARMGKB/')
 PMID = Namespace('http://www.ncbi.nlm.nih.gov/pubmed/')
 PO = Namespace('http://purl.obolibrary.org/obo/PO_')
 PR = Namespace('http://purl.obolibrary.org/obo/PR_')
+PUBCHEM = Namespace('http://example.org/UNKNOWN/PUBCHEM/')
 PW = Namespace('http://purl.obolibrary.org/obo/PW_')
 POMBASE = Namespace('https://www.pombase.org/spombe/result/')
 RHEA = Namespace('http://identifiers.org/rhea/')
@@ -65,17 +85,22 @@ REACTOME = Namespace('http://example.org/UNKNOWN/Reactome/')
 SEMMEDDB = Namespace('http://example.org/UNKNOWN/SEMMEDDB/')
 SGD = Namespace('https://www.yeastgenome.org/locus/')
 SIO = Namespace('http://semanticscience.org/resource/SIO_')
+SMPDB = Namespace('http://smpdb.ca/view/')
 SO = Namespace('http://purl.obolibrary.org/obo/SO_')
 UBERON = Namespace('http://purl.obolibrary.org/obo/UBERON_')
+UMLS = Namespace('http://linkedlifedata.com/resource/umls/id/')
 UMLSSC = Namespace('https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/')
 UMLSSG = Namespace('https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/')
 UMLSST = Namespace('https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/')
+UNII = Namespace('http://fdasis.nlm.nih.gov/srs/unii/')
+UNIPROTKB = Namespace('http://example.org/UNKNOWN/UNIPROTKB/')
 UO = Namespace('http://purl.obolibrary.org/obo/UO_')
 UPHENO = Namespace('http://purl.obolibrary.org/obo/UPHENO_')
 UNIPROTKB = Namespace('http://identifiers.org/uniprot/')
 VMC = Namespace('http://example.org/UNKNOWN/VMC/')
 WB = Namespace('http://identifiers.org/wb/')
 WD = Namespace('http://example.org/UNKNOWN/WD/')
+WIKIPATHWAYS = Namespace('http://identifiers.org/wikipathways/')
 ZFIN = Namespace('http://zfin.org/')
 BIOLINK = Namespace('https://w3id.org/biolink/vocab/')
 DCT = Namespace('http://example.org/UNKNOWN/dct/')
@@ -298,7 +323,7 @@ class PhenotypicFeatureId(DiseaseOrPhenotypicFeatureId):
     pass
 
 
-class EnvironmentId(BiologicalEntityId):
+class ExposureEventId(BiologicalEntityId):
     pass
 
 
@@ -470,11 +495,15 @@ class SequenceVariantId(GenomicEntityId):
     pass
 
 
-class DrugExposureId(EnvironmentId):
+class ChemicalExposureId(ExposureEventId):
     pass
 
 
-class TreatmentId(EnvironmentId):
+class DrugExposureId(ChemicalExposureId):
+    pass
+
+
+class TreatmentId(ExposureEventId):
     pass
 
 
@@ -566,6 +595,14 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
+class DiseaseToThingAssociationId(AssociationId):
+    pass
+
+
+class DiseaseToExposureAssociationId(DiseaseToThingAssociationId):
+    pass
+
+
 class EntityToPhenotypicFeatureAssociationId(AssociationId):
     pass
 
@@ -582,15 +619,11 @@ class ThingToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
-class DiseaseToThingAssociationId(AssociationId):
-    pass
-
-
 class GenotypeToPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
-class EnvironmentToPhenotypicFeatureAssociationId(AssociationId):
+class ExposureEventToPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
@@ -1006,7 +1039,7 @@ class NamedThing(YAMLRoot):
     """
     a databased entity or concept/class
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "physically_interacts_with", "affects", "regulates", "positively_regulates", "negatively_regulates", "disrupts", "homologous_to", "paralogous_to", "orthologous_to", "xenologous_to", "coexists_with", "colocalizes_with", "affects_risk_for", "predisposes", "contributes_to", "causes", "prevents", "occurs_in", "located_in", "location_of", "model_of", "overlaps", "has_part", "part_of", "participates_in", "actively_involved_in", "capable_of", "derives_into", "derives_from", "manifestation_of", "produces", "same_as", "has_molecular_consequence"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "physically_interacts_with", "affects", "regulates", "positively_regulates", "negatively_regulates", "disrupts", "homologous_to", "paralogous_to", "orthologous_to", "xenologous_to", "coexists_with", "colocalizes_with", "affects_risk_for", "predisposes", "contributes_to", "causes", "caused_by", "prevents", "occurs_in", "located_in", "location_of", "model_of", "overlaps", "has_part", "part_of", "participates_in", "actively_involved_in", "capable_of", "derives_into", "derives_from", "manifestation_of", "produces", "same_as", "has_molecular_consequence"]
 
     class_class_uri: ClassVar[URIRef] = WD.Q35120
     class_class_curie: ClassVar[str] = "WD:Q35120"
@@ -1422,7 +1455,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
 
 
 @dataclass
-class Environment(BiologicalEntity):
+class ExposureEvent(BiologicalEntity):
     """
     A feature of the environment of an organism that influences one or more phenotypic features of that organism,
     potentially mediated by genes
@@ -1431,18 +1464,18 @@ class Environment(BiologicalEntity):
 
     class_class_uri: ClassVar[URIRef] = SIO["000955"]
     class_class_curie: ClassVar[str] = "SIO:000955"
-    class_name: ClassVar[str] = "environment"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Environment
+    class_name: ClassVar[str] = "exposure event"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEvent
 
-    id: Union[ElementIdentifier, EnvironmentId] = None
+    id: Union[ElementIdentifier, ExposureEventId] = None
     name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, EnvironmentId):
-            self.id = EnvironmentId(self.id)
+        if not isinstance(self.id, ExposureEventId):
+            self.id = ExposureEventId(self.id)
         super().__post_init__()
 
 
@@ -2414,7 +2447,31 @@ class SequenceVariant(GenomicEntity):
 
 
 @dataclass
-class DrugExposure(Environment):
+class ChemicalExposure(ExposureEvent):
+    """
+    A chemical exposure is an intake of a particular chemical substance
+    """
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "has_phenotype"]
+
+    class_class_uri: ClassVar[URIRef] = ECTO["9000000"]
+    class_class_curie: ClassVar[str] = "ECTO:9000000"
+    class_name: ClassVar[str] = "chemical exposure"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalExposure
+
+    id: Union[ElementIdentifier, ChemicalExposureId] = None
+    name: Union[str, LabelType] = None
+    category: List[Union[str, IriType]] = empty_list()
+
+    def __post_init__(self):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, ChemicalExposureId):
+            self.id = ChemicalExposureId(self.id)
+        super().__post_init__()
+
+
+@dataclass
+class DrugExposure(ChemicalExposure):
     """
     A drug exposure is an intake of a particular chemical substance
     """
@@ -2428,7 +2485,7 @@ class DrugExposure(Environment):
     id: Union[ElementIdentifier, DrugExposureId] = None
     name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
-    drug: List[Union[ElementIdentifier, ChemicalSubstanceId]] = empty_list()
+    has_drug: List[Union[ElementIdentifier, ChemicalSubstanceId]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2439,11 +2496,11 @@ class DrugExposure(Environment):
 
 
 @dataclass
-class Treatment(Environment):
+class Treatment(ExposureEvent):
     """
     A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "has_phenotype", "treats"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "has_phenotype", "treats", "has_part"]
 
     class_class_uri: ClassVar[URIRef] = OGMS["0000090"]
     class_class_curie: ClassVar[str] = "OGMS:0000090"
@@ -2454,7 +2511,7 @@ class Treatment(Environment):
     name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     treats: List[Union[ElementIdentifier, DiseaseOrPhenotypicFeatureId]] = empty_list()
-    has_exposure_parts: List[Union[ElementIdentifier, DrugExposureId]] = empty_list()
+    has_part: List[Union[ElementIdentifier, DrugExposureId]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2524,11 +2581,11 @@ class Association(YAMLRoot):
     class_name: ClassVar[str] = "association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Association
 
+    id: Union[ElementIdentifier, AssociationId]
     subject: Union[ElementIdentifier, NamedThingId]
     relation: Union[str, URIorCURIE]
     object: Union[ElementIdentifier, NamedThingId]
     edge_label: Union[str, LabelType]
-    id: Union[ElementIdentifier, AssociationId] = bnode()
     negated: Optional[Bool] = None
     association_type: Optional[Union[ElementIdentifier, OntologyClassId]] = None
     qualifiers: List[Union[ElementIdentifier, OntologyClassId]] = empty_list()
@@ -2575,11 +2632,11 @@ class GenotypeToGenotypePartAssociation(Association):
     class_name: ClassVar[str] = "genotype to genotype part association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToGenotypePartAssociation
 
+    id: Union[ElementIdentifier, GenotypeToGenotypePartAssociationId] = None
     subject: Union[ElementIdentifier, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GenotypeId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GenotypeToGenotypePartAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -2614,11 +2671,11 @@ class GenotypeToGeneAssociation(Association):
     class_name: ClassVar[str] = "genotype to gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToGeneAssociation
 
+    id: Union[ElementIdentifier, GenotypeToGeneAssociationId] = None
     subject: Union[ElementIdentifier, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GenotypeToGeneAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -2652,11 +2709,11 @@ class GenotypeToVariantAssociation(Association):
     class_name: ClassVar[str] = "genotype to variant association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToVariantAssociation
 
+    id: Union[ElementIdentifier, GenotypeToVariantAssociationId] = None
     subject: Union[ElementIdentifier, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, SequenceVariantId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GenotypeToVariantAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -2691,11 +2748,11 @@ class GeneToGeneAssociation(Association):
     class_name: ClassVar[str] = "gene to gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneAssociation
 
+    id: Union[ElementIdentifier, GeneToGeneAssociationId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneOrGeneProductId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneToGeneAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -2722,11 +2779,11 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     class_name: ClassVar[str] = "gene to gene homology association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneHomologyAssociation
 
+    id: Union[ElementIdentifier, GeneToGeneHomologyAssociationId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneOrGeneProductId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneToGeneHomologyAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -2753,11 +2810,11 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     class_name: ClassVar[str] = "pairwise gene to gene interaction"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PairwiseGeneToGeneInteraction
 
+    id: Union[ElementIdentifier, PairwiseGeneToGeneInteractionId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneOrGeneProductId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, PairwiseGeneToGeneInteractionId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -2783,11 +2840,11 @@ class CellLineToThingAssociation(Association):
     class_name: ClassVar[str] = "cell line to thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellLineToThingAssociation
 
+    id: Union[ElementIdentifier, CellLineToThingAssociationId] = None
     subject: Union[ElementIdentifier, CellLineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, CellLineToThingAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -2810,11 +2867,11 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "cell line to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CellLineToDiseaseOrPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, CellLineToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, CellLineToDiseaseOrPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -2840,11 +2897,11 @@ class ChemicalToThingAssociation(Association):
     class_name: ClassVar[str] = "chemical to thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToThingAssociation
 
+    id: Union[ElementIdentifier, ChemicalToThingAssociationId] = None
     subject: Union[ElementIdentifier, ChemicalSubstanceId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, ChemicalToThingAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -2866,11 +2923,11 @@ class CaseToThingAssociation(Association):
     class_name: ClassVar[str] = "case to thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CaseToThingAssociation
 
+    id: Union[ElementIdentifier, CaseToThingAssociationId] = None
     subject: Union[ElementIdentifier, CaseId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, CaseToThingAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -2893,11 +2950,11 @@ class ChemicalToChemicalAssociation(Association):
     class_name: ClassVar[str] = "chemical to chemical association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalAssociation
 
+    id: Union[ElementIdentifier, ChemicalToChemicalAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, ChemicalSubstanceId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, ChemicalToChemicalAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -2931,11 +2988,11 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     class_name: ClassVar[str] = "chemical to chemical derivation association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToChemicalDerivationAssociation
 
+    id: Union[ElementIdentifier, ChemicalToChemicalDerivationAssociationId] = None
     subject: Union[ElementIdentifier, ChemicalSubstanceId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, ChemicalSubstanceId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, ChemicalToChemicalDerivationAssociationId] = bnode()
     change_is_catalyzed_by: List[Union[ElementIdentifier, MacromolecularMachineId]] = empty_list()
 
     def __post_init__(self):
@@ -2973,11 +3030,11 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "chemical to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToDiseaseOrPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, ChemicalToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, ChemicalToDiseaseOrPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3003,11 +3060,11 @@ class ChemicalToPathwayAssociation(Association):
     class_name: ClassVar[str] = "chemical to pathway association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToPathwayAssociation
 
+    id: Union[ElementIdentifier, ChemicalToPathwayAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, PathwayId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, ChemicalToPathwayAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3033,11 +3090,11 @@ class ChemicalToGeneAssociation(Association):
     class_name: ClassVar[str] = "chemical to gene association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalToGeneAssociation
 
+    id: Union[ElementIdentifier, ChemicalToGeneAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneOrGeneProductId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, ChemicalToGeneAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3063,11 +3120,11 @@ class MaterialSampleToThingAssociation(Association):
     class_name: ClassVar[str] = "material sample to thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToThingAssociation
 
+    id: Union[ElementIdentifier, MaterialSampleToThingAssociationId] = None
     subject: Union[ElementIdentifier, MaterialSampleId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, MaterialSampleToThingAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -3089,11 +3146,11 @@ class MaterialSampleDerivationAssociation(Association):
     class_name: ClassVar[str] = "material sample derivation association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleDerivationAssociation
 
+    id: Union[ElementIdentifier, MaterialSampleDerivationAssociationId] = None
     subject: Union[ElementIdentifier, MaterialSampleId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, MaterialSampleDerivationAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3127,17 +3184,74 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "material sample to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId):
             self.id = MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        super().__post_init__()
+
+
+@dataclass
+class DiseaseToThingAssociation(Association):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseToThingAssociation
+    class_class_curie: ClassVar[str] = "biolink:DiseaseToThingAssociation"
+    class_name: ClassVar[str] = "disease to thing association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToThingAssociation
+
+    id: Union[ElementIdentifier, DiseaseToThingAssociationId] = None
+    subject: Union[ElementIdentifier, DiseaseId] = None
+    relation: Union[str, URIorCURIE] = None
+    object: Union[ElementIdentifier, NamedThingId] = None
+    edge_label: Union[str, LabelType] = None
+
+    def __post_init__(self):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, DiseaseId):
+            self.subject = DiseaseId(self.subject)
+        super().__post_init__()
+
+
+@dataclass
+class DiseaseToExposureAssociation(DiseaseToThingAssociation):
+    """
+    An association between an exposure event and a disease
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseToExposureAssociation
+    class_class_curie: ClassVar[str] = "biolink:DiseaseToExposureAssociation"
+    class_name: ClassVar[str] = "disease to exposure association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToExposureAssociation
+
+    id: Union[ElementIdentifier, DiseaseToExposureAssociationId] = None
+    subject: Union[ElementIdentifier, DiseaseId] = None
+    relation: Union[str, URIorCURIE] = None
+    object: Union[ElementIdentifier, ExposureEventId] = None
+    edge_label: Union[str, LabelType] = None
+
+    def __post_init__(self):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, DiseaseToExposureAssociationId):
+            self.id = DiseaseToExposureAssociationId(self.id)
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, DiseaseId):
+            self.subject = DiseaseId(self.subject)
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, ExposureEventId):
+            self.object = ExposureEventId(self.object)
         super().__post_init__()
 
 
@@ -3150,11 +3264,11 @@ class EntityToPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "entity to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, EntityToPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, PhenotypicFeatureId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, EntityToPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.object is None:
@@ -3173,11 +3287,11 @@ class DiseaseOrPhenotypicFeatureAssociationToThingAssociation(Association):
     class_name: ClassVar[str] = "disease or phenotypic feature association to thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureAssociationToThingAssociation
 
+    id: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureAssociationToThingAssociationId] = None
     subject: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureAssociationToThingAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -3200,11 +3314,11 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenot
     class_name: ClassVar[str] = "disease or phenotypic feature association to location association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
 
+    id: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId] = None
     subject: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, AnatomicalEntityId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3227,40 +3341,17 @@ class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "thing to disease or phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ThingToDiseaseOrPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, ThingToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, DiseaseOrPhenotypicFeatureId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, ThingToDiseaseOrPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
             self.object = DiseaseOrPhenotypicFeatureId(self.object)
-        super().__post_init__()
-
-
-@dataclass
-class DiseaseToThingAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseToThingAssociation
-    class_class_curie: ClassVar[str] = "biolink:DiseaseToThingAssociation"
-    class_name: ClassVar[str] = "disease to thing association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToThingAssociation
-
-    subject: Union[ElementIdentifier, DiseaseId] = None
-    relation: Union[str, URIorCURIE] = None
-    object: Union[ElementIdentifier, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, DiseaseToThingAssociationId] = bnode()
-
-    def __post_init__(self):
-        if self.subject is None:
-            raise ValueError(f"subject must be supplied")
-        if not isinstance(self.subject, DiseaseId):
-            self.subject = DiseaseId(self.subject)
         super().__post_init__()
 
 
@@ -3277,11 +3368,11 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "genotype to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, GenotypeToPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GenotypeToPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3300,33 +3391,33 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
 
 
 @dataclass
-class EnvironmentToPhenotypicFeatureAssociation(Association):
+class ExposureEventToPhenotypicFeatureAssociation(Association):
     """
     Any association between an environment and a phenotypic feature, where being in the environment influences the
     phenotype
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentToPhenotypicFeatureAssociation
-    class_class_curie: ClassVar[str] = "biolink:EnvironmentToPhenotypicFeatureAssociation"
-    class_name: ClassVar[str] = "environment to phenotypic feature association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentToPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ExposureEventToPhenotypicFeatureAssociation
+    class_class_curie: ClassVar[str] = "biolink:ExposureEventToPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "exposure event to phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEventToPhenotypicFeatureAssociation
 
-    subject: Union[ElementIdentifier, EnvironmentId] = None
+    id: Union[ElementIdentifier, ExposureEventToPhenotypicFeatureAssociationId] = None
+    subject: Union[ElementIdentifier, ExposureEventId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, EnvironmentToPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, EnvironmentToPhenotypicFeatureAssociationId):
-            self.id = EnvironmentToPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, ExposureEventToPhenotypicFeatureAssociationId):
+            self.id = ExposureEventToPhenotypicFeatureAssociationId(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
-        if not isinstance(self.subject, EnvironmentId):
-            self.subject = EnvironmentId(self.subject)
+        if not isinstance(self.subject, ExposureEventId):
+            self.subject = ExposureEventId(self.subject)
         super().__post_init__()
 
 
@@ -3343,11 +3434,11 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "disease to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, DiseaseToPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, DiseaseToPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3370,11 +3461,11 @@ class CaseToPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "case to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.CaseToPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, CaseToPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, CaseToPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3393,11 +3484,11 @@ class GeneToThingAssociation(Association):
     class_name: ClassVar[str] = "gene to thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToThingAssociation
 
+    id: Union[ElementIdentifier, GeneToThingAssociationId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneToThingAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -3416,11 +3507,11 @@ class GeneToPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "gene to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, GeneToPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneToPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3443,11 +3534,11 @@ class GeneToDiseaseAssociation(Association):
     class_name: ClassVar[str] = "gene to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseAssociation
 
+    id: Union[ElementIdentifier, GeneToDiseaseAssociationId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneToDiseaseAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3473,11 +3564,11 @@ class VariantToPopulationAssociation(Association):
     class_name: ClassVar[str] = "variant to population association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToPopulationAssociation
 
+    id: Union[ElementIdentifier, VariantToPopulationAssociationId] = None
     subject: Union[ElementIdentifier, SequenceVariantId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, PopulationOfIndividualOrganismsId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, VariantToPopulationAssociationId] = bnode()
     has_count: Optional[int] = None
     has_total: Optional[int] = None
     has_quotient: Optional[float] = None
@@ -3510,11 +3601,11 @@ class PopulationToPopulationAssociation(Association):
     class_name: ClassVar[str] = "population to population association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PopulationToPopulationAssociation
 
+    id: Union[ElementIdentifier, PopulationToPopulationAssociationId] = None
     subject: Union[ElementIdentifier, PopulationOfIndividualOrganismsId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, PopulationOfIndividualOrganismsId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, PopulationToPopulationAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3545,11 +3636,11 @@ class VariantToPhenotypicFeatureAssociation(Association):
     class_name: ClassVar[str] = "variant to phenotypic feature association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToPhenotypicFeatureAssociation
 
+    id: Union[ElementIdentifier, VariantToPhenotypicFeatureAssociationId] = None
     subject: Union[ElementIdentifier, SequenceVariantId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, VariantToPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3572,11 +3663,11 @@ class VariantToDiseaseAssociation(Association):
     class_name: ClassVar[str] = "variant to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToDiseaseAssociation
 
+    id: Union[ElementIdentifier, VariantToDiseaseAssociationId] = None
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, VariantToDiseaseAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3607,11 +3698,11 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     class_name: ClassVar[str] = "gene as a model of disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneAsAModelOfDiseaseAssociation
 
+    id: Union[ElementIdentifier, GeneAsAModelOfDiseaseAssociationId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneAsAModelOfDiseaseAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3634,11 +3725,11 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     class_name: ClassVar[str] = "gene has variant that contributes to disease association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneHasVariantThatContributesToDiseaseAssociation
 
+    id: Union[ElementIdentifier, GeneHasVariantThatContributesToDiseaseAssociationId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneHasVariantThatContributesToDiseaseAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3661,11 +3752,11 @@ class GenotypeToThingAssociation(Association):
     class_name: ClassVar[str] = "genotype to thing association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypeToThingAssociation
 
+    id: Union[ElementIdentifier, GenotypeToThingAssociationId] = None
     subject: Union[ElementIdentifier, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GenotypeToThingAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -3687,11 +3778,11 @@ class GeneToExpressionSiteAssociation(Association):
     class_name: ClassVar[str] = "gene to expression site association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToExpressionSiteAssociation
 
+    id: Union[ElementIdentifier, GeneToExpressionSiteAssociationId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, AnatomicalEntityId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneToExpressionSiteAssociationId] = bnode()
     stage_qualifier: Optional[Union[ElementIdentifier, LifeStageId]] = None
     quantifier_qualifier: Optional[Union[ElementIdentifier, OntologyClassId]] = None
 
@@ -3732,11 +3823,11 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     class_name: ClassVar[str] = "sequence variant modulates treatment association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SequenceVariantModulatesTreatmentAssociation
 
+    id: Union[ElementIdentifier, SequenceVariantModulatesTreatmentAssociationId] = None
     subject: Union[ElementIdentifier, SequenceVariantId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, TreatmentId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, SequenceVariantModulatesTreatmentAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
@@ -3763,11 +3854,11 @@ class FunctionalAssociation(Association):
     class_name: ClassVar[str] = "functional association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.FunctionalAssociation
 
+    id: Union[ElementIdentifier, FunctionalAssociationId] = None
     subject: Union[ElementIdentifier, MacromolecularMachineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneOntologyClassId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, FunctionalAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3799,11 +3890,11 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     class_name: ClassVar[str] = "macromolecular machine to molecular activity association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToMolecularActivityAssociation
 
+    id: Union[ElementIdentifier, MacromolecularMachineToMolecularActivityAssociationId] = None
     subject: Union[ElementIdentifier, MacromolecularMachineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, MolecularActivityId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, MacromolecularMachineToMolecularActivityAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3831,11 +3922,11 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     class_name: ClassVar[str] = "macromolecular machine to biological process association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToBiologicalProcessAssociation
 
+    id: Union[ElementIdentifier, MacromolecularMachineToBiologicalProcessAssociationId] = None
     subject: Union[ElementIdentifier, MacromolecularMachineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, BiologicalProcessId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, MacromolecularMachineToBiologicalProcessAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3863,11 +3954,11 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     class_name: ClassVar[str] = "macromolecular machine to cellular component association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineToCellularComponentAssociation
 
+    id: Union[ElementIdentifier, MacromolecularMachineToCellularComponentAssociationId] = None
     subject: Union[ElementIdentifier, MacromolecularMachineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, CellularComponentId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, MacromolecularMachineToCellularComponentAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3890,11 +3981,11 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     class_name: ClassVar[str] = "gene to go term association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGoTermAssociation
 
+    id: Union[ElementIdentifier, GeneToGoTermAssociationId] = None
     subject: Union[ElementIdentifier, MolecularEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneOntologyClassId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneToGoTermAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3925,11 +4016,11 @@ class GenomicSequenceLocalization(Association):
     class_name: ClassVar[str] = "genomic sequence localization"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicSequenceLocalization
 
+    id: Union[ElementIdentifier, GenomicSequenceLocalizationId] = None
     subject: Union[ElementIdentifier, GenomicEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GenomicEntityId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GenomicSequenceLocalizationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3959,11 +4050,11 @@ class SequenceFeatureRelationship(Association):
     class_name: ClassVar[str] = "sequence feature relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SequenceFeatureRelationship
 
+    id: Union[ElementIdentifier, SequenceFeatureRelationshipId] = None
     subject: Union[ElementIdentifier, GenomicEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GenomicEntityId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, SequenceFeatureRelationshipId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -3993,11 +4084,11 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     class_name: ClassVar[str] = "transcript to gene relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.TranscriptToGeneRelationship
 
+    id: Union[ElementIdentifier, TranscriptToGeneRelationshipId] = None
     subject: Union[ElementIdentifier, TranscriptId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, TranscriptToGeneRelationshipId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -4027,11 +4118,11 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     class_name: ClassVar[str] = "gene to gene product relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneProductRelationship
 
+    id: Union[ElementIdentifier, GeneToGeneProductRelationshipId] = None
     subject: Union[ElementIdentifier, GeneId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneProductId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneToGeneProductRelationshipId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -4065,11 +4156,11 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     class_name: ClassVar[str] = "exon to transcript relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ExonToTranscriptRelationship
 
+    id: Union[ElementIdentifier, ExonToTranscriptRelationshipId] = None
     subject: Union[ElementIdentifier, ExonId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, TranscriptId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, ExonToTranscriptRelationshipId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -4099,11 +4190,11 @@ class GeneRegulatoryRelationship(Association):
     class_name: ClassVar[str] = "gene regulatory relationship"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneRegulatoryRelationship
 
+    id: Union[ElementIdentifier, GeneRegulatoryRelationshipId] = None
     subject: Union[ElementIdentifier, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, GeneOrGeneProductId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, GeneRegulatoryRelationshipId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -4134,11 +4225,11 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     class_name: ClassVar[str] = "anatomical entity to anatomical entity association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityAssociation
 
+    id: Union[ElementIdentifier, AnatomicalEntityToAnatomicalEntityAssociationId] = None
     subject: Union[ElementIdentifier, AnatomicalEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, AnatomicalEntityId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, AnatomicalEntityToAnatomicalEntityAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -4170,11 +4261,11 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     class_name: ClassVar[str] = "anatomical entity to anatomical entity part of association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityPartOfAssociation
 
+    id: Union[ElementIdentifier, AnatomicalEntityToAnatomicalEntityPartOfAssociationId] = None
     subject: Union[ElementIdentifier, AnatomicalEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, AnatomicalEntityId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, AnatomicalEntityToAnatomicalEntityPartOfAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
@@ -4210,11 +4301,11 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     class_name: ClassVar[str] = "anatomical entity to anatomical entity ontogenic association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntityToAnatomicalEntityOntogenicAssociation
 
+    id: Union[ElementIdentifier, AnatomicalEntityToAnatomicalEntityOntogenicAssociationId] = None
     subject: Union[ElementIdentifier, AnatomicalEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, AnatomicalEntityId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[ElementIdentifier, AnatomicalEntityToAnatomicalEntityOntogenicAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
