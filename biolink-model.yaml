@@ -2921,6 +2921,42 @@ classes:
         description: >-
           homology relationship type
 
+  gene to gene co-expression association:
+    is_a: gene to gene association
+    description: >-
+      Indicates that two genes are co-expressed, possibly under the same conditions
+    slots:
+      - quantifier qualifier
+      - expression site
+      - life stage
+      - phenotypic state
+    slot_usage:
+      relation:
+        subproperty_of: co-expressed with
+        symmetric: true
+        description: >-
+          This will typically be the relationship type 'co-expressed with', but may be a sub-relation
+      expression site:
+        range: anatomical entity
+        description: "location in which the two genes are co-expressed. May be cell, tissue, or organ"
+        examples:
+          - value: UBERON:0002037
+            description: cerebellum
+      stage qualifier:
+        range: life stage
+        description: "stage at which the gene is expressed in the site"
+        examples:
+          - value: UBERON:0000069
+            description: larval stage
+      phenotypic state:
+        range: disease or phenotype
+        description: >-
+          if the co-expression is in diseased or unhealthy tissue the phenotypic state can
+          be put here, e.g. MONDO ID. For heathy, use XXX
+      quantifier qualifier:
+        description: >-
+          optional quantitive value indicating degree of expression
+
 
   pairwise interaction association:
     is_a: association
