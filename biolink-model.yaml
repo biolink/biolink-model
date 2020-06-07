@@ -56,13 +56,6 @@ types:
     notes:
       - Should be implemented as a stronger type
 
-  identifier type:
-    base: ElementIdentifier
-    uri: xsd:anyURI
-    description: >-
-      A string that is intended to uniquely identify a thing
-      May be URI in full or compact (CURIE) form
-
   iri type:
     typeof: uriorcurie
     description: >-
@@ -1272,7 +1265,6 @@ slots:
     in_subset:
       - translator_minimal
     domain: named thing
-    range: identifier type
     required: true
 
   iri:
@@ -1361,7 +1353,6 @@ slots:
     in_subset:
         - translator_minimal
     domain: association
-    range: identifier type
     alias: id
 
   subject:
