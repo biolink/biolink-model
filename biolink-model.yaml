@@ -1835,7 +1835,8 @@ classes:
   onset:
     description: >-
       The age group in which manifestations appear
-    class_uri: HP:0003674
+    mappings:
+      - HP:0003674
     is_a: attribute
 
   relationship quantifier:
@@ -1873,8 +1874,8 @@ classes:
       - name
       - category
     subclass_of: BFO:0000001
-    class_uri: WD:Q35120
     mappings:
+      - WD:Q35120
       # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
       # Entity
@@ -1892,7 +1893,8 @@ classes:
 
   data file:
     is_a: named thing
-    class_uri: EFO:0004095
+    mappings:
+      - EFO:0004095
 
   source file:
     is_a: data file
@@ -1906,7 +1908,8 @@ classes:
 
   data set:
     is_a: named thing
-    class_uri: IAO:0000100
+    mappings:
+      - IAO:0000100
 
   data set version:
     is_a: data set
@@ -1933,8 +1936,8 @@ classes:
   biological entity:
     is_a: named thing
     abstract: true
-    class_uri: WD:Q28845870
     mappings:
+      - WD:Q28845870
       # UMLS Semantic Type "Experimental Model of Disease"
       - UMLSSC:T050
       - UMLSST:emod
@@ -1967,22 +1970,24 @@ classes:
     is_a: ontology class
     values_from:
       - NCBITaxon
-    class_uri: WD:Q16521
+    mappings:
+      - WD:Q16521
 
   organismal entity:
     description: >-
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
     abstract: true
     is_a: biological entity
-    class_uri: WD:Q7239
+    mappings:
+      - WD:Q7239
 
   individual organism:
     mixins:
       - thing with taxon
     is_a: organismal entity
     subclass_of: "NCBITaxon:1"
-    class_uri: SIO:010000
     mappings:
+      - SIO:010000
       - WD:Q795052
       # UMLS Semantic Group "Living Beings"
       # Several of the associated semantic types here are probably not
@@ -2066,8 +2071,8 @@ classes:
       - thing with taxon
     is_a: organismal entity
     subclass_of: PCO:0000001
-    class_uri: SIO:001061
     mappings:
+      - SIO:001061
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
       - UMLSST:popg
@@ -2115,8 +2120,8 @@ classes:
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
     is_a: disease or phenotypic feature
-    class_uri: MONDO:0000001
     mappings:
+      - MONDO:0000001
       - WD:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
@@ -2165,8 +2170,8 @@ classes:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
     subclass_of: UPHENO:0001001
-    class_uri: UPHENO:0001001
     mappings:
+      - UPHENO:0001001
       - SIO:010056
       - WD:Q169872
     id_prefixes:
@@ -2182,7 +2187,8 @@ classes:
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
-    class_uri: SIO:000955
+    mappings:
+      - SIO:000955
 
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
@@ -2190,8 +2196,8 @@ classes:
     is_a: named thing
     description: >-
       a piece of information that typically describes some piece of biology or is used as support.
-    class_uri: IAO:0000030
     mappings:
+      - IAO:0000030
       # UMLS Semantic Group "Concepts & Ideas"
       - UMLSSG:CONC
       # Conceptual Entity
@@ -2234,7 +2240,8 @@ classes:
       Level of confidence in a statement
     values_from:
       - cio
-    class_uri: CIO:0000028
+    mappings:
+      - CIO:0000028
 
   evidence type:
     is_a: information content entity
@@ -2243,7 +2250,8 @@ classes:
       Class of evidence that supports an association
     values_from:
       - eco
-    class_uri: ECO:0000000
+    mappings:
+      - ECO:0000000
 
   publication:
     is_a: information content entity
@@ -2252,8 +2260,8 @@ classes:
       Any published piece of information. Can refer to a whole publication,
       or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
       The scope is intended to be general and include information published on the web as well as journals.
-    class_uri: IAO:0000311
     mappings:
+      - IAO:0000311
       # UMLS Semantic Type "Intellectual Product"
       - UMLSSC:T170
       - UMLSST:inpr
@@ -2294,8 +2302,8 @@ classes:
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
     #notes:
     #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
-    class_uri: SIO:010341
     mappings:
+      - SIO:010341
       - WD:Q43460564
       # UMLS Semantic Group "Genes & Molecular Sequences"
       - UMLSSG:GENE
@@ -2309,8 +2317,8 @@ classes:
       May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
     subclass_of: "CHEBI:24431"
-    class_uri: SIO:010004
     mappings:
+      - SIO:010004
       - WD:Q79529
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
@@ -2397,8 +2405,8 @@ classes:
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     comments:
       - The CHEBI ID represents a role rather than a substance
-    class_uri: WD:Q12140
     mappings:
+      - WD:Q12140
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
       - UMLSSC:T200
@@ -2410,7 +2418,8 @@ classes:
       Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
     comments:
       - The CHEBI ID represents a role rather than a substance
-    class_uri: CHEBI:25212
+    mappings:
+      - CHEBI:25212
 #
 #    attribute:
 #    subclass_of: PATO:0000001
@@ -2427,8 +2436,8 @@ classes:
     subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
-    class_uri: SIO:010046
     mappings:
+      - SIO:010046
       - WD:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
@@ -2505,8 +2514,8 @@ classes:
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
     slots:
       - has biological sequence
-    class_uri: SO:0000110
     mappings:
+      - SO:0000110
       # Gene or Genome
       - UMLSSC:T028
       - UMLSST:gngm
@@ -2517,8 +2526,8 @@ classes:
     is_a: genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
-    class_uri: SO:0001026
     mappings:
+      - SO:0001026
       - SIO:000984
       - WD:Q7020
 
@@ -2526,23 +2535,23 @@ classes:
     is_a: genomic entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
-    class_uri: SO:0000673
     mappings:
+      - SO:0000673
       - SIO:010450
 
   exon:
     is_a: genomic entity
     description: >-
       A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
-    class_uri: SO:0000147
     mappings:
+      - SO:0000147
       - SIO:010445
       - WD:Q373027
 
   coding sequence:
     is_a: genomic entity
-    class_uri: SO:0000316
     mappings:
+      - SO:0000316
       - SIO:001390
 
   macromolecular machine:
@@ -2576,8 +2585,8 @@ classes:
   gene:
     is_a: gene or gene product
     aliases: ['locus']
-    class_uri: SO:0000704
     mappings:
+      - SO:0000704
       - SIO:010035
       - WD:Q7187
     id_prefixes:
@@ -2600,7 +2609,8 @@ classes:
     union_of:
       - protein
       - RNA product
-    class_uri: WD:Q424689
+    mappings:
+      - WD:Q424689
     id_prefixes:
       - UNIPROTKB
       - GTOPDB
@@ -2611,8 +2621,8 @@ classes:
     aliases: ['polypeptide']
     description: >-
       A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
-    class_uri: PR:000000001
     mappings:
+      - PR:000000001
       - SIO:010043
       - WD:Q8054
       # UMLS Semantic Type: "Amino Acid Sequence"
@@ -2649,8 +2659,8 @@ classes:
 
   RNA product:
     is_a: gene product
-    class_uri: CHEBI:33697
     mappings:
+      - CHEBI:33697
       - SIO:010450
       - WD:Q11053
     id_prefixes:
@@ -2672,13 +2682,14 @@ classes:
       - NCBIGene
       - ENSEMBL
     subclass_of: SO:0000655
-    class_uri: SIO:001235
+    mappings:
+      - SIO:001235
 
   microRNA:
     is_a: noncoding RNA product
     subclass_of: SO:0000276
-    class_uri: SIO:001397
     mappings:
+      - SIO:001397
       - WD:Q310899
     id_prefixes:
       - MIR
@@ -2686,8 +2697,8 @@ classes:
   macromolecular complex:
     is_a: macromolecular machine
     subclass_of: "GO:0032991"
-    class_uri: SIO:010046
     mappings:
+      - SIO:010046
       - WD:Q22325163
     id_prefixes:
       - IntAct
@@ -2703,8 +2714,8 @@ classes:
 
   gene family:
     is_a: molecular entity
-    class_uri: SIO:001380
     mappings:
+      - SIO:001380
       - "NCIT:C20130"
       - WD:Q417841
     mixins:
@@ -2716,7 +2727,8 @@ classes:
 
   zygosity:
     is_a: attribute
-    class_uri: GENO:0000133
+    mappings:
+      - GENO:0000133
 
   genotype:
     is_a: genomic entity
@@ -2726,8 +2738,8 @@ classes:
       - Consider renaming as genotypic entity
     slots:
       - has zygosity
-    class_uri: GENO:0000536
     mappings:
+      - GENO:0000536
       - SIO:001079
 
   haplotype:
@@ -2736,8 +2748,8 @@ classes:
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
 #      - completeness
-    class_uri: GENO:0000871
     mappings:
+      - GENO:0000871
       - VMC:Haplotype
 
   sequence variant:
@@ -2751,8 +2763,8 @@ classes:
       - >-
           This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
           than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
-    class_uri: GENO:0000002
     mappings:
+      - GENO:0000002
       - WD:Q15304597
       - SIO:010277
       - VMC:Allele
@@ -2796,7 +2808,8 @@ classes:
 #        range: chemical substance
 #        required: true
 #        multivalued: true
-    class_uri: ECTO:9000000
+    mappings:
+      - ECTO:9000000
 
   drug exposure:
     aliases: ['drug intake', 'drug dose']
@@ -2810,8 +2823,8 @@ classes:
         range: chemical substance
         required: true
         multivalued: true
-    class_uri: ECTO:0000509
     mappings:
+      - ECTO:0000509
       - SIO:001005
 
   treatment:
@@ -2824,8 +2837,8 @@ classes:
         multivalued: true
         range: drug exposure
         required: true
-    class_uri: OGMS:0000090
     mappings:
+      - OGMS:0000090
       - SIO:001398
 
   geographic location:
@@ -2867,8 +2880,8 @@ classes:
       - qualifiers
       - publications
       - provided by
-    class_uri: OBAN:association
     mappings:
+      - OBAN:association
       - "rdf:Statement"
       - "owl:Axiom"
 
@@ -3133,7 +3146,8 @@ classes:
         
   chemical to disease or phenotypic feature association:
     is_a: association
-    class_uri: SIO:000993
+    mappings:
+      - SIO:000993
     defining_slots:
       - subject
       - object
@@ -3150,7 +3164,8 @@ classes:
 
   chemical to pathway association:
     is_a: association
-    class_uri: SIO:001250
+    mappings:
+      - SIO:001250
     defining_slots:
       - subject
       - object
@@ -3165,7 +3180,8 @@ classes:
 
   chemical to gene association:
     is_a: association
-    class_uri: SIO:001257
+    mappings:
+      - SIO:001257
     defining_slots:
       - subject
       - object
@@ -3331,7 +3347,8 @@ classes:
     description: >-
       An association between either a disease or a phenotypic feature and an anatomical entity,
       where the disease/feature manifests in that site.
-    class_uri: NCIT:R100
+    mappings:
+      - NCIT:R100
     slot_usage:
       object:
         range: anatomical entity
@@ -3438,7 +3455,8 @@ classes:
 
   gene to phenotypic feature association:
     is_a: association
-    class_uri: http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
+    mappings:
+      - http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
     defining_slots:
       - subject
       - object
@@ -3457,7 +3475,8 @@ classes:
     is_a: association
     comments:
       - NCIT:R176 refers to the inverse relationship
-    class_uri: SIO:000983
+    mappings:
+      - SIO:000983
     defining_slots:
       - subject
       - object
@@ -3754,7 +3773,8 @@ classes:
   gene to go term association:
     aliases: ['functional association']
     is_a: functional association
-    class_uri: http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
+    mappings:
+      - http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
     defining_slots:
       - subject
       - object
@@ -3801,7 +3821,8 @@ classes:
       - end interbase coordinate
       - genome build
       - phase
-    class_uri: faldo:location
+    mappings:
+      - faldo:location
 
   sequence feature relationship:
     is_a: association
@@ -3929,7 +3950,8 @@ classes:
     description: >-
       A processual entity
     is_a: named thing
-    class_uri: BFO:0000003
+    mappings:
+      - BFO:0000003
 
   physical entity:
     description: >-
@@ -3960,7 +3982,6 @@ classes:
       - occurrent
     description: >-
       An execution of a molecular function carried out by a gene product or macromolecular complex.
-    class_uri: GO:0003674
     slot_usage:
       has input:
         range: chemical substance
@@ -3975,6 +3996,7 @@ classes:
         description: >-
           The gene product, gene, or complex that catalyzes the reaction
     mappings:
+      - GO:0003674
       # UMLS Semantic Type "Molecular Function"
       - UMLSSC:T044
       - UMLSST:moft
@@ -4078,8 +4100,8 @@ classes:
       - occurrent
     description: >-
       One or more causally connected executions of molecular functions
-    class_uri: GO:0008150
     mappings:
+      - GO:0008150
       - SIO:000006
       - WD:Q2996394
     id_prefixes:
@@ -4088,8 +4110,8 @@ classes:
 
   pathway:
     is_a: biological process
-    class_uri: GO:0007165
     mappings:
+      - GO:0007165
       - SIO:010526
       - PW:0000001
       - WD:Q4915012
@@ -4138,8 +4160,8 @@ classes:
     is_a: anatomical entity
     description: >-
       A location in or around a cell
-    class_uri: GO:0005575
     mappings:
+      - GO:0005575
       - SIO:001400
       - WD:Q5058355
       # Cell Component
@@ -4150,8 +4172,8 @@ classes:
 
   cell:
     is_a: anatomical entity
-    class_uri: GO:0005623
     mappings:
+      - GO:0005623
       - CL:0000000
       - SIO:010001
       - WD:Q7868
@@ -4165,15 +4187,16 @@ classes:
 
   cell line:
     is_a: organismal entity
-    class_uri: CLO:0000031
+    mappings:
+      - CLO:0000031
     id_prefixes:
       - CLO
 
   gross anatomical structure:
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
-    class_uri: UBERON:0010000
     mappings:
+      - UBERON:0010000
       - SIO:010046
       - WD:Q4936952
       # UMLS Semantic Type "Anatomical Structure"
