@@ -56,6 +56,14 @@ types:
     notes:
       - Should be implemented as a stronger type
 
+  category type:
+    typeof: uriorcurie
+    description: >-
+      A primitive type in which the value denotes a class within the biolink model.
+      The value must be a URI or a CURIE. In a Neo4j representation, the value should
+      be the CURIE for the biolink class, for example biolink:Gene. For an RDF representation,
+      the value should be a URI such as https://w3id.org/biolink/vocab/Gene
+
   iri type:
     typeof: uriorcurie
     description: >-
@@ -1183,7 +1191,7 @@ slots:
     description: >-
       holds between two classes where the domain class is a specialization of the range class
     domain: ontology class
-    range: iri type
+    range: ontology class
     multivalued: True
     in_subset:
       - translator_minimal
@@ -1302,7 +1310,7 @@ slots:
   category:
     is_a: node property
     domain: named thing
-    range: iri type
+    range: category type
     description: >-
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
       In a neo4j database this MAY correspond to the neo4j label tag
