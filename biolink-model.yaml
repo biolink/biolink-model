@@ -2679,9 +2679,9 @@ classes:
       - NCIT
       - SNOMEDCT
       - medgen
-      - ICD-10
-      - ICD-9
-      - ICD-0
+      - ICD10
+      - ICD9
+      - ICD0
       - HP
       - MP
 
@@ -4518,7 +4518,7 @@ classes:
       - RHEA
       - MetaCyc
       - EC
-      - KEGG.REACTION
+      - KEGG
 
   activity and behavior:
     is_a: occurrent
@@ -4623,8 +4623,8 @@ classes:
       - GO
       - Reactome
       - MetaCyc
-      - KEGG.PATHWAY
-      - KEGG.REACTION
+      - KEGG
+      - KEGG
 
   pathway:
     is_a: biological process
