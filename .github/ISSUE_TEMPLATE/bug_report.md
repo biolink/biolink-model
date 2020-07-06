@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help improve the Biolink Model
+about: Report a bug encountered with working with the Biolink Model
 title: ''
 labels: ''
 assignees: ''
