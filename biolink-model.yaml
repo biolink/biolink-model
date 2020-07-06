@@ -1436,8 +1436,8 @@ slots:
     range: provider
     description: >-
       connects an association to the agent (person, organization or group) that provided it
-    mappings:
-      - pav:providedBy
+    slot_uri: pav:providedBy
+    multivalued: true
 
   association type:
     is_a: association slot
