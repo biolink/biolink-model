@@ -4,23 +4,25 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  biolink: https://w3id.org/biolink/vocab/
-  biolinkml: https://w3id.org/biolink/biolinkml/
-  OBAN: http://purl.org/oban/
-  SIO: http://semanticscience.org/resource/SIO_
-  wgs: http://www.w3.org/2003/01/geo/wgs84_pos
-  qud: http://qudt.org/1.1/schema/qudt#
-  UMLSSG: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/
-  UMLSST: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/
-  UMLSSC: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/
+  biolink: 'https://w3id.org/biolink/vocab/'
+  biolinkml: 'https://w3id.org/biolink/biolinkml/'
+  CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
+  OBAN: 'http://purl.org/oban/'
+  SIO: 'http://semanticscience.org/resource/SIO_'
+  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  qud: 'http://qudt.org/1.1/schema/qudt#'
+  UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
+  UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
+  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
   
 default_prefix: biolink
 default_range: string
 
 default_curi_maps:
   - obo_context
-  - monarch_context
   - idot_context
+  - monarch_context
   - semweb_context
 
 emit_prefixes:
@@ -135,7 +137,7 @@ slots:
       - translator_minimal
     symmetric: true
     mappings:
-      - WD:P129
+      - WIKIDATA:P129
       - SEMMEDDB:INTERACTS_WITH
 
   molecularly interacts with:
@@ -607,7 +609,7 @@ slots:
     mixin: true
     abstract: true
     mappings:
-      - WD:P128
+      - WIKIDATA:P128
 
   positively regulates:
     comments:
@@ -704,7 +706,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002205
-      - WD:P688
+      - WIKIDATA:P688
 
   homologous to:
     is_a: related to
@@ -736,7 +738,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:HOM0000017
-      - WD:P684
+      - WIKIDATA:P684
 
   xenologous to:
     is_a: homologous to
@@ -801,7 +803,7 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - WD:P2293
+      - WIKIDATA:P2293
 
   affects risk for:
     is_a: related to
@@ -838,7 +840,7 @@ slots:
     mappings:
       - RO:0002410
       - SEMMEDDB:CAUSES
-      - WD:P1542
+      - WIKIDATA:P1542
 
   caused by:
     description: >-
@@ -848,7 +850,7 @@ slots:
       - translator_minimal
     inverse: causes
     mappings:
-      - WD:P828
+      - WIKIDATA:P828
 
   treats:
     aliases: ['is substance that treats']
@@ -865,7 +867,7 @@ slots:
       - RO:0002606
       - RO:0003307
       - SEMMEDDB:TREATS
-      - WD:P2175
+      - WIKIDATA:P2175
 
   prevents :
     is_a: affects risk for
@@ -922,7 +924,7 @@ slots:
     inverse: treats
     mappings:
       - RO:0002302
-      - WD:P2176
+      - WIKIDATA:P2176
 
   expressed in:
     is_a: related to
@@ -992,7 +994,7 @@ slots:
     mappings:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
-      - WD:276
+      - WIKIDATA:276
 
   model of:
     is_a: related to
@@ -1021,7 +1023,7 @@ slots:
     inverse: part of
     mappings:
       - BFO:0000051
-      - WD:P527
+      - WIKIDATA:P527
 
   part of:
     is_a: overlaps
@@ -1033,7 +1035,7 @@ slots:
     mappings:
       - BFO:0000050
       - SEMMEDDB:PART_OF
-      - WD:P361
+      - WIKIDATA:P361
 
   has participant:
     is_a: related to
@@ -1045,7 +1047,7 @@ slots:
     inverse: participates in
     mappings:
       - RO:0000057
-      - WD:P2283
+      - WIKIDATA:P2283
 
   has input:
     is_a: has participant
@@ -1140,7 +1142,7 @@ slots:
       - translator_minimal
     mappings:
       - SEMMEDDB:MANIFESTATION_OF
-      - WD:P1557
+      - WIKIDATA:P1557
 
   produces:
     is_a: related to
@@ -1150,7 +1152,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0003000
-      - WD:P1056
+      - WIKIDATA:P1056
       - SEMMEDDB:PRODUCES
 
   precedes:
@@ -1164,7 +1166,7 @@ slots:
     mappings:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
-      - WD:P156
+      - WIKIDATA:P156
 
   same as:
     is_a: related to
@@ -1176,7 +1178,7 @@ slots:
       - owl:equivalentClass
       - owl:sameAs
       - skos:exactMatch
-      - WD:P2888
+      - WIKIDATA:P2888
 
   subclass of:
     is_a: related to
@@ -1190,7 +1192,7 @@ slots:
     mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
-      - WD:P279
+      - WIKIDATA:P279
 
 ## property slots
 
@@ -1203,7 +1205,7 @@ slots:
     is_a: node property
     domain: data set version
     mappings:
-      - dct:title
+      - dcterms:title
 
   source data file:
     is_a: node property
@@ -1230,7 +1232,7 @@ slots:
     domain: data set version
     range: data set
     mappings:
-      - dct:isVersionOf
+      - dcterms:isVersionOf
 
   source version:
     is_a: node property
@@ -1242,7 +1244,7 @@ slots:
     is_a: node property
     domain: distribution level
     mappings:
-      - dct:downloadURL
+      - dcterms:downloadURL
 
   distribution:
     is_a: node property
@@ -1511,7 +1513,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002162
-      - WD:P703
+      - WIKIDATA:P703
 
   latitude:
     is_a: node property
@@ -1535,7 +1537,7 @@ slots:
     description: >-
       description of chemical compound based on element symbols
     mappings:
-      - WD:P274
+      - WIKIDATA:P274
 
   aggregate statistic:
     is_a: node property
@@ -1880,7 +1882,7 @@ classes:
       - category
     subclass_of: BFO:0000001
     mappings:
-      - WD:Q35120
+      - WIKIDATA:Q35120
       # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
       # Entity
@@ -1942,7 +1944,7 @@ classes:
     is_a: named thing
     abstract: true
     mappings:
-      - WD:Q28845870
+      - WIKIDATA:Q28845870
       # UMLS Semantic Type "Experimental Model of Disease"
       - UMLSSC:T050
       - UMLSST:emod
@@ -1976,7 +1978,7 @@ classes:
     values_from:
       - NCBITaxon
     mappings:
-      - WD:Q16521
+      - WIKIDATA:Q16521
 
   organismal entity:
     description: >-
@@ -1984,7 +1986,7 @@ classes:
     abstract: true
     is_a: biological entity
     mappings:
-      - WD:Q7239
+      - WIKIDATA:Q7239
 
   individual organism:
     mixins:
@@ -1993,7 +1995,7 @@ classes:
     subclass_of: "NCBITaxon:1"
     mappings:
       - SIO:010000
-      - WD:Q795052
+      - WIKIDATA:Q795052
       # UMLS Semantic Group "Living Beings"
       # Several of the associated semantic types here are probably not
       # that relevant to the Biolink world but we keep them here for now.
@@ -2104,7 +2106,7 @@ classes:
     slots:
       - has attribute
     id_prefixes:
-      - BioSample
+      - BIOSAMPLE
       - GOLD.META
 
   disease or phenotypic feature:
@@ -2127,7 +2129,7 @@ classes:
     is_a: disease or phenotypic feature
     mappings:
       - MONDO:0000001
-      - WD:Q12136
+      - WIKIDATA:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
       - UMLSSG:DISO
@@ -2178,7 +2180,7 @@ classes:
     mappings:
       - UPHENO:0001001
       - SIO:010056
-      - WD:Q169872
+      - WIKIDATA:Q169872
     id_prefixes:
       - HP
       - EFO
@@ -2309,7 +2311,7 @@ classes:
     #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
     mappings:
       - SIO:010341
-      - WD:Q43460564
+      - WIKIDATA:Q43460564
       # UMLS Semantic Group "Genes & Molecular Sequences"
       - UMLSSG:GENE
       # Molecular Sequence
@@ -2324,7 +2326,7 @@ classes:
     subclass_of: "CHEBI:24431"
     mappings:
       - SIO:010004
-      - WD:Q79529
+      - WIKIDATA:Q79529
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
       - UMLSST:sbst
@@ -2388,14 +2390,14 @@ classes:
       - CHEBI
       - CHEMBL.COMPOUND
       - DRUGBANK
-      - PUBCHEM
+      - PUBCHEM.COMPOUND
       - MESH
       - HMDB
       - INCHI
       - INCHIKEY
       - UNII
       - KEGG
-      - GTOPDB
+      - gtpo
 
   carbohydrate:
     is_a: chemical substance
@@ -2403,6 +2405,8 @@ classes:
       # UMLS Semantic Type "Carbohydrate Sequence"
       - UMLSSC:T088
       - UMLSST:crbs
+    id_prefixes:
+      - PUBCHEM.SUBSTANCE
 
   drug:
     is_a: chemical substance
@@ -2411,11 +2415,13 @@ classes:
     comments:
       - The CHEBI ID represents a role rather than a substance
     mappings:
-      - WD:Q12140
+      - WIKIDATA:Q12140
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
       - UMLSSC:T200
       - UMLSST:clnd
+    id_prefixes:
+      - PHARMGKB.DRUG
 
   metabolite:
     is_a: chemical substance
@@ -2443,7 +2449,7 @@ classes:
       A subcellular location, cell type or gross anatomical part
     mappings:
       - SIO:010046
-      - WD:Q4936952
+      - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
       # Body System
@@ -2534,7 +2540,7 @@ classes:
     mappings:
       - SO:0001026
       - SIO:000984
-      - WD:Q7020
+      - WIKIDATA:Q7020
 
   transcript:
     is_a: genomic entity
@@ -2551,7 +2557,7 @@ classes:
     mappings:
       - SO:0000147
       - SIO:010445
-      - WD:Q373027
+      - WIKIDATA:Q373027
 
   coding sequence:
     is_a: genomic entity
@@ -2586,6 +2592,7 @@ classes:
       Frequently an identifier for one will be used as proxy for another
     id_prefixes:
       - CHEMBL.TARGET
+      - IUPHAR.FAMILY
 
   gene:
     is_a: gene or gene product
@@ -2593,19 +2600,19 @@ classes:
     mappings:
       - SO:0000704
       - SIO:010035
-      - WD:Q7187
+      - WIKIDATA:Q7187
     id_prefixes:
       - NCBIGene
       - ENSEMBL
       - HGNC
-      #- UniProtKB  I think this belongs, but others may strongly disagree CB
+      # - UniProtKB  I think this belongs, but others may strongly disagree CB
       - MGI
       - ZFIN
       - dictyBase
       - WB
       - SGD
       - PomBase
-      - IUPHAR
+      # - IUPHAR
 
   gene product:
     is_a: gene or gene product
@@ -2615,10 +2622,10 @@ classes:
       - protein
       - RNA product
     mappings:
-      - WD:Q424689
+      - WIKIDATA:Q424689
     id_prefixes:
       - UniProtKB
-      - GTOPDB
+      - gtpo
       - PR
 
   protein:
@@ -2629,7 +2636,7 @@ classes:
     mappings:
       - PR:000000001
       - SIO:010043
-      - WD:Q8054
+      - WIKIDATA:Q8054
       # UMLS Semantic Type: "Amino Acid Sequence"
       - UMLSSC:T087
       - UMLSST:amas
@@ -2667,9 +2674,9 @@ classes:
     mappings:
       - CHEBI:33697
       - SIO:010450
-      - WD:Q11053
+      - WIKIDATA:Q11053
     id_prefixes:
-      - RNAcentral
+      - RNACENTRAL
 
   RNA product isoform:
     is_a: RNA product
@@ -2678,12 +2685,12 @@ classes:
     mixins:
       - gene product isoform
     id_prefixes:
-      - RNAcentral
+      - RNACENTRAL
 
   noncoding RNA product:
     is_a: RNA product
     id_prefixes:
-      - RNAcentral
+      - RNACENTRAL
       - NCBIGene
       - ENSEMBL
     subclass_of: SO:0000655
@@ -2695,7 +2702,7 @@ classes:
     subclass_of: SO:0000276
     mappings:
       - SIO:001397
-      - WD:Q310899
+      - WIKIDATA:Q310899
     id_prefixes:
       - MIR
 
@@ -2704,12 +2711,12 @@ classes:
     subclass_of: "GO:0032991"
     mappings:
       - SIO:010046
-      - WD:Q22325163
+      - WIKIDATA:Q22325163
     id_prefixes:
-      - IntAct
+      - INTACT
       - GO
       - PR
-      - Reactome
+      - REACT
 
   gene grouping:
     abstract: true
@@ -2722,7 +2729,7 @@ classes:
     mappings:
       - SIO:001380
       - "NCIT:C20130"
-      - WD:Q417841
+      - WIKIDATA:Q417841
     mixins:
       - gene grouping
     description: >-
@@ -2755,7 +2762,7 @@ classes:
 #      - completeness
     mappings:
       - GENO:0000871
-      - VMC:Haplotype
+      # - VMC:Haplotype  needs IRI mapping
 
   sequence variant:
     aliases: ['allele']
@@ -2770,18 +2777,18 @@ classes:
           than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
     mappings:
       - GENO:0000002
-      - WD:Q15304597
+      - WIKIDATA:Q15304597
       - SIO:010277
       - VMC:Allele
     id_prefixes:
-      - CAID #ClinGen Allele Registry
+      - CAID # ClinGen Allele Registry
       - ClinVar
-      - WD
-      - CIViC
-      - HGVS
+      - WIKIDATA
+      # - CIViC needs IRI mapping
       - DBSNP
-      - MYVARIANT_HG19
-      - MYVARIANT_HG38
+      # - MYVARIANT_HG19 needs IRI mapping
+      # - MYVARIANT_HG38 needs IRI mapping
+      # - HGVS needs IRI mapping
     alt_descriptions:
       AGR: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
       VMC: "A contiguous change at a Location"
@@ -3974,7 +3981,7 @@ classes:
 #      - biological process
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
     slots:
       - has input
       - has output
@@ -4007,7 +4014,7 @@ classes:
       - UMLSST:moft
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
       - RHEA
 
   activity and behavior:
@@ -4108,10 +4115,10 @@ classes:
     mappings:
       - GO:0008150
       - SIO:000006
-      - WD:Q2996394
+      - WIKIDATA:Q2996394
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
 
   pathway:
     is_a: biological process
@@ -4119,13 +4126,13 @@ classes:
       - GO:0007165
       - SIO:010526
       - PW:0000001
-      - WD:Q4915012
+      - WIKIDATA:Q4915012
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
       - KEGG
       - SMPDB
-      - PHARMGKB
+      - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
 
   physiological process:
@@ -4159,7 +4166,7 @@ classes:
       - UMLSST:clna
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
 
   cellular component:
     is_a: anatomical entity
@@ -4168,7 +4175,7 @@ classes:
     mappings:
       - GO:0005575
       - SIO:001400
-      - WD:Q5058355
+      - WIKIDATA:Q5058355
       # Cell Component
       - UMLSSC:T026
       - UMLSST:celc
@@ -4181,7 +4188,7 @@ classes:
       - GO:0005623
       - CL:0000000
       - SIO:010001
-      - WD:Q7868
+      - WIKIDATA:Q7868
       # UMLS Semantic Type "Cell"
       - UMLSSC:T025
       - UMLSST:cell
@@ -4203,7 +4210,7 @@ classes:
     mappings:
       - UBERON:0010000
       - SIO:010046
-      - WD:Q4936952
+      - WIKIDATA:Q4936952
       # UMLS Semantic Type "Anatomical Structure"
       - UMLSSC:T017
       - UMLSST:anst
