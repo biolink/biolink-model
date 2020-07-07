@@ -13,6 +13,18 @@ prefixes:
   UMLSSG: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/
   UMLSST: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/
   UMLSSC: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/
+  GOREL: http://purl.obolibrary.org/obo/GOREL_
+  UBERGRAPH: http://translator.renci.org/ubergraph-axioms.ofn#
+  GAMMA: http://translator.renci.org/GAMMA_
+  CTD: http://translator.ncats.nih.gov/CTD_
+  hetio: http://translator.ncats.nih.gov/hetio_
+  SNPEFF: http://translator.ncats.nih.gov/SNPEFF_
+  Aeolus: http://translator.ncats.nih.gov/Aeolus_
+  DrugCentral: http://translator.ncats.nih.gov/DrugCentral_
+  ICD0: http://translator.ncats.nih.gov/ICD0_
+  ICD9: http://translator.ncats.nih.gov/ICD9_
+  ICD10: http://translator.ncats.nih.gov/ICD10_
+  MetaCyc: http://translator.ncats.nih.gov/MetaCyc_
   
 default_prefix: biolink
 default_range: string
@@ -177,7 +189,6 @@ slots:
       - translator_minimal
     slot_uri: SEMMEDDB:AFFECTS
     mappings:
-      - GO:acts_on_population_of
       - GOREL:0001006
       - CTD:inferred
       - CTD:prediction_hypothesis
@@ -886,7 +897,7 @@ slots:
     mixin: true
     abstract: true
     mappings:
-      - GO:acts_upstream_of_positive_effect
+      - RO:0002213
 
   negatively regulates:
     comments:
@@ -895,8 +906,8 @@ slots:
     mixin: true
     abstract: true
     mappings:
-      - GO:acts_upstream_of_or_within_negative_effect
-      - GO:acts_upstream_of_negative_effect
+      - RO:0004033
+      - RO:0004035
 
   regulates, process to process:
     is_a: regulates
@@ -943,7 +954,7 @@ slots:
       - SEMMEDDB:STIMULATES
       - hetio:UPREGULATES_AuG
       - hetio:UPREGULATES_DuG
-      - GO:acts_upstream_of_or_within_positive_effect
+      - RO:0004034
 
   negatively regulates, entity to entity:
     aliases: ['activity directly negatively regulates activity of']
@@ -1297,7 +1308,7 @@ slots:
     inverse: location of
     slot_uri: RO:0001025
     mappings:
-      - GO:regulates_o_occurs_in
+      - GOREL:0001004
       - BSPO:0000107
       - BSPO:0000108
       - BSPO:0000120
@@ -1421,7 +1432,6 @@ slots:
     inverse: has participant
     slot_uri: RO:0000056
     mappings:
-      - GO:mediated_by
       - BFO:0000056
 
   actively involved in:
@@ -1494,7 +1504,7 @@ slots:
     mappings:
       - WD:P1056
       - SEMMEDDB:PRODUCES
-      - GO:regulates_o_results_in_acquisition_of_features_of
+      - GOREL:0001010
 
   precedes:
     is_a: related to
@@ -1508,8 +1518,8 @@ slots:
     mappings:
       - SEMMEDDB:PRECEDES
       - WD:P156
-      - GO:acts_upstream_of
-      - GO:acts_upstream_of_or_within
+      - RO:0002263
+      - RO:0002264
 
   same as:
     is_a: related to
