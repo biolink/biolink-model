@@ -1843,6 +1843,16 @@ classes:
     mappings:
       - HP:0003674
     is_a: attribute
+    
+  inheritance:
+    description: >-
+      The pattern in which a particular genetic trait or disorder is passed from one
+      generation to the next
+    mappings:
+      - HP:0000005
+      - GENO:0000141
+      - NCIT:C45827
+    is_a: attribute
 
   relationship quantifier:
     abstract: true
@@ -2064,6 +2074,8 @@ classes:
     is_a: individual organism
     description: >-
       An individual organism that has a patient role in some clinical context.
+    mappings:
+      - foaf:Person
 
   population of individual organisms:
     description: >-
@@ -2081,6 +2093,7 @@ classes:
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
       - UMLSST:popg
+      - OBI:0000181
     id_prefixes:
       - HANCESTRO
 
@@ -2166,6 +2179,7 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
+      - ORPHA
       - EFO
       - UMLS
       - MESH
@@ -2185,6 +2199,12 @@ classes:
       - NCIT
       - UMLS
       - MEDDRA
+      - MP
+      - ZP
+      - UPHENO
+      - APO
+      - FBcv
+      - WBPhenotype
 
   exposure event:
     aliases: ['environment', 'exposure', 'experimental condition']
@@ -2247,6 +2267,8 @@ classes:
       - cio
     mappings:
       - CIO:0000028
+      - SEPIO:0000167
+      - SEPIO:0000187
 
   evidence type:
     is_a: information content entity
@@ -2267,10 +2289,10 @@ classes:
       The scope is intended to be general and include information published on the web as well as journals.
     mappings:
       - IAO:0000311
+      - IAO:0000013
       # UMLS Semantic Type "Intellectual Product"
       - UMLSSC:T170
       - UMLSST:inpr
-
     id_prefixes:
       - PMID
 
@@ -2297,6 +2319,7 @@ classes:
       # Self-help or Relief Organization
       - UMLSSC:T095
       - UMLSST:shro
+      - prov:Agent
 
   molecular entity:
     is_a: biological entity
@@ -2603,6 +2626,9 @@ classes:
       - ZFIN
       - dictyBase
       - WB
+      - WormBase
+      - FlyBase
+      - RGD
       - SGD
       - PomBase
       - IUPHAR
@@ -2698,6 +2724,7 @@ classes:
       - WD:Q310899
     id_prefixes:
       - MIR
+      - HGNC
 
   macromolecular complex:
     is_a: macromolecular machine
@@ -2756,6 +2783,7 @@ classes:
     mappings:
       - GENO:0000871
       - VMC:Haplotype
+      - SO:0001024
 
   sequence variant:
     aliases: ['allele']
@@ -2773,6 +2801,8 @@ classes:
       - WD:Q15304597
       - SIO:010277
       - VMC:Allele
+      - SO:0001059
+      - SO:0001060
     id_prefixes:
       - CAID #ClinGen Allele Registry
       - ClinVar
@@ -2782,6 +2812,11 @@ classes:
       - DBSNP
       - MYVARIANT_HG19
       - MYVARIANT_HG38
+      - MGI
+      - ZFIN
+      - FlyBase
+      - WB
+      - WormBase
     alt_descriptions:
       AGR: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
       VMC: "A contiguous change at a Location"
