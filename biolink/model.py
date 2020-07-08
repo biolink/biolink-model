@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.1
-# Generation date: 2020-07-08 21:31
+# Generation date: 2020-07-08 22:04
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -124,6 +124,14 @@ class ChemicalFormulaValue(str):
     type_class_curie = "xsd:string"
     type_name = "chemical formula value"
     type_model_uri = BIOLINK.ChemicalFormulaValue
+
+
+class CategoryType(Uriorcurie):
+    """ A primitive type in which the value denotes a class within the biolink model. The value must be a URI or a CURIE. In a Neo4j representation, the value should be the CURIE for the biolink class, for example biolink:Gene. For an RDF representation, the value should be a URI such as https://w3id.org/biolink/vocab/Gene """
+    type_class_uri = XSD.anyURI
+    type_class_curie = "xsd:anyURI"
+    type_name = "category type"
+    type_model_uri = BIOLINK.CategoryType
 
 
 class IriType(Uriorcurie):
@@ -815,7 +823,7 @@ class Attribute(AbstractEntity):
 
     id: Union[str, AttributeId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     has_attribute_type: Optional[Union[str, OntologyClassId]] = None
     has_quantitative_value: List[Union[dict, "QuantityValue"]] = empty_list()
     has_qualitative_value: Optional[Union[str, NamedThingId]] = None
@@ -867,7 +875,7 @@ class BiologicalSex(Attribute):
 
     id: Union[str, BiologicalSexId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -891,7 +899,7 @@ class PhenotypicSex(BiologicalSex):
 
     id: Union[str, PhenotypicSexId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -916,7 +924,7 @@ class GenotypicSex(BiologicalSex):
 
     id: Union[str, GenotypicSexId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -940,7 +948,7 @@ class SeverityValue(Attribute):
 
     id: Union[str, SeverityValueId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -964,7 +972,7 @@ class FrequencyValue(Attribute):
 
     id: Union[str, FrequencyValueId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -989,7 +997,7 @@ class ClinicalModifier(Attribute):
 
     id: Union[str, ClinicalModifierId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1013,7 +1021,7 @@ class Onset(Attribute):
 
     id: Union[str, OnsetId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1037,7 +1045,7 @@ class NamedThing(YAMLRoot):
 
     id: Union[str, NamedThingId]
     name: Union[str, LabelType]
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1050,8 +1058,8 @@ class NamedThing(YAMLRoot):
             self.name = LabelType(self.name)
         if not isinstance(self.category, list) or len(self.category) == 0:
             raise ValueError(f"category must be a non-empty list")
-        self.category = [v if isinstance(v, IriType)
-                         else IriType(v) for v in self.category]
+        self.category = [v if isinstance(v, CategoryType)
+                         else CategoryType(v) for v in self.category]
         super().__post_init__()
 
 
@@ -1066,7 +1074,7 @@ class DataFile(NamedThing):
 
     id: Union[str, DataFileId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1087,7 +1095,7 @@ class SourceFile(DataFile):
 
     id: Union[str, SourceFileId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     source_version: Optional[str] = None
     retrievedOn: Optional[Union[str, XSDDate]] = None
 
@@ -1112,7 +1120,7 @@ class DataSet(NamedThing):
 
     id: Union[str, DataSetId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1133,7 +1141,7 @@ class DataSetVersion(DataSet):
 
     id: Union[str, DataSetVersionId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     title: Optional[str] = None
     source_data_file: Optional[Union[str, DataFileId]] = None
     versionOf: Optional[Union[str, DataSetId]] = None
@@ -1164,7 +1172,7 @@ class BiologicalEntity(NamedThing):
 
     id: Union[str, BiologicalEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
 @dataclass
 class OntologyClass(NamedThing):
@@ -1180,7 +1188,7 @@ class OntologyClass(NamedThing):
 
     id: Union[str, OntologyClassId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1204,7 +1212,7 @@ class RelationshipType(OntologyClass):
 
     id: Union[str, RelationshipTypeId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1228,7 +1236,7 @@ class GeneOntologyClass(OntologyClass):
 
     id: Union[str, GeneOntologyClassId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1249,7 +1257,7 @@ class OrganismTaxon(OntologyClass):
 
     id: Union[str, OrganismTaxonId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1274,7 +1282,7 @@ class OrganismalEntity(BiologicalEntity):
 
     id: Union[str, OrganismalEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
 @dataclass
 class IndividualOrganism(OrganismalEntity):
@@ -1287,7 +1295,7 @@ class IndividualOrganism(OrganismalEntity):
 
     id: Union[str, IndividualOrganismId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1311,7 +1319,7 @@ class Case(IndividualOrganism):
 
     id: Union[str, CaseId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1337,7 +1345,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
 
     id: Union[str, PopulationOfIndividualOrganismsId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1363,7 +1371,7 @@ class MaterialSample(NamedThing):
 
     id: Union[str, MaterialSampleId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     has_attribute: List[Union[str, AttributeId]] = empty_list()
 
     def __post_init__(self):
@@ -1391,7 +1399,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
 
     id: Union[str, DiseaseOrPhenotypicFeatureId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1412,7 +1420,7 @@ class Disease(DiseaseOrPhenotypicFeature):
 
     id: Union[str, DiseaseId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1433,7 +1441,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
 
     id: Union[str, PhenotypicFeatureId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1458,7 +1466,7 @@ class ExposureEvent(BiologicalEntity):
 
     id: Union[str, ExposureEventId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1482,7 +1490,7 @@ class InformationContentEntity(NamedThing):
 
     id: Union[str, InformationContentEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
 @dataclass
 class ConfidenceLevel(InformationContentEntity):
@@ -1498,7 +1506,7 @@ class ConfidenceLevel(InformationContentEntity):
 
     id: Union[str, ConfidenceLevelId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1522,7 +1530,7 @@ class EvidenceType(InformationContentEntity):
 
     id: Union[str, EvidenceTypeId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1548,7 +1556,7 @@ class Publication(InformationContentEntity):
 
     id: Union[str, PublicationId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1569,7 +1577,7 @@ class AdministrativeEntity(NamedThing):
 
     id: Union[str, AdministrativeEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
 @dataclass
 class Provider(AdministrativeEntity):
@@ -1585,7 +1593,7 @@ class Provider(AdministrativeEntity):
 
     id: Union[str, ProviderId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1609,7 +1617,7 @@ class MolecularEntity(BiologicalEntity):
 
     id: Union[str, MolecularEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1634,7 +1642,7 @@ class ChemicalSubstance(MolecularEntity):
 
     id: Union[str, ChemicalSubstanceId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1655,7 +1663,7 @@ class Carbohydrate(ChemicalSubstance):
 
     id: Union[str, CarbohydrateId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1679,7 +1687,7 @@ class Drug(ChemicalSubstance):
 
     id: Union[str, DrugId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1703,7 +1711,7 @@ class Metabolite(ChemicalSubstance):
 
     id: Union[str, MetaboliteId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1727,7 +1735,7 @@ class AnatomicalEntity(OrganismalEntity):
 
     id: Union[str, AnatomicalEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1751,7 +1759,7 @@ class LifeStage(OrganismalEntity):
 
     id: Union[str, LifeStageId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1775,7 +1783,7 @@ class PlanetaryEntity(NamedThing):
 
     id: Union[str, PlanetaryEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1796,7 +1804,7 @@ class EnvironmentalProcess(PlanetaryEntity):
 
     id: Union[str, EnvironmentalProcessId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1817,7 +1825,7 @@ class EnvironmentalFeature(PlanetaryEntity):
 
     id: Union[str, EnvironmentalFeatureId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1842,7 +1850,7 @@ class ClinicalEntity(NamedThing):
 
     id: Union[str, ClinicalEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1863,7 +1871,7 @@ class ClinicalTrial(ClinicalEntity):
 
     id: Union[str, ClinicalTrialId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1884,7 +1892,7 @@ class ClinicalIntervention(ClinicalEntity):
 
     id: Union[str, ClinicalInterventionId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1908,7 +1916,7 @@ class Device(NamedThing):
 
     id: Union[str, DeviceId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1933,7 +1941,7 @@ class GenomicEntity(MolecularEntity):
 
     id: Union[str, GenomicEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1957,7 +1965,7 @@ class Genome(GenomicEntity):
 
     id: Union[str, GenomeId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -1981,7 +1989,7 @@ class Transcript(GenomicEntity):
 
     id: Union[str, TranscriptId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2006,7 +2014,7 @@ class Exon(GenomicEntity):
 
     id: Union[str, ExonId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2027,7 +2035,7 @@ class CodingSequence(GenomicEntity):
 
     id: Union[str, CodingSequenceId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2052,7 +2060,7 @@ class MacromolecularMachine(GenomicEntity):
 
     id: Union[str, MacromolecularMachineId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2080,7 +2088,7 @@ class GeneOrGeneProduct(MacromolecularMachine):
 
     id: Union[str, GeneOrGeneProductId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2101,7 +2109,7 @@ class Gene(GeneOrGeneProduct):
 
     id: Union[str, GeneId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2125,7 +2133,7 @@ class GeneProduct(GeneOrGeneProduct):
 
     id: Union[str, GeneProductId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2150,7 +2158,7 @@ class Protein(GeneProduct):
 
     id: Union[str, ProteinId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2176,7 +2184,7 @@ class GeneProductIsoform(GeneProduct):
 
     id: Union[str, GeneProductIsoformId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
 @dataclass
 class ProteinIsoform(Protein):
@@ -2193,7 +2201,7 @@ class ProteinIsoform(Protein):
 
     id: Union[str, ProteinIsoformId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2214,7 +2222,7 @@ class RNAProduct(GeneProduct):
 
     id: Union[str, RNAProductId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2238,7 +2246,7 @@ class RNAProductIsoform(RNAProduct):
 
     id: Union[str, RNAProductIsoformId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2259,7 +2267,7 @@ class NoncodingRNAProduct(RNAProduct):
 
     id: Union[str, NoncodingRNAProductId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2280,7 +2288,7 @@ class MicroRNA(NoncodingRNAProduct):
 
     id: Union[str, MicroRNAId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2301,7 +2309,7 @@ class MacromolecularComplex(MacromolecularMachine):
 
     id: Union[str, MacromolecularComplexId] = None
     name: Union[str, SymbolType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2325,7 +2333,7 @@ class GeneFamily(MolecularEntity):
 
     id: Union[str, GeneFamilyId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2346,7 +2354,7 @@ class Zygosity(Attribute):
 
     id: Union[str, ZygosityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2371,7 +2379,7 @@ class Genotype(GenomicEntity):
 
     id: Union[str, GenotypeId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2395,7 +2403,7 @@ class Haplotype(GenomicEntity):
 
     id: Union[str, HaplotypeId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2419,7 +2427,7 @@ class SequenceVariant(GenomicEntity):
 
     id: Union[str, SequenceVariantId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
     has_gene: List[Union[str, GeneId]] = empty_list()
 
@@ -2449,7 +2457,7 @@ class ChemicalExposure(ExposureEvent):
 
     id: Union[str, ChemicalExposureId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2473,7 +2481,7 @@ class DrugExposure(ChemicalExposure):
 
     id: Union[str, DrugExposureId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     has_drug: List[Union[str, ChemicalSubstanceId]] = empty_list()
 
     def __post_init__(self):
@@ -2498,7 +2506,7 @@ class Treatment(ExposureEvent):
 
     id: Union[str, TreatmentId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     treats: List[Union[str, DiseaseOrPhenotypicFeatureId]] = empty_list()
     has_part: List[Union[str, DrugExposureId]] = empty_list()
 
@@ -2524,7 +2532,7 @@ class GeographicLocation(PlanetaryEntity):
 
     id: Union[str, GeographicLocationId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -2548,7 +2556,7 @@ class GeographicLocationAtTime(GeographicLocation):
 
     id: Union[str, GeographicLocationAtTimeId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4330,7 +4338,7 @@ class Occurrent(NamedThing):
 
     id: Union[str, OccurrentId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4354,7 +4362,7 @@ class PhysicalEntity(NamedThing):
 
     id: Union[str, PhysicalEntityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4378,7 +4386,7 @@ class BiologicalProcessOrActivity(BiologicalEntity):
 
     id: Union[str, BiologicalProcessOrActivityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     enabled_by: List[Union[str, NamedThingId]] = empty_list()
 
     def __post_init__(self):
@@ -4405,7 +4413,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
 
     id: Union[str, MolecularActivityId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
     has_input: List[Union[str, ChemicalSubstanceId]] = empty_list()
     has_output: List[Union[str, ChemicalSubstanceId]] = empty_list()
     enabled_by: List[Union[str, MacromolecularMachineId]] = empty_list()
@@ -4438,7 +4446,7 @@ class ActivityAndBehavior(Occurrent):
 
     id: Union[str, ActivityAndBehaviorId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4462,7 +4470,7 @@ class Procedure(Occurrent):
 
     id: Union[str, ProcedureId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4486,7 +4494,7 @@ class Phenomenon(Occurrent):
 
     id: Union[str, PhenomenonId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4510,7 +4518,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
 
     id: Union[str, BiologicalProcessId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4531,7 +4539,7 @@ class Pathway(BiologicalProcess):
 
     id: Union[str, PathwayId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4552,7 +4560,7 @@ class PhysiologicalProcess(BiologicalProcess):
 
     id: Union[str, PhysiologicalProcessId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4576,7 +4584,7 @@ class CellularComponent(AnatomicalEntity):
 
     id: Union[str, CellularComponentId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4597,7 +4605,7 @@ class Cell(AnatomicalEntity):
 
     id: Union[str, CellId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4618,7 +4626,7 @@ class CellLine(OrganismalEntity):
 
     id: Union[str, CellLineId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
@@ -4639,7 +4647,7 @@ class GrossAnatomicalStructure(AnatomicalEntity):
 
     id: Union[str, GrossAnatomicalStructureId] = None
     name: Union[str, LabelType] = None
-    category: List[Union[str, IriType]] = empty_list()
+    category: List[Union[str, CategoryType]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
