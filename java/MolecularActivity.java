@@ -3,9 +3,6 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -61,12 +58,35 @@ public class MolecularActivity {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("enabledBy", enabledBy).append("hasInput", hasInput).append("hasOutput", hasOutput).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(MolecularActivity.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("enabledBy");
+        sb.append('=');
+        sb.append(((this.enabledBy == null)?"<null>":this.enabledBy));
+        sb.append(',');
+        sb.append("hasInput");
+        sb.append('=');
+        sb.append(((this.hasInput == null)?"<null>":this.hasInput));
+        sb.append(',');
+        sb.append("hasOutput");
+        sb.append('=');
+        sb.append(((this.hasOutput == null)?"<null>":this.hasOutput));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(enabledBy).append(hasOutput).append(hasInput).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.enabledBy == null)? 0 :this.enabledBy.hashCode()));
+        result = ((result* 31)+((this.hasOutput == null)? 0 :this.hasOutput.hashCode()));
+        result = ((result* 31)+((this.hasInput == null)? 0 :this.hasInput.hashCode()));
+        return result;
     }
 
     @Override
@@ -78,7 +98,7 @@ public class MolecularActivity {
             return false;
         }
         MolecularActivity rhs = ((MolecularActivity) other);
-        return new EqualsBuilder().append(enabledBy, rhs.enabledBy).append(hasOutput, rhs.hasOutput).append(hasInput, rhs.hasInput).isEquals();
+        return ((((this.enabledBy == rhs.enabledBy)||((this.enabledBy!= null)&&this.enabledBy.equals(rhs.enabledBy)))&&((this.hasOutput == rhs.hasOutput)||((this.hasOutput!= null)&&this.hasOutput.equals(rhs.hasOutput))))&&((this.hasInput == rhs.hasInput)||((this.hasInput!= null)&&this.hasInput.equals(rhs.hasInput))));
     }
 
 }

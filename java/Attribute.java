@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -18,6 +15,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "category",
+    "correlated_with",
     "description",
     "full_name",
     "has_attribute_type",
@@ -43,6 +41,13 @@ public class Attribute {
     @JsonProperty("category")
     @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
     private List<String> category = new ArrayList<String>();
+    /**
+     * holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+     * 
+     */
+    @JsonProperty("correlated_with")
+    @JsonPropertyDescription("holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.")
+    private List<String> correlatedWith = new ArrayList<String>();
     /**
      * a human-readable description of a thing
      * 
@@ -162,6 +167,24 @@ public class Attribute {
     @JsonProperty("category")
     public void setCategory(List<String> category) {
         this.category = category;
+    }
+
+    /**
+     * holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+     * 
+     */
+    @JsonProperty("correlated_with")
+    public List<String> getCorrelatedWith() {
+        return correlatedWith;
+    }
+
+    /**
+     * holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+     * 
+     */
+    @JsonProperty("correlated_with")
+    public void setCorrelatedWith(List<String> correlatedWith) {
+        this.correlatedWith = correlatedWith;
     }
 
     /**
@@ -422,12 +445,100 @@ public class Attribute {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("category", category).append("description", description).append("fullName", fullName).append("hasAttributeType", hasAttributeType).append("hasQualitativeValue", hasQualitativeValue).append("hasQuantitativeValue", hasQuantitativeValue).append("id", id).append("interactsWith", interactsWith).append("iri", iri).append("name", name).append("nodeProperty", nodeProperty).append("relatedTo", relatedTo).append("subclassOf", subclassOf).append("synonym", synonym).append("systematicSynonym", systematicSynonym).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Attribute.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("category");
+        sb.append('=');
+        sb.append(((this.category == null)?"<null>":this.category));
+        sb.append(',');
+        sb.append("correlatedWith");
+        sb.append('=');
+        sb.append(((this.correlatedWith == null)?"<null>":this.correlatedWith));
+        sb.append(',');
+        sb.append("description");
+        sb.append('=');
+        sb.append(((this.description == null)?"<null>":this.description));
+        sb.append(',');
+        sb.append("fullName");
+        sb.append('=');
+        sb.append(((this.fullName == null)?"<null>":this.fullName));
+        sb.append(',');
+        sb.append("hasAttributeType");
+        sb.append('=');
+        sb.append(((this.hasAttributeType == null)?"<null>":this.hasAttributeType));
+        sb.append(',');
+        sb.append("hasQualitativeValue");
+        sb.append('=');
+        sb.append(((this.hasQualitativeValue == null)?"<null>":this.hasQualitativeValue));
+        sb.append(',');
+        sb.append("hasQuantitativeValue");
+        sb.append('=');
+        sb.append(((this.hasQuantitativeValue == null)?"<null>":this.hasQuantitativeValue));
+        sb.append(',');
+        sb.append("id");
+        sb.append('=');
+        sb.append(((this.id == null)?"<null>":this.id));
+        sb.append(',');
+        sb.append("interactsWith");
+        sb.append('=');
+        sb.append(((this.interactsWith == null)?"<null>":this.interactsWith));
+        sb.append(',');
+        sb.append("iri");
+        sb.append('=');
+        sb.append(((this.iri == null)?"<null>":this.iri));
+        sb.append(',');
+        sb.append("name");
+        sb.append('=');
+        sb.append(((this.name == null)?"<null>":this.name));
+        sb.append(',');
+        sb.append("nodeProperty");
+        sb.append('=');
+        sb.append(((this.nodeProperty == null)?"<null>":this.nodeProperty));
+        sb.append(',');
+        sb.append("relatedTo");
+        sb.append('=');
+        sb.append(((this.relatedTo == null)?"<null>":this.relatedTo));
+        sb.append(',');
+        sb.append("subclassOf");
+        sb.append('=');
+        sb.append(((this.subclassOf == null)?"<null>":this.subclassOf));
+        sb.append(',');
+        sb.append("synonym");
+        sb.append('=');
+        sb.append(((this.synonym == null)?"<null>":this.synonym));
+        sb.append(',');
+        sb.append("systematicSynonym");
+        sb.append('=');
+        sb.append(((this.systematicSynonym == null)?"<null>":this.systematicSynonym));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasQuantitativeValue).append(iri).append(nodeProperty).append(systematicSynonym).append(description).append(fullName).append(relatedTo).append(interactsWith).append(synonym).append(subclassOf).append(name).append(hasAttributeType).append(id).append(category).append(hasQualitativeValue).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.hasQuantitativeValue == null)? 0 :this.hasQuantitativeValue.hashCode()));
+        result = ((result* 31)+((this.iri == null)? 0 :this.iri.hashCode()));
+        result = ((result* 31)+((this.nodeProperty == null)? 0 :this.nodeProperty.hashCode()));
+        result = ((result* 31)+((this.correlatedWith == null)? 0 :this.correlatedWith.hashCode()));
+        result = ((result* 31)+((this.systematicSynonym == null)? 0 :this.systematicSynonym.hashCode()));
+        result = ((result* 31)+((this.description == null)? 0 :this.description.hashCode()));
+        result = ((result* 31)+((this.fullName == null)? 0 :this.fullName.hashCode()));
+        result = ((result* 31)+((this.relatedTo == null)? 0 :this.relatedTo.hashCode()));
+        result = ((result* 31)+((this.interactsWith == null)? 0 :this.interactsWith.hashCode()));
+        result = ((result* 31)+((this.synonym == null)? 0 :this.synonym.hashCode()));
+        result = ((result* 31)+((this.subclassOf == null)? 0 :this.subclassOf.hashCode()));
+        result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
+        result = ((result* 31)+((this.hasAttributeType == null)? 0 :this.hasAttributeType.hashCode()));
+        result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
+        result = ((result* 31)+((this.category == null)? 0 :this.category.hashCode()));
+        result = ((result* 31)+((this.hasQualitativeValue == null)? 0 :this.hasQualitativeValue.hashCode()));
+        return result;
     }
 
     @Override
@@ -439,7 +550,7 @@ public class Attribute {
             return false;
         }
         Attribute rhs = ((Attribute) other);
-        return new EqualsBuilder().append(hasQuantitativeValue, rhs.hasQuantitativeValue).append(iri, rhs.iri).append(nodeProperty, rhs.nodeProperty).append(systematicSynonym, rhs.systematicSynonym).append(description, rhs.description).append(fullName, rhs.fullName).append(relatedTo, rhs.relatedTo).append(interactsWith, rhs.interactsWith).append(synonym, rhs.synonym).append(subclassOf, rhs.subclassOf).append(name, rhs.name).append(hasAttributeType, rhs.hasAttributeType).append(id, rhs.id).append(category, rhs.category).append(hasQualitativeValue, rhs.hasQualitativeValue).isEquals();
+        return (((((((((((((((((this.hasQuantitativeValue == rhs.hasQuantitativeValue)||((this.hasQuantitativeValue!= null)&&this.hasQuantitativeValue.equals(rhs.hasQuantitativeValue)))&&((this.iri == rhs.iri)||((this.iri!= null)&&this.iri.equals(rhs.iri))))&&((this.nodeProperty == rhs.nodeProperty)||((this.nodeProperty!= null)&&this.nodeProperty.equals(rhs.nodeProperty))))&&((this.correlatedWith == rhs.correlatedWith)||((this.correlatedWith!= null)&&this.correlatedWith.equals(rhs.correlatedWith))))&&((this.systematicSynonym == rhs.systematicSynonym)||((this.systematicSynonym!= null)&&this.systematicSynonym.equals(rhs.systematicSynonym))))&&((this.description == rhs.description)||((this.description!= null)&&this.description.equals(rhs.description))))&&((this.fullName == rhs.fullName)||((this.fullName!= null)&&this.fullName.equals(rhs.fullName))))&&((this.relatedTo == rhs.relatedTo)||((this.relatedTo!= null)&&this.relatedTo.equals(rhs.relatedTo))))&&((this.interactsWith == rhs.interactsWith)||((this.interactsWith!= null)&&this.interactsWith.equals(rhs.interactsWith))))&&((this.synonym == rhs.synonym)||((this.synonym!= null)&&this.synonym.equals(rhs.synonym))))&&((this.subclassOf == rhs.subclassOf)||((this.subclassOf!= null)&&this.subclassOf.equals(rhs.subclassOf))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.hasAttributeType == rhs.hasAttributeType)||((this.hasAttributeType!= null)&&this.hasAttributeType.equals(rhs.hasAttributeType))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.category == rhs.category)||((this.category!= null)&&this.category.equals(rhs.category))))&&((this.hasQualitativeValue == rhs.hasQualitativeValue)||((this.hasQualitativeValue!= null)&&this.hasQualitativeValue.equals(rhs.hasQualitativeValue))));
     }
 
 }

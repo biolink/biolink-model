@@ -1,9 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -33,12 +30,25 @@ public class DistributionLevel {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("downloadURL", downloadURL).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(DistributionLevel.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("downloadURL");
+        sb.append('=');
+        sb.append(((this.downloadURL == null)?"<null>":this.downloadURL));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(downloadURL).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.downloadURL == null)? 0 :this.downloadURL.hashCode()));
+        return result;
     }
 
     @Override
@@ -50,7 +60,7 @@ public class DistributionLevel {
             return false;
         }
         DistributionLevel rhs = ((DistributionLevel) other);
-        return new EqualsBuilder().append(downloadURL, rhs.downloadURL).isEquals();
+        return ((this.downloadURL == rhs.downloadURL)||((this.downloadURL!= null)&&this.downloadURL.equals(rhs.downloadURL)));
     }
 
 }

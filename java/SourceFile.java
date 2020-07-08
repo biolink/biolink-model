@@ -1,9 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -46,12 +43,30 @@ public class SourceFile {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("retrievedOn", retrievedOn).append("sourceVersion", sourceVersion).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(SourceFile.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("retrievedOn");
+        sb.append('=');
+        sb.append(((this.retrievedOn == null)?"<null>":this.retrievedOn));
+        sb.append(',');
+        sb.append("sourceVersion");
+        sb.append('=');
+        sb.append(((this.sourceVersion == null)?"<null>":this.sourceVersion));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(retrievedOn).append(sourceVersion).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.retrievedOn == null)? 0 :this.retrievedOn.hashCode()));
+        result = ((result* 31)+((this.sourceVersion == null)? 0 :this.sourceVersion.hashCode()));
+        return result;
     }
 
     @Override
@@ -63,7 +78,7 @@ public class SourceFile {
             return false;
         }
         SourceFile rhs = ((SourceFile) other);
-        return new EqualsBuilder().append(retrievedOn, rhs.retrievedOn).append(sourceVersion, rhs.sourceVersion).isEquals();
+        return (((this.retrievedOn == rhs.retrievedOn)||((this.retrievedOn!= null)&&this.retrievedOn.equals(rhs.retrievedOn)))&&((this.sourceVersion == rhs.sourceVersion)||((this.sourceVersion!= null)&&this.sourceVersion.equals(rhs.sourceVersion))));
     }
 
 }

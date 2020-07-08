@@ -1,8 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -20,12 +17,20 @@ public class SpecificityQuantifier {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(SpecificityQuantifier.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().toHashCode();
+        int result = 1;
+        return result;
     }
 
     @Override
@@ -37,7 +42,7 @@ public class SpecificityQuantifier {
             return false;
         }
         SpecificityQuantifier rhs = ((SpecificityQuantifier) other);
-        return new EqualsBuilder().isEquals();
+        return true;
     }
 
 }
