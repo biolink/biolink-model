@@ -2,9 +2,9 @@
 [![Build Status](https://travis-ci.org/biolink/biolink-model.svg?branch=master)](https://travis-ci.org/biolink/biolink-model)
 [![DOI](https://zenodo.org/badge/112995625.svg)](https://zenodo.org/badge/latestdoi/112995625) [![Join the chat at https://gitter.im/biolink-model/community](https://badges.gitter.im/biolink-model/community.svg)](https://gitter.im/biolink-model/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-![bl](images/biolink-logo.png)
+<img src="images/biolink-logo.png" width="20%">
 
-# BioLink Model
+# Biolink Model
 
 
 Quickstart docs:
@@ -14,21 +14,21 @@ Quickstart docs:
     * [association](https://biolink.github.io/biolink-model/docs/Association.html) (root class for associations)
     * [slots](https://biolink.github.io/biolink-model/docs/#slots)
 
-See [Introduction to the BioLink datamodel](https://www.slideshare.net/cmungall/introduction-to-the-biolink-datamodel)
-slides for a background on the BioLink Model and its inception.
+See [Introduction to the Biolink datamodel](https://www.slideshare.net/cmungall/introduction-to-the-biolink-datamodel)
+slides for a background on the Biolink Model and its inception.
 
 Conversion/validation code: https://github.com/NCATS-Tangerine/kgx
 
 ## Introduction
 
-The purpose of the BioLink model is to provide a high level datamodel of
+The purpose of the Biolink model is to provide a high level datamodel of
 biological entities (genes, diseases, phenotypes, pathways, individuals, substances, etc),
 their properties, relationships, and enumerate ways in which they can be associated.
 
 The representation is independent of storage technology or metamodel (Solr documents, neo4j/property graphs,
 RDF/OWL, JSON, CSVs, etc). Different mappings to each of these are provided.
 
-The specification of the reference BioLink model is a [single YAML file](biolink-model.yaml) following
+The specification of the reference Biolink model is a [single YAML file](biolink-model.yaml) following
 a custom meta-model. The basic elements of the YAML are:
 
  - definitions of upper level *classes* representing both 'named thing'
@@ -70,12 +70,12 @@ See [biolink json-ld context](context.jsonld) to find out more about identifier 
 ### Neo4J Mapping
 
 Refer to [mapping to neo4j](https://biolink.github.io/biolink-model/about/mapping-neo4j.html) for strategies on
-representing BioLink model in a Neo4j database.
+representing Biolink model in a Neo4j database.
 
 ### RDF Mapping
 
-Refer to [mapping to RDF](https://biolink.github.io/biolink-model/about/mapping-rdf.html) for strategies on
-representing BioLink model in a RDF triple store.
+Refer to [mapping to RDF and RDF*](https://biolink.github.io/biolink-model/about/mapping-rdf.html) for strategies on
+representing Biolink model in a RDF triple store.
 
 
 
@@ -149,7 +149,7 @@ repo, using non-computable cmap images:
 And also by the [gene-anatomy cypher query](https://github.com/monarch-initiative/monarch-cypher-queries/blob/master/src/main/cypher/golr-loader/gene-anatomy.yaml)
 which maps graphs conforming to the pattern to denormalized tuples for indexing in Solr
 
-In the BioLink model this is explicitly represented using the `gene to expression site association` class definition
+In the Biolink model this is explicitly represented using the `gene to expression site association` class definition
 [in the model](biolink-model.yaml)
 
 ```yaml
@@ -333,3 +333,6 @@ attempts to model all of biology in an object model.
 
 Currently as far as we know there is no existing reference datamodel that is flexible enough to be used here.
 
+### How do I use Biolink Model YAML programatically?
+
+For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [biolink-model-toolkit](https://github.com/biolink/biolink-model-toolkit/). It provides a convenience methods for traversing Biolink Model.

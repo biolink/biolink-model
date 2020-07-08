@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * FrequencyQualifierMixin
  * <p>
- * Qualifier for freqency type associations
+ * Qualifier for frequency type associations
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

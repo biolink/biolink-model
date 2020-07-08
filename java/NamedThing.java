@@ -23,6 +23,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "aggregate_statistic",
     "capable_of",
     "category",
+    "caused_by",
     "causes",
     "coexists_with",
     "colocalizes_with",
@@ -32,18 +33,30 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "derives_into",
     "description",
     "disrupts",
+    "end_interbase_coordinate",
     "filler",
     "full_name",
+    "genome_build",
+    "has_biological_sequence",
     "has_chemical_formula",
+    "has_count",
+    "has_drug",
+    "has_gene",
     "has_molecular_consequence",
     "has_part",
+    "has_percentage",
+    "has_quotient",
+    "has_total",
+    "has_zygosity",
     "homologous_to",
     "id",
     "interacts_with",
     "interbase_coordinate",
     "iri",
+    "latitude",
     "located_in",
     "location_of",
+    "longitude",
     "manifestation_of",
     "model_of",
     "name",
@@ -55,6 +68,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "paralogous_to",
     "part_of",
     "participates_in",
+    "phase",
     "physically_interacts_with",
     "positively_regulates",
     "predisposes",
@@ -63,8 +77,11 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "regulates",
     "related_to",
     "same_as",
+    "start_interbase_coordinate",
     "synonym",
     "systematic_synonym",
+    "timepoint",
+    "type",
     "update_date",
     "xenologous_to"
 })
@@ -94,11 +111,11 @@ public class NamedThing {
     @JsonProperty("aggregate_statistic")
     private String aggregateStatistic;
     /**
-     * holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.
+     * holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
      * 
      */
     @JsonProperty("capable_of")
-    @JsonPropertyDescription("holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.")
+    @JsonPropertyDescription("holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.")
     private List<String> capableOf = new ArrayList<String>();
     /**
      * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
@@ -108,6 +125,13 @@ public class NamedThing {
     @JsonProperty("category")
     @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
     private List<String> category = new ArrayList<String>();
+    /**
+     * holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+     * 
+     */
+    @JsonProperty("caused_by")
+    @JsonPropertyDescription("holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other")
+    private List<String> causedBy = new ArrayList<String>();
     /**
      * holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
      * 
@@ -171,6 +195,8 @@ public class NamedThing {
     @JsonProperty("disrupts")
     @JsonPropertyDescription("describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.")
     private List<String> disrupts = new ArrayList<String>();
+    @JsonProperty("end_interbase_coordinate")
+    private String endInterbaseCoordinate;
     /**
      * The value in a property-value tuple
      * 
@@ -186,12 +212,47 @@ public class NamedThing {
     @JsonPropertyDescription("a long-form human readable name for a thing")
     private String fullName;
     /**
+     * TODO
+     * 
+     */
+    @JsonProperty("genome_build")
+    @JsonPropertyDescription("TODO")
+    private String genomeBuild;
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    @JsonPropertyDescription("connects a genomic feature to its sequence")
+    private String hasBiologicalSequence;
+    /**
      * description of chemical compound based on element symbols
      * 
      */
     @JsonProperty("has_chemical_formula")
     @JsonPropertyDescription("description of chemical compound based on element symbols")
     private String hasChemicalFormula;
+    /**
+     * number of things with a particular property
+     * 
+     */
+    @JsonProperty("has_count")
+    @JsonPropertyDescription("number of things with a particular property")
+    private String hasCount;
+    /**
+     * connects an entity to a single drug
+     * 
+     */
+    @JsonProperty("has_drug")
+    @JsonPropertyDescription("connects an entity to a single drug")
+    private String hasDrug;
+    /**
+     * connects an entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    @JsonPropertyDescription("connects an entity to a single gene")
+    private String hasGene;
     /**
      * connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
      * 
@@ -206,6 +267,24 @@ public class NamedThing {
     @JsonProperty("has_part")
     @JsonPropertyDescription("holds between wholes and their parts (material entities or processes)")
     private List<String> hasPart = new ArrayList<String>();
+    /**
+     * equivalent to has quotient multiplied by 100
+     * 
+     */
+    @JsonProperty("has_percentage")
+    @JsonPropertyDescription("equivalent to has quotient multiplied by 100")
+    private String hasPercentage;
+    @JsonProperty("has_quotient")
+    private String hasQuotient;
+    /**
+     * total number of things in a particular reference set
+     * 
+     */
+    @JsonProperty("has_total")
+    @JsonPropertyDescription("total number of things in a particular reference set")
+    private String hasTotal;
+    @JsonProperty("has_zygosity")
+    private String hasZygosity;
     /**
      * holds between two biological entities that have common evolutionary origin
      * 
@@ -243,6 +322,13 @@ public class NamedThing {
     @JsonPropertyDescription("An IRI for the node. This is determined by the id using expansion rules.")
     private String iri;
     /**
+     * latitude
+     * 
+     */
+    @JsonProperty("latitude")
+    @JsonPropertyDescription("latitude")
+    private String latitude;
+    /**
      * holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
      * 
      */
@@ -256,6 +342,13 @@ public class NamedThing {
     @JsonProperty("location_of")
     @JsonPropertyDescription("holds between material entity or site and a material entity that is located within it (but not considered a part of it)")
     private List<String> locationOf = new ArrayList<String>();
+    /**
+     * longitude
+     * 
+     */
+    @JsonProperty("longitude")
+    @JsonPropertyDescription("longitude")
+    private String longitude;
     /**
      * used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
      * 
@@ -330,6 +423,13 @@ public class NamedThing {
     @JsonPropertyDescription("holds between a continuant and a process, where the continuant is somehow involved in the process")
     private List<String> participatesIn = new ArrayList<String>();
     /**
+     * TODO
+     * 
+     */
+    @JsonProperty("phase")
+    @JsonPropertyDescription("TODO")
+    private String phase;
+    /**
      * holds between two entities that make physical contact as part of some interaction
      * 
      */
@@ -375,6 +475,8 @@ public class NamedThing {
     @JsonProperty("same_as")
     @JsonPropertyDescription("holds between two entities that are considered equivalent to each other")
     private List<String> sameAs = new ArrayList<String>();
+    @JsonProperty("start_interbase_coordinate")
+    private String startInterbaseCoordinate;
     /**
      * Alternate human-readable names for a thing
      * 
@@ -389,6 +491,15 @@ public class NamedThing {
     @JsonProperty("systematic_synonym")
     @JsonPropertyDescription("more commonly used for gene symbols in yeast")
     private List<String> systematicSynonym = new ArrayList<String>();
+    /**
+     * a point in time
+     * 
+     */
+    @JsonProperty("timepoint")
+    @JsonPropertyDescription("a point in time")
+    private String timepoint;
+    @JsonProperty("type")
+    private String type;
     /**
      * date on which thing was updated. This can be applied to nodes or edges
      * 
@@ -469,7 +580,7 @@ public class NamedThing {
     }
 
     /**
-     * holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.
+     * holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
      * 
      */
     @JsonProperty("capable_of")
@@ -478,7 +589,7 @@ public class NamedThing {
     }
 
     /**
-     * holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.
+     * holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
      * 
      */
     @JsonProperty("capable_of")
@@ -504,6 +615,24 @@ public class NamedThing {
     @JsonProperty("category")
     public void setCategory(List<String> category) {
         this.category = category;
+    }
+
+    /**
+     * holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+     * 
+     */
+    @JsonProperty("caused_by")
+    public List<String> getCausedBy() {
+        return causedBy;
+    }
+
+    /**
+     * holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+     * 
+     */
+    @JsonProperty("caused_by")
+    public void setCausedBy(List<String> causedBy) {
+        this.causedBy = causedBy;
     }
 
     /**
@@ -668,6 +797,16 @@ public class NamedThing {
         this.disrupts = disrupts;
     }
 
+    @JsonProperty("end_interbase_coordinate")
+    public String getEndInterbaseCoordinate() {
+        return endInterbaseCoordinate;
+    }
+
+    @JsonProperty("end_interbase_coordinate")
+    public void setEndInterbaseCoordinate(String endInterbaseCoordinate) {
+        this.endInterbaseCoordinate = endInterbaseCoordinate;
+    }
+
     /**
      * The value in a property-value tuple
      * 
@@ -705,6 +844,42 @@ public class NamedThing {
     }
 
     /**
+     * TODO
+     * 
+     */
+    @JsonProperty("genome_build")
+    public String getGenomeBuild() {
+        return genomeBuild;
+    }
+
+    /**
+     * TODO
+     * 
+     */
+    @JsonProperty("genome_build")
+    public void setGenomeBuild(String genomeBuild) {
+        this.genomeBuild = genomeBuild;
+    }
+
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    public String getHasBiologicalSequence() {
+        return hasBiologicalSequence;
+    }
+
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    public void setHasBiologicalSequence(String hasBiologicalSequence) {
+        this.hasBiologicalSequence = hasBiologicalSequence;
+    }
+
+    /**
      * description of chemical compound based on element symbols
      * 
      */
@@ -720,6 +895,60 @@ public class NamedThing {
     @JsonProperty("has_chemical_formula")
     public void setHasChemicalFormula(String hasChemicalFormula) {
         this.hasChemicalFormula = hasChemicalFormula;
+    }
+
+    /**
+     * number of things with a particular property
+     * 
+     */
+    @JsonProperty("has_count")
+    public String getHasCount() {
+        return hasCount;
+    }
+
+    /**
+     * number of things with a particular property
+     * 
+     */
+    @JsonProperty("has_count")
+    public void setHasCount(String hasCount) {
+        this.hasCount = hasCount;
+    }
+
+    /**
+     * connects an entity to a single drug
+     * 
+     */
+    @JsonProperty("has_drug")
+    public String getHasDrug() {
+        return hasDrug;
+    }
+
+    /**
+     * connects an entity to a single drug
+     * 
+     */
+    @JsonProperty("has_drug")
+    public void setHasDrug(String hasDrug) {
+        this.hasDrug = hasDrug;
+    }
+
+    /**
+     * connects an entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    public String getHasGene() {
+        return hasGene;
+    }
+
+    /**
+     * connects an entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    public void setHasGene(String hasGene) {
+        this.hasGene = hasGene;
     }
 
     /**
@@ -756,6 +985,62 @@ public class NamedThing {
     @JsonProperty("has_part")
     public void setHasPart(List<String> hasPart) {
         this.hasPart = hasPart;
+    }
+
+    /**
+     * equivalent to has quotient multiplied by 100
+     * 
+     */
+    @JsonProperty("has_percentage")
+    public String getHasPercentage() {
+        return hasPercentage;
+    }
+
+    /**
+     * equivalent to has quotient multiplied by 100
+     * 
+     */
+    @JsonProperty("has_percentage")
+    public void setHasPercentage(String hasPercentage) {
+        this.hasPercentage = hasPercentage;
+    }
+
+    @JsonProperty("has_quotient")
+    public String getHasQuotient() {
+        return hasQuotient;
+    }
+
+    @JsonProperty("has_quotient")
+    public void setHasQuotient(String hasQuotient) {
+        this.hasQuotient = hasQuotient;
+    }
+
+    /**
+     * total number of things in a particular reference set
+     * 
+     */
+    @JsonProperty("has_total")
+    public String getHasTotal() {
+        return hasTotal;
+    }
+
+    /**
+     * total number of things in a particular reference set
+     * 
+     */
+    @JsonProperty("has_total")
+    public void setHasTotal(String hasTotal) {
+        this.hasTotal = hasTotal;
+    }
+
+    @JsonProperty("has_zygosity")
+    public String getHasZygosity() {
+        return hasZygosity;
+    }
+
+    @JsonProperty("has_zygosity")
+    public void setHasZygosity(String hasZygosity) {
+        this.hasZygosity = hasZygosity;
     }
 
     /**
@@ -851,6 +1136,24 @@ public class NamedThing {
     }
 
     /**
+     * latitude
+     * 
+     */
+    @JsonProperty("latitude")
+    public String getLatitude() {
+        return latitude;
+    }
+
+    /**
+     * latitude
+     * 
+     */
+    @JsonProperty("latitude")
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    /**
      * holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
      * 
      */
@@ -884,6 +1187,24 @@ public class NamedThing {
     @JsonProperty("location_of")
     public void setLocationOf(List<String> locationOf) {
         this.locationOf = locationOf;
+    }
+
+    /**
+     * longitude
+     * 
+     */
+    @JsonProperty("longitude")
+    public String getLongitude() {
+        return longitude;
+    }
+
+    /**
+     * longitude
+     * 
+     */
+    @JsonProperty("longitude")
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     /**
@@ -1079,6 +1400,24 @@ public class NamedThing {
     }
 
     /**
+     * TODO
+     * 
+     */
+    @JsonProperty("phase")
+    public String getPhase() {
+        return phase;
+    }
+
+    /**
+     * TODO
+     * 
+     */
+    @JsonProperty("phase")
+    public void setPhase(String phase) {
+        this.phase = phase;
+    }
+
+    /**
      * holds between two entities that make physical contact as part of some interaction
      * 
      */
@@ -1206,6 +1545,16 @@ public class NamedThing {
         this.sameAs = sameAs;
     }
 
+    @JsonProperty("start_interbase_coordinate")
+    public String getStartInterbaseCoordinate() {
+        return startInterbaseCoordinate;
+    }
+
+    @JsonProperty("start_interbase_coordinate")
+    public void setStartInterbaseCoordinate(String startInterbaseCoordinate) {
+        this.startInterbaseCoordinate = startInterbaseCoordinate;
+    }
+
     /**
      * Alternate human-readable names for a thing
      * 
@@ -1240,6 +1589,34 @@ public class NamedThing {
     @JsonProperty("systematic_synonym")
     public void setSystematicSynonym(List<String> systematicSynonym) {
         this.systematicSynonym = systematicSynonym;
+    }
+
+    /**
+     * a point in time
+     * 
+     */
+    @JsonProperty("timepoint")
+    public String getTimepoint() {
+        return timepoint;
+    }
+
+    /**
+     * a point in time
+     * 
+     */
+    @JsonProperty("timepoint")
+    public void setTimepoint(String timepoint) {
+        this.timepoint = timepoint;
+    }
+
+    @JsonProperty("type")
+    public String getType() {
+        return type;
+    }
+
+    @JsonProperty("type")
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
@@ -1280,12 +1657,12 @@ public class NamedThing {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("activelyInvolvedIn", activelyInvolvedIn).append("affects", affects).append("affectsRiskFor", affectsRiskFor).append("aggregateStatistic", aggregateStatistic).append("capableOf", capableOf).append("category", category).append("causes", causes).append("coexistsWith", coexistsWith).append("colocalizesWith", colocalizesWith).append("contributesTo", contributesTo).append("creationDate", creationDate).append("derivesFrom", derivesFrom).append("derivesInto", derivesInto).append("description", description).append("disrupts", disrupts).append("filler", filler).append("fullName", fullName).append("hasChemicalFormula", hasChemicalFormula).append("hasMolecularConsequence", hasMolecularConsequence).append("hasPart", hasPart).append("homologousTo", homologousTo).append("id", id).append("interactsWith", interactsWith).append("interbaseCoordinate", interbaseCoordinate).append("iri", iri).append("locatedIn", locatedIn).append("locationOf", locationOf).append("manifestationOf", manifestationOf).append("modelOf", modelOf).append("name", name).append("negativelyRegulates", negativelyRegulates).append("nodeProperty", nodeProperty).append("occursIn", occursIn).append("orthologousTo", orthologousTo).append("overlaps", overlaps).append("paralogousTo", paralogousTo).append("partOf", partOf).append("participatesIn", participatesIn).append("physicallyInteractsWith", physicallyInteractsWith).append("positivelyRegulates", positivelyRegulates).append("predisposes", predisposes).append("prevents", prevents).append("produces", produces).append("regulates", regulates).append("relatedTo", relatedTo).append("sameAs", sameAs).append("synonym", synonym).append("systematicSynonym", systematicSynonym).append("updateDate", updateDate).append("xenologousTo", xenologousTo).toString();
+        return new ToStringBuilder(this).append("activelyInvolvedIn", activelyInvolvedIn).append("affects", affects).append("affectsRiskFor", affectsRiskFor).append("aggregateStatistic", aggregateStatistic).append("capableOf", capableOf).append("category", category).append("causedBy", causedBy).append("causes", causes).append("coexistsWith", coexistsWith).append("colocalizesWith", colocalizesWith).append("contributesTo", contributesTo).append("creationDate", creationDate).append("derivesFrom", derivesFrom).append("derivesInto", derivesInto).append("description", description).append("disrupts", disrupts).append("endInterbaseCoordinate", endInterbaseCoordinate).append("filler", filler).append("fullName", fullName).append("genomeBuild", genomeBuild).append("hasBiologicalSequence", hasBiologicalSequence).append("hasChemicalFormula", hasChemicalFormula).append("hasCount", hasCount).append("hasDrug", hasDrug).append("hasGene", hasGene).append("hasMolecularConsequence", hasMolecularConsequence).append("hasPart", hasPart).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("hasZygosity", hasZygosity).append("homologousTo", homologousTo).append("id", id).append("interactsWith", interactsWith).append("interbaseCoordinate", interbaseCoordinate).append("iri", iri).append("latitude", latitude).append("locatedIn", locatedIn).append("locationOf", locationOf).append("longitude", longitude).append("manifestationOf", manifestationOf).append("modelOf", modelOf).append("name", name).append("negativelyRegulates", negativelyRegulates).append("nodeProperty", nodeProperty).append("occursIn", occursIn).append("orthologousTo", orthologousTo).append("overlaps", overlaps).append("paralogousTo", paralogousTo).append("partOf", partOf).append("participatesIn", participatesIn).append("phase", phase).append("physicallyInteractsWith", physicallyInteractsWith).append("positivelyRegulates", positivelyRegulates).append("predisposes", predisposes).append("prevents", prevents).append("produces", produces).append("regulates", regulates).append("relatedTo", relatedTo).append("sameAs", sameAs).append("startInterbaseCoordinate", startInterbaseCoordinate).append("synonym", synonym).append("systematicSynonym", systematicSynonym).append("timepoint", timepoint).append("type", type).append("updateDate", updateDate).append("xenologousTo", xenologousTo).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(partOf).append(capableOf).append(systematicSynonym).append(hasChemicalFormula).append(interbaseCoordinate).append(locationOf).append(prevents).append(coexistsWith).append(positivelyRegulates).append(relatedTo).append(interactsWith).append(predisposes).append(overlaps).append(id).append(hasMolecularConsequence).append(nodeProperty).append(hasPart).append(creationDate).append(contributesTo).append(paralogousTo).append(physicallyInteractsWith).append(locatedIn).append(manifestationOf).append(derivesInto).append(name).append(produces).append(modelOf).append(updateDate).append(activelyInvolvedIn).append(description).append(occursIn).append(synonym).append(causes).append(aggregateStatistic).append(affectsRiskFor).append(disrupts).append(iri).append(homologousTo).append(colocalizesWith).append(derivesFrom).append(affects).append(fullName).append(orthologousTo).append(xenologousTo).append(participatesIn).append(regulates).append(negativelyRegulates).append(filler).append(category).append(sameAs).toHashCode();
+        return new HashCodeBuilder().append(partOf).append(capableOf).append(systematicSynonym).append(hasChemicalFormula).append(interbaseCoordinate).append(locationOf).append(prevents).append(coexistsWith).append(positivelyRegulates).append(type).append(hasTotal).append(relatedTo).append(interactsWith).append(predisposes).append(overlaps).append(id).append(hasMolecularConsequence).append(longitude).append(phase).append(nodeProperty).append(hasPart).append(causedBy).append(creationDate).append(contributesTo).append(paralogousTo).append(physicallyInteractsWith).append(locatedIn).append(manifestationOf).append(derivesInto).append(name).append(produces).append(modelOf).append(updateDate).append(latitude).append(activelyInvolvedIn).append(description).append(hasGene).append(hasCount).append(occursIn).append(startInterbaseCoordinate).append(synonym).append(hasQuotient).append(causes).append(hasBiologicalSequence).append(hasDrug).append(aggregateStatistic).append(affectsRiskFor).append(endInterbaseCoordinate).append(disrupts).append(iri).append(homologousTo).append(colocalizesWith).append(derivesFrom).append(affects).append(fullName).append(orthologousTo).append(xenologousTo).append(hasPercentage).append(participatesIn).append(regulates).append(genomeBuild).append(hasZygosity).append(negativelyRegulates).append(filler).append(category).append(sameAs).append(timepoint).toHashCode();
     }
 
     @Override
@@ -1297,7 +1674,7 @@ public class NamedThing {
             return false;
         }
         NamedThing rhs = ((NamedThing) other);
-        return new EqualsBuilder().append(partOf, rhs.partOf).append(capableOf, rhs.capableOf).append(systematicSynonym, rhs.systematicSynonym).append(hasChemicalFormula, rhs.hasChemicalFormula).append(interbaseCoordinate, rhs.interbaseCoordinate).append(locationOf, rhs.locationOf).append(prevents, rhs.prevents).append(coexistsWith, rhs.coexistsWith).append(positivelyRegulates, rhs.positivelyRegulates).append(relatedTo, rhs.relatedTo).append(interactsWith, rhs.interactsWith).append(predisposes, rhs.predisposes).append(overlaps, rhs.overlaps).append(id, rhs.id).append(hasMolecularConsequence, rhs.hasMolecularConsequence).append(nodeProperty, rhs.nodeProperty).append(hasPart, rhs.hasPart).append(creationDate, rhs.creationDate).append(contributesTo, rhs.contributesTo).append(paralogousTo, rhs.paralogousTo).append(physicallyInteractsWith, rhs.physicallyInteractsWith).append(locatedIn, rhs.locatedIn).append(manifestationOf, rhs.manifestationOf).append(derivesInto, rhs.derivesInto).append(name, rhs.name).append(produces, rhs.produces).append(modelOf, rhs.modelOf).append(updateDate, rhs.updateDate).append(activelyInvolvedIn, rhs.activelyInvolvedIn).append(description, rhs.description).append(occursIn, rhs.occursIn).append(synonym, rhs.synonym).append(causes, rhs.causes).append(aggregateStatistic, rhs.aggregateStatistic).append(affectsRiskFor, rhs.affectsRiskFor).append(disrupts, rhs.disrupts).append(iri, rhs.iri).append(homologousTo, rhs.homologousTo).append(colocalizesWith, rhs.colocalizesWith).append(derivesFrom, rhs.derivesFrom).append(affects, rhs.affects).append(fullName, rhs.fullName).append(orthologousTo, rhs.orthologousTo).append(xenologousTo, rhs.xenologousTo).append(participatesIn, rhs.participatesIn).append(regulates, rhs.regulates).append(negativelyRegulates, rhs.negativelyRegulates).append(filler, rhs.filler).append(category, rhs.category).append(sameAs, rhs.sameAs).isEquals();
+        return new EqualsBuilder().append(partOf, rhs.partOf).append(capableOf, rhs.capableOf).append(systematicSynonym, rhs.systematicSynonym).append(hasChemicalFormula, rhs.hasChemicalFormula).append(interbaseCoordinate, rhs.interbaseCoordinate).append(locationOf, rhs.locationOf).append(prevents, rhs.prevents).append(coexistsWith, rhs.coexistsWith).append(positivelyRegulates, rhs.positivelyRegulates).append(type, rhs.type).append(hasTotal, rhs.hasTotal).append(relatedTo, rhs.relatedTo).append(interactsWith, rhs.interactsWith).append(predisposes, rhs.predisposes).append(overlaps, rhs.overlaps).append(id, rhs.id).append(hasMolecularConsequence, rhs.hasMolecularConsequence).append(longitude, rhs.longitude).append(phase, rhs.phase).append(nodeProperty, rhs.nodeProperty).append(hasPart, rhs.hasPart).append(causedBy, rhs.causedBy).append(creationDate, rhs.creationDate).append(contributesTo, rhs.contributesTo).append(paralogousTo, rhs.paralogousTo).append(physicallyInteractsWith, rhs.physicallyInteractsWith).append(locatedIn, rhs.locatedIn).append(manifestationOf, rhs.manifestationOf).append(derivesInto, rhs.derivesInto).append(name, rhs.name).append(produces, rhs.produces).append(modelOf, rhs.modelOf).append(updateDate, rhs.updateDate).append(latitude, rhs.latitude).append(activelyInvolvedIn, rhs.activelyInvolvedIn).append(description, rhs.description).append(hasGene, rhs.hasGene).append(hasCount, rhs.hasCount).append(occursIn, rhs.occursIn).append(startInterbaseCoordinate, rhs.startInterbaseCoordinate).append(synonym, rhs.synonym).append(hasQuotient, rhs.hasQuotient).append(causes, rhs.causes).append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(hasDrug, rhs.hasDrug).append(aggregateStatistic, rhs.aggregateStatistic).append(affectsRiskFor, rhs.affectsRiskFor).append(endInterbaseCoordinate, rhs.endInterbaseCoordinate).append(disrupts, rhs.disrupts).append(iri, rhs.iri).append(homologousTo, rhs.homologousTo).append(colocalizesWith, rhs.colocalizesWith).append(derivesFrom, rhs.derivesFrom).append(affects, rhs.affects).append(fullName, rhs.fullName).append(orthologousTo, rhs.orthologousTo).append(xenologousTo, rhs.xenologousTo).append(hasPercentage, rhs.hasPercentage).append(participatesIn, rhs.participatesIn).append(regulates, rhs.regulates).append(genomeBuild, rhs.genomeBuild).append(hasZygosity, rhs.hasZygosity).append(negativelyRegulates, rhs.negativelyRegulates).append(filler, rhs.filler).append(category, rhs.category).append(sameAs, rhs.sameAs).append(timepoint, rhs.timepoint).isEquals();
     }
 
 }

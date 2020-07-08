@@ -15,7 +15,8 @@ message ActivityAndBehavior
   repeated regulatesProcessToProcess None = 12
   repeated hasParticipant None = 13
   repeated hasInput None = 14
-  repeated precedes None = 15
+  repeated hasOutput None = 15
+  repeated precedes None = 16
  }
 // A subcellular location, cell type or gross anatomical part
 message AnatomicalEntity
@@ -95,7 +96,15 @@ message Association
   edgeLabel None = 11
   optional hasConfidenceLevel None = 12
   optional hasEvidence None = 13
-  optional clinicalModifierQualifier None = 14
+  optional stageQualifier None = 14
+  optional quantifierQualifier None = 15
+  optional frequencyQualifier None = 16
+  optional severityQualifier None = 17
+  optional sexQualifier None = 18
+  optional onsetQualifier None = 19
+  optional clinicalModifierQualifier None = 20
+  optional sequenceVariantQualifier None = 21
+  repeated changeIsCatalyzedBy None = 22
  }
 // A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 message Attribute
@@ -131,10 +140,12 @@ message BiologicalProcess
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated hasPhenotype None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated precedes None = 16
+  repeated hasInput None = 13
+  repeated hasOutput None = 14
+  repeated enabledBy None = 15
+  repeated regulatesProcessToProcess None = 16
+  repeated hasParticipant None = 17
+  repeated precedes None = 18
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities
 message BiologicalProcessOrActivity
@@ -151,6 +162,12 @@ message BiologicalProcessOrActivity
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated hasPhenotype None = 12
+  repeated hasInput None = 13
+  repeated hasOutput None = 14
+  repeated enabledBy None = 15
+  repeated regulatesProcessToProcess None = 16
+  repeated hasParticipant None = 17
+  repeated precedes None = 18
  }
 message BiologicalSex
  {
@@ -338,6 +355,25 @@ message CellularComponent
   repeated expresses None = 13
   repeated inTaxon None = 14
  }
+// A chemical exposure is an intake of a particular chemical substance
+message ChemicalExposure
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  repeated systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  optional hasReceptor None = 13
+  optional hasStressor None = 14
+  optional hasRoute None = 15
+ }
 // May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
 message ChemicalSubstance
  {
@@ -405,6 +441,44 @@ message ChemicalSubstance
   repeated regulatesEntityToEntity None = 62
   repeated biomarkerFor None = 63
   repeated inTaxon None = 64
+ }
+// A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+message ChemicalToChemicalAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+ }
+// A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
+//   IF
+//   R has-input C1 AND
+//   R has-output C2 AND
+//   R enabled-by P AND
+//   R type Reaction
+//   THEN
+//   C1 derives-into C2 <<change is catalyzed by P>>
+message ChemicalToChemicalDerivationAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+  repeated changeIsCatalyzedBy None = 12
  }
 // An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
 message ChemicalToDiseaseOrPhenotypicFeatureAssociation
@@ -712,6 +786,21 @@ message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
   optional associationSlot None = 10
   edgeLabel None = 11
  }
+// An association between an exposure event and a disease
+message DiseaseToExposureAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+ }
 // An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
 message DiseaseToPhenotypicFeatureAssociation
  {
@@ -814,42 +903,10 @@ message DrugExposure
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated hasPhenotype None = 12
-  repeated drug None = 13
- }
-// A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-message Environment
- {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated hasPhenotype None = 12
- }
-// Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
-message EnvironmentToPhenotypicFeatureAssociation
- {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  optional providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional sexQualifier None = 12
-  optional frequencyQualifier None = 13
-  optional severityQualifier None = 14
-  optional onsetQualifier None = 15
+  optional hasReceptor None = 13
+  optional hasStressor None = 14
+  optional hasRoute None = 15
+  repeated hasDrug None = 16
  }
 message EnvironmentalFeature
  {
@@ -881,7 +938,8 @@ message EnvironmentalProcess
   repeated regulatesProcessToProcess None = 12
   repeated hasParticipant None = 13
   repeated hasInput None = 14
-  repeated precedes None = 15
+  repeated hasOutput None = 15
+  repeated precedes None = 16
  }
 // Class of evidence that supports an association
 message EvidenceType
@@ -981,6 +1039,44 @@ message ExonToTranscriptRelationship
   optional providedBy None = 9
   optional associationSlot None = 10
   edgeLabel None = 11
+ }
+// A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+message ExposureEvent
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  repeated systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  optional hasReceptor None = 13
+  optional hasStressor None = 14
+  optional hasRoute None = 15
+ }
+// Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+message ExposureEventToPhenotypicFeatureAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+  optional sexQualifier None = 12
+  optional frequencyQualifier None = 13
+  optional severityQualifier None = 14
+  optional onsetQualifier None = 15
  }
 // describes the frequency of occurrence of an event or condition
 message FrequencyValue
@@ -2314,10 +2410,12 @@ message MolecularActivity
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated hasPhenotype None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated precedes None = 16
+  repeated hasInput None = 13
+  repeated hasOutput None = 14
+  repeated enabledBy None = 15
+  repeated regulatesProcessToProcess None = 16
+  repeated hasParticipant None = 17
+  repeated precedes None = 18
  }
 // A gene, gene product, small molecule or macromolecule (including protein complex)
 message MolecularEntity
@@ -2419,29 +2517,46 @@ message NamedThing
   repeated predisposes None = 25
   repeated contributesTo None = 26
   repeated causes None = 27
-  repeated prevents None = 28
-  repeated occursIn None = 29
-  repeated locatedIn None = 30
-  repeated locationOf None = 31
-  repeated modelOf None = 32
-  repeated overlaps None = 33
-  repeated hasPart None = 34
-  repeated partOf None = 35
-  repeated participatesIn None = 36
-  repeated activelyInvolvedIn None = 37
-  repeated capableOf None = 38
-  repeated derivesInto None = 39
-  repeated derivesFrom None = 40
-  repeated manifestationOf None = 41
-  repeated produces None = 42
-  repeated sameAs None = 43
-  optional creationDate None = 44
-  optional updateDate None = 45
-  optional hasChemicalFormula None = 46
-  optional aggregateStatistic None = 47
-  repeated hasMolecularConsequence None = 48
-  optional filler None = 49
-  optional interbaseCoordinate None = 50
+  repeated causedBy None = 28
+  repeated prevents None = 29
+  repeated occursIn None = 30
+  repeated locatedIn None = 31
+  repeated locationOf None = 32
+  repeated modelOf None = 33
+  repeated overlaps None = 34
+  repeated hasPart None = 35
+  repeated partOf None = 36
+  repeated participatesIn None = 37
+  repeated activelyInvolvedIn None = 38
+  repeated capableOf None = 39
+  repeated derivesInto None = 40
+  repeated derivesFrom None = 41
+  repeated manifestationOf None = 42
+  repeated produces None = 43
+  repeated sameAs None = 44
+  optional type None = 45
+  optional creationDate None = 46
+  optional updateDate None = 47
+  optional latitude None = 48
+  optional longitude None = 49
+  optional hasChemicalFormula None = 50
+  optional aggregateStatistic None = 51
+  optional hasCount None = 52
+  optional hasTotal None = 53
+  optional hasQuotient None = 54
+  optional hasPercentage None = 55
+  optional timepoint None = 56
+  optional hasBiologicalSequence None = 57
+  repeated hasMolecularConsequence None = 58
+  optional hasDrug None = 59
+  optional hasGene None = 60
+  optional hasZygosity None = 61
+  optional filler None = 62
+  optional phase None = 63
+  optional genomeBuild None = 64
+  optional interbaseCoordinate None = 65
+  optional startInterbaseCoordinate None = 66
+  optional endInterbaseCoordinate None = 67
  }
 message NoncodingRNAProduct
  {
@@ -2532,9 +2647,11 @@ message Occurrent
   repeated regulatesProcessToProcess None = 12
   repeated hasParticipant None = 13
   repeated hasInput None = 14
-  repeated precedes None = 15
-  repeated positivelyRegulatesProcessToProcess None = 16
-  repeated negativelyRegulatesProcessToProcess None = 17
+  repeated hasOutput None = 15
+  repeated precedes None = 16
+  repeated positivelyRegulatesProcessToProcess None = 17
+  repeated negativelyRegulatesProcessToProcess None = 18
+  repeated enabledBy None = 19
  }
 // The age group in which manifestations appear
 message Onset
@@ -2615,10 +2732,12 @@ message Pathway
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated hasPhenotype None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated precedes None = 16
+  repeated hasInput None = 13
+  repeated hasOutput None = 14
+  repeated enabledBy None = 15
+  repeated regulatesProcessToProcess None = 16
+  repeated hasParticipant None = 17
+  repeated precedes None = 18
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 message Phenomenon
@@ -2637,7 +2756,8 @@ message Phenomenon
   repeated regulatesProcessToProcess None = 12
   repeated hasParticipant None = 13
   repeated hasInput None = 14
-  repeated precedes None = 15
+  repeated hasOutput None = 15
+  repeated precedes None = 16
  }
 message PhenotypicFeature
  {
@@ -2706,10 +2826,12 @@ message PhysiologicalProcess
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated hasPhenotype None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated precedes None = 16
+  repeated hasInput None = 13
+  repeated hasOutput None = 14
+  repeated enabledBy None = 15
+  repeated regulatesProcessToProcess None = 16
+  repeated hasParticipant None = 17
+  repeated precedes None = 18
  }
 // Any entity or process that exists at the level of the whole planet
 message PlanetaryEntity
@@ -2775,7 +2897,8 @@ message Procedure
   repeated regulatesProcessToProcess None = 12
   repeated hasParticipant None = 13
   repeated hasInput None = 14
-  repeated precedes None = 15
+  repeated hasOutput None = 15
+  repeated precedes None = 16
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -3339,8 +3462,11 @@ message Treatment
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated hasPhenotype None = 12
-  repeated treats None = 13
-  repeated hasExposureParts None = 14
+  optional hasReceptor None = 13
+  optional hasStressor None = 14
+  optional hasRoute None = 15
+  repeated treats None = 16
+  repeated hasPart None = 17
  }
 message VariantToDiseaseAssociation
  {

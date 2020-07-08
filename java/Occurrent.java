@@ -17,7 +17,9 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "enabled_by",
     "has_input",
+    "has_output",
     "has_participant",
     "negatively_regulates_process_to_process",
     "positively_regulates_process_to_process",
@@ -27,12 +29,26 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class Occurrent {
 
     /**
+     * holds between a process and a physical entity, where the physical entity executes the process
+     * 
+     */
+    @JsonProperty("enabled_by")
+    @JsonPropertyDescription("holds between a process and a physical entity, where the physical entity executes the process")
+    private List<String> enabledBy = new ArrayList<String>();
+    /**
      * holds between a process and a continuant, where the continuant is an input into the process
      * 
      */
     @JsonProperty("has_input")
     @JsonPropertyDescription("holds between a process and a continuant, where the continuant is an input into the process")
     private List<String> hasInput = new ArrayList<String>();
+    /**
+     * holds between a process and a continuant, where the continuant is an output of the process
+     * 
+     */
+    @JsonProperty("has_output")
+    @JsonPropertyDescription("holds between a process and a continuant, where the continuant is an output of the process")
+    private List<String> hasOutput = new ArrayList<String>();
     /**
      * holds between a process and a continuant, where the continuant is somehow involved in the process
      * 
@@ -55,6 +71,24 @@ public class Occurrent {
     private List<String> regulatesProcessToProcess = new ArrayList<String>();
 
     /**
+     * holds between a process and a physical entity, where the physical entity executes the process
+     * 
+     */
+    @JsonProperty("enabled_by")
+    public List<String> getEnabledBy() {
+        return enabledBy;
+    }
+
+    /**
+     * holds between a process and a physical entity, where the physical entity executes the process
+     * 
+     */
+    @JsonProperty("enabled_by")
+    public void setEnabledBy(List<String> enabledBy) {
+        this.enabledBy = enabledBy;
+    }
+
+    /**
      * holds between a process and a continuant, where the continuant is an input into the process
      * 
      */
@@ -70,6 +104,24 @@ public class Occurrent {
     @JsonProperty("has_input")
     public void setHasInput(List<String> hasInput) {
         this.hasInput = hasInput;
+    }
+
+    /**
+     * holds between a process and a continuant, where the continuant is an output of the process
+     * 
+     */
+    @JsonProperty("has_output")
+    public List<String> getHasOutput() {
+        return hasOutput;
+    }
+
+    /**
+     * holds between a process and a continuant, where the continuant is an output of the process
+     * 
+     */
+    @JsonProperty("has_output")
+    public void setHasOutput(List<String> hasOutput) {
+        this.hasOutput = hasOutput;
     }
 
     /**
@@ -140,12 +192,12 @@ public class Occurrent {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasInput", hasInput).append("hasParticipant", hasParticipant).append("negativelyRegulatesProcessToProcess", negativelyRegulatesProcessToProcess).append("positivelyRegulatesProcessToProcess", positivelyRegulatesProcessToProcess).append("precedes", precedes).append("regulatesProcessToProcess", regulatesProcessToProcess).toString();
+        return new ToStringBuilder(this).append("enabledBy", enabledBy).append("hasInput", hasInput).append("hasOutput", hasOutput).append("hasParticipant", hasParticipant).append("negativelyRegulatesProcessToProcess", negativelyRegulatesProcessToProcess).append("positivelyRegulatesProcessToProcess", positivelyRegulatesProcessToProcess).append("precedes", precedes).append("regulatesProcessToProcess", regulatesProcessToProcess).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(precedes).append(positivelyRegulatesProcessToProcess).append(regulatesProcessToProcess).append(negativelyRegulatesProcessToProcess).append(hasInput).append(hasParticipant).toHashCode();
+        return new HashCodeBuilder().append(enabledBy).append(precedes).append(positivelyRegulatesProcessToProcess).append(hasOutput).append(regulatesProcessToProcess).append(negativelyRegulatesProcessToProcess).append(hasInput).append(hasParticipant).toHashCode();
     }
 
     @Override
@@ -157,7 +209,7 @@ public class Occurrent {
             return false;
         }
         Occurrent rhs = ((Occurrent) other);
-        return new EqualsBuilder().append(precedes, rhs.precedes).append(positivelyRegulatesProcessToProcess, rhs.positivelyRegulatesProcessToProcess).append(regulatesProcessToProcess, rhs.regulatesProcessToProcess).append(negativelyRegulatesProcessToProcess, rhs.negativelyRegulatesProcessToProcess).append(hasInput, rhs.hasInput).append(hasParticipant, rhs.hasParticipant).isEquals();
+        return new EqualsBuilder().append(enabledBy, rhs.enabledBy).append(precedes, rhs.precedes).append(positivelyRegulatesProcessToProcess, rhs.positivelyRegulatesProcessToProcess).append(hasOutput, rhs.hasOutput).append(regulatesProcessToProcess, rhs.regulatesProcessToProcess).append(negativelyRegulatesProcessToProcess, rhs.negativelyRegulatesProcessToProcess).append(hasInput, rhs.hasInput).append(hasParticipant, rhs.hasParticipant).isEquals();
     }
 
 }

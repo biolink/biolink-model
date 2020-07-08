@@ -17,6 +17,7 @@ all: install tests build
 # Build the biolink model python library
 python: biolink/model.py
 docs: docs/index.md
+jekyll-docs: docs/Classes.md
 shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
 json-schema: json-schema/biolink-model.json
 
@@ -53,6 +54,12 @@ biolink/model.py: biolink-model.yaml env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 docs/index.md: biolink-model.yaml env.lock
 	pipenv run gen-markdown --dir docs $(imgflags) $<
+
+# ~~~~~~~~~~~~~~~~~~~~
+# JEKYLL DOCS
+# ~~~~~~~~~~~~~~~~~~~~
+docs/Classes.md: biolink-model.yaml env.lock
+	pipenv run python script/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~

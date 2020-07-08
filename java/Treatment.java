@@ -17,7 +17,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "has_exposure_parts",
+    "has_part",
     "treats"
 })
 public class Treatment {
@@ -27,8 +27,8 @@ public class Treatment {
      * (Required)
      * 
      */
-    @JsonProperty("has_exposure_parts")
-    private List<String> hasExposureParts = new ArrayList<String>();
+    @JsonProperty("has_part")
+    private List<String> hasPart = new ArrayList<String>();
     /**
      * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
      * (Required)
@@ -43,9 +43,9 @@ public class Treatment {
      * (Required)
      * 
      */
-    @JsonProperty("has_exposure_parts")
-    public List<String> getHasExposureParts() {
-        return hasExposureParts;
+    @JsonProperty("has_part")
+    public List<String> getHasPart() {
+        return hasPart;
     }
 
     /**
@@ -53,9 +53,9 @@ public class Treatment {
      * (Required)
      * 
      */
-    @JsonProperty("has_exposure_parts")
-    public void setHasExposureParts(List<String> hasExposureParts) {
-        this.hasExposureParts = hasExposureParts;
+    @JsonProperty("has_part")
+    public void setHasPart(List<String> hasPart) {
+        this.hasPart = hasPart;
     }
 
     /**
@@ -80,12 +80,12 @@ public class Treatment {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasExposureParts", hasExposureParts).append("treats", treats).toString();
+        return new ToStringBuilder(this).append("hasPart", hasPart).append("treats", treats).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasExposureParts).append(treats).toHashCode();
+        return new HashCodeBuilder().append(hasPart).append(treats).toHashCode();
     }
 
     @Override
@@ -97,7 +97,7 @@ public class Treatment {
             return false;
         }
         Treatment rhs = ((Treatment) other);
-        return new EqualsBuilder().append(hasExposureParts, rhs.hasExposureParts).append(treats, rhs.treats).isEquals();
+        return new EqualsBuilder().append(hasPart, rhs.hasPart).append(treats, rhs.treats).isEquals();
     }
 
 }
