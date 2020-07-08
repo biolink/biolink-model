@@ -3,9 +3,6 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -126,12 +123,40 @@ public class ChemicalToChemicalDerivationAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("changeIsCatalyzedBy", changeIsCatalyzedBy).append("object", object).append("relation", relation).append("subject", subject).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(ChemicalToChemicalDerivationAssociation.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("changeIsCatalyzedBy");
+        sb.append('=');
+        sb.append(((this.changeIsCatalyzedBy == null)?"<null>":this.changeIsCatalyzedBy));
+        sb.append(',');
+        sb.append("object");
+        sb.append('=');
+        sb.append(((this.object == null)?"<null>":this.object));
+        sb.append(',');
+        sb.append("relation");
+        sb.append('=');
+        sb.append(((this.relation == null)?"<null>":this.relation));
+        sb.append(',');
+        sb.append("subject");
+        sb.append('=');
+        sb.append(((this.subject == null)?"<null>":this.subject));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(subject).append(changeIsCatalyzedBy).append(object).append(relation).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.subject == null)? 0 :this.subject.hashCode()));
+        result = ((result* 31)+((this.changeIsCatalyzedBy == null)? 0 :this.changeIsCatalyzedBy.hashCode()));
+        result = ((result* 31)+((this.object == null)? 0 :this.object.hashCode()));
+        result = ((result* 31)+((this.relation == null)? 0 :this.relation.hashCode()));
+        return result;
     }
 
     @Override
@@ -143,7 +168,7 @@ public class ChemicalToChemicalDerivationAssociation {
             return false;
         }
         ChemicalToChemicalDerivationAssociation rhs = ((ChemicalToChemicalDerivationAssociation) other);
-        return new EqualsBuilder().append(subject, rhs.subject).append(changeIsCatalyzedBy, rhs.changeIsCatalyzedBy).append(object, rhs.object).append(relation, rhs.relation).isEquals();
+        return (((((this.subject == rhs.subject)||((this.subject!= null)&&this.subject.equals(rhs.subject)))&&((this.changeIsCatalyzedBy == rhs.changeIsCatalyzedBy)||((this.changeIsCatalyzedBy!= null)&&this.changeIsCatalyzedBy.equals(rhs.changeIsCatalyzedBy))))&&((this.object == rhs.object)||((this.object!= null)&&this.object.equals(rhs.object))))&&((this.relation == rhs.relation)||((this.relation!= null)&&this.relation.equals(rhs.relation))));
     }
 
 }

@@ -4,23 +4,25 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  biolink: https://w3id.org/biolink/vocab/
-  biolinkml: https://w3id.org/biolink/biolinkml/
-  OBAN: http://purl.org/oban/
-  SIO: http://semanticscience.org/resource/SIO_
-  wgs: http://www.w3.org/2003/01/geo/wgs84_pos
-  qud: http://qudt.org/1.1/schema/qudt#
-  UMLSSG: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/
-  UMLSST: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/
-  UMLSSC: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/
+  biolink: 'https://w3id.org/biolink/vocab/'
+  biolinkml: 'https://w3id.org/biolink/biolinkml/'
+  CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
+  OBAN: 'http://purl.org/oban/'
+  SIO: 'http://semanticscience.org/resource/SIO_'
+  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  qud: 'http://qudt.org/1.1/schema/qudt#'
+  UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
+  UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
+  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
   
 default_prefix: biolink
 default_range: string
 
 default_curi_maps:
   - obo_context
-  - monarch_context
   - idot_context
+  - monarch_context
   - semweb_context
 
 emit_prefixes:
@@ -55,13 +57,6 @@ types:
     description: A chemical formula
     notes:
       - Should be implemented as a stronger type
-
-  identifier type:
-    base: ElementIdentifier
-    uri: xsd:anyURI
-    description: >-
-      A string that is intended to uniquely identify a thing
-      May be URI in full or compact (CURIE) form
 
   iri type:
     typeof: uriorcurie
@@ -118,9 +113,9 @@ slots:
     domain: named thing
     range: named thing
     multivalued: true
-    slot_uri: owl:ObjectProperty
     inherited: true
     mappings:
+      - owl:topObjectProperty
       - SEMMEDDB:ASSOCIATED_WITH
 
   interacts with:
@@ -131,7 +126,8 @@ slots:
     is_a: related to
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002434
+    mappings:
+      - RO:0002434
 
   physically interacts with:
     is_a: interacts with
@@ -140,8 +136,8 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
-    slot_uri: WD:P129
     mappings:
+      - WIKIDATA:P129
       - SEMMEDDB:INTERACTS_WITH
 
   molecularly interacts with:
@@ -150,7 +146,8 @@ slots:
     range: molecular entity
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002436
+    mappings:
+      - RO:0002436
 
   genetically interacts with:
     is_a: interacts with
@@ -160,7 +157,8 @@ slots:
     range: gene
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002435
+    mappings:
+      - RO:0002435
 
   affects:
     is_a: related to
@@ -169,7 +167,8 @@ slots:
       Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
     in_subset:
       - translator_minimal
-    slot_uri: SEMMEDDB:AFFECTS
+    mappings:
+      - SEMMEDDB:AFFECTS
 
   affects abundance of:
     description: >-
@@ -609,7 +608,8 @@ slots:
       - This is a grouping for process-process and entity-entity relations
     mixin: true
     abstract: true
-    slot_uri: WD:P128
+    mappings:
+      - WIKIDATA:P128
 
   positively regulates:
     comments:
@@ -629,19 +629,22 @@ slots:
     is_a: regulates
     domain: occurrent
     range: occurrent
-    slot_uri: RO:0002211
+    mappings:
+      - RO:0002211
 
   positively regulates, process to process:
     is_a: regulates, process to process
     mixins:
       - positively regulates
-    slot_uri: RO:0002213
+    mappings:
+      - RO:0002213
 
   negatively regulates, process to process:
     is_a: regulates, process to process
     mixins:
       - negatively regulates
-    slot_uri: RO:0002212
+    mappings:
+      - RO:0002212
 
   regulates, entity to entity:
     aliases: ['activity directly regulates activity of']
@@ -653,7 +656,8 @@ slots:
       ro: activity directly regulates activity of
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002448
+    mappings:
+      - RO:0002448
 
   positively regulates, entity to entity:
     aliases: ['activity directly positively regulates activity of']
@@ -665,8 +669,8 @@ slots:
       ro: activity directly positively regulates activity of
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002450
     mappings:
+      - RO:0002450
       - SEMMEDDB:STIMULATES
 
   negatively regulates, entity to entity:
@@ -679,8 +683,8 @@ slots:
       ro: activity directly negatively regulates activity of
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002449
     mappings:
+      - RO:0002449
       - SEMMEDDB:INHIBITS
 
   disrupts:
@@ -689,7 +693,8 @@ slots:
       describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
     in_subset:
       - translator_minimal
-    slot_uri: SEMMEDDB:DISRUPTS
+    mappings:
+      - SEMMEDDB:DISRUPTS
 
   has gene product:
     is_a: related to
@@ -699,9 +704,9 @@ slots:
     range: gene product
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002205
     mappings:
-      - WD:P688
+      - RO:0002205
+      - WIKIDATA:P688
 
   homologous to:
     is_a: related to
@@ -712,8 +717,8 @@ slots:
       - typically used to describe homology relationships between genes or gene products
     in_subset:
       - translator_minimal
-    slot_uri: RO:HOM0000001
     mappings:
+      - RO:HOM0000001
       - SIO:010302
 
   paralogous to:
@@ -722,7 +727,8 @@ slots:
       a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
     in_subset:
       - translator_minimal
-    slot_uri: RO:HOM0000011
+    mappings:
+      - RO:HOM0000011
 
   orthologous to:
     is_a: homologous to
@@ -730,9 +736,9 @@ slots:
       a homology relationship between entities (typically genes) that diverged after a speciation event.
     in_subset:
       - translator_minimal
-    slot_uri: RO:HOM0000017
     mappings:
-      - WD:P684
+      - RO:HOM0000017
+      - WIKIDATA:P684
 
   xenologous to:
     is_a: homologous to
@@ -740,7 +746,8 @@ slots:
       a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
     in_subset:
       - translator_minimal
-    slot_uri: RO:HOM0000018
+    mappings:
+      - RO:HOM0000018
 
   coexists with:
     is_a: related to
@@ -748,7 +755,8 @@ slots:
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     in_subset:
       - translator_minimal
-    slot_uri: SEMMEDDB:COEXISTS_WITH
+    mappings:
+      - SEMMEDDB:COEXISTS_WITH
 
   in pathway with:
     description: >-
@@ -783,7 +791,8 @@ slots:
     is_a: coexists with
     in_subset:
       - translator_minimal
-    slot_uri: RO:00002325
+    mappings:
+      - RO:00002325
 
   gene associated with condition:
     is_a: related to
@@ -793,7 +802,8 @@ slots:
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
-    slot_uri: WD:P2293
+    mappings:
+      - WIKIDATA:P2293
 
   affects risk for:
     is_a: related to
@@ -808,7 +818,8 @@ slots:
       holds between two entities where exposure to one entity increases the chance of developing the other
     in_subset:
       - translator_minimal
-    slot_uri: SEMMEDDB:PREDISPOSES
+    mappings:
+      - SEMMEDDB:PREDISPOSES
 
   contributes to:
     is_a: related to
@@ -816,7 +827,8 @@ slots:
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002326
+    mappings:
+      - RO:0002326
 
   causes:
     description: >-
@@ -824,11 +836,11 @@ slots:
     is_a: contributes to
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002410
     inverse: caused by
     mappings:
+      - RO:0002410
       - SEMMEDDB:CAUSES
-      - WD:P1542
+      - WIKIDATA:P1542
 
   caused by:
     description: >-
@@ -838,7 +850,7 @@ slots:
       - translator_minimal
     inverse: causes
     mappings:
-      - WD:P828
+      - WIKIDATA:P828
 
   treats:
     aliases: ['is substance that treats']
@@ -851,11 +863,11 @@ slots:
     in_subset:
       - translator_minimal
     inverse: treated by
-    slot_uri: RO:0002606
     mappings:
+      - RO:0002606
       - RO:0003307
       - SEMMEDDB:TREATS
-      - WD:P2175
+      - WIKIDATA:P2175
 
   prevents :
     is_a: affects risk for
@@ -865,19 +877,20 @@ slots:
       the onset a disease or phenotypic feature.
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002599
     mappings:
+      - RO:0002599
       - SEMMEDDB:PREVENTS
 
   correlated with:
     is_a: related to
     description: >-
-      holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-    domain: disease or phenotypic feature
-    range: molecular entity
+      holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+    domain: named thing
+    range: named thing
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002610
+    mappings:
+      - RO:0002610
 
   has biomarker:
     is_a: correlated with
@@ -898,7 +911,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has biomarker
-    slot_uri: RO:0002607
+    mappings:
+      - RO:0002607
 
   treated by:
     is_a: related to
@@ -908,9 +922,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: treats
-    slot_uri: RO:0002302
     mappings:
-      - WD:P2176
+      - RO:0002302
+      - WIKIDATA:P2176
 
   expressed in:
     is_a: related to
@@ -921,7 +935,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: expresses
-    slot_uri: RO:0002206
+    mappings:
+      - RO:0002206
 
   expresses:
     is_a: related to
@@ -932,7 +947,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: expressed in
-    slot_uri: RO:0002292
+    mappings:
+      - RO:0002292
 
   has phenotype:
     is_a: related to
@@ -944,7 +960,8 @@ slots:
       - check the range
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002200
+    mappings:
+      - RO:0002200
 
   occurs in:
     is_a: related to
@@ -952,8 +969,8 @@ slots:
       holds between a process and a material entity or site within which the process occurs
     in_subset:
       - translator_minimal
-    slot_uri: BFO:0000066
     mappings:
+      - BFO:0000066
       - SEMMEDDB:OCCURS_IN
       - SEMMEDDB:PROCESS_OF
 
@@ -964,7 +981,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: location of
-    slot_uri: RO:0001025
+    mappings:
+      - RO:0001025
 
   location of:
     is_a: related to
@@ -973,10 +991,10 @@ slots:
     in_subset:
       - translator_minimal
     inverse: located in
-    slot_uri: RO:0001015
     mappings:
+      - RO:0001015
       - SEMMEDDB:LOCATION_OF
-      - WD:276
+      - WIKIDATA:276
 
   model of:
     is_a: related to
@@ -984,7 +1002,8 @@ slots:
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     in_subset:
       - translator_minimal
-    slot_uri: RO:0003301
+    mappings:
+      - RO:0003301
 
   overlaps:
     is_a: related to
@@ -992,7 +1011,8 @@ slots:
       holds between entties that overlap in their extents (materials or processes)
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002131
+    mappings:
+      - RO:0002131
 
   has part:
     is_a: overlaps
@@ -1001,9 +1021,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: part of
-    slot_uri: BFO:0000051
     mappings:
-      - WD:P527
+      - BFO:0000051
+      - WIKIDATA:P527
 
   part of:
     is_a: overlaps
@@ -1012,10 +1032,10 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has part
-    slot_uri: BFO:0000050
     mappings:
+      - BFO:0000050
       - SEMMEDDB:PART_OF
-      - WD:P361
+      - WIKIDATA:P361
 
   has participant:
     is_a: related to
@@ -1025,9 +1045,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: participates in
-    slot_uri: RO:0000057
     mappings:
-     - WD:P2283
+      - RO:0000057
+      - WIKIDATA:P2283
 
   has input:
     is_a: has participant
@@ -1036,8 +1056,8 @@ slots:
     domain: occurrent
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002233
     mappings:
+      - RO:0002233
       - SEMMEDDB:USES
 
   has output:
@@ -1047,7 +1067,8 @@ slots:
     domain: occurrent
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002234
+    mappings:
+      - RO:0002234
 
   participates in:
     is_a: related to
@@ -1057,7 +1078,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has participant
-    slot_uri: RO:0000056
+    mappings:
+      - RO:0000056
 
   actively involved in:
     is_a: participates in
@@ -1066,7 +1088,8 @@ slots:
     range: occurrent
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002331
+    mappings:
+      - RO:0002331
 
   capable of:
     is_a: actively involved in
@@ -1075,16 +1098,30 @@ slots:
     range: occurrent
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002215
+    mappings:
+      - RO:0002215
+
+  enables:
+    is_a: has participant
+    description: >-
+      holds between a physical entity and a process, where the physical entity executes the process
+    range: biological process or activity
+    in_subset:
+      - translator_minimal
+    inverse: enabled by
+    mappings:
+      - RO:0002327
 
   enabled by:
     is_a: has participant
     description: >-
       holds between a process and a physical entity, where the physical entity executes the process
-    range: biological process or activity
+    domain: biological process or activity
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002333
+    inverse: enables
+    mappings:
+      - RO:0002333
 
   derives into:
     is_a: related to
@@ -1093,8 +1130,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: derives from
-    slot_uri: RO:0001001
     mappings:
+      - RO:0001001
       - SEMMEDDB:CONVERTS_TO
 
   derives from:
@@ -1105,7 +1142,8 @@ slots:
       - translator_minimal
       - samples
     inverse: derives into
-    slot_uri: RO:0001000
+    mappings:
+      - RO:0001000
 
   manifestation of:
     is_a: related to
@@ -1114,9 +1152,9 @@ slots:
     range: disease
     in_subset:
       - translator_minimal
-    slot_uri: SEMMEDDB:MANIFESTATION_OF
     mappings:
-      - WD:P1557
+      - SEMMEDDB:MANIFESTATION_OF
+      - WIKIDATA:P1557
 
   produces:
     is_a: related to
@@ -1124,9 +1162,9 @@ slots:
       holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
     in_subset:
       - translator_minimal
-    slot_uri: RO:0003000
     mappings:
-      - WD:P1056
+      - RO:0003000
+      - WIKIDATA:P1056
       - SEMMEDDB:PRODUCES
 
   precedes:
@@ -1137,10 +1175,10 @@ slots:
     range: occurrent
     in_subset:
       - translator_minimal
-    slot_uri: BFO:0000063
     mappings:
+      - BFO:0000063
       - SEMMEDDB:PRECEDES
-      - WD:P156
+      - WIKIDATA:P156
 
   same as:
     is_a: related to
@@ -1148,11 +1186,11 @@ slots:
       holds between two entities that are considered equivalent to each other
     in_subset:
       - translator_minimal
-    slot_uri: owl:equivalentClass
     mappings:
+      - owl:equivalentClass
       - owl:sameAs
       - skos:exactMatch
-      - WD:P2888
+      - WIKIDATA:P2888
 
   subclass of:
     is_a: related to
@@ -1163,10 +1201,10 @@ slots:
     multivalued: True
     in_subset:
       - translator_minimal
-    slot_uri: rdfs:subClassOf
     mappings:
+      - rdfs:subClassOf
       - SEMMEDDB:IS_A
-      - WD:P279
+      - WIKIDATA:P279
 
 ## property slots
 
@@ -1178,50 +1216,59 @@ slots:
   title:
     is_a: node property
     domain: data set version
-    slot_uri: dct:title
+    mappings:
+      - dcterms:title
 
   source data file:
     is_a: node property
     domain: data set version
     range: data file
-    slot_uri: dcterms:source
+    mappings:
+      - dcterms:source
 
   source web page:
     is_a: node property
     domain: data set summary
-    slot_uri: dcterms:source
+    mappings:
+      - dcterms:source
 
   retrievedOn:
     is_a: node property
     domain: source file
     range: date
-    slot_uri: pav:retrievedOn
+    mappings:
+      - pav:retrievedOn
 
   versionOf:
     is_a: node property
     domain: data set version
     range: data set
-    slot_uri: dct:isVersionOf
+    mappings:
+      - dcterms:isVersionOf
 
   source version:
     is_a: node property
     domain: source file
-    slot_uri: pav:version
+    mappings:
+      - pav:version
 
   downloadURL:
     is_a: node property
     domain: distribution level
-    slot_uri: dct:downloadURL
+    mappings:
+      - dcterms:downloadURL
 
   distribution:
     is_a: node property
     domain: data set version
     range: distribution level
-    slot_uri: void:Dataset
+    mappings:
+      - void:Dataset
 
   type:
     is_a: node property
-    slot_uri: rdf:type
+    mappings:
+      - rdf:type
 
   id:
     is_a: node property
@@ -1232,7 +1279,6 @@ slots:
     in_subset:
       - translator_minimal
     domain: named thing
-    range: identifier type
     required: true
 
   iri:
@@ -1279,7 +1325,7 @@ slots:
     in_subset:
       - translator_minimal
     required: true
-    slot_uri: rdfs:subClassOf
+    slot_uri: rdf:type
 
   full name:
     is_a: node property
@@ -1321,7 +1367,6 @@ slots:
     in_subset:
         - translator_minimal
     domain: association
-    range: identifier type
     alias: id
 
   subject:
@@ -1397,7 +1442,8 @@ slots:
     range: evidence type
     description: >-
       connects an association to an instance of supporting evidence
-    slot_uri: RO:0002558
+    mappings:
+      - RO:0002558
 
   provided by:
     is_a: association slot
@@ -1405,20 +1451,37 @@ slots:
     description: >-
       connects an association to the agent (person, organization or group) that provided it
     slot_uri: pav:providedBy
+    multivalued: true
 
   association type:
     is_a: association slot
     range: ontology class
     description: >-
       connects an association to the type of association (e.g. gene to phenotype)
-    slot_uri: rdf:type
+    mappings:
+      - rdf:type
+
+  chi squared statistic:
+    is_a: association slot
+    range: float
+    description: >-
+      represents the chi-squared statistic computed from observations
+    slot_uri: STATO:0000030
+
+  p value:
+    is_a: association slot
+    range: float
+    description: >-
+      A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+    slot_uri: OBI:0000175
 
   creation date:
     is_a: node property
     range: date
     description: >-
       date on which thing was created. This can be applied to nodes or edges
-    slot_uri: dcterms:created
+    mappings:
+      - dcterms:created
 
   has receptor:
     is_a: node property
@@ -1426,7 +1489,8 @@ slots:
     range: organismal entity
     description: >-
       the organism or organism part being exposed
-    slot_uri: ExO:0000001
+    mappings:
+      - ExO:0000001
 
   has stressor:
     is_a: node property
@@ -1434,14 +1498,16 @@ slots:
     aliases: ['has stimulus']
     description: >-
       the process or entity that the receptor is being exposed to
-    slot_uri: ExO:0000000
+    mappings:
+      - ExO:0000000
 
   has route:
     is_a: node property
     domain: exposure event
     description: >-
       the process that results in the stressor coming into direct contact with the receptor
-    slot_uri: ExO:0000055
+    mappings:
+      - ExO:0000055
 
   update date:
     is_a: node property
@@ -1457,30 +1523,33 @@ slots:
       connects a thing to a class representing a taxon
     in_subset:
       - translator_minimal
-    slot_uri: RO:0002162
     mappings:
-      - WD:P703
+      - RO:0002162
+      - WIKIDATA:P703
 
   latitude:
     is_a: node property
     range: float
     description: >-
       latitude
-    slot_uri: wgs:lat
+    mappings:
+      - wgs:lat
 
   longitude:
     is_a: node property
     range: float
     description: >-
       longitude
-    slot_uri: wgs:long
+    mappings:
+      - wgs:long
 
   has chemical formula:
     is_a: node property
     range: chemical formula value
     description: >-
       description of chemical compound based on element symbols
-    slot_uri: WD:P274
+    mappings:
+      - WIKIDATA:P274
 
   aggregate statistic:
     is_a: node property
@@ -1785,7 +1854,8 @@ classes:
   onset:
     description: >-
       The age group in which manifestations appear
-    class_uri: HP:0003674
+    mappings:
+      - HP:0003674
     is_a: attribute
 
   relationship quantifier:
@@ -1823,8 +1893,8 @@ classes:
       - name
       - category
     subclass_of: BFO:0000001
-    class_uri: WD:Q35120
     mappings:
+      - WIKIDATA:Q35120
       # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
       # Entity
@@ -1842,7 +1912,8 @@ classes:
 
   data file:
     is_a: named thing
-    class_uri: EFO:0004095
+    mappings:
+      - EFO:0004095
 
   source file:
     is_a: data file
@@ -1856,7 +1927,8 @@ classes:
 
   data set:
     is_a: named thing
-    class_uri: IAO:0000100
+    mappings:
+      - IAO:0000100
 
   data set version:
     is_a: data set
@@ -1883,8 +1955,8 @@ classes:
   biological entity:
     is_a: named thing
     abstract: true
-    class_uri: WD:Q28845870
     mappings:
+      - WIKIDATA:Q28845870
       # UMLS Semantic Type "Experimental Model of Disease"
       - UMLSSC:T050
       - UMLSST:emod
@@ -1917,23 +1989,25 @@ classes:
     is_a: ontology class
     values_from:
       - NCBITaxon
-    class_uri: WD:Q16521
+    mappings:
+      - WIKIDATA:Q16521
 
   organismal entity:
     description: >-
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
     abstract: true
     is_a: biological entity
-    class_uri: WD:Q7239
+    mappings:
+      - WIKIDATA:Q7239
 
   individual organism:
     mixins:
       - thing with taxon
     is_a: organismal entity
     subclass_of: "NCBITaxon:1"
-    class_uri: SIO:010000
     mappings:
-      - WD:Q795052
+      - SIO:010000
+      - WIKIDATA:Q795052
       # UMLS Semantic Group "Living Beings"
       # Several of the associated semantic types here are probably not
       # that relevant to the Biolink world but we keep them here for now.
@@ -2016,8 +2090,8 @@ classes:
       - thing with taxon
     is_a: organismal entity
     subclass_of: PCO:0000001
-    class_uri: SIO:001061
     mappings:
+      - SIO:001061
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
       - UMLSST:popg
@@ -2044,7 +2118,7 @@ classes:
     slots:
       - has attribute
     id_prefixes:
-      - BioSample
+      - BIOSAMPLE
       - GOLD.META
 
   disease or phenotypic feature:
@@ -2065,9 +2139,9 @@ classes:
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
     is_a: disease or phenotypic feature
-    class_uri: MONDO:0000001
     mappings:
-      - WD:Q12136
+      - MONDO:0000001
+      - WIKIDATA:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
       - UMLSSG:DISO
@@ -2115,10 +2189,10 @@ classes:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
     subclass_of: UPHENO:0001001
-    class_uri: UPHENO:0001001
     mappings:
+      - UPHENO:0001001
       - SIO:010056
-      - WD:Q169872
+      - WIKIDATA:Q169872
     id_prefixes:
       - HP
       - EFO
@@ -2132,7 +2206,8 @@ classes:
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
-    class_uri: SIO:000955
+    mappings:
+      - SIO:000955
 
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
@@ -2140,8 +2215,8 @@ classes:
     is_a: named thing
     description: >-
       a piece of information that typically describes some piece of biology or is used as support.
-    class_uri: IAO:0000030
     mappings:
+      - IAO:0000030
       # UMLS Semantic Group "Concepts & Ideas"
       - UMLSSG:CONC
       # Conceptual Entity
@@ -2184,7 +2259,8 @@ classes:
       Level of confidence in a statement
     values_from:
       - cio
-    class_uri: CIO:0000028
+    mappings:
+      - CIO:0000028
 
   evidence type:
     is_a: information content entity
@@ -2193,7 +2269,8 @@ classes:
       Class of evidence that supports an association
     values_from:
       - eco
-    class_uri: ECO:0000000
+    mappings:
+      - ECO:0000000
 
   publication:
     is_a: information content entity
@@ -2202,8 +2279,8 @@ classes:
       Any published piece of information. Can refer to a whole publication,
       or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
       The scope is intended to be general and include information published on the web as well as journals.
-    class_uri: IAO:0000311
     mappings:
+      - IAO:0000311
       # UMLS Semantic Type "Intellectual Product"
       - UMLSSC:T170
       - UMLSST:inpr
@@ -2244,9 +2321,9 @@ classes:
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
     #notes:
     #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
-    class_uri: SIO:010341
     mappings:
-      - WD:Q43460564
+      - SIO:010341
+      - WIKIDATA:Q43460564
       # UMLS Semantic Group "Genes & Molecular Sequences"
       - UMLSSG:GENE
       # Molecular Sequence
@@ -2259,9 +2336,9 @@ classes:
       May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
     subclass_of: "CHEBI:24431"
-    class_uri: SIO:010004
     mappings:
-      - WD:Q79529
+      - SIO:010004
+      - WIKIDATA:Q79529
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
       - UMLSST:sbst
@@ -2325,14 +2402,14 @@ classes:
       - CHEBI
       - CHEMBL.COMPOUND
       - DRUGBANK
-      - PUBCHEM
+      - PUBCHEM.COMPOUND
       - MESH
       - HMDB
       - INCHI
       - INCHIKEY
       - UNII
       - KEGG
-      - GTOPDB
+      - gtpo
 
   carbohydrate:
     is_a: chemical substance
@@ -2340,6 +2417,8 @@ classes:
       # UMLS Semantic Type "Carbohydrate Sequence"
       - UMLSSC:T088
       - UMLSST:crbs
+    id_prefixes:
+      - PUBCHEM.SUBSTANCE
 
   drug:
     is_a: chemical substance
@@ -2347,12 +2426,14 @@ classes:
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     comments:
       - The CHEBI ID represents a role rather than a substance
-    class_uri: WD:Q12140
     mappings:
+      - WIKIDATA:Q12140
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
       - UMLSSC:T200
       - UMLSST:clnd
+    id_prefixes:
+      - PHARMGKB.DRUG
 
   metabolite:
     is_a: chemical substance
@@ -2360,7 +2441,8 @@ classes:
       Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
     comments:
       - The CHEBI ID represents a role rather than a substance
-    class_uri: CHEBI:25212
+    mappings:
+      - CHEBI:25212
 #
 #    attribute:
 #    subclass_of: PATO:0000001
@@ -2377,9 +2459,9 @@ classes:
     subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
-    class_uri: SIO:010046
     mappings:
-      - WD:Q4936952
+      - SIO:010046
+      - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
       # Body System
@@ -2455,8 +2537,8 @@ classes:
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
     slots:
       - has biological sequence
-    class_uri: SO:0000110
     mappings:
+      - SO:0000110
       # Gene or Genome
       - UMLSSC:T028
       - UMLSST:gngm
@@ -2467,32 +2549,32 @@ classes:
     is_a: genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
-    class_uri: SO:0001026
     mappings:
+      - SO:0001026
       - SIO:000984
-      - WD:Q7020
+      - WIKIDATA:Q7020
 
   transcript:
     is_a: genomic entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
-    class_uri: SO:0000673
     mappings:
+      - SO:0000673
       - SIO:010450
 
   exon:
     is_a: genomic entity
     description: >-
       A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
-    class_uri: SO:0000147
     mappings:
+      - SO:0000147
       - SIO:010445
-      - WD:Q373027
+      - WIKIDATA:Q373027
 
   coding sequence:
     is_a: genomic entity
-    class_uri: SO:0000316
     mappings:
+      - SO:0000316
       - SIO:001390
 
   macromolecular machine:
@@ -2522,26 +2604,27 @@ classes:
       Frequently an identifier for one will be used as proxy for another
     id_prefixes:
       - CHEMBL.TARGET
+      - IUPHAR.FAMILY
 
   gene:
     is_a: gene or gene product
     aliases: ['locus']
-    class_uri: SO:0000704
     mappings:
+      - SO:0000704
       - SIO:010035
-      - WD:Q7187
+      - WIKIDATA:Q7187
     id_prefixes:
       - NCBIGene
       - ENSEMBL
       - HGNC
-      #- UNIPROTKB  I think this belongs, but others may strongly disagree CB
+      # - UniProtKB  I think this belongs, but others may strongly disagree CB
       - MGI
       - ZFIN
       - dictyBase
       - WB
       - SGD
       - PomBase
-      - IUPHAR
+      # - IUPHAR
 
   gene product:
     is_a: gene or gene product
@@ -2550,10 +2633,11 @@ classes:
     union_of:
       - protein
       - RNA product
-    class_uri: WD:Q424689
+    mappings:
+      - WIKIDATA:Q424689
     id_prefixes:
-      - UNIPROTKB
-      - GTOPDB
+      - UniProtKB
+      - gtpo
       - PR
 
   protein:
@@ -2561,10 +2645,10 @@ classes:
     aliases: ['polypeptide']
     description: >-
       A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
-    class_uri: PR:000000001
     mappings:
+      - PR:000000001
       - SIO:010043
-      - WD:Q8054
+      - WIKIDATA:Q8054
       # UMLS Semantic Type: "Amino Acid Sequence"
       - UMLSSC:T087
       - UMLSST:amas
@@ -2599,12 +2683,12 @@ classes:
 
   RNA product:
     is_a: gene product
-    class_uri: CHEBI:33697
     mappings:
+      - CHEBI:33697
       - SIO:010450
-      - WD:Q11053
+      - WIKIDATA:Q11053
     id_prefixes:
-      - RNAcentral
+      - RNACENTRAL
 
   RNA product isoform:
     is_a: RNA product
@@ -2613,37 +2697,38 @@ classes:
     mixins:
       - gene product isoform
     id_prefixes:
-      - RNAcentral
+      - RNACENTRAL
 
   noncoding RNA product:
     is_a: RNA product
     id_prefixes:
-      - RNAcentral
+      - RNACENTRAL
       - NCBIGene
       - ENSEMBL
     subclass_of: SO:0000655
-    class_uri: SIO:001235
+    mappings:
+      - SIO:001235
 
   microRNA:
     is_a: noncoding RNA product
     subclass_of: SO:0000276
-    class_uri: SIO:001397
     mappings:
-      - WD:Q310899
+      - SIO:001397
+      - WIKIDATA:Q310899
     id_prefixes:
       - MIR
 
   macromolecular complex:
     is_a: macromolecular machine
     subclass_of: "GO:0032991"
-    class_uri: SIO:010046
     mappings:
-      - WD:Q22325163
+      - SIO:010046
+      - WIKIDATA:Q22325163
     id_prefixes:
-      - IntAct
+      - INTACT
       - GO
       - PR
-      - Reactome
+      - REACT
 
   gene grouping:
     abstract: true
@@ -2653,10 +2738,10 @@ classes:
 
   gene family:
     is_a: molecular entity
-    class_uri: SIO:001380
     mappings:
+      - SIO:001380
       - "NCIT:C20130"
-      - WD:Q417841
+      - WIKIDATA:Q417841
     mixins:
       - gene grouping
     description: >-
@@ -2666,7 +2751,8 @@ classes:
 
   zygosity:
     is_a: attribute
-    class_uri: GENO:0000133
+    mappings:
+      - GENO:0000133
 
   genotype:
     is_a: genomic entity
@@ -2676,8 +2762,8 @@ classes:
       - Consider renaming as genotypic entity
     slots:
       - has zygosity
-    class_uri: GENO:0000536
     mappings:
+      - GENO:0000536
       - SIO:001079
 
   haplotype:
@@ -2686,9 +2772,9 @@ classes:
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
 #      - completeness
-    class_uri: GENO:0000871
     mappings:
-      - VMC:Haplotype
+      - GENO:0000871
+      # - VMC:Haplotype  needs IRI mapping
 
   sequence variant:
     aliases: ['allele']
@@ -2701,20 +2787,20 @@ classes:
       - >-
           This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
           than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
-    class_uri: GENO:0000002
     mappings:
-      - WD:Q15304597
+      - GENO:0000002
+      - WIKIDATA:Q15304597
       - SIO:010277
       - VMC:Allele
     id_prefixes:
-      - CAID #ClinGen Allele Registry
+      - CAID # ClinGen Allele Registry
       - ClinVar
-      - WD
-      - CIViC
-      - HGVS
+      - WIKIDATA
+      # - CIViC needs IRI mapping
       - DBSNP
-      - MYVARIANT_HG19
-      - MYVARIANT_HG38
+      # - MYVARIANT_HG19 needs IRI mapping
+      # - MYVARIANT_HG38 needs IRI mapping
+      # - HGVS needs IRI mapping
     alt_descriptions:
       AGR: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
       VMC: "A contiguous change at a Location"
@@ -2746,7 +2832,8 @@ classes:
 #        range: chemical substance
 #        required: true
 #        multivalued: true
-    class_uri: ECTO:9000000
+    mappings:
+      - ECTO:9000000
 
   drug exposure:
     aliases: ['drug intake', 'drug dose']
@@ -2760,8 +2847,8 @@ classes:
         range: chemical substance
         required: true
         multivalued: true
-    class_uri: ECTO:0000509
     mappings:
+      - ECTO:0000509
       - SIO:001005
 
   treatment:
@@ -2774,8 +2861,8 @@ classes:
         multivalued: true
         range: drug exposure
         required: true
-    class_uri: OGMS:0000090
     mappings:
+      - OGMS:0000090
       - SIO:001398
 
   geographic location:
@@ -2817,8 +2904,8 @@ classes:
       - qualifiers
       - publications
       - provided by
-    class_uri: OBAN:association
     mappings:
+      - OBAN:association
       - "rdf:Statement"
       - "owl:Axiom"
 
@@ -3083,7 +3170,8 @@ classes:
         
   chemical to disease or phenotypic feature association:
     is_a: association
-    class_uri: SIO:000993
+    mappings:
+      - SIO:000993
     defining_slots:
       - subject
       - object
@@ -3100,7 +3188,8 @@ classes:
 
   chemical to pathway association:
     is_a: association
-    class_uri: SIO:001250
+    mappings:
+      - SIO:001250
     defining_slots:
       - subject
       - object
@@ -3115,7 +3204,8 @@ classes:
 
   chemical to gene association:
     is_a: association
-    class_uri: SIO:001257
+    mappings:
+      - SIO:001257
     defining_slots:
       - subject
       - object
@@ -3173,6 +3263,20 @@ classes:
       - thing to disease or phenotypic feature association
     description: >-
       An association between a material sample and a disease or phenotype
+
+  disease to thing association:
+    abstract: true
+    is_a: association
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: disease
+        description: "disease class"
+        values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
 
   disease to exposure association:
     is_a: disease to thing association
@@ -3267,7 +3371,8 @@ classes:
     description: >-
       An association between either a disease or a phenotypic feature and an anatomical entity,
       where the disease/feature manifests in that site.
-    class_uri: NCIT:R100
+    mappings:
+      - NCIT:R100
     slot_usage:
       object:
         range: anatomical entity
@@ -3290,21 +3395,6 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
           - value: MP:0013229
             description: "abnormal brain ventricle size"
-
-  disease to thing association:
-    abstract: true
-    is_a: association
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: disease
-        description: "disease class"
-        values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
-        examples:
-          - value: MONDO:0017314
-            description: "Ehlers-Danlos syndrome, vascular type"
-
 
   genotype to phenotypic feature association:
     is_a: association
@@ -3389,7 +3479,8 @@ classes:
 
   gene to phenotypic feature association:
     is_a: association
-    class_uri: http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
+    mappings:
+      - http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
     defining_slots:
       - subject
       - object
@@ -3408,7 +3499,8 @@ classes:
     is_a: association
     comments:
       - NCIT:R176 refers to the inverse relationship
-    class_uri: SIO:000983
+    mappings:
+      - SIO:000983
     defining_slots:
       - subject
       - object
@@ -3705,7 +3797,8 @@ classes:
   gene to go term association:
     aliases: ['functional association']
     is_a: functional association
-    class_uri: http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
+    mappings:
+      - http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
     defining_slots:
       - subject
       - object
@@ -3752,7 +3845,8 @@ classes:
       - end interbase coordinate
       - genome build
       - phase
-    class_uri: faldo:location
+    mappings:
+      - faldo:location
 
   sequence feature relationship:
     is_a: association
@@ -3880,7 +3974,8 @@ classes:
     description: >-
       A processual entity
     is_a: named thing
-    class_uri: BFO:0000003
+    mappings:
+      - BFO:0000003
 
   physical entity:
     description: >-
@@ -3898,7 +3993,7 @@ classes:
 #      - biological process
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
     slots:
       - has input
       - has output
@@ -3911,7 +4006,6 @@ classes:
       - occurrent
     description: >-
       An execution of a molecular function carried out by a gene product or macromolecular complex.
-    class_uri: GO:0003674
     slot_usage:
       has input:
         range: chemical substance
@@ -3926,12 +4020,13 @@ classes:
         description: >-
           The gene product, gene, or complex that catalyzes the reaction
     mappings:
+      - GO:0003674
       # UMLS Semantic Type "Molecular Function"
       - UMLSSC:T044
       - UMLSST:moft
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
       - RHEA
 
   activity and behavior:
@@ -4029,27 +4124,27 @@ classes:
       - occurrent
     description: >-
       One or more causally connected executions of molecular functions
-    class_uri: GO:0008150
     mappings:
+      - GO:0008150
       - SIO:000006
-      - WD:Q2996394
+      - WIKIDATA:Q2996394
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
 
   pathway:
     is_a: biological process
-    class_uri: GO:0007165
     mappings:
+      - GO:0007165
       - SIO:010526
       - PW:0000001
-      - WD:Q4915012
+      - WIKIDATA:Q4915012
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
       - KEGG
       - SMPDB
-      - PHARMGKB
+      - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
 
   physiological process:
@@ -4083,16 +4178,16 @@ classes:
       - UMLSST:clna
     id_prefixes:
       - GO
-      - Reactome
+      - REACT
 
   cellular component:
     is_a: anatomical entity
     description: >-
       A location in or around a cell
-    class_uri: GO:0005575
     mappings:
+      - GO:0005575
       - SIO:001400
-      - WD:Q5058355
+      - WIKIDATA:Q5058355
       # Cell Component
       - UMLSSC:T026
       - UMLSST:celc
@@ -4101,11 +4196,11 @@ classes:
 
   cell:
     is_a: anatomical entity
-    class_uri: GO:0005623
     mappings:
+      - GO:0005623
       - CL:0000000
       - SIO:010001
-      - WD:Q7868
+      - WIKIDATA:Q7868
       # UMLS Semantic Type "Cell"
       - UMLSSC:T025
       - UMLSST:cell
@@ -4116,17 +4211,18 @@ classes:
 
   cell line:
     is_a: organismal entity
-    class_uri: CLO:0000031
+    mappings:
+      - CLO:0000031
     id_prefixes:
       - CLO
 
   gross anatomical structure:
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
-    class_uri: UBERON:0010000
     mappings:
+      - UBERON:0010000
       - SIO:010046
-      - WD:Q4936952
+      - WIKIDATA:Q4936952
       # UMLS Semantic Type "Anatomical Structure"
       - UMLSSC:T017
       - UMLSST:anst

@@ -188,6 +188,10 @@
          },
          "type": "array"
       },
+      "chi_squared_statistic": {
+         "description": "represents the chi-squared statistic computed from observations",
+         "type": "string"
+      },
       "clinical_modifier_qualifier": {
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
          "type": "string"
@@ -214,7 +218,7 @@
          "type": "array"
       },
       "correlated_with": {
-         "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
+         "description": "holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
          "items": {
             "type": "string"
          },
@@ -373,6 +377,13 @@
       },
       "enabled_by": {
          "description": "holds between a process and a physical entity, where the physical entity executes the process",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "enables": {
+         "description": "holds between a physical entity and a process, where the physical entity executes the process",
          "items": {
             "type": "string"
          },
@@ -835,6 +846,10 @@
          },
          "type": "array"
       },
+      "p_value": {
+         "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
+         "type": "string"
+      },
       "paralogous_to": {
          "description": "a homology relationship that holds between entities (typically genes) that diverged after a duplication event.",
          "items": {
@@ -915,7 +930,10 @@
       },
       "provided_by": {
          "description": "connects an association to the agent (person, organization or group) that provided it",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "publications": {
          "description": "connects an association to publications supporting the association",
@@ -1171,6 +1189,10 @@
                },
                "type": "array"
             },
+            "chi_squared_statistic": {
+               "description": "represents the chi-squared statistic computed from observations",
+               "type": "string"
+            },
             "clinical_modifier_qualifier": {
                "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
                "type": "string"
@@ -1210,9 +1232,16 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "p_value": {
+               "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "publications": {
                "description": "connects an association to publications supporting the association",
@@ -1271,6 +1300,13 @@
                   "type": "string"
                },
                "required": true,
+               "type": "array"
+            },
+            "correlated_with": {
+               "description": "holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
+               "items": {
+                  "type": "string"
+               },
                "type": "array"
             },
             "description": {
@@ -1636,13 +1672,6 @@
       "DiseaseOrPhenotypicFeature": {
          "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.",
          "properties": {
-            "correlated_with": {
-               "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_biomarker": {
                "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
                "items": {
@@ -2890,6 +2919,13 @@
                },
                "type": "array"
             },
+            "correlated_with": {
+               "description": "holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "creation_date": {
                "description": "date on which thing was created. This can be applied to nodes or edges",
                "type": "string"
@@ -3208,8 +3244,8 @@
       "Occurrent": {
          "description": "A processual entity",
          "properties": {
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
+            "enables": {
+               "description": "holds between a physical entity and a process, where the physical entity executes the process",
                "items": {
                   "type": "string"
                },

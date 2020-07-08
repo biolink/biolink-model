@@ -31,6 +31,13 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - interacts with
   id: interacts_with
+- cardinality: multi
+  description: holds between any two named thing entities. For example, correlated_with
+    holds between a disease or phenotypic feature and a measurable molecular entity
+    that is used as an indicator of the presence or state of the disease or feature.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - correlated with
+  id: correlated_with
 - description: A grouping for any property that holds between a node and a value
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - node property

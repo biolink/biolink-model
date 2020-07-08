@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -80,12 +77,30 @@ public class Treatment {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasPart", hasPart).append("treats", treats).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Treatment.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("hasPart");
+        sb.append('=');
+        sb.append(((this.hasPart == null)?"<null>":this.hasPart));
+        sb.append(',');
+        sb.append("treats");
+        sb.append('=');
+        sb.append(((this.treats == null)?"<null>":this.treats));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasPart).append(treats).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.hasPart == null)? 0 :this.hasPart.hashCode()));
+        result = ((result* 31)+((this.treats == null)? 0 :this.treats.hashCode()));
+        return result;
     }
 
     @Override
@@ -97,7 +112,7 @@ public class Treatment {
             return false;
         }
         Treatment rhs = ((Treatment) other);
-        return new EqualsBuilder().append(hasPart, rhs.hasPart).append(treats, rhs.treats).isEquals();
+        return (((this.hasPart == rhs.hasPart)||((this.hasPart!= null)&&this.hasPart.equals(rhs.hasPart)))&&((this.treats == rhs.treats)||((this.treats!= null)&&this.treats.equals(rhs.treats))));
     }
 
 }
