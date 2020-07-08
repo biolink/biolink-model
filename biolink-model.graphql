@@ -6,7 +6,7 @@ type ActivityAndBehavior
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -27,7 +27,7 @@ interface AdministrativeEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -43,7 +43,7 @@ type AnatomicalEntity implements ThingWithTaxon, PhysicalEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -138,7 +138,7 @@ type Attribute implements OntologyClass
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -148,14 +148,14 @@ type Attribute implements OntologyClass
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 interface BiologicalEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -172,7 +172,7 @@ type BiologicalProcess implements Occurrent
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -195,7 +195,7 @@ type BiologicalProcessOrActivity implements Occurrent
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -221,7 +221,7 @@ type BiologicalSex
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -231,14 +231,14 @@ type BiologicalSex
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type Carbohydrate
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -307,7 +307,7 @@ type Case
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -359,7 +359,7 @@ type Cell
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -378,7 +378,7 @@ type CellLine
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -425,7 +425,7 @@ type CellularComponent
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -444,7 +444,7 @@ type ChemicalExposure
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -464,7 +464,7 @@ type ChemicalSubstance
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -624,7 +624,7 @@ type ClinicalEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -640,7 +640,7 @@ type ClinicalIntervention
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -659,7 +659,7 @@ type ClinicalModifier
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -669,14 +669,14 @@ type ClinicalModifier
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type ClinicalTrial
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -692,7 +692,7 @@ type CodingSequence
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -762,7 +762,7 @@ type ConfidenceLevel
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -778,7 +778,7 @@ type DataFile
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -794,7 +794,7 @@ type DataSet
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -810,7 +810,7 @@ interface DataSetSummary
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -832,7 +832,7 @@ type DataSetVersion
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -853,7 +853,7 @@ type Device
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -869,7 +869,7 @@ type Disease
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -889,7 +889,7 @@ type DiseaseOrPhenotypicFeature implements ThingWithTaxon
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -988,7 +988,7 @@ interface DistributionLevel
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1010,7 +1010,7 @@ type Drug
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1079,7 +1079,7 @@ type DrugExposure
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1135,7 +1135,7 @@ type EnvironmentalFeature
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1151,7 +1151,7 @@ type EnvironmentalProcess implements Occurrent
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1172,7 +1172,7 @@ type EvidenceType
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1188,7 +1188,7 @@ type Exon
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1273,7 +1273,7 @@ type ExposureEvent
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1328,7 +1328,7 @@ type FrequencyValue
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1338,7 +1338,7 @@ type FrequencyValue
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type FunctionalAssociation
@@ -1360,7 +1360,7 @@ type Gene
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1455,7 +1455,7 @@ type GeneFamily implements GeneGrouping
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1547,7 +1547,7 @@ type GeneOntologyClass
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1557,14 +1557,14 @@ type GeneOntologyClass
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type GeneOrGeneProduct
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1638,7 +1638,7 @@ type GeneProduct
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1712,7 +1712,7 @@ interface GeneProductIsoform
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -1930,7 +1930,7 @@ type Genome
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2000,7 +2000,7 @@ type GenomicEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2089,7 +2089,7 @@ type Genotype
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2242,7 +2242,7 @@ type GenotypicSex
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2252,14 +2252,14 @@ type GenotypicSex
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type GeographicLocation
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2277,7 +2277,7 @@ type GeographicLocationAtTime
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2296,7 +2296,7 @@ type GrossAnatomicalStructure
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2315,7 +2315,7 @@ type Haplotype
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2385,7 +2385,7 @@ type IndividualOrganism implements ThingWithTaxon
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2403,7 +2403,7 @@ interface InformationContentEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2419,7 +2419,7 @@ type LifeStage implements ThingWithTaxon
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2437,7 +2437,7 @@ type MacromolecularComplex
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2507,7 +2507,7 @@ type MacromolecularMachine
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2622,7 +2622,7 @@ type MaterialSample implements SubjectOfInvestigation, PhysicalEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2684,7 +2684,7 @@ type Metabolite
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2753,7 +2753,7 @@ type MicroRNA
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2833,7 +2833,7 @@ type MolecularActivity implements Occurrent
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2856,7 +2856,7 @@ type MolecularEntity implements ThingWithTaxon, PhysicalEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2927,7 +2927,7 @@ type NamedThing
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -2999,7 +2999,7 @@ type NoncodingRNAProduct
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3073,7 +3073,7 @@ type Occurrent
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3100,7 +3100,7 @@ type Onset
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3110,14 +3110,14 @@ type Onset
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type OntologyClass
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3127,14 +3127,14 @@ type OntologyClass
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type OrganismTaxon
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3144,14 +3144,14 @@ type OrganismTaxon
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 interface OrganismalEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3203,7 +3203,7 @@ type Pathway
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3226,7 +3226,7 @@ type Phenomenon
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3247,7 +3247,7 @@ type PhenotypicFeature
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3270,7 +3270,7 @@ type PhenotypicSex
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3280,14 +3280,14 @@ type PhenotypicSex
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type PhysicalEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3303,7 +3303,7 @@ type PhysiologicalProcess
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3326,7 +3326,7 @@ type PlanetaryEntity
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3342,7 +3342,7 @@ type PopulationOfIndividualOrganisms implements ThingWithTaxon
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3375,7 +3375,7 @@ type Procedure
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3396,7 +3396,7 @@ type Protein
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3470,7 +3470,7 @@ type ProteinIsoform implements GeneProductIsoform
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3544,7 +3544,7 @@ type Provider
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3560,7 +3560,7 @@ type Publication
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3586,7 +3586,7 @@ type RelationshipType
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3596,14 +3596,14 @@ type RelationshipType
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type RNAProduct
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3677,7 +3677,7 @@ type RNAProductIsoform implements GeneProductIsoform
   {
     id: String!
     name: SymbolType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3770,7 +3770,7 @@ type SequenceVariant
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3859,7 +3859,7 @@ type SeverityValue
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3869,14 +3869,14 @@ type SeverityValue
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 type SourceFile
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -3922,7 +3922,7 @@ type Transcript
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -4007,7 +4007,7 @@ type Treatment
   {
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -4104,7 +4104,7 @@ type Zygosity
     hasQualitativeValue: NamedThing
     id: String!
     name: LabelType!
-    category: [IriType]!
+    category: [CategoryType]!
     relatedTo: [NamedThing]
     interactsWith: [NamedThing]
     correlatedWith: [NamedThing]
@@ -4114,7 +4114,7 @@ type Zygosity
     fullName: LabelType
     description: NarrativeText
     systematicSynonym: [LabelType]
-    subclassOf: [IriType]
+    subclassOf: [OntologyClass]
   }
 
 

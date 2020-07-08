@@ -190,38 +190,38 @@
         "rdfs",
         "skos",
         "xsd" ;
-    meta:generation_date "2020-07-08 21:31"^^xsd:dateTime ;
+    meta:generation_date "2020-07-08 22:04"^^xsd:dateTime ;
     meta:id <https://w3id.org/biolink/biolink-model> ;
     meta:imports biolinkml:types ;
     meta:metamodel_version "1.4.1" ;
-    meta:prefixes [ meta:prefix_prefix "OBAN" ;
-            meta:prefix_reference <http://purl.org/oban/> ],
+    meta:prefixes [ meta:prefix_prefix "UMLSST" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
         [ meta:prefix_prefix "UMLSSG" ;
             meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ],
-        [ meta:prefix_prefix "SIO" ;
-            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
         [ meta:prefix_prefix "shex" ;
             meta:prefix_reference <http://www.w3.org/ns/shex#> ],
+        [ meta:prefix_prefix "metatype" ;
+            meta:prefix_reference <https://w3id.org/biolink/biolinkml/type/> ],
         [ meta:prefix_prefix "qud" ;
             meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
         [ meta:prefix_prefix "biolinkml" ;
             meta:prefix_reference biolinkml: ],
-        [ meta:prefix_prefix "UMLSST" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
-        [ meta:prefix_prefix "CAID" ;
-            meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
-        [ meta:prefix_prefix "xsd" ;
-            meta:prefix_reference xsd: ],
-        [ meta:prefix_prefix "UMLSSC" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
+        [ meta:prefix_prefix "OBAN" ;
+            meta:prefix_reference <http://purl.org/oban/> ],
+        [ meta:prefix_prefix "gtpo" ;
+            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ],
         [ meta:prefix_prefix "biolink" ;
             meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
+        [ meta:prefix_prefix "CAID" ;
+            meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
+        [ meta:prefix_prefix "UMLSSC" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
+        [ meta:prefix_prefix "xsd" ;
+            meta:prefix_reference xsd: ],
+        [ meta:prefix_prefix "SIO" ;
+            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
         [ meta:prefix_prefix "wgs" ;
-            meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
-        [ meta:prefix_prefix "metatype" ;
-            meta:prefix_reference <https://w3id.org/biolink/biolinkml/type/> ],
-        [ meta:prefix_prefix "gtpo" ;
-            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ] ;
+            meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ] ;
     meta:slots <https://w3id.org/biolink/vocab/actively_involved_in>,
         <https://w3id.org/biolink/vocab/affects>,
         <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -520,13 +520,14 @@
         <https://w3id.org/biolink/vocab/versionOf>,
         <https://w3id.org/biolink/vocab/xenologous_to> ;
     meta:source_file "biolink-model.yaml" ;
-    meta:source_file_date "Wed Jul  8 21:29:39 2020"^^xsd:dateTime ;
-    meta:source_file_size 119561 ;
+    meta:source_file_date "Wed Jul  8 22:03:04 2020"^^xsd:dateTime ;
+    meta:source_file_size 119974 ;
     meta:subsets <https://w3id.org/biolink/vocab/samples>,
         <https://w3id.org/biolink/vocab/testing>,
         <https://w3id.org/biolink/vocab/translator_minimal> ;
     meta:types <https://w3id.org/biolink/vocab/biological_sequence>,
         <https://w3id.org/biolink/vocab/boolean>,
+        <https://w3id.org/biolink/vocab/category_type>,
         <https://w3id.org/biolink/vocab/chemical_formula_value>,
         <https://w3id.org/biolink/vocab/date>,
         <https://w3id.org/biolink/vocab/datetime>,
@@ -1873,6 +1874,14 @@
     meta:required true ;
     meta:slot_uri <https://w3id.org/biolink/vocab/subject> .
 
+<https://w3id.org/biolink/vocab/category_type> a meta:TypeDefinition ;
+    skos:definition "A primitive type in which the value denotes a class within the biolink model. The value must be a URI or a CURIE. In a Neo4j representation, the value should be the CURIE for the biolink class, for example biolink:Gene. For an RDF representation, the value should be a URI such as https://w3id.org/biolink/vocab/Gene" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    meta:base "URIorCURIE" ;
+    meta:repr "str" ;
+    meta:typeof <https://w3id.org/biolink/vocab/uriorcurie> ;
+    meta:uri xsd:anyURI .
+
 <https://w3id.org/biolink/vocab/cell_line_to_disease_or_phenotypic_feature_association_subject> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     meta:alias "subject" ;
@@ -2418,6 +2427,14 @@
     meta:range <https://w3id.org/biolink/vocab/Genotype> ;
     meta:required true ;
     meta:slot_uri <https://w3id.org/biolink/vocab/subject> .
+
+<https://w3id.org/biolink/vocab/iri_type> a meta:TypeDefinition ;
+    skos:definition "An IRI" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    meta:base "URIorCURIE" ;
+    meta:repr "str" ;
+    meta:typeof <https://w3id.org/biolink/vocab/uriorcurie> ;
+    meta:uri xsd:anyURI .
 
 <https://w3id.org/biolink/vocab/macromolecular_machine_to_biological_process_association_object> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -4713,14 +4730,6 @@
     meta:range <https://w3id.org/biolink/vocab/OntologyClass> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/interacting_molecules_category> .
 
-<https://w3id.org/biolink/vocab/iri_type> a meta:TypeDefinition ;
-    skos:definition "An IRI" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    meta:base "URIorCURIE" ;
-    meta:repr "str" ;
-    meta:typeof <https://w3id.org/biolink/vocab/uriorcurie> ;
-    meta:uri xsd:anyURI .
-
 <https://w3id.org/biolink/vocab/manifestation_of> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome" ;
@@ -4758,11 +4767,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "negatively regulates" ;
-            meta:local_name_source "translator" ],
-        [ a meta:LocalName ;
             skos:altLabel "activity directly negatively regulates activity of" ;
-            meta:local_name_source "ro" ] ;
+            meta:local_name_source "ro" ],
+        [ a meta:LocalName ;
+            skos:altLabel "negatively regulates" ;
+            meta:local_name_source "translator" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/negatively_regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/negatively_regulates_entity_to_entity> ;
@@ -4833,11 +4842,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "activity directly positively regulates activity of" ;
-            meta:local_name_source "ro" ],
-        [ a meta:LocalName ;
             skos:altLabel "positively regulates" ;
-            meta:local_name_source "translator" ] ;
+            meta:local_name_source "translator" ],
+        [ a meta:LocalName ;
+            skos:altLabel "activity directly positively regulates activity of" ;
+            meta:local_name_source "ro" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/positively_regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/positively_regulates_entity_to_entity> ;
@@ -7703,25 +7712,6 @@
     meta:range <https://w3id.org/biolink/vocab/Occurrent> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/precedes> .
 
-<https://w3id.org/biolink/vocab/OntologyClass> a meta:ClassDefinition ;
-    skos:definition "a concept or class in an ontology, vocabulary or thesaurus" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    meta:class_uri <https://w3id.org/biolink/vocab/OntologyClass> ;
-    meta:is_a <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:slots <https://w3id.org/biolink/vocab/category>,
-        <https://w3id.org/biolink/vocab/correlated_with>,
-        <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/full_name>,
-        <https://w3id.org/biolink/vocab/id>,
-        <https://w3id.org/biolink/vocab/interacts_with>,
-        <https://w3id.org/biolink/vocab/iri>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/node_property>,
-        <https://w3id.org/biolink/vocab/related_to>,
-        <https://w3id.org/biolink/vocab/subclass_of>,
-        <https://w3id.org/biolink/vocab/synonym>,
-        <https://w3id.org/biolink/vocab/systematic_synonym> .
-
 <https://w3id.org/biolink/vocab/SequenceVariant> a meta:ClassDefinition ;
     skos:altLabel "allele" ;
     skos:definition "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
@@ -7918,6 +7908,25 @@
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/systematic_synonym> .
 
+<https://w3id.org/biolink/vocab/OntologyClass> a meta:ClassDefinition ;
+    skos:definition "a concept or class in an ontology, vocabulary or thesaurus" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    meta:class_uri <https://w3id.org/biolink/vocab/OntologyClass> ;
+    meta:is_a <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slots <https://w3id.org/biolink/vocab/category>,
+        <https://w3id.org/biolink/vocab/correlated_with>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/full_name>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/interacts_with>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/node_property>,
+        <https://w3id.org/biolink/vocab/related_to>,
+        <https://w3id.org/biolink/vocab/subclass_of>,
+        <https://w3id.org/biolink/vocab/synonym>,
+        <https://w3id.org/biolink/vocab/systematic_synonym> .
+
 <https://w3id.org/biolink/vocab/regulates_process_to_process> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002211> ;
@@ -7941,7 +7950,7 @@
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/subclass_of> ;
-    meta:range <https://w3id.org/biolink/vocab/iri_type> ;
+    meta:range <https://w3id.org/biolink/vocab/OntologyClass> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/subclass_of> .
 
 <https://w3id.org/biolink/vocab/onset_qualifier> a meta:SlotDefinition ;
@@ -8819,11 +8828,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "activity directly regulates activity of" ;
-            meta:local_name_source "ro" ],
-        [ a meta:LocalName ;
             skos:altLabel "regulates" ;
-            meta:local_name_source "translator" ] ;
+            meta:local_name_source "translator" ],
+        [ a meta:LocalName ;
+            skos:altLabel "activity directly regulates activity of" ;
+            meta:local_name_source "ro" ] ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
@@ -9023,7 +9032,7 @@
     meta:is_class_field true ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:range <https://w3id.org/biolink/vocab/iri_type> ;
+    meta:range <https://w3id.org/biolink/vocab/category_type> ;
     meta:required true ;
     meta:slot_uri rdf:type .
 
@@ -9334,11 +9343,11 @@
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "node with outgoing relationship" ;
-            meta:local_name_source "neo4j" ],
-        [ a meta:LocalName ;
             skos:altLabel "annotation subject" ;
-            meta:local_name_source "ga4gh" ] ;
+            meta:local_name_source "ga4gh" ],
+        [ a meta:LocalName ;
+            skos:altLabel "node with outgoing relationship" ;
+            meta:local_name_source "neo4j" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:required true ;

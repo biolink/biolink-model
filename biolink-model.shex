@@ -10,6 +10,8 @@ PREFIX metatype: <https://w3id.org/biolink/biolinkml/type/>
 
 <ChemicalFormulaValue> xsd:string
 
+<CategoryType> IRI
+
 <IriType> IRI
 
 <LabelType> xsd:string
@@ -186,7 +188,7 @@ metatype:Nodeidentifier NONLITERAL
              <has_quantitative_value> @<QuantityValue> * ;
              <has_qualitative_value> @<NamedThing> ? ;
              rdfs:label @<LabelType> ;
-             rdf:type @<IriType> + ;
+             rdf:type @<CategoryType> + ;
              <related_to> @<NamedThing> * ;
              <interacts_with> @<NamedThing> * ;
              <correlated_with> @<NamedThing> * ;
@@ -196,7 +198,7 @@ metatype:Nodeidentifier NONLITERAL
              <full_name> @<LabelType> ? ;
              dcterms:description @<NarrativeText> ? ;
              <systematic_synonym> @<LabelType> * ;
-             <subclass_of> @<IriType> *
+             <subclass_of> @<OntologyClass> *
           ) ;
           rdf:type [ <Attribute> ]
        )
@@ -1355,7 +1357,7 @@ metatype:Nodeidentifier NONLITERAL
 <NamedThing>  (
     CLOSED {
        (  $<NamedThing_tes> (  rdfs:label @<LabelType> ;
-             rdf:type @<IriType> + ;
+             rdf:type @<CategoryType> + ;
              <related_to> @<NamedThing> * ;
              <interacts_with> @<NamedThing> * ;
              <correlated_with> @<NamedThing> * ;
@@ -1464,7 +1466,7 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<OntologyClass_tes> (  &<NamedThing_tes> ;
              rdf:type [ <NamedThing> ] ? ;
-             <subclass_of> @<IriType> *
+             <subclass_of> @<OntologyClass> *
           ) ;
           rdf:type [ <OntologyClass> ]
        )
