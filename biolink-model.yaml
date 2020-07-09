@@ -1239,6 +1239,31 @@ slots:
     domain: source file
     mappings:
       - pav:version
+      - owl:versionInfo
+
+  license:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:license
+
+  rights:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:rights
+
+  format:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:format
+
+  created_with:
+    is_a: node property
+    domain: source file
+    mappings:
+      - pav:createdWith
 
   downloadURL:
     is_a: node property
@@ -1247,11 +1272,13 @@ slots:
       - dcterms:downloadURL
 
   distribution:
+    aliases: ['dataset']
     is_a: node property
     domain: data set version
     range: distribution level
     mappings:
       - void:Dataset
+      - dctypes:Dataset
 
   type:
     is_a: node property
@@ -1300,6 +1327,11 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
+    mappings:
+      - oboInOwl:hasExactSynonym
+      - oboInOwl:hasNarrowSynonym
+      - oboInOwl:hasBroadSynonym
+      - oboInOwl:hasRelatedSynonym
 
   category:
     is_a: node property
@@ -1324,6 +1356,7 @@ slots:
 
   description:
     is_a: node property
+    aliases: ['definition']
     domain: named thing
     range: narrative text
     description: >-
@@ -1331,12 +1364,16 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: dcterms:description
+    mappings:
+      - IAO:0000115
+      - skos:definitions
 
   systematic synonym:
     is_a: node property
     domain: named thing
     range: label type
     multivalued: true
+    slot_uri: http://purl.obolibrary.org/obo/go#systematic_synonym
     description: >-
       more commonly used for gene symbols in yeast
 
@@ -1410,8 +1447,8 @@ slots:
       translator: predicate
     slot_uri: rdf:predicate
     mappings:
-      - "owl:annotatedProperty"
-      - "OBAN:association_has_predicate"
+      - owl:annotatedProperty
+      - OBAN:association_has_predicate
 
   negated:
     is_a: association slot
@@ -1469,7 +1506,7 @@ slots:
     description: >-
       date on which thing was created. This can be applied to nodes or edges
     mappings:
-      - dcterms:created
+      - dcterms:createdOn
 
   has receptor:
     is_a: node property
@@ -1835,8 +1872,15 @@ classes:
   clinical modifier:
     description: >-
       Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
-      with respect to severity, laterality, age of onset, and other aspects
+      with respect to severity, laterality, and other aspects
     subclass_of: "HP:0012823"
+    is_a: attribute
+
+  clinical course:
+    description: >-
+      The course a disease typically takes from its onset, progression in time, and eventual resolution or death of
+      the affected individual
+    subclass_of: "HP:0031797"
     is_a: attribute
 
   onset:
@@ -1844,7 +1888,7 @@ classes:
       The age group in which manifestations appear
     mappings:
       - HP:0003674
-    is_a: attribute
+    is_a: clinical course
     
   inheritance:
     description: >-
@@ -1937,12 +1981,16 @@ classes:
       - versionOf
       - type
       - distribution
+    mappings:
+      - dctypes:Dataset
 
   distribution level:
     is_a: data set version
     mixin: true
     slots:
       - downloadURL
+    mappings:
+      - dcat:Distribution
 
   data set summary:
     is_a: data set version
@@ -1989,6 +2037,7 @@ classes:
       - NCBITaxon
     mappings:
       - WIKIDATA:Q16521
+      - NCBITaxon:1
 
   organismal entity:
     description: >-
@@ -2209,13 +2258,13 @@ classes:
       - WBPhenotype
 
   exposure event:
-    aliases: ['environment', 'exposure', 'experimental condition']
+    aliases: ['exposure', 'experimental condition']
     is_a: biological entity
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
     mappings:
-      - SIO:000955
+      - XCO:0000000
 
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
@@ -2472,6 +2521,7 @@ classes:
       A subcellular location, cell type or gross anatomical part
     mappings:
       - SIO:010046
+      - UBERON:0001062
       - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
@@ -2512,7 +2562,8 @@ classes:
 
   environmental feature:
     is_a: planetary entity
-    subclass_of: ENVO:00002297
+    mappings:
+      - ENVO:01000254
 
   clinical entity:
     is_a: named thing
@@ -2550,12 +2601,14 @@ classes:
       - has biological sequence
     mappings:
       - SO:0000110
+      - GENO:0000897
       # Gene or Genome
       - UMLSSC:T028
       - UMLSST:gngm
       # Nucleotide Sequence
       - UMLSSC:T086
       - UMLSST:nusq
+
   genome:
     is_a: genomic entity
     description: >-
@@ -2635,6 +2688,7 @@ classes:
       - WB
       - WormBase
       - FlyBase
+      - FB
       - RGD
       - SGD
       - PomBase
@@ -2663,6 +2717,7 @@ classes:
       - PR:000000001
       - SIO:010043
       - WIKIDATA:Q8054
+      - SO:0000104
       # UMLS Semantic Type: "Amino Acid Sequence"
       - UMLSSC:T087
       - UMLSST:amas
@@ -2732,6 +2787,7 @@ classes:
     id_prefixes:
       - MIR
       - HGNC
+      - WormBase
 
   macromolecular complex:
     is_a: macromolecular machine
@@ -2755,7 +2811,7 @@ classes:
     is_a: molecular entity
     mappings:
       - SIO:001380
-      - "NCIT:C20130"
+      - NCIT:C20130
       - WIKIDATA:Q417841
     mixins:
       - gene grouping
@@ -2816,15 +2872,16 @@ classes:
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
+      - dbSNP
       # - MYVARIANT_HG19 needs IRI mapping
       # - MYVARIANT_HG38 needs IRI mapping
       # - HGVS needs IRI mapping
       - MGI
       - ZFIN
       - FlyBase
+      - FB
       - WB
       - WormBase
-
     alt_descriptions:
       AGR: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
       VMC: "A contiguous change at a Location"
@@ -2844,6 +2901,22 @@ classes:
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
+  snv:
+    aliases: ['single nucleotide variant']
+    is_a: sequence variant
+    description: >-
+      SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
+    mappings:
+      - SO:0001483
+
+  reagent targeted gene:
+    is_a: genomic entity
+    description: >-
+       A gene altered in its expression level in the context of some experiment as a result of being
+       targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
+    mappings:
+      - GENO:0000504
+
   chemical exposure:
 #    aliases: ['drug intake', 'drug dose']
     is_a: exposure event
@@ -2858,6 +2931,7 @@ classes:
 #        multivalued: true
     mappings:
       - ECTO:9000000
+      - SIO:001399
 
   drug exposure:
     aliases: ['drug intake', 'drug dose']
