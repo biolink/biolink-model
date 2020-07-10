@@ -167,6 +167,13 @@
          },
          "type": "array"
       },
+      "caused_by": {
+         "description": "holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "causes": {
          "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",
          "items": {
@@ -180,6 +187,10 @@
             "type": "string"
          },
          "type": "array"
+      },
+      "chi_squared_statistic": {
+         "description": "represents the chi-squared statistic computed from observations",
+         "type": "string"
       },
       "clinical_modifier_qualifier": {
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
@@ -207,7 +218,7 @@
          "type": "array"
       },
       "correlated_with": {
-         "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
+         "description": "holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
          "items": {
             "type": "string"
          },
@@ -360,18 +371,19 @@
       "downloadURL": {
          "type": "string"
       },
-      "drug": {
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
       "edge_label": {
          "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
          "type": "string"
       },
       "enabled_by": {
          "description": "holds between a process and a physical entity, where the physical entity executes the process",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "enables": {
+         "description": "holds between a physical entity and a process, where the physical entity executes the process",
          "items": {
             "type": "string"
          },
@@ -458,18 +470,16 @@
          "description": "number of things with a particular property",
          "type": "string"
       },
+      "has_drug": {
+         "description": "connects an entity to a single drug",
+         "type": "string"
+      },
       "has_evidence": {
          "description": "connects an association to an instance of supporting evidence",
          "type": "string"
       },
-      "has_exposure_parts": {
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
       "has_gene": {
-         "description": "connects and entity to a single gene",
+         "description": "connects an entity to a single gene",
          "type": "string"
       },
       "has_gene_product": {
@@ -541,6 +551,18 @@
          "type": "array"
       },
       "has_quotient": {
+         "type": "string"
+      },
+      "has_receptor": {
+         "description": "the organism or organism part being exposed",
+         "type": "string"
+      },
+      "has_route": {
+         "description": "the process that results in the stressor coming into direct contact with the receptor",
+         "type": "string"
+      },
+      "has_stressor": {
+         "description": "the process or entity that the receptor is being exposed to",
          "type": "string"
       },
       "has_total": {
@@ -824,6 +846,10 @@
          },
          "type": "array"
       },
+      "p_value": {
+         "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
+         "type": "string"
+      },
       "paralogous_to": {
          "description": "a homology relationship that holds between entities (typically genes) that diverged after a duplication event.",
          "items": {
@@ -904,7 +930,10 @@
       },
       "provided_by": {
          "description": "connects an association to the agent (person, organization or group) that provided it",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "publications": {
          "description": "connects an association to publications supporting the association",
@@ -1160,6 +1189,10 @@
                },
                "type": "array"
             },
+            "chi_squared_statistic": {
+               "description": "represents the chi-squared statistic computed from observations",
+               "type": "string"
+            },
             "clinical_modifier_qualifier": {
                "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
                "type": "string"
@@ -1199,9 +1232,16 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "p_value": {
+               "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "publications": {
                "description": "connects an association to publications supporting the association",
@@ -1260,6 +1300,13 @@
                   "type": "string"
                },
                "required": true,
+               "type": "array"
+            },
+            "correlated_with": {
+               "description": "holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
+               "items": {
+                  "type": "string"
+               },
                "type": "array"
             },
             "description": {
@@ -1449,6 +1496,12 @@
          "title": "CellularComponent",
          "type": "object"
       },
+      "ChemicalExposure": {
+         "description": "A chemical exposure is an intake of a particular chemical substance",
+         "properties": {},
+         "title": "ChemicalExposure",
+         "type": "object"
+      },
       "ChemicalSubstance": {
          "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
          "properties": {},
@@ -1619,13 +1672,6 @@
       "DiseaseOrPhenotypicFeature": {
          "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.",
          "properties": {
-            "correlated_with": {
-               "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_biomarker": {
                "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
                "items": {
@@ -1662,20 +1708,25 @@
          "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
          "type": "object"
       },
+      "DiseaseToExposureAssociation": {
+         "description": "An association between an exposure event and a disease",
+         "properties": {
+            "object": {
+               "required": true,
+               "type": "string"
+            },
+            "subject": {
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "DiseaseToExposureAssociation",
+         "type": "object"
+      },
       "DiseaseToPhenotypicFeatureAssociation": {
          "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way",
          "properties": {},
          "title": "DiseaseToPhenotypicFeatureAssociation",
-         "type": "object"
-      },
-      "DistributionLevel": {
-         "description": "",
-         "properties": {
-            "downloadURL": {
-               "type": "string"
-            }
-         },
-         "title": "DistributionLevel",
          "type": "object"
       },
       "DistributionLevel": {
@@ -1697,7 +1748,7 @@
       "DrugExposure": {
          "description": "A drug exposure is an intake of a particular chemical substance",
          "properties": {
-            "drug": {
+            "has_drug": {
                "items": {
                   "type": "string"
                },
@@ -1706,23 +1757,6 @@
             }
          },
          "title": "DrugExposure",
-         "type": "object"
-      },
-      "Environment": {
-         "description": "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
-         "properties": {},
-         "title": "Environment",
-         "type": "object"
-      },
-      "EnvironmentToPhenotypicFeatureAssociation": {
-         "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype",
-         "properties": {
-            "subject": {
-               "required": true,
-               "type": "string"
-            }
-         },
-         "title": "EnvironmentToPhenotypicFeatureAssociation",
          "type": "object"
       },
       "EnvironmentalFeature": {
@@ -1799,8 +1833,38 @@
          "title": "ExonToTranscriptRelationship",
          "type": "object"
       },
+      "ExposureEvent": {
+         "description": "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
+         "properties": {
+            "has_receptor": {
+               "description": "the organism or organism part being exposed",
+               "type": "string"
+            },
+            "has_route": {
+               "description": "the process that results in the stressor coming into direct contact with the receptor",
+               "type": "string"
+            },
+            "has_stressor": {
+               "description": "the process or entity that the receptor is being exposed to",
+               "type": "string"
+            }
+         },
+         "title": "ExposureEvent",
+         "type": "object"
+      },
+      "ExposureEventToPhenotypicFeatureAssociation": {
+         "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype",
+         "properties": {
+            "subject": {
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "ExposureEventToPhenotypicFeatureAssociation",
+         "type": "object"
+      },
       "FrequencyQualifierMixin": {
-         "description": "Qualifier for freqency type associations",
+         "description": "Qualifier for frequency type associations",
          "properties": {
             "frequency_qualifier": {
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
@@ -2820,6 +2884,13 @@
                "required": true,
                "type": "array"
             },
+            "caused_by": {
+               "description": "holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "causes": {
                "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",
                "items": {
@@ -2843,6 +2914,13 @@
             },
             "contributes_to": {
                "description": "holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "correlated_with": {
+               "description": "holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
                "items": {
                   "type": "string"
                },
@@ -2904,8 +2982,12 @@
                "description": "number of things with a particular property",
                "type": "string"
             },
+            "has_drug": {
+               "description": "connects an entity to a single drug",
+               "type": "string"
+            },
             "has_gene": {
-               "description": "connects and entity to a single gene",
+               "description": "connects an entity to a single gene",
                "type": "string"
             },
             "has_molecular_consequence": {
@@ -3162,8 +3244,8 @@
       "Occurrent": {
          "description": "A processual entity",
          "properties": {
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
+            "enables": {
+               "description": "holds between a physical entity and a process, where the physical entity executes the process",
                "items": {
                   "type": "string"
                },
@@ -3490,7 +3572,7 @@
       "Treatment": {
          "description": "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'",
          "properties": {
-            "has_exposure_parts": {
+            "has_part": {
                "items": {
                   "type": "string"
                },
@@ -3574,7 +3656,7 @@
          "type": "object"
       }
    },
-   "title": "biolink_model",
+   "title": "Biolink-Model",
    "type": "object"
 }
 

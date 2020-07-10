@@ -1,9 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -76,12 +73,30 @@ public class GenotypeToPhenotypicFeatureAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("relation", relation).append("subject", subject).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(GenotypeToPhenotypicFeatureAssociation.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("relation");
+        sb.append('=');
+        sb.append(((this.relation == null)?"<null>":this.relation));
+        sb.append(',');
+        sb.append("subject");
+        sb.append('=');
+        sb.append(((this.subject == null)?"<null>":this.subject));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(subject).append(relation).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.subject == null)? 0 :this.subject.hashCode()));
+        result = ((result* 31)+((this.relation == null)? 0 :this.relation.hashCode()));
+        return result;
     }
 
     @Override
@@ -93,7 +108,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
             return false;
         }
         GenotypeToPhenotypicFeatureAssociation rhs = ((GenotypeToPhenotypicFeatureAssociation) other);
-        return new EqualsBuilder().append(subject, rhs.subject).append(relation, rhs.relation).isEquals();
+        return (((this.subject == rhs.subject)||((this.subject!= null)&&this.subject.equals(rhs.subject)))&&((this.relation == rhs.relation)||((this.relation!= null)&&this.relation.equals(rhs.relation))));
     }
 
 }

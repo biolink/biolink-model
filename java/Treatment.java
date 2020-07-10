@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -17,7 +14,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "has_exposure_parts",
+    "has_part",
     "treats"
 })
 public class Treatment {
@@ -27,8 +24,8 @@ public class Treatment {
      * (Required)
      * 
      */
-    @JsonProperty("has_exposure_parts")
-    private List<String> hasExposureParts = new ArrayList<String>();
+    @JsonProperty("has_part")
+    private List<String> hasPart = new ArrayList<String>();
     /**
      * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
      * (Required)
@@ -43,9 +40,9 @@ public class Treatment {
      * (Required)
      * 
      */
-    @JsonProperty("has_exposure_parts")
-    public List<String> getHasExposureParts() {
-        return hasExposureParts;
+    @JsonProperty("has_part")
+    public List<String> getHasPart() {
+        return hasPart;
     }
 
     /**
@@ -53,9 +50,9 @@ public class Treatment {
      * (Required)
      * 
      */
-    @JsonProperty("has_exposure_parts")
-    public void setHasExposureParts(List<String> hasExposureParts) {
-        this.hasExposureParts = hasExposureParts;
+    @JsonProperty("has_part")
+    public void setHasPart(List<String> hasPart) {
+        this.hasPart = hasPart;
     }
 
     /**
@@ -80,12 +77,30 @@ public class Treatment {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasExposureParts", hasExposureParts).append("treats", treats).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Treatment.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("hasPart");
+        sb.append('=');
+        sb.append(((this.hasPart == null)?"<null>":this.hasPart));
+        sb.append(',');
+        sb.append("treats");
+        sb.append('=');
+        sb.append(((this.treats == null)?"<null>":this.treats));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasExposureParts).append(treats).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.hasPart == null)? 0 :this.hasPart.hashCode()));
+        result = ((result* 31)+((this.treats == null)? 0 :this.treats.hashCode()));
+        return result;
     }
 
     @Override
@@ -97,7 +112,7 @@ public class Treatment {
             return false;
         }
         Treatment rhs = ((Treatment) other);
-        return new EqualsBuilder().append(hasExposureParts, rhs.hasExposureParts).append(treats, rhs.treats).isEquals();
+        return (((this.hasPart == rhs.hasPart)||((this.hasPart!= null)&&this.hasPart.equals(rhs.hasPart)))&&((this.treats == rhs.treats)||((this.treats!= null)&&this.treats.equals(rhs.treats))));
     }
 
 }

@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -101,12 +98,35 @@ public class Gene {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("geneAssociatedWithCondition", geneAssociatedWithCondition).append("geneticallyInteractsWith", geneticallyInteractsWith).append("hasGeneProduct", hasGeneProduct).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Gene.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("geneAssociatedWithCondition");
+        sb.append('=');
+        sb.append(((this.geneAssociatedWithCondition == null)?"<null>":this.geneAssociatedWithCondition));
+        sb.append(',');
+        sb.append("geneticallyInteractsWith");
+        sb.append('=');
+        sb.append(((this.geneticallyInteractsWith == null)?"<null>":this.geneticallyInteractsWith));
+        sb.append(',');
+        sb.append("hasGeneProduct");
+        sb.append('=');
+        sb.append(((this.hasGeneProduct == null)?"<null>":this.hasGeneProduct));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasGeneProduct).append(geneAssociatedWithCondition).append(geneticallyInteractsWith).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.hasGeneProduct == null)? 0 :this.hasGeneProduct.hashCode()));
+        result = ((result* 31)+((this.geneAssociatedWithCondition == null)? 0 :this.geneAssociatedWithCondition.hashCode()));
+        result = ((result* 31)+((this.geneticallyInteractsWith == null)? 0 :this.geneticallyInteractsWith.hashCode()));
+        return result;
     }
 
     @Override
@@ -118,7 +138,7 @@ public class Gene {
             return false;
         }
         Gene rhs = ((Gene) other);
-        return new EqualsBuilder().append(hasGeneProduct, rhs.hasGeneProduct).append(geneAssociatedWithCondition, rhs.geneAssociatedWithCondition).append(geneticallyInteractsWith, rhs.geneticallyInteractsWith).isEquals();
+        return ((((this.hasGeneProduct == rhs.hasGeneProduct)||((this.hasGeneProduct!= null)&&this.hasGeneProduct.equals(rhs.hasGeneProduct)))&&((this.geneAssociatedWithCondition == rhs.geneAssociatedWithCondition)||((this.geneAssociatedWithCondition!= null)&&this.geneAssociatedWithCondition.equals(rhs.geneAssociatedWithCondition))))&&((this.geneticallyInteractsWith == rhs.geneticallyInteractsWith)||((this.geneticallyInteractsWith!= null)&&this.geneticallyInteractsWith.equals(rhs.geneticallyInteractsWith))));
     }
 
 }

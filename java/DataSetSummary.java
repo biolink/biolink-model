@@ -1,9 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -33,12 +30,25 @@ public class DataSetSummary {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("sourceWebPage", sourceWebPage).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(DataSetSummary.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("sourceWebPage");
+        sb.append('=');
+        sb.append(((this.sourceWebPage == null)?"<null>":this.sourceWebPage));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(sourceWebPage).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.sourceWebPage == null)? 0 :this.sourceWebPage.hashCode()));
+        return result;
     }
 
     @Override
@@ -50,7 +60,7 @@ public class DataSetSummary {
             return false;
         }
         DataSetSummary rhs = ((DataSetSummary) other);
-        return new EqualsBuilder().append(sourceWebPage, rhs.sourceWebPage).isEquals();
+        return ((this.sourceWebPage == rhs.sourceWebPage)||((this.sourceWebPage!= null)&&this.sourceWebPage.equals(rhs.sourceWebPage)));
     }
 
 }

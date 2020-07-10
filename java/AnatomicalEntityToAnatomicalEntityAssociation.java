@@ -1,9 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -76,12 +73,30 @@ public class AnatomicalEntityToAnatomicalEntityAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("object", object).append("subject", subject).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(AnatomicalEntityToAnatomicalEntityAssociation.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("object");
+        sb.append('=');
+        sb.append(((this.object == null)?"<null>":this.object));
+        sb.append(',');
+        sb.append("subject");
+        sb.append('=');
+        sb.append(((this.subject == null)?"<null>":this.subject));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(subject).append(object).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.subject == null)? 0 :this.subject.hashCode()));
+        result = ((result* 31)+((this.object == null)? 0 :this.object.hashCode()));
+        return result;
     }
 
     @Override
@@ -93,7 +108,7 @@ public class AnatomicalEntityToAnatomicalEntityAssociation {
             return false;
         }
         AnatomicalEntityToAnatomicalEntityAssociation rhs = ((AnatomicalEntityToAnatomicalEntityAssociation) other);
-        return new EqualsBuilder().append(subject, rhs.subject).append(object, rhs.object).isEquals();
+        return (((this.subject == rhs.subject)||((this.subject!= null)&&this.subject.equals(rhs.subject)))&&((this.object == rhs.object)||((this.object!= null)&&this.object.equals(rhs.object))));
     }
 
 }
