@@ -1347,7 +1347,9 @@ metatype:Nodeidentifier NONLITERAL
              <biomarker_for> @<DiseaseOrPhenotypicFeature> * ;
              <in_taxon> @<OrganismTaxon> * ;
              <positively_regulates_entity_to_entity> @<MolecularEntity> * ;
-             <negatively_regulates_entity_to_entity> @<MolecularEntity> *
+             <negatively_regulates_entity_to_entity> @<MolecularEntity> * ;
+             <decreases_molecular_interaction> @<MolecularEntity> * ;
+             <increases_molecular_interaction> @<MolecularEntity> *
           ) ;
           rdf:type [ <MolecularEntity> ]
        )
@@ -1397,6 +1399,24 @@ metatype:Nodeidentifier NONLITERAL
              <manifestation_of> @<Disease> * ;
              <produces> @<NamedThing> * ;
              <same_as> @<NamedThing> * ;
+             <directly_interacts_with> @<NamedThing> * ;
+             <affects_expression_in> @<NamedThing> * ;
+             <is_missense_variant_of> @<NamedThing> * ;
+             <is_synonymous_variant_of> @<NamedThing> * ;
+             <is_nonsense_variant_of> @<NamedThing> * ;
+             <is_splice_site_variant_of> @<NamedThing> * ;
+             <is_nearby_variant_of> @<NamedThing> * ;
+             <is_non_coding_variant_of> @<NamedThing> * ;
+             <disease_has_basis_in> @<NamedThing> * ;
+             <causes_adverse_event> @<NamedThing> * ;
+             <contraindicated_for> @<NamedThing> * ;
+             <has_not_completed> @<NamedThing> * ;
+             <has_completed> @<NamedThing> * ;
+             <produced_by> @<NamedThing> * ;
+             <in_linkage_disequilibrium_with> @<NamedThing> * ;
+             <has_increased_amount> @<NamedThing> * ;
+             <has_decreased_amount> @<NamedThing> * ;
+             <lacks_part> @<NamedThing> * ;
              <type> @metatype:String ? ;
              <creation_date> @metatype:Date ? ;
              <update_date> @metatype:Date ? ;

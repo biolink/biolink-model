@@ -16,20 +16,25 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "actively_involved_in",
     "affects",
+    "affects_expression_in",
     "affects_risk_for",
     "aggregate_statistic",
     "capable_of",
     "category",
     "caused_by",
     "causes",
+    "causes_adverse_event",
     "coexists_with",
     "colocalizes_with",
+    "contraindicated_for",
     "contributes_to",
     "correlated_with",
     "creation_date",
     "derives_from",
     "derives_into",
     "description",
+    "directly_interacts_with",
+    "disease_has_basis_in",
     "disrupts",
     "end_interbase_coordinate",
     "filler",
@@ -37,10 +42,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "genome_build",
     "has_biological_sequence",
     "has_chemical_formula",
+    "has_completed",
     "has_count",
+    "has_decreased_amount",
     "has_drug",
     "has_gene",
+    "has_increased_amount",
     "has_molecular_consequence",
+    "has_not_completed",
     "has_part",
     "has_percentage",
     "has_quotient",
@@ -48,9 +57,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "has_zygosity",
     "homologous_to",
     "id",
+    "in_linkage_disequilibrium_with",
     "interacts_with",
     "interbase_coordinate",
     "iri",
+    "is_missense_variant_of",
+    "is_nearby_variant_of",
+    "is_non_coding_variant_of",
+    "is_nonsense_variant_of",
+    "is_splice_site_variant_of",
+    "is_synonymous_variant_of",
+    "lacks_part",
     "latitude",
     "located_in",
     "location_of",
@@ -71,6 +88,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "positively_regulates",
     "predisposes",
     "prevents",
+    "produced_by",
     "produces",
     "regulates",
     "related_to",
@@ -99,6 +117,13 @@ public class NamedThing {
     @JsonProperty("affects")
     @JsonPropertyDescription("describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.")
     private List<String> affects = new ArrayList<String>();
+    /**
+     * Holds between a variant and an anatomical entity where the expression of the variant is located in.
+     * 
+     */
+    @JsonProperty("affects_expression_in")
+    @JsonPropertyDescription("Holds between a variant and an anatomical entity where the expression of the variant is located in.")
+    private List<String> affectsExpressionIn = new ArrayList<String>();
     /**
      * holds between two entities where exposure to one entity alters the chance of developing the other
      * 
@@ -138,6 +163,13 @@ public class NamedThing {
     @JsonPropertyDescription("holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other")
     private List<String> causes = new ArrayList<String>();
     /**
+     * holds between a drug and a disease or phenotype that can be caused by the drug
+     * 
+     */
+    @JsonProperty("causes_adverse_event")
+    @JsonPropertyDescription("holds between a drug and a disease or phenotype that can be caused by the drug")
+    private List<String> causesAdverseEvent = new ArrayList<String>();
+    /**
      * holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
      * 
      */
@@ -151,6 +183,13 @@ public class NamedThing {
     @JsonProperty("colocalizes_with")
     @JsonPropertyDescription("holds between two entities that are observed to be located in the same place.")
     private List<String> colocalizesWith = new ArrayList<String>();
+    /**
+     * Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
+     * 
+     */
+    @JsonProperty("contraindicated_for")
+    @JsonPropertyDescription("Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.")
+    private List<String> contraindicatedFor = new ArrayList<String>();
     /**
      * holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
      * 
@@ -193,6 +232,20 @@ public class NamedThing {
     @JsonProperty("description")
     @JsonPropertyDescription("a human-readable description of a thing")
     private String description;
+    /**
+     * Holds between molecular entities that phyically and directly interact with each other
+     * 
+     */
+    @JsonProperty("directly_interacts_with")
+    @JsonPropertyDescription("Holds between molecular entities that phyically and directly interact with each other")
+    private List<String> directlyInteractsWith = new ArrayList<String>();
+    /**
+     * A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
+     * 
+     */
+    @JsonProperty("disease_has_basis_in")
+    @JsonPropertyDescription("A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.")
+    private List<String> diseaseHasBasisIn = new ArrayList<String>();
     /**
      * describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
      * 
@@ -238,12 +291,21 @@ public class NamedThing {
     @JsonPropertyDescription("description of chemical compound based on element symbols")
     private String hasChemicalFormula;
     /**
+     * holds between an entity and a process that the entity is capable of and has completed
+     * 
+     */
+    @JsonProperty("has_completed")
+    @JsonPropertyDescription("holds between an entity and a process that the entity is capable of and has completed")
+    private List<String> hasCompleted = new ArrayList<String>();
+    /**
      * number of things with a particular property
      * 
      */
     @JsonProperty("has_count")
     @JsonPropertyDescription("number of things with a particular property")
     private String hasCount;
+    @JsonProperty("has_decreased_amount")
+    private List<String> hasDecreasedAmount = new ArrayList<String>();
     /**
      * connects an entity to a single drug
      * 
@@ -258,6 +320,8 @@ public class NamedThing {
     @JsonProperty("has_gene")
     @JsonPropertyDescription("connects an entity to a single gene")
     private String hasGene;
+    @JsonProperty("has_increased_amount")
+    private List<String> hasIncreasedAmount = new ArrayList<String>();
     /**
      * connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
      * 
@@ -265,6 +329,13 @@ public class NamedThing {
     @JsonProperty("has_molecular_consequence")
     @JsonPropertyDescription("connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583")
     private List<String> hasMolecularConsequence = new ArrayList<String>();
+    /**
+     * holds between an entity and a process that the entity is capable of, but has not completed
+     * 
+     */
+    @JsonProperty("has_not_completed")
+    @JsonPropertyDescription("holds between an entity and a process that the entity is capable of, but has not completed")
+    private List<String> hasNotCompleted = new ArrayList<String>();
     /**
      * holds between wholes and their parts (material entities or processes)
      * 
@@ -306,6 +377,13 @@ public class NamedThing {
     @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
     private String id;
     /**
+     * holds between two sequence variants, the presence of which are correlated in a population
+     * 
+     */
+    @JsonProperty("in_linkage_disequilibrium_with")
+    @JsonPropertyDescription("holds between two sequence variants, the presence of which are correlated in a population")
+    private List<String> inLinkageDisequilibriumWith = new ArrayList<String>();
+    /**
      * holds between any two entities that directly or indirectly interact with each other
      * 
      */
@@ -326,6 +404,50 @@ public class NamedThing {
     @JsonProperty("iri")
     @JsonPropertyDescription("An IRI for the node. This is determined by the id using expansion rules.")
     private String iri;
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved.
+     * 
+     */
+    @JsonProperty("is_missense_variant_of")
+    @JsonPropertyDescription("holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved.")
+    private List<String> isMissenseVariantOf = new ArrayList<String>();
+    /**
+     * holds between a sequence variant and a gene sequence that the variant is genomically close to.
+     * 
+     */
+    @JsonProperty("is_nearby_variant_of")
+    @JsonPropertyDescription("holds between a sequence variant and a gene sequence that the variant is genomically close to.")
+    private List<String> isNearbyVariantOf = new ArrayList<String>();
+    /**
+     * holds between a sequence variant and a gene, where the variant does not affect the coding sequence
+     * 
+     */
+    @JsonProperty("is_non_coding_variant_of")
+    @JsonPropertyDescription("holds between a sequence variant and a gene, where the variant does not affect the coding sequence")
+    private List<String> isNonCodingVariantOf = new ArrayList<String>();
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
+     * 
+     */
+    @JsonProperty("is_nonsense_variant_of")
+    @JsonPropertyDescription("holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon")
+    private List<String> isNonsenseVariantOf = new ArrayList<String>();
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.
+     * 
+     */
+    @JsonProperty("is_splice_site_variant_of")
+    @JsonPropertyDescription("holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.")
+    private List<String> isSpliceSiteVariantOf = new ArrayList<String>();
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
+     * 
+     */
+    @JsonProperty("is_synonymous_variant_of")
+    @JsonPropertyDescription("holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence")
+    private List<String> isSynonymousVariantOf = new ArrayList<String>();
+    @JsonProperty("lacks_part")
+    private List<String> lacksPart = new ArrayList<String>();
     /**
      * latitude
      * 
@@ -457,6 +579,8 @@ public class NamedThing {
     @JsonProperty("prevents")
     @JsonPropertyDescription("holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.")
     private List<String> prevents = new ArrayList<String>();
+    @JsonProperty("produced_by")
+    private List<String> producedBy = new ArrayList<String>();
     /**
      * holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
      * 
@@ -554,6 +678,24 @@ public class NamedThing {
     @JsonProperty("affects")
     public void setAffects(List<String> affects) {
         this.affects = affects;
+    }
+
+    /**
+     * Holds between a variant and an anatomical entity where the expression of the variant is located in.
+     * 
+     */
+    @JsonProperty("affects_expression_in")
+    public List<String> getAffectsExpressionIn() {
+        return affectsExpressionIn;
+    }
+
+    /**
+     * Holds between a variant and an anatomical entity where the expression of the variant is located in.
+     * 
+     */
+    @JsonProperty("affects_expression_in")
+    public void setAffectsExpressionIn(List<String> affectsExpressionIn) {
+        this.affectsExpressionIn = affectsExpressionIn;
     }
 
     /**
@@ -659,6 +801,24 @@ public class NamedThing {
     }
 
     /**
+     * holds between a drug and a disease or phenotype that can be caused by the drug
+     * 
+     */
+    @JsonProperty("causes_adverse_event")
+    public List<String> getCausesAdverseEvent() {
+        return causesAdverseEvent;
+    }
+
+    /**
+     * holds between a drug and a disease or phenotype that can be caused by the drug
+     * 
+     */
+    @JsonProperty("causes_adverse_event")
+    public void setCausesAdverseEvent(List<String> causesAdverseEvent) {
+        this.causesAdverseEvent = causesAdverseEvent;
+    }
+
+    /**
      * holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
      * 
      */
@@ -692,6 +852,24 @@ public class NamedThing {
     @JsonProperty("colocalizes_with")
     public void setColocalizesWith(List<String> colocalizesWith) {
         this.colocalizesWith = colocalizesWith;
+    }
+
+    /**
+     * Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
+     * 
+     */
+    @JsonProperty("contraindicated_for")
+    public List<String> getContraindicatedFor() {
+        return contraindicatedFor;
+    }
+
+    /**
+     * Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
+     * 
+     */
+    @JsonProperty("contraindicated_for")
+    public void setContraindicatedFor(List<String> contraindicatedFor) {
+        this.contraindicatedFor = contraindicatedFor;
     }
 
     /**
@@ -800,6 +978,42 @@ public class NamedThing {
     @JsonProperty("description")
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * Holds between molecular entities that phyically and directly interact with each other
+     * 
+     */
+    @JsonProperty("directly_interacts_with")
+    public List<String> getDirectlyInteractsWith() {
+        return directlyInteractsWith;
+    }
+
+    /**
+     * Holds between molecular entities that phyically and directly interact with each other
+     * 
+     */
+    @JsonProperty("directly_interacts_with")
+    public void setDirectlyInteractsWith(List<String> directlyInteractsWith) {
+        this.directlyInteractsWith = directlyInteractsWith;
+    }
+
+    /**
+     * A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
+     * 
+     */
+    @JsonProperty("disease_has_basis_in")
+    public List<String> getDiseaseHasBasisIn() {
+        return diseaseHasBasisIn;
+    }
+
+    /**
+     * A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
+     * 
+     */
+    @JsonProperty("disease_has_basis_in")
+    public void setDiseaseHasBasisIn(List<String> diseaseHasBasisIn) {
+        this.diseaseHasBasisIn = diseaseHasBasisIn;
     }
 
     /**
@@ -921,6 +1135,24 @@ public class NamedThing {
     }
 
     /**
+     * holds between an entity and a process that the entity is capable of and has completed
+     * 
+     */
+    @JsonProperty("has_completed")
+    public List<String> getHasCompleted() {
+        return hasCompleted;
+    }
+
+    /**
+     * holds between an entity and a process that the entity is capable of and has completed
+     * 
+     */
+    @JsonProperty("has_completed")
+    public void setHasCompleted(List<String> hasCompleted) {
+        this.hasCompleted = hasCompleted;
+    }
+
+    /**
      * number of things with a particular property
      * 
      */
@@ -936,6 +1168,16 @@ public class NamedThing {
     @JsonProperty("has_count")
     public void setHasCount(String hasCount) {
         this.hasCount = hasCount;
+    }
+
+    @JsonProperty("has_decreased_amount")
+    public List<String> getHasDecreasedAmount() {
+        return hasDecreasedAmount;
+    }
+
+    @JsonProperty("has_decreased_amount")
+    public void setHasDecreasedAmount(List<String> hasDecreasedAmount) {
+        this.hasDecreasedAmount = hasDecreasedAmount;
     }
 
     /**
@@ -974,6 +1216,16 @@ public class NamedThing {
         this.hasGene = hasGene;
     }
 
+    @JsonProperty("has_increased_amount")
+    public List<String> getHasIncreasedAmount() {
+        return hasIncreasedAmount;
+    }
+
+    @JsonProperty("has_increased_amount")
+    public void setHasIncreasedAmount(List<String> hasIncreasedAmount) {
+        this.hasIncreasedAmount = hasIncreasedAmount;
+    }
+
     /**
      * connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
      * 
@@ -990,6 +1242,24 @@ public class NamedThing {
     @JsonProperty("has_molecular_consequence")
     public void setHasMolecularConsequence(List<String> hasMolecularConsequence) {
         this.hasMolecularConsequence = hasMolecularConsequence;
+    }
+
+    /**
+     * holds between an entity and a process that the entity is capable of, but has not completed
+     * 
+     */
+    @JsonProperty("has_not_completed")
+    public List<String> getHasNotCompleted() {
+        return hasNotCompleted;
+    }
+
+    /**
+     * holds between an entity and a process that the entity is capable of, but has not completed
+     * 
+     */
+    @JsonProperty("has_not_completed")
+    public void setHasNotCompleted(List<String> hasNotCompleted) {
+        this.hasNotCompleted = hasNotCompleted;
     }
 
     /**
@@ -1105,6 +1375,24 @@ public class NamedThing {
     }
 
     /**
+     * holds between two sequence variants, the presence of which are correlated in a population
+     * 
+     */
+    @JsonProperty("in_linkage_disequilibrium_with")
+    public List<String> getInLinkageDisequilibriumWith() {
+        return inLinkageDisequilibriumWith;
+    }
+
+    /**
+     * holds between two sequence variants, the presence of which are correlated in a population
+     * 
+     */
+    @JsonProperty("in_linkage_disequilibrium_with")
+    public void setInLinkageDisequilibriumWith(List<String> inLinkageDisequilibriumWith) {
+        this.inLinkageDisequilibriumWith = inLinkageDisequilibriumWith;
+    }
+
+    /**
      * holds between any two entities that directly or indirectly interact with each other
      * 
      */
@@ -1156,6 +1444,124 @@ public class NamedThing {
     @JsonProperty("iri")
     public void setIri(String iri) {
         this.iri = iri;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved.
+     * 
+     */
+    @JsonProperty("is_missense_variant_of")
+    public List<String> getIsMissenseVariantOf() {
+        return isMissenseVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved.
+     * 
+     */
+    @JsonProperty("is_missense_variant_of")
+    public void setIsMissenseVariantOf(List<String> isMissenseVariantOf) {
+        this.isMissenseVariantOf = isMissenseVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene sequence that the variant is genomically close to.
+     * 
+     */
+    @JsonProperty("is_nearby_variant_of")
+    public List<String> getIsNearbyVariantOf() {
+        return isNearbyVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene sequence that the variant is genomically close to.
+     * 
+     */
+    @JsonProperty("is_nearby_variant_of")
+    public void setIsNearbyVariantOf(List<String> isNearbyVariantOf) {
+        this.isNearbyVariantOf = isNearbyVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, where the variant does not affect the coding sequence
+     * 
+     */
+    @JsonProperty("is_non_coding_variant_of")
+    public List<String> getIsNonCodingVariantOf() {
+        return isNonCodingVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, where the variant does not affect the coding sequence
+     * 
+     */
+    @JsonProperty("is_non_coding_variant_of")
+    public void setIsNonCodingVariantOf(List<String> isNonCodingVariantOf) {
+        this.isNonCodingVariantOf = isNonCodingVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
+     * 
+     */
+    @JsonProperty("is_nonsense_variant_of")
+    public List<String> getIsNonsenseVariantOf() {
+        return isNonsenseVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
+     * 
+     */
+    @JsonProperty("is_nonsense_variant_of")
+    public void setIsNonsenseVariantOf(List<String> isNonsenseVariantOf) {
+        this.isNonsenseVariantOf = isNonsenseVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.
+     * 
+     */
+    @JsonProperty("is_splice_site_variant_of")
+    public List<String> getIsSpliceSiteVariantOf() {
+        return isSpliceSiteVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.
+     * 
+     */
+    @JsonProperty("is_splice_site_variant_of")
+    public void setIsSpliceSiteVariantOf(List<String> isSpliceSiteVariantOf) {
+        this.isSpliceSiteVariantOf = isSpliceSiteVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
+     * 
+     */
+    @JsonProperty("is_synonymous_variant_of")
+    public List<String> getIsSynonymousVariantOf() {
+        return isSynonymousVariantOf;
+    }
+
+    /**
+     * holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
+     * 
+     */
+    @JsonProperty("is_synonymous_variant_of")
+    public void setIsSynonymousVariantOf(List<String> isSynonymousVariantOf) {
+        this.isSynonymousVariantOf = isSynonymousVariantOf;
+    }
+
+    @JsonProperty("lacks_part")
+    public List<String> getLacksPart() {
+        return lacksPart;
+    }
+
+    @JsonProperty("lacks_part")
+    public void setLacksPart(List<String> lacksPart) {
+        this.lacksPart = lacksPart;
     }
 
     /**
@@ -1504,6 +1910,16 @@ public class NamedThing {
         this.prevents = prevents;
     }
 
+    @JsonProperty("produced_by")
+    public List<String> getProducedBy() {
+        return producedBy;
+    }
+
+    @JsonProperty("produced_by")
+    public void setProducedBy(List<String> producedBy) {
+        this.producedBy = producedBy;
+    }
+
     /**
      * holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
      * 
@@ -1690,6 +2106,10 @@ public class NamedThing {
         sb.append('=');
         sb.append(((this.affects == null)?"<null>":this.affects));
         sb.append(',');
+        sb.append("affectsExpressionIn");
+        sb.append('=');
+        sb.append(((this.affectsExpressionIn == null)?"<null>":this.affectsExpressionIn));
+        sb.append(',');
         sb.append("affectsRiskFor");
         sb.append('=');
         sb.append(((this.affectsRiskFor == null)?"<null>":this.affectsRiskFor));
@@ -1714,6 +2134,10 @@ public class NamedThing {
         sb.append('=');
         sb.append(((this.causes == null)?"<null>":this.causes));
         sb.append(',');
+        sb.append("causesAdverseEvent");
+        sb.append('=');
+        sb.append(((this.causesAdverseEvent == null)?"<null>":this.causesAdverseEvent));
+        sb.append(',');
         sb.append("coexistsWith");
         sb.append('=');
         sb.append(((this.coexistsWith == null)?"<null>":this.coexistsWith));
@@ -1721,6 +2145,10 @@ public class NamedThing {
         sb.append("colocalizesWith");
         sb.append('=');
         sb.append(((this.colocalizesWith == null)?"<null>":this.colocalizesWith));
+        sb.append(',');
+        sb.append("contraindicatedFor");
+        sb.append('=');
+        sb.append(((this.contraindicatedFor == null)?"<null>":this.contraindicatedFor));
         sb.append(',');
         sb.append("contributesTo");
         sb.append('=');
@@ -1745,6 +2173,14 @@ public class NamedThing {
         sb.append("description");
         sb.append('=');
         sb.append(((this.description == null)?"<null>":this.description));
+        sb.append(',');
+        sb.append("directlyInteractsWith");
+        sb.append('=');
+        sb.append(((this.directlyInteractsWith == null)?"<null>":this.directlyInteractsWith));
+        sb.append(',');
+        sb.append("diseaseHasBasisIn");
+        sb.append('=');
+        sb.append(((this.diseaseHasBasisIn == null)?"<null>":this.diseaseHasBasisIn));
         sb.append(',');
         sb.append("disrupts");
         sb.append('=');
@@ -1774,9 +2210,17 @@ public class NamedThing {
         sb.append('=');
         sb.append(((this.hasChemicalFormula == null)?"<null>":this.hasChemicalFormula));
         sb.append(',');
+        sb.append("hasCompleted");
+        sb.append('=');
+        sb.append(((this.hasCompleted == null)?"<null>":this.hasCompleted));
+        sb.append(',');
         sb.append("hasCount");
         sb.append('=');
         sb.append(((this.hasCount == null)?"<null>":this.hasCount));
+        sb.append(',');
+        sb.append("hasDecreasedAmount");
+        sb.append('=');
+        sb.append(((this.hasDecreasedAmount == null)?"<null>":this.hasDecreasedAmount));
         sb.append(',');
         sb.append("hasDrug");
         sb.append('=');
@@ -1786,9 +2230,17 @@ public class NamedThing {
         sb.append('=');
         sb.append(((this.hasGene == null)?"<null>":this.hasGene));
         sb.append(',');
+        sb.append("hasIncreasedAmount");
+        sb.append('=');
+        sb.append(((this.hasIncreasedAmount == null)?"<null>":this.hasIncreasedAmount));
+        sb.append(',');
         sb.append("hasMolecularConsequence");
         sb.append('=');
         sb.append(((this.hasMolecularConsequence == null)?"<null>":this.hasMolecularConsequence));
+        sb.append(',');
+        sb.append("hasNotCompleted");
+        sb.append('=');
+        sb.append(((this.hasNotCompleted == null)?"<null>":this.hasNotCompleted));
         sb.append(',');
         sb.append("hasPart");
         sb.append('=');
@@ -1818,6 +2270,10 @@ public class NamedThing {
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));
         sb.append(',');
+        sb.append("inLinkageDisequilibriumWith");
+        sb.append('=');
+        sb.append(((this.inLinkageDisequilibriumWith == null)?"<null>":this.inLinkageDisequilibriumWith));
+        sb.append(',');
         sb.append("interactsWith");
         sb.append('=');
         sb.append(((this.interactsWith == null)?"<null>":this.interactsWith));
@@ -1829,6 +2285,34 @@ public class NamedThing {
         sb.append("iri");
         sb.append('=');
         sb.append(((this.iri == null)?"<null>":this.iri));
+        sb.append(',');
+        sb.append("isMissenseVariantOf");
+        sb.append('=');
+        sb.append(((this.isMissenseVariantOf == null)?"<null>":this.isMissenseVariantOf));
+        sb.append(',');
+        sb.append("isNearbyVariantOf");
+        sb.append('=');
+        sb.append(((this.isNearbyVariantOf == null)?"<null>":this.isNearbyVariantOf));
+        sb.append(',');
+        sb.append("isNonCodingVariantOf");
+        sb.append('=');
+        sb.append(((this.isNonCodingVariantOf == null)?"<null>":this.isNonCodingVariantOf));
+        sb.append(',');
+        sb.append("isNonsenseVariantOf");
+        sb.append('=');
+        sb.append(((this.isNonsenseVariantOf == null)?"<null>":this.isNonsenseVariantOf));
+        sb.append(',');
+        sb.append("isSpliceSiteVariantOf");
+        sb.append('=');
+        sb.append(((this.isSpliceSiteVariantOf == null)?"<null>":this.isSpliceSiteVariantOf));
+        sb.append(',');
+        sb.append("isSynonymousVariantOf");
+        sb.append('=');
+        sb.append(((this.isSynonymousVariantOf == null)?"<null>":this.isSynonymousVariantOf));
+        sb.append(',');
+        sb.append("lacksPart");
+        sb.append('=');
+        sb.append(((this.lacksPart == null)?"<null>":this.lacksPart));
         sb.append(',');
         sb.append("latitude");
         sb.append('=');
@@ -1910,6 +2394,10 @@ public class NamedThing {
         sb.append('=');
         sb.append(((this.prevents == null)?"<null>":this.prevents));
         sb.append(',');
+        sb.append("producedBy");
+        sb.append('=');
+        sb.append(((this.producedBy == null)?"<null>":this.producedBy));
+        sb.append(',');
         sb.append("produces");
         sb.append('=');
         sb.append(((this.produces == null)?"<null>":this.produces));
@@ -1965,6 +2453,7 @@ public class NamedThing {
     @Override
     public int hashCode() {
         int result = 1;
+        result = ((result* 31)+((this.directlyInteractsWith == null)? 0 :this.directlyInteractsWith.hashCode()));
         result = ((result* 31)+((this.partOf == null)? 0 :this.partOf.hashCode()));
         result = ((result* 31)+((this.capableOf == null)? 0 :this.capableOf.hashCode()));
         result = ((result* 31)+((this.systematicSynonym == null)? 0 :this.systematicSynonym.hashCode()));
@@ -1976,29 +2465,40 @@ public class NamedThing {
         result = ((result* 31)+((this.positivelyRegulates == null)? 0 :this.positivelyRegulates.hashCode()));
         result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
         result = ((result* 31)+((this.hasTotal == null)? 0 :this.hasTotal.hashCode()));
+        result = ((result* 31)+((this.producedBy == null)? 0 :this.producedBy.hashCode()));
         result = ((result* 31)+((this.relatedTo == null)? 0 :this.relatedTo.hashCode()));
         result = ((result* 31)+((this.interactsWith == null)? 0 :this.interactsWith.hashCode()));
         result = ((result* 31)+((this.predisposes == null)? 0 :this.predisposes.hashCode()));
         result = ((result* 31)+((this.overlaps == null)? 0 :this.overlaps.hashCode()));
         result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
+        result = ((result* 31)+((this.isNonCodingVariantOf == null)? 0 :this.isNonCodingVariantOf.hashCode()));
+        result = ((result* 31)+((this.hasIncreasedAmount == null)? 0 :this.hasIncreasedAmount.hashCode()));
         result = ((result* 31)+((this.hasMolecularConsequence == null)? 0 :this.hasMolecularConsequence.hashCode()));
+        result = ((result* 31)+((this.hasNotCompleted == null)? 0 :this.hasNotCompleted.hashCode()));
         result = ((result* 31)+((this.longitude == null)? 0 :this.longitude.hashCode()));
         result = ((result* 31)+((this.phase == null)? 0 :this.phase.hashCode()));
         result = ((result* 31)+((this.nodeProperty == null)? 0 :this.nodeProperty.hashCode()));
         result = ((result* 31)+((this.hasPart == null)? 0 :this.hasPart.hashCode()));
+        result = ((result* 31)+((this.contraindicatedFor == null)? 0 :this.contraindicatedFor.hashCode()));
         result = ((result* 31)+((this.causedBy == null)? 0 :this.causedBy.hashCode()));
+        result = ((result* 31)+((this.causesAdverseEvent == null)? 0 :this.causesAdverseEvent.hashCode()));
         result = ((result* 31)+((this.creationDate == null)? 0 :this.creationDate.hashCode()));
         result = ((result* 31)+((this.contributesTo == null)? 0 :this.contributesTo.hashCode()));
+        result = ((result* 31)+((this.isNonsenseVariantOf == null)? 0 :this.isNonsenseVariantOf.hashCode()));
         result = ((result* 31)+((this.paralogousTo == null)? 0 :this.paralogousTo.hashCode()));
         result = ((result* 31)+((this.physicallyInteractsWith == null)? 0 :this.physicallyInteractsWith.hashCode()));
+        result = ((result* 31)+((this.diseaseHasBasisIn == null)? 0 :this.diseaseHasBasisIn.hashCode()));
         result = ((result* 31)+((this.locatedIn == null)? 0 :this.locatedIn.hashCode()));
         result = ((result* 31)+((this.manifestationOf == null)? 0 :this.manifestationOf.hashCode()));
+        result = ((result* 31)+((this.affectsExpressionIn == null)? 0 :this.affectsExpressionIn.hashCode()));
         result = ((result* 31)+((this.derivesInto == null)? 0 :this.derivesInto.hashCode()));
         result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
         result = ((result* 31)+((this.produces == null)? 0 :this.produces.hashCode()));
+        result = ((result* 31)+((this.isSynonymousVariantOf == null)? 0 :this.isSynonymousVariantOf.hashCode()));
         result = ((result* 31)+((this.modelOf == null)? 0 :this.modelOf.hashCode()));
         result = ((result* 31)+((this.correlatedWith == null)? 0 :this.correlatedWith.hashCode()));
         result = ((result* 31)+((this.updateDate == null)? 0 :this.updateDate.hashCode()));
+        result = ((result* 31)+((this.lacksPart == null)? 0 :this.lacksPart.hashCode()));
         result = ((result* 31)+((this.latitude == null)? 0 :this.latitude.hashCode()));
         result = ((result* 31)+((this.activelyInvolvedIn == null)? 0 :this.activelyInvolvedIn.hashCode()));
         result = ((result* 31)+((this.description == null)? 0 :this.description.hashCode()));
@@ -2009,6 +2509,7 @@ public class NamedThing {
         result = ((result* 31)+((this.synonym == null)? 0 :this.synonym.hashCode()));
         result = ((result* 31)+((this.hasQuotient == null)? 0 :this.hasQuotient.hashCode()));
         result = ((result* 31)+((this.causes == null)? 0 :this.causes.hashCode()));
+        result = ((result* 31)+((this.isSpliceSiteVariantOf == null)? 0 :this.isSpliceSiteVariantOf.hashCode()));
         result = ((result* 31)+((this.hasBiologicalSequence == null)? 0 :this.hasBiologicalSequence.hashCode()));
         result = ((result* 31)+((this.hasDrug == null)? 0 :this.hasDrug.hashCode()));
         result = ((result* 31)+((this.aggregateStatistic == null)? 0 :this.aggregateStatistic.hashCode()));
@@ -2021,8 +2522,12 @@ public class NamedThing {
         result = ((result* 31)+((this.derivesFrom == null)? 0 :this.derivesFrom.hashCode()));
         result = ((result* 31)+((this.affects == null)? 0 :this.affects.hashCode()));
         result = ((result* 31)+((this.fullName == null)? 0 :this.fullName.hashCode()));
+        result = ((result* 31)+((this.isMissenseVariantOf == null)? 0 :this.isMissenseVariantOf.hashCode()));
         result = ((result* 31)+((this.orthologousTo == null)? 0 :this.orthologousTo.hashCode()));
+        result = ((result* 31)+((this.hasDecreasedAmount == null)? 0 :this.hasDecreasedAmount.hashCode()));
+        result = ((result* 31)+((this.isNearbyVariantOf == null)? 0 :this.isNearbyVariantOf.hashCode()));
         result = ((result* 31)+((this.xenologousTo == null)? 0 :this.xenologousTo.hashCode()));
+        result = ((result* 31)+((this.hasCompleted == null)? 0 :this.hasCompleted.hashCode()));
         result = ((result* 31)+((this.hasPercentage == null)? 0 :this.hasPercentage.hashCode()));
         result = ((result* 31)+((this.participatesIn == null)? 0 :this.participatesIn.hashCode()));
         result = ((result* 31)+((this.regulates == null)? 0 :this.regulates.hashCode()));
@@ -2030,6 +2535,7 @@ public class NamedThing {
         result = ((result* 31)+((this.hasZygosity == null)? 0 :this.hasZygosity.hashCode()));
         result = ((result* 31)+((this.negativelyRegulates == null)? 0 :this.negativelyRegulates.hashCode()));
         result = ((result* 31)+((this.filler == null)? 0 :this.filler.hashCode()));
+        result = ((result* 31)+((this.inLinkageDisequilibriumWith == null)? 0 :this.inLinkageDisequilibriumWith.hashCode()));
         result = ((result* 31)+((this.category == null)? 0 :this.category.hashCode()));
         result = ((result* 31)+((this.sameAs == null)? 0 :this.sameAs.hashCode()));
         result = ((result* 31)+((this.timepoint == null)? 0 :this.timepoint.hashCode()));
@@ -2045,7 +2551,7 @@ public class NamedThing {
             return false;
         }
         NamedThing rhs = ((NamedThing) other);
-        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((this.partOf == rhs.partOf)||((this.partOf!= null)&&this.partOf.equals(rhs.partOf)))&&((this.capableOf == rhs.capableOf)||((this.capableOf!= null)&&this.capableOf.equals(rhs.capableOf))))&&((this.systematicSynonym == rhs.systematicSynonym)||((this.systematicSynonym!= null)&&this.systematicSynonym.equals(rhs.systematicSynonym))))&&((this.hasChemicalFormula == rhs.hasChemicalFormula)||((this.hasChemicalFormula!= null)&&this.hasChemicalFormula.equals(rhs.hasChemicalFormula))))&&((this.interbaseCoordinate == rhs.interbaseCoordinate)||((this.interbaseCoordinate!= null)&&this.interbaseCoordinate.equals(rhs.interbaseCoordinate))))&&((this.locationOf == rhs.locationOf)||((this.locationOf!= null)&&this.locationOf.equals(rhs.locationOf))))&&((this.prevents == rhs.prevents)||((this.prevents!= null)&&this.prevents.equals(rhs.prevents))))&&((this.coexistsWith == rhs.coexistsWith)||((this.coexistsWith!= null)&&this.coexistsWith.equals(rhs.coexistsWith))))&&((this.positivelyRegulates == rhs.positivelyRegulates)||((this.positivelyRegulates!= null)&&this.positivelyRegulates.equals(rhs.positivelyRegulates))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.hasTotal == rhs.hasTotal)||((this.hasTotal!= null)&&this.hasTotal.equals(rhs.hasTotal))))&&((this.relatedTo == rhs.relatedTo)||((this.relatedTo!= null)&&this.relatedTo.equals(rhs.relatedTo))))&&((this.interactsWith == rhs.interactsWith)||((this.interactsWith!= null)&&this.interactsWith.equals(rhs.interactsWith))))&&((this.predisposes == rhs.predisposes)||((this.predisposes!= null)&&this.predisposes.equals(rhs.predisposes))))&&((this.overlaps == rhs.overlaps)||((this.overlaps!= null)&&this.overlaps.equals(rhs.overlaps))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.hasMolecularConsequence == rhs.hasMolecularConsequence)||((this.hasMolecularConsequence!= null)&&this.hasMolecularConsequence.equals(rhs.hasMolecularConsequence))))&&((this.longitude == rhs.longitude)||((this.longitude!= null)&&this.longitude.equals(rhs.longitude))))&&((this.phase == rhs.phase)||((this.phase!= null)&&this.phase.equals(rhs.phase))))&&((this.nodeProperty == rhs.nodeProperty)||((this.nodeProperty!= null)&&this.nodeProperty.equals(rhs.nodeProperty))))&&((this.hasPart == rhs.hasPart)||((this.hasPart!= null)&&this.hasPart.equals(rhs.hasPart))))&&((this.causedBy == rhs.causedBy)||((this.causedBy!= null)&&this.causedBy.equals(rhs.causedBy))))&&((this.creationDate == rhs.creationDate)||((this.creationDate!= null)&&this.creationDate.equals(rhs.creationDate))))&&((this.contributesTo == rhs.contributesTo)||((this.contributesTo!= null)&&this.contributesTo.equals(rhs.contributesTo))))&&((this.paralogousTo == rhs.paralogousTo)||((this.paralogousTo!= null)&&this.paralogousTo.equals(rhs.paralogousTo))))&&((this.physicallyInteractsWith == rhs.physicallyInteractsWith)||((this.physicallyInteractsWith!= null)&&this.physicallyInteractsWith.equals(rhs.physicallyInteractsWith))))&&((this.locatedIn == rhs.locatedIn)||((this.locatedIn!= null)&&this.locatedIn.equals(rhs.locatedIn))))&&((this.manifestationOf == rhs.manifestationOf)||((this.manifestationOf!= null)&&this.manifestationOf.equals(rhs.manifestationOf))))&&((this.derivesInto == rhs.derivesInto)||((this.derivesInto!= null)&&this.derivesInto.equals(rhs.derivesInto))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.produces == rhs.produces)||((this.produces!= null)&&this.produces.equals(rhs.produces))))&&((this.modelOf == rhs.modelOf)||((this.modelOf!= null)&&this.modelOf.equals(rhs.modelOf))))&&((this.correlatedWith == rhs.correlatedWith)||((this.correlatedWith!= null)&&this.correlatedWith.equals(rhs.correlatedWith))))&&((this.updateDate == rhs.updateDate)||((this.updateDate!= null)&&this.updateDate.equals(rhs.updateDate))))&&((this.latitude == rhs.latitude)||((this.latitude!= null)&&this.latitude.equals(rhs.latitude))))&&((this.activelyInvolvedIn == rhs.activelyInvolvedIn)||((this.activelyInvolvedIn!= null)&&this.activelyInvolvedIn.equals(rhs.activelyInvolvedIn))))&&((this.description == rhs.description)||((this.description!= null)&&this.description.equals(rhs.description))))&&((this.hasGene == rhs.hasGene)||((this.hasGene!= null)&&this.hasGene.equals(rhs.hasGene))))&&((this.hasCount == rhs.hasCount)||((this.hasCount!= null)&&this.hasCount.equals(rhs.hasCount))))&&((this.occursIn == rhs.occursIn)||((this.occursIn!= null)&&this.occursIn.equals(rhs.occursIn))))&&((this.startInterbaseCoordinate == rhs.startInterbaseCoordinate)||((this.startInterbaseCoordinate!= null)&&this.startInterbaseCoordinate.equals(rhs.startInterbaseCoordinate))))&&((this.synonym == rhs.synonym)||((this.synonym!= null)&&this.synonym.equals(rhs.synonym))))&&((this.hasQuotient == rhs.hasQuotient)||((this.hasQuotient!= null)&&this.hasQuotient.equals(rhs.hasQuotient))))&&((this.causes == rhs.causes)||((this.causes!= null)&&this.causes.equals(rhs.causes))))&&((this.hasBiologicalSequence == rhs.hasBiologicalSequence)||((this.hasBiologicalSequence!= null)&&this.hasBiologicalSequence.equals(rhs.hasBiologicalSequence))))&&((this.hasDrug == rhs.hasDrug)||((this.hasDrug!= null)&&this.hasDrug.equals(rhs.hasDrug))))&&((this.aggregateStatistic == rhs.aggregateStatistic)||((this.aggregateStatistic!= null)&&this.aggregateStatistic.equals(rhs.aggregateStatistic))))&&((this.affectsRiskFor == rhs.affectsRiskFor)||((this.affectsRiskFor!= null)&&this.affectsRiskFor.equals(rhs.affectsRiskFor))))&&((this.endInterbaseCoordinate == rhs.endInterbaseCoordinate)||((this.endInterbaseCoordinate!= null)&&this.endInterbaseCoordinate.equals(rhs.endInterbaseCoordinate))))&&((this.disrupts == rhs.disrupts)||((this.disrupts!= null)&&this.disrupts.equals(rhs.disrupts))))&&((this.iri == rhs.iri)||((this.iri!= null)&&this.iri.equals(rhs.iri))))&&((this.homologousTo == rhs.homologousTo)||((this.homologousTo!= null)&&this.homologousTo.equals(rhs.homologousTo))))&&((this.colocalizesWith == rhs.colocalizesWith)||((this.colocalizesWith!= null)&&this.colocalizesWith.equals(rhs.colocalizesWith))))&&((this.derivesFrom == rhs.derivesFrom)||((this.derivesFrom!= null)&&this.derivesFrom.equals(rhs.derivesFrom))))&&((this.affects == rhs.affects)||((this.affects!= null)&&this.affects.equals(rhs.affects))))&&((this.fullName == rhs.fullName)||((this.fullName!= null)&&this.fullName.equals(rhs.fullName))))&&((this.orthologousTo == rhs.orthologousTo)||((this.orthologousTo!= null)&&this.orthologousTo.equals(rhs.orthologousTo))))&&((this.xenologousTo == rhs.xenologousTo)||((this.xenologousTo!= null)&&this.xenologousTo.equals(rhs.xenologousTo))))&&((this.hasPercentage == rhs.hasPercentage)||((this.hasPercentage!= null)&&this.hasPercentage.equals(rhs.hasPercentage))))&&((this.participatesIn == rhs.participatesIn)||((this.participatesIn!= null)&&this.participatesIn.equals(rhs.participatesIn))))&&((this.regulates == rhs.regulates)||((this.regulates!= null)&&this.regulates.equals(rhs.regulates))))&&((this.genomeBuild == rhs.genomeBuild)||((this.genomeBuild!= null)&&this.genomeBuild.equals(rhs.genomeBuild))))&&((this.hasZygosity == rhs.hasZygosity)||((this.hasZygosity!= null)&&this.hasZygosity.equals(rhs.hasZygosity))))&&((this.negativelyRegulates == rhs.negativelyRegulates)||((this.negativelyRegulates!= null)&&this.negativelyRegulates.equals(rhs.negativelyRegulates))))&&((this.filler == rhs.filler)||((this.filler!= null)&&this.filler.equals(rhs.filler))))&&((this.category == rhs.category)||((this.category!= null)&&this.category.equals(rhs.category))))&&((this.sameAs == rhs.sameAs)||((this.sameAs!= null)&&this.sameAs.equals(rhs.sameAs))))&&((this.timepoint == rhs.timepoint)||((this.timepoint!= null)&&this.timepoint.equals(rhs.timepoint))));
+        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((this.directlyInteractsWith == rhs.directlyInteractsWith)||((this.directlyInteractsWith!= null)&&this.directlyInteractsWith.equals(rhs.directlyInteractsWith)))&&((this.partOf == rhs.partOf)||((this.partOf!= null)&&this.partOf.equals(rhs.partOf))))&&((this.capableOf == rhs.capableOf)||((this.capableOf!= null)&&this.capableOf.equals(rhs.capableOf))))&&((this.systematicSynonym == rhs.systematicSynonym)||((this.systematicSynonym!= null)&&this.systematicSynonym.equals(rhs.systematicSynonym))))&&((this.hasChemicalFormula == rhs.hasChemicalFormula)||((this.hasChemicalFormula!= null)&&this.hasChemicalFormula.equals(rhs.hasChemicalFormula))))&&((this.interbaseCoordinate == rhs.interbaseCoordinate)||((this.interbaseCoordinate!= null)&&this.interbaseCoordinate.equals(rhs.interbaseCoordinate))))&&((this.locationOf == rhs.locationOf)||((this.locationOf!= null)&&this.locationOf.equals(rhs.locationOf))))&&((this.prevents == rhs.prevents)||((this.prevents!= null)&&this.prevents.equals(rhs.prevents))))&&((this.coexistsWith == rhs.coexistsWith)||((this.coexistsWith!= null)&&this.coexistsWith.equals(rhs.coexistsWith))))&&((this.positivelyRegulates == rhs.positivelyRegulates)||((this.positivelyRegulates!= null)&&this.positivelyRegulates.equals(rhs.positivelyRegulates))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.hasTotal == rhs.hasTotal)||((this.hasTotal!= null)&&this.hasTotal.equals(rhs.hasTotal))))&&((this.producedBy == rhs.producedBy)||((this.producedBy!= null)&&this.producedBy.equals(rhs.producedBy))))&&((this.relatedTo == rhs.relatedTo)||((this.relatedTo!= null)&&this.relatedTo.equals(rhs.relatedTo))))&&((this.interactsWith == rhs.interactsWith)||((this.interactsWith!= null)&&this.interactsWith.equals(rhs.interactsWith))))&&((this.predisposes == rhs.predisposes)||((this.predisposes!= null)&&this.predisposes.equals(rhs.predisposes))))&&((this.overlaps == rhs.overlaps)||((this.overlaps!= null)&&this.overlaps.equals(rhs.overlaps))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.isNonCodingVariantOf == rhs.isNonCodingVariantOf)||((this.isNonCodingVariantOf!= null)&&this.isNonCodingVariantOf.equals(rhs.isNonCodingVariantOf))))&&((this.hasIncreasedAmount == rhs.hasIncreasedAmount)||((this.hasIncreasedAmount!= null)&&this.hasIncreasedAmount.equals(rhs.hasIncreasedAmount))))&&((this.hasMolecularConsequence == rhs.hasMolecularConsequence)||((this.hasMolecularConsequence!= null)&&this.hasMolecularConsequence.equals(rhs.hasMolecularConsequence))))&&((this.hasNotCompleted == rhs.hasNotCompleted)||((this.hasNotCompleted!= null)&&this.hasNotCompleted.equals(rhs.hasNotCompleted))))&&((this.longitude == rhs.longitude)||((this.longitude!= null)&&this.longitude.equals(rhs.longitude))))&&((this.phase == rhs.phase)||((this.phase!= null)&&this.phase.equals(rhs.phase))))&&((this.nodeProperty == rhs.nodeProperty)||((this.nodeProperty!= null)&&this.nodeProperty.equals(rhs.nodeProperty))))&&((this.hasPart == rhs.hasPart)||((this.hasPart!= null)&&this.hasPart.equals(rhs.hasPart))))&&((this.contraindicatedFor == rhs.contraindicatedFor)||((this.contraindicatedFor!= null)&&this.contraindicatedFor.equals(rhs.contraindicatedFor))))&&((this.causedBy == rhs.causedBy)||((this.causedBy!= null)&&this.causedBy.equals(rhs.causedBy))))&&((this.causesAdverseEvent == rhs.causesAdverseEvent)||((this.causesAdverseEvent!= null)&&this.causesAdverseEvent.equals(rhs.causesAdverseEvent))))&&((this.creationDate == rhs.creationDate)||((this.creationDate!= null)&&this.creationDate.equals(rhs.creationDate))))&&((this.contributesTo == rhs.contributesTo)||((this.contributesTo!= null)&&this.contributesTo.equals(rhs.contributesTo))))&&((this.isNonsenseVariantOf == rhs.isNonsenseVariantOf)||((this.isNonsenseVariantOf!= null)&&this.isNonsenseVariantOf.equals(rhs.isNonsenseVariantOf))))&&((this.paralogousTo == rhs.paralogousTo)||((this.paralogousTo!= null)&&this.paralogousTo.equals(rhs.paralogousTo))))&&((this.physicallyInteractsWith == rhs.physicallyInteractsWith)||((this.physicallyInteractsWith!= null)&&this.physicallyInteractsWith.equals(rhs.physicallyInteractsWith))))&&((this.diseaseHasBasisIn == rhs.diseaseHasBasisIn)||((this.diseaseHasBasisIn!= null)&&this.diseaseHasBasisIn.equals(rhs.diseaseHasBasisIn))))&&((this.locatedIn == rhs.locatedIn)||((this.locatedIn!= null)&&this.locatedIn.equals(rhs.locatedIn))))&&((this.manifestationOf == rhs.manifestationOf)||((this.manifestationOf!= null)&&this.manifestationOf.equals(rhs.manifestationOf))))&&((this.affectsExpressionIn == rhs.affectsExpressionIn)||((this.affectsExpressionIn!= null)&&this.affectsExpressionIn.equals(rhs.affectsExpressionIn))))&&((this.derivesInto == rhs.derivesInto)||((this.derivesInto!= null)&&this.derivesInto.equals(rhs.derivesInto))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.produces == rhs.produces)||((this.produces!= null)&&this.produces.equals(rhs.produces))))&&((this.isSynonymousVariantOf == rhs.isSynonymousVariantOf)||((this.isSynonymousVariantOf!= null)&&this.isSynonymousVariantOf.equals(rhs.isSynonymousVariantOf))))&&((this.modelOf == rhs.modelOf)||((this.modelOf!= null)&&this.modelOf.equals(rhs.modelOf))))&&((this.correlatedWith == rhs.correlatedWith)||((this.correlatedWith!= null)&&this.correlatedWith.equals(rhs.correlatedWith))))&&((this.updateDate == rhs.updateDate)||((this.updateDate!= null)&&this.updateDate.equals(rhs.updateDate))))&&((this.lacksPart == rhs.lacksPart)||((this.lacksPart!= null)&&this.lacksPart.equals(rhs.lacksPart))))&&((this.latitude == rhs.latitude)||((this.latitude!= null)&&this.latitude.equals(rhs.latitude))))&&((this.activelyInvolvedIn == rhs.activelyInvolvedIn)||((this.activelyInvolvedIn!= null)&&this.activelyInvolvedIn.equals(rhs.activelyInvolvedIn))))&&((this.description == rhs.description)||((this.description!= null)&&this.description.equals(rhs.description))))&&((this.hasGene == rhs.hasGene)||((this.hasGene!= null)&&this.hasGene.equals(rhs.hasGene))))&&((this.hasCount == rhs.hasCount)||((this.hasCount!= null)&&this.hasCount.equals(rhs.hasCount))))&&((this.occursIn == rhs.occursIn)||((this.occursIn!= null)&&this.occursIn.equals(rhs.occursIn))))&&((this.startInterbaseCoordinate == rhs.startInterbaseCoordinate)||((this.startInterbaseCoordinate!= null)&&this.startInterbaseCoordinate.equals(rhs.startInterbaseCoordinate))))&&((this.synonym == rhs.synonym)||((this.synonym!= null)&&this.synonym.equals(rhs.synonym))))&&((this.hasQuotient == rhs.hasQuotient)||((this.hasQuotient!= null)&&this.hasQuotient.equals(rhs.hasQuotient))))&&((this.causes == rhs.causes)||((this.causes!= null)&&this.causes.equals(rhs.causes))))&&((this.isSpliceSiteVariantOf == rhs.isSpliceSiteVariantOf)||((this.isSpliceSiteVariantOf!= null)&&this.isSpliceSiteVariantOf.equals(rhs.isSpliceSiteVariantOf))))&&((this.hasBiologicalSequence == rhs.hasBiologicalSequence)||((this.hasBiologicalSequence!= null)&&this.hasBiologicalSequence.equals(rhs.hasBiologicalSequence))))&&((this.hasDrug == rhs.hasDrug)||((this.hasDrug!= null)&&this.hasDrug.equals(rhs.hasDrug))))&&((this.aggregateStatistic == rhs.aggregateStatistic)||((this.aggregateStatistic!= null)&&this.aggregateStatistic.equals(rhs.aggregateStatistic))))&&((this.affectsRiskFor == rhs.affectsRiskFor)||((this.affectsRiskFor!= null)&&this.affectsRiskFor.equals(rhs.affectsRiskFor))))&&((this.endInterbaseCoordinate == rhs.endInterbaseCoordinate)||((this.endInterbaseCoordinate!= null)&&this.endInterbaseCoordinate.equals(rhs.endInterbaseCoordinate))))&&((this.disrupts == rhs.disrupts)||((this.disrupts!= null)&&this.disrupts.equals(rhs.disrupts))))&&((this.iri == rhs.iri)||((this.iri!= null)&&this.iri.equals(rhs.iri))))&&((this.homologousTo == rhs.homologousTo)||((this.homologousTo!= null)&&this.homologousTo.equals(rhs.homologousTo))))&&((this.colocalizesWith == rhs.colocalizesWith)||((this.colocalizesWith!= null)&&this.colocalizesWith.equals(rhs.colocalizesWith))))&&((this.derivesFrom == rhs.derivesFrom)||((this.derivesFrom!= null)&&this.derivesFrom.equals(rhs.derivesFrom))))&&((this.affects == rhs.affects)||((this.affects!= null)&&this.affects.equals(rhs.affects))))&&((this.fullName == rhs.fullName)||((this.fullName!= null)&&this.fullName.equals(rhs.fullName))))&&((this.isMissenseVariantOf == rhs.isMissenseVariantOf)||((this.isMissenseVariantOf!= null)&&this.isMissenseVariantOf.equals(rhs.isMissenseVariantOf))))&&((this.orthologousTo == rhs.orthologousTo)||((this.orthologousTo!= null)&&this.orthologousTo.equals(rhs.orthologousTo))))&&((this.hasDecreasedAmount == rhs.hasDecreasedAmount)||((this.hasDecreasedAmount!= null)&&this.hasDecreasedAmount.equals(rhs.hasDecreasedAmount))))&&((this.isNearbyVariantOf == rhs.isNearbyVariantOf)||((this.isNearbyVariantOf!= null)&&this.isNearbyVariantOf.equals(rhs.isNearbyVariantOf))))&&((this.xenologousTo == rhs.xenologousTo)||((this.xenologousTo!= null)&&this.xenologousTo.equals(rhs.xenologousTo))))&&((this.hasCompleted == rhs.hasCompleted)||((this.hasCompleted!= null)&&this.hasCompleted.equals(rhs.hasCompleted))))&&((this.hasPercentage == rhs.hasPercentage)||((this.hasPercentage!= null)&&this.hasPercentage.equals(rhs.hasPercentage))))&&((this.participatesIn == rhs.participatesIn)||((this.participatesIn!= null)&&this.participatesIn.equals(rhs.participatesIn))))&&((this.regulates == rhs.regulates)||((this.regulates!= null)&&this.regulates.equals(rhs.regulates))))&&((this.genomeBuild == rhs.genomeBuild)||((this.genomeBuild!= null)&&this.genomeBuild.equals(rhs.genomeBuild))))&&((this.hasZygosity == rhs.hasZygosity)||((this.hasZygosity!= null)&&this.hasZygosity.equals(rhs.hasZygosity))))&&((this.negativelyRegulates == rhs.negativelyRegulates)||((this.negativelyRegulates!= null)&&this.negativelyRegulates.equals(rhs.negativelyRegulates))))&&((this.filler == rhs.filler)||((this.filler!= null)&&this.filler.equals(rhs.filler))))&&((this.inLinkageDisequilibriumWith == rhs.inLinkageDisequilibriumWith)||((this.inLinkageDisequilibriumWith!= null)&&this.inLinkageDisequilibriumWith.equals(rhs.inLinkageDisequilibriumWith))))&&((this.category == rhs.category)||((this.category!= null)&&this.category.equals(rhs.category))))&&((this.sameAs == rhs.sameAs)||((this.sameAs!= null)&&this.sameAs.equals(rhs.sameAs))))&&((this.timepoint == rhs.timepoint)||((this.timepoint!= null)&&this.timepoint.equals(rhs.timepoint))));
     }
 
 }

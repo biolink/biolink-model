@@ -37,6 +37,13 @@
          },
          "type": "array"
       },
+      "affects_expression_in": {
+         "description": "Holds between a variant and an anatomical entity where the expression of the variant is located in.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "affects_expression_of": {
          "description": "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest",
          "items": {
@@ -181,6 +188,13 @@
          },
          "type": "array"
       },
+      "causes_adverse_event": {
+         "description": "holds between a drug and a disease or phenotype that can be caused by the drug",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "change_is_catalyzed_by": {
          "description": "hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.",
          "items": {
@@ -205,6 +219,13 @@
       },
       "colocalizes_with": {
          "description": "holds between two entities that are observed to be located in the same place.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "contraindicated_for": {
+         "description": "Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.",
          "items": {
             "type": "string"
          },
@@ -272,6 +293,13 @@
       },
       "decreases_metabolic_processing_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "decreases_molecular_interaction": {
+         "description": "indicates that the source decreases the molecular interaction between the target and some other molecular entity",
          "items": {
             "type": "string"
          },
@@ -357,6 +385,20 @@
       "description": {
          "description": "a human-readable description of a thing",
          "type": "string"
+      },
+      "directly_interacts_with": {
+         "description": "Holds between molecular entities that phyically and directly interact with each other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "disease_has_basis_in": {
+         "description": "A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "disrupts": {
          "description": "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.",
@@ -462,6 +504,13 @@
          "description": "description of chemical compound based on element symbols",
          "type": "string"
       },
+      "has_completed": {
+         "description": "holds between an entity and a process that the entity is capable of and has completed",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "has_confidence_level": {
          "description": "connects an association to a qualitative term denoting the level of confidence",
          "type": "string"
@@ -469,6 +518,12 @@
       "has_count": {
          "description": "number of things with a particular property",
          "type": "string"
+      },
+      "has_decreased_amount": {
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_drug": {
          "description": "connects an entity to a single drug",
@@ -489,6 +544,12 @@
          },
          "type": "array"
       },
+      "has_increased_amount": {
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "has_input": {
          "description": "holds between a process and a continuant, where the continuant is an input into the process",
          "items": {
@@ -498,6 +559,13 @@
       },
       "has_molecular_consequence": {
          "description": "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "has_not_completed": {
+         "description": "holds between an entity and a process that the entity is capable of, but has not completed",
          "items": {
             "type": "string"
          },
@@ -601,6 +669,13 @@
          },
          "type": "array"
       },
+      "in_linkage_disequilibrium_with": {
+         "description": "holds between two sequence variants, the presence of which are correlated in a population",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "in_pathway_with": {
          "description": "holds between two genes or gene products that are part of in the same biological pathway",
          "items": {
@@ -659,6 +734,13 @@
       },
       "increases_metabolic_processing_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "increases_molecular_interaction": {
+         "description": "indicates that the source increases the molecular interaction between the target and some other molecular entity",
          "items": {
             "type": "string"
          },
@@ -744,6 +826,54 @@
       "iri": {
          "description": "An IRI for the node. This is determined by the id using expansion rules.",
          "type": "string"
+      },
+      "is_missense_variant_of": {
+         "description": "holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "is_nearby_variant_of": {
+         "description": "holds between a sequence variant and a gene sequence that the variant is genomically close to.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "is_non_coding_variant_of": {
+         "description": "holds between a sequence variant and a gene, where the variant does not affect the coding sequence",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "is_nonsense_variant_of": {
+         "description": "holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "is_splice_site_variant_of": {
+         "description": "holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "is_synonymous_variant_of": {
+         "description": "holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "lacks_part": {
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "latitude": {
          "description": "latitude",
@@ -916,6 +1046,12 @@
       },
       "prevents": {
          "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "produced_by": {
          "items": {
             "type": "string"
          },
@@ -2632,6 +2768,13 @@
                },
                "type": "array"
             },
+            "decreases_molecular_interaction": {
+               "description": "indicates that the source decreases the molecular interaction between the target and some other molecular entity",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "decreases_molecular_modification_of": {
                "description": "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
                "items": {
@@ -2751,6 +2894,13 @@
                },
                "type": "array"
             },
+            "increases_molecular_interaction": {
+               "description": "indicates that the source increases the molecular interaction between the target and some other molecular entity",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "increases_molecular_modification_of": {
                "description": "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
                "items": {
@@ -2859,6 +3009,13 @@
                },
                "type": "array"
             },
+            "affects_expression_in": {
+               "description": "Holds between a variant and an anatomical entity where the expression of the variant is located in.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "affects_risk_for": {
                "description": "holds between two entities where exposure to one entity alters the chance of developing the other",
                "items": {
@@ -2898,6 +3055,13 @@
                },
                "type": "array"
             },
+            "causes_adverse_event": {
+               "description": "holds between a drug and a disease or phenotype that can be caused by the drug",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "coexists_with": {
                "description": "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region",
                "items": {
@@ -2907,6 +3071,13 @@
             },
             "colocalizes_with": {
                "description": "holds between two entities that are observed to be located in the same place.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "contraindicated_for": {
+               "description": "Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.",
                "items": {
                   "type": "string"
                },
@@ -2948,6 +3119,20 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "directly_interacts_with": {
+               "description": "Holds between molecular entities that phyically and directly interact with each other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "disease_has_basis_in": {
+               "description": "A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "disrupts": {
                "description": "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.",
                "items": {
@@ -2978,9 +3163,22 @@
                "description": "description of chemical compound based on element symbols",
                "type": "string"
             },
+            "has_completed": {
+               "description": "holds between an entity and a process that the entity is capable of and has completed",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_count": {
                "description": "number of things with a particular property",
                "type": "string"
+            },
+            "has_decreased_amount": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "has_drug": {
                "description": "connects an entity to a single drug",
@@ -2990,8 +3188,21 @@
                "description": "connects an entity to a single gene",
                "type": "string"
             },
+            "has_increased_amount": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_molecular_consequence": {
                "description": "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_not_completed": {
+               "description": "holds between an entity and a process that the entity is capable of, but has not completed",
                "items": {
                   "type": "string"
                },
@@ -3030,6 +3241,13 @@
                "required": true,
                "type": "string"
             },
+            "in_linkage_disequilibrium_with": {
+               "description": "holds between two sequence variants, the presence of which are correlated in a population",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "interacts_with": {
                "description": "holds between any two entities that directly or indirectly interact with each other",
                "items": {
@@ -3044,6 +3262,54 @@
             "iri": {
                "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_missense_variant_of": {
+               "description": "holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "is_nearby_variant_of": {
+               "description": "holds between a sequence variant and a gene sequence that the variant is genomically close to.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "is_non_coding_variant_of": {
+               "description": "holds between a sequence variant and a gene, where the variant does not affect the coding sequence",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "is_nonsense_variant_of": {
+               "description": "holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "is_splice_site_variant_of": {
+               "description": "holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "is_synonymous_variant_of": {
+               "description": "holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "lacks_part": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "latitude": {
                "description": "latitude",
@@ -3164,6 +3430,12 @@
             },
             "prevents": {
                "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "produced_by": {
                "items": {
                   "type": "string"
                },

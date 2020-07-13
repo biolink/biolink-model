@@ -15,6 +15,19 @@ prefixes:
   UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
   UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
   UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
+  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
+  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
+  GAMMA: 'http://translator.renci.org/GAMMA_'
+  CTD: 'http://translator.ncats.nih.gov/CTD_'
+  hetio: 'http://translator.ncats.nih.gov/hetio_'
+  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
+  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
+  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
+  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
+  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
+  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+
   
 default_prefix: biolink
 default_range: string
@@ -125,6 +138,10 @@ slots:
     mappings:
       - owl:topObjectProperty
       - SEMMEDDB:ASSOCIATED_WITH
+      - BFO:0000054
+      - UBERON_CORE:protects
+      - GOREL:0002005
+      - GOREL:0012006
 
   interacts with:
     domain: named thing
@@ -156,6 +173,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002436
+      - CTD:molecularly_interacts_with
 
   genetically interacts with:
     is_a: interacts with
@@ -177,6 +195,10 @@ slots:
       - translator_minimal
     mappings:
       - SEMMEDDB:AFFECTS
+      - GOREL:0001006
+      - CTD:inferred
+      - CTD:prediction_hypothesis
+      - UPHENO:0000001
 
   affects abundance of:
     description: >-
@@ -186,6 +208,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_abundance_of
 
   increases abundance of:
     description: >-
@@ -195,6 +219,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_abundance_of
+      - UBERGRAPH:is_increase_of
 
   decreases abundance of:
     description: >-
@@ -204,6 +231,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_abundance_of
+      - UBERGRAPH:is_decrease_of
 
   affects activity of:
     description: >-
@@ -213,6 +243,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_activity_of
+      - GAMMA:allosteric_modulator
+      - GAMMA:modulator
+      - GAMMA:regulator
 
   increases activity of:
     description: >-
@@ -222,6 +257,19 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_activity_of
+      - GAMMA:activator
+      - GAMMA:partial_agonist
+      - GAMMA:agonist
+      - GAMMA:opener
+      - GAMMA:positive_allosteric_modulator
+      - GAMMA:positive_modulator
+      - GAMMA:ec50
+      - GAMMA:ac50
+      - GAMMA:inducer
+      - GAMMA:potentiator
+      - GAMMA:stimulator
 
   decreases activity of:
     description: >-
@@ -231,6 +279,27 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_activity_of
+      - GAMMA:allosteric_antagonist
+      - GAMMA:partial_antagonist
+      - GAMMA:antagonist
+      - GAMMA:weak_inhibitor
+      - GAMMA:inhibitor
+      - GAMMA:channel_blocker
+      - GAMMA:gating_inhibitor
+      - GAMMA:blocker
+      - GAMMA:inverse_agonist
+      - GAMMA:inactivator
+      - GAMMA:downregulator
+      - GAMMA:negative_modulator
+      - GAMMA:negative_allosteric_modulator
+      - GAMMA:inhibitory_allosteric_modulator
+      - GAMMA:ic50
+      - GAMMA:ki
+      - GAMMA:aggregation_inhibitor
+      - GAMMA:conversion_inhibitor
+      - GAMMA:suppressor
 
   affects expression of:
     description: >-
@@ -240,6 +309,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    mappings:
+      - CTD:affects_expression_of
 
   increases expression of:
     description: >-
@@ -249,6 +320,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    mappings:
+      - CTD:increases_expression_of      
 
   decreases expression of:
     description: >-
@@ -258,6 +331,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    mappings:
+      - CTD:decreases_expression_of
 
   affects folding of:
     description: >-
@@ -267,6 +342,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_folding_of
 
   increases folding of:
     description: >-
@@ -276,6 +353,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_folding_of
 
   decreases folding of:
     description: >-
@@ -285,6 +364,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_folding_of
 
   affects localization of:
     description: >-
@@ -294,6 +375,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_localization_of
+      - GAMMA:storage
+      - GOREL:0002003
 
   increases localization of:
     description: >-
@@ -303,6 +388,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_localization_of
 
   decreases localization of:
     description: >-
@@ -312,6 +399,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_localization_of
 
   affects metabolic processing of:
     description: >-
@@ -321,6 +410,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_metabolic_processing_of
+      - GAMMA:catalytic_activity
 
   increases metabolic processing of:
     description: >-
@@ -330,6 +422,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_metabolic_processing_of
 
   decreases metabolic processing of:
     description: >-
@@ -339,6 +433,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_metabolic_processing_of
 
   affects molecular modification of:
     description: >-
@@ -348,6 +444,39 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_molecular_modification_of
+      - CTD:affects_acetylation
+      - CTD:affects_acylation
+      - CTD:affects_alkylation
+      - CTD:affects_amination
+      - CTD:affects_carbamoylation
+      - CTD:affects_ethylation
+      - CTD:affects_glutathionylation
+      - CTD:affects_glycation
+      - CTD:affects_glycosylation
+      - CTD:affects_glucuronidation
+      - CTD:affects_N-linked_glycosylation
+      - CTD:affects_O-linked_glycosylation
+      - CTD:affects_hydroxylation
+      - CTD:affects_lipidation
+      - CTD:affects_farnesylation
+      - CTD:affects_geranoylation
+      - CTD:affects_myristoylation
+      - CTD:affects_palmitoylation
+      - CTD:affects_prenylation
+      - CTD:affects_methylation
+      - CTD:affects_nitrosation
+      - CTD:affects_nucleotidylation
+      - CTD:affects_phosphorylation
+      - CTD:affects_ribosylation
+      - CTD:affects_ADP-ribosylation
+      - CTD:affects_sulfation
+      - CTD:affects_sumoylation
+      - CTD:affects_ubiquitination
+      - CTD:affects_oxidation
+      - CTD:affects_reduction
+      - CTD:affects_carboxylation
 
   increases molecular modification of:
     description: >-
@@ -357,6 +486,41 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_molecular_modification_of
+      - CTD:increases_acetylation
+      - CTD:increases_acylation
+      - CTD:increases_alkylation
+      - CTD:increases_amination
+      - CTD:increases_carbamoylation
+      - CTD:increases_ethylation
+      - CTD:increases_glutathionylation
+      - CTD:increases_glycation
+      - CTD:increases_glycosylation
+      - CTD:increases_glucuronidation
+      - CTD:increases_N-linked_glycosylation
+      - CTD:increases_O-linked_glycosylation
+      - CTD:increases_hydroxylation
+      - CTD:increases_lipidation
+      - CTD:increases_farnesylation
+      - CTD:increases_geranoylation
+      - CTD:increases_myristoylation
+      - CTD:increases_palmitoylation
+      - CTD:increases_prenylation
+      - CTD:increases_methylation
+      - CTD:increases_nitrosation
+      - CTD:increases_nucleotidylation
+      - CTD:increases_phosphorylation
+      - CTD:increases_ribosylation
+      - CTD:increases_ADP-ribosylation
+      - CTD:increases_sulfation
+      - CTD:increases_sumoylation
+      - CTD:increases_ubiquitination
+      - CTD:increases_oxidation
+      - CTD:increases_reduction
+      - CTD:increases_carboxylation
+      - GAMMA:acetylation
+      - GAMMA:oxidizer
 
   decreases molecular modification of:
     description: >-
@@ -366,6 +530,40 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_molecular_modification_of
+      - CTD:decreases_acetylation
+      - CTD:decreases_acylation
+      - CTD:decreases_alkylation
+      - CTD:decreases_amination
+      - CTD:decreases_carbamoylation
+      - CTD:decreases_ethylation
+      - CTD:decreases_glutathionylation
+      - CTD:decreases_glycation
+      - CTD:decreases_glycosylation
+      - CTD:decreases_glucuronidation
+      - CTD:decreases_N-linked_glycosylation
+      - CTD:decreases_O-linked_glycosylation
+      - CTD:decreases_hydroxylation
+      - CTD:decreases_lipidation
+      - CTD:decreases_farnesylation
+      - CTD:decreases_geranoylation
+      - CTD:decreases_myristoylation
+      - CTD:decreases_palmitoylation
+      - CTD:decreases_prenylation
+      - CTD:decreases_methylation
+      - CTD:decreases_nitrosation
+      - CTD:decreases_nucleotidylation
+      - CTD:decreases_phosphorylation
+      - CTD:decreases_ribosylation
+      - CTD:decreases_ADP-ribosylation
+      - CTD:decreases_sulfation
+      - CTD:decreases_sumoylation
+      - CTD:decreases_ubiquitination
+      - CTD:decreases_oxidation
+      - CTD:decreases_reduction
+      - CTD:decreases_carboxylation
+      - GAMMA:deoxidizer
 
   affects synthesis of:
     description: >-
@@ -375,6 +573,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_synthesis_of
 
   increases synthesis of:
     description: >-
@@ -384,6 +584,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_synthesis_of
 
   decreases synthesis of:
     description: >-
@@ -393,6 +595,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_synthesis_of
+      - GAMMA:inhibition_of_synthesis
 
   affects degradation of:
     description: >-
@@ -402,6 +607,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_degradation_of
+      - CTD:affects_cleavage
+      - CTD:affects_hydrolysis
 
   increases degradation of:
     description: >-
@@ -411,6 +620,12 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_degradation_of
+      - CTD:increases_cleavage
+      - CTD:increases_hydrolysis
+      - GAMMA:substrate
+      - GOREL:0002004
 
   decreases degradation of:
     description: >-
@@ -420,6 +635,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_degradation_of
+      - CTD:decreases_cleavage
+      - CTD:decreases_hydrolysis
 
   affects mutation rate of:
     description: >-
@@ -429,6 +648,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    mappings:
+      - CTD:affects_mutation_rate_of
+      - CTD:affects_mutagenesis
 
   increases mutation rate of:
     description: >-
@@ -438,6 +660,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    mappings:
+      - CTD:increases_mutation_rate_of
+      - CTD:increases_mutagenesis
 
   decreases mutation rate of:
     description: >-
@@ -447,6 +672,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    mappings:
+      - CTD:decreases_mutation_rate_of
+      - CTD:decreases_mutagenesis
 
   affects response to:
     description: >-
@@ -456,6 +684,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_response_to
 
   increases response to:
     description: >-
@@ -465,6 +695,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_response_to
 
   decreases response to:
     description: >-
@@ -474,6 +706,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_response_to
+      - CTD:decreases_response_to_substance
+      - GAMMA:desensitize_the_target
 
   affects splicing of:
     description: >-
@@ -483,6 +719,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
+    mappings:
+      - CTD:affects_splicing_of
+      - CTD:affects_RNA_splicing
 
   increases splicing of:
     description: >-
@@ -492,6 +731,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
+    mappings:
+      - CTD:increases_splicing_of
+      - CTD:increases_RNA_splicing
 
   decreases splicing of:
     description: >-
@@ -501,6 +743,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
+    mappings:
+      - CTD:decreases_splicing_of
+      - CTD:decreases_RNA_splicing
 
   affects stability of:
     description: >-
@@ -510,6 +755,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_stability_of
+      - GAMMA:stabilization
 
   increases stability of:
     description: >-
@@ -519,6 +767,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_stability_of
 
   decreases stability of:
     description: >-
@@ -528,6 +778,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_stability_of
 
   affects transport of:
     description: >-
@@ -537,6 +789,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_transport_of
 
   increases transport of:
     description: >-
@@ -546,6 +800,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_transport_of
+      - GAMMA:carrier
+      - GAMMA:transporter
 
   decreases transport of:
     description: >-
@@ -555,6 +813,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_transport_of
 
   affects secretion of:
     description: >-
@@ -564,6 +824,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_secretion_of
+      - CTD:affects_export
 
   increases secretion of:
     description: >-
@@ -573,6 +836,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_secretion_of
+      - CTD:increases_export
 
   decreases secretion of:
     description: >-
@@ -582,6 +848,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_secretion_of
+      - CTD:decreases_export
 
   affects uptake of:
     description: >-
@@ -591,6 +860,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:affects_uptake_of
+      - CTD:affects_import
 
   increases uptake of:
     description: >-
@@ -600,6 +872,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:increases_uptake_of
+      - CTD:increases_import
 
   decreases uptake of:
     description: >-
@@ -609,6 +884,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    mappings:
+      - CTD:decreases_uptake_of
+      - CTD:decreases_import
 
   regulates:
     is_a: affects
@@ -625,6 +903,8 @@ slots:
     is_a: regulates
     mixin: true
     abstract: true
+    mappings:
+      - RO:0002213
 
   negatively regulates:
     comments:
@@ -632,6 +912,9 @@ slots:
     is_a: regulates
     mixin: true
     abstract: true
+    mappings:
+      - RO:0004033
+      - RO:0004035
 
   regulates, process to process:
     is_a: regulates
@@ -680,6 +963,9 @@ slots:
     mappings:
       - RO:0002450
       - SEMMEDDB:STIMULATES
+      - hetio:UPREGULATES_AuG
+      - hetio:UPREGULATES_DuG
+      - RO:0004034
 
   negatively regulates, entity to entity:
     aliases: ['activity directly negatively regulates activity of']
@@ -694,6 +980,8 @@ slots:
     mappings:
       - RO:0002449
       - SEMMEDDB:INHIBITS
+      - hetio:DOWNREGULATES_AdG
+      - hetio:DOWNREGULATES_DdG
 
   disrupts:
     is_a: affects
@@ -728,6 +1016,7 @@ slots:
     mappings:
       - RO:HOM0000001
       - SIO:010302
+      - UBERON_CORE:sexually_homologous_to
 
   paralogous to:
     is_a: homologous to
@@ -765,6 +1054,40 @@ slots:
       - translator_minimal
     mappings:
       - SEMMEDDB:COEXISTS_WITH
+      - BSPO:0000096
+      - BSPO:0000097
+      - BSPO:0000098
+      - BSPO:0000099
+      - BSPO:0000100
+      - BSPO:0000102
+      - BSPO:0000104
+      - BSPO:0015001
+      - BSPO:0015002
+      - BSPO:0015003
+      - BSPO:0015005
+      - BSPO:0015007
+      - BSPO:0015008
+      - BSPO:0015014
+      - UBERON_CORE:anastomoses_with
+      - UBERON_CORE:anteriorly_connected_to
+      - UBERON_CORE:posteriorly_connected_to
+      - UBERON_CORE:channel_for
+      - UBERON_CORE:channels_from
+      - UBERON_CORE:channels_into
+      - UBERON_CORE:conduit_for
+      - UBERON_CORE:distally_connected_to
+      - UBERON_CORE:extends_fibers_into
+      - UBERON_CORE:filtered_through
+      - UBERON_CORE:indirectly_supplies
+      - UBERON_CORE:proximally_connected_to
+      - UBERON_CORE:synapsed_by
+      - UBERON_CORE:transitively_anteriorly_connected_to
+      - UBERON_CORE:transitively_connected_to
+      - UBERON_CORE:transitively_distally_connected_to
+      - UBERON_CORE:transitively_proximally_connected_to
+      - BSPO:0015009
+      - BSPO:0015012
+      - BSPO:parallel_to
 
   in pathway with:
     description: >-
@@ -811,7 +1134,11 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - WIKIDATA:P2293
+      - WD:P2293
+      - GENO:0000840
+      - GENO:0000841
+      - NCIT:R176
+      - hetio:ASSOCIATES_DaG
 
   affects risk for:
     is_a: related to
@@ -837,6 +1164,8 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002326
+      - CTD:marker_mechanism
+      - CTD:positivecorrelation
 
   causes:
     description: >-
@@ -849,6 +1178,7 @@ slots:
       - RO:0002410
       - SEMMEDDB:CAUSES
       - WIKIDATA:P1542
+      - MONDO:disease_triggers
 
   caused by:
     description: >-
@@ -876,6 +1206,9 @@ slots:
       - RO:0003307
       - SEMMEDDB:TREATS
       - WIKIDATA:P2175
+      - CTD:therapeutic
+      - CTD:negativecorrelation
+      - MONDO:disease_responds_to
 
   prevents :
     is_a: affects risk for
@@ -957,6 +1290,7 @@ slots:
     inverse: expressed in
     mappings:
       - RO:0002292
+      - hetio:EXPRESSES_AeG
 
   has phenotype:
     is_a: related to
@@ -970,6 +1304,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002200
+      - hetio:PRESENTS_DpS
 
   occurs in:
     is_a: related to
@@ -981,6 +1316,7 @@ slots:
       - BFO:0000066
       - SEMMEDDB:OCCURS_IN
       - SEMMEDDB:PROCESS_OF
+      - UBERON_CORE:site_of
 
   located in:
     is_a: related to
@@ -991,6 +1327,25 @@ slots:
     inverse: location of
     mappings:
       - RO:0001025
+      - GOREL:0001004
+      - BSPO:0000107
+      - BSPO:0000108
+      - BSPO:0000120
+      - BSPO:0000121
+      - BSPO:0000122
+      - BSPO:0000123
+      - BSPO:0000124
+      - BSPO:0000125
+      - BSPO:0000126
+      - BSPO:0001100
+      - BSPO:0001101
+      - BSPO:0001107
+      - BSPO:0015101
+      - BSPO:0015102
+      - BSPO:0015202
+      - UBERON_CORE:in_central_side_of
+      - UBERON_CORE:in_innermost_side_of
+      - UBERON_CORE:in_outermost_side_of
 
   location of:
     is_a: related to
@@ -1021,6 +1376,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002131
+      - BSPO:0005001
 
   has part:
     is_a: overlaps
@@ -1044,6 +1400,13 @@ slots:
       - BFO:0000050
       - SEMMEDDB:PART_OF
       - WIKIDATA:P361
+      - BSPO:0001106
+      - BSPO:0001108
+      - BSPO:0001113
+      - BSPO:0001115
+      - UBERON_CORE:layer_part_of
+      - UBERON_CORE:subdivision_of
+      - UBERON_CORE:trunk_part_of
 
   has participant:
     is_a: related to
@@ -1056,6 +1419,8 @@ slots:
     mappings:
       - RO:0000057
       - WIKIDATA:P2283
+      - GOREL:0001007
+      - GOREL:0002008
 
   has input:
     is_a: has participant
@@ -1088,6 +1453,7 @@ slots:
     inverse: has participant
     mappings:
       - RO:0000056
+      - BFO:0000056
 
   actively involved in:
     is_a: participates in
@@ -1174,6 +1540,7 @@ slots:
       - RO:0003000
       - WIKIDATA:P1056
       - SEMMEDDB:PRODUCES
+      - GOREL:0001010
 
   precedes:
     is_a: related to
@@ -1187,6 +1554,8 @@ slots:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
       - WIKIDATA:P156
+      - RO:0002263
+      - RO:0002264
 
   same as:
     is_a: related to
@@ -1213,6 +1582,199 @@ slots:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
       - WIKIDATA:P279
+
+  directly interacts with:
+    is_a: interacts with
+    description: Holds between molecular entities that phyically and directly interact
+      with each other
+    mappings:
+      - SIO:000203
+      - chembio:interacts
+      - CTD:interacts_with
+      - CTD:affects_binding
+      - PHAROS:drug_targets
+      - GAMMA:interacts_with
+      - GAMMA:antibody_binding
+      - GAMMA:other
+      - GAMMA:other_unknown
+      - GAMMA:pharmacological_chaperone
+      - GAMMA:releasing_agent
+      - GAMMA:kd
+      - GAMMA:kb
+      - GAMMA:binder
+      - GAMMA:binding
+      - GAMMA:ligand
+      - GAMMA:cofactor
+      - GAMMA:potency
+      - GAMMA:none
+      - GAMMA:multitarget
+      - GAMMA:chaperone
+      - GAMMA:component
+      - GAMMA:adduct
+      - GAMMA:antibody
+
+  #The following are proposed new predictes
+
+  affects expression in:
+    is_a: affects
+    description: Holds between a variant and an anatomical entity where the expression of the variant
+       is located in.
+    mappings:
+      - GTEx:affects_expression_in
+
+  #Predicates relating variants to genes
+
+  is missense variant of:
+    is_a: related to
+    description: holds between a sequence variant and a gene, such the sequence variant
+      results in a different amino acid sequence but where the length is preserved.
+    mappings:
+      - SO:0001583
+      - SNPEFF:missense_variant
+      - SNPEFF:initiator_codon_variant
+      - SNPEFF:structural_interaction_variant
+
+  is synonymous variant of:
+    is_a: related to
+    description: holds between a sequence variant and a gene, such the sequence variant
+      is in the coding sequence of the gene, but results in the same amino acid sequence
+    mappings:
+      - SO:0001819
+      - SNPEFF:synonymous_variant
+      - SNPEFF:start_retained
+      - SNPEFF:stop_retained_variant
+
+  is nonsense variant of:
+    is_a: related to
+    description: holds between a sequence variant and a gene, such the sequence variant
+      results in a premature stop codon
+    mappings:
+      - SO:0002054
+      - SNPEFF:stop_gained
+      - SNPEFF:start_lost
+      - SNPEFF:stop_lost
+      - SNPEFF:frameshift_variant
+
+  is splice site variant of:
+    is_a: related to
+    description: holds between a sequence variant and a gene, such the sequence variant
+      is in the canonical splice site of one of the gene's exons.
+    mappings:
+      - SO:0001629
+      - SNPEFF:splice_region_variant
+      - SNPEFF:splice_acceptor_variant
+      - SNPEFF:splice_donor_variant
+
+  is nearby variant of:
+    is_a: related to
+    description: holds between a sequence variant and a gene sequence that the variant
+      is genomically close to.
+    mappings:
+      - GAMMA:0000102
+      - SNPEFF:downstream_gene_variant
+      - SNPEFF:upstream_gene_variant
+
+  is non coding variant of:
+    is_a: related to
+    description: holds between a sequence variant and a gene, where the variant does
+      not affect the coding sequence
+    mappings:
+      - GAMMA:0000103
+      - SNPEFF:3_prime_UTR_variant
+      - SNPEFF:5_prime_UTR_variant
+      - SNPEFF:5_prime_UTR_premature_start_codon_gain_variant
+      - SNPEFF:non_coding_transcript_exon_variant
+      - SNPEFF:intron_variant
+
+  #relating disease to process
+
+  disease has basis in:
+    description: A relation that holds between a disease and an entity where the state
+      of the entity has contribution to the disease.
+    is_a: related to
+    mappings:
+      - MONDO:disease_has_basis_in_development_of
+      - MONDO:disease_has_basis_in_accumulation_of
+
+  #These may be pushable to causal relationships, but seem important for clarity
+  # Also because causes adverse event tends to be very noisy and it's useful to be able
+  # to distinguish it.  maybe not the best way to do that though.
+
+  causes adverse event:
+    is_a: causes
+    description: holds between a drug and a disease or phenotype that can be caused
+      by the drug
+    mappings:
+      - Aeolus:0000001
+
+  contraindicated for:
+    is_a: related to
+    description: Holds between a drug and a disease or phenotype, such that a person
+      with that disease should not be treated with the drug.
+    mappings:
+     - DrugCentral:0000001
+
+  #The remaining new slots are here because we ran across them somewhere and they didn't seem
+  # to map well to anything else.
+
+  has not completed:
+    is_a: related to
+    description: holds between an entity and a process that the entity is capable of,
+      but has not completed
+    mappings:
+      - CL:has_not_completed
+
+  has completed:
+    is_a: related to
+    description: holds between an entity and a process that the entity is capable of
+      and has completed
+    mappings:
+    - CL:has_completed
+
+  decreases molecular interaction:
+    is_a: molecularly interacts with
+    description: indicates that the source decreases the molecular interaction between
+      the target and some other molecular entity
+    mappings:
+    - CTD:decreases_molecular_interaction_with
+
+  increases molecular interaction:
+    is_a: molecularly interacts with
+    description: indicates that the source increases the molecular interaction between
+      the target and some other molecular entity
+    mappings:
+    - CTD:increases_molecular_interaction_with
+
+  produced by:
+    is_a: related to
+    inverse: produces
+
+  in linkage disequilibrium with:
+    is_a: related to
+    description: holds between two sequence variants, the presence of which are correlated
+      in a population
+    mappings:
+      - NCIT:C16798
+
+  has increased amount:
+    is_a: related to
+    mappings:
+      - CL:has_high_plasma_membrane_amount
+
+  has decreased amount:
+    is_a: related to
+    mappings:
+      - CL:has_low_plasma_membrane_amount
+  
+  lacks part:
+    is_a: related to
+    mappings:
+      - CL:lacks_part
+      - CL:lacks_plasma_membrane_part
+
+  #End proposed slots
+
+
 
 ## property slots
 
@@ -1999,6 +2561,9 @@ classes:
       - NCBITaxon
     mappings:
       - WIKIDATA:Q16521
+    id_prefixes:
+      - NCBITaxon
+      - MESH
 
   organismal entity:
     description: >-
@@ -2192,6 +2757,14 @@ classes:
       - UMLS
       - MESH
       - MEDDRA
+      - NCIT
+      - SNOMEDCT
+      - medgen
+      - ICD10
+      - ICD9
+      - ICD0
+      - HP
+      - MP
 
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
@@ -2207,6 +2780,9 @@ classes:
       - NCIT
       - UMLS
       - MEDDRA
+      - SNOMEDCT
+      - MP
+      - MESH
 
   exposure event:
     aliases: ['environment', 'exposure', 'experimental condition']
@@ -2486,7 +3062,11 @@ classes:
       - UMLSST:bdsu
     id_prefixes:
       - UBERON
+      - GO
+      - CL
       - UMLS
+      - MESH
+      - NCIT
 
   life stage:
     is_a: organismal entity
@@ -2625,7 +3205,7 @@ classes:
       - NCBIGene
       - ENSEMBL
       - HGNC
-      # - UniProtKB  I think this belongs, but others may strongly disagree CB
+      - UniProtKB
       - MGI
       - ZFIN
       - dictyBase
@@ -2755,7 +3335,8 @@ classes:
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
-      - PANTHER
+      - PANTHER.FAMILY
+      - HGNC.FAMILY
 
   zygosity:
     is_a: attribute
@@ -4036,6 +4617,9 @@ classes:
       - GO
       - REACT
       - RHEA
+      - MetaCyc
+      - EC
+      - KEGG
 
   activity and behavior:
     is_a: occurrent
@@ -4139,6 +4723,8 @@ classes:
     id_prefixes:
       - GO
       - REACT
+      - MetaCyc
+      - KEGG
 
   pathway:
     is_a: biological process
@@ -4201,6 +4787,12 @@ classes:
       - UMLSST:celc
     id_prefixes:
       - GO
+      - MESH
+      - UMLS
+      - NCIT
+      - SNOMEDCT
+      - CL
+      - UBERON
 
   cell:
     is_a: anatomical entity
@@ -4216,6 +4808,10 @@ classes:
       - CL
       - PO
       - UMLS
+      - NCIT
+      - MESH
+      - UBERON
+      - SNOMEDCT
 
   cell line:
     is_a: organismal entity
