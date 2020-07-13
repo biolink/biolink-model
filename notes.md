@@ -1,7 +1,3 @@
----
-nav_order: 3
----
-
 # Installation and Usage Notes
 
 The Biolink Model is defined as a YAML. Any changes or edits are to be made to this YAML.

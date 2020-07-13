@@ -18,20 +18,21 @@ SIO:001380
 NCIT:C20130
 {: .mapping-label }
 
-WD:Q417841
+WIKIDATA:Q417841
 {: .mapping-label }
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[GeneFamily%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[GeneFamily]uses%20-.-%3E[GeneGrouping],%20[MolecularEntity]%5E-[GeneFamily])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MolecularEntity],[GeneGrouping],[GeneFamily|id(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[GeneGrouping],[MolecularEntity]%5E-[GeneFamily])
 
 ---
 
 
 ## Identifier prefixes
 
- * PANTHER
+ * PANTHER.FAMILY
+ * HGNC.FAMILY
 
 ## Parents
 
@@ -48,18 +49,15 @@ WD:Q417841
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from thing with taxon:
@@ -67,7 +65,6 @@ WD:Q417841
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
-    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
 
 ## Other properties
@@ -76,5 +73,5 @@ WD:Q417841
 | --- | --- | --- |
 | **Mappings:** | | SIO:001380 |
 |  | | NCIT:C20130 |
-|  | | WD:Q417841 |
+|  | | WIKIDATA:Q417841 |
 

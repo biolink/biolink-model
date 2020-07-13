@@ -18,7 +18,7 @@ BFO:0000003
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MolecularActivity]uses%20-.-%3E[Occurrent%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[EnvironmentalProcess]uses%20-.-%3E[Occurrent],%20[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],%20[BiologicalProcess]uses%20-.-%3E[Occurrent],%20[Occurrent]%5E-[Procedure],%20[Occurrent]%5E-[Phenomenon],%20[Occurrent]%5E-[ActivityAndBehavior],%20[NamedThing]%5E-[Occurrent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure],[Phenomenon],[MolecularActivity]uses%20-.-%3E[Occurrent|id(i):string;name(i):label_type;category(i):category_type%20%2B],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[Occurrent]%5E-[Procedure],[Occurrent]%5E-[Phenomenon],[Occurrent]%5E-[ActivityAndBehavior],[NamedThing]%5E-[Occurrent],[NamedThing],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
 
 ---
 
@@ -57,48 +57,16 @@ BFO:0000003
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
-
-### Domain for slot:
-
- * [enabled by](enabled_by.md)  <sub>0..*</sub>
-    * Description: holds between a process and a physical entity, where the physical entity executes the process
-    * range: [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
-    * in subsets: (translator_minimal)
- * [has input](has_input.md)  <sub>0..*</sub>
-    * Description: holds between a process and a continuant, where the continuant is an input into the process
-    * range: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
- * [has output](has_output.md)  <sub>0..*</sub>
-    * Description: holds between a process and a continuant, where the continuant is an output of the process
-    * range: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
- * [has participant](has_participant.md)  <sub>0..*</sub>
-    * Description: holds between a process and a continuant, where the continuant is somehow involved in the process
-    * range: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
- * [negatively regulates, process to process](negatively_regulates_process_to_process.md)  <sub>0..*</sub>
-    * range: [Occurrent](Occurrent.md)
- * [positively regulates, process to process](positively_regulates_process_to_process.md)  <sub>0..*</sub>
-    * range: [Occurrent](Occurrent.md)
- * [precedes](precedes.md)  <sub>0..*</sub>
-    * Description: holds between two processes, where one completes before the other begins
-    * range: [Occurrent](Occurrent.md)
-    * in subsets: (translator_minimal)
- * [regulates, process to process](regulates_process_to_process.md)  <sub>0..*</sub>
-    * range: [Occurrent](Occurrent.md)
 
 ## Other properties
 

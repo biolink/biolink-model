@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Introduction
-nav_order: 1
 ---
 
 [![Build Status](https://travis-ci.org/biolink/biolink-model.svg?branch=master)](https://travis-ci.org/biolink/biolink-model)

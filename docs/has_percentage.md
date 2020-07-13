@@ -26,5 +26,4 @@ URI: [biolink:has_percentage](https://w3id.org/biolink/vocab/has_percentage)
 ## Used by
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [NamedThing](NamedThing.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

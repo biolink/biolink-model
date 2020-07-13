@@ -14,7 +14,7 @@ URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [Provider](Provider.md)
+[Association](Association.md) ->  <sub>0..*</sub> [Provider](Provider.md)
 
 ## Parents
 

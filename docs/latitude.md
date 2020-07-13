@@ -27,7 +27,6 @@ URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
 
  * [GeographicLocation](GeographicLocation.md)
  * [GeographicLocationAtTime](GeographicLocationAtTime.md)
- * [NamedThing](NamedThing.md)
 
 ## Other properties
 

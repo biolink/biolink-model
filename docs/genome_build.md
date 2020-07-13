@@ -26,4 +26,3 @@ URI: [biolink:genome_build](https://w3id.org/biolink/vocab/genome_build)
 ## Used by
 
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
- * [NamedThing](NamedThing.md)

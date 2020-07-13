@@ -27,5 +27,4 @@ URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
 ## Used by
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [NamedThing](NamedThing.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

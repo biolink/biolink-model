@@ -26,4 +26,3 @@ URI: [biolink:phase](https://w3id.org/biolink/vocab/phase)
 ## Used by
 
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
- * [NamedThing](NamedThing.md)

@@ -15,7 +15,7 @@ URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/vocab/AnatomicalEntity)
 SIO:010046
 {: .mapping-label }
 
-WD:Q4936952
+WIKIDATA:Q4936952
 {: .mapping-label }
 
 UMLSSG:ANAT
@@ -48,7 +48,7 @@ UMLSST:bdsu
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..*-%20[AnatomicalEntity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[AnatomicalEntityToAnatomicalEntityAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityAssociation]-%20subject%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20subject%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20subject%201..1%3E[AnatomicalEntity],%20[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[GeneToExpressionSiteAssociation]-%20object%201..1%3E[AnatomicalEntity],%20[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon],%20[AnatomicalEntity]uses%20-.-%3E[PhysicalEntity],%20[AnatomicalEntity]%5E-[GrossAnatomicalStructure],%20[AnatomicalEntity]%5E-[CellularComponent],%20[AnatomicalEntity]%5E-[Cell],%20[OrganismalEntity]%5E-[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[PhysicalEntity],[OrganismalEntity],[OrganismTaxon],[GrossAnatomicalStructure],[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[CellularComponent],[Cell],[AnatomicalEntityToAnatomicalEntityPartOfAssociation],[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntityToAnatomicalEntityAssociation]-%20object%201..1%3E[AnatomicalEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B],[AnatomicalEntityToAnatomicalEntityAssociation]-%20subject%201..1%3E[AnatomicalEntity],[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20object%201..1%3E[AnatomicalEntity],[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20subject%201..1%3E[AnatomicalEntity],[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20object%201..1%3E[AnatomicalEntity],[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20subject%201..1%3E[AnatomicalEntity],[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20object%201..1%3E[AnatomicalEntity],[GeneToExpressionSiteAssociation]-%20object%201..1%3E[AnatomicalEntity],[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon],[AnatomicalEntity]uses%20-.-%3E[PhysicalEntity],[AnatomicalEntity]%5E-[GrossAnatomicalStructure],[AnatomicalEntity]%5E-[CellularComponent],[AnatomicalEntity]%5E-[Cell],[OrganismalEntity]%5E-[AnatomicalEntity])
 
 ---
 
@@ -56,7 +56,11 @@ UMLSST:bdsu
 ## Identifier prefixes
 
  * UBERON
+ * GO
+ * CL
  * UMLS
+ * MESH
+ * NCIT
 
 ## Parents
 
@@ -92,18 +96,15 @@ UMLSST:bdsu
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from thing with taxon:
@@ -113,19 +114,12 @@ UMLSST:bdsu
     * range: [OrganismTaxon](OrganismTaxon.md)
     * in subsets: (translator_minimal)
 
-### Domain for slot:
-
- * [expresses](expresses.md)  <sub>0..*</sub>
-    * Description: holds between an anatomical entity and gene or gene product that is expressed there
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
-    * in subsets: (translator_minimal)
-
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | SIO:010046 |
-|  | | WD:Q4936952 |
+|  | | WIKIDATA:Q4936952 |
 |  | | UMLSSG:ANAT |
 |  | | UMLSSC:T022 |
 |  | | UMLSST:bdsy |

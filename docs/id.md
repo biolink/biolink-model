@@ -17,7 +17,7 @@ URI: [biolink:id](https://w3id.org/biolink/vocab/id)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>REQ</sub> [IdentifierType](types/IdentifierType.md)
+[NamedThing](NamedThing.md) ->  <sub>REQ</sub> [String](types/String.md)
 
 ## Parents
 

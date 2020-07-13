@@ -15,7 +15,7 @@ URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 GENO:0000002
 {: .mapping-label }
 
-WD:Q15304597
+WIKIDATA:Q15304597
 {: .mapping-label }
 
 SIO:010277
@@ -27,7 +27,7 @@ VMC:Allele
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[SequenceVariant%7Cid:identifier_type;has_biological_sequence:biological_sequence%20%3F;name(i):label_type;category(i):iri_type%20%2B],%20[Gene]%3Chas%20gene%200..*-%20[SequenceVariant],%20[GenotypeToVariantAssociation]-%20object%201..1%3E[SequenceVariant],%20[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1%3E[SequenceVariant],%20[VariantToPhenotypicFeatureAssociation]-%20subject%201..1%3E[SequenceVariant],%20[VariantToPopulationAssociation]-%20subject%201..1%3E[SequenceVariant],%20[VariantToThingAssociation]-%20subject%201..1%3E[SequenceVariant],%20[GenomicEntity]%5E-[SequenceVariant])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[SequenceVariantModulatesTreatmentAssociation],[Gene]%3Chas%20gene%200..*-%20[SequenceVariant|id:string;has_biological_sequence:biological_sequence%20%3F;name(i):label_type;category(i):category_type%20%2B],[GenotypeToVariantAssociation]-%20object%201..1%3E[SequenceVariant],[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1%3E[SequenceVariant],[GeneHasVariantThatContributesToDiseaseAssociation]-%20sequence%20variant%20qualifier%200..1%3E[SequenceVariant],[VariantToPhenotypicFeatureAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToPopulationAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToThingAssociation]-%20subject%201..1%3E[SequenceVariant],[GenomicEntity]%5E-[SequenceVariant],[OrganismTaxon],[GenotypeToVariantAssociation],[GenomicEntity],[GeneHasVariantThatContributesToDiseaseAssociation],[Gene],[Association])
 
 ---
 
@@ -36,12 +36,8 @@ VMC:Allele
 
  * CAID
  * ClinVar
- * WD
- * CIViC
- * HGVS
+ * WIKIDATA
  * DBSNP
- * MYVARIANT_HG19
- * MYVARIANT_HG38
 
 ## Parents
 
@@ -66,24 +62,21 @@ VMC:Allele
  * [sequence variant➞has gene](sequence_variant_has_gene.md)  <sub>0..*</sub>
     * range: [Gene](Gene.md)
  * [sequence variant➞id](sequence_variant_id.md)  <sub>REQ</sub>
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [String](types/String.md)
 
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from thing with taxon:
@@ -91,7 +84,6 @@ VMC:Allele
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
-    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
 
 ### Domain for slot:
@@ -101,7 +93,7 @@ VMC:Allele
  * [sequence variant➞has gene](sequence_variant_has_gene.md)  <sub>0..*</sub>
     * range: [Gene](Gene.md)
  * [sequence variant➞id](sequence_variant_id.md)  <sub>REQ</sub>
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [String](types/String.md)
 
 ## Other properties
 
@@ -110,7 +102,7 @@ VMC:Allele
 | **Aliases:** | | allele |
 | **Local names:** | | allele (agr) |
 | **Mappings:** | | GENO:0000002 |
-|  | | WD:Q15304597 |
+|  | | WIKIDATA:Q15304597 |
 |  | | SIO:010277 |
 |  | | VMC:Allele |
 | **Alt Descriptions:** | | An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition (AGR) |

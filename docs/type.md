@@ -28,7 +28,6 @@ URI: [biolink:type](https://w3id.org/biolink/vocab/type)
  * [DataSetSummary](DataSetSummary.md)
  * [DataSetVersion](DataSetVersion.md)
  * [DistributionLevel](DistributionLevel.md)
- * [NamedThing](NamedThing.md)
 
 ## Other properties
 

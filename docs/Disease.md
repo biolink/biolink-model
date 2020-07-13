@@ -15,7 +15,7 @@ URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 MONDO:0000001
 {: .mapping-label }
 
-WD:Q12136
+WIKIDATA:Q12136
 {: .mapping-label }
 
 SIO:010299
@@ -87,7 +87,7 @@ UMLSST:neop
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[Disease%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[DiseaseToExposureAssociation]-%20subject%201..1%3E[Disease],%20[DiseaseToThingAssociation]-%20subject%201..1%3E[Disease],%20[DiseaseOrPhenotypicFeature]%5E-[Disease])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[EntityToDiseaseAssociation],[DiseaseToThingAssociation],[DiseaseToExposureAssociation],[DiseaseOrPhenotypicFeature],[DiseaseToExposureAssociation]-%20subject%201..1%3E[Disease|id(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseToThingAssociation]-%20subject%201..1%3E[Disease],[EntityToDiseaseAssociation]-%20object(i)%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease])
 
 ---
 
@@ -102,6 +102,14 @@ UMLSST:neop
  * UMLS
  * MESH
  * MEDDRA
+ * NCIT
+ * SNOMEDCT
+ * medgen
+ * ICD10
+ * ICD9
+ * ICD0
+ * HP
+ * MP
 
 ## Parents
 
@@ -121,18 +129,15 @@ UMLSST:neop
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from thing with taxon:
@@ -140,7 +145,6 @@ UMLSST:neop
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
-    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
 
 ## Other properties
@@ -151,7 +155,7 @@ UMLSST:neop
 |  | | disorder |
 |  | | medical condition |
 | **Mappings:** | | MONDO:0000001 |
-|  | | WD:Q12136 |
+|  | | WIKIDATA:Q12136 |
 |  | | SIO:010299 |
 |  | | UMLSSG:DISO |
 |  | | UMLSSC:T019 |

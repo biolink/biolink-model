@@ -24,7 +24,7 @@ owl:Axiom
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by%200..1-%20[Association%7Crelation:uriorcurie;id:identifier_type;negated:boolean%20%3F],%20[Publication]%3Cpublications%200..*-%20[Association],%20[OntologyClass]%3Cqualifiers%200..*-%20[Association],%20[OntologyClass]%3Cassociation%20type%200..1-%20[Association],%20[NamedThing]%3Cobject%201..1-%20[Association],%20[NamedThing]%3Csubject%201..1-%20[Association],%20[Association]%5E-[VariantToThingAssociation],%20[Association]%5E-[VariantToPopulationAssociation],%20[Association]%5E-[VariantToPhenotypicFeatureAssociation],%20[Association]%5E-[VariantToDiseaseAssociation],%20[Association]%5E-[ThingToDiseaseOrPhenotypicFeatureAssociation],%20[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],%20[Association]%5E-[SequenceFeatureRelationship],%20[Association]%5E-[PopulationToPopulationAssociation],%20[Association]%5E-[PairwiseInteractionAssociation],%20[Association]%5E-[MaterialSampleToThingAssociation],%20[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],%20[Association]%5E-[MaterialSampleDerivationAssociation],%20[Association]%5E-[GenotypeToVariantAssociation],%20[Association]%5E-[GenotypeToThingAssociation],%20[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],%20[Association]%5E-[GenotypeToGenotypePartAssociation],%20[Association]%5E-[GenotypeToGeneAssociation],%20[Association]%5E-[GenomicSequenceLocalization],%20[Association]%5E-[GeneToThingAssociation],%20[Association]%5E-[GeneToPhenotypicFeatureAssociation],%20[Association]%5E-[GeneToGeneAssociation],%20[Association]%5E-[GeneToExpressionSiteAssociation],%20[Association]%5E-[GeneToDiseaseAssociation],%20[Association]%5E-[GeneRegulatoryRelationship],%20[Association]%5E-[FunctionalAssociation],%20[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],%20[Association]%5E-[EntityToPhenotypicFeatureAssociation],%20[Association]%5E-[DiseaseToThingAssociation],%20[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],%20[Association]%5E-[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],%20[Association]%5E-[ChemicalToThingAssociation],%20[Association]%5E-[ChemicalToPathwayAssociation],%20[Association]%5E-[ChemicalToGeneAssociation],%20[Association]%5E-[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20[Association]%5E-[ChemicalToChemicalAssociation],%20[Association]%5E-[CellLineToThingAssociation],%20[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],%20[Association]%5E-[CaseToThingAssociation],%20[Association]%5E-[CaseToPhenotypicFeatureAssociation],%20[Association]%5E-[AnatomicalEntityToAnatomicalEntityAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToDiseaseAssociation],[ThingToDiseaseOrPhenotypicFeatureAssociation],[SequenceVariantModulatesTreatmentAssociation],[SequenceFeatureRelationship],[Publication],[Provider],[PopulationToPopulationAssociation],[PairwiseInteractionAssociation],[OntologyClass],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSampleDerivationAssociation],[GenotypeToVariantAssociation],[GenotypeToThingAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenomicSequenceLocalization],[GeneToThingAssociation],[GeneToPhenotypicFeatureAssociation],[GeneToGeneAssociation],[GeneToExpressionSiteAssociation],[GeneToDiseaseAssociation],[GeneRegulatoryRelationship],[FunctionalAssociation],[ExposureEventToPhenotypicFeatureAssociation],[EntityToPhenotypicFeatureAssociation],[DiseaseToThingAssociation],[DiseaseToPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[ChemicalToThingAssociation],[ChemicalToPathwayAssociation],[ChemicalToGeneAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CaseToThingAssociation],[CaseToPhenotypicFeatureAssociation],[Provider]%3Cprovided%20by%200..*-%20[Association|relation:uriorcurie;id:string;negated:boolean%20%3F],[Publication]%3Cpublications%200..*-%20[Association],[OntologyClass]%3Cqualifiers%200..*-%20[Association],[OntologyClass]%3Cassociation%20type%200..1-%20[Association],[NamedThing]%3Cobject%201..1-%20[Association],[NamedThing]%3Csubject%201..1-%20[Association],[Association]%5E-[VariantToThingAssociation],[Association]%5E-[VariantToPopulationAssociation],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[Association]%5E-[VariantToDiseaseAssociation],[Association]%5E-[ThingToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],[Association]%5E-[SequenceFeatureRelationship],[Association]%5E-[PopulationToPopulationAssociation],[Association]%5E-[PairwiseInteractionAssociation],[Association]%5E-[MaterialSampleToThingAssociation],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToThingAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Association]%5E-[GenomicSequenceLocalization],[Association]%5E-[GeneToThingAssociation],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[Association]%5E-[GeneToGeneAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToDiseaseAssociation],[Association]%5E-[GeneRegulatoryRelationship],[Association]%5E-[FunctionalAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[Association]%5E-[EntityToPhenotypicFeatureAssociation],[Association]%5E-[DiseaseToThingAssociation],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[Association]%5E-[ChemicalToThingAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Association]%5E-[ChemicalToGeneAssociation],[Association]%5E-[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[Association]%5E-[CellLineToThingAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[CaseToThingAssociation],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[Association]%5E-[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntityToAnatomicalEntityAssociation])
 
 ---
 
@@ -85,7 +85,7 @@ owl:Axiom
     * range: [OntologyClass](OntologyClass.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
@@ -93,7 +93,7 @@ owl:Axiom
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
- * [provided by](provided_by.md)  <sub>OPT</sub>
+ * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
  * [publications](publications.md)  <sub>0..*</sub>
@@ -111,44 +111,20 @@ owl:Axiom
 
 ### Domain for slot:
 
- * [association slot](association_slot.md)  <sub>OPT</sub>
-    * Description: any slot that relates an association to another entity
-    * range: [String](types/String.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
- * [change is catalyzed by](change_is_catalyzed_by.md)  <sub>0..*</sub>
-    * Description: hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
-    * range: [MacromolecularMachine](MacromolecularMachine.md)
- * [clinical modifier qualifier](clinical_modifier_qualifier.md)  <sub>OPT</sub>
-    * Description: Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
-    * range: [ClinicalModifier](ClinicalModifier.md)
- * [edge label](edge_label.md)  <sub>REQ</sub>
-    * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
-    * range: [LabelType](types/LabelType.md)
- * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    * range: [FrequencyValue](FrequencyValue.md)
- * [has confidence level](has_confidence_level.md)  <sub>OPT</sub>
-    * Description: connects an association to a qualitative term denoting the level of confidence
-    * range: [ConfidenceLevel](ConfidenceLevel.md)
- * [has evidence](has_evidence.md)  <sub>OPT</sub>
-    * Description: connects an association to an instance of supporting evidence
-    * range: [EvidenceType](EvidenceType.md)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
     * range: [Boolean](types/Boolean.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
- * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
-    * range: [Onset](Onset.md)
- * [provided by](provided_by.md)  <sub>OPT</sub>
+ * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
  * [publications](publications.md)  <sub>0..*</sub>
@@ -157,24 +133,9 @@ owl:Axiom
  * [qualifiers](qualifiers.md)  <sub>0..*</sub>
     * Description: connects an association to qualifiers that modify or qualify the meaning of that association
     * range: [OntologyClass](OntologyClass.md)
- * [quantifier qualifier](quantifier_qualifier.md)  <sub>OPT</sub>
-    * Description: A measurable quantity for the object of the association
-    * range: [OntologyClass](OntologyClass.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
     * range: [Uriorcurie](types/Uriorcurie.md)
- * [sequence variant qualifier](sequence_variant_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in an association where the variant
-    * range: [SequenceVariant](SequenceVariant.md)
- * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-    * range: [SeverityValue](SeverityValue.md)
- * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-    * range: [BiologicalSex](BiologicalSex.md)
- * [stage qualifier](stage_qualifier.md)  <sub>OPT</sub>
-    * Description: stage at which expression takes place
-    * range: [LifeStage](LifeStage.md)
  * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)

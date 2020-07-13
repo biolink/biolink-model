@@ -18,7 +18,7 @@ SIO:000614
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cid:identifier_type;name:label_type;category:iri_type%20%2B],%20[QuantityValue]%3Chas%20quantitative%20value%200..*-++[Attribute],%20[OntologyClass]%3Chas%20attribute%20type%200..1-%20[Attribute],%20[Attribute]uses%20-.-%3E[OntologyClass],%20[Attribute]%5E-[Zygosity],%20[Attribute]%5E-[SeverityValue],%20[Attribute]%5E-[Onset],%20[Attribute]%5E-[FrequencyValue],%20[Attribute]%5E-[ClinicalModifier],%20[Attribute]%5E-[BiologicalSex],%20[AbstractEntity]%5E-[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[QuantityValue],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ClinicalModifier],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute|id:string;name:label_type;category:category_type%20%2B],[QuantityValue]%3Chas%20quantitative%20value%200..*-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%200..1-%20[Attribute],[MaterialSample]-%20has%20attribute%200..*%3E[Attribute],[Attribute]uses%20-.-%3E[OntologyClass],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[Onset],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalModifier],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[MaterialSample],[AbstractEntity])
 
 ---
 
@@ -66,7 +66,7 @@ SIO:000614
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
@@ -74,7 +74,7 @@ SIO:000614
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Domain for slot:

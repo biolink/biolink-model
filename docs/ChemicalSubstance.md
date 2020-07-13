@@ -15,7 +15,7 @@ URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstanc
 SIO:010004
 {: .mapping-label }
 
-WD:Q79529
+WIKIDATA:Q79529
 {: .mapping-label }
 
 UMLSSC:T167
@@ -138,7 +138,7 @@ UMLSST:inch
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[ChemicalSubstance%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance],%20[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],%20[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],%20[ChemicalToThingAssociation]-%20subject%201..1%3E[ChemicalSubstance],%20[MolecularActivity]-%20has%20input%200..*%3E[ChemicalSubstance],%20[MolecularActivity]-%20has%20output%200..*%3E[ChemicalSubstance],%20[ChemicalSubstance]%5E-[Metabolite],%20[ChemicalSubstance]%5E-[Drug],%20[ChemicalSubstance]%5E-[Carbohydrate],%20[MolecularEntity]%5E-[ChemicalSubstance])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MolecularEntity],[MolecularActivity],[Metabolite],[DrugExposure],[Drug],[ChemicalToThingAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],[ChemicalToThingAssociation]-%20subject%201..1%3E[ChemicalSubstance],[DrugExposure]-%20has%20drug(i)%201..*%3E[ChemicalSubstance],[MolecularActivity]-%20has%20input%200..*%3E[ChemicalSubstance],[MolecularActivity]-%20has%20output%200..*%3E[ChemicalSubstance],[ChemicalSubstance]%5E-[Metabolite],[ChemicalSubstance]%5E-[Drug],[ChemicalSubstance]%5E-[Carbohydrate],[MolecularEntity]%5E-[ChemicalSubstance],[Carbohydrate])
 
 ---
 
@@ -148,14 +148,14 @@ UMLSST:inch
  * CHEBI
  * CHEMBL.COMPOUND
  * DRUGBANK
- * PUBCHEM
+ * PUBCHEM.COMPOUND
  * MESH
  * HMDB
  * INCHI
  * INCHIKEY
  * UNII
  * KEGG
- * GTOPDB
+ * gtpo
 
 ## Parents
 
@@ -184,18 +184,15 @@ UMLSST:inch
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from thing with taxon:
@@ -203,7 +200,6 @@ UMLSST:inch
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
-    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
 
 ## Other properties
@@ -211,7 +207,7 @@ UMLSST:inch
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | SIO:010004 |
-|  | | WD:Q79529 |
+|  | | WIKIDATA:Q79529 |
 |  | | UMLSSC:T167 |
 |  | | UMLSST:sbst |
 |  | | UMLSSG:CHEM |

@@ -29,16 +29,11 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 
 ## Used by
 
- * [ActivityAndBehavior](ActivityAndBehavior.md)
  * [BiologicalProcess](BiologicalProcess.md)
  * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
- * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [MolecularActivity](MolecularActivity.md)
- * [Occurrent](Occurrent.md)
  * [Pathway](Pathway.md)
- * [Phenomenon](Phenomenon.md)
  * [PhysiologicalProcess](PhysiologicalProcess.md)
- * [Procedure](Procedure.md)
 
 ## Other properties
 

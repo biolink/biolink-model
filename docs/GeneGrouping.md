@@ -15,7 +15,7 @@ URI: [biolink:GeneGrouping](https://w3id.org/biolink/vocab/GeneGrouping)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GeneFamily]uses%20-.-%3E[GeneGrouping])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GeneFamily]uses%20-.-%3E[GeneGrouping],[GeneFamily])
 
 ---
 

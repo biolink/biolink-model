@@ -26,4 +26,3 @@ URI: [biolink:has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
 ## Used by
 
  * [Genotype](Genotype.md)
- * [NamedThing](NamedThing.md)

@@ -17,7 +17,7 @@ URI: [biolink:category](https://w3id.org/biolink/vocab/category)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>1..*</sub> [IriType](types/IriType.md)
+[NamedThing](NamedThing.md) ->  <sub>1..*</sub> [CategoryType](types/CategoryType.md)
 
 ## Parents
 
@@ -123,6 +123,6 @@ URI: [biolink:category](https://w3id.org/biolink/vocab/category)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | rdfs:subClassOf |
+| **Mappings:** | | rdf:type |
 | **In Subsets:** | | translator_minimal |
 

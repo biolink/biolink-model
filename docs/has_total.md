@@ -27,5 +27,4 @@ URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)
 ## Used by
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [NamedThing](NamedThing.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

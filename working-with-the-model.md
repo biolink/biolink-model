@@ -1,9 +1,3 @@
----
-layout: default
-title: Working with Biolink Model
-nav_order: 4
----
-
 # Working with Biolink Model
 
 For Biolink Model, the main source of truth is the [YAML](biolink-model.yaml).

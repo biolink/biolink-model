@@ -30,7 +30,7 @@ UMLSST:nusq
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon(i)%200..*-%20[GenomicEntity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[GenomicSequenceLocalization]-%20object%201..1%3E[GenomicEntity],%20[GenomicSequenceLocalization]-%20subject%201..1%3E[GenomicEntity],%20[SequenceFeatureRelationship]-%20object%201..1%3E[GenomicEntity],%20[SequenceFeatureRelationship]-%20subject%201..1%3E[GenomicEntity],%20[GenomicEntity]%5E-[Transcript],%20[GenomicEntity]%5E-[SequenceVariant],%20[GenomicEntity]%5E-[MacromolecularMachine],%20[GenomicEntity]%5E-[Haplotype],%20[GenomicEntity]%5E-[Genotype],%20[GenomicEntity]%5E-[Genome],%20[GenomicEntity]%5E-[Exon],%20[GenomicEntity]%5E-[CodingSequence],%20[MolecularEntity]%5E-[GenomicEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[SequenceVariant],[SequenceFeatureRelationship],[OrganismTaxon],[MolecularEntity],[MacromolecularMachine],[Haplotype],[Genotype],[GenomicSequenceLocalization],[GenomicSequenceLocalization]-%20object%201..1%3E[GenomicEntity|has_biological_sequence:biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[GenomicSequenceLocalization]-%20subject%201..1%3E[GenomicEntity],[SequenceFeatureRelationship]-%20object%201..1%3E[GenomicEntity],[SequenceFeatureRelationship]-%20subject%201..1%3E[GenomicEntity],[GenomicEntity]%5E-[Transcript],[GenomicEntity]%5E-[SequenceVariant],[GenomicEntity]%5E-[MacromolecularMachine],[GenomicEntity]%5E-[Haplotype],[GenomicEntity]%5E-[Genotype],[GenomicEntity]%5E-[Genome],[GenomicEntity]%5E-[Exon],[GenomicEntity]%5E-[CodingSequence],[MolecularEntity]%5E-[GenomicEntity],[Genome],[Exon],[CodingSequence])
 
 ---
 
@@ -66,22 +66,25 @@ UMLSST:nusq
 ## Attributes
 
 
+### Own
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
+    * Description: connects a genomic feature to its sequence
+    * range: [BiologicalSequence](types/BiologicalSequence.md)
+
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from thing with taxon:
@@ -89,7 +92,6 @@ UMLSST:nusq
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
-    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
 
 ## Other properties

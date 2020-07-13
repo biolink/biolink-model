@@ -12,7 +12,7 @@ layout: default
 
 URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
-WD:Q28845870
+WIKIDATA:Q28845870
 {: .mapping-label }
 
 UMLSSC:T050
@@ -24,7 +24,7 @@ UMLSST:emod
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalEntity%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]%5E-[OrganismalEntity],%20[BiologicalEntity]%5E-[MolecularEntity],%20[BiologicalEntity]%5E-[ExposureEvent],%20[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],%20[BiologicalEntity]%5E-[BiologicalProcessOrActivity],%20[NamedThing]%5E-[BiologicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[NamedThing],[MolecularEntity],[ExposureEvent],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[MolecularEntity],[BiologicalEntity]%5E-[ExposureEvent],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity])
 
 ---
 
@@ -51,32 +51,22 @@ UMLSST:emod
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
-
-### Domain for slot:
-
- * [has phenotype](has_phenotype.md)  <sub>0..*</sub>
-    * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
-    * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WD:Q28845870 |
+| **Mappings:** | | WIKIDATA:Q28845870 |
 |  | | UMLSSC:T050 |
 |  | | UMLSST:emod |
 

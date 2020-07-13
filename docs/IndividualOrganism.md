@@ -15,7 +15,7 @@ URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrgan
 SIO:010000
 {: .mapping-label }
 
-WD:Q795052
+WIKIDATA:Q795052
 {: .mapping-label }
 
 UMLSSG:LIVB
@@ -144,7 +144,7 @@ UMLSST:euka
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..*-%20[IndividualOrganism%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],%20[IndividualOrganism]%5E-[Case],%20[OrganismalEntity]%5E-[IndividualOrganism])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismTaxon],[IndividualOrganism|id(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]%5E-[Case],[OrganismalEntity]%5E-[IndividualOrganism],[Case])
 
 ---
 
@@ -171,18 +171,15 @@ UMLSST:euka
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from thing with taxon:
@@ -197,7 +194,7 @@ UMLSST:euka
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | SIO:010000 |
-|  | | WD:Q795052 |
+|  | | WIKIDATA:Q795052 |
 |  | | UMLSSG:LIVB |
 |  | | UMLSSC:T001 |
 |  | | UMLSST:orgm |

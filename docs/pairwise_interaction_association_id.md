@@ -14,7 +14,7 @@ URI: [biolink:pairwise_interaction_association_id](https://w3id.org/biolink/voca
 
 ## Domain and Range
 
-[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [IdentifierType](types/IdentifierType.md)
+[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [String](types/String.md)
 
 ## Parents
 

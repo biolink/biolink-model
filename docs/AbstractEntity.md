@@ -15,7 +15,7 @@ URI: [biolink:AbstractEntity](https://w3id.org/biolink/vocab/AbstractEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[AbstractEntity]%5E-[QuantityValue],%20[AbstractEntity]%5E-[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[Attribute],[AbstractEntity]%5E-[QuantityValue],[AbstractEntity]%5E-[Attribute])
 
 ---
 

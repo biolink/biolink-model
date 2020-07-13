@@ -18,13 +18,13 @@ GO:0008150
 SIO:000006
 {: .mapping-label }
 
-WD:Q2996394
+WIKIDATA:Q2996394
 {: .mapping-label }
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[BiologicalProcess]uses%20-.-%3E[Occurrent],%20[BiologicalProcess]%5E-[PhysiologicalProcess],%20[BiologicalProcess]%5E-[Pathway],%20[BiologicalProcessOrActivity]%5E-[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[Pathway],[Occurrent],[NamedThing],[MacromolecularMachineToBiologicalProcessAssociation],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess|id(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcessOrActivity]%5E-[BiologicalProcess])
 
 ---
 
@@ -32,7 +32,9 @@ WD:Q2996394
 ## Identifier prefixes
 
  * GO
- * Reactome
+ * REACT
+ * MetaCyc
+ * KEGG
 
 ## Parents
 
@@ -54,22 +56,26 @@ WD:Q2996394
 ## Attributes
 
 
+### Inherited from biological process or activity:
+
+ * [enabled by](enabled_by.md)  <sub>0..*</sub>
+    * Description: holds between a process and a physical entity, where the physical entity executes the process
+    * range: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ## Other properties
@@ -78,5 +84,5 @@ WD:Q2996394
 | --- | --- | --- |
 | **Mappings:** | | GO:0008150 |
 |  | | SIO:000006 |
-|  | | WD:Q2996394 |
+|  | | WIKIDATA:Q2996394 |
 

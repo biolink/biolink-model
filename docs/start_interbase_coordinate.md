@@ -26,4 +26,3 @@ URI: [biolink:start_interbase_coordinate](https://w3id.org/biolink/vocab/start_i
 ## Used by
 
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
- * [NamedThing](NamedThing.md)

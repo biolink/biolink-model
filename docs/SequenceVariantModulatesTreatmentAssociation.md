@@ -15,7 +15,7 @@ URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/bio
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider]%3Cprovided%20by(i)%200..1-%20[SequenceVariantModulatesTreatmentAssociation%7Crelation(i):uriorcurie;id(i):identifier_type;negated(i):boolean%20%3F],%20[Publication]%3Cpublications(i)%200..*-%20[SequenceVariantModulatesTreatmentAssociation],%20[OntologyClass]%3Cqualifiers(i)%200..*-%20[SequenceVariantModulatesTreatmentAssociation],%20[OntologyClass]%3Cassociation%20type(i)%200..1-%20[SequenceVariantModulatesTreatmentAssociation],%20[Treatment]%3Cobject%201..1-%20[SequenceVariantModulatesTreatmentAssociation],%20[SequenceVariant]%3Csubject%201..1-%20[SequenceVariantModulatesTreatmentAssociation],%20[Association]%5E-[SequenceVariantModulatesTreatmentAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[Treatment]%3Cobject%201..1-%20[SequenceVariantModulatesTreatmentAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[SequenceVariant]%3Csubject%201..1-%20[SequenceVariantModulatesTreatmentAssociation],[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Association])
 
 ---
 
@@ -42,40 +42,31 @@ URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/bio
  * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
-    * inherited from: [Association](Association.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
     * range: [Uriorcurie](types/Uriorcurie.md)
-    * inherited from: [Association](Association.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
-    * inherited from: [Association](Association.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [Association](Association.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
     * range: [Boolean](types/Boolean.md)
-    * inherited from: [Association](Association.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
-    * inherited from: [Association](Association.md)
  * [qualifiers](qualifiers.md)  <sub>0..*</sub>
     * Description: connects an association to qualifiers that modify or qualify the meaning of that association
     * range: [OntologyClass](OntologyClass.md)
-    * inherited from: [Association](Association.md)
  * [publications](publications.md)  <sub>0..*</sub>
     * Description: connects an association to publications supporting the association
     * range: [Publication](Publication.md)
-    * inherited from: [Association](Association.md)
- * [provided by](provided_by.md)  <sub>OPT</sub>
+ * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
-    * inherited from: [Association](Association.md)
 
 ### Domain for slot:
 

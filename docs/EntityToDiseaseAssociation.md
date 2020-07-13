@@ -15,7 +15,7 @@ URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],%20[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],%20[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],%20[EntityToFeatureOrDiseaseQualifiers]%5E-[EntityToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Onset],[FrequencyValue],[EntityToFeatureOrDiseaseQualifiers],[VariantToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[EntityToFeatureOrDiseaseQualifiers]%5E-[EntityToDiseaseAssociation],[VariantToDiseaseAssociation],[GeneToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation])
 
 ---
 
@@ -36,7 +36,17 @@ URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityT
 ## Attributes
 
 
-### Domain for slot:
+### Inherited from entity to feature or disease qualifiers:
 
- * [entity to disease association➞object](entity_to_disease_association_object.md)  <sub>REQ</sub>
-    * range: [Disease](Disease.md)
+ * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+    * range: [SeverityValue](SeverityValue.md)
+ * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+    * range: [Onset](Onset.md)
+
+### Inherited from frequency qualifier mixin:
+
+ * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+    * range: [FrequencyValue](FrequencyValue.md)

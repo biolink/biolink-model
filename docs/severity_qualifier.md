@@ -25,7 +25,6 @@ URI: [biolink:severity_qualifier](https://w3id.org/biolink/vocab/severity_qualif
 
 ## Used by
 
- * [Association](Association.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)

@@ -21,7 +21,7 @@ UMLSST:fndg
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..*-%20[DiseaseOrPhenotypicFeature%7Cid(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject%201..1%3E[DiseaseOrPhenotypicFeature],%20[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1%3E[DiseaseOrPhenotypicFeature],%20[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]-%20subject%201..1%3E[DiseaseOrPhenotypicFeature],%20[ThingToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1%3E[DiseaseOrPhenotypicFeature],%20[DiseaseOrPhenotypicFeature]uses%20-.-%3E[ThingWithTaxon],%20[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],%20[DiseaseOrPhenotypicFeature]%5E-[Disease],%20[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[ThingWithTaxon],[ThingToDiseaseOrPhenotypicFeatureAssociation],[PhenotypicFeature],[OrganismTaxon],[MolecularEntity],[Gene],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject%201..1%3E[DiseaseOrPhenotypicFeature|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1%3E[DiseaseOrPhenotypicFeature],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]-%20subject%201..1%3E[DiseaseOrPhenotypicFeature],[ThingToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1%3E[DiseaseOrPhenotypicFeature],[DiseaseOrPhenotypicFeature]uses%20-.-%3E[ThingWithTaxon],[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],[DiseaseOrPhenotypicFeature]%5E-[Disease],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[Disease],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[BiologicalEntity])
 
 ---
 
@@ -56,18 +56,15 @@ UMLSST:fndg
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](types/IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [String](types/String.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](types/IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from thing with taxon:
@@ -75,21 +72,6 @@ UMLSST:fndg
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
-    * in subsets: (translator_minimal)
-
-### Domain for slot:
-
- * [correlated with](correlated_with.md)  <sub>0..*</sub>
-    * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-    * range: [MolecularEntity](MolecularEntity.md)
-    * in subsets: (translator_minimal)
- * [has biomarker](has_biomarker.md)  <sub>0..*</sub>
-    * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-    * range: [MolecularEntity](MolecularEntity.md)
-    * in subsets: (translator_minimal)
- * [treated by](treated_by.md)  <sub>0..*</sub>
-    * Description: holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
-    * range: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
 
 ## Other properties
