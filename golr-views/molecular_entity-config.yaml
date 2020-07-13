@@ -409,6 +409,18 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - negatively regulates, entity to entity
   id: negatively_regulates_entity_to_entity
+- cardinality: multi
+  description: indicates that the source decreases the molecular interaction between
+    the target and some other molecular entity
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - decreases molecular interaction
+  id: decreases_molecular_interaction
+- cardinality: multi
+  description: indicates that the source increases the molecular interaction between
+    the target and some other molecular entity
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - increases molecular interaction
+  id: increases_molecular_interaction
 id: molecular_entity
 schema_generating: true
 weight: 20

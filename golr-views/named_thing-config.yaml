@@ -261,6 +261,106 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - same as
   id: same_as
+- cardinality: multi
+  description: Holds between molecular entities that phyically and directly interact
+    with each other
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - directly interacts with
+  id: directly_interacts_with
+- cardinality: multi
+  description: Holds between a variant and an anatomical entity where the expression
+    of the variant is located in.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - affects expression in
+  id: affects_expression_in
+- cardinality: multi
+  description: holds between a sequence variant and a gene, such the sequence variant
+    results in a different amino acid sequence but where the length is preserved.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - is missense variant of
+  id: is_missense_variant_of
+- cardinality: multi
+  description: holds between a sequence variant and a gene, such the sequence variant
+    is in the coding sequence of the gene, but results in the same amino acid sequence
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - is synonymous variant of
+  id: is_synonymous_variant_of
+- cardinality: multi
+  description: holds between a sequence variant and a gene, such the sequence variant
+    results in a premature stop codon
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - is nonsense variant of
+  id: is_nonsense_variant_of
+- cardinality: multi
+  description: holds between a sequence variant and a gene, such the sequence variant
+    is in the canonical splice site of one of the gene's exons.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - is splice site variant of
+  id: is_splice_site_variant_of
+- cardinality: multi
+  description: holds between a sequence variant and a gene sequence that the variant
+    is genomically close to.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - is nearby variant of
+  id: is_nearby_variant_of
+- cardinality: multi
+  description: holds between a sequence variant and a gene, where the variant does
+    not affect the coding sequence
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - is non coding variant of
+  id: is_non_coding_variant_of
+- cardinality: multi
+  description: A relation that holds between a disease and an entity where the state
+    of the entity has contribution to the disease.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - disease has basis in
+  id: disease_has_basis_in
+- cardinality: multi
+  description: holds between a drug and a disease or phenotype that can be caused
+    by the drug
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - causes adverse event
+  id: causes_adverse_event
+- cardinality: multi
+  description: Holds between a drug and a disease or phenotype, such that a person
+    with that disease should not be treated with the drug.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - contraindicated for
+  id: contraindicated_for
+- cardinality: multi
+  description: holds between an entity and a process that the entity is capable of,
+    but has not completed
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has not completed
+  id: has_not_completed
+- cardinality: multi
+  description: holds between an entity and a process that the entity is capable of
+    and has completed
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has completed
+  id: has_completed
+- cardinality: multi
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - produced by
+  id: produced_by
+- cardinality: multi
+  description: holds between two sequence variants, the presence of which are correlated
+    in a population
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - in linkage disequilibrium with
+  id: in_linkage_disequilibrium_with
+- cardinality: multi
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has increased amount
+  id: has_increased_amount
+- cardinality: multi
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has decreased amount
+  id: has_decreased_amount
+- cardinality: multi
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - lacks part
+  id: lacks_part
 - display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - type
   id: type

@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.1
-# Generation date: 2020-07-08 22:04
+# Generation date: 2020-07-13 19:48
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -19,9 +19,11 @@ metamodel_version = "1.4.1"
 
 
 # Namespaces
+AEOLUS = Namespace('http://translator.ncats.nih.gov/Aeolus_')
 BFO = Namespace('http://purl.obolibrary.org/obo/BFO_')
 BIOGRID = Namespace('http://identifiers.org/biogrid/')
 BIOSAMPLE = Namespace('http://identifiers.org/biosample/')
+BSPO = Namespace('http://purl.obolibrary.org/obo/BSPO_')
 CAID = Namespace('http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=')
 CHEBI = Namespace('http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL_COMPOUND = Namespace('http://identifiers.org/chembl.compound/')
@@ -29,24 +31,34 @@ CHEMBL_TARGET = Namespace('http://identifiers.org/chembl.target/')
 CIO = Namespace('http://purl.obolibrary.org/obo/CIO_')
 CL = Namespace('http://purl.obolibrary.org/obo/CL_')
 CLO = Namespace('http://purl.obolibrary.org/obo/CLO_')
+CTD = Namespace('http://translator.ncats.nih.gov/CTD_')
 CLINVAR = Namespace('http://www.ncbi.nlm.nih.gov/clinvar/')
 DBSNP = Namespace('http://identifiers.org/dbsnp/')
 DOID = Namespace('http://purl.obolibrary.org/obo/DOID_')
 DRUGBANK = Namespace('http://identifiers.org/drugbank/')
+DRUGCENTRAL = Namespace('http://translator.ncats.nih.gov/DrugCentral_')
+EC = Namespace('http://www.enzyme-database.org/query.php?ec=')
 ECO = Namespace('http://purl.obolibrary.org/obo/ECO_')
 ECTO = Namespace('http://example.org/UNKNOWN/ECTO/')
 EFO = Namespace('http://identifiers.org/efo/')
 ENSEMBL = Namespace('http://identifiers.org/ensembl/')
 EXO = Namespace('http://example.org/UNKNOWN/ExO/')
 FAO = Namespace('http://purl.obolibrary.org/obo/FAO_')
+GAMMA = Namespace('http://translator.renci.org/GAMMA_')
 GENO = Namespace('http://purl.obolibrary.org/obo/GENO_')
 GO = Namespace('http://purl.obolibrary.org/obo/GO_')
 GOLD_META = Namespace('http://identifiers.org/gold.meta/')
+GOREL = Namespace('http://purl.obolibrary.org/obo/GOREL_')
+GTEX = Namespace('http://example.org/UNKNOWN/GTEx/')
 HANCESTRO = Namespace('http://example.org/UNKNOWN/HANCESTRO/')
 HGNC = Namespace('http://identifiers.org/hgnc/')
+HGNC_FAMILY = Namespace('http://identifiers.org/hgnc.family/')
 HMDB = Namespace('http://identifiers.org/hmdb/')
 HP = Namespace('http://purl.obolibrary.org/obo/HP_')
 IAO = Namespace('http://purl.obolibrary.org/obo/IAO_')
+ICD0 = Namespace('http://translator.ncats.nih.gov/ICD0_')
+ICD10 = Namespace('http://translator.ncats.nih.gov/ICD10_')
+ICD9 = Namespace('http://translator.ncats.nih.gov/ICD9_')
 INCHI = Namespace('http://identifiers.org/inchi/')
 INCHIKEY = Namespace('http://identifiers.org/inchikey/')
 INTACT = Namespace('http://identifiers.org/intact/')
@@ -57,7 +69,10 @@ MESH = Namespace('http://identifiers.org/mesh/')
 MGI = Namespace('http://identifiers.org/mgi/')
 MIR = Namespace('http://identifiers.org/mir/')
 MONDO = Namespace('http://purl.obolibrary.org/obo/MONDO_')
+MP = Namespace('http://purl.obolibrary.org/obo/MP_')
+METACYC = Namespace('http://translator.ncats.nih.gov/MetaCyc_')
 NCBIGENE = Namespace('http://www.ncbi.nlm.nih.gov/gene/')
+NCBITAXON = Namespace('http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = Namespace('http://purl.obolibrary.org/obo/NCIT_')
 OBAN = Namespace('http://purl.org/oban/')
 OBI = Namespace('http://purl.obolibrary.org/obo/OBI_')
@@ -65,9 +80,10 @@ OGMS = Namespace('http://purl.obolibrary.org/obo/OGMS_')
 OIO = Namespace('http://www.geneontology.org/formats/oboInOwl#')
 OMIM = Namespace('http://purl.obolibrary.org/obo/OMIM_')
 ORPHANET = Namespace('http://identifiers.org/orphanet/')
-PANTHER = Namespace('http://www.pantherdb.org/panther/family.do?clsAccession=')
+PANTHER_FAMILY = Namespace('http://identifiers.org/panther.family/')
 PHARMGKB_DRUG = Namespace('http://identifiers.org/pharmgkb.drug/')
 PHARMGKB_PATHWAYS = Namespace('http://identifiers.org/pharmgkb.pathways/')
+PHAROS = Namespace('http://example.org/UNKNOWN/PHAROS/')
 PMID = Namespace('http://www.ncbi.nlm.nih.gov/pubmed/')
 PO = Namespace('http://purl.obolibrary.org/obo/PO_')
 PR = Namespace('http://purl.obolibrary.org/obo/PR_')
@@ -83,9 +99,13 @@ SEMMEDDB = Namespace('http://example.org/UNKNOWN/SEMMEDDB/')
 SGD = Namespace('http://identifiers.org/sgd/')
 SIO = Namespace('http://semanticscience.org/resource/SIO_')
 SMPDB = Namespace('http://identifiers.org/smpdb/')
+SNOMEDCT = Namespace('http://identifiers.org/snomedct/')
+SNPEFF = Namespace('http://translator.ncats.nih.gov/SNPEFF_')
 SO = Namespace('http://purl.obolibrary.org/obo/SO_')
 STATO = Namespace('http://purl.obolibrary.org/obo/STATO_')
+UBERGRAPH = Namespace('http://translator.renci.org/ubergraph-axioms.ofn#')
 UBERON = Namespace('http://purl.obolibrary.org/obo/UBERON_')
+UBERON_CORE = Namespace('http://example.org/UNKNOWN/UBERON_CORE/')
 UMLS = Namespace('http://identifiers.org/umls/')
 UMLSSC = Namespace('https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/')
 UMLSSG = Namespace('https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/')
@@ -96,14 +116,18 @@ UPHENO = Namespace('http://purl.obolibrary.org/obo/UPHENO_')
 UNIPROTKB = Namespace('http://identifiers.org/uniprot/')
 VMC = Namespace('http://example.org/UNKNOWN/VMC/')
 WB = Namespace('http://identifiers.org/wb/')
+WD = Namespace('http://example.org/UNKNOWN/WD/')
 WIKIDATA = Namespace('http://identifiers.org/wikidata/')
 WIKIPATHWAYS = Namespace('http://identifiers.org/wikipathways/')
 ZFIN = Namespace('http://identifiers.org/zfin/')
 BIOLINK = Namespace('https://w3id.org/biolink/vocab/')
+CHEMBIO = Namespace('http://example.org/UNKNOWN/chembio/')
 DCTERMS = Namespace('http://purl.org/dc/terms/')
 DICTYBASE = Namespace('http://dictybase.org/gene/')
 FALDO = Namespace('http://biohackathon.org/resource/faldo#')
 GTPO = Namespace('https://rdf.guidetopharmacology.org/ns/gtpo#')
+HETIO = Namespace('http://translator.ncats.nih.gov/hetio_')
+MEDGEN = Namespace('http://example.org/UNKNOWN/medgen/')
 OWL = Namespace('http://www.w3.org/2002/07/owl#')
 PAV = Namespace('http://purl.org/pav/')
 QUD = Namespace('http://qudt.org/1.1/schema/qudt#')
@@ -1036,7 +1060,7 @@ class NamedThing(YAMLRoot):
     """
     a databased entity or concept/class
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "physically_interacts_with", "affects", "regulates", "positively_regulates", "negatively_regulates", "disrupts", "homologous_to", "paralogous_to", "orthologous_to", "xenologous_to", "coexists_with", "colocalizes_with", "affects_risk_for", "predisposes", "contributes_to", "causes", "caused_by", "prevents", "occurs_in", "located_in", "location_of", "model_of", "overlaps", "has_part", "part_of", "participates_in", "actively_involved_in", "capable_of", "derives_into", "derives_from", "manifestation_of", "produces", "same_as", "has_molecular_consequence"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "physically_interacts_with", "affects", "regulates", "positively_regulates", "negatively_regulates", "disrupts", "homologous_to", "paralogous_to", "orthologous_to", "xenologous_to", "coexists_with", "colocalizes_with", "affects_risk_for", "predisposes", "contributes_to", "causes", "caused_by", "prevents", "occurs_in", "located_in", "location_of", "model_of", "overlaps", "has_part", "part_of", "participates_in", "actively_involved_in", "capable_of", "derives_into", "derives_from", "manifestation_of", "produces", "same_as", "directly_interacts_with", "affects_expression_in", "is_missense_variant_of", "is_synonymous_variant_of", "is_nonsense_variant_of", "is_splice_site_variant_of", "is_nearby_variant_of", "is_non_coding_variant_of", "disease_has_basis_in", "causes_adverse_event", "contraindicated_for", "has_not_completed", "has_completed", "produced_by", "in_linkage_disequilibrium_with", "has_increased_amount", "has_decreased_amount", "lacks_part", "has_molecular_consequence"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.NamedThing
     class_class_curie: ClassVar[str] = "biolink:NamedThing"
@@ -1608,7 +1632,7 @@ class MolecularEntity(BiologicalEntity):
     """
     A gene, gene product, small molecule or macromolecule (including protein complex)
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "has_phenotype", "molecularly_interacts_with", "affects_abundance_of", "increases_abundance_of", "decreases_abundance_of", "affects_activity_of", "increases_activity_of", "decreases_activity_of", "affects_expression_of", "increases_expression_of", "decreases_expression_of", "affects_folding_of", "increases_folding_of", "decreases_folding_of", "affects_localization_of", "increases_localization_of", "decreases_localization_of", "affects_metabolic_processing_of", "increases_metabolic_processing_of", "decreases_metabolic_processing_of", "affects_molecular_modification_of", "increases_molecular_modification_of", "decreases_molecular_modification_of", "affects_synthesis_of", "increases_synthesis_of", "decreases_synthesis_of", "affects_degradation_of", "increases_degradation_of", "decreases_degradation_of", "affects_mutation_rate_of", "increases_mutation_rate_of", "decreases_mutation_rate_of", "affects_response_to", "increases_response_to", "decreases_response_to", "affects_splicing_of", "increases_splicing_of", "decreases_splicing_of", "affects_stability_of", "increases_stability_of", "decreases_stability_of", "affects_transport_of", "increases_transport_of", "decreases_transport_of", "affects_secretion_of", "increases_secretion_of", "decreases_secretion_of", "affects_uptake_of", "increases_uptake_of", "decreases_uptake_of", "regulates_entity_to_entity", "biomarker_for", "in_taxon", "positively_regulates_entity_to_entity", "negatively_regulates_entity_to_entity"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "has_phenotype", "molecularly_interacts_with", "affects_abundance_of", "increases_abundance_of", "decreases_abundance_of", "affects_activity_of", "increases_activity_of", "decreases_activity_of", "affects_expression_of", "increases_expression_of", "decreases_expression_of", "affects_folding_of", "increases_folding_of", "decreases_folding_of", "affects_localization_of", "increases_localization_of", "decreases_localization_of", "affects_metabolic_processing_of", "increases_metabolic_processing_of", "decreases_metabolic_processing_of", "affects_molecular_modification_of", "increases_molecular_modification_of", "decreases_molecular_modification_of", "affects_synthesis_of", "increases_synthesis_of", "decreases_synthesis_of", "affects_degradation_of", "increases_degradation_of", "decreases_degradation_of", "affects_mutation_rate_of", "increases_mutation_rate_of", "decreases_mutation_rate_of", "affects_response_to", "increases_response_to", "decreases_response_to", "affects_splicing_of", "increases_splicing_of", "decreases_splicing_of", "affects_stability_of", "increases_stability_of", "decreases_stability_of", "affects_transport_of", "increases_transport_of", "decreases_transport_of", "affects_secretion_of", "increases_secretion_of", "decreases_secretion_of", "affects_uptake_of", "increases_uptake_of", "decreases_uptake_of", "regulates_entity_to_entity", "biomarker_for", "in_taxon", "positively_regulates_entity_to_entity", "negatively_regulates_entity_to_entity", "decreases_molecular_interaction", "increases_molecular_interaction"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularEntity
     class_class_curie: ClassVar[str] = "biolink:MolecularEntity"

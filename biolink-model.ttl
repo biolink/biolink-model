@@ -190,36 +190,60 @@
         "rdfs",
         "skos",
         "xsd" ;
-    meta:generation_date "2020-07-08 22:04"^^xsd:dateTime ;
+    meta:generation_date "2020-07-13 19:48"^^xsd:dateTime ;
     meta:id <https://w3id.org/biolink/biolink-model> ;
     meta:imports biolinkml:types ;
     meta:metamodel_version "1.4.1" ;
-    meta:prefixes [ meta:prefix_prefix "UMLSST" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
+    meta:prefixes [ meta:prefix_prefix "biolinkml" ;
+            meta:prefix_reference biolinkml: ],
+        [ meta:prefix_prefix "SNPEFF" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/SNPEFF_> ],
+        [ meta:prefix_prefix "ICD9" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ],
+        [ meta:prefix_prefix "UBERGRAPH" ;
+            meta:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ],
+        [ meta:prefix_prefix "gtpo" ;
+            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ],
+        [ meta:prefix_prefix "GAMMA" ;
+            meta:prefix_reference <http://translator.renci.org/GAMMA_> ],
         [ meta:prefix_prefix "UMLSSG" ;
             meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ],
-        [ meta:prefix_prefix "shex" ;
-            meta:prefix_reference <http://www.w3.org/ns/shex#> ],
+        [ meta:prefix_prefix "SIO" ;
+            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
+        [ meta:prefix_prefix "hetio" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ],
+        [ meta:prefix_prefix "CAID" ;
+            meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
+        [ meta:prefix_prefix "MetaCyc" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ],
+        [ meta:prefix_prefix "OBAN" ;
+            meta:prefix_reference <http://purl.org/oban/> ],
+        [ meta:prefix_prefix "CTD" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/CTD_> ],
         [ meta:prefix_prefix "metatype" ;
             meta:prefix_reference <https://w3id.org/biolink/biolinkml/type/> ],
         [ meta:prefix_prefix "qud" ;
             meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
-        [ meta:prefix_prefix "biolinkml" ;
-            meta:prefix_reference biolinkml: ],
-        [ meta:prefix_prefix "OBAN" ;
-            meta:prefix_reference <http://purl.org/oban/> ],
-        [ meta:prefix_prefix "gtpo" ;
-            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ],
+        [ meta:prefix_prefix "Aeolus" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ],
+        [ meta:prefix_prefix "UMLSST" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
+        [ meta:prefix_prefix "DrugCentral" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ],
         [ meta:prefix_prefix "biolink" ;
             meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
-        [ meta:prefix_prefix "CAID" ;
-            meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
+        [ meta:prefix_prefix "GOREL" ;
+            meta:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ],
+        [ meta:prefix_prefix "ICD10" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD10_> ],
+        [ meta:prefix_prefix "ICD0" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ],
         [ meta:prefix_prefix "UMLSSC" ;
             meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
+        [ meta:prefix_prefix "shex" ;
+            meta:prefix_reference <http://www.w3.org/ns/shex#> ],
         [ meta:prefix_prefix "xsd" ;
             meta:prefix_reference xsd: ],
-        [ meta:prefix_prefix "SIO" ;
-            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
         [ meta:prefix_prefix "wgs" ;
             meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ] ;
     meta:slots <https://w3id.org/biolink/vocab/actively_involved_in>,
@@ -227,6 +251,7 @@
         <https://w3id.org/biolink/vocab/affects_abundance_of>,
         <https://w3id.org/biolink/vocab/affects_activity_of>,
         <https://w3id.org/biolink/vocab/affects_degradation_of>,
+        <https://w3id.org/biolink/vocab/affects_expression_in>,
         <https://w3id.org/biolink/vocab/affects_expression_of>,
         <https://w3id.org/biolink/vocab/affects_folding_of>,
         <https://w3id.org/biolink/vocab/affects_localization_of>,
@@ -259,6 +284,7 @@
         <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/caused_by>,
         <https://w3id.org/biolink/vocab/causes>,
+        <https://w3id.org/biolink/vocab/causes_adverse_event>,
         <https://w3id.org/biolink/vocab/cell_line_to_disease_or_phenotypic_feature_association_subject>,
         <https://w3id.org/biolink/vocab/cell_line_to_thing_association_subject>,
         <https://w3id.org/biolink/vocab/change_is_catalyzed_by>,
@@ -275,6 +301,7 @@
         <https://w3id.org/biolink/vocab/clinical_modifier_qualifier>,
         <https://w3id.org/biolink/vocab/coexists_with>,
         <https://w3id.org/biolink/vocab/colocalizes_with>,
+        <https://w3id.org/biolink/vocab/contraindicated_for>,
         <https://w3id.org/biolink/vocab/contributes_to>,
         <https://w3id.org/biolink/vocab/correlated_with>,
         <https://w3id.org/biolink/vocab/creation_date>,
@@ -285,6 +312,7 @@
         <https://w3id.org/biolink/vocab/decreases_folding_of>,
         <https://w3id.org/biolink/vocab/decreases_localization_of>,
         <https://w3id.org/biolink/vocab/decreases_metabolic_processing_of>,
+        <https://w3id.org/biolink/vocab/decreases_molecular_interaction>,
         <https://w3id.org/biolink/vocab/decreases_molecular_modification_of>,
         <https://w3id.org/biolink/vocab/decreases_mutation_rate_of>,
         <https://w3id.org/biolink/vocab/decreases_response_to>,
@@ -297,6 +325,8 @@
         <https://w3id.org/biolink/vocab/derives_from>,
         <https://w3id.org/biolink/vocab/derives_into>,
         <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/directly_interacts_with>,
+        <https://w3id.org/biolink/vocab/disease_has_basis_in>,
         <https://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_location_association_object>,
         <https://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_thing_association_subject>,
         <https://w3id.org/biolink/vocab/disease_to_exposure_association_object>,
@@ -366,14 +396,18 @@
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/has_biomarker>,
         <https://w3id.org/biolink/vocab/has_chemical_formula>,
+        <https://w3id.org/biolink/vocab/has_completed>,
         <https://w3id.org/biolink/vocab/has_confidence_level>,
         <https://w3id.org/biolink/vocab/has_count>,
+        <https://w3id.org/biolink/vocab/has_decreased_amount>,
         <https://w3id.org/biolink/vocab/has_drug>,
         <https://w3id.org/biolink/vocab/has_evidence>,
         <https://w3id.org/biolink/vocab/has_gene>,
         <https://w3id.org/biolink/vocab/has_gene_product>,
+        <https://w3id.org/biolink/vocab/has_increased_amount>,
         <https://w3id.org/biolink/vocab/has_input>,
         <https://w3id.org/biolink/vocab/has_molecular_consequence>,
+        <https://w3id.org/biolink/vocab/has_not_completed>,
         <https://w3id.org/biolink/vocab/has_numeric_value>,
         <https://w3id.org/biolink/vocab/has_output>,
         <https://w3id.org/biolink/vocab/has_part>,
@@ -393,6 +427,7 @@
         <https://w3id.org/biolink/vocab/id>,
         <https://w3id.org/biolink/vocab/in_cell_population_with>,
         <https://w3id.org/biolink/vocab/in_complex_with>,
+        <https://w3id.org/biolink/vocab/in_linkage_disequilibrium_with>,
         <https://w3id.org/biolink/vocab/in_pathway_with>,
         <https://w3id.org/biolink/vocab/in_taxon>,
         <https://w3id.org/biolink/vocab/increases_abundance_of>,
@@ -402,6 +437,7 @@
         <https://w3id.org/biolink/vocab/increases_folding_of>,
         <https://w3id.org/biolink/vocab/increases_localization_of>,
         <https://w3id.org/biolink/vocab/increases_metabolic_processing_of>,
+        <https://w3id.org/biolink/vocab/increases_molecular_interaction>,
         <https://w3id.org/biolink/vocab/increases_molecular_modification_of>,
         <https://w3id.org/biolink/vocab/increases_mutation_rate_of>,
         <https://w3id.org/biolink/vocab/increases_response_to>,
@@ -415,6 +451,13 @@
         <https://w3id.org/biolink/vocab/interacts_with>,
         <https://w3id.org/biolink/vocab/interbase_coordinate>,
         <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/is_missense_variant_of>,
+        <https://w3id.org/biolink/vocab/is_nearby_variant_of>,
+        <https://w3id.org/biolink/vocab/is_non_coding_variant_of>,
+        <https://w3id.org/biolink/vocab/is_nonsense_variant_of>,
+        <https://w3id.org/biolink/vocab/is_splice_site_variant_of>,
+        <https://w3id.org/biolink/vocab/is_synonymous_variant_of>,
+        <https://w3id.org/biolink/vocab/lacks_part>,
         <https://w3id.org/biolink/vocab/latitude>,
         <https://w3id.org/biolink/vocab/located_in>,
         <https://w3id.org/biolink/vocab/location_of>,
@@ -466,6 +509,7 @@
         <https://w3id.org/biolink/vocab/precedes>,
         <https://w3id.org/biolink/vocab/predisposes>,
         <https://w3id.org/biolink/vocab/prevents>,
+        <https://w3id.org/biolink/vocab/produced_by>,
         <https://w3id.org/biolink/vocab/produces>,
         <https://w3id.org/biolink/vocab/provided_by>,
         <https://w3id.org/biolink/vocab/publications>,
@@ -520,8 +564,8 @@
         <https://w3id.org/biolink/vocab/versionOf>,
         <https://w3id.org/biolink/vocab/xenologous_to> ;
     meta:source_file "biolink-model.yaml" ;
-    meta:source_file_date "Wed Jul  8 22:03:04 2020"^^xsd:dateTime ;
-    meta:source_file_size 119974 ;
+    meta:source_file_date "Mon Jul 13 19:41:52 2020"^^xsd:dateTime ;
+    meta:source_file_size 137152 ;
     meta:subsets <https://w3id.org/biolink/vocab/samples>,
         <https://w3id.org/biolink/vocab/testing>,
         <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -761,7 +805,11 @@
         <wikidata:Q7868> ;
     meta:class_uri <https://w3id.org/biolink/vocab/Cell> ;
     meta:id_prefixes "CL",
+        "MESH",
+        "NCIT",
         "PO",
+        "SNOMEDCT",
+        "UBERON",
         "UMLS" ;
     meta:is_a <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
     meta:slots <https://w3id.org/biolink/vocab/category>,
@@ -986,7 +1034,8 @@
         <ncit:C20130>,
         <wikidata:Q417841> ;
     meta:class_uri <https://w3id.org/biolink/vocab/GeneFamily> ;
-    meta:id_prefixes "PANTHER" ;
+    meta:id_prefixes "HGNC.FAMILY",
+        "PANTHER.FAMILY" ;
     meta:is_a <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:mixins <https://w3id.org/biolink/vocab/GeneGrouping> ;
     meta:slots <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -2936,7 +2985,13 @@
         <umlsst:celc>,
         <wikidata:Q5058355> ;
     meta:class_uri <https://w3id.org/biolink/vocab/CellularComponent> ;
-    meta:id_prefixes "GO" ;
+    meta:id_prefixes "CL",
+        "GO",
+        "MESH",
+        "NCIT",
+        "SNOMEDCT",
+        "UBERON",
+        "UMLS" ;
     meta:is_a <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
     meta:slots <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/correlated_with>,
@@ -3504,6 +3559,8 @@
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <wikidata:Q16521> ;
     meta:class_uri <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+    meta:id_prefixes "MESH",
+        "NCBITaxon" ;
     meta:is_a <https://w3id.org/biolink/vocab/OntologyClass> ;
     meta:slots <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/correlated_with>,
@@ -4511,6 +4568,18 @@
         <https://w3id.org/biolink/vocab/sex_qualifier>,
         <https://w3id.org/biolink/vocab/variant_to_phenotypic_feature_association_subject> .
 
+<https://w3id.org/biolink/vocab/affects_expression_in> a meta:SlotDefinition ;
+    skos:definition "Holds between a variant and an anatomical entity where the expression of the variant is located in." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <gtex:affects_expression_in> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/affects> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/affects_expression_in> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/affects_expression_in> .
+
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_object> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     meta:alias "object" ;
@@ -4546,6 +4615,18 @@
     meta:range <https://w3id.org/biolink/vocab/Occurrent> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/capable_of> .
 
+<https://w3id.org/biolink/vocab/causes_adverse_event> a meta:SlotDefinition ;
+    skos:definition "holds between a drug and a disease or phenotype that can be caused by the drug" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/Aeolus:0000001> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/causes> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/causes_adverse_event> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/causes_adverse_event> .
+
 <https://w3id.org/biolink/vocab/clinical_modifier_qualifier> a meta:SlotDefinition ;
     skos:definition "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -4568,6 +4649,18 @@
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/colocalizes_with> .
 
+<https://w3id.org/biolink/vocab/contraindicated_for> a meta:SlotDefinition ;
+    skos:definition "Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/DrugCentral:0000001> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/contraindicated_for> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/contraindicated_for> .
+
 <https://w3id.org/biolink/vocab/creation_date> a meta:SlotDefinition ;
     skos:definition "date on which thing was created. This can be applied to nodes or edges" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -4586,6 +4679,66 @@
     meta:imported_from "https://w3id.org/biolink/biolinkml/types" ;
     meta:repr "str" ;
     meta:uri xsd:date .
+
+<https://w3id.org/biolink/vocab/decreases_molecular_interaction> a meta:SlotDefinition ;
+    skos:definition "indicates that the source decreases the molecular interaction between the target and some other molecular entity" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_molecular_interaction_with> ;
+    meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/molecularly_interacts_with> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/decreases_molecular_interaction> ;
+    meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/decreases_molecular_interaction> .
+
+<https://w3id.org/biolink/vocab/directly_interacts_with> a meta:SlotDefinition ;
+    skos:definition "Holds between molecular entities that phyically and directly interact with each other" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <chembio:interacts>,
+        <ctd:affects_binding>,
+        <ctd:interacts_with>,
+        <gamma:adduct>,
+        <gamma:antibody>,
+        <gamma:antibody_binding>,
+        <gamma:binder>,
+        <gamma:binding>,
+        <gamma:chaperone>,
+        <gamma:cofactor>,
+        <gamma:component>,
+        <gamma:interacts_with>,
+        <gamma:kb>,
+        <gamma:kd>,
+        <gamma:ligand>,
+        <gamma:multitarget>,
+        <gamma:none>,
+        <gamma:other>,
+        <gamma:other_unknown>,
+        <gamma:pharmacological_chaperone>,
+        <gamma:potency>,
+        <gamma:releasing_agent>,
+        <https://w3id.org/biolink/vocab/SIO:000203>,
+        <pharos:drug_targets> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/interacts_with> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/directly_interacts_with> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/directly_interacts_with> .
+
+<https://w3id.org/biolink/vocab/disease_has_basis_in> a meta:SlotDefinition ;
+    skos:definition "A relation that holds between a disease and an entity where the state of the entity has contribution to the disease." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <mondo:disease_has_basis_in_accumulation_of>,
+        <mondo:disease_has_basis_in_development_of> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/disease_has_basis_in> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/disease_has_basis_in> .
 
 <https://w3id.org/biolink/vocab/disrupts> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -4613,7 +4766,11 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wikidata:P2293> ;
+    skos:mappingRelation <hetio:ASSOCIATES_DaG>,
+        <https://w3id.org/biolink/vocab/GENO:0000840>,
+        <https://w3id.org/biolink/vocab/GENO:0000841>,
+        <ncit:R176>,
+        <wd:P2293> ;
     meta:domain <https://w3id.org/biolink/vocab/Gene> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -4678,6 +4835,18 @@
     meta:range <https://w3id.org/biolink/vocab/chemical_formula_value> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/has_chemical_formula> .
 
+<https://w3id.org/biolink/vocab/has_completed> a meta:SlotDefinition ;
+    skos:definition "holds between an entity and a process that the entity is capable of and has completed" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <cl:has_completed> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/has_completed> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/has_completed> .
+
 <https://w3id.org/biolink/vocab/has_confidence_level> a meta:SlotDefinition ;
     skos:definition "connects an association to a qualitative term denoting the level of confidence" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -4686,6 +4855,17 @@
     meta:owner <https://w3id.org/biolink/vocab/has_confidence_level> ;
     meta:range <https://w3id.org/biolink/vocab/ConfidenceLevel> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/has_confidence_level> .
+
+<https://w3id.org/biolink/vocab/has_decreased_amount> a meta:SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <cl:has_low_plasma_membrane_amount> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/has_decreased_amount> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/has_decreased_amount> .
 
 <https://w3id.org/biolink/vocab/has_evidence> a meta:SlotDefinition ;
     skos:definition "connects an association to an instance of supporting evidence" ;
@@ -4711,6 +4891,17 @@
     meta:range <https://w3id.org/biolink/vocab/GeneProduct> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/has_gene_product> .
 
+<https://w3id.org/biolink/vocab/has_increased_amount> a meta:SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <cl:has_high_plasma_membrane_amount> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/has_increased_amount> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/has_increased_amount> .
+
 <https://w3id.org/biolink/vocab/has_molecular_consequence> a meta:SlotDefinition ;
     skos:definition "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -4722,6 +4913,42 @@
     meta:range <https://w3id.org/biolink/vocab/OntologyClass> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/has_molecular_consequence> .
 
+<https://w3id.org/biolink/vocab/has_not_completed> a meta:SlotDefinition ;
+    skos:definition "holds between an entity and a process that the entity is capable of, but has not completed" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <cl:has_not_completed> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/has_not_completed> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/has_not_completed> .
+
+<https://w3id.org/biolink/vocab/in_linkage_disequilibrium_with> a meta:SlotDefinition ;
+    skos:definition "holds between two sequence variants, the presence of which are correlated in a population" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ncit:C16798> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/in_linkage_disequilibrium_with> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/in_linkage_disequilibrium_with> .
+
+<https://w3id.org/biolink/vocab/increases_molecular_interaction> a meta:SlotDefinition ;
+    skos:definition "indicates that the source increases the molecular interaction between the target and some other molecular entity" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_molecular_interaction_with> ;
+    meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/molecularly_interacts_with> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/increases_molecular_interaction> ;
+    meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/increases_molecular_interaction> .
+
 <https://w3id.org/biolink/vocab/interacting_molecules_category> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     meta:domain <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
@@ -4729,6 +4956,110 @@
     meta:owner <https://w3id.org/biolink/vocab/interacting_molecules_category> ;
     meta:range <https://w3id.org/biolink/vocab/OntologyClass> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/interacting_molecules_category> .
+
+<https://w3id.org/biolink/vocab/is_missense_variant_of> a meta:SlotDefinition ;
+    skos:definition "holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SO:0001583>,
+        <snpeff:initiator_codon_variant>,
+        <snpeff:missense_variant>,
+        <snpeff:structural_interaction_variant> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/is_missense_variant_of> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/is_missense_variant_of> .
+
+<https://w3id.org/biolink/vocab/is_nearby_variant_of> a meta:SlotDefinition ;
+    skos:definition "holds between a sequence variant and a gene sequence that the variant is genomically close to." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GAMMA:0000102>,
+        <snpeff:downstream_gene_variant>,
+        <snpeff:upstream_gene_variant> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/is_nearby_variant_of> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/is_nearby_variant_of> .
+
+<https://w3id.org/biolink/vocab/is_non_coding_variant_of> a meta:SlotDefinition ;
+    skos:definition "holds between a sequence variant and a gene, where the variant does not affect the coding sequence" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GAMMA:0000103>,
+        <snpeff:3_prime_UTR_variant>,
+        <snpeff:5_prime_UTR_premature_start_codon_gain_variant>,
+        <snpeff:5_prime_UTR_variant>,
+        <snpeff:intron_variant>,
+        <snpeff:non_coding_transcript_exon_variant> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/is_non_coding_variant_of> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/is_non_coding_variant_of> .
+
+<https://w3id.org/biolink/vocab/is_nonsense_variant_of> a meta:SlotDefinition ;
+    skos:definition "holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SO:0002054>,
+        <snpeff:frameshift_variant>,
+        <snpeff:start_lost>,
+        <snpeff:stop_gained>,
+        <snpeff:stop_lost> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/is_nonsense_variant_of> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/is_nonsense_variant_of> .
+
+<https://w3id.org/biolink/vocab/is_splice_site_variant_of> a meta:SlotDefinition ;
+    skos:definition "holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SO:0001629>,
+        <snpeff:splice_acceptor_variant>,
+        <snpeff:splice_donor_variant>,
+        <snpeff:splice_region_variant> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/is_splice_site_variant_of> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/is_splice_site_variant_of> .
+
+<https://w3id.org/biolink/vocab/is_synonymous_variant_of> a meta:SlotDefinition ;
+    skos:definition "holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SO:0001819>,
+        <snpeff:start_retained>,
+        <snpeff:stop_retained_variant>,
+        <snpeff:synonymous_variant> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/is_synonymous_variant_of> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/is_synonymous_variant_of> .
+
+<https://w3id.org/biolink/vocab/lacks_part> a meta:SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <cl:lacks_part>,
+        <cl:lacks_plasma_membrane_part> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/lacks_part> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/lacks_part> .
 
 <https://w3id.org/biolink/vocab/manifestation_of> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -4761,17 +5092,19 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:altLabel "activity directly negatively regulates activity of" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002449>,
+    skos:mappingRelation <hetio:DOWNREGULATES_AdG>,
+        <hetio:DOWNREGULATES_DdG>,
+        <https://w3id.org/biolink/vocab/RO:0002449>,
         <semmeddb:INHIBITS> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "activity directly negatively regulates activity of" ;
-            meta:local_name_source "ro" ],
-        [ a meta:LocalName ;
             skos:altLabel "negatively regulates" ;
-            meta:local_name_source "translator" ] ;
+            meta:local_name_source "translator" ],
+        [ a meta:LocalName ;
+            skos:altLabel "activity directly negatively regulates activity of" ;
+            meta:local_name_source "ro" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/negatively_regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/negatively_regulates_entity_to_entity> ;
@@ -4795,6 +5128,7 @@
     skos:definition "holds between a process and a material entity or site within which the process occurs" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000066>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:site_of>,
         <semmeddb:OCCURS_IN>,
         <semmeddb:PROCESS_OF> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -4836,17 +5170,20 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:altLabel "activity directly positively regulates activity of" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002450>,
+    skos:mappingRelation <hetio:UPREGULATES_AuG>,
+        <hetio:UPREGULATES_DuG>,
+        <https://w3id.org/biolink/vocab/RO:0002450>,
+        <https://w3id.org/biolink/vocab/RO:0004034>,
         <semmeddb:STIMULATES> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "positively regulates" ;
-            meta:local_name_source "translator" ],
-        [ a meta:LocalName ;
             skos:altLabel "activity directly positively regulates activity of" ;
-            meta:local_name_source "ro" ] ;
+            meta:local_name_source "ro" ],
+        [ a meta:LocalName ;
+            skos:altLabel "positively regulates" ;
+            meta:local_name_source "translator" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/positively_regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/positively_regulates_entity_to_entity> ;
@@ -4892,20 +5229,16 @@
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/prevents> .
 
-<https://w3id.org/biolink/vocab/produces> a meta:SlotDefinition ;
-    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
-    skos:definition "holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity" ;
+<https://w3id.org/biolink/vocab/produced_by> a meta:SlotDefinition ;
+    owl:inverseOf <https://w3id.org/biolink/vocab/produces> ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0003000>,
-        <semmeddb:PRODUCES>,
-        <wikidata:P1056> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
     meta:multivalued true ;
-    meta:owner <https://w3id.org/biolink/vocab/produces> ;
+    meta:owner <https://w3id.org/biolink/vocab/produced_by> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:slot_uri <https://w3id.org/biolink/vocab/produces> .
+    meta:slot_uri <https://w3id.org/biolink/vocab/produced_by> .
 
 <https://w3id.org/biolink/vocab/same_as> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -4953,6 +5286,8 @@
         <wikidata:Q2996394> ;
     meta:class_uri <https://w3id.org/biolink/vocab/BiologicalProcess> ;
     meta:id_prefixes "GO",
+        "KEGG",
+        "MetaCyc",
         "REACT" ;
     meta:is_a <https://w3id.org/biolink/vocab/BiologicalProcessOrActivity> ;
     meta:mixins <https://w3id.org/biolink/vocab/Occurrent> ;
@@ -5234,7 +5569,10 @@
     meta:id_prefixes "EFO",
         "HP",
         "MEDDRA",
+        "MESH",
+        "MP",
         "NCIT",
+        "SNOMEDCT",
         "UMLS" ;
     meta:is_a <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
     meta:slots <https://w3id.org/biolink/vocab/category>,
@@ -5302,10 +5640,10 @@
     meta:is_a <https://w3id.org/biolink/vocab/OrganismalEntity> ;
     meta:local_names [ a meta:LocalName ;
             skos:altLabel "population" ;
-            meta:local_name_source "ga4gh" ],
+            meta:local_name_source "agr" ],
         [ a meta:LocalName ;
             skos:altLabel "population" ;
-            meta:local_name_source "agr" ] ;
+            meta:local_name_source "ga4gh" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/ThingWithTaxon> ;
     meta:slots <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/correlated_with>,
@@ -5461,27 +5799,13 @@
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/caused_by> .
 
-<https://w3id.org/biolink/vocab/causes> a meta:SlotDefinition ;
-    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
-    owl:inverseOf <https://w3id.org/biolink/vocab/caused_by> ;
-    skos:definition "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002410>,
-        <semmeddb:CAUSES>,
-        <wikidata:P1542> ;
-    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:inherited true ;
-    meta:is_a <https://w3id.org/biolink/vocab/contributes_to> ;
-    meta:multivalued true ;
-    meta:owner <https://w3id.org/biolink/vocab/causes> ;
-    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:slot_uri <https://w3id.org/biolink/vocab/causes> .
-
 <https://w3id.org/biolink/vocab/contributes_to> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002326> ;
+    skos:mappingRelation <ctd:marker_mechanism>,
+        <ctd:positivecorrelation>,
+        <https://w3id.org/biolink/vocab/RO:0002326> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -5587,7 +5911,26 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/location_of> ;
     skos:definition "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0001025> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/BSPO:0000107>,
+        <https://w3id.org/biolink/vocab/BSPO:0000108>,
+        <https://w3id.org/biolink/vocab/BSPO:0000120>,
+        <https://w3id.org/biolink/vocab/BSPO:0000121>,
+        <https://w3id.org/biolink/vocab/BSPO:0000122>,
+        <https://w3id.org/biolink/vocab/BSPO:0000123>,
+        <https://w3id.org/biolink/vocab/BSPO:0000124>,
+        <https://w3id.org/biolink/vocab/BSPO:0000125>,
+        <https://w3id.org/biolink/vocab/BSPO:0000126>,
+        <https://w3id.org/biolink/vocab/BSPO:0001100>,
+        <https://w3id.org/biolink/vocab/BSPO:0001101>,
+        <https://w3id.org/biolink/vocab/BSPO:0001107>,
+        <https://w3id.org/biolink/vocab/BSPO:0015101>,
+        <https://w3id.org/biolink/vocab/BSPO:0015102>,
+        <https://w3id.org/biolink/vocab/BSPO:0015202>,
+        <https://w3id.org/biolink/vocab/GOREL:0001004>,
+        <https://w3id.org/biolink/vocab/RO:0001025>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:in_central_side_of>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:in_innermost_side_of>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:in_outermost_side_of> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -5618,6 +5961,13 @@
     skos:definition "holds between parts and wholes (material entities or processes)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000050>,
+        <https://w3id.org/biolink/vocab/BSPO:0001106>,
+        <https://w3id.org/biolink/vocab/BSPO:0001108>,
+        <https://w3id.org/biolink/vocab/BSPO:0001113>,
+        <https://w3id.org/biolink/vocab/BSPO:0001115>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:layer_part_of>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:subdivision_of>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:trunk_part_of>,
         <semmeddb:PART_OF>,
         <wikidata:P361> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -5651,6 +6001,22 @@
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/physically_interacts_with> ;
     meta:symmetric true .
+
+<https://w3id.org/biolink/vocab/produces> a meta:SlotDefinition ;
+    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
+    skos:definition "holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GOREL:0001010>,
+        <https://w3id.org/biolink/vocab/RO:0003000>,
+        <semmeddb:PRODUCES>,
+        <wikidata:P1056> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/produces> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/produces> .
 
 <https://w3id.org/biolink/vocab/sequence_feature_relationship_object> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -5724,8 +6090,11 @@
     skos:altLabel "is substance that treats" ;
     skos:definition "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002606>,
+    skos:mappingRelation <ctd:negativecorrelation>,
+        <ctd:therapeutic>,
+        <https://w3id.org/biolink/vocab/RO:0002606>,
         <https://w3id.org/biolink/vocab/RO:0003307>,
+        <mondo:disease_responds_to>,
         <semmeddb:TREATS>,
         <wikidata:P2175> ;
     meta:domain <https://w3id.org/biolink/vocab/Treatment> ;
@@ -5996,6 +6365,23 @@
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/affects_risk_for> .
 
+<https://w3id.org/biolink/vocab/causes> a meta:SlotDefinition ;
+    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
+    owl:inverseOf <https://w3id.org/biolink/vocab/caused_by> ;
+    skos:definition "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002410>,
+        <mondo:disease_triggers>,
+        <semmeddb:CAUSES>,
+        <wikidata:P1542> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/contributes_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/causes> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/causes> .
+
 <https://w3id.org/biolink/vocab/change_is_catalyzed_by> a meta:SlotDefinition ;
     skos:definition "hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -6093,6 +6479,8 @@
 
 <https://w3id.org/biolink/vocab/negatively_regulates> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0004033>,
+        <https://w3id.org/biolink/vocab/RO:0004035> ;
     skos:note "This is a grouping for process-process and entity-entity relations" ;
     meta:abstract true ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -6108,7 +6496,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between entties that overlap in their extents (materials or processes)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002131> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/BSPO:0005001>,
+        <https://w3id.org/biolink/vocab/RO:0002131> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -6122,7 +6511,8 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/has_participant> ;
     skos:definition "holds between a continuant and a process, where the continuant is somehow involved in the process" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0000056> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000056>,
+        <https://w3id.org/biolink/vocab/RO:0000056> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -6133,6 +6523,7 @@
 
 <https://w3id.org/biolink/vocab/positively_regulates> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002213> ;
     skos:note "This is a grouping for process-process and entity-entity relations" ;
     meta:abstract true ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -6222,12 +6613,20 @@
     meta:class_uri <https://w3id.org/biolink/vocab/Disease> ;
     meta:id_prefixes "DOID",
         "EFO",
+        "HP",
+        "ICD0",
+        "ICD10",
+        "ICD9",
         "MEDDRA",
         "MESH",
         "MONDO",
+        "MP",
+        "NCIT",
         "OMIM",
         "ORPHANET",
-        "UMLS" ;
+        "SNOMEDCT",
+        "UMLS",
+        "medgen" ;
     meta:is_a <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
     meta:slots <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/correlated_with>,
@@ -6466,6 +6865,7 @@
     skos:definition "holds between two biological entities that have common evolutionary origin" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010302>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:sexually_homologous_to>,
         <ro:HOM0000001> ;
     skos:note "typically used to describe homology relationships between genes or gene products" ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -6881,7 +7281,41 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:COEXISTS_WITH> ;
+    skos:mappingRelation <bspo:parallel_to>,
+        <https://w3id.org/biolink/vocab/BSPO:0000096>,
+        <https://w3id.org/biolink/vocab/BSPO:0000097>,
+        <https://w3id.org/biolink/vocab/BSPO:0000098>,
+        <https://w3id.org/biolink/vocab/BSPO:0000099>,
+        <https://w3id.org/biolink/vocab/BSPO:0000100>,
+        <https://w3id.org/biolink/vocab/BSPO:0000102>,
+        <https://w3id.org/biolink/vocab/BSPO:0000104>,
+        <https://w3id.org/biolink/vocab/BSPO:0015001>,
+        <https://w3id.org/biolink/vocab/BSPO:0015002>,
+        <https://w3id.org/biolink/vocab/BSPO:0015003>,
+        <https://w3id.org/biolink/vocab/BSPO:0015005>,
+        <https://w3id.org/biolink/vocab/BSPO:0015007>,
+        <https://w3id.org/biolink/vocab/BSPO:0015008>,
+        <https://w3id.org/biolink/vocab/BSPO:0015009>,
+        <https://w3id.org/biolink/vocab/BSPO:0015012>,
+        <https://w3id.org/biolink/vocab/BSPO:0015014>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:anastomoses_with>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:anteriorly_connected_to>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:channel_for>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:channels_from>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:channels_into>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:conduit_for>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:distally_connected_to>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:extends_fibers_into>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:filtered_through>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:indirectly_supplies>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:posteriorly_connected_to>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:proximally_connected_to>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:synapsed_by>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:transitively_anteriorly_connected_to>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:transitively_connected_to>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:transitively_distally_connected_to>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:transitively_proximally_connected_to>,
+        <semmeddb:COEXISTS_WITH> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -6895,7 +7329,8 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/expressed_in> ;
     skos:definition "holds between an anatomical entity and gene or gene product that is expressed there" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002292> ;
+    skos:mappingRelation <hetio:EXPRESSES_AeG>,
+        <https://w3id.org/biolink/vocab/RO:0002292> ;
     meta:domain <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -7036,7 +7471,10 @@
         <umlssc:T044>,
         <umlsst:moft> ;
     meta:class_uri <https://w3id.org/biolink/vocab/MolecularActivity> ;
-    meta:id_prefixes "GO",
+    meta:id_prefixes "EC",
+        "GO",
+        "KEGG",
+        "MetaCyc",
         "REACT",
         "RHEA" ;
     meta:is_a <https://w3id.org/biolink/vocab/BiologicalProcessOrActivity> ;
@@ -7572,6 +8010,7 @@
         "NCBIGene",
         "PomBase",
         "SGD",
+        "UniProtKB",
         "WB",
         "ZFIN",
         "dictyBase" ;
@@ -7702,6 +8141,8 @@
     skos:definition "holds between two processes, where one completes before the other begins" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000063>,
+        <https://w3id.org/biolink/vocab/RO:0002263>,
+        <https://w3id.org/biolink/vocab/RO:0002264>,
         <semmeddb:PRECEDES>,
         <wikidata:P156> ;
     meta:domain <https://w3id.org/biolink/vocab/Occurrent> ;
@@ -7722,11 +8163,11 @@
         <wikidata:Q15304597> ;
     skos:note "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" ;
     meta:alt_descriptions [ a meta:AltDescription ;
-            skos:definition "A contiguous change at a Location" ;
-            meta:source "VMC" ],
-        [ a meta:AltDescription ;
             skos:definition "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition" ;
-            meta:source "AGR" ] ;
+            meta:source "AGR" ],
+        [ a meta:AltDescription ;
+            skos:definition "A contiguous change at a Location" ;
+            meta:source "VMC" ] ;
     meta:class_uri <https://w3id.org/biolink/vocab/SequenceVariant> ;
     meta:id_prefixes "CAID",
         "ClinVar",
@@ -7861,7 +8302,11 @@
         <umlsst:bsoj>,
         <wikidata:Q4936952> ;
     meta:class_uri <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
-    meta:id_prefixes "UBERON",
+    meta:id_prefixes "CL",
+        "GO",
+        "MESH",
+        "NCIT",
+        "UBERON",
         "UMLS" ;
     meta:is_a <https://w3id.org/biolink/vocab/OrganismalEntity> ;
     meta:mixins <https://w3id.org/biolink/vocab/PhysicalEntity>,
@@ -7976,7 +8421,9 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/participates_in> ;
     skos:definition "holds between a process and a continuant, where the continuant is somehow involved in the process" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0000057>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GOREL:0001007>,
+        <https://w3id.org/biolink/vocab/GOREL:0002008>,
+        <https://w3id.org/biolink/vocab/RO:0000057>,
         <wikidata:P2283> ;
     meta:domain <https://w3id.org/biolink/vocab/Occurrent> ;
     meta:inherited true ;
@@ -8161,19 +8608,6 @@
     meta:union_of <https://w3id.org/biolink/vocab/Gene>,
         <https://w3id.org/biolink/vocab/GeneProduct> .
 
-<https://w3id.org/biolink/vocab/affects> a meta:SlotDefinition ;
-    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
-    skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:AFFECTS> ;
-    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:inherited true ;
-    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
-    meta:multivalued true ;
-    meta:owner <https://w3id.org/biolink/vocab/affects> ;
-    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:slot_uri <https://w3id.org/biolink/vocab/affects> .
-
 <https://w3id.org/biolink/vocab/Occurrent> a meta:ClassDefinition ;
     skos:definition "A processual entity" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -8201,6 +8635,23 @@
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/systematic_synonym> .
 
+<https://w3id.org/biolink/vocab/affects> a meta:SlotDefinition ;
+    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
+    skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:inferred>,
+        <ctd:prediction_hypothesis>,
+        <https://w3id.org/biolink/vocab/GOREL:0001006>,
+        <https://w3id.org/biolink/vocab/UPHENO:0000001>,
+        <semmeddb:AFFECTS> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/affects> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/affects> .
+
 <https://w3id.org/biolink/vocab/has_biological_sequence> a meta:SlotDefinition ;
     skos:definition "connects a genomic feature to its sequence" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -8221,6 +8672,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_abundance_of>,
+        <ubergraph:is_decrease_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_abundance_of> ;
@@ -8233,6 +8686,26 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_activity_of>,
+        <gamma:aggregation_inhibitor>,
+        <gamma:allosteric_antagonist>,
+        <gamma:antagonist>,
+        <gamma:blocker>,
+        <gamma:channel_blocker>,
+        <gamma:conversion_inhibitor>,
+        <gamma:downregulator>,
+        <gamma:gating_inhibitor>,
+        <gamma:ic50>,
+        <gamma:inactivator>,
+        <gamma:inhibitor>,
+        <gamma:inhibitory_allosteric_modulator>,
+        <gamma:inverse_agonist>,
+        <gamma:ki>,
+        <gamma:negative_allosteric_modulator>,
+        <gamma:negative_modulator>,
+        <gamma:partial_antagonist>,
+        <gamma:suppressor>,
+        <gamma:weak_inhibitor> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_activity_of> ;
@@ -8245,6 +8718,9 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_cleavage>,
+        <ctd:decreases_degradation_of>,
+        <ctd:decreases_hydrolysis> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_degradation_of> ;
@@ -8257,6 +8733,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_expression_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_expression_of> ;
@@ -8269,6 +8746,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_folding_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_folding_of> ;
@@ -8281,6 +8759,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_localization_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_localization_of> ;
@@ -8293,6 +8772,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_metabolic_processing_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_metabolic_processing_of> ;
@@ -8305,6 +8785,39 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_ADP-ribosylation>,
+        <ctd:decreases_N-linked_glycosylation>,
+        <ctd:decreases_O-linked_glycosylation>,
+        <ctd:decreases_acetylation>,
+        <ctd:decreases_acylation>,
+        <ctd:decreases_alkylation>,
+        <ctd:decreases_amination>,
+        <ctd:decreases_carbamoylation>,
+        <ctd:decreases_carboxylation>,
+        <ctd:decreases_ethylation>,
+        <ctd:decreases_farnesylation>,
+        <ctd:decreases_geranoylation>,
+        <ctd:decreases_glucuronidation>,
+        <ctd:decreases_glutathionylation>,
+        <ctd:decreases_glycation>,
+        <ctd:decreases_glycosylation>,
+        <ctd:decreases_hydroxylation>,
+        <ctd:decreases_lipidation>,
+        <ctd:decreases_methylation>,
+        <ctd:decreases_molecular_modification_of>,
+        <ctd:decreases_myristoylation>,
+        <ctd:decreases_nitrosation>,
+        <ctd:decreases_nucleotidylation>,
+        <ctd:decreases_oxidation>,
+        <ctd:decreases_palmitoylation>,
+        <ctd:decreases_phosphorylation>,
+        <ctd:decreases_prenylation>,
+        <ctd:decreases_reduction>,
+        <ctd:decreases_ribosylation>,
+        <ctd:decreases_sulfation>,
+        <ctd:decreases_sumoylation>,
+        <ctd:decreases_ubiquitination>,
+        <gamma:deoxidizer> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_molecular_modification_of> ;
@@ -8317,6 +8830,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_mutagenesis>,
+        <ctd:decreases_mutation_rate_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_mutation_rate_of> ;
@@ -8329,6 +8844,9 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_response_to>,
+        <ctd:decreases_response_to_substance>,
+        <gamma:desensitize_the_target> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_response_to> ;
@@ -8341,6 +8859,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_export>,
+        <ctd:decreases_secretion_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_secretion_of> ;
@@ -8353,6 +8873,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_RNA_splicing>,
+        <ctd:decreases_splicing_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_splicing_of> ;
@@ -8365,6 +8887,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_stability_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_stability_of> ;
@@ -8377,6 +8900,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_synthesis_of>,
+        <gamma:inhibition_of_synthesis> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_synthesis_of> ;
@@ -8389,6 +8914,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_transport_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_transport_of> ;
@@ -8401,6 +8927,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:decreases_import>,
+        <ctd:decreases_uptake_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_uptake_of> ;
@@ -8413,6 +8941,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_abundance_of>,
+        <ubergraph:is_increase_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_abundance_of> ;
@@ -8425,6 +8955,18 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_activity_of>,
+        <gamma:ac50>,
+        <gamma:activator>,
+        <gamma:agonist>,
+        <gamma:ec50>,
+        <gamma:inducer>,
+        <gamma:opener>,
+        <gamma:partial_agonist>,
+        <gamma:positive_allosteric_modulator>,
+        <gamma:positive_modulator>,
+        <gamma:potentiator>,
+        <gamma:stimulator> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_activity_of> ;
@@ -8437,6 +8979,11 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_cleavage>,
+        <ctd:increases_degradation_of>,
+        <ctd:increases_hydrolysis>,
+        <gamma:substrate>,
+        <https://w3id.org/biolink/vocab/GOREL:0002004> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_degradation_of> ;
@@ -8449,6 +8996,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_expression_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_expression_of> ;
@@ -8461,6 +9009,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_folding_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_folding_of> ;
@@ -8473,6 +9022,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_localization_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_localization_of> ;
@@ -8485,6 +9035,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_metabolic_processing_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_metabolic_processing_of> ;
@@ -8497,6 +9048,40 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_ADP-ribosylation>,
+        <ctd:increases_N-linked_glycosylation>,
+        <ctd:increases_O-linked_glycosylation>,
+        <ctd:increases_acetylation>,
+        <ctd:increases_acylation>,
+        <ctd:increases_alkylation>,
+        <ctd:increases_amination>,
+        <ctd:increases_carbamoylation>,
+        <ctd:increases_carboxylation>,
+        <ctd:increases_ethylation>,
+        <ctd:increases_farnesylation>,
+        <ctd:increases_geranoylation>,
+        <ctd:increases_glucuronidation>,
+        <ctd:increases_glutathionylation>,
+        <ctd:increases_glycation>,
+        <ctd:increases_glycosylation>,
+        <ctd:increases_hydroxylation>,
+        <ctd:increases_lipidation>,
+        <ctd:increases_methylation>,
+        <ctd:increases_molecular_modification_of>,
+        <ctd:increases_myristoylation>,
+        <ctd:increases_nitrosation>,
+        <ctd:increases_nucleotidylation>,
+        <ctd:increases_oxidation>,
+        <ctd:increases_palmitoylation>,
+        <ctd:increases_phosphorylation>,
+        <ctd:increases_prenylation>,
+        <ctd:increases_reduction>,
+        <ctd:increases_ribosylation>,
+        <ctd:increases_sulfation>,
+        <ctd:increases_sumoylation>,
+        <ctd:increases_ubiquitination>,
+        <gamma:acetylation>,
+        <gamma:oxidizer> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_molecular_modification_of> ;
@@ -8509,6 +9094,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_mutagenesis>,
+        <ctd:increases_mutation_rate_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_mutation_rate_of> ;
@@ -8521,6 +9108,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_response_to> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_response_to> ;
@@ -8533,6 +9121,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_export>,
+        <ctd:increases_secretion_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_secretion_of> ;
@@ -8545,6 +9135,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_RNA_splicing>,
+        <ctd:increases_splicing_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_splicing_of> ;
@@ -8557,6 +9149,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_stability_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_stability_of> ;
@@ -8569,6 +9162,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_synthesis_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_synthesis_of> ;
@@ -8581,6 +9175,9 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_transport_of>,
+        <gamma:carrier>,
+        <gamma:transporter> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_transport_of> ;
@@ -8593,6 +9190,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:increases_import>,
+        <ctd:increases_uptake_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects_uptake_of> ;
@@ -8600,18 +9199,6 @@
     meta:owner <https://w3id.org/biolink/vocab/increases_uptake_of> ;
     meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/increases_uptake_of> .
-
-<https://w3id.org/biolink/vocab/molecularly_interacts_with> a meta:SlotDefinition ;
-    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002436> ;
-    meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
-    meta:inherited true ;
-    meta:is_a <https://w3id.org/biolink/vocab/physically_interacts_with> ;
-    meta:multivalued true ;
-    meta:owner <https://w3id.org/biolink/vocab/molecularly_interacts_with> ;
-    meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
-    meta:slot_uri <https://w3id.org/biolink/vocab/molecularly_interacts_with> .
 
 <https://w3id.org/biolink/vocab/biomarker_for> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -8631,6 +9218,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_abundance_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8643,6 +9231,10 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_activity_of>,
+        <gamma:allosteric_modulator>,
+        <gamma:modulator>,
+        <gamma:regulator> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8655,6 +9247,9 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_cleavage>,
+        <ctd:affects_degradation_of>,
+        <ctd:affects_hydrolysis> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8667,6 +9262,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_expression_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8679,6 +9275,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_folding_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8691,6 +9288,9 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_localization_of>,
+        <gamma:storage>,
+        <https://w3id.org/biolink/vocab/GOREL:0002003> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8703,6 +9303,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_metabolic_processing_of>,
+        <gamma:catalytic_activity> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8715,6 +9317,38 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_ADP-ribosylation>,
+        <ctd:affects_N-linked_glycosylation>,
+        <ctd:affects_O-linked_glycosylation>,
+        <ctd:affects_acetylation>,
+        <ctd:affects_acylation>,
+        <ctd:affects_alkylation>,
+        <ctd:affects_amination>,
+        <ctd:affects_carbamoylation>,
+        <ctd:affects_carboxylation>,
+        <ctd:affects_ethylation>,
+        <ctd:affects_farnesylation>,
+        <ctd:affects_geranoylation>,
+        <ctd:affects_glucuronidation>,
+        <ctd:affects_glutathionylation>,
+        <ctd:affects_glycation>,
+        <ctd:affects_glycosylation>,
+        <ctd:affects_hydroxylation>,
+        <ctd:affects_lipidation>,
+        <ctd:affects_methylation>,
+        <ctd:affects_molecular_modification_of>,
+        <ctd:affects_myristoylation>,
+        <ctd:affects_nitrosation>,
+        <ctd:affects_nucleotidylation>,
+        <ctd:affects_oxidation>,
+        <ctd:affects_palmitoylation>,
+        <ctd:affects_phosphorylation>,
+        <ctd:affects_prenylation>,
+        <ctd:affects_reduction>,
+        <ctd:affects_ribosylation>,
+        <ctd:affects_sulfation>,
+        <ctd:affects_sumoylation>,
+        <ctd:affects_ubiquitination> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8727,6 +9361,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_mutagenesis>,
+        <ctd:affects_mutation_rate_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8739,6 +9375,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_response_to> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8751,6 +9388,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_export>,
+        <ctd:affects_secretion_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8763,6 +9402,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_RNA_splicing>,
+        <ctd:affects_splicing_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8775,6 +9416,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_stability_of>,
+        <gamma:stabilization> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8787,6 +9430,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_synthesis_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8799,6 +9443,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_transport_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8811,6 +9456,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:affects_import>,
+        <ctd:affects_uptake_of> ;
     meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -8818,6 +9465,19 @@
     meta:owner <https://w3id.org/biolink/vocab/affects_uptake_of> ;
     meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/affects_uptake_of> .
+
+<https://w3id.org/biolink/vocab/molecularly_interacts_with> a meta:SlotDefinition ;
+    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ctd:molecularly_interacts_with>,
+        <https://w3id.org/biolink/vocab/RO:0002436> ;
+    meta:domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
+    meta:inherited true ;
+    meta:is_a <https://w3id.org/biolink/vocab/physically_interacts_with> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/molecularly_interacts_with> ;
+    meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/molecularly_interacts_with> .
 
 <https://w3id.org/biolink/vocab/regulates_entity_to_entity> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -8828,11 +9488,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "regulates" ;
-            meta:local_name_source "translator" ],
-        [ a meta:LocalName ;
             skos:altLabel "activity directly regulates activity of" ;
-            meta:local_name_source "ro" ] ;
+            meta:local_name_source "ro" ],
+        [ a meta:LocalName ;
+            skos:altLabel "regulates" ;
+            meta:local_name_source "translator" ] ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
@@ -8857,7 +9517,8 @@
     skos:definition "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature)." ;
     skos:editorialNote "check the range" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002200> ;
+    skos:mappingRelation <hetio:PRESENTS_DpS>,
+        <https://w3id.org/biolink/vocab/RO:0002200> ;
     meta:domain <https://w3id.org/biolink/vocab/BiologicalEntity> ;
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -9165,6 +9826,7 @@
         <https://w3id.org/biolink/vocab/decreases_folding_of>,
         <https://w3id.org/biolink/vocab/decreases_localization_of>,
         <https://w3id.org/biolink/vocab/decreases_metabolic_processing_of>,
+        <https://w3id.org/biolink/vocab/decreases_molecular_interaction>,
         <https://w3id.org/biolink/vocab/decreases_molecular_modification_of>,
         <https://w3id.org/biolink/vocab/decreases_mutation_rate_of>,
         <https://w3id.org/biolink/vocab/decreases_response_to>,
@@ -9186,6 +9848,7 @@
         <https://w3id.org/biolink/vocab/increases_folding_of>,
         <https://w3id.org/biolink/vocab/increases_localization_of>,
         <https://w3id.org/biolink/vocab/increases_metabolic_processing_of>,
+        <https://w3id.org/biolink/vocab/increases_molecular_interaction>,
         <https://w3id.org/biolink/vocab/increases_molecular_modification_of>,
         <https://w3id.org/biolink/vocab/increases_mutation_rate_of>,
         <https://w3id.org/biolink/vocab/increases_response_to>,
@@ -9220,27 +9883,15 @@
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "descriptor" ;
-            meta:local_name_source "ga4gh" ],
-        [ a meta:LocalName ;
             skos:altLabel "node with incoming relationship" ;
-            meta:local_name_source "neo4j" ] ;
+            meta:local_name_source "neo4j" ],
+        [ a meta:LocalName ;
+            skos:altLabel "descriptor" ;
+            meta:local_name_source "ga4gh" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:required true ;
     meta:slot_uri rdf:object .
-
-<https://w3id.org/biolink/vocab/related_to> a meta:SlotDefinition ;
-    skos:definition "A relationship that is asserted between two named things" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation owl:topObjectProperty,
-        <semmeddb:ASSOCIATED_WITH> ;
-    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:inherited true ;
-    meta:multivalued true ;
-    meta:owner <https://w3id.org/biolink/vocab/related_to> ;
-    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:slot_uri <https://w3id.org/biolink/vocab/related_to> .
 
 <https://w3id.org/biolink/vocab/node_property> a meta:SlotDefinition ;
     skos:definition "A grouping for any property that holds between a node and a value" ;
@@ -9249,6 +9900,41 @@
     meta:owner <https://w3id.org/biolink/vocab/node_property> ;
     meta:range <https://w3id.org/biolink/vocab/string> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/node_property> .
+
+<https://w3id.org/biolink/vocab/subject> a meta:SlotDefinition ;
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation rdf:subject,
+        owl:annotatedSource,
+        <oban:association_has_subject> ;
+    meta:domain <https://w3id.org/biolink/vocab/Association> ;
+    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
+    meta:local_names [ a meta:LocalName ;
+            skos:altLabel "annotation subject" ;
+            meta:local_name_source "ga4gh" ],
+        [ a meta:LocalName ;
+            skos:altLabel "node with outgoing relationship" ;
+            meta:local_name_source "neo4j" ] ;
+    meta:owner <https://w3id.org/biolink/vocab/Association> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:required true ;
+    meta:slot_uri rdf:subject .
+
+<https://w3id.org/biolink/vocab/related_to> a meta:SlotDefinition ;
+    skos:definition "A relationship that is asserted between two named things" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation owl:topObjectProperty,
+        <https://w3id.org/biolink/vocab/BFO:0000054>,
+        <https://w3id.org/biolink/vocab/GOREL:0002005>,
+        <https://w3id.org/biolink/vocab/GOREL:0012006>,
+        <https://w3id.org/biolink/vocab/UBERON_CORE:protects>,
+        <semmeddb:ASSOCIATED_WITH> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:inherited true ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/related_to> ;
+    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/related_to> .
 
 <https://w3id.org/biolink/vocab/NamedThing> a meta:ClassDefinition ;
     rdfs:subClassOf <https://w3id.org/biolink/vocab/BFO:0000001> ;
@@ -9267,20 +9953,25 @@
     meta:class_uri <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slots <https://w3id.org/biolink/vocab/actively_involved_in>,
         <https://w3id.org/biolink/vocab/affects>,
+        <https://w3id.org/biolink/vocab/affects_expression_in>,
         <https://w3id.org/biolink/vocab/affects_risk_for>,
         <https://w3id.org/biolink/vocab/aggregate_statistic>,
         <https://w3id.org/biolink/vocab/capable_of>,
         <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/caused_by>,
         <https://w3id.org/biolink/vocab/causes>,
+        <https://w3id.org/biolink/vocab/causes_adverse_event>,
         <https://w3id.org/biolink/vocab/coexists_with>,
         <https://w3id.org/biolink/vocab/colocalizes_with>,
+        <https://w3id.org/biolink/vocab/contraindicated_for>,
         <https://w3id.org/biolink/vocab/contributes_to>,
         <https://w3id.org/biolink/vocab/correlated_with>,
         <https://w3id.org/biolink/vocab/creation_date>,
         <https://w3id.org/biolink/vocab/derives_from>,
         <https://w3id.org/biolink/vocab/derives_into>,
         <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/directly_interacts_with>,
+        <https://w3id.org/biolink/vocab/disease_has_basis_in>,
         <https://w3id.org/biolink/vocab/disrupts>,
         <https://w3id.org/biolink/vocab/end_interbase_coordinate>,
         <https://w3id.org/biolink/vocab/filler>,
@@ -9288,10 +9979,14 @@
         <https://w3id.org/biolink/vocab/genome_build>,
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/has_chemical_formula>,
+        <https://w3id.org/biolink/vocab/has_completed>,
         <https://w3id.org/biolink/vocab/has_count>,
+        <https://w3id.org/biolink/vocab/has_decreased_amount>,
         <https://w3id.org/biolink/vocab/has_drug>,
         <https://w3id.org/biolink/vocab/has_gene>,
+        <https://w3id.org/biolink/vocab/has_increased_amount>,
         <https://w3id.org/biolink/vocab/has_molecular_consequence>,
+        <https://w3id.org/biolink/vocab/has_not_completed>,
         <https://w3id.org/biolink/vocab/has_part>,
         <https://w3id.org/biolink/vocab/has_percentage>,
         <https://w3id.org/biolink/vocab/has_quotient>,
@@ -9299,9 +9994,17 @@
         <https://w3id.org/biolink/vocab/has_zygosity>,
         <https://w3id.org/biolink/vocab/homologous_to>,
         <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/in_linkage_disequilibrium_with>,
         <https://w3id.org/biolink/vocab/interacts_with>,
         <https://w3id.org/biolink/vocab/interbase_coordinate>,
         <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/is_missense_variant_of>,
+        <https://w3id.org/biolink/vocab/is_nearby_variant_of>,
+        <https://w3id.org/biolink/vocab/is_non_coding_variant_of>,
+        <https://w3id.org/biolink/vocab/is_nonsense_variant_of>,
+        <https://w3id.org/biolink/vocab/is_splice_site_variant_of>,
+        <https://w3id.org/biolink/vocab/is_synonymous_variant_of>,
+        <https://w3id.org/biolink/vocab/lacks_part>,
         <https://w3id.org/biolink/vocab/latitude>,
         <https://w3id.org/biolink/vocab/located_in>,
         <https://w3id.org/biolink/vocab/location_of>,
@@ -9322,6 +10025,7 @@
         <https://w3id.org/biolink/vocab/positively_regulates>,
         <https://w3id.org/biolink/vocab/predisposes>,
         <https://w3id.org/biolink/vocab/prevents>,
+        <https://w3id.org/biolink/vocab/produced_by>,
         <https://w3id.org/biolink/vocab/produces>,
         <https://w3id.org/biolink/vocab/regulates>,
         <https://w3id.org/biolink/vocab/related_to>,
@@ -9333,25 +10037,6 @@
         <https://w3id.org/biolink/vocab/type>,
         <https://w3id.org/biolink/vocab/update_date>,
         <https://w3id.org/biolink/vocab/xenologous_to> .
-
-<https://w3id.org/biolink/vocab/subject> a meta:SlotDefinition ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation rdf:subject,
-        owl:annotatedSource,
-        <oban:association_has_subject> ;
-    meta:domain <https://w3id.org/biolink/vocab/Association> ;
-    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
-    meta:local_names [ a meta:LocalName ;
-            skos:altLabel "annotation subject" ;
-            meta:local_name_source "ga4gh" ],
-        [ a meta:LocalName ;
-            skos:altLabel "node with outgoing relationship" ;
-            meta:local_name_source "neo4j" ] ;
-    meta:owner <https://w3id.org/biolink/vocab/Association> ;
-    meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:required true ;
-    meta:slot_uri rdf:subject .
 
 
 

@@ -2541,6 +2541,8 @@ message MolecularEntity
   repeated inTaxon None = 65
   repeated positivelyRegulatesEntityToEntity None = 66
   repeated negativelyRegulatesEntityToEntity None = 67
+  repeated decreasesMolecularInteraction None = 68
+  repeated increasesMolecularInteraction None = 69
  }
 // a databased entity or concept/class
 message NamedThing
@@ -2590,29 +2592,47 @@ message NamedThing
   repeated manifestationOf None = 43
   repeated produces None = 44
   repeated sameAs None = 45
-  optional type None = 46
-  optional creationDate None = 47
-  optional updateDate None = 48
-  optional latitude None = 49
-  optional longitude None = 50
-  optional hasChemicalFormula None = 51
-  optional aggregateStatistic None = 52
-  optional hasCount None = 53
-  optional hasTotal None = 54
-  optional hasQuotient None = 55
-  optional hasPercentage None = 56
-  optional timepoint None = 57
-  optional hasBiologicalSequence None = 58
-  repeated hasMolecularConsequence None = 59
-  optional hasDrug None = 60
-  optional hasGene None = 61
-  optional hasZygosity None = 62
-  optional filler None = 63
-  optional phase None = 64
-  optional genomeBuild None = 65
-  optional interbaseCoordinate None = 66
-  optional startInterbaseCoordinate None = 67
-  optional endInterbaseCoordinate None = 68
+  repeated directlyInteractsWith None = 46
+  repeated affectsExpressionIn None = 47
+  repeated isMissenseVariantOf None = 48
+  repeated isSynonymousVariantOf None = 49
+  repeated isNonsenseVariantOf None = 50
+  repeated isSpliceSiteVariantOf None = 51
+  repeated isNearbyVariantOf None = 52
+  repeated isNonCodingVariantOf None = 53
+  repeated diseaseHasBasisIn None = 54
+  repeated causesAdverseEvent None = 55
+  repeated contraindicatedFor None = 56
+  repeated hasNotCompleted None = 57
+  repeated hasCompleted None = 58
+  repeated producedBy None = 59
+  repeated inLinkageDisequilibriumWith None = 60
+  repeated hasIncreasedAmount None = 61
+  repeated hasDecreasedAmount None = 62
+  repeated lacksPart None = 63
+  optional type None = 64
+  optional creationDate None = 65
+  optional updateDate None = 66
+  optional latitude None = 67
+  optional longitude None = 68
+  optional hasChemicalFormula None = 69
+  optional aggregateStatistic None = 70
+  optional hasCount None = 71
+  optional hasTotal None = 72
+  optional hasQuotient None = 73
+  optional hasPercentage None = 74
+  optional timepoint None = 75
+  optional hasBiologicalSequence None = 76
+  repeated hasMolecularConsequence None = 77
+  optional hasDrug None = 78
+  optional hasGene None = 79
+  optional hasZygosity None = 80
+  optional filler None = 81
+  optional phase None = 82
+  optional genomeBuild None = 83
+  optional interbaseCoordinate None = 84
+  optional startInterbaseCoordinate None = 85
+  optional endInterbaseCoordinate None = 86
  }
 message NoncodingRNAProduct
  {

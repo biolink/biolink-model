@@ -2921,6 +2921,8 @@ type MolecularEntity implements ThingWithTaxon, PhysicalEntity
     inTaxon: [OrganismTaxon]
     positivelyRegulatesEntityToEntity: [MolecularEntity]
     negativelyRegulatesEntityToEntity: [MolecularEntity]
+    decreasesMolecularInteraction: [MolecularEntity]
+    increasesMolecularInteraction: [MolecularEntity]
   }
 
 type NamedThing
@@ -2970,6 +2972,24 @@ type NamedThing
     manifestationOf: [Disease]
     produces: [NamedThing]
     sameAs: [NamedThing]
+    directlyInteractsWith: [NamedThing]
+    affectsExpressionIn: [NamedThing]
+    isMissenseVariantOf: [NamedThing]
+    isSynonymousVariantOf: [NamedThing]
+    isNonsenseVariantOf: [NamedThing]
+    isSpliceSiteVariantOf: [NamedThing]
+    isNearbyVariantOf: [NamedThing]
+    isNonCodingVariantOf: [NamedThing]
+    diseaseHasBasisIn: [NamedThing]
+    causesAdverseEvent: [NamedThing]
+    contraindicatedFor: [NamedThing]
+    hasNotCompleted: [NamedThing]
+    hasCompleted: [NamedThing]
+    producedBy: [NamedThing]
+    inLinkageDisequilibriumWith: [NamedThing]
+    hasIncreasedAmount: [NamedThing]
+    hasDecreasedAmount: [NamedThing]
+    lacksPart: [NamedThing]
     type: String
     creationDate: Date
     updateDate: Date

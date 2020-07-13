@@ -38,6 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "decreases_folding_of",
     "decreases_localization_of",
     "decreases_metabolic_processing_of",
+    "decreases_molecular_interaction",
     "decreases_molecular_modification_of",
     "decreases_mutation_rate_of",
     "decreases_response_to",
@@ -55,6 +56,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "increases_folding_of",
     "increases_localization_of",
     "increases_metabolic_processing_of",
+    "increases_molecular_interaction",
     "increases_molecular_modification_of",
     "increases_mutation_rate_of",
     "increases_response_to",
@@ -240,6 +242,13 @@ public class MolecularEntity {
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest")
     private List<String> decreasesMetabolicProcessingOf = new ArrayList<String>();
     /**
+     * indicates that the source decreases the molecular interaction between the target and some other molecular entity
+     * 
+     */
+    @JsonProperty("decreases_molecular_interaction")
+    @JsonPropertyDescription("indicates that the source decreases the molecular interaction between the target and some other molecular entity")
+    private List<String> decreasesMolecularInteraction = new ArrayList<String>();
+    /**
      * holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
      * 
      */
@@ -358,6 +367,13 @@ public class MolecularEntity {
     @JsonProperty("increases_metabolic_processing_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest")
     private List<String> increasesMetabolicProcessingOf = new ArrayList<String>();
+    /**
+     * indicates that the source increases the molecular interaction between the target and some other molecular entity
+     * 
+     */
+    @JsonProperty("increases_molecular_interaction")
+    @JsonPropertyDescription("indicates that the source increases the molecular interaction between the target and some other molecular entity")
+    private List<String> increasesMolecularInteraction = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
      * 
@@ -863,6 +879,24 @@ public class MolecularEntity {
     }
 
     /**
+     * indicates that the source decreases the molecular interaction between the target and some other molecular entity
+     * 
+     */
+    @JsonProperty("decreases_molecular_interaction")
+    public List<String> getDecreasesMolecularInteraction() {
+        return decreasesMolecularInteraction;
+    }
+
+    /**
+     * indicates that the source decreases the molecular interaction between the target and some other molecular entity
+     * 
+     */
+    @JsonProperty("decreases_molecular_interaction")
+    public void setDecreasesMolecularInteraction(List<String> decreasesMolecularInteraction) {
+        this.decreasesMolecularInteraction = decreasesMolecularInteraction;
+    }
+
+    /**
      * holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
      * 
      */
@@ -1169,6 +1203,24 @@ public class MolecularEntity {
     }
 
     /**
+     * indicates that the source increases the molecular interaction between the target and some other molecular entity
+     * 
+     */
+    @JsonProperty("increases_molecular_interaction")
+    public List<String> getIncreasesMolecularInteraction() {
+        return increasesMolecularInteraction;
+    }
+
+    /**
+     * indicates that the source increases the molecular interaction between the target and some other molecular entity
+     * 
+     */
+    @JsonProperty("increases_molecular_interaction")
+    public void setIncreasesMolecularInteraction(List<String> increasesMolecularInteraction) {
+        this.increasesMolecularInteraction = increasesMolecularInteraction;
+    }
+
+    /**
      * holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
      * 
      */
@@ -1470,6 +1522,10 @@ public class MolecularEntity {
         sb.append('=');
         sb.append(((this.decreasesMetabolicProcessingOf == null)?"<null>":this.decreasesMetabolicProcessingOf));
         sb.append(',');
+        sb.append("decreasesMolecularInteraction");
+        sb.append('=');
+        sb.append(((this.decreasesMolecularInteraction == null)?"<null>":this.decreasesMolecularInteraction));
+        sb.append(',');
         sb.append("decreasesMolecularModificationOf");
         sb.append('=');
         sb.append(((this.decreasesMolecularModificationOf == null)?"<null>":this.decreasesMolecularModificationOf));
@@ -1537,6 +1593,10 @@ public class MolecularEntity {
         sb.append("increasesMetabolicProcessingOf");
         sb.append('=');
         sb.append(((this.increasesMetabolicProcessingOf == null)?"<null>":this.increasesMetabolicProcessingOf));
+        sb.append(',');
+        sb.append("increasesMolecularInteraction");
+        sb.append('=');
+        sb.append(((this.increasesMolecularInteraction == null)?"<null>":this.increasesMolecularInteraction));
         sb.append(',');
         sb.append("increasesMolecularModificationOf");
         sb.append('=');
@@ -1627,6 +1687,7 @@ public class MolecularEntity {
         result = ((result* 31)+((this.affectsFoldingOf == null)? 0 :this.affectsFoldingOf.hashCode()));
         result = ((result* 31)+((this.decreasesUptakeOf == null)? 0 :this.decreasesUptakeOf.hashCode()));
         result = ((result* 31)+((this.increasesMetabolicProcessingOf == null)? 0 :this.increasesMetabolicProcessingOf.hashCode()));
+        result = ((result* 31)+((this.increasesMolecularInteraction == null)? 0 :this.increasesMolecularInteraction.hashCode()));
         result = ((result* 31)+((this.decreasesActivityOf == null)? 0 :this.decreasesActivityOf.hashCode()));
         result = ((result* 31)+((this.affectsSecretionOf == null)? 0 :this.affectsSecretionOf.hashCode()));
         result = ((result* 31)+((this.decreasesSplicingOf == null)? 0 :this.decreasesSplicingOf.hashCode()));
@@ -1641,6 +1702,7 @@ public class MolecularEntity {
         result = ((result* 31)+((this.increasesLocalizationOf == null)? 0 :this.increasesLocalizationOf.hashCode()));
         result = ((result* 31)+((this.increasesDegradationOf == null)? 0 :this.increasesDegradationOf.hashCode()));
         result = ((result* 31)+((this.affectsResponseTo == null)? 0 :this.affectsResponseTo.hashCode()));
+        result = ((result* 31)+((this.decreasesMolecularInteraction == null)? 0 :this.decreasesMolecularInteraction.hashCode()));
         result = ((result* 31)+((this.affectsExpressionOf == null)? 0 :this.affectsExpressionOf.hashCode()));
         result = ((result* 31)+((this.affectsTransportOf == null)? 0 :this.affectsTransportOf.hashCode()));
         result = ((result* 31)+((this.decreasesAbundanceOf == null)? 0 :this.decreasesAbundanceOf.hashCode()));
@@ -1667,7 +1729,7 @@ public class MolecularEntity {
             return false;
         }
         MolecularEntity rhs = ((MolecularEntity) other);
-        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((this.affectsMetabolicProcessingOf == rhs.affectsMetabolicProcessingOf)||((this.affectsMetabolicProcessingOf!= null)&&this.affectsMetabolicProcessingOf.equals(rhs.affectsMetabolicProcessingOf)))&&((this.decreasesFoldingOf == rhs.decreasesFoldingOf)||((this.decreasesFoldingOf!= null)&&this.decreasesFoldingOf.equals(rhs.decreasesFoldingOf))))&&((this.increasesSecretionOf == rhs.increasesSecretionOf)||((this.increasesSecretionOf!= null)&&this.increasesSecretionOf.equals(rhs.increasesSecretionOf))))&&((this.decreasesLocalizationOf == rhs.decreasesLocalizationOf)||((this.decreasesLocalizationOf!= null)&&this.decreasesLocalizationOf.equals(rhs.decreasesLocalizationOf))))&&((this.affectsUptakeOf == rhs.affectsUptakeOf)||((this.affectsUptakeOf!= null)&&this.affectsUptakeOf.equals(rhs.affectsUptakeOf))))&&((this.decreasesResponseTo == rhs.decreasesResponseTo)||((this.decreasesResponseTo!= null)&&this.decreasesResponseTo.equals(rhs.decreasesResponseTo))))&&((this.decreasesTransportOf == rhs.decreasesTransportOf)||((this.decreasesTransportOf!= null)&&this.decreasesTransportOf.equals(rhs.decreasesTransportOf))))&&((this.molecularlyInteractsWith == rhs.molecularlyInteractsWith)||((this.molecularlyInteractsWith!= null)&&this.molecularlyInteractsWith.equals(rhs.molecularlyInteractsWith))))&&((this.decreasesExpressionOf == rhs.decreasesExpressionOf)||((this.decreasesExpressionOf!= null)&&this.decreasesExpressionOf.equals(rhs.decreasesExpressionOf))))&&((this.increasesStabilityOf == rhs.increasesStabilityOf)||((this.increasesStabilityOf!= null)&&this.increasesStabilityOf.equals(rhs.increasesStabilityOf))))&&((this.decreasesSecretionOf == rhs.decreasesSecretionOf)||((this.decreasesSecretionOf!= null)&&this.decreasesSecretionOf.equals(rhs.decreasesSecretionOf))))&&((this.decreasesStabilityOf == rhs.decreasesStabilityOf)||((this.decreasesStabilityOf!= null)&&this.decreasesStabilityOf.equals(rhs.decreasesStabilityOf))))&&((this.increasesAbundanceOf == rhs.increasesAbundanceOf)||((this.increasesAbundanceOf!= null)&&this.increasesAbundanceOf.equals(rhs.increasesAbundanceOf))))&&((this.increasesMutationRateOf == rhs.increasesMutationRateOf)||((this.increasesMutationRateOf!= null)&&this.increasesMutationRateOf.equals(rhs.increasesMutationRateOf))))&&((this.affectsMutationRateOf == rhs.affectsMutationRateOf)||((this.affectsMutationRateOf!= null)&&this.affectsMutationRateOf.equals(rhs.affectsMutationRateOf))))&&((this.increasesExpressionOf == rhs.increasesExpressionOf)||((this.increasesExpressionOf!= null)&&this.increasesExpressionOf.equals(rhs.increasesExpressionOf))))&&((this.affectsLocalizationOf == rhs.affectsLocalizationOf)||((this.affectsLocalizationOf!= null)&&this.affectsLocalizationOf.equals(rhs.affectsLocalizationOf))))&&((this.affectsAbundanceOf == rhs.affectsAbundanceOf)||((this.affectsAbundanceOf!= null)&&this.affectsAbundanceOf.equals(rhs.affectsAbundanceOf))))&&((this.increasesMolecularModificationOf == rhs.increasesMolecularModificationOf)||((this.increasesMolecularModificationOf!= null)&&this.increasesMolecularModificationOf.equals(rhs.increasesMolecularModificationOf))))&&((this.decreasesDegradationOf == rhs.decreasesDegradationOf)||((this.decreasesDegradationOf!= null)&&this.decreasesDegradationOf.equals(rhs.decreasesDegradationOf))))&&((this.increasesFoldingOf == rhs.increasesFoldingOf)||((this.increasesFoldingOf!= null)&&this.increasesFoldingOf.equals(rhs.increasesFoldingOf))))&&((this.decreasesMutationRateOf == rhs.decreasesMutationRateOf)||((this.decreasesMutationRateOf!= null)&&this.decreasesMutationRateOf.equals(rhs.decreasesMutationRateOf))))&&((this.decreasesSynthesisOf == rhs.decreasesSynthesisOf)||((this.decreasesSynthesisOf!= null)&&this.decreasesSynthesisOf.equals(rhs.decreasesSynthesisOf))))&&((this.affectsFoldingOf == rhs.affectsFoldingOf)||((this.affectsFoldingOf!= null)&&this.affectsFoldingOf.equals(rhs.affectsFoldingOf))))&&((this.decreasesUptakeOf == rhs.decreasesUptakeOf)||((this.decreasesUptakeOf!= null)&&this.decreasesUptakeOf.equals(rhs.decreasesUptakeOf))))&&((this.increasesMetabolicProcessingOf == rhs.increasesMetabolicProcessingOf)||((this.increasesMetabolicProcessingOf!= null)&&this.increasesMetabolicProcessingOf.equals(rhs.increasesMetabolicProcessingOf))))&&((this.decreasesActivityOf == rhs.decreasesActivityOf)||((this.decreasesActivityOf!= null)&&this.decreasesActivityOf.equals(rhs.decreasesActivityOf))))&&((this.affectsSecretionOf == rhs.affectsSecretionOf)||((this.affectsSecretionOf!= null)&&this.affectsSecretionOf.equals(rhs.affectsSecretionOf))))&&((this.decreasesSplicingOf == rhs.decreasesSplicingOf)||((this.decreasesSplicingOf!= null)&&this.decreasesSplicingOf.equals(rhs.decreasesSplicingOf))))&&((this.decreasesMetabolicProcessingOf == rhs.decreasesMetabolicProcessingOf)||((this.decreasesMetabolicProcessingOf!= null)&&this.decreasesMetabolicProcessingOf.equals(rhs.decreasesMetabolicProcessingOf))))&&((this.increasesUptakeOf == rhs.increasesUptakeOf)||((this.increasesUptakeOf!= null)&&this.increasesUptakeOf.equals(rhs.increasesUptakeOf))))&&((this.negativelyRegulatesEntityToEntity == rhs.negativelyRegulatesEntityToEntity)||((this.negativelyRegulatesEntityToEntity!= null)&&this.negativelyRegulatesEntityToEntity.equals(rhs.negativelyRegulatesEntityToEntity))))&&((this.inTaxon == rhs.inTaxon)||((this.inTaxon!= null)&&this.inTaxon.equals(rhs.inTaxon))))&&((this.affectsActivityOf == rhs.affectsActivityOf)||((this.affectsActivityOf!= null)&&this.affectsActivityOf.equals(rhs.affectsActivityOf))))&&((this.affectsStabilityOf == rhs.affectsStabilityOf)||((this.affectsStabilityOf!= null)&&this.affectsStabilityOf.equals(rhs.affectsStabilityOf))))&&((this.increasesSplicingOf == rhs.increasesSplicingOf)||((this.increasesSplicingOf!= null)&&this.increasesSplicingOf.equals(rhs.increasesSplicingOf))))&&((this.biomarkerFor == rhs.biomarkerFor)||((this.biomarkerFor!= null)&&this.biomarkerFor.equals(rhs.biomarkerFor))))&&((this.increasesLocalizationOf == rhs.increasesLocalizationOf)||((this.increasesLocalizationOf!= null)&&this.increasesLocalizationOf.equals(rhs.increasesLocalizationOf))))&&((this.increasesDegradationOf == rhs.increasesDegradationOf)||((this.increasesDegradationOf!= null)&&this.increasesDegradationOf.equals(rhs.increasesDegradationOf))))&&((this.affectsResponseTo == rhs.affectsResponseTo)||((this.affectsResponseTo!= null)&&this.affectsResponseTo.equals(rhs.affectsResponseTo))))&&((this.affectsExpressionOf == rhs.affectsExpressionOf)||((this.affectsExpressionOf!= null)&&this.affectsExpressionOf.equals(rhs.affectsExpressionOf))))&&((this.affectsTransportOf == rhs.affectsTransportOf)||((this.affectsTransportOf!= null)&&this.affectsTransportOf.equals(rhs.affectsTransportOf))))&&((this.decreasesAbundanceOf == rhs.decreasesAbundanceOf)||((this.decreasesAbundanceOf!= null)&&this.decreasesAbundanceOf.equals(rhs.decreasesAbundanceOf))))&&((this.affectsSynthesisOf == rhs.affectsSynthesisOf)||((this.affectsSynthesisOf!= null)&&this.affectsSynthesisOf.equals(rhs.affectsSynthesisOf))))&&((this.affectsDegradationOf == rhs.affectsDegradationOf)||((this.affectsDegradationOf!= null)&&this.affectsDegradationOf.equals(rhs.affectsDegradationOf))))&&((this.affectsSplicingOf == rhs.affectsSplicingOf)||((this.affectsSplicingOf!= null)&&this.affectsSplicingOf.equals(rhs.affectsSplicingOf))))&&((this.affectsMolecularModificationOf == rhs.affectsMolecularModificationOf)||((this.affectsMolecularModificationOf!= null)&&this.affectsMolecularModificationOf.equals(rhs.affectsMolecularModificationOf))))&&((this.decreasesMolecularModificationOf == rhs.decreasesMolecularModificationOf)||((this.decreasesMolecularModificationOf!= null)&&this.decreasesMolecularModificationOf.equals(rhs.decreasesMolecularModificationOf))))&&((this.increasesTransportOf == rhs.increasesTransportOf)||((this.increasesTransportOf!= null)&&this.increasesTransportOf.equals(rhs.increasesTransportOf))))&&((this.increasesSynthesisOf == rhs.increasesSynthesisOf)||((this.increasesSynthesisOf!= null)&&this.increasesSynthesisOf.equals(rhs.increasesSynthesisOf))))&&((this.increasesResponseTo == rhs.increasesResponseTo)||((this.increasesResponseTo!= null)&&this.increasesResponseTo.equals(rhs.increasesResponseTo))))&&((this.increasesActivityOf == rhs.increasesActivityOf)||((this.increasesActivityOf!= null)&&this.increasesActivityOf.equals(rhs.increasesActivityOf))))&&((this.regulatesEntityToEntity == rhs.regulatesEntityToEntity)||((this.regulatesEntityToEntity!= null)&&this.regulatesEntityToEntity.equals(rhs.regulatesEntityToEntity))))&&((this.positivelyRegulatesEntityToEntity == rhs.positivelyRegulatesEntityToEntity)||((this.positivelyRegulatesEntityToEntity!= null)&&this.positivelyRegulatesEntityToEntity.equals(rhs.positivelyRegulatesEntityToEntity))));
+        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((this.affectsMetabolicProcessingOf == rhs.affectsMetabolicProcessingOf)||((this.affectsMetabolicProcessingOf!= null)&&this.affectsMetabolicProcessingOf.equals(rhs.affectsMetabolicProcessingOf)))&&((this.decreasesFoldingOf == rhs.decreasesFoldingOf)||((this.decreasesFoldingOf!= null)&&this.decreasesFoldingOf.equals(rhs.decreasesFoldingOf))))&&((this.increasesSecretionOf == rhs.increasesSecretionOf)||((this.increasesSecretionOf!= null)&&this.increasesSecretionOf.equals(rhs.increasesSecretionOf))))&&((this.decreasesLocalizationOf == rhs.decreasesLocalizationOf)||((this.decreasesLocalizationOf!= null)&&this.decreasesLocalizationOf.equals(rhs.decreasesLocalizationOf))))&&((this.affectsUptakeOf == rhs.affectsUptakeOf)||((this.affectsUptakeOf!= null)&&this.affectsUptakeOf.equals(rhs.affectsUptakeOf))))&&((this.decreasesResponseTo == rhs.decreasesResponseTo)||((this.decreasesResponseTo!= null)&&this.decreasesResponseTo.equals(rhs.decreasesResponseTo))))&&((this.decreasesTransportOf == rhs.decreasesTransportOf)||((this.decreasesTransportOf!= null)&&this.decreasesTransportOf.equals(rhs.decreasesTransportOf))))&&((this.molecularlyInteractsWith == rhs.molecularlyInteractsWith)||((this.molecularlyInteractsWith!= null)&&this.molecularlyInteractsWith.equals(rhs.molecularlyInteractsWith))))&&((this.decreasesExpressionOf == rhs.decreasesExpressionOf)||((this.decreasesExpressionOf!= null)&&this.decreasesExpressionOf.equals(rhs.decreasesExpressionOf))))&&((this.increasesStabilityOf == rhs.increasesStabilityOf)||((this.increasesStabilityOf!= null)&&this.increasesStabilityOf.equals(rhs.increasesStabilityOf))))&&((this.decreasesSecretionOf == rhs.decreasesSecretionOf)||((this.decreasesSecretionOf!= null)&&this.decreasesSecretionOf.equals(rhs.decreasesSecretionOf))))&&((this.decreasesStabilityOf == rhs.decreasesStabilityOf)||((this.decreasesStabilityOf!= null)&&this.decreasesStabilityOf.equals(rhs.decreasesStabilityOf))))&&((this.increasesAbundanceOf == rhs.increasesAbundanceOf)||((this.increasesAbundanceOf!= null)&&this.increasesAbundanceOf.equals(rhs.increasesAbundanceOf))))&&((this.increasesMutationRateOf == rhs.increasesMutationRateOf)||((this.increasesMutationRateOf!= null)&&this.increasesMutationRateOf.equals(rhs.increasesMutationRateOf))))&&((this.affectsMutationRateOf == rhs.affectsMutationRateOf)||((this.affectsMutationRateOf!= null)&&this.affectsMutationRateOf.equals(rhs.affectsMutationRateOf))))&&((this.increasesExpressionOf == rhs.increasesExpressionOf)||((this.increasesExpressionOf!= null)&&this.increasesExpressionOf.equals(rhs.increasesExpressionOf))))&&((this.affectsLocalizationOf == rhs.affectsLocalizationOf)||((this.affectsLocalizationOf!= null)&&this.affectsLocalizationOf.equals(rhs.affectsLocalizationOf))))&&((this.affectsAbundanceOf == rhs.affectsAbundanceOf)||((this.affectsAbundanceOf!= null)&&this.affectsAbundanceOf.equals(rhs.affectsAbundanceOf))))&&((this.increasesMolecularModificationOf == rhs.increasesMolecularModificationOf)||((this.increasesMolecularModificationOf!= null)&&this.increasesMolecularModificationOf.equals(rhs.increasesMolecularModificationOf))))&&((this.decreasesDegradationOf == rhs.decreasesDegradationOf)||((this.decreasesDegradationOf!= null)&&this.decreasesDegradationOf.equals(rhs.decreasesDegradationOf))))&&((this.increasesFoldingOf == rhs.increasesFoldingOf)||((this.increasesFoldingOf!= null)&&this.increasesFoldingOf.equals(rhs.increasesFoldingOf))))&&((this.decreasesMutationRateOf == rhs.decreasesMutationRateOf)||((this.decreasesMutationRateOf!= null)&&this.decreasesMutationRateOf.equals(rhs.decreasesMutationRateOf))))&&((this.decreasesSynthesisOf == rhs.decreasesSynthesisOf)||((this.decreasesSynthesisOf!= null)&&this.decreasesSynthesisOf.equals(rhs.decreasesSynthesisOf))))&&((this.affectsFoldingOf == rhs.affectsFoldingOf)||((this.affectsFoldingOf!= null)&&this.affectsFoldingOf.equals(rhs.affectsFoldingOf))))&&((this.decreasesUptakeOf == rhs.decreasesUptakeOf)||((this.decreasesUptakeOf!= null)&&this.decreasesUptakeOf.equals(rhs.decreasesUptakeOf))))&&((this.increasesMetabolicProcessingOf == rhs.increasesMetabolicProcessingOf)||((this.increasesMetabolicProcessingOf!= null)&&this.increasesMetabolicProcessingOf.equals(rhs.increasesMetabolicProcessingOf))))&&((this.increasesMolecularInteraction == rhs.increasesMolecularInteraction)||((this.increasesMolecularInteraction!= null)&&this.increasesMolecularInteraction.equals(rhs.increasesMolecularInteraction))))&&((this.decreasesActivityOf == rhs.decreasesActivityOf)||((this.decreasesActivityOf!= null)&&this.decreasesActivityOf.equals(rhs.decreasesActivityOf))))&&((this.affectsSecretionOf == rhs.affectsSecretionOf)||((this.affectsSecretionOf!= null)&&this.affectsSecretionOf.equals(rhs.affectsSecretionOf))))&&((this.decreasesSplicingOf == rhs.decreasesSplicingOf)||((this.decreasesSplicingOf!= null)&&this.decreasesSplicingOf.equals(rhs.decreasesSplicingOf))))&&((this.decreasesMetabolicProcessingOf == rhs.decreasesMetabolicProcessingOf)||((this.decreasesMetabolicProcessingOf!= null)&&this.decreasesMetabolicProcessingOf.equals(rhs.decreasesMetabolicProcessingOf))))&&((this.increasesUptakeOf == rhs.increasesUptakeOf)||((this.increasesUptakeOf!= null)&&this.increasesUptakeOf.equals(rhs.increasesUptakeOf))))&&((this.negativelyRegulatesEntityToEntity == rhs.negativelyRegulatesEntityToEntity)||((this.negativelyRegulatesEntityToEntity!= null)&&this.negativelyRegulatesEntityToEntity.equals(rhs.negativelyRegulatesEntityToEntity))))&&((this.inTaxon == rhs.inTaxon)||((this.inTaxon!= null)&&this.inTaxon.equals(rhs.inTaxon))))&&((this.affectsActivityOf == rhs.affectsActivityOf)||((this.affectsActivityOf!= null)&&this.affectsActivityOf.equals(rhs.affectsActivityOf))))&&((this.affectsStabilityOf == rhs.affectsStabilityOf)||((this.affectsStabilityOf!= null)&&this.affectsStabilityOf.equals(rhs.affectsStabilityOf))))&&((this.increasesSplicingOf == rhs.increasesSplicingOf)||((this.increasesSplicingOf!= null)&&this.increasesSplicingOf.equals(rhs.increasesSplicingOf))))&&((this.biomarkerFor == rhs.biomarkerFor)||((this.biomarkerFor!= null)&&this.biomarkerFor.equals(rhs.biomarkerFor))))&&((this.increasesLocalizationOf == rhs.increasesLocalizationOf)||((this.increasesLocalizationOf!= null)&&this.increasesLocalizationOf.equals(rhs.increasesLocalizationOf))))&&((this.increasesDegradationOf == rhs.increasesDegradationOf)||((this.increasesDegradationOf!= null)&&this.increasesDegradationOf.equals(rhs.increasesDegradationOf))))&&((this.affectsResponseTo == rhs.affectsResponseTo)||((this.affectsResponseTo!= null)&&this.affectsResponseTo.equals(rhs.affectsResponseTo))))&&((this.decreasesMolecularInteraction == rhs.decreasesMolecularInteraction)||((this.decreasesMolecularInteraction!= null)&&this.decreasesMolecularInteraction.equals(rhs.decreasesMolecularInteraction))))&&((this.affectsExpressionOf == rhs.affectsExpressionOf)||((this.affectsExpressionOf!= null)&&this.affectsExpressionOf.equals(rhs.affectsExpressionOf))))&&((this.affectsTransportOf == rhs.affectsTransportOf)||((this.affectsTransportOf!= null)&&this.affectsTransportOf.equals(rhs.affectsTransportOf))))&&((this.decreasesAbundanceOf == rhs.decreasesAbundanceOf)||((this.decreasesAbundanceOf!= null)&&this.decreasesAbundanceOf.equals(rhs.decreasesAbundanceOf))))&&((this.affectsSynthesisOf == rhs.affectsSynthesisOf)||((this.affectsSynthesisOf!= null)&&this.affectsSynthesisOf.equals(rhs.affectsSynthesisOf))))&&((this.affectsDegradationOf == rhs.affectsDegradationOf)||((this.affectsDegradationOf!= null)&&this.affectsDegradationOf.equals(rhs.affectsDegradationOf))))&&((this.affectsSplicingOf == rhs.affectsSplicingOf)||((this.affectsSplicingOf!= null)&&this.affectsSplicingOf.equals(rhs.affectsSplicingOf))))&&((this.affectsMolecularModificationOf == rhs.affectsMolecularModificationOf)||((this.affectsMolecularModificationOf!= null)&&this.affectsMolecularModificationOf.equals(rhs.affectsMolecularModificationOf))))&&((this.decreasesMolecularModificationOf == rhs.decreasesMolecularModificationOf)||((this.decreasesMolecularModificationOf!= null)&&this.decreasesMolecularModificationOf.equals(rhs.decreasesMolecularModificationOf))))&&((this.increasesTransportOf == rhs.increasesTransportOf)||((this.increasesTransportOf!= null)&&this.increasesTransportOf.equals(rhs.increasesTransportOf))))&&((this.increasesSynthesisOf == rhs.increasesSynthesisOf)||((this.increasesSynthesisOf!= null)&&this.increasesSynthesisOf.equals(rhs.increasesSynthesisOf))))&&((this.increasesResponseTo == rhs.increasesResponseTo)||((this.increasesResponseTo!= null)&&this.increasesResponseTo.equals(rhs.increasesResponseTo))))&&((this.increasesActivityOf == rhs.increasesActivityOf)||((this.increasesActivityOf!= null)&&this.increasesActivityOf.equals(rhs.increasesActivityOf))))&&((this.regulatesEntityToEntity == rhs.regulatesEntityToEntity)||((this.regulatesEntityToEntity!= null)&&this.regulatesEntityToEntity.equals(rhs.regulatesEntityToEntity))))&&((this.positivelyRegulatesEntityToEntity == rhs.positivelyRegulatesEntityToEntity)||((this.positivelyRegulatesEntityToEntity!= null)&&this.positivelyRegulatesEntityToEntity.equals(rhs.positivelyRegulatesEntityToEntity))));
     }
 
 }
