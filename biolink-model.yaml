@@ -221,7 +221,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_abundance_of
-      - ubergraph-axioms.ofn:is_increase_of
+      - UBERGRAPH:is_increase_of
 
   decreases abundance of:
     description: >-
@@ -233,7 +233,7 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_abundance_of
-      - ubergraph-axioms.ofn:is_decrease_of
+      - UBERGRAPH:is_decrease_of
 
   affects activity of:
     description: >-
