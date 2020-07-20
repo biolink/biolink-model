@@ -1,9 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -48,12 +45,25 @@ public class GeneToGeneHomologyAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("relation", relation).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(GeneToGeneHomologyAssociation.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("relation");
+        sb.append('=');
+        sb.append(((this.relation == null)?"<null>":this.relation));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(relation).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.relation == null)? 0 :this.relation.hashCode()));
+        return result;
     }
 
     @Override
@@ -65,7 +75,7 @@ public class GeneToGeneHomologyAssociation {
             return false;
         }
         GeneToGeneHomologyAssociation rhs = ((GeneToGeneHomologyAssociation) other);
-        return new EqualsBuilder().append(relation, rhs.relation).isEquals();
+        return ((this.relation == rhs.relation)||((this.relation!= null)&&this.relation.equals(rhs.relation)));
     }
 
 }
