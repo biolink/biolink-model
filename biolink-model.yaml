@@ -1873,14 +1873,16 @@ classes:
     description: >-
       Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
       with respect to severity, laterality, and other aspects
-    subclass_of: "HP:0012823"
+    mappings:
+      - HP:0012823
     is_a: attribute
 
   clinical course:
     description: >-
       The course a disease typically takes from its onset, progression in time, and eventual resolution or death of
       the affected individual
-    subclass_of: "HP:0031797"
+    mappings:
+      - HP:0031797
     is_a: attribute
 
   onset:
@@ -2191,6 +2193,7 @@ classes:
     is_a: disease or phenotypic feature
     mappings:
       - MONDO:0000001
+      - DOID:4
       - WIKIDATA:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
@@ -2244,6 +2247,7 @@ classes:
       - UPHENO:0001001
       - SIO:010056
       - WIKIDATA:Q169872
+      # - HP:0000118  needs to be a narrow mapping
     id_prefixes:
       - HP
       - EFO
@@ -2559,6 +2563,8 @@ classes:
     mixins:
       - occurrent
     subclass_of: ENVO:02500000
+    mappings:
+      - ENVO:02500000
 
   environmental feature:
     is_a: planetary entity
@@ -2869,6 +2875,7 @@ classes:
     id_prefixes:
       - CAID # ClinGen Allele Registry
       - ClinVar
+      - ClinVarVariant
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
@@ -3720,6 +3727,32 @@ classes:
           - value: MONDO:0016419
             description: hereditary breast cancer
 
+
+  genotype to disease association:
+    is_a: association
+    comments:
+      - TODO decide no how to model pathogenicity
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - genotype to thing association
+      - entity to disease association
+    slot_usage:
+      subject:
+        description: >-
+          a genotype that is associated in some way with a disease state
+      relation:
+        description: >-
+          E.g. is pathogenic for
+        subproperty_of: related condition
+      object:
+        description: >-
+          a disease that is associated with that genotype
+        examples:
+          - value: MONDO:0016419
+            description: hereditary breast cancer
+
   model to disease mixin:
     mixin: true
     abstract: true
@@ -3751,6 +3784,68 @@ classes:
         description: >-
           A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene,
           or it may be a gene whose mutants recapitulate core features of the disease.
+
+  variant as a model of disease association:
+    is_a: variant to disease association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: sequence variant
+        description: >-
+          A variant that has a role in modeling the disease.
+
+  genotype as a model of disease association:
+    is_a: genotype to disease association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: genotype
+        description: >-
+          A genotype that has a role in modeling the disease.
+
+  cell line as a model of disease association:
+    is_a: cell line to disease or phenotypic feature association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: cell line
+        description: >-
+          A cell line derived from an organismal entity with a disease state that is used
+          as a model of that disease.
+
+  organismal entity as a model of disease association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: organismal entity
+        description: >-
+          A organismal entity (strain, breed) with a predisposition to a disease, or bred/created
+          specifically to model a disease.
 
   gene has variant that contributes to disease association:
     is_a: gene to disease association
