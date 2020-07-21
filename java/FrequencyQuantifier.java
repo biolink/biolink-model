@@ -2,9 +2,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -112,12 +109,40 @@ public class FrequencyQuantifier {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasCount", hasCount).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(FrequencyQuantifier.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("hasCount");
+        sb.append('=');
+        sb.append(((this.hasCount == null)?"<null>":this.hasCount));
+        sb.append(',');
+        sb.append("hasPercentage");
+        sb.append('=');
+        sb.append(((this.hasPercentage == null)?"<null>":this.hasPercentage));
+        sb.append(',');
+        sb.append("hasQuotient");
+        sb.append('=');
+        sb.append(((this.hasQuotient == null)?"<null>":this.hasQuotient));
+        sb.append(',');
+        sb.append("hasTotal");
+        sb.append('=');
+        sb.append(((this.hasTotal == null)?"<null>":this.hasTotal));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasPercentage).append(hasCount).append(hasQuotient).append(hasTotal).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.hasPercentage == null)? 0 :this.hasPercentage.hashCode()));
+        result = ((result* 31)+((this.hasCount == null)? 0 :this.hasCount.hashCode()));
+        result = ((result* 31)+((this.hasQuotient == null)? 0 :this.hasQuotient.hashCode()));
+        result = ((result* 31)+((this.hasTotal == null)? 0 :this.hasTotal.hashCode()));
+        return result;
     }
 
     @Override
@@ -129,7 +154,7 @@ public class FrequencyQuantifier {
             return false;
         }
         FrequencyQuantifier rhs = ((FrequencyQuantifier) other);
-        return new EqualsBuilder().append(hasPercentage, rhs.hasPercentage).append(hasCount, rhs.hasCount).append(hasQuotient, rhs.hasQuotient).append(hasTotal, rhs.hasTotal).isEquals();
+        return (((((this.hasPercentage == rhs.hasPercentage)||((this.hasPercentage!= null)&&this.hasPercentage.equals(rhs.hasPercentage)))&&((this.hasCount == rhs.hasCount)||((this.hasCount!= null)&&this.hasCount.equals(rhs.hasCount))))&&((this.hasQuotient == rhs.hasQuotient)||((this.hasQuotient!= null)&&this.hasQuotient.equals(rhs.hasQuotient))))&&((this.hasTotal == rhs.hasTotal)||((this.hasTotal!= null)&&this.hasTotal.equals(rhs.hasTotal))));
     }
 
 }

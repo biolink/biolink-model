@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -17,20 +14,12 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "correlated_with",
     "has_biomarker",
     "in_taxon",
     "treated_by"
 })
 public class DiseaseOrPhenotypicFeature {
 
-    /**
-     * holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-     * 
-     */
-    @JsonProperty("correlated_with")
-    @JsonPropertyDescription("holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.")
-    private List<String> correlatedWith = new ArrayList<String>();
     /**
      * holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
      * 
@@ -52,24 +41,6 @@ public class DiseaseOrPhenotypicFeature {
     @JsonProperty("treated_by")
     @JsonPropertyDescription("holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition")
     private List<String> treatedBy = new ArrayList<String>();
-
-    /**
-     * holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-     * 
-     */
-    @JsonProperty("correlated_with")
-    public List<String> getCorrelatedWith() {
-        return correlatedWith;
-    }
-
-    /**
-     * holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-     * 
-     */
-    @JsonProperty("correlated_with")
-    public void setCorrelatedWith(List<String> correlatedWith) {
-        this.correlatedWith = correlatedWith;
-    }
 
     /**
      * holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -127,12 +98,35 @@ public class DiseaseOrPhenotypicFeature {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("correlatedWith", correlatedWith).append("hasBiomarker", hasBiomarker).append("inTaxon", inTaxon).append("treatedBy", treatedBy).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(DiseaseOrPhenotypicFeature.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("hasBiomarker");
+        sb.append('=');
+        sb.append(((this.hasBiomarker == null)?"<null>":this.hasBiomarker));
+        sb.append(',');
+        sb.append("inTaxon");
+        sb.append('=');
+        sb.append(((this.inTaxon == null)?"<null>":this.inTaxon));
+        sb.append(',');
+        sb.append("treatedBy");
+        sb.append('=');
+        sb.append(((this.treatedBy == null)?"<null>":this.treatedBy));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasBiomarker).append(correlatedWith).append(inTaxon).append(treatedBy).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.hasBiomarker == null)? 0 :this.hasBiomarker.hashCode()));
+        result = ((result* 31)+((this.inTaxon == null)? 0 :this.inTaxon.hashCode()));
+        result = ((result* 31)+((this.treatedBy == null)? 0 :this.treatedBy.hashCode()));
+        return result;
     }
 
     @Override
@@ -144,7 +138,7 @@ public class DiseaseOrPhenotypicFeature {
             return false;
         }
         DiseaseOrPhenotypicFeature rhs = ((DiseaseOrPhenotypicFeature) other);
-        return new EqualsBuilder().append(hasBiomarker, rhs.hasBiomarker).append(correlatedWith, rhs.correlatedWith).append(inTaxon, rhs.inTaxon).append(treatedBy, rhs.treatedBy).isEquals();
+        return ((((this.hasBiomarker == rhs.hasBiomarker)||((this.hasBiomarker!= null)&&this.hasBiomarker.equals(rhs.hasBiomarker)))&&((this.inTaxon == rhs.inTaxon)||((this.inTaxon!= null)&&this.inTaxon.equals(rhs.inTaxon))))&&((this.treatedBy == rhs.treatedBy)||((this.treatedBy!= null)&&this.treatedBy.equals(rhs.treatedBy))));
     }
 
 }

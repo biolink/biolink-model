@@ -2,9 +2,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -155,12 +152,50 @@ public class GenomicSequenceLocalization {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("endInterbaseCoordinate", endInterbaseCoordinate).append("genomeBuild", genomeBuild).append("object", object).append("phase", phase).append("startInterbaseCoordinate", startInterbaseCoordinate).append("subject", subject).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(GenomicSequenceLocalization.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("endInterbaseCoordinate");
+        sb.append('=');
+        sb.append(((this.endInterbaseCoordinate == null)?"<null>":this.endInterbaseCoordinate));
+        sb.append(',');
+        sb.append("genomeBuild");
+        sb.append('=');
+        sb.append(((this.genomeBuild == null)?"<null>":this.genomeBuild));
+        sb.append(',');
+        sb.append("object");
+        sb.append('=');
+        sb.append(((this.object == null)?"<null>":this.object));
+        sb.append(',');
+        sb.append("phase");
+        sb.append('=');
+        sb.append(((this.phase == null)?"<null>":this.phase));
+        sb.append(',');
+        sb.append("startInterbaseCoordinate");
+        sb.append('=');
+        sb.append(((this.startInterbaseCoordinate == null)?"<null>":this.startInterbaseCoordinate));
+        sb.append(',');
+        sb.append("subject");
+        sb.append('=');
+        sb.append(((this.subject == null)?"<null>":this.subject));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(phase).append(genomeBuild).append(subject).append(endInterbaseCoordinate).append(object).append(startInterbaseCoordinate).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.phase == null)? 0 :this.phase.hashCode()));
+        result = ((result* 31)+((this.genomeBuild == null)? 0 :this.genomeBuild.hashCode()));
+        result = ((result* 31)+((this.subject == null)? 0 :this.subject.hashCode()));
+        result = ((result* 31)+((this.endInterbaseCoordinate == null)? 0 :this.endInterbaseCoordinate.hashCode()));
+        result = ((result* 31)+((this.object == null)? 0 :this.object.hashCode()));
+        result = ((result* 31)+((this.startInterbaseCoordinate == null)? 0 :this.startInterbaseCoordinate.hashCode()));
+        return result;
     }
 
     @Override
@@ -172,7 +207,7 @@ public class GenomicSequenceLocalization {
             return false;
         }
         GenomicSequenceLocalization rhs = ((GenomicSequenceLocalization) other);
-        return new EqualsBuilder().append(phase, rhs.phase).append(genomeBuild, rhs.genomeBuild).append(subject, rhs.subject).append(endInterbaseCoordinate, rhs.endInterbaseCoordinate).append(object, rhs.object).append(startInterbaseCoordinate, rhs.startInterbaseCoordinate).isEquals();
+        return (((((((this.phase == rhs.phase)||((this.phase!= null)&&this.phase.equals(rhs.phase)))&&((this.genomeBuild == rhs.genomeBuild)||((this.genomeBuild!= null)&&this.genomeBuild.equals(rhs.genomeBuild))))&&((this.subject == rhs.subject)||((this.subject!= null)&&this.subject.equals(rhs.subject))))&&((this.endInterbaseCoordinate == rhs.endInterbaseCoordinate)||((this.endInterbaseCoordinate!= null)&&this.endInterbaseCoordinate.equals(rhs.endInterbaseCoordinate))))&&((this.object == rhs.object)||((this.object!= null)&&this.object.equals(rhs.object))))&&((this.startInterbaseCoordinate == rhs.startInterbaseCoordinate)||((this.startInterbaseCoordinate!= null)&&this.startInterbaseCoordinate.equals(rhs.startInterbaseCoordinate))));
     }
 
 }
