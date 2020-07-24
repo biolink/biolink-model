@@ -1346,6 +1346,7 @@ slots:
       - UBERON_CORE:in_central_side_of
       - UBERON_CORE:in_innermost_side_of
       - UBERON_CORE:in_outermost_side_of
+      - NCIT:R100
 
   location of:
     is_a: related to
@@ -3960,8 +3961,6 @@ classes:
     description: >-
       An association between either a disease or a phenotypic feature and an anatomical entity,
       where the disease/feature manifests in that site.
-    mappings:
-      - NCIT:R100
     slot_usage:
       object:
         range: anatomical entity
