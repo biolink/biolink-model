@@ -12,9 +12,6 @@ An association between either a disease or a phenotypic feature and an anatomica
 
 URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
 
-NCIT:R100
-{: .mapping-label }
-
 
 ---
 
@@ -78,10 +75,3 @@ NCIT:R100
 
  * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md)  <sub>REQ</sub>
     * range: [AnatomicalEntity](AnatomicalEntity.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | NCIT:R100 |
-
