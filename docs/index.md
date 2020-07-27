@@ -245,7 +245,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
     * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
        * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)
-    * [relation](relation.md) - the relationship type by which a subject is connected to an object in an association
+    * [relation](relation.md) - The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
        * [anatomical entity to anatomical entity ontogenic association➞relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)
        * [anatomical entity to anatomical entity part of association➞relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)
        * [chemical to chemical derivation association➞relation](chemical_to_chemical_derivation_association_relation.md)
@@ -534,6 +534,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Date](types/Date.md)  (**XSDDate**)  - a date (year, month and day) in an idealized calendar
  * [Datetime](types/Datetime.md)  (**XSDDateTime**)  - The combination of a date and time
  * [Double](types/Double.md)  (**float**)  - A real number that conforms to the xsd:double specification
+ * [EdgeLabelType](types/EdgeLabelType.md)  ([Uriorcurie](types/Uriorcurie.md))  - A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats.
  * [Float](types/Float.md)  (**float**)  - A real number that conforms to the xsd:float specification
  * [Frequency](types/Frequency.md)  ([String](types/String.md)) 
  * [Integer](types/Integer.md)  (**int**)  - An integer

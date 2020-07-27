@@ -8,7 +8,7 @@ layout: default
 # Type: relation
 
 
-the relationship type by which a subject is connected to an object in an association
+The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
 
 URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
 
@@ -100,14 +100,3 @@ URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  * [VariantToThingAssociation](VariantToThingAssociation.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Local names:** | | annotation predicate (ga4gh) |
-|  | | predicate (translator) |
-| **Mappings:** | | rdf:predicate |
-|  | | owl:annotatedProperty |
-|  | | OBAN:association_has_predicate |
-
