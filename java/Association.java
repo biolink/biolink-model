@@ -171,12 +171,12 @@ public class Association {
     @JsonPropertyDescription("A measurable quantity for the object of the association")
     private String quantifierQualifier;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
+    @JsonPropertyDescription("The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.")
     private String relation;
     /**
      * a qualifier used in an association where the variant
@@ -546,7 +546,7 @@ public class Association {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * (Required)
      * 
      */
@@ -556,7 +556,7 @@ public class Association {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * (Required)
      * 
      */

@@ -89,6 +89,12 @@ types:
     description: >-
       A string that provides a human-readable name for a thing
 
+  edge label type:
+    typeof: uriorcurie
+    description: >-
+      A CURIE from the biolink related_to hierarchy.
+      For example, biolink:related_to, biolink:causes, biolink:treats.
+
   narrative text:
     typeof: string
     description: >-
@@ -1976,17 +1982,11 @@ slots:
       A high-level grouping for the relationship type. AKA minimal predicate.
       This is analogous to category for nodes.
     domain: association
-    notes:
-    - in neo4j this corresponds to the relationship type and the convention is for a snake_case label
-    range: label type
-    required: true
-
-  relation:
-    is_a: association slot
-    description: >-
-      the relationship type by which a subject is connected to an object in an association
-    domain: association
-    range: uriorcurie
+    notes: >-
+      Has a value from the Biolink related_to hierarchy. In RDF, this corresponds to rdf:predicate and
+      in Neo4j this corresponds to the relationship type.
+      The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats
+    range: edge label type
     required: true
     local_names:
       ga4gh: annotation predicate
@@ -1995,6 +1995,15 @@ slots:
     mappings:
       - "owl:annotatedProperty"
       - "OBAN:association_has_predicate"
+
+  relation:
+    is_a: association slot
+    description: >-
+      The relation which describes an association between a subject and an object in a more granular manner.
+      Usually this is a term from Relation Ontology, but it can be any edge CURIE.
+    domain: association
+    range: uriorcurie
+    required: true
 
   negated:
     is_a: association slot

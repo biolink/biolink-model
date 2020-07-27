@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.1
-# Generation date: 2020-07-13 19:48
+# Generation date: 2020-07-27 18:39
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -172,6 +172,14 @@ class LabelType(String):
     type_class_curie = "xsd:string"
     type_name = "label type"
     type_model_uri = BIOLINK.LabelType
+
+
+class EdgeLabelType(Uriorcurie):
+    """ A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats. """
+    type_class_uri = XSD.anyURI
+    type_class_curie = "xsd:anyURI"
+    type_name = "edge label type"
+    type_model_uri = BIOLINK.EdgeLabelType
 
 
 class NarrativeText(String):
@@ -2606,7 +2614,7 @@ class Association(YAMLRoot):
     subject: Union[str, NamedThingId]
     relation: Union[str, URIorCURIE]
     object: Union[str, NamedThingId]
-    edge_label: Union[str, LabelType]
+    edge_label: Union[str, EdgeLabelType]
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
@@ -2657,7 +2665,7 @@ class GenotypeToGenotypePartAssociation(Association):
     subject: Union[str, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GenotypeId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -2696,7 +2704,7 @@ class GenotypeToGeneAssociation(Association):
     subject: Union[str, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -2734,7 +2742,7 @@ class GenotypeToVariantAssociation(Association):
     subject: Union[str, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, SequenceVariantId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -2773,7 +2781,7 @@ class GeneToGeneAssociation(Association):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneOrGeneProductId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -2804,7 +2812,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneOrGeneProductId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -2835,7 +2843,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneOrGeneProductId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -2865,7 +2873,7 @@ class CellLineToThingAssociation(Association):
     subject: Union[str, CellLineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -2892,7 +2900,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -2922,7 +2930,7 @@ class ChemicalToThingAssociation(Association):
     subject: Union[str, ChemicalSubstanceId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -2948,7 +2956,7 @@ class CaseToThingAssociation(Association):
     subject: Union[str, CaseId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -2975,7 +2983,7 @@ class ChemicalToChemicalAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, ChemicalSubstanceId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3013,7 +3021,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     subject: Union[str, ChemicalSubstanceId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, ChemicalSubstanceId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
     change_is_catalyzed_by: List[Union[str, MacromolecularMachineId]] = empty_list()
 
     def __post_init__(self):
@@ -3055,7 +3063,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3085,7 +3093,7 @@ class ChemicalToPathwayAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, PathwayId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3115,7 +3123,7 @@ class ChemicalToGeneAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneOrGeneProductId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3145,7 +3153,7 @@ class MaterialSampleToThingAssociation(Association):
     subject: Union[str, MaterialSampleId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -3171,7 +3179,7 @@ class MaterialSampleDerivationAssociation(Association):
     subject: Union[str, MaterialSampleId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3209,7 +3217,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3232,7 +3240,7 @@ class DiseaseToThingAssociation(Association):
     subject: Union[str, DiseaseId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -3258,7 +3266,7 @@ class DiseaseToExposureAssociation(DiseaseToThingAssociation):
     subject: Union[str, DiseaseId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, ExposureEventId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3289,7 +3297,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, PhenotypicFeatureId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.object is None:
@@ -3312,7 +3320,7 @@ class DiseaseOrPhenotypicFeatureAssociationToThingAssociation(Association):
     subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -3339,7 +3347,7 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenot
     subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, AnatomicalEntityId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3366,7 +3374,7 @@ class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.object is None:
@@ -3393,7 +3401,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     subject: Union[str, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3428,7 +3436,7 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     subject: Union[str, ExposureEventId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3459,7 +3467,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3486,7 +3494,7 @@ class CaseToPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3509,7 +3517,7 @@ class GeneToThingAssociation(Association):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -3532,7 +3540,7 @@ class GeneToPhenotypicFeatureAssociation(Association):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3559,7 +3567,7 @@ class GeneToDiseaseAssociation(Association):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3589,7 +3597,7 @@ class VariantToPopulationAssociation(Association):
     subject: Union[str, SequenceVariantId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, PopulationOfIndividualOrganismsId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
     has_count: Optional[int] = None
     has_total: Optional[int] = None
     has_quotient: Optional[float] = None
@@ -3626,7 +3634,7 @@ class PopulationToPopulationAssociation(Association):
     subject: Union[str, PopulationOfIndividualOrganismsId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, PopulationOfIndividualOrganismsId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3661,7 +3669,7 @@ class VariantToPhenotypicFeatureAssociation(Association):
     subject: Union[str, SequenceVariantId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3688,7 +3696,7 @@ class VariantToDiseaseAssociation(Association):
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3723,7 +3731,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3750,7 +3758,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3777,7 +3785,7 @@ class GenotypeToThingAssociation(Association):
     subject: Union[str, GenotypeId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -3803,7 +3811,7 @@ class GeneToExpressionSiteAssociation(Association):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, AnatomicalEntityId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
     stage_qualifier: Optional[Union[str, LifeStageId]] = None
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
 
@@ -3848,7 +3856,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     subject: Union[str, SequenceVariantId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, TreatmentId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.subject is None:
@@ -3879,7 +3887,7 @@ class FunctionalAssociation(Association):
     subject: Union[str, MacromolecularMachineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneOntologyClassId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3915,7 +3923,7 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     subject: Union[str, MacromolecularMachineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, MolecularActivityId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3947,7 +3955,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     subject: Union[str, MacromolecularMachineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, BiologicalProcessId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -3979,7 +3987,7 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     subject: Union[str, MacromolecularMachineId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, CellularComponentId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4006,7 +4014,7 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     subject: Union[str, MolecularEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneOntologyClassId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4041,7 +4049,7 @@ class GenomicSequenceLocalization(Association):
     subject: Union[str, GenomicEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GenomicEntityId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4075,7 +4083,7 @@ class SequenceFeatureRelationship(Association):
     subject: Union[str, GenomicEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GenomicEntityId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4109,7 +4117,7 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     subject: Union[str, TranscriptId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4143,7 +4151,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     subject: Union[str, GeneId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneProductId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4181,7 +4189,7 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     subject: Union[str, ExonId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, TranscriptId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4215,7 +4223,7 @@ class GeneRegulatoryRelationship(Association):
     subject: Union[str, GeneOrGeneProductId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, GeneOrGeneProductId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4250,7 +4258,7 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     subject: Union[str, AnatomicalEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, AnatomicalEntityId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4286,7 +4294,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     subject: Union[str, AnatomicalEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, AnatomicalEntityId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:
@@ -4326,7 +4334,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     subject: Union[str, AnatomicalEntityId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[str, AnatomicalEntityId] = None
-    edge_label: Union[str, LabelType] = None
+    edge_label: Union[str, EdgeLabelType] = None
 
     def __post_init__(self):
         if self.id is None:

@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-07-24 18:41\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-07-27 18:40\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": "@type",
@@ -111,7 +111,7 @@
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
       "medgen": "http://example.org/UNKNOWN/medgen/",
-      "metatype": "https://w3id.org/biolink/biolinkml/type/",
+      "metatype": "https://w3id.org/biolink/biolinkml/meta/types/",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
       "qud": "http://qudt.org/1.1/schema/qudt#",
@@ -299,6 +299,9 @@
          "@type": "@id"
       },
       "distribution": {
+         "@type": "@id"
+      },
+      "edge_label": {
          "@type": "@id"
       },
       "enabled_by": {

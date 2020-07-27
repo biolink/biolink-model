@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2197.3,283"];
+	graph [bb="0,0,2235.3,283"];
 	node [label="\N"];
 	"gene to phenotypic feature association"	 [height=0.5,
 		label="gene to phenotypic feature association",
@@ -124,58 +124,58 @@ digraph {
 		style=solid];
 	"edge label"	 [color=blue,
 		height=0.5,
-		label="label type",
-		pos="1644,178",
-		width=1.2638];
+		label="edge label type",
+		pos="1663,178",
+		width=1.7873];
 	"gene to phenotypic feature association" -> "edge label"	 [color=blue,
 		label="edge label",
-		lp="1640,221.5",
-		pos="e,1630.9,195.24 1255.4,252.25 1272.6,250.34 1290.3,248.5 1307,247 1369.6,241.38 1531.3,253.78 1589,229 1602.5,223.23 1614.7,212.7 \
-1624.2,202.7",
+		lp="1646,221.5",
+		pos="e,1644.2,195.27 1255.4,252.25 1272.6,250.34 1290.3,248.5 1307,247 1369.6,241.38 1529.7,249.56 1589,229 1606.3,223.03 1623.2,211.9 \
+1636.5,201.55",
 		style=solid];
 	"sex qualifier"	 [color=blue,
 		height=0.5,
 		label="biological sex",
-		pos="1767,178",
+		pos="1805,178",
 		width=1.661];
 	"gene to phenotypic feature association" -> "sex qualifier"	 [color=blue,
 		label="sex qualifier",
-		lp="1742,221.5",
-		pos="e,1743.3,194.6 1254.5,252.13 1272,250.21 1290,248.41 1307,247 1388,240.31 1593.8,250.74 1672,229 1694.2,222.86 1716.9,210.9 1734.6,\
-200.1",
+		lp="1759,221.5",
+		pos="e,1774.7,193.56 1254.5,252.12 1272,250.2 1290,248.4 1307,247 1471.6,233.47 1516.8,264.25 1678,229 1708.4,222.37 1740.8,209.22 1765.3,\
+197.94",
 		style=solid];
 	"frequency qualifier"	 [color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="1912,178",
+		pos="1950,178",
 		width=1.8776];
 	"gene to phenotypic feature association" -> "frequency qualifier"	 [color=blue,
 		label="frequency qualifier",
-		lp="1881,221.5",
-		pos="e,1879.9,193.9 1254.1,252.01 1271.7,250.09 1289.9,248.32 1307,247 1411.9,238.93 1677,250.24 1780,229 1811.4,222.53 1845.1,209.43 \
-1870.5,198.12",
+		lp="1905,221.5",
+		pos="e,1914,193.26 1253.7,252.04 1271.4,250.1 1289.8,248.32 1307,247 1415.7,238.71 1689.8,248.43 1797,229 1834.2,222.27 1874.7,208.47 \
+1904.7,196.92",
 		style=solid];
 	"severity qualifier"	 [color=blue,
 		height=0.5,
 		label="severity value",
-		pos="2057,178",
+		pos="2095,178",
 		width=1.661];
 	"gene to phenotypic feature association" -> "severity qualifier"	 [color=blue,
 		label="severity qualifier",
-		lp="2028.5,221.5",
-		pos="e,2028,194 1253.2,251.96 1271.1,250.03 1289.6,248.26 1307,247 1446.7,236.91 1800.2,258.91 1937,229 1965.6,222.75 1995.9,209.82 2018.9,\
-198.54",
+		lp="2057.5,221.5",
+		pos="e,2063.7,193.38 1253.2,251.95 1271.1,250.01 1289.6,248.25 1307,247 1452.1,236.6 1818.4,257.26 1961,229 1993.6,222.56 2028.5,209.02 \
+2054.5,197.51",
 		style=solid];
 	"onset qualifier"	 [color=blue,
 		height=0.5,
 		label=onset,
-		pos="2168,178",
+		pos="2206,178",
 		width=0.81243];
 	"gene to phenotypic feature association" -> "onset qualifier"	 [color=blue,
 		label="onset qualifier",
-		lp="2151.5,221.5",
-		pos="e,2149.8,192.09 1252.8,251.93 1270.8,249.98 1289.5,248.22 1307,247 1392.6,241.04 1996.4,252.04 2079,229 2101.7,222.69 2124.6,209.33 \
-2141.6,197.86",
+		lp="2183.5,221.5",
+		pos="e,2186.5,191.62 1252.8,251.92 1270.8,249.97 1289.5,248.21 1307,247 1395.9,240.86 2021.8,251.12 2108,229 2133.1,222.57 2159,208.75 \
+2177.8,197.12",
 		style=solid];
 	subject -> relation	 [pos="e,716.75,36.223 728.35,159.96 725.77,132.35 720.8,79.375 717.72,46.525",
 		style=dotted];

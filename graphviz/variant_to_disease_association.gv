@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1997,283"];
+	graph [bb="0,0,2033.3,283"];
 	node [label="\N"];
 	"variant to disease association"	 [height=0.5,
 		label="variant to disease association",
@@ -122,47 +122,47 @@ digraph {
 		style=solid];
 	"edge label"	 [color=blue,
 		height=0.5,
-		label="label type",
-		pos="1579,178",
-		width=1.2638];
+		label="edge label type",
+		pos="1598,178",
+		width=1.7873];
 	"variant to disease association" -> "edge label"	 [color=blue,
 		label="edge label",
-		lp="1573,221.5",
-		pos="e,1565.1,195.34 1097,252.14 1111.3,250.17 1126.1,248.35 1140,247 1224.4,238.85 1442.5,260.77 1521,229 1535,223.35 1547.9,212.84 \
-1557.9,202.82",
+		lp="1579,221.5",
+		pos="e,1578.4,195.37 1097,252.14 1111.3,250.17 1126.1,248.35 1140,247 1224.4,238.85 1440.5,255.35 1521,229 1538.8,223.18 1556.4,212.06 \
+1570.3,201.68",
 		style=solid];
 	"frequency qualifier"	 [color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="1710,178",
+		pos="1748,178",
 		width=1.8776];
 	"variant to disease association" -> "frequency qualifier"	 [color=blue,
 		label="frequency qualifier",
-		lp="1697,221.5",
-		pos="e,1683.6,194.67 1096.6,252.09 1111,250.11 1126,248.3 1140,247 1243,237.5 1504.7,254.13 1605,229 1629.5,222.88 1654.9,210.68 1674.7,\
-199.74",
+		lp="1714,221.5",
+		pos="e,1714.9,193.76 1096.6,252.08 1111,250.11 1126,248.3 1140,247 1244.3,237.4 1508.3,249.53 1611,229 1643.7,222.47 1679,209.21 1705.5,\
+197.85",
 		style=solid];
 	"severity qualifier"	 [color=blue,
 		height=0.5,
 		label="severity value",
-		pos="1855,178",
+		pos="1893,178",
 		width=1.661];
 	"variant to disease association" -> "severity qualifier"	 [color=blue,
 		label="severity qualifier",
-		lp="1838.5,221.5",
-		pos="e,1829.8,194.5 1096.3,252.03 1110.8,250.04 1125.9,248.24 1140,247 1275.8,235.11 1620.9,262.25 1753,229 1777.1,222.95 1802,210.63 \
-1821.2,199.61",
+		lp="1862.5,221.5",
+		pos="e,1863.7,193.75 1096.3,252.02 1110.8,250.03 1125.9,248.24 1140,247 1279.6,234.84 1633.1,258.31 1770,229 1799.6,222.68 1831,209.53 \
+1854.7,198.16",
 		style=solid];
 	"onset qualifier"	 [color=blue,
 		height=0.5,
 		label=onset,
-		pos="1966,178",
+		pos="2004,178",
 		width=0.81243];
 	"variant to disease association" -> "onset qualifier"	 [color=blue,
 		label="onset qualifier",
-		lp="1957.5,221.5",
-		pos="e,1949.5,193.04 1096,252.01 1110.6,250.01 1125.7,248.21 1140,247 1223,239.96 1809.6,253.96 1889,229 1908.4,222.93 1927.3,210.45 \
-1941.6,199.35",
+		lp="1986.5,221.5",
+		pos="e,1985.4,192.09 1095.9,252 1110.6,250 1125.7,248.21 1140,247 1225.7,239.77 1830.2,251.67 1913,229 1936.1,222.69 1959.6,209.33 1976.9,\
+197.87",
 		style=solid];
 	subject -> relation	 [pos="e,651.75,36.223 663.35,159.96 660.77,132.35 655.8,79.375 652.72,46.525",
 		style=dotted];

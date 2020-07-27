@@ -70,7 +70,7 @@ type AnatomicalEntityToAnatomicalEntityAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
@@ -85,7 +85,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type AnatomicalEntityToAnatomicalEntityPartOfAssociation
@@ -100,7 +100,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type Association
@@ -115,7 +115,7 @@ type Association
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     hasConfidenceLevel: ConfidenceLevel
     hasEvidence: EvidenceType
     chiSquaredStatistic: Float
@@ -333,7 +333,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     sexQualifier: BiologicalSex
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -352,7 +352,7 @@ interface CaseToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type Cell
@@ -403,7 +403,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToThingA
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 interface CellLineToThingAssociation
@@ -418,7 +418,7 @@ interface CellLineToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type CellularComponent
@@ -541,7 +541,7 @@ type ChemicalToChemicalAssociation implements ChemicalToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type ChemicalToChemicalDerivationAssociation
@@ -556,7 +556,7 @@ type ChemicalToChemicalDerivationAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     changeIsCatalyzedBy: [MacromolecularMachine]
   }
 
@@ -572,7 +572,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingA
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type ChemicalToGeneAssociation implements ChemicalToThingAssociation
@@ -587,7 +587,7 @@ type ChemicalToGeneAssociation implements ChemicalToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type ChemicalToPathwayAssociation implements ChemicalToThingAssociation
@@ -602,7 +602,7 @@ type ChemicalToPathwayAssociation implements ChemicalToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 interface ChemicalToThingAssociation
@@ -617,7 +617,7 @@ interface ChemicalToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type ClinicalEntity
@@ -917,7 +917,7 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation
@@ -932,7 +932,7 @@ interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type DiseaseToExposureAssociation
@@ -947,7 +947,7 @@ type DiseaseToExposureAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation
@@ -962,7 +962,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     sexQualifier: BiologicalSex
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -981,7 +981,7 @@ interface DiseaseToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 interface DistributionLevel
@@ -1123,7 +1123,7 @@ type EntityToPhenotypicFeatureAssociation implements EntityToFeatureOrDiseaseQua
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     sexQualifier: BiologicalSex
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -1266,7 +1266,7 @@ type ExonToTranscriptRelationship
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type ExposureEvent
@@ -1301,7 +1301,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     sexQualifier: BiologicalSex
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -1353,7 +1353,7 @@ type FunctionalAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type Gene
@@ -1445,7 +1445,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDi
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1536,7 +1536,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1794,7 +1794,7 @@ type GeneRegulatoryRelationship
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThingAssociation
@@ -1809,7 +1809,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1827,7 +1827,7 @@ type GeneToExpressionSiteAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     stageQualifier: LifeStage
     quantifierQualifier: OntologyClass
   }
@@ -1844,7 +1844,7 @@ interface GeneToGeneAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GeneToGeneHomologyAssociation
@@ -1859,7 +1859,7 @@ type GeneToGeneHomologyAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GeneToGeneProductRelationship
@@ -1874,7 +1874,7 @@ type GeneToGeneProductRelationship
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GeneToGoTermAssociation
@@ -1889,7 +1889,7 @@ type GeneToGoTermAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation
@@ -1904,7 +1904,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     sexQualifier: BiologicalSex
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -1923,7 +1923,7 @@ interface GeneToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type Genome
@@ -2078,7 +2078,7 @@ type GenomicSequenceLocalization
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     startInterbaseCoordinate: String
     endInterbaseCoordinate: String
     genomeBuild: String
@@ -2168,7 +2168,7 @@ type GenotypeToGeneAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GenotypeToGenotypePartAssociation
@@ -2183,7 +2183,7 @@ type GenotypeToGenotypePartAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation
@@ -2198,7 +2198,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     sexQualifier: BiologicalSex
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -2217,7 +2217,7 @@ interface GenotypeToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GenotypeToVariantAssociation
@@ -2232,7 +2232,7 @@ type GenotypeToVariantAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type GenotypicSex
@@ -2585,7 +2585,7 @@ type MacromolecularMachineToBiologicalProcessAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type MacromolecularMachineToCellularComponentAssociation
@@ -2600,7 +2600,7 @@ type MacromolecularMachineToCellularComponentAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type MacromolecularMachineToMolecularActivityAssociation
@@ -2615,7 +2615,7 @@ type MacromolecularMachineToMolecularActivityAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type MaterialSample implements SubjectOfInvestigation, PhysicalEntity
@@ -2647,7 +2647,7 @@ type MaterialSampleDerivationAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
@@ -2662,7 +2662,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 interface MaterialSampleToThingAssociation
@@ -2677,7 +2677,7 @@ interface MaterialSampleToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type Metabolite
@@ -3196,7 +3196,7 @@ type PairwiseGeneToGeneInteraction implements PairwiseInteractionAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 interface PairwiseInteractionAssociation
@@ -3211,7 +3211,7 @@ interface PairwiseInteractionAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     interactingMoleculesCategory: OntologyClass
   }
 
@@ -3388,7 +3388,7 @@ type PopulationToPopulationAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type Procedure
@@ -3783,7 +3783,7 @@ type SequenceFeatureRelationship
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type SequenceVariant
@@ -3869,7 +3869,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type SeverityValue
@@ -3930,7 +3930,7 @@ interface ThingToDiseaseOrPhenotypicFeatureAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 interface ThingWithTaxon
@@ -4020,7 +4020,7 @@ type TranscriptToGeneRelationship
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type Treatment
@@ -4057,7 +4057,7 @@ type VariantToDiseaseAssociation implements VariantToThingAssociation, EntityToD
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -4075,7 +4075,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociation,
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     sexQualifier: BiologicalSex
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -4094,7 +4094,7 @@ type VariantToPopulationAssociation implements VariantToThingAssociation, Freque
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
     hasCount: Integer
     hasTotal: Integer
     hasQuotient: Double
@@ -4114,7 +4114,7 @@ interface VariantToThingAssociation
     publications: [Publication]
     providedBy: [Provider]
     associationSlot: String
-    edgeLabel: LabelType!
+    edgeLabel: EdgeLabelType!
   }
 
 type Zygosity
