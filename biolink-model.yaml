@@ -89,6 +89,12 @@ types:
     description: >-
       A string that provides a human-readable name for a thing
 
+  edge label type:
+    typeof: uriorcurie
+    description: >-
+      A CURIE from the biolink related_to hierarchy.
+      For example, biolink:related_to, biolink:causes, biolink:treats.
+
   narrative text:
     typeof: string
     description: >-
@@ -1977,16 +1983,10 @@ slots:
       This is analogous to category for nodes.
     domain: association
     notes:
-    - in neo4j this corresponds to the relationship type and the convention is for a snake_case label
-    range: label type
-    required: true
-
-  relation:
-    is_a: association slot
-    description: >-
-      the relationship type by which a subject is connected to an object in an association
-    domain: association
-    range: uriorcurie
+    - Has a value from the Biolink related_to herarchy. In RDF, this corresponds to rdf:predicate and 
+    in Neo4j this corresponds to the relationship type and the convention is for a snake_case label.
+    For example, biolink:related_to, biolink:causes, biolink:treats
+    range: edge label type
     required: true
     local_names:
       ga4gh: annotation predicate
@@ -1995,6 +1995,14 @@ slots:
     mappings:
       - "owl:annotatedProperty"
       - "OBAN:association_has_predicate"
+
+  relation:
+    is_a: association slot
+    description: >-
+      the relationship type by which a subject is connected to an object in an association
+    domain: association
+    range: uriorcurie
+    required: true
 
   negated:
     is_a: association slot
