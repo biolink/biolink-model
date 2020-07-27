@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1351,283"];
+	graph [bb="0,0,1366,283"];
 	node [label="\N"];
 	"pairwise interaction association"	 [height=0.5,
 		label="pairwise interaction association",
@@ -109,25 +109,25 @@ digraph {
 		style=solid];
 	"edge label"	 [color=blue,
 		height=0.5,
-		label="label type",
-		pos="1123,178",
-		width=1.2638];
+		label="edge label type",
+		pos="1136,178",
+		width=1.7873];
 	"pairwise interaction association" -> "edge label"	 [color=blue,
 		label="edge label",
-		lp="1113,221.5",
-		pos="e,1107.5,195.1 640.89,252.1 655.91,250.16 671.42,248.36 686.05,247 768.68,239.34 981.4,258.27 1059,229 1074.4,223.22 1088.9,212.29 \
-1100.2,202.03",
+		lp="1117,221.5",
+		pos="e,1116.4,195.37 640.89,252.1 655.91,250.16 671.42,248.36 686.05,247 768.68,239.34 980.18,254.84 1059,229 1076.8,223.17 1094.4,212.05 \
+1108.3,201.68",
 		style=solid];
 	"interacting molecules category"	 [color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="1248,178",
+		pos="1280,178",
 		width=1.7151];
 	"pairwise interaction association" -> "interacting molecules category"	 [color=blue,
 		label="interacting molecules category",
-		lp="1267,221.5",
-		pos="e,1222.6,194.42 640.18,252.08 655.42,250.11 671.18,248.31 686.05,247 787.73,238.04 1046.1,254.2 1145,229 1169.2,222.83 1194.4,210.5 \
-1213.8,199.51",
+		lp="1282,221.5",
+		pos="e,1248.7,193.64 640.17,252.07 655.42,250.11 671.18,248.31 686.05,247 788.62,237.98 1048.2,249.97 1149,229 1180.4,222.48 1214,209.24 \
+1239.4,197.89",
 		style=solid];
 	subject -> relation	 [pos="e,187.1,36.223 201.02,159.96 197.91,132.35 191.95,79.375 188.25,46.525",
 		style=dotted];

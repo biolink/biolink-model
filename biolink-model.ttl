@@ -190,62 +190,62 @@
         "rdfs",
         "skos",
         "xsd" ;
-    meta:generation_date "2020-07-24 18:41"^^xsd:dateTime ;
+    meta:generation_date "2020-07-27 18:40"^^xsd:dateTime ;
     meta:id <https://w3id.org/biolink/biolink-model> ;
     meta:imports biolinkml:types ;
     meta:metamodel_version "1.4.1" ;
-    meta:prefixes [ meta:prefix_prefix "xsd" ;
-            meta:prefix_reference xsd: ],
-        [ meta:prefix_prefix "MetaCyc" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ],
-        [ meta:prefix_prefix "qud" ;
+    meta:prefixes [ meta:prefix_prefix "qud" ;
             meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
-        [ meta:prefix_prefix "UMLSSC" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
+        [ meta:prefix_prefix "hetio" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ],
+        [ meta:prefix_prefix "Aeolus" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ],
+        [ meta:prefix_prefix "UMLSST" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
+        [ meta:prefix_prefix "UBERGRAPH" ;
+            meta:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ],
+        [ meta:prefix_prefix "xsd" ;
+            meta:prefix_reference xsd: ],
+        [ meta:prefix_prefix "GOREL" ;
+            meta:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ],
         [ meta:prefix_prefix "shex" ;
             meta:prefix_reference <http://www.w3.org/ns/shex#> ],
-        [ meta:prefix_prefix "SIO" ;
-            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
-        [ meta:prefix_prefix "ICD10" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/ICD10_> ],
+        [ meta:prefix_prefix "biolink" ;
+            meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
+        [ meta:prefix_prefix "biolinkml" ;
+            meta:prefix_reference biolinkml: ],
         [ meta:prefix_prefix "CTD" ;
             meta:prefix_reference <http://translator.ncats.nih.gov/CTD_> ],
         [ meta:prefix_prefix "metatype" ;
-            meta:prefix_reference <https://w3id.org/biolink/biolinkml/type/> ],
-        [ meta:prefix_prefix "CAID" ;
-            meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
-        [ meta:prefix_prefix "UMLSST" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
-        [ meta:prefix_prefix "Aeolus" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ],
-        [ meta:prefix_prefix "GOREL" ;
-            meta:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ],
-        [ meta:prefix_prefix "GAMMA" ;
-            meta:prefix_reference <http://translator.renci.org/GAMMA_> ],
-        [ meta:prefix_prefix "biolinkml" ;
-            meta:prefix_reference biolinkml: ],
-        [ meta:prefix_prefix "biolink" ;
-            meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
-        [ meta:prefix_prefix "gtpo" ;
-            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ],
-        [ meta:prefix_prefix "DrugCentral" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ],
+            meta:prefix_reference <https://w3id.org/biolink/biolinkml/meta/types/> ],
         [ meta:prefix_prefix "OBAN" ;
             meta:prefix_reference <http://purl.org/oban/> ],
-        [ meta:prefix_prefix "hetio" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ],
-        [ meta:prefix_prefix "UBERGRAPH" ;
-            meta:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ],
-        [ meta:prefix_prefix "ICD0" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ],
         [ meta:prefix_prefix "UMLSSG" ;
             meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ],
+        [ meta:prefix_prefix "ICD10" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD10_> ],
+        [ meta:prefix_prefix "ICD0" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ],
+        [ meta:prefix_prefix "SIO" ;
+            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
         [ meta:prefix_prefix "SNPEFF" ;
             meta:prefix_reference <http://translator.ncats.nih.gov/SNPEFF_> ],
+        [ meta:prefix_prefix "CAID" ;
+            meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
         [ meta:prefix_prefix "ICD9" ;
             meta:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ],
+        [ meta:prefix_prefix "UMLSSC" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
+        [ meta:prefix_prefix "DrugCentral" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ],
         [ meta:prefix_prefix "wgs" ;
-            meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ] ;
+            meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
+        [ meta:prefix_prefix "MetaCyc" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ],
+        [ meta:prefix_prefix "GAMMA" ;
+            meta:prefix_reference <http://translator.renci.org/GAMMA_> ],
+        [ meta:prefix_prefix "gtpo" ;
+            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ] ;
     meta:slots <https://w3id.org/biolink/vocab/actively_involved_in>,
         <https://w3id.org/biolink/vocab/affects>,
         <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -564,8 +564,8 @@
         <https://w3id.org/biolink/vocab/versionOf>,
         <https://w3id.org/biolink/vocab/xenologous_to> ;
     meta:source_file "biolink-model.yaml" ;
-    meta:source_file_date "Fri Jul 24 18:40:11 2020"^^xsd:dateTime ;
-    meta:source_file_size 137138 ;
+    meta:source_file_date "Mon Jul 27 18:37:51 2020"^^xsd:dateTime ;
+    meta:source_file_size 137619 ;
     meta:subsets <https://w3id.org/biolink/vocab/samples>,
         <https://w3id.org/biolink/vocab/testing>,
         <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -576,6 +576,7 @@
         <https://w3id.org/biolink/vocab/date>,
         <https://w3id.org/biolink/vocab/datetime>,
         <https://w3id.org/biolink/vocab/double>,
+        <https://w3id.org/biolink/vocab/edge_label_type>,
         <https://w3id.org/biolink/vocab/float>,
         <https://w3id.org/biolink/vocab/frequency>,
         <https://w3id.org/biolink/vocab/integer>,
@@ -2080,6 +2081,14 @@
     meta:range <https://w3id.org/biolink/vocab/Disease> ;
     meta:required true ;
     meta:slot_uri <https://w3id.org/biolink/vocab/subject> .
+
+<https://w3id.org/biolink/vocab/edge_label_type> a meta:TypeDefinition ;
+    skos:definition "A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    meta:base "URIorCURIE" ;
+    meta:repr "str" ;
+    meta:typeof <https://w3id.org/biolink/vocab/uriorcurie> ;
+    meta:uri xsd:anyURI .
 
 <https://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_object> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -5905,6 +5914,13 @@
     meta:imported_from "https://w3id.org/biolink/biolinkml/types" ;
     meta:uri xsd:integer .
 
+<https://w3id.org/biolink/vocab/label_type> a meta:TypeDefinition ;
+    skos:definition "A string that provides a human-readable name for a thing" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    meta:base "str" ;
+    meta:typeof <https://w3id.org/biolink/vocab/string> ;
+    meta:uri xsd:string .
+
 <https://w3id.org/biolink/vocab/located_in> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     owl:inverseOf <https://w3id.org/biolink/vocab/location_of> ;
@@ -6449,13 +6465,6 @@
     meta:owner <https://w3id.org/biolink/vocab/interbase_coordinate> ;
     meta:range <https://w3id.org/biolink/vocab/string> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/interbase_coordinate> .
-
-<https://w3id.org/biolink/vocab/label_type> a meta:TypeDefinition ;
-    skos:definition "A string that provides a human-readable name for a thing" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    meta:base "str" ;
-    meta:typeof <https://w3id.org/biolink/vocab/string> ;
-    meta:uri xsd:string .
 
 <https://w3id.org/biolink/vocab/latitude> a meta:SlotDefinition ;
     skos:definition "latitude" ;
@@ -9561,6 +9570,26 @@
     meta:range <https://w3id.org/biolink/vocab/OntologyClass> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/association_type> .
 
+<https://w3id.org/biolink/vocab/edge_label> a meta:SlotDefinition ;
+    skos:definition "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes." ;
+    skos:editorialNote "Has a value from the Biolink related_to hierarchy. In RDF, this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation rdf:predicate,
+        owl:annotatedProperty,
+        <oban:association_has_predicate> ;
+    meta:domain <https://w3id.org/biolink/vocab/Association> ;
+    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
+    meta:local_names [ a meta:LocalName ;
+            skos:altLabel "predicate" ;
+            meta:local_name_source "translator" ],
+        [ a meta:LocalName ;
+            skos:altLabel "annotation predicate" ;
+            meta:local_name_source "ga4gh" ] ;
+    meta:owner <https://w3id.org/biolink/vocab/edge_label> ;
+    meta:range <https://w3id.org/biolink/vocab/edge_label_type> ;
+    meta:required true ;
+    meta:slot_uri rdf:predicate .
+
 <https://w3id.org/biolink/vocab/negated> a meta:SlotDefinition ;
     skos:definition "if set to true, then the association is negated i.e. is not true" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -9594,17 +9623,6 @@
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/OntologyClass> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/qualifiers> .
-
-<https://w3id.org/biolink/vocab/edge_label> a meta:SlotDefinition ;
-    skos:definition "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes." ;
-    skos:editorialNote "in neo4j this corresponds to the relationship type and the convention is for a snake_case label" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    meta:domain <https://w3id.org/biolink/vocab/Association> ;
-    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
-    meta:owner <https://w3id.org/biolink/vocab/edge_label> ;
-    meta:range <https://w3id.org/biolink/vocab/label_type> ;
-    meta:required true ;
-    meta:slot_uri <https://w3id.org/biolink/vocab/edge_label> .
 
 <https://w3id.org/biolink/vocab/Association> a meta:ClassDefinition ;
     skos:definition "A typed association between two entities, supported by evidence" ;
@@ -9665,23 +9683,14 @@
     meta:slot_uri <https://w3id.org/biolink/vocab/association_slot> .
 
 <https://w3id.org/biolink/vocab/relation> a meta:SlotDefinition ;
-    skos:definition "the relationship type by which a subject is connected to an object in an association" ;
+    skos:definition "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation rdf:predicate,
-        owl:annotatedProperty,
-        <oban:association_has_predicate> ;
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
-    meta:local_names [ a meta:LocalName ;
-            skos:altLabel "predicate" ;
-            meta:local_name_source "translator" ],
-        [ a meta:LocalName ;
-            skos:altLabel "annotation predicate" ;
-            meta:local_name_source "ga4gh" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/uriorcurie> ;
     meta:required true ;
-    meta:slot_uri rdf:predicate .
+    meta:slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/category> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;

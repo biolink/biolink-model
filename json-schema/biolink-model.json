@@ -1115,7 +1115,7 @@
          "type": "array"
       },
       "relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
          "type": "string"
       },
       "retrievedOn": {
@@ -1398,7 +1398,7 @@
                "type": "string"
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "required": true,
                "type": "string"
             },

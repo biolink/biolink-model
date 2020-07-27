@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1987.3,283"];
+	graph [bb="0,0,2025.3,283"];
 	node [label="\N"];
 	"exposure event to phenotypic feature association"	 [height=0.5,
 		label="exposure event to phenotypic feature association",
@@ -118,57 +118,57 @@ digraph {
 		style=solid];
 	"edge label"	 [color=blue,
 		height=0.5,
-		label="label type",
-		pos="1434,178",
-		width=1.2638];
+		label="edge label type",
+		pos="1453,178",
+		width=1.7873];
 	"exposure event to phenotypic feature association" -> "edge label"	 [color=blue,
 		label="edge label",
-		lp="1430,221.5",
-		pos="e,1421,195.32 1145.2,252.53 1249.3,242.63 1377.3,230.26 1380,229 1393,223.1 1404.8,212.79 1414.1,202.98",
+		lp="1437,221.5",
+		pos="e,1434.2,195.31 1144.6,252.48 1248.8,242.51 1377.2,230.05 1380,229 1396.7,222.85 1413.1,211.95 1426.1,201.81",
 		style=solid];
 	"sex qualifier"	 [color=blue,
 		height=0.5,
 		label="biological sex",
-		pos="1557,178",
+		pos="1595,178",
 		width=1.661];
 	"exposure event to phenotypic feature association" -> "sex qualifier"	 [color=blue,
 		label="sex qualifier",
-		lp="1532,221.5",
-		pos="e,1532.9,194.7 1143,252.33 1163.4,250.46 1184.3,248.62 1204,247 1318.6,237.61 1351.6,260.9 1462,229 1483.9,222.67 1506.5,210.83 \
-1524.1,200.14",
+		lp="1550,221.5",
+		pos="e,1564.6,193.51 1142.7,252.32 1163.2,250.45 1184.2,248.61 1204,247 1321.7,237.46 1354,255.48 1469,229 1499,222.11 1531.1,209.03 \
+1555.4,197.85",
 		style=solid];
 	"frequency qualifier"	 [color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="1702,178",
+		pos="1740,178",
 		width=1.8776];
 	"exposure event to phenotypic feature association" -> "frequency qualifier"	 [color=blue,
 		label="frequency qualifier",
-		lp="1671,221.5",
-		pos="e,1669.6,193.91 1141.1,252.13 1162.2,250.25 1183.7,248.46 1204,247 1366.5,235.36 1410.7,262.78 1570,229 1601.3,222.38 1634.8,209.35 \
-1660.2,198.11",
+		lp="1696,221.5",
+		pos="e,1703.9,193.28 1140.9,252.11 1162,250.23 1183.6,248.44 1204,247 1374.5,234.98 1420.1,260.48 1588,229 1624.7,222.14 1664.6,208.5 \
+1694.3,197.06",
 		style=solid];
 	"severity qualifier"	 [color=blue,
 		height=0.5,
 		label="severity value",
-		pos="1847,178",
+		pos="1885,178",
 		width=1.661];
 	"exposure event to phenotypic feature association" -> "severity qualifier"	 [color=blue,
 		label="severity qualifier",
-		lp="1818.5,221.5",
-		pos="e,1818,193.95 1139.6,252.01 1161.1,250.11 1183.2,248.34 1204,247 1320.1,239.54 1613.5,254.17 1727,229 1755.6,222.67 1785.9,209.74 \
-1808.9,198.48",
+		lp="1847.5,221.5",
+		pos="e,1853.7,193.45 1139.6,251.98 1161.1,250.08 1183.2,248.32 1204,247 1325.6,239.28 1632.6,253.15 1752,229 1784.1,222.52 1818.5,209.15 \
+1844.3,197.72",
 		style=solid];
 	"onset qualifier"	 [color=blue,
 		height=0.5,
 		label=onset,
-		pos="1958,178",
+		pos="1996,178",
 		width=0.81243];
 	"exposure event to phenotypic feature association" -> "onset qualifier"	 [color=blue,
 		label="onset qualifier",
-		lp="1941.5,221.5",
-		pos="e,1939.5,192.31 1138.8,251.94 1160.5,250.03 1182.9,248.28 1204,247 1277.8,242.53 1797.9,248.98 1869,229 1891.5,222.69 1914.3,209.46 \
-1931.2,198.06",
+		lp="1973.5,221.5",
+		pos="e,1976.5,191.6 1138.8,251.92 1160.5,250.01 1182.9,248.27 1204,247 1281,242.38 1823.4,248.3 1898,229 1923.1,222.53 1949,208.71 1967.8,\
+197.09",
 		style=solid];
 	subject -> relation	 [pos="e,504.1,36.223 518.02,159.96 514.91,132.35 508.95,79.375 505.25,46.525",
 		style=dotted];

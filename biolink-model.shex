@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX OBO: <http://purl.obolibrary.org/obo/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX pav: <http://purl.org/pav/>
-PREFIX metatype: <https://w3id.org/biolink/biolinkml/type/>
+PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
 
 
 <ChemicalFormulaValue> xsd:string
@@ -15,6 +15,8 @@ PREFIX metatype: <https://w3id.org/biolink/biolinkml/type/>
 <IriType> IRI
 
 <LabelType> xsd:string
+
+<EdgeLabelType> IRI
 
 <NarrativeText> xsd:string
 
@@ -137,14 +139,14 @@ metatype:Nodeidentifier NONLITERAL
 <Association>  (
     CLOSED {
        (  $<Association_tes> (  rdf:subject @<NamedThing> ;
-             rdf:predicate @metatype:Uriorcurie ;
+             <relation> @metatype:Uriorcurie ;
              rdf:object @<NamedThing> ;
              <negated> @metatype:Boolean ? ;
              <association_type> @<OntologyClass> ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              pav:providedBy @<Provider> * ;
-             <edge_label> @<LabelType> ;
+             rdf:predicate @<EdgeLabelType> ;
              <has_confidence_level> @<ConfidenceLevel> ? ;
              <has_evidence> @<EvidenceType> ? ;
              OBO:STATO_0000030 @metatype:Float ? ;

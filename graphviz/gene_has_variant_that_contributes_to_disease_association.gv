@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1822.9,283"];
+	graph [bb="0,0,1854.9,283"];
 	node [label="\N"];
 	"gene has variant that contributes to disease association"	 [height=0.5,
 		label="gene has variant that contributes to disease association",
@@ -110,56 +110,56 @@ digraph {
 		style=solid];
 	"edge label"	 [color=blue,
 		height=0.5,
-		label="label type",
-		pos="1228.9,178",
-		width=1.2638];
+		label="edge label type",
+		pos="1247.9,178",
+		width=1.7873];
 	"gene has variant that contributes to disease association" -> "edge label"	 [color=blue,
 		label="edge label",
-		lp="1233.9,221.5",
-		pos="e,1219.6,195.69 1024.1,252.89 1097.4,246.08 1172.9,237.3 1187.9,229 1198.5,223.21 1207.3,213.51 1214,204.11",
+		lp="1239.9,221.5",
+		pos="e,1232.5,195.73 1017.9,252.3 1092.7,245.04 1171.7,236.02 1187.9,229 1201.7,223.02 1214.7,212.77 1225.1,203.01",
 		style=solid];
 	"frequency qualifier"	 [color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="1359.9,178",
+		pos="1397.9,178",
 		width=1.8776];
 	"gene has variant that contributes to disease association" -> "frequency qualifier"	 [color=blue,
 		label="frequency qualifier",
-		lp="1353.9,221.5",
-		pos="e,1335.2,195.03 1018.3,252.36 1127.7,242.74 1259.8,230.85 1265.9,229 1287.3,222.53 1309.3,210.92 1326.6,200.4",
+		lp="1370.9,221.5",
+		pos="e,1366.2,193.91 1018.5,252.36 1129.9,242.61 1265.6,230.53 1271.9,229 1301.3,221.9 1332.8,209.15 1357,198.17",
 		style=solid];
 	"severity qualifier"	 [color=blue,
 		height=0.5,
 		label="severity value",
-		pos="1504.9,178",
+		pos="1542.9,178",
 		width=1.661];
 	"gene has variant that contributes to disease association" -> "severity qualifier"	 [color=blue,
 		label="severity qualifier",
-		lp="1492.4,221.5",
-		pos="e,1481.2,194.55 1017.3,252.24 1040.2,250.37 1063.7,248.56 1085.9,247 1157.9,241.96 1340.5,248.52 1409.9,229 1432,222.79 1454.8,210.82 \
-1472.4,200.05",
+		lp="1516.4,221.5",
+		pos="e,1514.4,194.04 1017,252.21 1040,250.34 1063.6,248.53 1085.9,247 1161.6,241.8 1353.1,246.56 1426.9,229 1454.3,222.5 1483.2,209.78 \
+1505.4,198.68",
 		style=solid];
 	"onset qualifier"	 [color=blue,
 		height=0.5,
 		label=onset,
-		pos="1611.9,178",
+		pos="1649.9,178",
 		width=0.81243];
 	"gene has variant that contributes to disease association" -> "onset qualifier"	 [color=blue,
 		label="onset qualifier",
-		lp="1609.4,221.5",
-		pos="e,1596.8,193.42 1015.2,252.08 1038.8,250.2 1063.1,248.42 1085.9,247 1136.7,243.86 1495,245.85 1542.9,229 1560.1,222.96 1576.6,211.07 \
-1589.2,200.28",
+		lp="1638.4,221.5",
+		pos="e,1632.5,192.48 1014.9,252.07 1038.6,250.18 1063,248.4 1085.9,247 1139.3,243.75 1515.8,244.51 1566.9,229 1587.8,222.67 1608.8,209.75 \
+1624.4,198.51",
 		style=solid];
 	"sequence variant qualifier"	 [color=blue,
 		height=0.5,
 		label="sequence variant",
-		pos="1728.9,178",
+		pos="1766.9,178",
 		width=1.9318];
 	"gene has variant that contributes to disease association" -> "sequence variant qualifier"	 [color=blue,
 		label="sequence variant qualifier",
-		lp="1752.4,221.5",
-		pos="e,1709.6,195.47 1014.4,252 1038.2,250.11 1062.8,248.35 1085.9,247 1148.9,243.34 1592.9,248.31 1652.9,229 1670.6,223.32 1688,212.21 \
-1701.6,201.8",
+		lp="1784.4,221.5",
+		pos="e,1745.3,195.24 1014.1,251.99 1038,250.09 1062.7,248.33 1085.9,247 1152.1,243.21 1618.4,247.65 1681.9,229 1701.7,223.2 1721.6,211.65 \
+1737.2,201.02",
 		style=solid];
 	subject -> relation	 [pos="e,298.99,36.223 312.91,159.96 309.8,132.35 303.85,79.375 300.15,46.525",
 		style=dotted];
