@@ -2,15 +2,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
  * FrequencyQualifierMixin
  * <p>
- * Qualifier for freqency type associations
+ * Qualifier for frequency type associations
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,12 +44,25 @@ public class FrequencyQualifierMixin {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("frequencyQualifier", frequencyQualifier).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(FrequencyQualifierMixin.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("frequencyQualifier");
+        sb.append('=');
+        sb.append(((this.frequencyQualifier == null)?"<null>":this.frequencyQualifier));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(frequencyQualifier).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.frequencyQualifier == null)? 0 :this.frequencyQualifier.hashCode()));
+        return result;
     }
 
     @Override
@@ -64,7 +74,7 @@ public class FrequencyQualifierMixin {
             return false;
         }
         FrequencyQualifierMixin rhs = ((FrequencyQualifierMixin) other);
-        return new EqualsBuilder().append(frequencyQualifier, rhs.frequencyQualifier).isEquals();
+        return ((this.frequencyQualifier == rhs.frequencyQualifier)||((this.frequencyQualifier!= null)&&this.frequencyQualifier.equals(rhs.frequencyQualifier)));
     }
 
 }

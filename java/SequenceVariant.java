@@ -3,9 +3,6 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -76,12 +73,35 @@ public class SequenceVariant {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasBiologicalSequence", hasBiologicalSequence).append("hasGene", hasGene).append("id", id).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(SequenceVariant.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("hasBiologicalSequence");
+        sb.append('=');
+        sb.append(((this.hasBiologicalSequence == null)?"<null>":this.hasBiologicalSequence));
+        sb.append(',');
+        sb.append("hasGene");
+        sb.append('=');
+        sb.append(((this.hasGene == null)?"<null>":this.hasGene));
+        sb.append(',');
+        sb.append("id");
+        sb.append('=');
+        sb.append(((this.id == null)?"<null>":this.id));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasBiologicalSequence).append(hasGene).append(id).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.hasBiologicalSequence == null)? 0 :this.hasBiologicalSequence.hashCode()));
+        result = ((result* 31)+((this.hasGene == null)? 0 :this.hasGene.hashCode()));
+        result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
+        return result;
     }
 
     @Override
@@ -93,7 +113,7 @@ public class SequenceVariant {
             return false;
         }
         SequenceVariant rhs = ((SequenceVariant) other);
-        return new EqualsBuilder().append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(hasGene, rhs.hasGene).append(id, rhs.id).isEquals();
+        return ((((this.hasBiologicalSequence == rhs.hasBiologicalSequence)||((this.hasBiologicalSequence!= null)&&this.hasBiologicalSequence.equals(rhs.hasBiologicalSequence)))&&((this.hasGene == rhs.hasGene)||((this.hasGene!= null)&&this.hasGene.equals(rhs.hasGene))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))));
     }
 
 }

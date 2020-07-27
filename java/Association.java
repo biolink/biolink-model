@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -20,6 +17,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "association_slot",
     "association_type",
     "change_is_catalyzed_by",
+    "chi_squared_statistic",
     "clinical_modifier_qualifier",
     "edge_label",
     "frequency_qualifier",
@@ -29,6 +27,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "negated",
     "object",
     "onset_qualifier",
+    "p_value",
     "provided_by",
     "publications",
     "qualifiers",
@@ -63,6 +62,13 @@ public class Association {
     @JsonProperty("change_is_catalyzed_by")
     @JsonPropertyDescription("hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.")
     private List<String> changeIsCatalyzedBy = new ArrayList<String>();
+    /**
+     * represents the chi-squared statistic computed from observations
+     * 
+     */
+    @JsonProperty("chi_squared_statistic")
+    @JsonPropertyDescription("represents the chi-squared statistic computed from observations")
+    private String chiSquaredStatistic;
     /**
      * Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
      * 
@@ -130,12 +136,19 @@ public class Association {
     @JsonPropertyDescription("a qualifier used in a phenotypic association to state when the phenotype appears is in the subject")
     private String onsetQualifier;
     /**
+     * A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+     * 
+     */
+    @JsonProperty("p_value")
+    @JsonPropertyDescription("A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.")
+    private String pValue;
+    /**
      * connects an association to the agent (person, organization or group) that provided it
      * 
      */
     @JsonProperty("provided_by")
     @JsonPropertyDescription("connects an association to the agent (person, organization or group) that provided it")
-    private String providedBy;
+    private List<String> providedBy = new ArrayList<String>();
     /**
      * connects an association to publications supporting the association
      * 
@@ -158,12 +171,12 @@ public class Association {
     @JsonPropertyDescription("A measurable quantity for the object of the association")
     private String quantifierQualifier;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
+    @JsonPropertyDescription("The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.")
     private String relation;
     /**
      * a qualifier used in an association where the variant
@@ -254,6 +267,24 @@ public class Association {
     @JsonProperty("change_is_catalyzed_by")
     public void setChangeIsCatalyzedBy(List<String> changeIsCatalyzedBy) {
         this.changeIsCatalyzedBy = changeIsCatalyzedBy;
+    }
+
+    /**
+     * represents the chi-squared statistic computed from observations
+     * 
+     */
+    @JsonProperty("chi_squared_statistic")
+    public String getChiSquaredStatistic() {
+        return chiSquaredStatistic;
+    }
+
+    /**
+     * represents the chi-squared statistic computed from observations
+     * 
+     */
+    @JsonProperty("chi_squared_statistic")
+    public void setChiSquaredStatistic(String chiSquaredStatistic) {
+        this.chiSquaredStatistic = chiSquaredStatistic;
     }
 
     /**
@@ -425,11 +456,29 @@ public class Association {
     }
 
     /**
+     * A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+     * 
+     */
+    @JsonProperty("p_value")
+    public String getpValue() {
+        return pValue;
+    }
+
+    /**
+     * A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+     * 
+     */
+    @JsonProperty("p_value")
+    public void setpValue(String pValue) {
+        this.pValue = pValue;
+    }
+
+    /**
      * connects an association to the agent (person, organization or group) that provided it
      * 
      */
     @JsonProperty("provided_by")
-    public String getProvidedBy() {
+    public List<String> getProvidedBy() {
         return providedBy;
     }
 
@@ -438,7 +487,7 @@ public class Association {
      * 
      */
     @JsonProperty("provided_by")
-    public void setProvidedBy(String providedBy) {
+    public void setProvidedBy(List<String> providedBy) {
         this.providedBy = providedBy;
     }
 
@@ -497,7 +546,7 @@ public class Association {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * (Required)
      * 
      */
@@ -507,7 +556,7 @@ public class Association {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * (Required)
      * 
      */
@@ -610,12 +659,140 @@ public class Association {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationSlot", associationSlot).append("associationType", associationType).append("changeIsCatalyzedBy", changeIsCatalyzedBy).append("clinicalModifierQualifier", clinicalModifierQualifier).append("edgeLabel", edgeLabel).append("frequencyQualifier", frequencyQualifier).append("hasConfidenceLevel", hasConfidenceLevel).append("hasEvidence", hasEvidence).append("id", id).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("quantifierQualifier", quantifierQualifier).append("relation", relation).append("sequenceVariantQualifier", sequenceVariantQualifier).append("severityQualifier", severityQualifier).append("sexQualifier", sexQualifier).append("stageQualifier", stageQualifier).append("subject", subject).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Association.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("associationSlot");
+        sb.append('=');
+        sb.append(((this.associationSlot == null)?"<null>":this.associationSlot));
+        sb.append(',');
+        sb.append("associationType");
+        sb.append('=');
+        sb.append(((this.associationType == null)?"<null>":this.associationType));
+        sb.append(',');
+        sb.append("changeIsCatalyzedBy");
+        sb.append('=');
+        sb.append(((this.changeIsCatalyzedBy == null)?"<null>":this.changeIsCatalyzedBy));
+        sb.append(',');
+        sb.append("chiSquaredStatistic");
+        sb.append('=');
+        sb.append(((this.chiSquaredStatistic == null)?"<null>":this.chiSquaredStatistic));
+        sb.append(',');
+        sb.append("clinicalModifierQualifier");
+        sb.append('=');
+        sb.append(((this.clinicalModifierQualifier == null)?"<null>":this.clinicalModifierQualifier));
+        sb.append(',');
+        sb.append("edgeLabel");
+        sb.append('=');
+        sb.append(((this.edgeLabel == null)?"<null>":this.edgeLabel));
+        sb.append(',');
+        sb.append("frequencyQualifier");
+        sb.append('=');
+        sb.append(((this.frequencyQualifier == null)?"<null>":this.frequencyQualifier));
+        sb.append(',');
+        sb.append("hasConfidenceLevel");
+        sb.append('=');
+        sb.append(((this.hasConfidenceLevel == null)?"<null>":this.hasConfidenceLevel));
+        sb.append(',');
+        sb.append("hasEvidence");
+        sb.append('=');
+        sb.append(((this.hasEvidence == null)?"<null>":this.hasEvidence));
+        sb.append(',');
+        sb.append("id");
+        sb.append('=');
+        sb.append(((this.id == null)?"<null>":this.id));
+        sb.append(',');
+        sb.append("negated");
+        sb.append('=');
+        sb.append(((this.negated == null)?"<null>":this.negated));
+        sb.append(',');
+        sb.append("object");
+        sb.append('=');
+        sb.append(((this.object == null)?"<null>":this.object));
+        sb.append(',');
+        sb.append("onsetQualifier");
+        sb.append('=');
+        sb.append(((this.onsetQualifier == null)?"<null>":this.onsetQualifier));
+        sb.append(',');
+        sb.append("pValue");
+        sb.append('=');
+        sb.append(((this.pValue == null)?"<null>":this.pValue));
+        sb.append(',');
+        sb.append("providedBy");
+        sb.append('=');
+        sb.append(((this.providedBy == null)?"<null>":this.providedBy));
+        sb.append(',');
+        sb.append("publications");
+        sb.append('=');
+        sb.append(((this.publications == null)?"<null>":this.publications));
+        sb.append(',');
+        sb.append("qualifiers");
+        sb.append('=');
+        sb.append(((this.qualifiers == null)?"<null>":this.qualifiers));
+        sb.append(',');
+        sb.append("quantifierQualifier");
+        sb.append('=');
+        sb.append(((this.quantifierQualifier == null)?"<null>":this.quantifierQualifier));
+        sb.append(',');
+        sb.append("relation");
+        sb.append('=');
+        sb.append(((this.relation == null)?"<null>":this.relation));
+        sb.append(',');
+        sb.append("sequenceVariantQualifier");
+        sb.append('=');
+        sb.append(((this.sequenceVariantQualifier == null)?"<null>":this.sequenceVariantQualifier));
+        sb.append(',');
+        sb.append("severityQualifier");
+        sb.append('=');
+        sb.append(((this.severityQualifier == null)?"<null>":this.severityQualifier));
+        sb.append(',');
+        sb.append("sexQualifier");
+        sb.append('=');
+        sb.append(((this.sexQualifier == null)?"<null>":this.sexQualifier));
+        sb.append(',');
+        sb.append("stageQualifier");
+        sb.append('=');
+        sb.append(((this.stageQualifier == null)?"<null>":this.stageQualifier));
+        sb.append(',');
+        sb.append("subject");
+        sb.append('=');
+        sb.append(((this.subject == null)?"<null>":this.subject));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(sexQualifier).append(negated).append(associationSlot).append(clinicalModifierQualifier).append(sequenceVariantQualifier).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(relation).append(onsetQualifier).append(severityQualifier).append(stageQualifier).append(hasConfidenceLevel).append(quantifierQualifier).append(changeIsCatalyzedBy).append(hasEvidence).append(edgeLabel).append(id).append(object).append(publications).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.negated == null)? 0 :this.negated.hashCode()));
+        result = ((result* 31)+((this.sequenceVariantQualifier == null)? 0 :this.sequenceVariantQualifier.hashCode()));
+        result = ((result* 31)+((this.subject == null)? 0 :this.subject.hashCode()));
+        result = ((result* 31)+((this.chiSquaredStatistic == null)? 0 :this.chiSquaredStatistic.hashCode()));
+        result = ((result* 31)+((this.relation == null)? 0 :this.relation.hashCode()));
+        result = ((result* 31)+((this.onsetQualifier == null)? 0 :this.onsetQualifier.hashCode()));
+        result = ((result* 31)+((this.stageQualifier == null)? 0 :this.stageQualifier.hashCode()));
+        result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
+        result = ((result* 31)+((this.providedBy == null)? 0 :this.providedBy.hashCode()));
+        result = ((result* 31)+((this.sexQualifier == null)? 0 :this.sexQualifier.hashCode()));
+        result = ((result* 31)+((this.associationSlot == null)? 0 :this.associationSlot.hashCode()));
+        result = ((result* 31)+((this.clinicalModifierQualifier == null)? 0 :this.clinicalModifierQualifier.hashCode()));
+        result = ((result* 31)+((this.associationType == null)? 0 :this.associationType.hashCode()));
+        result = ((result* 31)+((this.frequencyQualifier == null)? 0 :this.frequencyQualifier.hashCode()));
+        result = ((result* 31)+((this.pValue == null)? 0 :this.pValue.hashCode()));
+        result = ((result* 31)+((this.qualifiers == null)? 0 :this.qualifiers.hashCode()));
+        result = ((result* 31)+((this.severityQualifier == null)? 0 :this.severityQualifier.hashCode()));
+        result = ((result* 31)+((this.hasConfidenceLevel == null)? 0 :this.hasConfidenceLevel.hashCode()));
+        result = ((result* 31)+((this.quantifierQualifier == null)? 0 :this.quantifierQualifier.hashCode()));
+        result = ((result* 31)+((this.changeIsCatalyzedBy == null)? 0 :this.changeIsCatalyzedBy.hashCode()));
+        result = ((result* 31)+((this.hasEvidence == null)? 0 :this.hasEvidence.hashCode()));
+        result = ((result* 31)+((this.edgeLabel == null)? 0 :this.edgeLabel.hashCode()));
+        result = ((result* 31)+((this.object == null)? 0 :this.object.hashCode()));
+        result = ((result* 31)+((this.publications == null)? 0 :this.publications.hashCode()));
+        return result;
     }
 
     @Override
@@ -627,7 +804,7 @@ public class Association {
             return false;
         }
         Association rhs = ((Association) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(sexQualifier, rhs.sexQualifier).append(negated, rhs.negated).append(associationSlot, rhs.associationSlot).append(clinicalModifierQualifier, rhs.clinicalModifierQualifier).append(sequenceVariantQualifier, rhs.sequenceVariantQualifier).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(stageQualifier, rhs.stageQualifier).append(hasConfidenceLevel, rhs.hasConfidenceLevel).append(quantifierQualifier, rhs.quantifierQualifier).append(changeIsCatalyzedBy, rhs.changeIsCatalyzedBy).append(hasEvidence, rhs.hasEvidence).append(edgeLabel, rhs.edgeLabel).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return (((((((((((((((((((((((((this.negated == rhs.negated)||((this.negated!= null)&&this.negated.equals(rhs.negated)))&&((this.sequenceVariantQualifier == rhs.sequenceVariantQualifier)||((this.sequenceVariantQualifier!= null)&&this.sequenceVariantQualifier.equals(rhs.sequenceVariantQualifier))))&&((this.subject == rhs.subject)||((this.subject!= null)&&this.subject.equals(rhs.subject))))&&((this.chiSquaredStatistic == rhs.chiSquaredStatistic)||((this.chiSquaredStatistic!= null)&&this.chiSquaredStatistic.equals(rhs.chiSquaredStatistic))))&&((this.relation == rhs.relation)||((this.relation!= null)&&this.relation.equals(rhs.relation))))&&((this.onsetQualifier == rhs.onsetQualifier)||((this.onsetQualifier!= null)&&this.onsetQualifier.equals(rhs.onsetQualifier))))&&((this.stageQualifier == rhs.stageQualifier)||((this.stageQualifier!= null)&&this.stageQualifier.equals(rhs.stageQualifier))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.providedBy == rhs.providedBy)||((this.providedBy!= null)&&this.providedBy.equals(rhs.providedBy))))&&((this.sexQualifier == rhs.sexQualifier)||((this.sexQualifier!= null)&&this.sexQualifier.equals(rhs.sexQualifier))))&&((this.associationSlot == rhs.associationSlot)||((this.associationSlot!= null)&&this.associationSlot.equals(rhs.associationSlot))))&&((this.clinicalModifierQualifier == rhs.clinicalModifierQualifier)||((this.clinicalModifierQualifier!= null)&&this.clinicalModifierQualifier.equals(rhs.clinicalModifierQualifier))))&&((this.associationType == rhs.associationType)||((this.associationType!= null)&&this.associationType.equals(rhs.associationType))))&&((this.frequencyQualifier == rhs.frequencyQualifier)||((this.frequencyQualifier!= null)&&this.frequencyQualifier.equals(rhs.frequencyQualifier))))&&((this.pValue == rhs.pValue)||((this.pValue!= null)&&this.pValue.equals(rhs.pValue))))&&((this.qualifiers == rhs.qualifiers)||((this.qualifiers!= null)&&this.qualifiers.equals(rhs.qualifiers))))&&((this.severityQualifier == rhs.severityQualifier)||((this.severityQualifier!= null)&&this.severityQualifier.equals(rhs.severityQualifier))))&&((this.hasConfidenceLevel == rhs.hasConfidenceLevel)||((this.hasConfidenceLevel!= null)&&this.hasConfidenceLevel.equals(rhs.hasConfidenceLevel))))&&((this.quantifierQualifier == rhs.quantifierQualifier)||((this.quantifierQualifier!= null)&&this.quantifierQualifier.equals(rhs.quantifierQualifier))))&&((this.changeIsCatalyzedBy == rhs.changeIsCatalyzedBy)||((this.changeIsCatalyzedBy!= null)&&this.changeIsCatalyzedBy.equals(rhs.changeIsCatalyzedBy))))&&((this.hasEvidence == rhs.hasEvidence)||((this.hasEvidence!= null)&&this.hasEvidence.equals(rhs.hasEvidence))))&&((this.edgeLabel == rhs.edgeLabel)||((this.edgeLabel!= null)&&this.edgeLabel.equals(rhs.edgeLabel))))&&((this.object == rhs.object)||((this.object!= null)&&this.object.equals(rhs.object))))&&((this.publications == rhs.publications)||((this.publications!= null)&&this.publications.equals(rhs.publications))));
     }
 
 }

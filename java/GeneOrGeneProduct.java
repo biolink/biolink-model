@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -127,12 +124,40 @@ public class GeneOrGeneProduct {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("expressedIn", expressedIn).append("inCellPopulationWith", inCellPopulationWith).append("inComplexWith", inComplexWith).append("inPathwayWith", inPathwayWith).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(GeneOrGeneProduct.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("expressedIn");
+        sb.append('=');
+        sb.append(((this.expressedIn == null)?"<null>":this.expressedIn));
+        sb.append(',');
+        sb.append("inCellPopulationWith");
+        sb.append('=');
+        sb.append(((this.inCellPopulationWith == null)?"<null>":this.inCellPopulationWith));
+        sb.append(',');
+        sb.append("inComplexWith");
+        sb.append('=');
+        sb.append(((this.inComplexWith == null)?"<null>":this.inComplexWith));
+        sb.append(',');
+        sb.append("inPathwayWith");
+        sb.append('=');
+        sb.append(((this.inPathwayWith == null)?"<null>":this.inPathwayWith));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(expressedIn).append(inCellPopulationWith).append(inComplexWith).append(inPathwayWith).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.expressedIn == null)? 0 :this.expressedIn.hashCode()));
+        result = ((result* 31)+((this.inCellPopulationWith == null)? 0 :this.inCellPopulationWith.hashCode()));
+        result = ((result* 31)+((this.inComplexWith == null)? 0 :this.inComplexWith.hashCode()));
+        result = ((result* 31)+((this.inPathwayWith == null)? 0 :this.inPathwayWith.hashCode()));
+        return result;
     }
 
     @Override
@@ -144,7 +169,7 @@ public class GeneOrGeneProduct {
             return false;
         }
         GeneOrGeneProduct rhs = ((GeneOrGeneProduct) other);
-        return new EqualsBuilder().append(expressedIn, rhs.expressedIn).append(inCellPopulationWith, rhs.inCellPopulationWith).append(inComplexWith, rhs.inComplexWith).append(inPathwayWith, rhs.inPathwayWith).isEquals();
+        return (((((this.expressedIn == rhs.expressedIn)||((this.expressedIn!= null)&&this.expressedIn.equals(rhs.expressedIn)))&&((this.inCellPopulationWith == rhs.inCellPopulationWith)||((this.inCellPopulationWith!= null)&&this.inCellPopulationWith.equals(rhs.inCellPopulationWith))))&&((this.inComplexWith == rhs.inComplexWith)||((this.inComplexWith!= null)&&this.inComplexWith.equals(rhs.inComplexWith))))&&((this.inPathwayWith == rhs.inPathwayWith)||((this.inPathwayWith!= null)&&this.inPathwayWith.equals(rhs.inPathwayWith))));
     }
 
 }

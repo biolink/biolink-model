@@ -2,9 +2,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -73,12 +70,30 @@ public class GeographicLocation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("latitude", latitude).append("longitude", longitude).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(GeographicLocation.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("latitude");
+        sb.append('=');
+        sb.append(((this.latitude == null)?"<null>":this.latitude));
+        sb.append(',');
+        sb.append("longitude");
+        sb.append('=');
+        sb.append(((this.longitude == null)?"<null>":this.longitude));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(latitude).append(longitude).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.latitude == null)? 0 :this.latitude.hashCode()));
+        result = ((result* 31)+((this.longitude == null)? 0 :this.longitude.hashCode()));
+        return result;
     }
 
     @Override
@@ -90,7 +105,7 @@ public class GeographicLocation {
             return false;
         }
         GeographicLocation rhs = ((GeographicLocation) other);
-        return new EqualsBuilder().append(latitude, rhs.latitude).append(longitude, rhs.longitude).isEquals();
+        return (((this.latitude == rhs.latitude)||((this.latitude!= null)&&this.latitude.equals(rhs.latitude)))&&((this.longitude == rhs.longitude)||((this.longitude!= null)&&this.longitude.equals(rhs.longitude))));
     }
 
 }

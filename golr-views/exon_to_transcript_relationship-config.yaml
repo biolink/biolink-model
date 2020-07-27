@@ -7,8 +7,9 @@ fields:
 - display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - exon to transcript relationship_subject
   id: subject
-- description: the relationship type by which a subject is connected to an object
-    in an association
+- description: The relation which describes an association between a subject and an
+    object in a more granular manner. Usually this is a term from Relation Ontology,
+    but it can be any edge CURIE.
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - relation
   id: relation
@@ -38,7 +39,8 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - publications
   id: publications
-- description: connects an association to the agent (person, organization or group)
+- cardinality: multi
+  description: connects an association to the agent (person, organization or group)
     that provided it
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - provided by

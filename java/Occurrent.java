@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -17,7 +14,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "enabled_by",
+    "enables",
     "has_input",
     "has_output",
     "has_participant",
@@ -29,12 +26,12 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class Occurrent {
 
     /**
-     * holds between a process and a physical entity, where the physical entity executes the process
+     * holds between a physical entity and a process, where the physical entity executes the process
      * 
      */
-    @JsonProperty("enabled_by")
-    @JsonPropertyDescription("holds between a process and a physical entity, where the physical entity executes the process")
-    private List<String> enabledBy = new ArrayList<String>();
+    @JsonProperty("enables")
+    @JsonPropertyDescription("holds between a physical entity and a process, where the physical entity executes the process")
+    private List<String> enables = new ArrayList<String>();
     /**
      * holds between a process and a continuant, where the continuant is an input into the process
      * 
@@ -71,21 +68,21 @@ public class Occurrent {
     private List<String> regulatesProcessToProcess = new ArrayList<String>();
 
     /**
-     * holds between a process and a physical entity, where the physical entity executes the process
+     * holds between a physical entity and a process, where the physical entity executes the process
      * 
      */
-    @JsonProperty("enabled_by")
-    public List<String> getEnabledBy() {
-        return enabledBy;
+    @JsonProperty("enables")
+    public List<String> getEnables() {
+        return enables;
     }
 
     /**
-     * holds between a process and a physical entity, where the physical entity executes the process
+     * holds between a physical entity and a process, where the physical entity executes the process
      * 
      */
-    @JsonProperty("enabled_by")
-    public void setEnabledBy(List<String> enabledBy) {
-        this.enabledBy = enabledBy;
+    @JsonProperty("enables")
+    public void setEnables(List<String> enables) {
+        this.enables = enables;
     }
 
     /**
@@ -192,12 +189,60 @@ public class Occurrent {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("enabledBy", enabledBy).append("hasInput", hasInput).append("hasOutput", hasOutput).append("hasParticipant", hasParticipant).append("negativelyRegulatesProcessToProcess", negativelyRegulatesProcessToProcess).append("positivelyRegulatesProcessToProcess", positivelyRegulatesProcessToProcess).append("precedes", precedes).append("regulatesProcessToProcess", regulatesProcessToProcess).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Occurrent.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("enables");
+        sb.append('=');
+        sb.append(((this.enables == null)?"<null>":this.enables));
+        sb.append(',');
+        sb.append("hasInput");
+        sb.append('=');
+        sb.append(((this.hasInput == null)?"<null>":this.hasInput));
+        sb.append(',');
+        sb.append("hasOutput");
+        sb.append('=');
+        sb.append(((this.hasOutput == null)?"<null>":this.hasOutput));
+        sb.append(',');
+        sb.append("hasParticipant");
+        sb.append('=');
+        sb.append(((this.hasParticipant == null)?"<null>":this.hasParticipant));
+        sb.append(',');
+        sb.append("negativelyRegulatesProcessToProcess");
+        sb.append('=');
+        sb.append(((this.negativelyRegulatesProcessToProcess == null)?"<null>":this.negativelyRegulatesProcessToProcess));
+        sb.append(',');
+        sb.append("positivelyRegulatesProcessToProcess");
+        sb.append('=');
+        sb.append(((this.positivelyRegulatesProcessToProcess == null)?"<null>":this.positivelyRegulatesProcessToProcess));
+        sb.append(',');
+        sb.append("precedes");
+        sb.append('=');
+        sb.append(((this.precedes == null)?"<null>":this.precedes));
+        sb.append(',');
+        sb.append("regulatesProcessToProcess");
+        sb.append('=');
+        sb.append(((this.regulatesProcessToProcess == null)?"<null>":this.regulatesProcessToProcess));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(enabledBy).append(precedes).append(positivelyRegulatesProcessToProcess).append(hasOutput).append(regulatesProcessToProcess).append(negativelyRegulatesProcessToProcess).append(hasInput).append(hasParticipant).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.precedes == null)? 0 :this.precedes.hashCode()));
+        result = ((result* 31)+((this.positivelyRegulatesProcessToProcess == null)? 0 :this.positivelyRegulatesProcessToProcess.hashCode()));
+        result = ((result* 31)+((this.hasOutput == null)? 0 :this.hasOutput.hashCode()));
+        result = ((result* 31)+((this.regulatesProcessToProcess == null)? 0 :this.regulatesProcessToProcess.hashCode()));
+        result = ((result* 31)+((this.negativelyRegulatesProcessToProcess == null)? 0 :this.negativelyRegulatesProcessToProcess.hashCode()));
+        result = ((result* 31)+((this.hasInput == null)? 0 :this.hasInput.hashCode()));
+        result = ((result* 31)+((this.hasParticipant == null)? 0 :this.hasParticipant.hashCode()));
+        result = ((result* 31)+((this.enables == null)? 0 :this.enables.hashCode()));
+        return result;
     }
 
     @Override
@@ -209,7 +254,7 @@ public class Occurrent {
             return false;
         }
         Occurrent rhs = ((Occurrent) other);
-        return new EqualsBuilder().append(enabledBy, rhs.enabledBy).append(precedes, rhs.precedes).append(positivelyRegulatesProcessToProcess, rhs.positivelyRegulatesProcessToProcess).append(hasOutput, rhs.hasOutput).append(regulatesProcessToProcess, rhs.regulatesProcessToProcess).append(negativelyRegulatesProcessToProcess, rhs.negativelyRegulatesProcessToProcess).append(hasInput, rhs.hasInput).append(hasParticipant, rhs.hasParticipant).isEquals();
+        return (((((((((this.precedes == rhs.precedes)||((this.precedes!= null)&&this.precedes.equals(rhs.precedes)))&&((this.positivelyRegulatesProcessToProcess == rhs.positivelyRegulatesProcessToProcess)||((this.positivelyRegulatesProcessToProcess!= null)&&this.positivelyRegulatesProcessToProcess.equals(rhs.positivelyRegulatesProcessToProcess))))&&((this.hasOutput == rhs.hasOutput)||((this.hasOutput!= null)&&this.hasOutput.equals(rhs.hasOutput))))&&((this.regulatesProcessToProcess == rhs.regulatesProcessToProcess)||((this.regulatesProcessToProcess!= null)&&this.regulatesProcessToProcess.equals(rhs.regulatesProcessToProcess))))&&((this.negativelyRegulatesProcessToProcess == rhs.negativelyRegulatesProcessToProcess)||((this.negativelyRegulatesProcessToProcess!= null)&&this.negativelyRegulatesProcessToProcess.equals(rhs.negativelyRegulatesProcessToProcess))))&&((this.hasInput == rhs.hasInput)||((this.hasInput!= null)&&this.hasInput.equals(rhs.hasInput))))&&((this.hasParticipant == rhs.hasParticipant)||((this.hasParticipant!= null)&&this.hasParticipant.equals(rhs.hasParticipant))))&&((this.enables == rhs.enables)||((this.enables!= null)&&this.enables.equals(rhs.enables))));
     }
 
 }
