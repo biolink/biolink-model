@@ -151,7 +151,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [Procedure](Procedure.md) - A series of actions conducted in a certain order or manner
     * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
        * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-       * [OrganismTaxon](OrganismTaxon.md)
+       * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
        * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
     * [PhysicalEntity](PhysicalEntity.md) - An entity that has physical properties such as mass, volume, or charge
     * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet

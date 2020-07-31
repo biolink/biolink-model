@@ -27,7 +27,7 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 ## Children
 
  * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
- * [OrganismTaxon](OrganismTaxon.md)
+ * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
  * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
 
 ## Mixin for
