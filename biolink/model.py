@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.1
-# Generation date: 2020-07-27 18:39
+# Generation date: 2020-07-31 22:24
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1280,6 +1280,10 @@ class GeneOntologyClass(OntologyClass):
 
 @dataclass
 class OrganismTaxon(OntologyClass):
+    """
+    A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also
+    be used to represent strains or subspecies.
+    """
     _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
