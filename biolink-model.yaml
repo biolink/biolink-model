@@ -1619,6 +1619,7 @@ slots:
       - GAMMA:component
       - GAMMA:adduct
       - GAMMA:antibody
+      - DRUGBANK:chelator
 
   #The following are proposed new predictes
 
@@ -2030,7 +2031,8 @@ slots:
     range: provider
     description: >-
       connects an association to the agent (person, organization or group) that provided it
-    slot_uri: pav:providedBy
+    mappings:
+      - pav:providedBy
     multivalued: true
 
   association type:
@@ -2046,14 +2048,16 @@ slots:
     range: float
     description: >-
       represents the chi-squared statistic computed from observations
-    slot_uri: STATO:0000030
+    mappings:
+      - STATO:0000030
 
   p value:
     is_a: association slot
     range: float
     description: >-
       A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
-    slot_uri: OBI:0000175
+    mappings:
+      - OBI:0000175
 
   creation date:
     is_a: node property
