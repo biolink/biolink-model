@@ -190,62 +190,62 @@
         "rdfs",
         "skos",
         "xsd" ;
-    meta:generation_date "2020-07-31 22:10"^^xsd:dateTime ;
+    meta:generation_date "2020-07-31 22:19"^^xsd:dateTime ;
     meta:id <https://w3id.org/biolink/biolink-model> ;
     meta:imports biolinkml:types ;
     meta:metamodel_version "1.4.1" ;
-    meta:prefixes [ meta:prefix_prefix "wgs" ;
-            meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
-        [ meta:prefix_prefix "biolinkml" ;
-            meta:prefix_reference biolinkml: ],
-        [ meta:prefix_prefix "xsd" ;
-            meta:prefix_reference xsd: ],
-        [ meta:prefix_prefix "SIO" ;
-            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
-        [ meta:prefix_prefix "hetio" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ],
-        [ meta:prefix_prefix "UMLSSC" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
-        [ meta:prefix_prefix "ICD9" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ],
-        [ meta:prefix_prefix "gtpo" ;
-            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ],
-        [ meta:prefix_prefix "MetaCyc" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ],
-        [ meta:prefix_prefix "DrugCentral" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ],
-        [ meta:prefix_prefix "GAMMA" ;
-            meta:prefix_reference <http://translator.renci.org/GAMMA_> ],
-        [ meta:prefix_prefix "Aeolus" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ],
-        [ meta:prefix_prefix "metatype" ;
-            meta:prefix_reference <https://w3id.org/biolink/biolinkml/meta/types/> ],
-        [ meta:prefix_prefix "GOREL" ;
+    meta:prefixes [ meta:prefix_prefix "GOREL" ;
             meta:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ],
-        [ meta:prefix_prefix "shex" ;
-            meta:prefix_reference <http://www.w3.org/ns/shex#> ],
-        [ meta:prefix_prefix "UMLSST" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
         [ meta:prefix_prefix "ICD10" ;
             meta:prefix_reference <http://translator.ncats.nih.gov/ICD10_> ],
         [ meta:prefix_prefix "qud" ;
             meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
-        [ meta:prefix_prefix "biolink" ;
-            meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
-        [ meta:prefix_prefix "SNPEFF" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/SNPEFF_> ],
-        [ meta:prefix_prefix "OBAN" ;
-            meta:prefix_reference <http://purl.org/oban/> ],
-        [ meta:prefix_prefix "CTD" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/CTD_> ],
-        [ meta:prefix_prefix "CAID" ;
-            meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
-        [ meta:prefix_prefix "UMLSSG" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ],
         [ meta:prefix_prefix "UBERGRAPH" ;
             meta:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ],
+        [ meta:prefix_prefix "OBAN" ;
+            meta:prefix_reference <http://purl.org/oban/> ],
+        [ meta:prefix_prefix "wgs" ;
+            meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
+        [ meta:prefix_prefix "GAMMA" ;
+            meta:prefix_reference <http://translator.renci.org/GAMMA_> ],
+        [ meta:prefix_prefix "CAID" ;
+            meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
+        [ meta:prefix_prefix "DrugCentral" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ],
+        [ meta:prefix_prefix "CTD" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/CTD_> ],
+        [ meta:prefix_prefix "Aeolus" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ],
+        [ meta:prefix_prefix "biolink" ;
+            meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
+        [ meta:prefix_prefix "shex" ;
+            meta:prefix_reference <http://www.w3.org/ns/shex#> ],
+        [ meta:prefix_prefix "UMLSSG" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ],
         [ meta:prefix_prefix "ICD0" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ] ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ],
+        [ meta:prefix_prefix "ICD9" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ],
+        [ meta:prefix_prefix "xsd" ;
+            meta:prefix_reference xsd: ],
+        [ meta:prefix_prefix "metatype" ;
+            meta:prefix_reference <https://w3id.org/biolink/biolinkml/meta/types/> ],
+        [ meta:prefix_prefix "UMLSST" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
+        [ meta:prefix_prefix "UMLSSC" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
+        [ meta:prefix_prefix "hetio" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ],
+        [ meta:prefix_prefix "MetaCyc" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ],
+        [ meta:prefix_prefix "biolinkml" ;
+            meta:prefix_reference biolinkml: ],
+        [ meta:prefix_prefix "SIO" ;
+            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
+        [ meta:prefix_prefix "SNPEFF" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/SNPEFF_> ],
+        [ meta:prefix_prefix "gtpo" ;
+            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ] ;
     meta:slots <https://w3id.org/biolink/vocab/actively_involved_in>,
         <https://w3id.org/biolink/vocab/affects>,
         <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -564,8 +564,8 @@
         <https://w3id.org/biolink/vocab/versionOf>,
         <https://w3id.org/biolink/vocab/xenologous_to> ;
     meta:source_file "biolink-model.yaml" ;
-    meta:source_file_date "Fri Jul 31 22:08:16 2020"^^xsd:dateTime ;
-    meta:source_file_size 137669 ;
+    meta:source_file_date "Fri Jul 31 22:17:00 2020"^^xsd:dateTime ;
+    meta:source_file_size 137689 ;
     meta:subsets <https://w3id.org/biolink/vocab/samples>,
         <https://w3id.org/biolink/vocab/testing>,
         <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -5188,11 +5188,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "positively regulates" ;
-            meta:local_name_source "translator" ],
-        [ a meta:LocalName ;
             skos:altLabel "activity directly positively regulates activity of" ;
-            meta:local_name_source "ro" ] ;
+            meta:local_name_source "ro" ],
+        [ a meta:LocalName ;
+            skos:altLabel "positively regulates" ;
+            meta:local_name_source "translator" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/positively_regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/positively_regulates_entity_to_entity> ;
@@ -5942,6 +5942,7 @@
         <https://w3id.org/biolink/vocab/BSPO:0015101>,
         <https://w3id.org/biolink/vocab/BSPO:0015102>,
         <https://w3id.org/biolink/vocab/BSPO:0015202>,
+        <https://w3id.org/biolink/vocab/EFO:0000784>,
         <https://w3id.org/biolink/vocab/GOREL:0001004>,
         <https://w3id.org/biolink/vocab/RO:0001025>,
         <https://w3id.org/biolink/vocab/UBERON_CORE:in_central_side_of>,
@@ -9498,11 +9499,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "activity directly regulates activity of" ;
-            meta:local_name_source "ro" ],
-        [ a meta:LocalName ;
             skos:altLabel "regulates" ;
-            meta:local_name_source "translator" ] ;
+            meta:local_name_source "translator" ],
+        [ a meta:LocalName ;
+            skos:altLabel "activity directly regulates activity of" ;
+            meta:local_name_source "ro" ] ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:range <https://w3id.org/biolink/vocab/MolecularEntity> ;
@@ -9893,11 +9894,11 @@
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "descriptor" ;
-            meta:local_name_source "ga4gh" ],
-        [ a meta:LocalName ;
             skos:altLabel "node with incoming relationship" ;
-            meta:local_name_source "neo4j" ] ;
+            meta:local_name_source "neo4j" ],
+        [ a meta:LocalName ;
+            skos:altLabel "descriptor" ;
+            meta:local_name_source "ga4gh" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:required true ;
@@ -9920,11 +9921,11 @@
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "node with outgoing relationship" ;
-            meta:local_name_source "neo4j" ],
-        [ a meta:LocalName ;
             skos:altLabel "annotation subject" ;
-            meta:local_name_source "ga4gh" ] ;
+            meta:local_name_source "ga4gh" ],
+        [ a meta:LocalName ;
+            skos:altLabel "node with outgoing relationship" ;
+            meta:local_name_source "neo4j" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:required true ;
