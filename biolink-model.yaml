@@ -1011,7 +1011,7 @@ slots:
       - WIKIDATA:P688
 
   homologous to:
-    is_a: related to
+    is_a: similar to
     aliases: ['in homology relationship with']
     description: >-
       holds between two biological entities that have common evolutionary origin
@@ -1366,8 +1366,25 @@ slots:
       - SEMMEDDB:LOCATION_OF
       - WIKIDATA:276
 
+  similar to:
+      is_a: related to
+      description: >-
+        holds between an entity and some other entity with similar features.
+      in_subset:
+        - translator_minimal
+      symmetric: true
+      mappings:
+        - RO:HOM0000000               #I don't understand this identifier, but I think it's equivalent
+        - SO:similar_to               #equivalent
+        - CHEBI:has_parent_hydride    #subproperty
+        - CHEBI:has_functional_parent #subproperty
+        - CHEBI:is_conjugate_acid_of  #subproperty
+        - CHEBI:is_conjugate_base_of  #subproperty
+        - CHEBI:is_enantiomer_of      #subproperty
+        - CHEBI:is_tautomer_of        #subproperty
+
   model of:
-    is_a: related to
+    is_a: similar to
     description: >-
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     in_subset:
