@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-07-27 18:40\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-07-31 22:09\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": "@type",
@@ -210,8 +210,7 @@
          "@type": "@id"
       },
       "chi_squared_statistic": {
-         "@type": "xsd:float",
-         "@id": "STATO:0000030"
+         "@type": "xsd:float"
       },
       "clinical_modifier_qualifier": {
          "@type": "@id"
@@ -567,8 +566,7 @@
          "@type": "@id"
       },
       "p_value": {
-         "@type": "xsd:float",
-         "@id": "OBI:0000175"
+         "@type": "xsd:float"
       },
       "paralogous_to": {
          "@type": "@id"
@@ -607,8 +605,7 @@
          "@type": "@id"
       },
       "provided_by": {
-         "@type": "@id",
-         "@id": "pav:providedBy"
+         "@type": "@id"
       },
       "publications": {
          "@type": "@id"

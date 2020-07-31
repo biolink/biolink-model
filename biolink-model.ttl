@@ -190,62 +190,62 @@
         "rdfs",
         "skos",
         "xsd" ;
-    meta:generation_date "2020-07-27 18:40"^^xsd:dateTime ;
+    meta:generation_date "2020-07-31 22:10"^^xsd:dateTime ;
     meta:id <https://w3id.org/biolink/biolink-model> ;
     meta:imports biolinkml:types ;
     meta:metamodel_version "1.4.1" ;
-    meta:prefixes [ meta:prefix_prefix "qud" ;
-            meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
-        [ meta:prefix_prefix "hetio" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ],
-        [ meta:prefix_prefix "Aeolus" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ],
-        [ meta:prefix_prefix "UMLSST" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
-        [ meta:prefix_prefix "UBERGRAPH" ;
-            meta:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ],
+    meta:prefixes [ meta:prefix_prefix "wgs" ;
+            meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
+        [ meta:prefix_prefix "biolinkml" ;
+            meta:prefix_reference biolinkml: ],
         [ meta:prefix_prefix "xsd" ;
             meta:prefix_reference xsd: ],
+        [ meta:prefix_prefix "SIO" ;
+            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
+        [ meta:prefix_prefix "hetio" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ],
+        [ meta:prefix_prefix "UMLSSC" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
+        [ meta:prefix_prefix "ICD9" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ],
+        [ meta:prefix_prefix "gtpo" ;
+            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ],
+        [ meta:prefix_prefix "MetaCyc" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ],
+        [ meta:prefix_prefix "DrugCentral" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ],
+        [ meta:prefix_prefix "GAMMA" ;
+            meta:prefix_reference <http://translator.renci.org/GAMMA_> ],
+        [ meta:prefix_prefix "Aeolus" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ],
+        [ meta:prefix_prefix "metatype" ;
+            meta:prefix_reference <https://w3id.org/biolink/biolinkml/meta/types/> ],
         [ meta:prefix_prefix "GOREL" ;
             meta:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ],
         [ meta:prefix_prefix "shex" ;
             meta:prefix_reference <http://www.w3.org/ns/shex#> ],
-        [ meta:prefix_prefix "biolink" ;
-            meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
-        [ meta:prefix_prefix "biolinkml" ;
-            meta:prefix_reference biolinkml: ],
-        [ meta:prefix_prefix "CTD" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/CTD_> ],
-        [ meta:prefix_prefix "metatype" ;
-            meta:prefix_reference <https://w3id.org/biolink/biolinkml/meta/types/> ],
-        [ meta:prefix_prefix "OBAN" ;
-            meta:prefix_reference <http://purl.org/oban/> ],
-        [ meta:prefix_prefix "UMLSSG" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ],
+        [ meta:prefix_prefix "UMLSST" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
         [ meta:prefix_prefix "ICD10" ;
             meta:prefix_reference <http://translator.ncats.nih.gov/ICD10_> ],
-        [ meta:prefix_prefix "ICD0" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ],
-        [ meta:prefix_prefix "SIO" ;
-            meta:prefix_reference <http://semanticscience.org/resource/SIO_> ],
+        [ meta:prefix_prefix "qud" ;
+            meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
+        [ meta:prefix_prefix "biolink" ;
+            meta:prefix_reference <https://w3id.org/biolink/vocab/> ],
         [ meta:prefix_prefix "SNPEFF" ;
             meta:prefix_reference <http://translator.ncats.nih.gov/SNPEFF_> ],
+        [ meta:prefix_prefix "OBAN" ;
+            meta:prefix_reference <http://purl.org/oban/> ],
+        [ meta:prefix_prefix "CTD" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/CTD_> ],
         [ meta:prefix_prefix "CAID" ;
             meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
-        [ meta:prefix_prefix "ICD9" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ],
-        [ meta:prefix_prefix "UMLSSC" ;
-            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
-        [ meta:prefix_prefix "DrugCentral" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ],
-        [ meta:prefix_prefix "wgs" ;
-            meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
-        [ meta:prefix_prefix "MetaCyc" ;
-            meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ],
-        [ meta:prefix_prefix "GAMMA" ;
-            meta:prefix_reference <http://translator.renci.org/GAMMA_> ],
-        [ meta:prefix_prefix "gtpo" ;
-            meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ] ;
+        [ meta:prefix_prefix "UMLSSG" ;
+            meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ],
+        [ meta:prefix_prefix "UBERGRAPH" ;
+            meta:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ],
+        [ meta:prefix_prefix "ICD0" ;
+            meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ] ;
     meta:slots <https://w3id.org/biolink/vocab/actively_involved_in>,
         <https://w3id.org/biolink/vocab/affects>,
         <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -564,8 +564,8 @@
         <https://w3id.org/biolink/vocab/versionOf>,
         <https://w3id.org/biolink/vocab/xenologous_to> ;
     meta:source_file "biolink-model.yaml" ;
-    meta:source_file_date "Mon Jul 27 18:37:51 2020"^^xsd:dateTime ;
-    meta:source_file_size 137619 ;
+    meta:source_file_date "Fri Jul 31 22:08:16 2020"^^xsd:dateTime ;
+    meta:source_file_size 137669 ;
     meta:subsets <https://w3id.org/biolink/vocab/samples>,
         <https://w3id.org/biolink/vocab/testing>,
         <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -3746,16 +3746,6 @@
     meta:required true ;
     meta:slot_uri <https://w3id.org/biolink/vocab/object> .
 
-<https://w3id.org/biolink/vocab/chi_squared_statistic> a meta:SlotDefinition ;
-    skos:definition "represents the chi-squared statistic computed from observations" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/STATO:0000030> ;
-    meta:domain <https://w3id.org/biolink/vocab/Association> ;
-    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
-    meta:owner <https://w3id.org/biolink/vocab/chi_squared_statistic> ;
-    meta:range <https://w3id.org/biolink/vocab/float> ;
-    meta:slot_uri <http://purl.obolibrary.org/obo/STATO_0000030> .
-
 <https://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_thing_association_subject> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     meta:alias "subject" ;
@@ -3879,16 +3869,6 @@
     meta:base "str" ;
     meta:typeof <https://w3id.org/biolink/vocab/string> ;
     meta:uri xsd:string .
-
-<https://w3id.org/biolink/vocab/p_value> a meta:SlotDefinition ;
-    skos:definition "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone." ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/OBI:0000175> ;
-    meta:domain <https://w3id.org/biolink/vocab/Association> ;
-    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
-    meta:owner <https://w3id.org/biolink/vocab/p_value> ;
-    meta:range <https://w3id.org/biolink/vocab/float> ;
-    meta:slot_uri <http://purl.obolibrary.org/obo/OBI_0000175> .
 
 <https://w3id.org/biolink/vocab/retrievedOn> a meta:SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -4635,6 +4615,16 @@
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/causes_adverse_event> .
 
+<https://w3id.org/biolink/vocab/chi_squared_statistic> a meta:SlotDefinition ;
+    skos:definition "represents the chi-squared statistic computed from observations" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/STATO:0000030> ;
+    meta:domain <https://w3id.org/biolink/vocab/Association> ;
+    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
+    meta:owner <https://w3id.org/biolink/vocab/chi_squared_statistic> ;
+    meta:range <https://w3id.org/biolink/vocab/float> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/chi_squared_statistic> .
+
 <https://w3id.org/biolink/vocab/clinical_modifier_qualifier> a meta:SlotDefinition ;
     skos:definition "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -4706,6 +4696,7 @@
     skos:mappingRelation <chembio:interacts>,
         <ctd:affects_binding>,
         <ctd:interacts_with>,
+        <drugbank:chelator>,
         <gamma:adduct>,
         <gamma:antibody>,
         <gamma:antibody_binding>,
@@ -5160,6 +5151,16 @@
     meta:owner <https://w3id.org/biolink/vocab/orthologous_to> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/orthologous_to> .
+
+<https://w3id.org/biolink/vocab/p_value> a meta:SlotDefinition ;
+    skos:definition "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone." ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/OBI:0000175> ;
+    meta:domain <https://w3id.org/biolink/vocab/Association> ;
+    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
+    meta:owner <https://w3id.org/biolink/vocab/p_value> ;
+    meta:range <https://w3id.org/biolink/vocab/float> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/p_value> .
 
 <https://w3id.org/biolink/vocab/paralogous_to> a meta:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -8172,11 +8173,11 @@
         <wikidata:Q15304597> ;
     skos:note "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" ;
     meta:alt_descriptions [ a meta:AltDescription ;
-            skos:definition "A contiguous change at a Location" ;
-            meta:source "VMC" ],
-        [ a meta:AltDescription ;
             skos:definition "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition" ;
-            meta:source "AGR" ] ;
+            meta:source "AGR" ],
+        [ a meta:AltDescription ;
+            skos:definition "A contiguous change at a Location" ;
+            meta:source "VMC" ] ;
     meta:class_uri <https://w3id.org/biolink/vocab/SequenceVariant> ;
     meta:id_prefixes "CAID",
         "ClinVar",
@@ -9549,17 +9550,6 @@
     meta:required true ;
     meta:slot_uri <https://w3id.org/biolink/vocab/id> .
 
-<https://w3id.org/biolink/vocab/provided_by> a meta:SlotDefinition ;
-    skos:definition "connects an association to the agent (person, organization or group) that provided it" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation pav:providedBy ;
-    meta:domain <https://w3id.org/biolink/vocab/Association> ;
-    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
-    meta:multivalued true ;
-    meta:owner <https://w3id.org/biolink/vocab/Association> ;
-    meta:range <https://w3id.org/biolink/vocab/Provider> ;
-    meta:slot_uri pav:providedBy .
-
 <https://w3id.org/biolink/vocab/association_type> a meta:SlotDefinition ;
     skos:definition "connects an association to the type of association (e.g. gene to phenotype)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -9598,6 +9588,17 @@
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/boolean> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/negated> .
+
+<https://w3id.org/biolink/vocab/provided_by> a meta:SlotDefinition ;
+    skos:definition "connects an association to the agent (person, organization or group) that provided it" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation pav:providedBy ;
+    meta:domain <https://w3id.org/biolink/vocab/Association> ;
+    meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
+    meta:multivalued true ;
+    meta:owner <https://w3id.org/biolink/vocab/Association> ;
+    meta:range <https://w3id.org/biolink/vocab/Provider> ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/provided_by> .
 
 <https://w3id.org/biolink/vocab/publications> a meta:SlotDefinition ;
     skos:altLabel "publication" ;
@@ -9892,11 +9893,11 @@
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "node with incoming relationship" ;
-            meta:local_name_source "neo4j" ],
-        [ a meta:LocalName ;
             skos:altLabel "descriptor" ;
-            meta:local_name_source "ga4gh" ] ;
+            meta:local_name_source "ga4gh" ],
+        [ a meta:LocalName ;
+            skos:altLabel "node with incoming relationship" ;
+            meta:local_name_source "neo4j" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:required true ;
@@ -9919,11 +9920,11 @@
     meta:domain <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a meta:LocalName ;
-            skos:altLabel "annotation subject" ;
-            meta:local_name_source "ga4gh" ],
-        [ a meta:LocalName ;
             skos:altLabel "node with outgoing relationship" ;
-            meta:local_name_source "neo4j" ] ;
+            meta:local_name_source "neo4j" ],
+        [ a meta:LocalName ;
+            skos:altLabel "annotation subject" ;
+            meta:local_name_source "ga4gh" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:required true ;

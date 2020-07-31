@@ -4,7 +4,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX OBO: <http://purl.obolibrary.org/obo/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX pav: <http://purl.org/pav/>
 PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
 
 
@@ -145,12 +144,12 @@ metatype:Nodeidentifier NONLITERAL
              <association_type> @<OntologyClass> ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
-             pav:providedBy @<Provider> * ;
+             <provided_by> @<Provider> * ;
              rdf:predicate @<EdgeLabelType> ;
              <has_confidence_level> @<ConfidenceLevel> ? ;
              <has_evidence> @<EvidenceType> ? ;
-             OBO:STATO_0000030 @metatype:Float ? ;
-             OBO:OBI_0000175 @metatype:Float ? ;
+             <chi_squared_statistic> @metatype:Float ? ;
+             <p_value> @metatype:Float ? ;
              <stage_qualifier> @<LifeStage> ? ;
              <quantifier_qualifier> @<OntologyClass> ? ;
              <frequency_qualifier> @<FrequencyValue> ? ;
