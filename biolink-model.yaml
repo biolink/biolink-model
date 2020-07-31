@@ -1414,6 +1414,8 @@ slots:
       - UBERON_CORE:layer_part_of
       - UBERON_CORE:subdivision_of
       - UBERON_CORE:trunk_part_of
+      - CHEBI:is_substituent_group_from
+      - DRUGBANK:component_of
 
   has participant:
     is_a: related to
