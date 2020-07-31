@@ -1069,11 +1069,11 @@ public class BiolinkModel {
     /**
      * OrganismTaxon
      * <p>
-     * 
+     * A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
      * 
      */
     @JsonProperty("OrganismTaxon")
-    @JsonPropertyDescription("")
+    @JsonPropertyDescription("A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.")
     private OrganismTaxon organismTaxon;
     /**
      * PairwiseGeneToGeneInteraction
@@ -3612,7 +3612,7 @@ public class BiolinkModel {
     /**
      * OrganismTaxon
      * <p>
-     * 
+     * A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
      * 
      */
     @JsonProperty("OrganismTaxon")
@@ -3623,7 +3623,7 @@ public class BiolinkModel {
     /**
      * OrganismTaxon
      * <p>
-     * 
+     * A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
      * 
      */
     @JsonProperty("OrganismTaxon")
