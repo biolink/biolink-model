@@ -336,6 +336,23 @@ message CellLine
   repeated systematicSynonym None = 12
   repeated hasPhenotype None = 13
  }
+message CellLineAsAModelOfDiseaseAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  repeated providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
  {
@@ -542,6 +559,27 @@ message ChemicalToPathwayAssociation
   optional associationSlot None = 10
   edgeLabel None = 11
  }
+// The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
+message ClinicalCourse
+ {
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  repeated correlatedWith None = 9
+  optional nodeProperty None = 10
+  optional iri None = 11
+  repeated synonym None = 12
+  optional fullName None = 13
+  optional description None = 14
+  repeated systematicSynonym None = 15
+  repeated subclassOf None = 16
+  repeated superclassOf None = 17
+ }
 // Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 message ClinicalEntity
  {
@@ -573,7 +611,7 @@ message ClinicalIntervention
   optional description None = 11
   repeated systematicSynonym None = 12
  }
-// Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+// Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects
 message ClinicalModifier
  {
   optional hasAttributeType None = 1
@@ -1836,6 +1874,40 @@ message Genotype
   optional hasBiologicalSequence None = 66
   optional hasZygosity None = 67
  }
+message GenotypeAsAModelOfDiseaseAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  repeated providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
+message GenotypeToDiseaseAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  repeated providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
 // Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 message GenotypeToGeneAssociation
  {
@@ -2062,6 +2134,27 @@ message IndividualOrganism
   repeated systematicSynonym None = 12
   repeated hasPhenotype None = 13
   repeated inTaxon None = 14
+ }
+// The pattern in which a particular genetic trait or disorder is passed from one generation to the next
+message Inheritance
+ {
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  repeated correlatedWith None = 9
+  optional nodeProperty None = 10
+  optional iri None = 11
+  repeated synonym None = 12
+  optional fullName None = 13
+  optional description None = 14
+  repeated systematicSynonym None = 15
+  repeated subclassOf None = 16
+  repeated superclassOf None = 17
  }
 // A stage of development or growth of an organism, including post-natal adult stages
 message LifeStage
@@ -2794,6 +2887,23 @@ message OrganismTaxon
   repeated subclassOf None = 13
   repeated superclassOf None = 14
  }
+message OrganismalEntityAsAModelOfDiseaseAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  repeated providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 message PairwiseGeneToGeneInteraction
  {
@@ -3186,6 +3296,76 @@ message QuantityValue
   optional hasUnit None = 1
   optional hasNumericValue None = 2
  }
+// A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
+message ReagentTargetedGene
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  repeated correlatedWith None = 6
+  optional nodeProperty None = 7
+  optional iri None = 8
+  repeated synonym None = 9
+  optional fullName None = 10
+  optional description None = 11
+  repeated systematicSynonym None = 12
+  repeated hasPhenotype None = 13
+  repeated molecularlyInteractsWith None = 14
+  repeated affectsAbundanceOf None = 15
+  repeated increasesAbundanceOf None = 16
+  repeated decreasesAbundanceOf None = 17
+  repeated affectsActivityOf None = 18
+  repeated increasesActivityOf None = 19
+  repeated decreasesActivityOf None = 20
+  repeated affectsExpressionOf None = 21
+  repeated increasesExpressionOf None = 22
+  repeated decreasesExpressionOf None = 23
+  repeated affectsFoldingOf None = 24
+  repeated increasesFoldingOf None = 25
+  repeated decreasesFoldingOf None = 26
+  repeated affectsLocalizationOf None = 27
+  repeated increasesLocalizationOf None = 28
+  repeated decreasesLocalizationOf None = 29
+  repeated affectsMetabolicProcessingOf None = 30
+  repeated increasesMetabolicProcessingOf None = 31
+  repeated decreasesMetabolicProcessingOf None = 32
+  repeated affectsMolecularModificationOf None = 33
+  repeated increasesMolecularModificationOf None = 34
+  repeated decreasesMolecularModificationOf None = 35
+  repeated affectsSynthesisOf None = 36
+  repeated increasesSynthesisOf None = 37
+  repeated decreasesSynthesisOf None = 38
+  repeated affectsDegradationOf None = 39
+  repeated increasesDegradationOf None = 40
+  repeated decreasesDegradationOf None = 41
+  repeated affectsMutationRateOf None = 42
+  repeated increasesMutationRateOf None = 43
+  repeated decreasesMutationRateOf None = 44
+  repeated affectsResponseTo None = 45
+  repeated increasesResponseTo None = 46
+  repeated decreasesResponseTo None = 47
+  repeated affectsSplicingOf None = 48
+  repeated increasesSplicingOf None = 49
+  repeated decreasesSplicingOf None = 50
+  repeated affectsStabilityOf None = 51
+  repeated increasesStabilityOf None = 52
+  repeated decreasesStabilityOf None = 53
+  repeated affectsTransportOf None = 54
+  repeated increasesTransportOf None = 55
+  repeated decreasesTransportOf None = 56
+  repeated affectsSecretionOf None = 57
+  repeated increasesSecretionOf None = 58
+  repeated decreasesSecretionOf None = 59
+  repeated affectsUptakeOf None = 60
+  repeated increasesUptakeOf None = 61
+  repeated decreasesUptakeOf None = 62
+  repeated regulatesEntityToEntity None = 63
+  repeated biomarkerFor None = 64
+  repeated inTaxon None = 65
+  optional hasBiologicalSequence None = 66
+ }
 // An OWL property used as an edge label
 message RelationshipType
  {
@@ -3458,6 +3638,77 @@ message SeverityValue
   repeated subclassOf None = 16
   repeated superclassOf None = 17
  }
+// SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
+message Snv
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  repeated correlatedWith None = 6
+  optional nodeProperty None = 7
+  optional iri None = 8
+  repeated synonym None = 9
+  optional fullName None = 10
+  optional description None = 11
+  repeated systematicSynonym None = 12
+  repeated hasPhenotype None = 13
+  repeated molecularlyInteractsWith None = 14
+  repeated affectsAbundanceOf None = 15
+  repeated increasesAbundanceOf None = 16
+  repeated decreasesAbundanceOf None = 17
+  repeated affectsActivityOf None = 18
+  repeated increasesActivityOf None = 19
+  repeated decreasesActivityOf None = 20
+  repeated affectsExpressionOf None = 21
+  repeated increasesExpressionOf None = 22
+  repeated decreasesExpressionOf None = 23
+  repeated affectsFoldingOf None = 24
+  repeated increasesFoldingOf None = 25
+  repeated decreasesFoldingOf None = 26
+  repeated affectsLocalizationOf None = 27
+  repeated increasesLocalizationOf None = 28
+  repeated decreasesLocalizationOf None = 29
+  repeated affectsMetabolicProcessingOf None = 30
+  repeated increasesMetabolicProcessingOf None = 31
+  repeated decreasesMetabolicProcessingOf None = 32
+  repeated affectsMolecularModificationOf None = 33
+  repeated increasesMolecularModificationOf None = 34
+  repeated decreasesMolecularModificationOf None = 35
+  repeated affectsSynthesisOf None = 36
+  repeated increasesSynthesisOf None = 37
+  repeated decreasesSynthesisOf None = 38
+  repeated affectsDegradationOf None = 39
+  repeated increasesDegradationOf None = 40
+  repeated decreasesDegradationOf None = 41
+  repeated affectsMutationRateOf None = 42
+  repeated increasesMutationRateOf None = 43
+  repeated decreasesMutationRateOf None = 44
+  repeated affectsResponseTo None = 45
+  repeated increasesResponseTo None = 46
+  repeated decreasesResponseTo None = 47
+  repeated affectsSplicingOf None = 48
+  repeated increasesSplicingOf None = 49
+  repeated decreasesSplicingOf None = 50
+  repeated affectsStabilityOf None = 51
+  repeated increasesStabilityOf None = 52
+  repeated decreasesStabilityOf None = 53
+  repeated affectsTransportOf None = 54
+  repeated increasesTransportOf None = 55
+  repeated decreasesTransportOf None = 56
+  repeated affectsSecretionOf None = 57
+  repeated increasesSecretionOf None = 58
+  repeated decreasesSecretionOf None = 59
+  repeated affectsUptakeOf None = 60
+  repeated increasesUptakeOf None = 61
+  repeated decreasesUptakeOf None = 62
+  repeated regulatesEntityToEntity None = 63
+  repeated biomarkerFor None = 64
+  repeated inTaxon None = 65
+  optional hasBiologicalSequence None = 66
+  repeated hasGene None = 67
+ }
 message SourceFile
  {
   id None = 1
@@ -3474,6 +3725,10 @@ message SourceFile
   repeated systematicSynonym None = 12
   optional sourceVersion None = 13
   optional retrievedOn None = 14
+  optional license None = 15
+  optional rights None = 16
+  optional format None = 17
+  optional createdWith None = 18
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase
 message Transcript
@@ -3581,6 +3836,23 @@ message Treatment
   optional hasRoute None = 16
   repeated treats None = 17
   repeated hasPart None = 18
+ }
+message VariantAsAModelOfDiseaseAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  repeated providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
  }
 message VariantToDiseaseAssociation
  {

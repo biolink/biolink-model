@@ -69,6 +69,18 @@ fields:
 - display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - retrievedOn
   id: retrievedOn
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - license
+  id: license
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - rights
+  id: rights
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - format
+  id: format
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - created_with
+  id: created_with
 id: source_file
 schema_generating: true
 weight: 20

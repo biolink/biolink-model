@@ -1,10 +1,9 @@
-description: Used to characterize and specify the phenotypic abnormalities defined
-  in the Phenotypic abnormality subontology, with respect to severity, laterality,
-  and other aspects
+description: The pattern in which a particular genetic trait or disorder is passed
+  from one generation to the next
 display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- clinical modifier
+- inheritance
 document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- clinical modifier
+- inheritance
 fields:
 - description: connects an attribute to a class that describes it
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
@@ -91,6 +90,6 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - superclass of
   id: superclass_of
-id: clinical_modifier
+id: inheritance
 schema_generating: true
 weight: 20

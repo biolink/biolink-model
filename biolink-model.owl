@@ -13,11 +13,11 @@
     rdfs:label "Biolink-Model" ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     skos:definition "Entity and association taxonomy and datamodel for life-sciences data" ;
-    meta:generation_date "2020-08-01 00:11" ;
+    meta:generation_date "2020-08-01 00:44" ;
     meta:metamodel_version "1.4.1" ;
     meta:source_file "biolink-model.yaml" ;
-    meta:source_file_date "Sat Aug  1 00:10:12 2020" ;
-    meta:source_file_size 138251 .
+    meta:source_file_date "Sat Aug  1 00:43:02 2020" ;
+    meta:source_file_size 143161 .
 
 meta:ActivityAndBehavior a owl:Class,
         meta:ClassDefinition ;
@@ -81,8 +81,11 @@ meta:EnvironmentalProcess a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "environmental process" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meta:Occurrent ;
+            owl:onProperty meta:regulates_process_to_process ],
+        [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_participant ],
+            owl:onProperty meta:has_output ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:Occurrent ;
             owl:onProperty meta:precedes ],
@@ -91,10 +94,7 @@ meta:EnvironmentalProcess a owl:Class,
             owl:onProperty meta:has_input ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_output ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:Occurrent ;
-            owl:onProperty meta:regulates_process_to_process ],
+            owl:onProperty meta:has_participant ],
         meta:Occurrent,
         meta:PlanetaryEntity .
 
@@ -133,6 +133,12 @@ meta:Haplotype a owl:Class,
     rdfs:label "haplotype" ;
     rdfs:subClassOf meta:GenomicEntity ;
     skos:definition "A set of zero or more Alleles on a single instance of a Sequence[VMC]" .
+
+meta:Inheritance a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "inheritance" ;
+    rdfs:subClassOf meta:Attribute ;
+    skos:definition "The pattern in which a particular genetic trait or disorder is passed from one generation to the next" .
 
 meta:MacromolecularComplex a owl:Class,
         meta:ClassDefinition ;
@@ -203,6 +209,12 @@ meta:RNAProductIsoform a owl:Class,
         meta:RNAProduct ;
     skos:definition "Represents a protein that is a specific isoform of the canonical or reference RNA" .
 
+meta:ReagentTargetedGene a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "reagent targeted gene" ;
+    rdfs:subClassOf meta:GenomicEntity ;
+    skos:definition "A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi" .
+
 meta:RelationshipType a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "relationship type" ;
@@ -214,6 +226,12 @@ meta:SensitivityQuantifier a owl:Class,
     rdfs:label "sensitivity quantifier" ;
     rdfs:subClassOf meta:RelationshipQuantifier,
         meta:mixin .
+
+meta:Snv a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "snv" ;
+    rdfs:subClassOf meta:SequenceVariant ;
+    skos:definition "SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist" .
 
 meta:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" ;
@@ -284,12 +302,12 @@ meta:category a owl:AnnotationProperty,
     rdfs:subPropertyOf meta:node_property ;
     skos:definition "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag" .
 
-meta:cell_line_to_disease_or_phenotypic_feature_association_subject a owl:AnnotationProperty,
+meta:cell_line_as_a_model_of_disease_association_subject a owl:AnnotationProperty,
         meta:SlotDefinition ;
-    rdfs:label "cell line to disease or phenotypic feature association_subject" ;
-    rdfs:domain meta:CellLineToDiseaseOrPhenotypicFeatureAssociation ;
-    rdfs:range meta:DiseaseOrPhenotypicFeature ;
-    rdfs:subPropertyOf meta:subject .
+    rdfs:label "cell line as a model of disease association_subject" ;
+    rdfs:domain meta:CellLineAsAModelOfDiseaseAssociation ;
+    rdfs:range meta:CellLine ;
+    rdfs:subPropertyOf meta:cell_line_to_disease_or_phenotypic_feature_association_subject .
 
 meta:cell_line_to_thing_association_subject a owl:AnnotationProperty,
         meta:SlotDefinition ;
@@ -369,6 +387,13 @@ meta:clinical_modifier_qualifier a owl:AnnotationProperty,
     rdfs:range meta:ClinicalModifier ;
     rdfs:subPropertyOf meta:association_slot ;
     skos:definition "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" .
+
+meta:created_with a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "created_with" ;
+    rdfs:domain meta:SourceFile ;
+    rdfs:range meta:string ;
+    rdfs:subPropertyOf meta:node_property .
 
 meta:creation_date a owl:AnnotationProperty,
         meta:SlotDefinition ;
@@ -501,6 +526,13 @@ meta:filler a owl:AnnotationProperty,
     rdfs:range meta:NamedThing ;
     rdfs:subPropertyOf meta:node_property ;
     skos:definition "The value in a property-value tuple" .
+
+meta:format a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "format" ;
+    rdfs:domain meta:SourceFile ;
+    rdfs:range meta:string ;
+    rdfs:subPropertyOf meta:node_property .
 
 meta:frequency a owl:Class,
         meta:TypeDefinition ;
@@ -684,6 +716,27 @@ meta:genomic_sequence_localization_subject a owl:AnnotationProperty,
     rdfs:domain meta:GenomicSequenceLocalization ;
     rdfs:range meta:GenomicEntity ;
     rdfs:subPropertyOf meta:subject .
+
+meta:genotype_as_a_model_of_disease_association_subject a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "genotype as a model of disease association_subject" ;
+    rdfs:domain meta:GenotypeAsAModelOfDiseaseAssociation ;
+    rdfs:range meta:Genotype ;
+    rdfs:subPropertyOf meta:genotype_to_disease_association_subject .
+
+meta:genotype_to_disease_association_object a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "genotype to disease association_object" ;
+    rdfs:domain meta:GenotypeToDiseaseAssociation ;
+    rdfs:range meta:NamedThing ;
+    rdfs:subPropertyOf meta:object .
+
+meta:genotype_to_disease_association_relation a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "genotype to disease association_relation" ;
+    rdfs:domain meta:GenotypeToDiseaseAssociation ;
+    rdfs:range meta:uriorcurie ;
+    rdfs:subPropertyOf meta:relation .
 
 meta:genotype_to_gene_association_object a owl:AnnotationProperty,
         meta:SlotDefinition ;
@@ -895,6 +948,13 @@ meta:latitude a owl:AnnotationProperty,
     rdfs:subPropertyOf meta:node_property ;
     skos:definition "latitude" .
 
+meta:license a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "license" ;
+    rdfs:domain meta:SourceFile ;
+    rdfs:range meta:string ;
+    rdfs:subPropertyOf meta:node_property .
+
 meta:longitude a owl:AnnotationProperty,
         meta:SlotDefinition ;
     rdfs:label "longitude" ;
@@ -1038,6 +1098,13 @@ meta:onset_qualifier a owl:AnnotationProperty,
     rdfs:subPropertyOf meta:association_slot ;
     skos:definition "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject" .
 
+meta:organismal_entity_as_a_model_of_disease_association_subject a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "organismal entity as a model of disease association_subject" ;
+    rdfs:domain meta:OrganismalEntityAsAModelOfDiseaseAssociation ;
+    rdfs:range meta:OrganismalEntity ;
+    rdfs:subPropertyOf meta:subject .
+
 meta:p_value a owl:AnnotationProperty,
         meta:SlotDefinition ;
     rdfs:label "p value" ;
@@ -1149,6 +1216,13 @@ meta:retrievedOn a owl:AnnotationProperty,
     rdfs:label "retrievedOn" ;
     rdfs:domain meta:SourceFile ;
     rdfs:range meta:date ;
+    rdfs:subPropertyOf meta:node_property .
+
+meta:rights a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "rights" ;
+    rdfs:domain meta:SourceFile ;
+    rdfs:range meta:string ;
     rdfs:subPropertyOf meta:node_property .
 
 meta:sequence_variant_has_biological_sequence a owl:AnnotationProperty,
@@ -1321,6 +1395,13 @@ meta:uri a owl:Class,
             owl:qualifiedCardinality 1 ] ;
     skos:definition "a complete URI" .
 
+meta:variant_as_a_model_of_disease_association_subject a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "variant as a model of disease association_subject" ;
+    rdfs:domain meta:VariantAsAModelOfDiseaseAssociation ;
+    rdfs:range meta:SequenceVariant ;
+    rdfs:subPropertyOf meta:variant_to_disease_association_subject .
+
 meta:variant_to_disease_association_object a owl:AnnotationProperty,
         meta:SlotDefinition ;
     rdfs:label "variant to disease association_object" ;
@@ -1334,13 +1415,6 @@ meta:variant_to_disease_association_relation a owl:AnnotationProperty,
     rdfs:domain meta:VariantToDiseaseAssociation ;
     rdfs:range meta:uriorcurie ;
     rdfs:subPropertyOf meta:relation .
-
-meta:variant_to_disease_association_subject a owl:AnnotationProperty,
-        meta:SlotDefinition ;
-    rdfs:label "variant to disease association_subject" ;
-    rdfs:domain meta:VariantToDiseaseAssociation ;
-    rdfs:range meta:NamedThing ;
-    rdfs:subPropertyOf meta:subject .
 
 meta:variant_to_phenotypic_feature_association_subject a owl:AnnotationProperty,
         meta:SlotDefinition ;
@@ -1409,18 +1483,12 @@ meta:Case a owl:Class,
     rdfs:subClassOf meta:IndividualOrganism ;
     skos:definition "An individual organism that has a patient role in some clinical context." .
 
-meta:CellLine a owl:Class,
+meta:CellLineAsAModelOfDiseaseAssociation a owl:Class,
         meta:ClassDefinition ;
-    rdfs:label "cell line" ;
-    rdfs:subClassOf meta:OrganismalEntity .
-
-meta:CellLineToDiseaseOrPhenotypicFeatureAssociation a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "cell line to disease or phenotypic feature association" ;
-    rdfs:subClassOf meta:Association,
-        meta:CellLineToThingAssociation,
-        meta:ThingToDiseaseOrPhenotypicFeatureAssociation ;
-    skos:definition "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype" .
+    rdfs:label "cell line as a model of disease association" ;
+    rdfs:subClassOf meta:CellLineToDiseaseOrPhenotypicFeatureAssociation,
+        meta:EntityToDiseaseAssociation,
+        meta:ModelToDiseaseMixin .
 
 meta:CellularComponent a owl:Class,
         meta:ClassDefinition ;
@@ -1456,11 +1524,17 @@ meta:ChemicalToPathwayAssociation a owl:Class,
         meta:ChemicalToThingAssociation ;
     skos:definition "An interaction between a chemical entity and a biological process or pathway" .
 
+meta:ClinicalCourse a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "clinical course" ;
+    rdfs:subClassOf meta:Attribute ;
+    skos:definition "The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual" .
+
 meta:ClinicalModifier a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "clinical modifier" ;
     rdfs:subClassOf meta:Attribute ;
-    skos:definition "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" .
+    skos:definition "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects" .
 
 meta:ConfidenceLevel a owl:Class,
         meta:ClassDefinition ;
@@ -1549,6 +1623,13 @@ meta:GeneToPhenotypicFeatureAssociation a owl:Class,
         meta:EntityToPhenotypicFeatureAssociation,
         meta:GeneToThingAssociation .
 
+meta:GenotypeAsAModelOfDiseaseAssociation a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "genotype as a model of disease association" ;
+    rdfs:subClassOf meta:EntityToDiseaseAssociation,
+        meta:GenotypeToDiseaseAssociation,
+        meta:ModelToDiseaseMixin .
+
 meta:GeographicLocation a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "geographic location" ;
@@ -1590,8 +1671,15 @@ meta:NoncodingRNAProduct a owl:Class,
 meta:Onset a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "onset" ;
-    rdfs:subClassOf meta:Attribute ;
+    rdfs:subClassOf meta:ClinicalCourse ;
     skos:definition "The age group in which manifestations appear" .
+
+meta:OrganismalEntityAsAModelOfDiseaseAssociation a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "organismal entity as a model of disease association" ;
+    rdfs:subClassOf meta:Association,
+        meta:EntityToDiseaseAssociation,
+        meta:ModelToDiseaseMixin .
 
 meta:PairwiseGeneToGeneInteraction a owl:Class,
         meta:ClassDefinition ;
@@ -1640,6 +1728,13 @@ meta:SubjectOfInvestigation a owl:Class,
     rdfs:label "subject of investigation" ;
     rdfs:subClassOf meta:mixin ;
     skos:definition "An entity that has the role of being studied in an investigation, study, or experiment" .
+
+meta:VariantAsAModelOfDiseaseAssociation a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "variant as a model of disease association" ;
+    rdfs:subClassOf meta:EntityToDiseaseAssociation,
+        meta:ModelToDiseaseMixin,
+        meta:VariantToDiseaseAssociation .
 
 meta:VariantToPhenotypicFeatureAssociation a owl:Class,
         meta:ClassDefinition ;
@@ -1715,6 +1810,13 @@ meta:causes_adverse_event a owl:ObjectProperty,
     rdfs:range meta:NamedThing ;
     rdfs:subPropertyOf meta:causes ;
     skos:definition "holds between a drug and a disease or phenotype that can be caused by the drug" .
+
+meta:cell_line_to_disease_or_phenotypic_feature_association_subject a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "cell line to disease or phenotypic feature association_subject" ;
+    rdfs:domain meta:CellLineToDiseaseOrPhenotypicFeatureAssociation ;
+    rdfs:range meta:DiseaseOrPhenotypicFeature ;
+    rdfs:subPropertyOf meta:subject .
 
 meta:change_is_catalyzed_by a owl:AnnotationProperty,
         meta:SlotDefinition ;
@@ -2000,6 +2102,13 @@ meta:genetically_interacts_with a owl:ObjectProperty,
     rdfs:range meta:Gene ;
     rdfs:subPropertyOf meta:interacts_with ;
     skos:definition "holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality." .
+
+meta:genotype_to_disease_association_subject a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "genotype to disease association_subject" ;
+    rdfs:domain meta:GenotypeToDiseaseAssociation ;
+    rdfs:range meta:NamedThing ;
+    rdfs:subPropertyOf meta:subject .
 
 meta:has_biological_sequence a owl:AnnotationProperty,
         meta:SlotDefinition ;
@@ -2534,6 +2643,13 @@ meta:unit a owl:Class,
     rdfs:label "unit" ;
     rdfs:subClassOf meta:string .
 
+meta:variant_to_disease_association_subject a owl:AnnotationProperty,
+        meta:SlotDefinition ;
+    rdfs:label "variant to disease association_subject" ;
+    rdfs:domain meta:VariantToDiseaseAssociation ;
+    rdfs:range meta:NamedThing ;
+    rdfs:subPropertyOf meta:subject .
+
 meta:xenologous_to a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "xenologous to" ;
@@ -2552,6 +2668,19 @@ meta:CaseToThingAssociation a owl:Class,
     rdfs:label "case to thing association" ;
     rdfs:subClassOf meta:Association ;
     skos:definition "An abstract association for use where the case is the subject" .
+
+meta:CellLine a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "cell line" ;
+    rdfs:subClassOf meta:OrganismalEntity .
+
+meta:CellLineToDiseaseOrPhenotypicFeatureAssociation a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "cell line to disease or phenotypic feature association" ;
+    rdfs:subClassOf meta:Association,
+        meta:CellLineToThingAssociation,
+        meta:ThingToDiseaseOrPhenotypicFeatureAssociation ;
+    skos:definition "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype" .
 
 meta:CellLineToThingAssociation a owl:Class,
         meta:ClassDefinition ;
@@ -2649,11 +2778,6 @@ meta:GenotypeToPhenotypicFeatureAssociation a owl:Class,
         meta:GenotypeToThingAssociation ;
     skos:definition "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment" .
 
-meta:GenotypeToThingAssociation a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "genotype to thing association" ;
-    rdfs:subClassOf meta:Association .
-
 meta:LifeStage a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "life stage" ;
@@ -2689,11 +2813,6 @@ meta:SequenceVariantModulatesTreatmentAssociation a owl:Class,
     rdfs:subClassOf meta:Association ;
     skos:definition "An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used." ;
     skos:note "An alternate way to model the same information could be via a qualifier" .
-
-meta:SourceFile a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "source file" ;
-    rdfs:subClassOf meta:DataFile .
 
 meta:TranscriptToGeneRelationship a owl:Class,
         meta:ClassDefinition ;
@@ -2871,6 +2990,11 @@ meta:GenotypeToGenotypePartAssociation a owl:Class,
     rdfs:subClassOf meta:Association ;
     skos:definition "Any association between one genotype and a genotypic entity that is a sub-component of it" .
 
+meta:GenotypeToThingAssociation a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "genotype to thing association" ;
+    rdfs:subClassOf meta:Association .
+
 meta:GenotypeToVariantAssociation a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "genotype to variant association" ;
@@ -2888,12 +3012,6 @@ meta:MaterialSampleDerivationAssociation a owl:Class,
     rdfs:label "material sample derivation association" ;
     rdfs:subClassOf meta:Association ;
     skos:definition "An association between a material sample and the material entity it is derived from" .
-
-meta:ModelToDiseaseMixin a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "model to disease mixin" ;
-    rdfs:subClassOf meta:mixin ;
-    skos:definition "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease" .
 
 meta:PhenotypicFeature a owl:Class,
         meta:ClassDefinition ;
@@ -2944,26 +3062,18 @@ meta:Treatment a owl:Class,
     rdfs:label "treatment" ;
     rdfs:subClassOf [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom meta:DiseaseOrPhenotypicFeature ;
-                        owl:onProperty meta:treats ] [ a owl:Restriction ;
-                        owl:onProperty meta:treats ;
-                        owl:someValuesFrom meta:DiseaseOrPhenotypicFeature ] ) ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom meta:DrugExposure ;
                         owl:onProperty meta:has_part ] [ a owl:Restriction ;
                         owl:onProperty meta:has_part ;
                         owl:someValuesFrom meta:DrugExposure ] ) ],
+        [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:allValuesFrom meta:DiseaseOrPhenotypicFeature ;
+                        owl:onProperty meta:treats ] [ a owl:Restriction ;
+                        owl:onProperty meta:treats ;
+                        owl:someValuesFrom meta:DiseaseOrPhenotypicFeature ] ) ],
         meta:ExposureEvent ;
     skos:definition "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" .
-
-meta:VariantToDiseaseAssociation a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "variant to disease association" ;
-    rdfs:subClassOf meta:Association,
-        meta:EntityToDiseaseAssociation,
-        meta:VariantToThingAssociation ;
-    skos:note "TODO decide no how to model pathogenicity" .
 
 meta:affects_abundance_of a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -3203,18 +3313,19 @@ meta:DrugExposure a owl:Class,
     rdfs:subClassOf meta:ChemicalExposure ;
     skos:definition "A drug exposure is an intake of a particular chemical substance" .
 
-meta:EntityToDiseaseAssociation a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "entity to disease association" ;
-    rdfs:subClassOf meta:EntityToFeatureOrDiseaseQualifiers,
-        meta:mixin ;
-    skos:definition "mixin class for any association whose object (target node) is a disease" .
-
 meta:GeneToGeneAssociation a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "gene to gene association" ;
     rdfs:subClassOf meta:Association ;
     skos:definition "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction." .
+
+meta:GenotypeToDiseaseAssociation a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "genotype to disease association" ;
+    rdfs:subClassOf meta:Association,
+        meta:EntityToDiseaseAssociation,
+        meta:GenotypeToThingAssociation ;
+    skos:note "TODO decide no how to model pathogenicity" .
 
 meta:MolecularActivity a owl:Class,
         meta:ClassDefinition ;
@@ -3223,11 +3334,11 @@ meta:MolecularActivity a owl:Class,
             owl:allValuesFrom meta:ChemicalSubstance ;
             owl:onProperty meta:has_input ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:ChemicalSubstance ;
-            owl:onProperty meta:has_output ],
-        [ a owl:Restriction ;
             owl:allValuesFrom meta:MacromolecularMachine ;
             owl:onProperty meta:enabled_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:ChemicalSubstance ;
+            owl:onProperty meta:has_output ],
         meta:BiologicalProcessOrActivity,
         meta:Occurrent ;
     skos:definition "An execution of a molecular function carried out by a gene product or macromolecular complex." .
@@ -3236,6 +3347,14 @@ meta:ThingToDiseaseOrPhenotypicFeatureAssociation a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "thing to disease or phenotypic feature association" ;
     rdfs:subClassOf meta:Association .
+
+meta:VariantToDiseaseAssociation a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "variant to disease association" ;
+    rdfs:subClassOf meta:Association,
+        meta:EntityToDiseaseAssociation,
+        meta:VariantToThingAssociation ;
+    skos:note "TODO decide no how to model pathogenicity" .
 
 meta:VariantToThingAssociation a owl:Class,
         meta:ClassDefinition ;
@@ -3316,23 +3435,23 @@ meta:BiologicalProcessOrActivity a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "biological process or activity" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:has_participant ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:has_input ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Occurrent ;
+            owl:onProperty meta:regulates_process_to_process ],
+        [ a owl:Restriction ;
             owl:allValuesFrom meta:Occurrent ;
             owl:onProperty meta:precedes ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:enabled_by ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:Occurrent ;
-            owl:onProperty meta:regulates_process_to_process ],
-        [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:has_output ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_participant ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_input ],
         meta:BiologicalEntity,
         meta:Occurrent ;
     skos:definition "Either an individual molecular activity, or a collection of causally connected molecular activities" .
@@ -3465,25 +3584,17 @@ meta:GeneProduct a owl:Class,
     rdfs:subClassOf meta:GeneOrGeneProduct ;
     skos:definition "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules" .
 
-meta:Genotype a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "genotype" ;
-    rdfs:subClassOf meta:GenomicEntity ;
-    skos:definition "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" ;
-    skos:note "Consider renaming as genotypic entity" .
-
-meta:OrganismalEntity a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "organismal entity" ;
-    rdfs:subClassOf meta:BiologicalEntity ;
-    skos:definition "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities" .
-
 meta:PairwiseInteractionAssociation a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "pairwise interaction association" ;
     rdfs:subClassOf meta:Association,
         meta:mixin ;
     skos:definition "An interaction at the molecular level between two physical entities" .
+
+meta:SourceFile a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "source file" ;
+    rdfs:subClassOf meta:DataFile .
 
 meta:double a owl:Class,
         meta:TypeDefinition ;
@@ -3499,6 +3610,25 @@ meta:ExposureEvent a owl:Class,
     rdfs:label "exposure event" ;
     rdfs:subClassOf meta:BiologicalEntity ;
     skos:definition "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes" .
+
+meta:Genotype a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "genotype" ;
+    rdfs:subClassOf meta:GenomicEntity ;
+    skos:definition "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" ;
+    skos:note "Consider renaming as genotypic entity" .
+
+meta:ModelToDiseaseMixin a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "model to disease mixin" ;
+    rdfs:subClassOf meta:mixin ;
+    skos:definition "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease" .
+
+meta:OrganismalEntity a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "organismal entity" ;
+    rdfs:subClassOf meta:BiologicalEntity ;
+    skos:definition "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities" .
 
 meta:ThingWithTaxon a owl:Class,
         meta:ClassDefinition ;
@@ -3549,34 +3679,12 @@ meta:Transcript a owl:Class,
     rdfs:subClassOf meta:GenomicEntity ;
     skos:definition "An RNA synthesized on a DNA or RNA template by an RNA polymerase" .
 
-meta:SequenceVariant a owl:Class,
+meta:EntityToDiseaseAssociation a owl:Class,
         meta:ClassDefinition ;
-    rdfs:label "sequence variant" ;
-    rdfs:subClassOf meta:GenomicEntity ;
-    skos:definition "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
-    skos:note "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" .
-
-meta:Attribute a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "attribute" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:correlated_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:iri_type ;
-            owl:onProperty meta:superclass_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:related_to ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:OntologyClass ;
-            owl:onProperty meta:subclass_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:interacts_with ],
-        meta:AbstractEntity,
-        meta:OntologyClass ;
-    skos:definition "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material." .
+    rdfs:label "entity to disease association" ;
+    rdfs:subClassOf meta:EntityToFeatureOrDiseaseQualifiers,
+        meta:mixin ;
+    skos:definition "mixin class for any association whose object (target node) is a disease" .
 
 meta:Gene a owl:Class,
         meta:ClassDefinition ;
@@ -3591,6 +3699,35 @@ meta:Gene a owl:Class,
             owl:allValuesFrom meta:GeneProduct ;
             owl:onProperty meta:has_gene_product ],
         meta:GeneOrGeneProduct .
+
+meta:Attribute a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "attribute" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:correlated_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:OntologyClass ;
+            owl:onProperty meta:subclass_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:related_to ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:interacts_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:iri_type ;
+            owl:onProperty meta:superclass_of ],
+        meta:AbstractEntity,
+        meta:OntologyClass ;
+    skos:definition "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material." .
+
+meta:SequenceVariant a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "sequence variant" ;
+    rdfs:subClassOf meta:GenomicEntity ;
+    skos:definition "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
+    skos:note "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" .
 
 meta:ChemicalSubstance a owl:Class,
         meta:ClassDefinition ;
@@ -3619,14 +3756,14 @@ meta:DiseaseOrPhenotypicFeature a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "disease or phenotypic feature" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:has_biomarker ],
+            owl:allValuesFrom meta:OrganismTaxon ;
+            owl:onProperty meta:in_taxon ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:treated_by ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:OrganismTaxon ;
-            owl:onProperty meta:in_taxon ],
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:has_biomarker ],
         meta:BiologicalEntity,
         meta:ThingWithTaxon ;
     skos:definition "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate." .
@@ -3675,29 +3812,33 @@ meta:association_slot a owl:AnnotationProperty,
     rdfs:range meta:string ;
     skos:definition "any slot that relates an association to another entity" .
 
+meta:GeneOrGeneProduct a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "gene or gene product" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meta:GeneOrGeneProduct ;
+            owl:onProperty meta:in_pathway_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:GeneOrGeneProduct ;
+            owl:onProperty meta:in_cell_population_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:GeneOrGeneProduct ;
+            owl:onProperty meta:in_complex_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:AnatomicalEntity ;
+            owl:onProperty meta:expressed_in ],
+        meta:MacromolecularMachine ;
+    skos:definition "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another" .
+
 meta:GenomicEntity a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "genomic entity" ;
     rdfs:subClassOf meta:MolecularEntity ;
     skos:definition "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)" .
 
-meta:GeneOrGeneProduct a owl:Class,
-        meta:ClassDefinition ;
-    rdfs:label "gene or gene product" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom meta:GeneOrGeneProduct ;
-            owl:onProperty meta:in_cell_population_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:GeneOrGeneProduct ;
-            owl:onProperty meta:in_pathway_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:AnatomicalEntity ;
-            owl:onProperty meta:expressed_in ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:GeneOrGeneProduct ;
-            owl:onProperty meta:in_complex_with ],
-        meta:MacromolecularMachine ;
-    skos:definition "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another" .
+meta:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" ;
+    skos:definition "A data type definition." .
 
 meta:object a owl:AnnotationProperty,
         meta:SlotDefinition ;
@@ -3716,37 +3857,33 @@ meta:string a owl:Class,
             owl:qualifiedCardinality 1 ] ;
     skos:definition "A character string" .
 
-meta:TypeDefinition a owl:Class ;
-    rdfs:label "type_definition" ;
-    skos:definition "A data type definition." .
-
 meta:Occurrent a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "occurrent" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom meta:Occurrent ;
-            owl:onProperty meta:positively_regulates_process_to_process ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:Occurrent ;
-            owl:onProperty meta:precedes ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:Occurrent ;
             owl:onProperty meta:negatively_regulates_process_to_process ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_output ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:BiologicalProcessOrActivity ;
             owl:onProperty meta:enables ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_input ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:has_participant ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:Occurrent ;
+            owl:onProperty meta:precedes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Occurrent ;
+            owl:onProperty meta:positively_regulates_process_to_process ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:has_input ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Occurrent ;
             owl:onProperty meta:regulates_process_to_process ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:has_output ],
         meta:NamedThing ;
     skos:definition "A processual entity" .
 
@@ -3782,20 +3919,17 @@ meta:MolecularEntity a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "molecular entity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom meta:GenomicEntity ;
-            owl:onProperty meta:affects_mutation_rate_of ],
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_molecular_modification_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_response_to ],
+            owl:onProperty meta:increases_synthesis_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:GenomicEntity ;
-            owl:onProperty meta:increases_expression_of ],
+            owl:onProperty meta:increases_mutation_rate_of ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:OrganismTaxon ;
-            owl:onProperty meta:in_taxon ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_localization_of ],
+            owl:allValuesFrom meta:DiseaseOrPhenotypicFeature ;
+            owl:onProperty meta:biomarker_for ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:GenomicEntity ;
             owl:onProperty meta:decreases_expression_of ],
@@ -3803,152 +3937,155 @@ meta:MolecularEntity a owl:Class,
             owl:allValuesFrom meta:MolecularEntity ;
             owl:onProperty meta:increases_molecular_modification_of ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:DiseaseOrPhenotypicFeature ;
-            owl:onProperty meta:biomarker_for ],
-        [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_degradation_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_metabolic_processing_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_stability_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:GenomicEntity ;
-            owl:onProperty meta:increases_mutation_rate_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_activity_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_uptake_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_abundance_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_secretion_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_transport_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_transport_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:Transcript ;
-            owl:onProperty meta:increases_splicing_of ],
+            owl:onProperty meta:increases_response_to ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
             owl:onProperty meta:increases_localization_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_synthesis_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:GenomicEntity ;
-            owl:onProperty meta:decreases_mutation_rate_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_abundance_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_activity_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_localization_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_response_to ],
+            owl:onProperty meta:increases_abundance_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:Transcript ;
-            owl:onProperty meta:decreases_splicing_of ],
+            owl:onProperty meta:increases_splicing_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_abundance_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_molecular_interaction ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_metabolic_processing_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_secretion_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_synthesis_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_metabolic_processing_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_transport_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_uptake_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_folding_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_degradation_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_response_to ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_synthesis_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_degradation_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_uptake_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_molecular_interaction ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_folding_of ],
+            owl:onProperty meta:increases_activity_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
             owl:onProperty meta:decreases_activity_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_secretion_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:decreases_molecular_modification_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:GenomicEntity ;
-            owl:onProperty meta:affects_expression_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:increases_stability_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:MolecularEntity ;
             owl:onProperty meta:increases_folding_of ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:Transcript ;
-            owl:onProperty meta:affects_splicing_of ],
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_localization_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:molecularly_interacts_with ],
+            owl:onProperty meta:increases_transport_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:positively_regulates_entity_to_entity ],
+            owl:onProperty meta:decreases_degradation_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_transport_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_localization_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_secretion_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_metabolic_processing_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_metabolic_processing_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
             owl:onProperty meta:decreases_stability_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:negatively_regulates_entity_to_entity ],
+            owl:onProperty meta:decreases_molecular_modification_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:GenomicEntity ;
+            owl:onProperty meta:increases_expression_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
-            owl:onProperty meta:affects_molecular_modification_of ],
+            owl:onProperty meta:affects_synthesis_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:GenomicEntity ;
+            owl:onProperty meta:affects_expression_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_transport_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_degradation_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:increases_stability_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_response_to ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:increases_molecular_interaction ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_folding_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:molecularly_interacts_with ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
             owl:onProperty meta:regulates_entity_to_entity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_folding_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_secretion_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_abundance_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_activity_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:increases_secretion_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_abundance_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:increases_metabolic_processing_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_uptake_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_uptake_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_response_to ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:GenomicEntity ;
+            owl:onProperty meta:decreases_mutation_rate_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Transcript ;
+            owl:onProperty meta:decreases_splicing_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:OrganismTaxon ;
+            owl:onProperty meta:in_taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:positively_regulates_entity_to_entity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_synthesis_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:GenomicEntity ;
+            owl:onProperty meta:affects_mutation_rate_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:increases_degradation_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:affects_stability_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:decreases_molecular_interaction ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Transcript ;
+            owl:onProperty meta:affects_splicing_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:increases_uptake_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:MolecularEntity ;
+            owl:onProperty meta:negatively_regulates_entity_to_entity ],
         meta:BiologicalEntity,
         meta:PhysicalEntity,
         meta:ThingWithTaxon ;
@@ -3963,115 +4100,49 @@ meta:NamedThing a owl:Class,
     rdfs:label "named thing" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_decreased_amount ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:correlated_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:homologous_to ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:coexists_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:is_missense_variant_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:Occurrent ;
-            owl:onProperty meta:capable_of ],
+            owl:onProperty meta:causes ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:affects ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:colocalizes_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:is_synonymous_variant_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:affects_expression_in ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:is_nearby_variant_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:regulates ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_increased_amount ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:derives_into ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:contributes_to ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:predisposes ],
+            owl:onProperty meta:has_decreased_amount ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_not_completed ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:affects_risk_for ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:contraindicated_for ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:disrupts ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:physically_interacts_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:is_nonsense_variant_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:is_non_coding_variant_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:directly_interacts_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:negatively_regulates ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:causes ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:disease_has_basis_in ],
+            owl:onProperty meta:homologous_to ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:produced_by ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:paralogous_to ],
+            owl:onProperty meta:is_splice_site_variant_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:model_of ],
+            owl:onProperty meta:is_missense_variant_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:in_linkage_disequilibrium_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:causes_adverse_event ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:related_to ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:prevents ],
+            owl:onProperty meta:is_synonymous_variant_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:Occurrent ;
-            owl:onProperty meta:actively_involved_in ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:orthologous_to ],
+            owl:onProperty meta:participates_in ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:xenologous_to ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:OntologyClass ;
+            owl:onProperty meta:has_molecular_consequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:derives_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:directly_interacts_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:derives_into ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:overlaps ],
@@ -4080,16 +4151,67 @@ meta:NamedThing a owl:Class,
             owl:onProperty meta:positively_regulates ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:located_in ],
+            owl:onProperty meta:predisposes ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:is_splice_site_variant_of ],
+            owl:onProperty meta:is_nonsense_variant_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:Occurrent ;
-            owl:onProperty meta:participates_in ],
+            owl:onProperty meta:capable_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:produces ],
+            owl:onProperty meta:affects_risk_for ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:model_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:negatively_regulates ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:regulates ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:same_as ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:contraindicated_for ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:has_part ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:is_nearby_variant_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Disease ;
+            owl:onProperty meta:manifestation_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:physically_interacts_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:interacts_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:prevents ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:disease_has_basis_in ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:has_increased_amount ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:related_to ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:correlated_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:has_completed ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:Occurrent ;
+            owl:onProperty meta:actively_involved_in ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:occurs_in ],
@@ -4098,34 +4220,49 @@ meta:NamedThing a owl:Class,
             owl:onProperty meta:lacks_part ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:interacts_with ],
+            owl:onProperty meta:orthologous_to ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_part ],
+            owl:onProperty meta:produces ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:caused_by ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom meta:Disease ;
-            owl:onProperty meta:manifestation_of ],
+            owl:onProperty meta:has_not_completed ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:location_of ],
+            owl:onProperty meta:located_in ],
         [ a owl:Restriction ;
-            owl:allValuesFrom meta:OntologyClass ;
-            owl:onProperty meta:has_molecular_consequence ],
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:paralogous_to ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:part_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:same_as ],
+            owl:onProperty meta:disrupts ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_completed ],
+            owl:onProperty meta:colocalizes_with ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:derives_from ] ;
+            owl:onProperty meta:affects_expression_in ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:is_non_coding_variant_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:in_linkage_disequilibrium_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:location_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:caused_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:causes_adverse_event ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:coexists_with ] ;
     skos:definition "a databased entity or concept/class" .
 
 meta:SlotDefinition a owl:Class ;
