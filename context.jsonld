@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-07-31 22:24\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-08-01 00:11\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": "@type",
@@ -653,11 +653,15 @@
          "@type": "@id"
       },
       "subclass_of": {
-         "@type": "@id"
+         "@type": "@id",
+         "@id": "rdfs:subClassOf"
       },
       "subject": {
          "@type": "@id",
          "@id": "rdf:subject"
+      },
+      "superclass_of": {
+         "@type": "@id"
       },
       "timepoint": {
          "@type": "xsd:dateTime"

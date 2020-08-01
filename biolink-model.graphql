@@ -149,6 +149,7 @@ type Attribute implements OntologyClass
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 interface BiologicalEntity
@@ -232,6 +233,7 @@ type BiologicalSex
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type Carbohydrate
@@ -670,6 +672,7 @@ type ClinicalModifier
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type ClinicalTrial
@@ -1339,6 +1342,7 @@ type FrequencyValue
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type FunctionalAssociation
@@ -1558,6 +1562,7 @@ type GeneOntologyClass
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type GeneOrGeneProduct
@@ -2253,6 +2258,7 @@ type GenotypicSex
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type GeographicLocation
@@ -3131,6 +3137,7 @@ type Onset
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type OntologyClass
@@ -3148,6 +3155,7 @@ type OntologyClass
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type OrganismTaxon
@@ -3165,6 +3173,7 @@ type OrganismTaxon
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 interface OrganismalEntity
@@ -3301,6 +3310,7 @@ type PhenotypicSex
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type PhysicalEntity
@@ -3617,6 +3627,7 @@ type RelationshipType
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type RNAProduct
@@ -3890,6 +3901,7 @@ type SeverityValue
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 type SourceFile
@@ -4135,6 +4147,7 @@ type Zygosity
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [OntologyClass]
+    superclassOf: [IriType]
   }
 
 

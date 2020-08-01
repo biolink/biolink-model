@@ -70,6 +70,12 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - subclass of
   id: subclass_of
+- cardinality: multi
+  description: holds between two classes where the domain class is a super class of
+    the range class
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - superclass of
+  id: superclass_of
 id: relationship_type
 schema_generating: true
 weight: 20
