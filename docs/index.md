@@ -505,6 +505,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
     * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
     * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
+    * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
     * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
 
 ### Types
