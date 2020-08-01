@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "node_property",
     "related_to",
     "subclass_of",
+    "superclass_of",
     "synonym",
     "systematic_synonym"
 })
@@ -134,6 +135,13 @@ public class Attribute {
     @JsonProperty("subclass_of")
     @JsonPropertyDescription("holds between two classes where the domain class is a specialization of the range class")
     private List<String> subclassOf = new ArrayList<String>();
+    /**
+     * holds between two classes where the domain class is a super class of the range class
+     * 
+     */
+    @JsonProperty("superclass_of")
+    @JsonPropertyDescription("holds between two classes where the domain class is a super class of the range class")
+    private List<String> superclassOf = new ArrayList<String>();
     /**
      * Alternate human-readable names for a thing
      * 
@@ -408,6 +416,24 @@ public class Attribute {
     }
 
     /**
+     * holds between two classes where the domain class is a super class of the range class
+     * 
+     */
+    @JsonProperty("superclass_of")
+    public List<String> getSuperclassOf() {
+        return superclassOf;
+    }
+
+    /**
+     * holds between two classes where the domain class is a super class of the range class
+     * 
+     */
+    @JsonProperty("superclass_of")
+    public void setSuperclassOf(List<String> superclassOf) {
+        this.superclassOf = superclassOf;
+    }
+
+    /**
      * Alternate human-readable names for a thing
      * 
      */
@@ -503,6 +529,10 @@ public class Attribute {
         sb.append('=');
         sb.append(((this.subclassOf == null)?"<null>":this.subclassOf));
         sb.append(',');
+        sb.append("superclassOf");
+        sb.append('=');
+        sb.append(((this.superclassOf == null)?"<null>":this.superclassOf));
+        sb.append(',');
         sb.append("synonym");
         sb.append('=');
         sb.append(((this.synonym == null)?"<null>":this.synonym));
@@ -530,6 +560,7 @@ public class Attribute {
         result = ((result* 31)+((this.description == null)? 0 :this.description.hashCode()));
         result = ((result* 31)+((this.fullName == null)? 0 :this.fullName.hashCode()));
         result = ((result* 31)+((this.relatedTo == null)? 0 :this.relatedTo.hashCode()));
+        result = ((result* 31)+((this.superclassOf == null)? 0 :this.superclassOf.hashCode()));
         result = ((result* 31)+((this.interactsWith == null)? 0 :this.interactsWith.hashCode()));
         result = ((result* 31)+((this.synonym == null)? 0 :this.synonym.hashCode()));
         result = ((result* 31)+((this.subclassOf == null)? 0 :this.subclassOf.hashCode()));
@@ -550,7 +581,7 @@ public class Attribute {
             return false;
         }
         Attribute rhs = ((Attribute) other);
-        return (((((((((((((((((this.hasQuantitativeValue == rhs.hasQuantitativeValue)||((this.hasQuantitativeValue!= null)&&this.hasQuantitativeValue.equals(rhs.hasQuantitativeValue)))&&((this.iri == rhs.iri)||((this.iri!= null)&&this.iri.equals(rhs.iri))))&&((this.nodeProperty == rhs.nodeProperty)||((this.nodeProperty!= null)&&this.nodeProperty.equals(rhs.nodeProperty))))&&((this.correlatedWith == rhs.correlatedWith)||((this.correlatedWith!= null)&&this.correlatedWith.equals(rhs.correlatedWith))))&&((this.systematicSynonym == rhs.systematicSynonym)||((this.systematicSynonym!= null)&&this.systematicSynonym.equals(rhs.systematicSynonym))))&&((this.description == rhs.description)||((this.description!= null)&&this.description.equals(rhs.description))))&&((this.fullName == rhs.fullName)||((this.fullName!= null)&&this.fullName.equals(rhs.fullName))))&&((this.relatedTo == rhs.relatedTo)||((this.relatedTo!= null)&&this.relatedTo.equals(rhs.relatedTo))))&&((this.interactsWith == rhs.interactsWith)||((this.interactsWith!= null)&&this.interactsWith.equals(rhs.interactsWith))))&&((this.synonym == rhs.synonym)||((this.synonym!= null)&&this.synonym.equals(rhs.synonym))))&&((this.subclassOf == rhs.subclassOf)||((this.subclassOf!= null)&&this.subclassOf.equals(rhs.subclassOf))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.hasAttributeType == rhs.hasAttributeType)||((this.hasAttributeType!= null)&&this.hasAttributeType.equals(rhs.hasAttributeType))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.category == rhs.category)||((this.category!= null)&&this.category.equals(rhs.category))))&&((this.hasQualitativeValue == rhs.hasQualitativeValue)||((this.hasQualitativeValue!= null)&&this.hasQualitativeValue.equals(rhs.hasQualitativeValue))));
+        return ((((((((((((((((((this.hasQuantitativeValue == rhs.hasQuantitativeValue)||((this.hasQuantitativeValue!= null)&&this.hasQuantitativeValue.equals(rhs.hasQuantitativeValue)))&&((this.iri == rhs.iri)||((this.iri!= null)&&this.iri.equals(rhs.iri))))&&((this.nodeProperty == rhs.nodeProperty)||((this.nodeProperty!= null)&&this.nodeProperty.equals(rhs.nodeProperty))))&&((this.correlatedWith == rhs.correlatedWith)||((this.correlatedWith!= null)&&this.correlatedWith.equals(rhs.correlatedWith))))&&((this.systematicSynonym == rhs.systematicSynonym)||((this.systematicSynonym!= null)&&this.systematicSynonym.equals(rhs.systematicSynonym))))&&((this.description == rhs.description)||((this.description!= null)&&this.description.equals(rhs.description))))&&((this.fullName == rhs.fullName)||((this.fullName!= null)&&this.fullName.equals(rhs.fullName))))&&((this.relatedTo == rhs.relatedTo)||((this.relatedTo!= null)&&this.relatedTo.equals(rhs.relatedTo))))&&((this.superclassOf == rhs.superclassOf)||((this.superclassOf!= null)&&this.superclassOf.equals(rhs.superclassOf))))&&((this.interactsWith == rhs.interactsWith)||((this.interactsWith!= null)&&this.interactsWith.equals(rhs.interactsWith))))&&((this.synonym == rhs.synonym)||((this.synonym!= null)&&this.synonym.equals(rhs.synonym))))&&((this.subclassOf == rhs.subclassOf)||((this.subclassOf!= null)&&this.subclassOf.equals(rhs.subclassOf))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.hasAttributeType == rhs.hasAttributeType)||((this.hasAttributeType!= null)&&this.hasAttributeType.equals(rhs.hasAttributeType))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.category == rhs.category)||((this.category!= null)&&this.category.equals(rhs.category))))&&((this.hasQualitativeValue == rhs.hasQualitativeValue)||((this.hasQualitativeValue!= null)&&this.hasQualitativeValue.equals(rhs.hasQualitativeValue))));
     }
 
 }

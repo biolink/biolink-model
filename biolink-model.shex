@@ -199,7 +199,8 @@ metatype:Nodeidentifier NONLITERAL
              <full_name> @<LabelType> ? ;
              dcterms:description @<NarrativeText> ? ;
              <systematic_synonym> @<LabelType> * ;
-             <subclass_of> @<OntologyClass> *
+             rdfs:subClassOf @<OntologyClass> * ;
+             <superclass_of> @<IriType> *
           ) ;
           rdf:type [ <Attribute> ]
        )
@@ -1487,7 +1488,8 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<OntologyClass_tes> (  &<NamedThing_tes> ;
              rdf:type [ <NamedThing> ] ? ;
-             <subclass_of> @<OntologyClass> *
+             rdfs:subClassOf @<OntologyClass> * ;
+             <superclass_of> @<IriType> *
           ) ;
           rdf:type [ <OntologyClass> ]
        )

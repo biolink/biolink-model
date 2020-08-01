@@ -1586,6 +1586,8 @@ slots:
     multivalued: True
     in_subset:
       - translator_minimal
+    inverse: superclass of
+    slot_uri: rdfs:subClassOf
     mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
@@ -1784,6 +1786,19 @@ slots:
   #End proposed slots
 
 
+
+  superclass of:
+    is_a: related to
+    description: >-
+      holds between two classes where the domain class is a super class of the range class
+    domain: ontology class
+    range: iri type
+    multivalued: True
+    inverse: subclass of
+    in_subset:
+      - translator_minimal
+    mappings:
+      - WD:Q66088480
 
 ## property slots
 

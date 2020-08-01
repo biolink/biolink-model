@@ -1167,6 +1167,13 @@
          "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
          "type": "string"
       },
+      "superclass_of": {
+         "description": "holds between two classes where the domain class is a super class of the range class",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "synonym": {
          "description": "Alternate human-readable names for a thing",
          "items": {
@@ -1502,6 +1509,13 @@
             },
             "subclass_of": {
                "description": "holds between two classes where the domain class is a specialization of the range class",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "superclass_of": {
+               "description": "holds between two classes where the domain class is a super class of the range class",
                "items": {
                   "type": "string"
                },
@@ -3584,6 +3598,13 @@
          "properties": {
             "subclass_of": {
                "description": "holds between two classes where the domain class is a specialization of the range class",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "superclass_of": {
+               "description": "holds between two classes where the domain class is a super class of the range class",
                "items": {
                   "type": "string"
                },

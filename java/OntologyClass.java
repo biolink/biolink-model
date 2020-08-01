@@ -14,7 +14,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "subclass_of"
+    "subclass_of",
+    "superclass_of"
 })
 public class OntologyClass {
 
@@ -25,6 +26,13 @@ public class OntologyClass {
     @JsonProperty("subclass_of")
     @JsonPropertyDescription("holds between two classes where the domain class is a specialization of the range class")
     private List<String> subclassOf = new ArrayList<String>();
+    /**
+     * holds between two classes where the domain class is a super class of the range class
+     * 
+     */
+    @JsonProperty("superclass_of")
+    @JsonPropertyDescription("holds between two classes where the domain class is a super class of the range class")
+    private List<String> superclassOf = new ArrayList<String>();
 
     /**
      * holds between two classes where the domain class is a specialization of the range class
@@ -44,6 +52,24 @@ public class OntologyClass {
         this.subclassOf = subclassOf;
     }
 
+    /**
+     * holds between two classes where the domain class is a super class of the range class
+     * 
+     */
+    @JsonProperty("superclass_of")
+    public List<String> getSuperclassOf() {
+        return superclassOf;
+    }
+
+    /**
+     * holds between two classes where the domain class is a super class of the range class
+     * 
+     */
+    @JsonProperty("superclass_of")
+    public void setSuperclassOf(List<String> superclassOf) {
+        this.superclassOf = superclassOf;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -51,6 +77,10 @@ public class OntologyClass {
         sb.append("subclassOf");
         sb.append('=');
         sb.append(((this.subclassOf == null)?"<null>":this.subclassOf));
+        sb.append(',');
+        sb.append("superclassOf");
+        sb.append('=');
+        sb.append(((this.superclassOf == null)?"<null>":this.superclassOf));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
@@ -64,6 +94,7 @@ public class OntologyClass {
     public int hashCode() {
         int result = 1;
         result = ((result* 31)+((this.subclassOf == null)? 0 :this.subclassOf.hashCode()));
+        result = ((result* 31)+((this.superclassOf == null)? 0 :this.superclassOf.hashCode()));
         return result;
     }
 
@@ -76,7 +107,7 @@ public class OntologyClass {
             return false;
         }
         OntologyClass rhs = ((OntologyClass) other);
-        return ((this.subclassOf == rhs.subclassOf)||((this.subclassOf!= null)&&this.subclassOf.equals(rhs.subclassOf)));
+        return (((this.subclassOf == rhs.subclassOf)||((this.subclassOf!= null)&&this.subclassOf.equals(rhs.subclassOf)))&&((this.superclassOf == rhs.superclassOf)||((this.superclassOf!= null)&&this.superclassOf.equals(rhs.superclassOf))));
     }
 
 }
