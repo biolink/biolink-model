@@ -29,6 +29,8 @@ WIKIDATA:Q310899
 ## Identifier prefixes
 
  * MIR
+ * HGNC
+ * WormBase
 
 ## Parents
 

@@ -32,4 +32,5 @@ URI: [biolink:source_version](https://w3id.org/biolink/vocab/source_version)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | pav:version |
+|  | | owl:versionInfo |
 

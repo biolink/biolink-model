@@ -15,14 +15,18 @@ URI: [biolink:ModelToDiseaseMixin](https://w3id.org/biolink/vocab/ModelToDisease
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GeneAsAModelOfDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[OrganismalEntityAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[VariantAsAModelOfDiseaseAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation],[GenotypeAsAModelOfDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation])
 
 ---
 
 
 ## Mixin for
 
+ * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) (mixin) 
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) (mixin) 
 
 ## Referenced by class
 

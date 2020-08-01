@@ -26,3 +26,4 @@ URI: [biolink:sequence_variant_has_gene](https://w3id.org/biolink/vocab/sequence
 ## Used by
 
  * [SequenceVariant](SequenceVariant.md)
+ * [Snv](Snv.md)

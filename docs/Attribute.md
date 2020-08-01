@@ -18,7 +18,7 @@ SIO:000614
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[QuantityValue],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ClinicalModifier],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute|id:string;name:label_type;category:category_type%20%2B],[QuantityValue]%3Chas%20quantitative%20value%200..*-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%200..1-%20[Attribute],[MaterialSample]-%20has%20attribute%200..*%3E[Attribute],[Attribute]uses%20-.-%3E[OntologyClass],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[Onset],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalModifier],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[MaterialSample],[AbstractEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[QuantityValue],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalModifier],[ClinicalCourse],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute|id:string;name:label_type;category:category_type%20%2B],[QuantityValue]%3Chas%20quantitative%20value%200..*-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%200..1-%20[Attribute],[MaterialSample]-%20has%20attribute%200..*%3E[Attribute],[Attribute]uses%20-.-%3E[OntologyClass],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalModifier],[Attribute]%5E-[ClinicalCourse],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[MaterialSample],[AbstractEntity])
 
 ---
 
@@ -34,9 +34,10 @@ SIO:000614
 ## Children
 
  * [BiologicalSex](BiologicalSex.md)
- * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+ * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
+ * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects
  * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
- * [Onset](Onset.md) - The age group in which manifestations appear
+ * [Inheritance](Inheritance.md) - The pattern in which a particular genetic trait or disorder is passed from one generation to the next
  * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
  * [Zygosity](Zygosity.md)
 

@@ -25,4 +25,5 @@ URI: [biolink:variant_to_disease_association_object](https://w3id.org/biolink/vo
 
 ## Used by
 
+ * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
  * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)

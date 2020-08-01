@@ -21,6 +21,9 @@ UMLSSC:T098
 UMLSST:popg
 {: .mapping-label }
 
+OBI:0000181
+{: .mapping-label }
+
 
 ---
 
@@ -81,4 +84,5 @@ UMLSST:popg
 | **Mappings:** | | SIO:001061 |
 |  | | UMLSSC:T098 |
 |  | | UMLSST:popg |
+|  | | OBI:0000181 |
 

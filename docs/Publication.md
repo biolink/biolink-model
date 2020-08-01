@@ -15,6 +15,9 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 IAO:0000311
 {: .mapping-label }
 
+IAO:0000013
+{: .mapping-label }
+
 UMLSSC:T170
 {: .mapping-label }
 
@@ -65,6 +68,7 @@ UMLSST:inpr
 | --- | --- | --- |
 | **Aliases:** | | reference |
 | **Mappings:** | | IAO:0000311 |
+|  | | IAO:0000013 |
 |  | | UMLSSC:T170 |
 |  | | UMLSST:inpr |
 

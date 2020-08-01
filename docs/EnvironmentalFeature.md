@@ -12,6 +12,9 @@ layout: default
 
 URI: [biolink:EnvironmentalFeature](https://w3id.org/biolink/vocab/EnvironmentalFeature)
 
+ENVO:01000254
+{: .mapping-label }
+
 
 ---
 
@@ -41,3 +44,10 @@ URI: [biolink:EnvironmentalFeature](https://w3id.org/biolink/vocab/Environmental
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | ENVO:01000254 |
+

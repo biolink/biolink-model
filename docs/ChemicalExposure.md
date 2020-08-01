@@ -15,6 +15,9 @@ URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 ECTO:9000000
 {: .mapping-label }
 
+SIO:001399
+{: .mapping-label }
+
 
 ---
 
@@ -57,4 +60,5 @@ ECTO:9000000
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | ECTO:9000000 |
+|  | | SIO:001399 |
 

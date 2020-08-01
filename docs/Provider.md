@@ -39,6 +39,9 @@ UMLSSC:T095
 UMLSST:shro
 {: .mapping-label }
 
+prov:Agent
+{: .mapping-label }
+
 
 ---
 
@@ -88,4 +91,5 @@ UMLSST:shro
 |  | | UMLSST:pros |
 |  | | UMLSSC:T095 |
 |  | | UMLSST:shro |
+|  | | prov:Agent |
 

@@ -15,7 +15,7 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[NamedThing]%3Cobject%201..1-%20[VariantToDiseaseAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[NamedThing]%3Csubject%201..1-%20[VariantToDiseaseAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[Association]%5E-[VariantToDiseaseAssociation],[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToDiseaseAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[NamedThing]%3Cobject%201..1-%20[VariantToDiseaseAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[NamedThing]%3Csubject%201..1-%20[VariantToDiseaseAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[Association]%5E-[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToDiseaseAssociation],[Association])
 
 ---
 
@@ -28,6 +28,10 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
 
  *  mixin: [VariantToThingAssociation](VariantToThingAssociation.md)
  *  mixin: [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
+
+## Children
+
+ * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
 
 ## Referenced by class
 

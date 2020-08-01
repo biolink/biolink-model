@@ -15,9 +15,11 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [BiologicalSex](BiologicalSex.md)
           * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
           * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-       * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+       * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
+          * [Onset](Onset.md) - The age group in which manifestations appear
+       * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects
        * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
-       * [Onset](Onset.md) - The age group in which manifestations appear
+       * [Inheritance](Inheritance.md) - The pattern in which a particular genetic trait or disorder is passed from one generation to the next
        * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
        * [Zygosity](Zygosity.md)
     * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
@@ -28,6 +30,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
     * [CaseToThingAssociation](CaseToThingAssociation.md) - An abstract association for use where the case is the subject
     * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+       * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
     * [CellLineToThingAssociation](CellLineToThingAssociation.md) - An relationship between a cell line and another entity
     * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
        * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) - A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
@@ -58,6 +61,8 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
     * [GeneToThingAssociation](GeneToThingAssociation.md)
     * [GenomicSequenceLocalization](GenomicSequenceLocalization.md) - A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+    * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
+       * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
     * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) - Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
     * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) - Any association between one genotype and a genotypic entity that is a sub-component of it
     * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
@@ -66,6 +71,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) - An association between a material sample and the material entity it is derived from
     * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a material sample and a disease or phenotype
     * [MaterialSampleToThingAssociation](MaterialSampleToThingAssociation.md) - An association between a material sample and something
+    * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)
     * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
     * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
     * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
@@ -75,6 +81,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) - An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
     * [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
     * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+       * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
     * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
     * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
     * [VariantToThingAssociation](VariantToThingAssociation.md)
@@ -118,7 +125,9 @@ Entity and association taxonomy and datamodel for life-sciences data
                       * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
                          * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
                 * [MacromolecularComplex](MacromolecularComplex.md)
+             * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
              * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
+                * [Snv](Snv.md) - SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
              * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
        * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
           * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
@@ -224,6 +233,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [gene to expression site association➞object](gene_to_expression_site_association_object.md)
        * [gene to gene association➞object](gene_to_gene_association_object.md)
        * [genomic sequence localization➞object](genomic_sequence_localization_object.md)
+       * [genotype to disease association➞object](genotype_to_disease_association_object.md)
        * [genotype to gene association➞object](genotype_to_gene_association_object.md)
        * [genotype to genotype part association➞object](genotype_to_genotype_part_association_object.md)
        * [genotype to variant association➞object](genotype_to_variant_association_object.md)
@@ -253,6 +263,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [gene to expression site association➞relation](gene_to_expression_site_association_relation.md)
        * [gene to gene homology association➞relation](gene_to_gene_homology_association_relation.md)
        * [gene to gene product relationship➞relation](gene_to_gene_product_relationship_relation.md)
+       * [genotype to disease association➞relation](genotype_to_disease_association_relation.md)
        * [genotype to gene association➞relation](genotype_to_gene_association_relation.md)
        * [genotype to genotype part association➞relation](genotype_to_genotype_part_association_relation.md)
        * [genotype to phenotypic feature association➞relation](genotype_to_phenotypic_feature_association_relation.md)
@@ -274,6 +285,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [anatomical entity to anatomical entity part of association➞subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)
        * [case to thing association➞subject](case_to_thing_association_subject.md)
        * [cell line to disease or phenotypic feature association➞subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)
+          * [cell line as a model of disease association➞subject](cell_line_as_a_model_of_disease_association_subject.md)
        * [cell line to thing association➞subject](cell_line_to_thing_association_subject.md)
        * [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)
        * [chemical to thing association➞subject](chemical_to_thing_association_subject.md)
@@ -292,6 +304,8 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [gene to phenotypic feature association➞subject](gene_to_phenotypic_feature_association_subject.md)
        * [gene to thing association➞subject](gene_to_thing_association_subject.md)
        * [genomic sequence localization➞subject](genomic_sequence_localization_subject.md)
+       * [genotype to disease association➞subject](genotype_to_disease_association_subject.md)
+          * [genotype as a model of disease association➞subject](genotype_as_a_model_of_disease_association_subject.md)
        * [genotype to gene association➞subject](genotype_to_gene_association_subject.md)
        * [genotype to genotype part association➞subject](genotype_to_genotype_part_association_subject.md)
        * [genotype to phenotypic feature association➞subject](genotype_to_phenotypic_feature_association_subject.md)
@@ -300,6 +314,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [material sample derivation association➞subject](material_sample_derivation_association_subject.md)
        * [material sample to thing association➞subject](material_sample_to_thing_association_subject.md)
        * [model to disease mixin➞subject](model_to_disease_mixin_subject.md)
+       * [organismal entity as a model of disease association➞subject](organismal_entity_as_a_model_of_disease_association_subject.md)
        * [pairwise interaction association➞subject](pairwise_interaction_association_subject.md)
        * [population to population association➞subject](population_to_population_association_subject.md)
        * [sequence feature relationship➞subject](sequence_feature_relationship_subject.md)
@@ -308,6 +323,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [transcript to gene relationship➞subject](transcript_to_gene_relationship_subject.md)
        * [sequence variant modulates treatment association➞subject](sequence_variant_modulates_treatment_association_subject.md)
        * [variant to disease association➞subject](variant_to_disease_association_subject.md)
+          * [variant as a model of disease association➞subject](variant_as_a_model_of_disease_association_subject.md)
        * [variant to phenotypic feature association➞subject](variant_to_phenotypic_feature_association_subject.md)
        * [variant to population association➞subject](variant_to_population_association_subject.md)
        * [variant to thing association➞subject](variant_to_thing_association_subject.md)
@@ -328,12 +344,14 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [has total](has_total.md) - total number of things in a particular reference set
           * [variant to population association➞has total](variant_to_population_association_has_total.md)
     * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+    * [created_with](created_with.md)
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
     * [description](description.md) - a human-readable description of a thing
        * [entity to phenotypic feature association➞description](entity_to_phenotypic_feature_association_description.md)
     * [distribution](distribution.md)
     * [downloadURL](downloadURL.md)
     * [filler](filler.md) - The value in a property-value tuple
+    * [format](format.md)
     * [full name](full_name.md) - a long-form human readable name for a thing
     * [genome build](genome_build.md) - TODO
     * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
@@ -354,11 +372,13 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [start interbase coordinate](start_interbase_coordinate.md)
     * [iri](iri.md) - An IRI for the node. This is determined by the id using expansion rules.
     * [latitude](latitude.md) - latitude
+    * [license](license.md)
     * [longitude](longitude.md) - longitude
     * [name](name.md) - A human-readable name for a thing
        * [macromolecular machine➞name](macromolecular_machine_name.md)
     * [phase](phase.md) - TODO
     * [retrievedOn](retrievedOn.md)
+    * [rights](rights.md)
     * [source data file](source_data_file.md)
     * [source version](source_version.md)
     * [source web page](source_web_page.md)

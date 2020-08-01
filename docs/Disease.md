@@ -15,6 +15,9 @@ URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 MONDO:0000001
 {: .mapping-label }
 
+DOID:4
+{: .mapping-label }
+
 WIKIDATA:Q12136
 {: .mapping-label }
 
@@ -98,6 +101,7 @@ UMLSST:neop
  * DOID
  * OMIM
  * ORPHANET
+ * ORPHA
  * EFO
  * UMLS
  * MESH
@@ -155,6 +159,7 @@ UMLSST:neop
 |  | | disorder |
 |  | | medical condition |
 | **Mappings:** | | MONDO:0000001 |
+|  | | DOID:4 |
 |  | | WIKIDATA:Q12136 |
 |  | | SIO:010299 |
 |  | | UMLSSG:DISO |

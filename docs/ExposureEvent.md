@@ -12,7 +12,7 @@ A feature of the environment of an organism that influences one or more phenotyp
 
 URI: [biolink:ExposureEvent](https://w3id.org/biolink/vocab/ExposureEvent)
 
-SIO:000955
+XCO:0000000
 {: .mapping-label }
 
 
@@ -59,8 +59,7 @@ SIO:000955
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | environment |
-|  | | exposure |
+| **Aliases:** | | exposure |
 |  | | experimental condition |
-| **Mappings:** | | SIO:000955 |
+| **Mappings:** | | XCO:0000000 |
 

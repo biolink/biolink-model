@@ -18,7 +18,7 @@ CLO:0000031
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[CellLineToThingAssociation],[CellLineToThingAssociation]-%20subject%201..1%3E[CellLine|id(i):string;name(i):label_type;category(i):category_type%20%2B],[OrganismalEntity]%5E-[CellLine])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[CellLineToThingAssociation],[CellLineAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[CellLine|id(i):string;name(i):label_type;category(i):category_type%20%2B],[CellLineToThingAssociation]-%20subject%201..1%3E[CellLine],[OrganismalEntity]%5E-[CellLine])
 
 ---
 
@@ -33,6 +33,7 @@ CLO:0000031
 
 ## Referenced by class
 
+ *  **[CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)** *[cell line as a model of disease association➞subject](cell_line_as_a_model_of_disease_association_subject.md)*  <sub>REQ</sub>  **[CellLine](CellLine.md)**
  *  **[CellLineToThingAssociation](CellLineToThingAssociation.md)** *[cell line to thing association➞subject](cell_line_to_thing_association_subject.md)*  <sub>REQ</sub>  **[CellLine](CellLine.md)**
 
 ## Attributes

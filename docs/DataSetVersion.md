@@ -12,6 +12,9 @@ layout: default
 
 URI: [biolink:DataSetVersion](https://w3id.org/biolink/vocab/DataSetVersion)
 
+dctypes:Dataset
+{: .mapping-label }
+
 
 ---
 
@@ -73,3 +76,10 @@ URI: [biolink:DataSetVersion](https://w3id.org/biolink/vocab/DataSetVersion)
     * range: [String](types/String.md)
  * [versionOf](versionOf.md)  <sub>OPT</sub>
     * range: [DataSet](DataSet.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dctypes:Dataset |
+

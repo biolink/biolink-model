@@ -29,9 +29,11 @@ URI: [biolink:has_qualitative_value](https://w3id.org/biolink/vocab/has_qualitat
 
  * [Attribute](Attribute.md)
  * [BiologicalSex](BiologicalSex.md)
+ * [ClinicalCourse](ClinicalCourse.md)
  * [ClinicalModifier](ClinicalModifier.md)
  * [FrequencyValue](FrequencyValue.md)
  * [GenotypicSex](GenotypicSex.md)
+ * [Inheritance](Inheritance.md)
  * [Onset](Onset.md)
  * [PhenotypicSex](PhenotypicSex.md)
  * [SeverityValue](SeverityValue.md)

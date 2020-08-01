@@ -18,7 +18,7 @@ WIKIDATA:Q7239
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PopulationOfIndividualOrganisms],[OrganismalEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity]%5E-[LifeStage],[OrganismalEntity]%5E-[IndividualOrganism],[OrganismalEntity]%5E-[CellLine],[OrganismalEntity]%5E-[AnatomicalEntity],[BiologicalEntity]%5E-[OrganismalEntity],[LifeStage],[IndividualOrganism],[ExposureEvent],[CellLine],[BiologicalEntity],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PopulationOfIndividualOrganisms],[OrganismalEntityAsAModelOfDiseaseAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[OrganismalEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity]%5E-[LifeStage],[OrganismalEntity]%5E-[IndividualOrganism],[OrganismalEntity]%5E-[CellLine],[OrganismalEntity]%5E-[AnatomicalEntity],[BiologicalEntity]%5E-[OrganismalEntity],[LifeStage],[IndividualOrganism],[ExposureEvent],[CellLine],[BiologicalEntity],[AnatomicalEntity])
 
 ---
 
@@ -38,6 +38,7 @@ WIKIDATA:Q7239
 ## Referenced by class
 
  *  **[ExposureEvent](ExposureEvent.md)** *[has receptor](has_receptor.md)*  <sub>OPT</sub>  **[OrganismalEntity](OrganismalEntity.md)**
+ *  **[OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)** *[organismal entity as a model of disease association➞subject](organismal_entity_as_a_model_of_disease_association_subject.md)*  <sub>REQ</sub>  **[OrganismalEntity](OrganismalEntity.md)**
 
 ## Attributes
 

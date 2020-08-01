@@ -39,6 +39,10 @@ WIKIDATA:Q7187
  * ZFIN
  * dictyBase
  * WB
+ * WormBase
+ * FlyBase
+ * FB
+ * RGD
  * SGD
  * PomBase
 

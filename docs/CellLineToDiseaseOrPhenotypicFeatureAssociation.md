@@ -15,7 +15,7 @@ URI: [biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToDiseaseOrPhenotypicFeatureAssociation],[Publication],[Provider],[OntologyClass],[NamedThing],[DiseaseOrPhenotypicFeature],[CellLineToThingAssociation],[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[CellLineToDiseaseOrPhenotypicFeatureAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToDiseaseOrPhenotypicFeatureAssociation],[Publication],[Provider],[OntologyClass],[NamedThing],[DiseaseOrPhenotypicFeature],[CellLineToThingAssociation],[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[CellLineToDiseaseOrPhenotypicFeatureAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]%5E-[CellLineAsAModelOfDiseaseAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLineAsAModelOfDiseaseAssociation],[Association])
 
 ---
 
@@ -28,6 +28,10 @@ URI: [biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/
 
  *  mixin: [CellLineToThingAssociation](CellLineToThingAssociation.md) - An relationship between a cell line and another entity
  *  mixin: [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+
+## Children
+
+ * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
 
 ## Referenced by class
 

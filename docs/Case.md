@@ -12,6 +12,9 @@ An individual organism that has a patient role in some clinical context.
 
 URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
 
+foaf:Person
+{: .mapping-label }
+
 
 ---
 
@@ -59,4 +62,5 @@ URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
 | --- | --- | --- |
 | **Aliases:** | | patient |
 |  | | proband |
+| **Mappings:** | | foaf:Person |
 

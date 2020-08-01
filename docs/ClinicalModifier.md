@@ -8,9 +8,12 @@ layout: default
 # Type: ClinicalModifier
 
 
-Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects
 
 URI: [biolink:ClinicalModifier](https://w3id.org/biolink/vocab/ClinicalModifier)
+
+HP:0012823
+{: .mapping-label }
 
 
 ---
@@ -60,3 +63,10 @@ URI: [biolink:ClinicalModifier](https://w3id.org/biolink/vocab/ClinicalModifier)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | HP:0012823 |
+

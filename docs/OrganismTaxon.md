@@ -15,6 +15,9 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 WIKIDATA:Q16521
 {: .mapping-label }
 
+NCBITaxon:1
+{: .mapping-label }
+
 
 ---
 
@@ -59,4 +62,5 @@ WIKIDATA:Q16521
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | WIKIDATA:Q16521 |
+|  | | NCBITaxon:1 |
 

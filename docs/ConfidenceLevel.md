@@ -15,6 +15,12 @@ URI: [biolink:ConfidenceLevel](https://w3id.org/biolink/vocab/ConfidenceLevel)
 CIO:0000028
 {: .mapping-label }
 
+SEPIO:0000167
+{: .mapping-label }
+
+SEPIO:0000187
+{: .mapping-label }
+
 
 ---
 
@@ -54,4 +60,6 @@ CIO:0000028
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | CIO:0000028 |
+|  | | SEPIO:0000167 |
+|  | | SEPIO:0000187 |
 

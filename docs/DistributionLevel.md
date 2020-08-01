@@ -12,6 +12,9 @@ layout: default
 
 URI: [biolink:DistributionLevel](https://w3id.org/biolink/vocab/DistributionLevel)
 
+dcat:Distribution
+{: .mapping-label }
+
 
 ---
 
@@ -68,3 +71,10 @@ URI: [biolink:DistributionLevel](https://w3id.org/biolink/vocab/DistributionLeve
 
  * [downloadURL](downloadURL.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dcat:Distribution |
+

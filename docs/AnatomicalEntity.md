@@ -15,6 +15,9 @@ URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/vocab/AnatomicalEntity)
 SIO:010046
 {: .mapping-label }
 
+UBERON:0001062
+{: .mapping-label }
+
 WIKIDATA:Q4936952
 {: .mapping-label }
 
@@ -119,6 +122,7 @@ UMLSST:bdsu
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | SIO:010046 |
+|  | | UBERON:0001062 |
 |  | | WIKIDATA:Q4936952 |
 |  | | UMLSSG:ANAT |
 |  | | UMLSSC:T022 |

@@ -26,3 +26,4 @@ URI: [biolink:sequence_variant_id](https://w3id.org/biolink/vocab/sequence_varia
 ## Used by
 
  * [SequenceVariant](SequenceVariant.md)
+ * [Snv](Snv.md)

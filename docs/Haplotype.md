@@ -15,6 +15,9 @@ URI: [biolink:Haplotype](https://w3id.org/biolink/vocab/Haplotype)
 GENO:0000871
 {: .mapping-label }
 
+SO:0001024
+{: .mapping-label }
+
 
 ---
 
@@ -63,4 +66,5 @@ GENO:0000871
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | GENO:0000871 |
+|  | | SO:0001024 |
 

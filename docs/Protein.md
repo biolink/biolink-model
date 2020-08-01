@@ -21,6 +21,9 @@ SIO:010043
 WIKIDATA:Q8054
 {: .mapping-label }
 
+SO:0000104
+{: .mapping-label }
+
 UMLSSC:T087
 {: .mapping-label }
 
@@ -102,6 +105,7 @@ UMLSST:aapp
 | **Mappings:** | | PR:000000001 |
 |  | | SIO:010043 |
 |  | | WIKIDATA:Q8054 |
+|  | | SO:0000104 |
 |  | | UMLSSC:T087 |
 |  | | UMLSST:amas |
 |  | | UMLSSC:T116 |

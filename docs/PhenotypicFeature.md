@@ -36,8 +36,13 @@ WIKIDATA:Q169872
  * NCIT
  * UMLS
  * MEDDRA
- * SNOMEDCT
  * MP
+ * ZP
+ * UPHENO
+ * APO
+ * FBcv
+ * WBPhenotype
+ * SNOMEDCT
  * MESH
 
 ## Parents

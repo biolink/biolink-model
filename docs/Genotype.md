@@ -21,7 +21,7 @@ SIO:001079
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[OrganismTaxon],[GenotypeToVariantAssociation],[GenotypeToThingAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[Zygosity]%3Chas%20zygosity%200..1-%20[Genotype|has_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[GenotypeToGeneAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20object%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToThingAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToVariantAssociation]-%20subject%201..1%3E[Genotype],[GenomicEntity]%5E-[Genotype],[GenomicEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[OrganismTaxon],[GenotypeToVariantAssociation],[GenotypeToThingAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeAsAModelOfDiseaseAssociation],[Zygosity]%3Chas%20zygosity%200..1-%20[Genotype|has_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[GenotypeAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToGeneAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20object%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToThingAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToVariantAssociation]-%20subject%201..1%3E[Genotype],[GenomicEntity]%5E-[Genotype],[GenomicEntity])
 
 ---
 
@@ -32,6 +32,7 @@ SIO:001079
 
 ## Referenced by class
 
+ *  **[GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)** *[genotype as a model of disease association➞subject](genotype_as_a_model_of_disease_association_subject.md)*  <sub>REQ</sub>  **[Genotype](Genotype.md)**
  *  **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[genotype to gene association➞subject](genotype_to_gene_association_subject.md)*  <sub>REQ</sub>  **[Genotype](Genotype.md)**
  *  **[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)** *[genotype to genotype part association➞object](genotype_to_genotype_part_association_object.md)*  <sub>REQ</sub>  **[Genotype](Genotype.md)**
  *  **[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)** *[genotype to genotype part association➞subject](genotype_to_genotype_part_association_subject.md)*  <sub>REQ</sub>  **[Genotype](Genotype.md)**
