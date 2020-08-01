@@ -1845,6 +1845,31 @@ slots:
     domain: source file
     mappings:
       - pav:version
+      - owl:versionInfo
+
+  license:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:license
+
+  rights:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:rights
+
+  format:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:format
+
+  created_with:
+    is_a: node property
+    domain: source file
+    mappings:
+      - pav:createdWith
 
   downloadURL:
     is_a: node property
@@ -1853,11 +1878,13 @@ slots:
       - dcterms:downloadURL
 
   distribution:
+    aliases: ['dataset']
     is_a: node property
     domain: data set version
     range: distribution level
     mappings:
       - void:Dataset
+      - dctypes:Dataset
 
   type:
     is_a: node property
@@ -1906,6 +1933,11 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
+    mappings:
+      - oboInOwl:hasExactSynonym
+      - oboInOwl:hasNarrowSynonym
+      - oboInOwl:hasBroadSynonym
+      - oboInOwl:hasRelatedSynonym
 
   category:
     is_a: node property
@@ -1930,6 +1962,7 @@ slots:
 
   description:
     is_a: node property
+    aliases: ['definition']
     domain: named thing
     range: narrative text
     description: >-
@@ -1937,12 +1970,16 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: dcterms:description
+    mappings:
+      - IAO:0000115
+      - skos:definitions
 
   systematic synonym:
     is_a: node property
     domain: named thing
     range: label type
     multivalued: true
+    slot_uri: http://purl.obolibrary.org/obo/go#systematic_synonym
     description: >-
       more commonly used for gene symbols in yeast
 
@@ -2010,8 +2047,8 @@ slots:
       translator: predicate
     slot_uri: rdf:predicate
     mappings:
-      - "owl:annotatedProperty"
-      - "OBAN:association_has_predicate"
+      - owl:annotatedProperty
+      - OBAN:association_has_predicate
 
   relation:
     is_a: association slot
@@ -2081,7 +2118,7 @@ slots:
     description: >-
       date on which thing was created. This can be applied to nodes or edges
     mappings:
-      - dcterms:created
+      - dcterms:createdOn
 
   has receptor:
     is_a: node property
@@ -2447,8 +2484,17 @@ classes:
   clinical modifier:
     description: >-
       Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
-      with respect to severity, laterality, age of onset, and other aspects
-    subclass_of: "HP:0012823"
+      with respect to severity, laterality, and other aspects
+    mappings:
+      - HP:0012823
+    is_a: attribute
+
+  clinical course:
+    description: >-
+      The course a disease typically takes from its onset, progression in time, and eventual resolution or death of
+      the affected individual
+    mappings:
+      - HP:0031797
     is_a: attribute
 
   onset:
@@ -2456,6 +2502,16 @@ classes:
       The age group in which manifestations appear
     mappings:
       - HP:0003674
+    is_a: clinical course
+    
+  inheritance:
+    description: >-
+      The pattern in which a particular genetic trait or disorder is passed from one
+      generation to the next
+    mappings:
+      - HP:0000005
+      - GENO:0000141
+      - NCIT:C45827
     is_a: attribute
 
   relationship quantifier:
@@ -2539,12 +2595,16 @@ classes:
       - versionOf
       - type
       - distribution
+    mappings:
+      - dctypes:Dataset
 
   distribution level:
     is_a: data set version
     mixin: true
     slots:
       - downloadURL
+    mappings:
+      - dcat:Distribution
 
   data set summary:
     is_a: data set version
@@ -2593,6 +2653,7 @@ classes:
       - NCBITaxon
     mappings:
       - WIKIDATA:Q16521
+      - NCBITaxon:1
     id_prefixes:
       - NCBITaxon
       - MESH
@@ -2683,6 +2744,8 @@ classes:
     is_a: individual organism
     description: >-
       An individual organism that has a patient role in some clinical context.
+    mappings:
+      - foaf:Person
 
   population of individual organisms:
     description: >-
@@ -2700,6 +2763,7 @@ classes:
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
       - UMLSST:popg
+      - OBI:0000181
     id_prefixes:
       - HANCESTRO
 
@@ -2746,6 +2810,7 @@ classes:
     is_a: disease or phenotypic feature
     mappings:
       - MONDO:0000001
+      - DOID:4
       - WIKIDATA:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
@@ -2785,6 +2850,7 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
+      - ORPHA
       - EFO
       - UMLS
       - MESH
@@ -2806,24 +2872,30 @@ classes:
       - UPHENO:0001001
       - SIO:010056
       - WIKIDATA:Q169872
+      # - HP:0000118  needs to be a narrow mapping
     id_prefixes:
       - HP
       - EFO
       - NCIT
       - UMLS
       - MEDDRA
-      - SNOMEDCT
       - MP
+      - ZP
+      - UPHENO
+      - APO
+      - FBcv
+      - WBPhenotype
+      - SNOMEDCT
       - MESH
 
   exposure event:
-    aliases: ['environment', 'exposure', 'experimental condition']
+    aliases: ['exposure', 'experimental condition']
     is_a: biological entity
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
     mappings:
-      - SIO:000955
+      - XCO:0000000
 
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
@@ -2877,6 +2949,8 @@ classes:
       - cio
     mappings:
       - CIO:0000028
+      - SEPIO:0000167
+      - SEPIO:0000187
 
   evidence type:
     is_a: information content entity
@@ -2897,10 +2971,10 @@ classes:
       The scope is intended to be general and include information published on the web as well as journals.
     mappings:
       - IAO:0000311
+      - IAO:0000013
       # UMLS Semantic Type "Intellectual Product"
       - UMLSSC:T170
       - UMLSST:inpr
-
     id_prefixes:
       - PMID
 
@@ -2927,6 +3001,7 @@ classes:
       # Self-help or Relief Organization
       - UMLSSC:T095
       - UMLSST:shro
+      - prov:Agent
 
   molecular entity:
     is_a: biological entity
@@ -3077,6 +3152,7 @@ classes:
       A subcellular location, cell type or gross anatomical part
     mappings:
       - SIO:010046
+      - UBERON:0001062
       - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
@@ -3118,10 +3194,13 @@ classes:
     mixins:
       - occurrent
     subclass_of: ENVO:02500000
+    mappings:
+      - ENVO:02500000
 
   environmental feature:
     is_a: planetary entity
-    subclass_of: ENVO:00002297
+    mappings:
+      - ENVO:01000254
 
   clinical entity:
     is_a: named thing
@@ -3159,12 +3238,14 @@ classes:
       - has biological sequence
     mappings:
       - SO:0000110
+      - GENO:0000897
       # Gene or Genome
       - UMLSSC:T028
       - UMLSST:gngm
       # Nucleotide Sequence
       - UMLSSC:T086
       - UMLSST:nusq
+
   genome:
     is_a: genomic entity
     description: >-
@@ -3242,6 +3323,10 @@ classes:
       - ZFIN
       - dictyBase
       - WB
+      - WormBase
+      - FlyBase
+      - FB
+      - RGD
       - SGD
       - PomBase
       # - IUPHAR
@@ -3269,6 +3354,7 @@ classes:
       - PR:000000001
       - SIO:010043
       - WIKIDATA:Q8054
+      - SO:0000104
       # UMLS Semantic Type: "Amino Acid Sequence"
       - UMLSSC:T087
       - UMLSST:amas
@@ -3337,6 +3423,8 @@ classes:
       - WIKIDATA:Q310899
     id_prefixes:
       - MIR
+      - HGNC
+      - WormBase
 
   macromolecular complex:
     is_a: macromolecular machine
@@ -3360,7 +3448,7 @@ classes:
     is_a: molecular entity
     mappings:
       - SIO:001380
-      - "NCIT:C20130"
+      - NCIT:C20130
       - WIKIDATA:Q417841
     mixins:
       - gene grouping
@@ -3395,6 +3483,7 @@ classes:
 #      - completeness
     mappings:
       - GENO:0000871
+      - SO:0001024
       # - VMC:Haplotype  needs IRI mapping
 
   sequence variant:
@@ -3413,15 +3502,25 @@ classes:
       - WIKIDATA:Q15304597
       - SIO:010277
       - VMC:Allele
+      - SO:0001059
+      - SO:0001060
     id_prefixes:
       - CAID # ClinGen Allele Registry
       - ClinVar
+      - ClinVarVariant
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
+      - dbSNP
       # - MYVARIANT_HG19 needs IRI mapping
       # - MYVARIANT_HG38 needs IRI mapping
       # - HGVS needs IRI mapping
+      - MGI
+      - ZFIN
+      - FlyBase
+      - FB
+      - WB
+      - WormBase
     alt_descriptions:
       AGR: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
       VMC: "A contiguous change at a Location"
@@ -3441,6 +3540,22 @@ classes:
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
+  snv:
+    aliases: ['single nucleotide variant']
+    is_a: sequence variant
+    description: >-
+      SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
+    mappings:
+      - SO:0001483
+
+  reagent targeted gene:
+    is_a: genomic entity
+    description: >-
+       A gene altered in its expression level in the context of some experiment as a result of being
+       targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
+    mappings:
+      - GENO:0000504
+
   chemical exposure:
 #    aliases: ['drug intake', 'drug dose']
     is_a: exposure event
@@ -3455,6 +3570,7 @@ classes:
 #        multivalued: true
     mappings:
       - ECTO:9000000
+      - SIO:001399
 
   drug exposure:
     aliases: ['drug intake', 'drug dose']
@@ -4241,6 +4357,32 @@ classes:
           - value: MONDO:0016419
             description: hereditary breast cancer
 
+
+  genotype to disease association:
+    is_a: association
+    comments:
+      - TODO decide no how to model pathogenicity
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - genotype to thing association
+      - entity to disease association
+    slot_usage:
+      subject:
+        description: >-
+          a genotype that is associated in some way with a disease state
+      relation:
+        description: >-
+          E.g. is pathogenic for
+        subproperty_of: related condition
+      object:
+        description: >-
+          a disease that is associated with that genotype
+        examples:
+          - value: MONDO:0016419
+            description: hereditary breast cancer
+
   model to disease mixin:
     mixin: true
     abstract: true
@@ -4272,6 +4414,68 @@ classes:
         description: >-
           A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene,
           or it may be a gene whose mutants recapitulate core features of the disease.
+
+  variant as a model of disease association:
+    is_a: variant to disease association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: sequence variant
+        description: >-
+          A variant that has a role in modeling the disease.
+
+  genotype as a model of disease association:
+    is_a: genotype to disease association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: genotype
+        description: >-
+          A genotype that has a role in modeling the disease.
+
+  cell line as a model of disease association:
+    is_a: cell line to disease or phenotypic feature association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: cell line
+        description: >-
+          A cell line derived from an organismal entity with a disease state that is used
+          as a model of that disease.
+
+  organismal entity as a model of disease association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: organismal entity
+        description: >-
+          A organismal entity (strain, breed) with a predisposition to a disease, or bred/created
+          specifically to model a disease.
 
   gene has variant that contributes to disease association:
     is_a: gene to disease association
