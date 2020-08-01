@@ -1,10 +1,9 @@
-description: Used to characterize and specify the phenotypic abnormalities defined
-  in the Phenotypic abnormality subontology, with respect to severity, laterality,
-  and other aspects
+description: The course a disease typically takes from its onset, progression in time,
+  and eventual resolution or death of the affected individual
 display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- clinical modifier
+- clinical course
 document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- clinical modifier
+- clinical course
 fields:
 - description: connects an attribute to a class that describes it
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
@@ -91,6 +90,6 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - superclass of
   id: superclass_of
-id: clinical_modifier
+id: clinical_course
 schema_generating: true
 weight: 20
