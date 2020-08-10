@@ -5087,3 +5087,71 @@ classes:
       - UBERON
       - PO
       - FAO
+
+  ## ------
+  ## SETS OF ASSOCIATIONS
+  ## ------
+  logical assertion:
+    description: >-
+      An assertion that may be primitive or complex that chains together associations recursively
+    slot_usage:
+      is_negated:
+        range: boolean
+        required: true
+        description: >-
+          if true, the truth value of the assertion is negated.
+      probability:
+        required: false
+        range: float
+        minimum_value: 0.0
+        maximum_value: 1.0
+        description: >-
+          if specified, the assertion A is treated as a probabilistic assertion Pr(A)=probability.
+          If not specified, the assertion is treated as crisp, i.e. Pr=1.0.
+          Note this is interpreted in combination with is_negated. Thus an association A with
+          is_negated=true and probability=0.0 is treated as true (i.e. Pr(not A) = 0.0)
+    union_of:
+      - primitive assertion
+      - complex assertion
+  
+  primitive assertion:
+    is_a: logical assertion
+    description: >-
+      An association that is qualified either with a boolean true/false modifier, or
+      a probability. Probability=0 is the same as a false modifier.
+    slot_usage:
+      on association:
+        range: association
+        required: true
+        multivalued: false
+        description: >-
+          The association that is qualified
+
+  complex assertion:
+    is_a: logical assertion
+    description: >-
+      A set of logical assertions that are combined using AND or OR.
+      Note that it is possible to combine both ANDs and ORs in a single complex assertion, but it is always
+      possible to rewrite this for example in negative normal form such that each complex assertion has either conjunctions or disjunctions but not both.
+      
+      A simple KG with edges E can be thought of as a complex assertion with a set of |E| conjunctions and 0 disjunctions, where each conjunction
+      is a simple assertion corresponding to that edge
+    slot_usage:
+      conjunctions:
+        range: logical assertion
+        multivalued: true
+        description: >-
+          All assertions in the set of conjunctions are ANDed together.
+          Note the assertions may be primitive or complex, allowing for recursive nesting
+        comments:
+          - "De Morgan's law: note that if negated=true, this is is equivalent to a set of disjunctions with individual assertions negated"
+      disjunctions:
+        range: logical assertion
+        multivalued: true
+        description: >-
+          All assertions in the set of disjunctions are ORed together
+        comments:
+          - "De Morgan's law: note that if negated=true, this is is equivalent to a set of conjunctions with individual assertions negated"
+      formal serialization:
+        string_serialization: "{' and '.join(conjunctions)} and ' or {'.join(disjunctions)}"
+        
