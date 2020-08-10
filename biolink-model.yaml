@@ -2065,6 +2065,10 @@ slots:
     domain: association
     range: uriorcurie
     required: true
+    id_prefixes:
+      - RO
+      - BSPO
+      - SIO
 
   negated:
     is_a: association slot
