@@ -32,7 +32,8 @@ prefixes:
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
-  
+  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
+
 default_prefix: biolink
 default_range: string
 
@@ -1897,6 +1898,8 @@ slots:
     is_a: node property
     mappings:
       - rdf:type
+      - alliancegenome:soTermId
+      - gff3:type
 
   id:
     is_a: node property
@@ -1908,6 +1911,9 @@ slots:
       - translator_minimal
     domain: named thing
     required: true
+    mappings:
+      - alliancegenome:primaryId
+      - gff3:ID
 
   iri:
     is_a: node property
@@ -1929,6 +1935,9 @@ slots:
       - translator_minimal
     required: true
     slot_uri: rdfs:label
+    mappings:
+      - gff3:Name
+      - alliancegenome:symbol
 
   synonym:
     is_a: node property
@@ -1941,10 +1950,27 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
+      - skos:altLabel
+      - gff3:Alias
+      - alliancegenome:synonyms
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
       - oboInOwl:hasRelatedSynonym
+
+  xref:
+    is_a: node_property
+    aliases: ['dbxref', 'Dbxref']
+    domain: named thing
+    range: iri type
+    description: >-
+      Alternate CURIEs for a thing
+    multivalued: true
+    in_subset:
+      - translator_minimal
+    mappings:
+      - gff3:Dbxref
+
 
   category:
     is_a: node property
@@ -3263,7 +3289,7 @@ classes:
       - WIKIDATA:Q7020
 
   transcript:
-    is_a: genomic entity
+    is_a: gene product
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
     mappings:
@@ -3317,6 +3343,14 @@ classes:
   gene:
     is_a: gene or gene product
     aliases: ['locus']
+    slots:
+      - id
+      - name
+      - synonym
+      - xrefs
+    slot_usage:
+      - name:
+          description: Gene symbol
     mappings:
       - SO:0000704
       - SIO:010035
@@ -3342,6 +3376,11 @@ classes:
     is_a: gene or gene product
     description: >-
       The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
+    slots:
+      - id
+      - name
+      - synonym
+      - xrefs
     union_of:
       - protein
       - RNA product
