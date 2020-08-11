@@ -8,7 +8,7 @@ layout: default
 # Type: model_to_disease_mixin_relation
 
 
-
+The relationship to the disease
 
 URI: [biolink:model_to_disease_mixin_relation](https://w3id.org/biolink/vocab/model_to_disease_mixin_relation)
 
@@ -26,3 +26,4 @@ URI: [biolink:model_to_disease_mixin_relation](https://w3id.org/biolink/vocab/mo
 ## Used by
 
  * [ModelToDiseaseMixin](ModelToDiseaseMixin.md)
+ *  reifies: [model of](model_of.md)

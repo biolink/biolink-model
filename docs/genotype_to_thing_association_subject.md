@@ -8,7 +8,7 @@ layout: default
 # Type: genotype_to_thing_association_subject
 
 
-
+genotype that is the subject of the association
 
 URI: [biolink:genotype_to_thing_association_subject](https://w3id.org/biolink/vocab/genotype_to_thing_association_subject)
 

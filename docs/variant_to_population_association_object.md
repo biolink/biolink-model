@@ -8,7 +8,7 @@ layout: default
 # Type: variant_to_population_association_object
 
 
-
+the population that is observed to have the frequency
 
 URI: [biolink:variant_to_population_association_object](https://w3id.org/biolink/vocab/variant_to_population_association_object)
 

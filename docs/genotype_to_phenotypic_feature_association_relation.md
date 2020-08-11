@@ -26,3 +26,4 @@ URI: [biolink:genotype_to_phenotypic_feature_association_relation](https://w3id.
 ## Used by
 
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
+ *  reifies: [has phenotype](has_phenotype.md)

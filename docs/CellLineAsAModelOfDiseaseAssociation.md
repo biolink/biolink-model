@@ -38,6 +38,7 @@ URI: [biolink:CellLineAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
 ### Own
 
  * [cell line as a model of disease association➞subject](cell_line_as_a_model_of_disease_association_subject.md)  <sub>REQ</sub>
+    * Description: A cell line derived from an organismal entity with a disease state that is used as a model of that disease.
     * range: [CellLine](CellLine.md)
 
 ### Inherited from association:
@@ -89,4 +90,5 @@ URI: [biolink:CellLineAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
 ### Domain for slot:
 
  * [cell line as a model of disease association➞subject](cell_line_as_a_model_of_disease_association_subject.md)  <sub>REQ</sub>
+    * Description: A cell line derived from an organismal entity with a disease state that is used as a model of that disease.
     * range: [CellLine](CellLine.md)

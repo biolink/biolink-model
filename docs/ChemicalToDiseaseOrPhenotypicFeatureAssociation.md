@@ -41,6 +41,7 @@ SIO:000993
 ### Own
 
  * [chemical to disease or phenotypic feature association➞object](chemical_to_disease_or_phenotypic_feature_association_object.md)  <sub>REQ</sub>
+    * Description: the disease or phenotype that is affected by the chemical
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ### Inherited from association:
@@ -77,6 +78,7 @@ SIO:000993
 ### Domain for slot:
 
  * [chemical to disease or phenotypic feature association➞object](chemical_to_disease_or_phenotypic_feature_association_object.md)  <sub>REQ</sub>
+    * Description: the disease or phenotype that is affected by the chemical
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ## Other properties

@@ -40,8 +40,10 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
 ### Own
 
  * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
+    * Description: class describing the activity, process or localization of the gene product
     * range: [GeneOntologyClass](GeneOntologyClass.md)
  * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
+    * Description: gene, product or macromolecular complex that has the function associated with the GO term
     * range: [MacromolecularMachine](MacromolecularMachine.md)
 
 ### Inherited from association:
@@ -78,6 +80,8 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
 ### Domain for slot:
 
  * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
+    * Description: class describing the activity, process or localization of the gene product
     * range: [GeneOntologyClass](GeneOntologyClass.md)
  * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
+    * Description: gene, product or macromolecular complex that has the function associated with the GO term
     * range: [MacromolecularMachine](MacromolecularMachine.md)

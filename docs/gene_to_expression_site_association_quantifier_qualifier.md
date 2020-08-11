@@ -8,7 +8,7 @@ layout: default
 # Type: gene_to_expression_site_association_quantifier_qualifier
 
 
-
+can be used to indicate magnitude, or also ranking
 
 URI: [biolink:gene_to_expression_site_association_quantifier_qualifier](https://w3id.org/biolink/vocab/gene_to_expression_site_association_quantifier_qualifier)
 

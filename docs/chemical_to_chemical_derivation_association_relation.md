@@ -26,3 +26,4 @@ URI: [biolink:chemical_to_chemical_derivation_association_relation](https://w3id
 ## Used by
 
  * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)
+ *  reifies: [derives into](derives_into.md)

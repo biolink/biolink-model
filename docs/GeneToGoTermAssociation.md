@@ -36,8 +36,10 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
 ### Own
 
  * [gene to go term association➞object](gene_to_go_term_association_object.md)  <sub>REQ</sub>
+    * Description: class describing the activity, process or localization of the gene product
     * range: [GeneOntologyClass](GeneOntologyClass.md)
  * [gene to go term association➞subject](gene_to_go_term_association_subject.md)  <sub>REQ</sub>
+    * Description: gene, product or macromolecular complex that has the function associated with the GO term
     * range: [MolecularEntity](MolecularEntity.md)
 
 ### Inherited from association:
@@ -74,8 +76,10 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
 ### Domain for slot:
 
  * [gene to go term association➞object](gene_to_go_term_association_object.md)  <sub>REQ</sub>
+    * Description: class describing the activity, process or localization of the gene product
     * range: [GeneOntologyClass](GeneOntologyClass.md)
  * [gene to go term association➞subject](gene_to_go_term_association_subject.md)  <sub>REQ</sub>
+    * Description: gene, product or macromolecular complex that has the function associated with the GO term
     * range: [MolecularEntity](MolecularEntity.md)
 
 ## Other properties

@@ -15,7 +15,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[LifeStage],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[Association],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[LifeStage],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[Association],[AnatomicalEntity])
 
 ---
 
@@ -33,14 +33,19 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
 ### Own
 
  * [gene to expression site association➞object](gene_to_expression_site_association_object.md)  <sub>REQ</sub>
+    * Description: location in which the gene is expressed
     * range: [AnatomicalEntity](AnatomicalEntity.md)
  * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
+    * Description: can be used to indicate magnitude, or also ranking
     * range: [OntologyClass](OntologyClass.md)
  * [gene to expression site association➞relation](gene_to_expression_site_association_relation.md)  <sub>REQ</sub>
+    * Description: expression relationship
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
+    * Description: stage at which the gene is expressed in the site
     * range: [LifeStage](LifeStage.md)
  * [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
+    * Description: gene in which variation is correlated with the phenotypic feature
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ### Inherited from association:
@@ -77,97 +82,24 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
 ### Domain for slot:
 
  * [gene to expression site association➞object](gene_to_expression_site_association_object.md)  <sub>REQ</sub>
+    * Description: location in which the gene is expressed
     * range: [AnatomicalEntity](AnatomicalEntity.md)
  * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
+    * Description: can be used to indicate magnitude, or also ranking
     * range: [OntologyClass](OntologyClass.md)
  * [gene to expression site association➞relation](gene_to_expression_site_association_relation.md)  <sub>REQ</sub>
+    * Description: expression relationship
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
+    * Description: stage at which the gene is expressed in the site
     * range: [LifeStage](LifeStage.md)
  * [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
+    * Description: gene in which variation is correlated with the phenotypic feature
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **See also:** | | h |
-|  | | t |
-|  | | t |
-|  | | p |
-|  | | s |
-|  | | : |
-|  | | / |
-|  | | / |
-|  | | g |
-|  | | i |
-|  | | t |
-|  | | h |
-|  | | u |
-|  | | b |
-|  | | . |
-|  | | c |
-|  | | o |
-|  | | m |
-|  | | / |
-|  | | m |
-|  | | o |
-|  | | n |
-|  | | a |
-|  | | r |
-|  | | c |
-|  | | h |
-|  | | - |
-|  | | i |
-|  | | n |
-|  | | i |
-|  | | t |
-|  | | i |
-|  | | a |
-|  | | t |
-|  | | i |
-|  | | v |
-|  | | e |
-|  | | / |
-|  | | i |
-|  | | n |
-|  | | g |
-|  | | e |
-|  | | s |
-|  | | t |
-|  | | - |
-|  | | a |
-|  | | r |
-|  | | t |
-|  | | i |
-|  | | f |
-|  | | a |
-|  | | c |
-|  | | t |
-|  | | s |
-|  | | / |
-|  | | t |
-|  | | r |
-|  | | e |
-|  | | e |
-|  | | / |
-|  | | m |
-|  | | a |
-|  | | s |
-|  | | t |
-|  | | e |
-|  | | r |
-|  | | / |
-|  | | s |
-|  | | o |
-|  | | u |
-|  | | r |
-|  | | c |
-|  | | e |
-|  | | s |
-|  | | / |
-|  | | B |
-|  | | G |
-|  | | e |
-|  | | e |
+| **See also:** | | https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee |
 

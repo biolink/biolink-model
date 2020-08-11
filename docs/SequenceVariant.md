@@ -33,7 +33,7 @@ SO:0001060
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantAsAModelOfDiseaseAssociation],[Snv],[SequenceVariantModulatesTreatmentAssociation],[Gene]%3Chas%20gene%200..*-%20[SequenceVariant|id:string;has_biological_sequence:biological_sequence%20%3F;name(i):label_type;category(i):category_type%20%2B],[GenotypeToVariantAssociation]-%20object%201..1%3E[SequenceVariant],[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1%3E[SequenceVariant],[GeneHasVariantThatContributesToDiseaseAssociation]-%20sequence%20variant%20qualifier%200..1%3E[SequenceVariant],[VariantAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToPhenotypicFeatureAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToPopulationAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToThingAssociation]-%20subject%201..1%3E[SequenceVariant],[SequenceVariant]%5E-[Snv],[GenomicEntity]%5E-[SequenceVariant],[OrganismTaxon],[GenotypeToVariantAssociation],[GenomicEntity],[GeneHasVariantThatContributesToDiseaseAssociation],[Gene],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantAsAModelOfDiseaseAssociation],[Snv],[SequenceVariantModulatesTreatmentAssociation],[Gene]%3Chas%20gene%200..*-%20[SequenceVariant|has_biological_sequence:biological_sequence%20%3F;id:string;name(i):label_type;category(i):category_type%20%2B],[GenotypeToVariantAssociation]-%20object%201..1%3E[SequenceVariant],[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1%3E[SequenceVariant],[GeneHasVariantThatContributesToDiseaseAssociation]-%20sequence%20variant%20qualifier%200..1%3E[SequenceVariant],[VariantAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToPhenotypicFeatureAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToPopulationAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToThingAssociation]-%20subject%201..1%3E[SequenceVariant],[SequenceVariant]%5E-[Snv],[GenomicEntity]%5E-[SequenceVariant],[OrganismTaxon],[GenotypeToVariantAssociation],[GenomicEntity],[GeneHasVariantThatContributesToDiseaseAssociation],[Gene],[Association])
 
 ---
 
@@ -77,8 +77,10 @@ SO:0001060
 ### Own
 
  * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md)  <sub>OPT</sub>
+    * Description: The state of the sequence w.r.t a reference sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
  * [sequence variant➞has gene](sequence_variant_has_gene.md)  <sub>0..*</sub>
+    * Description: Each allele can be associated with any number of genes
     * range: [Gene](Gene.md)
  * [sequence variant➞id](sequence_variant_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
@@ -108,8 +110,10 @@ SO:0001060
 ### Domain for slot:
 
  * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md)  <sub>OPT</sub>
+    * Description: The state of the sequence w.r.t a reference sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
  * [sequence variant➞has gene](sequence_variant_has_gene.md)  <sub>0..*</sub>
+    * Description: Each allele can be associated with any number of genes
     * range: [Gene](Gene.md)
  * [sequence variant➞id](sequence_variant_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)

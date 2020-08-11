@@ -33,8 +33,10 @@ URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/bio
 ### Own
 
  * [sequence variant modulates treatment association➞object](sequence_variant_modulates_treatment_association_object.md)  <sub>REQ</sub>
+    * Description: treatment whose efficacy is modulated by the subject variant
     * range: [Treatment](Treatment.md)
  * [sequence variant modulates treatment association➞subject](sequence_variant_modulates_treatment_association_subject.md)  <sub>REQ</sub>
+    * Description: variant that modulates the treatment of some disease
     * range: [SequenceVariant](SequenceVariant.md)
 
 ### Inherited from association:
@@ -71,8 +73,10 @@ URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/bio
 ### Domain for slot:
 
  * [sequence variant modulates treatment association➞object](sequence_variant_modulates_treatment_association_object.md)  <sub>REQ</sub>
+    * Description: treatment whose efficacy is modulated by the subject variant
     * range: [Treatment](Treatment.md)
  * [sequence variant modulates treatment association➞subject](sequence_variant_modulates_treatment_association_subject.md)  <sub>REQ</sub>
+    * Description: variant that modulates the treatment of some disease
     * range: [SequenceVariant](SequenceVariant.md)
 
 ## Other properties

@@ -33,10 +33,13 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
 ### Own
 
  * [genotype to variant association➞object](genotype_to_variant_association_object.md)  <sub>REQ</sub>
+    * Description: gene implicated in genotype
     * range: [SequenceVariant](SequenceVariant.md)
  * [genotype to variant association➞relation](genotype_to_variant_association_relation.md)  <sub>REQ</sub>
+    * Description: the relationship type used to connect genotype to gene
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to variant association➞subject](genotype_to_variant_association_subject.md)  <sub>REQ</sub>
+    * Description: parent genotype
     * range: [Genotype](Genotype.md)
 
 ### Inherited from association:
@@ -73,8 +76,11 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
 ### Domain for slot:
 
  * [genotype to variant association➞object](genotype_to_variant_association_object.md)  <sub>REQ</sub>
+    * Description: gene implicated in genotype
     * range: [SequenceVariant](SequenceVariant.md)
  * [genotype to variant association➞relation](genotype_to_variant_association_relation.md)  <sub>REQ</sub>
+    * Description: the relationship type used to connect genotype to gene
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to variant association➞subject](genotype_to_variant_association_subject.md)  <sub>REQ</sub>
+    * Description: parent genotype
     * range: [Genotype](Genotype.md)

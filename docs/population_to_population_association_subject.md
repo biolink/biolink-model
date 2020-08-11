@@ -8,7 +8,7 @@ layout: default
 # Type: population_to_population_association_subject
 
 
-
+the population that form the subject of the association
 
 URI: [biolink:population_to_population_association_subject](https://w3id.org/biolink/vocab/population_to_population_association_subject)
 

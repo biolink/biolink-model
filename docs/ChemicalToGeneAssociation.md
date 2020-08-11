@@ -40,6 +40,7 @@ SIO:001257
 ### Own
 
  * [chemical to gene association➞object](chemical_to_gene_association_object.md)  <sub>REQ</sub>
+    * Description: the gene or gene product that is affected by the chemical
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ### Inherited from association:
@@ -76,6 +77,7 @@ SIO:001257
 ### Domain for slot:
 
  * [chemical to gene association➞object](chemical_to_gene_association_object.md)  <sub>REQ</sub>
+    * Description: the gene or gene product that is affected by the chemical
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ## Other properties

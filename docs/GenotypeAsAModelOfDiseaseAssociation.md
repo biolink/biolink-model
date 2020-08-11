@@ -38,6 +38,7 @@ URI: [biolink:GenotypeAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
 ### Own
 
  * [genotype as a model of disease association➞subject](genotype_as_a_model_of_disease_association_subject.md)  <sub>REQ</sub>
+    * Description: A genotype that has a role in modeling the disease.
     * range: [Genotype](Genotype.md)
 
 ### Inherited from association:
@@ -89,13 +90,17 @@ URI: [biolink:GenotypeAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
 ### Inherited from genotype to disease association:
 
  * [genotype to disease association➞subject](genotype_to_disease_association_subject.md)  <sub>REQ</sub>
+    * Description: a genotype that is associated in some way with a disease state
     * range: [NamedThing](NamedThing.md)
  * [genotype to disease association➞relation](genotype_to_disease_association_relation.md)  <sub>REQ</sub>
+    * Description: E.g. is pathogenic for
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to disease association➞object](genotype_to_disease_association_object.md)  <sub>REQ</sub>
+    * Description: a disease that is associated with that genotype
     * range: [NamedThing](NamedThing.md)
 
 ### Domain for slot:
 
  * [genotype as a model of disease association➞subject](genotype_as_a_model_of_disease_association_subject.md)  <sub>REQ</sub>
+    * Description: A genotype that has a role in modeling the disease.
     * range: [Genotype](Genotype.md)

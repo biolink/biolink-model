@@ -90,7 +90,7 @@ UMLSST:neop
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[EntityToDiseaseAssociation],[DiseaseToThingAssociation],[DiseaseToExposureAssociation],[DiseaseOrPhenotypicFeature],[DiseaseToExposureAssociation]-%20subject%201..1%3E[Disease|id(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseToThingAssociation]-%20subject%201..1%3E[Disease],[EntityToDiseaseAssociation]-%20object(i)%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[EntityToDiseaseAssociation],[DiseaseToThingAssociation],[DiseaseToExposureAssociation],[DiseaseOrPhenotypicFeature],[DiseaseToExposureAssociation]-%20subject%201..1%3E[Disease|id(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseToThingAssociation]-%20subject%201..1%3E[Disease],[EntityToDiseaseAssociation]-%20object%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease])
 
 ---
 

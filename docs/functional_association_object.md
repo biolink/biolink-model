@@ -8,7 +8,7 @@ layout: default
 # Type: functional_association_object
 
 
-
+class describing the activity, process or localization of the gene product
 
 URI: [biolink:functional_association_object](https://w3id.org/biolink/vocab/functional_association_object)
 

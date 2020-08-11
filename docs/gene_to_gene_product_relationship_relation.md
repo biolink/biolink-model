@@ -26,3 +26,4 @@ URI: [biolink:gene_to_gene_product_relationship_relation](https://w3id.org/bioli
 ## Used by
 
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
+ *  reifies: [has gene product](has_gene_product.md)

@@ -56,6 +56,7 @@ WIKIDATA:Q424689
 ### Inherited from macromolecular machine:
 
  * [macromolecular machine➞name](macromolecular_machine_name.md)  <sub>REQ</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:

@@ -8,7 +8,7 @@ layout: default
 # Type: gene_to_go_term_association_subject
 
 
-
+gene, product or macromolecular complex that has the function associated with the GO term
 
 URI: [biolink:gene_to_go_term_association_subject](https://w3id.org/biolink/vocab/gene_to_go_term_association_subject)
 

@@ -8,7 +8,7 @@ layout: default
 # Type: variant_to_population_association_has_count
 
 
-
+number in object population that carry a particular allele, aka allele count
 
 URI: [biolink:variant_to_population_association_has_count](https://w3id.org/biolink/vocab/variant_to_population_association_has_count)
 

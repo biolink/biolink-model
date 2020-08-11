@@ -33,10 +33,13 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
 ### Own
 
  * [material sample derivation association➞object](material_sample_derivation_association_object.md)  <sub>REQ</sub>
+    * Description: the material entity the sample was derived from. This may be another material sample, or any other material entity, including for example an organism, a geographic feature, or some environmental material.
     * range: [NamedThing](NamedThing.md)
  * [material sample derivation association➞relation](material_sample_derivation_association_relation.md)  <sub>REQ</sub>
+    * Description: derivation relationship
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [material sample derivation association➞subject](material_sample_derivation_association_subject.md)  <sub>REQ</sub>
+    * Description: the material sample being described
     * range: [MaterialSample](MaterialSample.md)
 
 ### Inherited from association:
@@ -73,8 +76,11 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
 ### Domain for slot:
 
  * [material sample derivation association➞object](material_sample_derivation_association_object.md)  <sub>REQ</sub>
+    * Description: the material entity the sample was derived from. This may be another material sample, or any other material entity, including for example an organism, a geographic feature, or some environmental material.
     * range: [NamedThing](NamedThing.md)
  * [material sample derivation association➞relation](material_sample_derivation_association_relation.md)  <sub>REQ</sub>
+    * Description: derivation relationship
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [material sample derivation association➞subject](material_sample_derivation_association_subject.md)  <sub>REQ</sub>
+    * Description: the material sample being described
     * range: [MaterialSample](MaterialSample.md)

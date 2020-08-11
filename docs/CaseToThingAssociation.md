@@ -37,6 +37,7 @@ URI: [biolink:CaseToThingAssociation](https://w3id.org/biolink/vocab/CaseToThing
 ### Own
 
  * [case to thing association➞subject](case_to_thing_association_subject.md)  <sub>REQ</sub>
+    * Description: the case (e.g. patient) that has the property
     * range: [Case](Case.md)
 
 ### Inherited from association:
@@ -73,4 +74,5 @@ URI: [biolink:CaseToThingAssociation](https://w3id.org/biolink/vocab/CaseToThing
 ### Domain for slot:
 
  * [case to thing association➞subject](case_to_thing_association_subject.md)  <sub>REQ</sub>
+    * Description: the case (e.g. patient) that has the property
     * range: [Case](Case.md)

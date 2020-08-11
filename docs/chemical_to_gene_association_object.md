@@ -8,7 +8,7 @@ layout: default
 # Type: chemical_to_gene_association_object
 
 
-
+the gene or gene product that is affected by the chemical
 
 URI: [biolink:chemical_to_gene_association_object](https://w3id.org/biolink/vocab/chemical_to_gene_association_object)
 

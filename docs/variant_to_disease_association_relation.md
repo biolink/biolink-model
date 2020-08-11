@@ -8,7 +8,7 @@ layout: default
 # Type: variant_to_disease_association_relation
 
 
-
+E.g. is pathogenic for
 
 URI: [biolink:variant_to_disease_association_relation](https://w3id.org/biolink/vocab/variant_to_disease_association_relation)
 
@@ -27,3 +27,4 @@ URI: [biolink:variant_to_disease_association_relation](https://w3id.org/biolink/
 
  * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
  * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+ *  reifies: related condition

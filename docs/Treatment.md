@@ -21,7 +21,7 @@ SIO:001398
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ExposureEvent]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[ExposureEvent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DrugExposure]%3Chas%20part%201..*-%20[Treatment|id(i):string;name(i):label_type;category(i):category_type%20%2B],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[ExposureEvent]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[ExposureEvent],[DrugExposure])
 
 ---
 
@@ -37,6 +37,11 @@ SIO:001398
 ## Attributes
 
 
+### Own
+
+ * [treatment➞has part](treatment_has_part.md)  <sub>1..*</sub>
+    * range: [DrugExposure](DrugExposure.md)
+
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -51,6 +56,11 @@ SIO:001398
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
+
+### Domain for slot:
+
+ * [treatment➞has part](treatment_has_part.md)  <sub>1..*</sub>
+    * range: [DrugExposure](DrugExposure.md)
 
 ## Other properties
 

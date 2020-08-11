@@ -18,7 +18,7 @@ SO:0001483
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%5E-[Snv|id(i):string;has_biological_sequence(i):biological_sequence%20%3F;name(i):label_type;category(i):category_type%20%2B],[SequenceVariant],[OrganismTaxon],[Gene])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%5E-[Snv|has_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[SequenceVariant],[OrganismTaxon],[Gene])
 
 ---
 
@@ -47,12 +47,14 @@ SO:0001483
 
 ### Inherited from sequence variant:
 
+ * [sequence variant➞has gene](sequence_variant_has_gene.md)  <sub>0..*</sub>
+    * Description: Each allele can be associated with any number of genes
+    * range: [Gene](Gene.md)
+ * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md)  <sub>OPT</sub>
+    * Description: The state of the sequence w.r.t a reference sequence
+    * range: [BiologicalSequence](types/BiologicalSequence.md)
  * [sequence variant➞id](sequence_variant_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
- * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md)  <sub>OPT</sub>
-    * range: [BiologicalSequence](types/BiologicalSequence.md)
- * [sequence variant➞has gene](sequence_variant_has_gene.md)  <sub>0..*</sub>
-    * range: [Gene](Gene.md)
 
 ### Inherited from thing with taxon:
 

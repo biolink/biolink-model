@@ -8,7 +8,7 @@ layout: default
 # Type: disease_to_thing_association_subject
 
 
-
+disease class
 
 URI: [biolink:disease_to_thing_association_subject](https://w3id.org/biolink/vocab/disease_to_thing_association_subject)
 

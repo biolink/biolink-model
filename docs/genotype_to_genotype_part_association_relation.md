@@ -26,3 +26,4 @@ URI: [biolink:genotype_to_genotype_part_association_relation](https://w3id.org/b
 ## Used by
 
  * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)
+ *  reifies: has variant part

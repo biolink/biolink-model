@@ -40,6 +40,7 @@ SIO:001250
 ### Own
 
  * [chemical to pathway association➞object](chemical_to_pathway_association_object.md)  <sub>REQ</sub>
+    * Description: the pathway that is affected by the chemical
     * range: [Pathway](Pathway.md)
 
 ### Inherited from association:
@@ -76,6 +77,7 @@ SIO:001250
 ### Domain for slot:
 
  * [chemical to pathway association➞object](chemical_to_pathway_association_object.md)  <sub>REQ</sub>
+    * Description: the pathway that is affected by the chemical
     * range: [Pathway](Pathway.md)
 
 ## Other properties

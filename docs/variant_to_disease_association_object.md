@@ -8,7 +8,7 @@ layout: default
 # Type: variant_to_disease_association_object
 
 
-
+a disease that is associated with that variant
 
 URI: [biolink:variant_to_disease_association_object](https://w3id.org/biolink/vocab/variant_to_disease_association_object)
 

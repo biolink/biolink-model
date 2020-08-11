@@ -21,7 +21,7 @@ SIO:001005
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[Treatment]-%20has%20part(i)%201..*%3E[DrugExposure|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalExposure]%5E-[DrugExposure],[ChemicalExposure])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[ChemicalSubstance]%3Chas%20drug%201..*-%20[DrugExposure|id(i):string;name(i):label_type;category(i):category_type%20%2B],[Treatment]-%20has%20part%201..*%3E[DrugExposure],[ChemicalExposure]%5E-[DrugExposure],[ChemicalSubstance],[ChemicalExposure])
 
 ---
 
@@ -37,6 +37,11 @@ SIO:001005
 ## Attributes
 
 
+### Own
+
+ * [drug exposure➞has drug](drug_exposure_has_drug.md)  <sub>1..*</sub>
+    * range: [ChemicalSubstance](ChemicalSubstance.md)
+
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -51,6 +56,11 @@ SIO:001005
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
+
+### Domain for slot:
+
+ * [drug exposure➞has drug](drug_exposure_has_drug.md)  <sub>1..*</sub>
+    * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ## Other properties
 

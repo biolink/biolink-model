@@ -8,7 +8,7 @@ layout: default
 # Type: anatomical_entity_to_anatomical_entity_part_of_association_object
 
 
-
+the whole
 
 URI: [biolink:anatomical_entity_to_anatomical_entity_part_of_association_object](https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_object)
 

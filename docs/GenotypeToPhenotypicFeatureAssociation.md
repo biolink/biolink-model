@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation|relation:uriorcurie;description:narrative_text%20%3F;id(i):string;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
 
 ---
 
@@ -40,6 +40,7 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
  * [genotype to phenotypic feature association➞relation](genotype_to_phenotypic_feature_association_relation.md)  <sub>REQ</sub>
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to phenotypic feature association➞subject](genotype_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
+    * Description: genotype that is associated with the phenotypic feature
     * range: [Genotype](Genotype.md)
 
 ### Inherited from association:
@@ -84,11 +85,15 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
 
 ### Inherited from entity to phenotypic feature association:
 
- * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
-    * range: [PhenotypicFeature](PhenotypicFeature.md)
  * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     * range: [BiologicalSex](BiologicalSex.md)
+ * [entity to phenotypic feature association➞description](entity_to_phenotypic_feature_association_description.md)  <sub>OPT</sub>
+    * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
+    * range: [NarrativeText](types/NarrativeText.md)
+ * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
+    * Description: phenotypic class
+    * range: [PhenotypicFeature](PhenotypicFeature.md)
 
 ### Inherited from frequency qualifier mixin:
 
@@ -101,4 +106,5 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
  * [genotype to phenotypic feature association➞relation](genotype_to_phenotypic_feature_association_relation.md)  <sub>REQ</sub>
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to phenotypic feature association➞subject](genotype_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
+    * Description: genotype that is associated with the phenotypic feature
     * range: [Genotype](Genotype.md)

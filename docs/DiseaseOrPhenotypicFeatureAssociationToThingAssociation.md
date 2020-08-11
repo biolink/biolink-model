@@ -37,6 +37,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation](https://w
 ### Own
 
  * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)  <sub>REQ</sub>
+    * Description: disease or phenotype
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ### Inherited from association:
@@ -73,4 +74,5 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation](https://w
 ### Domain for slot:
 
  * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)  <sub>REQ</sub>
+    * Description: disease or phenotype
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)

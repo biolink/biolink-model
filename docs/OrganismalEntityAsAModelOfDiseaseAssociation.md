@@ -38,6 +38,7 @@ URI: [biolink:OrganismalEntityAsAModelOfDiseaseAssociation](https://w3id.org/bio
 ### Own
 
  * [organismal entity as a model of disease association➞subject](organismal_entity_as_a_model_of_disease_association_subject.md)  <sub>REQ</sub>
+    * Description: A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.
     * range: [OrganismalEntity](OrganismalEntity.md)
 
 ### Inherited from association:
@@ -89,4 +90,5 @@ URI: [biolink:OrganismalEntityAsAModelOfDiseaseAssociation](https://w3id.org/bio
 ### Domain for slot:
 
  * [organismal entity as a model of disease association➞subject](organismal_entity_as_a_model_of_disease_association_subject.md)  <sub>REQ</sub>
+    * Description: A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.
     * range: [OrganismalEntity](OrganismalEntity.md)

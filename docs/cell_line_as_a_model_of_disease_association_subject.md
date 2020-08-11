@@ -8,7 +8,7 @@ layout: default
 # Type: cell_line_as_a_model_of_disease_association_subject
 
 
-
+A cell line derived from an organismal entity with a disease state that is used as a model of that disease.
 
 URI: [biolink:cell_line_as_a_model_of_disease_association_subject](https://w3id.org/biolink/vocab/cell_line_as_a_model_of_disease_association_subject)
 

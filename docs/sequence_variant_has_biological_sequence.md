@@ -8,7 +8,7 @@ layout: default
 # Type: sequence_variant_has_biological_sequence
 
 
-
+The state of the sequence w.r.t a reference sequence
 
 URI: [biolink:sequence_variant_has_biological_sequence](https://w3id.org/biolink/vocab/sequence_variant_has_biological_sequence)
 

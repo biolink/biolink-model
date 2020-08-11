@@ -8,7 +8,7 @@ layout: default
 # Type: pairwise_gene_to_gene_interaction_relation
 
 
-
+interaction relationship type
 
 URI: [biolink:pairwise_gene_to_gene_interaction_relation](https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation)
 
@@ -26,3 +26,4 @@ URI: [biolink:pairwise_gene_to_gene_interaction_relation](https://w3id.org/bioli
 ## Used by
 
  * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)
+ *  reifies: [molecularly interacts with](molecularly_interacts_with.md)

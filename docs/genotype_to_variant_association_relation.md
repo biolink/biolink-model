@@ -8,7 +8,7 @@ layout: default
 # Type: genotype_to_variant_association_relation
 
 
-
+the relationship type used to connect genotype to gene
 
 URI: [biolink:genotype_to_variant_association_relation](https://w3id.org/biolink/vocab/genotype_to_variant_association_relation)
 

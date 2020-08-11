@@ -33,10 +33,12 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation](https://w3id.
 ### Own
 
  * [anatomical entity to anatomical entity part of association➞object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)  <sub>REQ</sub>
+    * Description: the whole
     * range: [AnatomicalEntity](AnatomicalEntity.md)
  * [anatomical entity to anatomical entity part of association➞relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)  <sub>REQ</sub>
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [anatomical entity to anatomical entity part of association➞subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)  <sub>REQ</sub>
+    * Description: the part
     * range: [AnatomicalEntity](AnatomicalEntity.md)
 
 ### Inherited from association:
@@ -73,8 +75,10 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation](https://w3id.
 ### Domain for slot:
 
  * [anatomical entity to anatomical entity part of association➞object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)  <sub>REQ</sub>
+    * Description: the whole
     * range: [AnatomicalEntity](AnatomicalEntity.md)
  * [anatomical entity to anatomical entity part of association➞relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)  <sub>REQ</sub>
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [anatomical entity to anatomical entity part of association➞subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)  <sub>REQ</sub>
+    * Description: the part
     * range: [AnatomicalEntity](AnatomicalEntity.md)

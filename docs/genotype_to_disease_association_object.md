@@ -8,7 +8,7 @@ layout: default
 # Type: genotype_to_disease_association_object
 
 
-
+a disease that is associated with that genotype
 
 URI: [biolink:genotype_to_disease_association_object](https://w3id.org/biolink/vocab/genotype_to_disease_association_object)
 

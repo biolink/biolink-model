@@ -8,7 +8,7 @@ layout: default
 # Type: chemical_to_chemical_derivation_association_subject
 
 
-
+the upstream chemical entity
 
 URI: [biolink:chemical_to_chemical_derivation_association_subject](https://w3id.org/biolink/vocab/chemical_to_chemical_derivation_association_subject)
 

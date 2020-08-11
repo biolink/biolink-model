@@ -38,8 +38,10 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
 ### Own
 
  * [gene to gene association➞object](gene_to_gene_association_object.md)  <sub>REQ</sub>
+    * Description: the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [gene to gene association➞subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
+    * Description: the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ### Inherited from association:
@@ -76,8 +78,10 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
 ### Domain for slot:
 
  * [gene to gene association➞object](gene_to_gene_association_object.md)  <sub>REQ</sub>
+    * Description: the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [gene to gene association➞subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
+    * Description: the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ## Other properties

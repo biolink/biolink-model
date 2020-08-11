@@ -33,10 +33,13 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
 ### Own
 
  * [population to population association➞object](population_to_population_association_object.md)  <sub>REQ</sub>
+    * Description: the population that form the object of the association
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
  * [population to population association➞relation](population_to_population_association_relation.md)  <sub>REQ</sub>
+    * Description: A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [population to population association➞subject](population_to_population_association_subject.md)  <sub>REQ</sub>
+    * Description: the population that form the subject of the association
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
 
 ### Inherited from association:
@@ -73,8 +76,11 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
 ### Domain for slot:
 
  * [population to population association➞object](population_to_population_association_object.md)  <sub>REQ</sub>
+    * Description: the population that form the object of the association
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
  * [population to population association➞relation](population_to_population_association_relation.md)  <sub>REQ</sub>
+    * Description: A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [population to population association➞subject](population_to_population_association_subject.md)  <sub>REQ</sub>
+    * Description: the population that form the subject of the association
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)

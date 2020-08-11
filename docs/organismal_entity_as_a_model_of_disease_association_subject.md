@@ -8,7 +8,7 @@ layout: default
 # Type: organismal_entity_as_a_model_of_disease_association_subject
 
 
-
+A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.
 
 URI: [biolink:organismal_entity_as_a_model_of_disease_association_subject](https://w3id.org/biolink/vocab/organismal_entity_as_a_model_of_disease_association_subject)
 

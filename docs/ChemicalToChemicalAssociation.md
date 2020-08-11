@@ -41,6 +41,7 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 ### Own
 
  * [chemical to chemical association➞object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
+    * Description: the chemical element that is the target of the statement
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ### Inherited from association:
@@ -77,4 +78,5 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 ### Domain for slot:
 
  * [chemical to chemical association➞object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
+    * Description: the chemical element that is the target of the statement
     * range: [ChemicalSubstance](ChemicalSubstance.md)

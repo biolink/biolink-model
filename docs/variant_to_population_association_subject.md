@@ -8,7 +8,7 @@ layout: default
 # Type: variant_to_population_association_subject
 
 
-
+an allele that has a certain frequency in a given population
 
 URI: [biolink:variant_to_population_association_subject](https://w3id.org/biolink/vocab/variant_to_population_association_subject)
 

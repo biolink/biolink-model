@@ -8,7 +8,7 @@ layout: default
 # Type: gene_to_phenotypic_feature_association_subject
 
 
-
+gene in which variation is correlated with the phenotypic feature
 
 URI: [biolink:gene_to_phenotypic_feature_association_subject](https://w3id.org/biolink/vocab/gene_to_phenotypic_feature_association_subject)
 

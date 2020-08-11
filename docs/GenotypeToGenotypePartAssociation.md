@@ -33,10 +33,12 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
 ### Own
 
  * [genotype to genotype part association➞object](genotype_to_genotype_part_association_object.md)  <sub>REQ</sub>
+    * Description: child genotype
     * range: [Genotype](Genotype.md)
  * [genotype to genotype part association➞relation](genotype_to_genotype_part_association_relation.md)  <sub>REQ</sub>
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to genotype part association➞subject](genotype_to_genotype_part_association_subject.md)  <sub>REQ</sub>
+    * Description: parent genotype
     * range: [Genotype](Genotype.md)
 
 ### Inherited from association:
@@ -73,8 +75,10 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
 ### Domain for slot:
 
  * [genotype to genotype part association➞object](genotype_to_genotype_part_association_object.md)  <sub>REQ</sub>
+    * Description: child genotype
     * range: [Genotype](Genotype.md)
  * [genotype to genotype part association➞relation](genotype_to_genotype_part_association_relation.md)  <sub>REQ</sub>
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to genotype part association➞subject](genotype_to_genotype_part_association_subject.md)  <sub>REQ</sub>
+    * Description: parent genotype
     * range: [Genotype](Genotype.md)

@@ -8,7 +8,7 @@ layout: default
 # Type: pairwise_interaction_association_relation
 
 
-
+interaction relationship type
 
 URI: [biolink:pairwise_interaction_association_relation](https://w3id.org/biolink/vocab/pairwise_interaction_association_relation)
 
@@ -26,3 +26,4 @@ URI: [biolink:pairwise_interaction_association_relation](https://w3id.org/biolin
 ## Used by
 
  * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
+ *  reifies: [molecularly interacts with](molecularly_interacts_with.md)

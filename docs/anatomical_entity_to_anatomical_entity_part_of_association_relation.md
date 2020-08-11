@@ -26,3 +26,4 @@ URI: [biolink:anatomical_entity_to_anatomical_entity_part_of_association_relatio
 ## Used by
 
  * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)
+ *  reifies: [part of](part_of.md)

@@ -8,7 +8,7 @@ layout: default
 # Type: chemical_to_chemical_derivation_association_change_is_catalyzed_by
 
 
-
+this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical
 
 URI: [biolink:chemical_to_chemical_derivation_association_change_is_catalyzed_by](https://w3id.org/biolink/vocab/chemical_to_chemical_derivation_association_change_is_catalyzed_by)
 

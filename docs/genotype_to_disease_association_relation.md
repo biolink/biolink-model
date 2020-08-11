@@ -8,7 +8,7 @@ layout: default
 # Type: genotype_to_disease_association_relation
 
 
-
+E.g. is pathogenic for
 
 URI: [biolink:genotype_to_disease_association_relation](https://w3id.org/biolink/vocab/genotype_to_disease_association_relation)
 
@@ -27,3 +27,4 @@ URI: [biolink:genotype_to_disease_association_relation](https://w3id.org/biolink
 
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
+ *  reifies: related condition

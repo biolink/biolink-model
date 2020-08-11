@@ -8,7 +8,7 @@ layout: default
 # Type: gene_to_expression_site_association_relation
 
 
-
+expression relationship
 
 URI: [biolink:gene_to_expression_site_association_relation](https://w3id.org/biolink/vocab/gene_to_expression_site_association_relation)
 
@@ -26,3 +26,4 @@ URI: [biolink:gene_to_expression_site_association_relation](https://w3id.org/bio
 ## Used by
 
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
+ *  reifies: [expressed in](expressed_in.md)

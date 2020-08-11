@@ -8,7 +8,7 @@ layout: default
 # Type: chemical_to_disease_or_phenotypic_feature_association_object
 
 
-
+the disease or phenotype that is affected by the chemical
 
 URI: [biolink:chemical_to_disease_or_phenotypic_feature_association_object](https://w3id.org/biolink/vocab/chemical_to_disease_or_phenotypic_feature_association_object)
 

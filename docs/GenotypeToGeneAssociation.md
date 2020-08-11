@@ -33,10 +33,13 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
 ### Own
 
  * [genotype to gene association➞object](genotype_to_gene_association_object.md)  <sub>REQ</sub>
+    * Description: gene implicated in genotype
     * range: [Gene](Gene.md)
  * [genotype to gene association➞relation](genotype_to_gene_association_relation.md)  <sub>REQ</sub>
+    * Description: the relationship type used to connect genotype to gene
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to gene association➞subject](genotype_to_gene_association_subject.md)  <sub>REQ</sub>
+    * Description: parent genotype
     * range: [Genotype](Genotype.md)
 
 ### Inherited from association:
@@ -73,8 +76,11 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
 ### Domain for slot:
 
  * [genotype to gene association➞object](genotype_to_gene_association_object.md)  <sub>REQ</sub>
+    * Description: gene implicated in genotype
     * range: [Gene](Gene.md)
  * [genotype to gene association➞relation](genotype_to_gene_association_relation.md)  <sub>REQ</sub>
+    * Description: the relationship type used to connect genotype to gene
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [genotype to gene association➞subject](genotype_to_gene_association_subject.md)  <sub>REQ</sub>
+    * Description: parent genotype
     * range: [Genotype](Genotype.md)

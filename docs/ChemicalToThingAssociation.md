@@ -40,6 +40,7 @@ URI: [biolink:ChemicalToThingAssociation](https://w3id.org/biolink/vocab/Chemica
 ### Own
 
  * [chemical to thing association➞subject](chemical_to_thing_association_subject.md)  <sub>REQ</sub>
+    * Description: the chemical substance or entity that is an interactor
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ### Inherited from association:
@@ -76,4 +77,5 @@ URI: [biolink:ChemicalToThingAssociation](https://w3id.org/biolink/vocab/Chemica
 ### Domain for slot:
 
  * [chemical to thing association➞subject](chemical_to_thing_association_subject.md)  <sub>REQ</sub>
+    * Description: the chemical substance or entity that is an interactor
     * range: [ChemicalSubstance](ChemicalSubstance.md)

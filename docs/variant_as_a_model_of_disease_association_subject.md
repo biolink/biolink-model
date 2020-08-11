@@ -8,7 +8,7 @@ layout: default
 # Type: variant_as_a_model_of_disease_association_subject
 
 
-
+A variant that has a role in modeling the disease.
 
 URI: [biolink:variant_as_a_model_of_disease_association_subject](https://w3id.org/biolink/vocab/variant_as_a_model_of_disease_association_subject)
 

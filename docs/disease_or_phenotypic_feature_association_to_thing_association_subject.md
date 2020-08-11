@@ -8,7 +8,7 @@ layout: default
 # Type: disease_or_phenotypic_feature_association_to_thing_association_subject
 
 
-
+disease or phenotype
 
 URI: [biolink:disease_or_phenotypic_feature_association_to_thing_association_subject](https://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_thing_association_subject)
 

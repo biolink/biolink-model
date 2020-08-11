@@ -8,7 +8,7 @@ layout: default
 # Type: molecular_activity_has_input
 
 
-
+A chemical entity that is the input for the reaction
 
 URI: [biolink:molecular_activity_has_input](https://w3id.org/biolink/vocab/molecular_activity_has_input)
 
