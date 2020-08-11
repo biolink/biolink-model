@@ -1,7 +1,6 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-08-01 00:44\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-08-11 20:33\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
-      "_comments": null,
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
       "Aeolus": "http://translator.ncats.nih.gov/Aeolus_",
@@ -117,6 +116,7 @@
       "XCO": "http://purl.obolibrary.org/obo/XCO_",
       "ZFIN": "http://identifiers.org/zfin/",
       "ZP": "http://purl.obolibrary.org/obo/ZP_",
+      "biolink": "https://w3id.org/biolink/vocab/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
       "chembio": "http://example.org/UNKNOWN/chembio/",
       "dbSNP": "http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=",
@@ -129,7 +129,6 @@
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
       "medgen": "http://example.org/UNKNOWN/medgen/",
-      "metatype": "https://w3id.org/biolink/biolinkml/meta/types/",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
@@ -137,7 +136,6 @@
       "qud": "http://qudt.org/1.1/schema/qudt#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-      "shex": "http://www.w3.org/ns/shex#",
       "skos": "https://www.w3.org/TR/skos-reference/#",
       "void": "http://rdfs.org/ns/void#",
       "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",

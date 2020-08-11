@@ -1,105 +1,33 @@
+id: molecular_activity
+schema_generating: true
 description: An execution of a molecular function carried out by a gene product or
   macromolecular complex.
-display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- molecular activity
-document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- molecular activity
+display_name: molecular activity
+document_category: molecular activity
+weight: 20
 fields:
-- description: A unique identifier for a thing. Must be either a CURIE shorthand for
+- id: id
+  description: A unique identifier for a thing. Must be either a CURIE shorthand for
     a URI or a complete URI
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - id
-  id: id
-- description: A human-readable name for a thing
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - name
-  id: name
-- cardinality: multi
+  display_name: id
+- id: name
+  description: A human-readable name for a thing
+  display_name: name
+- id: category
   description: Name of the high level ontology class in which this entity is categorized.
     Corresponds to the label for the biolink entity type class. In a neo4j database
     this MAY correspond to the neo4j label tag
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - category
-  id: category
-- cardinality: multi
-  description: A relationship that is asserted between two named things
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - related to
-  id: related_to
-- cardinality: multi
-  description: holds between any two entities that directly or indirectly interact
-    with each other
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - interacts with
-  id: interacts_with
-- cardinality: multi
-  description: holds between any two named thing entities. For example, correlated_with
-    holds between a disease or phenotypic feature and a measurable molecular entity
-    that is used as an indicator of the presence or state of the disease or feature.
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - correlated with
-  id: correlated_with
-- description: A grouping for any property that holds between a node and a value
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - node property
-  id: node_property
-- description: An IRI for the node. This is determined by the id using expansion rules.
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - iri
-  id: iri
-- cardinality: multi
-  description: Alternate human-readable names for a thing
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - synonym
-  id: synonym
-- description: a long-form human readable name for a thing
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - full name
-  id: full_name
-- description: a human-readable description of a thing
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - description
-  id: description
-- cardinality: multi
-  description: more commonly used for gene symbols in yeast
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - systematic synonym
-  id: systematic_synonym
-- cardinality: multi
-  description: holds between a biological entity and a phenotype, where a phenotype
-    is construed broadly as any kind of quality of an organism part, a collection
-    of these qualities, or a change in quality or qualities (e.g. abnormally increased
-    temperature).
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - has phenotype
-  id: has_phenotype
-- cardinality: multi
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - molecular activity_has input
-  id: has_input
-- cardinality: multi
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - molecular activity_has output
-  id: has_output
-- cardinality: multi
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - molecular activity_enabled by
-  id: enabled_by
-- cardinality: multi
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - regulates, process to process
-  id: regulates_process_to_process
-- cardinality: multi
-  description: holds between a process and a continuant, where the continuant is somehow
-    involved in the process
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - has participant
-  id: has_participant
-- cardinality: multi
-  description: holds between two processes, where one completes before the other begins
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - precedes
-  id: precedes
-id: molecular_activity
-schema_generating: true
-weight: 20
+  display_name: category
+  cardinality: multi
+- id: has_input
+  description: A chemical entity that is the input for the reaction
+  display_name: molecular activity_has input
+  cardinality: multi
+- id: has_output
+  description: A chemical entity that is the output for the reaction
+  display_name: molecular activity_has output
+  cardinality: multi
+- id: enabled_by
+  description: The gene product, gene, or complex that catalyzes the reaction
+  display_name: molecular activity_enabled by
+  cardinality: multi

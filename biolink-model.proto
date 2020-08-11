@@ -1,495 +1,217 @@
 // Activity or behavior of any independent integral living, organization or mechanical actor in the world
 message ActivityAndBehavior
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated hasOutput None = 16
-  repeated precedes None = 17
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // A subcellular location, cell type or gross anatomical part
 message AnatomicalEntity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated expresses None = 14
-  repeated inTaxon None = 15
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 message AnatomicalEntityToAnatomicalEntityAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject AnatomicalEntity = 8
+  object AnatomicalEntity = 9
  }
 // A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
 message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject AnatomicalEntity = 7
+  object AnatomicalEntity = 8
+  relation Uriorcurie = 9
  }
 // A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
 message AnatomicalEntityToAnatomicalEntityPartOfAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject AnatomicalEntity = 7
+  object AnatomicalEntity = 8
+  relation Uriorcurie = 9
  }
 // A typed association between two entities, supported by evidence
 message Association
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional hasConfidenceLevel None = 12
-  optional hasEvidence None = 13
-  optional chiSquaredStatistic None = 14
-  optional pValue None = 15
-  optional stageQualifier None = 16
-  optional quantifierQualifier None = 17
-  optional frequencyQualifier None = 18
-  optional severityQualifier None = 19
-  optional sexQualifier None = 20
-  optional onsetQualifier None = 21
-  optional clinicalModifierQualifier None = 22
-  optional sequenceVariantQualifier None = 23
-  repeated changeIsCatalyzedBy None = 24
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  object NamedThing = 3
+  id String = 4
+  optional negated Boolean = 5
+  optional associationType OntologyClass = 6
+  repeated qualifiers OntologyClass = 7
+  repeated publications Publication = 8
+  repeated providedBy Provider = 9
  }
 // A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 message Attribute
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated hasInput None = 14
-  repeated hasOutput None = 15
-  repeated enabledBy None = 16
-  repeated regulatesProcessToProcess None = 17
-  repeated hasParticipant None = 18
-  repeated precedes None = 19
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated hasInput NamedThing = 4
+  repeated hasOutput NamedThing = 5
+  repeated enabledBy NamedThing = 6
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities
 message BiologicalProcessOrActivity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated hasInput None = 14
-  repeated hasOutput None = 15
-  repeated enabledBy None = 16
-  repeated regulatesProcessToProcess None = 17
-  repeated hasParticipant None = 18
-  repeated precedes None = 19
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated hasInput NamedThing = 4
+  repeated hasOutput NamedThing = 5
+  repeated enabledBy NamedThing = 6
  }
 message BiologicalSex
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 message Carbohydrate
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // An individual organism that has a patient role in some clinical context.
 message Case
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated inTaxon None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
 message CaseToPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional sexQualifier None = 12
-  optional frequencyQualifier None = 13
-  optional severityQualifier None = 14
-  optional onsetQualifier None = 15
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  object NamedThing = 3
+  id String = 4
+  optional negated Boolean = 5
+  optional associationType OntologyClass = 6
+  repeated qualifiers OntologyClass = 7
+  repeated publications Publication = 8
+  repeated providedBy Provider = 9
+  optional sexQualifier BiologicalSex = 10
+  optional description NarrativeText = 11
+  optional frequencyQualifier FrequencyValue = 12
+  optional severityQualifier SeverityValue = 13
+  optional onsetQualifier Onset = 14
  }
 message Cell
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated expresses None = 14
-  repeated inTaxon None = 15
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 message CellLine
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message CellLineAsAModelOfDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  subject CellLine = 9
+  optional frequencyQualifier FrequencyValue = 10
+  optional severityQualifier SeverityValue = 11
+  optional onsetQualifier Onset = 12
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  subject DiseaseOrPhenotypicFeature = 9
  }
 // A location in or around a cell
 message CellularComponent
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated expresses None = 14
-  repeated inTaxon None = 15
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // A chemical exposure is an intake of a particular chemical substance
 message ChemicalExposure
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  optional hasReceptor None = 14
-  optional hasStressor None = 15
-  optional hasRoute None = 16
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
 message ChemicalSubstance
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  object ChemicalSubstance = 9
  }
 // A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
 //   IF
@@ -501,3432 +223,1182 @@ message ChemicalToChemicalAssociation
 //   C1 derives-into C2 <<change is catalyzed by P>>
 message ChemicalToChemicalDerivationAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  repeated changeIsCatalyzedBy None = 12
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  repeated changeIsCatalyzedBy MacromolecularMachine = 7
+  subject ChemicalSubstance = 8
+  object ChemicalSubstance = 9
+  relation Uriorcurie = 10
  }
 // An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
 message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  object DiseaseOrPhenotypicFeature = 9
  }
 // An interaction between a chemical entity and a gene or gene product
 message ChemicalToGeneAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  object GeneOrGeneProduct = 9
  }
 // An interaction between a chemical entity and a biological process or pathway
 message ChemicalToPathwayAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  object Pathway = 9
  }
 // The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
 message ClinicalCourse
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 // Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 message ClinicalEntity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message ClinicalIntervention
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects
 message ClinicalModifier
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 message ClinicalTrial
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message CodingSequence
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
  }
 // Level of confidence in a statement
 message ConfidenceLevel
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message DataFile
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message DataSet
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message DataSetVersion
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  optional title None = 13
-  optional sourceDataFile None = 14
-  optional versionOf None = 15
-  optional type None = 16
-  optional distribution None = 17
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  optional title String = 4
+  optional sourceDataFile DataFile = 5
+  optional versionOf DataSet = 6
+  optional type String = 7
+  optional distribution DistributionLevel = 8
  }
 // A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 message Device
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message Disease
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated hasBiomarker None = 14
-  repeated treatedBy None = 15
-  repeated inTaxon None = 16
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
 message DiseaseOrPhenotypicFeature
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated hasBiomarker None = 14
-  repeated treatedBy None = 15
-  repeated inTaxon None = 16
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject DiseaseOrPhenotypicFeature = 8
+  object AnatomicalEntity = 9
  }
 // An association between an exposure event and a disease
 message DiseaseToExposureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject Disease = 8
+  object ExposureEvent = 9
  }
 // An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
 message DiseaseToPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional sexQualifier None = 12
-  optional frequencyQualifier None = 13
-  optional severityQualifier None = 14
-  optional onsetQualifier None = 15
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  object NamedThing = 3
+  id String = 4
+  optional negated Boolean = 5
+  optional associationType OntologyClass = 6
+  repeated qualifiers OntologyClass = 7
+  repeated publications Publication = 8
+  repeated providedBy Provider = 9
+  optional sexQualifier BiologicalSex = 10
+  optional description NarrativeText = 11
+  optional frequencyQualifier FrequencyValue = 12
+  optional severityQualifier SeverityValue = 13
+  optional onsetQualifier Onset = 14
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // A drug exposure is an intake of a particular chemical substance
 message DrugExposure
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  optional hasReceptor None = 14
-  optional hasStressor None = 15
-  optional hasRoute None = 16
-  repeated hasDrug None = 17
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated hasDrug ChemicalSubstance = 4
  }
 message EnvironmentalFeature
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message EnvironmentalProcess
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated hasOutput None = 16
-  repeated precedes None = 17
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // Class of evidence that supports an association
 message EvidenceType
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 message Exon
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject Exon = 8
+  object Transcript = 9
  }
 // A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 message ExposureEvent
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  optional hasReceptor None = 14
-  optional hasStressor None = 15
-  optional hasRoute None = 16
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
 message ExposureEventToPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional sexQualifier None = 12
-  optional frequencyQualifier None = 13
-  optional severityQualifier None = 14
-  optional onsetQualifier None = 15
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  subject ExposureEvent = 9
+  optional sexQualifier BiologicalSex = 10
+  optional description NarrativeText = 11
+  optional frequencyQualifier FrequencyValue = 12
+  optional severityQualifier SeverityValue = 13
+  optional onsetQualifier Onset = 14
  }
 // describes the frequency of occurrence of an event or condition
 message FrequencyValue
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 // An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
 message FunctionalAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject MacromolecularMachine = 8
+  object GeneOntologyClass = 9
  }
 message Gene
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
-  repeated geneticallyInteractsWith None = 71
-  repeated hasGeneProduct None = 72
-  repeated geneAssociatedWithCondition None = 73
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 message GeneAsAModelOfDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  optional frequencyQualifier FrequencyValue = 9
+  optional severityQualifier SeverityValue = 10
+  optional onsetQualifier Onset = 11
+  subject GeneOrGeneProduct = 12
  }
 // any grouping of multiple genes or gene products related by common descent
 message GeneFamily
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
-  optional sequenceVariantQualifier None = 15
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  optional frequencyQualifier FrequencyValue = 9
+  optional severityQualifier SeverityValue = 10
+  optional onsetQualifier Onset = 11
+  optional sequenceVariantQualifier SequenceVariant = 12
+  subject GeneOrGeneProduct = 13
  }
 // an ontology class that describes a functional aspect of a gene, gene prodoct or complex
 message GeneOntologyClass
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated subclassOf None = 13
-  repeated superclassOf None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
 message GeneOrGeneProduct
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 message GeneProduct
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // A regulatory relationship between two genes
 message GeneRegulatoryRelationship
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  relation Uriorcurie = 7
+  subject GeneOrGeneProduct = 8
+  object GeneOrGeneProduct = 9
  }
 message GeneToDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  subject GeneOrGeneProduct = 9
+  optional frequencyQualifier FrequencyValue = 10
+  optional severityQualifier SeverityValue = 11
+  optional onsetQualifier Onset = 12
  }
 // An association between a gene and an expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional stageQualifier None = 12
-  optional quantifierQualifier None = 13
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  optional stageQualifier LifeStage = 7
+  optional quantifierQualifier OntologyClass = 8
+  subject GeneOrGeneProduct = 9
+  object AnatomicalEntity = 10
+  relation Uriorcurie = 11
  }
 // A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 message GeneToGeneHomologyAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject GeneOrGeneProduct = 7
+  object GeneOrGeneProduct = 8
+  relation Uriorcurie = 9
  }
 // A gene is transcribed and potentially translated to a gene product
 message GeneToGeneProductRelationship
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject Gene = 7
+  object GeneProduct = 8
+  relation Uriorcurie = 9
  }
 message GeneToGoTermAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject MolecularEntity = 8
+  object GeneOntologyClass = 9
  }
 message GeneToPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional sexQualifier None = 12
-  optional frequencyQualifier None = 13
-  optional severityQualifier None = 14
-  optional onsetQualifier None = 15
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  subject GeneOrGeneProduct = 9
+  optional sexQualifier BiologicalSex = 10
+  optional description NarrativeText = 11
+  optional frequencyQualifier FrequencyValue = 12
+  optional severityQualifier SeverityValue = 13
+  optional onsetQualifier Onset = 14
  }
 // A genome is the sum of genetic material within a cell or virion.
 message Genome
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
  }
 // an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
 message GenomicEntity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
  }
 // A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
 message GenomicSequenceLocalization
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional startInterbaseCoordinate None = 12
-  optional endInterbaseCoordinate None = 13
-  optional genomeBuild None = 14
-  optional phase None = 15
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  optional startInterbaseCoordinate String = 8
+  optional endInterbaseCoordinate String = 9
+  optional genomeBuild String = 10
+  optional phase String = 11
+  subject GenomicEntity = 12
+  object GenomicEntity = 13
  }
 // An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
 message Genotype
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  optional hasZygosity None = 67
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
+  optional hasZygosity Zygosity = 6
  }
 message GenotypeAsAModelOfDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  relation Uriorcurie = 7
+  object NamedThing = 8
+  optional frequencyQualifier FrequencyValue = 9
+  optional severityQualifier SeverityValue = 10
+  optional onsetQualifier Onset = 11
+  subject Genotype = 12
  }
 message GenotypeToDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject NamedThing = 7
+  relation Uriorcurie = 8
+  object NamedThing = 9
+  optional frequencyQualifier FrequencyValue = 10
+  optional severityQualifier SeverityValue = 11
+  optional onsetQualifier Onset = 12
  }
 // Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 message GenotypeToGeneAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  relation Uriorcurie = 7
+  subject Genotype = 8
+  object Gene = 9
  }
 // Any association between one genotype and a genotypic entity that is a sub-component of it
 message GenotypeToGenotypePartAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  relation Uriorcurie = 7
+  subject Genotype = 8
+  object Genotype = 9
  }
 // Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
 message GenotypeToPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional sexQualifier None = 12
-  optional frequencyQualifier None = 13
-  optional severityQualifier None = 14
-  optional onsetQualifier None = 15
+  object NamedThing = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  relation Uriorcurie = 8
+  subject Genotype = 9
+  optional sexQualifier BiologicalSex = 10
+  optional description NarrativeText = 11
+  optional frequencyQualifier FrequencyValue = 12
+  optional severityQualifier SeverityValue = 13
+  optional onsetQualifier Onset = 14
  }
 // Any association between a genotype and a sequence variant.
 message GenotypeToVariantAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  relation Uriorcurie = 7
+  subject Genotype = 8
+  object SequenceVariant = 9
  }
 // An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 message GenotypicSex
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  optional latitude None = 13
-  optional longitude None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  optional latitude Float = 4
+  optional longitude Float = 5
  }
 // a location that can be described in lat/long coordinates, for a particular time
 message GeographicLocationAtTime
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  optional latitude None = 13
-  optional longitude None = 14
-  optional timepoint None = 15
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  optional latitude Float = 4
+  optional longitude Float = 5
+  optional timepoint TimeType = 6
  }
 message GrossAnatomicalStructure
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated expresses None = 14
-  repeated inTaxon None = 15
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // A set of zero or more Alleles on a single instance of a Sequence[VMC]
 message Haplotype
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
  }
 message IndividualOrganism
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated inTaxon None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // The pattern in which a particular genetic trait or disorder is passed from one generation to the next
 message Inheritance
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 // A stage of development or growth of an organism, including post-natal adult stages
 message LifeStage
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated inTaxon None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 message MacromolecularComplex
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
 message MacromolecularMachine
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
 message MacromolecularMachineToBiologicalProcessAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject MacromolecularMachine = 8
+  object BiologicalProcess = 9
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
 message MacromolecularMachineToCellularComponentAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject MacromolecularMachine = 8
+  object CellularComponent = 9
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
 message MacromolecularMachineToMolecularActivityAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject MacromolecularMachine = 8
+  object MolecularActivity = 9
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasAttribute None = 13
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated hasAttribute Attribute = 4
  }
 // An association between a material sample and the material entity it is derived from
 message MaterialSampleDerivationAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject MaterialSample = 7
+  object NamedThing = 8
+  relation Uriorcurie = 9
  }
 // An association between a material sample and a disease or phenotype
 message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  object NamedThing = 3
+  id String = 4
+  optional negated Boolean = 5
+  optional associationType OntologyClass = 6
+  repeated qualifiers OntologyClass = 7
+  repeated publications Publication = 8
+  repeated providedBy Provider = 9
  }
 // Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
 message Metabolite
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 message MicroRNA
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
 message MolecularActivity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated hasInput None = 14
-  repeated hasOutput None = 15
-  repeated enabledBy None = 16
-  repeated regulatesProcessToProcess None = 17
-  repeated hasParticipant None = 18
-  repeated precedes None = 19
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated hasInput ChemicalSubstance = 4
+  repeated hasOutput ChemicalSubstance = 5
+  repeated enabledBy MacromolecularMachine = 6
  }
 // A gene, gene product, small molecule or macromolecule (including protein complex)
 message MolecularEntity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  repeated positivelyRegulatesEntityToEntity None = 66
-  repeated negativelyRegulatesEntityToEntity None = 67
-  repeated decreasesMolecularInteraction None = 68
-  repeated increasesMolecularInteraction None = 69
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // a databased entity or concept/class
 message NamedThing
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated physicallyInteractsWith None = 13
-  repeated affects None = 14
-  repeated regulates None = 15
-  repeated positivelyRegulates None = 16
-  repeated negativelyRegulates None = 17
-  repeated disrupts None = 18
-  repeated homologousTo None = 19
-  repeated paralogousTo None = 20
-  repeated orthologousTo None = 21
-  repeated xenologousTo None = 22
-  repeated coexistsWith None = 23
-  repeated colocalizesWith None = 24
-  repeated affectsRiskFor None = 25
-  repeated predisposes None = 26
-  repeated contributesTo None = 27
-  repeated causes None = 28
-  repeated causedBy None = 29
-  repeated prevents None = 30
-  repeated occursIn None = 31
-  repeated locatedIn None = 32
-  repeated locationOf None = 33
-  repeated modelOf None = 34
-  repeated overlaps None = 35
-  repeated hasPart None = 36
-  repeated partOf None = 37
-  repeated participatesIn None = 38
-  repeated activelyInvolvedIn None = 39
-  repeated capableOf None = 40
-  repeated derivesInto None = 41
-  repeated derivesFrom None = 42
-  repeated manifestationOf None = 43
-  repeated produces None = 44
-  repeated sameAs None = 45
-  repeated directlyInteractsWith None = 46
-  repeated affectsExpressionIn None = 47
-  repeated isMissenseVariantOf None = 48
-  repeated isSynonymousVariantOf None = 49
-  repeated isNonsenseVariantOf None = 50
-  repeated isSpliceSiteVariantOf None = 51
-  repeated isNearbyVariantOf None = 52
-  repeated isNonCodingVariantOf None = 53
-  repeated diseaseHasBasisIn None = 54
-  repeated causesAdverseEvent None = 55
-  repeated contraindicatedFor None = 56
-  repeated hasNotCompleted None = 57
-  repeated hasCompleted None = 58
-  repeated producedBy None = 59
-  repeated inLinkageDisequilibriumWith None = 60
-  repeated hasIncreasedAmount None = 61
-  repeated hasDecreasedAmount None = 62
-  repeated lacksPart None = 63
-  optional type None = 64
-  optional creationDate None = 65
-  optional updateDate None = 66
-  optional latitude None = 67
-  optional longitude None = 68
-  optional hasChemicalFormula None = 69
-  optional aggregateStatistic None = 70
-  optional hasCount None = 71
-  optional hasTotal None = 72
-  optional hasQuotient None = 73
-  optional hasPercentage None = 74
-  optional timepoint None = 75
-  optional hasBiologicalSequence None = 76
-  repeated hasMolecularConsequence None = 77
-  optional hasDrug None = 78
-  optional hasGene None = 79
-  optional hasZygosity None = 80
-  optional filler None = 81
-  optional phase None = 82
-  optional genomeBuild None = 83
-  optional interbaseCoordinate None = 84
-  optional startInterbaseCoordinate None = 85
-  optional endInterbaseCoordinate None = 86
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message NoncodingRNAProduct
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // A processual entity
 message Occurrent
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated hasOutput None = 16
-  repeated precedes None = 17
-  repeated positivelyRegulatesProcessToProcess None = 18
-  repeated negativelyRegulatesProcessToProcess None = 19
-  repeated enables None = 20
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // The age group in which manifestations appear
 message Onset
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 // a concept or class in an ontology, vocabulary or thesaurus
 message OntologyClass
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated subclassOf None = 13
-  repeated superclassOf None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
 message OrganismTaxon
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated subclassOf None = 13
-  repeated superclassOf None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message OrganismalEntityAsAModelOfDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  subject OrganismalEntity = 9
+  optional frequencyQualifier FrequencyValue = 10
+  optional severityQualifier SeverityValue = 11
+  optional onsetQualifier Onset = 12
  }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 message PairwiseGeneToGeneInteraction
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject GeneOrGeneProduct = 7
+  object GeneOrGeneProduct = 8
+  relation Uriorcurie = 9
  }
 message Pathway
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated hasInput None = 14
-  repeated hasOutput None = 15
-  repeated enabledBy None = 16
-  repeated regulatesProcessToProcess None = 17
-  repeated hasParticipant None = 18
-  repeated precedes None = 19
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated hasInput NamedThing = 4
+  repeated hasOutput NamedThing = 5
+  repeated enabledBy NamedThing = 6
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 message Phenomenon
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated hasOutput None = 16
-  repeated precedes None = 17
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message PhenotypicFeature
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated hasBiomarker None = 14
-  repeated treatedBy None = 15
-  repeated inTaxon None = 16
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 message PhenotypicSex
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 // An entity that has physical properties such as mass, volume, or charge
 message PhysicalEntity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message PhysiologicalProcess
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated hasInput None = 14
-  repeated hasOutput None = 15
-  repeated enabledBy None = 16
-  repeated regulatesProcessToProcess None = 17
-  repeated hasParticipant None = 18
-  repeated precedes None = 19
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated hasInput NamedThing = 4
+  repeated hasOutput NamedThing = 5
+  repeated enabledBy NamedThing = 6
  }
 // Any entity or process that exists at the level of the whole planet
 message PlanetaryEntity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
 message PopulationOfIndividualOrganisms
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated inTaxon None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // An association between a two populations
 message PopulationToPopulationAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject PopulationOfIndividualOrganisms = 7
+  object PopulationOfIndividualOrganisms = 8
+  relation Uriorcurie = 9
  }
 // A series of actions conducted in a certain order or manner
 message Procedure
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated regulatesProcessToProcess None = 13
-  repeated hasParticipant None = 14
-  repeated hasInput None = 15
-  repeated hasOutput None = 16
-  repeated precedes None = 17
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // person, group, organization or project that provides a piece of information
 message Provider
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
 message Publication
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 // A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
 message QuantityValue
  {
-  optional hasUnit None = 1
-  optional hasNumericValue None = 2
+  optional hasUnit Unit = 1
+  optional hasNumericValue Double = 2
  }
 // A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
 message ReagentTargetedGene
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
  }
 // An OWL property used as an edge label
 message RelationshipType
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated subclassOf None = 13
-  repeated superclassOf None = 14
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
  }
 message RNAProduct
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
 message RNAProductIsoform
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated inPathwayWith None = 67
-  repeated inComplexWith None = 68
-  repeated inCellPopulationWith None = 69
-  repeated expressedIn None = 70
+  id String = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
+  name SymbolType = 5
  }
 // For example, a particular exon is part of a particular transcript or gene
 message SequenceFeatureRelationship
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject GenomicEntity = 8
+  object GenomicEntity = 9
  }
 // An allele that varies in its sequence from what is considered the reference allele at that locus.
 message SequenceVariant
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated hasGene None = 67
+  name LabelType = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  repeated hasGene Gene = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
+  id String = 6
  }
 // describes the severity of a phenotypic feature or disease
 message SeverityValue
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
-  repeated hasGene None = 67
+  name LabelType = 1
+  repeated category CategoryType = 2
+  repeated inTaxon OrganismTaxon = 3
+  repeated hasGene Gene = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
+  id String = 6
  }
 message SourceFile
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  optional sourceVersion None = 13
-  optional retrievedOn None = 14
-  optional license None = 15
-  optional rights None = 16
-  optional format None = 17
-  optional createdWith None = 18
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  optional sourceVersion String = 4
+  optional retrievedOn Date = 5
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase
 message Transcript
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  repeated molecularlyInteractsWith None = 14
-  repeated affectsAbundanceOf None = 15
-  repeated increasesAbundanceOf None = 16
-  repeated decreasesAbundanceOf None = 17
-  repeated affectsActivityOf None = 18
-  repeated increasesActivityOf None = 19
-  repeated decreasesActivityOf None = 20
-  repeated affectsExpressionOf None = 21
-  repeated increasesExpressionOf None = 22
-  repeated decreasesExpressionOf None = 23
-  repeated affectsFoldingOf None = 24
-  repeated increasesFoldingOf None = 25
-  repeated decreasesFoldingOf None = 26
-  repeated affectsLocalizationOf None = 27
-  repeated increasesLocalizationOf None = 28
-  repeated decreasesLocalizationOf None = 29
-  repeated affectsMetabolicProcessingOf None = 30
-  repeated increasesMetabolicProcessingOf None = 31
-  repeated decreasesMetabolicProcessingOf None = 32
-  repeated affectsMolecularModificationOf None = 33
-  repeated increasesMolecularModificationOf None = 34
-  repeated decreasesMolecularModificationOf None = 35
-  repeated affectsSynthesisOf None = 36
-  repeated increasesSynthesisOf None = 37
-  repeated decreasesSynthesisOf None = 38
-  repeated affectsDegradationOf None = 39
-  repeated increasesDegradationOf None = 40
-  repeated decreasesDegradationOf None = 41
-  repeated affectsMutationRateOf None = 42
-  repeated increasesMutationRateOf None = 43
-  repeated decreasesMutationRateOf None = 44
-  repeated affectsResponseTo None = 45
-  repeated increasesResponseTo None = 46
-  repeated decreasesResponseTo None = 47
-  repeated affectsSplicingOf None = 48
-  repeated increasesSplicingOf None = 49
-  repeated decreasesSplicingOf None = 50
-  repeated affectsStabilityOf None = 51
-  repeated increasesStabilityOf None = 52
-  repeated decreasesStabilityOf None = 53
-  repeated affectsTransportOf None = 54
-  repeated increasesTransportOf None = 55
-  repeated decreasesTransportOf None = 56
-  repeated affectsSecretionOf None = 57
-  repeated increasesSecretionOf None = 58
-  repeated decreasesSecretionOf None = 59
-  repeated affectsUptakeOf None = 60
-  repeated increasesUptakeOf None = 61
-  repeated decreasesUptakeOf None = 62
-  repeated regulatesEntityToEntity None = 63
-  repeated biomarkerFor None = 64
-  repeated inTaxon None = 65
-  optional hasBiologicalSequence None = 66
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  optional hasBiologicalSequence BiologicalSequence = 5
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject Transcript = 8
+  object Gene = 9
  }
 // A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
 message Treatment
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  repeated correlatedWith None = 6
-  optional nodeProperty None = 7
-  optional iri None = 8
-  repeated synonym None = 9
-  optional fullName None = 10
-  optional description None = 11
-  repeated systematicSynonym None = 12
-  repeated hasPhenotype None = 13
-  optional hasReceptor None = 14
-  optional hasStressor None = 15
-  optional hasRoute None = 16
-  repeated treats None = 17
-  repeated hasPart None = 18
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated hasPart DrugExposure = 4
  }
 message VariantAsAModelOfDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  relation Uriorcurie = 7
+  object NamedThing = 8
+  optional frequencyQualifier FrequencyValue = 9
+  optional severityQualifier SeverityValue = 10
+  optional onsetQualifier Onset = 11
+  subject SequenceVariant = 12
  }
 message VariantToDiseaseAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional frequencyQualifier None = 12
-  optional severityQualifier None = 13
-  optional onsetQualifier None = 14
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  subject NamedThing = 7
+  relation Uriorcurie = 8
+  object NamedThing = 9
+  optional frequencyQualifier FrequencyValue = 10
+  optional severityQualifier SeverityValue = 11
+  optional onsetQualifier Onset = 12
  }
 message VariantToPhenotypicFeatureAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional sexQualifier None = 12
-  optional frequencyQualifier None = 13
-  optional severityQualifier None = 14
-  optional onsetQualifier None = 15
+  relation Uriorcurie = 1
+  object NamedThing = 2
+  id String = 3
+  optional negated Boolean = 4
+  optional associationType OntologyClass = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  repeated providedBy Provider = 8
+  subject SequenceVariant = 9
+  optional sexQualifier BiologicalSex = 10
+  optional description NarrativeText = 11
+  optional frequencyQualifier FrequencyValue = 12
+  optional severityQualifier SeverityValue = 13
+  optional onsetQualifier Onset = 14
  }
 // An association between a variant and a population, where the variant has particular frequency in the population
 message VariantToPopulationAssociation
  {
-  subject None = 1
-  relation None = 2
-  object None = 3
-  id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  repeated providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
-  optional hasCount None = 12
-  optional hasTotal None = 13
-  optional hasQuotient None = 14
-  optional hasPercentage None = 15
-  optional frequencyQualifier None = 16
+  relation Uriorcurie = 1
+  id String = 2
+  optional negated Boolean = 3
+  optional associationType OntologyClass = 4
+  repeated qualifiers OntologyClass = 5
+  repeated publications Publication = 6
+  repeated providedBy Provider = 7
+  subject SequenceVariant = 8
+  object PopulationOfIndividualOrganisms = 9
+  optional hasQuotient Double = 10
+  optional hasCount Integer = 11
+  optional hasTotal Integer = 12
+  optional hasPercentage Double = 13
+  optional frequencyQualifier FrequencyValue = 14
  }
 message Zygosity
  {
-  optional hasAttributeType None = 1
-  repeated hasQuantitativeValue None = 2
-  optional hasQualitativeValue None = 3
-  id None = 4
-  name None = 5
-  repeated category None = 6
-  repeated relatedTo None = 7
-  repeated interactsWith None = 8
-  repeated correlatedWith None = 9
-  optional nodeProperty None = 10
-  optional iri None = 11
-  repeated synonym None = 12
-  optional fullName None = 13
-  optional description None = 14
-  repeated systematicSynonym None = 15
-  repeated subclassOf None = 16
-  repeated superclassOf None = 17
+  optional hasAttributeType OntologyClass = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  id String = 4
+  name LabelType = 5
+  repeated category CategoryType = 6
  }
 

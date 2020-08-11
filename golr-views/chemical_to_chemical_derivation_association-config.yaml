@@ -1,64 +1,47 @@
+id: chemical_to_chemical_derivation_association
+schema_generating: true
 description: "A causal relationship between two chemical entities, where the subject\
   \ represents the upstream entity and the object represents the downstream. For any\
   \ such association there is an implicit reaction:\n  IF\n  R has-input C1 AND\n\
   \  R has-output C2 AND\n  R enabled-by P AND\n  R type Reaction\n  THEN\n  C1 derives-into\
   \ C2 <<change is catalyzed by P>>"
-display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- chemical to chemical derivation association
-document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- chemical to chemical derivation association
+display_name: chemical to chemical derivation association
+document_category: chemical to chemical derivation association
+weight: 20
 fields:
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - chemical to chemical derivation association_subject
-  id: subject
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - chemical to chemical derivation association_relation
-  id: relation
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - chemical to chemical derivation association_object
-  id: object
-- description: A unique identifier for an association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association_id
-  id: id
-- description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - negated
-  id: negated
-- description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association type
-  id: association_type
-- cardinality: multi
+- id: id
+  description: A unique identifier for an association
+  display_name: association_id
+- id: negated
+  description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+- id: association_type
+  description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+- id: qualifiers
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - qualifiers
-  id: qualifiers
-- cardinality: multi
+  display_name: qualifiers
+  cardinality: multi
+- id: publications
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - publications
-  id: publications
-- cardinality: multi
+  display_name: publications
+  cardinality: multi
+- id: provided_by
   description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - provided by
-  id: provided_by
-- description: any slot that relates an association to another entity
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association slot
-  id: association_slot
-- description: A high-level grouping for the relationship type. AKA minimal predicate.
-    This is analogous to category for nodes.
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - edge label
-  id: edge_label
-- cardinality: multi
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - chemical to chemical derivation association_change is catalyzed by
-  id: change_is_catalyzed_by
-id: chemical_to_chemical_derivation_association
-schema_generating: true
-weight: 20
+  display_name: provided by
+  cardinality: multi
+- id: change_is_catalyzed_by
+  description: this connects the derivation edge to the molecular entity that catalyzes
+    the reaction that causes the subject chemical to transform into the object chemical
+  display_name: chemical to chemical derivation association_change is catalyzed by
+  cardinality: multi
+- id: subject
+  description: the upstream chemical entity
+  display_name: chemical to chemical derivation association_subject
+- id: object
+  description: the downstream chemical entity
+  display_name: chemical to chemical derivation association_object
+- id: relation
+  display_name: chemical to chemical derivation association_relation
