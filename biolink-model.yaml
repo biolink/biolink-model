@@ -5091,7 +5091,33 @@ classes:
   ## ------
   ## SETS OF ASSOCIATIONS
   ## ------
+  assertion:
+    union_of:
+      - probabilistic assertion
+      - logical assertion
+      
+  probabilistic assertion:
+    is_a: assertion
+    description: >-
+      A complex or primitive logical assertion that has a probability associated
+    slot_usage:
+      on assertion:
+        range: logical assertion
+      probability:
+        required: true
+        multivalued: false
+        range: float
+        minimum_value: 0.0
+        maximum_value: 1.0
+        description: >-
+          the assertion A ('on assertion' field) is treated as a probabilistic assertion Pr(A)=probability.
+      formal serialization:
+        string_serialization: "Pr({on assertion}) = {probability}"
+    see_also:
+      - https://en.wikipedia.org/wiki/Probability_axioms
+      
   logical assertion:
+    is_a: assertion
     description: >-
       An assertion that may be primitive or complex that chains together associations recursively
     slot_usage:
@@ -5100,25 +5126,14 @@ classes:
         required: true
         description: >-
           if true, the truth value of the assertion is negated.
-      probability:
-        required: false
-        range: float
-        minimum_value: 0.0
-        maximum_value: 1.0
-        description: >-
-          if specified, the assertion A is treated as a probabilistic assertion Pr(A)=probability.
-          If not specified, the assertion is treated as crisp, i.e. Pr=1.0.
-          Note this is interpreted in combination with is_negated. Thus an association A with
-          is_negated=true and probability=0.0 is treated as true (i.e. Pr(not A) = 0.0)
     union_of:
-      - primitive assertion
-      - complex assertion
+      - primitive logical assertion
+      - complex logical assertion
   
-  primitive assertion:
+  primitive logical assertion:
     is_a: logical assertion
     description: >-
-      An association that is qualified either with a boolean true/false modifier, or
-      a probability. Probability=0 is the same as a false modifier.
+      An association that is qualified either with a boolean true/false modifier.
     slot_usage:
       on association:
         range: association
@@ -5127,7 +5142,7 @@ classes:
         description: >-
           The association that is qualified
 
-  complex assertion:
+  complex logical assertion:
     is_a: logical assertion
     description: >-
       A set of logical assertions that are combined using AND or OR.
