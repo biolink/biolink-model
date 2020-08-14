@@ -1895,8 +1895,7 @@ slots:
 
   type:
     is_a: node property
-    mappings:
-      - rdf:type
+    slot_uri: rdf:type
 
   id:
     is_a: node property
@@ -1947,7 +1946,7 @@ slots:
       - oboInOwl:hasRelatedSynonym
 
   category:
-    is_a: node property
+    is_a: type
     domain: named thing
     range: category type
     description: >-
@@ -1958,7 +1957,6 @@ slots:
     in_subset:
       - translator_minimal
     required: true
-    slot_uri: rdf:type
 
   full name:
     is_a: node property
