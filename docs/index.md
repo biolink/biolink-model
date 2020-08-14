@@ -342,7 +342,6 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [variant to population association➞has quotient](variant_to_population_association_has_quotient.md) - frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
        * [has total](has_total.md) - total number of things in a particular reference set
           * [variant to population association➞has total](variant_to_population_association_has_total.md) - number all populations that carry a particular allele, aka allele number
-    * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * [created_with](created_with.md)
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
     * [description](description.md) - a human-readable description of a thing
@@ -387,6 +386,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [timepoint](timepoint.md) - a point in time
     * [title](title.md)
     * [type](type.md)
+       * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
     * [versionOf](versionOf.md)
  * [related to](related_to.md) - A relationship that is asserted between two named things
