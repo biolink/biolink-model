@@ -173,7 +173,7 @@ metatype:Nodeidentifier NONLITERAL
              <has_quantitative_value> @<QuantityValue> * ;
              <has_qualitative_value> @<NamedThing> ? ;
              rdfs:label @<LabelType> ;
-             rdf:type @<CategoryType> +
+             <category> @<CategoryType> +
           ) ;
           rdf:type [ <Attribute> ]
        )
@@ -522,7 +522,7 @@ metatype:Nodeidentifier NONLITERAL
              <title> @metatype:String ? ;
              <source_data_file> @<DataFile> ? ;
              <versionOf> @<DataSet> ? ;
-             <type> @metatype:String ? ;
+             rdf:type @metatype:String ? ;
              <distribution> @<DistributionLevel> ?
           ) ;
           rdf:type [ <DataSetVersion> ]
@@ -1360,7 +1360,7 @@ metatype:Nodeidentifier NONLITERAL
 <NamedThing>  (
     CLOSED {
        (  $<NamedThing_tes> (  rdfs:label @<LabelType> ;
-             rdf:type @<CategoryType> +
+             <category> @<CategoryType> +
           ) ;
           rdf:type [ <NamedThing> ]
        )
