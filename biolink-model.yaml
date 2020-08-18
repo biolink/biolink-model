@@ -155,15 +155,15 @@ slots:
       - UBERON_CORE:protects
       - GOREL:0002005
       - GOREL:0012006
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       - SEMMEDDB:ASSOCIATED_WITH
-    exact_match:
+    exact_mappings:
       - skos:relatedMatch
-    broad_match:
+    broad_mappings:
       - owl:topObjectProperty
-    narrow_match:
+    narrow_mappings:
       -
 
   interacts with:
@@ -176,15 +176,15 @@ slots:
       - translator_minimal
     mappings:
     #  - RO:0002434
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - RO:0002434
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   physically interacts with:
@@ -197,15 +197,15 @@ slots:
     #mappings:
     #  - WIKIDATA:P129
     #  - SEMMEDDB:INTERACTS_WITH
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - WIKIDATA:P129
-    broad_match:
+    broad_mappings:
       - SEMMEDDB:INTERACTS_WITH
-    narrow_match:
+    narrow_mappings:
       -
 
   molecularly interacts with:
@@ -217,16 +217,16 @@ slots:
     #mappings:
     #  - RO:0002436
     #  - CTD:molecularly_interacts_with
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - RO:0002436
       - CTD:molecularly_interacts_with
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   genetically interacts with:
@@ -239,15 +239,15 @@ slots:
       - translator_minimal
     #mappings:
     #  - RO:0002435
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - RO:0002435
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects:
@@ -263,15 +263,15 @@ slots:
       - CTD:inferred
     #  - CTD:prediction_hypothesis
       - UPHENO:0000001
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - SEMMEDDB:AFFECTS
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       - CTD:prediction_hypothesis
 
   affects abundance of:
@@ -284,15 +284,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:affects_abundance_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_abundance_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases abundance of:
@@ -306,15 +306,15 @@ slots:
     mappings:
     #  - CTD:increases_abundance_of
       - UBERGRAPH:is_increase_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_abundance_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases abundance of:
@@ -328,15 +328,15 @@ slots:
     mappings:
     #  - CTD:decreases_abundance_of
       - UBERGRAPH:is_decrease_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:decreases_abundance_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects activity of:
@@ -352,15 +352,15 @@ slots:
       - GAMMA:allosteric_modulator
       - GAMMA:modulator
       - GAMMA:regulator
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_activity_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases activity of:
@@ -384,15 +384,15 @@ slots:
       - GAMMA:inducer
       - GAMMA:potentiator
       - GAMMA:stimulator
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_activity_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases activity of:
@@ -424,15 +424,15 @@ slots:
       - GAMMA:aggregation_inhibitor
       - GAMMA:conversion_inhibitor
       - GAMMA:suppressor
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:decreases_activity_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects expression of:
@@ -445,15 +445,15 @@ slots:
     range: genomic entity
     #mappings:
     #  - CTD:affects_expression_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_expression_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases expression of:
@@ -466,15 +466,15 @@ slots:
     range: genomic entity
     #mappings:
     #  - CTD:increases_expression_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_expression_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases expression of:
@@ -487,15 +487,15 @@ slots:
     range: genomic entity
     #mappings:
     #  - CTD:decreases_expression_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:decreases_expression_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects folding of:
@@ -508,15 +508,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:affects_folding_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_folding_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases folding of:
@@ -529,15 +529,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:increases_folding_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_folding_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases folding of:
@@ -550,15 +550,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:decreases_folding_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:decreases_folding_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects localization of:
@@ -573,15 +573,15 @@ slots:
     #  - CTD:affects_localization_of
       - GAMMA:storage
       - GOREL:0002003
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_localization_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases localization of:
@@ -594,15 +594,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:increases_localization_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_localization_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases localization of:
@@ -615,15 +615,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:decreases_localization_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:decreases_localization_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects metabolic processing of:
@@ -637,15 +637,15 @@ slots:
     mappings:
     #  - CTD:affects_metabolic_processing_of
       - GAMMA:catalytic_activity
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_metabolic_processing_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases metabolic processing of:
@@ -658,15 +658,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:increases_metabolic_processing_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_metabolic_processing_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases metabolic processing of:
@@ -679,15 +679,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:decreases_metabolic_processing_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:decreases_metabolic_processing_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects molecular modification of:
@@ -731,15 +731,15 @@ slots:
     #  - CTD:affects_oxidation
     #  - CTD:affects_reduction
     #  - CTD:affects_carboxylation
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_molecular_modification_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       - CTD:affects_acetylation
       - CTD:affects_acylation
       - CTD:affects_alkylation
@@ -815,18 +815,18 @@ slots:
     #  - CTD:increases_carboxylation
     #  - GAMMA:acetylation
     #  - GAMMA:oxidizer
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       # The GAMMA terms don't specifically quantify the molecular modification as 'increasing'
       # the rate of the specified activity thus the terms are simply tagged as a 'close match'
       - GAMMA:acetylation
       - GAMMA:oxidizer
-    exact_match:
+    exact_mappings:
       - CTD:increases_molecular_modification_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       - CTD:increases_acetylation
       - CTD:increases_acylation
       - CTD:increases_alkylation
@@ -901,17 +901,17 @@ slots:
     #  - CTD:decreases_reduction
     #  - CTD:decreases_carboxylation
     #  - GAMMA:deoxidizer
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       # The GAMMA terms don't specifically quantify the molecular modification as 'decreasing'
       # the rate of the specified activity thus the terms are simply tagged as a 'close match'
       - GAMMA:deoxidizer
-    exact_match:
+    exact_mappings:
       - CTD:decreases_molecular_modification_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       - CTD:decreases_acetylation
       - CTD:decreases_acylation
       - CTD:decreases_alkylation
@@ -954,15 +954,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:affects_synthesis_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_synthesis_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases synthesis of:
@@ -975,15 +975,15 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:increases_synthesis_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_synthesis_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases synthesis of:
@@ -997,16 +997,16 @@ slots:
     #mappings:
     #  - CTD:decreases_synthesis_of
     #  - GAMMA:inhibition_of_synthesis
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:decreases_synthesis_of
       - GAMMA:inhibition_of_synthesis
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects degradation of:
@@ -1021,15 +1021,15 @@ slots:
     #  - CTD:affects_degradation_of
     #  - CTD:affects_cleavage
     #  - CTD:affects_hydrolysis
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:affects_degradation_of
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       - CTD:affects_cleavage
       - CTD:affects_hydrolysis
 
@@ -1047,17 +1047,17 @@ slots:
     #  - CTD:increases_hydrolysis
     #  - GAMMA:substrate
       - GOREL:0002004
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_degradation_of
-    broad_match:
+    broad_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
       - GAMMA:substrate
-    narrow_match:
+    narrow_mappings:
       - CTD:increases_cleavage
       - CTD:increases_hydrolysis
 
@@ -1073,15 +1073,15 @@ slots:
       - CTD:decreases_degradation_of
       - CTD:decreases_cleavage
       - CTD:decreases_hydrolysis
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects mutation rate of:
@@ -1095,15 +1095,15 @@ slots:
     mappings:
       - CTD:affects_mutation_rate_of
       - CTD:affects_mutagenesis
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases mutation rate of:
@@ -1117,15 +1117,15 @@ slots:
     mappings:
       - CTD:increases_mutation_rate_of
       - CTD:increases_mutagenesis
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases mutation rate of:
@@ -1139,15 +1139,15 @@ slots:
     mappings:
       - CTD:decreases_mutation_rate_of
       - CTD:decreases_mutagenesis
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects response to:
@@ -1160,15 +1160,15 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_response_to
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases response to:
@@ -1181,15 +1181,15 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_response_to
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases response to:
@@ -1204,15 +1204,15 @@ slots:
       - CTD:decreases_response_to
       - CTD:decreases_response_to_substance
       - GAMMA:desensitize_the_target
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects splicing of:
@@ -1226,15 +1226,15 @@ slots:
     mappings:
       - CTD:affects_splicing_of
       - CTD:affects_RNA_splicing
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases splicing of:
@@ -1248,15 +1248,15 @@ slots:
     mappings:
       - CTD:increases_splicing_of
       - CTD:increases_RNA_splicing
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases splicing of:
@@ -1270,15 +1270,15 @@ slots:
     mappings:
       - CTD:decreases_splicing_of
       - CTD:decreases_RNA_splicing
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects stability of:
@@ -1292,15 +1292,15 @@ slots:
     mappings:
       - CTD:affects_stability_of
       - GAMMA:stabilization
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases stability of:
@@ -1313,15 +1313,15 @@ slots:
     range: molecular entity
     mappings:
       - CTD:increases_stability_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases stability of:
@@ -1334,15 +1334,15 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_stability_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects transport of:
@@ -1355,15 +1355,15 @@ slots:
     range: molecular entity
     mappings:
       - CTD:affects_transport_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases transport of:
@@ -1378,15 +1378,15 @@ slots:
       - CTD:increases_transport_of
       - GAMMA:carrier
       - GAMMA:transporter
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases transport of:
@@ -1399,15 +1399,15 @@ slots:
     range: molecular entity
     mappings:
       - CTD:decreases_transport_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects secretion of:
@@ -1421,15 +1421,15 @@ slots:
     mappings:
       - CTD:affects_secretion_of
       - CTD:affects_export
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases secretion of:
@@ -1443,15 +1443,15 @@ slots:
     mappings:
       - CTD:increases_secretion_of
       - CTD:increases_export
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases secretion of:
@@ -1465,15 +1465,15 @@ slots:
     mappings:
       - CTD:decreases_secretion_of
       - CTD:decreases_export
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects uptake of:
@@ -1487,15 +1487,15 @@ slots:
     mappings:
       - CTD:affects_uptake_of
       - CTD:affects_import
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases uptake of:
@@ -1509,15 +1509,15 @@ slots:
     mappings:
       - CTD:increases_uptake_of
       - CTD:increases_import
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases uptake of:
@@ -1531,15 +1531,15 @@ slots:
     mappings:
       - CTD:decreases_uptake_of
       - CTD:decreases_import
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   regulates:
@@ -1550,15 +1550,15 @@ slots:
     abstract: true
     mappings:
       - WIKIDATA:P128
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   positively regulates:
@@ -1569,15 +1569,15 @@ slots:
     abstract: true
     mappings:
       - RO:0002213
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   negatively regulates:
@@ -1589,15 +1589,15 @@ slots:
     mappings:
       - RO:0004033
       - RO:0004035
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   regulates, process to process:
@@ -1606,15 +1606,15 @@ slots:
     range: occurrent
     mappings:
       - RO:0002211
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   positively regulates, process to process:
@@ -1623,15 +1623,15 @@ slots:
       - positively regulates
     mappings:
       - RO:0002213
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   negatively regulates, process to process:
@@ -1640,15 +1640,15 @@ slots:
       - negatively regulates
     mappings:
       - RO:0002212
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   regulates, entity to entity:
@@ -1663,15 +1663,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002448
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   positively regulates, entity to entity:
@@ -1690,15 +1690,15 @@ slots:
       - hetio:UPREGULATES_AuG
       - hetio:UPREGULATES_DuG
       - RO:0004034
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   negatively regulates, entity to entity:
@@ -1716,15 +1716,15 @@ slots:
       - SEMMEDDB:INHIBITS
       - hetio:DOWNREGULATES_AdG
       - hetio:DOWNREGULATES_DdG
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   disrupts:
@@ -1735,15 +1735,15 @@ slots:
       - translator_minimal
     mappings:
       - SEMMEDDB:DISRUPTS
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has gene product:
@@ -1757,15 +1757,15 @@ slots:
     mappings:
       - RO:0002205
       - WIKIDATA:P688
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   homologous to:
@@ -1781,15 +1781,15 @@ slots:
       - RO:HOM0000001
       - SIO:010302
       - UBERON_CORE:sexually_homologous_to
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   paralogous to:
@@ -1800,15 +1800,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:HOM0000011
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   orthologous to:
@@ -1820,15 +1820,15 @@ slots:
     mappings:
       - RO:HOM0000017
       - WIKIDATA:P684
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   xenologous to:
@@ -1839,15 +1839,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:HOM0000018
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   coexists with:
@@ -1892,15 +1892,15 @@ slots:
       - BSPO:0015009
       - BSPO:0015012
       - BSPO:parallel_to
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   in pathway with:
@@ -1911,15 +1911,15 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   in complex with:
@@ -1930,15 +1930,15 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   in cell population with:
@@ -1949,15 +1949,15 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   colocalizes with:
@@ -1968,15 +1968,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:00002325
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   gene associated with condition:
@@ -1993,15 +1993,15 @@ slots:
       - GENO:0000841
       - NCIT:R176
       - hetio:ASSOCIATES_DaG
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   affects risk for:
@@ -2010,15 +2010,15 @@ slots:
       holds between two entities where exposure to one entity alters the chance of developing the other
     in_subset:
       - translator_minimal
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   predisposes:
@@ -2029,15 +2029,15 @@ slots:
       - translator_minimal
     mappings:
       - SEMMEDDB:PREDISPOSES
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   contributes to:
@@ -2050,15 +2050,15 @@ slots:
       - RO:0002326
       - CTD:marker_mechanism
       - CTD:positivecorrelation
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   causes:
@@ -2073,15 +2073,15 @@ slots:
       - SEMMEDDB:CAUSES
       - WIKIDATA:P1542
       - MONDO:disease_triggers
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   caused by:
@@ -2093,15 +2093,15 @@ slots:
     inverse: causes
     mappings:
       - WIKIDATA:P828
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   treats:
@@ -2123,15 +2123,15 @@ slots:
       - CTD:therapeutic
       - CTD:negativecorrelation
       - MONDO:disease_responds_to
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   prevents :
@@ -2145,15 +2145,15 @@ slots:
     mappings:
       - RO:0002599
       - SEMMEDDB:PREVENTS
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   correlated with:
@@ -2166,15 +2166,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002610
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has biomarker:
@@ -2186,15 +2186,15 @@ slots:
     in_subset:
       - translator_minimal
     inverse: biomarker for
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   biomarker for:
@@ -2208,15 +2208,15 @@ slots:
     inverse: has biomarker
     mappings:
       - RO:0002607
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   treated by:
@@ -2230,15 +2230,15 @@ slots:
     mappings:
       - RO:0002302
       - WIKIDATA:P2176
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   expressed in:
@@ -2252,15 +2252,15 @@ slots:
     inverse: expresses
     mappings:
       - RO:0002206
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   expresses:
@@ -2275,15 +2275,15 @@ slots:
     mappings:
       - RO:0002292
       - hetio:EXPRESSES_AeG
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has phenotype:
@@ -2299,15 +2299,15 @@ slots:
     mappings:
       - RO:0002200
       - hetio:PRESENTS_DpS
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   occurs in:
@@ -2321,15 +2321,15 @@ slots:
       - SEMMEDDB:OCCURS_IN
       - SEMMEDDB:PROCESS_OF
       - UBERON_CORE:site_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   located in:
@@ -2362,15 +2362,15 @@ slots:
       - UBERON_CORE:in_outermost_side_of
       - NCIT:R100
       - EFO:0000784
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   location of:
@@ -2384,15 +2384,15 @@ slots:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
       - WIKIDATA:276
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   model of:
@@ -2403,15 +2403,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:0003301
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   overlaps:
@@ -2423,15 +2423,15 @@ slots:
     mappings:
       - RO:0002131
       - BSPO:0005001
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has part:
@@ -2444,15 +2444,15 @@ slots:
     mappings:
       - BFO:0000051
       - WIKIDATA:P527
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   part of:
@@ -2473,15 +2473,15 @@ slots:
       - UBERON_CORE:layer_part_of
       - UBERON_CORE:subdivision_of
       - UBERON_CORE:trunk_part_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has participant:
@@ -2497,15 +2497,15 @@ slots:
       - WIKIDATA:P2283
       - GOREL:0001007
       - GOREL:0002008
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has input:
@@ -2518,15 +2518,15 @@ slots:
     mappings:
       - RO:0002233
       - SEMMEDDB:USES
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has output:
@@ -2538,15 +2538,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002234
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   participates in:
@@ -2560,15 +2560,15 @@ slots:
     mappings:
       - RO:0000056
       - BFO:0000056
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   actively involved in:
@@ -2580,15 +2580,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002331
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   capable of:
@@ -2600,15 +2600,15 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002215
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   enables:
@@ -2621,15 +2621,15 @@ slots:
     inverse: enabled by
     mappings:
       - RO:0002327
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   enabled by:
@@ -2642,15 +2642,15 @@ slots:
     inverse: enables
     mappings:
       - RO:0002333
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   derives into:
@@ -2663,15 +2663,15 @@ slots:
     mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   derives from:
@@ -2684,15 +2684,15 @@ slots:
     inverse: derives into
     mappings:
       - RO:0001000
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   manifestation of:
@@ -2705,15 +2705,15 @@ slots:
     mappings:
       - SEMMEDDB:MANIFESTATION_OF
       - WIKIDATA:P1557
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   produces:
@@ -2727,15 +2727,15 @@ slots:
       - WIKIDATA:P1056
       - SEMMEDDB:PRODUCES
       - GOREL:0001010
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   precedes:
@@ -2752,15 +2752,15 @@ slots:
       - WIKIDATA:P156
       - RO:0002263
       - RO:0002264
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   same as:
@@ -2774,15 +2774,15 @@ slots:
       - owl:sameAs
       - skos:exactMatch
       - WIKIDATA:P2888
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   subclass of:
@@ -2800,15 +2800,15 @@ slots:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
       - WIKIDATA:P279
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   directly interacts with:
@@ -2841,15 +2841,15 @@ slots:
       - GAMMA:adduct
       - GAMMA:antibody
       - DRUGBANK:chelator
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   #The following are proposed new predicates
@@ -2860,15 +2860,15 @@ slots:
        is located in.
     mappings:
       - GTEx:affects_expression_in
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   #Predicates relating variants to genes
@@ -2882,15 +2882,15 @@ slots:
       - SNPEFF:missense_variant
       - SNPEFF:initiator_codon_variant
       - SNPEFF:structural_interaction_variant
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   is synonymous variant of:
@@ -2902,15 +2902,15 @@ slots:
       - SNPEFF:synonymous_variant
       - SNPEFF:start_retained
       - SNPEFF:stop_retained_variant
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   is nonsense variant of:
@@ -2923,15 +2923,15 @@ slots:
       - SNPEFF:start_lost
       - SNPEFF:stop_lost
       - SNPEFF:frameshift_variant
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   is splice site variant of:
@@ -2943,15 +2943,15 @@ slots:
       - SNPEFF:splice_region_variant
       - SNPEFF:splice_acceptor_variant
       - SNPEFF:splice_donor_variant
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   is nearby variant of:
@@ -2962,15 +2962,15 @@ slots:
       - GAMMA:0000102
       - SNPEFF:downstream_gene_variant
       - SNPEFF:upstream_gene_variant
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   is non coding variant of:
@@ -2984,15 +2984,15 @@ slots:
       - SNPEFF:5_prime_UTR_premature_start_codon_gain_variant
       - SNPEFF:non_coding_transcript_exon_variant
       - SNPEFF:intron_variant
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   #relating disease to process
@@ -3004,15 +3004,15 @@ slots:
     mappings:
       - MONDO:disease_has_basis_in_development_of
       - MONDO:disease_has_basis_in_accumulation_of
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   #These may be pushable to causal relationships, but seem important for clarity
@@ -3025,15 +3025,15 @@ slots:
       by the drug
     mappings:
       - Aeolus:0000001
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   contraindicated for:
@@ -3042,15 +3042,15 @@ slots:
       with that disease should not be treated with the drug.
     mappings:
      - DrugCentral:0000001
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   #The remaining new slots are here because we ran across them somewhere and they didn't seem
@@ -3062,15 +3062,15 @@ slots:
       but has not completed
     mappings:
       - CL:has_not_completed
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has completed:
@@ -3079,15 +3079,15 @@ slots:
       and has completed
     mappings:
     - CL:has_completed
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   decreases molecular interaction:
@@ -3096,15 +3096,15 @@ slots:
       the target and some other molecular entity
     mappings:
     #- CTD:decreases_molecular_interaction_with
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:decreases_molecular_interaction_with
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   increases molecular interaction:
@@ -3113,29 +3113,29 @@ slots:
       the target and some other molecular entity
     mappings:
     #- CTD:increases_molecular_interaction_with
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CTD:increases_molecular_interaction_with
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   produced by:
     is_a: related to
     inverse: produces
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   in linkage disequilibrium with:
@@ -3144,45 +3144,45 @@ slots:
       in a population
     mappings:
       - NCIT:C16798
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       -
 
   has increased amount:
     is_a: related to
     #mappings:
     #  - CL:has_high_plasma_membrane_amount
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
   has decreased amount:
     is_a: related to
     #mappings:
     #  - CL:has_low_plasma_membrane_amount
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       -
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
   lacks part:
@@ -3190,15 +3190,15 @@ slots:
     #mappings:
     #  - CL:lacks_part
     #  - CL:lacks_plasma_membrane_part
-    related_match:
+    related_mappings:
       -
-    close_match:
+    close_mappings:
       -
-    exact_match:
+    exact_mappings:
       - CL:lacks_part
-    broad_match:
+    broad_mappings:
       -
-    narrow_match:
+    narrow_mappings:
       - CL:lacks_plasma_membrane_part
 
   #End proposed slots
