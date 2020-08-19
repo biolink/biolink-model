@@ -2355,14 +2355,14 @@ slots:
     in_subset:
       - translator_minimal
     inverse: expresses
-    mappings:
-      - RO:0002206
+    #mappings:
+    #  - RO:0002206
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002206
     broad_mappings:
       -
     narrow_mappings:
@@ -2378,14 +2378,14 @@ slots:
       - translator_minimal
     inverse: expressed in
     mappings:
-      - RO:0002292
+    #- RO:0002292
       - hetio:EXPRESSES_AeG
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002292
     broad_mappings:
       -
     narrow_mappings:
@@ -2402,14 +2402,14 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - RO:0002200
+    #  - RO:0002200
       - hetio:PRESENTS_DpS
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002200
     broad_mappings:
       -
     narrow_mappings:
@@ -2423,9 +2423,9 @@ slots:
       - translator_minimal
     mappings:
       - BFO:0000066
-      - SEMMEDDB:OCCURS_IN
-      - SEMMEDDB:PROCESS_OF
-      - UBERON_CORE:site_of
+    #  - SEMMEDDB:OCCURS_IN
+    #  - SEMMEDDB:PROCESS_OF
+    #  - UBERON_CORE:site_of
     related_mappings:
       -
     close_mappings:
@@ -2435,7 +2435,12 @@ slots:
     broad_mappings:
       -
     narrow_mappings:
-      -
+      # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
+      - SEMMEDDB:OCCURS_IN
+      # SemMedDb term 'PROCESS_IN' constrained specifically to a process occurring in the object concept entity
+      - SEMMEDDB:PROCESS_OF
+      # Uberon term constrained to a 'site' as object concept
+      - UBERON_CORE:site_of
 
   located in:
     is_a: related to
