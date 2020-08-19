@@ -259,7 +259,7 @@ slots:
       - translator_minimal
     mappings:
     #  - SEMMEDDB:AFFECTS
-      - GOREL:0001006
+    #  - GOREL:0001006
       - CTD:inferred
     #  - CTD:prediction_hypothesis
       - UPHENO:0000001
@@ -273,6 +273,7 @@ slots:
       -
     narrow_mappings:
       - CTD:prediction_hypothesis
+      - GOREL:0001006
 
   affects abundance of:
     description: >-
@@ -303,7 +304,7 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:increases_abundance_of
       - UBERGRAPH:is_increase_of
     related_mappings:
@@ -374,10 +375,10 @@ slots:
     mappings:
     #  - CTD:increases_activity_of
       - GAMMA:activator
-      - GAMMA:partial_agonist
+    #  - GAMMA:partial_agonist
       - GAMMA:agonist
       - GAMMA:opener
-      - GAMMA:positive_allosteric_modulator
+    #  - GAMMA:positive_allosteric_modulator
       - GAMMA:positive_modulator
       - GAMMA:ec50
       - GAMMA:ac50
@@ -393,7 +394,8 @@ slots:
     broad_mappings:
       -
     narrow_mappings:
-      -
+      - GAMMA:partial_agonist
+      - GAMMA:positive_allosteric_modulator
 
   decreases activity of:
     description: >-
@@ -405,24 +407,24 @@ slots:
     range: molecular entity
     mappings:
     #  - CTD:decreases_activity_of
-      - GAMMA:allosteric_antagonist
-      - GAMMA:partial_antagonist
+    #  - GAMMA:allosteric_antagonist
+    #  - GAMMA:partial_antagonist
       - GAMMA:antagonist
       - GAMMA:weak_inhibitor
       - GAMMA:inhibitor
-      - GAMMA:channel_blocker
-      - GAMMA:gating_inhibitor
+    #  - GAMMA:channel_blocker
+    #  - GAMMA:gating_inhibitor
       - GAMMA:blocker
       - GAMMA:inverse_agonist
       - GAMMA:inactivator
       - GAMMA:downregulator
       - GAMMA:negative_modulator
-      - GAMMA:negative_allosteric_modulator
-      - GAMMA:inhibitory_allosteric_modulator
+    #  - GAMMA:negative_allosteric_modulator
+    #  - GAMMA:inhibitory_allosteric_modulator
       - GAMMA:ic50
       - GAMMA:ki
-      - GAMMA:aggregation_inhibitor
-      - GAMMA:conversion_inhibitor
+    #  - GAMMA:aggregation_inhibitor
+    #  - GAMMA:conversion_inhibitor
       - GAMMA:suppressor
     related_mappings:
       -
@@ -433,7 +435,14 @@ slots:
     broad_mappings:
       -
     narrow_mappings:
-      -
+      - GAMMA:allosteric_antagonist
+      - GAMMA:partial_antagonist
+      - GAMMA:channel_blocker
+      - GAMMA:gating_inhibitor
+      - GAMMA:negative_allosteric_modulator
+      - GAMMA:inhibitory_allosteric_modulator
+      - GAMMA:aggregation_inhibitor
+      - GAMMA:conversion_inhibitor
 
   affects expression of:
     description: >-
@@ -996,14 +1005,13 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:decreases_synthesis_of
-    #  - GAMMA:inhibition_of_synthesis
+      - GAMMA:inhibition_of_synthesis
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
       - CTD:decreases_synthesis_of
-      - GAMMA:inhibition_of_synthesis
     broad_mappings:
       -
     narrow_mappings:
@@ -1011,7 +1019,7 @@ slots:
 
   affects degradation of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest
+      holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
     is_a: affects
     in_subset:
       - translator_minimal
@@ -1069,20 +1077,21 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:decreases_degradation_of
-      - CTD:decreases_cleavage
-      - CTD:decreases_hydrolysis
+    #mappings:
+    #  - CTD:decreases_degradation_of
+    #  - CTD:decreases_cleavage
+    #  - CTD:decreases_hydrolysis
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:decreases_degradation_of
     broad_mappings:
       -
     narrow_mappings:
-      -
+      - CTD:decreases_cleavage
+      - CTD:decreases_hydrolysis
 
   affects mutation rate of:
     description: >-
@@ -1092,17 +1101,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    mappings:
-      - CTD:affects_mutation_rate_of
-      - CTD:affects_mutagenesis
+    #mappings:
+    #  - CTD:affects_mutation_rate_of
+    #  - CTD:affects_mutagenesis
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:affects_mutation_rate_of
     broad_mappings:
-      -
+      # Term 'mutagenesis' generally speaks generally of the process of 'production of genetic mutations':  this term says it is affected but not specifically how
+      - CTD:affects_mutagenesis
     narrow_mappings:
       -
 
@@ -1114,17 +1124,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    mappings:
-      - CTD:increases_mutation_rate_of
-      - CTD:increases_mutagenesis
+    #mappings:
+    #  - CTD:increases_mutation_rate_of
+    #  - CTD:increases_mutagenesis
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:increases_mutation_rate_of
     broad_mappings:
-      -
+      # See 'affects mutation rate of' above
+      - CTD:increases_mutagenesis
     narrow_mappings:
       -
 
@@ -1136,17 +1147,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    mappings:
-      - CTD:decreases_mutation_rate_of
-      - CTD:decreases_mutagenesis
+    #mappings:
+    #  - CTD:decreases_mutation_rate_of
+    #  - CTD:decreases_mutagenesis
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:decreases_mutation_rate_of
     broad_mappings:
-      -
+      # See 'affects mutation rate of' above
+      - CTD:decreases_mutagenesis
     narrow_mappings:
       -
 
@@ -1158,14 +1170,14 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:affects_response_to
+    #mappings:
+    #  - CTD:affects_response_to
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:affects_response_to
     broad_mappings:
       -
     narrow_mappings:
@@ -1179,14 +1191,14 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:increases_response_to
+    #mappings:
+    #  - CTD:increases_response_to
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:increases_response_to
     broad_mappings:
       -
     narrow_mappings:
@@ -1200,20 +1212,21 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:decreases_response_to
-      - CTD:decreases_response_to_substance
-      - GAMMA:desensitize_the_target
+    #mappings:
+    #  - CTD:decreases_response_to
+    #  - CTD:decreases_response_to_substance
+    #  - GAMMA:desensitize_the_target
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:decreases_response_to
     broad_mappings:
       -
     narrow_mappings:
-      -
+      - CTD:decreases_response_to_substance
+      - GAMMA:desensitize_the_target
 
   affects splicing of:
     description: >-
@@ -1223,15 +1236,16 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
-    mappings:
-      - CTD:affects_splicing_of
-      - CTD:affects_RNA_splicing
+    #mappings:
+    #  - CTD:affects_splicing_of
+    #  - CTD:affects_RNA_splicing
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:affects_splicing_of
+      - CTD:affects_RNA_splicing
     broad_mappings:
       -
     narrow_mappings:
@@ -1245,15 +1259,16 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
-    mappings:
-      - CTD:increases_splicing_of
-      - CTD:increases_RNA_splicing
+    #mappings:
+    #  - CTD:increases_splicing_of
+    #  - CTD:increases_RNA_splicing
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:increases_splicing_of
+      - CTD:increases_RNA_splicing
     broad_mappings:
       -
     narrow_mappings:
@@ -1267,15 +1282,16 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
-    mappings:
-      - CTD:decreases_splicing_of
-      - CTD:decreases_RNA_splicing
+    #mappings:
+    #  - CTD:decreases_splicing_of
+    #  - CTD:decreases_RNA_splicing
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:decreases_splicing_of
+      - CTD:decreases_RNA_splicing
     broad_mappings:
       -
     narrow_mappings:
@@ -1290,14 +1306,14 @@ slots:
     domain: molecular entity
     range: molecular entity
     mappings:
-      - CTD:affects_stability_of
+    #  - CTD:affects_stability_of
       - GAMMA:stabilization
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:affects_stability_of
     broad_mappings:
       -
     narrow_mappings:
@@ -1311,14 +1327,14 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:increases_stability_of
+    #mappings:
+    #  - CTD:increases_stability_of
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:increases_stability_of
     broad_mappings:
       -
     narrow_mappings:
@@ -1332,14 +1348,14 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:decreases_stability_of
+    #mappings:
+    #  - CTD:decreases_stability_of
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:decreases_stability_of
     broad_mappings:
       -
     narrow_mappings:
@@ -1353,14 +1369,14 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:affects_transport_of
+    #mappings:
+    #  - CTD:affects_transport_of
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:affects_transport_of
     broad_mappings:
       -
     narrow_mappings:
@@ -1374,16 +1390,17 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:increases_transport_of
-      - GAMMA:carrier
-      - GAMMA:transporter
+    #mappings:
+    #  - CTD:increases_transport_of
+    #  - GAMMA:carrier
+    #  - GAMMA:transporter
     related_mappings:
       -
     close_mappings:
-      -
+      - GAMMA:carrier
+      - GAMMA:transporter
     exact_mappings:
-      -
+      - CTD:increases_transport_of
     broad_mappings:
       -
     narrow_mappings:
@@ -1397,14 +1414,14 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:decreases_transport_of
+    #mappings:
+    #  - CTD:decreases_transport_of
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:decreases_transport_of
     broad_mappings:
       -
     narrow_mappings:
@@ -1418,17 +1435,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:affects_secretion_of
-      - CTD:affects_export
+    #mappings:
+    #  - CTD:affects_secretion_of
+    #  - CTD:affects_export
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:affects_secretion_of
     broad_mappings:
-      -
+      # 'export' more general than 'secretion'
+      - CTD:affects_export
     narrow_mappings:
       -
 
@@ -1440,17 +1458,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:increases_secretion_of
-      - CTD:increases_export
+    #mappings:
+    #  - CTD:increases_secretion_of
+    #  - CTD:increases_export
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:increases_secretion_of
     broad_mappings:
-      -
+      # 'export' more general than 'secretion'
+      - CTD:increases_export
     narrow_mappings:
       -
 
@@ -1462,17 +1481,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:decreases_secretion_of
-      - CTD:decreases_export
+    #mappings:
+    #  - CTD:decreases_secretion_of
+    #  - CTD:decreases_export
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:decreases_secretion_of
     broad_mappings:
-      -
+      # 'export' more general than 'secretion'
+      - CTD:decreases_export
     narrow_mappings:
       -
 
@@ -1484,17 +1504,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:affects_uptake_of
-      - CTD:affects_import
+    #mappings:
+    #  - CTD:affects_uptake_of
+    #  - CTD:affects_import
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:affects_uptake_of
     broad_mappings:
-      -
+      # 'import' more general than 'uptake'
+      - CTD:affects_import
     narrow_mappings:
       -
 
@@ -1506,17 +1527,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:increases_uptake_of
-      - CTD:increases_import
+    #mappings:
+    #  - CTD:increases_uptake_of
+    #  - CTD:increases_import
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:increases_uptake_of
     broad_mappings:
-      -
+      # 'import' more general than 'uptake'
+      - CTD:increases_import
     narrow_mappings:
       -
 
@@ -1528,17 +1550,18 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-      - CTD:decreases_uptake_of
-      - CTD:decreases_import
+    #mappings:
+    #  - CTD:decreases_uptake_of
+    #  - CTD:decreases_import
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CTD:decreases_uptake_of
     broad_mappings:
-      -
+      # 'import' more general than 'uptake'
+      - CTD:decreases_import
     narrow_mappings:
       -
 
@@ -1555,11 +1578,13 @@ slots:
     close_mappings:
       -
     exact_mappings:
+      # we don't really have an exact match term for this generic
       -
     broad_mappings:
       -
     narrow_mappings:
-      -
+      # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
+      - WIKIDATA:P128
 
   positively regulates:
     comments:
@@ -1661,14 +1686,16 @@ slots:
       ro: activity directly regulates activity of
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002448
+    #mappings:
+    #  - RO:0002448
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002448
+      # Wikidata mapping copied over from 'regulates' above
+      - WIKIDATA:P128
     broad_mappings:
       -
     narrow_mappings:
