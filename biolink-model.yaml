@@ -2191,14 +2191,14 @@ slots:
     in_subset:
       - translator_minimal
     inverse: causes
-    mappings:
-      - WIKIDATA:P828
+    #mappings:
+    #  - WIKIDATA:P828
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - WIKIDATA:P828
     broad_mappings:
       -
     narrow_mappings:
@@ -2216,10 +2216,10 @@ slots:
       - translator_minimal
     inverse: treated by
     mappings:
-      - RO:0002606
-      - RO:0003307
-      - SEMMEDDB:TREATS
-      - WIKIDATA:P2175
+    #  - RO:0002606
+    #  - RO:0003307
+    #  - SEMMEDDB:TREATS
+    #  - WIKIDATA:P2175
       - CTD:therapeutic
       - CTD:negativecorrelation
       - MONDO:disease_responds_to
@@ -2228,9 +2228,11 @@ slots:
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002606
+      - SEMMEDDB:TREATS
+      - WIKIDATA:P2175
     broad_mappings:
-      -
+      - RO:0003307
     narrow_mappings:
       -
 
@@ -2242,19 +2244,20 @@ slots:
       the onset a disease or phenotypic feature.
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002599
-      - SEMMEDDB:PREVENTS
+    #mappings:
+    #  - RO:0002599
+    #  - SEMMEDDB:PREVENTS
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - SEMMEDDB:PREVENTS
     broad_mappings:
       -
     narrow_mappings:
-      -
+      # more restricted case of a material entity mitigating a pathological process
+      - RO:0002599
 
   correlated with:
     is_a: related to
