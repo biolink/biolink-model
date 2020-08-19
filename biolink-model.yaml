@@ -2228,13 +2228,13 @@ slots:
     close_mappings:
       -
     exact_mappings:
-      - RO:0002606
       - SEMMEDDB:TREATS
       - WIKIDATA:P2175
     broad_mappings:
       - RO:0003307
     narrow_mappings:
-      -
+      # "is substance that treats" constrains statements to a subset of the universe of all possible treatments
+      - RO:0002606
 
   prevents :
     is_a: affects risk for
@@ -2267,14 +2267,14 @@ slots:
     range: named thing
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002610
+    #mappings:
+    #  - RO:0002610
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002610
     broad_mappings:
       -
     narrow_mappings:
@@ -2309,8 +2309,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has biomarker
-    mappings:
-      - RO:0002607
+    #mappings:
+    #  - RO:0002607
     related_mappings:
       -
     close_mappings:
@@ -2318,7 +2318,8 @@ slots:
     exact_mappings:
       -
     broad_mappings:
-      -
+      # Generic marker definition not specific to biomarkers per say
+      - RO:0002607
     narrow_mappings:
       -
 
@@ -2330,19 +2331,20 @@ slots:
     in_subset:
       - translator_minimal
     inverse: treats
-    mappings:
-      - RO:0002302
-      - WIKIDATA:P2176
+    #mappings:
+    #  - RO:0002302
+    #  - WIKIDATA:P2176
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - WIKIDATA:P2176
     broad_mappings:
       -
     narrow_mappings:
-      -
+      # "is treated by substance" constrains statements to a subset of the universe of all possible treatments
+      - RO:0002302
 
   expressed in:
     is_a: related to
