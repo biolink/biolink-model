@@ -1852,15 +1852,16 @@ slots:
       a homology relationship between entities (typically genes) that diverged after a speciation event.
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:HOM0000017
-      - WIKIDATA:P684
+    #mappings:
+    #  - RO:HOM0000017
+    #  - WIKIDATA:P684
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:HOM0000017
+      - WIKIDATA:P684
     broad_mappings:
       -
     narrow_mappings:
@@ -1872,14 +1873,14 @@ slots:
       a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:HOM0000018
+    #mappings:
+    #  - RO:HOM0000018
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:HOM0000018
     broad_mappings:
       -
     narrow_mappings:
@@ -1892,7 +1893,50 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
+    #  - SEMMEDDB:COEXISTS_WITH
+    #  - BSPO:0000096
+    #  - BSPO:0000097
+    #  - BSPO:0000098
+    #  - BSPO:0000099
+    #  - BSPO:0000100
+    #  - BSPO:0000102
+    #  - BSPO:0000104
+    #  - BSPO:0015001
+    #  - BSPO:0015002
+    #  - BSPO:0015003
+    #  - BSPO:0015005
+    #  - BSPO:0015007
+    #  - BSPO:0015008
+    #  - BSPO:0015014
+    #  - UBERON_CORE:anastomoses_with
+    #  - UBERON_CORE:anteriorly_connected_to
+    #  - UBERON_CORE:posteriorly_connected_to
+    #  - UBERON_CORE:channel_for
+    #  - UBERON_CORE:channels_from
+    #  - UBERON_CORE:channels_into
+    #  - UBERON_CORE:conduit_for
+    #  - UBERON_CORE:distally_connected_to
+    #  - UBERON_CORE:extends_fibers_into
+    #  - UBERON_CORE:filtered_through
+    #  - UBERON_CORE:indirectly_supplies
+    #  - UBERON_CORE:proximally_connected_to
+    #  - UBERON_CORE:synapsed_by
+    #  - UBERON_CORE:transitively_anteriorly_connected_to
+    #  - UBERON_CORE:transitively_connected_to
+    #  - UBERON_CORE:transitively_distally_connected_to
+    #  - UBERON_CORE:transitively_proximally_connected_to
+    #  - BSPO:0015009
+    #  - BSPO:0015012
+    #  - BSPO:parallel_to
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
+    broad_mappings:
+      -
+    narrow_mappings:
       - BSPO:0000096
       - BSPO:0000097
       - BSPO:0000098
@@ -1906,7 +1950,10 @@ slots:
       - BSPO:0015005
       - BSPO:0015007
       - BSPO:0015008
+      - BSPO:0015009
+      - BSPO:0015012
       - BSPO:0015014
+      - BSPO:parallel_to
       - UBERON_CORE:anastomoses_with
       - UBERON_CORE:anteriorly_connected_to
       - UBERON_CORE:posteriorly_connected_to
@@ -1924,19 +1971,7 @@ slots:
       - UBERON_CORE:transitively_connected_to
       - UBERON_CORE:transitively_distally_connected_to
       - UBERON_CORE:transitively_proximally_connected_to
-      - BSPO:0015009
-      - BSPO:0015012
-      - BSPO:parallel_to
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
+
 
   in pathway with:
     description: >-
@@ -1947,7 +1982,8 @@ slots:
     in_subset:
       - translator_minimal
     related_mappings:
-      -
+      # generally pertains to membership of a (subject) component - gene, metabolite, etc? - in an (object) metabolic pathway
+      - SIO:010532
     close_mappings:
       -
     exact_mappings:
@@ -1966,13 +2002,15 @@ slots:
     in_subset:
       - translator_minimal
     related_mappings:
-      -
+      # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
+      - SIO:010497
     close_mappings:
       -
     exact_mappings:
       -
     broad_mappings:
-      -
+      # generally pertains to membership of any (subject) constituent molecule in an (object) molecular complex (might also generically cover RNA-Protein, Lipid-Protein, etc complexes)
+      - SIO:010285
     narrow_mappings:
       -
 
