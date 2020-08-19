@@ -204,9 +204,10 @@ slots:
     exact_mappings:
       - WIKIDATA:P129
     broad_mappings:
-      - SEMMEDDB:INTERACTS_WITH
-    narrow_mappings:
       -
+    narrow_mappings:
+      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
+      - SEMMEDDB:INTERACTS_WITH
 
   molecularly interacts with:
     is_a: physically interacts with
@@ -1611,17 +1612,19 @@ slots:
     is_a: regulates
     mixin: true
     abstract: true
-    mappings:
-      - RO:0004033
-      - RO:0004035
+    #mappings:
+    #  - RO:0004033
+    #  - RO:0004035
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      # Strict interpretation here is that entity A causally affects levels of B
+      - RO:0004035
     broad_mappings:
-      -
+      # This term is slightly broader in that it includes that A acts within B as well
+      - RO:0004033
     narrow_mappings:
       -
 
@@ -1629,14 +1632,14 @@ slots:
     is_a: regulates
     domain: occurrent
     range: occurrent
-    mappings:
-      - RO:0002211
+    #mappings:
+    #  - RO:0002211
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002211
     broad_mappings:
       -
     narrow_mappings:
@@ -1646,14 +1649,14 @@ slots:
     is_a: regulates, process to process
     mixins:
       - positively regulates
-    mappings:
-      - RO:0002213
+    #mappings:
+    #  - RO:0002213
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002213
     broad_mappings:
       -
     narrow_mappings:
@@ -1663,14 +1666,14 @@ slots:
     is_a: regulates, process to process
     mixins:
       - negatively regulates
-    mappings:
-      - RO:0002212
+    #mappings:
+    #  - RO:0002212
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002212
     broad_mappings:
       -
     narrow_mappings:
@@ -1694,12 +1697,11 @@ slots:
       -
     exact_mappings:
       - RO:0002448
-      # Wikidata mapping copied over from 'regulates' above
-      - WIKIDATA:P128
     broad_mappings:
       -
     narrow_mappings:
-      -
+      # Wikidata mapping copied over from 'regulates' above;  considered a slightly narrower term since it applies to protein and RNA as subject regulator whereas molecular_entity may also be another class of chemical_substance?
+      - WIKIDATA:P128
 
   positively regulates, entity to entity:
     aliases: ['activity directly positively regulates activity of']
@@ -1712,21 +1714,23 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - RO:0002450
-      - SEMMEDDB:STIMULATES
+    #  - RO:0002450
+    #  - SEMMEDDB:STIMULATES
       - hetio:UPREGULATES_AuG
       - hetio:UPREGULATES_DuG
-      - RO:0004034
+    #  - RO:0004034
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002450
     broad_mappings:
-      -
+      # causally positive effect of A over B but not specific to nature of B
+      - RO:0004034
     narrow_mappings:
-      -
+      # Defined more narrowly as increasing, facilitating the action or function of a "substance interaction", where "substance" is deemed a subclass of possible entity
+      - SEMMEDDB:STIMULATES
 
   negatively regulates, entity to entity:
     aliases: ['activity directly negatively regulates activity of']
@@ -1739,8 +1743,8 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - RO:0002449
-      - SEMMEDDB:INHIBITS
+    #  - RO:0002449
+    #  - SEMMEDDB:INHIBITS
       - hetio:DOWNREGULATES_AdG
       - hetio:DOWNREGULATES_DdG
     related_mappings:
@@ -1748,11 +1752,12 @@ slots:
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002449
     broad_mappings:
       -
     narrow_mappings:
-      -
+      # SemMedDb definition focuses on (chemical?) "substance interactions" which is a bit narrower?
+      - SEMMEDDB:INHIBITS
 
   disrupts:
     is_a: affects
@@ -1760,14 +1765,14 @@ slots:
       describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
     in_subset:
       - translator_minimal
-    mappings:
-      - SEMMEDDB:DISRUPTS
+    #mappings:
+    #  - SEMMEDDB:DISRUPTS
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - SEMMEDDB:DISRUPTS
     broad_mappings:
       -
     narrow_mappings:
@@ -1781,15 +1786,16 @@ slots:
     range: gene product
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002205
-      - WIKIDATA:P688
+    #mappings:
+    #  - RO:0002205
+    #  - WIKIDATA:P688
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002205
+      - WIKIDATA:P688
     broad_mappings:
       -
     narrow_mappings:
@@ -1804,20 +1810,22 @@ slots:
       - typically used to describe homology relationships between genes or gene products
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:HOM0000001
-      - SIO:010302
-      - UBERON_CORE:sexually_homologous_to
+    #mappings:
+    #  - RO:HOM0000001
+    #  - SIO:010302
+    #  - UBERON_CORE:sexually_homologous_to
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:HOM0000001
+      - SIO:010302
     broad_mappings:
       -
     narrow_mappings:
-      -
+      # This is a tricky one to place; seems narrower than the RO mapping but that mapping, RO:0002158
+      - UBERON_CORE:sexually_homologous_to
 
   paralogous to:
     is_a: homologous to
@@ -1825,14 +1833,14 @@ slots:
       a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:HOM0000011
+    #mappings:
+    #  - RO:HOM0000011
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:HOM0000011
     broad_mappings:
       -
     narrow_mappings:
