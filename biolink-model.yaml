@@ -2039,14 +2039,14 @@ slots:
     is_a: coexists with
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:00002325
+    #mappings:
+    #  - RO:00002325
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:00002325
     broad_mappings:
       -
     narrow_mappings:
@@ -2060,8 +2060,9 @@ slots:
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
+    inverse: condition associated with gene
     mappings:
-      - WD:P2293
+    #  - WD:P2293
       - GENO:0000840
       - GENO:0000841
       - NCIT:R176
@@ -2069,9 +2070,32 @@ slots:
     related_mappings:
       -
     close_mappings:
-      -
+      - WD:P2293
     exact_mappings:
       -
+    broad_mappings:
+      -
+    narrow_mappings:
+      -
+
+  condition associated with gene:
+    is_a: related to
+    aliases: ['genetic association']
+    description: >-
+      holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
+    domain: disease or phenotypic feature
+    range: gene
+    in_subset:
+      - translator_minimal
+    inverse: gene associated with condition
+    #mappings:
+    #  - WD:P2293
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - WD:P2293
     broad_mappings:
       -
     narrow_mappings:
@@ -2100,14 +2124,14 @@ slots:
       holds between two entities where exposure to one entity increases the chance of developing the other
     in_subset:
       - translator_minimal
-    mappings:
-      - SEMMEDDB:PREDISPOSES
+    #mappings:
+    #  - SEMMEDDB:PREDISPOSES
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - SEMMEDDB:PREDISPOSES
     broad_mappings:
       -
     narrow_mappings:
@@ -2120,42 +2144,45 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - RO:0002326
+    #  - RO:0002326
       - CTD:marker_mechanism
-      - CTD:positivecorrelation
+    #  - CTD:positivecorrelation
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002326
     broad_mappings:
-      -
+      # Correlation is not causation...
+      - CTD:positivecorrelation
     narrow_mappings:
       -
 
   causes:
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
+      holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
     is_a: contributes to
     in_subset:
       - translator_minimal
     inverse: caused by
-    mappings:
-      - RO:0002410
-      - SEMMEDDB:CAUSES
-      - WIKIDATA:P1542
-      - MONDO:disease_triggers
+    #mappings:
+    #  - RO:0002410
+    #  - SEMMEDDB:CAUSES
+    #  - WIKIDATA:P1542
+    #  - MONDO:disease_triggers
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002506
+      - SEMMEDDB:CAUSES
+      - WIKIDATA:P1542
     broad_mappings:
-      -
+      - RO:0002410
     narrow_mappings:
-      -
+      - MONDO:disease_triggers
 
   caused by:
     description: >-
