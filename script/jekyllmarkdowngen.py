@@ -120,6 +120,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 img_url = img_url.replace('<', '%3C')
                 img_url = img_url.replace('^', '%5E')
                 img_url = img_url.replace('>', '%3E')
+                img_url = img_url.replace('|', '%7C')
+                img_url = img_url.replace('*', '%2A')
                 img_url = img_url.replace('&#124;', '%7C')
 
                 self.horizontal_line()
