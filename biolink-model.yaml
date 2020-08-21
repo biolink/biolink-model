@@ -2716,8 +2716,6 @@ slots:
     narrow_mappings:
       -
 
-START_AGAIN_HERE:
-
   actively involved in:
     is_a: participates in
     description: >-
@@ -2725,14 +2723,14 @@ START_AGAIN_HERE:
     range: occurrent
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002331
+    #mappings:
+    #  - RO:0002331
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002331
     broad_mappings:
       -
     narrow_mappings:
@@ -2745,14 +2743,14 @@ START_AGAIN_HERE:
     range: occurrent
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002215
+    #mappings:
+    #  - RO:0002215
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002215
     broad_mappings:
       -
     narrow_mappings:
@@ -2766,14 +2764,14 @@ START_AGAIN_HERE:
     in_subset:
       - translator_minimal
     inverse: enabled by
-    mappings:
-      - RO:0002327
+    #mappings:
+    #  - RO:0002327
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002327
     broad_mappings:
       -
     narrow_mappings:
@@ -2787,14 +2785,14 @@ START_AGAIN_HERE:
     in_subset:
       - translator_minimal
     inverse: enables
-    mappings:
-      - RO:0002333
+    #mappings:
+    #  - RO:0002333
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002333
     broad_mappings:
       -
     narrow_mappings:
@@ -2807,15 +2805,16 @@ START_AGAIN_HERE:
     in_subset:
       - translator_minimal
     inverse: derives from
-    mappings:
-      - RO:0001001
-      - SEMMEDDB:CONVERTS_TO
+    #mappings:
+    #  - RO:0001001
+    #  - SEMMEDDB:CONVERTS_TO
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0001001
+      - SEMMEDDB:CONVERTS_TO
     broad_mappings:
       -
     narrow_mappings:
@@ -2829,14 +2828,14 @@ START_AGAIN_HERE:
       - translator_minimal
       - samples
     inverse: derives into
-    mappings:
-      - RO:0001000
+    #mappings:
+    #  - RO:0001000
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0001000
     broad_mappings:
       -
     narrow_mappings:
@@ -2845,21 +2844,22 @@ START_AGAIN_HERE:
   manifestation of:
     is_a: related to
     description: >-
-      used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
+      that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
     range: disease
     in_subset:
       - translator_minimal
-    mappings:
-      - SEMMEDDB:MANIFESTATION_OF
-      - WIKIDATA:P1557
+    #mappings:
+    #  - SEMMEDDB:MANIFESTATION_OF
+    #  - WIKIDATA:P1557
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - SEMMEDDB:MANIFESTATION_OF
     broad_mappings:
-      -
+      # Wikidata definition slightly broader: "inherent and characteristic embodiment of a given concept"
+      - WIKIDATA:P1557
     narrow_mappings:
       -
 
