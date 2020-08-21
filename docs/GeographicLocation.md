@@ -24,7 +24,7 @@ UMLSSC:T083
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[GeographicLocationAtTime],[GeographicLocation|latitude:float%20%3F;longitude:float%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[GeographicLocationAtTime],[PlanetaryEntity]%5E-[GeographicLocation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[GeographicLocationAtTime],[GeographicLocation%7Clatitude:float%20%3F;longitude:float%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[GeographicLocationAtTime],[PlanetaryEntity]%5E-[GeographicLocation])
 
 ---
 

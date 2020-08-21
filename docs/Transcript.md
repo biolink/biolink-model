@@ -21,7 +21,7 @@ SIO:010450
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript|has_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[GenomicEntity]%5E-[Transcript],[OrganismTaxon],[MolecularEntity],[GenomicEntity],[ExonToTranscriptRelationship])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[GenomicEntity]%5E-[Transcript],[OrganismTaxon],[MolecularEntity],[GenomicEntity],[ExonToTranscriptRelationship])
 
 ---
 

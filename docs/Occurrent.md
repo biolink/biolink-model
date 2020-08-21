@@ -18,7 +18,7 @@ BFO:0000003
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure],[Phenomenon],[MolecularActivity]uses%20-.-%3E[Occurrent|id(i):string;name(i):label_type;category(i):category_type%20%2B],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[Occurrent]%5E-[Procedure],[Occurrent]%5E-[Phenomenon],[Occurrent]%5E-[ActivityAndBehavior],[NamedThing]%5E-[Occurrent],[NamedThing],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure],[Phenomenon],[MolecularActivity]uses%20-.-%3E[Occurrent%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[Occurrent]%5E-[Procedure],[Occurrent]%5E-[Phenomenon],[Occurrent]%5E-[ActivityAndBehavior],[NamedThing]%5E-[Occurrent],[NamedThing],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
 
 ---
 

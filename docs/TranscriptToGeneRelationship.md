@@ -15,7 +15,7 @@ URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/Trans
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Gene]%3Cobject%201..1-%20[TranscriptToGeneRelationship|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[Transcript]%3Csubject%201..1-%20[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[Transcript],[SequenceFeatureRelationship],[Publication],[Provider],[OntologyClass],[Gene])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Gene]%3Cobject%201..1-%20[TranscriptToGeneRelationship%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[Transcript]%3Csubject%201..1-%20[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[Transcript],[SequenceFeatureRelationship],[Publication],[Provider],[OntologyClass],[Gene])
 
 ---
 

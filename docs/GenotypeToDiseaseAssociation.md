@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToDiseaseAssociation](https://w3id.org/biolink/vocab/Genot
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociation],[NamedThing]%3Cobject%201..1-%20[GenotypeToDiseaseAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[NamedThing]%3Csubject%201..1-%20[GenotypeToDiseaseAssociation],[GenotypeToDiseaseAssociation]uses%20-.-%3E[GenotypeToThingAssociation],[GenotypeToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GenotypeToDiseaseAssociation]%5E-[GenotypeAsAModelOfDiseaseAssociation],[Association]%5E-[GenotypeToDiseaseAssociation],[GenotypeAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToDiseaseAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociation],[NamedThing]%3Cobject%201..1-%20[GenotypeToDiseaseAssociation%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[NamedThing]%3Csubject%201..1-%20[GenotypeToDiseaseAssociation],[GenotypeToDiseaseAssociation]uses%20-.-%3E[GenotypeToThingAssociation],[GenotypeToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GenotypeToDiseaseAssociation]%5E-[GenotypeAsAModelOfDiseaseAssociation],[Association]%5E-[GenotypeToDiseaseAssociation],[GenotypeAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToDiseaseAssociation],[Association])
 
 ---
 

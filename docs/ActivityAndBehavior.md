@@ -72,7 +72,7 @@ UMLSST:mcha
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[Occurrent]%5E-[ActivityAndBehavior|id(i):string;name(i):label_type;category(i):category_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[Occurrent]%5E-[ActivityAndBehavior%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B])
 
 ---
 

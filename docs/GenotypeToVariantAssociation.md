@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[Publication],[Provider],[OntologyClass],[SequenceVariant]%3Cobject%201..1-%20[GenotypeToVariantAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Genotype],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[Publication],[Provider],[OntologyClass],[SequenceVariant]%3Cobject%201..1-%20[GenotypeToVariantAssociation%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Genotype],[Association])
 
 ---
 

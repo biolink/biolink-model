@@ -15,7 +15,7 @@ URI: [biolink:GenotypeAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[GenotypeToDiseaseAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeAsAModelOfDiseaseAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GenotypeToDiseaseAssociation]%5E-[GenotypeAsAModelOfDiseaseAssociation],[Genotype],[FrequencyValue],[EntityToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[GenotypeToDiseaseAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeAsAModelOfDiseaseAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GenotypeToDiseaseAssociation]%5E-[GenotypeAsAModelOfDiseaseAssociation],[Genotype],[FrequencyValue],[EntityToDiseaseAssociation])
 
 ---
 

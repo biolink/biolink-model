@@ -15,7 +15,7 @@ URI: [biolink:VariantAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voca
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[SequenceVariant]%3Csubject%201..1-%20[VariantAsAModelOfDiseaseAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[VariantAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[VariantAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[SeverityValue],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[FrequencyValue],[EntityToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[SequenceVariant]%3Csubject%201..1-%20[VariantAsAModelOfDiseaseAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[VariantAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[VariantAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[SeverityValue],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[FrequencyValue],[EntityToDiseaseAssociation])
 
 ---
 

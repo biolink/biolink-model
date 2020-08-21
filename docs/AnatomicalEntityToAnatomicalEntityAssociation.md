@@ -15,7 +15,7 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/bi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[Association],[AnatomicalEntityToAnatomicalEntityPartOfAssociation],[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[AnatomicalEntity]%3Cobject%201..1-%20[AnatomicalEntityToAnatomicalEntityAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[AnatomicalEntity]%3Csubject%201..1-%20[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntityToAnatomicalEntityAssociation]%5E-[AnatomicalEntityToAnatomicalEntityPartOfAssociation],[AnatomicalEntityToAnatomicalEntityAssociation]%5E-[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[Association]%5E-[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[Association],[AnatomicalEntityToAnatomicalEntityPartOfAssociation],[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[AnatomicalEntity]%3Cobject%201..1-%20[AnatomicalEntityToAnatomicalEntityAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[AnatomicalEntity]%3Csubject%201..1-%20[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntityToAnatomicalEntityAssociation]%5E-[AnatomicalEntityToAnatomicalEntityPartOfAssociation],[AnatomicalEntityToAnatomicalEntityAssociation]%5E-[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[Association]%5E-[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntity])
 
 ---
 

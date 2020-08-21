@@ -18,7 +18,7 @@ EFO:0004095
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SourceFile],[NamedThing],[DataSetVersion],[DataSetVersion]-%20source%20data%20file%200..1%3E[DataFile|id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataFile]%5E-[SourceFile],[NamedThing]%5E-[DataFile])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SourceFile],[NamedThing],[DataSetVersion],[DataSetVersion]-%20source%20data%20file%200..1%3E[DataFile%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DataFile]%5E-[SourceFile],[NamedThing]%5E-[DataFile])
 
 ---
 

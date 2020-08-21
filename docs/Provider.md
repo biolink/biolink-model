@@ -45,7 +45,7 @@ prov:Agent
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20provided%20by%200..*%3E[Provider|id(i):string;name(i):label_type;category(i):category_type%20%2B],[AdministrativeEntity]%5E-[Provider],[Association],[AdministrativeEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20provided%20by%200..%2A%3E[Provider%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[AdministrativeEntity]%5E-[Provider],[Association],[AdministrativeEntity])
 
 ---
 

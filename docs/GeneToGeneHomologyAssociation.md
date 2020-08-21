@@ -15,7 +15,7 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneToGeneAssociation],[GeneOrGeneProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneToGeneAssociation],[GeneOrGeneProduct])
 
 ---
 

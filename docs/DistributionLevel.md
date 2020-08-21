@@ -18,7 +18,7 @@ dcat:Distribution
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DataSetVersion]-%20distribution%200..1%3E[DistributionLevel|downloadURL:string%20%3F;title(i):string%20%3F;type(i):string%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSetVersion]%5E-[DistributionLevel],[DataSetVersion],[DataSet],[DataFile])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DataSetVersion]-%20distribution%200..1%3E[DistributionLevel%7CdownloadURL:string%20%3F;title(i):string%20%3F;type(i):string%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSetVersion]%5E-[DistributionLevel],[DataSetVersion],[DataSet],[DataFile])
 
 ---
 

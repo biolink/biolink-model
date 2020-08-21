@@ -21,7 +21,7 @@ NCBITaxon:1
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[ThingWithTaxon]-%20in%20taxon%200..*%3E[OrganismTaxon|id(i):string;name(i):label_type;category(i):category_type%20%2B],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass])
 
 ---
 

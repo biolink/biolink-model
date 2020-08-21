@@ -21,7 +21,7 @@ SIO:001399
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[DrugExposure],[ChemicalExposure|id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[DrugExposure],[ExposureEvent]%5E-[ChemicalExposure])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[DrugExposure],[ChemicalExposure%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[DrugExposure],[ExposureEvent]%5E-[ChemicalExposure])
 
 ---
 

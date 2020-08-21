@@ -21,7 +21,7 @@ SIO:001005
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[ChemicalSubstance]%3Chas%20drug%201..*-%20[DrugExposure|id(i):string;name(i):label_type;category(i):category_type%20%2B],[Treatment]-%20has%20part%201..*%3E[DrugExposure],[ChemicalExposure]%5E-[DrugExposure],[ChemicalSubstance],[ChemicalExposure])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[ChemicalSubstance]%3Chas%20drug%201..%2A-%20[DrugExposure%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Treatment]-%20has%20part%201..%2A%3E[DrugExposure],[ChemicalExposure]%5E-[DrugExposure],[ChemicalSubstance],[ChemicalExposure])
 
 ---
 

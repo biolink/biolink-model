@@ -18,7 +18,7 @@ IAO:0000100
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[DataSetVersion],[DataSetVersion]-%20versionOf%200..1%3E[DataSet|id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSet]%5E-[DataSetVersion],[NamedThing]%5E-[DataSet])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[DataSetVersion],[DataSetVersion]-%20versionOf%200..1%3E[DataSet%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSet]%5E-[DataSetVersion],[NamedThing]%5E-[DataSet])
 
 ---
 

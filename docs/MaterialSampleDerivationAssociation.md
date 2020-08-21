@@ -15,7 +15,7 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[NamedThing]%3Cobject%201..1-%20[MaterialSampleDerivationAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[MaterialSample]%3Csubject%201..1-%20[MaterialSampleDerivationAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[MaterialSample],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[NamedThing]%3Cobject%201..1-%20[MaterialSampleDerivationAssociation%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[MaterialSample]%3Csubject%201..1-%20[MaterialSampleDerivationAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[MaterialSample],[Association])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/Disea
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[ExposureEvent],[DiseaseToThingAssociation],[ExposureEvent]%3Cobject%201..1-%20[DiseaseToExposureAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[Disease]%3Csubject%201..1-%20[DiseaseToExposureAssociation],[DiseaseToThingAssociation]%5E-[DiseaseToExposureAssociation],[Disease])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[ExposureEvent],[DiseaseToThingAssociation],[ExposureEvent]%3Cobject%201..1-%20[DiseaseToExposureAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[Disease]%3Csubject%201..1-%20[DiseaseToExposureAssociation],[DiseaseToThingAssociation]%5E-[DiseaseToExposureAssociation],[Disease])
 
 ---
 

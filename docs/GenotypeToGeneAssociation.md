@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[Gene]%3Cobject%201..1-%20[GenotypeToGeneAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Genotype],[Gene],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[Gene]%3Cobject%201..1-%20[GenotypeToGeneAssociation%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Genotype],[Gene],[Association])
 
 ---
 

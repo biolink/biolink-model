@@ -15,7 +15,7 @@ URI: [biolink:CaseToThingAssociation](https://w3id.org/biolink/vocab/CaseToThing
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[Case]%3Csubject%201..1-%20[CaseToThingAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToThingAssociation],[Association]%5E-[CaseToThingAssociation],[CaseToPhenotypicFeatureAssociation],[Case],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[Case]%3Csubject%201..1-%20[CaseToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToThingAssociation],[Association]%5E-[CaseToThingAssociation],[CaseToPhenotypicFeatureAssociation],[Case],[Association])
 
 ---
 

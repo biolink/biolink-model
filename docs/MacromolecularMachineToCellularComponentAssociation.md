@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToCellularComponentAssociation](https://w3id.
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[CellularComponent]%3Cobject%201..1-%20[MacromolecularMachineToCellularComponentAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachine],[FunctionalAssociation],[CellularComponent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[CellularComponent]%3Cobject%201..1-%20[MacromolecularMachineToCellularComponentAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachine],[FunctionalAssociation],[CellularComponent])
 
 ---
 

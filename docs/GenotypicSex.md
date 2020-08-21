@@ -15,7 +15,7 @@ URI: [biolink:GenotypicSex](https://w3id.org/biolink/vocab/GenotypicSex)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[BiologicalSex]%5E-[GenotypicSex|id(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalSex])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[BiologicalSex]%5E-[GenotypicSex%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalSex])
 
 ---
 

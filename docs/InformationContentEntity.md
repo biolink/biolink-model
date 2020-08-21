@@ -87,7 +87,7 @@ UMLSST:clas
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[InformationContentEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[Publication],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[ConfidenceLevel],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[ConfidenceLevel])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[InformationContentEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[Publication],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[ConfidenceLevel],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[ConfidenceLevel])
 
 ---
 

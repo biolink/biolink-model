@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToMolecularActivityAssociation](https://w3id.
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[MolecularActivity],[MolecularActivity]%3Cobject%201..1-%20[MacromolecularMachineToMolecularActivityAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachine],[FunctionalAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[MolecularActivity],[MolecularActivity]%3Cobject%201..1-%20[MacromolecularMachineToMolecularActivityAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachine],[FunctionalAssociation])
 
 ---
 

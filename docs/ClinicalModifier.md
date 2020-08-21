@@ -18,7 +18,7 @@ HP:0012823
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[Attribute]%5E-[ClinicalModifier|id(i):string;name(i):label_type;category(i):category_type%20%2B],[Attribute],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[Attribute]%5E-[ClinicalModifier%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Attribute],[Association])
 
 ---
 

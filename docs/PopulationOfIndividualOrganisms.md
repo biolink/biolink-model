@@ -27,7 +27,7 @@ OBI:0000181
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[ThingWithTaxon],[PopulationToPopulationAssociation],[PopulationToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms|id(i):string;name(i):label_type;category(i):category_type%20%2B],[PopulationToPopulationAssociation]-%20subject%201..1%3E[PopulationOfIndividualOrganisms],[VariantToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity],[OrganismTaxon])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[ThingWithTaxon],[PopulationToPopulationAssociation],[PopulationToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[PopulationToPopulationAssociation]-%20subject%201..1%3E[PopulationOfIndividualOrganisms],[VariantToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity],[OrganismTaxon])
 
 ---
 

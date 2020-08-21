@@ -15,7 +15,7 @@ URI: [biolink:ClinicalTrial](https://w3id.org/biolink/vocab/ClinicalTrial)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ClinicalEntity]%5E-[ClinicalTrial|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ClinicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ClinicalEntity]%5E-[ClinicalTrial%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ClinicalEntity])
 
 ---
 

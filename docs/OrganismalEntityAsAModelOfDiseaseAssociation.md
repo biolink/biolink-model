@@ -15,7 +15,7 @@ URI: [biolink:OrganismalEntityAsAModelOfDiseaseAssociation](https://w3id.org/bio
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OrganismalEntity]%3Csubject%201..1-%20[OrganismalEntityAsAModelOfDiseaseAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[OrganismalEntityAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[OrganismalEntityAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[Association]%5E-[OrganismalEntityAsAModelOfDiseaseAssociation],[OrganismalEntity],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[FrequencyValue],[EntityToDiseaseAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OrganismalEntity]%3Csubject%201..1-%20[OrganismalEntityAsAModelOfDiseaseAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[OrganismalEntityAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[OrganismalEntityAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[Association]%5E-[OrganismalEntityAsAModelOfDiseaseAssociation],[OrganismalEntity],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[FrequencyValue],[EntityToDiseaseAssociation],[Association])
 
 ---
 

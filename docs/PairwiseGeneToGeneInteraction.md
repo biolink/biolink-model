@@ -15,7 +15,7 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[PairwiseInteractionAssociation],[PairwiseGeneToGeneInteraction|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F]uses%20-.-%3E[PairwiseInteractionAssociation],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneAssociation],[GeneOrGeneProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[PairwiseInteractionAssociation],[PairwiseGeneToGeneInteraction%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F]uses%20-.-%3E[PairwiseInteractionAssociation],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneAssociation],[GeneOrGeneProduct])
 
 ---
 
@@ -79,6 +79,21 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
  * [gene to gene association➞object](gene_to_gene_association_object.md)  <sub>REQ</sub>
     * Description: the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+
+### Inherited from pairwise interaction association:
+
+ * [pairwise interaction association➞subject](pairwise_interaction_association_subject.md)  <sub>REQ</sub>
+    * range: [MolecularEntity](MolecularEntity.md)
+ * [pairwise interaction association➞id](pairwise_interaction_association_id.md)  <sub>REQ</sub>
+    * Description: identifier for the interaction. This may come from an interaction database such as IMEX.
+    * range: [String](types/String.md)
+ * [pairwise interaction association➞relation](pairwise_interaction_association_relation.md)  <sub>REQ</sub>
+    * Description: interaction relationship type
+    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [pairwise interaction association➞object](pairwise_interaction_association_object.md)  <sub>REQ</sub>
+    * range: [MolecularEntity](MolecularEntity.md)
+ * [pairwise interaction association➞interacting molecules category](pairwise_interaction_association_interacting_molecules_category.md)  <sub>OPT</sub>
+    * range: [OntologyClass](OntologyClass.md)
 
 ### Domain for slot:
 

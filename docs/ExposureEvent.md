@@ -18,7 +18,7 @@ XCO:0000000
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[ExposureEventToPhenotypicFeatureAssociation],[DiseaseToExposureAssociation]-%20object%201..1%3E[ExposureEvent|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ExposureEventToPhenotypicFeatureAssociation]-%20subject%201..1%3E[ExposureEvent],[ExposureEvent]%5E-[Treatment],[ExposureEvent]%5E-[ChemicalExposure],[BiologicalEntity]%5E-[ExposureEvent],[DiseaseToExposureAssociation],[ChemicalExposure],[BiologicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[ExposureEventToPhenotypicFeatureAssociation],[DiseaseToExposureAssociation]-%20object%201..1%3E[ExposureEvent%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ExposureEventToPhenotypicFeatureAssociation]-%20subject%201..1%3E[ExposureEvent],[ExposureEvent]%5E-[Treatment],[ExposureEvent]%5E-[ChemicalExposure],[BiologicalEntity]%5E-[ExposureEvent],[DiseaseToExposureAssociation],[ChemicalExposure],[BiologicalEntity])
 
 ---
 

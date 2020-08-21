@@ -24,7 +24,7 @@ UMLSST:emod
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[NamedThing],[MolecularEntity],[ExposureEvent],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[MolecularEntity],[BiologicalEntity]%5E-[ExposureEvent],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[NamedThing],[MolecularEntity],[ExposureEvent],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[MolecularEntity],[BiologicalEntity]%5E-[ExposureEvent],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity])
 
 ---
 

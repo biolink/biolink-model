@@ -15,7 +15,7 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[ChemicalToThingAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalSubstance]%3Cobject%201..1-%20[ChemicalToChemicalAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[ChemicalSubstance],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[ChemicalToThingAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalSubstance]%3Cobject%201..1-%20[ChemicalToChemicalAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[ChemicalSubstance],[Association])
 
 ---
 

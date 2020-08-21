@@ -18,7 +18,7 @@ foaf:Person
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[IndividualOrganism],[CaseToThingAssociation],[CaseToThingAssociation]-%20subject%201..1%3E[Case|id(i):string;name(i):label_type;category(i):category_type%20%2B],[IndividualOrganism]%5E-[Case])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[IndividualOrganism],[CaseToThingAssociation],[CaseToThingAssociation]-%20subject%201..1%3E[Case%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[IndividualOrganism]%5E-[Case])
 
 ---
 

@@ -18,7 +18,7 @@ CLO:0000031
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[CellLineToThingAssociation],[CellLineAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[CellLine|id(i):string;name(i):label_type;category(i):category_type%20%2B],[CellLineToThingAssociation]-%20subject%201..1%3E[CellLine],[OrganismalEntity]%5E-[CellLine])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[CellLineToThingAssociation],[CellLineAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[CellLine%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[CellLineToThingAssociation]-%20subject%201..1%3E[CellLine],[OrganismalEntity]%5E-[CellLine])
 
 ---
 

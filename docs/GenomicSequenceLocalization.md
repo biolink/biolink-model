@@ -18,7 +18,7 @@ faldo:location
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[GenomicEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization|start_interbase_coordinate:string%20%3F;end_interbase_coordinate:string%20%3F;genome_build:string%20%3F;phase:string%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GenomicEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[Association]%5E-[GenomicSequenceLocalization],[GenomicEntity],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[GenomicEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:string%20%3F;end_interbase_coordinate:string%20%3F;genome_build:string%20%3F;phase:string%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GenomicEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[Association]%5E-[GenomicSequenceLocalization],[GenomicEntity],[Association])
 
 ---
 

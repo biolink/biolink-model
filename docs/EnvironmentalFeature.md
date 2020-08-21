@@ -18,7 +18,7 @@ ENVO:01000254
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[PlanetaryEntity]%5E-[EnvironmentalFeature|id(i):string;name(i):label_type;category(i):category_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[PlanetaryEntity]%5E-[EnvironmentalFeature%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B])
 
 ---
 

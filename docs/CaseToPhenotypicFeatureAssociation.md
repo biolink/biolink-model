@@ -15,7 +15,7 @@ URI: [biolink:CaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[CaseToThingAssociation],[CaseToPhenotypicFeatureAssociation|description:narrative_text%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToThingAssociation],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[CaseToThingAssociation],[CaseToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToThingAssociation],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
 
 ---
 

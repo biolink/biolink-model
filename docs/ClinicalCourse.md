@@ -18,7 +18,7 @@ HP:0031797
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[Onset],[NamedThing],[ClinicalCourse|id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[Onset],[Attribute]%5E-[ClinicalCourse],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[Onset],[NamedThing],[ClinicalCourse%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[Onset],[Attribute]%5E-[ClinicalCourse],[Attribute])
 
 ---
 

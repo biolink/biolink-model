@@ -18,7 +18,7 @@ SO:0001483
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%5E-[Snv|has_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[SequenceVariant],[OrganismTaxon],[Gene])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%5E-[Snv%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[SequenceVariant],[OrganismTaxon],[Gene])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/vocab/ClinicalInter
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ClinicalEntity]%5E-[ClinicalIntervention|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ClinicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ClinicalEntity]%5E-[ClinicalIntervention%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ClinicalEntity])
 
 ---
 

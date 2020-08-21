@@ -24,7 +24,7 @@ WIKIDATA:Q169872
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[EntityToPhenotypicFeatureAssociation]-%20object%201..1%3E[PhenotypicFeature|id(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],[OrganismTaxon],[EntityToPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[BiologicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[EntityToPhenotypicFeatureAssociation]-%20object%201..1%3E[PhenotypicFeature%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],[OrganismTaxon],[EntityToPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[BiologicalEntity])
 
 ---
 

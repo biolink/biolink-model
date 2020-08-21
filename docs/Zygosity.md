@@ -18,7 +18,7 @@ GENO:0000133
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Genotype]-%20has%20zygosity%200..1%3E[Zygosity|id(i):string;name(i):label_type;category(i):category_type%20%2B],[Attribute]%5E-[Zygosity],[QuantityValue],[OntologyClass],[NamedThing],[Genotype],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Genotype]-%20has%20zygosity%200..1%3E[Zygosity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Attribute]%5E-[Zygosity],[QuantityValue],[OntologyClass],[NamedThing],[Genotype],[Attribute])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[Genotype]%3Cobject%201..1-%20[GenotypeToGenotypePartAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Genotype],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[Genotype]%3Cobject%201..1-%20[GenotypeToGenotypePartAssociation%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Genotype],[Association])
 
 ---
 

@@ -27,7 +27,7 @@ UMLSST:inpr
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20publications%200..*%3E[Publication|id(i):string;name(i):label_type;category(i):category_type%20%2B],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20publications%200..%2A%3E[Publication%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[Association])
 
 ---
 

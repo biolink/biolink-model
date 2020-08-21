@@ -15,7 +15,7 @@ URI: [biolink:GeographicLocationAtTime](https://w3id.org/biolink/vocab/Geographi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GeographicLocation]%5E-[GeographicLocationAtTime|timepoint:time_type%20%3F;latitude(i):float%20%3F;longitude(i):float%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[GeographicLocation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GeographicLocation]%5E-[GeographicLocationAtTime%7Ctimepoint:time_type%20%3F;latitude(i):float%20%3F;longitude(i):float%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[GeographicLocation])
 
 ---
 

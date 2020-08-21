@@ -15,7 +15,7 @@ URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/Sequen
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[GenomicEntity]%3Cobject%201..1-%20[SequenceFeatureRelationship|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GenomicEntity]%3Csubject%201..1-%20[SequenceFeatureRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Association]%5E-[SequenceFeatureRelationship],[Publication],[Provider],[OntologyClass],[GenomicEntity],[GeneToGeneProductRelationship],[ExonToTranscriptRelationship],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[GenomicEntity]%3Cobject%201..1-%20[SequenceFeatureRelationship%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GenomicEntity]%3Csubject%201..1-%20[SequenceFeatureRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Association]%5E-[SequenceFeatureRelationship],[Publication],[Provider],[OntologyClass],[GenomicEntity],[GeneToGeneProductRelationship],[ExonToTranscriptRelationship],[Association])
 
 ---
 

@@ -18,7 +18,7 @@ HP:0003674
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[EntityToFeatureOrDiseaseQualifiers]-%20onset%20qualifier%200..1%3E[Onset|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ClinicalCourse]%5E-[Onset],[NamedThing],[EntityToFeatureOrDiseaseQualifiers],[ClinicalCourse],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[EntityToFeatureOrDiseaseQualifiers]-%20onset%20qualifier%200..1%3E[Onset%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ClinicalCourse]%5E-[Onset],[NamedThing],[EntityToFeatureOrDiseaseQualifiers],[ClinicalCourse],[Association])
 
 ---
 

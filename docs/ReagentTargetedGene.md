@@ -18,7 +18,7 @@ GENO:0000504
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GenomicEntity]%5E-[ReagentTargetedGene|has_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[OrganismTaxon],[GenomicEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GenomicEntity]%5E-[ReagentTargetedGene%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[OrganismTaxon],[GenomicEntity])
 
 ---
 

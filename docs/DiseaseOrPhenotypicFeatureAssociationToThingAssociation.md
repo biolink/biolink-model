@@ -15,7 +15,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation](https://w
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[DiseaseOrPhenotypicFeatureAssociationToThingAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]%5E-[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[DiseaseOrPhenotypicFeature],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[DiseaseOrPhenotypicFeatureAssociationToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]%5E-[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[DiseaseOrPhenotypicFeature],[Association])
 
 ---
 

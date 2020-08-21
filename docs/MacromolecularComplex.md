@@ -21,7 +21,7 @@ WIKIDATA:Q22325163
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MacromolecularMachine],[MacromolecularMachine]%5E-[MacromolecularComplex|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MacromolecularMachine],[MacromolecularMachine]%5E-[MacromolecularComplex%7Cname(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B])
 
 ---
 

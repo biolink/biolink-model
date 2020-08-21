@@ -15,7 +15,7 @@ URI: [biolink:DiseaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[DiseaseToThingAssociation],[DiseaseToPhenotypicFeatureAssociation|description:narrative_text%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToThingAssociation],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[DiseaseToThingAssociation],[DiseaseToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToThingAssociation],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
 
 ---
 

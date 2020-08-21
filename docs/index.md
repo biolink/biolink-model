@@ -333,6 +333,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
  * [has unit](has_unit.md) - connects a quantity value to a unit
  * [interacting molecules category](interacting_molecules_category.md)
+    * [pairwise interaction association➞interacting molecules category](pairwise_interaction_association_interacting_molecules_category.md)
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
     * [aggregate statistic](aggregate_statistic.md)
        * [has count](has_count.md) - number of things with a particular property

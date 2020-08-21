@@ -15,7 +15,7 @@ URI: [biolink:GeneProductIsoform](https://w3id.org/biolink/vocab/GeneProductIsof
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[ProteinIsoform]uses%20-.-%3E[GeneProductIsoform|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B],[RNAProductIsoform]uses%20-.-%3E[GeneProductIsoform],[GeneProduct]%5E-[GeneProductIsoform],[ProteinIsoform],[GeneProduct],[RNAProductIsoform])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[ProteinIsoform]uses%20-.-%3E[GeneProductIsoform%7Cname(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B],[RNAProductIsoform]uses%20-.-%3E[GeneProductIsoform],[GeneProduct]%5E-[GeneProductIsoform],[ProteinIsoform],[GeneProduct],[RNAProductIsoform])
 
 ---
 

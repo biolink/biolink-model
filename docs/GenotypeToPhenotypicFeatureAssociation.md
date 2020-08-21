@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation|relation:uriorcurie;description:narrative_text%20%3F;id(i):string;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation%7Crelation:uriorcurie;description:narrative_text%20%3F;id(i):string;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
 
 ---
 

@@ -21,7 +21,7 @@ SIO:001398
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DrugExposure]%3Chas%20part%201..*-%20[Treatment|id(i):string;name(i):label_type;category(i):category_type%20%2B],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[ExposureEvent]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[ExposureEvent],[DrugExposure])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DrugExposure]%3Chas%20part%201..%2A-%20[Treatment%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[ExposureEvent]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[ExposureEvent],[DrugExposure])
 
 ---
 

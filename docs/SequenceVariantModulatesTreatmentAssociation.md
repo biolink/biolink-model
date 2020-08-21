@@ -15,7 +15,7 @@ URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/bio
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[Treatment]%3Cobject%201..1-%20[SequenceVariantModulatesTreatmentAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[SequenceVariant]%3Csubject%201..1-%20[SequenceVariantModulatesTreatmentAssociation],[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[Treatment]%3Cobject%201..1-%20[SequenceVariantModulatesTreatmentAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[SequenceVariant]%3Csubject%201..1-%20[SequenceVariantModulatesTreatmentAssociation],[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Association])
 
 ---
 

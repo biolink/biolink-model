@@ -18,7 +18,7 @@ WIKIDATA:Q424689
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Protein],[OrganismTaxon],[GeneToGeneProductRelationship],[GeneProductIsoform],[GeneToGeneProductRelationship]-%20object%201..1%3E[GeneProduct|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B],[GeneProduct]%5E-[Protein],[GeneProduct]%5E-[GeneProductIsoform],[GeneProduct]%5E-[RNAProduct],[GeneOrGeneProduct]%5E-[GeneProduct],[GeneOrGeneProduct],[Gene],[RNAProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Protein],[OrganismTaxon],[GeneToGeneProductRelationship],[GeneProductIsoform],[GeneToGeneProductRelationship]-%20object%201..1%3E[GeneProduct%7Cname(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B],[GeneProduct]%5E-[Protein],[GeneProduct]%5E-[GeneProductIsoform],[GeneProduct]%5E-[RNAProduct],[GeneOrGeneProduct]%5E-[GeneProduct],[GeneOrGeneProduct],[Gene],[RNAProduct])
 
 ---
 

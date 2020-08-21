@@ -24,7 +24,7 @@ UMLSST:moft
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[MacromolecularMachine]%3Cenabled%20by%200..*-%20[MolecularActivity|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalSubstance]%3Chas%20output%200..*-%20[MolecularActivity],[ChemicalSubstance]%3Chas%20input%200..*-%20[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachine],[ChemicalSubstance],[BiologicalProcessOrActivity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[MacromolecularMachine]%3Cenabled%20by%200..%2A-%20[MolecularActivity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalSubstance]%3Chas%20output%200..%2A-%20[MolecularActivity],[ChemicalSubstance]%3Chas%20input%200..%2A-%20[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachine],[ChemicalSubstance],[BiologicalProcessOrActivity])
 
 ---
 

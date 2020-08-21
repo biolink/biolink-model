@@ -15,7 +15,7 @@ URI: [biolink:DataSetSummary](https://w3id.org/biolink/vocab/DataSetSummary)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DistributionLevel],[DataSetVersion],[DataSetVersion]%5E-[DataSetSummary|source_web_page:string%20%3F;title(i):string%20%3F;type(i):string%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSet],[DataFile])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DistributionLevel],[DataSetVersion],[DataSetVersion]%5E-[DataSetSummary%7Csource_web_page:string%20%3F;title(i):string%20%3F;type(i):string%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSet],[DataFile])
 
 ---
 

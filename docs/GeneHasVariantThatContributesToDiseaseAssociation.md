@@ -15,7 +15,7 @@ URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.or
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneHasVariantThatContributesToDiseaseAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[SequenceVariant]%3Csequence%20variant%20qualifier%200..1-%20[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[FrequencyValue])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneHasVariantThatContributesToDiseaseAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[SequenceVariant]%3Csequence%20variant%20qualifier%200..1-%20[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[FrequencyValue])
 
 ---
 

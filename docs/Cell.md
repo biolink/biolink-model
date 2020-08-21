@@ -33,7 +33,7 @@ UMLSST:cell
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[AnatomicalEntity]%5E-[Cell|id(i):string;name(i):label_type;category(i):category_type%20%2B],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[AnatomicalEntity]%5E-[Cell%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[AnatomicalEntity])
 
 ---
 

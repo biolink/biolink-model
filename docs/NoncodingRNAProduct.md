@@ -18,7 +18,7 @@ SIO:001235
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NoncodingRNAProduct|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[MicroRNA],[RNAProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NoncodingRNAProduct%7Cname(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[MicroRNA],[RNAProduct])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:MaterialSampleToThingAssociation](https://w3id.org/biolink/vocab/M
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[MaterialSample]%3Csubject%201..1-%20[MaterialSampleToThingAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[MaterialSampleToThingAssociation],[Association]%5E-[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSample],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[MaterialSample]%3Csubject%201..1-%20[MaterialSampleToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[MaterialSampleToThingAssociation],[Association]%5E-[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSample],[Association])
 
 ---
 

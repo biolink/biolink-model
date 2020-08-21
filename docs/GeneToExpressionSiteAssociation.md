@@ -15,7 +15,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[LifeStage],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[Association],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[LifeStage],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[Association],[AnatomicalEntity])
 
 ---
 

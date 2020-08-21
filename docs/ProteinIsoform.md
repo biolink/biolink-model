@@ -15,7 +15,7 @@ URI: [biolink:ProteinIsoform](https://w3id.org/biolink/vocab/ProteinIsoform)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B]uses%20-.-%3E[GeneProductIsoform],[Protein]%5E-[ProteinIsoform],[Protein],[OrganismTaxon],[GeneProductIsoform])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform%7Cname(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B]uses%20-.-%3E[GeneProductIsoform],[Protein]%5E-[ProteinIsoform],[Protein],[OrganismTaxon],[GeneProductIsoform])
 
 ---
 

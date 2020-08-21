@@ -18,7 +18,7 @@ SIO:000614
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[QuantityValue],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalModifier],[ClinicalCourse],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute|id:string;name:label_type;category:category_type%20%2B],[QuantityValue]%3Chas%20quantitative%20value%200..*-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%200..1-%20[Attribute],[MaterialSample]-%20has%20attribute%200..*%3E[Attribute],[Attribute]uses%20-.-%3E[OntologyClass],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalModifier],[Attribute]%5E-[ClinicalCourse],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[MaterialSample],[AbstractEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[QuantityValue],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalModifier],[ClinicalCourse],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cid:string;name:label_type;category:category_type%20%2B],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%200..1-%20[Attribute],[MaterialSample]-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]uses%20-.-%3E[OntologyClass],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalModifier],[Attribute]%5E-[ClinicalCourse],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[MaterialSample],[AbstractEntity])
 
 ---
 

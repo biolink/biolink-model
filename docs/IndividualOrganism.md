@@ -144,7 +144,7 @@ UMLSST:euka
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismTaxon],[IndividualOrganism|id(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]%5E-[Case],[OrganismalEntity]%5E-[IndividualOrganism],[Case])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismTaxon],[IndividualOrganism%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]%5E-[Case],[OrganismalEntity]%5E-[IndividualOrganism],[Case])
 
 ---
 

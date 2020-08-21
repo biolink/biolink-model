@@ -18,7 +18,7 @@ dctypes:Dataset
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DistributionLevel],[DistributionLevel]%3Cdistribution%200..1-%20[DataSetVersion|title:string%20%3F;type:string%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSet]%3CversionOf%200..1-%20[DataSetVersion],[DataFile]%3Csource%20data%20file%200..1-%20[DataSetVersion],[DataSetVersion]%5E-[DistributionLevel],[DataSetVersion]%5E-[DataSetSummary],[DataSet]%5E-[DataSetVersion],[DataSetSummary],[DataSet],[DataFile])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DistributionLevel],[DistributionLevel]%3Cdistribution%200..1-%20[DataSetVersion%7Ctitle:string%20%3F;type:string%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSet]%3CversionOf%200..1-%20[DataSetVersion],[DataFile]%3Csource%20data%20file%200..1-%20[DataSetVersion],[DataSetVersion]%5E-[DistributionLevel],[DataSetVersion]%5E-[DataSetSummary],[DataSet]%5E-[DataSetVersion],[DataSetSummary],[DataSet],[DataFile])
 
 ---
 

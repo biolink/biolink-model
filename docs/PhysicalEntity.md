@@ -15,7 +15,7 @@ URI: [biolink:PhysicalEntity](https://w3id.org/biolink/vocab/PhysicalEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]uses%20-.-%3E[PhysicalEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B],[MaterialSample]uses%20-.-%3E[PhysicalEntity],[AnatomicalEntity]uses%20-.-%3E[PhysicalEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing],[MolecularEntity],[MaterialSample],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]uses%20-.-%3E[PhysicalEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[MaterialSample]uses%20-.-%3E[PhysicalEntity],[AnatomicalEntity]uses%20-.-%3E[PhysicalEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing],[MolecularEntity],[MaterialSample],[AnatomicalEntity])
 
 ---
 

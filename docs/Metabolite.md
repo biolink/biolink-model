@@ -18,7 +18,7 @@ CHEBI:25212
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[ChemicalSubstance]%5E-[Metabolite|id(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalSubstance])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[ChemicalSubstance]%5E-[Metabolite%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalSubstance])
 
 ---
 

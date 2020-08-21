@@ -15,7 +15,7 @@ URI: [biolink:SeverityValue](https://w3id.org/biolink/vocab/SeverityValue)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[EntityToFeatureOrDiseaseQualifiers]-%20severity%20qualifier%200..1%3E[SeverityValue|id(i):string;name(i):label_type;category(i):category_type%20%2B],[Attribute]%5E-[SeverityValue],[QuantityValue],[OntologyClass],[NamedThing],[EntityToFeatureOrDiseaseQualifiers],[Attribute],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[EntityToFeatureOrDiseaseQualifiers]-%20severity%20qualifier%200..1%3E[SeverityValue%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Attribute]%5E-[SeverityValue],[QuantityValue],[OntologyClass],[NamedThing],[EntityToFeatureOrDiseaseQualifiers],[Attribute],[Association])
 
 ---
 

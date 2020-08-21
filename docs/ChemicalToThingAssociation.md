@@ -15,7 +15,7 @@ URI: [biolink:ChemicalToThingAssociation](https://w3id.org/biolink/vocab/Chemica
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[ChemicalSubstance]%3Csubject%201..1-%20[ChemicalToThingAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToThingAssociation],[ChemicalToPathwayAssociation],[ChemicalToGeneAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[ChemicalSubstance],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[ChemicalSubstance]%3Csubject%201..1-%20[ChemicalToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToThingAssociation],[ChemicalToPathwayAssociation],[ChemicalToGeneAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[ChemicalSubstance],[Association])
 
 ---
 

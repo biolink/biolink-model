@@ -15,7 +15,7 @@ URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[SequenceFeatureRelationship],[Publication],[Provider],[OntologyClass],[Transcript]%3Cobject%201..1-%20[ExonToTranscriptRelationship|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[Exon]%3Csubject%201..1-%20[ExonToTranscriptRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Exon])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[SequenceFeatureRelationship],[Publication],[Provider],[OntologyClass],[Transcript]%3Cobject%201..1-%20[ExonToTranscriptRelationship%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[Exon]%3Csubject%201..1-%20[ExonToTranscriptRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Exon])
 
 ---
 

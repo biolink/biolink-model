@@ -54,7 +54,7 @@ UMLSST:npop
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent]%5E-[Phenomenon|id(i):string;name(i):label_type;category(i):category_type%20%2B],[Occurrent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent]%5E-[Phenomenon%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Occurrent])
 
 ---
 

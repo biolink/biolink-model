@@ -39,7 +39,7 @@ UMLSST:aapp
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform],[Protein|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B]%5E-[ProteinIsoform],[GeneProduct]%5E-[Protein],[OrganismTaxon],[GeneProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform],[Protein%7Cname(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;category(i):category_type%20%2B]%5E-[ProteinIsoform],[GeneProduct]%5E-[Protein],[OrganismTaxon],[GeneProduct])
 
 ---
 

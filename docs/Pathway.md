@@ -27,7 +27,7 @@ WIKIDATA:Q4915012
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalToPathwayAssociation]-%20object%201..1%3E[Pathway|id(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalProcess]%5E-[Pathway],[NamedThing],[ChemicalToPathwayAssociation],[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalToPathwayAssociation]-%20object%201..1%3E[Pathway%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalProcess]%5E-[Pathway],[NamedThing],[ChemicalToPathwayAssociation],[BiologicalProcess])
 
 ---
 

@@ -30,7 +30,7 @@ UMLSST:mosq
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[PhysicalEntity],[PairwiseInteractionAssociation],[OrganismTaxon],[GeneToGoTermAssociation]-%20subject%201..1%3E[MolecularEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B],[PairwiseInteractionAssociation]-%20object%201..1%3E[MolecularEntity],[PairwiseInteractionAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]uses%20-.-%3E[ThingWithTaxon],[MolecularEntity]uses%20-.-%3E[PhysicalEntity],[MolecularEntity]%5E-[GenomicEntity],[MolecularEntity]%5E-[GeneFamily],[MolecularEntity]%5E-[ChemicalSubstance],[BiologicalEntity]%5E-[MolecularEntity],[GenomicEntity],[GeneToGoTermAssociation],[GeneFamily],[DiseaseOrPhenotypicFeature],[ChemicalSubstance],[BiologicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[PhysicalEntity],[PairwiseInteractionAssociation],[OrganismTaxon],[GeneToGoTermAssociation]-%20subject%201..1%3E[MolecularEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[PairwiseInteractionAssociation]-%20object%201..1%3E[MolecularEntity],[PairwiseInteractionAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]uses%20-.-%3E[ThingWithTaxon],[MolecularEntity]uses%20-.-%3E[PhysicalEntity],[MolecularEntity]%5E-[GenomicEntity],[MolecularEntity]%5E-[GeneFamily],[MolecularEntity]%5E-[ChemicalSubstance],[BiologicalEntity]%5E-[MolecularEntity],[GenomicEntity],[GeneToGoTermAssociation],[GeneFamily],[DiseaseOrPhenotypicFeature],[ChemicalSubstance],[BiologicalEntity])
 
 ---
 

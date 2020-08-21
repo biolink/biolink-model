@@ -18,7 +18,7 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GeneToThingAssociation],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToPhenotypicFeatureAssociation|description:narrative_text%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToThingAssociation],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[GeneOrGeneProduct],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GeneToThingAssociation],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToThingAssociation],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[GeneOrGeneProduct],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
 
 ---
 

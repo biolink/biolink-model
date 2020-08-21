@@ -21,7 +21,7 @@ SIO:001050
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleDerivationAssociation],[Attribute]%3Chas%20attribute%200..*-%20[MaterialSample|id(i):string;name(i):label_type;category(i):category_type%20%2B],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSampleToThingAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[MaterialSample]uses%20-.-%3E[PhysicalEntity],[NamedThing]%5E-[MaterialSample],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleDerivationAssociation],[Attribute]%3Chas%20attribute%200..%2A-%20[MaterialSample%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSampleToThingAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[MaterialSample]uses%20-.-%3E[PhysicalEntity],[NamedThing]%5E-[MaterialSample],[Attribute])
 
 ---
 

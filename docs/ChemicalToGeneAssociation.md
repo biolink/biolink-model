@@ -18,7 +18,7 @@ SIO:001257
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[GeneOrGeneProduct],[ChemicalToThingAssociation],[GeneOrGeneProduct]%3Cobject%201..1-%20[ChemicalToGeneAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToGeneAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[GeneOrGeneProduct],[ChemicalToThingAssociation],[GeneOrGeneProduct]%3Cobject%201..1-%20[ChemicalToGeneAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToGeneAssociation],[Association])
 
 ---
 

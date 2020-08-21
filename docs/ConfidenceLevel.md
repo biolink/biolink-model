@@ -24,7 +24,7 @@ SEPIO:0000187
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[InformationContentEntity]%5E-[ConfidenceLevel|id(i):string;name(i):label_type;category(i):category_type%20%2B],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[InformationContentEntity]%5E-[ConfidenceLevel%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Association])
 
 ---
 

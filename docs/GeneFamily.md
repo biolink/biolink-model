@@ -24,7 +24,7 @@ WIKIDATA:Q417841
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MolecularEntity],[GeneGrouping],[GeneFamily|id(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[GeneGrouping],[MolecularEntity]%5E-[GeneFamily])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MolecularEntity],[GeneGrouping],[GeneFamily%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[GeneGrouping],[MolecularEntity]%5E-[GeneFamily])
 
 ---
 

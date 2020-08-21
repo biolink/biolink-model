@@ -21,7 +21,7 @@ UMLSST:crbs
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[ChemicalSubstance],[ChemicalSubstance]%5E-[Carbohydrate|id(i):string;name(i):label_type;category(i):category_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[ChemicalSubstance],[ChemicalSubstance]%5E-[Carbohydrate%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B])
 
 ---
 

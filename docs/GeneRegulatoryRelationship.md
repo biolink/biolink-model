@@ -15,7 +15,7 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[GeneOrGeneProduct]%3Cobject%201..1-%20[GeneRegulatoryRelationship|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneRegulatoryRelationship],[Association]%5E-[GeneRegulatoryRelationship],[GeneOrGeneProduct],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[GeneOrGeneProduct]%3Cobject%201..1-%20[GeneRegulatoryRelationship%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneRegulatoryRelationship],[Association]%5E-[GeneRegulatoryRelationship],[GeneOrGeneProduct],[Association])
 
 ---
 

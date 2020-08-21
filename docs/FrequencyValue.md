@@ -15,7 +15,7 @@ URI: [biolink:FrequencyValue](https://w3id.org/biolink/vocab/FrequencyValue)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[FrequencyQualifierMixin]-%20frequency%20qualifier%200..1%3E[FrequencyValue|id(i):string;name(i):label_type;category(i):category_type%20%2B],[Attribute]%5E-[FrequencyValue],[FrequencyQualifierMixin],[Attribute],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[FrequencyQualifierMixin]-%20frequency%20qualifier%200..1%3E[FrequencyValue%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Attribute]%5E-[FrequencyValue],[FrequencyQualifierMixin],[Attribute],[Association])
 
 ---
 

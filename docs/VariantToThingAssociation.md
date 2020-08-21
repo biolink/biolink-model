@@ -15,7 +15,7 @@ URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToThingAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociation],[Association]%5E-[VariantToThingAssociation],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToDiseaseAssociation],[SequenceVariant],[Publication],[Provider],[OntologyClass],[NamedThing],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociation],[Association]%5E-[VariantToThingAssociation],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToDiseaseAssociation],[SequenceVariant],[Publication],[Provider],[OntologyClass],[NamedThing],[Association])
 
 ---
 

@@ -36,7 +36,7 @@ UMLSST:drdd
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]%5E-[Device|id(i):string;name(i):label_type;category(i):category_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]%5E-[Device%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B])
 
 ---
 

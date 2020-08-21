@@ -22,7 +22,7 @@ URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[MacromolecularMachine],[ChemicalSubstance]%3Cobject%201..1-%20[ChemicalToChemicalDerivationAssociation|relation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalSubstance]%3Csubject%201..1-%20[ChemicalToChemicalDerivationAssociation],[MacromolecularMachine]%3Cchange%20is%20catalyzed%20by%200..*-%20[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalSubstance])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[MacromolecularMachine],[ChemicalSubstance]%3Cobject%201..1-%20[ChemicalToChemicalDerivationAssociation%7Crelation:uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalSubstance]%3Csubject%201..1-%20[ChemicalToChemicalDerivationAssociation],[MacromolecularMachine]%3Cchange%20is%20catalyzed%20by%200..%2A-%20[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalSubstance])
 
 ---
 

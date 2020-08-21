@@ -15,7 +15,7 @@ URI: [biolink:ClinicalEntity](https://w3id.org/biolink/vocab/ClinicalEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ClinicalTrial],[ClinicalIntervention],[ClinicalEntity|id(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[ClinicalTrial],[ClinicalEntity]%5E-[ClinicalIntervention],[NamedThing]%5E-[ClinicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ClinicalTrial],[ClinicalIntervention],[ClinicalEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[ClinicalTrial],[ClinicalEntity]%5E-[ClinicalIntervention],[NamedThing]%5E-[ClinicalEntity])
 
 ---
 

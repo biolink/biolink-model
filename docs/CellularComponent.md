@@ -30,7 +30,7 @@ UMLSST:celc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1%3E[CellularComponent|id(i):string;name(i):label_type;category(i):category_type%20%2B],[AnatomicalEntity]%5E-[CellularComponent],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1%3E[CellularComponent%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[AnatomicalEntity]%5E-[CellularComponent],[AnatomicalEntity])
 
 ---
 

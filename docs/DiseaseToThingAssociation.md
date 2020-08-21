@@ -15,7 +15,7 @@ URI: [biolink:DiseaseToThingAssociation](https://w3id.org/biolink/vocab/DiseaseT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[Disease]%3Csubject%201..1-%20[DiseaseToThingAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToThingAssociation],[DiseaseToThingAssociation]%5E-[DiseaseToExposureAssociation],[Association]%5E-[DiseaseToThingAssociation],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureAssociation],[Disease],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[Disease]%3Csubject%201..1-%20[DiseaseToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToThingAssociation],[DiseaseToThingAssociation]%5E-[DiseaseToExposureAssociation],[Association]%5E-[DiseaseToThingAssociation],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureAssociation],[Disease],[Association])
 
 ---
 

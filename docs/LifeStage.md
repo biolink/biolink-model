@@ -15,7 +15,7 @@ URI: [biolink:LifeStage](https://w3id.org/biolink/vocab/LifeStage)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismTaxon],[GeneToExpressionSiteAssociation]-%20stage%20qualifier%200..1%3E[LifeStage|id(i):string;name(i):label_type;category(i):category_type%20%2B],[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%200..1%3E[LifeStage],[LifeStage]uses%20-.-%3E[ThingWithTaxon],[OrganismalEntity]%5E-[LifeStage],[GeneToExpressionSiteAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismTaxon],[GeneToExpressionSiteAssociation]-%20stage%20qualifier%200..1%3E[LifeStage%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%200..1%3E[LifeStage],[LifeStage]uses%20-.-%3E[ThingWithTaxon],[OrganismalEntity]%5E-[LifeStage],[GeneToExpressionSiteAssociation],[Association])
 
 ---
 

@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[BiologicalProcess]%3Cobject%201..1-%20[MacromolecularMachineToBiologicalProcessAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachine],[FunctionalAssociation],[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[BiologicalProcess]%3Cobject%201..1-%20[MacromolecularMachineToBiologicalProcessAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachine],[FunctionalAssociation],[BiologicalProcess])
 
 ---
 

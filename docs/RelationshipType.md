@@ -15,7 +15,7 @@ URI: [biolink:RelationshipType](https://w3id.org/biolink/vocab/RelationshipType)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass]%5E-[RelationshipType|id(i):string;name(i):label_type;category(i):category_type%20%2B],[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass]%5E-[RelationshipType%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[OntologyClass])
 
 ---
 

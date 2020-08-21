@@ -15,7 +15,7 @@ URI: [biolink:GeneToThingAssociation](https://w3id.org/biolink/vocab/GeneToThing
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToThingAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToThingAssociation],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToThingAssociation],[Association]%5E-[GeneToThingAssociation],[GeneToPhenotypicFeatureAssociation],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToThingAssociation],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToThingAssociation],[Association]%5E-[GeneToThingAssociation],[GeneToPhenotypicFeatureAssociation],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[Association])
 
 ---
 

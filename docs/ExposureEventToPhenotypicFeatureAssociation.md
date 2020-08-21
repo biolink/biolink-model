@@ -15,7 +15,7 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ExposureEvent]%3Csubject%201..1-%20[ExposureEventToPhenotypicFeatureAssociation|description:narrative_text%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[ExposureEvent],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ExposureEvent]%3Csubject%201..1-%20[ExposureEventToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[ExposureEvent],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
 
 ---
 

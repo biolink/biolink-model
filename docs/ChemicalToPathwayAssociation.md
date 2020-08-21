@@ -18,7 +18,7 @@ SIO:001250
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[Pathway],[OntologyClass],[NamedThing],[ChemicalToThingAssociation],[Pathway]%3Cobject%201..1-%20[ChemicalToPathwayAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[Pathway],[OntologyClass],[NamedThing],[ChemicalToThingAssociation],[Pathway]%3Cobject%201..1-%20[ChemicalToPathwayAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Association])
 
 ---
 

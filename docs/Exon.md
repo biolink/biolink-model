@@ -24,7 +24,7 @@ WIKIDATA:Q373027
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[GenomicEntity],[ExonToTranscriptRelationship],[ExonToTranscriptRelationship]-%20subject%201..1%3E[Exon|has_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[GenomicEntity]%5E-[Exon])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[GenomicEntity],[ExonToTranscriptRelationship],[ExonToTranscriptRelationship]-%20subject%201..1%3E[Exon%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[GenomicEntity]%5E-[Exon])
 
 ---
 

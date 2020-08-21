@@ -18,7 +18,7 @@ ENVO:02500000
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[Occurrent],[EnvironmentalProcess|id(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[Occurrent],[PlanetaryEntity]%5E-[EnvironmentalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[Occurrent],[EnvironmentalProcess%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[Occurrent],[PlanetaryEntity]%5E-[EnvironmentalProcess])
 
 ---
 

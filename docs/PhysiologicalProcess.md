@@ -66,7 +66,7 @@ UMLSST:clna
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalProcess]%5E-[PhysiologicalProcess|id(i):string;name(i):label_type;category(i):category_type%20%2B],[NamedThing],[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalProcess]%5E-[PhysiologicalProcess%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[NamedThing],[BiologicalProcess])
 
 ---
 

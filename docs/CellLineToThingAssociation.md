@@ -15,7 +15,7 @@ URI: [biolink:CellLineToThingAssociation](https://w3id.org/biolink/vocab/CellLin
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[CellLine]%3Csubject%201..1-%20[CellLineToThingAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToThingAssociation],[Association]%5E-[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[CellLine]%3Csubject%201..1-%20[CellLineToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToThingAssociation],[Association]%5E-[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine],[Association])
 
 ---
 

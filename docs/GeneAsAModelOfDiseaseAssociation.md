@@ -15,7 +15,7 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneAsAModelOfDiseaseAssociation|relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneAsAModelOfDiseaseAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToDiseaseAssociation])
 
 ---
 
