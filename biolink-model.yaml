@@ -1,3 +1,6 @@
+---Look for 'START_AGAIN_HERE' in the file...//
+@@@
+
 id: https://w3id.org/biolink/biolink-model
 name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
@@ -2450,7 +2453,37 @@ slots:
       - translator_minimal
     inverse: location of
     mappings:
+    #  - RO:0001025
+    #  - GOREL:0001004
+    #  - BSPO:0000107
+    #  - BSPO:0000108
+    #  - BSPO:0000120
+    #  - BSPO:0000121
+    #  - BSPO:0000122
+    #  - BSPO:0000123
+    #  - BSPO:0000124
+    #  - BSPO:0000125
+    #  - BSPO:0000126
+    #  - BSPO:0001100
+    #  - BSPO:0001101
+    #  - BSPO:0001107
+    #  - BSPO:0015101
+    #  - BSPO:0015102
+    #  - BSPO:0015202
+    #  - UBERON_CORE:in_central_side_of
+    #  - UBERON_CORE:in_innermost_side_of
+    #  - UBERON_CORE:in_outermost_side_of
+    #  - NCIT:R100
+    #  - EFO:0000784
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
       - RO:0001025
+    broad_mappings:
+      -
+    narrow_mappings:
       - GOREL:0001004
       - BSPO:0000107
       - BSPO:0000108
@@ -2472,16 +2505,6 @@ slots:
       - UBERON_CORE:in_outermost_side_of
       - NCIT:R100
       - EFO:0000784
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   location of:
     is_a: related to
@@ -2490,16 +2513,18 @@ slots:
     in_subset:
       - translator_minimal
     inverse: located in
-    mappings:
-      - RO:0001015
-      - SEMMEDDB:LOCATION_OF
-      - WIKIDATA:276
+    #mappings:
+    #  - RO:0001015
+    #  - SEMMEDDB:LOCATION_OF
+    #  - WIKIDATA:276
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0001015
+      - SEMMEDDB:LOCATION_OF
+      - WIKIDATA:276
     broad_mappings:
       -
     narrow_mappings:
@@ -2511,14 +2536,14 @@ slots:
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0003301
+    #mappings:
+    #  - RO:0003301
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0003301
     broad_mappings:
       -
     narrow_mappings:
@@ -2527,22 +2552,22 @@ slots:
   overlaps:
     is_a: related to
     description: >-
-      holds between entties that overlap in their extents (materials or processes)
+      holds between entities that overlap in their extents (materials or processes)
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002131
-      - BSPO:0005001
+    #mappings:
+    #  - RO:0002131
+    #  - BSPO:0005001
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002131
     broad_mappings:
       -
     narrow_mappings:
-      -
+      - BSPO:0005001
 
   has part:
     is_a: overlaps
@@ -2553,13 +2578,13 @@ slots:
     inverse: part of
     mappings:
       - BFO:0000051
-      - WIKIDATA:P527
+    #  - WIKIDATA:P527
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - WIKIDATA:P527
     broad_mappings:
       -
     narrow_mappings:
@@ -2572,10 +2597,28 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has part
-    mappings:
+    #mappings:
+    #  - BFO:0000050
+    #  - SEMMEDDB:PART_OF
+    #  - WIKIDATA:P361
+    #  - BSPO:0001106
+    #  - BSPO:0001108
+    #  - BSPO:0001113
+    #  - BSPO:0001115
+    #  - UBERON_CORE:layer_part_of
+    #  - UBERON_CORE:subdivision_of
+    #  - UBERON_CORE:trunk_part_of
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
       - BFO:0000050
       - SEMMEDDB:PART_OF
       - WIKIDATA:P361
+    broad_mappings:
+      -
+    narrow_mappings:
       - BSPO:0001106
       - BSPO:0001108
       - BSPO:0001113
@@ -2583,16 +2626,6 @@ slots:
       - UBERON_CORE:layer_part_of
       - UBERON_CORE:subdivision_of
       - UBERON_CORE:trunk_part_of
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   has participant:
     is_a: related to
