@@ -2636,16 +2636,16 @@ slots:
       - translator_minimal
     inverse: participates in
     mappings:
-      - RO:0000057
-      - WIKIDATA:P2283
+    #  - RO:0000057
+    #  - WIKIDATA:P2283
       - GOREL:0001007
       - GOREL:0002008
     related_mappings:
       -
     close_mappings:
-      -
+      - WIKIDATA:P2283
     exact_mappings:
-      -
+      - RO:0000057
     broad_mappings:
       -
     narrow_mappings:
@@ -2658,15 +2658,16 @@ slots:
     domain: occurrent
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002233
-      - SEMMEDDB:USES
+    #mappings:
+    #  - RO:0002233
+    #  - SEMMEDDB:USES
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002233
+      - SEMMEDDB:USES
     broad_mappings:
       -
     narrow_mappings:
@@ -2679,14 +2680,14 @@ slots:
     domain: occurrent
     in_subset:
       - translator_minimal
-    mappings:
-      - RO:0002234
+    #mappings:
+    #  - RO:0002234
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0002234
     broad_mappings:
       -
     narrow_mappings:
@@ -2700,19 +2701,22 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has participant
-    mappings:
-      - RO:0000056
-      - BFO:0000056
+    #mappings:
+    #  - RO:0000056
+    #  - BFO:0000056
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - RO:0000056
+      - BFO:0000056
     broad_mappings:
       -
     narrow_mappings:
       -
+
+START_AGAIN_HERE:
 
   actively involved in:
     is_a: participates in
