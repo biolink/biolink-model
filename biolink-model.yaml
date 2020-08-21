@@ -1572,8 +1572,27 @@ slots:
       - RO:0002263
       - RO:0002264
 
-  same as:
+  close match:
     is_a: related to
+    description: >-
+      holds between two entities that are similar to each other
+    in_subset:
+      - translator_minimal
+    mappings:
+      - skos:closeMatch
+
+  exact match:
+    is_a: close match
+    description: >-
+      holds between two entities that are identical to each other, with a high degree of confidence
+    in_subset:
+      - translator_minimal
+    mappings:
+      - skos:exactMatch
+      - WIKIDATA:P2888
+
+  same as:
+    is_a: exact match
     description: >-
       holds between two entities that are considered equivalent to each other
     in_subset:
@@ -1581,8 +1600,6 @@ slots:
     mappings:
       - owl:equivalentClass
       - owl:sameAs
-      - skos:exactMatch
-      - WIKIDATA:P2888
 
   subclass of:
     is_a: related to
