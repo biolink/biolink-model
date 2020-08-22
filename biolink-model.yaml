@@ -2975,11 +2975,11 @@ slots:
     description: Holds between molecular entities that phyically and directly interact
       with each other
     mappings:
-      - SIO:000203
+    #  - SIO:000203
       - chembio:interacts
       - CTD:interacts_with
       - CTD:affects_binding
-      - PHAROS:drug_targets
+    #  - PHAROS:drug_targets
       - GAMMA:interacts_with
       - GAMMA:antibody_binding
       - GAMMA:other
@@ -2990,16 +2990,16 @@ slots:
       - GAMMA:kb
       - GAMMA:binder
       - GAMMA:binding
-      - GAMMA:ligand
-      - GAMMA:cofactor
+    #  - GAMMA:ligand
+    #  - GAMMA:cofactor
       - GAMMA:potency
       - GAMMA:none
       - GAMMA:multitarget
       - GAMMA:chaperone
       - GAMMA:component
       - GAMMA:adduct
-      - GAMMA:antibody
-      - DRUGBANK:chelator
+    #  - GAMMA:antibody
+    #  - DRUGBANK:chelator
     related_mappings:
       -
     close_mappings:
@@ -3007,9 +3007,15 @@ slots:
     exact_mappings:
       -
     broad_mappings:
-      -
+      # Definition of this term is more generic than direct physical molecular interactions: A is connected to B iff there exists a fiat, material or temporal path between A and B.
+      - SIO:000203
     narrow_mappings:
-      -
+      - PHAROS:drug_targets
+      - GAMMA:ligand
+      - GAMMA:cofactor
+      - GAMMA:antibody
+      - DRUGBANK:chelator
+
 
   #The following are proposed new predicates
 
@@ -3017,14 +3023,14 @@ slots:
     is_a: affects
     description: Holds between a variant and an anatomical entity where the expression of the variant
        is located in.
-    mappings:
-      - GTEx:affects_expression_in
+    #mappings:
+    #  - GTEx:affects_expression_in
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - GTEx:affects_expression_in
     broad_mappings:
       -
     narrow_mappings:
@@ -3034,36 +3040,66 @@ slots:
 
   is missense variant of:
     is_a: related to
-    description: holds between a sequence variant and a gene, such the sequence variant
+    description: holds between a gene  and a sequence variant, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
-    mappings:
-      - SO:0001583
-      - SNPEFF:missense_variant
-      - SNPEFF:initiator_codon_variant
-      - SNPEFF:structural_interaction_variant
+    domain: sequence variant
+    range: gene
+    inverse: has missense variant
+    #mappings: # moved to 'has missense variant` below
+    #  - SO:0001583
+    #  - SNPEFF:missense_variant
+    #  - SNPEFF:initiator_codon_variant
+    #  - SNPEFF:structural_interaction_variant
     related_mappings:
       -
     close_mappings:
-      -
+      # these are actually "inverse" mappings
+      - SO:0001583
+      - SNPEFF:missense_variant
     exact_mappings:
       -
     broad_mappings:
       -
     narrow_mappings:
       -
+
+  has missense variant:
+    is_a: related to
+    description: holds between a sequence variant and a gene, such the sequence variant
+      results in a different amino acid sequence but where the length is preserved.
+    domain: gene
+    range: sequence variant
+    inverse: is missense variant of
+    mappings:
+      -
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - SO:0001583
+      - SNPEFF:missense_variant
+    broad_mappings:
+      -
+    narrow_mappings:
+      - SNPEFF:initiator_codon_variant
+      - SNPEFF:structural_interaction_variant
 
   is synonymous variant of:
     is_a: related to
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
-    mappings:
-      - SO:0001819
-      - SNPEFF:synonymous_variant
-      - SNPEFF:start_retained
-      - SNPEFF:stop_retained_variant
+    domain: sequence variant
+    range: gene
+    #mappings: # terms moved to inverse 'has synonymous variant' below
+    #  - SO:0001819
+    #  - SNPEFF:synonymous_variant
+    #  - SNPEFF:start_retained
+    #  - SNPEFF:stop_retained_variant
     related_mappings:
       -
     close_mappings:
+      # these are actually "inverse" mappings
       -
     exact_mappings:
       -
@@ -3071,37 +3107,140 @@ slots:
       -
     narrow_mappings:
       -
+
+  has synonymous variant:
+    is_a: related to
+    description: holds between a gene and a sequence variant, such the sequence variant
+      is in the coding sequence of the gene, but results in the same amino acid sequence
+    domain: gene
+    range: sequence variant
+    inverse: is synonymous variant of
+    mappings:
+      -
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - SO:0001819
+      - SNPEFF:synonymous_variant
+    broad_mappings:
+      -
+    narrow_mappings:
+      - SNPEFF:start_retained
+      - SNPEFF:stop_retained_variant
 
   is nonsense variant of:
     is_a: related to
     description: holds between a sequence variant and a gene, such the sequence variant
       results in a premature stop codon
-    mappings:
-      - SO:0002054
-      - SNPEFF:stop_gained
-      - SNPEFF:start_lost
-      - SNPEFF:stop_lost
-      - SNPEFF:frameshift_variant
+    domain: sequence variant
+    range: gene
+    inverse: has nonsense variant
+    #mappings: # terms moved to inverse 'has nonsense variant' below
+    #  - SO:0002054
+    #  - SNPEFF:stop_gained
+    #  - SNPEFF:start_lost
+    #  - SNPEFF:stop_lost
+    #  - SNPEFF:frameshift_variant
     related_mappings:
       -
     close_mappings:
-      -
+      # this is actually an "inverse" mapping
+      - SNPEFF:stop_gained
     exact_mappings:
       -
     broad_mappings:
       -
     narrow_mappings:
       -
+
+  has nonsense variant:
+    is_a: related to
+    description: holds between a gene and a sequence variant, such the sequence variant
+      results in a premature stop codon
+    domain: gene
+    range: sequence variant
+    inverse: is nonsense variant of
+    mappings:
+    #  - SO:0002054
+    #  - SNPEFF:stop_gained
+    #
+    # Next three terms moved to 'frameshift variant' below
+    #  - SNPEFF:start_lost
+    #  - SNPEFF:stop_lost
+    #  - SNPEFF:frameshift_variant
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - SNPEFF:stop_gained
+    broad_mappings:
+      # Term definition broader than nonsense codon: A sequence variant whereby the gene product has diminished or abolished function.
+      - SO:0002054
+    narrow_mappings:
+      -
+
+  is frameshift variant of:
+    is_a: related to
+    description: holds between a sequence variant and a gene, such the sequence variant
+      causes a disruption of the translational reading frame, because the number of
+      nucleotides inserted or deleted is not a multiple of three.
+    domain: sequence variant
+    range: gene
+    inverse: has frameshift variant
+    mappings:
+      -
+    related_mappings:
+      -
+    close_mappings:
+      # these are actually "inverse" mappings (see 'has frameshift variant')
+      - SO:0001589
+      - SNPEFF:frameshift_variant
+    exact_mappings:
+      -
+    broad_mappings:
+      -
+    narrow_mappings:
+      -
+
+  has frameshift variant:
+    is_a: related to
+    description: holds between a gene and a sequence variant, such the sequence variant
+      causes a disruption of the translational reading frame, because the number of
+      nucleotides inserted or deleted is not a multiple of three.
+    domain: gene
+    range: sequence variant
+    inverse: is frameshift variant of
+    mappings:
+      -
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - SO:0001589
+      - SNPEFF:frameshift_variant
+    broad_mappings:
+      -
+    narrow_mappings:
+      # These are particular narrow consequences of a frameshift variant?
+      - SNPEFF:start_lost
+      - SNPEFF:stop_lost
 
   is splice site variant of:
     is_a: related to
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the canonical splice site of one of the gene's exons.
-    mappings:
-      - SO:0001629
-      - SNPEFF:splice_region_variant
-      - SNPEFF:splice_acceptor_variant
-      - SNPEFF:splice_donor_variant
+    domain: sequence variant
+    range: gene
+    inverse: has splice site variant
+    #mappings: # terms moved to inverse 'has splice site variant' below
+    #  - SO:0001629
+    #  - SNPEFF:splice_region_variant
+    #  - SNPEFF:splice_acceptor_variant
+    #  - SNPEFF:splice_donor_variant
     related_mappings:
       -
     close_mappings:
@@ -3112,15 +3251,41 @@ slots:
       -
     narrow_mappings:
       -
+
+  has splice site variant:
+    is_a: related to
+    description: holds between a gene and a sequence variant, such the sequence variant
+      is in the canonical splice site of one of the gene's exons.
+    domain: gene
+    range: sequence variant
+    inverse: is splice site variant of
+    mappings:
+      -
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - SO:0001629
+    broad_mappings:
+      -
+    narrow_mappings:
+      # These are particular narrow consequences of a splice site variant
+      - SNPEFF:splice_region_variant
+      - SNPEFF:splice_acceptor_variant
+      - SNPEFF:splice_donor_variant
 
   is nearby variant of:
     is_a: related to
     description: holds between a sequence variant and a gene sequence that the variant
       is genomically close to.
-    mappings:
-      - GAMMA:0000102
-      - SNPEFF:downstream_gene_variant
-      - SNPEFF:upstream_gene_variant
+    domain: sequence variant
+    range: gene
+    inverse: has nearby variant
+    #mappings: # terms moved to inverse 'has nearby variant' below
+    #  - GAMMA:0000102
+    #  - SNPEFF:downstream_gene_variant
+    #  - SNPEFF:upstream_gene_variant
     related_mappings:
       -
     close_mappings:
@@ -3132,17 +3297,44 @@ slots:
     narrow_mappings:
       -
 
+  has nearby variant:
+    is_a: related to
+    description: holds between a sequence variant and a gene sequence that the variant
+      is genomically close to.
+    domain: sequence variant
+    range: gene
+    inverse: is nearby variant of
+    mappings:
+      - GAMMA:0000102
+    #  - SNPEFF:downstream_gene_variant
+    #  - SNPEFF:upstream_gene_variant
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      -
+    broad_mappings:
+      -
+    narrow_mappings:
+      # these are more precisely positioned 'nearby variant' locations
+      - SNPEFF:downstream_gene_variant
+      - SNPEFF:upstream_gene_variant
+
   is non coding variant of:
     is_a: related to
     description: holds between a sequence variant and a gene, where the variant does
       not affect the coding sequence
-    mappings:
-      - GAMMA:0000103
-      - SNPEFF:3_prime_UTR_variant
-      - SNPEFF:5_prime_UTR_variant
-      - SNPEFF:5_prime_UTR_premature_start_codon_gain_variant
-      - SNPEFF:non_coding_transcript_exon_variant
-      - SNPEFF:intron_variant
+    domain: sequence variant
+    range: gene
+    inverse: has non coding variant
+    #mappings: # terms moved to inverse 'has non coding variant' below
+    #  - GAMMA:0000103
+    #  - SNPEFF:3_prime_UTR_variant
+    #  - SNPEFF:5_prime_UTR_variant
+    #  - SNPEFF:5_prime_UTR_premature_start_codon_gain_variant
+    #  - SNPEFF:non_coding_transcript_exon_variant
+    #  - SNPEFF:intron_variant
     related_mappings:
       -
     close_mappings:
@@ -3153,6 +3345,31 @@ slots:
       -
     narrow_mappings:
       -
+
+  has non coding variant:
+    is_a: related to
+    description: holds between a gene and a sequence variant, where the variant does
+      not affect the coding sequence
+    domain: gene
+    range: sequence variant
+    inverse: is non coding variant of
+    mappings:
+      - GAMMA:0000103
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      -
+    broad_mappings:
+      -
+    narrow_mappings:
+      # More narrow but precisely defined instances of non coding sequence variants
+      - SNPEFF:3_prime_UTR_variant
+      - SNPEFF:5_prime_UTR_variant
+      - SNPEFF:5_prime_UTR_premature_start_codon_gain_variant
+      - SNPEFF:non_coding_transcript_exon_variant
+      - SNPEFF:intron_variant
 
   #relating disease to process
 
