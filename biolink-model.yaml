@@ -3377,9 +3377,9 @@ slots:
     description: A relation that holds between a disease and an entity where the state
       of the entity has contribution to the disease.
     is_a: related to
-    mappings:
-      - MONDO:disease_has_basis_in_development_of
-      - MONDO:disease_has_basis_in_accumulation_of
+    #mappings:
+    #  - MONDO:disease_has_basis_in_development_of
+    #  - MONDO:disease_has_basis_in_accumulation_of
     related_mappings:
       -
     close_mappings:
@@ -3389,7 +3389,9 @@ slots:
     broad_mappings:
       -
     narrow_mappings:
-      -
+      # These two MONDO terms seem more particular than the predicate
+      - MONDO:disease_has_basis_in_development_of
+      - MONDO:disease_has_basis_in_accumulation_of
 
   #These may be pushable to causal relationships, but seem important for clarity
   # Also because causes adverse event tends to be very noisy and it's useful to be able
@@ -3399,6 +3401,8 @@ slots:
     is_a: causes
     description: holds between a drug and a disease or phenotype that can be caused
       by the drug
+    domain: drug
+    range: disease or phenotypic feature
     mappings:
       - Aeolus:0000001
     related_mappings:
@@ -3416,6 +3420,8 @@ slots:
     is_a: related to
     description: Holds between a drug and a disease or phenotype, such that a person
       with that disease should not be treated with the drug.
+    domain: drug
+    range: disease or phenotypic feature
     mappings:
      - DrugCentral:0000001
     related_mappings:
@@ -3436,14 +3442,14 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
-    mappings:
-      - CL:has_not_completed
+    #mappings:
+    #  - CL:has_not_completed
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CL:has_not_completed
     broad_mappings:
       -
     narrow_mappings:
@@ -3453,14 +3459,14 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of
       and has completed
-    mappings:
-    - CL:has_completed
+    #mappings:
+    #- CL:has_completed
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - CL:has_completed
     broad_mappings:
       -
     narrow_mappings:
