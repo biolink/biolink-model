@@ -2089,14 +2089,14 @@ slots:
     #  - WD:P2293
       - GENO:0000840
       - GENO:0000841
-      - NCIT:R176
+    #  - NCIT:R176
       - hetio:ASSOCIATES_DaG
     related_mappings:
       -
     close_mappings:
       - WD:P2293
     exact_mappings:
-      -
+      - NCIT:R176
     broad_mappings:
       -
     narrow_mappings:
@@ -3309,14 +3309,14 @@ slots:
       with that disease should not be treated with the drug.
     domain: drug
     range: disease or phenotypic feature
-    mappings:
-     - DrugCentral:0000001
+    #mappings:
+    # - DrugCentral:0000001 # the only CURIE here so assume it is the exact mapping?
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - DrugCentral:0000001
     broad_mappings:
       -
     narrow_mappings:
@@ -3411,14 +3411,14 @@ slots:
     is_a: related to
     description: holds between two sequence variants, the presence of which are correlated
       in a population
-    mappings:
-      - NCIT:C16798
+    #mappings:
+    #  - NCIT:C16798
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - NCIT:C16798
     broad_mappings:
       -
     narrow_mappings:
@@ -3470,11 +3470,7 @@ slots:
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
 
-
-
   #End proposed slots
-
-
 
   superclass of:
     is_a: related to
