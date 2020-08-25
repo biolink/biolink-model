@@ -1,6 +1,3 @@
----Look for 'START_AGAIN_HERE' in the file...//
-@@@
-
 id: https://w3id.org/biolink/biolink-model
 name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
@@ -159,7 +156,8 @@ slots:
       - GOREL:0002005
       - GOREL:0012006
     related_mappings:
-      -
+      # Absence of relationship?
+      - GAMMA:none
     close_mappings:
       - SEMMEDDB:ASSOCIATED_WITH
     exact_mappings:
@@ -167,7 +165,8 @@ slots:
     broad_mappings:
       - owl:topObjectProperty
     narrow_mappings:
-      -
+      - GAMMA:other
+      - GAMMA:other_unknown
 
   interacts with:
     domain: named thing
@@ -354,9 +353,9 @@ slots:
     range: molecular entity
     mappings:
     #  - CTD:affects_activity_of
-      - GAMMA:allosteric_modulator
-      - GAMMA:modulator
-      - GAMMA:regulator
+    #  - GAMMA:allosteric_modulator
+    #  - GAMMA:modulator
+    #  - GAMMA:regulator
     related_mappings:
       -
     close_mappings:
@@ -366,7 +365,9 @@ slots:
     broad_mappings:
       -
     narrow_mappings:
-      -
+      - GAMMA:allosteric_modulator
+      - GAMMA:modulator
+      - GAMMA:regulator
 
   increases activity of:
     description: >-
@@ -376,21 +377,22 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:increases_activity_of
-      - GAMMA:activator
+    #  - GAMMA:activator
     #  - GAMMA:partial_agonist
-      - GAMMA:agonist
-      - GAMMA:opener
+    #  - GAMMA:agonist
+    #  - GAMMA:opener
     #  - GAMMA:positive_allosteric_modulator
-      - GAMMA:positive_modulator
+    #  - GAMMA:positive_modulator
+    #  - GAMMA:ec50
+    #  - GAMMA:ac50
+    #  - GAMMA:inducer
+    #  - GAMMA:potentiator
+    #  - GAMMA:stimulator
+    related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
-      - GAMMA:inducer
-      - GAMMA:potentiator
-      - GAMMA:stimulator
-    related_mappings:
-      -
     close_mappings:
       -
     exact_mappings:
@@ -398,8 +400,15 @@ slots:
     broad_mappings:
       -
     narrow_mappings:
+      - GAMMA:activator
       - GAMMA:partial_agonist
+      - GAMMA:agonist
+      - GAMMA:opener
       - GAMMA:positive_allosteric_modulator
+      - GAMMA:positive_modulator
+      - GAMMA:inducer
+      - GAMMA:potentiator
+      - GAMMA:stimulator
 
   decreases activity of:
     description: >-
@@ -409,29 +418,30 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:decreases_activity_of
     #  - GAMMA:allosteric_antagonist
     #  - GAMMA:partial_antagonist
-      - GAMMA:antagonist
-      - GAMMA:weak_inhibitor
-      - GAMMA:inhibitor
+    #  - GAMMA:antagonist
+    #  - GAMMA:weak_inhibitor
+    #  - GAMMA:inhibitor
     #  - GAMMA:channel_blocker
     #  - GAMMA:gating_inhibitor
-      - GAMMA:blocker
-      - GAMMA:inverse_agonist
-      - GAMMA:inactivator
-      - GAMMA:downregulator
-      - GAMMA:negative_modulator
+    #  - GAMMA:blocker
+    #  - GAMMA:inverse_agonist
+    #  - GAMMA:inactivator
+    #  - GAMMA:downregulator
+    #  - GAMMA:negative_modulator
     #  - GAMMA:negative_allosteric_modulator
     #  - GAMMA:inhibitory_allosteric_modulator
-      - GAMMA:ic50
-      - GAMMA:ki
+    #  - GAMMA:ic50
+    #  - GAMMA:ki
     #  - GAMMA:aggregation_inhibitor
     #  - GAMMA:conversion_inhibitor
-      - GAMMA:suppressor
+    #  - GAMMA:suppressor
     related_mappings:
-      -
+      - GAMMA:ic50
+      - GAMMA:ki
     close_mappings:
       -
     exact_mappings:
@@ -441,12 +451,21 @@ slots:
     narrow_mappings:
       - GAMMA:allosteric_antagonist
       - GAMMA:partial_antagonist
+      - GAMMA:antagonist
+      - GAMMA:weak_inhibitor
+      - GAMMA:inhibitor
       - GAMMA:channel_blocker
       - GAMMA:gating_inhibitor
+      - GAMMA:blocker
+      - GAMMA:inverse_agonist
+      - GAMMA:inactivator
+      - GAMMA:downregulator
+      - GAMMA:negative_modulator
       - GAMMA:negative_allosteric_modulator
       - GAMMA:inhibitory_allosteric_modulator
       - GAMMA:aggregation_inhibitor
       - GAMMA:conversion_inhibitor
+      - GAMMA:suppressor
 
   affects expression of:
     description: >-
@@ -584,10 +603,11 @@ slots:
     range: molecular entity
     #mappings:
     #  - CTD:affects_localization_of
-      - GAMMA:storage
-      - GOREL:0002003
+    #  - GAMMA:storage
+    # TODO: Cannot seem to find this term anywhere in the GOREL ontology?
+    #  - GOREL:0002003
     related_mappings:
-      -
+      - GAMMA:storage
     close_mappings:
       -
     exact_mappings:
@@ -711,7 +731,7 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:affects_molecular_modification_of
     #  - CTD:affects_acetylation
     #  - CTD:affects_acylation
@@ -1053,12 +1073,13 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:increases_degradation_of
     #  - CTD:increases_cleavage
     #  - CTD:increases_hydrolysis
     #  - GAMMA:substrate
-      - GOREL:0002004
+    # TODO: cannot seem to find this GOREL mapping
+    #  - GOREL:0002004
     related_mappings:
       -
     close_mappings:
@@ -1309,13 +1330,13 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:affects_stability_of
-      - GAMMA:stabilization
+    #  - GAMMA:stabilization
     related_mappings:
       -
     close_mappings:
-      -
+      - GAMMA:stabilization
     exact_mappings:
       - CTD:affects_stability_of
     broad_mappings:
@@ -1575,8 +1596,8 @@ slots:
       - This is a grouping for process-process and entity-entity relations
     mixin: true
     abstract: true
-    mappings:
-      - WIKIDATA:P128
+    #mappings:
+    #  - WIKIDATA:P128
     related_mappings:
       -
     close_mappings:
@@ -2218,21 +2239,22 @@ slots:
     in_subset:
       - translator_minimal
     inverse: treated by
-    mappings:
+    #mappings:
     #  - RO:0002606
     #  - RO:0003307
     #  - SEMMEDDB:TREATS
     #  - WIKIDATA:P2175
-      - CTD:therapeutic
-      - CTD:negativecorrelation
-      - MONDO:disease_responds_to
+    #  - CTD:therapeutic
+    #  - CTD:negativecorrelation
+    #  - MONDO:disease_responds_to
     related_mappings:
-      -
+      - MONDO:disease_responds_to
     close_mappings:
-      -
+      - CTD:negativecorrelation
     exact_mappings:
       - SEMMEDDB:TREATS
       - WIKIDATA:P2175
+      - CTD:therapeutic
     broad_mappings:
       - RO:0003307
     narrow_mappings:
@@ -2424,8 +2446,8 @@ slots:
       holds between a process and a material entity or site within which the process occurs
     in_subset:
       - translator_minimal
-    mappings:
-      - BFO:0000066
+    #mappings:
+    #  - BFO:0000066
     #  - SEMMEDDB:OCCURS_IN
     #  - SEMMEDDB:PROCESS_OF
     #  - UBERON_CORE:site_of
@@ -2434,7 +2456,7 @@ slots:
     close_mappings:
       -
     exact_mappings:
-      -
+      - BFO:0000066
     broad_mappings:
       -
     narrow_mappings:
@@ -2452,7 +2474,7 @@ slots:
     in_subset:
       - translator_minimal
     inverse: location of
-    mappings:
+    #mappings:
     #  - RO:0001025
     #  - GOREL:0001004
     #  - BSPO:0000107
@@ -2576,14 +2598,15 @@ slots:
     in_subset:
       - translator_minimal
     inverse: part of
-    mappings:
-      - BFO:0000051
+    #mappings:
+    #  - BFO:0000051
     #  - WIKIDATA:P527
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
+      - BFO:0000051
       - WIKIDATA:P527
     broad_mappings:
       -
@@ -2924,6 +2947,7 @@ slots:
       - translator_minimal
     #mappings:
     #  - owl:equivalentClass
+    #  - owl:equivalentClass
     #  - owl:sameAs
     #  - skos:exactMatch
     #  - WIKIDATA:P2888
@@ -2936,7 +2960,31 @@ slots:
       # identical individual, or identical class concept/meaning
       - owl:sameAs
       - skos:exactMatch
+      # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
+      # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
+      #- SEMMEDDB:SAME_AS
       - WIKIDATA:P2888
+    broad_mappings:
+      -
+    narrow_mappings:
+      -
+
+  close match:
+    is_a: related to
+    description: >-
+      holds between two entities that are considered a skos:closeMatch to one another
+    in_subset:
+      - translator_minimal
+    mappings:
+      -
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - skos:closeMatch
+      # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
+      - SEMMEDDB:SAME_AS
     broad_mappings:
       -
     narrow_mappings:
@@ -2974,48 +3022,66 @@ slots:
     is_a: interacts with
     description: Holds between molecular entities that phyically and directly interact
       with each other
-    mappings:
+    #mappings:
     #  - SIO:000203
-      - chembio:interacts
-      - CTD:interacts_with
-      - CTD:affects_binding
+    #  - chembio:interacts
+    #  - CTD:interacts_with
+    #  - CTD:affects_binding
     #  - PHAROS:drug_targets
-      - GAMMA:interacts_with
-      - GAMMA:antibody_binding
-      - GAMMA:other
-      - GAMMA:other_unknown
-      - GAMMA:pharmacological_chaperone
-      - GAMMA:releasing_agent
-      - GAMMA:kd
-      - GAMMA:kb
-      - GAMMA:binder
-      - GAMMA:binding
+    #  - GAMMA:interacts_with
+    #  - GAMMA:antibody_binding
+    # GAMMA:other and other unknown moved to "biolink:related_to"
+    #  - GAMMA:other
+    #  - GAMMA:other_unknown
+    #  - GAMMA:pharmacological_chaperone
+    #  - GAMMA:releasing_agent
+    #  - GAMMA:kd
+    #  - GAMMA:kb
+    #  - GAMMA:binder
+    #  - GAMMA:binding
     #  - GAMMA:ligand
     #  - GAMMA:cofactor
+    #  - GAMMA:potency
+    # GAMMA:none and other unknown moved to "biolink:related_to"
+    #  - GAMMA:none
+    #  - GAMMA:multitarget
+    #  - GAMMA:chaperone
+    #  - GAMMA:component
+    #  - GAMMA:adduct
+    #  - GAMMA:antibody
+    #  - DRUGBANK:chelator
+    related_mappings:
+      - GAMMA:kd
+      - GAMMA:kb
       - GAMMA:potency
-      - GAMMA:none
+    close_mappings:
+      -
+    exact_mappings:
+      - chembio:interacts
+      - CTD:interacts_with
+      - GAMMA:interacts_with
+    broad_mappings:
+      # Definition of this term is more generic than direct physical molecular interactions:
+      # A is connected to B iff there exists a fiat, material or temporal path between A and B.
+      - SIO:000203
+    narrow_mappings:
+      - PHAROS:drug_targets
+      - DRUGBANK:chelator
+      - GAMMA:antibody_binding
+      - GAMMA:pharmacological_chaperone
+      - GAMMA:releasing_agent
+      - GAMMA:pharmacological_chaperone
+      - GAMMA:releasing_agent
+      - GAMMA:binder
+      - GAMMA:binding
+      - GAMMA:ligand
+      - GAMMA:cofactor
       - GAMMA:multitarget
       - GAMMA:chaperone
       - GAMMA:component
       - GAMMA:adduct
-    #  - GAMMA:antibody
-    #  - DRUGBANK:chelator
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      # Definition of this term is more generic than direct physical molecular interactions: A is connected to B iff there exists a fiat, material or temporal path between A and B.
-      - SIO:000203
-    narrow_mappings:
-      - PHAROS:drug_targets
-      - GAMMA:ligand
-      - GAMMA:cofactor
       - GAMMA:antibody
-      - DRUGBANK:chelator
-
+      - CTD:affects_binding
 
   #The following are proposed new predicates
 
@@ -3044,32 +3110,6 @@ slots:
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
     range: gene
-    inverse: has missense variant
-    #mappings: # moved to 'has missense variant` below
-    #  - SO:0001583
-    #  - SNPEFF:missense_variant
-    #  - SNPEFF:initiator_codon_variant
-    #  - SNPEFF:structural_interaction_variant
-    related_mappings:
-      -
-    close_mappings:
-      # these are actually "inverse" mappings
-      - SO:0001583
-      - SNPEFF:missense_variant
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
-
-  has missense variant:
-    is_a: related to
-    description: holds between a sequence variant and a gene, such the sequence variant
-      results in a different amino acid sequence but where the length is preserved.
-    domain: gene
-    range: sequence variant
-    inverse: is missense variant of
     mappings:
       -
     related_mappings:
@@ -3091,30 +3131,6 @@ slots:
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
     range: gene
-    #mappings: # terms moved to inverse 'has synonymous variant' below
-    #  - SO:0001819
-    #  - SNPEFF:synonymous_variant
-    #  - SNPEFF:start_retained
-    #  - SNPEFF:stop_retained_variant
-    related_mappings:
-      -
-    close_mappings:
-      # these are actually "inverse" mappings
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
-
-  has synonymous variant:
-    is_a: related to
-    description: holds between a gene and a sequence variant, such the sequence variant
-      is in the coding sequence of the gene, but results in the same amino acid sequence
-    domain: gene
-    range: sequence variant
-    inverse: is synonymous variant of
     mappings:
       -
     related_mappings:
@@ -3136,40 +3152,8 @@ slots:
       results in a premature stop codon
     domain: sequence variant
     range: gene
-    inverse: has nonsense variant
-    #mappings: # terms moved to inverse 'has nonsense variant' below
-    #  - SO:0002054
-    #  - SNPEFF:stop_gained
-    #  - SNPEFF:start_lost
-    #  - SNPEFF:stop_lost
-    #  - SNPEFF:frameshift_variant
-    related_mappings:
-      -
-    close_mappings:
-      # this is actually an "inverse" mapping
-      - SNPEFF:stop_gained
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
-
-  has nonsense variant:
-    is_a: related to
-    description: holds between a gene and a sequence variant, such the sequence variant
-      results in a premature stop codon
-    domain: gene
-    range: sequence variant
-    inverse: is nonsense variant of
     mappings:
-    #  - SO:0002054
-    #  - SNPEFF:stop_gained
-    #
-    # Next three terms moved to 'frameshift variant' below
-    #  - SNPEFF:start_lost
-    #  - SNPEFF:stop_lost
-    #  - SNPEFF:frameshift_variant
+      -
     related_mappings:
       -
     close_mappings:
@@ -3189,30 +3173,6 @@ slots:
       nucleotides inserted or deleted is not a multiple of three.
     domain: sequence variant
     range: gene
-    inverse: has frameshift variant
-    mappings:
-      -
-    related_mappings:
-      -
-    close_mappings:
-      # these are actually "inverse" mappings (see 'has frameshift variant')
-      - SO:0001589
-      - SNPEFF:frameshift_variant
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
-
-  has frameshift variant:
-    is_a: related to
-    description: holds between a gene and a sequence variant, such the sequence variant
-      causes a disruption of the translational reading frame, because the number of
-      nucleotides inserted or deleted is not a multiple of three.
-    domain: gene
-    range: sequence variant
-    inverse: is frameshift variant of
     mappings:
       -
     related_mappings:
@@ -3235,30 +3195,6 @@ slots:
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
     range: gene
-    inverse: has splice site variant
-    #mappings: # terms moved to inverse 'has splice site variant' below
-    #  - SO:0001629
-    #  - SNPEFF:splice_region_variant
-    #  - SNPEFF:splice_acceptor_variant
-    #  - SNPEFF:splice_donor_variant
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
-
-  has splice site variant:
-    is_a: related to
-    description: holds between a gene and a sequence variant, such the sequence variant
-      is in the canonical splice site of one of the gene's exons.
-    domain: gene
-    range: sequence variant
-    inverse: is splice site variant of
     mappings:
       -
     related_mappings:
@@ -3281,29 +3217,6 @@ slots:
       is genomically close to.
     domain: sequence variant
     range: gene
-    inverse: has nearby variant
-    #mappings: # terms moved to inverse 'has nearby variant' below
-    #  - GAMMA:0000102
-    #  - SNPEFF:downstream_gene_variant
-    #  - SNPEFF:upstream_gene_variant
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
-
-  has nearby variant:
-    is_a: related to
-    description: holds between a sequence variant and a gene sequence that the variant
-      is genomically close to.
-    domain: sequence variant
-    range: gene
-    inverse: is nearby variant of
     mappings:
       - GAMMA:0000102
     #  - SNPEFF:downstream_gene_variant
@@ -3327,32 +3240,6 @@ slots:
       not affect the coding sequence
     domain: sequence variant
     range: gene
-    inverse: has non coding variant
-    #mappings: # terms moved to inverse 'has non coding variant' below
-    #  - GAMMA:0000103
-    #  - SNPEFF:3_prime_UTR_variant
-    #  - SNPEFF:5_prime_UTR_variant
-    #  - SNPEFF:5_prime_UTR_premature_start_codon_gain_variant
-    #  - SNPEFF:non_coding_transcript_exon_variant
-    #  - SNPEFF:intron_variant
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
-
-  has non coding variant:
-    is_a: related to
-    description: holds between a gene and a sequence variant, where the variant does
-      not affect the coding sequence
-    domain: gene
-    range: sequence variant
-    inverse: is non coding variant of
     mappings:
       - GAMMA:0000103
     related_mappings:
@@ -3582,6 +3469,8 @@ slots:
       -
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
+
+
 
   #End proposed slots
 
