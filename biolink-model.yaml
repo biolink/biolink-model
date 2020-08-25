@@ -176,7 +176,7 @@ slots:
     is_a: related to
     in_subset:
       - translator_minimal
-    mappings:
+    #mappings:
     #  - RO:0002434
     related_mappings:
       -
@@ -307,7 +307,7 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    #mappings:
+    mappings:
     #  - CTD:increases_abundance_of
       - UBERGRAPH:is_increase_of
     related_mappings:
@@ -351,7 +351,7 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:affects_activity_of
     #  - GAMMA:allosteric_modulator
     #  - GAMMA:modulator
@@ -1916,7 +1916,7 @@ slots:
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     in_subset:
       - translator_minimal
-    mappings:
+    #mappings:
     #  - SEMMEDDB:COEXISTS_WITH
     #  - BSPO:0000096
     #  - BSPO:0000097
@@ -3363,7 +3363,7 @@ slots:
     is_a: molecularly interacts with
     description: indicates that the source decreases the molecular interaction between
       the target and some other molecular entity
-    mappings:
+    #mappings:
     #- CTD:decreases_molecular_interaction_with
     related_mappings:
       -
@@ -3380,7 +3380,7 @@ slots:
     is_a: molecularly interacts with
     description: indicates that the source increases the molecular interaction between
       the target and some other molecular entity
-    mappings:
+    #mappings:
     #- CTD:increases_molecular_interaction_with
     related_mappings:
       -
