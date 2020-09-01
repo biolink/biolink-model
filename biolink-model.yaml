@@ -2423,6 +2423,19 @@ slots:
     in_subset:
       - samples
 
+  has variant part:
+    notes:
+      - TBD define this property
+
+  develops from:
+    notes:
+      - TBD define this property
+
+  related condition:
+    notes:
+      - TBD define this property
+
+
 classes:
 
   abstract entity:
@@ -4065,7 +4078,7 @@ classes:
       object:
         range: phenotypic feature
         description: "phenotypic class"
-        values_from: ['upheno', 'hp', 'mp', 'wbphenotypic feature']
+        values_from: ['upheno', 'hp', 'mp', 'wbphenotypic_feature']
         examples:
           - value: HP:0002487
             description: Hyperkinesis

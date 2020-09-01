@@ -1351,6 +1351,7 @@ type PairwiseGeneToGeneInteraction implements PairwiseInteractionAssociation
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     relation: Uriorcurie!
+    interactingMoleculesCategory: OntologyClass
   }
 
 interface PairwiseInteractionAssociation
@@ -1364,6 +1365,7 @@ interface PairwiseInteractionAssociation
     id: String!
     relation: Uriorcurie!
     object: MolecularEntity!
+    interactingMoleculesCategory: OntologyClass
   }
 
 interface PathognomonicityQuantifier

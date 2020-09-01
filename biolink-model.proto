@@ -1090,6 +1090,7 @@ message PairwiseGeneToGeneInteraction
   subject GeneOrGeneProduct = 7
   object GeneOrGeneProduct = 8
   relation Uriorcurie = 9
+  optional interactingMoleculesCategory OntologyClass = 10
  }
 message Pathway
  {
