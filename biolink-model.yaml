@@ -24,7 +24,8 @@ prefixes:
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
-  hetio: 'http://translator.ncats.nih.gov/hetio_'
+
+  hetio: 'http://translator.ncats.nih.gov/hetio_' # hetio ontology terms: https://git.dhimmel.com/rephetio-manuscript/
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
   Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
@@ -1735,11 +1736,11 @@ slots:
       ro: activity directly positively regulates activity of
     in_subset:
       - translator_minimal
-    mappings:
+    #mappings:
     #  - RO:0002450
     #  - SEMMEDDB:STIMULATES
-      - hetio:UPREGULATES_AuG
-      - hetio:UPREGULATES_DuG
+    #  - hetio:UPREGULATES_AuG
+    #  - hetio:UPREGULATES_DuG
     #  - RO:0004034
     related_mappings:
       -
@@ -1753,6 +1754,10 @@ slots:
     narrow_mappings:
       # Defined more narrowly as increasing, facilitating the action or function of a "substance interaction", where "substance" is deemed a subclass of possible entity
       - SEMMEDDB:STIMULATES
+      # Positive regulation is defined more narrowly here, as "Anatomy upregulates Gene"
+      - hetio:UPREGULATES_AuG
+      # Positive regulation is defined more narrowly here, as "Disease upregulates Gene"
+      - hetio:UPREGULATES_DuG
 
   negatively regulates, entity to entity:
     aliases: ['activity directly negatively regulates activity of']
@@ -1764,11 +1769,11 @@ slots:
       ro: activity directly negatively regulates activity of
     in_subset:
       - translator_minimal
-    mappings:
+    #mappings:
     #  - RO:0002449
     #  - SEMMEDDB:INHIBITS
-      - hetio:DOWNREGULATES_AdG
-      - hetio:DOWNREGULATES_DdG
+    #  - hetio:DOWNREGULATES_AdG
+    #  - hetio:DOWNREGULATES_DdG
     related_mappings:
       -
     close_mappings:
@@ -1780,6 +1785,10 @@ slots:
     narrow_mappings:
       # SemMedDb definition focuses on (chemical?) "substance interactions" which is a bit narrower?
       - SEMMEDDB:INHIBITS
+      # Down regulation is defined more narrowly here, as "Anatomy downregulates Gene"
+      - hetio:DOWNREGULATES_AdG
+      # Down regulation is defined more narrowly here, as "Disease downregulates Gene"
+      - hetio:DOWNREGULATES_DdG
 
   disrupts:
     is_a: affects
@@ -2083,22 +2092,29 @@ slots:
     in_subset:
       - translator_minimal
     inverse: condition associated with gene
-    mappings:
+    #mappings:
     #  - WD:P2293
-      - GENO:0000840
-      - GENO:0000841
+    #  - GENO:0000840
+    #  - GENO:0000841
     #  - NCIT:R176
-      - hetio:ASSOCIATES_DaG
+    #  - hetio:ASSOCIATES_DaG
     related_mappings:
       -
     close_mappings:
       - WD:P2293
+      # genotype likely pathogenic for condition
+      - GENO:0000841
     exact_mappings:
       - NCIT:R176
+      - hetio:ASSOCIATES_DaG
+      # genotype pathogenic for condition
+      - GENO:0000840
     broad_mappings:
-      -
+      # genotype likely pathogenic for condition
+      - GENO:0000841
     narrow_mappings:
       -
+
 
   condition associated with gene:
     is_a: related to
@@ -2440,15 +2456,16 @@ slots:
     in_subset:
       - translator_minimal
     inverse: expressed in
-    mappings:
+    #mappings:
     #- RO:0002292
-      - hetio:EXPRESSES_AeG
+    #  - hetio:EXPRESSES_AeG
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
       - RO:0002292
+      - hetio:EXPRESSES_AeG
     broad_mappings:
       -
     narrow_mappings:
@@ -2464,9 +2481,9 @@ slots:
       - check the range
     in_subset:
       - translator_minimal
-    mappings:
+    #mappings:
     #  - RO:0002200
-      - hetio:PRESENTS_DpS
+    #  - hetio:PRESENTS_DpS
     related_mappings:
       -
     close_mappings:
@@ -2474,9 +2491,8 @@ slots:
     exact_mappings:
       - RO:0002200
     broad_mappings:
-      -
-    narrow_mappings:
-      -
+      # Disease–presents–Symptom
+      - hetio:PRESENTS_DpS
 
   occurs in:
     is_a: related to
