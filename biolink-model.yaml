@@ -148,16 +148,15 @@ slots:
     range: named thing
     multivalued: true
     inherited: true
-    mappings:
+    #mappings:
     #  - owl:topObjectProperty
     #  - SEMMEDDB:ASSOCIATED_WITH
-      - BFO:0000054
-      - UBERON_CORE:protects
-      - GOREL:0002005
-      - GOREL:0012006
+    #  - BFO:0000054
+    #  - UBERON_CORE:protects
+    #  - GOREL:0002005
+    #  - GOREL:0012006
     related_mappings:
-      # Absence of relationship?
-      - GAMMA:none
+      -
     close_mappings:
       - SEMMEDDB:ASSOCIATED_WITH
     exact_mappings:
@@ -165,8 +164,10 @@ slots:
     broad_mappings:
       - owl:topObjectProperty
     narrow_mappings:
-      - GAMMA:other
-      - GAMMA:other_unknown
+      - BFO:0000054
+      - UBERON_CORE:protects
+      - GOREL:0002005
+      - GOREL:0012006
 
   interacts with:
     domain: named thing
@@ -260,12 +261,12 @@ slots:
       Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
     in_subset:
       - translator_minimal
-    mappings:
+    #mappings:
     #  - SEMMEDDB:AFFECTS
     #  - GOREL:0001006
-      - CTD:inferred
+    #  - CTD:inferred
     #  - CTD:prediction_hypothesis
-      - UPHENO:0000001
+    #  - UPHENO:0000001
     related_mappings:
       -
     close_mappings:
@@ -277,6 +278,8 @@ slots:
     narrow_mappings:
       - CTD:prediction_hypothesis
       - GOREL:0001006
+      - CTD:inferred
+      - UPHENO:0000001
 
   affects abundance of:
     description: >-
@@ -307,11 +310,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:increases_abundance_of
-      - UBERGRAPH:is_increase_of
+    #  - UBERGRAPH:is_increase_of
     related_mappings:
-      -
+      - UBERGRAPH:is_increase_of
     close_mappings:
       -
     exact_mappings:
@@ -329,11 +332,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:decreases_abundance_of
-      - UBERGRAPH:is_decrease_of
+    #  - UBERGRAPH:is_decrease_of
     related_mappings:
-      -
+      - UBERGRAPH:is_decrease_of
     close_mappings:
       -
     exact_mappings:
@@ -667,11 +670,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
+    #mappings:
     #  - CTD:affects_metabolic_processing_of
-      - GAMMA:catalytic_activity
+    #  - GAMMA:catalytic_activity
     related_mappings:
-      -
+      - GAMMA:catalytic_activity
     close_mappings:
       -
     exact_mappings:
@@ -851,10 +854,7 @@ slots:
     related_mappings:
       -
     close_mappings:
-      # The GAMMA terms don't specifically quantify the molecular modification as 'increasing'
-      # the rate of the specified activity thus the terms are simply tagged as a 'close match'
-      - GAMMA:acetylation
-      - GAMMA:oxidizer
+      -
     exact_mappings:
       - CTD:increases_molecular_modification_of
     broad_mappings:
@@ -891,6 +891,8 @@ slots:
       - CTD:increases_oxidation
       - CTD:increases_reduction
       - CTD:increases_carboxylation
+      - GAMMA:acetylation
+      - GAMMA:oxidizer
 
   decreases molecular modification of:
     description: >-
@@ -937,9 +939,7 @@ slots:
     related_mappings:
       -
     close_mappings:
-      # The GAMMA terms don't specifically quantify the molecular modification as 'decreasing'
-      # the rate of the specified activity thus the terms are simply tagged as a 'close match'
-      - GAMMA:deoxidizer
+      -
     exact_mappings:
       - CTD:decreases_molecular_modification_of
     broad_mappings:
@@ -976,6 +976,7 @@ slots:
       - CTD:decreases_oxidation
       - CTD:decreases_reduction
       - CTD:decreases_carboxylation
+      - GAMMA:deoxidizer
 
   affects synthesis of:
     description: >-
@@ -1269,10 +1270,9 @@ slots:
     close_mappings:
       -
     exact_mappings:
-      - CTD:affects_splicing_of
       - CTD:affects_RNA_splicing
     broad_mappings:
-      -
+      - CTD:affects_splicing_of
     narrow_mappings:
       -
 
@@ -1292,10 +1292,9 @@ slots:
     close_mappings:
       -
     exact_mappings:
-      - CTD:increases_splicing_of
       - CTD:increases_RNA_splicing
     broad_mappings:
-      -
+      - CTD:increases_splicing_of
     narrow_mappings:
       -
 
@@ -1315,10 +1314,9 @@ slots:
     close_mappings:
       -
     exact_mappings:
-      - CTD:decreases_splicing_of
       - CTD:decreases_RNA_splicing
     broad_mappings:
-      -
+      - CTD:decreases_splicing_of
     narrow_mappings:
       -
 
@@ -2167,19 +2165,19 @@ slots:
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
     in_subset:
       - translator_minimal
-    mappings:
+    #mappings:
     #  - RO:0002326
-      - CTD:marker_mechanism
-    #  - CTD:positivecorrelation
+    #  - CTD:marker_mechanism
+    #  - CTD:positivecorrelation # moved to new "positively correlated with" Biolink predicate as an exact mapping
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
       - RO:0002326
+      - CTD:marker_mechanism
     broad_mappings:
-      # Correlation is not causation...
-      - CTD:positivecorrelation
+      -
     narrow_mappings:
       -
 
@@ -2245,12 +2243,12 @@ slots:
     #  - SEMMEDDB:TREATS
     #  - WIKIDATA:P2175
     #  - CTD:therapeutic
-    #  - CTD:negativecorrelation
+    #  - CTD:negativecorrelation # moved to new "negatively correlated with" Biolink predicate as an exact mapping
     #  - MONDO:disease_responds_to
     related_mappings:
       - MONDO:disease_responds_to
     close_mappings:
-      - CTD:negativecorrelation
+      -
     exact_mappings:
       - SEMMEDDB:TREATS
       - WIKIDATA:P2175
@@ -2300,6 +2298,46 @@ slots:
       -
     exact_mappings:
       - RO:0002610
+    broad_mappings:
+      -
+    narrow_mappings:
+      -
+
+  # proposed positive and negative semantic extensions to the general "correlated with" predicate
+
+  positively correlated with:
+    is_a: correlated with
+    description: >-
+      holds between any two named thing entities "correlated with" one another in a positive manner.
+    domain: named thing
+    range: named thing
+    #in_subset:
+    #  - translator_minimal
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - CTD:positivecorrelation
+    broad_mappings:
+      -
+    narrow_mappings:
+      -
+
+  negatively correlated with:
+    is_a: correlated with
+    description: >-
+      holds between any two named thing entities "correlated with" one another in a negative manner.
+    domain: named thing
+    range: named thing
+    #in_subset:
+    #  - translator_minimal
+    related_mappings:
+      -
+    close_mappings:
+      -
+    exact_mappings:
+      - CTD:negativecorrelation
     broad_mappings:
       -
     narrow_mappings:
@@ -3291,13 +3329,13 @@ slots:
     domain: drug
     range: disease or phenotypic feature
     mappings:
-      - Aeolus:0000001
+      -
     related_mappings:
       -
     close_mappings:
       -
     exact_mappings:
-      -
+      - Aeolus:0000001
     broad_mappings:
       -
     narrow_mappings:
