@@ -3107,15 +3107,6 @@ classes:
       - KEGG
       - gtpo
 
-  carbohydrate:
-    is_a: chemical substance
-    mappings:
-      # UMLS Semantic Type "Carbohydrate Sequence"
-      - UMLSSC:T088
-      - UMLSST:crbs
-    id_prefixes:
-      - PUBCHEM.SUBSTANCE
-
   drug:
     is_a: chemical substance
     description: >-
