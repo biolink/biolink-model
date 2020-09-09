@@ -206,7 +206,7 @@ pytest: biolink/model.py
 	pipenv run python $<
 
 jsonschema_test: json-schema/biolink-model.json
-#	jsonschema $<
+	jsonschema $<
 
 # ----------------------------------------
 # CLEAN
