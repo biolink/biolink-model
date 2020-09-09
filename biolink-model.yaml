@@ -1462,6 +1462,9 @@ slots:
       holds between a process and a material entity or site within which the process occurs
     in_subset:
       - translator_minimal
+    close_mapping:
+      # This term seems to be the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
+      - BFO:0000067
     exact_mappings:
       - BFO:0000066
     narrow_mappings:
@@ -1545,6 +1548,8 @@ slots:
     inverse: part of
     exact_mappings:
       - BFO:0000051
+      # term name seems to be 'realizes' but RTX maps this term here
+      - BFO:0000055
       - WIKIDATA:P527
 
   part of:
@@ -1713,6 +1718,7 @@ slots:
       holds between two processes, where one completes before the other begins
     domain: occurrent
     range: occurrent
+    inverse: preceded by
     in_subset:
       - translator_minimal
     close_mappings:
@@ -1725,6 +1731,18 @@ slots:
     broad_mappings:
       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
       - WIKIDATA:P156
+
+  preceded by:
+    is_a: related to
+    description: >-
+      holds between two processes, where the other is completed before the one begins
+    domain: occurrent
+    range: occurrent
+    inverse: precedes
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - BFO:0000062
 
   same as:
     is_a: related to
@@ -3872,9 +3890,10 @@ classes:
       - object
     description: >-
       Any association between one genotype and a genotypic entity that is a sub-component of it
-    slot_usage:
-      relation:
-        subproperty_of: has variant part
+    #slot_usage:
+    # should 'relation' be 'edge_label'; also, not sure how 'has_variant_part' needs to be defined)
+    #  relation:
+    #    subproperty_of: has variant part
       subject:
         range: genotype
         description: >-
