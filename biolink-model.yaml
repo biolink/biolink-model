@@ -149,8 +149,6 @@ slots:
     range: named thing
     multivalued: true
     inherited: true
-    related_mappings:
-      -
     close_mappings:
       - SEMMEDDB:ASSOCIATED_WITH
     exact_mappings:
@@ -171,16 +169,8 @@ slots:
     is_a: related to
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002434
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   physically interacts with:
     is_a: interacts with
@@ -189,14 +179,8 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - WIKIDATA:P129
-    broad_mappings:
-      -
     narrow_mappings:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
       - SEMMEDDB:INTERACTS_WITH
@@ -207,17 +191,9 @@ slots:
     range: molecular entity
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002436
       - CTD:molecularly_interacts_with
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   genetically interacts with:
     is_a: interacts with
@@ -227,16 +203,8 @@ slots:
     range: gene
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002435
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects:
     is_a: related to
@@ -245,14 +213,8 @@ slots:
       Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SEMMEDDB:AFFECTS
-    broad_mappings:
-      -
     narrow_mappings:
       - CTD:prediction_hypothesis
       - GOREL:0001006
@@ -267,16 +229,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_abundance_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases abundance of:
     description: >-
@@ -288,14 +242,8 @@ slots:
     range: molecular entity
     related_mappings:
       - UBERGRAPH:is_increase_of
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_abundance_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases abundance of:
     description: >-
@@ -307,14 +255,8 @@ slots:
     range: molecular entity
     related_mappings:
       - UBERGRAPH:is_decrease_of
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_abundance_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects activity of:
     description: >-
@@ -324,14 +266,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_activity_of
-    broad_mappings:
-      -
     narrow_mappings:
       - GAMMA:allosteric_modulator
       - GAMMA:modulator
@@ -348,12 +284,8 @@ slots:
     related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_activity_of
-    broad_mappings:
-      -
     narrow_mappings:
       - GAMMA:activator
       - GAMMA:partial_agonist
@@ -376,12 +308,8 @@ slots:
     related_mappings:
       - GAMMA:ic50
       - GAMMA:ki
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_activity_of
-    broad_mappings:
-      -
     narrow_mappings:
       - GAMMA:allosteric_antagonist
       - GAMMA:partial_antagonist
@@ -409,16 +337,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_expression_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases expression of:
     description: >-
@@ -428,16 +348,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_expression_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases expression of:
     description: >-
@@ -447,16 +359,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_expression_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects folding of:
     description: >-
@@ -466,16 +370,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_folding_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases folding of:
     description: >-
@@ -485,16 +381,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_folding_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases folding of:
     description: >-
@@ -504,16 +392,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_folding_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects localization of:
     description: >-
@@ -525,14 +405,8 @@ slots:
     range: molecular entity
     related_mappings:
       - GAMMA:storage
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_localization_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases localization of:
     description: >-
@@ -542,16 +416,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_localization_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases localization of:
     description: >-
@@ -561,16 +427,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_localization_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects metabolic processing of:
     description: >-
@@ -582,14 +440,8 @@ slots:
     range: molecular entity
     related_mappings:
       - GAMMA:catalytic_activity
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_metabolic_processing_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases metabolic processing of:
     description: >-
@@ -599,16 +451,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_metabolic_processing_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases metabolic processing of:
     description: >-
@@ -618,16 +462,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_metabolic_processing_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects molecular modification of:
     description: >-
@@ -637,14 +473,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_molecular_modification_of
-    broad_mappings:
-      -
     narrow_mappings:
       - CTD:affects_acetylation
       - CTD:affects_acylation
@@ -686,14 +516,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_molecular_modification_of
-    broad_mappings:
-      -
     narrow_mappings:
       - CTD:increases_acetylation
       - CTD:increases_acylation
@@ -737,14 +561,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_molecular_modification_of
-    broad_mappings:
-      -
     narrow_mappings:
       - CTD:decreases_acetylation
       - CTD:decreases_acylation
@@ -787,16 +605,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_synthesis_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases synthesis of:
     description: >-
@@ -806,16 +616,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_synthesis_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases synthesis of:
     description: >-
@@ -828,16 +630,8 @@ slots:
     mappings:
     #  - CTD:decreases_synthesis_of
       - GAMMA:inhibition_of_synthesis
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_synthesis_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects degradation of:
     description: >-
@@ -847,14 +641,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_degradation_of
-    broad_mappings:
-      -
     narrow_mappings:
       - CTD:affects_cleavage
       - CTD:affects_hydrolysis
@@ -867,10 +655,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_degradation_of
     broad_mappings:
@@ -889,14 +673,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_degradation_of
-    broad_mappings:
-      -
     narrow_mappings:
       - CTD:decreases_cleavage
       - CTD:decreases_hydrolysis
@@ -909,17 +687,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_mutation_rate_of
     broad_mappings:
       # Term 'mutagenesis' generally speaks generally of the process of 'production of genetic mutations':  this term says it is affected but not specifically how
       - CTD:affects_mutagenesis
-    narrow_mappings:
-      -
 
   increases mutation rate of:
     description: >-
@@ -929,17 +701,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_mutation_rate_of
     broad_mappings:
       # See 'affects mutation rate of' above
       - CTD:increases_mutagenesis
-    narrow_mappings:
-      -
 
   decreases mutation rate of:
     description: >-
@@ -949,17 +715,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_mutation_rate_of
     broad_mappings:
       # See 'affects mutation rate of' above
       - CTD:decreases_mutagenesis
-    narrow_mappings:
-      -
 
   affects response to:
     description: >-
@@ -969,16 +729,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_response_to
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases response to:
     description: >-
@@ -988,16 +740,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_response_to
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases response to:
     description: >-
@@ -1007,14 +751,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_response_to
-    broad_mappings:
-      -
     narrow_mappings:
       - CTD:decreases_response_to_substance
       - GAMMA:desensitize_the_target
@@ -1027,16 +765,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_RNA_splicing
     broad_mappings:
       - CTD:affects_splicing_of
-    narrow_mappings:
-      -
 
   increases splicing of:
     description: >-
@@ -1046,16 +778,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_RNA_splicing
     broad_mappings:
       - CTD:increases_splicing_of
-    narrow_mappings:
-      -
 
   decreases splicing of:
     description: >-
@@ -1065,16 +791,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_RNA_splicing
     broad_mappings:
       - CTD:decreases_splicing_of
-    narrow_mappings:
-      -
 
   affects stability of:
     description: >-
@@ -1084,16 +804,10 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
     close_mappings:
       - GAMMA:stabilization
     exact_mappings:
       - CTD:affects_stability_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases stability of:
     description: >-
@@ -1103,16 +817,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_stability_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases stability of:
     description: >-
@@ -1122,16 +828,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_stability_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects transport of:
     description: >-
@@ -1141,16 +839,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_transport_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases transport of:
     description: >-
@@ -1160,17 +850,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
     close_mappings:
       - GAMMA:carrier
       - GAMMA:transporter
     exact_mappings:
       - CTD:increases_transport_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases transport of:
     description: >-
@@ -1180,16 +864,8 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_transport_of
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects secretion of:
     description: >-
@@ -1199,17 +875,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:affects_export
-    narrow_mappings:
-      -
 
   increases secretion of:
     description: >-
@@ -1219,17 +889,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:increases_export
-    narrow_mappings:
-      -
 
   decreases secretion of:
     description: >-
@@ -1239,17 +903,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:decreases_export
-    narrow_mappings:
-      -
 
   affects uptake of:
     description: >-
@@ -1259,17 +917,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:affects_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:affects_import
-    narrow_mappings:
-      -
 
   increases uptake of:
     description: >-
@@ -1279,17 +931,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:increases_import
-    narrow_mappings:
-      -
 
   decreases uptake of:
     description: >-
@@ -1299,17 +945,11 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:decreases_import
-    narrow_mappings:
-      -
 
   regulates:
     is_a: affects
@@ -1317,15 +957,6 @@ slots:
       - This is a grouping for process-process and entity-entity relations
     mixin: true
     abstract: true
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      # we don't really have an exact match term for this generic
-      -
-    broad_mappings:
-      -
     narrow_mappings:
       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
       - WIKIDATA:P128
@@ -1336,16 +967,8 @@ slots:
     is_a: regulates
     mixin: true
     abstract: true
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002213
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   negatively regulates:
     comments:
@@ -1353,63 +976,33 @@ slots:
     is_a: regulates
     mixin: true
     abstract: true
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       # Strict interpretation here is that entity A causally affects levels of B
       - RO:0004035
     broad_mappings:
       # This term is slightly broader in that it includes that A acts within B as well
       - RO:0004033
-    narrow_mappings:
-      -
 
   regulates, process to process:
     is_a: regulates
     domain: occurrent
     range: occurrent
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002211
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   positively regulates, process to process:
     is_a: regulates, process to process
     mixins:
       - positively regulates
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002213
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   negatively regulates, process to process:
     is_a: regulates, process to process
     mixins:
       - negatively regulates
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002212
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   regulates, entity to entity:
     aliases: ['activity directly regulates activity of']
@@ -1421,14 +1014,8 @@ slots:
       ro: activity directly regulates activity of
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002448
-    broad_mappings:
-      -
     narrow_mappings:
       # Wikidata mapping copied over from 'regulates' above;  considered a slightly narrower term since it applies to protein and RNA as subject regulator whereas molecular_entity may also be another class of chemical_substance?
       - WIKIDATA:P128
@@ -1443,10 +1030,6 @@ slots:
       ro: activity directly positively regulates activity of
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002450
     broad_mappings:
@@ -1470,14 +1053,8 @@ slots:
       ro: activity directly negatively regulates activity of
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002449
-    broad_mappings:
-      -
     narrow_mappings:
       # SemMedDb definition focuses on (chemical?) "substance interactions" which is a bit narrower?
       - SEMMEDDB:INHIBITS
@@ -1492,16 +1069,8 @@ slots:
       describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SEMMEDDB:DISRUPTS
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   has gene product:
     is_a: related to
@@ -1511,17 +1080,9 @@ slots:
     range: gene product
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002205
       - WIKIDATA:P688
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   homologous to:
     is_a: related to
@@ -1532,15 +1093,9 @@ slots:
       - typically used to describe homology relationships between genes or gene products
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:HOM0000001
       - SIO:010302
-    broad_mappings:
-      -
     narrow_mappings:
       # This is a tricky one to place; seems narrower than the RO mapping but that mapping, RO:0002158
       - UBERON_CORE:sexually_homologous_to
@@ -1551,16 +1106,8 @@ slots:
       a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:HOM0000011
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   orthologous to:
     is_a: homologous to
@@ -1568,17 +1115,9 @@ slots:
       a homology relationship between entities (typically genes) that diverged after a speciation event.
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:HOM0000017
       - WIKIDATA:P684
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   xenologous to:
     is_a: homologous to
@@ -1586,16 +1125,8 @@ slots:
       a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:HOM0000018
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   coexists with:
     is_a: related to
@@ -1603,14 +1134,8 @@ slots:
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
-    broad_mappings:
-      -
     narrow_mappings:
       - BSPO:0000096
       - BSPO:0000097
@@ -1659,14 +1184,6 @@ slots:
     related_mappings:
       # generally pertains to membership of a (subject) component - gene, metabolite, etc? - in an (object) metabolic pathway
       - SIO:010532
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   in complex with:
     description: >-
@@ -1679,15 +1196,9 @@ slots:
     related_mappings:
       # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
       - SIO:010497
-    close_mappings:
-      -
-    exact_mappings:
-      -
     broad_mappings:
       # generally pertains to membership of any (subject) constituent molecule in an (object) molecular complex (might also generically cover RNA-Protein, Lipid-Protein, etc complexes)
       - SIO:010285
-    narrow_mappings:
-      -
 
   in cell population with:
     description: >-
@@ -1697,16 +1208,6 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   colocalizes with:
     description: >-
@@ -1714,16 +1215,8 @@ slots:
     is_a: coexists with
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:00002325
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   gene associated with condition:
     is_a: related to
@@ -1734,8 +1227,6 @@ slots:
     in_subset:
       - translator_minimal
     inverse: condition associated with gene
-    related_mappings:
-      -
     close_mappings:
       - WD:P2293
       # genotype likely pathogenic for condition
@@ -1748,8 +1239,6 @@ slots:
     broad_mappings:
       # genotype likely pathogenic for condition
       - GENO:0000841
-    narrow_mappings:
-      -
 
 
   condition associated with gene:
@@ -1762,16 +1251,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: gene associated with condition
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - WD:P2293
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   affects risk for:
     is_a: related to
@@ -1779,16 +1260,6 @@ slots:
       holds between two entities where exposure to one entity alters the chance of developing the other
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   predisposes:
     is_a: affects risk for
@@ -1796,16 +1267,8 @@ slots:
       holds between two entities where exposure to one entity increases the chance of developing the other
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SEMMEDDB:PREDISPOSES
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   contributes to:
     is_a: related to
@@ -1813,17 +1276,9 @@ slots:
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002326
       - CTD:marker_mechanism
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   causes:
     description: >-
@@ -1832,10 +1287,6 @@ slots:
     in_subset:
       - translator_minimal
     inverse: caused by
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002506
       - SEMMEDDB:CAUSES
@@ -1852,16 +1303,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: causes
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - WIKIDATA:P828
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   treats:
     aliases: ['is substance that treats']
@@ -1876,8 +1319,6 @@ slots:
     inverse: treated by
     related_mappings:
       - MONDO:disease_responds_to
-    close_mappings:
-      -
     exact_mappings:
       - SEMMEDDB:TREATS
       - WIKIDATA:P2175
@@ -1896,14 +1337,8 @@ slots:
       the onset a disease or phenotypic feature.
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SEMMEDDB:PREVENTS
-    broad_mappings:
-      -
     narrow_mappings:
       # more restricted case of a material entity mitigating a pathological process
       - RO:0002599
@@ -1916,16 +1351,8 @@ slots:
     range: named thing
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002610
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -1937,16 +1364,8 @@ slots:
     range: named thing
     #in_subset:
     #  - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:positivecorrelation
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   negatively correlated with:
     is_a: correlated with
@@ -1956,16 +1375,8 @@ slots:
     range: named thing
     #in_subset:
     #  - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:negativecorrelation
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   has biomarker:
     is_a: correlated with
@@ -1976,16 +1387,6 @@ slots:
     in_subset:
       - translator_minimal
     inverse: biomarker for
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   biomarker for:
     is_a: correlated with
@@ -1996,17 +1397,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has biomarker
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
     broad_mappings:
       # Generic marker definition not specific to biomarkers per say
       - RO:0002607
-    narrow_mappings:
-      -
 
   treated by:
     is_a: related to
@@ -2016,14 +1409,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: treats
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - WIKIDATA:P2176
-    broad_mappings:
-      -
     narrow_mappings:
       # "is treated by substance" constrains statements to a subset of the universe of all possible treatments
       - RO:0002302
@@ -2037,16 +1424,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: expresses
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002206
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   expresses:
     is_a: related to
@@ -2057,17 +1436,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: expressed in
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002292
       - hetio:EXPRESSES_AeG
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   has phenotype:
     is_a: related to
@@ -2079,10 +1450,6 @@ slots:
       - check the range
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002200
     broad_mappings:
@@ -2095,14 +1462,8 @@ slots:
       holds between a process and a material entity or site within which the process occurs
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - BFO:0000066
-    broad_mappings:
-      -
     narrow_mappings:
       # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
       - SEMMEDDB:OCCURS_IN
@@ -2118,14 +1479,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: location of
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0001025
-    broad_mappings:
-      -
     narrow_mappings:
       - GOREL:0001004
       - BSPO:0000107
@@ -2156,18 +1511,10 @@ slots:
     in_subset:
       - translator_minimal
     inverse: located in
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
       - WIKIDATA:276
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   model of:
     is_a: related to
@@ -2175,16 +1522,8 @@ slots:
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0003301
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   overlaps:
     is_a: related to
@@ -2192,14 +1531,8 @@ slots:
       holds between entities that overlap in their extents (materials or processes)
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002131
-    broad_mappings:
-      -
     narrow_mappings:
       - BSPO:0005001
 
@@ -2210,17 +1543,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: part of
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - BFO:0000051
       - WIKIDATA:P527
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   part of:
     is_a: overlaps
@@ -2229,16 +1554,10 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has part
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - BFO:0000050
       - SEMMEDDB:PART_OF
       - WIKIDATA:P361
-    broad_mappings:
-      -
     narrow_mappings:
       - BSPO:0001106
       - BSPO:0001108
@@ -2256,21 +1575,14 @@ slots:
     in_subset:
       - translator_minimal
     inverse: participates in
-    mappings:
-    #  - RO:0000057
-    #  - WIKIDATA:P2283
-      - GOREL:0001007
-      - GOREL:0002008
-    related_mappings:
-      -
+    #mappings:
+    # Not sure about these here
+    #  - GOREL:0001007
+    #  - GOREL:0002008
     close_mappings:
       - WIKIDATA:P2283
     exact_mappings:
       - RO:0000057
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   has input:
     is_a: has participant
@@ -2279,17 +1591,9 @@ slots:
     domain: occurrent
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   has output:
     is_a: has participant
@@ -2298,16 +1602,8 @@ slots:
     domain: occurrent
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002234
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   participates in:
     is_a: related to
@@ -2317,17 +1613,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has participant
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0000056
       - BFO:0000056
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   actively involved in:
     is_a: participates in
@@ -2336,16 +1624,8 @@ slots:
     range: occurrent
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002331
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   capable of:
     is_a: actively involved in
@@ -2354,16 +1634,8 @@ slots:
     range: occurrent
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002215
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   enables:
     is_a: has participant
@@ -2373,16 +1645,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: enabled by
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002327
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   enabled by:
     is_a: has participant
@@ -2392,16 +1656,8 @@ slots:
     in_subset:
       - translator_minimal
     inverse: enables
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0002333
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   derives into:
     is_a: related to
@@ -2410,17 +1666,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: derives from
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   derives from:
     is_a: related to
@@ -2430,16 +1678,8 @@ slots:
       - translator_minimal
       - samples
     inverse: derives into
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - RO:0001000
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   manifestation of:
     is_a: related to
@@ -2448,17 +1688,11 @@ slots:
     range: disease
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SEMMEDDB:MANIFESTATION_OF
     broad_mappings:
       # Wikidata definition slightly broader: "inherent and characteristic embodiment of a given concept"
       - WIKIDATA:P1557
-    narrow_mappings:
-      -
 
   produces:
     is_a: related to
@@ -2466,23 +1700,14 @@ slots:
       holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
     in_subset:
       - translator_minimal
-    mappings:
-    #  - RO:0003000
-    #  - WIKIDATA:P1056
-    #  - SEMMEDDB:PRODUCES
-      - GOREL:0001010
     related_mappings:
-      -
+      - GOREL:0001010
     close_mappings:
       -
     exact_mappings:
       - RO:0003000
       - WIKIDATA:P1056
       - SEMMEDDB:PRODUCES
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   precedes:
     is_a: related to
@@ -2492,8 +1717,6 @@ slots:
     range: occurrent
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
     close_mappings:
       # the subject of these terms is a material entity, not a process, but affects a process which is cause a second process to occur
       - RO:0002263
@@ -2504,8 +1727,6 @@ slots:
     broad_mappings:
       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
       - WIKIDATA:P156
-    narrow_mappings:
-      -
 
   same as:
     is_a: related to
@@ -2513,8 +1734,6 @@ slots:
       holds between two entities that are considered equivalent to each other
     in_subset:
       - translator_minimal
-    related_mappings:
-      -
     close_mappings:
       # identical class extension with identical sets of individuals
       - owl:equivalentClass
@@ -2526,10 +1745,6 @@ slots:
       # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
       #- SEMMEDDB:SAME_AS
       - WIKIDATA:P2888
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   close match:
     is_a: related to
@@ -2537,20 +1752,10 @@ slots:
       holds between two entities that are considered a skos:closeMatch to one another
     in_subset:
       - translator_minimal
-    mappings:
-      -
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
       - SEMMEDDB:SAME_AS
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   subclass of:
     is_a: related to
@@ -2563,18 +1768,10 @@ slots:
       - translator_minimal
     inverse: superclass of
     slot_uri: rdfs:subClassOf
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
       - WIKIDATA:P279
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   directly interacts with:
     is_a: interacts with
@@ -2584,8 +1781,6 @@ slots:
       - GAMMA:kd
       - GAMMA:kb
       - GAMMA:potency
-    close_mappings:
-      -
     exact_mappings:
       - chembio:interacts
       - CTD:interacts_with
@@ -2619,16 +1814,8 @@ slots:
     is_a: affects
     description: Holds between a variant and an anatomical entity where the expression of the variant
        is located in.
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - GTEx:affects_expression_in
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   #Predicates relating variants to genes
 
@@ -2638,17 +1825,9 @@ slots:
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
     range: gene
-    mappings:
-      -
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SO:0001583
       - SNPEFF:missense_variant
-    broad_mappings:
-      -
     narrow_mappings:
       - SNPEFF:initiator_codon_variant
       - SNPEFF:structural_interaction_variant
@@ -2659,17 +1838,9 @@ slots:
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
     range: gene
-    mappings:
-      -
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SO:0001819
       - SNPEFF:synonymous_variant
-    broad_mappings:
-      -
     narrow_mappings:
       - SNPEFF:start_retained
       - SNPEFF:stop_retained_variant
@@ -2680,19 +1851,11 @@ slots:
       results in a premature stop codon
     domain: sequence variant
     range: gene
-    mappings:
-      -
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SNPEFF:stop_gained
     broad_mappings:
       # Term definition broader than nonsense codon: A sequence variant whereby the gene product has diminished or abolished function.
       - SO:0002054
-    narrow_mappings:
-      -
 
   is frameshift variant of:
     is_a: related to
@@ -2701,17 +1864,9 @@ slots:
       nucleotides inserted or deleted is not a multiple of three.
     domain: sequence variant
     range: gene
-    mappings:
-      -
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SO:0001589
       - SNPEFF:frameshift_variant
-    broad_mappings:
-      -
     narrow_mappings:
       # These are particular narrow consequences of a frameshift variant?
       - SNPEFF:start_lost
@@ -2723,16 +1878,8 @@ slots:
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
     range: gene
-    mappings:
-      -
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - SO:0001629
-    broad_mappings:
-      -
     narrow_mappings:
       # These are particular narrow consequences of a splice site variant
       - SNPEFF:splice_region_variant
@@ -2745,18 +1892,8 @@ slots:
       is genomically close to.
     domain: sequence variant
     range: gene
-    mappings:
-      - GAMMA:0000102
-    #  - SNPEFF:downstream_gene_variant
-    #  - SNPEFF:upstream_gene_variant
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
-      -
-    broad_mappings:
-      -
+      - GAMMA:0000102
     narrow_mappings:
       # these are more precisely positioned 'nearby variant' locations
       - SNPEFF:downstream_gene_variant
@@ -2770,14 +1907,6 @@ slots:
     range: gene
     mappings:
       - GAMMA:0000103
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
     narrow_mappings:
       # More narrow but precisely defined instances of non coding sequence variants
       - SNPEFF:3_prime_UTR_variant
@@ -2792,14 +1921,6 @@ slots:
     description: A relation that holds between a disease and an entity where the state
       of the entity has contribution to the disease.
     is_a: related to
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
     narrow_mappings:
       # These two MONDO terms seem more particular than the predicate
       - MONDO:disease_has_basis_in_development_of
@@ -2815,18 +1936,8 @@ slots:
       by the drug
     domain: drug
     range: disease or phenotypic feature
-    mappings:
-      -
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - Aeolus:0000001
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   contraindicated for:
     is_a: related to
@@ -2834,16 +1945,8 @@ slots:
       with that disease should not be treated with the drug.
     domain: drug
     range: disease or phenotypic feature
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - DrugCentral:0000001
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   #The remaining new slots are here because we ran across them somewhere and they didn't seem
   # to map well to anything else.
@@ -2852,127 +1955,56 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CL:has_not_completed
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   has completed:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of
       and has completed
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CL:has_completed
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   decreases molecular interaction:
     is_a: molecularly interacts with
     description: indicates that the source decreases the molecular interaction between
       the target and some other molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   increases molecular interaction:
     is_a: molecularly interacts with
     description: indicates that the source increases the molecular interaction between
       the target and some other molecular entity
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CTD:increases_molecular_interaction_with
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   produced by:
     is_a: related to
     inverse: produces
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
+
 
   in linkage disequilibrium with:
     is_a: related to
     description: holds between two sequence variants, the presence of which are correlated
       in a population
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - NCIT:C16798
-    broad_mappings:
-      -
-    narrow_mappings:
-      -
 
   has increased amount:
     is_a: related to
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
     narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
   has decreased amount:
     is_a: related to
-    related_mappings:
-      -
-    close_mappings:
-      -
-    exact_mappings:
-      -
-    broad_mappings:
-      -
     narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
   lacks part:
     is_a: related to
-    related_mappings:
-      -
-    close_mappings:
-      -
     exact_mappings:
       - CL:lacks_part
-    broad_mappings:
-      -
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
 
