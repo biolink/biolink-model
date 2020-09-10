@@ -1534,6 +1534,30 @@ slots:
     mappings:
       - RO:0001000
 
+  is metabolite of:
+    is_a: derives from
+    description: >-
+      holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
+    in_subset:
+      - translator_minimal
+    inverse: has metabolite
+    comments:
+      - The CHEBI ID represents a role rather than a predicate
+    mappings:
+      - CHEBI:25212
+
+  has metabolite:
+    is_a: derives into
+    description: >-
+      holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
+    in_subset:
+      - translator_minimal
+    inverse: is metabolite of
+    comments:
+      - The CHEBI ID represents a role rather than a predicate
+    mappings:
+      - CHEBI:25212
+
   manifestation of:
     is_a: related to
     description: >-
@@ -3121,22 +3145,6 @@ classes:
       - UMLSST:clnd
     id_prefixes:
       - PHARMGKB.DRUG
-
-  metabolite:
-    is_a: chemical substance
-    description: >-
-      Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
-    comments:
-      - The CHEBI ID represents a role rather than a substance
-    mappings:
-      - CHEBI:25212
-#
-#    attribute:
-#    subclass_of: PATO:0000001
-#      mixins:
-#        - ontology class
-#      description: >-
-#        A property or characteristic of an entity
 
   anatomical entity:
     is_a: organismal entity
