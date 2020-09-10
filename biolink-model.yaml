@@ -24,7 +24,6 @@ prefixes:
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
-
   hetio: 'http://translator.ncats.nih.gov/hetio_' # hetio ontology terms: https://git.dhimmel.com/rephetio-manuscript/
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
   Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
@@ -33,7 +32,7 @@ prefixes:
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
-  
+
 default_prefix: biolink
 default_range: string
 
@@ -163,6 +162,9 @@ slots:
       # several of the following terms mapped here by RTX could merit upgrade to new Biolink terms
       - BFO:0000068
       - BFO:0000069
+      - BTO:related_to
+      - CHEBI:is_conjugate_acid_of
+      - CHEBI:is_conjugate_base_of
 
   interacts with:
     domain: named thing
@@ -187,6 +189,9 @@ slots:
     narrow_mappings:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
       - SEMMEDDB:INTERACTS_WITH
+      - CHEMBL.MECHANISM:binding_agent
+      - CHEMBL.MECHANISM:chelating_agent
+      - CHEMBL.MECHANISM:cross-linking_agent
 
   molecularly interacts with:
     is_a: physically interacts with
@@ -299,6 +304,7 @@ slots:
       - GAMMA:inducer
       - GAMMA:potentiator
       - GAMMA:stimulator
+      - CHEMBL.MECHANISM:agonist
 
   decreases activity of:
     description: >-
@@ -331,6 +337,8 @@ slots:
       - GAMMA:aggregation_inhibitor
       - GAMMA:conversion_inhibitor
       - GAMMA:suppressor
+      - CHEMBL.MECHANISM:antagonist
+      - CHEMBL.MECHANISM:allosteric_antagonist
 
   affects expression of:
     description: >-
@@ -364,6 +372,8 @@ slots:
     range: genomic entity
     exact_mappings:
       - CTD:decreases_expression_of
+    narrow_mappings:
+      - CHEMBL.MECHANISM:antisense_inhibitor
 
   affects folding of:
     description: >-
@@ -658,15 +668,16 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    exact_mappings:
-      - CTD:increases_degradation_of
-    broad_mappings:
+    related_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
       - GAMMA:substrate
+    exact_mappings:
+      - CTD:increases_degradation_of
     narrow_mappings:
       - CTD:increases_cleavage
       - CTD:increases_hydrolysis
+      - CHEMBL.MECHANISM:degrader
 
   decreases degradation of:
     description: >-
@@ -972,6 +983,8 @@ slots:
     abstract: true
     exact_mappings:
       - RO:0002213
+    narrow_mappings:
+      - CHEMBL.MECHANISM:activator
 
   negatively regulates:
     comments:
@@ -985,6 +998,8 @@ slots:
     broad_mappings:
       # This term is slightly broader in that it includes that A acts within B as well
       - RO:0004033
+    narrow_mappings:
+      - CHEMBL.MECHANISM:blocker
 
   regulates, process to process:
     is_a: regulates
@@ -1580,6 +1595,7 @@ slots:
       - UBERON_CORE:layer_part_of
       - UBERON_CORE:subdivision_of
       - UBERON_CORE:trunk_part_of
+      - CHEBI:is_substituent_group_from
 
   has participant:
     is_a: related to
@@ -1696,6 +1712,9 @@ slots:
     inverse: derives into
     exact_mappings:
       - RO:0001000
+    narrow_mappings:
+      - CHEBI:has_functional_parent
+
 
   manifestation of:
     is_a: related to
@@ -1783,6 +1802,9 @@ slots:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
       - SEMMEDDB:SAME_AS
+    narrow_mappings:
+      - CHEBI:is_enantiomer_of
+      - CHEBI:is_tautomer_of
 
   subclass of:
     is_a: related to
@@ -1799,6 +1821,8 @@ slots:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
       - WIKIDATA:P279
+    narrow_mappings:
+      - CHEBI:has_parent_hydride
 
   directly interacts with:
     is_a: interacts with
@@ -2046,6 +2070,11 @@ slots:
       - CL:lacks_part
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
+
+  develops from:
+    is_a: related to
+    exact_mappings:
+      - BTO:develops_from
 
   #End proposed slots
 
