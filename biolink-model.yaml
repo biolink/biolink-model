@@ -165,6 +165,8 @@ slots:
       - BTO:related_to
       - CHEBI:is_conjugate_acid_of
       - CHEBI:is_conjugate_base_of
+      - CPT:has_add_on_code
+      - CPT:mapped_to
 
   interacts with:
     domain: named thing
@@ -186,12 +188,18 @@ slots:
     symmetric: true
     exact_mappings:
       - WIKIDATA:P129
-    narrow_mappings:
-      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
-      - SEMMEDDB:INTERACTS_WITH
+    close_mappings:
+      # Agents of some interaction but not the relationship of interaction
+      # These RTX mapped terms may need to be reclassified to more meaningful terms (perhaps not yet created)
       - CHEMBL.MECHANISM:binding_agent
       - CHEMBL.MECHANISM:chelating_agent
       - CHEMBL.MECHANISM:cross-linking_agent
+      - CHEMBL.MECHANISM:oxidative_enzyme
+      - CHEMBL.MECHANISM:sequestering_agent
+      - CHEMBL.MECHANISM:substrate
+    narrow_mappings:
+      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
+      - SEMMEDDB:INTERACTS_WITH
 
   molecularly interacts with:
     is_a: physically interacts with
@@ -305,6 +313,10 @@ slots:
       - GAMMA:potentiator
       - GAMMA:stimulator
       - CHEMBL.MECHANISM:agonist
+      - CHEMBL.MECHANISM:opener
+      - CHEMBL.MECHANISM:partial_agonist
+      - CHEMBL.MECHANISM:positive_allosteric_modulator
+      - CHEMBL.MECHANISM:positive_modulator
 
   decreases activity of:
     description: >-
@@ -339,6 +351,7 @@ slots:
       - GAMMA:suppressor
       - CHEMBL.MECHANISM:antagonist
       - CHEMBL.MECHANISM:allosteric_antagonist
+      - CHEMBL.MECHANISM:inverse_agonist
 
   affects expression of:
     description: >-
@@ -359,6 +372,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    close_mappings:
+      # Agent of the action or effect, not the relationship itelf
+      - CHEMBL.MECHANISM:releasing_agent
     exact_mappings:
       - CTD:increases_expression_of
 
@@ -672,12 +688,19 @@ slots:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
       - GAMMA:substrate
+      # RTX put this under "biolink:physically_interacts_with" but rather we also put next to the GAMMA mapping
+      # That said, neither mapping feels like a comfortable fit here
+      - CHEMBL.MECHANISM:substrate
+    close_mappings:
+      # terms refer less to the action or effect than the agent of that action or effect
+      - CHEMBL.MECHANISM:degrader
+      - CHEMBL.MECHANISM:proteolytic_enzyme
+      - CHEMBL.MECHANISM:hydrolytic_enzyme
     exact_mappings:
       - CTD:increases_degradation_of
     narrow_mappings:
       - CTD:increases_cleavage
       - CTD:increases_hydrolysis
-      - CHEMBL.MECHANISM:degrader
 
   decreases degradation of:
     description: >-
@@ -831,6 +854,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    close_mappings:
+      # agent of the action or effect, not the relationship
+      - CHEMBL.MECHANISM:stabiliser
     exact_mappings:
       - CTD:increases_stability_of
 
@@ -974,6 +1000,7 @@ slots:
     narrow_mappings:
       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
       - WIKIDATA:P128
+      - CHEMBL.MECHANISM:modulator
 
   positively regulates:
     comments:
@@ -1000,6 +1027,9 @@ slots:
       - RO:0004033
     narrow_mappings:
       - CHEMBL.MECHANISM:blocker
+      - CHEMBL.MECHANISM:inhibitor
+      - CHEMBL.MECHANISM:negative_allosteric_modulator
+      - CHEMBL.MECHANISM:negative_modulator
 
   regulates, process to process:
     is_a: regulates
@@ -1089,6 +1119,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:DISRUPTS
+      - CHEMBL.MECHANISM:disrupting_agent
 
   has gene product:
     is_a: related to
@@ -1560,6 +1591,7 @@ slots:
       - RO:0002131
     narrow_mappings:
       - BSPO:0005001
+      - CHEMBL.MECHANISM:overlaps_with
 
   has part:
     is_a: overlaps
@@ -1596,6 +1628,8 @@ slots:
       - UBERON_CORE:subdivision_of
       - UBERON_CORE:trunk_part_of
       - CHEBI:is_substituent_group_from
+      - CPT:panel_element_of
+      - CPT:panel_element_of_possibly_included
 
   has participant:
     is_a: related to
@@ -1791,6 +1825,7 @@ slots:
       # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
       #- SEMMEDDB:SAME_AS
       - WIKIDATA:P2888
+      - CHEMBL.MECHANISM:equivalent_to
 
   close match:
     is_a: related to
@@ -1817,10 +1852,14 @@ slots:
       - translator_minimal
     inverse: superclass of
     slot_uri: rdfs:subClassOf
+    close_mappings:
+      # RTX proposed term is actually 'biolink:superclass_of' which is inverse of 'biolink:subclass_of' relationship
+      - CHEMBL.MECHANISM:superset_of
     exact_mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
       - WIKIDATA:P279
+      - CHEMBL.MECHANISM:subset_of
     narrow_mappings:
       - CHEBI:has_parent_hydride
 
@@ -2075,8 +2114,7 @@ slots:
     is_a: related to
     exact_mappings:
       - BTO:develops_from
-
-  #End proposed slots
+      - DDANAT:develops_from
 
   superclass of:
     is_a: related to
@@ -2088,8 +2126,11 @@ slots:
     inverse: subclass of
     in_subset:
       - translator_minimal
-    mappings:
+    exact_mappings:
       - WD:Q66088480
+      - CHEMBL.MECHANISM:superset_of
+
+#End of edge_label predicate slots
 
 ## property slots
 
@@ -2654,6 +2695,8 @@ slots:
     multivalued: true
     in_subset:
       - samples
+    narrow_mappings:
+      - CPT:has_possibly_included_panel_element
 
   has attribute type:
     description: >-
