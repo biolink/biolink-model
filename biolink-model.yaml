@@ -168,6 +168,8 @@ slots:
       - CPT:has_add_on_code
       - CPT:mapped_to
       - EFO:0006351
+      - FMA:connected_to
+      - FMA:continuous_with
 
   interacts with:
     domain: named thing
@@ -203,6 +205,7 @@ slots:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
       - SEMMEDDB:INTERACTS_WITH
       - DRUGBANK:drug-interaction
+      - FMA:adheres_to
 
   molecularly interacts with:
     is_a: physically interacts with
@@ -1254,8 +1257,25 @@ slots:
       - UBERON_CORE:transitively_proximally_connected_to
       # RTX contributed Environmental Ontology term meaning "partially surrounded by"
       - ENVO:01001307
+      - FMA:adjacent_to
+      - FMA:afferent_to
+      - FMA:anterior_to
+      - FMA:anteroinferior_to
+      - FMA:anterolateral_to
+      - FMA:anteromedial_to
+      - FMA:anterosuperior_to
+      # RTX contributed term might better be mapped to another term with more precise functional semantics?
+      - FMA:arterial_supply_of
+      - FMA:articulates_with
+      - FMA:attaches_to
+      - FMA:bounded_by
+      - FMA:bounds
+      - FMA:branch_of
+      - FMA:connection_type_of
+      - FMA:continuation_branch_of
+      - FMA:continuous_distally_with
+      - FMA:continuous_proximally_with
 
-  #
   #  in pathway:
   #    description: >-
   #      holds between a gene or gene products that are part of a biological pathway
@@ -1646,6 +1666,7 @@ slots:
       # term name seems to be 'realizes' but RTX maps this term here
       - BFO:0000055
       - WIKIDATA:P527
+      - FMA:contains
     narrow_mappings:
       - BFO:0000117
 
@@ -1671,6 +1692,8 @@ slots:
       - CHEBI:is_substituent_group_from
       - CPT:panel_element_of
       - CPT:panel_element_of_possibly_included
+      - FMA:constitutional_part_of
+      - FMA:contained_in
 
   has participant:
     is_a: related to
