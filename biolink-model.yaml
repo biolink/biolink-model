@@ -167,6 +167,7 @@ slots:
       - CHEBI:is_conjugate_base_of
       - CPT:has_add_on_code
       - CPT:mapped_to
+      - EFO:0006351
 
   interacts with:
     domain: named thing
@@ -197,9 +198,11 @@ slots:
       - CHEMBL.MECHANISM:oxidative_enzyme
       - CHEMBL.MECHANISM:sequestering_agent
       - CHEMBL.MECHANISM:substrate
+      - DRUGBANK:target
     narrow_mappings:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
       - SEMMEDDB:INTERACTS_WITH
+      - DRUGBANK:drug-interaction
 
   molecularly interacts with:
     is_a: physically interacts with
@@ -207,6 +210,8 @@ slots:
     range: molecular entity
     in_subset:
       - translator_minimal
+    related_mappings:
+      - DGIdb:antibody
     exact_mappings:
       - RO:0002436
       - CTD:molecularly_interacts_with
@@ -229,8 +234,12 @@ slots:
       Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
     in_subset:
       - translator_minimal
+    related_mappings:
+      # Contributed by RTX. Seems possible that a new predicate "biolink:in_pathway" could be justified?
+      - DRUGBANK:pathway
     exact_mappings:
       - SEMMEDDB:AFFECTS
+      - DGIdb:affects
     narrow_mappings:
       - CTD:prediction_hypothesis
       - GOREL:0001006
@@ -288,6 +297,8 @@ slots:
       - GAMMA:allosteric_modulator
       - GAMMA:modulator
       - GAMMA:regulator
+      - DGIdb:modulator
+      - DGIdb:allosteric_modulator
 
   increases activity of:
     description: >-
@@ -317,6 +328,11 @@ slots:
       - CHEMBL.MECHANISM:partial_agonist
       - CHEMBL.MECHANISM:positive_allosteric_modulator
       - CHEMBL.MECHANISM:positive_modulator
+      - DGIdb:agonist
+      - DGIdb:partial_agonist
+      - DGIdb:inducer
+      - DGIdb:positive_allosteric_modulator
+      - DGIdb:stimulator
 
   decreases activity of:
     description: >-
@@ -329,6 +345,7 @@ slots:
     related_mappings:
       - GAMMA:ic50
       - GAMMA:ki
+      - DGIdb:vaccine
     exact_mappings:
       - CTD:decreases_activity_of
     narrow_mappings:
@@ -352,6 +369,14 @@ slots:
       - CHEMBL.MECHANISM:antagonist
       - CHEMBL.MECHANISM:allosteric_antagonist
       - CHEMBL.MECHANISM:inverse_agonist
+      - DGIdb:antagonist
+      - DGIdb:blocker
+      - DGIdb:channel_blocker
+      - DGIdb:gating_inhibitor
+      - DGIdb:inhibitor
+      - DGIdb:negative_modulator
+      - DGIdb:inhibitory_allosteric_modulator
+      - DGIdb:inverse_agonist
 
   affects expression of:
     description: >-
@@ -386,6 +411,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    related_mappings:
+      - DGIdb:antisense
+      - DGIdb:antisense_oligonucleotide
     exact_mappings:
       - CTD:decreases_expression_of
     narrow_mappings:
@@ -1012,6 +1040,7 @@ slots:
       - RO:0002213
     narrow_mappings:
       - CHEMBL.MECHANISM:activator
+      - DGIdb:activator
 
   negatively regulates:
     comments:
@@ -1223,6 +1252,20 @@ slots:
       - UBERON_CORE:transitively_connected_to
       - UBERON_CORE:transitively_distally_connected_to
       - UBERON_CORE:transitively_proximally_connected_to
+      # RTX contributed Environmental Ontology term meaning "partially surrounded by"
+      - ENVO:01001307
+
+  #
+  #  in pathway:
+  #    description: >-
+  #      holds between a gene or gene products that are part of a biological pathway
+  #    is_a: related to
+  #    domain: gene or gene product
+  #    range: pathway
+  #    in_subset:
+  #      - translator_minimal # should be?
+  #    exact_mappings:
+  #      - DRUGBANK:pathway
 
   in pathway with:
     description: >-
@@ -1824,6 +1867,8 @@ slots:
       #- SEMMEDDB:SAME_AS
       - WIKIDATA:P2888
       - CHEMBL.MECHANISM:equivalent_to
+    narrow_mappings:
+      - DRUGBANK:external-identifier
 
   close match:
     is_a: related to
@@ -1895,6 +1940,8 @@ slots:
       - GAMMA:adduct
       - GAMMA:antibody
       - CTD:affects_binding
+      - DGIdb:binder
+      - DGIdb:cofactor
 
   #The following are proposed new predicates
 
@@ -2695,6 +2742,9 @@ slots:
       - samples
     narrow_mappings:
       - CPT:has_possibly_included_panel_element
+      - DRUGBANK:category
+      # RTX contributed. Wondering if there is a better bin for it
+      - EFO:is_executed_in
 
   has attribute type:
     description: >-
@@ -2743,7 +2793,10 @@ slots:
     domain: quantity value
     range: unit
     multivalued: false
-    mappings:
+    close_mappings:
+      # This term means "is unit of" which is the semantic inverse of this biolink:has_unit term
+      - EFO:0001697
+    exact_mappings:
       - qud:unit
     in_subset:
       - samples
