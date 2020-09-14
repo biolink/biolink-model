@@ -170,6 +170,10 @@ slots:
       - EFO:0006351
       - FMA:connected_to
       - FMA:continuous_with
+      # RTX puts these terms here but would this be better put into 'biolink:derives_from' and 'biolink:derives_into'?
+      # Also, RTX tags this term as an 'invert' but 'biolink:related_to' is symmetrically reflexive?
+      - FMA:develops_from
+      - FMA:develops_into
 
   interacts with:
     domain: named thing
@@ -1264,8 +1268,10 @@ slots:
       - FMA:anterolateral_to
       - FMA:anteromedial_to
       - FMA:anterosuperior_to
-      # RTX contributed term might better be mapped to another term with more precise functional semantics?
+      # RTX contributed terms (also inverses to one another?) might better be mapped to another term with more precise functional semantics?
+      # Some of these terms also seem to be semantic inverses of one another, thus, perhaps not simple narrow_mappings to Biolink
       - FMA:arterial_supply_of
+      - FMA:has_arterial_supply
       - FMA:articulates_with
       - FMA:attaches_to
       - FMA:bounded_by
@@ -1275,6 +1281,41 @@ slots:
       - FMA:continuation_branch_of
       - FMA:continuous_distally_with
       - FMA:continuous_proximally_with
+      - FMA:corresponds_to
+      - FMA:development_type_of
+      - FMA:developmental_stage_of
+      - FMA:direct_cell_shape_of
+      - FMA:direct_left_of
+      - FMA:direct_right_of
+      - FMA:distal_to
+      - FMA:drains_into
+      - FMA:efferent_to
+      - FMA:external_to
+      - FMA:formed_by
+      - FMA:forms
+      # these next two RTX mapped terms also seem to be inverses of one another
+      - FMA:full_grown_phenotype_of
+      - FMA:has_full_grown_phenotype
+      # these next two RTX mapped terms also seem to be inverses of one another
+      - FMA:fuses_with
+      - FMA:fusion_of
+      - FMA:has_fusion
+      - FMA:germ_origin_of
+      - FMA:has_germ_origin
+      - FMA:has_adherent
+      - FMA:has_branch
+      - FMA:has_connection_type
+      - FMA:has_continuation_branch
+      - FMA:has_development_type
+      - FMA:has_developmental_stage
+      - FMA:has_direct_cell_shape
+      - FMA:has_inherent_3d_shape
+      - FMA:has_insertion
+      - FMA:has_lymphatic_drainage
+      - FMA:has_nerve_supply
+      - FMA:has_observed_anatomical_entity
+      - FMA:has_origin
+      - FMA:has_primary_segmental_supply
 
   #  in pathway:
   #    description: >-
@@ -1598,6 +1639,7 @@ slots:
     inverse: location of
     exact_mappings:
       - RO:0001025
+      - FMA:has_location
     narrow_mappings:
       - GOREL:0001004
       - BSPO:0000107
@@ -1620,6 +1662,7 @@ slots:
       - UBERON_CORE:in_outermost_side_of
       - NCIT:R100
       - EFO:0000784
+      - FMA:has_location
 
   location of:
     is_a: related to
@@ -1669,6 +1712,11 @@ slots:
       - FMA:contains
     narrow_mappings:
       - BFO:0000117
+      # RTX term originally mapped to 'biolink:coexists_with'?
+      - FMA:has_constitutional_part
+      # The following RTX terms were originally mapped as inverses to 'biolink:part_of'?
+      - FMA:has_member
+      - FMA:has_part
 
   part of:
     is_a: overlaps
@@ -1799,6 +1847,8 @@ slots:
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
+      # RTX posted this as an inverse of 'biolink:derives_from'
+      - FMA:derives
 
   derives from:
     is_a: related to
@@ -1810,6 +1860,7 @@ slots:
     inverse: derives into
     exact_mappings:
       - RO:0001000
+      - FMA:derives_from
     narrow_mappings:
       - CHEBI:has_functional_parent
 
