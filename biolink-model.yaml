@@ -174,6 +174,8 @@ slots:
       # Also, RTX tags this term as an 'invert' but 'biolink:related_to' is symmetrically reflexive?
       - FMA:develops_from
       - FMA:develops_into
+      - FMA:homonym_of
+      - FMA:related_developmental_entity_of
 
   interacts with:
     domain: named thing
@@ -1316,17 +1318,57 @@ slots:
       - FMA:has_observed_anatomical_entity
       - FMA:has_origin
       - FMA:has_primary_segmental_supply
-
-  #  in pathway:
-  #    description: >-
-  #      holds between a gene or gene products that are part of a biological pathway
-  #    is_a: related to
-  #    domain: gene or gene product
-  #    range: pathway
-  #    in_subset:
-  #      - translator_minimal # should be?
-  #    exact_mappings:
-  #      - DRUGBANK:pathway
+      - FMA:has_projection
+      - FMA:has_regional_part
+      - FMA:has_related_developmental_entity
+      - FMA:has_secondary_segmental_supply
+      - FMA:has_segmental_composition
+      - FMA:has_segmental_supply
+      - FMA:has_tributary
+      - FMA:has_venous_drainage
+      - FMA:inferior_to
+      - FMA:inferolateral_to
+      - FMA:inferomedial_to
+      - FMA:inherent_3d_shape_of
+      - FMA:insertion_of
+      - FMA:internal_to
+      - FMA:lateral_to
+      - FMA:left_lateral_to
+      - FMA:left_medial_to
+      - FMA:lymphatic_drainage_of
+      - FMA:matures_from
+      - FMA:matures_into
+      - FMA:medial_to
+      - FMA:merges_with
+      - FMA:nerve_supply_of
+      - FMA:origin_of
+      - FMA:posterior_to
+      - FMA:posteroinferior_to
+      - FMA:posterolateral_to
+      - FMA:posteromedial_to
+      - FMA:posterosuperior_to
+      - FMA:primary_segmental_supply_of
+      - FMA:projects_from
+      - FMA:projects_to
+      - FMA:proximal_to
+      - FMA:receives_attachment_from
+      - FMA:receives_drainage_from
+      - FMA:receives_input_from
+      - FMA:receives_projection
+      - FMA:related_part
+      - FMA:right_lateral_to
+      - FMA:right_medial_to
+      - FMA:secondary_segmental_supply_of
+      - FMA:segmental_composition_of
+      - FMA:segmental_supply_of
+      - FMA:sends_output_to
+      - FMA:superior_to
+      - FMA:superolateral_to
+      - FMA:superomedial_to
+      - FMA:surrounded_by
+      - FMA:surrounds
+      - FMA:tributary_of
+      - FMA:venous_drainage_of
 
   in pathway with:
     description: >-
@@ -1675,6 +1717,8 @@ slots:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
       - WIKIDATA:276
+      # RTX tagged this as an inverse of biolink:located_in
+      - FMA:location_of
 
   model of:
     is_a: related to
@@ -1729,6 +1773,7 @@ slots:
       - BFO:0000050
       - SEMMEDDB:PART_OF
       - WIKIDATA:P361
+      - FMA:part_of
     narrow_mappings:
       - BSPO:0001106
       - BSPO:0001108
@@ -1742,6 +1787,9 @@ slots:
       - CPT:panel_element_of_possibly_included
       - FMA:constitutional_part_of
       - FMA:contained_in
+      - FMA:member_of
+      - FMA:regional_part_of
+      - FMA:related_developmental_entity_of
 
   has participant:
     is_a: related to
@@ -1794,6 +1842,8 @@ slots:
     exact_mappings:
       - RO:0000056
       - BFO:0000056
+    narrow_mappings:
+      - DRUGBANK:pathway
 
   actively involved in:
     is_a: participates in
@@ -1910,6 +1960,8 @@ slots:
     broad_mappings:
       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
       - WIKIDATA:P156
+    narrow_mappings:
+      - FMA:transforms_into
 
   preceded by:
     is_a: related to
@@ -1922,6 +1974,9 @@ slots:
       - translator_minimal
     exact_mappings:
       - BFO:0000062
+    narrow_mappings:
+      # RTX contributed mapping was given as the inverse of 'biolink:precedes'
+      - FMA:transforms_from
 
   same as:
     is_a: related to
