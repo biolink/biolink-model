@@ -3462,6 +3462,18 @@ classes:
       - PANTHER.FAMILY
       - HGNC.FAMILY
 
+  compound class:
+    is_a: molecular entity
+    mappings:
+      - NCIT:C154331
+      - SIO:000616
+    description: >-
+      any grouping of multiple related chemical substances
+    id_prefixes:
+      - ATC
+      - CHEBI
+      - MESH
+
   zygosity:
     is_a: attribute
     mappings:
