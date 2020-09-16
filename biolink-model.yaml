@@ -179,6 +179,13 @@ slots:
       - GO:ends_during
       - GO:happens_during
       - GO:inverse_ends_during
+      - GOREL:0002005
+      - GOREL:0012006
+      - HCPCS:mapped_to
+      # RTX contributed terms, perhaps belong somewhere else with more precise semantics?
+      - HMDB:disease
+      - HMDB:has_protein_association
+      - IAO:0000136
 
   interacts with:
     domain: named thing
@@ -478,6 +485,7 @@ slots:
       - GAMMA:storage
     exact_mappings:
       - CTD:affects_localization_of
+      - GOREL:0002003
 
   increases localization of:
     description: >-
@@ -743,6 +751,7 @@ slots:
     narrow_mappings:
       - CTD:increases_cleavage
       - CTD:increases_hydrolysis
+      - GOREL:0002004
 
   decreases degradation of:
     description: >-
@@ -1039,6 +1048,11 @@ slots:
       - This is a grouping for process-process and entity-entity relations
     mixin: true
     abstract: true
+    close_mappings:
+      # This RTX contributed term is tagged as a inverse of this Biolink predicate
+      - GO:regulated_by
+    exact_mappings:
+      - GO:regulates
     narrow_mappings:
       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
       - WIKIDATA:P128
@@ -1050,8 +1064,12 @@ slots:
     is_a: regulates
     mixin: true
     abstract: true
+    close_mappings:
+      # This RTX contributed term is tagged as a inverse of this Biolink predicate
+      - GO:positively_regulated_by
     exact_mappings:
       - RO:0002213
+      - GO:positively_regulates
     narrow_mappings:
       - CHEMBL.MECHANISM:activator
       - DGIdb:activator
@@ -1064,9 +1082,13 @@ slots:
     is_a: regulates
     mixin: true
     abstract: true
+    close_mappings:
+      # This RTX contributed term is tagged as a inverse of this Biolink predicate
+      - GO:negatively_regulated_by
     exact_mappings:
       # Strict interpretation here is that entity A causally affects levels of B
       - RO:0004035
+      - GO:negatively_regulates
     broad_mappings:
       # This term is slightly broader in that it includes that A acts within B as well
       - RO:0004033
@@ -1503,6 +1525,7 @@ slots:
       - RO:0002410
     narrow_mappings:
       - MONDO:disease_triggers
+      - GOREL:0000040
 
   caused by:
     description: >-
@@ -1675,6 +1698,7 @@ slots:
       - BFO:0000067
     exact_mappings:
       - BFO:0000066
+      - GO:occurs_in
     narrow_mappings:
       # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
       - SEMMEDDB:OCCURS_IN
@@ -1716,6 +1740,9 @@ slots:
       - NCIT:R100
       - EFO:0000784
       - FMA:has_location
+      - HMDB:at_cellular_location
+      - HMDB:at_tissue
+      - HMDB:in_biospecimen
 
   location of:
     is_a: related to
@@ -1790,6 +1817,7 @@ slots:
       - SEMMEDDB:PART_OF
       - WIKIDATA:P361
       - FMA:part_of
+      - GO:part_of
     narrow_mappings:
       - BSPO:0001106
       - BSPO:0001108
@@ -1858,8 +1886,10 @@ slots:
     exact_mappings:
       - RO:0000056
       - BFO:0000056
+      - GO:involved_in
     narrow_mappings:
       - DRUGBANK:pathway
+      - HMDB:in_pathway
 
   actively involved in:
     is_a: participates in
@@ -1870,6 +1900,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002331
+      - GO:is_active_in
 
   capable of:
     is_a: actively involved in
@@ -2054,6 +2085,7 @@ slots:
       - SEMMEDDB:IS_A
       - WIKIDATA:P279
       - CHEMBL.MECHANISM:subset_of
+      - GO:isa
     narrow_mappings:
       - CHEBI:has_parent_hydride
 
@@ -2467,6 +2499,9 @@ slots:
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
       - oboInOwl:hasRelatedSynonym
+    narrow_mappings:
+      - HANCESTRO:0330
+      - IAO:0000136
 
   category:
     is_a: type
@@ -2898,6 +2933,7 @@ slots:
       - DRUGBANK:category
       # RTX contributed. Wondering if there is a better bin for it
       - EFO:is_executed_in
+      - HANCESTRO:0301
 
   has attribute type:
     description: >-
@@ -2951,6 +2987,7 @@ slots:
       - EFO:0001697
     exact_mappings:
       - qud:unit
+      - IAO:0000039
     in_subset:
       - samples
 
