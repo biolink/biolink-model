@@ -186,6 +186,7 @@ slots:
       - HMDB:disease
       - HMDB:has_protein_association
       - IAO:0000136
+      - LOINC:has_answer
 
   interacts with:
     domain: named thing
@@ -1505,6 +1506,9 @@ slots:
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
     in_subset:
       - translator_minimal
+    close_mappings:
+      # RTX contributed mapping tagged as 'inverse' of this Biolink predicate
+      - IDO:0000664
     exact_mappings:
       - RO:0002326
       - CTD:marker_mechanism
@@ -1584,6 +1588,9 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002610
+    narrow_mappings:
+      # RTX contributed term: note that association is not always correlation?
+      - LOINC:associated_with
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -1834,6 +1841,7 @@ slots:
       - FMA:member_of
       - FMA:regional_part_of
       - FMA:related_developmental_entity_of
+      - LOINC:component_of
 
   has participant:
     is_a: related to
@@ -2080,6 +2088,8 @@ slots:
     close_mappings:
       # RTX proposed term is actually 'biolink:superclass_of' which is inverse of 'biolink:subclass_of' relationship
       - CHEMBL.MECHANISM:superset_of
+      # RTX mapped term, would this rather mean that a 'class A' class of an 'instance' of 'A'?
+      - LOINC:class_of
     exact_mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
@@ -2500,6 +2510,7 @@ slots:
       - oboInOwl:hasBroadSynonym
       - oboInOwl:hasRelatedSynonym
     narrow_mappings:
+      # TODO: RTX contributed terms mapped here... May need review?
       - HANCESTRO:0330
       - IAO:0000136
 
@@ -2795,6 +2806,9 @@ slots:
     range: ontology class
     description: >-
       A measurable quantity for the object of the association
+    narrow_mappings:
+      # TODO: RTX contributed term mapped here... May need review?
+      - LOINC:analyzes
 
   qualifiers:
     singular_name: qualifier
@@ -2931,9 +2945,13 @@ slots:
     narrow_mappings:
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
-      # RTX contributed. Wondering if there is a better bin for it
+      # RTX contributed terms. Perhaps review for better mappings?
       - EFO:is_executed_in
       - HANCESTRO:0301
+      - LOINC:has_action_guidance
+      - LOINC:has_adjustment
+      - LOINC:has_aggregation_view
+      - LOINC:has_approach_guidance
 
   has attribute type:
     description: >-
