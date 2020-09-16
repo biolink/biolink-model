@@ -176,6 +176,9 @@ slots:
       - FMA:develops_into
       - FMA:homonym_of
       - FMA:related_developmental_entity_of
+      - GO:ends_during
+      - GO:happens_during
+      - GO:inverse_ends_during
 
   interacts with:
     domain: named thing
@@ -254,6 +257,8 @@ slots:
       - GOREL:0001006
       - CTD:inferred
       - UPHENO:0000001
+      - GO:acts_upstream_of
+      - GO:acts_upstream_of_or_within
 
   affects abundance of:
     description: >-
@@ -1050,6 +1055,8 @@ slots:
     narrow_mappings:
       - CHEMBL.MECHANISM:activator
       - DGIdb:activator
+      - GO:acts_upstream_of_or_within_positive_effect
+      - GO:acts_upstream_of_positive_effect
 
   negatively regulates:
     comments:
@@ -1068,6 +1075,8 @@ slots:
       - CHEMBL.MECHANISM:inhibitor
       - CHEMBL.MECHANISM:negative_allosteric_modulator
       - CHEMBL.MECHANISM:negative_modulator
+      - GO:acts_upstream_of_negative_effect
+      - GO:acts_upstream_of_or_within_negative_effect
 
   regulates, process to process:
     is_a: regulates
@@ -1414,6 +1423,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:00002325
+      - GO:colocalizes_with
 
   gene associated with condition:
     is_a: related to
@@ -1476,6 +1486,7 @@ slots:
     exact_mappings:
       - RO:0002326
       - CTD:marker_mechanism
+      - GO:contributes_to
 
   causes:
     description: >-
@@ -1728,6 +1739,8 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0003301
+    narrow_mappings:
+      - FOODON:00001301
 
   overlaps:
     is_a: related to
@@ -1754,13 +1767,16 @@ slots:
       - BFO:0000055
       - WIKIDATA:P527
       - FMA:contains
+      - GO:has_part
     narrow_mappings:
       - BFO:0000117
       # RTX term originally mapped to 'biolink:coexists_with'?
       - FMA:has_constitutional_part
+      - FMA:has_part
       # The following RTX terms were originally mapped as inverses to 'biolink:part_of'?
       - FMA:has_member
-      - FMA:has_part
+      - FOODON:00001563
+      - FOODON:00002420
 
   part of:
     is_a: overlaps
@@ -1864,6 +1880,8 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002215
+    narrow_mappings:
+      - GO:has_occurrence
 
   enables:
     is_a: has participant
@@ -1875,6 +1893,7 @@ slots:
     inverse: enabled by
     exact_mappings:
       - RO:0002327
+      - GO:enables
 
   enabled by:
     is_a: has participant
@@ -1974,6 +1993,9 @@ slots:
       - translator_minimal
     exact_mappings:
       - BFO:0000062
+    broad_mappings:
+      # Contributed by RTX as inverse of 'precedes'. Seems more generic to just processes, so we tag it as 'broad'?
+      - GENEPIO:0001739
     narrow_mappings:
       # RTX contributed mapping was given as the inverse of 'biolink:precedes'
       - FMA:transforms_from
@@ -2303,6 +2325,8 @@ slots:
     exact_mappings:
       - WD:Q66088480
       - CHEMBL.MECHANISM:superset_of
+      # RTX tagged as inverse of 'biolink:subclass_of'
+      - GO:inverse_isa
 
 #End of edge_label predicate slots
 
