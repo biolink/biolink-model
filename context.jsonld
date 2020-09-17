@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-09-17 21:16\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-09-17 22:03\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"
@@ -226,6 +226,9 @@
          "@type": "@id"
       },
       "change_is_catalyzed_by": {
+         "@type": "@id"
+      },
+      "chemically_similar_to": {
          "@type": "@id"
       },
       "chi_squared_statistic": {
@@ -672,6 +675,9 @@
          "@type": "@id"
       },
       "sex_qualifier": {
+         "@type": "@id"
+      },
+      "similar_to": {
          "@type": "@id"
       },
       "source_data_file": {
