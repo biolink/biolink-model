@@ -1380,8 +1380,9 @@ slots:
       holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome.
     domain: genomic entity
     range: genomic entity
+    mappings:
+      - faldo:location
 
-      
   model of:
     is_a: related to
     description: >-
@@ -2348,16 +2349,6 @@ slots:
     description: >-
       The value in a property-value tuple
 
-  phase:
-    is_a: node property
-    description: >-
-      TODO
-
-  genome build:
-    is_a: node property
-    description: >-
-      TODO
-
   sequence localization attribute:
     is_a: edge property
     domain: genomic sequence localization
@@ -2382,6 +2373,22 @@ slots:
     is_a: interbase coordinate
     description: >-
       The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
+
+  genome build:
+    is_a: sequence localization attribute
+    description: >-
+      The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
+
+  strand:
+    is_a: sequence localization attribute
+    description: >-
+      The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+
+  phase:
+    is_a: sequence localization attribute
+    domain: coding sequence
+    description: >-
+      The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
 
   has attribute:
     description: >-
@@ -4690,16 +4697,15 @@ classes:
         range: genomic entity  ## todo protein
       object:
         aliases: ['reference']
-        range: genomic entity ## typically a chromosomel use monochrom
+        range: genomic entity ## typically a chromosome use monochrom
       relation:
         subproperty_of: has sequence location
     slots:
       - start interbase coordinate
       - end interbase coordinate
       - genome build
+      - strand
       - phase
-    mappings:
-      - faldo:location
 
   sequence feature relationship:
     is_a: association
