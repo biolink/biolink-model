@@ -196,6 +196,9 @@ slots:
       - MESH:mapped_to
       - MONDO:disease_shares_features_of
       - NCIT:disease_may_have_associated_disease
+      - NCIT:human_disease_maps_to_eo_disease
+      - NCIT:is_abnormal_cell_of_disease
+      - NCIT:is_related_to_endogenous_product
 
   interacts with:
     domain: named thing
@@ -232,6 +235,7 @@ slots:
       - SEMMEDDB:INTERACTS_WITH
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
+      - NCIT:has_target
 
   molecularly interacts with:
     is_a: physically interacts with
@@ -1576,8 +1580,9 @@ slots:
       - NCIT:allele_has_abnormality
       - NCIT:biological_process_has_result_biological_process
       - NCIT:chemical_or_drug_has_physiologic_effect
-      - # RTX mapped term as 'biolink:part_of' but implied sequence of causality suggests 'biolink:causes'?
+      - # RTX mapped terms as 'biolink:part_of' but implied sequence of causality suggests 'biolink:causes'?
       - NCIT:chemical_or_drug_initiates_biological_process
+      - NCIT:process_initiates_biological_process
       - NCIT:chromosome_mapped_to_disease
       - NCIT:disease_has_normal_tissue_origin
 
@@ -1613,6 +1618,7 @@ slots:
     narrow_mappings:
       # "is substance that treats" constrains statements to a subset of the universe of all possible treatments
       - RO:0002606
+      - NCIT:regimen_has_accepted_use_for_disease
 
   prevents :
     is_a: affects risk for
@@ -1641,6 +1647,9 @@ slots:
     narrow_mappings:
       # RTX contributed term: note that association is not always correlation?
       - LOINC:associated_with
+      - NCIT:is_associated_disease_of
+      # RTX term deemed inverse of this biolink term?
+      - NCIT:is_cytogenetic_abnormality_of_disease
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -1699,6 +1708,7 @@ slots:
       - NCIT:gene_product_is_biomarker_of
       # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
       - NCIT:genetic_biomarker_related_to
+      - NCIT:is_molecular_abnormality_of_disease
 
   treated by:
     is_a: related to
@@ -1825,7 +1835,14 @@ slots:
       - NCIT:allele_in_chromosomal_location
       - NCIT:gene_has_physical_location
       - NCIT:gene_in_chromosomal_location
-
+      - NCIT:is_location_of_anatomic_structure
+      - NCIT:procedure_has_completely_excised_anatomy
+      - NCIT:procedure_has_excised_anatomy
+      - NCIT:procedure_has_imaged_anatomy
+      - NCIT:procedure_has_partially_excised_anatomy
+      - NCIT:procedure_may_have_completely_excised_anatomy
+      - NCIT:procedure_may_have_excised_anatomy
+      - NCIT:procedure_may_have_partially_excised_anatomy
 
   location of:
     is_a: related to
@@ -1865,6 +1882,7 @@ slots:
       - CHEBI:is_conjugate_base_of  #subproperty
       - CHEBI:is_enantiomer_of      #subproperty
       - CHEBI:is_tautomer_of        #subproperty
+      - NCIT:has_salt_form
 
   has sequence location:
     is_a: related to
@@ -1966,6 +1984,7 @@ slots:
       - MONDO:part_of_progression_of_disease
       - NCIT:anatomic_structure_is_physical_part_of
       - NCIT:conceptual_part_of
+      - NCIT:is_component_of_chemotherapy_regimen
 
   has participant:
     is_a: related to
@@ -1985,8 +2004,13 @@ slots:
       - RO:0000057
     narrow_mappings:
       - BFO:0000167
-      # RTX term tagged as inverse to 'biolink:participates_in'
+      # RTX terms tagged as inverse to 'biolink:participates_in'
       - LOINC:has_subject
+      - NCIT:pathway_has_gene_element
+      - NCIT:process_involves_gene
+      # RTX mapped the following term as 'biolink:superclass_of' but term seem compositional in nature
+      - NCIT:process_includes_biological_process
+
 
   has input:
     is_a: has participant
@@ -2099,8 +2123,10 @@ slots:
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
-      # RTX posted this as an inverse of 'biolink:derives_from'
+      # RTX posted terms as inverse of 'biolink:derives_from'
       - FMA:derives
+      - NCIT:is_normal_cell_origin_of_disease
+      - NCIT:may_be_normal_cell_origin_of_disease
 
   derives from:
     is_a: related to
@@ -2258,6 +2284,8 @@ slots:
       - NCIT:gene_product_is_biomarker_type
       - NCIT:has_inc_parent
       - NCIT:has_nichd_parent
+      - NCIT:neoplasm_has_special_category
+      - NCIT:role_has_parent
 
   directly interacts with:
     is_a: interacts with
@@ -2539,7 +2567,7 @@ slots:
       # RTX terms tagged as inverse of 'biolink:subclass_of'
       - NCIT:cdrh_parent_of
       - NCIT:ctcae_5_parent_of
-
+      - NCIT:subset_includes_concept
 
   #End of edge_label predicate slots
 
@@ -2910,6 +2938,10 @@ slots:
     related_mappings:
       # RO term 'never in taxon' is a negation of this biolink term
       - RO:0002162
+    close_mappings:
+      # RTX contributed term is an inverse mapping
+      - NCIT:is_organism_source_of_gene_product
+      - NCIT:organism_has_gene
     exact_mappings:
       - WIKIDATA:P703
     narrow_mappings:
@@ -3176,6 +3208,10 @@ slots:
       - NCIT:has_pharmaceutical_release_characteristics
       - NCIT:has_pharmaceutical_state_of_matter
       - NCIT:has_pharmaceutical_transformation
+      - NCIT:is_qualified_by
+      - NCIT:qualifier_applies_to
+      - NCIT:role_has_domain
+      - NCIT:role_has_range
 
   has attribute type:
     description: >-
