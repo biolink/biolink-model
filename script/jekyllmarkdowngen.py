@@ -120,6 +120,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 img_url = img_url.replace('<', '%3C')
                 img_url = img_url.replace('^', '%5E')
                 img_url = img_url.replace('>', '%3E')
+                img_url = img_url.replace('|', '%7C')
+                img_url = img_url.replace('*', '%2A')
                 img_url = img_url.replace('&#124;', '%7C')
 
                 self.horizontal_line()
@@ -219,7 +221,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                         self.bullet(f'{self.class_link(rc)}')
                 if aliased_slot_name == 'relation':
                     if slot.subproperty_of:
-                        self.bullet(f' reifies: {self.slot_link(slot.subproperty_of)}')
+                        self.bullet(f' reifies: {self.slot_link(slot.subproperty_of) if slot.subproperty_of in self.schema.slots else slot.subproperty_of}')
                 self.element_properties(slot)
 
     def visit_type(self, typ: TypeDefinition) -> None:

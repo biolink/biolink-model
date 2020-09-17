@@ -46,7 +46,7 @@ env.lock:
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
 biolink/model.py: biolink-model.yaml env.lock
-	pipenv run gen-py-classes $< > tmp.py && pipenv run python tmp.py &&  (pipenv run comparefiles tmp.py $@ && cp $@ $@-PREV && cp tmp.py $@); rm tmp.py
+	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp &&  mv $@.tmp $@
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -125,7 +125,7 @@ biolink-model.proto: biolink-model.yaml env.lock
 # RDF
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.ttl: biolink-model.yaml env.lock
-	pipenv run gen-rdf -f ttl --context https://w3id.org/biolink/biolinkml/context.jsonld $<  > $@
+	pipenv run gen-rdf -f ttl --context https://w3id.org/biolink/biolink-model/context.jsonld $<  > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
@@ -198,9 +198,15 @@ contrib/%/%.shex: contrib-dir-% contrib/%.yaml
 # ----------------------------------------
 # TESTS
 # ----------------------------------------
-tests: biolink-model.yaml env.lock
+test: tests
+tests: biolink-model.yaml env.lock pytest jsonschema_test
 	pipenv run python -m unittest discover -p 'test_*.py'
 
+pytest: biolink/model.py
+	pipenv run python $<
+
+jsonschema_test: json-schema/biolink-model.json
+	jsonschema $<
 
 # ----------------------------------------
 # CLEAN

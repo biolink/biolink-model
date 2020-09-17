@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,1227.4,283"];
+	graph [bb="0,0,1001.3,283"];
 	node [label="\N"];
 	"thing to disease or phenotypic feature association"	 [height=0.5,
 		label="thing to disease or phenotypic feature association",
-		pos="523.05,265",
+		pos="422.05,265",
 		width=5.1454];
 	association	 [height=0.5,
 		pos="50.046,178",
 		width=1.3902];
 	"thing to disease or phenotypic feature association" -> association	 [label=is_a,
 		lp="103.05,221.5",
-		pos="e,59.653,195.84 355.63,257.24 244.77,251.03 115.57,241.33 92.046,229 81.311,223.38 72.283,213.71 65.381,204.29"];
+		pos="e,59.713,195.72 251.01,258.03 185.67,252.95 120.12,244.17 92.046,229 81.383,223.24 72.367,213.55 65.456,204.15"];
 	subject	 [color=blue,
 		height=0.5,
 		label="named thing",
@@ -19,7 +19,7 @@ digraph {
 	"thing to disease or phenotypic feature association" -> subject	 [color=blue,
 		label=subject,
 		lp="268.55,221.5",
-		pos="e,219.73,196.1 368.16,255.07 318.17,249.65 270.2,241.41 249.05,229 239.23,223.24 231.16,213.85 225.02,204.69",
+		pos="e,219.92,195.79 319.71,249.94 289.75,244.18 261.65,237.04 249.05,229 239.45,222.88 231.42,213.42 225.26,204.31",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
@@ -29,25 +29,15 @@ digraph {
 	"thing to disease or phenotypic feature association" -> relation	 [color=blue,
 		label=relation,
 		lp="159.05,134.5",
-		pos="e,184.38,35.171 373.58,254.32 326.82,248.95 275.36,240.93 229.05,229 191,219.2 169.04,228.55 147.05,196 114.73,148.16 152.86,79.833 \
-178.5,43.314",
-		style=solid];
-	object	 [height=0.5,
-		pos="258.05,91",
-		width=0.9027];
-	"thing to disease or phenotypic feature association" -> object	 [color=blue,
-		label=object,
-		lp="328.05,178",
-		pos="e,271.4,107.63 418.55,250.12 380.81,240.19 340.33,223.62 311.05,196 287.09,173.4 299.81,155.91 284.05,127 282.01,123.27 279.65,119.48 \
-277.19,115.82",
+		pos="e,184.36,35.184 304.2,251.1 238.11,240.45 165.32,222.93 147.05,196 114.63,148.23 152.8,79.874 178.47,43.332",
 		style=solid];
 	id	 [height=0.5,
 		pos="381.05,178",
 		width=0.75];
 	"thing to disease or phenotypic feature association" -> id	 [color=blue,
 		label=id,
-		lp="466.55,221.5",
-		pos="e,400.95,190.19 493.97,247.18 469.36,232.11 434.29,210.62 409.78,195.6",
+		lp="409.55,221.5",
+		pos="e,389.25,195.41 413.55,246.97 407.81,234.8 400.14,218.51 393.69,204.82",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -56,8 +46,8 @@ digraph {
 		width=1.0652];
 	"thing to disease or phenotypic feature association" -> negated	 [color=blue,
 		label=negated,
-		lp="519.55,221.5",
-		pos="e,475.85,195.41 510.82,246.97 502.4,234.56 491.09,217.88 481.7,204.03",
+		lp="467.55,221.5",
+		pos="e,455.5,195.71 430.75,246.97 436.59,234.88 444.38,218.73 450.97,205.09",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -66,8 +56,8 @@ digraph {
 		width=1.7151];
 	"thing to disease or phenotypic feature association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="601.05,221.5",
-		pos="e,570.04,195.71 535.27,246.97 543.63,234.64 554.85,218.1 564.21,204.3",
+		lp="562.05,221.5",
+		pos="e,554.59,194.22 457.99,247.22 469.27,241.52 481.73,235.1 493.05,229 510.47,219.6 529.55,208.74 545.55,199.47",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -76,8 +66,8 @@ digraph {
 		width=1.7151];
 	"thing to disease or phenotypic feature association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="701.05,221.5",
-		pos="e,702.16,195.14 596.15,248.46 613.88,243.27 632.48,236.82 649.05,229 664.79,221.57 680.86,210.93 693.99,201.29",
+		lp="675.05,221.5",
+		pos="e,693.11,193.85 524.12,249.96 552.29,244.6 582.64,237.68 610.05,229 635.43,220.97 662.66,208.79 684.04,198.35",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -86,8 +76,8 @@ digraph {
 		width=1.3902];
 	"thing to disease or phenotypic feature association" -> publications	 [color=blue,
 		label=publications,
-		lp="806.55,221.5",
-		pos="e,823.15,192.73 633.94,250.54 665.64,245.14 700,238.05 731.05,229 759.52,220.7 790.33,207.79 813.86,197.03",
+		lp="788.55,221.5",
+		pos="e,819.82,191.65 561.24,253.05 607.37,247.57 658.74,239.8 705.05,229 741.31,220.54 781.15,206.53 810.35,195.33",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -96,46 +86,34 @@ digraph {
 		width=1.1193];
 	"thing to disease or phenotypic feature association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="921.05,221.5",
-		pos="e,934.92,192.1 653.74,252.2 734.2,244 825.42,233.98 844.05,229 872.52,221.38 902.98,207.92 925.69,196.73",
+		lp="908.05,221.5",
+		pos="e,933.3,191.07 555.61,252.48 575.86,250.62 596.5,248.74 616.05,247 709.35,238.67 734.7,249.75 826.05,229 860.21,221.24 897.33,206.74 \
+923.98,195.18",
 		style=solid];
-	"association slot"	 [color=blue,
-		height=0.5,
-		label=string,
-		pos="1050,178",
-		width=0.84854];
-	"thing to disease or phenotypic feature association" -> "association slot"	 [color=blue,
-		label="association slot",
-		lp="1035,221.5",
-		pos="e,1030.7,192 655.97,252.42 676.74,250.55 697.97,248.68 718.05,247 824.64,238.08 855.56,259.64 958.05,229 980.99,222.14 1004.6,208.92 \
-1022.1,197.67",
-		style=solid];
-	"edge label"	 [color=blue,
-		height=0.5,
-		label="edge label type",
-		pos="1163,178",
-		width=1.7873];
-	"thing to disease or phenotypic feature association" -> "edge label"	 [color=blue,
-		label="edge label",
-		lp="1140,221.5",
-		pos="e,1142.3,195.11 653.31,252.2 674.92,250.3 697.1,248.49 718.05,247 798.61,241.29 1004,253.1 1081,229 1100,223.06 1119,211.67 1134,\
-201.15",
+	object	 [height=0.5,
+		pos="258.05,91",
+		width=0.9027];
+	"thing to disease or phenotypic feature association" -> object	 [color=blue,
+		label=object,
+		lp="328.05,178",
+		pos="e,271.4,107.63 380.75,247.38 357.59,235.71 329.69,218.42 311.05,196 289.99,170.68 299.81,155.91 284.05,127 282.01,123.27 279.65,\
+119.48 277.19,115.82",
 		style=solid];
 	subject -> relation	 [pos="e,199.53,36.223 209.58,159.96 207.34,132.35 203.03,79.375 200.36,46.525",
 		style=dotted];
 	subject -> object	 [label=relation,
 		lp="259.05,134.5",
 		pos="e,248.64,108.41 220.78,159.97 227.43,147.68 236.33,131.2 243.77,117.42"];
+	association_id	 [color=blue,
+		height=0.5,
+		label=string,
+		pos="656.05,265",
+		width=0.84854];
 	object -> relation	 [pos="e,212.23,35.261 244.43,74.435 236.85,65.207 227.25,53.528 218.75,43.191",
 		style=dotted];
 	"thing to disease or phenotypic feature association_object"	 [color=blue,
 		height=0.5,
 		label="disease or phenotypic feature",
-		pos="841.05,265",
+		pos="819.05,265",
 		width=3.1775];
-	association_id	 [color=blue,
-		height=0.5,
-		label=string,
-		pos="1004,265",
-		width=0.84854];
 }

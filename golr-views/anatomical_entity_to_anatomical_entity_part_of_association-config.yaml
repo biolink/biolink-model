@@ -1,59 +1,41 @@
+id: anatomical_entity_to_anatomical_entity_part_of_association
+schema_generating: true
 description: A relationship between two anatomical entities where the relationship
   is mereological, i.e the two entities are related by parthood. This includes relationships
   between cellular components and cells, between cells and tissues, tissues and whole
   organisms
-display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- anatomical entity to anatomical entity part of association
-document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- anatomical entity to anatomical entity part of association
+display_name: anatomical entity to anatomical entity part of association
+document_category: anatomical entity to anatomical entity part of association
+weight: 20
 fields:
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - anatomical entity to anatomical entity part of association_subject
-  id: subject
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - anatomical entity to anatomical entity part of association_relation
-  id: relation
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - anatomical entity to anatomical entity part of association_object
-  id: object
-- description: A unique identifier for an association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association_id
-  id: id
-- description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - negated
-  id: negated
-- description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association type
-  id: association_type
-- cardinality: multi
+- id: id
+  description: A unique identifier for an association
+  display_name: association_id
+- id: negated
+  description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+- id: association_type
+  description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+- id: qualifiers
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - qualifiers
-  id: qualifiers
-- cardinality: multi
+  display_name: qualifiers
+  cardinality: multi
+- id: publications
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - publications
-  id: publications
-- cardinality: multi
+  display_name: publications
+  cardinality: multi
+- id: provided_by
   description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - provided by
-  id: provided_by
-- description: any slot that relates an association to another entity
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association slot
-  id: association_slot
-- description: A high-level grouping for the relationship type. AKA minimal predicate.
-    This is analogous to category for nodes.
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - edge label
-  id: edge_label
-id: anatomical_entity_to_anatomical_entity_part_of_association
-schema_generating: true
-weight: 20
+  display_name: provided by
+  cardinality: multi
+- id: subject
+  description: the part
+  display_name: anatomical entity to anatomical entity part of association_subject
+- id: object
+  description: the whole
+  display_name: anatomical entity to anatomical entity part of association_object
+- id: relation
+  display_name: anatomical entity to anatomical entity part of association_relation

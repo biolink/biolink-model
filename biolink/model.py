@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.1
-# Generation date: 2020-07-27 18:39
+# Generation date: 2020-08-01 00:11
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -846,7 +846,7 @@ class Attribute(AbstractEntity):
     A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age,
     crispiness. An environmental sample may have attributes such as depth, lat, long, material.
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Attribute
     class_class_curie: ClassVar[str] = "biolink:Attribute"
@@ -898,7 +898,7 @@ class QuantityValue(AbstractEntity):
 
 @dataclass
 class BiologicalSex(Attribute):
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalSex
     class_class_curie: ClassVar[str] = "biolink:BiologicalSex"
@@ -922,7 +922,7 @@ class PhenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicSex
     class_class_curie: ClassVar[str] = "biolink:PhenotypicSex"
@@ -947,7 +947,7 @@ class GenotypicSex(BiologicalSex):
     An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex
     chromosomes.
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypicSex
     class_class_curie: ClassVar[str] = "biolink:GenotypicSex"
@@ -971,7 +971,7 @@ class SeverityValue(Attribute):
     """
     describes the severity of a phenotypic feature or disease
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
     class_class_curie: ClassVar[str] = "biolink:SeverityValue"
@@ -995,7 +995,7 @@ class FrequencyValue(Attribute):
     """
     describes the frequency of occurrence of an event or condition
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.FrequencyValue
     class_class_curie: ClassVar[str] = "biolink:FrequencyValue"
@@ -1020,7 +1020,7 @@ class ClinicalModifier(Attribute):
     Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
     with respect to severity, laterality, age of onset, and other aspects
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
     class_class_curie: ClassVar[str] = "biolink:ClinicalModifier"
@@ -1044,7 +1044,7 @@ class Onset(Attribute):
     """
     The age group in which manifestations appear
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Onset
     class_class_curie: ClassVar[str] = "biolink:Onset"
@@ -1211,7 +1211,7 @@ class OntologyClass(NamedThing):
     """
     a concept or class in an ontology, vocabulary or thesaurus
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.OntologyClass
     class_class_curie: ClassVar[str] = "biolink:OntologyClass"
@@ -1235,7 +1235,7 @@ class RelationshipType(OntologyClass):
     """
     An OWL property used as an edge label
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.RelationshipType
     class_class_curie: ClassVar[str] = "biolink:RelationshipType"
@@ -1259,7 +1259,7 @@ class GeneOntologyClass(OntologyClass):
     """
     an ontology class that describes a functional aspect of a gene, gene prodoct or complex
     """
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GeneOntologyClass
     class_class_curie: ClassVar[str] = "biolink:GeneOntologyClass"
@@ -1280,7 +1280,11 @@ class GeneOntologyClass(OntologyClass):
 
 @dataclass
 class OrganismTaxon(OntologyClass):
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    """
+    A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also
+    be used to represent strains or subspecies.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxon"
@@ -2377,7 +2381,7 @@ class GeneFamily(MolecularEntity):
 
 @dataclass
 class Zygosity(Attribute):
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "correlated_with", "subclass_of", "superclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Zygosity
     class_class_curie: ClassVar[str] = "biolink:Zygosity"

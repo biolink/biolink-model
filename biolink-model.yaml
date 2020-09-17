@@ -3,6 +3,11 @@ name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
+# CURIE namespaces (prefixes/base URI's) mappings of prefixes used in the body of the Biolink Model specification are resolved using a specific precedence order,
+# for use in the generation of the Biolink Model context.jsonld mappings to namespaces. Any prefixes encountered in the Biolink Model but not resolved by the following 
+# precedence sources, are anonymously declared by biolinkml as http://example.org/UNKNOWN/ rooted base URI's which should ideally be repaired in one of the precedence lists.
+#
+# 1. The following 'prefixes:' delimited list has first precedence in resolution. 
 prefixes:
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
@@ -27,17 +32,19 @@ prefixes:
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
-
   
 default_prefix: biolink
 default_range: string
 
+# 2. The following prefix maps are retrieved from the 
+#    specified contexts defined at https://prefixcommons.org/
 default_curi_maps:
   - obo_context
   - idot_context
   - monarch_context
   - semweb_context
 
+# The following 'standard' prefixes are also used.
 emit_prefixes:
   - rdf
   - rdfs
@@ -1353,7 +1360,8 @@ slots:
       - UBERON_CORE:in_innermost_side_of
       - UBERON_CORE:in_outermost_side_of
       - NCIT:R100
-
+      - EFO:0000784
+      
   location of:
     is_a: related to
     description: >-
@@ -1390,6 +1398,15 @@ slots:
       - CHEBI:is_conjugate_base_of  #subproperty
       - CHEBI:is_enantiomer_of      #subproperty
       - CHEBI:is_tautomer_of        #subproperty
+
+  has sequence location:
+    is_a: related to
+    description: >-
+      holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
+    domain: genomic entity
+    range: genomic entity
+    mappings:
+      - faldo:location
 
   model of:
     is_a: similar to
@@ -1610,6 +1627,8 @@ slots:
     multivalued: True
     in_subset:
       - translator_minimal
+    inverse: superclass of
+    slot_uri: rdfs:subClassOf
     mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
@@ -1644,6 +1663,7 @@ slots:
       - GAMMA:component
       - GAMMA:adduct
       - GAMMA:antibody
+      - DRUGBANK:chelator
 
   #The following are proposed new predictes
 
@@ -1653,6 +1673,7 @@ slots:
        is located in.
     mappings:
       - GTEx:affects_expression_in
+
 
   #Predicates relating variants to genes
 
@@ -1808,6 +1829,19 @@ slots:
 
 
 
+  superclass of:
+    is_a: related to
+    description: >-
+      holds between two classes where the domain class is a super class of the range class
+    domain: ontology class
+    range: iri type
+    multivalued: True
+    inverse: subclass of
+    in_subset:
+      - translator_minimal
+    mappings:
+      - WD:Q66088480
+
 ## property slots
 
   node property:
@@ -1853,6 +1887,31 @@ slots:
     domain: source file
     mappings:
       - pav:version
+      - owl:versionInfo
+
+  license:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:license
+
+  rights:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:rights
+
+  format:
+    is_a: node property
+    domain: source file
+    mappings:
+      - dcterms:format
+
+  created_with:
+    is_a: node property
+    domain: source file
+    mappings:
+      - pav:createdWith
 
   downloadURL:
     is_a: node property
@@ -1861,16 +1920,17 @@ slots:
       - dcterms:downloadURL
 
   distribution:
+    aliases: ['dataset']
     is_a: node property
     domain: data set version
     range: distribution level
     mappings:
       - void:Dataset
+      - dctypes:Dataset
 
   type:
     is_a: node property
-    mappings:
-      - rdf:type
+    slot_uri: rdf:type
 
   id:
     is_a: node property
@@ -1914,9 +1974,14 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
+    mappings:
+      - oboInOwl:hasExactSynonym
+      - oboInOwl:hasNarrowSynonym
+      - oboInOwl:hasBroadSynonym
+      - oboInOwl:hasRelatedSynonym
 
   category:
-    is_a: node property
+    is_a: type
     domain: named thing
     range: category type
     description: >-
@@ -1927,7 +1992,6 @@ slots:
     in_subset:
       - translator_minimal
     required: true
-    slot_uri: rdf:type
 
   full name:
     is_a: node property
@@ -1938,6 +2002,7 @@ slots:
 
   description:
     is_a: node property
+    aliases: ['definition']
     domain: named thing
     range: narrative text
     description: >-
@@ -1945,12 +2010,16 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: dcterms:description
+    mappings:
+      - IAO:0000115
+      - skos:definitions
 
   systematic synonym:
     is_a: node property
     domain: named thing
     range: label type
     multivalued: true
+    slot_uri: http://purl.obolibrary.org/obo/go#systematic_synonym
     description: >-
       more commonly used for gene symbols in yeast
 
@@ -2018,8 +2087,8 @@ slots:
       translator: predicate
     slot_uri: rdf:predicate
     mappings:
-      - "owl:annotatedProperty"
-      - "OBAN:association_has_predicate"
+      - owl:annotatedProperty
+      - OBAN:association_has_predicate
 
   relation:
     is_a: association slot
@@ -2055,7 +2124,8 @@ slots:
     range: provider
     description: >-
       connects an association to the agent (person, organization or group) that provided it
-    slot_uri: pav:providedBy
+    mappings:
+      - pav:providedBy
     multivalued: true
 
   association type:
@@ -2071,14 +2141,16 @@ slots:
     range: float
     description: >-
       represents the chi-squared statistic computed from observations
-    slot_uri: STATO:0000030
+    mappings:
+      - STATO:0000030
 
   p value:
     is_a: association slot
     range: float
     description: >-
       A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
-    slot_uri: OBI:0000175
+    mappings:
+      - OBI:0000175
 
   creation date:
     is_a: node property
@@ -2086,7 +2158,7 @@ slots:
     description: >-
       date on which thing was created. This can be applied to nodes or edges
     mappings:
-      - dcterms:created
+      - dcterms:createdOn
 
   has receptor:
     is_a: node property
@@ -2302,26 +2374,46 @@ slots:
     description: >-
       The value in a property-value tuple
 
-  phase:
-    is_a: node property
+  sequence localization attribute:
+    is_a: association slot
+    domain: genomic sequence localization
     description: >-
-      TODO
-
-  genome build:
-    is_a: node property
-    description: >-
-      TODO
+      An attribute that can be applied to a genome sequence localization edge. These edges
+      connect a genomic entity such as an exon to an entity such as a chromosome. Edge properties are used
+      to ascribe specific positional information and other metadata to the localization. In pragmatic terms
+      this can be thought of as columns in a GFF3 line.
 
   interbase coordinate:
-    is_a: node property
+    is_a: sequence localization attribute
     description: >-
-      TODO
+      A position in interbase coordinates. This is applied to a sequence localization edge.
+    range: integer
 
   start interbase coordinate:
     is_a: interbase coordinate
+    description: >-
+      The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
 
   end interbase coordinate:
     is_a: interbase coordinate
+    description: >-
+      The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
+
+  genome build:
+    is_a: sequence localization attribute
+    description: >-
+      The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
+
+  strand:
+    is_a: sequence localization attribute
+    description: >-
+      The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+
+  phase:
+    is_a: sequence localization attribute
+    domain: coding sequence
+    description: >-
+      The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
 
   has attribute:
     description: >-
@@ -2452,8 +2544,17 @@ classes:
   clinical modifier:
     description: >-
       Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
-      with respect to severity, laterality, age of onset, and other aspects
-    subclass_of: "HP:0012823"
+      with respect to severity, laterality, and other aspects
+    mappings:
+      - HP:0012823
+    is_a: attribute
+
+  clinical course:
+    description: >-
+      The course a disease typically takes from its onset, progression in time, and eventual resolution or death of
+      the affected individual
+    mappings:
+      - HP:0031797
     is_a: attribute
 
   onset:
@@ -2461,6 +2562,16 @@ classes:
       The age group in which manifestations appear
     mappings:
       - HP:0003674
+    is_a: clinical course
+    
+  inheritance:
+    description: >-
+      The pattern in which a particular genetic trait or disorder is passed from one
+      generation to the next
+    mappings:
+      - HP:0000005
+      - GENO:0000141
+      - NCIT:C45827
     is_a: attribute
 
   relationship quantifier:
@@ -2544,12 +2655,16 @@ classes:
       - versionOf
       - type
       - distribution
+    mappings:
+      - dctypes:Dataset
 
   distribution level:
     is_a: data set version
     mixin: true
     slots:
       - downloadURL
+    mappings:
+      - dcat:Distribution
 
   data set summary:
     is_a: data set version
@@ -2591,11 +2706,14 @@ classes:
       - in taxon
 
   organism taxon:
+    description: >-
+      A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
     is_a: ontology class
     values_from:
       - NCBITaxon
     mappings:
       - WIKIDATA:Q16521
+      - NCBITaxon:1
     id_prefixes:
       - NCBITaxon
       - MESH
@@ -2686,6 +2804,8 @@ classes:
     is_a: individual organism
     description: >-
       An individual organism that has a patient role in some clinical context.
+    mappings:
+      - foaf:Person
 
   population of individual organisms:
     description: >-
@@ -2703,6 +2823,7 @@ classes:
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
       - UMLSST:popg
+      - OBI:0000181
     id_prefixes:
       - HANCESTRO
 
@@ -2749,6 +2870,7 @@ classes:
     is_a: disease or phenotypic feature
     mappings:
       - MONDO:0000001
+      - DOID:4
       - WIKIDATA:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
@@ -2788,6 +2910,7 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
+      - ORPHA
       - EFO
       - UMLS
       - MESH
@@ -2809,24 +2932,30 @@ classes:
       - UPHENO:0001001
       - SIO:010056
       - WIKIDATA:Q169872
+      # - HP:0000118  needs to be a narrow mapping
     id_prefixes:
       - HP
       - EFO
       - NCIT
       - UMLS
       - MEDDRA
-      - SNOMEDCT
       - MP
+      - ZP
+      - UPHENO
+      - APO
+      - FBcv
+      - WBPhenotype
+      - SNOMEDCT
       - MESH
 
   exposure event:
-    aliases: ['environment', 'exposure', 'experimental condition']
+    aliases: ['exposure', 'experimental condition']
     is_a: biological entity
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
     mappings:
-      - SIO:000955
+      - XCO:0000000
 
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
@@ -2880,6 +3009,8 @@ classes:
       - cio
     mappings:
       - CIO:0000028
+      - SEPIO:0000167
+      - SEPIO:0000187
 
   evidence type:
     is_a: information content entity
@@ -2900,10 +3031,10 @@ classes:
       The scope is intended to be general and include information published on the web as well as journals.
     mappings:
       - IAO:0000311
+      - IAO:0000013
       # UMLS Semantic Type "Intellectual Product"
       - UMLSSC:T170
       - UMLSST:inpr
-
     id_prefixes:
       - PMID
 
@@ -2930,6 +3061,7 @@ classes:
       # Self-help or Relief Organization
       - UMLSSC:T095
       - UMLSST:shro
+      - prov:Agent
 
   molecular entity:
     is_a: biological entity
@@ -3080,6 +3212,7 @@ classes:
       A subcellular location, cell type or gross anatomical part
     mappings:
       - SIO:010046
+      - UBERON:0001062
       - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
@@ -3121,10 +3254,13 @@ classes:
     mixins:
       - occurrent
     subclass_of: ENVO:02500000
+    mappings:
+      - ENVO:02500000
 
   environmental feature:
     is_a: planetary entity
-    subclass_of: ENVO:00002297
+    mappings:
+      - ENVO:01000254
 
   clinical entity:
     is_a: named thing
@@ -3162,12 +3298,14 @@ classes:
       - has biological sequence
     mappings:
       - SO:0000110
+      - GENO:0000897
       # Gene or Genome
       - UMLSSC:T028
       - UMLSST:gngm
       # Nucleotide Sequence
       - UMLSSC:T086
       - UMLSST:nusq
+
   genome:
     is_a: genomic entity
     description: >-
@@ -3245,6 +3383,10 @@ classes:
       - ZFIN
       - dictyBase
       - WB
+      - WormBase
+      - FlyBase
+      - FB
+      - RGD
       - SGD
       - PomBase
       # - IUPHAR
@@ -3272,6 +3414,7 @@ classes:
       - PR:000000001
       - SIO:010043
       - WIKIDATA:Q8054
+      - SO:0000104
       # UMLS Semantic Type: "Amino Acid Sequence"
       - UMLSSC:T087
       - UMLSST:amas
@@ -3340,6 +3483,8 @@ classes:
       - WIKIDATA:Q310899
     id_prefixes:
       - MIR
+      - HGNC
+      - WormBase
 
   macromolecular complex:
     is_a: macromolecular machine
@@ -3363,7 +3508,7 @@ classes:
     is_a: molecular entity
     mappings:
       - SIO:001380
-      - "NCIT:C20130"
+      - NCIT:C20130
       - WIKIDATA:Q417841
     mixins:
       - gene grouping
@@ -3398,6 +3543,7 @@ classes:
 #      - completeness
     mappings:
       - GENO:0000871
+      - SO:0001024
       # - VMC:Haplotype  needs IRI mapping
 
   sequence variant:
@@ -3416,15 +3562,25 @@ classes:
       - WIKIDATA:Q15304597
       - SIO:010277
       - VMC:Allele
+      - SO:0001059
+      - SO:0001060
     id_prefixes:
       - CAID # ClinGen Allele Registry
       - ClinVar
+      - ClinVarVariant
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
+      - dbSNP
       # - MYVARIANT_HG19 needs IRI mapping
       # - MYVARIANT_HG38 needs IRI mapping
       # - HGVS needs IRI mapping
+      - MGI
+      - ZFIN
+      - FlyBase
+      - FB
+      - WB
+      - WormBase
     alt_descriptions:
       AGR: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
       VMC: "A contiguous change at a Location"
@@ -3444,6 +3600,22 @@ classes:
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
+  snv:
+    aliases: ['single nucleotide variant']
+    is_a: sequence variant
+    description: >-
+      SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
+    mappings:
+      - SO:0001483
+
+  reagent targeted gene:
+    is_a: genomic entity
+    description: >-
+       A gene altered in its expression level in the context of some experiment as a result of being
+       targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
+    mappings:
+      - GENO:0000504
+
   chemical exposure:
 #    aliases: ['drug intake', 'drug dose']
     is_a: exposure event
@@ -3458,6 +3630,7 @@ classes:
 #        multivalued: true
     mappings:
       - ECTO:9000000
+      - SIO:001399
 
   drug exposure:
     aliases: ['drug intake', 'drug dose']
@@ -3947,7 +4120,7 @@ classes:
       object:
         range: phenotypic feature
         description: "phenotypic class"
-        values_from: ['upheno', 'hp', 'mp', 'wbphenotypic feature']
+        values_from: ['upheno', 'hp', 'mp', 'WBPhenotype']
         examples:
           - value: HP:0002487
             description: Hyperkinesis
@@ -4244,6 +4417,32 @@ classes:
           - value: MONDO:0016419
             description: hereditary breast cancer
 
+
+  genotype to disease association:
+    is_a: association
+    comments:
+      - TODO decide no how to model pathogenicity
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - genotype to thing association
+      - entity to disease association
+    slot_usage:
+      subject:
+        description: >-
+          a genotype that is associated in some way with a disease state
+      relation:
+        description: >-
+          E.g. is pathogenic for
+        subproperty_of: related condition
+      object:
+        description: >-
+          a disease that is associated with that genotype
+        examples:
+          - value: MONDO:0016419
+            description: hereditary breast cancer
+
   model to disease mixin:
     mixin: true
     abstract: true
@@ -4275,6 +4474,68 @@ classes:
         description: >-
           A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene,
           or it may be a gene whose mutants recapitulate core features of the disease.
+
+  variant as a model of disease association:
+    is_a: variant to disease association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: sequence variant
+        description: >-
+          A variant that has a role in modeling the disease.
+
+  genotype as a model of disease association:
+    is_a: genotype to disease association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: genotype
+        description: >-
+          A genotype that has a role in modeling the disease.
+
+  cell line as a model of disease association:
+    is_a: cell line to disease or phenotypic feature association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: cell line
+        description: >-
+          A cell line derived from an organismal entity with a disease state that is used
+          as a model of that disease.
+
+  organismal entity as a model of disease association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    mixins:
+      - model to disease mixin
+      - entity to disease association
+    slot_usage:
+      subject:
+        range: organismal entity
+        description: >-
+          A organismal entity (strain, breed) with a predisposition to a disease, or bred/created
+          specifically to model a disease.
 
   gene has variant that contributes to disease association:
     is_a: gene to disease association
@@ -4450,10 +4711,15 @@ classes:
   ## SEQUENCE FEATURES
   ## ------
 
-  genomic sequence localization:
+  sequence association:
     is_a: association
     description: >-
-      A relationship between a sequence feature and an entity it is localized to. The reference entity may be
+      An association between a sequence feature and a genomic entity it is localized to.
+
+  genomic sequence localization:
+    is_a: sequence association
+    description: >-
+      A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be
       a chromosome, chromosome region or information entity such as a contig
     slot_usage:
       subject:
@@ -4461,14 +4727,15 @@ classes:
         range: genomic entity  ## todo protein
       object:
         aliases: ['reference']
-        range: genomic entity ## typically a chromosomel use monochrom
+        range: genomic entity ## typically a chromosome use monochrom
+      relation:
+        subproperty_of: has sequence location
     slots:
       - start interbase coordinate
       - end interbase coordinate
       - genome build
+      - strand
       - phase
-    mappings:
-      - faldo:location
 
   sequence feature relationship:
     is_a: association

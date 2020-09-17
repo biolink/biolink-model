@@ -1,8 +1,10 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-07-27 18:40\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-09-17 21:16\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
-      "_comments": null,
-      "type": "@type",
+      "type": {
+         "@id": "rdf:type"
+      },
+      "APO": "http://purl.obolibrary.org/obo/APO_",
       "Aeolus": "http://translator.ncats.nih.gov/Aeolus_",
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://identifiers.org/biogrid/",
@@ -17,6 +19,7 @@
       "CLO": "http://purl.obolibrary.org/obo/CLO_",
       "CTD": "http://translator.ncats.nih.gov/CTD_",
       "ClinVar": "http://www.ncbi.nlm.nih.gov/clinvar/",
+      "ClinVarVariant": "http://www.ncbi.nlm.nih.gov/clinvar/variation/",
       "DBSNP": "http://identifiers.org/dbsnp/",
       "DOID": "http://purl.obolibrary.org/obo/DOID_",
       "DRUGBANK": "http://identifiers.org/drugbank/",
@@ -26,8 +29,12 @@
       "ECTO": "http://example.org/UNKNOWN/ECTO/",
       "EFO": "http://identifiers.org/efo/",
       "ENSEMBL": "http://identifiers.org/ensembl/",
+      "ENVO": "http://purl.obolibrary.org/obo/ENVO_",
       "ExO": "http://example.org/UNKNOWN/ExO/",
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
+      "FB": "http://identifiers.org/fb/",
+      "FBcv": "http://purl.obolibrary.org/obo/FBcv_",
+      "FlyBase": "http://flybase.org/reports/",
       "GAMMA": "http://translator.renci.org/GAMMA_",
       "GENO": "http://purl.obolibrary.org/obo/GENO_",
       "GO": "http://purl.obolibrary.org/obo/GO_",
@@ -60,9 +67,11 @@
       "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
       "OBAN": "http://purl.org/oban/",
       "OBI": "http://purl.obolibrary.org/obo/OBI_",
+      "OBO": "http://purl.obolibrary.org/obo/",
       "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
       "OIO": "http://www.geneontology.org/formats/oboInOwl#",
       "OMIM": "http://purl.obolibrary.org/obo/OMIM_",
+      "ORPHA": "http://example.org/UNKNOWN/ORPHA/",
       "ORPHANET": "http://identifiers.org/orphanet/",
       "PANTHER.FAMILY": "http://identifiers.org/panther.family/",
       "PHARMGKB.DRUG": "http://identifiers.org/pharmgkb.drug/",
@@ -76,10 +85,12 @@
       "PW": "http://purl.obolibrary.org/obo/PW_",
       "PomBase": "https://www.pombase.org/spombe/result/",
       "REACT": "http://www.reactome.org/PathwayBrowser/#/",
+      "RGD": "http://identifiers.org/rgd/",
       "RHEA": "http://identifiers.org/rhea/",
       "RNACENTRAL": "http://identifiers.org/rnacentral/",
       "RO": "http://purl.obolibrary.org/obo/RO_",
       "SEMMEDDB": "http://example.org/UNKNOWN/SEMMEDDB/",
+      "SEPIO": "http://purl.obolibrary.org/obo/SEPIO_",
       "SGD": "http://identifiers.org/sgd/",
       "SIO": "http://semanticscience.org/resource/SIO_",
       "SMPDB": "http://identifiers.org/smpdb/",
@@ -99,25 +110,34 @@
       "UniProtKB": "http://identifiers.org/uniprot/",
       "VMC": "http://example.org/UNKNOWN/VMC/",
       "WB": "http://identifiers.org/wb/",
+      "WBPhenotype": "http://purl.obolibrary.org/obo/WBPhenotype_",
       "WD": "http://example.org/UNKNOWN/WD/",
       "WIKIDATA": "http://identifiers.org/wikidata/",
       "WIKIPATHWAYS": "http://identifiers.org/wikipathways/",
+      "WormBase": "https://www.wormbase.org/get?name=",
+      "XCO": "http://purl.obolibrary.org/obo/XCO_",
       "ZFIN": "http://identifiers.org/zfin/",
+      "ZP": "http://purl.obolibrary.org/obo/ZP_",
+      "biolink": "https://w3id.org/biolink/vocab/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
       "chembio": "http://example.org/UNKNOWN/chembio/",
+      "dbSNP": "http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=",
+      "dcat": "http://www.w3.org/ns/dcat#",
       "dcterms": "http://purl.org/dc/terms/",
+      "dctypes": "http://purl.org/dc/dcmitype/",
       "dictyBase": "http://dictybase.org/gene/",
       "faldo": "http://biohackathon.org/resource/faldo#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
       "medgen": "http://example.org/UNKNOWN/medgen/",
-      "metatype": "https://w3id.org/biolink/biolinkml/meta/types/",
+      "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
+      "prov": "http://www.w3.org/ns/prov#",
       "qud": "http://qudt.org/1.1/schema/qudt#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-      "shex": "http://www.w3.org/ns/shex#",
       "skos": "https://www.w3.org/TR/skos-reference/#",
       "void": "http://rdfs.org/ns/void#",
       "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
@@ -194,8 +214,7 @@
          "@type": "@id"
       },
       "category": {
-         "@type": "@id",
-         "@id": "rdf:type"
+         "@type": "@id"
       },
       "caused_by": {
          "@type": "@id"
@@ -210,8 +229,7 @@
          "@type": "@id"
       },
       "chi_squared_statistic": {
-         "@type": "xsd:float",
-         "@id": "STATO:0000030"
+         "@type": "xsd:float"
       },
       "clinical_modifier_qualifier": {
          "@type": "@id"
@@ -316,6 +334,9 @@
       "enables": {
          "@type": "@id"
       },
+      "end_interbase_coordinate": {
+         "@type": "xsd:integer"
+      },
       "expressed_in": {
          "@type": "@id"
       },
@@ -409,6 +430,9 @@
       "has_receptor": {
          "@type": "@id"
       },
+      "has_sequence_location": {
+         "@type": "@id"
+      },
       "has_total": {
          "@type": "xsd:integer"
       },
@@ -490,6 +514,9 @@
       "interacts_with": {
          "@type": "@id"
       },
+      "interbase_coordinate": {
+         "@type": "xsd:integer"
+      },
       "iri": {
          "@type": "@id"
       },
@@ -567,8 +594,7 @@
          "@type": "@id"
       },
       "p_value": {
-         "@type": "xsd:float",
-         "@id": "OBI:0000175"
+         "@type": "xsd:float"
       },
       "paralogous_to": {
          "@type": "@id"
@@ -607,8 +633,7 @@
          "@type": "@id"
       },
       "provided_by": {
-         "@type": "@id",
-         "@id": "pav:providedBy"
+         "@type": "@id"
       },
       "publications": {
          "@type": "@id"
@@ -655,12 +680,22 @@
       "stage_qualifier": {
          "@type": "@id"
       },
+      "start_interbase_coordinate": {
+         "@type": "xsd:integer"
+      },
       "subclass_of": {
-         "@type": "@id"
+         "@type": "@id",
+         "@id": "rdfs:subClassOf"
       },
       "subject": {
          "@type": "@id",
          "@id": "rdf:subject"
+      },
+      "superclass_of": {
+         "@type": "@id"
+      },
+      "systematic_synonym": {
+         "@id": "http://purl.obolibrary.org/obo/go#systematic_synonym"
       },
       "timepoint": {
          "@type": "xsd:dateTime"
