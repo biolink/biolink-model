@@ -191,6 +191,9 @@ slots:
       - LOINC:has_evaluation
       - LOINC:mapped_to
       - LOINC:mth_has_expanded_form
+      - MESH:RO
+      - MESH:has_mapping_qualifier
+      - MESH:mapped_to
 
   interacts with:
     domain: named thing
@@ -2122,6 +2125,7 @@ slots:
       - WIKIDATA:P279
       - CHEMBL.MECHANISM:subset_of
       - GO:isa
+      - MESH:isa
     narrow_mappings:
       - CHEBI:has_parent_hydride
       - LOINC:has_archetype
@@ -2396,8 +2400,9 @@ slots:
     exact_mappings:
       - WD:Q66088480
       - CHEMBL.MECHANISM:superset_of
-      # RTX tagged as inverse of 'biolink:subclass_of'
+      # RTX terms tagged as inverse of 'biolink:subclass_of'
       - GO:inverse_isa
+      - MESH:inverse_isa
 
 #End of edge_label predicate slots
 
