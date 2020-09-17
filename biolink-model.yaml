@@ -4686,10 +4686,15 @@ classes:
   ## SEQUENCE FEATURES
   ## ------
 
+  sequence association:
+    is_a: association
+    description: >-
+      An association between a sequence feature and a genomic entity it is localized to.
+
   genomic sequence localization:
     is_a: sequence association
     description: >-
-      A relationship between a sequence feature and an genomic entity it is localized to. The reference entity may be
+      A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be
       a chromosome, chromosome region or information entity such as a contig
     slot_usage:
       subject:
