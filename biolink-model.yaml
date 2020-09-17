@@ -187,6 +187,10 @@ slots:
       - HMDB:has_protein_association
       - IAO:0000136
       - LOINC:has_answer
+      - LOINC:has_challenge
+      - LOINC:has_evaluation
+      - LOINC:mapped_to
+      - LOINC:mth_has_expanded_form
 
   interacts with:
     domain: named thing
@@ -1401,6 +1405,10 @@ slots:
       - FMA:surrounds
       - FMA:tributary_of
       - FMA:venous_drainage_of
+      # These LOINC: terms contributed by RTX were only tagged as 'biolink:has_attribute'
+      # but seem more aligned to the FMA entries in this biolink term, so I leave them here for now
+      - LOINC:has_lateral_anatomic_location
+      - LOINC:has_lateral_location_presence
 
   in pathway with:
     description: >-
@@ -1713,6 +1721,7 @@ slots:
       - SEMMEDDB:PROCESS_OF
       # Uberon term constrained to a 'site' as object concept
       - UBERON_CORE:site_of
+      - LOINC:has_imaged_location
 
   located in:
     is_a: related to
@@ -1750,6 +1759,7 @@ slots:
       - HMDB:at_cellular_location
       - HMDB:at_tissue
       - HMDB:in_biospecimen
+      - LOINC:has_imaging_focus
 
   location of:
     is_a: related to
@@ -1807,10 +1817,13 @@ slots:
       # RTX term originally mapped to 'biolink:coexists_with'?
       - FMA:has_constitutional_part
       - FMA:has_part
-      # The following RTX terms were originally mapped as inverses to 'biolink:part_of'?
+      # Some of following RTX terms were originally mapped as inverses to 'biolink:part_of'?
       - FMA:has_member
       - FOODON:00001563
       - FOODON:00002420
+      - LOINC:has_component
+      - LOINC:has_member
+      - MEDDRA:has_member
 
   part of:
     is_a: overlaps
@@ -1842,6 +1855,10 @@ slots:
       - FMA:regional_part_of
       - FMA:related_developmental_entity_of
       - LOINC:component_of
+      - LOINC:has_supersystem
+      - LOINC:member_of
+      - LOINC:multipart_of
+      - MEDDRA:member_of
 
   has participant:
     is_a: related to
@@ -1861,6 +1878,8 @@ slots:
       - RO:0000057
     narrow_mappings:
       - BFO:0000167
+      # RTX term tagged as inverse to 'biolink:participates_in'
+      - LOINC:has_subject
 
   has input:
     is_a: has participant
@@ -1872,6 +1891,9 @@ slots:
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
+    narrow_mappings:
+      - LOINC:has_fragments_for_synonyms
+      - LOINC:has_system
 
   has output:
     is_a: has participant
@@ -1898,6 +1920,7 @@ slots:
     narrow_mappings:
       - DRUGBANK:pathway
       - HMDB:in_pathway
+      - LOINC:is_given_pharmaceutical_substance_for
 
   actively involved in:
     is_a: participates in
@@ -2073,6 +2096,7 @@ slots:
     narrow_mappings:
       - CHEBI:is_enantiomer_of
       - CHEBI:is_tautomer_of
+      - MEDDRA:classified_as
 
   subclass of:
     is_a: related to
@@ -2088,8 +2112,10 @@ slots:
     close_mappings:
       # RTX proposed term is actually 'biolink:superclass_of' which is inverse of 'biolink:subclass_of' relationship
       - CHEMBL.MECHANISM:superset_of
-      # RTX mapped term, would this rather mean that a 'class A' class of an 'instance' of 'A'?
+      # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
+      # and a an 'instance B' has class 'class A' (inverse term)
       - LOINC:class_of
+      - LOINC:has_class
     exact_mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
@@ -2098,6 +2124,9 @@ slots:
       - GO:isa
     narrow_mappings:
       - CHEBI:has_parent_hydride
+      - LOINC:has_archetype
+      - LOINC:has_parent_group
+      - LOINC:is_presence_guidance_for
 
   directly interacts with:
     is_a: interacts with
@@ -2719,6 +2748,8 @@ slots:
       the process that results in the stressor coming into direct contact with the receptor
     mappings:
       - ExO:0000055
+    narrow_mappings:
+      - LOINC:has_pharmaceutical_route
 
   update date:
     is_a: node property
@@ -2771,6 +2802,8 @@ slots:
       number of things with a particular property
     is_a: aggregate statistic
     range: integer
+    exact_mappings:
+      - LOINC:has_count
 
   has total:
     description: >-
@@ -2807,8 +2840,10 @@ slots:
     description: >-
       A measurable quantity for the object of the association
     narrow_mappings:
-      # TODO: RTX contributed term mapped here... May need review?
+      # TODO: RTX contributed terms mapped here... May need review?
       - LOINC:analyzes
+      - LOINC:measured_by
+      - LOINC:property_of
 
   qualifiers:
     singular_name: qualifier
@@ -2945,13 +2980,23 @@ slots:
     narrow_mappings:
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
-      # RTX contributed terms. Perhaps review for better mappings?
+      # RTX contributed terms. Could perhaps review for more semantically precise mappings?
       - EFO:is_executed_in
       - HANCESTRO:0301
       - LOINC:has_action_guidance
       - LOINC:has_adjustment
       - LOINC:has_aggregation_view
       - LOINC:has_approach_guidance
+      - LOINC:has_divisor
+      - LOINC:has_exam
+      - LOINC:has_method
+      - LOINC:has_modality_subtype
+      - LOINC:has_object_guidance
+      - LOINC:has_scale
+      - LOINC:has_suffix
+      - LOINC:has_time_aspect
+      - LOINC:has_time_modifier
+      - LOINC:has_timing_of
 
   has attribute type:
     description: >-
@@ -2961,6 +3006,9 @@ slots:
     multivalued: false
     in_subset:
       - samples
+    narrow_mappings:
+      - LOINC:has_modality_type
+      - LOINC:has_view_type
 
   has qualitative value:
     description: >-
