@@ -194,6 +194,7 @@ slots:
       - MESH:RO
       - MESH:has_mapping_qualifier
       - MESH:mapped_to
+      - MONDO:disease_shares_features_of
 
   interacts with:
     domain: named thing
@@ -1522,8 +1523,10 @@ slots:
       - IDO:0000664
     exact_mappings:
       - RO:0002326
-      - CTD:marker_mechanism
       - GO:contributes_to
+    narrow_mappings:
+      - CTD:marker_mechanism
+      - MONDO:predisposes_towards
 
   causes:
     description: >-
@@ -1541,6 +1544,8 @@ slots:
     narrow_mappings:
       - MONDO:disease_triggers
       - GOREL:0000040
+      - MONDO:disease_causes_feature
+      - MONDO:disease_triggers
 
   caused by:
     description: >-
@@ -1660,6 +1665,8 @@ slots:
     inverse: treats
     exact_mappings:
       - WIKIDATA:P2176
+      # RTX contributed term tagged as inverse of 'biolink:treats'
+      - MONDO:disease_responds_to
     narrow_mappings:
       # "is treated by substance" constrains statements to a subset of the universe of all possible treatments
       - RO:0002302
@@ -1827,6 +1834,7 @@ slots:
       - LOINC:has_component
       - LOINC:has_member
       - MEDDRA:has_member
+      - MONDO:disease_has_major_feature
 
   part of:
     is_a: overlaps
@@ -1862,6 +1870,7 @@ slots:
       - LOINC:member_of
       - LOINC:multipart_of
       - MEDDRA:member_of
+      - MONDO:part_of_progression_of_disease
 
   has participant:
     is_a: related to
@@ -2083,6 +2092,7 @@ slots:
       #- SEMMEDDB:SAME_AS
       - WIKIDATA:P2888
       - CHEMBL.MECHANISM:equivalent_to
+      - MONDO:equivalentTo
     narrow_mappings:
       - DRUGBANK:external-identifier
 
