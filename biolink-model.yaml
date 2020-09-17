@@ -1507,6 +1507,7 @@ slots:
       # narrower: just diseases, not phenotypic features as well
       - NCIT:gene_associated_with_disease
       - NCIT:gene_involved_in_pathogenesis_of_disease
+      - NCIT:gene_product_malfunction_associated_with_disease
 
 
   condition associated with gene:
@@ -1696,6 +1697,8 @@ slots:
       - RO:0002607
     narrow_mappings:
       - NCIT:gene_product_is_biomarker_of
+      # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
+      - NCIT:genetic_biomarker_related_to
 
   treated by:
     is_a: related to
@@ -1996,6 +1999,7 @@ slots:
       - NCIT:gene_plays_role_in_process
       - NCIT:gene_product_is_element_in_pathway
       - NCIT:gene_product_is_physical_part_of
+      - NCIT:gene_product_plays_role_in_biological_process
 
   actively involved in:
     is_a: participates in
@@ -2217,6 +2221,8 @@ slots:
       - # RTX mapped terms classes for biomarkers
       - NCIT:gene_is_biomarker_type
       - NCIT:gene_product_is_biomarker_type
+      - NCIT:has_inc_parent
+      - NCIT:has_nichd_parent
 
   directly interacts with:
     is_a: interacts with
@@ -2268,9 +2274,13 @@ slots:
 
   is sequence variant of:
     is_a: related to
-    description: holds between a genomic entity and a sequence variant.
+    description: holds between a sequence variant and a genomic entity
     domain: sequence variant
     range: genomic entity
+  narrow_mappings:
+    # RTX contributed term mappings tagged elsewhere but mapped better here
+    - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
+    - NCIT:gene_product_variant_of_gene_product
 
   has variant part:
     is_a: is sequence variant of
@@ -3103,6 +3113,13 @@ slots:
       - NCIT:disease_is_grade
       - NCIT:disease_is_stage
       - NCIT:eo_disease_has_property_or_attribute
+      - NCIT:has_data_element
+      - NCIT:has_pharmaceutical_administration_method
+      - NCIT:has_pharmaceutical_basic_dose_form
+      - NCIT:has_pharmaceutical_intended_site
+      - NCIT:has_pharmaceutical_release_characteristics
+      - NCIT:has_pharmaceutical_state_of_matter
+      - NCIT:has_pharmaceutical_transformation
 
   has attribute type:
     description: >-
