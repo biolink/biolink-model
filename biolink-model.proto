@@ -709,22 +709,23 @@ message GenomicEntity
   repeated inTaxon OrganismTaxon = 4
   optional hasBiologicalSequence BiologicalSequence = 5
  }
-// A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+// A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
 message GenomicSequenceLocalization
  {
-  relation Uriorcurie = 1
-  id String = 2
-  optional negated Boolean = 3
-  optional associationType OntologyClass = 4
-  repeated qualifiers OntologyClass = 5
-  repeated publications Publication = 6
-  repeated providedBy Provider = 7
-  optional startInterbaseCoordinate String = 8
-  optional endInterbaseCoordinate String = 9
-  optional genomeBuild String = 10
+  id String = 1
+  optional negated Boolean = 2
+  optional associationType OntologyClass = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Provider = 6
+  optional startInterbaseCoordinate Integer = 7
+  optional endInterbaseCoordinate Integer = 8
+  optional genomeBuild String = 9
+  optional strand String = 10
   optional phase String = 11
   subject GenomicEntity = 12
   object GenomicEntity = 13
+  relation Uriorcurie = 14
  }
 // An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
 message Genotype
@@ -1245,6 +1246,19 @@ message RNAProductIsoform
   repeated inTaxon OrganismTaxon = 3
   optional hasBiologicalSequence BiologicalSequence = 4
   name SymbolType = 5
+ }
+// An association between a sequence feature and a genomic entity it is localized to.
+message SequenceAssociation
+ {
+  subject NamedThing = 1
+  relation Uriorcurie = 2
+  object NamedThing = 3
+  id String = 4
+  optional negated Boolean = 5
+  optional associationType OntologyClass = 6
+  repeated qualifiers OntologyClass = 7
+  repeated publications Publication = 8
+  repeated providedBy Provider = 9
  }
 // For example, a particular exon is part of a particular transcript or gene
 message SequenceFeatureRelationship

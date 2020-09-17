@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-08-14 21:37\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-09-17 20:57\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"
@@ -334,6 +334,9 @@
       "enables": {
          "@type": "@id"
       },
+      "end_interbase_coordinate": {
+         "@type": "xsd:integer"
+      },
       "expressed_in": {
          "@type": "@id"
       },
@@ -427,6 +430,9 @@
       "has_receptor": {
          "@type": "@id"
       },
+      "has_sequence_location": {
+         "@type": "@id"
+      },
       "has_total": {
          "@type": "xsd:integer"
       },
@@ -507,6 +513,9 @@
       },
       "interacts_with": {
          "@type": "@id"
+      },
+      "interbase_coordinate": {
+         "@type": "xsd:integer"
       },
       "iri": {
          "@type": "@id"
@@ -670,6 +679,9 @@
       },
       "stage_qualifier": {
          "@type": "@id"
+      },
+      "start_interbase_coordinate": {
+         "@type": "xsd:integer"
       },
       "subclass_of": {
          "@type": "@id",

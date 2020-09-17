@@ -153,12 +153,12 @@ metatype:Nodeidentifier NONLITERAL
     @<DiseaseToPhenotypicFeatureAssociation> OR @<DiseaseToThingAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneRegulatoryRelationship> OR
     @<GeneToDiseaseAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR
-    @<GeneToPhenotypicFeatureAssociation> OR @<GeneToThingAssociation> OR @<GenomicSequenceLocalization> OR
-    @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR
-    @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToThingAssociation> OR @<GenotypeToVariantAssociation> OR
-    @<MaterialSampleDerivationAssociation> OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<MaterialSampleToThingAssociation> OR @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PairwiseInteractionAssociation> OR
-    @<PopulationToPopulationAssociation> OR @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR
+    @<GeneToPhenotypicFeatureAssociation> OR @<GeneToThingAssociation> OR @<GenotypeToDiseaseAssociation> OR
+    @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR
+    @<GenotypeToThingAssociation> OR @<GenotypeToVariantAssociation> OR @<MaterialSampleDerivationAssociation> OR
+    @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MaterialSampleToThingAssociation> OR
+    @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PairwiseInteractionAssociation> OR @<PopulationToPopulationAssociation> OR
+    @<SequenceAssociation> OR @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR
     @<ThingToDiseaseOrPhenotypicFeatureAssociation> OR @<VariantToDiseaseAssociation> OR @<VariantToPhenotypicFeatureAssociation>
     OR @<VariantToPopulationAssociation> OR @<VariantToThingAssociation>
 )
@@ -1009,14 +1009,16 @@ metatype:Nodeidentifier NONLITERAL
 )
 
 <GenomicSequenceLocalization> CLOSED {
-    (  $<GenomicSequenceLocalization_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ? ;
-          <start_interbase_coordinate> @metatype:String ? ;
-          <end_interbase_coordinate> @metatype:String ? ;
+    (  $<GenomicSequenceLocalization_tes> (  &<SequenceAssociation_tes> ;
+          rdf:type [ <SequenceAssociation> ] ? ;
+          <start_interbase_coordinate> @metatype:Integer ? ;
+          <end_interbase_coordinate> @metatype:Integer ? ;
           <genome_build> @metatype:String ? ;
+          <strand> @metatype:String ? ;
           <phase> @metatype:String ? ;
           <subject> @<GenomicEntity> ;
-          <object> @<GenomicEntity>
+          <object> @<GenomicEntity> ;
+          <relation> @metatype:Uriorcurie
        ) ;
        rdf:type [ <GenomicSequenceLocalization> ]
     )
@@ -1659,6 +1661,16 @@ metatype:Nodeidentifier NONLITERAL
        rdf:type [ <SensitivityQuantifier> ] ?
     )
 }
+
+<SequenceAssociation>  (
+    CLOSED {
+       (  $<SequenceAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ?
+          ) ;
+          rdf:type [ <SequenceAssociation> ]
+       )
+    } OR @<GenomicSequenceLocalization>
+)
 
 <SequenceFeatureRelationship>  (
     CLOSED {

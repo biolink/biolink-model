@@ -1361,7 +1361,7 @@ slots:
       - UBERON_CORE:in_outermost_side_of
       - NCIT:R100
       - EFO:0000784
-
+      
   location of:
     is_a: related to
     description: >-
@@ -1373,6 +1373,15 @@ slots:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
       - WIKIDATA:276
+
+  has sequence location:
+    is_a: related to
+    description: >-
+      holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
+    domain: genomic entity
+    range: genomic entity
+    mappings:
+      - faldo:location
 
   model of:
     is_a: related to
@@ -1639,6 +1648,7 @@ slots:
        is located in.
     mappings:
       - GTEx:affects_expression_in
+
 
   #Predicates relating variants to genes
 
@@ -2339,26 +2349,46 @@ slots:
     description: >-
       The value in a property-value tuple
 
-  phase:
-    is_a: node property
+  sequence localization attribute:
+    is_a: association slot
+    domain: genomic sequence localization
     description: >-
-      TODO
-
-  genome build:
-    is_a: node property
-    description: >-
-      TODO
+      An attribute that can be applied to a genome sequence localization edge. These edges
+      connect a genomic entity such as an exon to an entity such as a chromosome. Edge properties are used
+      to ascribe specific positional information and other metadata to the localization. In pragmatic terms
+      this can be thought of as columns in a GFF3 line.
 
   interbase coordinate:
-    is_a: node property
+    is_a: sequence localization attribute
     description: >-
-      TODO
+      A position in interbase coordinates. This is applied to a sequence localization edge.
+    range: integer
 
   start interbase coordinate:
     is_a: interbase coordinate
+    description: >-
+      The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
 
   end interbase coordinate:
     is_a: interbase coordinate
+    description: >-
+      The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
+
+  genome build:
+    is_a: sequence localization attribute
+    description: >-
+      The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
+
+  strand:
+    is_a: sequence localization attribute
+    description: >-
+      The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+
+  phase:
+    is_a: sequence localization attribute
+    domain: coding sequence
+    description: >-
+      The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
 
   has attribute:
     description: >-
@@ -4656,10 +4686,15 @@ classes:
   ## SEQUENCE FEATURES
   ## ------
 
-  genomic sequence localization:
+  sequence association:
     is_a: association
     description: >-
-      A relationship between a sequence feature and an entity it is localized to. The reference entity may be
+      An association between a sequence feature and a genomic entity it is localized to.
+
+  genomic sequence localization:
+    is_a: sequence association
+    description: >-
+      A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be
       a chromosome, chromosome region or information entity such as a contig
     slot_usage:
       subject:
@@ -4667,14 +4702,15 @@ classes:
         range: genomic entity  ## todo protein
       object:
         aliases: ['reference']
-        range: genomic entity ## typically a chromosomel use monochrom
+        range: genomic entity ## typically a chromosome use monochrom
+      relation:
+        subproperty_of: has sequence location
     slots:
       - start interbase coordinate
       - end interbase coordinate
       - genome build
+      - strand
       - phase
-    mappings:
-      - faldo:location
 
   sequence feature relationship:
     is_a: association
