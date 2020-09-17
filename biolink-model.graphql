@@ -919,19 +919,20 @@ type GenomicEntity
 
 type GenomicSequenceLocalization
   {
-    relation: Uriorcurie!
     id: String!
     negated: Boolean
     associationType: OntologyClass
     qualifiers: [OntologyClass]
     publications: [Publication]
     providedBy: [Provider]
-    startInterbaseCoordinate: String
-    endInterbaseCoordinate: String
+    startInterbaseCoordinate: Integer
+    endInterbaseCoordinate: Integer
     genomeBuild: String
+    strand: String
     phase: String
     subject: GenomicEntity!
     object: GenomicEntity!
+    relation: Uriorcurie!
   }
 
 type Genotype
@@ -1535,6 +1536,19 @@ type RNAProductIsoform implements GeneProductIsoform
 
 interface SensitivityQuantifier
   {
+  }
+
+type SequenceAssociation
+  {
+    subject: NamedThing!
+    relation: Uriorcurie!
+    object: NamedThing!
+    id: String!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: [Provider]
   }
 
 type SequenceFeatureRelationship
