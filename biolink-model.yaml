@@ -195,6 +195,7 @@ slots:
       - MESH:has_mapping_qualifier
       - MESH:mapped_to
       - MONDO:disease_shares_features_of
+      - NCIT:disease_may_have_associated_disease
 
   interacts with:
     domain: named thing
@@ -275,6 +276,20 @@ slots:
       - UPHENO:0000001
       - GO:acts_upstream_of
       - GO:acts_upstream_of_or_within
+      - CIT:allele_plays_altered_role_in_process
+      - NCIT:allele_plays_role_in_metabolism_of_chemical_or_drug
+      - NCIT:biological_process_has_associated_location
+      - NCIT:chemical_or_drug_affects_abnormal_cell
+      - NCIT:chemical_or_drug_affects_cell_type_or_tissue
+      - NCIT:chemical_or_drug_affects_gene_product
+      - NCIT:chemical_or_drug_has_mechanism_of_action
+      - NCIT:cytogenetic_abnormality_involves_chromosome
+      - NCIT:disease_has_associated_anatomic_site
+      - NCIT:disease_has_metastatic_anatomic_site
+      - NCIT:disease_has_primary_anatomic_site
+      - NCIT:disease_may_have_abnormal_cell
+      - NCIT:eo_disease_has_associated_cell_type
+      - NCIT:eo_disease_has_associated_eo_anatomy
 
   affects abundance of:
     description: >-
@@ -541,6 +556,8 @@ slots:
     range: molecular entity
     exact_mappings:
       - CTD:increases_metabolic_processing_of
+    narrow_mappings:
+      - NCIT:enzyme_metabolizes_chemical_or_drug
 
   decreases metabolic processing of:
     description: >-
@@ -1210,6 +1227,7 @@ slots:
     exact_mappings:
       - RO:0002205
       - WIKIDATA:P688
+      - NCIT:gene_encodes_gene_product
 
   homologous to:
     is_a: related to
@@ -1481,6 +1499,9 @@ slots:
     broad_mappings:
       # genotype likely pathogenic for condition
       - GENO:0000841
+    narrow_mappings:
+      # narrower: just diseases, not phenotypic features as well
+      - NCIT:gene_associated_with_disease
 
 
   condition associated with gene:
@@ -1546,6 +1567,13 @@ slots:
       - GOREL:0000040
       - MONDO:disease_causes_feature
       - MONDO:disease_triggers
+      - NCIT:allele_has_abnormality
+      - NCIT:biological_process_has_result_biological_process
+      - NCIT:chemical_or_drug_has_physiologic_effect
+      - # RTX mapped term as 'biolink:part_of' but implied sequence of causality suggests 'biolink:causes'?
+      - NCIT:chemical_or_drug_initiates_biological_process
+      - NCIT:chromosome_mapped_to_disease
+      - NCIT:disease_has_normal_tissue_origin
 
   caused by:
     description: >-
@@ -1641,6 +1669,11 @@ slots:
     in_subset:
       - translator_minimal
     inverse: biomarker for
+    narrow_mappings:
+      # some RTX terms contributed as inverses of 'biolink:biomarker_for'
+      - NCIT:disease_has_finding
+      - NCIT:disease_has_molecular_abnormality
+      - NCIT:disease_is_marked_by_gene
 
   biomarker for:
     is_a: correlated with
@@ -1709,8 +1742,11 @@ slots:
     exact_mappings:
       - RO:0002200
     broad_mappings:
-      # Disease–presents–Symptom
+      # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
       - hetio:PRESENTS_DpS
+      - NCIT:disease_may_have_finding
+    narrow_mappings:
+      - NCIT:disease_may_have_molecular_abnormality
 
   occurs in:
     is_a: related to
@@ -1770,6 +1806,8 @@ slots:
       - HMDB:at_tissue
       - HMDB:in_biospecimen
       - LOINC:has_imaging_focus
+      - NCIT:allele_absent_from_wild-type_chromosomal_location
+      - NCIT:allele_in_chromosomal_location
 
   location of:
     is_a: related to
@@ -1835,6 +1873,7 @@ slots:
       - LOINC:has_member
       - MEDDRA:has_member
       - MONDO:disease_has_major_feature
+      - NCIT:complex_has_physical_part
 
   part of:
     is_a: overlaps
@@ -1871,6 +1910,8 @@ slots:
       - LOINC:multipart_of
       - MEDDRA:member_of
       - MONDO:part_of_progression_of_disease
+      - NCIT:anatomic_structure_is_physical_part_of
+      - NCIT:conceptual_part_of
 
   has participant:
     is_a: related to
@@ -1916,6 +1957,8 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002234
+    narrow_mappings:
+      - NCIT:biological_process_has_result_anatomy
 
   participates in:
     is_a: related to
@@ -1941,6 +1984,9 @@ slots:
     range: occurrent
     in_subset:
       - translator_minimal
+    close_mappings:
+      # RTX term tagged as inverse
+      - NCIT:biological_process_involves_chemical_or_drug
     exact_mappings:
       - RO:0002331
       - GO:is_active_in
@@ -2033,6 +2079,8 @@ slots:
       - RO:0003000
       - WIKIDATA:P1056
       - SEMMEDDB:PRODUCES
+    narrow_mappings:
+      - NCIT:biological_process_has_result_chemical_or_drug
 
   precedes:
     is_a: related to
@@ -2413,8 +2461,13 @@ slots:
       # RTX terms tagged as inverse of 'biolink:subclass_of'
       - GO:inverse_isa
       - MESH:inverse_isa
+    narrow_mappings:
+      # RTX terms tagged as inverse of 'biolink:subclass_of'
+      - NCIT:cdrh_parent_of
+      - NCIT:ctcae_5_parent_of
 
-#End of edge_label predicate slots
+
+  #End of edge_label predicate slots
 
 ## property slots
 
@@ -2780,9 +2833,13 @@ slots:
       connects a thing to a class representing a taxon
     in_subset:
       - translator_minimal
-    mappings:
+    related_mappings:
+      # RO term 'never in taxon' is a negation of this biolink term
       - RO:0002162
+    exact_mappings:
       - WIKIDATA:P703
+    narrow_mappings:
+      - NCIT:gene_found_in_organism
 
   latitude:
     is_a: node property
@@ -2935,6 +2992,8 @@ slots:
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
     range: ontology class
+    narrow_mappings:
+      - NCIT:allele_has_activity
 
   has drug:
     is_a: node property
@@ -3012,6 +3071,9 @@ slots:
       - LOINC:has_time_aspect
       - LOINC:has_time_modifier
       - LOINC:has_timing_of
+      - NCIT:disease_is_grade
+      - NCIT:disease_is_stage
+      - NCIT:eo_disease_has_property_or_attribute
 
   has attribute type:
     description: >-
