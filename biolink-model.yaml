@@ -1773,12 +1773,16 @@ slots:
       - check the range
     in_subset:
       - translator_minimal
+    close_mappings:
+      # RTX contributed term tagged as 'inverse' 
+      - OMIM:phenotype_of
     exact_mappings:
       - RO:0002200
     broad_mappings:
       # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
       - hetio:PRESENTS_DpS
       - NCIT:disease_may_have_finding
+      - OMIM:has_phenotype
     narrow_mappings:
       - NCIT:disease_may_have_molecular_abnormality
       - OBO:doid#has_symptom
@@ -2168,6 +2172,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:MANIFESTATION_OF
+      - OMIM:manifestation_of
     broad_mappings:
       # Wikidata definition slightly broader: "inherent and characteristic embodiment of a given concept"
       - WIKIDATA:P1557
@@ -2364,6 +2369,7 @@ slots:
     # RTX contributed term mappings tagged elsewhere but mapped better here
     - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
     - NCIT:gene_product_variant_of_gene_product
+    - OMIM:allelic_variant_of
 
   has variant part:
     is_a: is sequence variant of
@@ -2587,6 +2593,7 @@ slots:
       - NCIT:cdrh_parent_of
       - NCIT:ctcae_5_parent_of
       - NCIT:subset_includes_concept
+      - OMIM:has_manifestation
 
   #End of edge_label predicate slots
 
@@ -3236,6 +3243,7 @@ slots:
       - NCIT:role_has_range
       - OBO:INO_0000154
       - OBO:hancestro_0308
+      - OMIM:has_inheritance_type
 
   has attribute type:
     description: >-
