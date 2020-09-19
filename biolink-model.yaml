@@ -1594,6 +1594,11 @@ slots:
       - NCIT:chromosome_mapped_to_disease
       - NCIT:disease_has_normal_tissue_origin
       - OBO:nbo#in_response_to
+      - ORPHANET:317343
+      - ORPHANET:317344
+      - ORPHANET:317346
+      - ORPHANET:410295
+      - ORPHANET:410296
 
   caused by:
     description: >-
@@ -1659,6 +1664,7 @@ slots:
       - NCIT:is_associated_disease_of
       # RTX term deemed inverse of this biolink term?
       - NCIT:is_cytogenetic_abnormality_of_disease
+      - ORPHANET:317345
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -1718,6 +1724,7 @@ slots:
       # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
+      - ORPHANET:465410
 
   treated by:
     is_a: related to
@@ -1774,7 +1781,7 @@ slots:
     in_subset:
       - translator_minimal
     close_mappings:
-      # RTX contributed term tagged as 'inverse' 
+      # RTX contributed term tagged as 'inverse'
       - OMIM:phenotype_of
     exact_mappings:
       - RO:0002200
@@ -2096,6 +2103,9 @@ slots:
       # RTX contribute mapping, may belong somewhere else?
       - NCIT:gene_involved_in_molecular_abnormality
       - OBO:nbo#by_means
+      - ORPHANET:317348
+      - ORPHANET:317349
+      - ORPHANET:327767
 
   capable of:
     is_a: actively involved in
@@ -3244,6 +3254,8 @@ slots:
       - OBO:INO_0000154
       - OBO:hancestro_0308
       - OMIM:has_inheritance_type
+      - ORPHANET:C016
+      - ORPHANET:C017
 
   has attribute type:
     description: >-
