@@ -199,6 +199,12 @@ slots:
       - NCIT:human_disease_maps_to_eo_disease
       - NCIT:is_abnormal_cell_of_disease
       - NCIT:is_related_to_endogenous_product
+      - OBO:core#connected_to
+      - OBO:core#innervated_by
+      - OBO:envo#has_increased_levels_of
+      - OBO:has_role
+      - OBO:nbo#is_about
+      - OBOREL:bearer_of
 
   interacts with:
     domain: named thing
@@ -1439,6 +1445,8 @@ slots:
       # but seem more aligned to the FMA entries in this biolink term, so I leave them here for now
       - LOINC:has_lateral_anatomic_location
       - LOINC:has_lateral_location_presence
+      - OBO:core#distally_connected_to
+      - OBO:core#subdivision_of
 
   in pathway with:
     description: >-
@@ -1585,6 +1593,7 @@ slots:
       - NCIT:process_initiates_biological_process
       - NCIT:chromosome_mapped_to_disease
       - NCIT:disease_has_normal_tissue_origin
+      - OBO:nbo#in_response_to
 
   caused by:
     description: >-
@@ -1772,6 +1781,7 @@ slots:
       - NCIT:disease_may_have_finding
     narrow_mappings:
       - NCIT:disease_may_have_molecular_abnormality
+      - OBO:doid#has_symptom
 
   occurs in:
     is_a: related to
@@ -2060,6 +2070,7 @@ slots:
       - LOINC:has_subject
       - NCIT:pathway_has_gene_element
       - NCIT:process_involves_gene
+      - OBO:nbo#has_participant
       # RTX mapped the following term as 'biolink:superclass_of' but term seem compositional in nature
       - NCIT:process_includes_biological_process
       - OBI:0000293
@@ -2080,6 +2091,7 @@ slots:
     narrow_mappings:
       # RTX contribute mapping, may belong somewhere else?
       - NCIT:gene_involved_in_molecular_abnormality
+      - OBO:nbo#by_means
 
   capable of:
     is_a: actively involved in
@@ -2143,9 +2155,9 @@ slots:
     exact_mappings:
       - RO:0001000
       - FMA:derives_from
+      - OBO:doid#derives_from
     narrow_mappings:
       - CHEBI:has_functional_parent
-
 
   manifestation of:
     is_a: related to
@@ -2251,6 +2263,7 @@ slots:
       - CHEBI:is_enantiomer_of
       - CHEBI:is_tautomer_of
       - MEDDRA:classified_as
+      - OBO:xref
 
   subclass of:
     is_a: related to
@@ -2291,6 +2304,7 @@ slots:
       - NCIT:neoplasm_has_special_category
       - NCIT:role_has_parent
       - NDDF:has_dose_form
+      - OBO:intersection_of
 
   directly interacts with:
     is_a: interacts with
@@ -3220,6 +3234,8 @@ slots:
       - NCIT:qualifier_applies_to
       - NCIT:role_has_domain
       - NCIT:role_has_range
+      - OBO:INO_0000154
+      - OBO:hancestro_0308
 
   has attribute type:
     description: >-
@@ -3272,8 +3288,9 @@ slots:
     range: unit
     multivalued: false
     close_mappings:
-      # This term means "is unit of" which is the semantic inverse of this biolink:has_unit term
+      # These RTX contributed terms mean "is unit of" which is the semantic inverse of this biolink:has_unit term
       - EFO:0001697
+      - OBO:uo#is_unit_of
     exact_mappings:
       - qud:unit
       - IAO:0000039
