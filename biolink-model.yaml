@@ -247,6 +247,7 @@ slots:
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
       - NCIT:has_target
+      - PR:non-covalently_bound_to
 
   molecularly interacts with:
     is_a: physically interacts with
@@ -1241,6 +1242,9 @@ slots:
     range: gene product
     in_subset:
       - translator_minimal
+    close_mappings:
+      # RTX term tagged as inverse mapping
+      - PR:has_gene_template
     exact_mappings:
       - RO:0002205
       - WIKIDATA:P688
@@ -1671,6 +1675,7 @@ slots:
       # RTX term deemed inverse of this biolink term?
       - NCIT:is_cytogenetic_abnormality_of_disease
       - ORPHANET:317345
+      - PDQ:associated_disease
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -1812,6 +1817,7 @@ slots:
     exact_mappings:
       - BFO:0000066
       - GO:occurs_in
+      - PathWhiz:has_location
     narrow_mappings:
       # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
       - SEMMEDDB:OCCURS_IN
@@ -1820,6 +1826,7 @@ slots:
       # Uberon term constrained to a 'site' as object concept
       - UBERON_CORE:site_of
       - LOINC:has_imaged_location
+      - PathWhiz:in_species
 
   located in:
     is_a: related to
@@ -1962,7 +1969,7 @@ slots:
       # RTX term originally mapped to 'biolink:coexists_with'?
       - FMA:has_constitutional_part
       - FMA:has_part
-      # Some of following RTX terms were originally mapped as inverses to 'biolink:part_of'?
+      # Several of the following RTX terms were originally mapped as inverses to 'biolink:part_of'?
       - FMA:has_member
       - FOODON:00001563
       - FOODON:00002420
@@ -1972,8 +1979,11 @@ slots:
       - MONDO:disease_has_major_feature
       - NCIT:complex_has_physical_part
       - NDDF:has_ingredient
+      - PathWhiz:has_element_in_bound
       # This RTX contributed term was tagged as 'biolink:has_gene_product' but seems more compositional in nature
       - NCIT:gene_product_has_structural_domain_or_motif
+      - PDQ:has_component
+      - PathWhiz:has_protein_in_complex
 
   part of:
     is_a: overlaps
@@ -2014,6 +2024,7 @@ slots:
       - NCIT:conceptual_part_of
       - NCIT:is_component_of_chemotherapy_regimen
       - NDDF:ingredient_of
+      - PDQ:component_of
 
   has input:
     is_a: has participant
@@ -2028,6 +2039,7 @@ slots:
     narrow_mappings:
       - LOINC:has_fragments_for_synonyms
       - LOINC:has_system
+      - PathWhiz:has_left_element
 
   has output:
     is_a: has participant
@@ -2041,6 +2053,41 @@ slots:
     narrow_mappings:
       - NCIT:biological_process_has_result_anatomy
       - OBI:0000299
+      - PathWhiz:has_right_element
+
+  has participant:
+    is_a: related to
+    description: >-
+      holds between a process and a continuant, where the continuant is somehow involved in the process
+    domain: occurrent
+    in_subset:
+      - translator_minimal
+    inverse: participates in
+    #mappings:
+    # Not sure about these here
+    #  - GOREL:0001007
+    #  - GOREL:0002008
+    close_mappings:
+      - WIKIDATA:P2283
+    exact_mappings:
+      - RO:0000057
+    narrow_mappings:
+      - BFO:0000167
+      # Several of the following RTX terms tagged as inverse to 'biolink:participates_in'
+      - LOINC:has_subject
+      - NCIT:pathway_has_gene_element
+      - NCIT:process_involves_gene
+      - OBO:nbo#has_participant
+      - PathWhiz:has_bound
+      - PathWhiz:has_compound
+      - PathWhiz:has_element_collection
+      - PathWhiz:has_enzyme
+      # RTX mapped the following term as 'biolink:superclass_of' but term seem compositional in nature
+      - NCIT:process_includes_biological_process
+      - OBI:0000293
+      - PathWhiz:has_nucleic_acid
+      - PathWhiz:has_protein
+      - PathWhiz:has_reaction
 
   participates in:
     is_a: related to
@@ -2064,33 +2111,6 @@ slots:
       - NCIT:gene_product_is_physical_part_of
       - NCIT:gene_product_plays_role_in_biological_process
       - OBI:0000295
-
-  has participant:
-    is_a: related to
-    description: >-
-      holds between a process and a continuant, where the continuant is somehow involved in the process
-    domain: occurrent
-    in_subset:
-      - translator_minimal
-    inverse: participates in
-    #mappings:
-    # Not sure about these here
-    #  - GOREL:0001007
-    #  - GOREL:0002008
-    close_mappings:
-      - WIKIDATA:P2283
-    exact_mappings:
-      - RO:0000057
-    narrow_mappings:
-      - BFO:0000167
-      # RTX terms tagged as inverse to 'biolink:participates_in'
-      - LOINC:has_subject
-      - NCIT:pathway_has_gene_element
-      - NCIT:process_involves_gene
-      - OBO:nbo#has_participant
-      # RTX mapped the following term as 'biolink:superclass_of' but term seem compositional in nature
-      - NCIT:process_includes_biological_process
-      - OBI:0000293
 
   actively involved in:
     is_a: participates in
@@ -2580,6 +2600,7 @@ slots:
     is_a: related to
     exact_mappings:
       - CL:lacks_part
+      - PR:lacks_part
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
 
