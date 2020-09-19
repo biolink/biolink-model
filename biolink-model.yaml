@@ -1944,6 +1944,7 @@ slots:
       - MEDDRA:has_member
       - MONDO:disease_has_major_feature
       - NCIT:complex_has_physical_part
+      - NDDF:has_ingredient
       # This RTX contributed term was tagged as 'biolink:has_gene_product' but seems more compositional in nature
       - NCIT:gene_product_has_structural_domain_or_motif
 
@@ -1985,32 +1986,7 @@ slots:
       - NCIT:anatomic_structure_is_physical_part_of
       - NCIT:conceptual_part_of
       - NCIT:is_component_of_chemotherapy_regimen
-
-  has participant:
-    is_a: related to
-    description: >-
-      holds between a process and a continuant, where the continuant is somehow involved in the process
-    domain: occurrent
-    in_subset:
-      - translator_minimal
-    inverse: participates in
-    #mappings:
-    # Not sure about these here
-    #  - GOREL:0001007
-    #  - GOREL:0002008
-    close_mappings:
-      - WIKIDATA:P2283
-    exact_mappings:
-      - RO:0000057
-    narrow_mappings:
-      - BFO:0000167
-      # RTX terms tagged as inverse to 'biolink:participates_in'
-      - LOINC:has_subject
-      - NCIT:pathway_has_gene_element
-      - NCIT:process_involves_gene
-      # RTX mapped the following term as 'biolink:superclass_of' but term seem compositional in nature
-      - NCIT:process_includes_biological_process
-
+      - NDDF:ingredient_of
 
   has input:
     is_a: has participant
@@ -2037,6 +2013,7 @@ slots:
       - RO:0002234
     narrow_mappings:
       - NCIT:biological_process_has_result_anatomy
+      - OBI:0000299
 
   participates in:
     is_a: related to
@@ -2059,6 +2036,33 @@ slots:
       - NCIT:gene_product_is_element_in_pathway
       - NCIT:gene_product_is_physical_part_of
       - NCIT:gene_product_plays_role_in_biological_process
+      - OBI:0000295
+
+  has participant:
+    is_a: related to
+    description: >-
+      holds between a process and a continuant, where the continuant is somehow involved in the process
+    domain: occurrent
+    in_subset:
+      - translator_minimal
+    inverse: participates in
+    #mappings:
+    # Not sure about these here
+    #  - GOREL:0001007
+    #  - GOREL:0002008
+    close_mappings:
+      - WIKIDATA:P2283
+    exact_mappings:
+      - RO:0000057
+    narrow_mappings:
+      - BFO:0000167
+      # RTX terms tagged as inverse to 'biolink:participates_in'
+      - LOINC:has_subject
+      - NCIT:pathway_has_gene_element
+      - NCIT:process_involves_gene
+      # RTX mapped the following term as 'biolink:superclass_of' but term seem compositional in nature
+      - NCIT:process_includes_biological_process
+      - OBI:0000293
 
   actively involved in:
     is_a: participates in
@@ -2286,6 +2290,7 @@ slots:
       - NCIT:has_nichd_parent
       - NCIT:neoplasm_has_special_category
       - NCIT:role_has_parent
+      - NDDF:has_dose_form
 
   directly interacts with:
     is_a: interacts with
@@ -3178,6 +3183,9 @@ slots:
     multivalued: true
     in_subset:
       - samples
+    close_mappings:
+      # RTX term meaning 'specifies value of' tagged as inverse of 'biolink:has attribute'
+      - OBI:0001927
     narrow_mappings:
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
