@@ -205,6 +205,11 @@ slots:
       - OBO:has_role
       - OBO:nbo#is_about
       - OBOREL:bearer_of
+      - PATO:decreased_in_magnitude_relative_to
+      - PATO:has_cross_section
+      - PATO:has_relative_magnitude
+      - PATO:increased_in_magnitude_relative_to
+      - PATO:reciprocal_of
 
   interacts with:
     domain: named thing
@@ -1658,6 +1663,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002610
+      - PATO:correlates_with
     narrow_mappings:
       # RTX contributed term: note that association is not always correlation?
       - LOINC:associated_with
@@ -2106,6 +2112,7 @@ slots:
       - ORPHANET:317348
       - ORPHANET:317349
       - ORPHANET:327767
+      - PATO:towards
 
   capable of:
     is_a: actively involved in
