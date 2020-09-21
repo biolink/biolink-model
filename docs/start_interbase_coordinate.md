@@ -8,13 +8,13 @@ layout: default
 # Type: start_interbase_coordinate
 
 
-
+The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
 
 URI: [biolink:start_interbase_coordinate](https://w3id.org/biolink/vocab/start_interbase_coordinate)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 

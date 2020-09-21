@@ -98,6 +98,7 @@ URI: [biolink:GenotypeAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
  * [genotype to disease association➞object](genotype_to_disease_association_object.md)  <sub>REQ</sub>
     * Description: a disease that is associated with that genotype
     * range: [NamedThing](NamedThing.md)
+    * Example:    
 
 ### Domain for slot:
 

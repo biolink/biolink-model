@@ -66,7 +66,6 @@ UMLSST:inpr
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | reference |
 | **Mappings:** | | IAO:0000311 |
 |  | | IAO:0000013 |
 |  | | UMLSSC:T170 |

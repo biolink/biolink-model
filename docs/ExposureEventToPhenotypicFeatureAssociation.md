@@ -90,6 +90,9 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
  * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
     * Description: phenotypic class
     * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * Example:    
+    * Example:    
+    * Example:    
 
 ### Inherited from frequency qualifier mixin:
 

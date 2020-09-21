@@ -44,6 +44,7 @@ URI: [biolink:GenotypeToDiseaseAssociation](https://w3id.org/biolink/vocab/Genot
  * [genotype to disease association➞object](genotype_to_disease_association_object.md)  <sub>REQ</sub>
     * Description: a disease that is associated with that genotype
     * range: [NamedThing](NamedThing.md)
+    * Example:    
  * [genotype to disease association➞relation](genotype_to_disease_association_relation.md)  <sub>REQ</sub>
     * Description: E.g. is pathogenic for
     * range: [Uriorcurie](types/Uriorcurie.md)
@@ -102,6 +103,7 @@ URI: [biolink:GenotypeToDiseaseAssociation](https://w3id.org/biolink/vocab/Genot
  * [genotype to disease association➞object](genotype_to_disease_association_object.md)  <sub>REQ</sub>
     * Description: a disease that is associated with that genotype
     * range: [NamedThing](NamedThing.md)
+    * Example:    
  * [genotype to disease association➞relation](genotype_to_disease_association_relation.md)  <sub>REQ</sub>
     * Description: E.g. is pathogenic for
     * range: [Uriorcurie](types/Uriorcurie.md)

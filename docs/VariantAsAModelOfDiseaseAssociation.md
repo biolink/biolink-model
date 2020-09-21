@@ -92,12 +92,14 @@ URI: [biolink:VariantAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voca
  * [variant to disease association➞subject](variant_to_disease_association_subject.md)  <sub>REQ</sub>
     * Description: a sequence variant in which the allele state is associated in some way with the disease state
     * range: [NamedThing](NamedThing.md)
+    * Example:    
  * [variant to disease association➞relation](variant_to_disease_association_relation.md)  <sub>REQ</sub>
     * Description: E.g. is pathogenic for
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [variant to disease association➞object](variant_to_disease_association_object.md)  <sub>REQ</sub>
     * Description: a disease that is associated with that variant
     * range: [NamedThing](NamedThing.md)
+    * Example:    
 
 ### Domain for slot:
 

@@ -35,6 +35,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https:
  * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md)  <sub>REQ</sub>
     * Description: anatomical entity in which the disease or feature is found
     * range: [AnatomicalEntity](AnatomicalEntity.md)
+    * Example:    
 
 ### Inherited from association:
 
@@ -72,9 +73,12 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https:
  * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)  <sub>REQ</sub>
     * Description: disease or phenotype
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+    * Example:    
+    * Example:    
 
 ### Domain for slot:
 
  * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md)  <sub>REQ</sub>
     * Description: anatomical entity in which the disease or feature is found
     * range: [AnatomicalEntity](AnatomicalEntity.md)
+    * Example:    

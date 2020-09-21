@@ -26,3 +26,10 @@ URI: [biolink:disease_or_phenotypic_feature_association_to_location_association_
 ## Used by
 
  * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'UBERON:0002048', 'description': 'lung'} |
+

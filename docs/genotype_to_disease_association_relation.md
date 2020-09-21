@@ -27,4 +27,4 @@ URI: [biolink:genotype_to_disease_association_relation](https://w3id.org/biolink
 
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
- *  reifies: related condition
+ *  reifies: [related condition](related_condition.md)

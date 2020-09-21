@@ -22,8 +22,16 @@ URI: [biolink:pairwise_interaction_association_relation](https://w3id.org/biolin
 
 ## Children
 
+ *  [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)
 
 ## Used by
 
  * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
  *  reifies: [molecularly interacts with](molecularly_interacts_with.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'RO:0002447', 'description': 'the subject molecular phosphorylates the object molecule'} |
+

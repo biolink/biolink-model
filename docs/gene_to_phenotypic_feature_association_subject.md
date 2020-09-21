@@ -26,3 +26,10 @@ URI: [biolink:gene_to_phenotypic_feature_association_subject](https://w3id.org/b
 ## Used by
 
  * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'HGNC:2197', 'description': 'COL1A1 (Human)'} |
+

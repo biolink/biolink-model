@@ -35,6 +35,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
  * [gene to expression site association➞object](gene_to_expression_site_association_object.md)  <sub>REQ</sub>
     * Description: location in which the gene is expressed
     * range: [AnatomicalEntity](AnatomicalEntity.md)
+    * Example:    
  * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
     * Description: can be used to indicate magnitude, or also ranking
     * range: [OntologyClass](OntologyClass.md)
@@ -44,6 +45,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
  * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
     * Description: stage at which the gene is expressed in the site
     * range: [LifeStage](LifeStage.md)
+    * Example:    
  * [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
     * Description: gene in which variation is correlated with the phenotypic feature
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
@@ -84,6 +86,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
  * [gene to expression site association➞object](gene_to_expression_site_association_object.md)  <sub>REQ</sub>
     * Description: location in which the gene is expressed
     * range: [AnatomicalEntity](AnatomicalEntity.md)
+    * Example:    
  * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
     * Description: can be used to indicate magnitude, or also ranking
     * range: [OntologyClass](OntologyClass.md)
@@ -93,6 +96,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
  * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
     * Description: stage at which the gene is expressed in the site
     * range: [LifeStage](LifeStage.md)
+    * Example:    
  * [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
     * Description: gene in which variation is correlated with the phenotypic feature
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)

@@ -84,6 +84,8 @@ SO:0001060
     * range: [Gene](Gene.md)
  * [sequence variant➞id](sequence_variant_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
+    * Example:    
+    * Example:    
 
 ### Inherited from named thing:
 
@@ -117,6 +119,8 @@ SO:0001060
     * range: [Gene](Gene.md)
  * [sequence variant➞id](sequence_variant_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
+    * Example:    
+    * Example:    
 
 ## Other properties
 

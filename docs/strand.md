@@ -1,16 +1,16 @@
 ---
 parent: Slots
-title: biolink:genome_build
+title: biolink:strand
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: genome_build
+# Type: strand
 
 
-The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
+The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
 
-URI: [biolink:genome_build](https://w3id.org/biolink/vocab/genome_build)
+URI: [biolink:strand](https://w3id.org/biolink/vocab/strand)
 
 ## Domain and Range
 

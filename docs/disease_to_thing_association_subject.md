@@ -27,3 +27,10 @@ URI: [biolink:disease_to_thing_association_subject](https://w3id.org/biolink/voc
 ## Used by
 
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'MONDO:0017314', 'description': 'Ehlers-Danlos syndrome, vascular type'} |
+

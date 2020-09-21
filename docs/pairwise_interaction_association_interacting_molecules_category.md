@@ -27,3 +27,10 @@ URI: [biolink:pairwise_interaction_association_interacting_molecules_category](h
 
  * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)
  * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'MI:1048', 'description': 'smallmolecule-protein'} |
+

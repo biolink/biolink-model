@@ -55,6 +55,8 @@ SO:0001483
     * range: [BiologicalSequence](types/BiologicalSequence.md)
  * [sequence variant➞id](sequence_variant_id.md)  <sub>REQ</sub>
     * range: [String](types/String.md)
+    * Example:    
+    * Example:    
 
 ### Inherited from thing with taxon:
 

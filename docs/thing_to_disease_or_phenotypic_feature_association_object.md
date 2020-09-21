@@ -26,3 +26,11 @@ URI: [biolink:thing_to_disease_or_phenotypic_feature_association_object](https:/
 ## Used by
 
  * [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'MONDO:0017314', 'description': 'Ehlers-Danlos syndrome, vascular type'} |
+|  | | {'value': 'MP:0013229', 'description': 'abnormal brain ventricle size'} |
+

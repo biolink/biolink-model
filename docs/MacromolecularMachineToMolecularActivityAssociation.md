@@ -71,9 +71,12 @@ URI: [biolink:MacromolecularMachineToMolecularActivityAssociation](https://w3id.
  * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
     * Description: gene, product or macromolecular complex that has the function associated with the GO term
     * range: [MacromolecularMachine](MacromolecularMachine.md)
+    * Example:    
  * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
     * Description: class describing the activity, process or localization of the gene product
     * range: [GeneOntologyClass](GeneOntologyClass.md)
+    * Example:    
+    * Example:    
 
 ### Domain for slot:
 

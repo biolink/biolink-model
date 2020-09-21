@@ -43,6 +43,7 @@ URI: [biolink:DiseaseToThingAssociation](https://w3id.org/biolink/vocab/DiseaseT
  * [disease to thing association➞subject](disease_to_thing_association_subject.md)  <sub>REQ</sub>
     * Description: disease class
     * range: [Disease](Disease.md)
+    * Example:    
 
 ### Inherited from association:
 
@@ -80,3 +81,4 @@ URI: [biolink:DiseaseToThingAssociation](https://w3id.org/biolink/vocab/DiseaseT
  * [disease to thing association➞subject](disease_to_thing_association_subject.md)  <sub>REQ</sub>
     * Description: disease class
     * range: [Disease](Disease.md)
+    * Example:    

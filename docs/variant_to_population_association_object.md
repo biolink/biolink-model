@@ -26,3 +26,10 @@ URI: [biolink:variant_to_population_association_object](https://w3id.org/biolink
 ## Used by
 
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'HANCESTRO:0010', 'description': 'African'} |
+

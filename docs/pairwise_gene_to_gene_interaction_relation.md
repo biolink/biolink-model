@@ -18,7 +18,7 @@ URI: [biolink:pairwise_gene_to_gene_interaction_relation](https://w3id.org/bioli
 
 ## Parents
 
- *  is_a: [relation](relation.md)
+ *  is_a: [pairwise interaction association➞relation](pairwise_interaction_association_relation.md)
 
 ## Children
 

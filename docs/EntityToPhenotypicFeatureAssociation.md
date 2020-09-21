@@ -51,6 +51,9 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
  * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
     * Description: phenotypic class
     * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * Example:    
+    * Example:    
+    * Example:    
  * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     * range: [BiologicalSex](BiologicalSex.md)
@@ -109,3 +112,6 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
  * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
     * Description: phenotypic class
     * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * Example:    
+    * Example:    
+    * Example:    

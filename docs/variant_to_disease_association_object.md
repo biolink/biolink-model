@@ -27,3 +27,10 @@ URI: [biolink:variant_to_disease_association_object](https://w3id.org/biolink/vo
 
  * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
  * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'MONDO:0016419', 'description': 'hereditary breast cancer'} |
+

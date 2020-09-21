@@ -26,3 +26,10 @@ URI: [biolink:variant_to_population_association_has_quotient](https://w3id.org/b
 ## Used by
 
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': '0.0001666', 'description': None} |
+

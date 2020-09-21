@@ -39,6 +39,8 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation](https://w
  * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)  <sub>REQ</sub>
     * Description: disease or phenotype
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+    * Example:    
+    * Example:    
 
 ### Inherited from association:
 
@@ -76,3 +78,5 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation](https://w
  * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)  <sub>REQ</sub>
     * Description: disease or phenotype
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+    * Example:    
+    * Example:    

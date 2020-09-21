@@ -26,3 +26,10 @@ URI: [biolink:variant_to_population_association_has_count](https://w3id.org/biol
 ## Used by
 
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': '4', 'description': '4 individuals in gnomad set'} |
+

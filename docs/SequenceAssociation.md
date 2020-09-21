@@ -1,21 +1,21 @@
 ---
-parent: Mixins
-title: biolink:VariantToThingAssociation
+parent: Classes
+title: biolink:SequenceAssociation
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: VariantToThingAssociation
+# Type: SequenceAssociation
 
 
+An association between a sequence feature and a genomic entity it is localized to.
 
-
-URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantToThingAssociation)
+URI: [biolink:SequenceAssociation](https://w3id.org/biolink/vocab/SequenceAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToThingAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociation],[Association]%5E-[VariantToThingAssociation],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToDiseaseAssociation],[SequenceVariant],[Publication],[Provider],[OntologyClass],[NamedThing],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation%7Crelation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F]%5E-[GenomicSequenceLocalization],[Association]%5E-[SequenceAssociation],[Publication],[Provider],[OntologyClass],[NamedThing],[GenomicSequenceLocalization],[Association])
 
 ---
 
@@ -24,25 +24,15 @@ URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantT
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
 
-## Mixin for
+## Children
 
- * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) (mixin) 
- * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) (mixin) 
- * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population
+ * [GenomicSequenceLocalization](GenomicSequenceLocalization.md) - A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
 
 ## Referenced by class
 
 
 ## Attributes
 
-
-### Own
-
- * [variant to thing association➞subject](variant_to_thing_association_subject.md)  <sub>REQ</sub>
-    * Description: a sequence variant in which the allele state is associated with some other entity
-    * range: [SequenceVariant](SequenceVariant.md)
-    * Example:    
-    * Example:    
 
 ### Inherited from association:
 
@@ -74,18 +64,3 @@ URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantT
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
-
-### Domain for slot:
-
- * [variant to thing association➞subject](variant_to_thing_association_subject.md)  <sub>REQ</sub>
-    * Description: a sequence variant in which the allele state is associated with some other entity
-    * range: [SequenceVariant](SequenceVariant.md)
-    * Example:    
-    * Example:    
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Local names:** | | variant annotation (ga4gh) |
-

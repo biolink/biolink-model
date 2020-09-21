@@ -30,3 +30,10 @@ URI: [biolink:functional_association_subject](https://w3id.org/biolink/vocab/fun
  * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)
  * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)
  * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'ZFIN:ZDB-GENE-050417-357', 'description': 'twist1b'} |
+

@@ -60,7 +60,6 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
     * [GeneToThingAssociation](GeneToThingAssociation.md)
-    * [GenomicSequenceLocalization](GenomicSequenceLocalization.md) - A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
     * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
        * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
     * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) - Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
@@ -74,6 +73,8 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)
     * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
     * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
+    * [SequenceAssociation](SequenceAssociation.md) - An association between a sequence feature and a genomic entity it is localized to.
+       * [GenomicSequenceLocalization](GenomicSequenceLocalization.md) - A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
     * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
        * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) - A transcript is formed from multiple exons
        * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) - A gene is transcribed and potentially translated to a gene product
@@ -262,6 +263,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [gene to expression site association➞relation](gene_to_expression_site_association_relation.md) - expression relationship
        * [gene to gene homology association➞relation](gene_to_gene_homology_association_relation.md) - homology relationship type
        * [gene to gene product relationship➞relation](gene_to_gene_product_relationship_relation.md)
+       * [genomic sequence localization➞relation](genomic_sequence_localization_relation.md)
        * [genotype to disease association➞relation](genotype_to_disease_association_relation.md) - E.g. is pathogenic for
        * [genotype to gene association➞relation](genotype_to_gene_association_relation.md) - the relationship type used to connect genotype to gene
        * [genotype to genotype part association➞relation](genotype_to_genotype_part_association_relation.md)
@@ -269,10 +271,17 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [genotype to variant association➞relation](genotype_to_variant_association_relation.md) - the relationship type used to connect genotype to gene
        * [material sample derivation association➞relation](material_sample_derivation_association_relation.md) - derivation relationship
        * [model to disease mixin➞relation](model_to_disease_mixin_relation.md) - The relationship to the disease
-       * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md) - interaction relationship type
        * [pairwise interaction association➞relation](pairwise_interaction_association_relation.md) - interaction relationship type
+          * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)
        * [population to population association➞relation](population_to_population_association_relation.md) - A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
        * [variant to disease association➞relation](variant_to_disease_association_relation.md) - E.g. is pathogenic for
+    * [sequence localization attribute](sequence_localization_attribute.md) - An attribute that can be applied to a genome sequence localization edge. These edges connect a genomic entity such as an exon to an entity such as a chromosome. Edge properties are used to ascribe specific positional information and other metadata to the localization. In pragmatic terms this can be thought of as columns in a GFF3 line.
+       * [genome build](genome_build.md) - The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
+       * [interbase coordinate](interbase_coordinate.md) - A position in interbase coordinates. This is applied to a sequence localization edge.
+          * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
+          * [start interbase coordinate](start_interbase_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
+       * [phase](phase.md) - The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
+       * [strand](strand.md) - The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
     * [sequence variant qualifier](sequence_variant_qualifier.md) - a qualifier used in an association where the variant
     * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
     * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
@@ -352,7 +361,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [filler](filler.md) - The value in a property-value tuple
     * [format](format.md)
     * [full name](full_name.md) - a long-form human readable name for a thing
-    * [genome build](genome_build.md) - TODO
     * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
        * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md) - The state of the sequence w.r.t a reference sequence
     * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
@@ -367,16 +375,12 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
        * [pairwise interaction association➞id](pairwise_interaction_association_id.md) - identifier for the interaction. This may come from an interaction database such as IMEX.
        * [sequence variant➞id](sequence_variant_id.md)
-    * [interbase coordinate](interbase_coordinate.md) - TODO
-       * [end interbase coordinate](end_interbase_coordinate.md)
-       * [start interbase coordinate](start_interbase_coordinate.md)
     * [iri](iri.md) - An IRI for the node. This is determined by the id using expansion rules.
     * [latitude](latitude.md) - latitude
     * [license](license.md)
     * [longitude](longitude.md) - longitude
     * [name](name.md) - A human-readable name for a thing
        * [macromolecular machine➞name](macromolecular_machine_name.md) - genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-    * [phase](phase.md) - TODO
     * [retrievedOn](retrievedOn.md)
     * [rights](rights.md)
     * [source data file](source_data_file.md)
@@ -470,6 +474,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     * [derives from](derives_from.md) - holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
     * [derives into](derives_into.md) - holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+    * [develops from](develops_from.md)
     * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
     * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
     * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
@@ -489,10 +494,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
           * [molecular activity➞has output](molecular_activity_has_output.md) - A chemical entity that is the output for the reaction
     * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
-    * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
-       * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
-       * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
-       * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
+    * [has sequence location](has_sequence_location.md) - holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
     * [in linkage disequilibrium with](in_linkage_disequilibrium_with.md) - holds between two sequence variants, the presence of which are correlated in a population
     * [in taxon](in_taxon.md) - connects a thing to a class representing a taxon
     * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
@@ -512,10 +514,10 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
     * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
     * [manifestation of](manifestation_of.md) - used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
-    * [model of](model_of.md) - holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
     * [overlaps](overlaps.md) - holds between entties that overlap in their extents (materials or processes)
        * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
+          * [has variant part](has_variant_part.md) - Holds between a genotype and a genotypic entity
           * [treatment➞has part](treatment_has_part.md)
        * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
     * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
@@ -524,7 +526,15 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
     * [produced by](produced_by.md)
     * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
+    * [related condition](related_condition.md)
     * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
+    * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
+       * [chemically similar to](chemically_similar_to.md) - holds between one chemical substances and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
+       * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
+          * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
+          * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
+          * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
+       * [model of](model_of.md) - holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
     * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
     * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition

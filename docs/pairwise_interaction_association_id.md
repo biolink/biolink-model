@@ -26,3 +26,10 @@ URI: [biolink:pairwise_interaction_association_id](https://w3id.org/biolink/voca
 ## Used by
 
  * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | {'value': 'WB:WBInteraction000538741', 'description': None} |
+

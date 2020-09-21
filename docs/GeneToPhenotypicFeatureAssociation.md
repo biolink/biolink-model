@@ -43,6 +43,7 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
  * [gene to phenotypic feature association➞subject](gene_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
     * Description: gene in which variation is correlated with the phenotypic feature
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+    * Example:    
 
 ### Inherited from association:
 
@@ -95,6 +96,9 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
  * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
     * Description: phenotypic class
     * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * Example:    
+    * Example:    
+    * Example:    
 
 ### Inherited from frequency qualifier mixin:
 
@@ -107,6 +111,7 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
  * [gene to phenotypic feature association➞subject](gene_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
     * Description: gene in which variation is correlated with the phenotypic feature
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+    * Example:    
 
 ## Other properties
 
