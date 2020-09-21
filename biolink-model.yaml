@@ -1675,6 +1675,22 @@ slots:
       - GTEx:affects_expression_in
 
 
+  has variant part:
+    is_a: has part
+    description: Holds between a genotype and a genotypic entity
+    mappings:
+      - GENO:0000382
+
+  related condition:
+    is_a: related to
+    mappings:
+      - GENO:0000790
+
+  develops from:
+    is_a: related to
+    mappings:
+      - RO:0002202
+
   #Predicates relating variants to genes
 
   is missense variant of:
