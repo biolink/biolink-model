@@ -1,0 +1,44 @@
+.default-label {
+  display: inline-block;
+  padding-top: 0.16em;
+  padding-right: 0.42em;
+  padding-bottom: 0.16em;
+  padding-left: 0.42em;
+  margin-right: $sp-1;
+  margin-left: $sp-1;
+  color: #ffffff;
+  vertical-align: middle;
+  background-color: #607d8b;
+  font-weight: 800;
+  @include fs-2;
+}
+
+.mapping-label {
+  display: inline-block;
+  padding-top: 0.16em;
+  padding-right: 0.42em;
+  padding-bottom: 0.16em;
+  padding-left: 0.42em;
+  margin-right: $sp-1;
+  margin-left: $sp-1;
+  color: #635f5f;
+  vertical-align: middle;
+  background-color: #faad00;
+  font-weight: 800;
+  @include fs-2;
+}
+
+.translator_minimal-subset-label {
+  display: inline-block;
+  padding-top: 0.16em;
+  padding-right: 0.42em;
+  padding-bottom: 0.16em;
+  padding-left: 0.42em;
+  margin-right: $sp-1;
+  margin-left: $sp-1;
+  color: #ffffff;
+  vertical-align: middle;
+  background-color: #fb8c00;
+  font-weight: 800;
+  @include fs-2;
+}
