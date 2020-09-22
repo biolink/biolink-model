@@ -170,10 +170,6 @@ slots:
       - EFO:0006351
       - FMA:connected_to
       - FMA:continuous_with
-      # RTX puts these terms here but would this be better put into 'biolink:derives_from' and 'biolink:derives_into'?
-      # Also, RTX tags this term as an 'invert' but 'biolink:related_to' is symmetrically reflexive?
-      - FMA:develops_from
-      - FMA:develops_into
       - FMA:homonym_of
       - FMA:related_developmental_entity_of
       - GO:ends_during
@@ -1118,6 +1114,8 @@ slots:
       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
       - WIKIDATA:P128
       - CHEMBL.MECHANISM:modulator
+      # RTX mapping was 'biolink:related_to' but this term seems a more precise mapping?
+      - RO:0002295
 
   positively regulates:
     comments:
@@ -1473,6 +1471,10 @@ slots:
       - LOINC:has_lateral_location_presence
       - OBO:core#distally_connected_to
       - OBO:core#subdivision_of
+      # These RO terms seem similar to the FMA terms above, so I place them here rather than under 'biolink:related_to'
+      - RO:0002219
+      - RO:0002220
+      - RO:0002221
 
   in pathway with:
     description: >-
@@ -1592,6 +1594,8 @@ slots:
     narrow_mappings:
       - CTD:marker_mechanism
       - MONDO:predisposes_towards
+      # RTX mapped this to 'biolink:related_to' but this term seems a more precise mapping
+      - RO:0002255
 
   causes:
     description: >-
@@ -1625,6 +1629,8 @@ slots:
       - ORPHANET:317346
       - ORPHANET:410295
       - ORPHANET:410296
+      - # RTX mapped this to 'biolink:related_to' but this term seems a more precise mapping
+        - RO:0002256
 
   caused by:
     description: >-
@@ -1865,6 +1871,9 @@ slots:
       - UBERON_CORE:site_of
       - LOINC:has_imaged_location
       - PathWhiz:in_species
+      - RO:0002231
+      - RO:0002232
+
 
   located in:
     is_a: related to
@@ -2155,6 +2164,7 @@ slots:
       - NCIT:gene_product_is_physical_part_of
       - NCIT:gene_product_plays_role_in_biological_process
       - OBI:0000295
+      - RO:0002216
 
   actively involved in:
     is_a: participates in
@@ -2285,6 +2295,10 @@ slots:
       - RO:0002083
       - RO:0002092
       - RO:0002093
+      - RO:0002223
+      - RO:0002224
+      - RO:0002229
+      - RO:0002230
 
   precedes:
     is_a: temporally related to
@@ -2327,6 +2341,7 @@ slots:
       # RTX contributed mapping was given as the inverse of 'biolink:precedes'
       - FMA:transforms_from
       - RO:0002087
+      - RO:0002285
 
   same as:
     is_a: related to
@@ -2668,12 +2683,16 @@ slots:
     close_mappings:
       # RTX mapping seems to be inverse of 'biolink:develops_from'
       - RO:0002203
+      - FMA:develops_into
     exact_mappings:
       - BTO:develops_from
       - DDANAT:develops_from
+      - FMA:develops_from
       - RO:0002202
     narrow_mappings:
       - RO:0002207
+      - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
+      - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
   superclass of:
     is_a: related to
