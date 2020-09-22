@@ -215,12 +215,6 @@ slots:
       - RO:0002002
       - RO:0002003
       - RO:0002008
-      # The next few RTX mappings seem temporal in nature and ought to be better modelled elsewhere
-      - RO:0002082
-      - RO:0002083
-      - RO:0002087
-      - RO:0002092
-      - RO:0002093
 
   interacts with:
     domain: named thing
@@ -2271,8 +2265,21 @@ slots:
     narrow_mappings:
       - NCIT:biological_process_has_result_chemical_or_drug
 
-  precedes:
+  temporally related to:
     is_a: related to
+    description: >-
+      holds between two processes, where one completes before the other begins
+    domain: occurrent
+    range: occurrent
+    narrow_mappings:
+      # The These RTX mappings are temporal in nature, but not with precedes ordering, so mapped here
+      - RO:0002082
+      - RO:0002083
+      - RO:0002092
+      - RO:0002093
+
+  precedes:
+    is_a: temporally related to
     description: >-
       holds between two processes, where one completes before the other begins
     domain: occurrent
@@ -2295,7 +2302,7 @@ slots:
       - RO:0002090
 
   preceded by:
-    is_a: related to
+    is_a: temporally related to
     description: >-
       holds between two processes, where the other is completed before the one begins
     domain: occurrent
