@@ -3154,7 +3154,7 @@ classes:
       - gtpo
 
   drug:
-    is_a: treatment
+    is_a: drug treatment
     description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     comments:
@@ -3639,6 +3639,13 @@ classes:
     mappings:
       - OGMS:0000090
       - SIO:001398
+
+  drug treatment:
+    is_a: treatment
+    description: >-
+      A treatment is targeted at a disease or phenotype that involves drug 'exposure'
+    mappings:
+      - MAXO:0000058
 
   geographic location:
     is_a: planetary entity
