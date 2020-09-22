@@ -2026,6 +2026,7 @@ slots:
       - PDQ:has_component
       - PathWhiz:has_protein_in_complex
       - RO:0002104
+      - RO:0002180
 
   part of:
     is_a: overlaps
@@ -2664,9 +2665,15 @@ slots:
 
   develops from:
     is_a: related to
+    close_mappings:
+      # RTX mapping seems to be inverse of 'biolink:develops_from'
+      - RO:0002203
     exact_mappings:
       - BTO:develops_from
       - DDANAT:develops_from
+      - RO:0002202
+    narrow_mappings:
+      - RO:0002207
 
   superclass of:
     is_a: related to
