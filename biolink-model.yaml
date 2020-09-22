@@ -210,6 +210,17 @@ slots:
       - PATO:has_relative_magnitude
       - PATO:increased_in_magnitude_relative_to
       - PATO:reciprocal_of
+      - RO:0000052
+      - RO:0002001
+      - RO:0002002
+      - RO:0002003
+      - RO:0002008
+      # The next few RTX mappings seem temporal in nature and ought to be better modelled elsewhere
+      - RO:0002082
+      - RO:0002083
+      - RO:0002087
+      - RO:0002092
+      - RO:0002093
 
   interacts with:
     domain: named thing
@@ -221,6 +232,11 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002434
+    narrow_mappings:
+      # RO terms RTX mapped to 'biolink:related_to' but which imply a chemical interaction
+      - RO:0002103
+      - RO:0002120
+      - RO:0002130
 
   physically interacts with:
     is_a: interacts with
@@ -1618,6 +1634,7 @@ slots:
     inverse: causes
     exact_mappings:
       - WIKIDATA:P828
+      - RO:0001022
 
   treats:
     aliases: ['is substance that treats']
@@ -1642,6 +1659,26 @@ slots:
       # "is substance that treats" constrains statements to a subset of the universe of all possible treatments
       - RO:0002606
       - NCIT:regimen_has_accepted_use_for_disease
+      # RTX mapped REPODB terms
+      - REPODB:clinically_tested_approved_unknown_phase
+      - REPODBclinically_tested_suspended_phase_0
+      - REPODBclinically_tested_suspended_phase_1
+      - REPODBclinically_tested_suspended_phase_1_or_phase_2
+      - REPODBclinically_tested_suspended_phase_2
+      - REPODBclinically_tested_suspended_phase_2_or_phase_3
+      - REPODBclinically_tested_suspended_phase_3
+      - REPODBclinically_tested_terminated_phase_0
+      - REPODBclinically_tested_terminated_phase_1
+      - REPODBclinically_tested_terminated_phase_1_or_phase_2
+      - REPODBclinically_tested_terminated_phase_2
+      - REPODBclinically_tested_terminated_phase_2_or_phase_3
+      - REPODBclinically_tested_terminated_phase_3
+      - REPODBclinically_tested_withdrawn_phase_0
+      - REPODBclinically_tested_withdrawn_phase_1
+      - REPODBclinically_tested_withdrawn_phase_1_or_phase_2
+      - REPODBclinically_tested_withdrawn_phase_2
+      - REPODBclinically_tested_withdrawn_phase_2_or_phase_3
+      - REPODBclinically_tested_withdrawn_phase_3
 
   prevents :
     is_a: affects risk for
@@ -1949,6 +1986,8 @@ slots:
     narrow_mappings:
       - BSPO:0005001
       - CHEMBL.MECHANISM:overlaps_with
+      - RO:0002100
+      - RO:0002102
 
   has part:
     is_a: overlaps
@@ -1964,6 +2003,7 @@ slots:
       - WIKIDATA:P527
       - FMA:contains
       - GO:has_part
+      - RO:0001019
     narrow_mappings:
       - BFO:0000117
       # RTX term originally mapped to 'biolink:coexists_with'?
@@ -1984,6 +2024,7 @@ slots:
       - NCIT:gene_product_has_structural_domain_or_motif
       - PDQ:has_component
       - PathWhiz:has_protein_in_complex
+      - RO:0002104
 
   part of:
     is_a: overlaps
@@ -2025,6 +2066,7 @@ slots:
       - NCIT:is_component_of_chemotherapy_regimen
       - NDDF:ingredient_of
       - PDQ:component_of
+      - RO:0002007
 
   has input:
     is_a: has participant
@@ -2250,6 +2292,7 @@ slots:
       - WIKIDATA:P156
     narrow_mappings:
       - FMA:transforms_into
+      - RO:0002090
 
   preceded by:
     is_a: related to
@@ -2268,6 +2311,7 @@ slots:
     narrow_mappings:
       # RTX contributed mapping was given as the inverse of 'biolink:precedes'
       - FMA:transforms_from
+      - RO:0002087
 
   same as:
     is_a: related to
@@ -2350,7 +2394,7 @@ slots:
 
   directly interacts with:
     is_a: interacts with
-    description: Holds between molecular entities that phyically and directly interact
+    description: Holds between molecular entities that physically and directly interact
       with each other
     related_mappings:
       - GAMMA:kd
@@ -3235,9 +3279,6 @@ slots:
   has attribute:
     description: >-
       connects any named thing to an attribute
-    mappings:
-      - SIO:000008
-      - RO:0000053
     range: attribute
     multivalued: true
     in_subset:
@@ -3245,6 +3286,8 @@ slots:
     close_mappings:
       # RTX term meaning 'specifies value of' tagged as inverse of 'biolink:has attribute'
       - OBI:0001927
+    exact_mappings:
+      - SIO:000008
     narrow_mappings:
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
@@ -3284,6 +3327,10 @@ slots:
       - OMIM:has_inheritance_type
       - ORPHANET:C016
       - ORPHANET:C017
+      - RO:0000053
+      # RTX tagged a few RO terms as 'biolink:related_to' but semantics suggest a better mapping here
+      - RO:0000086
+      - RO:0000087
 
   has attribute type:
     description: >-
