@@ -218,6 +218,12 @@ slots:
       - RO:0002177
       - RO:0002178
       - RO:0002179
+      - RO:0002314
+      - RO:0002322
+      - RO:0002328
+      - RO:0002332
+      - RO:0002338
+      - RO:0002339
 
   interacts with:
     domain: named thing
@@ -989,6 +995,9 @@ slots:
     range: molecular entity
     exact_mappings:
       - CTD:affects_transport_of
+    narrow_mappings:
+      - RO:0002313
+      - RO:0002340
 
   increases transport of:
     description: >-
@@ -1108,6 +1117,7 @@ slots:
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - GO:regulated_by
+      - RO:0002334
     exact_mappings:
       - GO:regulates
     narrow_mappings:
@@ -1116,6 +1126,7 @@ slots:
       - CHEMBL.MECHANISM:modulator
       # RTX mapping was 'biolink:related_to' but this term seems a more precise mapping?
       - RO:0002295
+      - RO:0002332
 
   positively regulates:
     comments:
@@ -1618,7 +1629,7 @@ slots:
       - NCIT:allele_has_abnormality
       - NCIT:biological_process_has_result_biological_process
       - NCIT:chemical_or_drug_has_physiologic_effect
-      - # RTX mapped terms as 'biolink:part_of' but implied sequence of causality suggests 'biolink:causes'?
+      # RTX mapped terms as 'biolink:part_of' but implied sequence of causality suggests 'biolink:causes'?
       - NCIT:chemical_or_drug_initiates_biological_process
       - NCIT:process_initiates_biological_process
       - NCIT:chromosome_mapped_to_disease
@@ -1629,8 +1640,9 @@ slots:
       - ORPHANET:317346
       - ORPHANET:410295
       - ORPHANET:410296
-      - # RTX mapped this to 'biolink:related_to' but this term seems a more precise mapping
-        - RO:0002256
+      # RTX mapped this to 'biolink:related_to' but this term seems a more precise mapping
+      - RO:0002256
+      - RO:0002315
 
   caused by:
     description: >-
@@ -1924,6 +1936,7 @@ slots:
       - NCIT:procedure_may_have_completely_excised_anatomy
       - NCIT:procedure_may_have_excised_anatomy
       - NCIT:procedure_may_have_partially_excised_anatomy
+      - RO:0002303
 
   location of:
     is_a: related to
@@ -2107,6 +2120,10 @@ slots:
       - NCIT:biological_process_has_result_anatomy
       - OBI:0000299
       - PathWhiz:has_right_element
+      - RO:0002296
+      - RO:0002297
+      - RO:0002298
+      - RO:0002299
 
   has participant:
     is_a: related to
@@ -2412,7 +2429,7 @@ slots:
       - LOINC:has_parent_group
       - LOINC:is_presence_guidance_for
       - NCIT:gene_product_has_chemical_classification
-      - # RTX mapped terms classes for biomarkers
+      # RTX mapped terms classes for biomarkers
       - NCIT:gene_is_biomarker_type
       - NCIT:gene_product_is_biomarker_type
       - NCIT:has_inc_parent
