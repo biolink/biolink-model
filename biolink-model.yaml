@@ -346,6 +346,8 @@ slots:
       - NCIT:gene_product_has_abnormality
       - RO:0002343
       - RO:0002355
+      - RO:0002591
+      - RO:0002592
 
   affects abundance of:
     description: >-
@@ -1166,6 +1168,7 @@ slots:
       - DGIdb:activator
       - GO:acts_upstream_of_or_within_positive_effect
       - GO:acts_upstream_of_positive_effect
+      - RO:0002629
 
   negatively regulates:
     comments:
@@ -1190,6 +1193,7 @@ slots:
       - CHEMBL.MECHANISM:negative_modulator
       - GO:acts_upstream_of_negative_effect
       - GO:acts_upstream_of_or_within_negative_effect
+      - RO:0002630
 
   regulates, process to process:
     is_a: regulates
@@ -1628,6 +1632,8 @@ slots:
       - MONDO:predisposes_towards
       # RTX mapped this to 'biolink:related_to' but this term seems a more precise mapping
       - RO:0002255
+      # RTX term 'contributes to condition' mapped to 'biolink:causes' seems more suitable here
+      - RO:0003304
 
   causes:
     description: >-
@@ -1666,6 +1672,7 @@ slots:
       - RO:0002315
       - RO:0002507
       - RO:0002509
+      - RO:0004001
 
   caused by:
     description: >-
@@ -1677,6 +1684,7 @@ slots:
     exact_mappings:
       - WIKIDATA:P828
       - RO:0001022
+      - RO:0002608
 
   treats:
     aliases: ['is substance that treats']
@@ -2143,6 +2151,8 @@ slots:
       - LOINC:has_fragments_for_synonyms
       - LOINC:has_system
       - PathWhiz:has_left_element
+      - RO:0002590
+      - RO:0004009
 
   has output:
     is_a: has participant
@@ -2165,6 +2175,8 @@ slots:
       - RO:0002297
       - RO:0002298
       - RO:0002299
+      - RO:0002588
+      - RO:0004008
 
   has participant:
     is_a: related to
@@ -2174,15 +2186,14 @@ slots:
     in_subset:
       - translator_minimal
     inverse: participates in
-    #mappings:
-    # Not sure about these here
-    #  - GOREL:0001007
-    #  - GOREL:0002008
     close_mappings:
       - WIKIDATA:P2283
     exact_mappings:
       - RO:0000057
     narrow_mappings:
+      # Not sure about the definitions of these two GOREL terms... may be deprecated?
+      #- GOREL:0001007
+      #- GOREL:0002008
       - BFO:0000167
       # Several of the following RTX terms tagged as inverse to 'biolink:participates_in'
       - LOINC:has_subject
@@ -2199,6 +2210,7 @@ slots:
       - PathWhiz:has_nucleic_acid
       - PathWhiz:has_protein
       - PathWhiz:has_reaction
+      - RO:0004007
 
   participates in:
     is_a: related to
@@ -2343,6 +2355,12 @@ slots:
       - SEMMEDDB:PRODUCES
     narrow_mappings:
       - NCIT:biological_process_has_result_chemical_or_drug
+
+  produced by:
+    is_a: related to
+    inverse: produces
+    exact_mappings:
+      - RO:0003001
 
   temporally related to:
     is_a: related to
@@ -2716,11 +2734,6 @@ slots:
       the target and some other molecular entity
     exact_mappings:
       - CTD:increases_molecular_interaction_with
-
-  produced by:
-    is_a: related to
-    inverse: produces
-
 
   in linkage disequilibrium with:
     is_a: related to
