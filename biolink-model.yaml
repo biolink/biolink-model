@@ -224,6 +224,23 @@ slots:
       - RO:0002332
       - RO:0002338
       - RO:0002339
+      - RO:0002341
+      - RO:0002342
+      - RO:0002344
+      - RO:0002348
+      - RO:0002349
+      - RO:0002356
+      - RO:0002371
+      - RO:0002372
+      - RO:0002373
+      - RO:0002374
+      - RO:0002385
+      - RO:0002387
+      - RO:0002451
+      - RO:0002494
+      - RO:0002495
+      - RO:0002568
+      - RO:0002573
 
   interacts with:
     domain: named thing
@@ -327,6 +344,8 @@ slots:
       - NCIT:eo_disease_has_associated_eo_anatomy
       - NCIT:gene_mapped_to_disease
       - NCIT:gene_product_has_abnormality
+      - RO:0002343
+      - RO:0002355
 
   affects abundance of:
     description: >-
@@ -998,6 +1017,7 @@ slots:
     narrow_mappings:
       - RO:0002313
       - RO:0002340
+      - RO:0002345
 
   increases transport of:
     description: >-
@@ -1127,6 +1147,7 @@ slots:
       # RTX mapping was 'biolink:related_to' but this term seems a more precise mapping?
       - RO:0002295
       - RO:0002332
+      - RO:0002578
 
   positively regulates:
     comments:
@@ -1640,9 +1661,11 @@ slots:
       - ORPHANET:317346
       - ORPHANET:410295
       - ORPHANET:410296
-      # RTX mapped this to 'biolink:related_to' but this term seems a more precise mapping
+      # RTX mapped this term to 'biolink:related_to' but this term seems a more precise mapping
       - RO:0002256
       - RO:0002315
+      - RO:0002507
+      - RO:0002509
 
   caused by:
     description: >-
@@ -2011,6 +2034,7 @@ slots:
       - CHEMBL.MECHANISM:overlaps_with
       - RO:0002100
       - RO:0002102
+      - RO:0002433
 
   has part:
     is_a: overlaps
@@ -2049,6 +2073,10 @@ slots:
       - PathWhiz:has_protein_in_complex
       - RO:0002104
       - RO:0002180
+      - RO:0002351
+      - RO:0002473
+      - RO:0002524
+      - RO:0002551
 
   part of:
     is_a: overlaps
@@ -2091,6 +2119,12 @@ slots:
       - NDDF:ingredient_of
       - PDQ:component_of
       - RO:0002007
+      - RO:0002350
+      - RO:0002376
+      - RO:0002380
+      - RO:0002571
+      - RO:0002572
+      - RO:0002576
 
   has input:
     is_a: has participant
@@ -2099,6 +2133,9 @@ slots:
     domain: occurrent
     in_subset:
       - translator_minimal
+    close_mappings:
+      # RTX inverse mapping to to 'biolink:has_input'
+      - RO:0002352
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
@@ -2114,6 +2151,10 @@ slots:
     domain: occurrent
     in_subset:
       - translator_minimal
+    close_mappings:
+      # RTX inverse mapping to to 'biolink:has_output'
+      - RO:0002353
+      - RO:0002354
     exact_mappings:
       - RO:0002234
     narrow_mappings:
@@ -2182,6 +2223,8 @@ slots:
       - NCIT:gene_product_plays_role_in_biological_process
       - OBI:0000295
       - RO:0002216
+      - RO:0002505
+      - RO:0002565
 
   actively involved in:
     is_a: participates in
@@ -2217,6 +2260,7 @@ slots:
     narrow_mappings:
       - GO:has_occurrence
       - NCIT:gene_product_has_biochemical_function
+      - RO:0002500
 
   enables:
     is_a: has participant
@@ -2316,6 +2360,12 @@ slots:
       - RO:0002224
       - RO:0002229
       - RO:0002230
+      - RO:0002488
+      - RO:0002489
+      - RO:0002492
+      - RO:0002493
+      - RO:0002496
+      - RO:0002497
 
   precedes:
     is_a: temporally related to
@@ -2339,6 +2389,8 @@ slots:
     narrow_mappings:
       - FMA:transforms_into
       - RO:0002090
+      - RO:0002411
+      - RO:0002412
 
   preceded by:
     is_a: temporally related to
