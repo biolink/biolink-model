@@ -241,6 +241,10 @@ slots:
       - RO:0002495
       - RO:0002568
       - RO:0002573
+      - RO:0004026
+      - RO:0004027
+      - RO:0009001
+      - RO:0009004
 
   interacts with:
     domain: named thing
@@ -348,6 +352,7 @@ slots:
       - RO:0002355
       - RO:0002591
       - RO:0002592
+      - RO:0012003
 
   affects abundance of:
     description: >-
@@ -1284,6 +1289,9 @@ slots:
     exact_mappings:
       - SEMMEDDB:DISRUPTS
       - CHEMBL.MECHANISM:disrupting_agent
+    narrow_mappings:
+      - RO:0004024
+      - RO:0004025
 
   has gene product:
     is_a: related to
@@ -1685,6 +1693,10 @@ slots:
       - WIKIDATA:P828
       - RO:0001022
       - RO:0002608
+      - RO:0004019
+      - RO:0004020
+      - RO:0004028
+      - RO:0009501
 
   treats:
     aliases: ['is substance that treats']
@@ -1763,6 +1775,8 @@ slots:
       - NCIT:is_cytogenetic_abnormality_of_disease
       - ORPHANET:317345
       - PDQ:associated_disease
+      # RTX mapping for this term was just 'related_to' but there seems to be a stronger correlation implied
+      - RO:0004029
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -1840,6 +1854,9 @@ slots:
       # "is treated by substance" constrains statements to a subset of the universe of all possible treatments
       - RO:0002302
 
+  # It may be helpful to introduce an intermediate predicate in between 'related_to' and 'expressed in'
+  # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
+  # which are biological which have manifestation in an anatomical site, e.g. RO:0004026, RO:0004027 and others
   expressed in:
     is_a: related to
     description: >-
@@ -1891,6 +1908,7 @@ slots:
     narrow_mappings:
       - NCIT:disease_may_have_molecular_abnormality
       - OBO:doid#has_symptom
+      - RO:0004022
 
   occurs in:
     is_a: related to
@@ -2190,6 +2208,7 @@ slots:
       - WIKIDATA:P2283
     exact_mappings:
       - RO:0000057
+      - RO:has_participant
     narrow_mappings:
       # Not sure about the definitions of these two GOREL terms... may be deprecated?
       #- GOREL:0001007
@@ -2211,6 +2230,8 @@ slots:
       - PathWhiz:has_protein
       - PathWhiz:has_reaction
       - RO:0004007
+      - RO:0004020
+      - RO:0004021
 
   participates in:
     is_a: related to
@@ -2224,6 +2245,7 @@ slots:
       - RO:0000056
       - BFO:0000056
       - GO:involved_in
+      - RO:participates_in
     narrow_mappings:
       - DRUGBANK:pathway
       - HMDB:in_pathway
@@ -2324,6 +2346,7 @@ slots:
       - RO:0001000
       - FMA:derives_from
       - OBO:doid#derives_from
+      - RO:derives_from
     narrow_mappings:
       - CHEBI:has_functional_parent
 
