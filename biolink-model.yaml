@@ -245,6 +245,7 @@ slots:
       - RO:0004027
       - RO:0009001
       - RO:0009004
+      - RTXKG1:functionally_related_to
 
   interacts with:
     domain: named thing
@@ -271,6 +272,7 @@ slots:
     symmetric: true
     exact_mappings:
       - WIKIDATA:P129
+      - RTXKG1:physically_interacts_with
     close_mappings:
       # Agents of some interaction but not the relationship of interaction
       # These RTX mapped terms may need to be reclassified to more meaningful terms (perhaps not yet created)
@@ -300,6 +302,7 @@ slots:
     exact_mappings:
       - RO:0002436
       - CTD:molecularly_interacts_with
+      - RTXKG1:targets
 
   genetically interacts with:
     is_a: interacts with
@@ -325,6 +328,7 @@ slots:
     exact_mappings:
       - SEMMEDDB:AFFECTS
       - DGIdb:affects
+      - RTXKG1:affects
     narrow_mappings:
       - CTD:prediction_hypothesis
       - GOREL:0001006
@@ -1155,6 +1159,8 @@ slots:
       - RO:0002295
       - RO:0002332
       - RO:0002578
+      - RTXKG1:regulates_activity_of
+      - RTXKG1:regulates_expression_of
 
   positively regulates:
     comments:
@@ -1292,6 +1298,7 @@ slots:
     narrow_mappings:
       - RO:0004024
       - RO:0004025
+      - RTXKG1:disease_causes_disruption_of
 
   has gene product:
     is_a: related to
@@ -1584,6 +1591,7 @@ slots:
       - hetio:ASSOCIATES_DaG
       # genotype pathogenic for condition
       - GENO:0000840
+      - RTXKG1:gene_associated_with_condition
     broad_mappings:
       # genotype likely pathogenic for condition
       - GENO:0000841
@@ -1592,7 +1600,6 @@ slots:
       - NCIT:gene_associated_with_disease
       - NCIT:gene_involved_in_pathogenesis_of_disease
       - NCIT:gene_product_malfunction_associated_with_disease
-
 
   condition associated with gene:
     is_a: related to
@@ -1681,6 +1688,8 @@ slots:
       - RO:0002507
       - RO:0002509
       - RO:0004001
+      # RTX mapping
+      - RTXKG1:capable_of_part_of
 
   caused by:
     description: >-
@@ -1691,12 +1700,17 @@ slots:
     inverse: causes
     exact_mappings:
       - WIKIDATA:P828
+    narrow_mappings:
       - RO:0001022
       - RO:0002608
       - RO:0004019
       - RO:0004020
       - RO:0004028
       - RO:0009501
+      - RTXKG1:disease_caused_by_disruption_of
+      - RTXKG1:disease_has_basis_in_dysfunction_of
+      - RTXKG1:realized_in_response_to
+      - RTXKG1:realized_in_response_to_stimulus
 
   treats:
     aliases: ['is substance that treats']
@@ -1741,6 +1755,7 @@ slots:
       - REPODB:clinically_tested_withdrawn_phase_2
       - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
       - REPODB:clinically_tested_withdrawn_phase_3
+      - RTXKG1:indicated_for
 
   prevents :
     is_a: affects risk for
@@ -1777,6 +1792,7 @@ slots:
       - PDQ:associated_disease
       # RTX mapping for this term was just 'related_to' but there seems to be a stronger correlation implied
       - RO:0004029
+      - RTXKG1:associated_with_disease
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -1871,6 +1887,7 @@ slots:
     narrow_mappings:
       - NCIT:gene_product_expressed_in_tissue
       - NCIT:gene_product_has_associated_anatomy
+      - RTXKG1:expressed_in
 
   expresses:
     is_a: related to
@@ -1900,6 +1917,7 @@ slots:
       - OMIM:phenotype_of
     exact_mappings:
       - RO:0002200
+      - RTXKG1:has_phenotype
     broad_mappings:
       # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
       - hetio:PRESENTS_DpS
@@ -1986,6 +2004,7 @@ slots:
       - NCIT:procedure_may_have_excised_anatomy
       - NCIT:procedure_may_have_partially_excised_anatomy
       - RO:0002303
+      - RTXKG1:disease_has_location
 
   location of:
     is_a: related to
@@ -2000,6 +2019,7 @@ slots:
       - WIKIDATA:276
       # RTX tagged this as an inverse of biolink:located_in
       - FMA:location_of
+      - RTXKG1:site_of
 
   similar to:
       is_a: related to
@@ -2077,6 +2097,7 @@ slots:
       - FMA:contains
       - GO:has_part
       - RO:0001019
+      - RTXKG1:has_part
     narrow_mappings:
       - BFO:0000117
       # RTX term originally mapped to 'biolink:coexists_with'?
@@ -2103,6 +2124,9 @@ slots:
       - RO:0002473
       - RO:0002524
       - RO:0002551
+      - RTXKG1:composed_primarily_of
+      - RTXKG1:contains_process
+      - RTXKG1:has_plasma_membrane_part
 
   part of:
     is_a: overlaps
@@ -2183,6 +2207,7 @@ slots:
       # RTX inverse mapping to to 'biolink:has_output'
       - RO:0002353
       - RO:0002354
+      - RTXKG1:output_of
     exact_mappings:
       - RO:0002234
     narrow_mappings:
@@ -2246,6 +2271,7 @@ slots:
       - BFO:0000056
       - GO:involved_in
       - RO:participates_in
+      - RTXKG1:participates_in
     narrow_mappings:
       - DRUGBANK:pathway
       - HMDB:in_pathway
@@ -2270,6 +2296,9 @@ slots:
     close_mappings:
       # RTX term tagged as inverse
       - NCIT:biological_process_involves_chemical_or_drug
+    broad_mappings:
+      # could the involvement be either active or passive?
+      - RTXKG1:involved_in
     exact_mappings:
       - RO:0002331
       - GO:is_active_in
@@ -2291,6 +2320,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002215
+      - RTXKG1:capable_of
     narrow_mappings:
       - GO:has_occurrence
       - NCIT:gene_product_has_biochemical_function
@@ -2516,6 +2546,7 @@ slots:
       - CHEMBL.MECHANISM:subset_of
       - GO:isa
       - MESH:isa
+      - RTXKG1:subclass_of
     narrow_mappings:
       - CHEBI:has_parent_hydride
       - LOINC:has_archetype
@@ -2726,6 +2757,7 @@ slots:
     range: disease or phenotypic feature
     exact_mappings:
       - DrugCentral:0000001
+      - RTXKG1:contraindicated_for
 
   #The remaining new slots are here because we ran across them somewhere and they didn't seem
   # to map well to anything else.
@@ -2743,6 +2775,7 @@ slots:
       and has completed
     exact_mappings:
       - CL:has_completed
+      - RTXKG1:has_completed
 
   decreases molecular interaction:
     is_a: molecularly interacts with
@@ -2780,6 +2813,7 @@ slots:
     exact_mappings:
       - CL:lacks_part
       - PR:lacks_part
+      - RTXKG1:lacks_part
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
 
