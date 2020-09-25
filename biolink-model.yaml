@@ -150,13 +150,16 @@ slots:
     range: named thing
     multivalued: true
     inherited: true
-    close_mappings:
-      - SEMMEDDB:ASSOCIATED_WITH
     exact_mappings:
       - skos:relatedMatch
+      - SEMMEDDB:ASSOCIATED_WITH
+      - SEMMEDDB:associated_with
     broad_mappings:
       - owl:topObjectProperty
     narrow_mappings:
+      - SEMMEDDB:compared_with
+      - SEMMEDDB:higher_than
+      - SEMMEDDB:lower_than
       - BFO:0000054
       - UBERON_CORE:protects
       - GOREL:0002005
@@ -296,6 +299,7 @@ slots:
     exact_mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
+      - SEMMEDDB:isa
       - WIKIDATA:P279
       - CHEMBL.MECHANISM:subset_of
       - GO:isa
@@ -352,6 +356,7 @@ slots:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
       - SEMMEDDB:SAME_AS
+      - SEMMEDDB:same_as
     narrow_mappings:
       - CHEBI:is_enantiomer_of
       - CHEBI:is_tautomer_of
@@ -374,6 +379,7 @@ slots:
       - RO:0002103
       - RO:0002120
       - RO:0002130
+      - SEMMEDDB:complicates
 
   physically interacts with:
     is_a: interacts with
@@ -398,6 +404,7 @@ slots:
     narrow_mappings:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
       - SEMMEDDB:INTERACTS_WITH
+      - SEMMEDDB:interacts_with
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
       - NCIT:has_target
@@ -439,9 +446,11 @@ slots:
       - DRUGBANK:pathway
     exact_mappings:
       - SEMMEDDB:AFFECTS
+      - SEMMEDDB:affects
       - DGIdb:affects
       - RTXKG1:affects
     narrow_mappings:
+      - SEMMEDDB:administered_to
       - CTD:prediction_hypothesis
       - GOREL:0001006
       - CTD:inferred
@@ -1292,6 +1301,7 @@ slots:
       - GO:acts_upstream_of_or_within_positive_effect
       - GO:acts_upstream_of_positive_effect
       - RO:0002629
+      - SEMMEDDB:augments
 
   negatively regulates:
     comments:
@@ -1373,6 +1383,7 @@ slots:
     narrow_mappings:
       # Defined more narrowly as increasing, facilitating the action or function of a "substance interaction", where "substance" is deemed a subclass of possible entity
       - SEMMEDDB:STIMULATES
+      - SEMMEDDB:stimulates
       # Positive regulation is defined more narrowly here, as "Anatomy upregulates Gene"
       - hetio:UPREGULATES_AuG
       # Positive regulation is defined more narrowly here, as "Disease upregulates Gene"
@@ -1393,6 +1404,7 @@ slots:
     narrow_mappings:
       # SemMedDb definition focuses on (chemical?) "substance interactions" which is a bit narrower?
       - SEMMEDDB:INHIBITS
+      - SEMMEDDB:inhibits
       # Down regulation is defined more narrowly here, as "Anatomy downregulates Gene"
       - hetio:DOWNREGULATES_AdG
       # Down regulation is defined more narrowly here, as "Disease downregulates Gene"
@@ -1406,6 +1418,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:DISRUPTS
+      - SEMMEDDB:disrupts
       - CHEMBL.MECHANISM:disrupting_agent
     narrow_mappings:
       - RO:0004024
@@ -1482,6 +1495,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
+      - SEMMEDDB:coexists_with
     narrow_mappings:
       - BSPO:0000096
       - BSPO:0000097
@@ -1741,6 +1755,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:PREDISPOSES
+      - SEMMEDDB:predisposes
 
   contributes to:
     is_a: related to
@@ -1772,6 +1787,7 @@ slots:
     exact_mappings:
       - RO:0002506
       - SEMMEDDB:CAUSES
+      - SEMMEDDB:causes
       - WIKIDATA:P1542
     broad_mappings:
       - RO:0002410
@@ -1839,6 +1855,7 @@ slots:
       - MONDO:disease_responds_to
     exact_mappings:
       - SEMMEDDB:TREATS
+      - SEMMEDDB:treats
       - WIKIDATA:P2175
       - CTD:therapeutic
     broad_mappings:
@@ -1879,6 +1896,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:PREVENTS
+      - SEMMEDDB:prevents
     narrow_mappings:
       # more restricted case of a material entity mitigating a pathological process
       - RO:0002599
@@ -1965,6 +1983,7 @@ slots:
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
       - ORPHANET:465410
+      - SEMMEDDB:diagnoses
 
   treated by:
     is_a: related to
@@ -2056,8 +2075,10 @@ slots:
     narrow_mappings:
       # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
       - SEMMEDDB:OCCURS_IN
+      - SEMMEDDB:occurs_in
       # SemMedDb term 'PROCESS_IN' constrained specifically to a process occurring in the object concept entity
       - SEMMEDDB:PROCESS_OF
+      - SEMMEDDB:process_of
       # Uberon term constrained to a 'site' as object concept
       - UBERON_CORE:site_of
       - LOINC:has_imaged_location
@@ -2128,6 +2149,7 @@ slots:
     exact_mappings:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
+      - SEMMEDDB:location_of
       - WIKIDATA:276
       # RTX tagged this as an inverse of biolink:located_in
       - FMA:location_of
@@ -2257,6 +2279,7 @@ slots:
     exact_mappings:
       - BFO:0000050
       - SEMMEDDB:PART_OF
+      - SEMMEDDB:part_of
       - WIKIDATA:P361
       - FMA:part_of
       - GO:part_of
@@ -2317,6 +2340,7 @@ slots:
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
+      - SEMMEDDB:uses
     narrow_mappings:
       - LOINC:has_fragments_for_synonyms
       - LOINC:has_system
@@ -2487,6 +2511,7 @@ slots:
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
+      - SEMMEDDB:converts_to
       # RTX posted terms as inverse of 'biolink:derives_from'
       - FMA:derives
       - NCIT:is_normal_cell_origin_of_disease
@@ -2517,6 +2542,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:MANIFESTATION_OF
+      - SEMMEDDB:manifestation_of
       - OMIM:manifestation_of
     broad_mappings:
       # Wikidata definition slightly broader: "inherent and characteristic embodiment of a given concept"
@@ -2534,6 +2560,7 @@ slots:
       - RO:0003000
       - WIKIDATA:P1056
       - SEMMEDDB:PRODUCES
+      - SEMMEDDB:produces
     narrow_mappings:
       - NCIT:biological_process_has_result_chemical_or_drug
 
@@ -2582,6 +2609,7 @@ slots:
     exact_mappings:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
+      - SEMMEDDB:precedes
     broad_mappings:
       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
       - WIKIDATA:P156
@@ -3340,6 +3368,7 @@ slots:
       - LOINC:analyzes
       - LOINC:measured_by
       - LOINC:property_of
+      - SEMMEDDB:measures
 
   qualifiers:
     singular_name: qualifier
