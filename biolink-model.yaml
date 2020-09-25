@@ -32,6 +32,8 @@ prefixes:
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  RTXKG1: 'http://arax.rtx.ai/'
+  RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
 
 default_prefix: biolink
 default_range: string
@@ -246,6 +248,116 @@ slots:
       - RO:0009001
       - RO:0009004
       - RTXKG1:functionally_related_to
+      - RXNORM:has_form
+      - RXNORM:reformulated_to
+
+  superclass of:
+    is_a: related to
+    description: >-
+      holds between two classes where the domain class is a super class of the range class
+    domain: ontology class
+    range: iri type
+    multivalued: True
+    inverse: subclass of
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - WD:Q66088480
+      - CHEMBL.MECHANISM:superset_of
+      # RTX terms tagged as inverse of 'biolink:subclass_of'
+      - GO:inverse_isa
+      - MESH:inverse_isa
+      - RXNORM:inverse_isa
+    narrow_mappings:
+      # RTX terms tagged as inverse of 'biolink:subclass_of'
+      - NCIT:cdrh_parent_of
+      - NCIT:ctcae_5_parent_of
+      - NCIT:subset_includes_concept
+      - OMIM:has_manifestation
+
+  subclass of:
+    is_a: related to
+    description: >-
+      holds between two classes where the domain class is a specialization of the range class
+    domain: ontology class
+    range: ontology class
+    multivalued: True
+    in_subset:
+      - translator_minimal
+    inverse: superclass of
+    slot_uri: rdfs:subClassOf
+    close_mappings:
+      # RTX proposed term is actually 'biolink:superclass_of' which is inverse of 'biolink:subclass_of' relationship
+      - CHEMBL.MECHANISM:superset_of
+      # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
+      # and a an 'instance B' has class 'class A' (inverse term)
+      - LOINC:class_of
+      - LOINC:has_class
+    exact_mappings:
+      - rdfs:subClassOf
+      - SEMMEDDB:IS_A
+      - WIKIDATA:P279
+      - CHEMBL.MECHANISM:subset_of
+      - GO:isa
+      - MESH:isa
+      - RTXKG1:subclass_of
+      - RXNORM:isa
+    narrow_mappings:
+      - CHEBI:has_parent_hydride
+      - LOINC:has_archetype
+      - LOINC:has_parent_group
+      - LOINC:is_presence_guidance_for
+      - NCIT:gene_product_has_chemical_classification
+      # RTX mapped terms classes for biomarkers
+      - NCIT:gene_is_biomarker_type
+      - NCIT:gene_product_is_biomarker_type
+      - NCIT:has_inc_parent
+      - NCIT:has_nichd_parent
+      - NCIT:neoplasm_has_special_category
+      - NCIT:role_has_parent
+      - NDDF:has_dose_form
+      - OBO:intersection_of
+      - RXNORM:has_dose_form
+      - RXNORM:has_doseformgroup
+
+  same as:
+    is_a: related to
+    description: >-
+      holds between two entities that are considered equivalent to each other
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      # identical class extension with identical sets of individuals
+      - owl:equivalentClass
+    exact_mappings:
+      # identical individual, or identical class concept/meaning
+      - owl:sameAs
+      - skos:exactMatch
+      # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
+      # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
+      #- SEMMEDDB:SAME_AS
+      - WIKIDATA:P2888
+      - CHEMBL.MECHANISM:equivalent_to
+      - MONDO:equivalentTo
+    narrow_mappings:
+      - DRUGBANK:external-identifier
+
+  close match:
+    is_a: related to
+    description: >-
+      holds between two entities that are considered a skos:closeMatch to one another
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - skos:closeMatch
+      # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
+      - SEMMEDDB:SAME_AS
+    narrow_mappings:
+      - CHEBI:is_enantiomer_of
+      - CHEBI:is_tautomer_of
+      - MEDDRA:classified_as
+      - OBO:xref
+      - RXNORM:has_quantified_form
 
   interacts with:
     domain: named thing
@@ -2094,10 +2206,16 @@ slots:
       # term name seems to be 'realizes' but RTX maps this term here
       - BFO:0000055
       - WIKIDATA:P527
-      - FMA:contains
       - GO:has_part
       - RO:0001019
       - RTXKG1:has_part
+      - RXNORM:consists_of
+      - RXNORM:has_part
+    broad_mappings:
+      # To 'contain' is 'to have something inside or include something as a part'; slightly broader?
+      - RO:0001019
+      - FMA:contains
+      - RXNORM:contains
     narrow_mappings:
       - BFO:0000117
       # RTX term originally mapped to 'biolink:coexists_with'?
@@ -2127,6 +2245,7 @@ slots:
       - RTXKG1:composed_primarily_of
       - RTXKG1:contains_process
       - RTXKG1:has_plasma_membrane_part
+      - RXNORM:has_ingredient
 
   part of:
     is_a: overlaps
@@ -2141,6 +2260,13 @@ slots:
       - WIKIDATA:P361
       - FMA:part_of
       - GO:part_of
+      - RXNORM:constitutes
+      - RXNORM:part_of
+    broad_mappings:
+      # To 'contain' is 'to have something inside or include something as a part'
+      - RO:0001018
+      - FMA:contained_in
+      - RXNORM:contained_in
     narrow_mappings:
       - BSPO:0001106
       - BSPO:0001108
@@ -2153,7 +2279,6 @@ slots:
       - CPT:panel_element_of
       - CPT:panel_element_of_possibly_included
       - FMA:constitutional_part_of
-      - FMA:contained_in
       - FMA:member_of
       - FMA:regional_part_of
       - FMA:related_developmental_entity_of
@@ -2175,6 +2300,9 @@ slots:
       - RO:0002571
       - RO:0002572
       - RO:0002576
+      - RXNORM:ingredient_of
+      - RXNORM:ingredients_of
+      - RXNORM:precise_ingredient_of
 
   has input:
     is_a: has participant
@@ -2483,86 +2611,6 @@ slots:
       - RO:0002087
       - RO:0002285
 
-  same as:
-    is_a: related to
-    description: >-
-      holds between two entities that are considered equivalent to each other
-    in_subset:
-      - translator_minimal
-    close_mappings:
-      # identical class extension with identical sets of individuals
-      - owl:equivalentClass
-    exact_mappings:
-      # identical individual, or identical class concept/meaning
-      - owl:sameAs
-      - skos:exactMatch
-      # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
-      # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
-      #- SEMMEDDB:SAME_AS
-      - WIKIDATA:P2888
-      - CHEMBL.MECHANISM:equivalent_to
-      - MONDO:equivalentTo
-    narrow_mappings:
-      - DRUGBANK:external-identifier
-
-  close match:
-    is_a: related to
-    description: >-
-      holds between two entities that are considered a skos:closeMatch to one another
-    in_subset:
-      - translator_minimal
-    exact_mappings:
-      - skos:closeMatch
-      # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
-      - SEMMEDDB:SAME_AS
-    narrow_mappings:
-      - CHEBI:is_enantiomer_of
-      - CHEBI:is_tautomer_of
-      - MEDDRA:classified_as
-      - OBO:xref
-
-  subclass of:
-    is_a: related to
-    description: >-
-      holds between two classes where the domain class is a specialization of the range class
-    domain: ontology class
-    range: ontology class
-    multivalued: True
-    in_subset:
-      - translator_minimal
-    inverse: superclass of
-    slot_uri: rdfs:subClassOf
-    close_mappings:
-      # RTX proposed term is actually 'biolink:superclass_of' which is inverse of 'biolink:subclass_of' relationship
-      - CHEMBL.MECHANISM:superset_of
-      # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
-      # and a an 'instance B' has class 'class A' (inverse term)
-      - LOINC:class_of
-      - LOINC:has_class
-    exact_mappings:
-      - rdfs:subClassOf
-      - SEMMEDDB:IS_A
-      - WIKIDATA:P279
-      - CHEMBL.MECHANISM:subset_of
-      - GO:isa
-      - MESH:isa
-      - RTXKG1:subclass_of
-    narrow_mappings:
-      - CHEBI:has_parent_hydride
-      - LOINC:has_archetype
-      - LOINC:has_parent_group
-      - LOINC:is_presence_guidance_for
-      - NCIT:gene_product_has_chemical_classification
-      # RTX mapped terms classes for biomarkers
-      - NCIT:gene_is_biomarker_type
-      - NCIT:gene_product_is_biomarker_type
-      - NCIT:has_inc_parent
-      - NCIT:has_nichd_parent
-      - NCIT:neoplasm_has_special_category
-      - NCIT:role_has_parent
-      - NDDF:has_dose_form
-      - OBO:intersection_of
-
   directly interacts with:
     is_a: interacts with
     description: Holds between molecular entities that physically and directly interact
@@ -2833,29 +2881,6 @@ slots:
       - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
-  superclass of:
-    is_a: related to
-    description: >-
-      holds between two classes where the domain class is a super class of the range class
-    domain: ontology class
-    range: iri type
-    multivalued: True
-    inverse: subclass of
-    in_subset:
-      - translator_minimal
-    exact_mappings:
-      - WD:Q66088480
-      - CHEMBL.MECHANISM:superset_of
-      # RTX terms tagged as inverse of 'biolink:subclass_of'
-      - GO:inverse_isa
-      - MESH:inverse_isa
-    narrow_mappings:
-      # RTX terms tagged as inverse of 'biolink:subclass_of'
-      - NCIT:cdrh_parent_of
-      - NCIT:ctcae_5_parent_of
-      - NCIT:subset_includes_concept
-      - OMIM:has_manifestation
-
   #End of edge_label predicate slots
 
 ## property slots
@@ -2991,6 +3016,9 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
+      # there is an interesting debate here: are these terms "narrower" a.k.a. more specialized instances of
+      # 'biolink:synonym' or should they be binned into their respective namesake class of mappings?
+      # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
@@ -2999,6 +3027,7 @@ slots:
       # TODO: RTX contributed terms mapped here... May need review?
       - HANCESTRO:0330
       - IAO:0000136
+      - RXNORM:has_tradename
 
   category:
     is_a: type
