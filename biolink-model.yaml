@@ -257,6 +257,13 @@ slots:
       - SNOMED:has_associated_procedure
       - SNOMED:has_direct_morphology
       - SNOMED:has_disposition
+      - SNOMED:has_indirect_morphology
+      - SNOMED:has_modification
+      - SNOMED:has_procedure_morphology
+      - SNOMED:has_specimen_source_morphology
+      - SNOMED:inheres_in
+      - SNOMED:is_interpreted_by
+      - SNOMED:relative_to_part_of
 
   superclass of:
     is_a: related to
@@ -485,6 +492,7 @@ slots:
       - RO:0002591
       - RO:0002592
       - RO:0012003
+      - SNOMED:has_pathological_process
 
   affects abundance of:
     description: >-
@@ -1827,6 +1835,7 @@ slots:
       # RTX mapping
       - RTXKG1:capable_of_part_of
       - SNOMED:causative_agent_of
+      - SNOMED:has_realization
 
   caused by:
     description: >-
@@ -1894,6 +1903,7 @@ slots:
       - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
       - REPODB:clinically_tested_withdrawn_phase_3
       - RTXKG1:indicated_for
+      - SNOMED:plays_role
 
   prevents :
     is_a: affects risk for
@@ -2078,12 +2088,14 @@ slots:
     in_subset:
       - translator_minimal
     close_mappings:
-      # This term seems to be the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
+      # These terms seem to be the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
       - BFO:0000067
+      - SNOMED:has_occurrence
     exact_mappings:
       - BFO:0000066
       - GO:occurs_in
       - PathWhiz:has_location
+      - SNOMED:occurs_in
     narrow_mappings:
       # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
       - SEMMEDDB:OCCURS_IN
@@ -2099,6 +2111,7 @@ slots:
       - RO:0002232
       - SNOMED:has_direct_procedure_site
       - SNOMED:has_direct_site
+      - SNOMED:has_procedure_site
 
   located in:
     is_a: related to
@@ -2151,6 +2164,9 @@ slots:
       - NCIT:procedure_may_have_partially_excised_anatomy
       - RO:0002303
       - RTXKG1:disease_has_location
+      - SNOMED:has_finding_site
+      - SNOMED:has_indirect_procedure_site
+      - SNOMED:has_inherent_location
 
   location of:
     is_a: related to
@@ -2167,6 +2183,8 @@ slots:
       # RTX tagged this as an inverse of biolink:located_in
       - FMA:location_of
       - RTXKG1:site_of
+    narrow_mappinigs:
+      - SNOMED:inherent_location_of
 
   similar to:
       is_a: related to
@@ -2347,6 +2365,8 @@ slots:
       - SNOMED:during
       - SNOMED:focus_of
       - SNOMED:has_dependent
+      - SNOMED:part_anatomy_structure_of
+      - SNOMED:precise_active_ingredient_of
 
   has input:
     is_a: has participant
@@ -2368,6 +2388,14 @@ slots:
       - PathWhiz:has_left_element
       - RO:0002590
       - RO:0004009
+      - SNOMED:has_finding_method
+      - SNOMED:has_precondition
+      - SNOMED:has_specimen_source_identity
+      - SNOMED:has_specimen_substance
+      - SNOMED:uses_access_device
+      - SNOMED:uses_device
+      - SNOMED:uses_energy
+      - SNOMED:uses_substance
 
   has output:
     is_a: has participant
@@ -2430,6 +2458,9 @@ slots:
       - RO:0004007
       - RO:0004020
       - RO:0004021
+      - SNOMED:has_indirect_device
+      - SNOMED:has_procedure_device
+      - SNOMED:has_recipient_category
 
   participates in:
     is_a: related to
@@ -2554,6 +2585,7 @@ slots:
       - RO:derives_from
     narrow_mappings:
       - CHEBI:has_functional_parent
+      - SNOMED:has_specimen_source_topography
 
   manifestation of:
     is_a: related to
@@ -2587,6 +2619,8 @@ slots:
       - SEMMEDDB:produces
     narrow_mappings:
       - NCIT:biological_process_has_result_chemical_or_drug
+      - SNOMED:has_process_output
+      - SNOMED:specimen_procedure_of
 
   produced by:
     is_a: related to
@@ -2600,6 +2634,8 @@ slots:
       holds between two entities with a temporal relationship
     domain: occurrent
     range: occurrent
+    exact_mappings:
+      - SNOMED:temporally_related_to
     narrow_mappings:
       # The These RTX mappings are temporal in nature, but not with precedes ordering, so mapped here
       - RO:0002082
@@ -2634,6 +2670,7 @@ slots:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
       - SEMMEDDB:precedes
+      - SNOMED:occurs_before
     broad_mappings:
       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
       - WIKIDATA:P156
@@ -3288,6 +3325,8 @@ slots:
       - ExO:0000055
     narrow_mappings:
       - LOINC:has_pharmaceutical_route
+      - SNOMED:has_dose_form_intended_site
+      - SNOMED:has_route_of_administration
 
   update date:
     is_a: node property
@@ -3597,6 +3636,31 @@ slots:
       - SNOMED:has_clinical_course
       - SNOMED:has_count_of_base_of_active_ingredient
       - SNOMED:has_dose_form_administration_method
+      - SNOMED:has_dose_form_release_characteristic
+      - SNOMED:has_dose_form_transformation
+      - SNOMED:has_finding_context
+      - SNOMED:has_finding_informer
+      - SNOMED:has_inherent_attribute
+      - SNOMED:has_intent
+      - SNOMED:has_interpretation
+      - SNOMED:has_laterality
+      - SNOMED:has_measurement_method
+      - SNOMED:has_method
+      - SNOMED:has_priority
+      - SNOMED:has_procedure_context
+      - SNOMED:has_process_duration
+      - SNOMED:has_property
+      - SNOMED:has_revision_status
+      - SNOMED:has_scale_type
+      - SNOMED:has_severity
+      - SNOMED:has_specimen
+      - SNOMED:has_state_of_matter
+      - SNOMED:has_subject_relationship_context
+      - SNOMED:has_surgical_approach
+      - SNOMED:has_technique
+      - SNOMED:has_temporal_context
+      - SNOMED:has_time_aspect
+      - SNOMED:has_units
 
   has attribute type:
     description: >-
@@ -3630,6 +3694,8 @@ slots:
       - qud:quantityValue
     narrow_mappings:
       - SNOMED:has_concentration_strength_numerator_value
+      - SNOMED:has_presentation_strength_denominator_value
+      - SNOMED:has_presentation_strength_numerator_value
     in_subset:
       - samples
 
@@ -3660,6 +3726,9 @@ slots:
     narrow_mappings:
       - SNOMED:has_concentration_strength_denominator_unit
       - SNOMED:has_concentration_strength_numerator_unit
+      - SNOMED:has_presentation_strength_denominator_unit
+      - SNOMED:has_presentation_strength_numerator_unit
+      - SNOMED:has_unit_of_presentation
     in_subset:
       - samples
 
