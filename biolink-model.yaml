@@ -253,6 +253,10 @@ slots:
       - RTXKG1:functionally_related_to
       - RXNORM:has_form
       - RXNORM:reformulated_to
+      - SNOMED:has_associated_morphology
+      - SNOMED:has_associated_procedure
+      - SNOMED:has_direct_morphology
+      - SNOMED:has_disposition
 
   superclass of:
     is_a: related to
@@ -277,6 +281,7 @@ slots:
       - NCIT:ctcae_5_parent_of
       - NCIT:subset_includes_concept
       - OMIM:has_manifestation
+      - SNOMED:has_basic_dose_form
 
   subclass of:
     is_a: related to
@@ -323,6 +328,8 @@ slots:
       - OBO:intersection_of
       - RXNORM:has_dose_form
       - RXNORM:has_doseformgroup
+      - SNOMED:entire_anatomy_structure_of
+      - SNOMED:has_dose_form
 
   same as:
     is_a: related to
@@ -1789,6 +1796,7 @@ slots:
       - SEMMEDDB:CAUSES
       - SEMMEDDB:causes
       - WIKIDATA:P1542
+      - SNOMED:cause_of
     broad_mappings:
       - RO:0002410
     narrow_mappings:
@@ -1818,6 +1826,7 @@ slots:
       - RO:0004001
       # RTX mapping
       - RTXKG1:capable_of_part_of
+      - SNOMED:causative_agent_of
 
   caused by:
     description: >-
@@ -1923,6 +1932,8 @@ slots:
       # RTX mapping for this term was just 'related_to' but there seems to be a stronger correlation implied
       - RO:0004029
       - RTXKG1:associated_with_disease
+      - SNOMED:associated_with
+      - SNOMED:has_associated_finding
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -2049,6 +2060,7 @@ slots:
     exact_mappings:
       - RO:0002200
       - RTXKG1:has_phenotype
+      - SNOMED:characterized_by
     broad_mappings:
       # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
       - hetio:PRESENTS_DpS
@@ -2085,7 +2097,8 @@ slots:
       - PathWhiz:in_species
       - RO:0002231
       - RO:0002232
-
+      - SNOMED:has_direct_procedure_site
+      - SNOMED:has_direct_site
 
   located in:
     is_a: related to
@@ -2268,6 +2281,7 @@ slots:
       - RTXKG1:contains_process
       - RTXKG1:has_plasma_membrane_part
       - RXNORM:has_ingredient
+      - SNOMED:has_component
 
   part of:
     is_a: overlaps
@@ -2326,6 +2340,13 @@ slots:
       - RXNORM:ingredient_of
       - RXNORM:ingredients_of
       - RXNORM:precise_ingredient_of
+      - SNOMED:active_ingredient_of
+      - SNOMED:basis_of_strength_substance_of
+      - SNOMED:component_of
+      - SNOMED:direct_substance_of
+      - SNOMED:during
+      - SNOMED:focus_of
+      - SNOMED:has_dependent
 
   has input:
     is_a: has participant
@@ -2437,6 +2458,7 @@ slots:
       - RO:0002216
       - RO:0002505
       - RO:0002565
+      - SNOMED:has_direct_device
 
   actively involved in:
     is_a: participates in
@@ -2547,6 +2569,8 @@ slots:
     broad_mappings:
       # Wikidata definition slightly broader: "inherent and characteristic embodiment of a given concept"
       - WIKIDATA:P1557
+    narrow_mappings:
+      - SNOMED:has_definitional_manifestation
 
   produces:
     is_a: related to
@@ -3569,6 +3593,10 @@ slots:
       # RTX tagged a few RO terms as 'biolink:related_to' but semantics suggest a better mapping here
       - RO:0000086
       - RO:0000087
+      - SNOMED:has_access
+      - SNOMED:has_clinical_course
+      - SNOMED:has_count_of_base_of_active_ingredient
+      - SNOMED:has_dose_form_administration_method
 
   has attribute type:
     description: >-
@@ -3600,6 +3628,8 @@ slots:
     multivalued: true
     mappings:
       - qud:quantityValue
+    narrow_mappings:
+      - SNOMED:has_concentration_strength_numerator_value
     in_subset:
       - samples
 
@@ -3627,6 +3657,9 @@ slots:
     exact_mappings:
       - qud:unit
       - IAO:0000039
+    narrow_mappings:
+      - SNOMED:has_concentration_strength_denominator_unit
+      - SNOMED:has_concentration_strength_numerator_unit
     in_subset:
       - samples
 
