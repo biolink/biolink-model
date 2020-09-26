@@ -294,6 +294,7 @@ slots:
       - GO:inverse_isa
       - MESH:inverse_isa
       - RXNORM:inverse_isa
+      - VANDF:inverse_isa
     narrow_mappings:
       # RTX terms tagged as inverse of 'biolink:subclass_of'
       - NCIT:cdrh_parent_of
@@ -331,6 +332,7 @@ slots:
       - MESH:isa
       - RTXKG1:subclass_of
       - RXNORM:isa
+      - VANDF:isa
     narrow_mappings:
       - CHEBI:has_parent_hydride
       - LOINC:has_archetype
@@ -2410,6 +2412,7 @@ slots:
       - UMLS:component_of
       - UMLS:has_owning_affiliate
       - UMLS:owning_subsection_of
+      - VANDF:ingredient_of
 
   has input:
     is_a: has participant
