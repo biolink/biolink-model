@@ -154,6 +154,7 @@ slots:
       - skos:relatedMatch
       - SEMMEDDB:ASSOCIATED_WITH
       - SEMMEDDB:associated_with
+      - UMLS:related_to
     broad_mappings:
       - owl:topObjectProperty
     narrow_mappings:
@@ -265,6 +266,16 @@ slots:
       - SNOMED:is_interpreted_by
       - SNOMED:relative_to_part_of
       - UBERON:synapsed_by
+      - UMLS:RO
+      - UMLS:RQ
+      - UMLS:class_code_classified_by
+      - UMLS:exhibited_by
+      - UMLS:has_context_binding
+      - UMLS:has_form
+      - UMLS:has_mapping_qualifier
+      - UMLS:larger_than
+      - UMLS:mapped_to
+      - UMLS:owning_section_of
 
   superclass of:
     is_a: related to
@@ -290,6 +301,7 @@ slots:
       - NCIT:subset_includes_concept
       - OMIM:has_manifestation
       - SNOMED:has_basic_dose_form
+      - UMLS:RB
 
   subclass of:
     is_a: related to
@@ -378,6 +390,7 @@ slots:
       - MEDDRA:classified_as
       - OBO:xref
       - RXNORM:has_quantified_form
+      - UMLS:SY
 
   interacts with:
     domain: named thing
@@ -1859,6 +1872,7 @@ slots:
       - RTXKG1:capable_of_part_of
       - SNOMED:causative_agent_of
       - SNOMED:has_realization
+      - UMLS:has_physiologic_effect
 
   caused by:
     description: >-
@@ -2324,6 +2338,7 @@ slots:
       - RTXKG1:has_plasma_membrane_part
       - RXNORM:has_ingredient
       - SNOMED:has_component
+      - UMLS:has_component
 
   part of:
     is_a: overlaps
@@ -2392,6 +2407,9 @@ slots:
       - SNOMED:part_anatomy_structure_of
       - SNOMED:precise_active_ingredient_of
       - UBERON:subdivision_of
+      - UMLS:component_of
+      - UMLS:has_owning_affiliate
+      - UMLS:owning_subsection_of
 
   has input:
     is_a: has participant
@@ -3129,7 +3147,7 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
-    mappings:
+    narrow_mappings:
       # there is an interesting debate here: are these terms "narrower" a.k.a. more specialized instances of
       # 'biolink:synonym' or should they be binned into their respective namesake class of mappings?
       # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
@@ -3137,7 +3155,6 @@ slots:
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
       - oboInOwl:hasRelatedSynonym
-    narrow_mappings:
       # TODO: RTX contributed terms mapped here... May need review?
       - HANCESTRO:0330
       - IAO:0000136
@@ -3457,6 +3474,7 @@ slots:
       - LOINC:measured_by
       - LOINC:property_of
       - SEMMEDDB:measures
+      - UMLS:measures
 
   qualifiers:
     singular_name: qualifier
@@ -3686,6 +3704,10 @@ slots:
       - SNOMED:has_temporal_context
       - SNOMED:has_time_aspect
       - SNOMED:has_units
+      - UMLS:has_structural_class
+      - UMLS:has_supported_concept_property
+      - UMLS:has_supported_concept_relationship
+      - UMLS:may_be_qualified_by
 
   has attribute type:
     description: >-
