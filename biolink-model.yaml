@@ -264,6 +264,7 @@ slots:
       - SNOMED:inheres_in
       - SNOMED:is_interpreted_by
       - SNOMED:relative_to_part_of
+      - UBERON:synapsed_by
 
   superclass of:
     is_a: related to
@@ -1667,6 +1668,28 @@ slots:
       - RO:0002219
       - RO:0002220
       - RO:0002221
+      - SO:has_origin
+      # RTX mapped these UBERON terms all here
+      - UBERON:anastomoses_with
+      - UBERON:anteriorly_connected_to
+      - UBERON:channel_for
+      - UBERON:channels_from
+      - UBERON:channels_into
+      - UBERON:conduit_for
+      - UBERON:distally_connected_to
+      - UBERON:existence_starts_and_ends_during
+      - UBERON:extends_fibers_into
+      - UBERON:filtered_through
+      - UBERON:in_central_side_of
+      - UBERON:in_innermost_side_of
+      - UBERON:in_outermost_side_of
+      - UBERON:indirectly_supplies
+      - UBERON:posteriorly_connected_to
+      - UBERON:protects
+      - UBERON:proximally_connected_to
+      - UBERON:sexually_homologous_to
+
+
 
   in pathway with:
     description: >-
@@ -2088,9 +2111,10 @@ slots:
     in_subset:
       - translator_minimal
     close_mappings:
-      # These terms seem to be the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
+      # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
       - BFO:0000067
       - SNOMED:has_occurrence
+      - UBERON:site_of
     exact_mappings:
       - BFO:0000066
       - GO:occurs_in
@@ -2367,6 +2391,7 @@ slots:
       - SNOMED:has_dependent
       - SNOMED:part_anatomy_structure_of
       - SNOMED:precise_active_ingredient_of
+      - UBERON:subdivision_of
 
   has input:
     is_a: has participant
