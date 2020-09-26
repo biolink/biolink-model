@@ -352,6 +352,8 @@ slots:
       - RXNORM:has_doseformgroup
       - SNOMED:entire_anatomy_structure_of
       - SNOMED:has_dose_form
+      # RTX mapping
+      - rdfs:subPropertyOf
 
   same as:
     is_a: related to
@@ -391,6 +393,7 @@ slots:
       - CHEBI:is_tautomer_of
       - MEDDRA:classified_as
       - OBO:xref
+      - oboFormat:xref
       - RXNORM:has_quantified_form
       - UMLS:SY
 
