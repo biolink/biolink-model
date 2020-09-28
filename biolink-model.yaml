@@ -2795,22 +2795,16 @@ slots:
     exact_mappings:
       - GTEx:affects_expression_in
 
-
   has variant part:
     is_a: has part
-    description: Holds between a genotype and a genotypic entity
-    mappings:
+    description: holds between a genomic entity and a genotypic entity that is a sub-component of it
+    exact_mappings:
       - GENO:0000382
 
   related condition:
     is_a: related to
-    mappings:
+    exact_mappings:
       - GENO:0000790
-
-  develops from:
-    is_a: related to
-    mappings:
-      - RO:0002202
 
   #Predicates relating variants to genes
 
@@ -2824,12 +2818,6 @@ slots:
     - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
     - NCIT:gene_product_variant_of_gene_product
     - OMIM:allelic_variant_of
-
-  has variant part:
-    is_a: is sequence variant of
-    description: holds between one genotype and a genotypic entity that is a sub-component of it
-    domain: sequence variant
-    range: sequence variant
 
   is missense variant of:
     is_a: is sequence variant of
@@ -4848,7 +4836,7 @@ classes:
   genotype:
     is_a: genomic entity
     description: >-
-      An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+      An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
     comments:
       - Consider renaming as genotypic entity
     slots:
