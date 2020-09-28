@@ -1995,8 +1995,8 @@ slots:
       holds between any two named thing entities "correlated with" one another in a positive manner.
     domain: named thing
     range: named thing
-    #in_subset:
-    #  - translator_minimal
+    in_subset:
+      - translator_minimal
     exact_mappings:
       - CTD:positivecorrelation
 
@@ -2006,8 +2006,8 @@ slots:
       holds between any two named thing entities "correlated with" one another in a negative manner.
     domain: named thing
     range: named thing
-    #in_subset:
-    #  - translator_minimal
+    in_subset:
+      - translator_minimal
     exact_mappings:
       - CTD:negativecorrelation
 
