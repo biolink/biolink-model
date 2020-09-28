@@ -2796,6 +2796,22 @@ slots:
       - GTEx:affects_expression_in
 
 
+  has variant part:
+    is_a: has part
+    description: Holds between a genotype and a genotypic entity
+    mappings:
+      - GENO:0000382
+
+  related condition:
+    is_a: related to
+    mappings:
+      - GENO:0000790
+
+  develops from:
+    is_a: related to
+    mappings:
+      - RO:0002202
+
   #Predicates relating variants to genes
 
   is sequence variant of:
@@ -4331,7 +4347,6 @@ classes:
 
   publication:
     is_a: information content entity
-    aliases: ['reference']
     description: >-
       Any published piece of information. Can refer to a whole publication,
       or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).

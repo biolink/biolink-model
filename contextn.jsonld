@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-09-17 21:16\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-09-21 02:02\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -226,6 +226,9 @@
       "change_is_catalyzed_by": {
          "@type": "@id"
       },
+      "chemically_similar_to": {
+         "@type": "@id"
+      },
       "chi_squared_statistic": {
          "@type": "xsd:float"
       },
@@ -305,6 +308,9 @@
          "@type": "@id"
       },
       "derives_into": {
+         "@type": "@id"
+      },
+      "develops_from": {
          "@type": "@id"
       },
       "directly_interacts_with": {
@@ -432,6 +438,9 @@
       },
       "has_unit": {
          "@type": "UO:0000000"
+      },
+      "has_variant_part": {
+         "@type": "@id"
       },
       "has_zygosity": {
          "@type": "@id"
@@ -643,6 +652,9 @@
       "regulates_process_to_process": {
          "@type": "@id"
       },
+      "related_condition": {
+         "@type": "@id"
+      },
       "related_to": {
          "@type": "@id"
       },
@@ -662,6 +674,9 @@
          "@type": "@id"
       },
       "sex_qualifier": {
+         "@type": "@id"
+      },
+      "similar_to": {
          "@type": "@id"
       },
       "source_data_file": {
