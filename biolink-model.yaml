@@ -2813,11 +2813,11 @@ slots:
     description: holds between a sequence variant and a genomic entity
     domain: sequence variant
     range: genomic entity
-  narrow_mappings:
-    # RTX contributed term mappings tagged elsewhere but mapped better here
-    - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
-    - NCIT:gene_product_variant_of_gene_product
-    - OMIM:allelic_variant_of
+    narrow_mappings:
+      # RTX contributed term mappings tagged elsewhere but mapped better here
+      - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
+      - NCIT:gene_product_variant_of_gene_product
+      - OMIM:allelic_variant_of
 
   is missense variant of:
     is_a: is sequence variant of
