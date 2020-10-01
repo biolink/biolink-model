@@ -132,12 +132,31 @@ make
 ```
 
 
-**Note:** the Makefile requires [jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo).
+**Note:** the Makefile requires the following dependencies to be installed:
+
+### jsonschema
+
+[jsonschema](https://json-schema.org/)
+
+Generally install using 
+
+```sh
+pip3 install jsonschema
+```
+
+### jsonschema2pojo
+
+[jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo)
 
 If you are on a Mac, it can be installed using `brew`:
 ```sh
 brew install jsonschema2pojo
 ```
+For other OS environments, download the latest release then extract it into your execution path.
+
+### GraphViz
+
+[GraphViz](https://graphviz.org/)
 
 ## Usage in existing projects
 
