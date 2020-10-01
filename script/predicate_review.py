@@ -37,6 +37,7 @@ class PredicateInventory():
             print("Definitions: ", definitions, file=self.log)
 
             for line in predicates:
+                n += 1
                 if n % 10:
                     # Process each line
                     field = line.split('\t')
@@ -45,11 +46,13 @@ class PredicateInventory():
                     if field[5]:
                         # Ignore mappings where the "Source Relationship ID" is empty?
                         if not field[2]:
+                            print("Empty Source ID: ", field[0], "|", field[1], "| |", field[5], file=self.log)
                             continue
 
                         # Ignore mappings where the "Source Relationship ID"
                         # is already identical to the Biolink predicate
                         if field[2] == field[5]:
+                            print("Source ID equals Biolink Slot: ", field[0], "|", field[1], "|", field[2], "|", field[5], file=self.log)
                             continue
 
                         print("Check: ", field[0], "|", field[1], "|", field[2], "|", field[5], file=self.log)
@@ -61,9 +64,8 @@ class PredicateInventory():
                     else:
                         #  do something with the exceptions here?
                         #  or don't bother for now, since they are easily reviewed in the original file?
+                        print("Exception: ", field[0], "|", field[1], "|", field[2], "|", field[5], file=self.log)
                         continue
-
-                    n += 1
 
 
 if __name__ == "__main__":
