@@ -117,9 +117,13 @@ See [metamodel](metamodel) for details of the metamodel.
 
 ## Make and build instructions
 
-Prerequisites: Python 3.7+
+Prerequisites: Python 3.7+ and pipenv:
 
-To install,
+```sh
+pip3 install pipenv
+```
+
+To install the project:
 ```sh
 make install
 ```
