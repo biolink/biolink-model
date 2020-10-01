@@ -66,4 +66,11 @@ URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | WIKIDATA:P703 |
+| **Close Mappings:** | | NCIT:is_organism_source_of_gene_product |
+|  | | NCIT:organism_has_gene |
+| **Narrow Mappings:** | | NCIT:gene_found_in_organism |
+|  | | NCIT:gene_product_has_organism_source |
+|  | | RO:0002160 |
+| **Related Mappings:** | | RO:0002162 |
 

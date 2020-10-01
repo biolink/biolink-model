@@ -23,3 +23,10 @@ URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | LOINC:has_count |
+

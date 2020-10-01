@@ -32,4 +32,21 @@ URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002233 |
+|  | | SEMMEDDB:USES |
+|  | | SEMMEDDB:uses |
+| **Close Mappings:** | | RO:0002352 |
+| **Narrow Mappings:** | | LOINC:has_fragments_for_synonyms |
+|  | | LOINC:has_system |
+|  | | PathWhiz:has_left_element |
+|  | | RO:0002590 |
+|  | | RO:0004009 |
+|  | | SNOMED:has_finding_method |
+|  | | SNOMED:has_precondition |
+|  | | SNOMED:has_specimen_source_identity |
+|  | | SNOMED:has_specimen_substance |
+|  | | SNOMED:uses_access_device |
+|  | | SNOMED:uses_device |
+|  | | SNOMED:uses_energy |
+|  | | SNOMED:uses_substance |
 
