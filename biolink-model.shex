@@ -1449,7 +1449,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <GeneToGeneAssociation> ] ? ;
           &<PairwiseInteractionAssociation_tes> ;
           rdf:type [ <PairwiseInteractionAssociation> ] ? ;
-          <relation> @metatype:Uriorcurie
+          <relation> @metatype:Uriorcurie ;
+          <interacting_molecules_category> @<OntologyClass> ?
        ) ;
        rdf:type [ <PairwiseGeneToGeneInteraction> ]
     )
@@ -1460,7 +1461,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <Association> ] ? ;
           <subject> @<MolecularEntity> ;
           <relation> @metatype:Uriorcurie ;
-          <object> @<MolecularEntity>
+          <object> @<MolecularEntity> ;
+          <interacting_molecules_category> @<OntologyClass> ?
        ) ;
        rdf:type [ <PairwiseInteractionAssociation> ]
     )
