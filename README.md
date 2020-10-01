@@ -160,7 +160,7 @@ For other OS environments, download the latest release then extract it into your
 
 ### GraphViz
 
-[GraphViz](https://graphviz.org/)
+See [GraphViz site](https://graphviz.org/) for installation in your operating system.
 
 ## Usage in existing projects
 
