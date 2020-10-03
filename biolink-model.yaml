@@ -9,29 +9,38 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 #
 # 1. The following 'prefixes:' delimited list has first precedence in resolution. 
 prefixes:
+  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  CTD: 'http://translator.ncats.nih.gov/CTD_'
+  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
+  ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
+  ExO: 'http://purl.obolibrary.org/obo/ExO_'
+  GAMMA: 'http://translator.renci.org/GAMMA_'
+  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
+  GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
+  HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
+  hetio: 'http://translator.ncats.nih.gov/hetio_'
+  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
+  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
+  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
+  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
-  SIO: 'http://semanticscience.org/resource/SIO_'
-  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
+  SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
+  SIO: 'http://semanticscience.org/resource/SIO_'
+  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
+  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
+  UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
+  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
   UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
   UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
-  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
-  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
-  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
-  GAMMA: 'http://translator.renci.org/GAMMA_'
-  CTD: 'http://translator.ncats.nih.gov/CTD_'
-  hetio: 'http://translator.ncats.nih.gov/hetio_'
-  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
-  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
-  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
-  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
-  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
-  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
-  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  WD: 'https://www.wikidata.org/wiki/'
+  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   
 default_prefix: biolink
 default_range: string
@@ -1148,7 +1157,7 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - WD:P2293
+      - WD:Property:P2293
       - GENO:0000840
       - GENO:0000841
       - NCIT:R176
@@ -1209,8 +1218,8 @@ slots:
     is_a: affects
     description: >-
       holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
-    domain: treatment
     required: true
+    domain: treatment
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -1223,6 +1232,19 @@ slots:
       - CTD:therapeutic
       - CTD:negativecorrelation
       - MONDO:disease_responds_to
+
+  treated by:
+    is_a: related to
+    description: >-
+      holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
+    domain: disease or phenotypic feature
+    range: treatment
+    in_subset:
+      - translator_minimal
+    inverse: treats
+    mappings:
+      - RO:0002302
+      - WIKIDATA:P2176
 
   prevents :
     is_a: affects risk for
@@ -1268,18 +1290,6 @@ slots:
     inverse: has biomarker
     mappings:
       - RO:0002607
-
-  treated by:
-    is_a: related to
-    description: >-
-      holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
-    domain: disease or phenotypic feature
-    in_subset:
-      - translator_minimal
-    inverse: treats
-    mappings:
-      - RO:0002302
-      - WIKIDATA:P2176
 
   expressed in:
     is_a: related to
@@ -1529,6 +1539,7 @@ slots:
     is_a: has participant
     description: >-
       holds between a physical entity and a process, where the physical entity executes the process
+    domain: physical entity
     range: biological process or activity
     in_subset:
       - translator_minimal
@@ -1541,6 +1552,7 @@ slots:
     description: >-
       holds between a process and a physical entity, where the physical entity executes the process
     domain: biological process or activity
+    range: physical entity
     in_subset:
       - translator_minimal
     inverse: enables
@@ -1618,6 +1630,19 @@ slots:
       - owl:sameAs
       - skos:exactMatch
       - WIKIDATA:P2888
+
+  superclass of:
+    is_a: related to
+    description: >-
+      holds between two classes where the domain class is a super class of the range class
+    domain: ontology class
+    range: ontology class # range was tagged as 'iri type' before... not sure why
+    multivalued: True
+    inverse: subclass of
+    in_subset:
+      - translator_minimal
+    mappings:
+      - WD:Q66088480
 
   subclass of:
     is_a: related to
@@ -1843,21 +1868,6 @@ slots:
       - CL:lacks_plasma_membrane_part
 
   #End proposed slots
-
-
-
-  superclass of:
-    is_a: related to
-    description: >-
-      holds between two classes where the domain class is a super class of the range class
-    domain: ontology class
-    range: iri type
-    multivalued: True
-    inverse: subclass of
-    in_subset:
-      - translator_minimal
-    mappings:
-      - WD:Q66088480
 
 ## property slots
 
@@ -2927,7 +2937,7 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
-      - ORPHA
+      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbrevation for ORPHANET? not used in model
       - EFO
       - UMLS
       - MESH
