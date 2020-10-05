@@ -13,12 +13,16 @@ prefixes:
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  # Placeholder: not sure how 'chembio' really resolves
+  chembio: 'http://translator.ncats.nih.gov/chembio_'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
+  # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
+  GOP: 'http://purl.obolibrary.org/obo/go#'
   GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
@@ -29,6 +33,8 @@ prefixes:
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
+  # 'ORPHA' could be a synonym for 'ORPHANET' but not otherwise resolvable
+  ORPHA: 'http://translator.ncats.nih.gov/ORPHA_'
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
@@ -39,6 +45,11 @@ prefixes:
   UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
   UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
   UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
+  # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
+  # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
+  # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
+  VMC: 'https://github.com/ga4gh/vr-spec/'
+  WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
   WD: 'https://www.wikidata.org/wiki/'
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   
@@ -2046,7 +2057,7 @@ slots:
     domain: named thing
     range: label type
     multivalued: true
-    slot_uri: http://purl.obolibrary.org/obo/go#systematic_synonym
+    slot_uri: GOP:systematic_synonym
     description: >-
       more commonly used for gene symbols in yeast
 
@@ -4301,7 +4312,7 @@ classes:
   gene to phenotypic feature association:
     is_a: association
     mappings:
-      - http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
+      - WBVocab:Gene-Phenotype-Association
     defining_slots:
       - subject
       - object
@@ -4707,7 +4718,7 @@ classes:
     aliases: ['functional association']
     is_a: functional association
     mappings:
-      - http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
+      - WBVocab:Gene-GO-Association
     defining_slots:
       - subject
       - object
