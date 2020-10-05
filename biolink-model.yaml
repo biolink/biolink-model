@@ -49,7 +49,8 @@ prefixes:
   # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
   VMC: 'https://github.com/ga4gh/vr-spec/'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
-  WD: 'https://www.wikidata.org/wiki/'
+  WD: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
+  WDP: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   
 default_prefix: biolink
