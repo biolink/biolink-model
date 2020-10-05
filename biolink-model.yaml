@@ -33,8 +33,7 @@ prefixes:
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
-  # 'ORPHA' could be a synonym for 'ORPHANET' but not otherwise resolvable
-  ORPHA: 'http://translator.ncats.nih.gov/ORPHA_'
+  ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
@@ -50,7 +49,8 @@ prefixes:
   # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
   VMC: 'https://github.com/ga4gh/vr-spec/'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
-  WD: 'https://www.wikidata.org/wiki/'
+  WD: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
+  WDP: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   
 default_prefix: biolink
@@ -1168,7 +1168,7 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - WD:Property:P2293
+      - WDP:P2293
       - GENO:0000840
       - GENO:0000841
       - NCIT:R176
