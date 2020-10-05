@@ -33,8 +33,7 @@ prefixes:
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
-  # 'ORPHA' could be a synonym for 'ORPHANET' but not otherwise resolvable
-  ORPHA: 'http://translator.ncats.nih.gov/ORPHA_'
+  ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
@@ -1881,11 +1880,11 @@ slots:
       - NCIT:chromosome_mapped_to_disease
       - NCIT:disease_has_normal_tissue_origin
       - OBO:nbo#in_response_to
-      - ORPHANET:317343
-      - ORPHANET:317344
-      - ORPHANET:317346
-      - ORPHANET:410295
-      - ORPHANET:410296
+      - ORPHA:317343
+      - ORPHA:317344
+      - ORPHA:317346
+      - ORPHA:410295
+      - ORPHA:410296
       # RTX mapped this term to 'biolink:related_to' but this term seems a more precise mapping
       - RO:0002256
       - RO:0002315
@@ -1998,7 +1997,7 @@ slots:
       - NCIT:is_associated_disease_of
       # RTX term deemed inverse of this biolink term?
       - NCIT:is_cytogenetic_abnormality_of_disease
-      - ORPHANET:317345
+      - ORPHA:317345
       - PDQ:associated_disease
       # RTX mapping for this term was just 'related_to' but there seems to be a stronger correlation implied
       - RO:0004029
@@ -2064,7 +2063,7 @@ slots:
       # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
-      - ORPHANET:465410
+      - ORPHA:465410
       - SEMMEDDB:diagnoses
 
   treated by:
@@ -2579,9 +2578,9 @@ slots:
       # RTX contribute mapping, may belong somewhere else?
       - NCIT:gene_involved_in_molecular_abnormality
       - OBO:nbo#by_means
-      - ORPHANET:317348
-      - ORPHANET:317349
-      - ORPHANET:327767
+      - ORPHA:317348
+      - ORPHA:317349
+      - ORPHA:327767
       - PATO:towards
 
   capable of:
@@ -3700,8 +3699,8 @@ slots:
       - OBO:INO_0000154
       - OBO:hancestro_0308
       - OMIM:has_inheritance_type
-      - ORPHANET:C016
-      - ORPHANET:C017
+      - ORPHA:C016
+      - ORPHA:C017
       - RO:0000053
       # RTX tagged a few RO terms as 'biolink:related_to' but semantics suggest a better mapping here
       - RO:0000086
