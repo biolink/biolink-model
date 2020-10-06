@@ -2319,6 +2319,7 @@ slots:
     inverse: part of
     exact_mappings:
       - BFO:0000051
+      - dcterms:hasPart
       # term name seems to be 'realizes' but RTX maps this term here
       - BFO:0000055
       - WIKIDATA:P527
@@ -3056,28 +3057,29 @@ slots:
 
   title:
     is_a: node property
-    domain: data set version
-    mappings:
+    domain: named thing   # needed to generalise this for inheritance to information content entities?
+    exact_mappings:
       - dcterms:title
+      - WDP:P1476
 
   source data file:
     is_a: node property
     domain: data set version
     range: data file
-    mappings:
+    broad_mappings:
       - dcterms:source
 
   source web page:
     is_a: node property
     domain: data set summary
-    mappings:
+    broad_mappings:
       - dcterms:source
 
   retrievedOn:
     is_a: node property
     domain: source file
     range: date
-    mappings:
+    exact_mappings:
       - pav:retrievedOn
 
   versionOf:
@@ -3109,19 +3111,19 @@ slots:
   format:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - dcterms:format
 
   created_with:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - pav:createdWith
 
   downloadURL:
     is_a: node property
     domain: distribution level
-    mappings:
+    exact_mappings:
       - dcterms:downloadURL
 
   distribution:
@@ -3348,6 +3350,19 @@ slots:
     mappings:
       - rdf:type
 
+  ## Additional Information Content Entity and Publication Node Properties
+
+
+  publication type:
+    is_a: node slot
+    range: ontology class
+    description: >-
+      connects an publication node to the type of publication (see MESH, https://www.nlm.nih.gov/mesh/pubtypes.html)
+      Can be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types) or perhaps
+      MESH (https://www.nlm.nih.gov/mesh/pubtypes.html)
+    mappings:
+      - rdf:type
+
   chi squared statistic:
     is_a: association slot
     range: float
@@ -3366,11 +3381,13 @@ slots:
 
   creation date:
     is_a: node property
+    aliases: ['publication date']
     range: date
     description: >-
       date on which thing was created. This can be applied to nodes or edges
-    mappings:
+    exact_mappings:
       - dcterms:createdOn
+      - WDP:P577
 
   has receptor:
     is_a: node property
@@ -4296,8 +4313,12 @@ classes:
     is_a: named thing
     description: >-
       a piece of information that typically describes some piece of biology or is used as support.
-    mappings:
+    slots:
+      - title
+      - format
+    exact_mappings:
       - IAO:0000030
+    narrow_mappings:
       # UMLS Semantic Group "Concepts & Ideas"
       - UMLSSG:CONC
       # Conceptual Entity
@@ -4361,9 +4382,19 @@ classes:
       Any published piece of information. Can refer to a whole publication,
       or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
       The scope is intended to be general and include information published on the web as well as journals.
+    slots:
+      - published in
+      - creation date
+      - publication type
+      - published in   # a broader work within which the publication may be placed, e.g. a journal
+      - author         # can be a list
+      - volume
+      - issue
+      - pages
     mappings:
       - IAO:0000311
       - IAO:0000013
+    exact_mappings:
       # UMLS Semantic Type "Intellectual Product"
       - UMLSSC:T170
       - UMLSST:inpr
