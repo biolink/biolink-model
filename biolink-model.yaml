@@ -1775,8 +1775,16 @@ slots:
       - RO:00002325
       - GO:colocalizes_with
 
-  gene associated with condition:
+  genetic association:
     is_a: related to
+    symmetric: true
+    description: >-
+      Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
+    exact_mappings:
+      - WIKIDATA.PROPERTY:P2293
+
+  gene associated with condition:
+    is_a: genetic association
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
     domain: gene
@@ -1784,18 +1792,11 @@ slots:
     in_subset:
       - translator_minimal
     inverse: condition associated with gene
-    close_mappings:
-      - WIKIDATA.PROPERTY:P2293
-      # genotype likely pathogenic for condition
-      - GENO:0000841
     exact_mappings:
-      - NCIT:R176
-      - hetio:ASSOCIATES_DaG
-      # genotype pathogenic for condition
-      - GENO:0000840
       - RTXKG1:gene_associated_with_condition
     broad_mappings:
-      # genotype likely pathogenic for condition
+      # broader than a single gene: 'genotype' pathogenic for condition?
+      - GENO:0000840
       - GENO:0000841
     narrow_mappings:
       # narrower: just diseases, not phenotypic features as well
@@ -1804,8 +1805,7 @@ slots:
       - NCIT:gene_product_malfunction_associated_with_disease
 
   condition associated with gene:
-    is_a: related to
-    aliases: ['genetic association']
+    is_a: genetic association
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
     domain: disease or phenotypic feature
@@ -1813,8 +1813,10 @@ slots:
     in_subset:
       - translator_minimal
     inverse: gene associated with condition
-    exact_mappings:
-      - WIKIDATA.PROPERTY:P2293
+    narrow_mappings:
+      # narrower since just diseases, not phenotypic features as well
+      - NCIT:R176
+      - hetio:ASSOCIATES_DaG
 
   affects risk for:
     is_a: related to
