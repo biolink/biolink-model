@@ -3062,7 +3062,7 @@ slots:
     domain: named thing   # needed to generalise this for inheritance to information content entities?
     exact_mappings:
       - dcterms:title
-      - WDP:P1476
+      - WIKIDATA_PROPERTY:P1476
 
   source data file:
     is_a: node property
@@ -3115,7 +3115,7 @@ slots:
     domain: source file
     exact_mappings:
       - dcterms:format
-      - WDP:P2701
+      - WIKIDATA_PROPERTY:P2701
 
   created_with:
     is_a: node property
@@ -3162,7 +3162,7 @@ slots:
     domain: named thing
     range: iri type
     exact_mappings:
-      - WDP:P854
+      - WIKIDATA_PROPERTY:P854
 
   name:
     is_a: node property
@@ -3369,7 +3369,7 @@ slots:
     domain: information content entity
     range: doi type
     exact_mappings:
-      - WDP:P356
+      - WIKIDATA_PROPERTY:P356
 
   publication type:
     is_a: node property
@@ -3386,7 +3386,7 @@ slots:
       a broader work within which the publication may be placed, e.g. a journal
     domain: publication
     exact_mappings:
-      - WDP:P1433
+      - WIKIDATA_PROPERTY:P1433
 
   publisher:
     is_a: node property
@@ -3395,7 +3395,7 @@ slots:
     domain: publication
     range: provider
     exact_mappings:
-      - WDP:P123
+      - WIKIDATA_PROPERTY:P123
 
   copyright license:
     is_a: node property
@@ -3403,7 +3403,7 @@ slots:
       license under which this copyrighted work is released
     domain: publication
     exact_mappings:
-      - WDP:P275
+      - WIKIDATA_PROPERTY:P275
 
   editor:
     is_a: node property
@@ -3412,7 +3412,7 @@ slots:
     domain: publication
     range: provider
     exact_mappings:
-      - WDP:P98
+      - WIKIDATA_PROPERTY:P98
 
   author:
     is_a: node property
@@ -3422,7 +3422,7 @@ slots:
     range: provider
     multivalued: true
     exact_mappings:
-      - WDP:P50
+      - WIKIDATA_PROPERTY:P50
 
   volume:
     is_a: node property
@@ -3430,7 +3430,7 @@ slots:
       volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
     domain: publication
     exact_mappings:
-      - WDP:P478
+      - WIKIDATA_PROPERTY:P478
 
   issue:
     is_a: node property
@@ -3438,7 +3438,7 @@ slots:
       issue of a newspaper, a scientific journal or magazine for reference purpose
     domain: publication
     exact_mappings:
-      - WDP:P433
+      - WIKIDATA_PROPERTY:P433
 
   pages:
     is_a: node property
@@ -3447,7 +3447,7 @@ slots:
     domain: publication
     multivalued: true
     exact_mappings:
-      - WDP:P304
+      - WIKIDATA_PROPERTY:P304
 
   ## End of Additional Properties for Information Content Entity and Publication Nodes
 
@@ -3475,7 +3475,7 @@ slots:
       date on which thing was created. This can be applied to nodes or edges
     exact_mappings:
       - dcterms:createdOn
-      - WDP:P577
+      - WIKIDATA_PROPERTY:P577
 
   has receptor:
     is_a: node property
