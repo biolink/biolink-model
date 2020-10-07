@@ -3113,6 +3113,7 @@ slots:
     domain: source file
     exact_mappings:
       - dcterms:format
+      - WDP:P2701
 
   created_with:
     is_a: node property
@@ -3158,6 +3159,8 @@ slots:
       - translator_minimal
     domain: named thing
     range: iri type
+    exact_mappings:
+      - WDP:P854
 
   name:
     is_a: node property
@@ -3335,12 +3338,13 @@ slots:
 
   provided by:
     is_a: association slot
-    range: provider
     description: >-
       connects an association to the agent (person, organization or group) that provided it
+    range: provider
+    multivalued: true
     mappings:
       - pav:providedBy
-    multivalued: true
+
 
   association type:
     is_a: association slot
@@ -3350,18 +3354,100 @@ slots:
     mappings:
       - rdf:type
 
-  ## Additional Information Content Entity and Publication Node Properties
+  ## Additional Properties for Information Content Entity and Publication Nodes
 
+  doi type:
+    typeof: uriorcurie
+    description: >-
+      Digital Object Identifier (see https://www.doi.org/) serial code used to uniquely identify
+      digital objects like academic papers (use upper case letters only)
+
+  doi:
+    is_a: id
+    domain: information content entity
+    range: doi type
+    exact_mappings:
+      - WDP:P356
 
   publication type:
-    is_a: node slot
-    range: ontology class
+    is_a: node property
     description: >-
-      connects an publication node to the type of publication (see MESH, https://www.nlm.nih.gov/mesh/pubtypes.html)
-      Can be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types) or perhaps
-      MESH (https://www.nlm.nih.gov/mesh/pubtypes.html)
-    mappings:
-      - rdf:type
+      Connects a publication node to the type of publication.
+      Ontology term could be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types)
+      or perhaps MESH (https://www.nlm.nih.gov/mesh/pubtypes.html)
+    domain: publication
+    range: ontology class
+
+  published in:
+    is_a: node property
+    description: >-
+      a broader work within which the publication may be placed, e.g. a journal
+    domain: publication
+    exact_mappings:
+      - WDP:P1433
+
+  publisher:
+    is_a: node property
+    description: >-
+      organization or person responsible for publishing books, periodicals, podcasts, games or software
+    domain: publication
+    range: provider
+    exact_mappings:
+      - WDP:P123
+
+  copyright license:
+    is_a: node property
+    description: >-
+      license under which this copyrighted work is released
+    domain: publication
+    exact_mappings:
+      - WDP:P275
+
+  editor:
+    is_a: node property
+    description: >-
+      editor of a compiled work such as a book or a periodical (newspaper or an academic journal)
+    domain: publication
+    range: provider
+    exact_mappings:
+      - WDP:P98
+
+  author:
+    is_a: node property
+    description: >-
+      main creator(s) of a written work (may be a list)
+    domain: publication
+    range: provider
+    multivalued: true
+    exact_mappings:
+      - WDP:P50
+
+  volume:
+    is_a: node property
+    description: >-
+      volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
+    domain: publication
+    exact_mappings:
+      - WDP:P478
+
+  issue:
+    is_a: node property
+    description: >-
+      issue of a newspaper, a scientific journal or magazine for reference purpose
+    domain: publication
+    exact_mappings:
+      - WDP:P433
+
+  pages:
+    is_a: node property
+    description: >-
+      page number of source referenced for statement
+    domain: publication
+    multivalued: true
+    exact_mappings:
+      - WDP:P304
+
+  ## End of Additional Properties for Information Content Entity and Publication Nodes
 
   chi squared statistic:
     is_a: association slot
@@ -4314,8 +4400,10 @@ classes:
     description: >-
       a piece of information that typically describes some piece of biology or is used as support.
     slots:
+      - doi
       - title
       - format
+      - creation date
     exact_mappings:
       - IAO:0000030
     narrow_mappings:
@@ -4383,23 +4471,24 @@ classes:
       or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
       The scope is intended to be general and include information published on the web as well as journals.
     slots:
-      - published in
-      - creation date
       - publication type
-      - published in   # a broader work within which the publication may be placed, e.g. a journal
-      - author         # can be a list
+      - published in
+      - copyright license
+      - editor
+      - author
       - volume
       - issue
       - pages
-    mappings:
-      - IAO:0000311
-      - IAO:0000013
     exact_mappings:
+      - IAO:0000311
+    narrow_mappings:
+      - IAO:0000013
       # UMLS Semantic Type "Intellectual Product"
       - UMLSSC:T170
       - UMLSST:inpr
     id_prefixes:
       - PMID
+      #- DOI  # maybe digital object identifier needs to be treated as a prefix too?
 
   administrative entity:
     is_a: named thing
