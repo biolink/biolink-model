@@ -50,8 +50,8 @@ prefixes:
   # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
   VMC: 'https://github.com/ga4gh/vr-spec/'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
-  WD: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
-  WDP: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
+  WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   
 default_prefix: biolink
@@ -307,7 +307,7 @@ slots:
     in_subset:
       - translator_minimal
     exact_mappings:
-      - WD:Q66088480
+      - WIKIDATA:Q66088480
       - CHEMBL.MECHANISM:superset_of
       # RTX terms tagged as inverse of 'biolink:subclass_of'
       - GO:inverse_isa
@@ -345,7 +345,7 @@ slots:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
       - SEMMEDDB:isa
-      - WIKIDATA:P279
+      - WIKIDATA_PROPERTY:P279
       - CHEMBL.MECHANISM:subset_of
       - GO:isa
       - MESH:isa
@@ -390,7 +390,7 @@ slots:
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
       # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
       #- SEMMEDDB:SAME_AS
-      - WIKIDATA:P2888
+      - WIKIDATA_PROPERTY:P2888
       - CHEMBL.MECHANISM:equivalent_to
       - MONDO:equivalentTo
     narrow_mappings:
@@ -442,7 +442,7 @@ slots:
       - translator_minimal
     symmetric: true
     exact_mappings:
-      - WIKIDATA:P129
+      - WIKIDATA_PROPERTY:P129
       - RTXKG1:physically_interacts_with
     close_mappings:
       # Agents of some interaction but not the relationship of interaction
@@ -1328,7 +1328,7 @@ slots:
       - GO:regulates
     narrow_mappings:
       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
-      - WIKIDATA:P128
+      - WIKIDATA_PROPERTY:P128
       - CHEMBL.MECHANISM:modulator
       # RTX mapping was 'biolink:related_to' but this term seems a more precise mapping?
       - RO:0002295
@@ -1417,7 +1417,7 @@ slots:
       - RO:0002448
     narrow_mappings:
       # Wikidata mapping copied over from 'regulates' above;  considered a slightly narrower term since it applies to protein and RNA as subject regulator whereas molecular_entity may also be another class of chemical_substance?
-      - WIKIDATA:P128
+      - WIKIDATA_PROPERTY:P128
 
   positively regulates, entity to entity:
     aliases: ['activity directly positively regulates activity of']
@@ -1492,7 +1492,7 @@ slots:
       - PR:has_gene_template
     exact_mappings:
       - RO:0002205
-      - WIKIDATA:P688
+      - WIKIDATA_PROPERTY:P688
       - NCIT:gene_encodes_gene_product
     narrow_mappings:
       - NCIT:gene_mutant_encodes_gene_product_sequence_variation
@@ -1530,7 +1530,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:HOM0000017
-      - WIKIDATA:P684
+      - WIKIDATA_PROPERTY:P684
 
   xenologous to:
     is_a: homologous to
@@ -1775,8 +1775,16 @@ slots:
       - RO:00002325
       - GO:colocalizes_with
 
-  gene associated with condition:
+  genetic association:
     is_a: related to
+    symmetric: true
+    description: >-
+      Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P2293
+
+  gene associated with condition:
+    is_a: genetic association
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
     domain: gene
@@ -1784,18 +1792,11 @@ slots:
     in_subset:
       - translator_minimal
     inverse: condition associated with gene
-    close_mappings:
-      - WD:Property:P2293
-      # genotype likely pathogenic for condition
-      - GENO:0000841
     exact_mappings:
-      - NCIT:R176
-      - hetio:ASSOCIATES_DaG
-      # genotype pathogenic for condition
-      - GENO:0000840
       - RTXKG1:gene_associated_with_condition
     broad_mappings:
-      # genotype likely pathogenic for condition
+      # broader than a single gene: 'genotype' pathogenic for condition?
+      - GENO:0000840
       - GENO:0000841
     narrow_mappings:
       # narrower: just diseases, not phenotypic features as well
@@ -1804,8 +1805,7 @@ slots:
       - NCIT:gene_product_malfunction_associated_with_disease
 
   condition associated with gene:
-    is_a: related to
-    aliases: ['genetic association']
+    is_a: genetic association
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
     domain: disease or phenotypic feature
@@ -1813,8 +1813,10 @@ slots:
     in_subset:
       - translator_minimal
     inverse: gene associated with condition
-    exact_mappings:
-      - WD:P2293
+    narrow_mappings:
+      # narrower since just diseases, not phenotypic features as well
+      - NCIT:R176
+      - hetio:ASSOCIATES_DaG
 
   affects risk for:
     is_a: related to
@@ -1864,7 +1866,7 @@ slots:
       - RO:0002506
       - SEMMEDDB:CAUSES
       - SEMMEDDB:causes
-      - WIKIDATA:P1542
+      - WIKIDATA_PROPERTY:P1542
       - SNOMED:cause_of
     broad_mappings:
       - RO:0002410
@@ -1907,7 +1909,7 @@ slots:
       - translator_minimal
     inverse: causes
     exact_mappings:
-      - WIKIDATA:P828
+      - WIKIDATA_PROPERTY:P828
     narrow_mappings:
       - RO:0001022
       - RO:0002608
@@ -1936,7 +1938,7 @@ slots:
     exact_mappings:
       - SEMMEDDB:TREATS
       - SEMMEDDB:treats
-      - WIKIDATA:P2175
+      - WIKIDATA_PROPERTY:P2175
       - CTD:therapeutic
     broad_mappings:
       - RO:0003307
@@ -2077,7 +2079,7 @@ slots:
       - translator_minimal
     inverse: treats
     exact_mappings:
-      - WIKIDATA:P2176
+      - WIKIDATA_PROPERTY:P2176
       # RTX contributed term tagged as inverse of 'biolink:treats'
       - MONDO:disease_responds_to
     narrow_mappings:
@@ -2322,7 +2324,7 @@ slots:
       - dcterms:hasPart
       # term name seems to be 'realizes' but RTX maps this term here
       - BFO:0000055
-      - WIKIDATA:P527
+      - WIKIDATA_PROPERTY:P527
       - GO:has_part
       - RO:0001019
       - RTXKG1:has_part
@@ -2377,7 +2379,7 @@ slots:
       - BFO:0000050
       - SEMMEDDB:PART_OF
       - SEMMEDDB:part_of
-      - WIKIDATA:P361
+      - WIKIDATA_PROPERTY:P361
       - FMA:part_of
       - GO:part_of
       - RXNORM:constitutes
@@ -2501,7 +2503,7 @@ slots:
       - translator_minimal
     inverse: participates in
     close_mappings:
-      - WIKIDATA:P2283
+      - WIKIDATA_PROPERTY:P2283
     exact_mappings:
       - RO:0000057
       - RO:has_participant
@@ -2672,7 +2674,7 @@ slots:
       - OMIM:manifestation_of
     broad_mappings:
       # Wikidata definition slightly broader: "inherent and characteristic embodiment of a given concept"
-      - WIKIDATA:P1557
+      - WIKIDATA_PROPERTY:P1557
     narrow_mappings:
       - SNOMED:has_definitional_manifestation
 
@@ -2686,7 +2688,7 @@ slots:
       - GOREL:0001010
     exact_mappings:
       - RO:0003000
-      - WIKIDATA:P1056
+      - WIKIDATA_PROPERTY:P1056
       - SEMMEDDB:PRODUCES
       - SEMMEDDB:produces
     narrow_mappings:
@@ -2745,7 +2747,7 @@ slots:
       - SNOMED:occurs_before
     broad_mappings:
       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
-      - WIKIDATA:P156
+      - WIKIDATA_PROPERTY:P156
     narrow_mappings:
       - FMA:transforms_into
       - RO:0002090
@@ -3527,7 +3529,7 @@ slots:
       - NCIT:is_organism_source_of_gene_product
       - NCIT:organism_has_gene
     exact_mappings:
-      - WIKIDATA:P703
+      - WIKIDATA_PROPERTY:P703
     narrow_mappings:
       - NCIT:gene_found_in_organism
       - NCIT:gene_product_has_organism_source
@@ -3555,7 +3557,7 @@ slots:
     description: >-
       description of chemical compound based on element symbols
     mappings:
-      - WIKIDATA:P274
+      - WIKIDATA_PROPERTY:P274
 
   aggregate statistic:
     is_a: node property
