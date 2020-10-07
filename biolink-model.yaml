@@ -16,6 +16,7 @@ prefixes:
   # Placeholder: not sure how 'chembio' really resolves
   chembio: 'http://translator.ncats.nih.gov/chembio_'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
+  COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
@@ -32,6 +33,7 @@ prefixes:
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
+  MESH_PUB: 'https://www.nlm.nih.gov/mesh/pubtypes.html#'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
@@ -50,8 +52,8 @@ prefixes:
   # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
   VMC: 'https://github.com/ga4gh/vr-spec/'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
-  WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
-  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
+  WIKIDATA: 'https://www.wikidata.org/wiki/'
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   
 default_prefix: biolink
@@ -3356,7 +3358,7 @@ slots:
     mappings:
       - rdf:type
 
-  ## Additional Properties for Information Content Entity and Publication Nodes
+  ## Properties and Definitions for Information Content Entity and Publication Nodes
 
   doi type:
     typeof: uriorcurie
@@ -3371,14 +3373,28 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P356
 
-  publication type:
+  genre type:
+    is_a: ontology class
+    description: >-
+      Ontology term for genre could be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types),
+      the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html) or perhaps the
+      Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
+      (http://vocabularies.coar-repositories.org/documentation/resource_types/).
+    values_from:  # Not sure which takes precedence here... perhaps MESH_PUB?
+      - WIKIDATA
+      - MESH_PUB
+      - COAR_RESOURCE
+    id_prefixes:
+      - WIKIDATA
+      - MESH_PUB
+      - COAR_RESOURCE
+
+  genre:
     is_a: node property
     description: >-
-      Connects a publication node to the type of publication.
-      Ontology term could be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types)
-      or perhaps MESH (https://www.nlm.nih.gov/mesh/pubtypes.html)
+      Connects a publication node to the genre of publication, e.g. book, periodical, etc.
     domain: publication
-    range: ontology class
+    range: genre type
 
   published in:
     is_a: node property
@@ -3448,6 +3464,82 @@ slots:
     multivalued: true
     exact_mappings:
       - WIKIDATA_PROPERTY:P304
+
+  information content entity:
+    aliases: ['information', 'information artefact', 'information entity']
+    abstract: true
+    is_a: named thing
+    description: >-
+      a piece of information that typically describes some piece of biology or is used as support.
+    slots:
+      - doi
+      - title
+      - format
+      - creation date
+    exact_mappings:
+      - IAO:0000030
+    narrow_mappings:
+      # UMLS Semantic Group "Concepts & Ideas"
+      - UMLSSG:CONC
+      # Conceptual Entity
+      - UMLSSC:T077
+      - UMLSST:cnce
+      # Idea or Concept
+      - UMLSSC:T078
+      - UMLSST:idcn
+      # Temporal Concept
+      - UMLSSC:T079
+      - UMLSST:tmco
+      # Qualitative Concept
+      - UMLSSC:T080
+      - UMLSST:qlco
+      # Quantitative Concept
+      - UMLSSC:T081
+      - UMLSST:qnco
+      # Spatial Concept
+      - UMLSSC:T082
+      - UMLSST:spco
+      # Regulation or Law
+      - UMLSSC:T089
+      - UMLSST:rnlw
+      # Group Attribute
+      - UMLSSC:T102
+      - UMLSST:grpa
+      # Functional Concept
+      - UMLSSC:T169
+      - UMLSST:ftcn
+      # Language
+      - UMLSSC:T171
+      - UMLSST:lang
+      # Classification
+      - UMLSSC:T185
+      - UMLSST:clas
+
+  publication:
+    is_a: information content entity
+    description: >-
+      Any published piece of information. Can refer to a whole publication,
+      or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
+      The scope is intended to be general and include information published on the web as well as journals.
+    slots:
+      - genre
+      - published in
+      - copyright license
+      - editor
+      - author
+      - volume
+      - issue
+      - pages
+    exact_mappings:
+      - IAO:0000311
+    narrow_mappings:
+      - IAO:0000013
+      # UMLS Semantic Type "Intellectual Product"
+      - UMLSSC:T170
+      - UMLSST:inpr
+    id_prefixes:
+      - PMID
+      #- DOI  # maybe digital object identifier needs to be treated as a prefix too?
 
   ## End of Additional Properties for Information Content Entity and Publication Nodes
 
@@ -4395,56 +4487,6 @@ classes:
     mappings:
       - XCO:0000000
 
-  information content entity:
-    aliases: ['information', 'information artefact', 'information entity']
-    abstract: true
-    is_a: named thing
-    description: >-
-      a piece of information that typically describes some piece of biology or is used as support.
-    slots:
-      - doi
-      - title
-      - format
-      - creation date
-    exact_mappings:
-      - IAO:0000030
-    narrow_mappings:
-      # UMLS Semantic Group "Concepts & Ideas"
-      - UMLSSG:CONC
-      # Conceptual Entity
-      - UMLSSC:T077
-      - UMLSST:cnce
-      # Idea or Concept
-      - UMLSSC:T078
-      - UMLSST:idcn
-      # Temporal Concept
-      - UMLSSC:T079
-      - UMLSST:tmco
-      # Qualitative Concept
-      - UMLSSC:T080
-      - UMLSST:qlco
-      # Quantitative Concept
-      - UMLSSC:T081
-      - UMLSST:qnco
-      # Spatial Concept
-      - UMLSSC:T082
-      - UMLSST:spco
-      # Regulation or Law
-      - UMLSSC:T089
-      - UMLSST:rnlw
-      # Group Attribute
-      - UMLSSC:T102
-      - UMLSST:grpa
-      # Functional Concept
-      - UMLSSC:T169
-      - UMLSST:ftcn
-      # Language
-      - UMLSSC:T171
-      - UMLSST:lang
-      # Classification
-      - UMLSSC:T185
-      - UMLSST:clas
-
   confidence level:
     is_a: information content entity
     description: >-
@@ -4465,32 +4507,6 @@ classes:
       - eco
     mappings:
       - ECO:0000000
-
-  publication:
-    is_a: information content entity
-    description: >-
-      Any published piece of information. Can refer to a whole publication,
-      or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
-      The scope is intended to be general and include information published on the web as well as journals.
-    slots:
-      - publication type
-      - published in
-      - copyright license
-      - editor
-      - author
-      - volume
-      - issue
-      - pages
-    exact_mappings:
-      - IAO:0000311
-    narrow_mappings:
-      - IAO:0000013
-      # UMLS Semantic Type "Intellectual Product"
-      - UMLSSC:T170
-      - UMLSST:inpr
-    id_prefixes:
-      - PMID
-      #- DOI  # maybe digital object identifier needs to be treated as a prefix too?
 
   administrative entity:
     is_a: named thing
