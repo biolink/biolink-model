@@ -114,6 +114,12 @@ types:
     description: >-
       An IRI
 
+  doi type:
+    typeof: uriorcurie
+    description: >-
+      Digital Object Identifier (see https://www.doi.org/) serial code used to uniquely identify
+      digital objects like academic papers (use upper case letters only)
+
   label type:
     typeof: string
     description: >-
@@ -3360,12 +3366,6 @@ slots:
       - rdf:type
 
   ## Properties and Definitions for Information Content Entity and Publication Nodes
-
-  doi type:
-    typeof: uriorcurie
-    description: >-
-      Digital Object Identifier (see https://www.doi.org/) serial code used to uniquely identify
-      digital objects like academic papers (use upper case letters only)
 
   doi:
     is_a: id
