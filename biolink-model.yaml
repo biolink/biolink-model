@@ -3103,19 +3103,21 @@ slots:
   license:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - dcterms:license
+    narrow_mappings:
+      - WIKIDATA_PROPERTY:P275
 
   rights:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - dcterms:rights
 
   format:
     is_a: node property
     domain: source file
-    exact_mappings:
+    exact_exact_mappings:
       - dcterms:format
       - WIKIDATA_PROPERTY:P2701
 
@@ -3377,16 +3379,19 @@ slots:
     is_a: ontology class
     description: >-
       Ontology term for genre could be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types),
-      the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html) or perhaps the
+      the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html),
+      Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/) or perhaps the
       Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
       (http://vocabularies.coar-repositories.org/documentation/resource_types/).
     values_from:  # Not sure which takes precedence here... perhaps MESH_PUB?
       - WIKIDATA
       - MESH_PUB
+      - dctypes
       - COAR_RESOURCE
     id_prefixes:
       - WIKIDATA
       - MESH_PUB
+      - dctypes
       - COAR_RESOURCE
 
   genre:
@@ -3395,11 +3400,12 @@ slots:
       Connects a publication node to the genre of publication, e.g. book, periodical, etc.
     domain: publication
     range: genre type
+    slot_uri: dcterms:type
 
   published in:
     is_a: node property
     description: >-
-      a broader work within which the publication may be placed, e.g. a journal
+      identity of a broader work within which the publication may be placed, e.g. a specified journal
     domain: publication
     exact_mappings:
       - WIKIDATA_PROPERTY:P1433
@@ -3411,15 +3417,8 @@ slots:
     domain: publication
     range: provider
     exact_mappings:
+      - dcterms:publisher
       - WIKIDATA_PROPERTY:P123
-
-  copyright license:
-    is_a: node property
-    description: >-
-      license under which this copyrighted work is released
-    domain: publication
-    exact_mappings:
-      - WIKIDATA_PROPERTY:P275
 
   editor:
     is_a: node property
@@ -3438,6 +3437,7 @@ slots:
     range: provider
     multivalued: true
     exact_mappings:
+      - dcterms:contributor
       - WIKIDATA_PROPERTY:P50
 
   volume:
@@ -3524,12 +3524,14 @@ slots:
     slots:
       - genre
       - published in
-      - copyright license
+      - publisher
+      - rights
       - editor
       - author
       - volume
       - issue
       - pages
+      - description
     exact_mappings:
       - IAO:0000311
     narrow_mappings:
