@@ -3374,25 +3374,6 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P356
 
-  genre type:
-    is_a: ontology class
-    description: >-
-      Ontology term for genre could be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types),
-      the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html),
-      Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/) or perhaps the
-      Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
-      (http://vocabularies.coar-repositories.org/documentation/resource_types/).
-    values_from:  # Not sure which takes precedence here... perhaps MESH_PUB?
-      - WIKIDATA
-      - MESH_PUB
-      - dctypes
-      - COAR_RESOURCE
-    id_prefixes:
-      - WIKIDATA
-      - MESH_PUB
-      - dctypes
-      - COAR_RESOURCE
-
   genre:
     is_a: node property
     description: >-
@@ -4170,6 +4151,26 @@ classes:
       - distribution
     mappings:
       - dctypes:Dataset
+
+  # Publication Genre, treated as an ontology
+  genre type:
+    is_a: ontology class
+    description: >-
+      Ontology term for genre could be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types),
+      the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html),
+      Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/) or perhaps the
+      Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
+      (http://vocabularies.coar-repositories.org/documentation/resource_types/).
+    values_from:  # Not sure which takes precedence here...
+      - WIKIDATA
+      - MESH_PUB
+      - dctypes
+      - COAR_RESOURCE
+    id_prefixes:
+      - WIKIDATA
+      - MESH_PUB
+      - dctypes
+      - COAR_RESOURCE
 
   publication:
     is_a: information content entity
