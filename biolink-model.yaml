@@ -3365,7 +3365,7 @@ slots:
     mappings:
       - rdf:type
 
-  ## Properties and Definitions for Information Content Entity and Publication Nodes
+  ## Additional Properties for Information Content Entity and Publication Nodes
 
   doi:
     is_a: id
@@ -3472,84 +3472,6 @@ slots:
     exact_mappings:
       - dcterms:abstract
       - WIKIDATA:Q333291
-
-  information content entity:
-    aliases: ['information', 'information artefact', 'information entity']
-    abstract: true
-    is_a: named thing
-    description: >-
-      a piece of information that typically describes some piece of biology or is used as support.
-    slots:
-      - doi
-      - title
-      - description
-      - format
-      - creation date
-    exact_mappings:
-      - IAO:0000030
-    narrow_mappings:
-      # UMLS Semantic Group "Concepts & Ideas"
-      - UMLSSG:CONC
-      # Conceptual Entity
-      - UMLSSC:T077
-      - UMLSST:cnce
-      # Idea or Concept
-      - UMLSSC:T078
-      - UMLSST:idcn
-      # Temporal Concept
-      - UMLSSC:T079
-      - UMLSST:tmco
-      # Qualitative Concept
-      - UMLSSC:T080
-      - UMLSST:qlco
-      # Quantitative Concept
-      - UMLSSC:T081
-      - UMLSST:qnco
-      # Spatial Concept
-      - UMLSSC:T082
-      - UMLSST:spco
-      # Regulation or Law
-      - UMLSSC:T089
-      - UMLSST:rnlw
-      # Group Attribute
-      - UMLSSC:T102
-      - UMLSST:grpa
-      # Functional Concept
-      - UMLSSC:T169
-      - UMLSST:ftcn
-      # Language
-      - UMLSSC:T171
-      - UMLSST:lang
-      # Classification
-      - UMLSSC:T185
-      - UMLSST:clas
-
-  publication:
-    is_a: information content entity
-    description: >-
-      Any published piece of information. Can refer to a whole publication,
-      or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
-      The scope is intended to be general and include information published on the web as well as journals.
-    slots:
-      - genre
-      - published in
-      - publisher
-      - rights
-      - editor
-      - author
-      - volume
-      - issue
-      - pages
-      - abstract
-    exact_mappings:
-      - IAO:0000311
-    narrow_mappings:
-      - IAO:0000013
-      # UMLS Semantic Type "Intellectual Product"
-      - UMLSSC:T170
-      - UMLSST:inpr
-    id_prefixes:
-      - PMID
 
   ## End of Additional Properties for Information Content Entity and Publication Nodes
 
@@ -4166,6 +4088,57 @@ classes:
       - UMLSSC:T168
       - UMLSST:food
 
+  information content entity:
+    aliases: ['information', 'information artefact', 'information entity']
+    abstract: true
+    is_a: named thing
+    description: >-
+      a piece of information that typically describes some piece of biology or is used as support.
+    slots:
+      - doi
+      - title
+      - description
+      - format
+      - creation date
+    exact_mappings:
+      - IAO:0000030
+    narrow_mappings:
+      # UMLS Semantic Group "Concepts & Ideas"
+      - UMLSSG:CONC
+      # Conceptual Entity
+      - UMLSSC:T077
+      - UMLSST:cnce
+      # Idea or Concept
+      - UMLSSC:T078
+      - UMLSST:idcn
+      # Temporal Concept
+      - UMLSSC:T079
+      - UMLSST:tmco
+      # Qualitative Concept
+      - UMLSSC:T080
+      - UMLSST:qlco
+      # Quantitative Concept
+      - UMLSSC:T081
+      - UMLSST:qnco
+      # Spatial Concept
+      - UMLSSC:T082
+      - UMLSST:spco
+      # Regulation or Law
+      - UMLSSC:T089
+      - UMLSST:rnlw
+      # Group Attribute
+      - UMLSSC:T102
+      - UMLSST:grpa
+      # Functional Concept
+      - UMLSSC:T169
+      - UMLSST:ftcn
+      # Language
+      - UMLSSC:T171
+      - UMLSST:lang
+      # Classification
+      - UMLSSC:T185
+      - UMLSST:clas
+
   data file:
     is_a: named thing
     mappings:
@@ -4197,6 +4170,33 @@ classes:
       - distribution
     mappings:
       - dctypes:Dataset
+
+  publication:
+    is_a: information content entity
+    description: >-
+      Any published piece of information. Can refer to a whole publication,
+      or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
+      The scope is intended to be general and include information published on the web as well as journals.
+    slots:
+      - genre
+      - published in
+      - publisher
+      - rights
+      - editor
+      - author
+      - volume
+      - issue
+      - pages
+      - abstract
+    exact_mappings:
+      - IAO:0000311
+    narrow_mappings:
+      - IAO:0000013
+      # UMLS Semantic Type "Intellectual Product"
+      - UMLSSC:T170
+      - UMLSST:inpr
+    id_prefixes:
+      - PMID
 
   distribution level:
     is_a: data set version
