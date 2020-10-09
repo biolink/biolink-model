@@ -2,7 +2,7 @@
 name: Biolink Help Desk question
 about: For Translator project members to ask questions about representing their data or knowledge using the Biolink Model
 title: ''
-labels: ''
+labels: 'question'
 assignees: ''
 
 ---
