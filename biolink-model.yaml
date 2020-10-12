@@ -1177,7 +1177,7 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - WD:P2293
+      - WIKIDATA_PROPERTY:P2293
       - GENO:0000840
       - GENO:0000841
       - NCIT:R176
@@ -1886,7 +1886,7 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - WD:Q66088480
+      - WIKIDATA:Q66088480
 
 ## property slots
 
@@ -2071,7 +2071,7 @@ slots:
     domain: named thing
     range: label type
     multivalued: true
-    slot_uri: http://purl.obolibrary.org/obo/go#systematic_synonym
+    slot_uri: GOP:systematic_synonym
     description: >-
       more commonly used for gene symbols in yeast
 
@@ -4864,7 +4864,7 @@ classes:
     aliases: ['functional association']
     is_a: functional association
     mappings:
-      - http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
+      - WBVocab:Gene-GO-Association
     defining_slots:
       - subject
       - object
