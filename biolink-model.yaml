@@ -33,6 +33,7 @@ prefixes:
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
+  gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
 
 default_prefix: biolink
 default_range: string
@@ -1952,6 +1953,7 @@ slots:
     mappings:
       - alliancegenome:soTermId
       - gff3:type
+      - gpi:DB_Object_Type
 
   id:
     is_a: node property
@@ -1966,6 +1968,7 @@ slots:
     mappings:
       - alliancegenome:primaryId
       - gff3:ID
+      - gpi:DB_Object_ID
 
   iri:
     is_a: node property
@@ -1989,6 +1992,7 @@ slots:
     slot_uri: rdfs:label
     mappings:
       - gff3:Name
+      - gpi:DB_Object_Name
 
   symbol:
     is_a: node property
@@ -1997,6 +2001,7 @@ slots:
       Symbol for a particular thing
     mappings:
       - alliancegenome:symbol
+      - gpi:DB_Object_Symbol
 
   synonym:
     is_a: node property
@@ -2012,6 +2017,7 @@ slots:
       - skos:altLabel
       - gff3:Alias
       - alliancegenome:synonyms
+      - gpi:DB_Object_Synonyms
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
@@ -2029,6 +2035,7 @@ slots:
       - translator_minimal
     mappings:
       - gff3:Dbxref
+      - gpi:DB_Xrefs
 
   category:
     is_a: type
