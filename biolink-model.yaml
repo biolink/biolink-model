@@ -32,7 +32,8 @@ prefixes:
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
-  
+  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
+
 default_prefix: biolink
 default_range: string
 
@@ -1948,6 +1949,9 @@ slots:
   type:
     is_a: node property
     slot_uri: rdf:type
+    mappings:
+      - alliancegenome:soTermId
+      - gff3:type
 
   id:
     is_a: node property
@@ -1959,6 +1963,9 @@ slots:
       - translator_minimal
     domain: named thing
     required: true
+    mappings:
+      - alliancegenome:primaryId
+      - gff3:ID
 
   iri:
     is_a: node property
@@ -1980,6 +1987,16 @@ slots:
       - translator_minimal
     required: true
     slot_uri: rdfs:label
+    mappings:
+      - gff3:Name
+
+  symbol:
+    is_a: node property
+    domain: named thing
+    description: >-
+      Symbol for a particular thing
+    mappings:
+      - alliancegenome:symbol
 
   synonym:
     is_a: node property
@@ -1992,10 +2009,26 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
+      - skos:altLabel
+      - gff3:Alias
+      - alliancegenome:synonyms
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
       - oboInOwl:hasRelatedSynonym
+
+  xref:
+    is_a: node property
+    aliases: ['dbxref', 'Dbxref', 'DbXref']
+    domain: named thing
+    range: iri type
+    description: >-
+      Alternate CURIEs for a thing
+    multivalued: true
+    in_subset:
+      - translator_minimal
+    mappings:
+      - gff3:Dbxref
 
   category:
     is_a: type
@@ -2030,6 +2063,7 @@ slots:
     mappings:
       - IAO:0000115
       - skos:definitions
+      - gff3:Description
 
   systematic synonym:
     is_a: node property
@@ -3332,7 +3366,7 @@ classes:
       - WIKIDATA:Q7020
 
   transcript:
-    is_a: genomic entity
+    is_a: gene product
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
     mappings:
@@ -3386,6 +3420,13 @@ classes:
   gene:
     is_a: gene or gene product
     aliases: ['locus']
+    slots:
+      - id
+      - name
+      - symbol
+      - description
+      - synonym
+      - xref
     mappings:
       - SO:0000704
       - SIO:010035
@@ -3414,6 +3455,12 @@ classes:
     union_of:
       - protein
       - RNA product
+    slots:
+      - id
+      - name
+      - description
+      - synonym
+      - xref
     mappings:
       - WIKIDATA:Q424689
     id_prefixes:
