@@ -9,29 +9,52 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 #
 # 1. The following 'prefixes:' delimited list has first precedence in resolution. 
 prefixes:
+  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  # Placeholder: not sure how 'chembio' really resolves
+  chembio: 'http://translator.ncats.nih.gov/chembio_'
+  CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
+  COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
+  CTD: 'http://translator.ncats.nih.gov/CTD_'
+  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
+  ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
+  ExO: 'http://purl.obolibrary.org/obo/ExO_'
+  GAMMA: 'http://translator.renci.org/GAMMA_'
+  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
+  # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
+  GOP: 'http://purl.obolibrary.org/obo/go#'
+  GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
+  HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
+  hetio: 'http://translator.ncats.nih.gov/hetio_'
+  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
+  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
+  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
+  MESH_PUB: 'https://www.nlm.nih.gov/mesh/pubtypes.html#'
+  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
-  SIO: 'http://semanticscience.org/resource/SIO_'
-  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
+  PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
+  SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
+  SIO: 'http://semanticscience.org/resource/SIO_'
+  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
+  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
+  UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
+  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
   UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
   UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
-  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
-  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
-  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
-  GAMMA: 'http://translator.renci.org/GAMMA_'
-  CTD: 'http://translator.ncats.nih.gov/CTD_'
-  hetio: 'http://translator.ncats.nih.gov/hetio_'
-  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
-  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
-  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
-  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
-  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
-  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
-  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
+  # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
+  # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
+  VMC: 'https://github.com/ga4gh/vr-spec/'
+  WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
+  WIKIDATA: 'https://www.wikidata.org/wiki/'
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'
+  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   
 default_prefix: biolink
 default_range: string
@@ -90,6 +113,12 @@ types:
     typeof: uriorcurie
     description: >-
       An IRI
+
+  doi type:
+    typeof: uriorcurie
+    description: >-
+      Digital Object Identifier (see https://www.doi.org/) serial code used to uniquely identify
+      digital objects like academic papers (use upper case letters only)
 
   label type:
     typeof: string
@@ -1868,28 +1897,29 @@ slots:
 
   title:
     is_a: node property
-    domain: data set version
-    mappings:
+    domain: named thing   # needed to generalise this for inheritance to information content entities?
+    exact_mappings:
       - dcterms:title
+      - WIKIDATA_PROPERTY:P1476
 
   source data file:
     is_a: node property
     domain: data set version
     range: data file
-    mappings:
+    broad_mappings:
       - dcterms:source
 
   source web page:
     is_a: node property
     domain: data set summary
-    mappings:
+    broad_mappings:
       - dcterms:source
 
   retrievedOn:
     is_a: node property
     domain: source file
     range: date
-    mappings:
+    exact_mappings:
       - pav:retrievedOn
 
   versionOf:
@@ -1909,31 +1939,34 @@ slots:
   license:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - dcterms:license
+    narrow_mappings:
+      - WIKIDATA_PROPERTY:P275
 
   rights:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - dcterms:rights
 
   format:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - dcterms:format
+      - WIKIDATA_PROPERTY:P2701
 
   created_with:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - pav:createdWith
 
   downloadURL:
     is_a: node property
     domain: distribution level
-    mappings:
+    exact_mappings:
       - dcterms:downloadURL
 
   distribution:
@@ -1968,6 +2001,8 @@ slots:
       - translator_minimal
     domain: named thing
     range: iri type
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P854
 
   name:
     is_a: node property
@@ -2138,12 +2173,12 @@ slots:
 
   provided by:
     is_a: association slot
-    range: provider
     description: >-
       connects an association to the agent (person, organization or group) that provided it
+    range: provider
+    multivalued: true
     mappings:
       - pav:providedBy
-    multivalued: true
 
   association type:
     is_a: association slot
@@ -2152,6 +2187,97 @@ slots:
       connects an association to the type of association (e.g. gene to phenotype)
     mappings:
       - rdf:type
+
+  ## Additional Properties for Information Content Entity and Publication Nodes
+
+  doi:
+    is_a: id
+    domain: information content entity
+    range: doi type
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P356
+
+  genre:
+    is_a: node property
+    description: >-
+      Connects a publication node to the genre of publication, e.g. book, periodical, etc.
+    domain: publication
+    range: genre type
+    slot_uri: dcterms:type
+
+  published in:
+    is_a: node property
+    description: >-
+      identity of a broader work within which the publication may be placed, e.g. name of a specified journal
+    domain: publication
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P1433
+
+  publisher:
+    is_a: node property
+    description: >-
+      organization or person responsible for publishing books, periodicals, podcasts, games or software
+    domain: publication
+    range: provider
+    exact_mappings:
+      - dcterms:publisher
+      - WIKIDATA_PROPERTY:P123
+
+  editor:
+    is_a: node property
+    description: >-
+      editor of a compiled work such as a book or a periodical (newspaper or an academic journal)
+    domain: publication
+    range: provider
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P98
+
+  author:
+    is_a: node property
+    description: >-
+      main creator(s) of a written work (may be a list)
+    domain: publication
+    range: provider
+    multivalued: true
+    exact_mappings:
+      - dcterms:contributor
+      - WIKIDATA_PROPERTY:P50
+
+  volume:
+    is_a: node property
+    description: >-
+      volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
+    domain: publication
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P478
+
+  issue:
+    is_a: node property
+    description: >-
+      issue of a newspaper, a scientific journal or magazine for reference purpose
+    domain: publication
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P433
+
+  pages:
+    is_a: node property
+    description: >-
+      page number of source referenced for statement
+    domain: publication
+    multivalued: true
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P304
+
+  abstract:
+    is_a: node property
+    description: >-
+      summary of a research document
+    domain: publication
+    exact_mappings:
+      - dcterms:abstract
+      - WIKIDATA:Q333291
+
+  ## End of Additional Properties for Information Content Entity and Publication Nodes
 
   chi squared statistic:
     is_a: association slot
@@ -2171,11 +2297,13 @@ slots:
 
   creation date:
     is_a: node property
+    aliases: ['publication date']
     range: date
     description: >-
       date on which thing was created. This can be applied to nodes or edges
-    mappings:
+    exact_mappings:
       - dcterms:createdOn
+      - WIKIDATA_PROPERTY:P577
 
   has receptor:
     is_a: node property
@@ -2643,6 +2771,57 @@ classes:
       - UMLSSC:T168
       - UMLSST:food
 
+  information content entity:
+    aliases: ['information', 'information artefact', 'information entity']
+    abstract: true
+    is_a: named thing
+    description: >-
+      a piece of information that typically describes some piece of biology or is used as support.
+    slots:
+      - doi
+      - title
+      - description
+      - format
+      - creation date
+    exact_mappings:
+      - IAO:0000030
+    narrow_mappings:
+      # UMLS Semantic Group "Concepts & Ideas"
+      - UMLSSG:CONC
+      # Conceptual Entity
+      - UMLSSC:T077
+      - UMLSST:cnce
+      # Idea or Concept
+      - UMLSSC:T078
+      - UMLSST:idcn
+      # Temporal Concept
+      - UMLSSC:T079
+      - UMLSST:tmco
+      # Qualitative Concept
+      - UMLSSC:T080
+      - UMLSST:qlco
+      # Quantitative Concept
+      - UMLSSC:T081
+      - UMLSST:qnco
+      # Spatial Concept
+      - UMLSSC:T082
+      - UMLSST:spco
+      # Regulation or Law
+      - UMLSSC:T089
+      - UMLSST:rnlw
+      # Group Attribute
+      - UMLSSC:T102
+      - UMLSST:grpa
+      # Functional Concept
+      - UMLSSC:T169
+      - UMLSST:ftcn
+      # Language
+      - UMLSSC:T171
+      - UMLSST:lang
+      # Classification
+      - UMLSSC:T185
+      - UMLSST:clas
+
   data file:
     is_a: named thing
     mappings:
@@ -2674,6 +2853,53 @@ classes:
       - distribution
     mappings:
       - dctypes:Dataset
+
+  # Publication Genre, treated as an ontology
+  genre type:
+    is_a: ontology class
+    description: >-
+      Ontology term for genre could be drawn from Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types),
+      the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html),
+      Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/) or perhaps the
+      Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
+      (http://vocabularies.coar-repositories.org/documentation/resource_types/).
+    values_from:  # Not sure which takes precedence here...
+      - WIKIDATA
+      - MESH_PUB
+      - dctypes
+      - COAR_RESOURCE
+    id_prefixes:
+      - WIKIDATA
+      - MESH_PUB
+      - dctypes
+      - COAR_RESOURCE
+
+  publication:
+    is_a: information content entity
+    description: >-
+      Any published piece of information. Can refer to a whole publication,
+      or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
+      The scope is intended to be general and include information published on the web as well as journals.
+    slots:
+      - genre
+      - published in
+      - publisher
+      - rights
+      - editor
+      - author
+      - volume
+      - issue
+      - pages
+      - abstract
+    exact_mappings:
+      - IAO:0000311
+    narrow_mappings:
+      - IAO:0000013
+      # UMLS Semantic Type "Intellectual Product"
+      - UMLSSC:T170
+      - UMLSST:inpr
+    id_prefixes:
+      - PMID
 
   distribution level:
     is_a: data set version
@@ -2974,50 +3200,6 @@ classes:
     mappings:
       - XCO:0000000
 
-  information content entity:
-    aliases: ['information', 'information artefact', 'information entity']
-    abstract: true
-    is_a: named thing
-    description: >-
-      a piece of information that typically describes some piece of biology or is used as support.
-    mappings:
-      - IAO:0000030
-      # UMLS Semantic Group "Concepts & Ideas"
-      - UMLSSG:CONC
-      # Conceptual Entity
-      - UMLSSC:T077
-      - UMLSST:cnce
-      # Idea or Concept
-      - UMLSSC:T078
-      - UMLSST:idcn
-      # Temporal Concept
-      - UMLSSC:T079
-      - UMLSST:tmco
-      # Qualitative Concept
-      - UMLSSC:T080
-      - UMLSST:qlco
-      # Quantitative Concept
-      - UMLSSC:T081
-      - UMLSST:qnco
-      # Spatial Concept
-      - UMLSSC:T082
-      - UMLSST:spco
-      # Regulation or Law
-      - UMLSSC:T089
-      - UMLSST:rnlw
-      # Group Attribute
-      - UMLSSC:T102
-      - UMLSST:grpa
-      # Functional Concept
-      - UMLSSC:T169
-      - UMLSST:ftcn
-      # Language
-      - UMLSSC:T171
-      - UMLSST:lang
-      # Classification
-      - UMLSSC:T185
-      - UMLSST:clas
-
   confidence level:
     is_a: information content entity
     description: >-
@@ -3038,21 +3220,6 @@ classes:
       - eco
     mappings:
       - ECO:0000000
-
-  publication:
-    is_a: information content entity
-    description: >-
-      Any published piece of information. Can refer to a whole publication,
-      or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
-      The scope is intended to be general and include information published on the web as well as journals.
-    mappings:
-      - IAO:0000311
-      - IAO:0000013
-      # UMLS Semantic Type "Intellectual Product"
-      - UMLSSC:T170
-      - UMLSST:inpr
-    id_prefixes:
-      - PMID
 
   administrative entity:
     is_a: named thing
