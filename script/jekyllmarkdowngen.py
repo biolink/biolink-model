@@ -142,7 +142,17 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             with redirect_stdout(clsfile):
                 class_curi = self.namespaces.uri_or_curie_for(self.namespaces._base, camelcase(cls.name))
                 class_uri = self.namespaces.uri_for(class_curi)
-                self.frontmatter(**{'parent': 'Mixins' if cls.mixin else 'Classes', 'title': class_curi, 'grand_parent': self.doc_root_title, 'layout': 'default'})
+                ancs = self.ancestors(cls)
+                if 'named thing' in ancs:
+                    parent = 'Entities'
+                    grand_parent = 'Classes'
+                elif 'association' in ancs:
+                    parent = 'Associations'
+                    grand_parent = 'Classes'
+                else:
+                    parent = 'Mixins' if cls.mixin else 'Classes'
+                    grand_parent = self.doc_root_title
+                self.frontmatter(**{'parent': parent, 'title': class_curi, 'grand_parent': grand_parent, 'layout': 'default'})
                 self.element_header(cls, cls.name, class_curi, class_uri)
                 for m in cls.mappings:
                     self.badges(m, 'mapping-label')
