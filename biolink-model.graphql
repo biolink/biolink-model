@@ -528,7 +528,7 @@ interface DistributionLevel
     versionOf: DataSet
     type: String
     distribution: DistributionLevel
-    downloadURL: String
+    downloadUrl: String
   }
 
 type Drug
@@ -686,11 +686,15 @@ type FunctionalAssociation
 
 type Gene
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    symbol: String
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation
@@ -756,20 +760,26 @@ type GeneOrGeneProduct
 
 type GeneProduct
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 interface GeneProductIsoform
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type GeneRegulatoryRelationship
@@ -1240,11 +1250,14 @@ type Metabolite
 
 type MicroRNA
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 interface ModelToDiseaseMixin
@@ -1280,11 +1293,14 @@ type NamedThing
 
 type NoncodingRNAProduct
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type Occurrent
@@ -1462,20 +1478,26 @@ type Procedure
 
 type Protein
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type ProteinIsoform implements GeneProductIsoform
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type Provider
@@ -1520,20 +1542,26 @@ type RelationshipType
 
 type RNAProduct
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type RNAProductIsoform implements GeneProductIsoform
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 interface SensitivityQuantifier
@@ -1646,11 +1674,14 @@ interface ThingWithTaxon
 
 type Transcript
   {
-    id: String!
-    name: LabelType!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type TranscriptToGeneRelationship

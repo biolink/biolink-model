@@ -523,11 +523,15 @@ message FunctionalAssociation
  }
 message Gene
  {
-  id String = 1
-  repeated category CategoryType = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  name SymbolType = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional symbol String = 6
+  optional description NarrativeText = 7
+  repeated synonym LabelType = 8
+  repeated xref IriType = 9
  }
 message GeneAsAModelOfDiseaseAssociation
  {
@@ -587,11 +591,14 @@ message GeneOrGeneProduct
 // The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 message GeneProduct
  {
-  id String = 1
-  repeated category CategoryType = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  name SymbolType = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional description NarrativeText = 6
+  repeated synonym LabelType = 7
+  repeated xref IriType = 8
  }
 // A regulatory relationship between two genes
 message GeneRegulatoryRelationship
@@ -994,11 +1001,14 @@ message Metabolite
  }
 message MicroRNA
  {
-  id String = 1
-  repeated category CategoryType = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  name SymbolType = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional description NarrativeText = 6
+  repeated synonym LabelType = 7
+  repeated xref IriType = 8
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
 message MolecularActivity
@@ -1027,11 +1037,14 @@ message NamedThing
  }
 message NoncodingRNAProduct
  {
-  id String = 1
-  repeated category CategoryType = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  name SymbolType = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional description NarrativeText = 6
+  repeated synonym LabelType = 7
+  repeated xref IriType = 8
  }
 // A processual entity
 message Occurrent
@@ -1180,20 +1193,26 @@ message Procedure
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
  {
-  id String = 1
-  repeated category CategoryType = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  name SymbolType = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional description NarrativeText = 6
+  repeated synonym LabelType = 7
+  repeated xref IriType = 8
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
  {
-  id String = 1
-  repeated category CategoryType = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  name SymbolType = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional description NarrativeText = 6
+  repeated synonym LabelType = 7
+  repeated xref IriType = 8
  }
 // person, group, organization or project that provides a piece of information
 message Provider
@@ -1233,20 +1252,26 @@ message RelationshipType
  }
 message RNAProduct
  {
-  id String = 1
-  repeated category CategoryType = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  name SymbolType = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional description NarrativeText = 6
+  repeated synonym LabelType = 7
+  repeated xref IriType = 8
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
 message RNAProductIsoform
  {
-  id String = 1
-  repeated category CategoryType = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  name SymbolType = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional description NarrativeText = 6
+  repeated synonym LabelType = 7
+  repeated xref IriType = 8
  }
 // An association between a sequence feature and a genomic entity it is localized to.
 message SequenceAssociation
@@ -1315,11 +1340,14 @@ message SourceFile
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase
 message Transcript
  {
-  id String = 1
-  name LabelType = 2
-  repeated category CategoryType = 3
-  repeated inTaxon OrganismTaxon = 4
-  optional hasBiologicalSequence BiologicalSequence = 5
+  repeated category CategoryType = 1
+  repeated inTaxon OrganismTaxon = 2
+  optional hasBiologicalSequence BiologicalSequence = 3
+  id String = 4
+  name LabelType = 5
+  optional description NarrativeText = 6
+  repeated synonym LabelType = 7
+  repeated xref IriType = 8
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship

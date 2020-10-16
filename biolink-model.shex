@@ -3,6 +3,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX UO: <http://purl.obolibrary.org/obo/UO_>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
 
 
@@ -521,7 +522,7 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <DataSet> ] ? ;
              <title> @metatype:String ? ;
              <source_data_file> @<DataFile> ? ;
-             <versionOf> @<DataSet> ? ;
+             <version_of> @<DataSet> ? ;
              rdf:type @metatype:String ? ;
              <distribution> @<DistributionLevel> ?
           ) ;
@@ -621,7 +622,7 @@ metatype:Nodeidentifier NONLITERAL
 <DistributionLevel> {
     (  $<DistributionLevel_tes> (  &<DataSetVersion_tes> ;
           rdf:type [ <DataSetVersion> ] ? ;
-          <downloadURL> @metatype:String ?
+          <download_url> @metatype:String ?
        ) ;
        rdf:type [ <DistributionLevel> ]
     )
@@ -794,7 +795,12 @@ metatype:Nodeidentifier NONLITERAL
 
 <Gene> CLOSED {
     (  $<Gene_tes> (  &<GeneOrGeneProduct_tes> ;
-          rdf:type [ <GeneOrGeneProduct> ] ?
+          rdf:type [ <GeneOrGeneProduct> ] ? ;
+          rdfs:label @<LabelType> ;
+          <symbol> @metatype:String ? ;
+          dcterms:description @<NarrativeText> ? ;
+          <synonym> @<LabelType> * ;
+          <xref> @<IriType> *
        ) ;
        rdf:type [ <Gene> ]
     )
@@ -860,11 +866,15 @@ metatype:Nodeidentifier NONLITERAL
 <GeneProduct>  (
     CLOSED {
        (  $<GeneProduct_tes> (  &<GeneOrGeneProduct_tes> ;
-             rdf:type [ <GeneOrGeneProduct> ] ?
+             rdf:type [ <GeneOrGeneProduct> ] ? ;
+             rdfs:label @<LabelType> ;
+             dcterms:description @<NarrativeText> ? ;
+             <synonym> @<LabelType> * ;
+             <xref> @<IriType> *
           ) ;
           rdf:type [ <GeneProduct> ]
        )
-    } OR @<RNAProduct> OR @<GeneProductIsoform> OR @<Protein>
+    } OR @<RNAProduct> OR @<GeneProductIsoform> OR @<Protein> OR @<Transcript>
 )
 
 <GeneProductIsoform> {
@@ -1005,7 +1015,7 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <GenomicEntity> ]
        )
     } OR @<CodingSequence> OR @<Exon> OR @<Genome> OR @<Genotype> OR @<Haplotype> OR @<MacromolecularMachine> OR
-    @<ReagentTargetedGene> OR @<SequenceVariant> OR @<Transcript>
+    @<ReagentTargetedGene> OR @<SequenceVariant>
 )
 
 <GenomicSequenceLocalization> CLOSED {
@@ -1728,7 +1738,7 @@ metatype:Nodeidentifier NONLITERAL
     (  $<SourceFile_tes> (  &<DataFile_tes> ;
           rdf:type [ <DataFile> ] ? ;
           <source_version> @metatype:String ? ;
-          <retrievedOn> @metatype:Date ?
+          <retrieved_on> @metatype:Date ?
        ) ;
        rdf:type [ <SourceFile> ]
     )
@@ -1766,8 +1776,8 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <Transcript> CLOSED {
-    (  $<Transcript_tes> (  &<GenomicEntity_tes> ;
-          rdf:type [ <GenomicEntity> ] ?
+    (  $<Transcript_tes> (  &<GeneProduct_tes> ;
+          rdf:type [ <GeneProduct> ] ?
        ) ;
        rdf:type [ <Transcript> ]
     )
