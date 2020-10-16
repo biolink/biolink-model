@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
+# Class: DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
 
 
 An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.

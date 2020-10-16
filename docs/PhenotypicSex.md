@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: PhenotypicSex
+# Class: PhenotypicSex
 
 
 An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.

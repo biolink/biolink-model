@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Relations
 title: biolink:enabled_by
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: enabled_by
+# Relation: enabled_by
 
 translator_minimal
 {: .translator_minimal-subset-label }

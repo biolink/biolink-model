@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:derives_into
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: derives_into
+# Relation: derives_into
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
 
 URI: [biolink:derives_into](https://w3id.org/biolink/vocab/derives_into)
-
 
 ## Domain and Range
 

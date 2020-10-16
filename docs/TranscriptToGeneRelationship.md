@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: TranscriptToGeneRelationship
+# Class: TranscriptToGeneRelationship
 
 
 A gene is a collection of transcripts

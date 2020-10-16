@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeographicLocationAtTime
+# Class: GeographicLocationAtTime
 
 
 a location that can be described in lat/long coordinates, for a particular time

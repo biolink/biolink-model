@@ -1,11 +1,16 @@
+---
+parent: Slots
+title: biolink:interacting_molecules_category
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: interacting_molecules_category
+# Slot: interacting_molecules_category
 
 
 
 
 URI: [biolink:interacting_molecules_category](https://w3id.org/biolink/vocab/interacting_molecules_category)
-
 
 ## Domain and Range
 

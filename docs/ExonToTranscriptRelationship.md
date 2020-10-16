@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ExonToTranscriptRelationship
+# Class: ExonToTranscriptRelationship
 
 
 A transcript is formed from multiple exons

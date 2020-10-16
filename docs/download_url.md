@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:download_url
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: download_url
+# Slot: download_url
 
 
 

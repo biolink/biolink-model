@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: BiologicalProcessOrActivity
+# Class: BiologicalProcessOrActivity
 
 
 Either an individual molecular activity, or a collection of causally connected molecular activities

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: EntityToFeatureOrDiseaseQualifiers
+# Class: EntityToFeatureOrDiseaseQualifiers
 
 
 Qualifiers for entity to disease or phenotype associations

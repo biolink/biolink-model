@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ClinicalEntity
+# Class: ClinicalEntity
 
 
 Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities

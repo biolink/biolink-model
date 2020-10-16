@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:name
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: name
+# Slot: name
 
 translator_minimal
 {: .translator_minimal-subset-label }

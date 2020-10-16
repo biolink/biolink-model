@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:symbol
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: symbol
+# Slot: symbol
 
 
 Symbol for a particular thing

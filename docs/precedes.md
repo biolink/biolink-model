@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:precedes
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: precedes
+# Relation: precedes
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two processes, where one completes before the other begins
 
 URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
-
 
 ## Domain and Range
 

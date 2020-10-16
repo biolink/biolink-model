@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:affects_risk_for
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_risk_for
+# Relation: affects_risk_for
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two entities where exposure to one entity alters the chance of developing the other
 
 URI: [biolink:affects_risk_for](https://w3id.org/biolink/vocab/affects_risk_for)
-
 
 ## Domain and Range
 

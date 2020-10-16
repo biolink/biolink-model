@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:variant_to_population_association_has_quotient
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: variant_to_population_association_has_quotient
+# Slot: variant_to_population_association_has_quotient
 
 
 frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency

@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:format
+grand_parent: Slots
+layout: default
+---
 
-# Type: format
+# Slot: format
 
 
 
 
 URI: [biolink:format](https://w3id.org/biolink/vocab/format)
-
 
 ## Domain and Range
 

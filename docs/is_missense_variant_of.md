@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:is_missense_variant_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: is_missense_variant_of
+# Relation: is_missense_variant_of
 
 
 holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved.
 
 URI: [biolink:is_missense_variant_of](https://w3id.org/biolink/vocab/is_missense_variant_of)
-
 
 ## Domain and Range
 

@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:has_not_completed
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: has_not_completed
+# Relation: has_not_completed
 
 
 holds between an entity and a process that the entity is capable of, but has not completed
 
 URI: [biolink:has_not_completed](https://w3id.org/biolink/vocab/has_not_completed)
-
 
 ## Domain and Range
 

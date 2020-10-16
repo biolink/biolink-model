@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:genomic_sequence_localization_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: genomic_sequence_localization_subject
+# Slot: genomic_sequence_localization_subject
 
 
 

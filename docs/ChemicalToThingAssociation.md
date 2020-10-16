@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ChemicalToThingAssociation
+# Class: ChemicalToThingAssociation
 
 
 An interaction between a chemical entity and another entity

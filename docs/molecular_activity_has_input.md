@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Relations
 title: biolink:molecular_activity_has_input
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: molecular_activity_has_input
+# Relation: molecular_activity_has_input
 
 
 A chemical entity that is the input for the reaction

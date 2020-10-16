@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:version_of
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: version_of
+# Slot: version_of
 
 
 

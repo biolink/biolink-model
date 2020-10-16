@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Phenomenon
+# Class: Phenomenon
 
 
 a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question

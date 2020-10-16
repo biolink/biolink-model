@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:gene_to_expression_site_association_object
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: gene_to_expression_site_association_object
+# Slot: gene_to_expression_site_association_object
 
 
 location in which the gene is expressed

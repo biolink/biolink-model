@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Onset
+# Class: Onset
 
 
 The age group in which manifestations appear

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: AbstractEntity
+# Class: AbstractEntity
 
 
 Any thing that is not a process or a physical mass-bearing entity

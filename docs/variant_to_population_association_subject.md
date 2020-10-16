@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:variant_to_population_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: variant_to_population_association_subject
+# Slot: variant_to_population_association_subject
 
 
 an allele that has a certain frequency in a given population

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeneToExpressionSiteAssociation
+# Class: GeneToExpressionSiteAssociation
 
 
 An association between a gene and an expression site, possibly qualified by stage/timing info.

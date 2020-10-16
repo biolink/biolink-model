@@ -1,11 +1,16 @@
+---
+parent: Edge Properties
+title: biolink:interbase_coordinate
+grand_parent: Slots
+layout: default
+---
 
-# Type: interbase_coordinate
+# Slot: interbase_coordinate
 
 
 A position in interbase coordinates. This is applied to a sequence localization edge.
 
 URI: [biolink:interbase_coordinate](https://w3id.org/biolink/vocab/interbase_coordinate)
-
 
 ## Domain and Range
 

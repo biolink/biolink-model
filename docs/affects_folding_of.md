@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:affects_folding_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_folding_of
+# Relation: affects_folding_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other
 
 URI: [biolink:affects_folding_of](https://w3id.org/biolink/vocab/affects_folding_of)
-
 
 ## Domain and Range
 

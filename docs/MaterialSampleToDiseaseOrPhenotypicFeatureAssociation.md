@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
+# Class: MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
 
 
 An association between a material sample and a disease or phenotype

@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:association_type
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: association_type
+# Slot: association_type
 
 
 connects an association to the type of association (e.g. gene to phenotype)

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeneToGeneAssociation
+# Class: GeneToGeneAssociation
 
 
 abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.

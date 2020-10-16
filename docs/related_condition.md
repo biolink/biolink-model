@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:related_condition
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: related_condition
+# Relation: related_condition
 
 
 
 
 URI: [biolink:related_condition](https://w3id.org/biolink/vocab/related_condition)
-
 
 ## Domain and Range
 

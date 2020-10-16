@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Relations
 title: biolink:molecular_activity_has_output
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: molecular_activity_has_output
+# Relation: molecular_activity_has_output
 
 
 A chemical entity that is the output for the reaction

@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:association_id
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: association_id
+# Slot: association_id
 
 translator_minimal
 {: .translator_minimal-subset-label }

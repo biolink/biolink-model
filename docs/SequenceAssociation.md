@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: SequenceAssociation
+# Class: SequenceAssociation
 
 
 An association between a sequence feature and a genomic entity it is localized to.

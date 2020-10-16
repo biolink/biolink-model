@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: PairwiseInteractionAssociation
+# Class: PairwiseInteractionAssociation
 
 
 An interaction at the molecular level between two physical entities

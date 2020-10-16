@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: pairwise_interaction_association_interacting_molecules_category
+# Slot: pairwise_interaction_association_interacting_molecules_category
 
 
 

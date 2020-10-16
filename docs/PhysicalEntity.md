@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: PhysicalEntity
+# Class: PhysicalEntity
 
 
 An entity that has physical properties such as mass, volume, or charge

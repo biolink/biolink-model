@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GenotypeToVariantAssociation
+# Class: GenotypeToVariantAssociation
 
 
 Any association between a genotype and a sequence variant.

@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:is_nonsense_variant_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: is_nonsense_variant_of
+# Relation: is_nonsense_variant_of
 
 
 holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
 
 URI: [biolink:is_nonsense_variant_of](https://w3id.org/biolink/vocab/is_nonsense_variant_of)
-
 
 ## Domain and Range
 

@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:is_nearby_variant_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: is_nearby_variant_of
+# Relation: is_nearby_variant_of
 
 
 holds between a sequence variant and a gene sequence that the variant is genomically close to.
 
 URI: [biolink:is_nearby_variant_of](https://w3id.org/biolink/vocab/is_nearby_variant_of)
-
 
 ## Domain and Range
 

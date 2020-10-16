@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:update_date
+grand_parent: Slots
+layout: default
+---
 
-# Type: update_date
+# Slot: update_date
 
 
 date on which thing was updated. This can be applied to nodes or edges
 
 URI: [biolink:update_date](https://w3id.org/biolink/vocab/update_date)
-
 
 ## Domain and Range
 

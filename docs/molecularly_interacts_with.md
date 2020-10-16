@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:molecularly_interacts_with
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: molecularly_interacts_with
+# Relation: molecularly_interacts_with
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 
 
 URI: [biolink:molecularly_interacts_with](https://w3id.org/biolink/vocab/molecularly_interacts_with)
-
 
 ## Domain and Range
 

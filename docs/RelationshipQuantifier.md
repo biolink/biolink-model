@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: RelationshipQuantifier
+# Class: RelationshipQuantifier
 
 
 

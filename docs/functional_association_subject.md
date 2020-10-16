@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:functional_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: functional_association_subject
+# Slot: functional_association_subject
 
 
 gene, product or macromolecular complex that has the function associated with the GO term

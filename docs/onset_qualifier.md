@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:onset_qualifier
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: onset_qualifier
+# Slot: onset_qualifier
 
 
 a qualifier used in a phenotypic association to state when the phenotype appears is in the subject

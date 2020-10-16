@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Relations
 title: biolink:in_taxon
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: in_taxon
+# Relation: in_taxon
 
 translator_minimal
 {: .translator_minimal-subset-label }

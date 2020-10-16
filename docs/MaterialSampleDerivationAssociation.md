@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: MaterialSampleDerivationAssociation
+# Class: MaterialSampleDerivationAssociation
 
 
 An association between a material sample and the material entity it is derived from

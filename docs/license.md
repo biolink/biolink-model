@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:license
+grand_parent: Slots
+layout: default
+---
 
-# Type: license
+# Slot: license
 
 
 
 
 URI: [biolink:license](https://w3id.org/biolink/vocab/license)
-
 
 ## Domain and Range
 

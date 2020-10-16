@@ -1,11 +1,16 @@
+---
+parent: Edge Properties
+title: biolink:association_slot
+grand_parent: Slots
+layout: default
+---
 
-# Type: association_slot
+# Slot: association_slot
 
 
 any slot that relates an association to another entity
 
 URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
-
 
 ## Domain and Range
 

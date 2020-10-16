@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:affects_expression_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_expression_of
+# Relation: affects_expression_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest
 
 URI: [biolink:affects_expression_of](https://w3id.org/biolink/vocab/affects_expression_of)
-
 
 ## Domain and Range
 

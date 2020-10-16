@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:similar_to
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: similar_to
+# Relation: similar_to
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between an entity and some other entity with similar features.
 
 URI: [biolink:similar_to](https://w3id.org/biolink/vocab/similar_to)
-
 
 ## Domain and Range
 

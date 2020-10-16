@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: BiologicalProcess
+# Class: BiologicalProcess
 
 
 One or more causally connected executions of molecular functions

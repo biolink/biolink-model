@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: MolecularEntity
+# Class: MolecularEntity
 
 
 A gene, gene product, small molecule or macromolecule (including protein complex)

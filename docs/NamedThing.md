@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: NamedThing
+# Class: NamedThing
 
 
 a databased entity or concept/class

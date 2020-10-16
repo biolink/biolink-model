@@ -1,11 +1,16 @@
+---
+parent: Edge Properties
+title: biolink:quantifier_qualifier
+grand_parent: Slots
+layout: default
+---
 
-# Type: quantifier_qualifier
+# Slot: quantifier_qualifier
 
 
 A measurable quantity for the object of the association
 
 URI: [biolink:quantifier_qualifier](https://w3id.org/biolink/vocab/quantifier_qualifier)
-
 
 ## Domain and Range
 

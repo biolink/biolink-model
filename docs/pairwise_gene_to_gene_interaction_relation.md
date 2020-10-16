@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:pairwise_gene_to_gene_interaction_relation
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: pairwise_gene_to_gene_interaction_relation
+# Slot: pairwise_gene_to_gene_interaction_relation
 
 
 interaction relationship type

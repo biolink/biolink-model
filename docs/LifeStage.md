@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: LifeStage
+# Class: LifeStage
 
 
 A stage of development or growth of an organism, including post-natal adult stages

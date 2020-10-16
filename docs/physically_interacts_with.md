@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:physically_interacts_with
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: physically_interacts_with
+# Relation: physically_interacts_with
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two entities that make physical contact as part of some interaction
 
 URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physically_interacts_with)
-
 
 ## Domain and Range
 

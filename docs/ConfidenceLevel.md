@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ConfidenceLevel
+# Class: ConfidenceLevel
 
 
 Level of confidence in a statement

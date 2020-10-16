@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:sequence_variant_qualifier
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: sequence_variant_qualifier
+# Slot: sequence_variant_qualifier
 
 
 a qualifier used in an association where the variant

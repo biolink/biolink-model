@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: VariantToPopulationAssociation
+# Class: VariantToPopulationAssociation
 
 
 An association between a variant and a population, where the variant has particular frequency in the population

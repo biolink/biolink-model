@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:variant_as_a_model_of_disease_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: variant_as_a_model_of_disease_association_subject
+# Slot: variant_as_a_model_of_disease_association_subject
 
 
 A variant that has a role in modeling the disease.

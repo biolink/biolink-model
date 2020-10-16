@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:increases_activity_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: increases_activity_of
+# Relation: increases_activity_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
 
 URI: [biolink:increases_activity_of](https://w3id.org/biolink/vocab/increases_activity_of)
-
 
 ## Domain and Range
 

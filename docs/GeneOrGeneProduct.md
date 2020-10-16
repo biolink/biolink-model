@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeneOrGeneProduct
+# Class: GeneOrGeneProduct
 
 
 a union of genes or gene products. Frequently an identifier for one will be used as proxy for another

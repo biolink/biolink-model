@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:increases_localization_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: increases_localization_of
+# Relation: increases_localization_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest
 
 URI: [biolink:increases_localization_of](https://w3id.org/biolink/vocab/increases_localization_of)
-
 
 ## Domain and Range
 

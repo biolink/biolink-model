@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:variant_to_disease_association_relation
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: variant_to_disease_association_relation
+# Slot: variant_to_disease_association_relation
 
 
 E.g. is pathogenic for

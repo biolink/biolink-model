@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:positively_regulates_entity_to_entity
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: positively_regulates_entity_to_entity
+# Relation: positively_regulates_entity_to_entity
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 
 
 URI: [biolink:positively_regulates_entity_to_entity](https://w3id.org/biolink/vocab/positively_regulates_entity_to_entity)
-
 
 ## Domain and Range
 

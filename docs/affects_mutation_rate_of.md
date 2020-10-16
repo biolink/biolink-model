@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:affects_mutation_rate_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_mutation_rate_of
+# Relation: affects_mutation_rate_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
 
 URI: [biolink:affects_mutation_rate_of](https://w3id.org/biolink/vocab/affects_mutation_rate_of)
-
 
 ## Domain and Range
 

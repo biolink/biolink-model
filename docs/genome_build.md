@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:genome_build
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: genome_build
+# Slot: genome_build
 
 
 The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.

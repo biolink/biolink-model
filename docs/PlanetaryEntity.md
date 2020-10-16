@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: PlanetaryEntity
+# Class: PlanetaryEntity
 
 
 Any entity or process that exists at the level of the whole planet

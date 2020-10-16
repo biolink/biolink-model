@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:severity_qualifier
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: severity_qualifier
+# Slot: severity_qualifier
 
 
 a qualifier used in a phenotypic association to state how severe the phenotype is in the subject

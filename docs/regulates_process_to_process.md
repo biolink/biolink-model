@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:regulates_process_to_process
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: regulates_process_to_process
+# Relation: regulates_process_to_process
 
 
 
 
 URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regulates_process_to_process)
-
 
 ## Domain and Range
 

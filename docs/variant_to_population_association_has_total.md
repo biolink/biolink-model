@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:variant_to_population_association_has_total
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: variant_to_population_association_has_total
+# Slot: variant_to_population_association_has_total
 
 
 number all populations that carry a particular allele, aka allele number

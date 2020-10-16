@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Genotype
+# Class: Genotype
 
 
 An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background

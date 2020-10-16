@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:entity_to_phenotypic_feature_association_description
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: entity_to_phenotypic_feature_association_description
+# Slot: entity_to_phenotypic_feature_association_description
 
 
 A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class

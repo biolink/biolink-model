@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GenotypicSex
+# Class: GenotypicSex
 
 
 An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.

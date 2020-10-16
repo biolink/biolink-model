@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Haplotype
+# Class: Haplotype
 
 
 A set of zero or more Alleles on a single instance of a Sequence[VMC]

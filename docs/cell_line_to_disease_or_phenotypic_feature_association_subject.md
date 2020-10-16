@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:cell_line_to_disease_or_phenotypic_feature_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: cell_line_to_disease_or_phenotypic_feature_association_subject
+# Slot: cell_line_to_disease_or_phenotypic_feature_association_subject
 
 
 

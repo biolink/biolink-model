@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:chemical_to_chemical_association_object
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: chemical_to_chemical_association_object
+# Slot: chemical_to_chemical_association_object
 
 
 the chemical element that is the target of the statement

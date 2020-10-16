@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: SeverityValue
+# Class: SeverityValue
 
 
 describes the severity of a phenotypic feature or disease

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: PopulationToPopulationAssociation
+# Class: PopulationToPopulationAssociation
 
 
 An association between a two populations

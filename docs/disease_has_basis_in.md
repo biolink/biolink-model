@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:disease_has_basis_in
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: disease_has_basis_in
+# Relation: disease_has_basis_in
 
 
 A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
 
 URI: [biolink:disease_has_basis_in](https://w3id.org/biolink/vocab/disease_has_basis_in)
-
 
 ## Domain and Range
 

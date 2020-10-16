@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:filler
+grand_parent: Slots
+layout: default
+---
 
-# Type: filler
+# Slot: filler
 
 
 The value in a property-value tuple
 
 URI: [biolink:filler](https://w3id.org/biolink/vocab/filler)
-
 
 ## Domain and Range
 

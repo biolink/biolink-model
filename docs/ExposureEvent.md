@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ExposureEvent
+# Class: ExposureEvent
 
 
 A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes

@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:same_as
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: same_as
+# Relation: same_as
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two entities that are considered equivalent to each other
 
 URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
-
 
 ## Domain and Range
 

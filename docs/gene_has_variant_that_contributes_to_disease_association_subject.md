@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:gene_has_variant_that_contributes_to_disease_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: gene_has_variant_that_contributes_to_disease_association_subject
+# Slot: gene_has_variant_that_contributes_to_disease_association_subject
 
 
 A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.

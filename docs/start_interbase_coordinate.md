@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:start_interbase_coordinate
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: start_interbase_coordinate
+# Slot: start_interbase_coordinate
 
 
 The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.

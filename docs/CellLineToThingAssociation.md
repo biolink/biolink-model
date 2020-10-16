@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: CellLineToThingAssociation
+# Class: CellLineToThingAssociation
 
 
 An relationship between a cell line and another entity

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeneOntologyClass
+# Class: GeneOntologyClass
 
 
 an ontology class that describes a functional aspect of a gene, gene prodoct or complex

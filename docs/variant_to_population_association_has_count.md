@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:variant_to_population_association_has_count
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: variant_to_population_association_has_count
+# Slot: variant_to_population_association_has_count
 
 
 number in object population that carry a particular allele, aka allele count

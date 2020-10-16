@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:population_to_population_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: population_to_population_association_subject
+# Slot: population_to_population_association_subject
 
 
 the population that form the subject of the association

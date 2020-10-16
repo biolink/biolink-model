@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:disrupts
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: disrupts
+# Relation: disrupts
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
 
 URI: [biolink:disrupts](https://w3id.org/biolink/vocab/disrupts)
-
 
 ## Domain and Range
 

@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:produced_by
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: produced_by
+# Relation: produced_by
 
 
 
 
 URI: [biolink:produced_by](https://w3id.org/biolink/vocab/produced_by)
-
 
 ## Domain and Range
 

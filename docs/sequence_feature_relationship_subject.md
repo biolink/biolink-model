@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:sequence_feature_relationship_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: sequence_feature_relationship_subject
+# Slot: sequence_feature_relationship_subject
 
 
 

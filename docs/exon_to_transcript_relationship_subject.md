@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:exon_to_transcript_relationship_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: exon_to_transcript_relationship_subject
+# Slot: exon_to_transcript_relationship_subject
 
 
 

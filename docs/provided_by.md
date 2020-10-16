@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:provided_by
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: provided_by
+# Slot: provided_by
 
 
 connects an association to the agent (person, organization or group) that provided it

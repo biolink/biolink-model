@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: SequenceVariant
+# Class: SequenceVariant
 
 
 An allele that varies in its sequence from what is considered the reference allele at that locus.

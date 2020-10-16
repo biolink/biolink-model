@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GenotypeToGenotypePartAssociation
+# Class: GenotypeToGenotypePartAssociation
 
 
 Any association between one genotype and a genotypic entity that is a sub-component of it

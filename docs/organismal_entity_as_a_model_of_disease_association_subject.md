@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:organismal_entity_as_a_model_of_disease_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: organismal_entity_as_a_model_of_disease_association_subject
+# Slot: organismal_entity_as_a_model_of_disease_association_subject
 
 
 A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.

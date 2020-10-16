@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:created_with
+grand_parent: Slots
+layout: default
+---
 
-# Type: created_with
+# Slot: created_with
 
 
 
 
 URI: [biolink:created_with](https://w3id.org/biolink/vocab/created_with)
-
 
 ## Domain and Range
 

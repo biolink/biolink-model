@@ -1,11 +1,16 @@
+---
+parent: Edge Properties
+title: biolink:stage_qualifier
+grand_parent: Slots
+layout: default
+---
 
-# Type: stage_qualifier
+# Slot: stage_qualifier
 
 
 stage at which expression takes place
 
 URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
-
 
 ## Domain and Range
 

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: CaseToThingAssociation
+# Class: CaseToThingAssociation
 
 
 An abstract association for use where the case is the subject

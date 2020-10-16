@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: OntologyClass
+# Class: OntologyClass
 
 
 a concept or class in an ontology, vocabulary or thesaurus

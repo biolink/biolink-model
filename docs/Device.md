@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Device
+# Class: Device
 
 
 A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment

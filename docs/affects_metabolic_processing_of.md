@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:affects_metabolic_processing_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_metabolic_processing_of
+# Relation: affects_metabolic_processing_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
 
 URI: [biolink:affects_metabolic_processing_of](https://w3id.org/biolink/vocab/affects_metabolic_processing_of)
-
 
 ## Domain and Range
 

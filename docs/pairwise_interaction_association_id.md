@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:pairwise_interaction_association_id
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: pairwise_interaction_association_id
+# Slot: pairwise_interaction_association_id
 
 
 identifier for the interaction. This may come from an interaction database such as IMEX.

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: has_qualitative_value
+# Slot: has_qualitative_value
 
 samples
 {: .samples-subset-label }

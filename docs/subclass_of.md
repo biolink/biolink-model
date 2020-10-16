@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:subclass_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: subclass_of
+# Relation: subclass_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two classes where the domain class is a specialization of the range class
 
 URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
-
 
 ## Domain and Range
 

@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:increases_stability_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: increases_stability_of
+# Relation: increases_stability_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest
 
 URI: [biolink:increases_stability_of](https://w3id.org/biolink/vocab/increases_stability_of)
-
 
 ## Domain and Range
 

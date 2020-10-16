@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:has_stressor
+grand_parent: Slots
+layout: default
+---
 
-# Type: has_stressor
+# Slot: has_stressor
 
 
 the process or entity that the receptor is being exposed to
 
 URI: [biolink:has_stressor](https://w3id.org/biolink/vocab/has_stressor)
-
 
 ## Domain and Range
 

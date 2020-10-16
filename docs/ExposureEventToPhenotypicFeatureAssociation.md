@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ExposureEventToPhenotypicFeatureAssociation
+# Class: ExposureEventToPhenotypicFeatureAssociation
 
 
 Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype

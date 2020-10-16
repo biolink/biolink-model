@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: CellularComponent
+# Class: CellularComponent
 
 
 A location in or around a cell

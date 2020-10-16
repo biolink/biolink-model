@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: AnatomicalEntity
+# Class: AnatomicalEntity
 
 
 A subcellular location, cell type or gross anatomical part

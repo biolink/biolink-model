@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:material_sample_derivation_association_relation
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: material_sample_derivation_association_relation
+# Slot: material_sample_derivation_association_relation
 
 
 derivation relationship

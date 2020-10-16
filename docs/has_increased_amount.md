@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:has_increased_amount
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: has_increased_amount
+# Relation: has_increased_amount
 
 
 
 
 URI: [biolink:has_increased_amount](https://w3id.org/biolink/vocab/has_increased_amount)
-
 
 ## Domain and Range
 

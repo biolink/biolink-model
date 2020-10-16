@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: DrugExposure
+# Class: DrugExposure
 
 
 A drug exposure is an intake of a particular chemical substance

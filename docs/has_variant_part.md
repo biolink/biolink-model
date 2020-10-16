@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:has_variant_part
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: has_variant_part
+# Relation: has_variant_part
 
 
 Holds between a genotype and a genotypic entity
 
 URI: [biolink:has_variant_part](https://w3id.org/biolink/vocab/has_variant_part)
-
 
 ## Domain and Range
 

@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:gene_to_expression_site_association_quantifier_qualifier
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: gene_to_expression_site_association_quantifier_qualifier
+# Slot: gene_to_expression_site_association_quantifier_qualifier
 
 
 can be used to indicate magnitude, or also ranking

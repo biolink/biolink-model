@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:affects_degradation_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_degradation_of
+# Relation: affects_degradation_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest
 
 URI: [biolink:affects_degradation_of](https://w3id.org/biolink/vocab/affects_degradation_of)
-
 
 ## Domain and Range
 

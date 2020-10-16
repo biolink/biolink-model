@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:chemical_to_disease_or_phenotypic_feature_association_object
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: chemical_to_disease_or_phenotypic_feature_association_object
+# Slot: chemical_to_disease_or_phenotypic_feature_association_object
 
 
 the disease or phenotype that is affected by the chemical

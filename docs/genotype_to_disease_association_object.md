@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:genotype_to_disease_association_object
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: genotype_to_disease_association_object
+# Slot: genotype_to_disease_association_object
 
 
 a disease that is associated with that genotype

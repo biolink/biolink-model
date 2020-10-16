@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:material_sample_to_thing_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: material_sample_to_thing_association_subject
+# Slot: material_sample_to_thing_association_subject
 
 
 the material sample being described

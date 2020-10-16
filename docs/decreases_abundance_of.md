@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:decreases_abundance_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: decreases_abundance_of
+# Relation: decreases_abundance_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
 
 URI: [biolink:decreases_abundance_of](https://w3id.org/biolink/vocab/decreases_abundance_of)
-
 
 ## Domain and Range
 

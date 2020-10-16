@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:enables
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: enables
+# Relation: enables
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between a physical entity and a process, where the physical entity executes the process
 
 URI: [biolink:enables](https://w3id.org/biolink/vocab/enables)
-
 
 ## Domain and Range
 

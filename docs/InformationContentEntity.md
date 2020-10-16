@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: InformationContentEntity
+# Class: InformationContentEntity
 
 
 a piece of information that typically describes some piece of biology or is used as support.

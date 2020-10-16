@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: OrganismalEntityAsAModelOfDiseaseAssociation
+# Class: OrganismalEntityAsAModelOfDiseaseAssociation
 
 
 

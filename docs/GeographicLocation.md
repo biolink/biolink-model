@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeographicLocation
+# Class: GeographicLocation
 
 
 a location that can be described in lat/long coordinates

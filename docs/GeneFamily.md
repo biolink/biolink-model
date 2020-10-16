@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeneFamily
+# Class: GeneFamily
 
 
 any grouping of multiple genes or gene products related by common descent

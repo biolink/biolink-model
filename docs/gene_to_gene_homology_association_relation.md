@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:gene_to_gene_homology_association_relation
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: gene_to_gene_homology_association_relation
+# Slot: gene_to_gene_homology_association_relation
 
 
 homology relationship type

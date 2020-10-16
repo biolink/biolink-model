@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:pairwise_interaction_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: pairwise_interaction_association_subject
+# Slot: pairwise_interaction_association_subject
 
 
 

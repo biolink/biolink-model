@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:disease_or_phenotypic_feature_association_to_location_association_object
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: disease_or_phenotypic_feature_association_to_location_association_object
+# Slot: disease_or_phenotypic_feature_association_to_location_association_object
 
 
 anatomical entity in which the disease or feature is found

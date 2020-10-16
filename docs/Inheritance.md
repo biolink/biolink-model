@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Inheritance
+# Class: Inheritance
 
 
 The pattern in which a particular genetic trait or disorder is passed from one generation to the next

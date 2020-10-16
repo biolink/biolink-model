@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:decreases_response_to
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: decreases_response_to
+# Relation: decreases_response_to
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
 
 URI: [biolink:decreases_response_to](https://w3id.org/biolink/vocab/decreases_response_to)
-
 
 ## Domain and Range
 

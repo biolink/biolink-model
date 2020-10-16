@@ -2,6 +2,6 @@
 parent: Browse Biolink Model
 title: Types
 has_children: true
-nav_order: 4
+nav_order: 7
 layout: default
 ---

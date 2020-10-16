@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:sequence_variant_has_gene
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: sequence_variant_has_gene
+# Slot: sequence_variant_has_gene
 
 
 Each allele can be associated with any number of genes

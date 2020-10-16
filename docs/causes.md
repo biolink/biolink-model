@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:causes
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: causes
+# Relation: causes
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
 
 URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
-
 
 ## Domain and Range
 

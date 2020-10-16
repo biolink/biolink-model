@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: PathognomonicityQuantifier
+# Class: PathognomonicityQuantifier
 
 
 A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease

@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:object
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: object
+# Slot: object
 
 
 connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.

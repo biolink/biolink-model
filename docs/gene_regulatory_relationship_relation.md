@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:gene_regulatory_relationship_relation
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: gene_regulatory_relationship_relation
+# Slot: gene_regulatory_relationship_relation
 
 
 the direction is always from regulator to regulated

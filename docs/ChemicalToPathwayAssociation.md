@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ChemicalToPathwayAssociation
+# Class: ChemicalToPathwayAssociation
 
 
 An interaction between a chemical entity and a biological process or pathway

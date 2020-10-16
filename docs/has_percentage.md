@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:has_percentage
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: has_percentage
+# Slot: has_percentage
 
 
 equivalent to has quotient multiplied by 100

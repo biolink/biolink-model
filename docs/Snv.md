@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Snv
+# Class: Snv
 
 
 SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist

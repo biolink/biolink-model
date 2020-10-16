@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: DiseaseOrPhenotypicFeature
+# Class: DiseaseOrPhenotypicFeature
 
 
 Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.

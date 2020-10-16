@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Occurrent
+# Class: Occurrent
 
 
 A processual entity

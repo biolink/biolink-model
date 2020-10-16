@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Case
+# Class: Case
 
 
 An individual organism that has a patient role in some clinical context.

@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:variant_to_phenotypic_feature_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: variant_to_phenotypic_feature_association_subject
+# Slot: variant_to_phenotypic_feature_association_subject
 
 
 a sequence variant in which the allele state is associated in some way with the phenotype state

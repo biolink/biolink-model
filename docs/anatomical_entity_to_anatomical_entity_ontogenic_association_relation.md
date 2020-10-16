@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: anatomical_entity_to_anatomical_entity_ontogenic_association_relation
+# Slot: anatomical_entity_to_anatomical_entity_ontogenic_association_relation
 
 
 

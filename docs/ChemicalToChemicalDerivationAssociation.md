@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ChemicalToChemicalDerivationAssociation
+# Class: ChemicalToChemicalDerivationAssociation
 
 
 A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: FrequencyValue
+# Class: FrequencyValue
 
 
 describes the frequency of occurrence of an event or condition

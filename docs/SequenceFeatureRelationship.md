@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: SequenceFeatureRelationship
+# Class: SequenceFeatureRelationship
 
 
 For example, a particular exon is part of a particular transcript or gene

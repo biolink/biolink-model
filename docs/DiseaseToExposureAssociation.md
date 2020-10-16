@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: DiseaseToExposureAssociation
+# Class: DiseaseToExposureAssociation
 
 
 An association between an exposure event and a disease

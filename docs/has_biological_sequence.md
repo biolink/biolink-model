@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:has_biological_sequence
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: has_biological_sequence
+# Slot: has_biological_sequence
 
 
 connects a genomic feature to its sequence

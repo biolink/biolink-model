@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: SequenceVariantModulatesTreatmentAssociation
+# Class: SequenceVariantModulatesTreatmentAssociation
 
 
 An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.

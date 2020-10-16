@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: QuantityValue
+# Class: QuantityValue
 
 
 A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value

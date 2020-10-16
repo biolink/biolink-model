@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:has_receptor
+grand_parent: Slots
+layout: default
+---
 
-# Type: has_receptor
+# Slot: has_receptor
 
 
 the organism or organism part being exposed
 
 URI: [biolink:has_receptor](https://w3id.org/biolink/vocab/has_receptor)
-
 
 ## Domain and Range
 

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: RelationshipType
+# Class: RelationshipType
 
 
 An OWL property used as an edge label

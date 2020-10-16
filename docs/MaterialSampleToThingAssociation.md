@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: MaterialSampleToThingAssociation
+# Class: MaterialSampleToThingAssociation
 
 
 An association between a material sample and something

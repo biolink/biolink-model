@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: EvidenceType
+# Class: EvidenceType
 
 
 Class of evidence that supports an association

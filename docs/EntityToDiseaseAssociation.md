@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: EntityToDiseaseAssociation
+# Class: EntityToDiseaseAssociation
 
 
 mixin class for any association whose object (target node) is a disease

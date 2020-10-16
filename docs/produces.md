@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:produces
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: produces
+# Relation: produces
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
 
 URI: [biolink:produces](https://w3id.org/biolink/vocab/produces)
-
 
 ## Domain and Range
 

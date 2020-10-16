@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:lacks_part
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: lacks_part
+# Relation: lacks_part
 
 
 
 
 URI: [biolink:lacks_part](https://w3id.org/biolink/vocab/lacks_part)
-
 
 ## Domain and Range
 

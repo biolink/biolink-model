@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:has_drug
+grand_parent: Slots
+layout: default
+---
 
-# Type: has_drug
+# Slot: has_drug
 
 
 connects an entity to a single drug
 
 URI: [biolink:has_drug](https://w3id.org/biolink/vocab/has_drug)
-
 
 ## Domain and Range
 

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeneToGeneProductRelationship
+# Class: GeneToGeneProductRelationship
 
 
 A gene is transcribed and potentially translated to a gene product

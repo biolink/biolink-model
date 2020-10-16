@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeneProduct
+# Class: GeneProduct
 
 
 The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Drug
+# Class: Drug
 
 
 A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease

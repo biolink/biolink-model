@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:case_to_thing_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: case_to_thing_association_subject
+# Slot: case_to_thing_association_subject
 
 
 the case (e.g. patient) that has the property

@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:sex_qualifier
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: sex_qualifier
+# Slot: sex_qualifier
 
 
 a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.

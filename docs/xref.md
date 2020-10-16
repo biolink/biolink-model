@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:xref
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: xref
+# Slot: xref
 
 translator_minimal
 {: .translator_minimal-subset-label }

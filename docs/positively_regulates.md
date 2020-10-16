@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:positively_regulates
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: positively_regulates
+# Relation: positively_regulates
 
 
 
 
 URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_regulates)
-
 
 ## Domain and Range
 

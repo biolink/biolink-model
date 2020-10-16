@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:has_sequence_location
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: has_sequence_location
+# Relation: has_sequence_location
 
 
 holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
 
 URI: [biolink:has_sequence_location](https://w3id.org/biolink/vocab/has_sequence_location)
-
 
 ## Domain and Range
 

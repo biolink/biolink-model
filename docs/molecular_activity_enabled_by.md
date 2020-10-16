@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Relations
 title: biolink:molecular_activity_enabled_by
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: molecular_activity_enabled_by
+# Relation: molecular_activity_enabled_by
 
 
 The gene product, gene, or complex that catalyzes the reaction

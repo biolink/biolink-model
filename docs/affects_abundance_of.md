@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:affects_abundance_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_abundance_of
+# Relation: affects_abundance_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
 
 URI: [biolink:affects_abundance_of](https://w3id.org/biolink/vocab/affects_abundance_of)
-
 
 ## Domain and Range
 

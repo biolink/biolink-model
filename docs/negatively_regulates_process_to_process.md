@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:negatively_regulates_process_to_process
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: negatively_regulates_process_to_process
+# Relation: negatively_regulates_process_to_process
 
 
 
 
 URI: [biolink:negatively_regulates_process_to_process](https://w3id.org/biolink/vocab/negatively_regulates_process_to_process)
-
 
 ## Domain and Range
 

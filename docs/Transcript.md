@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Transcript
+# Class: Transcript
 
 
 An RNA synthesized on a DNA or RNA template by an RNA polymerase

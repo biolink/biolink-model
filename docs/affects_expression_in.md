@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:affects_expression_in
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_expression_in
+# Relation: affects_expression_in
 
 
 Holds between a variant and an anatomical entity where the expression of the variant is located in.
 
 URI: [biolink:affects_expression_in](https://w3id.org/biolink/vocab/affects_expression_in)
-
 
 ## Domain and Range
 

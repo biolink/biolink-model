@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:has_decreased_amount
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: has_decreased_amount
+# Relation: has_decreased_amount
 
 
 
 
 URI: [biolink:has_decreased_amount](https://w3id.org/biolink/vocab/has_decreased_amount)
-
 
 ## Domain and Range
 

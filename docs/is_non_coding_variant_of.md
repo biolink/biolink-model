@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:is_non_coding_variant_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: is_non_coding_variant_of
+# Relation: is_non_coding_variant_of
 
 
 holds between a sequence variant and a gene, where the variant does not affect the coding sequence
 
 URI: [biolink:is_non_coding_variant_of](https://w3id.org/biolink/vocab/is_non_coding_variant_of)
-
 
 ## Domain and Range
 

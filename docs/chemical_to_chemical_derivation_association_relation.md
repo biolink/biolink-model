@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:chemical_to_chemical_derivation_association_relation
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: chemical_to_chemical_derivation_association_relation
+# Slot: chemical_to_chemical_derivation_association_relation
 
 
 

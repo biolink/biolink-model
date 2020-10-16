@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:chemical_to_chemical_derivation_association_change_is_catalyzed_by
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: chemical_to_chemical_derivation_association_change_is_catalyzed_by
+# Slot: chemical_to_chemical_derivation_association_change_is_catalyzed_by
 
 
 this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical

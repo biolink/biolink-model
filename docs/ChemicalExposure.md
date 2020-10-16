@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ChemicalExposure
+# Class: ChemicalExposure
 
 
 A chemical exposure is an intake of a particular chemical substance

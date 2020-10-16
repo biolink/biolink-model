@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: has_numeric_value
+# Slot: has_numeric_value
 
 samples
 {: .samples-subset-label }

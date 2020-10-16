@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:frequency_qualifier
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: frequency_qualifier
+# Slot: frequency_qualifier
 
 
 a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject

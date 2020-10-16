@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: has_attribute
+# Slot: has_attribute
 
 samples
 {: .samples-subset-label }

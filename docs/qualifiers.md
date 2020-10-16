@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:qualifiers
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: qualifiers
+# Slot: qualifiers
 
 
 connects an association to qualifiers that modify or qualify the meaning of that association

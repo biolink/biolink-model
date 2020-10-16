@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:rights
+grand_parent: Slots
+layout: default
+---
 
-# Type: rights
+# Slot: rights
 
 
 
 
 URI: [biolink:rights](https://w3id.org/biolink/vocab/rights)
-
 
 ## Domain and Range
 

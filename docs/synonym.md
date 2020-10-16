@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:synonym
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: synonym
+# Slot: synonym
 
 translator_minimal
 {: .translator_minimal-subset-label }

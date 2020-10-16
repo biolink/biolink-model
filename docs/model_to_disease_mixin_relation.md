@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:model_to_disease_mixin_relation
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: model_to_disease_mixin_relation
+# Slot: model_to_disease_mixin_relation
 
 
 The relationship to the disease

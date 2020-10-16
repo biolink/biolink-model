@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:correlated_with
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: correlated_with
+# Relation: correlated_with
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
 
 URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
-
 
 ## Domain and Range
 

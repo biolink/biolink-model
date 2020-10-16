@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GeneGrouping
+# Class: GeneGrouping
 
 
 any grouping of multiple genes or gene products

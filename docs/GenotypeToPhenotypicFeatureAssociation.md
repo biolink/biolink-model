@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: GenotypeToPhenotypicFeatureAssociation
+# Class: GenotypeToPhenotypicFeatureAssociation
 
 
 Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment

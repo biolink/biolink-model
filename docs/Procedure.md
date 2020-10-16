@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Procedure
+# Class: Procedure
 
 
 A series of actions conducted in a certain order or manner

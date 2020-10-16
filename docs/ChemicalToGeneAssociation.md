@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: ChemicalToGeneAssociation
+# Class: ChemicalToGeneAssociation
 
 
 An interaction between a chemical entity and a gene or gene product

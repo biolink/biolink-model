@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:colocalizes_with
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: colocalizes_with
+# Relation: colocalizes_with
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two entities that are observed to be located in the same place.
 
 URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
-
 
 ## Domain and Range
 

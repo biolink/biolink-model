@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Treatment
+# Class: Treatment
 
 
 A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'

@@ -1,11 +1,16 @@
+---
+parent: Edge Properties
+title: biolink:edge_label
+grand_parent: Slots
+layout: default
+---
 
-# Type: edge_label
+# Slot: edge_label
 
 
 A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
 
 URI: [biolink:edge_label](https://w3id.org/biolink/vocab/edge_label)
-
 
 ## Domain and Range
 

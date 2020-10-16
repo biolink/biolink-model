@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Association
+# Class: Association
 
 
 A typed association between two entities, supported by evidence

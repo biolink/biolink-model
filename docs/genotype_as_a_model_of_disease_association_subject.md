@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:genotype_as_a_model_of_disease_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: genotype_as_a_model_of_disease_association_subject
+# Slot: genotype_as_a_model_of_disease_association_subject
 
 
 A genotype that has a role in modeling the disease.

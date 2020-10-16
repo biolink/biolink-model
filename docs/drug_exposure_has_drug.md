@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:drug_exposure_has_drug
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: drug_exposure_has_drug
+# Slot: drug_exposure_has_drug
 
 
 

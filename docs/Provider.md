@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Provider
+# Class: Provider
 
 
 person, group, organization or project that provides a piece of information

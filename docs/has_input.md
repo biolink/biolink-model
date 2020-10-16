@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Relations
 title: biolink:has_input
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: has_input
+# Relation: has_input
 
 translator_minimal
 {: .translator_minimal-subset-label }

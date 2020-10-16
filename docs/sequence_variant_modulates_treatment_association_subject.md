@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:sequence_variant_modulates_treatment_association_subject
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: sequence_variant_modulates_treatment_association_subject
+# Slot: sequence_variant_modulates_treatment_association_subject
 
 
 variant that modulates the treatment of some disease

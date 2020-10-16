@@ -1,11 +1,16 @@
+---
+parent: Edge Properties
+title: biolink:chi_squared_statistic
+grand_parent: Slots
+layout: default
+---
 
-# Type: chi_squared_statistic
+# Slot: chi_squared_statistic
 
 
 represents the chi-squared statistic computed from observations
 
 URI: [biolink:chi_squared_statistic](https://w3id.org/biolink/vocab/chi_squared_statistic)
-
 
 ## Domain and Range
 

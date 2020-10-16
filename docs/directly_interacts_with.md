@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:directly_interacts_with
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: directly_interacts_with
+# Relation: directly_interacts_with
 
 
 Holds between molecular entities that phyically and directly interact with each other
 
 URI: [biolink:directly_interacts_with](https://w3id.org/biolink/vocab/directly_interacts_with)
-
 
 ## Domain and Range
 

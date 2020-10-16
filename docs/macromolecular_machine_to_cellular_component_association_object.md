@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:macromolecular_machine_to_cellular_component_association_object
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: macromolecular_machine_to_cellular_component_association_object
+# Slot: macromolecular_machine_to_cellular_component_association_object
 
 
 

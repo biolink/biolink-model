@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Node Properties
 title: biolink:sequence_variant_has_biological_sequence
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: sequence_variant_has_biological_sequence
+# Slot: sequence_variant_has_biological_sequence
 
 
 The state of the sequence w.r.t a reference sequence

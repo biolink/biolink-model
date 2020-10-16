@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: RNAProductIsoform
+# Class: RNAProductIsoform
 
 
 Represents a protein that is a specific isoform of the canonical or reference RNA

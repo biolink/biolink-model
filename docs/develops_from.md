@@ -1,11 +1,16 @@
+---
+parent: Relations
+title: biolink:develops_from
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: develops_from
+# Relation: develops_from
 
 
 
 
 URI: [biolink:develops_from](https://w3id.org/biolink/vocab/develops_from)
-
 
 ## Domain and Range
 

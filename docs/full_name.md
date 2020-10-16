@@ -1,11 +1,16 @@
+---
+parent: Node Properties
+title: biolink:full_name
+grand_parent: Slots
+layout: default
+---
 
-# Type: full_name
+# Slot: full_name
 
 
 a long-form human readable name for a thing
 
 URI: [biolink:full_name](https://w3id.org/biolink/vocab/full_name)
-
 
 ## Domain and Range
 

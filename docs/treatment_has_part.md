@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Relations
 title: biolink:treatment_has_part
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: treatment_has_part
+# Relation: treatment_has_part
 
 
 

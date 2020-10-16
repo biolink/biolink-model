@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:decreases_stability_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: decreases_stability_of
+# Relation: decreases_stability_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest
 
 URI: [biolink:decreases_stability_of](https://w3id.org/biolink/vocab/decreases_stability_of)
-
 
 ## Domain and Range
 

@@ -1,11 +1,19 @@
+---
+parent: Relations
+title: biolink:affects_localization_of
+grand_parent: Browse Biolink Model
+layout: default
+---
 
-# Type: affects_localization_of
+# Relation: affects_localization_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest
 
 URI: [biolink:affects_localization_of](https://w3id.org/biolink/vocab/affects_localization_of)
-
 
 ## Domain and Range
 

@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: Metabolite
+# Class: Metabolite
 
 
 Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.

@@ -1,11 +1,11 @@
 ---
-parent: Slots
+parent: Edge Properties
 title: biolink:thing_to_disease_or_phenotypic_feature_association_object
-grand_parent: Browse Biolink Model
+grand_parent: Slots
 layout: default
 ---
 
-# Type: thing_to_disease_or_phenotypic_feature_association_object
+# Slot: thing_to_disease_or_phenotypic_feature_association_object
 
 
 disease or phenotype

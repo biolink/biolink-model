@@ -5,7 +5,7 @@ grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: MolecularActivity
+# Class: MolecularActivity
 
 
 An execution of a molecular function carried out by a gene product or macromolecular complex.
