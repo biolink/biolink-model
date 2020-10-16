@@ -65,7 +65,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
                 self.header(3, 'Entities')
                 with open(os.path.join(directory, 'Entities.md'), 'w') as file:
-                    file.write(f'---\nparent: Classes\ntitle: Entities\nhas_children: false\nnav_order: 1\nlayout: default\n---')
+                    file.write(f'---\nparent: Classes\ntitle: Entities\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     ancs = self.ancestors(cls)
                     if 'named thing' in ancs:
@@ -74,7 +74,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
                 self.header(3, 'Associations')
                 with open(os.path.join(directory, 'Associations.md'), 'w') as file:
-                    file.write(f'---\nparent: Classes\ntitle: Associations\nhas_children: false\nnav_order: 2\nlayout: default\n---')
+                    file.write(f'---\nparent: Classes\ntitle: Associations\nhas_children: true\nnav_order: 2\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     ancs = self.ancestors(cls)
                     if 'association' in ancs:
@@ -83,14 +83,14 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
                 self.header(3, 'Mixins')
                 with open(os.path.join(directory, 'Mixins.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Mixins\nhas_children: false\nnav_order: 2\nlayout: default\n---')
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 2\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     if cls.mixin and self.is_secondary_ref(cls.name):
                         self.class_hier(cls)
 
                 self.header(3, 'Relations')
                 with open(os.path.join(directory, 'Relations.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Relations\nhas_children: false\nnav_order: 3\nlayout: default\n---')
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Relations\nhas_children: true\nnav_order: 3\nlayout: default\n---')
                 for slot in sorted(self.schema.slots.values(), key=lambda c: c.name):
                     if 'related to' in self.ancestors(slot):
                         self.pred_hier(slot)
@@ -101,7 +101,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
                 self.header(4, 'Node Properties')
                 with open(os.path.join(directory, 'NodeProperties.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\ntitle: Node Properties\nhas_children: false\nnav_order: 1\nlayout: default\n---')
+                    file.write(f'---\nparent: Slots\ntitle: Node Properties\nhas_children: true\nnav_order: 1\nlayout: default\n---')
 
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     ancs = self.ancestors(slot)
@@ -111,7 +111,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
                 self.header(4, 'Edge Properties')
                 with open(os.path.join(directory, 'EdgeProperties.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\ntitle: Edge Properties\nhas_children: false\nnav_order: 2\nlayout: default\n---')
+                    file.write(f'---\nparent: Slots\ntitle: Edge Properties\nhas_children: true\nnav_order: 2\nlayout: default\n---')
 
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     ancs = self.ancestors(slot)
