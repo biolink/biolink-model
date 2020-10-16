@@ -62,13 +62,13 @@ digraph {
 		lp="538.7,61.5",
 		pos="e,518.11,34.402 464.5,87.394 477.85,74.202 496.24,56.015 510.86,41.569",
 		style=solid];
-	versionOf	 [color=blue,
+	"version of"	 [color=blue,
 		height=0.5,
 		label="data set",
 		pos="629.7,18",
 		width=1.0471];
-	"data set version" -> versionOf	 [color=blue,
-		label=versionOf,
+	"data set version" -> "version of"	 [color=blue,
+		label="version of",
 		lp="630.2,61.5",
 		pos="e,618.32,35.566 506.49,97.365 531.97,92.159 561.18,83.465 584.7,69 595.17,62.558 604.57,52.919 612.03,43.75",
 		style=solid];

@@ -32,7 +32,9 @@ prefixes:
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
-  
+  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
+  gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
+
 default_prefix: biolink
 default_range: string
 
@@ -164,6 +166,7 @@ slots:
     is_a: related to
     in_subset:
       - translator_minimal
+    symmetric: true
     mappings:
       - RO:0002434
 
@@ -1884,14 +1887,14 @@ slots:
     mappings:
       - dcterms:source
 
-  retrievedOn:
+  retrieved on:
     is_a: node property
     domain: source file
     range: date
     mappings:
       - pav:retrievedOn
 
-  versionOf:
+  version of:
     is_a: node property
     domain: data set version
     range: data set
@@ -1929,7 +1932,7 @@ slots:
     mappings:
       - pav:createdWith
 
-  downloadURL:
+  download url:
     is_a: node property
     domain: distribution level
     mappings:
@@ -1947,6 +1950,10 @@ slots:
   type:
     is_a: node property
     slot_uri: rdf:type
+    mappings:
+      - alliancegenome:soTermId
+      - gff3:type
+      - gpi:DB_Object_Type
 
   id:
     is_a: node property
@@ -1958,6 +1965,10 @@ slots:
       - translator_minimal
     domain: named thing
     required: true
+    mappings:
+      - alliancegenome:primaryId
+      - gff3:ID
+      - gpi:DB_Object_ID
 
   iri:
     is_a: node property
@@ -1979,6 +1990,18 @@ slots:
       - translator_minimal
     required: true
     slot_uri: rdfs:label
+    mappings:
+      - gff3:Name
+      - gpi:DB_Object_Name
+
+  symbol:
+    is_a: node property
+    domain: named thing
+    description: >-
+      Symbol for a particular thing
+    mappings:
+      - alliancegenome:symbol
+      - gpi:DB_Object_Symbol
 
   synonym:
     is_a: node property
@@ -1991,10 +2014,28 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
+      - skos:altLabel
+      - gff3:Alias
+      - alliancegenome:synonyms
+      - gpi:DB_Object_Synonyms
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
       - oboInOwl:hasRelatedSynonym
+
+  xref:
+    is_a: node property
+    aliases: ['dbxref', 'Dbxref', 'DbXref']
+    domain: named thing
+    range: iri type
+    description: >-
+      Alternate CURIEs for a thing
+    multivalued: true
+    in_subset:
+      - translator_minimal
+    mappings:
+      - gff3:Dbxref
+      - gpi:DB_Xrefs
 
   category:
     is_a: type
@@ -2029,6 +2070,7 @@ slots:
     mappings:
       - IAO:0000115
       - skos:definitions
+      - gff3:Description
 
   systematic synonym:
     is_a: node property
@@ -2651,7 +2693,7 @@ classes:
     is_a: data file
     slots:
       - source version
-      - retrievedOn
+      - retrieved on
 
 #  data set descriptor:
 #    abstract: true
@@ -2668,7 +2710,7 @@ classes:
       - title
 #      - description
       - source data file
-      - versionOf
+      - version of
       - type
       - distribution
     mappings:
@@ -2678,7 +2720,7 @@ classes:
     is_a: data set version
     mixin: true
     slots:
-      - downloadURL
+      - download url
     mappings:
       - dcat:Distribution
 
@@ -3331,7 +3373,7 @@ classes:
       - WIKIDATA:Q7020
 
   transcript:
-    is_a: genomic entity
+    is_a: gene product
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
     mappings:
@@ -3385,6 +3427,13 @@ classes:
   gene:
     is_a: gene or gene product
     aliases: ['locus']
+    slots:
+      - id
+      - name
+      - symbol
+      - description
+      - synonym
+      - xref
     mappings:
       - SO:0000704
       - SIO:010035
@@ -3413,6 +3462,12 @@ classes:
     union_of:
       - protein
       - RNA product
+    slots:
+      - id
+      - name
+      - description
+      - synonym
+      - xref
     mappings:
       - WIKIDATA:Q424689
     id_prefixes:
