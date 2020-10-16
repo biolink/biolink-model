@@ -1,7 +1,7 @@
 ---
 parent: Slots
 title: Edge Properties
-has_children: true
-nav_order: 6
+has_children: false
+nav_order: 2
 layout: default
 ---
