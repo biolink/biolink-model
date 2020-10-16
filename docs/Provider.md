@@ -1,7 +1,7 @@
 ---
-parent: Classes
+parent: Entities
 title: biolink:Provider
-grand_parent: Browse Biolink Model
+grand_parent: Classes
 layout: default
 ---
 

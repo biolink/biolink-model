@@ -1,7 +1,7 @@
 ---
-parent: Classes
+parent: Entities
 title: biolink:ClinicalEntity
-grand_parent: Browse Biolink Model
+grand_parent: Classes
 layout: default
 ---
 

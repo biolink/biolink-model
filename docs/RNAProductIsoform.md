@@ -1,7 +1,7 @@
 ---
-parent: Classes
+parent: Entities
 title: biolink:RNAProductIsoform
-grand_parent: Browse Biolink Model
+grand_parent: Classes
 layout: default
 ---
 

@@ -1,7 +1,7 @@
 ---
-parent: Classes
+parent: Entities
 title: biolink:CellularComponent
-grand_parent: Browse Biolink Model
+grand_parent: Classes
 layout: default
 ---
 

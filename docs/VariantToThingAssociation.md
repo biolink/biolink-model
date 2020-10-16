@@ -1,7 +1,7 @@
 ---
-parent: Mixins
+parent: Associations
 title: biolink:VariantToThingAssociation
-grand_parent: Browse Biolink Model
+grand_parent: Classes
 layout: default
 ---
 

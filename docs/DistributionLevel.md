@@ -1,7 +1,7 @@
 ---
-parent: Mixins
+parent: Entities
 title: biolink:DistributionLevel
-grand_parent: Browse Biolink Model
+grand_parent: Classes
 layout: default
 ---
 

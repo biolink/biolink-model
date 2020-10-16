@@ -1,7 +1,7 @@
 ---
-parent: Classes
+parent: Associations
 title: biolink:ChemicalToThingAssociation
-grand_parent: Browse Biolink Model
+grand_parent: Classes
 layout: default
 ---
 
