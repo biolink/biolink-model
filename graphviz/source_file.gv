@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,566.65,123"];
+	graph [bb="0,0,567.65,123"];
 	node [label="\N"];
 	"source file"	 [height=0.5,
 		label="source file",
@@ -51,14 +51,14 @@ digraph {
 		lp="434.15,61.5",
 		pos="e,430.62,31.717 316.71,92.202 332.74,85.809 351.96,77.611 368.65,69 386.95,59.552 406.58,47.424 422.04,37.365",
 		style=solid];
-	retrievedOn	 [color=blue,
+	"retrieved on"	 [color=blue,
 		height=0.5,
 		label=date,
 		pos="539.65,18",
 		width=0.75];
-	"source file" -> retrievedOn	 [color=blue,
-		label=retrievedOn,
-		lp="534.15,61.5",
+	"source file" -> "retrieved on"	 [color=blue,
+		label="retrieved on",
+		lp="534.65,61.5",
 		pos="e,525.36,33.402 328.4,99.249 377.44,92.612 451.74,81.053 477.65,69 492.49,62.093 506.77,50.784 517.87,40.569",
 		style=solid];
 }
