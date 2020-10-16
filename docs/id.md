@@ -129,5 +129,8 @@ URI: [biolink:id](https://w3id.org/biolink/vocab/id)
 
 |  |  |  |
 | --- | --- | --- |
+| **Mappings:** | | alliancegenome:primaryId |
+|  | | gff3:ID |
+|  | | gpi:DB_Object_ID |
 | **In Subsets:** | | translator_minimal |
 

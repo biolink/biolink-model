@@ -125,11 +125,11 @@ Entity and association taxonomy and datamodel for life-sciences data
                       * [GeneProductIsoform](GeneProductIsoform.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
                       * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
                          * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+                      * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
                 * [MacromolecularComplex](MacromolecularComplex.md)
              * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
              * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
                 * [Snv](Snv.md) - SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
-             * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
        * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
           * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
              * [Cell](Cell.md)
@@ -357,7 +357,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [description](description.md) - a human-readable description of a thing
        * [entity to phenotypic feature association➞description](entity_to_phenotypic_feature_association_description.md) - A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
     * [distribution](distribution.md)
-    * [downloadURL](downloadURL.md)
+    * [download url](download_url.md)
     * [filler](filler.md) - The value in a property-value tuple
     * [format](format.md)
     * [full name](full_name.md) - a long-form human readable name for a thing
@@ -381,11 +381,12 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [longitude](longitude.md) - longitude
     * [name](name.md) - A human-readable name for a thing
        * [macromolecular machine➞name](macromolecular_machine_name.md) - genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-    * [retrievedOn](retrievedOn.md)
+    * [retrieved on](retrieved_on.md)
     * [rights](rights.md)
     * [source data file](source_data_file.md)
     * [source version](source_version.md)
     * [source web page](source_web_page.md)
+    * [symbol](symbol.md) - Symbol for a particular thing
     * [synonym](synonym.md) - Alternate human-readable names for a thing
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
     * [timepoint](timepoint.md) - a point in time
@@ -393,7 +394,8 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [type](type.md)
        * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
-    * [versionOf](versionOf.md)
+    * [version of](version_of.md)
+    * [xref](xref.md) - Alternate CURIEs for a thing
  * [related to](related_to.md) - A relationship that is asserted between two named things
     * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
        * [affects abundance of](affects_abundance_of.md) - holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest

@@ -35,4 +35,7 @@ URI: [biolink:type](https://w3id.org/biolink/vocab/type)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | rdf:type |
+|  | | alliancegenome:soTermId |
+|  | | gff3:type |
+|  | | gpi:DB_Object_Type |
 

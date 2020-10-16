@@ -1,0 +1,30 @@
+
+# Type: superclass_of
+
+
+holds between two classes where the domain class is a super class of the range class
+
+URI: [biolink:superclass_of](https://w3id.org/biolink/vocab/superclass_of)
+
+
+## Domain and Range
+
+[OntologyClass](OntologyClass.md) ->  <sub>0..*</sub> [IriType](types/IriType.md)
+
+## Parents
+
+ *  is_a: [related to](related_to.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | WD:Q66088480 |
+| **In Subsets:** | | translator_minimal |
+
