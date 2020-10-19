@@ -3,6 +3,9 @@ name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
+# Version should be kept in sync with primary Git repository release tag
+version: 1.3.8
+
 # CURIE namespaces (prefixes/base URI's) mappings of prefixes used in the body of the Biolink Model specification are resolved using a specific precedence order,
 # for use in the generation of the Biolink Model context.jsonld mappings to namespaces. Any prefixes encountered in the Biolink Model but not resolved by the following 
 # precedence sources, are anonymously declared by biolinkml as http://example.org/UNKNOWN/ rooted base URI's which should ideally be repaired in one of the precedence lists.
@@ -22,9 +25,11 @@ prefixes:
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   GAMMA: 'http://translator.renci.org/GAMMA_'
+  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
   # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
   GOP: 'http://purl.obolibrary.org/obo/go#'
+  gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
   GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
@@ -55,7 +60,7 @@ prefixes:
   WIKIDATA: 'https://www.wikidata.org/wiki/'
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
-  
+
 default_prefix: biolink
 default_range: string
 
@@ -1915,14 +1920,14 @@ slots:
     broad_mappings:
       - dcterms:source
 
-  retrievedOn:
+  retrieved on:
     is_a: node property
     domain: source file
     range: date
     exact_mappings:
       - pav:retrievedOn
 
-  versionOf:
+  version of:
     is_a: node property
     domain: data set version
     range: data set
@@ -1963,7 +1968,7 @@ slots:
     exact_mappings:
       - pav:createdWith
 
-  downloadURL:
+  download url:
     is_a: node property
     domain: distribution level
     exact_mappings:
@@ -1981,6 +1986,10 @@ slots:
   type:
     is_a: node property
     slot_uri: rdf:type
+    mappings:
+      - alliancegenome:soTermId
+      - gff3:type
+      - gpi:DB_Object_Type
 
   id:
     is_a: node property
@@ -1992,6 +2001,10 @@ slots:
       - translator_minimal
     domain: named thing
     required: true
+    mappings:
+      - alliancegenome:primaryId
+      - gff3:ID
+      - gpi:DB_Object_ID
 
   iri:
     is_a: node property
@@ -2015,6 +2028,18 @@ slots:
       - translator_minimal
     required: true
     slot_uri: rdfs:label
+    mappings:
+      - gff3:Name
+      - gpi:DB_Object_Name
+
+  symbol:
+    is_a: node property
+    domain: named thing
+    description: >-
+      Symbol for a particular thing
+    mappings:
+      - alliancegenome:symbol
+      - gpi:DB_Object_Symbol
 
   synonym:
     is_a: node property
@@ -2027,10 +2052,28 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
+      - skos:altLabel
+      - gff3:Alias
+      - alliancegenome:synonyms
+      - gpi:DB_Object_Synonyms
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
       - oboInOwl:hasRelatedSynonym
+
+  xref:
+    is_a: node property
+    aliases: ['dbxref', 'Dbxref', 'DbXref']
+    domain: named thing
+    range: iri type
+    description: >-
+      Alternate CURIEs for a thing
+    multivalued: true
+    in_subset:
+      - translator_minimal
+    mappings:
+      - gff3:Dbxref
+      - gpi:DB_Xrefs
 
   category:
     is_a: type
@@ -2065,6 +2108,7 @@ slots:
     mappings:
       - IAO:0000115
       - skos:definitions
+      - gff3:Description
 
   systematic synonym:
     is_a: node property
@@ -2831,7 +2875,7 @@ classes:
     is_a: data file
     slots:
       - source version
-      - retrievedOn
+      - retrieved on
 
 #  data set descriptor:
 #    abstract: true
@@ -2848,7 +2892,7 @@ classes:
       - title
 #      - description
       - source data file
-      - versionOf
+      - version of
       - type
       - distribution
     mappings:
@@ -2905,7 +2949,7 @@ classes:
     is_a: data set version
     mixin: true
     slots:
-      - downloadURL
+      - download url
     mappings:
       - dcat:Distribution
 
@@ -3499,7 +3543,7 @@ classes:
       - WIKIDATA:Q7020
 
   transcript:
-    is_a: genomic entity
+    is_a: gene product
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
     mappings:
@@ -3553,6 +3597,13 @@ classes:
   gene:
     is_a: gene or gene product
     aliases: ['locus']
+    slots:
+      - id
+      - name
+      - symbol
+      - description
+      - synonym
+      - xref
     mappings:
       - SO:0000704
       - SIO:010035
@@ -3581,6 +3632,12 @@ classes:
     union_of:
       - protein
       - RNA product
+    slots:
+      - id
+      - name
+      - description
+      - synonym
+      - xref
     mappings:
       - WIKIDATA:Q424689
     id_prefixes:

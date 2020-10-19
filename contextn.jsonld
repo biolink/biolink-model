@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-09-21 02:02\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-10-16 01:13\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -116,6 +116,7 @@
       "XCO": "http://purl.obolibrary.org/obo/XCO_",
       "ZFIN": "http://identifiers.org/zfin/",
       "ZP": "http://purl.obolibrary.org/obo/ZP_",
+      "alliancegenome": "http://example.org/UNKNOWN/alliancegenome/",
       "biolink": "https://w3id.org/biolink/vocab/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
       "chembio": "http://example.org/UNKNOWN/chembio/",
@@ -126,6 +127,8 @@
       "dictyBase": "http://dictybase.org/gene/",
       "faldo": "http://biohackathon.org/resource/faldo#",
       "foaf": "http://xmlns.com/foaf/0.1/",
+      "gff3": "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#",
+      "gpi": "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
       "medgen": "http://example.org/UNKNOWN/medgen/",
@@ -514,6 +517,9 @@
       "increases_uptake_of": {
          "@type": "@id"
       },
+      "interacting_molecules_category": {
+         "@type": "@id"
+      },
       "interacts_with": {
          "@type": "@id"
       },
@@ -661,7 +667,7 @@
       "relation": {
          "@type": "@id"
       },
-      "retrievedOn": {
+      "retrieved_on": {
          "@type": "xsd:date"
       },
       "same_as": {
@@ -709,10 +715,13 @@
       "update_date": {
          "@type": "xsd:date"
       },
-      "versionOf": {
+      "version_of": {
          "@type": "@id"
       },
       "xenologous_to": {
+         "@type": "@id"
+      },
+      "xref": {
          "@type": "@id"
       }
    }
