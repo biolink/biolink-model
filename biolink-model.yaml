@@ -119,12 +119,6 @@ types:
     description: >-
       An IRI
 
-  doi type:
-    typeof: uriorcurie
-    description: >-
-      Digital Object Identifier (see https://www.doi.org/) serial code used to uniquely identify
-      digital objects like academic papers (use upper case letters only)
-
   label type:
     typeof: string
     description: >-
@@ -1900,13 +1894,6 @@ slots:
       A grouping for any property that holds between a node and a value
     domain: named thing
 
-  title:
-    is_a: node property
-    domain: named thing   # needed to generalise this for inheritance to information content entities?
-    exact_mappings:
-      - dcterms:title
-      - WIKIDATA_PROPERTY:P1476
-
   source data file:
     is_a: node property
     domain: data set version
@@ -2019,7 +2006,7 @@ slots:
 
   name:
     is_a: node property
-    aliases: ['label', 'display name']
+    aliases: ['label', 'display name', 'title']
     domain: named thing
     range: label type
     description: >-
@@ -2028,9 +2015,12 @@ slots:
       - translator_minimal
     required: true
     slot_uri: rdfs:label
-    mappings:
+    exact_mappings:
       - gff3:Name
       - gpi:DB_Object_Name
+    narrow_mappings:
+      - dcterms:title
+      - WIKIDATA_PROPERTY:P1476
 
   symbol:
     is_a: node property
@@ -2234,13 +2224,6 @@ slots:
 
   ## Additional Properties for Information Content Entity and Publication Nodes
 
-  doi:
-    is_a: id
-    domain: information content entity
-    range: doi type
-    exact_mappings:
-      - WIKIDATA_PROPERTY:P356
-
   genre:
     is_a: node property
     description: >-
@@ -2408,6 +2391,19 @@ slots:
       longitude
     mappings:
       - wgs:long
+
+  has affiliation:
+    is_a: related to
+    description: >-
+      a professional relationship between one provider (often a person) within another provider (often an organization)
+    domain: provider
+    range: provider
+
+  address:
+    is_a: node property
+    description: >-
+      the particulars of the place where someone or an organization is situated.  For now, this slot is a
+      simple text "blob" containing all relevant details of the given location for fitness of purpose.
 
   has chemical formula:
     is_a: node property
@@ -2822,11 +2818,11 @@ classes:
     description: >-
       a piece of information that typically describes some piece of biology or is used as support.
     slots:
-      - doi
-      - title
       - description
       - format
       - creation date
+    id_prefixes:
+      - doi
     exact_mappings:
       - IAO:0000030
     narrow_mappings:
@@ -2882,21 +2878,18 @@ classes:
 #    mixin: true
 
   data set:
-    is_a: named thing
-    mappings:
+    is_a: information content entity
+    exact_mappings:
       - IAO:0000100
+      - dctypes:Dataset
 
   data set version:
     is_a: data set
     slots:
-      - title
-#      - description
       - source data file
       - version of
       - type
       - distribution
-    mappings:
-      - dctypes:Dataset
 
   # Publication Genre, treated as an ontology
   genre type:
@@ -2935,6 +2928,11 @@ classes:
       - issue
       - pages
       - abstract
+    slot_usage:
+      name:
+        description: >-
+          the title of the publication is generally recorded in the 'name' property (inherited from NamedThing)
+          but 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case)
     exact_mappings:
       - IAO:0000311
     narrow_mappings:
@@ -2944,6 +2942,7 @@ classes:
       - UMLSST:inpr
     id_prefixes:
       - PMID
+      - doi
 
   distribution level:
     is_a: data set version
@@ -3274,6 +3273,9 @@ classes:
     aliases: ['agent', 'group']
     description: >-
       person, group, organization or project that provides a piece of information
+    slots:
+      - has affiliation
+      - address
     mappings: # Organizations
       - UMLSSG:ORGA
       # Organization
