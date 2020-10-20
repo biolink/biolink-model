@@ -4,7 +4,7 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-version: 1.3.8
+version: 1.3.9
 
 # CURIE namespaces (prefixes/base URI's) mappings of prefixes used in the body of the Biolink Model specification are resolved using a specific precedence order,
 # for use in the generation of the Biolink Model context.jsonld mappings to namespaces. Any prefixes encountered in the Biolink Model but not resolved by the following 
@@ -12,31 +12,52 @@ version: 1.3.8
 #
 # 1. The following 'prefixes:' delimited list has first precedence in resolution. 
 prefixes:
+  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  # Placeholder: not sure how 'chembio' really resolves
+  chembio: 'http://translator.ncats.nih.gov/chembio_'
+  CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
+  CTD: 'http://translator.ncats.nih.gov/CTD_'
+  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
+  ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
+  ExO: 'http://purl.obolibrary.org/obo/ExO_'
+  GAMMA: 'http://translator.renci.org/GAMMA_'
+  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
+  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
+  gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
+  # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
+  GOP: 'http://purl.obolibrary.org/obo/go#'
+  GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
+  HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
+  hetio: 'http://translator.ncats.nih.gov/hetio_'
+  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
+  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
+  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
+  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
-  SIO: 'http://semanticscience.org/resource/SIO_'
-  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
+  PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
+  SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
+  SIO: 'http://semanticscience.org/resource/SIO_'
+  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
+  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
+  UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
+  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
   UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
   UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
-  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
-  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
-  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
-  GAMMA: 'http://translator.renci.org/GAMMA_'
-  CTD: 'http://translator.ncats.nih.gov/CTD_'
-  hetio: 'http://translator.ncats.nih.gov/hetio_'
-  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
-  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
-  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
-  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
-  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
-  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
-  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
-  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
-  gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
+  # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
+  # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
+  # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
+  VMC: 'https://github.com/ga4gh/vr-spec/'
+  WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
+  WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
+  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
 
 default_prefix: biolink
 default_range: string
@@ -181,7 +202,7 @@ slots:
       - translator_minimal
     symmetric: true
     mappings:
-      - WIKIDATA:P129
+      - WIKIDATA_PROPERTY:P129
       - SEMMEDDB:INTERACTS_WITH
 
   molecularly interacts with:
@@ -914,7 +935,7 @@ slots:
     mixin: true
     abstract: true
     mappings:
-      - WIKIDATA:P128
+      - WIKIDATA_PROPERTY:P128
 
   positively regulates:
     comments:
@@ -1021,7 +1042,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002205
-      - WIKIDATA:P688
+      - WIKIDATA_PROPERTY:P688
 
   homologous to:
     is_a: similar to
@@ -1054,7 +1075,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:HOM0000017
-      - WIKIDATA:P684
+      - WIKIDATA_PROPERTY:P684
 
   xenologous to:
     is_a: homologous to
@@ -1153,7 +1174,7 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - WD:P2293
+      - WIKIDATA_PROPERTY:P2293
       - GENO:0000840
       - GENO:0000841
       - NCIT:R176
@@ -1196,7 +1217,7 @@ slots:
     mappings:
       - RO:0002410
       - SEMMEDDB:CAUSES
-      - WIKIDATA:P1542
+      - WIKIDATA_PROPERTY:P1542
       - MONDO:disease_triggers
 
   caused by:
@@ -1207,15 +1228,15 @@ slots:
       - translator_minimal
     inverse: causes
     mappings:
-      - WIKIDATA:P828
+      - WIKIDATA_PROPERTY:P828
 
   treats:
     aliases: ['is substance that treats']
     is_a: affects
     description: >-
       holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
-    domain: treatment
     required: true
+    domain: treatment
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -1224,10 +1245,23 @@ slots:
       - RO:0002606
       - RO:0003307
       - SEMMEDDB:TREATS
-      - WIKIDATA:P2175
+      - WIKIDATA_PROPERTY:P2175
       - CTD:therapeutic
       - CTD:negativecorrelation
       - MONDO:disease_responds_to
+
+  treated by:
+    is_a: related to
+    description: >-
+      holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
+    domain: disease or phenotypic feature
+    range: treatment
+    in_subset:
+      - translator_minimal
+    inverse: treats
+    mappings:
+      - RO:0002302
+      - WIKIDATA_PROPERTY:P2176
 
   prevents :
     is_a: affects risk for
@@ -1273,18 +1307,6 @@ slots:
     inverse: has biomarker
     mappings:
       - RO:0002607
-
-  treated by:
-    is_a: related to
-    description: >-
-      holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
-    domain: disease or phenotypic feature
-    in_subset:
-      - translator_minimal
-    inverse: treats
-    mappings:
-      - RO:0002302
-      - WIKIDATA:P2176
 
   expressed in:
     is_a: related to
@@ -1442,7 +1464,7 @@ slots:
     inverse: part of
     mappings:
       - BFO:0000051
-      - WIKIDATA:P527
+      - WIKIDATA_PROPERTY:P527
 
   part of:
     is_a: overlaps
@@ -1454,7 +1476,7 @@ slots:
     mappings:
       - BFO:0000050
       - SEMMEDDB:PART_OF
-      - WIKIDATA:P361
+      - WIKIDATA_PROPERTY:P361
       - BSPO:0001106
       - BSPO:0001108
       - BSPO:0001113
@@ -1473,7 +1495,7 @@ slots:
     inverse: participates in
     mappings:
       - RO:0000057
-      - WIKIDATA:P2283
+      - WIKIDATA_PROPERTY:P2283
       - GOREL:0001007
       - GOREL:0002008
 
@@ -1534,6 +1556,7 @@ slots:
     is_a: has participant
     description: >-
       holds between a physical entity and a process, where the physical entity executes the process
+    domain: physical entity
     range: biological process or activity
     in_subset:
       - translator_minimal
@@ -1546,6 +1569,7 @@ slots:
     description: >-
       holds between a process and a physical entity, where the physical entity executes the process
     domain: biological process or activity
+    range: physical entity
     in_subset:
       - translator_minimal
     inverse: enables
@@ -1583,7 +1607,7 @@ slots:
       - translator_minimal
     mappings:
       - SEMMEDDB:MANIFESTATION_OF
-      - WIKIDATA:P1557
+      - WIKIDATA_PROPERTY:P1557
 
   produces:
     is_a: related to
@@ -1593,7 +1617,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0003000
-      - WIKIDATA:P1056
+      - WIKIDATA_PROPERTY:P1056
       - SEMMEDDB:PRODUCES
       - GOREL:0001010
 
@@ -1608,7 +1632,7 @@ slots:
     mappings:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
-      - WIKIDATA:P156
+      - WIKIDATA_PROPERTY:P156
       - RO:0002263
       - RO:0002264
 
@@ -1622,7 +1646,20 @@ slots:
       - owl:equivalentClass
       - owl:sameAs
       - skos:exactMatch
-      - WIKIDATA:P2888
+      - WIKIDATA_PROPERTY:P2888
+
+  superclass of:
+    is_a: related to
+    description: >-
+      holds between two classes where the domain class is a super class of the range class
+    domain: ontology class
+    range: ontology class # range was tagged as 'iri type' before... not sure why
+    multivalued: True
+    inverse: subclass of
+    in_subset:
+      - translator_minimal
+    mappings:
+      - WIKIDATA:Q66088480
 
   subclass of:
     is_a: related to
@@ -1638,7 +1675,7 @@ slots:
     mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
-      - WIKIDATA:P279
+      - WIKIDATA_PROPERTY:P279
 
   directly interacts with:
     is_a: interacts with
@@ -1848,21 +1885,6 @@ slots:
       - CL:lacks_plasma_membrane_part
 
   #End proposed slots
-
-
-
-  superclass of:
-    is_a: related to
-    description: >-
-      holds between two classes where the domain class is a super class of the range class
-    domain: ontology class
-    range: iri type
-    multivalued: True
-    inverse: subclass of
-    in_subset:
-      - translator_minimal
-    mappings:
-      - WD:Q66088480
 
 ## property slots
 
@@ -2080,7 +2102,7 @@ slots:
     domain: named thing
     range: label type
     multivalued: true
-    slot_uri: http://purl.obolibrary.org/obo/go#systematic_synonym
+    slot_uri: GOP:systematic_synonym
     description: >-
       more commonly used for gene symbols in yeast
 
@@ -2263,7 +2285,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002162
-      - WIKIDATA:P703
+      - WIKIDATA_PROPERTY:P703
 
   latitude:
     is_a: node property
@@ -2287,7 +2309,7 @@ slots:
     description: >-
       description of chemical compound based on element symbols
     mappings:
-      - WIKIDATA:P274
+      - WIKIDATA_PROPERTY:P274
 
   aggregate statistic:
     is_a: node property
@@ -2971,7 +2993,7 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
-      - ORPHA
+      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbrevation for ORPHANET? not used in model
       - EFO
       - UMLS
       - MESH
@@ -4348,7 +4370,7 @@ classes:
   gene to phenotypic feature association:
     is_a: association
     mappings:
-      - http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
+      - WBVocab:Gene-Phenotype-Association
     defining_slots:
       - subject
       - object
@@ -4754,7 +4776,7 @@ classes:
     aliases: ['functional association']
     is_a: functional association
     mappings:
-      - http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
+      - WBVocab:Gene-GO-Association
     defining_slots:
       - subject
       - object
