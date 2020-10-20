@@ -74,6 +74,6 @@ URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | RO:0002162 |
-|  | | WIKIDATA:P703 |
+|  | | WIKIDATA_PROPERTY:P703 |
 | **In Subsets:** | | translator_minimal |
 

@@ -101,7 +101,6 @@ UMLSST:neop
  * DOID
  * OMIM
  * ORPHANET
- * ORPHA
  * EFO
  * UMLS
  * MESH

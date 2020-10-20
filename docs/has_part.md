@@ -37,6 +37,6 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | BFO:0000051 |
-|  | | WIKIDATA:P527 |
+|  | | WIKIDATA_PROPERTY:P527 |
 | **In Subsets:** | | translator_minimal |
 

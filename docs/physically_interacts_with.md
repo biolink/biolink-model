@@ -34,7 +34,7 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA:P129 |
+| **Mappings:** | | WIKIDATA_PROPERTY:P129 |
 |  | | SEMMEDDB:INTERACTS_WITH |
 | **In Subsets:** | | translator_minimal |
 

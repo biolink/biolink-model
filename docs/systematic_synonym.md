@@ -30,5 +30,5 @@ URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_syno
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | http://purl.obolibrary.org/obo/go#systematic_synonym |
+| **Mappings:** | | GOP:systematic_synonym |
 

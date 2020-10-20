@@ -35,7 +35,7 @@ URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
 | --- | --- | --- |
 | **Mappings:** | | BFO:0000063 |
 |  | | SEMMEDDB:PRECEDES |
-|  | | WIKIDATA:P156 |
+|  | | WIKIDATA_PROPERTY:P156 |
 |  | | RO:0002263 |
 |  | | RO:0002264 |
 | **In Subsets:** | | translator_minimal |

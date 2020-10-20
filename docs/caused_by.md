@@ -33,6 +33,6 @@ URI: [biolink:caused_by](https://w3id.org/biolink/vocab/caused_by)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA:P828 |
+| **Mappings:** | | WIKIDATA_PROPERTY:P828 |
 | **In Subsets:** | | translator_minimal |
 

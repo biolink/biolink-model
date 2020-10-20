@@ -27,7 +27,7 @@ WIKIDATA:Q4915012
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalToPathwayAssociation]-%20object%201..1%3E[Pathway%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalProcess]%5E-[Pathway],[NamedThing],[ChemicalToPathwayAssociation],[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[ChemicalToPathwayAssociation]-%20object%201..1%3E[Pathway%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalProcess]%5E-[Pathway],[NamedThing],[ChemicalToPathwayAssociation],[BiologicalProcess])
 
 ---
 
@@ -56,7 +56,7 @@ WIKIDATA:Q4915012
 
  * [enabled by](enabled_by.md)  <sub>0..*</sub>
     * Description: holds between a process and a physical entity, where the physical entity executes the process
-    * range: [NamedThing](NamedThing.md)
+    * range: [PhysicalEntity](PhysicalEntity.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from gene product:

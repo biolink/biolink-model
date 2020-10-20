@@ -33,7 +33,7 @@ URI: [biolink:gene_associated_with_condition](https://w3id.org/biolink/vocab/gen
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WD:P2293 |
+| **Mappings:** | | WIKIDATA_PROPERTY:P2293 |
 |  | | GENO:0000840 |
 |  | | GENO:0000841 |
 |  | | NCIT:R176 |

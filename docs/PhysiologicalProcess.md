@@ -66,7 +66,7 @@ UMLSST:clna
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalProcess]%5E-[PhysiologicalProcess%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[NamedThing],[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalProcess]%5E-[PhysiologicalProcess%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[PhysicalEntity],[NamedThing],[BiologicalProcess])
 
 ---
 
@@ -87,7 +87,7 @@ UMLSST:clna
 
  * [enabled by](enabled_by.md)  <sub>0..*</sub>
     * Description: holds between a process and a physical entity, where the physical entity executes the process
-    * range: [NamedThing](NamedThing.md)
+    * range: [PhysicalEntity](PhysicalEntity.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from gene product:

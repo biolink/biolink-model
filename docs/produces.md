@@ -34,7 +34,7 @@ URI: [biolink:produces](https://w3id.org/biolink/vocab/produces)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | RO:0003000 |
-|  | | WIKIDATA:P1056 |
+|  | | WIKIDATA_PROPERTY:P1056 |
 |  | | SEMMEDDB:PRODUCES |
 |  | | GOREL:0001010 |
 | **In Subsets:** | | translator_minimal |

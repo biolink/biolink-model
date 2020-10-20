@@ -37,7 +37,7 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 | **Mappings:** | | RO:0002606 |
 |  | | RO:0003307 |
 |  | | SEMMEDDB:TREATS |
-|  | | WIKIDATA:P2175 |
+|  | | WIKIDATA_PROPERTY:P2175 |
 |  | | CTD:therapeutic |
 |  | | CTD:negativecorrelation |
 |  | | MONDO:disease_responds_to |

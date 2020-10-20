@@ -12,7 +12,7 @@ layout: default
 
 URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTermAssociation)
 
-http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
+WBVocab:Gene-GO-Association
 {: .mapping-label }
 
 
@@ -91,5 +91,5 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | functional association |
-| **Mappings:** | | http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association |
+| **Mappings:** | | WBVocab:Gene-GO-Association |
 

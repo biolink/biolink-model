@@ -21,7 +21,7 @@ SIO:001398
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DrugExposure]%3Chas%20part%201..%2A-%20[Treatment%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[ExposureEvent]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[ExposureEvent],[DrugExposure])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DrugExposure]%3Chas%20part%201..%2A-%20[Treatment%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[ExposureEvent]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[ExposureEvent],[DrugExposure],[DiseaseOrPhenotypicFeature])
 
 ---
 
@@ -33,6 +33,7 @@ SIO:001398
 ## Referenced by class
 
  *  **[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)** *[sequence variant modulates treatment association➞object](sequence_variant_modulates_treatment_association_object.md)*  <sub>REQ</sub>  **[Treatment](Treatment.md)**
+ *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[treated by](treated_by.md)*  <sub>0..*</sub>  **[Treatment](Treatment.md)**
 
 ## Attributes
 

@@ -15,7 +15,7 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[NamedThing],[MolecularActivity],[NamedThing]%3Cenabled%20by%200..%2A-%20[BiologicalProcessOrActivity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[NamedThing]%3Chas%20output%200..%2A-%20[BiologicalProcessOrActivity],[NamedThing]%3Chas%20input%200..%2A-%20[BiologicalProcessOrActivity],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[BiologicalProcess],[BiologicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[Occurrent],[NamedThing],[MolecularActivity],[PhysicalEntity]%3Cenabled%20by%200..%2A-%20[BiologicalProcessOrActivity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[NamedThing]%3Chas%20output%200..%2A-%20[BiologicalProcessOrActivity],[NamedThing]%3Chas%20input%200..%2A-%20[BiologicalProcessOrActivity],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[BiologicalProcess],[BiologicalEntity])
 
 ---
 
@@ -40,7 +40,7 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
 ## Referenced by class
 
- *  **[Occurrent](Occurrent.md)** *[enables](enables.md)*  <sub>0..*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
+ *  **[PhysicalEntity](PhysicalEntity.md)** *[enables](enables.md)*  <sub>0..*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
 
 ## Attributes
 
@@ -49,7 +49,7 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
  * [enabled by](enabled_by.md)  <sub>0..*</sub>
     * Description: holds between a process and a physical entity, where the physical entity executes the process
-    * range: [NamedThing](NamedThing.md)
+    * range: [PhysicalEntity](PhysicalEntity.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from gene product:
@@ -74,5 +74,5 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
  * [enabled by](enabled_by.md)  <sub>0..*</sub>
     * Description: holds between a process and a physical entity, where the physical entity executes the process
-    * range: [NamedThing](NamedThing.md)
+    * range: [PhysicalEntity](PhysicalEntity.md)
     * in subsets: (translator_minimal)

@@ -36,6 +36,6 @@ URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
 | **Mappings:** | | rdfs:subClassOf |
 |  | | rdfs:subClassOf |
 |  | | SEMMEDDB:IS_A |
-|  | | WIKIDATA:P279 |
+|  | | WIKIDATA_PROPERTY:P279 |
 | **In Subsets:** | | translator_minimal |
 

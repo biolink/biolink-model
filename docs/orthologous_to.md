@@ -34,6 +34,6 @@ URI: [biolink:orthologous_to](https://w3id.org/biolink/vocab/orthologous_to)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | RO:HOM0000017 |
-|  | | WIKIDATA:P684 |
+|  | | WIKIDATA_PROPERTY:P684 |
 | **In Subsets:** | | translator_minimal |
 

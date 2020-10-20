@@ -24,7 +24,7 @@ WIKIDATA:Q2996394
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[Pathway],[Occurrent],[NamedThing],[MacromolecularMachineToBiologicalProcessAssociation],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcessOrActivity]%5E-[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[PhysicalEntity],[Pathway],[Occurrent],[NamedThing],[MacromolecularMachineToBiologicalProcessAssociation],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcessOrActivity]%5E-[BiologicalProcess])
 
 ---
 
@@ -60,7 +60,7 @@ WIKIDATA:Q2996394
 
  * [enabled by](enabled_by.md)  <sub>0..*</sub>
     * Description: holds between a process and a physical entity, where the physical entity executes the process
-    * range: [NamedThing](NamedThing.md)
+    * range: [PhysicalEntity](PhysicalEntity.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from gene product:

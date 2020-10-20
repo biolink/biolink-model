@@ -34,6 +34,6 @@ URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA:P128 |
+| **Mappings:** | | WIKIDATA_PROPERTY:P128 |
 | **Comments:** | | This is a grouping for process-process and entity-entity relations |
 

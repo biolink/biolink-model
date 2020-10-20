@@ -12,7 +12,7 @@ layout: default
 
 URI: [biolink:GeneToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation)
 
-http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
+WBVocab:Gene-Phenotype-Association
 {: .mapping-label }
 
 
@@ -117,5 +117,5 @@ http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association |
+| **Mappings:** | | WBVocab:Gene-Phenotype-Association |
 

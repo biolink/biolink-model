@@ -38,7 +38,7 @@ URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | RO:0000057 |
-|  | | WIKIDATA:P2283 |
+|  | | WIKIDATA_PROPERTY:P2283 |
 |  | | GOREL:0001007 |
 |  | | GOREL:0002008 |
 | **In Subsets:** | | translator_minimal |

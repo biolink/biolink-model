@@ -17,7 +17,7 @@ URI: [biolink:superclass_of](https://w3id.org/biolink/vocab/superclass_of)
 
 ## Domain and Range
 
-[OntologyClass](OntologyClass.md) ->  <sub>0..*</sub> [IriType](types/IriType.md)
+[OntologyClass](OntologyClass.md) ->  <sub>0..*</sub> [OntologyClass](OntologyClass.md)
 
 ## Parents
 
@@ -33,6 +33,6 @@ URI: [biolink:superclass_of](https://w3id.org/biolink/vocab/superclass_of)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WD:Q66088480 |
+| **Mappings:** | | WIKIDATA:Q66088480 |
 | **In Subsets:** | | translator_minimal |
 

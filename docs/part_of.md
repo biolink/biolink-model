@@ -35,7 +35,7 @@ URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
 | --- | --- | --- |
 | **Mappings:** | | BFO:0000050 |
 |  | | SEMMEDDB:PART_OF |
-|  | | WIKIDATA:P361 |
+|  | | WIKIDATA_PROPERTY:P361 |
 |  | | BSPO:0001106 |
 |  | | BSPO:0001108 |
 |  | | BSPO:0001113 |

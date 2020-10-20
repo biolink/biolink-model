@@ -17,7 +17,7 @@ URI: [biolink:treated_by](https://w3id.org/biolink/vocab/treated_by)
 
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..*</sub> [Treatment](Treatment.md)
 
 ## Parents
 
@@ -34,6 +34,6 @@ URI: [biolink:treated_by](https://w3id.org/biolink/vocab/treated_by)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | RO:0002302 |
-|  | | WIKIDATA:P2176 |
+|  | | WIKIDATA_PROPERTY:P2176 |
 | **In Subsets:** | | translator_minimal |
 

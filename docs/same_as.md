@@ -36,6 +36,6 @@ URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
 | **Mappings:** | | owl:equivalentClass |
 |  | | owl:sameAs |
 |  | | skos:exactMatch |
-|  | | WIKIDATA:P2888 |
+|  | | WIKIDATA_PROPERTY:P2888 |
 | **In Subsets:** | | translator_minimal |
 

@@ -15,7 +15,7 @@ URI: [biolink:PhysicalEntity](https://w3id.org/biolink/vocab/PhysicalEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]uses%20-.-%3E[PhysicalEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[MaterialSample]uses%20-.-%3E[PhysicalEntity],[AnatomicalEntity]uses%20-.-%3E[PhysicalEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing],[MolecularEntity],[MaterialSample],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalProcessOrActivity]-%20enabled%20by%200..%2A%3E[PhysicalEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[MolecularEntity]uses%20-.-%3E[PhysicalEntity],[MaterialSample]uses%20-.-%3E[PhysicalEntity],[AnatomicalEntity]uses%20-.-%3E[PhysicalEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing],[MolecularEntity],[MaterialSample],[BiologicalProcessOrActivity],[AnatomicalEntity])
 
 ---
 
@@ -32,6 +32,7 @@ URI: [biolink:PhysicalEntity](https://w3id.org/biolink/vocab/PhysicalEntity)
 
 ## Referenced by class
 
+ *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[enabled by](enabled_by.md)*  <sub>0..*</sub>  **[PhysicalEntity](PhysicalEntity.md)**
 
 ## Attributes
 

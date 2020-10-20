@@ -30,5 +30,5 @@ URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA:P274 |
+| **Mappings:** | | WIKIDATA_PROPERTY:P274 |
 
