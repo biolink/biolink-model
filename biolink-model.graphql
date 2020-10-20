@@ -100,7 +100,7 @@ type BiologicalProcess implements Occurrent
     category: [CategoryType]!
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
-    enabledBy: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 type BiologicalProcessOrActivity implements Occurrent
@@ -110,7 +110,7 @@ type BiologicalProcessOrActivity implements Occurrent
     category: [CategoryType]!
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
-    enabledBy: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 type BiologicalSex
@@ -1396,7 +1396,7 @@ type Pathway
     category: [CategoryType]!
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
-    enabledBy: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 type Phenomenon
@@ -1438,7 +1438,7 @@ type PhysiologicalProcess
     category: [CategoryType]!
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
-    enabledBy: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 type PlanetaryEntity
