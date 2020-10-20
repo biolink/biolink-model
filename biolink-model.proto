@@ -82,7 +82,7 @@ message BiologicalProcess
   repeated category CategoryType = 3
   repeated hasInput NamedThing = 4
   repeated hasOutput NamedThing = 5
-  repeated enabledBy NamedThing = 6
+  repeated enabledBy PhysicalEntity = 6
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities
 message BiologicalProcessOrActivity
@@ -92,7 +92,7 @@ message BiologicalProcessOrActivity
   repeated category CategoryType = 3
   repeated hasInput NamedThing = 4
   repeated hasOutput NamedThing = 5
-  repeated enabledBy NamedThing = 6
+  repeated enabledBy PhysicalEntity = 6
  }
 message BiologicalSex
  {
@@ -1113,7 +1113,7 @@ message Pathway
   repeated category CategoryType = 3
   repeated hasInput NamedThing = 4
   repeated hasOutput NamedThing = 5
-  repeated enabledBy NamedThing = 6
+  repeated enabledBy PhysicalEntity = 6
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 message Phenomenon
@@ -1153,7 +1153,7 @@ message PhysiologicalProcess
   repeated category CategoryType = 3
   repeated hasInput NamedThing = 4
   repeated hasOutput NamedThing = 5
-  repeated enabledBy NamedThing = 6
+  repeated enabledBy PhysicalEntity = 6
  }
 // Any entity or process that exists at the level of the whole planet
 message PlanetaryEntity
