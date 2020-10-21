@@ -23,6 +23,7 @@ prefixes:
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
+  foodb.compound: 'http://foodb.ca/compounds/'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
@@ -3253,8 +3254,15 @@ classes:
     id_prefixes:
       - PUBCHEM.SUBSTANCE
 
-  drug:
+  processed material:
     is_a: chemical substance
+    description: >-
+      A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+    mappings:
+      - OBI:0000047
+
+  drug:
+    is_a: processed material
     description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     comments:
@@ -3267,6 +3275,13 @@ classes:
       - UMLSST:clnd
     id_prefixes:
       - PHARMGKB.DRUG
+
+  food:
+    is_a: processed material
+    description: >-
+      A substance encountered by nutritional consumption
+    id_prefixes:
+      - foodb.compound
 
   metabolite:
     is_a: chemical substance
