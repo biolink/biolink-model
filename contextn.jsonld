@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-10-16 01:13\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-10-20 17:05\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -7,10 +7,12 @@
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://identifiers.org/biogrid/",
       "BIOSAMPLE": "http://identifiers.org/biosample/",
+      "BSPO": "http://purl.obolibrary.org/obo/BSPO_",
       "CAID": "http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=",
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
       "CHEMBL.COMPOUND": "http://identifiers.org/chembl.compound/",
       "CHEMBL.TARGET": "http://identifiers.org/chembl.target/",
+      "CID": "http://pubchem.ncbi.nlm.nih.gov/compound/",
       "CIO": "http://purl.obolibrary.org/obo/CIO_",
       "CL": "http://purl.obolibrary.org/obo/CL_",
       "CLO": "http://purl.obolibrary.org/obo/CLO_",
@@ -23,11 +25,11 @@
       "DrugCentral": "http://translator.ncats.nih.gov/DrugCentral_",
       "EC": "http://www.enzyme-database.org/query.php?ec=",
       "ECO": "http://purl.obolibrary.org/obo/ECO_",
-      "ECTO": "http://example.org/UNKNOWN/ECTO/",
+      "ECTO": "http://purl.obolibrary.org/obo/ECTO_",
       "EFO": "http://identifiers.org/efo/",
       "ENSEMBL": "http://identifiers.org/ensembl/",
       "ENVO": "http://purl.obolibrary.org/obo/ENVO_",
-      "ExO": "http://example.org/UNKNOWN/ExO/",
+      "ExO": "http://purl.obolibrary.org/obo/ExO_",
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
       "FB": "http://identifiers.org/fb/",
       "FBcv": "http://purl.obolibrary.org/obo/FBcv_",
@@ -36,8 +38,10 @@
       "GENO": "http://purl.obolibrary.org/obo/GENO_",
       "GO": "http://purl.obolibrary.org/obo/GO_",
       "GOLD.META": "http://identifiers.org/gold.meta/",
+      "GOP": "http://purl.obolibrary.org/obo/go#",
       "GOREL": "http://purl.obolibrary.org/obo/GOREL_",
-      "HANCESTRO": "http://example.org/UNKNOWN/HANCESTRO/",
+      "GTEx": "https://www.gtexportal.org/home/gene/",
+      "HANCESTRO": "http://www.ebi.ac.uk/ancestro/ancestro_",
       "HGNC": "http://identifiers.org/hgnc/",
       "HGNC.FAMILY": "http://identifiers.org/hgnc.family/",
       "HMDB": "http://identifiers.org/hmdb/",
@@ -63,15 +67,15 @@
       "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
       "OBAN": "http://purl.org/oban/",
       "OBI": "http://purl.obolibrary.org/obo/OBI_",
-      "OBO": "http://purl.obolibrary.org/obo/",
       "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
       "OIO": "http://www.geneontology.org/formats/oboInOwl#",
       "OMIM": "http://purl.obolibrary.org/obo/OMIM_",
-      "ORPHA": "http://example.org/UNKNOWN/ORPHA/",
+      "ORPHA": "http://www.orpha.net/ORDO/Orphanet_",
       "ORPHANET": "http://identifiers.org/orphanet/",
       "PANTHER.FAMILY": "http://identifiers.org/panther.family/",
       "PHARMGKB.DRUG": "http://identifiers.org/pharmgkb.drug/",
       "PHARMGKB.PATHWAYS": "http://identifiers.org/pharmgkb.pathways/",
+      "PHAROS": "http://pharos.nih.gov",
       "PMID": "http://www.ncbi.nlm.nih.gov/pubmed/",
       "PO": "http://purl.obolibrary.org/obo/PO_",
       "PR": "http://purl.obolibrary.org/obo/PR_",
@@ -84,8 +88,7 @@
       "RHEA": "http://identifiers.org/rhea/",
       "RNACENTRAL": "http://identifiers.org/rnacentral/",
       "RO": "http://purl.obolibrary.org/obo/RO_",
-      "RTXKG1": "http://arax.rtx.ai/",
-      "RXNORM": "http://purl.bioontology.org/ontology/RXNORM/",
+      "SEMMEDDB": "https://skr3.nlm.nih.gov/SemMedDB",
       "SEPIO": "http://purl.obolibrary.org/obo/SEPIO_",
       "SGD": "http://identifiers.org/sgd/",
       "SIO": "http://semanticscience.org/resource/SIO_",
@@ -96,6 +99,7 @@
       "STATO": "http://purl.obolibrary.org/obo/STATO_",
       "UBERGRAPH": "http://translator.renci.org/ubergraph-axioms.ofn#",
       "UBERON": "http://purl.obolibrary.org/obo/UBERON_",
+      "UBERON_CORE": "http://purl.obolibrary.org/obo/uberon/core#",
       "UMLS": "http://identifiers.org/umls/",
       "UMLSSC": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/",
       "UMLSSG": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/",
@@ -103,10 +107,12 @@
       "UNII": "http://identifiers.org/unii/",
       "UPHENO": "http://purl.obolibrary.org/obo/UPHENO_",
       "UniProtKB": "http://identifiers.org/uniprot/",
-      "VMC": "http://example.org/UNKNOWN/VMC/",
+      "VMC": "https://github.com/ga4gh/vr-spec/",
       "WB": "http://identifiers.org/wb/",
       "WBPhenotype": "http://purl.obolibrary.org/obo/WBPhenotype_",
-      "WIKIDATA": "http://identifiers.org/wikidata/",
+      "WBVocab": "http://bio2rdf.org/wormbase_vocabulary",
+      "WIKIDATA": "https://www.wikidata.org/wiki/",
+      "WIKIDATA_PROPERTY": "https://www.wikidata.org/wiki/Property:",
       "WIKIPATHWAYS": "http://identifiers.org/wikipathways/",
       "WormBase": "https://www.wormbase.org/get?name=",
       "XCO": "http://purl.obolibrary.org/obo/XCO_",
@@ -115,17 +121,20 @@
       "alliancegenome": "http://example.org/UNKNOWN/alliancegenome/",
       "biolink": "https://w3id.org/biolink/vocab/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
+      "chembio": "http://translator.ncats.nih.gov/chembio_",
       "dbSNP": "http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=",
       "dcat": "http://www.w3.org/ns/dcat#",
       "dcterms": "http://purl.org/dc/terms/",
       "dctypes": "http://purl.org/dc/dcmitype/",
       "dictyBase": "http://dictybase.org/gene/",
+      "faldo": "http://biohackathon.org/resource/faldo#",
       "foaf": "http://xmlns.com/foaf/0.1/",
       "gff3": "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#",
       "gpi": "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
-      "medgen": "http://example.org/UNKNOWN/medgen/",
+      "medgen": "https://www.ncbi.nlm.nih.gov/medgen/",
+      "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
       "prov": "http://www.w3.org/ns/prov#",
@@ -231,16 +240,10 @@
       "clinical_modifier_qualifier": {
          "@type": "@id"
       },
-      "close_match": {
-         "@type": "@id"
-      },
       "coexists_with": {
          "@type": "@id"
       },
       "colocalizes_with": {
-         "@type": "@id"
-      },
-      "condition_associated_with_gene": {
          "@type": "@id"
       },
       "contraindicated_for": {
@@ -528,9 +531,6 @@
       "iri": {
          "@type": "@id"
       },
-      "is_frameshift_variant_of": {
-         "@type": "@id"
-      },
       "is_missense_variant_of": {
          "@type": "@id"
       },
@@ -541,9 +541,6 @@
          "@type": "@id"
       },
       "is_nonsense_variant_of": {
-         "@type": "@id"
-      },
-      "is_sequence_variant_of": {
          "@type": "@id"
       },
       "is_splice_site_variant_of": {
@@ -578,9 +575,6 @@
       },
       "negated": {
          "@type": "xsd:boolean"
-      },
-      "negatively_correlated_with": {
-         "@type": "@id"
       },
       "negatively_regulates": {
          "@type": "@id"
@@ -621,9 +615,6 @@
       "physically_interacts_with": {
          "@type": "@id"
       },
-      "positively_correlated_with": {
-         "@type": "@id"
-      },
       "positively_regulates": {
          "@type": "@id"
       },
@@ -631,9 +622,6 @@
          "@type": "@id"
       },
       "positively_regulates_process_to_process": {
-         "@type": "@id"
-      },
-      "preceded_by": {
          "@type": "@id"
       },
       "precedes": {
@@ -715,9 +703,6 @@
          "@type": "@id"
       },
       "superclass_of": {
-         "@type": "@id"
-      },
-      "temporally_related_to": {
          "@type": "@id"
       },
       "timepoint": {
