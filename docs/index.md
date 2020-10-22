@@ -314,6 +314,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
  * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
  * [chemically similar to](chemically_similar_to.md) - holds between one chemical substances and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
+ * [close match](close_match.md) - holds between two entities that are similar to each other
+    * [exact match](exact_match.md) - holds between two entities that are identical to each other, with a high degree of confidence
+       * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
  * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
     * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
@@ -353,6 +356,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
     * [molecular activity➞enabled by](molecular_activity_enabled_by.md) - The gene product, gene, or complex that catalyzes the reaction
  * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
+ * [exact match](exact_match.md) - holds between two entities that are identical to each other, with a high degree of confidence
+    * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
  * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
  * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
  * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
@@ -541,6 +546,9 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
        * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
     * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+    * [close match](close_match.md) - holds between two entities that are similar to each other
+       * [exact match](exact_match.md) - holds between two entities that are identical to each other, with a high degree of confidence
+          * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
     * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
        * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
        * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
@@ -608,7 +616,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [produced by](produced_by.md)
     * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
     * [related condition](related_condition.md)
-    * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
     * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
        * [chemically similar to](chemically_similar_to.md) - holds between one chemical substances and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
        * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin

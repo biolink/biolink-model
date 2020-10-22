@@ -1,19 +1,19 @@
 ---
 parent: Relations
-title: biolink:same_as
+title: biolink:exact_match
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Relation: same_as
+# Relation: exact_match
 
 translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two entities that are considered equivalent to each other
+holds between two entities that are identical to each other, with a high degree of confidence
 
-URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
+URI: [biolink:exact_match](https://w3id.org/biolink/vocab/exact_match)
 
 ## Domain and Range
 
@@ -21,10 +21,11 @@ URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
 
 ## Parents
 
- *  is_a: [exact match](exact_match.md)
+ *  is_a: [close match](close_match.md)
 
 ## Children
 
+ *  [same as](same_as.md)
 
 ## Used by
 
@@ -33,7 +34,7 @@ URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | owl:equivalentClass |
-|  | | owl:sameAs |
+| **Mappings:** | | skos:exactMatch |
+|  | | WIKIDATA:P2888 |
 | **In Subsets:** | | translator_minimal |
 
