@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -75,12 +72,30 @@ public class AnatomicalEntity {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("expresses", expresses).append("inTaxon", inTaxon).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(AnatomicalEntity.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("expresses");
+        sb.append('=');
+        sb.append(((this.expresses == null)?"<null>":this.expresses));
+        sb.append(',');
+        sb.append("inTaxon");
+        sb.append('=');
+        sb.append(((this.inTaxon == null)?"<null>":this.inTaxon));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(inTaxon).append(expresses).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.inTaxon == null)? 0 :this.inTaxon.hashCode()));
+        result = ((result* 31)+((this.expresses == null)? 0 :this.expresses.hashCode()));
+        return result;
     }
 
     @Override
@@ -92,7 +107,7 @@ public class AnatomicalEntity {
             return false;
         }
         AnatomicalEntity rhs = ((AnatomicalEntity) other);
-        return new EqualsBuilder().append(inTaxon, rhs.inTaxon).append(expresses, rhs.expresses).isEquals();
+        return (((this.inTaxon == rhs.inTaxon)||((this.inTaxon!= null)&&this.inTaxon.equals(rhs.inTaxon)))&&((this.expresses == rhs.expresses)||((this.expresses!= null)&&this.expresses.equals(rhs.expresses))));
     }
 
 }

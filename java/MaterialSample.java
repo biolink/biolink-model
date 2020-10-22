@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -49,12 +46,25 @@ public class MaterialSample {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasAttribute", hasAttribute).toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(MaterialSample.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("hasAttribute");
+        sb.append('=');
+        sb.append(((this.hasAttribute == null)?"<null>":this.hasAttribute));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasAttribute).toHashCode();
+        int result = 1;
+        result = ((result* 31)+((this.hasAttribute == null)? 0 :this.hasAttribute.hashCode()));
+        return result;
     }
 
     @Override
@@ -66,7 +76,7 @@ public class MaterialSample {
             return false;
         }
         MaterialSample rhs = ((MaterialSample) other);
-        return new EqualsBuilder().append(hasAttribute, rhs.hasAttribute).isEquals();
+        return ((this.hasAttribute == rhs.hasAttribute)||((this.hasAttribute!= null)&&this.hasAttribute.equals(rhs.hasAttribute)));
     }
 
 }

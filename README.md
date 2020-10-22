@@ -1,6 +1,8 @@
 [![Python 3.7](https://upload.wikimedia.org/wikipedia/commons/f/fc/Blue_Python_3.7_Shield_Badge.svg)](https://www.python.org/downloads/release/python-370/)
 [![Build Status](https://travis-ci.org/biolink/biolink-model.svg?branch=master)](https://travis-ci.org/biolink/biolink-model)
 [![DOI](https://zenodo.org/badge/112995625.svg)](https://zenodo.org/badge/latestdoi/112995625) [![Join the chat at https://gitter.im/biolink-model/community](https://badges.gitter.im/biolink-model/community.svg)](https://gitter.im/biolink-model/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![Regenerate Biolink Model Artifacts](https://github.com/biolink/biolink-model/workflows/Regenerate%20Biolink%20Model%20Artifacts/badge.svg)
+![Deploy Documentation](https://github.com/biolink/biolink-model/workflows/Deploy%20Documentation/badge.svg)
 
 <img src="images/biolink-logo.png" width="20%">
 
@@ -115,9 +117,13 @@ See [metamodel](metamodel) for details of the metamodel.
 
 ## Make and build instructions
 
-Prerequisites: Python 3.7+
+Prerequisites: Python 3.7+ and pipenv:
 
-To install,
+```sh
+pip3 install pipenv
+```
+
+To install the project:
 ```sh
 make install
 ```
@@ -130,12 +136,31 @@ make
 ```
 
 
-**Note:** the Makefile requires [jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo).
+**Note:** the Makefile requires the following dependencies to be installed:
+
+### jsonschema
+
+[jsonschema](https://json-schema.org/)
+
+Generally install using 
+
+```sh
+pip3 install jsonschema
+```
+
+### jsonschema2pojo
+
+[jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo)
 
 If you are on a Mac, it can be installed using `brew`:
 ```sh
 brew install jsonschema2pojo
 ```
+For other OS environments, download the latest release then extract it into your execution path.
+
+### GraphViz
+
+See [GraphViz site](https://graphviz.org/) for installation in your operating system.
 
 ## Usage in existing projects
 

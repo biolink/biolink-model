@@ -1,0 +1,54 @@
+id: organismal_entity_as_a_model_of_disease_association
+schema_generating: true
+display_name: organismal entity as a model of disease association
+document_category: organismal entity as a model of disease association
+weight: 20
+fields:
+- id: relation
+  description: The relation which describes an association between a subject and an
+    object in a more granular manner. Usually this is a term from Relation Ontology,
+    but it can be any edge CURIE.
+  display_name: relation
+- id: object
+  description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: object
+- id: id
+  description: A unique identifier for an association
+  display_name: association_id
+- id: negated
+  description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+- id: association_type
+  description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+- id: qualifiers
+  description: connects an association to qualifiers that modify or qualify the meaning
+    of that association
+  display_name: qualifiers
+  cardinality: multi
+- id: publications
+  description: connects an association to publications supporting the association
+  display_name: publications
+  cardinality: multi
+- id: provided_by
+  description: connects an association to the agent (person, organization or group)
+    that provided it
+  display_name: provided by
+  cardinality: multi
+- id: subject
+  description: A organismal entity (strain, breed) with a predisposition to a disease,
+    or bred/created specifically to model a disease.
+  display_name: organismal entity as a model of disease association_subject
+- id: frequency_qualifier
+  description: a qualifier used in a phenotypic association to state how frequent
+    the phenotype is observed in the subject
+  display_name: frequency qualifier
+- id: severity_qualifier
+  description: a qualifier used in a phenotypic association to state how severe the
+    phenotype is in the subject
+  display_name: severity qualifier
+- id: onset_qualifier
+  description: a qualifier used in a phenotypic association to state when the phenotype
+    appears is in the subject
+  display_name: onset qualifier

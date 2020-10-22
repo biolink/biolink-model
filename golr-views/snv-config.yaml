@@ -1,0 +1,30 @@
+id: snv
+schema_generating: true
+description: SNVs are single nucleotide positions in genomic DNA at which different
+  sequence alternatives exist
+display_name: snv
+document_category: snv
+weight: 20
+fields:
+- id: name
+  description: A human-readable name for a thing
+  display_name: name
+- id: category
+  description: Name of the high level ontology class in which this entity is categorized.
+    Corresponds to the label for the biolink entity type class. In a neo4j database
+    this MAY correspond to the neo4j label tag
+  display_name: category
+  cardinality: multi
+- id: in_taxon
+  description: connects a thing to a class representing a taxon
+  display_name: in taxon
+  cardinality: multi
+- id: has_gene
+  description: Each allele can be associated with any number of genes
+  display_name: sequence variant_has gene
+  cardinality: multi
+- id: has_biological_sequence
+  description: The state of the sequence w.r.t a reference sequence
+  display_name: sequence variant_has biological sequence
+- id: id
+  display_name: sequence variant_id
