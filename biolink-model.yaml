@@ -3,36 +3,63 @@ name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
+# Version should be kept in sync with primary Git repository release tag
+version: 1.3.9
+
 # CURIE namespaces (prefixes/base URI's) mappings of prefixes used in the body of the Biolink Model specification are resolved using a specific precedence order,
 # for use in the generation of the Biolink Model context.jsonld mappings to namespaces. Any prefixes encountered in the Biolink Model but not resolved by the following 
 # precedence sources, are anonymously declared by biolinkml as http://example.org/UNKNOWN/ rooted base URI's which should ideally be repaired in one of the precedence lists.
 #
 # 1. The following 'prefixes:' delimited list has first precedence in resolution. 
 prefixes:
+  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  # Placeholder: not sure how 'chembio' really resolves
+  chembio: 'http://translator.ncats.nih.gov/chembio_'
+  CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
+  CTD: 'http://translator.ncats.nih.gov/CTD_'
+  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
+  ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
+  ExO: 'http://purl.obolibrary.org/obo/ExO_'
+  GAMMA: 'http://translator.renci.org/GAMMA_'
+  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
+  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
+  gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
+  # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
+  GOP: 'http://purl.obolibrary.org/obo/go#'
+  GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
+  HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
+  hetio: 'http://translator.ncats.nih.gov/hetio_'
+  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
+  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
+  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
+  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
-  SIO: 'http://semanticscience.org/resource/SIO_'
-  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
+  PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
+  SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
+  SIO: 'http://semanticscience.org/resource/SIO_'
+  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
+  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
+  UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
+  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
   UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
   UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
-  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
-  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
-  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
-  GAMMA: 'http://translator.renci.org/GAMMA_'
-  CTD: 'http://translator.ncats.nih.gov/CTD_'
-  hetio: 'http://translator.ncats.nih.gov/hetio_'
-  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
-  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
-  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
-  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
-  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
-  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
-  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
-  
+  # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
+  # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
+  # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
+  VMC: 'https://github.com/ga4gh/vr-spec/'
+  WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
+  WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
+  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  foaf: 'http://xmlns.com/foaf/0.1/'
+
 default_prefix: biolink
 default_range: string
 
@@ -164,6 +191,7 @@ slots:
     is_a: related to
     in_subset:
       - translator_minimal
+    symmetric: true
     mappings:
       - RO:0002434
 
@@ -175,7 +203,7 @@ slots:
       - translator_minimal
     symmetric: true
     mappings:
-      - WIKIDATA:P129
+      - WIKIDATA_PROPERTY:P129
       - SEMMEDDB:INTERACTS_WITH
 
   molecularly interacts with:
@@ -908,7 +936,7 @@ slots:
     mixin: true
     abstract: true
     mappings:
-      - WIKIDATA:P128
+      - WIKIDATA_PROPERTY:P128
 
   positively regulates:
     comments:
@@ -1015,10 +1043,10 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002205
-      - WIKIDATA:P688
+      - WIKIDATA_PROPERTY:P688
 
   homologous to:
-    is_a: related to
+    is_a: similar to
     aliases: ['in homology relationship with']
     description: >-
       holds between two biological entities that have common evolutionary origin
@@ -1048,7 +1076,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:HOM0000017
-      - WIKIDATA:P684
+      - WIKIDATA_PROPERTY:P684
 
   xenologous to:
     is_a: homologous to
@@ -1147,7 +1175,7 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
-      - WD:P2293
+      - WIKIDATA_PROPERTY:P2293
       - GENO:0000840
       - GENO:0000841
       - NCIT:R176
@@ -1190,7 +1218,7 @@ slots:
     mappings:
       - RO:0002410
       - SEMMEDDB:CAUSES
-      - WIKIDATA:P1542
+      - WIKIDATA_PROPERTY:P1542
       - MONDO:disease_triggers
 
   caused by:
@@ -1201,15 +1229,15 @@ slots:
       - translator_minimal
     inverse: causes
     mappings:
-      - WIKIDATA:P828
+      - WIKIDATA_PROPERTY:P828
 
   treats:
     aliases: ['is substance that treats']
     is_a: affects
     description: >-
       holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
-    domain: treatment
     required: true
+    domain: treatment
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -1218,10 +1246,23 @@ slots:
       - RO:0002606
       - RO:0003307
       - SEMMEDDB:TREATS
-      - WIKIDATA:P2175
+      - WIKIDATA_PROPERTY:P2175
       - CTD:therapeutic
       - CTD:negativecorrelation
       - MONDO:disease_responds_to
+
+  treated by:
+    is_a: related to
+    description: >-
+      holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
+    domain: disease or phenotypic feature
+    range: treatment
+    in_subset:
+      - translator_minimal
+    inverse: treats
+    mappings:
+      - RO:0002302
+      - WIKIDATA_PROPERTY:P2176
 
   prevents :
     is_a: affects risk for
@@ -1267,18 +1308,6 @@ slots:
     inverse: has biomarker
     mappings:
       - RO:0002607
-
-  treated by:
-    is_a: related to
-    description: >-
-      holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
-    domain: disease or phenotypic feature
-    in_subset:
-      - translator_minimal
-    inverse: treats
-    mappings:
-      - RO:0002302
-      - WIKIDATA:P2176
 
   expressed in:
     is_a: related to
@@ -1361,7 +1390,7 @@ slots:
       - UBERON_CORE:in_outermost_side_of
       - NCIT:R100
       - EFO:0000784
-
+      
   location of:
     is_a: related to
     description: >-
@@ -1374,8 +1403,42 @@ slots:
       - SEMMEDDB:LOCATION_OF
       - WIKIDATA:276
 
-  model of:
+  similar to:
+      is_a: related to
+      description: >-
+        holds between an entity and some other entity with similar features.
+      in_subset:
+        - translator_minimal
+      symmetric: true
+      mappings:
+        - RO:HOM0000000               #I don't understand this identifier, but I think it's equivalent
+        - SO:similar_to               #equivalent
+
+  chemically similar to:
+    is_a: similar to
+    description: >-
+      holds between one chemical substances and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
+    in_subset:
+      - translator_minimal
+    mappings:
+      - CHEBI:has_parent_hydride    #subproperty
+      - CHEBI:has_functional_parent #subproperty
+      - CHEBI:is_conjugate_acid_of  #subproperty
+      - CHEBI:is_conjugate_base_of  #subproperty
+      - CHEBI:is_enantiomer_of      #subproperty
+      - CHEBI:is_tautomer_of        #subproperty
+
+  has sequence location:
     is_a: related to
+    description: >-
+      holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
+    domain: genomic entity
+    range: genomic entity
+    mappings:
+      - faldo:location
+
+  model of:
+    is_a: similar to
     description: >-
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     in_subset:
@@ -1402,7 +1465,7 @@ slots:
     inverse: part of
     mappings:
       - BFO:0000051
-      - WIKIDATA:P527
+      - WIKIDATA_PROPERTY:P527
 
   part of:
     is_a: overlaps
@@ -1414,7 +1477,7 @@ slots:
     mappings:
       - BFO:0000050
       - SEMMEDDB:PART_OF
-      - WIKIDATA:P361
+      - WIKIDATA_PROPERTY:P361
       - BSPO:0001106
       - BSPO:0001108
       - BSPO:0001113
@@ -1433,7 +1496,7 @@ slots:
     inverse: participates in
     mappings:
       - RO:0000057
-      - WIKIDATA:P2283
+      - WIKIDATA_PROPERTY:P2283
       - GOREL:0001007
       - GOREL:0002008
 
@@ -1494,6 +1557,7 @@ slots:
     is_a: has participant
     description: >-
       holds between a physical entity and a process, where the physical entity executes the process
+    domain: physical entity
     range: biological process or activity
     in_subset:
       - translator_minimal
@@ -1506,6 +1570,7 @@ slots:
     description: >-
       holds between a process and a physical entity, where the physical entity executes the process
     domain: biological process or activity
+    range: physical entity
     in_subset:
       - translator_minimal
     inverse: enables
@@ -1543,7 +1608,7 @@ slots:
       - translator_minimal
     mappings:
       - SEMMEDDB:MANIFESTATION_OF
-      - WIKIDATA:P1557
+      - WIKIDATA_PROPERTY:P1557
 
   produces:
     is_a: related to
@@ -1553,7 +1618,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0003000
-      - WIKIDATA:P1056
+      - WIKIDATA_PROPERTY:P1056
       - SEMMEDDB:PRODUCES
       - GOREL:0001010
 
@@ -1568,7 +1633,7 @@ slots:
     mappings:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
-      - WIKIDATA:P156
+      - WIKIDATA_PROPERTY:P156
       - RO:0002263
       - RO:0002264
 
@@ -1601,6 +1666,19 @@ slots:
       - owl:equivalentClass
       - owl:sameAs
 
+  superclass of:
+    is_a: related to
+    description: >-
+      holds between two classes where the domain class is a super class of the range class
+    domain: ontology class
+    range: ontology class # range was tagged as 'iri type' before... not sure why
+    multivalued: True
+    inverse: subclass of
+    in_subset:
+      - translator_minimal
+    mappings:
+      - WIKIDATA:Q66088480
+
   subclass of:
     is_a: related to
     description: >-
@@ -1615,7 +1693,7 @@ slots:
     mappings:
       - rdfs:subClassOf
       - SEMMEDDB:IS_A
-      - WIKIDATA:P279
+      - WIKIDATA_PROPERTY:P279
 
   directly interacts with:
     is_a: interacts with
@@ -1656,6 +1734,23 @@ slots:
        is located in.
     mappings:
       - GTEx:affects_expression_in
+
+
+  has variant part:
+    is_a: has part
+    description: Holds between a genotype and a genotypic entity
+    mappings:
+      - GENO:0000382
+
+  related condition:
+    is_a: related to
+    mappings:
+      - GENO:0000790
+
+  develops from:
+    is_a: related to
+    mappings:
+      - RO:0002202
 
   #Predicates relating variants to genes
 
@@ -1809,21 +1904,6 @@ slots:
 
   #End proposed slots
 
-
-
-  superclass of:
-    is_a: related to
-    description: >-
-      holds between two classes where the domain class is a super class of the range class
-    domain: ontology class
-    range: iri type
-    multivalued: True
-    inverse: subclass of
-    in_subset:
-      - translator_minimal
-    mappings:
-      - WD:Q66088480
-
 ## property slots
 
   node property:
@@ -1850,14 +1930,14 @@ slots:
     mappings:
       - dcterms:source
 
-  retrievedOn:
+  retrieved on:
     is_a: node property
     domain: source file
     range: date
     mappings:
       - pav:retrievedOn
 
-  versionOf:
+  version of:
     is_a: node property
     domain: data set version
     range: data set
@@ -1895,7 +1975,7 @@ slots:
     mappings:
       - pav:createdWith
 
-  downloadURL:
+  download url:
     is_a: node property
     domain: distribution level
     mappings:
@@ -1913,6 +1993,10 @@ slots:
   type:
     is_a: node property
     slot_uri: rdf:type
+    mappings:
+      - alliancegenome:soTermId
+      - gff3:type
+      - gpi:DB_Object_Type
 
   id:
     is_a: node property
@@ -1924,6 +2008,10 @@ slots:
       - translator_minimal
     domain: named thing
     required: true
+    mappings:
+      - alliancegenome:primaryId
+      - gff3:ID
+      - gpi:DB_Object_ID
 
   iri:
     is_a: node property
@@ -1945,6 +2033,18 @@ slots:
       - translator_minimal
     required: true
     slot_uri: rdfs:label
+    mappings:
+      - gff3:Name
+      - gpi:DB_Object_Name
+
+  symbol:
+    is_a: node property
+    domain: named thing
+    description: >-
+      Symbol for a particular thing
+    mappings:
+      - alliancegenome:symbol
+      - gpi:DB_Object_Symbol
 
   synonym:
     is_a: node property
@@ -1957,10 +2057,38 @@ slots:
     in_subset:
       - translator_minimal
     mappings:
+      - skos:altLabel
+      - gff3:Alias
+      - alliancegenome:synonyms
+      - gpi:DB_Object_Synonyms
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
       - oboInOwl:hasBroadSynonym
       - oboInOwl:hasRelatedSynonym
+
+  has topic:
+    aliases: ['topic', 'descriptors']
+    is_a: node property
+    range: ontology class
+    mappings:
+      - foaf:topic
+    description: >-
+      Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred.
+      See https://github.com/biolink/biolink-model/issues/238
+
+  xref:
+    is_a: node property
+    aliases: ['dbxref', 'Dbxref', 'DbXref']
+    domain: named thing
+    range: iri type
+    description: >-
+      Alternate CURIEs for a thing
+    multivalued: true
+    in_subset:
+      - translator_minimal
+    mappings:
+      - gff3:Dbxref
+      - gpi:DB_Xrefs
 
   category:
     is_a: type
@@ -1968,7 +2096,14 @@ slots:
     range: category type
     description: >-
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
-      In a neo4j database this MAY correspond to the neo4j label tag
+       * In a neo4j database this MAY correspond to the neo4j label tag.
+       * In an RDF database it should be a biolink model class URI.
+      This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have
+      category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
+      
+      In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class
+      more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,
+      which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
     is_class_field: true
     multivalued: true
     in_subset:
@@ -1995,13 +2130,14 @@ slots:
     mappings:
       - IAO:0000115
       - skos:definitions
+      - gff3:Description
 
   systematic synonym:
     is_a: node property
     domain: named thing
     range: label type
     multivalued: true
-    slot_uri: http://purl.obolibrary.org/obo/go#systematic_synonym
+    slot_uri: GOP:systematic_synonym
     description: >-
       more commonly used for gene symbols in yeast
 
@@ -2184,7 +2320,7 @@ slots:
       - translator_minimal
     mappings:
       - RO:0002162
-      - WIKIDATA:P703
+      - WIKIDATA_PROPERTY:P703
 
   latitude:
     is_a: node property
@@ -2208,7 +2344,7 @@ slots:
     description: >-
       description of chemical compound based on element symbols
     mappings:
-      - WIKIDATA:P274
+      - WIKIDATA_PROPERTY:P274
 
   aggregate statistic:
     is_a: node property
@@ -2347,7 +2483,7 @@ slots:
 
   has zygosity:
     is_a: node property
-#    domain: single locus feature complement
+    domain: genomic entity
     range: zygosity
 
   filler:
@@ -2356,26 +2492,46 @@ slots:
     description: >-
       The value in a property-value tuple
 
-  phase:
-    is_a: node property
+  sequence localization attribute:
+    is_a: association slot
+    domain: genomic sequence localization
     description: >-
-      TODO
-
-  genome build:
-    is_a: node property
-    description: >-
-      TODO
+      An attribute that can be applied to a genome sequence localization edge. These edges
+      connect a genomic entity such as an exon to an entity such as a chromosome. Edge properties are used
+      to ascribe specific positional information and other metadata to the localization. In pragmatic terms
+      this can be thought of as columns in a GFF3 line.
 
   interbase coordinate:
-    is_a: node property
+    is_a: sequence localization attribute
     description: >-
-      TODO
+      A position in interbase coordinates. This is applied to a sequence localization edge.
+    range: integer
 
   start interbase coordinate:
     is_a: interbase coordinate
+    description: >-
+      The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
 
   end interbase coordinate:
     is_a: interbase coordinate
+    description: >-
+      The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
+
+  genome build:
+    is_a: sequence localization attribute
+    description: >-
+      The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
+
+  strand:
+    is_a: sequence localization attribute
+    description: >-
+      The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+
+  phase:
+    is_a: sequence localization attribute
+    domain: coding sequence
+    description: >-
+      The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
 
   has attribute:
     description: >-
@@ -2597,7 +2753,7 @@ classes:
     is_a: data file
     slots:
       - source version
-      - retrievedOn
+      - retrieved on
 
 #  data set descriptor:
 #    abstract: true
@@ -2614,7 +2770,7 @@ classes:
       - title
 #      - description
       - source data file
-      - versionOf
+      - version of
       - type
       - distribution
     mappings:
@@ -2624,7 +2780,7 @@ classes:
     is_a: data set version
     mixin: true
     slots:
-      - downloadURL
+      - download url
     mappings:
       - dcat:Distribution
 
@@ -2872,7 +3028,7 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
-      - ORPHA
+      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbrevation for ORPHANET? not used in model
       - EFO
       - UMLS
       - MESH
@@ -2986,7 +3142,6 @@ classes:
 
   publication:
     is_a: information content entity
-    aliases: ['reference']
     description: >-
       Any published piece of information. Can refer to a whole publication,
       or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
@@ -3278,7 +3433,7 @@ classes:
       - WIKIDATA:Q7020
 
   transcript:
-    is_a: genomic entity
+    is_a: gene product
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
     mappings:
@@ -3332,6 +3487,13 @@ classes:
   gene:
     is_a: gene or gene product
     aliases: ['locus']
+    slots:
+      - id
+      - name
+      - symbol
+      - description
+      - synonym
+      - xref
     mappings:
       - SO:0000704
       - SIO:010035
@@ -3360,6 +3522,12 @@ classes:
     union_of:
       - protein
       - RNA product
+    slots:
+      - id
+      - name
+      - description
+      - synonym
+      - xref
     mappings:
       - WIKIDATA:Q424689
     id_prefixes:
@@ -4082,7 +4250,7 @@ classes:
       object:
         range: phenotypic feature
         description: "phenotypic class"
-        values_from: ['upheno', 'hp', 'mp', 'wbphenotypic feature']
+        values_from: ['upheno', 'hp', 'mp', 'WBPhenotype']
         examples:
           - value: HP:0002487
             description: Hyperkinesis
@@ -4237,7 +4405,7 @@ classes:
   gene to phenotypic feature association:
     is_a: association
     mappings:
-      - http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association
+      - WBVocab:Gene-Phenotype-Association
     defining_slots:
       - subject
       - object
@@ -4643,7 +4811,7 @@ classes:
     aliases: ['functional association']
     is_a: functional association
     mappings:
-      - http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association
+      - WBVocab:Gene-GO-Association
     defining_slots:
       - subject
       - object
@@ -4673,10 +4841,15 @@ classes:
   ## SEQUENCE FEATURES
   ## ------
 
-  genomic sequence localization:
+  sequence association:
     is_a: association
     description: >-
-      A relationship between a sequence feature and an entity it is localized to. The reference entity may be
+      An association between a sequence feature and a genomic entity it is localized to.
+
+  genomic sequence localization:
+    is_a: sequence association
+    description: >-
+      A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be
       a chromosome, chromosome region or information entity such as a contig
     slot_usage:
       subject:
@@ -4684,14 +4857,15 @@ classes:
         range: genomic entity  ## todo protein
       object:
         aliases: ['reference']
-        range: genomic entity ## typically a chromosomel use monochrom
+        range: genomic entity ## typically a chromosome use monochrom
+      relation:
+        subproperty_of: has sequence location
     slots:
       - start interbase coordinate
       - end interbase coordinate
       - genome build
+      - strand
       - phase
-    mappings:
-      - faldo:location
 
   sequence feature relationship:
     is_a: association

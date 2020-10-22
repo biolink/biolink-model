@@ -61,13 +61,13 @@ digraph {
 		lp="610.64,61.5",
 		pos="e,580.47,35.706 551,86.974 558.02,74.761 567.42,58.412 575.3,44.697",
 		style=solid];
-	versionOf	 [color=blue,
+	"version of"	 [color=blue,
 		height=0.5,
 		label="data set",
 		pos="685.64,18",
 		width=1.0471];
-	"distribution level" -> versionOf	 [color=blue,
-		label=versionOf,
+	"distribution level" -> "version of"	 [color=blue,
+		label="version of",
 		lp="697.14,61.5",
 		pos="e,679.41,35.88 600.86,95.424 620.19,90.092 640.71,81.819 656.64,69 664.45,62.718 670.55,53.73 675.08,45.044",
 		style=solid];
@@ -91,14 +91,14 @@ digraph {
 		lp="847.14,61.5",
 		pos="e,859.77,34.392 608.28,99.44 655.8,94.376 720.48,85.144 775.64,69 801.39,61.465 828.9,49.421 850.56,38.928",
 		style=solid];
-	downloadURL	 [color=blue,
+	"download url"	 [color=blue,
 		height=0.5,
 		label=string,
 		pos="1009.6,18",
 		width=0.84854];
-	"distribution level" -> downloadURL	 [color=blue,
-		label=downloadURL,
-		lp="969.14,61.5",
+	"distribution level" -> "download url"	 [color=blue,
+		label="download url",
+		lp="965.14,61.5",
 		pos="e,986.46,29.779 611.27,102.79 681.05,99.388 790.4,90.776 882.64,69 916.07,61.11 952.23,45.872 977.39,34.099",
 		style=solid];
 }

@@ -100,7 +100,7 @@ type BiologicalProcess implements Occurrent
     category: [CategoryType]!
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
-    enabledBy: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 type BiologicalProcessOrActivity implements Occurrent
@@ -110,7 +110,7 @@ type BiologicalProcessOrActivity implements Occurrent
     category: [CategoryType]!
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
-    enabledBy: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 type BiologicalSex
@@ -528,7 +528,7 @@ interface DistributionLevel
     versionOf: DataSet
     type: String
     distribution: DistributionLevel
-    downloadURL: String
+    downloadUrl: String
   }
 
 type Drug
@@ -686,11 +686,15 @@ type FunctionalAssociation
 
 type Gene
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    symbol: String
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation
@@ -756,20 +760,26 @@ type GeneOrGeneProduct
 
 type GeneProduct
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 interface GeneProductIsoform
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type GeneRegulatoryRelationship
@@ -919,19 +929,20 @@ type GenomicEntity
 
 type GenomicSequenceLocalization
   {
-    relation: Uriorcurie!
     id: String!
     negated: Boolean
     associationType: OntologyClass
     qualifiers: [OntologyClass]
     publications: [Publication]
     providedBy: [Provider]
-    startInterbaseCoordinate: String
-    endInterbaseCoordinate: String
+    startInterbaseCoordinate: Integer
+    endInterbaseCoordinate: Integer
     genomeBuild: String
+    strand: String
     phase: String
     subject: GenomicEntity!
     object: GenomicEntity!
+    relation: Uriorcurie!
   }
 
 type Genotype
@@ -1239,11 +1250,14 @@ type Metabolite
 
 type MicroRNA
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 interface ModelToDiseaseMixin
@@ -1279,11 +1293,14 @@ type NamedThing
 
 type NoncodingRNAProduct
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type Occurrent
@@ -1351,6 +1368,7 @@ type PairwiseGeneToGeneInteraction implements PairwiseInteractionAssociation
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     relation: Uriorcurie!
+    interactingMoleculesCategory: OntologyClass
   }
 
 interface PairwiseInteractionAssociation
@@ -1364,6 +1382,7 @@ interface PairwiseInteractionAssociation
     id: String!
     relation: Uriorcurie!
     object: MolecularEntity!
+    interactingMoleculesCategory: OntologyClass
   }
 
 interface PathognomonicityQuantifier
@@ -1377,7 +1396,7 @@ type Pathway
     category: [CategoryType]!
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
-    enabledBy: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 type Phenomenon
@@ -1419,7 +1438,7 @@ type PhysiologicalProcess
     category: [CategoryType]!
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
-    enabledBy: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 type PlanetaryEntity
@@ -1459,20 +1478,26 @@ type Procedure
 
 type Protein
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type ProteinIsoform implements GeneProductIsoform
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type Provider
@@ -1517,24 +1542,43 @@ type RelationshipType
 
 type RNAProduct
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type RNAProductIsoform implements GeneProductIsoform
   {
-    id: String!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType!
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 interface SensitivityQuantifier
   {
+  }
+
+type SequenceAssociation
+  {
+    subject: NamedThing!
+    relation: Uriorcurie!
+    object: NamedThing!
+    id: String!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: [Provider]
   }
 
 type SequenceFeatureRelationship
@@ -1630,11 +1674,14 @@ interface ThingWithTaxon
 
 type Transcript
   {
-    id: String!
-    name: LabelType!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    id: String!
+    name: LabelType!
+    description: NarrativeText
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type TranscriptToGeneRelationship

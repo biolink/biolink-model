@@ -117,9 +117,13 @@ See [metamodel](metamodel) for details of the metamodel.
 
 ## Make and build instructions
 
-Prerequisites: Python 3.7+
+Prerequisites: Python 3.7+ and pipenv:
 
-To install,
+```sh
+pip3 install pipenv
+```
+
+To install the project:
 ```sh
 make install
 ```
@@ -132,12 +136,31 @@ make
 ```
 
 
-**Note:** the Makefile requires [jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo).
+**Note:** the Makefile requires the following dependencies to be installed:
+
+### jsonschema
+
+[jsonschema](https://json-schema.org/)
+
+Generally install using 
+
+```sh
+pip3 install jsonschema
+```
+
+### jsonschema2pojo
+
+[jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo)
 
 If you are on a Mac, it can be installed using `brew`:
 ```sh
 brew install jsonschema2pojo
 ```
+For other OS environments, download the latest release then extract it into your execution path.
+
+### GraphViz
+
+See [GraphViz site](https://graphviz.org/) for installation in your operating system.
 
 ## Usage in existing projects
 
