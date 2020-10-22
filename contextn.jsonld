@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-10-22 23:33\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-10-22 23:49\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -240,6 +240,9 @@
       "clinical_modifier_qualifier": {
          "@type": "@id"
       },
+      "close_match": {
+         "@type": "@id"
+      },
       "coexists_with": {
          "@type": "@id"
       },
@@ -341,6 +344,9 @@
       },
       "end_interbase_coordinate": {
          "@type": "xsd:integer"
+      },
+      "exact_match": {
+         "@type": "@id"
       },
       "expressed_in": {
          "@type": "@id"
