@@ -31,6 +31,7 @@ prefixes:
   # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
   GOP: 'http://purl.obolibrary.org/obo/go#'
   gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
+  GSAPID: 'https://scholar.google.com/citations?view_op=list_works&hl=en&user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
@@ -42,9 +43,12 @@ prefixes:
   MESH_PUB: 'https://www.nlm.nih.gov/mesh/pubtypes.html#'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   OBAN: 'http://purl.org/oban/'
+  orcid: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
+  ResearchID: 'https://publons.com/researcher/'
+  ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
@@ -184,6 +188,47 @@ slots:
       - UBERON_CORE:protects
       - GOREL:0002005
       - GOREL:0012006
+
+  ## Publication related slots
+
+  has provider:
+    is_a: related to
+    domain: publication
+    range: provider
+    comments:
+      - This is a grouping for publications and associated providers for the end product
+    abstract: true
+
+  publisher:
+    is_a: has provider
+    description: >-
+      organization or person responsible for publishing books, periodicals, podcasts, games or software
+    domain: publication
+    range: provider
+    exact_mappings:
+      - dcterms:publisher
+      - WIKIDATA_PROPERTY:P123
+
+  editor:
+    is_a: has provider
+    description: >-
+      editor of a compiled work such as a book or a periodical (newspaper or an academic journal)
+    domain: publication
+    range: provider
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P98
+
+  author:
+    is_a: has provider
+    description: >-
+      an instance of creator of a written work
+    domain: publication
+    range: provider
+    exact_mappings:
+      - dcterms:contributor
+      - WIKIDATA_PROPERTY:P50
+
+  ## end of Publication related slots
 
   interacts with:
     domain: named thing
@@ -1451,7 +1496,7 @@ slots:
   overlaps:
     is_a: related to
     description: >-
-      holds between entties that overlap in their extents (materials or processes)
+      holds between entities that overlap in their extents (materials or processes)
     in_subset:
       - translator_minimal
     mappings:
@@ -2234,36 +2279,6 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P1433
 
-  publisher:
-    is_a: node property
-    description: >-
-      organization or person responsible for publishing books, periodicals, podcasts, games or software
-    domain: publication
-    range: provider
-    exact_mappings:
-      - dcterms:publisher
-      - WIKIDATA_PROPERTY:P123
-
-  editor:
-    is_a: node property
-    description: >-
-      editor of a compiled work such as a book or a periodical (newspaper or an academic journal)
-    domain: publication
-    range: provider
-    exact_mappings:
-      - WIKIDATA_PROPERTY:P98
-
-  author:
-    is_a: node property
-    description: >-
-      main creator(s) of a written work (may be a list)
-    domain: publication
-    range: provider
-    multivalued: true
-    exact_mappings:
-      - dcterms:contributor
-      - WIKIDATA_PROPERTY:P50
-
   volume:
     is_a: node property
     description: >-
@@ -2495,9 +2510,15 @@ slots:
 
   sequence variant qualifier:
     description: >-
-      a qualifier used in an association where the variant
+      a qualifier used in an association with the variant
     is_a: association slot
     range: sequence variant
+
+  author qualifier:
+    description: >-
+      a qualifier used in an association qualifying the status of an author of a publication
+    is_a: association slot
+    range: ontology class
 
   publications:
     singular_name: publication
@@ -2897,7 +2918,6 @@ classes:
       - publisher
       - rights
       - editor
-      - author
       - volume
       - issue
       - pages
@@ -3286,6 +3306,27 @@ classes:
       - UMLSSC:T095
       - UMLSST:shro
       - prov:Agent
+      # narrow_mappings: # author roles
+      - dcterms:contributor
+      - WIKIDATA_PROPERTY:P50
+
+  author:
+    is_a: provider
+    description: >-
+      a (usually human, occasionally, a specific research group) provider who contributes to a publication
+    slot_usage:
+      id:
+        description: >-
+          use the researcher's orcid if available, then ScopusID, ResearchID or Google Scholar Author Profile ID
+          may be used if the orcid is unknown.
+      name:
+        description: >-
+          it is recommended that a researcher's 'name' property be formatted as "surname, firstname initial."
+    id_prefixes:
+      - orcid
+      - ScopusID
+      - ResearchID
+      - GSAPID
 
   molecular entity:
     is_a: biological entity
@@ -3942,6 +3983,29 @@ classes:
       - OBAN:association
       - "rdf:Statement"
       - "owl:Axiom"
+
+  publication to provider association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+      #- relation
+      - author qualifier
+    description: >-
+      Any association between a publication and its various provider contributors
+    slots:
+      - author qualifier
+    slot_usage:
+      subject:
+        range: publication
+        description: >-
+          publication to which an author has contributed
+      object:
+        range: researcher
+        description: >-
+          author contributing to a publication
+      #relation:
+      #  subproperty_of: related to
 
   genotype to genotype part association:
     is_a: association
