@@ -647,7 +647,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [variant to population association➞has quotient](variant_to_population_association_has_quotient.md) - frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
     * [has total](has_total.md) - total number of things in a particular reference set
        * [variant to population association➞has total](variant_to_population_association_has_total.md) - number all populations that carry a particular allele, aka allele number
- * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+ * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * [created_with](created_with.md)
  * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
  * [description](description.md) - a human-readable description of a thing
@@ -674,6 +674,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has receptor](has_receptor.md) - the organism or organism part being exposed
  * [has route](has_route.md) - the process that results in the stressor coming into direct contact with the receptor
  * [has stressor](has_stressor.md) - the process or entity that the receptor is being exposed to
+ * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
  * [has total](has_total.md) - total number of things in a particular reference set
     * [variant to population association➞has total](variant_to_population_association_has_total.md) - number all populations that carry a particular allele, aka allele number
  * [has zygosity](has_zygosity.md)
@@ -715,6 +716,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has receptor](has_receptor.md) - the organism or organism part being exposed
     * [has route](has_route.md) - the process that results in the stressor coming into direct contact with the receptor
     * [has stressor](has_stressor.md) - the process or entity that the receptor is being exposed to
+    * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
     * [has zygosity](has_zygosity.md)
     * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
        * [pairwise interaction association➞id](pairwise_interaction_association_id.md) - identifier for the interaction. This may come from an interaction database such as IMEX.
@@ -736,7 +738,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [timepoint](timepoint.md) - a point in time
     * [title](title.md)
     * [type](type.md)
-       * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+       * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
     * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
     * [version of](version_of.md)
     * [xref](xref.md) - Alternate CURIEs for a thing
@@ -755,7 +757,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [timepoint](timepoint.md) - a point in time
  * [title](title.md)
  * [type](type.md)
-    * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+    * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
  * [variant to population association➞has count](variant_to_population_association_has_count.md) - number in object population that carry a particular allele, aka allele count
  * [variant to population association➞has quotient](variant_to_population_association_has_quotient.md) - frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
