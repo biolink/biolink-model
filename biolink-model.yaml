@@ -189,7 +189,7 @@ slots:
       - GOREL:0002005
       - GOREL:0012006
 
-  ## Publication related slots
+  ## Publication related predicates
 
   has provider:
     is_a: related to
@@ -221,14 +221,14 @@ slots:
   author:
     is_a: has provider
     description: >-
-      an instance of creator of a written work
+      an instance of one (co-)creator of a written work
     domain: publication
     range: provider
     exact_mappings:
       - dcterms:contributor
       - WIKIDATA_PROPERTY:P50
 
-  ## end of Publication related slots
+  ## end of Publication related predicates
 
   interacts with:
     domain: named thing
@@ -1977,7 +1977,7 @@ slots:
 
   license:
     is_a: node property
-    domain: source file
+    domain: information content entity
     exact_mappings:
       - dcterms:license
     narrow_mappings:
@@ -1985,13 +1985,13 @@ slots:
 
   rights:
     is_a: node property
-    domain: source file
+    domain: information content entity
     exact_mappings:
       - dcterms:rights
 
   format:
     is_a: node property
-    domain: source file
+    domain: information content entity
     exact_mappings:
       - dcterms:format
       - WIKIDATA_PROPERTY:P2701
@@ -2279,6 +2279,17 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P1433
 
+  authors:
+    is_a: node property
+    singular_name: author
+    description: >-
+      connects an publication to authors who contributed to the publications. Note that this property is a node
+      annotation expressing an citation list of authorship which can otherwise be more completely documented
+      in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and
+      possibly, some qualifiers which clarify the specific status of a given author to the publication.
+    multivalued: true
+    domain: publication
+
   volume:
     is_a: node property
     description: >-
@@ -2513,12 +2524,6 @@ slots:
       a qualifier used in an association with the variant
     is_a: association slot
     range: sequence variant
-
-  author qualifier:
-    description: >-
-      a qualifier used in an association qualifying the status of an author of a publication
-    is_a: association slot
-    range: ontology class
 
   publications:
     singular_name: publication
@@ -2831,9 +2836,11 @@ classes:
     abstract: true
     is_a: named thing
     description: >-
-      a piece of information that typically describes some piece of biology or is used as support.
+      a piece of information that typically describes some topic of discourse or is used as support.
     slots:
       - description
+      - license
+      - rights
       - format
       - creation date
     id_prefixes:
@@ -2878,7 +2885,7 @@ classes:
       - UMLSST:clas
 
   data file:
-    is_a: named thing
+    is_a: information content entity
     mappings:
       - EFO:0004095
 
@@ -2906,6 +2913,7 @@ classes:
       - type
       - distribution
 
+  # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
   publication:
     is_a: information content entity
     description: >-
@@ -2915,23 +2923,24 @@ classes:
     slots:
       - type
       - published in
-      - publisher
-      - rights
-      - editor
+      - authors
       - volume
       - issue
       - pages
       - abstract
     slot_usage:
       id:
+        required: true
         description: >-
           Precedence of identifiers is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise
       name:
+        required: true
         description: >-
           the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing)
           The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
       type:
         slot_uri: dcterms:type
+        required: true
         description: >-
           Ontology term for publication type may be drawn from
           Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/),
@@ -2948,6 +2957,11 @@ classes:
           - MESH_PUB
           - COAR_RESOURCE
           - WIKIDATA
+      pages:
+        multivalued: true
+        description: >-
+          when a 2-tuple of page numbers are provided, they represent
+          the start and end page of the publication within its parent publication context
     exact_mappings:
       - IAO:0000311
     narrow_mappings:
@@ -3313,15 +3327,15 @@ classes:
   author:
     is_a: provider
     description: >-
-      a (usually human, occasionally, a specific research group) provider who contributes to a publication
+      a provider (usually individual; sometimes, a research team) who contributes specific core content to a publication
     slot_usage:
       id:
         description: >-
-          use the researcher's orcid if available, then ScopusID, ResearchID or Google Scholar Author Profile ID
-          may be used if the orcid is unknown.
+          use the author's ORCID if available, otherwise, a ScopusID, ResearchID or
+          Google Scholar Author Profile ID may be used if the author ORCID is unknown.
       name:
         description: >-
-          it is recommended that a researcher's 'name' property be formatted as "surname, firstname initial."
+          it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
     id_prefixes:
       - orcid
       - ScopusID
@@ -3988,24 +4002,28 @@ classes:
     is_a: association
     defining_slots:
       - subject
+      - predicate
       - object
-      #- relation
-      - author qualifier
+      - qualifiers
     description: >-
-      Any association between a publication and its various provider contributors
-    slots:
-      - author qualifier
+      Any association between a publication and various providers that contribute to its realisation
     slot_usage:
       subject:
         range: publication
         description: >-
-          publication to which an author has contributed
-      object:
-        range: researcher
+          publication which a provider has helped realise
+      predicate:
+        subproperty_of: has provider
         description: >-
-          author contributing to a publication
-      #relation:
-      #  subproperty_of: related to
+          generally one of the predicate values 'publisher', 'editor' or 'author'
+      object:
+        range: provider
+        description: >-
+          provider helping to realise the given publication
+      qualifiers:
+        description: >-
+          this field can be used to annotate special characteristics of a provider relationship, such as the fact
+          that a given author provider is the 'corresponding author'
 
   genotype to genotype part association:
     is_a: association
