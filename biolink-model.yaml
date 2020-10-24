@@ -2309,7 +2309,7 @@ slots:
   pages:
     is_a: node property
     description: >-
-      page number of source referenced for statement
+      page number of source referenced for statement or publication
     domain: publication
     multivalued: true
     exact_mappings:
@@ -2318,11 +2318,28 @@ slots:
   abstract:
     is_a: node property
     description: >-
-      summary of a research document
+      summary of a publication
     domain: publication
     exact_mappings:
       - dcterms:abstract
       - WIKIDATA:Q333291
+
+  keywords:
+    is_a: node property
+    description: >-
+      keywords tagging a publication
+    domain: publication
+    multivalued: true
+
+  mesh terms:
+    is_a: node property
+    description: >-
+      mesh terms tagging a publication
+    domain: publication
+    range: uriorcurie
+    values_from:
+      - MESH
+    multivalued: true
 
   ## End of Additional Properties for Information Content Entity and Publication Nodes
 
@@ -2928,6 +2945,9 @@ classes:
       - issue
       - pages
       - abstract
+      - keywords
+      - mesh terms
+      - xref
     slot_usage:
       id:
         required: true
