@@ -3376,13 +3376,12 @@ classes:
       id:
         required: true
         description: >-
-          Different providers have preferred identifiers. For publishers, use the NLMID, ISBN or ISSN codes.
+          Different providers have preferred identifiers. For publishers, use the ISBN publisher code.
           For authors, use the individual's ORCID if available, otherwise, a ScopusID, ResearchID or
           Google Scholar Author Profile ID ('GSAPID') may be used if the author ORCID is unknown.
         values_from:
-        values_from:
           # CURIE space for publishers
-          -
+          - ISBN
           # CURIE space for authors
           - ORCID
           - ScopusID
