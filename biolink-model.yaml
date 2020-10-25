@@ -3041,6 +3041,12 @@ classes:
       # UMLS Semantic Type "Intellectual Product"
       - UMLSSC:T170
       - UMLSST:inpr
+    id_prefixes:
+      # By inheritance, the id may also be a DOI; there may be other relevant prefixes
+      - PMID
+      # Whole books and journals may be modelled as an integral publication node
+      - ISBN
+      - ISSN
 
   distribution level:
     is_a: data set version
