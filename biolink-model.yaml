@@ -40,8 +40,11 @@ prefixes:
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
+  ISBN: 'https://isbn-international.org/'
+  ISSN: 'https://portal.issn.org/resource/ISSN/'
   MESH_PUB: 'https://www.nlm.nih.gov/mesh/pubtypes.html#'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
   orcid: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
@@ -2287,7 +2290,7 @@ slots:
     domain: publication
     range: uriorcurie
     values_from:
-      - NLMId
+      - NLMID
       - ISSN
       - ISBN
     exact_mappings:
