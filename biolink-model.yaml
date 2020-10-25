@@ -2287,8 +2287,8 @@ slots:
   published in:
     is_a: node property
     description: >-
-      String identifier of a broader publication context within which the publication may be placed,
-      e.g. a specified journal.
+      CURIE identifier of a broader publication context within which the publication may be placed,
+      e.g. a specified book or journal.
     domain: publication
     range: uriorcurie
     values_from:
@@ -2298,21 +2298,27 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P1433
 
+  iso abbreviation:
+    is_a: node property
+    description: >-
+      Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system
+      See https://www.issn.org/services/online-services/access-to-the-ltwa/
+    domain: publication
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P1160
+
   authors:
     is_a: node property
     singular_name: author
     description: >-
-      connects an publication to authors who contributed to the publications. Note that this property is a node
-      annotation expressing an citation list of authorship which can otherwise be more completely documented
-      in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and
-      possibly, some qualifiers which clarify the specific status of a given author to the publication.
+      connects an publication to the list of authors who contributed to the publications.
+      This property should be a comma-delimited list of author names. It is recommended that an author's name
+      be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing
+      the citation list of authorship which might typically otherwise be more completely documented in
+      biolink:PublicationToProviderAssociation defined edges which point to full details about an author
+      and possibly, some qualifiers which clarify the specific status of a given author to the publication.
     multivalued: true
     domain: publication
-    values_from:
-      - ORCID
-      - ScopusID
-      - ResearchID
-      - GSAPID
 
   volume:
     is_a: node property
@@ -2964,6 +2970,7 @@ classes:
     slots:
       - type
       - published in
+      - iso abbreviation
       - authors
       - volume
       - issue
@@ -3005,6 +3012,20 @@ classes:
           - MESH_PUB
           - COAR_RESOURCE
           - WIKIDATA
+      published in:
+        description: >-
+          CURIE identifier of a broader publication context within which a core publication may be placed,
+          e.g. a specified book or journal.
+        values_from:
+          - NLMID
+          - ISSN
+          - ISBN
+      iso abbreviation:
+        description: >-
+          Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system
+          See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set,
+          then the iso abbreviation pertains to the broader publication context (the journal) within which the given
+          publication node is embedded, not the publication itself.
       pages:
         multivalued: true
         description: >-
@@ -3358,6 +3379,15 @@ classes:
           Different providers have preferred identifiers. For publishers, use the NLMID, ISBN or ISSN codes.
           For authors, use the individual's ORCID if available, otherwise, a ScopusID, ResearchID or
           Google Scholar Author Profile ID ('GSAPID') may be used if the author ORCID is unknown.
+        values_from:
+        values_from:
+          # CURIE space for publishers
+          -
+          # CURIE space for authors
+          - ORCID
+          - ScopusID
+          - ResearchID
+          - GSAPID
       name:
         description: >-
           it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
