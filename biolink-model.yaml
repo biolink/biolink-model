@@ -204,7 +204,7 @@ slots:
       - This is a grouping for publications and associated providers for the end product
     abstract: true
 
-  publisher:
+  has publisher:
     is_a: has provider
     description: >-
       organization or person responsible for publishing books, periodicals, podcasts, games or software.
@@ -218,7 +218,7 @@ slots:
       - dcterms:publisher
       - WIKIDATA_PROPERTY:P123
 
-  editor:
+  has editor:
     is_a: has provider
     description: >-
       editor of a compiled work such as a book or a periodical (newspaper or an academic journal).
@@ -231,7 +231,7 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P98
 
-  author:
+  has author:
     is_a: has provider
     description: >-
       an instance of one (co-)creator of a written work
@@ -2311,12 +2311,12 @@ slots:
     is_a: node property
     singular_name: author
     description: >-
-      connects an publication to the list of authors who contributed to the publications.
+      connects an publication to the list of authors who contributed to the publication.
       This property should be a comma-delimited list of author names. It is recommended that an author's name
       be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing
       the citation list of authorship which might typically otherwise be more completely documented in
       biolink:PublicationToProviderAssociation defined edges which point to full details about an author
-      and possibly, some qualifiers which clarify the specific status of a given author to the publication.
+      and possibly, some qualifiers which clarify the specific status of a given author in the publication.
     multivalued: true
     domain: publication
 
@@ -2459,18 +2459,21 @@ slots:
     mappings:
       - wgs:long
 
-  has affiliation:
-    is_a: related to
+  affiliation:
+    is_a: node property
     description: >-
-      a professional relationship between one provider (often a person) within another provider (often an organization)
+      a professional relationship between one provider (often a person) within another provider (often an organization).
+      Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
     domain: provider
-    range: provider
+    range: uriorcurie
+    multivalued: true
 
   address:
     is_a: node property
     description: >-
       the particulars of the place where someone or an organization is situated.  For now, this slot is a
       simple text "blob" containing all relevant details of the given location for fitness of purpose.
+      For the moment, this "address" can include other contact details such as email and phone number(?).
 
   has chemical formula:
     is_a: node property
@@ -3370,7 +3373,7 @@ classes:
       person, group, organization or project that provides a piece of information,
       e.g. for a publication or smaller unit of information provided
     slots:
-      - has affiliation
+      - affiliation
       - address
     slot_usage:
       id:
@@ -4089,7 +4092,7 @@ classes:
       predicate:
         subproperty_of: has provider
         description: >-
-          generally one of the predicate values 'publisher', 'editor' or 'author'
+          generally one of the predicate values 'has publisher', 'has editor' or 'has author'
       object:
         range: provider
         description: >-
