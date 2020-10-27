@@ -2965,21 +2965,21 @@ classes:
 
   disease or phenotypic outcome:
     is_a: named thing
-      mixins:
-        - outcome
-        - disease or phenotypic feature
+    mixins:
+      - outcome
+      - disease or phenotypic feature
 
   hospitalization outcome:
     is_a: named thing
-      mixins:
-        - outcome
-        - hospitalization
+    mixins:
+      - outcome
+      - hospitalization
 
   mortality outcome:
     is_a: named thing
-      mixins:
-        - outcome
-        - death
+    mixins:
+      - outcome
+      - death
 
   subject of investigation:
     abstract: true
