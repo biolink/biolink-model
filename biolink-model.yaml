@@ -231,7 +231,8 @@ slots:
     is_a: related to
     description: >-
       describes an entity that has a direct affect on the state or quality of another existing entity.
-      Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
+      Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as
+      'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
     in_subset:
       - translator_minimal
     mappings:
@@ -3076,15 +3077,6 @@ classes:
       - SNOMEDCT
       - MESH
 
-  exposure event:
-    aliases: ['exposure', 'experimental condition']
-    is_a: biological entity
-    description: >-
-      A feature of the environment of an organism that influences one or more phenotypic features
-      of that organism, potentially mediated by genes
-    mappings:
-      - XCO:0000000
-
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
     abstract: true
@@ -3756,6 +3748,16 @@ classes:
     mappings:
       - GENO:0000504
 
+  exposure event:
+    aliases: ['exposure', 'experimental condition']
+    # need to generalise 'exposure event' to include other non-biological events
+    is_a: named thing
+    description: >-
+      A feature of the environment of an organism that influences one or more phenotypic features
+      of that organism, potentially mediated by genes
+    mappings:
+      - XCO:0000000
+
   chemical exposure:
 #    aliases: ['drug intake', 'drug dose']
     is_a: exposure event
@@ -3777,8 +3779,8 @@ classes:
     is_a: chemical exposure
     description: >-
       A drug exposure is an intake of a particular chemical substance
-#    slots:
-#      - has input
+    slots:
+      - has drug
     slot_usage:
       has drug:
         range: chemical substance
@@ -3801,6 +3803,37 @@ classes:
     mappings:
       - OGMS:0000090
       - SIO:001398
+
+  biotic exposure:
+    aliases: ['viral exposure','bacterial exposure']
+    is_a: exposure event
+    description: >-
+      A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
+    slot_usage:
+      # Perhaps something more semantically precise than 'attribute' is needed
+      # but this gives us the greatest flexibility for the moment?
+      has attribute:
+        multivalued: true
+        range: organism taxon
+        required: true
+    # mappings:
+    #  -
+
+  socioeconomic exposure:
+    is_a: exposure event
+    description: >-
+      A socioeconomic exposure is a factor relating to social and financial status of an affected individual.
+    slot_usage:
+      # Perhaps something more semantically precise than 'attribute' is needed
+      # but this gives us the greatest flexibility for the moment?
+      has attribute:
+        multivalued: true
+        # need a suitable qualifying socioeconomic ontology target here?
+        # Perhaps some subset of ECTO: https://github.com/EnvironmentOntology/environmental-exposure-ontology
+        range: ontology class
+        required: true
+    # mappings:
+    #  -
 
   geographic location:
     is_a: planetary entity
