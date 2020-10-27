@@ -2955,6 +2955,31 @@ classes:
     mappings:
       - WIKIDATA:Q1303415
 
+  outcome:
+    is_a: named thing
+    mixin: true
+    abstract: true
+    description: >-
+      An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping
+      of various categories of possible biological or non-biological (e.g. clinical) outcomes.
+
+  disease or phenotypic outcome:
+    is_a: named thing
+      mixins:
+        - outcome
+        - disease or phenotypic feature
+
+  hospitalization outcome:
+    is_a: named thing
+      mixins:
+        - outcome
+        - hospitalization
+
+  mortality outcome:
+    is_a: named thing
+      mixins:
+        - outcome
+        - death
 
   subject of investigation:
     abstract: true
@@ -3052,6 +3077,17 @@ classes:
       - ICD0
       - HP
       - MP
+
+  hospitalization:
+    is_a: clinical intervention
+    mappings:
+      - SNOMEDCT:32485007
+      - WIKIDATA:Q3140971
+
+  death:
+    is_a: biological process
+    mappings:
+      - GO:0016265
 
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
