@@ -1400,7 +1400,7 @@ slots:
     mappings:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
-      - WIKIDATA:276
+      - WIKIDATA_PROPERTY:P276
 
   similar to:
       is_a: related to
@@ -2909,6 +2909,16 @@ classes:
       - OBI:0000181
     id_prefixes:
       - HANCESTRO
+
+  cohort:
+    is_a: population of individual organisms
+    description: >-
+      a group of people banded together or treated as a group. A cohort study is a particular form of
+      longitudinal study that samples a cohort, performing a cross-section at intervals through time.
+      It is a type of panel study where the individuals in the panel share common characteristics.
+    mappings:
+      - WIKIDATA:Q1303415
+
 
   subject of investigation:
     abstract: true
