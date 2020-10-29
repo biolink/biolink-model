@@ -58,6 +58,7 @@ prefixes:
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  foaf: 'http://xmlns.com/foaf/0.1/'
 
 default_prefix: biolink
 default_range: string
@@ -380,7 +381,7 @@ slots:
       - rdfs:subPropertyOf
 
   same as:
-    is_a: related to
+    is_a: exact match
     description: >-
       holds between two entities that are considered equivalent to each other
     in_subset:
@@ -420,6 +421,16 @@ slots:
       - oboFormat:xref
       - RXNORM:has_quantified_form
       - UMLS:SY
+
+  exact match:
+    is_a: close match
+    description: >-
+      holds between two entities that are identical to each other, with a high degree of confidence
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - skos:exactMatch
+      - WIKIDATA:P2888
 
   interacts with:
     domain: named thing
@@ -2248,13 +2259,7 @@ slots:
     exact_mappings:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
-      - SEMMEDDB:location_of
-      - WIKIDATA:276
-      # RTX tagged this as an inverse of biolink:located_in
-      - FMA:location_of
-      - RTXKG1:site_of
-    narrow_mappings:
-      - SNOMED:inherent_location_of
+      - WIKIDATA_PROPERTY:P276
 
   similar to:
       is_a: related to
@@ -2752,11 +2757,8 @@ slots:
     broad_mappings:
       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
       - WIKIDATA_PROPERTY:P156
-    narrow_mappings:
-      - FMA:transforms_into
-      - RO:0002090
-      - RO:0002411
-      - RO:0002412
+      - RO:0002263
+      - RO:0002264
 
   preceded by:
     is_a: temporally related to
@@ -2934,7 +2936,7 @@ slots:
       not affect the coding sequence
     domain: sequence variant
     range: gene
-    mappings:
+    exact_mappings:
       - GAMMA:0000103
     narrow_mappings:
       # More narrow but precisely defined instances of non coding sequence variants
@@ -3052,7 +3054,6 @@ slots:
       - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
-  #End of edge_label predicate slots
 
 ## property slots
 
@@ -3223,6 +3224,16 @@ slots:
       - IAO:0000136
       - RXNORM:has_tradename
 
+  has topic:
+    aliases: ['topic', 'descriptors']
+    is_a: node property
+    range: ontology class
+    exact_mappings:
+      - foaf:topic
+    description: >-
+      Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred.
+      See https://github.com/biolink/biolink-model/issues/238
+
   xref:
     is_a: node property
     aliases: ['dbxref', 'Dbxref', 'DbXref']
@@ -3233,7 +3244,7 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
-    mappings:
+    narrow_mappings:
       - gff3:Dbxref
       - gpi:DB_Xrefs
 
@@ -3243,7 +3254,14 @@ slots:
     range: category type
     description: >-
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
-      In a neo4j database this MAY correspond to the neo4j label tag
+       * In a neo4j database this MAY correspond to the neo4j label tag.
+       * In an RDF database it should be a biolink model class URI.
+      This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have
+      category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
+      
+      In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class
+      more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,
+      which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
     is_class_field: true
     multivalued: true
     in_subset:
@@ -3267,9 +3285,10 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: dcterms:description
-    mappings:
+    exact_mappings:
       - IAO:0000115
       - skos:definitions
+    narrow_mappings:
       - gff3:Description
 
   systematic synonym:
@@ -3309,7 +3328,7 @@ slots:
     required: true
     range: named thing
     slot_uri: rdf:subject
-    mappings:
+    exact_mappings:
       - owl:annotatedSource
       - OBAN:association_has_subject
 
@@ -3324,7 +3343,7 @@ slots:
       ga4gh: descriptor
       neo4j: node with incoming relationship
     slot_uri: rdf:object
-    mappings:
+    exact_mappings:
       - owl:annotatedTarget
       - OBAN:association_has_object
 
@@ -3344,7 +3363,7 @@ slots:
       ga4gh: annotation predicate
       translator: predicate
     slot_uri: rdf:predicate
-    mappings:
+    exact_mappings:
       - owl:annotatedProperty
       - OBAN:association_has_predicate
 
@@ -3374,7 +3393,7 @@ slots:
     range: evidence type
     description: >-
       connects an association to an instance of supporting evidence
-    mappings:
+    exact_mappings:
       - RO:0002558
 
   provided by:
@@ -3648,7 +3667,7 @@ slots:
 
   has zygosity:
     is_a: node property
-#    domain: single locus feature complement
+    domain: genomic entity
     range: zygosity
 
   filler:
@@ -3815,7 +3834,7 @@ slots:
     range: quantity value
 #    multivalued: false
     multivalued: true
-    mappings:
+    exact_mappings:
       - qud:quantityValue
     narrow_mappings:
       - SNOMED:has_concentration_strength_numerator_value
