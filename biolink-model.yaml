@@ -1279,7 +1279,9 @@ slots:
   correlated with:
     is_a: related to
     description: >-
-      holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+      holds between any two named thing entities. For example, correlated_with holds
+      between a disease or phenotypic feature and a measurable molecular entity that
+      is used as an indicator of the presence or state of the disease or feature.
     domain: named thing
     range: named thing
     in_subset:
@@ -1290,7 +1292,8 @@ slots:
   has biomarker:
     is_a: correlated with
     description: >-
-      holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+      holds between a disease or phenotypic feature and a measurable molecular entity
+      that is used as an indicator of the presence or state of the disease or feature.
     domain: disease or phenotypic feature
     range: molecular entity
     in_subset:
@@ -3118,6 +3121,11 @@ classes:
       # Classification
       - UMLSSC:T185
       - UMLSST:clas
+
+  measurement:
+    is_a: information content entity
+    mappings:
+      - EFO:0001444
 
   confidence level:
     is_a: information content entity
