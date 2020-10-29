@@ -4370,7 +4370,7 @@ classes:
     is_a: named thing
     description: >-
       a piece of information that typically describes some piece of biology or is used as support.
-    mappings:
+    narrow_mappings:
       - IAO:0000030
       # UMLS Semantic Group "Concepts & Ideas"
       - UMLSSG:CONC
@@ -4407,6 +4407,11 @@ classes:
       # Classification
       - UMLSSC:T185
       - UMLSST:clas
+
+  measurement:
+    is_a: information content entity
+    exact_mappings:
+      - EFO:0001444
 
   confidence level:
     is_a: information content entity
