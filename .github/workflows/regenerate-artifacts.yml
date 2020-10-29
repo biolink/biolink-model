@@ -47,7 +47,7 @@ jobs:
     - name: Generate Biolink Model artifacts
       run: |
         export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
-        make -B
+        make -B install build
         if [ $? -eq 0 ]; then
           git config --global user.name "$GITHUB_NAME"
           git config --global user.email "$GITHUB_EMAIL"
