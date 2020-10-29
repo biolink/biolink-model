@@ -23,6 +23,7 @@ prefixes:
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
+  foaf: 'http://xmlns.com/foaf/0.1/'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
@@ -420,6 +421,16 @@ slots:
       - oboFormat:xref
       - RXNORM:has_quantified_form
       - UMLS:SY
+
+  exact match:
+    is_a: close match
+    description: >-
+      holds between two entities that are identical to each other, with a high degree of confidence
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - skos:exactMatch
+      - WIKIDATA:P2888
 
   interacts with:
     domain: named thing
@@ -3223,6 +3234,16 @@ slots:
       - IAO:0000136
       - RXNORM:has_tradename
 
+  has topic:
+    aliases: ['topic', 'descriptors']
+    is_a: node property
+    range: ontology class
+    mappings:
+      - foaf:topic
+    description: >-
+      Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred.
+      See https://github.com/biolink/biolink-model/issues/238
+
   xref:
     is_a: node property
     aliases: ['dbxref', 'Dbxref', 'DbXref']
@@ -3243,7 +3264,14 @@ slots:
     range: category type
     description: >-
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
-      In a neo4j database this MAY correspond to the neo4j label tag
+       * In a neo4j database this MAY correspond to the neo4j label tag.
+       * In an RDF database it should be a biolink model class URI.
+      This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have
+      category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
+      
+      In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class
+      more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,
+      which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
     is_class_field: true
     multivalued: true
     in_subset:
@@ -3648,7 +3676,7 @@ slots:
 
   has zygosity:
     is_a: node property
-#    domain: single locus feature complement
+    domain: genomic entity
     range: zygosity
 
   filler:
