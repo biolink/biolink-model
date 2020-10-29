@@ -2946,12 +2946,19 @@ classes:
     id_prefixes:
       - HANCESTRO
 
-  cohort:
+  study population:
     is_a: population of individual organisms
     description: >-
-      a group of people banded together or treated as a group. A cohort study is a particular form of
-      longitudinal study that samples a cohort, performing a cross-section at intervals through time.
-      It is a type of panel study where the individuals in the panel share common characteristics.
+      A group of people banded together or treated as a group as participants in a research study.
+    mappings:
+      - WIKIDATA:Q7229825
+
+  cohort:
+    is_a: study population
+    description: >-
+      A group of people banded together or treated as a group who share common characteristics.
+      A cohort 'study' is a particular form of longitudinal study that samples a cohort,
+      performing a cross-section at intervals through time.
     mappings:
       - WIKIDATA:Q1303415
 
