@@ -2964,22 +2964,19 @@ classes:
       of various categories of possible biological or non-biological (e.g. clinical) outcomes.
 
   disease or phenotypic outcome:
-    is_a: named thing
+    is_a: disease or phenotypic feature
     mixins:
       - outcome
-      - disease or phenotypic feature
 
   hospitalization outcome:
-    is_a: named thing
+    is_a: hospitalization
     mixins:
       - outcome
-      - hospitalization
 
   mortality outcome:
-    is_a: named thing
+    is_a: death
     mixins:
       - outcome
-      - death
 
   subject of investigation:
     abstract: true
