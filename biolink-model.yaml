@@ -2967,16 +2967,23 @@ classes:
     is_a: disease or phenotypic feature
     mixins:
       - outcome
+    description: >-
+      An outcome from an exposure event which is the manifestation of a disease or other characteristic phenotype.
 
   hospitalization outcome:
     is_a: hospitalization
     mixins:
       - outcome
+    description: >-
+      An outcome from an exposure event which is the increased manifestation of
+      acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
 
   mortality outcome:
     is_a: death
     mixins:
       - outcome
+    description: >-
+      An outcome of death from an exposure event.
 
   subject of investigation:
     abstract: true
