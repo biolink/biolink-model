@@ -2207,6 +2207,7 @@ slots:
     exact_mappings:
       - RO:0001025
       - FMA:has_location
+      - BFO:0000029
     narrow_mappings:
       - GOREL:0001004
       - BSPO:0000107
@@ -3741,6 +3742,8 @@ slots:
       - OBI:0001927
     exact_mappings:
       - SIO:000008
+      # BFO term for 'material property'
+      - BFO:0000020
     narrow_mappings:
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
@@ -4251,9 +4254,12 @@ classes:
       - physical entity
     description: >-
       A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
-    mappings:
+    exact_mappings:
       - OBI:0000747
       - SIO:001050
+    broad_mappings:
+      # BFO term for 'material entity' seems slightly broader semantically than a 'sample'
+      - BFO:0000040
     slots:
       - has attribute
     id_prefixes:
@@ -6290,7 +6296,7 @@ classes:
     description: >-
       A processual entity
     is_a: named thing
-    mappings:
+    exact_mappings:
       - BFO:0000003
 
   physical entity:
@@ -6443,10 +6449,13 @@ classes:
       - occurrent
     description: >-
       One or more causally connected executions of molecular functions
-    mappings:
+    exact_mappings:
       - GO:0008150
-      - SIO:000006
       - WIKIDATA:Q2996394
+    broad_mappings:
+      # These 'process' ontology terms are not specifically constrained to biology
+      - SIO:000006
+      - BFO:0000015
     id_prefixes:
       - GO
       - REACT
