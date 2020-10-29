@@ -381,7 +381,7 @@ slots:
       - rdfs:subPropertyOf
 
   same as:
-    is_a: related to
+    is_a: exact match
     description: >-
       holds between two entities that are considered equivalent to each other
     in_subset:
@@ -2945,7 +2945,7 @@ slots:
       not affect the coding sequence
     domain: sequence variant
     range: gene
-    mappings:
+    exact_mappings:
       - GAMMA:0000103
     narrow_mappings:
       # More narrow but precisely defined instances of non coding sequence variants
@@ -3063,7 +3063,6 @@ slots:
       - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
-  #End of edge_label predicate slots
 
 ## property slots
 
@@ -3238,7 +3237,7 @@ slots:
     aliases: ['topic', 'descriptors']
     is_a: node property
     range: ontology class
-    mappings:
+    exact_mappings:
       - foaf:topic
     description: >-
       Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred.
@@ -3254,7 +3253,7 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
-    mappings:
+    narrow_mappings:
       - gff3:Dbxref
       - gpi:DB_Xrefs
 
@@ -3295,9 +3294,10 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: dcterms:description
-    mappings:
+    exact_mappings:
       - IAO:0000115
       - skos:definitions
+    narrow_mappings:
       - gff3:Description
 
   systematic synonym:
@@ -3337,7 +3337,7 @@ slots:
     required: true
     range: named thing
     slot_uri: rdf:subject
-    mappings:
+    exact_mappings:
       - owl:annotatedSource
       - OBAN:association_has_subject
 
@@ -3352,7 +3352,7 @@ slots:
       ga4gh: descriptor
       neo4j: node with incoming relationship
     slot_uri: rdf:object
-    mappings:
+    exact_mappings:
       - owl:annotatedTarget
       - OBAN:association_has_object
 
@@ -3372,7 +3372,7 @@ slots:
       ga4gh: annotation predicate
       translator: predicate
     slot_uri: rdf:predicate
-    mappings:
+    exact_mappings:
       - owl:annotatedProperty
       - OBAN:association_has_predicate
 
@@ -3402,7 +3402,7 @@ slots:
     range: evidence type
     description: >-
       connects an association to an instance of supporting evidence
-    mappings:
+    exact_mappings:
       - RO:0002558
 
   provided by:
@@ -3843,7 +3843,7 @@ slots:
     range: quantity value
 #    multivalued: false
     multivalued: true
-    mappings:
+    exact_mappings:
       - qud:quantityValue
     narrow_mappings:
       - SNOMED:has_concentration_strength_numerator_value
