@@ -5605,6 +5605,9 @@ classes:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
 
+  # This association may be going in the wrong direction, at least, in terms of 'causality'
+  # It is also specific to just one kind of 'exposure outcome'.
+  # so we specify a reverse, more generic association class just immediately below
   disease to exposure association:
     is_a: disease to thing association
     defining_slots:
@@ -5617,6 +5620,22 @@ classes:
         range: disease
       object:
         range: exposure event
+
+  exposure to outcome association:
+    is_a: association
+    defining_slots:
+      - subject
+      #- predicate
+      - object
+    description: >-
+      An association between an exposure event and an outcome
+    slot_usage:
+      subject:
+        range: exposure event
+      #predicate:
+      #  subproperty_of: ??? # future semantic constraint here may be feasible and desired
+      object:
+        range: outcome
 
   frequency qualifier mixin:
     mixin: true
