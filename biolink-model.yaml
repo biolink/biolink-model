@@ -3486,6 +3486,16 @@ slots:
     mappings:
       - ExO:0000000
 
+  has active ingredient:
+    is_a: node property
+    domain: drug
+    range: molecular entity
+    multivalued: true
+    description: >-
+      one or more molecular entities which are the active ingredient(s) of a drug
+    exact_mappings:
+      - WIKIDATA:Q912807
+
   has route:
     is_a: node property
     domain: exposure event
@@ -4606,13 +4616,23 @@ classes:
     mappings:
       - OBI:0000047
 
+  mixture:
+    abstract: true
+    mixin: true
+    description: >-
+      any grouping of multiple molecular entities
+
   drug:
-    is_a: processed material
+    is_a: molecular entity
+    mixins:
+      - mixture
     description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    slots:
+      - has active ingredient
     comments:
       - The CHEBI ID represents a role rather than a substance
-    mappings:
+    exact_mappings:
       - WIKIDATA:Q12140
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
@@ -4622,7 +4642,10 @@ classes:
       - PHARMGKB.DRUG
 
   food:
-    is_a: processed material
+    is_a: molecular entity
+    # I think that food is also generally a mixture
+    mixins:
+      - mixture
     description: >-
       A substance encountered by nutritional consumption
     id_prefixes:
