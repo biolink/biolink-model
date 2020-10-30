@@ -123,8 +123,16 @@ types:
     description: >-
       A string that provides a human-readable name for a thing
 
+  predicate type:
+    typeof: uriorcurie
+    description: >-
+      A CURIE from the biolink related_to hierarchy.
+      For example, biolink:related_to, biolink:causes, biolink:treats.
+
   edge label type:
     typeof: uriorcurie
+    deprecated: Deprecated in favor of 'predicate type'
+    deprecated_element_has_exact_replacement: predicate type
     description: >-
       A CURIE from the biolink related_to hierarchy.
       For example, biolink:related_to, biolink:causes, biolink:treats.
@@ -2264,7 +2272,7 @@ slots:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
       - SEMMEDDB:location_of
-      - WIKIDATA:276
+      - WIKIDATA_PROPERTY:P276
       # RTX tagged this as an inverse of biolink:located_in
       - FMA:location_of
       - RTXKG1:site_of
@@ -3360,7 +3368,7 @@ slots:
       - owl:annotatedTarget
       - OBAN:association_has_object
 
-  edge label:
+  predicate:
     is_a: association slot
     description: >-
       A high-level grouping for the relationship type. AKA minimal predicate.
@@ -3370,7 +3378,7 @@ slots:
       Has a value from the Biolink related_to hierarchy. In RDF, this corresponds to rdf:predicate and
       in Neo4j this corresponds to the relationship type.
       The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats
-    range: edge label type
+    range: predicate type
     required: true
     local_names:
       ga4gh: annotation predicate
@@ -3379,6 +3387,19 @@ slots:
     exact_mappings:
       - owl:annotatedProperty
       - OBAN:association_has_predicate
+
+  edge label:
+    deprecated: >-
+      This slot is deprecated in favor of 'predicate' slot.
+    deprecated_element_has_exact_replacement: predicate
+    is_a: association slot
+    domain: association
+    range: edge label type
+    required: true
+    local_names:
+      ga4gh: annotation predicate
+      translator: predicate
+    slot_uri: rdf:predicate
 
   relation:
     is_a: association slot
