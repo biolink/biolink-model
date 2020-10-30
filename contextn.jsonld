@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-10-29 19:57\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-10-30 17:16\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -7,7 +7,6 @@
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://identifiers.org/biogrid/",
       "BIOSAMPLE": "http://identifiers.org/biosample/",
-      "BSPO": "http://purl.obolibrary.org/obo/BSPO_",
       "CAID": "http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=",
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
       "CHEMBL.COMPOUND": "http://identifiers.org/chembl.compound/",
@@ -87,7 +86,6 @@
       "RGD": "http://identifiers.org/rgd/",
       "RHEA": "http://identifiers.org/rhea/",
       "RNACENTRAL": "http://identifiers.org/rnacentral/",
-      "RO": "http://purl.obolibrary.org/obo/RO_",
       "SEMMEDDB": "https://skr3.nlm.nih.gov/SemMedDB",
       "SEPIO": "http://purl.obolibrary.org/obo/SEPIO_",
       "SGD": "http://identifiers.org/sgd/",
@@ -127,14 +125,12 @@
       "dcterms": "http://purl.org/dc/terms/",
       "dctypes": "http://purl.org/dc/dcmitype/",
       "dictyBase": "http://dictybase.org/gene/",
-      "faldo": "http://biohackathon.org/resource/faldo#",
       "foaf": "http://xmlns.com/foaf/0.1/",
       "gff3": "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#",
       "gpi": "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
       "medgen": "https://www.ncbi.nlm.nih.gov/medgen/",
-      "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
       "prov": "http://www.w3.org/ns/prov#",
@@ -249,6 +245,9 @@
       "colocalizes_with": {
          "@type": "@id"
       },
+      "condition_associated_with_gene": {
+         "@type": "@id"
+      },
       "contraindicated_for": {
          "@type": "@id"
       },
@@ -361,6 +360,9 @@
          "@type": "@id"
       },
       "gene_associated_with_condition": {
+         "@type": "@id"
+      },
+      "genetic_association": {
          "@type": "@id"
       },
       "genetically_interacts_with": {
@@ -540,6 +542,9 @@
       "iri": {
          "@type": "@id"
       },
+      "is_frameshift_variant_of": {
+         "@type": "@id"
+      },
       "is_missense_variant_of": {
          "@type": "@id"
       },
@@ -550,6 +555,9 @@
          "@type": "@id"
       },
       "is_nonsense_variant_of": {
+         "@type": "@id"
+      },
+      "is_sequence_variant_of": {
          "@type": "@id"
       },
       "is_splice_site_variant_of": {
@@ -584,6 +592,9 @@
       },
       "negated": {
          "@type": "xsd:boolean"
+      },
+      "negatively_correlated_with": {
+         "@type": "@id"
       },
       "negatively_regulates": {
          "@type": "@id"
@@ -624,6 +635,9 @@
       "physically_interacts_with": {
          "@type": "@id"
       },
+      "positively_correlated_with": {
+         "@type": "@id"
+      },
       "positively_regulates": {
          "@type": "@id"
       },
@@ -633,7 +647,13 @@
       "positively_regulates_process_to_process": {
          "@type": "@id"
       },
+      "preceded_by": {
+         "@type": "@id"
+      },
       "precedes": {
+         "@type": "@id"
+      },
+      "predicate": {
          "@type": "@id"
       },
       "predisposes": {
@@ -712,6 +732,9 @@
          "@type": "@id"
       },
       "superclass_of": {
+         "@type": "@id"
+      },
+      "temporally_related_to": {
          "@type": "@id"
       },
       "timepoint": {
