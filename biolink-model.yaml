@@ -2753,31 +2753,6 @@ slots:
   precedes:
     is_a: temporally related to
     description: >-
-      holds between two entities with a temporal relationship
-    domain: occurrent
-    range: occurrent
-    exact_mappings:
-      - SNOMED:temporally_related_to
-    narrow_mappings:
-      # The These RTX mappings are temporal in nature, but not with precedes ordering, so mapped here
-      - RO:0002082
-      - RO:0002083
-      - RO:0002092
-      - RO:0002093
-      - RO:0002223
-      - RO:0002224
-      - RO:0002229
-      - RO:0002230
-      - RO:0002488
-      - RO:0002489
-      - RO:0002492
-      - RO:0002493
-      - RO:0002496
-      - RO:0002497
-
-  precedes:
-    is_a: temporally related to
-    description: >-
       holds between two processes, where one completes before the other begins
     domain: occurrent
     range: occurrent
