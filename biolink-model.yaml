@@ -307,7 +307,7 @@ slots:
     description: >-
       holds between two classes where the domain class is a super class of the range class
     domain: ontology class
-    range: iri type
+    range: ontology class
     multivalued: True
     inverse: subclass of
     in_subset:
@@ -1990,6 +1990,7 @@ slots:
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
     domain: disease or phenotypic feature
+    range: treatment
     in_subset:
       - translator_minimal
     inverse: treats
