@@ -123,8 +123,16 @@ types:
     description: >-
       A string that provides a human-readable name for a thing
 
+  predicate type:
+    typeof: uriorcurie
+    description: >-
+      A CURIE from the biolink related_to hierarchy.
+      For example, biolink:related_to, biolink:causes, biolink:treats.
+
   edge label type:
     typeof: uriorcurie
+    deprecated: Deprecated in favor of 'predicate type'
+    deprecated_element_has_exact_replacement: predicate type
     description: >-
       A CURIE from the biolink related_to hierarchy.
       For example, biolink:related_to, biolink:causes, biolink:treats.
@@ -2745,6 +2753,31 @@ slots:
   precedes:
     is_a: temporally related to
     description: >-
+      holds between two entities with a temporal relationship
+    domain: occurrent
+    range: occurrent
+    exact_mappings:
+      - SNOMED:temporally_related_to
+    narrow_mappings:
+      # The These RTX mappings are temporal in nature, but not with precedes ordering, so mapped here
+      - RO:0002082
+      - RO:0002083
+      - RO:0002092
+      - RO:0002093
+      - RO:0002223
+      - RO:0002224
+      - RO:0002229
+      - RO:0002230
+      - RO:0002488
+      - RO:0002489
+      - RO:0002492
+      - RO:0002493
+      - RO:0002496
+      - RO:0002497
+
+  precedes:
+    is_a: temporally related to
+    description: >-
       holds between two processes, where one completes before the other begins
     domain: occurrent
     range: occurrent
@@ -3356,7 +3389,7 @@ slots:
       - owl:annotatedTarget
       - OBAN:association_has_object
 
-  edge label:
+  predicate:
     is_a: association slot
     description: >-
       A high-level grouping for the relationship type. AKA minimal predicate.
@@ -3366,7 +3399,7 @@ slots:
       Has a value from the Biolink related_to hierarchy. In RDF, this corresponds to rdf:predicate and
       in Neo4j this corresponds to the relationship type.
       The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats
-    range: edge label type
+    range: predicate type
     required: true
     local_names:
       ga4gh: annotation predicate
@@ -3375,6 +3408,19 @@ slots:
     exact_mappings:
       - owl:annotatedProperty
       - OBAN:association_has_predicate
+
+  edge label:
+    deprecated: >-
+      This slot is deprecated in favor of 'predicate' slot.
+    deprecated_element_has_exact_replacement: predicate
+    is_a: association slot
+    domain: association
+    range: edge label type
+    required: true
+    local_names:
+      ga4gh: annotation predicate
+      translator: predicate
+    slot_uri: rdf:predicate
 
   relation:
     is_a: association slot
