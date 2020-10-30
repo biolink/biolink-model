@@ -30,5 +30,5 @@ URI: [biolink:affects_expression_in](https://w3id.org/biolink/vocab/affects_expr
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | GTEx:affects_expression_in |
+| **Exact Mappings:** | | GTEx:affects_expression_in |
 

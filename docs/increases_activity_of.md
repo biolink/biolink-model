@@ -33,17 +33,27 @@ URI: [biolink:increases_activity_of](https://w3id.org/biolink/vocab/increases_ac
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:increases_activity_of |
-|  | | GAMMA:activator |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_activity_of |
+| **Narrow Mappings:** | | GAMMA:activator |
 |  | | GAMMA:partial_agonist |
 |  | | GAMMA:agonist |
 |  | | GAMMA:opener |
 |  | | GAMMA:positive_allosteric_modulator |
 |  | | GAMMA:positive_modulator |
-|  | | GAMMA:ec50 |
-|  | | GAMMA:ac50 |
 |  | | GAMMA:inducer |
 |  | | GAMMA:potentiator |
 |  | | GAMMA:stimulator |
-| **In Subsets:** | | translator_minimal |
+|  | | CHEMBL.MECHANISM:agonist |
+|  | | CHEMBL.MECHANISM:opener |
+|  | | CHEMBL.MECHANISM:partial_agonist |
+|  | | CHEMBL.MECHANISM:positive_allosteric_modulator |
+|  | | CHEMBL.MECHANISM:positive_modulator |
+|  | | DGIdb:agonist |
+|  | | DGIdb:partial_agonist |
+|  | | DGIdb:inducer |
+|  | | DGIdb:positive_allosteric_modulator |
+|  | | DGIdb:stimulator |
+| **Related Mappings:** | | GAMMA:ec50 |
+|  | | GAMMA:ac50 |
 

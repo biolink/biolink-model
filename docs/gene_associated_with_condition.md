@@ -21,7 +21,7 @@ URI: [biolink:gene_associated_with_condition](https://w3id.org/biolink/vocab/gen
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [genetic association](genetic_association.md)
 
 ## Children
 
@@ -33,10 +33,11 @@ URI: [biolink:gene_associated_with_condition](https://w3id.org/biolink/vocab/gen
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA_PROPERTY:P2293 |
-|  | | GENO:0000840 |
-|  | | GENO:0000841 |
-|  | | NCIT:R176 |
-|  | | hetio:ASSOCIATES_DaG |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RTXKG1:gene_associated_with_condition |
+| **Narrow Mappings:** | | NCIT:gene_associated_with_disease |
+|  | | NCIT:gene_involved_in_pathogenesis_of_disease |
+|  | | NCIT:gene_product_malfunction_associated_with_disease |
+| **Broad Mappings:** | | GENO:0000840 |
+|  | | GENO:0000841 |
 

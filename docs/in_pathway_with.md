@@ -34,4 +34,5 @@ URI: [biolink:in_pathway_with](https://w3id.org/biolink/vocab/in_pathway_with)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Related Mappings:** | | SIO:010532 |
 

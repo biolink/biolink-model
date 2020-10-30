@@ -33,7 +33,7 @@ URI: [biolink:increases_abundance_of](https://w3id.org/biolink/vocab/increases_a
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:increases_abundance_of |
-|  | | UBERGRAPH:is_increase_of |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_abundance_of |
+| **Related Mappings:** | | UBERGRAPH:is_increase_of |
 

@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: biolink:EdgeLabelType
+title: biolink:PredicateType
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: EdgeLabelType
+# Type: PredicateType
 
 
 A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats.
 
-URI: [biolink:EdgeLabelType](https://w3id.org/biolink/vocab/EdgeLabelType)
+URI: [biolink:PredicateType](https://w3id.org/biolink/vocab/PredicateType)
 
 |  |  |  |
 | --- | --- | --- |

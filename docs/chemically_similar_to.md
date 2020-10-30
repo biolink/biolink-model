@@ -33,11 +33,12 @@ URI: [biolink:chemically_similar_to](https://w3id.org/biolink/vocab/chemically_s
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CHEBI:has_parent_hydride |
+| **In Subsets:** | | translator_minimal |
+| **Narrow Mappings:** | | CHEBI:has_parent_hydride |
 |  | | CHEBI:has_functional_parent |
 |  | | CHEBI:is_conjugate_acid_of |
 |  | | CHEBI:is_conjugate_base_of |
 |  | | CHEBI:is_enantiomer_of |
 |  | | CHEBI:is_tautomer_of |
-| **In Subsets:** | | translator_minimal |
+|  | | NCIT:has_salt_form |
 

@@ -34,7 +34,7 @@ URI: [biolink:exact_match](https://w3id.org/biolink/vocab/exact_match)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | skos:exactMatch |
-|  | | WIKIDATA:P2888 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | skos:exactMatch |
+|  | | WIKIDATA:P2888 |
 

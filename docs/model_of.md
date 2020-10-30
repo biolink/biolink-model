@@ -33,6 +33,7 @@ URI: [biolink:model_of](https://w3id.org/biolink/vocab/model_of)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0003301 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0003301 |
+| **Narrow Mappings:** | | FOODON:00001301 |
 

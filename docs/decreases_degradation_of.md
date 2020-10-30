@@ -33,8 +33,8 @@ URI: [biolink:decreases_degradation_of](https://w3id.org/biolink/vocab/decreases
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:decreases_degradation_of |
-|  | | CTD:decreases_cleavage |
-|  | | CTD:decreases_hydrolysis |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_degradation_of |
+| **Narrow Mappings:** | | CTD:decreases_cleavage |
+|  | | CTD:decreases_hydrolysis |
 

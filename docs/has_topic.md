@@ -32,5 +32,5 @@ URI: [biolink:has_topic](https://w3id.org/biolink/vocab/has_topic)
 | --- | --- | --- |
 | **Aliases:** | | topic |
 |  | | descriptors |
-| **Mappings:** | | foaf:topic |
+| **Exact Mappings:** | | foaf:topic |
 

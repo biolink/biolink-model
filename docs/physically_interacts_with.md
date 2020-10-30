@@ -34,7 +34,20 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA_PROPERTY:P129 |
-|  | | SEMMEDDB:INTERACTS_WITH |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | WIKIDATA_PROPERTY:P129 |
+|  | | RTXKG1:physically_interacts_with |
+| **Close Mappings:** | | CHEMBL.MECHANISM:binding_agent |
+|  | | CHEMBL.MECHANISM:chelating_agent |
+|  | | CHEMBL.MECHANISM:cross-linking_agent |
+|  | | CHEMBL.MECHANISM:oxidative_enzyme |
+|  | | CHEMBL.MECHANISM:sequestering_agent |
+|  | | CHEMBL.MECHANISM:substrate |
+|  | | DRUGBANK:target |
+| **Narrow Mappings:** | | SEMMEDDB:INTERACTS_WITH |
+|  | | SEMMEDDB:interacts_with |
+|  | | DRUGBANK:drug-interaction |
+|  | | FMA:adheres_to |
+|  | | NCIT:has_target |
+|  | | PR:non-covalently_bound_to |
 

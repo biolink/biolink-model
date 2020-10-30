@@ -8,17 +8,17 @@ layout: default
 # Relation: is_missense_variant_of
 
 
-holds between a sequence variant and a gene, such the sequence variant results in a different amino acid sequence but where the length is preserved.
+holds between a gene  and a sequence variant, such the sequence variant results in a different amino acid sequence but where the length is preserved.
 
 URI: [biolink:is_missense_variant_of](https://w3id.org/biolink/vocab/is_missense_variant_of)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [is sequence variant of](is_sequence_variant_of.md)
 
 ## Children
 
@@ -30,8 +30,8 @@ URI: [biolink:is_missense_variant_of](https://w3id.org/biolink/vocab/is_missense
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SO:0001583 |
+| **Exact Mappings:** | | SO:0001583 |
 |  | | SNPEFF:missense_variant |
-|  | | SNPEFF:initiator_codon_variant |
+| **Narrow Mappings:** | | SNPEFF:initiator_codon_variant |
 |  | | SNPEFF:structural_interaction_variant |
 

@@ -14,11 +14,11 @@ URI: [biolink:is_splice_site_variant_of](https://w3id.org/biolink/vocab/is_splic
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [is sequence variant of](is_sequence_variant_of.md)
 
 ## Children
 
@@ -30,8 +30,8 @@ URI: [biolink:is_splice_site_variant_of](https://w3id.org/biolink/vocab/is_splic
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SO:0001629 |
-|  | | SNPEFF:splice_region_variant |
+| **Exact Mappings:** | | SO:0001629 |
+| **Narrow Mappings:** | | SNPEFF:splice_region_variant |
 |  | | SNPEFF:splice_acceptor_variant |
 |  | | SNPEFF:splice_donor_variant |
 

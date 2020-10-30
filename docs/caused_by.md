@@ -33,6 +33,16 @@ URI: [biolink:caused_by](https://w3id.org/biolink/vocab/caused_by)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA_PROPERTY:P828 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | WIKIDATA_PROPERTY:P828 |
+| **Narrow Mappings:** | | RO:0001022 |
+|  | | RO:0002608 |
+|  | | RO:0004019 |
+|  | | RO:0004020 |
+|  | | RO:0004028 |
+|  | | RO:0009501 |
+|  | | RTXKG1:disease_caused_by_disruption_of |
+|  | | RTXKG1:disease_has_basis_in_dysfunction_of |
+|  | | RTXKG1:realized_in_response_to |
+|  | | RTXKG1:realized_in_response_to_stimulus |
 

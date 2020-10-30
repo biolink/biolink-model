@@ -30,5 +30,5 @@ URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002558 |
+| **Exact Mappings:** | | RO:0002558 |
 

@@ -33,7 +33,10 @@ URI: [biolink:has_gene_product](https://w3id.org/biolink/vocab/has_gene_product)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002205 |
-|  | | WIKIDATA_PROPERTY:P688 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002205 |
+|  | | WIKIDATA_PROPERTY:P688 |
+|  | | NCIT:gene_encodes_gene_product |
+| **Close Mappings:** | | PR:has_gene_template |
+| **Narrow Mappings:** | | NCIT:gene_mutant_encodes_gene_product_sequence_variation |
 

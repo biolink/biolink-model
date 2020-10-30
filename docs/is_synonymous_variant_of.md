@@ -14,11 +14,11 @@ URI: [biolink:is_synonymous_variant_of](https://w3id.org/biolink/vocab/is_synony
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [is sequence variant of](is_sequence_variant_of.md)
 
 ## Children
 
@@ -30,8 +30,8 @@ URI: [biolink:is_synonymous_variant_of](https://w3id.org/biolink/vocab/is_synony
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SO:0001819 |
+| **Exact Mappings:** | | SO:0001819 |
 |  | | SNPEFF:synonymous_variant |
-|  | | SNPEFF:start_retained |
+| **Narrow Mappings:** | | SNPEFF:start_retained |
 |  | | SNPEFF:stop_retained_variant |
 

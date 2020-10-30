@@ -33,6 +33,6 @@ URI: [biolink:decreases_stability_of](https://w3id.org/biolink/vocab/decreases_s
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:decreases_stability_of |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_stability_of |
 

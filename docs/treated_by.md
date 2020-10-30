@@ -33,7 +33,8 @@ URI: [biolink:treated_by](https://w3id.org/biolink/vocab/treated_by)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002302 |
-|  | | WIKIDATA_PROPERTY:P2176 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | WIKIDATA_PROPERTY:P2176 |
+|  | | MONDO:disease_responds_to |
+| **Narrow Mappings:** | | RO:0002302 |
 

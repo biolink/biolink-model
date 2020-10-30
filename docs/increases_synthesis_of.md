@@ -33,6 +33,6 @@ URI: [biolink:increases_synthesis_of](https://w3id.org/biolink/vocab/increases_s
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:increases_synthesis_of |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_synthesis_of |
 

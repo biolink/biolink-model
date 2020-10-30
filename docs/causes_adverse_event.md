@@ -14,7 +14,7 @@ URI: [biolink:causes_adverse_event](https://w3id.org/biolink/vocab/causes_advers
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[Drug](Drug.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ## Parents
 
@@ -30,5 +30,5 @@ URI: [biolink:causes_adverse_event](https://w3id.org/biolink/vocab/causes_advers
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | Aeolus:0000001 |
+| **Exact Mappings:** | | Aeolus:0000001 |
 

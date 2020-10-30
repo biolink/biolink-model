@@ -34,6 +34,15 @@ URI: [biolink:actively_involved_in](https://w3id.org/biolink/vocab/actively_invo
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002331 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002331 |
+|  | | GO:is_active_in |
+| **Close Mappings:** | | NCIT:biological_process_involves_chemical_or_drug |
+| **Narrow Mappings:** | | NCIT:gene_involved_in_molecular_abnormality |
+|  | | OBO:nbo#by_means |
+|  | | ORPHA:317348 |
+|  | | ORPHA:317349 |
+|  | | ORPHA:327767 |
+|  | | PATO:towards |
+| **Broad Mappings:** | | RTXKG1:involved_in |
 

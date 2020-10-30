@@ -33,6 +33,10 @@ URI: [biolink:capable_of](https://w3id.org/biolink/vocab/capable_of)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002215 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002215 |
+|  | | RTXKG1:capable_of |
+| **Narrow Mappings:** | | GO:has_occurrence |
+|  | | NCIT:gene_product_has_biochemical_function |
+|  | | RO:0002500 |
 

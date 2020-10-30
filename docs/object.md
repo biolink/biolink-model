@@ -119,6 +119,6 @@ URI: [biolink:object](https://w3id.org/biolink/vocab/object)
 | **Local names:** | | descriptor (ga4gh) |
 |  | | node with incoming relationship (neo4j) |
 | **Mappings:** | | rdf:object |
-|  | | owl:annotatedTarget |
+| **Exact Mappings:** | | owl:annotatedTarget |
 |  | | OBAN:association_has_object |
 

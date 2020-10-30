@@ -33,6 +33,11 @@ URI: [biolink:disrupts](https://w3id.org/biolink/vocab/disrupts)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SEMMEDDB:DISRUPTS |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | SEMMEDDB:DISRUPTS |
+|  | | SEMMEDDB:disrupts |
+|  | | CHEMBL.MECHANISM:disrupting_agent |
+| **Narrow Mappings:** | | RO:0004024 |
+|  | | RO:0004025 |
+|  | | RTXKG1:disease_causes_disruption_of |
 

@@ -30,6 +30,8 @@ URI: [biolink:lacks_part](https://w3id.org/biolink/vocab/lacks_part)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CL:lacks_part |
-|  | | CL:lacks_plasma_membrane_part |
+| **Exact Mappings:** | | CL:lacks_part |
+|  | | PR:lacks_part |
+|  | | RTXKG1:lacks_part |
+| **Narrow Mappings:** | | CL:lacks_plasma_membrane_part |
 

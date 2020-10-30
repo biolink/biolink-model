@@ -33,8 +33,9 @@ URI: [biolink:decreases_activity_of](https://w3id.org/biolink/vocab/decreases_ac
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:decreases_activity_of |
-|  | | GAMMA:allosteric_antagonist |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_activity_of |
+| **Narrow Mappings:** | | GAMMA:allosteric_antagonist |
 |  | | GAMMA:partial_antagonist |
 |  | | GAMMA:antagonist |
 |  | | GAMMA:weak_inhibitor |
@@ -48,10 +49,21 @@ URI: [biolink:decreases_activity_of](https://w3id.org/biolink/vocab/decreases_ac
 |  | | GAMMA:negative_modulator |
 |  | | GAMMA:negative_allosteric_modulator |
 |  | | GAMMA:inhibitory_allosteric_modulator |
-|  | | GAMMA:ic50 |
-|  | | GAMMA:ki |
 |  | | GAMMA:aggregation_inhibitor |
 |  | | GAMMA:conversion_inhibitor |
 |  | | GAMMA:suppressor |
-| **In Subsets:** | | translator_minimal |
+|  | | CHEMBL.MECHANISM:antagonist |
+|  | | CHEMBL.MECHANISM:allosteric_antagonist |
+|  | | CHEMBL.MECHANISM:inverse_agonist |
+|  | | DGIdb:antagonist |
+|  | | DGIdb:blocker |
+|  | | DGIdb:channel_blocker |
+|  | | DGIdb:gating_inhibitor |
+|  | | DGIdb:inhibitor |
+|  | | DGIdb:negative_modulator |
+|  | | DGIdb:inhibitory_allosteric_modulator |
+|  | | DGIdb:inverse_agonist |
+| **Related Mappings:** | | GAMMA:ic50 |
+|  | | GAMMA:ki |
+|  | | DGIdb:vaccine |
 

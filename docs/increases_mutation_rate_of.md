@@ -33,7 +33,7 @@ URI: [biolink:increases_mutation_rate_of](https://w3id.org/biolink/vocab/increas
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:increases_mutation_rate_of |
-|  | | CTD:increases_mutagenesis |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_mutation_rate_of |
+| **Broad Mappings:** | | CTD:increases_mutagenesis |
 

@@ -14,11 +14,11 @@ URI: [biolink:is_nonsense_variant_of](https://w3id.org/biolink/vocab/is_nonsense
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [is sequence variant of](is_sequence_variant_of.md)
 
 ## Children
 
@@ -30,9 +30,6 @@ URI: [biolink:is_nonsense_variant_of](https://w3id.org/biolink/vocab/is_nonsense
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SO:0002054 |
-|  | | SNPEFF:stop_gained |
-|  | | SNPEFF:start_lost |
-|  | | SNPEFF:stop_lost |
-|  | | SNPEFF:frameshift_variant |
+| **Exact Mappings:** | | SNPEFF:stop_gained |
+| **Broad Mappings:** | | SO:0002054 |
 

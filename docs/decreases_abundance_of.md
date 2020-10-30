@@ -33,7 +33,7 @@ URI: [biolink:decreases_abundance_of](https://w3id.org/biolink/vocab/decreases_a
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:decreases_abundance_of |
-|  | | UBERGRAPH:is_decrease_of |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_abundance_of |
+| **Related Mappings:** | | UBERGRAPH:is_decrease_of |
 

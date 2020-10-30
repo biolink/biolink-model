@@ -30,5 +30,5 @@ URI: [biolink:in_linkage_disequilibrium_with](https://w3id.org/biolink/vocab/in_
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | NCIT:C16798 |
+| **Exact Mappings:** | | NCIT:C16798 |
 

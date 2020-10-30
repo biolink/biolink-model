@@ -33,7 +33,7 @@ URI: [biolink:expresses](https://w3id.org/biolink/vocab/expresses)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002292 |
-|  | | hetio:EXPRESSES_AeG |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002292 |
+|  | | hetio:EXPRESSES_AeG |
 

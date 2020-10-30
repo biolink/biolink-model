@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest
+holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
 
 URI: [biolink:affects_degradation_of](https://w3id.org/biolink/vocab/affects_degradation_of)
 
@@ -35,8 +35,8 @@ URI: [biolink:affects_degradation_of](https://w3id.org/biolink/vocab/affects_deg
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:affects_degradation_of |
-|  | | CTD:affects_cleavage |
-|  | | CTD:affects_hydrolysis |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_degradation_of |
+| **Narrow Mappings:** | | CTD:affects_cleavage |
+|  | | CTD:affects_hydrolysis |
 

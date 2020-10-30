@@ -33,6 +33,9 @@ URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002206 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002206 |
+| **Narrow Mappings:** | | NCIT:gene_product_expressed_in_tissue |
+|  | | NCIT:gene_product_has_associated_anatomy |
+|  | | RTXKG1:expressed_in |
 

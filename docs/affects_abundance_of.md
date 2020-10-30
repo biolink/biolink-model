@@ -35,6 +35,6 @@ URI: [biolink:affects_abundance_of](https://w3id.org/biolink/vocab/affects_abund
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:affects_abundance_of |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_abundance_of |
 

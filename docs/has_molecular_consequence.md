@@ -25,3 +25,10 @@ URI: [biolink:has_molecular_consequence](https://w3id.org/biolink/vocab/has_mole
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Narrow Mappings:** | | NCIT:allele_has_activity |
+

@@ -30,6 +30,14 @@ URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_re
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002213 |
 | **Comments:** | | This is a grouping for process-process and entity-entity relations |
+| **Exact Mappings:** | | RO:0002213 |
+|  | | GO:positively_regulates |
+| **Close Mappings:** | | GO:positively_regulated_by |
+| **Narrow Mappings:** | | CHEMBL.MECHANISM:activator |
+|  | | DGIdb:activator |
+|  | | GO:acts_upstream_of_or_within_positive_effect |
+|  | | GO:acts_upstream_of_positive_effect |
+|  | | RO:0002629 |
+|  | | SEMMEDDB:augments |
 

@@ -47,8 +47,8 @@ URI: [biolink:description](https://w3id.org/biolink/vocab/description)
 | --- | --- | --- |
 | **Aliases:** | | definition |
 | **Mappings:** | | dcterms:description |
-|  | | IAO:0000115 |
-|  | | skos:definitions |
-|  | | gff3:Description |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | IAO:0000115 |
+|  | | skos:definitions |
+| **Narrow Mappings:** | | gff3:Description |
 

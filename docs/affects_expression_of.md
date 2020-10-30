@@ -35,6 +35,6 @@ URI: [biolink:affects_expression_of](https://w3id.org/biolink/vocab/affects_expr
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:affects_expression_of |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_expression_of |
 

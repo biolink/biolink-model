@@ -35,7 +35,7 @@ URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splici
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:affects_splicing_of |
-|  | | CTD:affects_RNA_splicing |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_RNA_splicing |
+| **Broad Mappings:** | | CTD:affects_splicing_of |
 

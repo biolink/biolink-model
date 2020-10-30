@@ -33,7 +33,12 @@ URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | owl:equivalentClass |
-|  | | owl:sameAs |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | owl:sameAs |
+|  | | skos:exactMatch |
+|  | | WIKIDATA_PROPERTY:P2888 |
+|  | | CHEMBL.MECHANISM:equivalent_to |
+|  | | MONDO:equivalentTo |
+| **Close Mappings:** | | owl:equivalentClass |
+| **Narrow Mappings:** | | DRUGBANK:external-identifier |
 

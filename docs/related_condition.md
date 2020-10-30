@@ -30,5 +30,5 @@ URI: [biolink:related_condition](https://w3id.org/biolink/vocab/related_conditio
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | GENO:0000790 |
+| **Exact Mappings:** | | GENO:0000790 |
 

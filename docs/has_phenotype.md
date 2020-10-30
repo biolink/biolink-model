@@ -33,7 +33,15 @@ URI: [biolink:has_phenotype](https://w3id.org/biolink/vocab/has_phenotype)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002200 |
-|  | | hetio:PRESENTS_DpS |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002200 |
+|  | | RTXKG1:has_phenotype |
+|  | | SNOMED:characterized_by |
+| **Close Mappings:** | | OMIM:phenotype_of |
+| **Narrow Mappings:** | | NCIT:disease_may_have_molecular_abnormality |
+|  | | OBO:doid#has_symptom |
+|  | | RO:0004022 |
+| **Broad Mappings:** | | hetio:PRESENTS_DpS |
+|  | | NCIT:disease_may_have_finding |
+|  | | OMIM:has_phenotype |
 

@@ -33,10 +33,14 @@ URI: [biolink:increases_degradation_of](https://w3id.org/biolink/vocab/increases
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:increases_degradation_of |
-|  | | CTD:increases_cleavage |
-|  | | CTD:increases_hydrolysis |
-|  | | GAMMA:substrate |
-|  | | GOREL:0002004 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_degradation_of |
+| **Close Mappings:** | | CHEMBL.MECHANISM:degrader |
+|  | | CHEMBL.MECHANISM:proteolytic_enzyme |
+|  | | CHEMBL.MECHANISM:hydrolytic_enzyme |
+| **Narrow Mappings:** | | CTD:increases_cleavage |
+|  | | CTD:increases_hydrolysis |
+|  | | GOREL:0002004 |
+| **Related Mappings:** | | GAMMA:substrate |
+|  | | CHEMBL.MECHANISM:substrate |
 

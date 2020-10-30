@@ -36,10 +36,11 @@ URI: [biolink:positively_regulates_entity_to_entity](https://w3id.org/biolink/vo
 | **Aliases:** | | activity directly positively regulates activity of |
 | **Local names:** | | positively regulates (translator) |
 |  | | activity directly positively regulates activity of (ro) |
-| **Mappings:** | | RO:0002450 |
-|  | | SEMMEDDB:STIMULATES |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002450 |
+| **Narrow Mappings:** | | SEMMEDDB:STIMULATES |
+|  | | SEMMEDDB:stimulates |
 |  | | hetio:UPREGULATES_AuG |
 |  | | hetio:UPREGULATES_DuG |
-|  | | RO:0004034 |
-| **In Subsets:** | | translator_minimal |
+| **Broad Mappings:** | | RO:0004034 |
 

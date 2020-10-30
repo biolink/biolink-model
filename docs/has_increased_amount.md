@@ -30,5 +30,5 @@ URI: [biolink:has_increased_amount](https://w3id.org/biolink/vocab/has_increased
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CL:has_high_plasma_membrane_amount |
+| **Narrow Mappings:** | | CL:has_high_plasma_membrane_amount |
 

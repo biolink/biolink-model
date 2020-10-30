@@ -34,12 +34,34 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | is substance that treats |
-| **Mappings:** | | RO:0002606 |
-|  | | RO:0003307 |
-|  | | SEMMEDDB:TREATS |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | SEMMEDDB:TREATS |
+|  | | SEMMEDDB:treats |
 |  | | WIKIDATA_PROPERTY:P2175 |
 |  | | CTD:therapeutic |
-|  | | CTD:negativecorrelation |
-|  | | MONDO:disease_responds_to |
-| **In Subsets:** | | translator_minimal |
+| **Narrow Mappings:** | | RO:0002606 |
+|  | | NCIT:regimen_has_accepted_use_for_disease |
+|  | | REPODB:clinically_tested_approved_unknown_phase |
+|  | | REPODB:clinically_tested_suspended_phase_0 |
+|  | | REPODB:clinically_tested_suspended_phase_1 |
+|  | | REPODB:clinically_tested_suspended_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_suspended_phase_2 |
+|  | | REPODB:clinically_tested_suspended_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_suspended_phase_3 |
+|  | | REPODB:clinically_tested_terminated_phase_0 |
+|  | | REPODB:clinically_tested_terminated_phase_1 |
+|  | | REPODB:clinically_tested_terminated_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_terminated_phase_2 |
+|  | | REPODB:clinically_tested_terminated_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_terminated_phase_3 |
+|  | | REPODB:clinically_tested_withdrawn_phase_0 |
+|  | | REPODB:clinically_tested_withdrawn_phase_1 |
+|  | | REPODB:clinically_tested_withdrawn_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_withdrawn_phase_2 |
+|  | | REPODB:clinically_tested_withdrawn_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_withdrawn_phase_3 |
+|  | | RTXKG1:indicated_for |
+|  | | SNOMED:plays_role |
+| **Broad Mappings:** | | RO:0003307 |
+| **Related Mappings:** | | MONDO:disease_responds_to |
 

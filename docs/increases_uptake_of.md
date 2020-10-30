@@ -33,7 +33,7 @@ URI: [biolink:increases_uptake_of](https://w3id.org/biolink/vocab/increases_upta
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:increases_uptake_of |
-|  | | CTD:increases_import |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_uptake_of |
+| **Broad Mappings:** | | CTD:increases_import |
 

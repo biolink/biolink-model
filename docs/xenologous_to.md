@@ -33,6 +33,6 @@ URI: [biolink:xenologous_to](https://w3id.org/biolink/vocab/xenologous_to)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:HOM0000018 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:HOM0000018 |
 

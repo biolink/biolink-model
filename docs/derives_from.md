@@ -36,7 +36,12 @@ URI: [biolink:derives_from](https://w3id.org/biolink/vocab/derives_from)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0001000 |
 | **In Subsets:** | | translator_minimal |
 |  | | samples |
+| **Exact Mappings:** | | RO:0001000 |
+|  | | FMA:derives_from |
+|  | | OBO:doid#derives_from |
+|  | | RO:derives_from |
+| **Narrow Mappings:** | | CHEBI:has_functional_parent |
+|  | | SNOMED:has_specimen_source_topography |
 

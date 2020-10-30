@@ -35,9 +35,11 @@ URI: [biolink:affects_activity_of](https://w3id.org/biolink/vocab/affects_activi
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:affects_activity_of |
-|  | | GAMMA:allosteric_modulator |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_activity_of |
+| **Narrow Mappings:** | | GAMMA:allosteric_modulator |
 |  | | GAMMA:modulator |
 |  | | GAMMA:regulator |
-| **In Subsets:** | | translator_minimal |
+|  | | DGIdb:modulator |
+|  | | DGIdb:allosteric_modulator |
 

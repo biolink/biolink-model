@@ -35,6 +35,9 @@ URI: [biolink:affects_transport_of](https://w3id.org/biolink/vocab/affects_trans
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:affects_transport_of |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_transport_of |
+| **Narrow Mappings:** | | RO:0002313 |
+|  | | RO:0002340 |
+|  | | RO:0002345 |
 

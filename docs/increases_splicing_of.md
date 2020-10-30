@@ -33,7 +33,7 @@ URI: [biolink:increases_splicing_of](https://w3id.org/biolink/vocab/increases_sp
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:increases_splicing_of |
-|  | | CTD:increases_RNA_splicing |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_RNA_splicing |
+| **Broad Mappings:** | | CTD:increases_splicing_of |
 

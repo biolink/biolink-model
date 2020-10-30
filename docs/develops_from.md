@@ -30,5 +30,13 @@ URI: [biolink:develops_from](https://w3id.org/biolink/vocab/develops_from)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002202 |
+| **Exact Mappings:** | | BTO:develops_from |
+|  | | DDANAT:develops_from |
+|  | | FMA:develops_from |
+|  | | RO:0002202 |
+| **Close Mappings:** | | RO:0002203 |
+|  | | FMA:develops_into |
+| **Narrow Mappings:** | | RO:0002207 |
+|  | | RO:0002225 |
+|  | | RO:0002226 |
 

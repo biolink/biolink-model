@@ -33,6 +33,7 @@ URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:00002325 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:00002325 |
+|  | | GO:colocalizes_with |
 

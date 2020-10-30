@@ -35,7 +35,7 @@ URI: [biolink:affects_mutation_rate_of](https://w3id.org/biolink/vocab/affects_m
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:affects_mutation_rate_of |
-|  | | CTD:affects_mutagenesis |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_mutation_rate_of |
+| **Broad Mappings:** | | CTD:affects_mutagenesis |
 

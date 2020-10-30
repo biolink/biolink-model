@@ -126,6 +126,6 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
 | **Local names:** | | annotation subject (ga4gh) |
 |  | | node with outgoing relationship (neo4j) |
 | **Mappings:** | | rdf:subject |
-|  | | owl:annotatedSource |
+| **Exact Mappings:** | | owl:annotatedSource |
 |  | | OBAN:association_has_subject |
 

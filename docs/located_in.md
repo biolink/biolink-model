@@ -33,8 +33,10 @@ URI: [biolink:located_in](https://w3id.org/biolink/vocab/located_in)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0001025 |
-|  | | GOREL:0001004 |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0001025 |
+|  | | FMA:has_location |
+| **Narrow Mappings:** | | GOREL:0001004 |
 |  | | BSPO:0000107 |
 |  | | BSPO:0000108 |
 |  | | BSPO:0000120 |
@@ -55,5 +57,26 @@ URI: [biolink:located_in](https://w3id.org/biolink/vocab/located_in)
 |  | | UBERON_CORE:in_outermost_side_of |
 |  | | NCIT:R100 |
 |  | | EFO:0000784 |
-| **In Subsets:** | | translator_minimal |
+|  | | FMA:has_location |
+|  | | HMDB:at_cellular_location |
+|  | | HMDB:at_tissue |
+|  | | HMDB:in_biospecimen |
+|  | | LOINC:has_imaging_focus |
+|  | | NCIT:allele_absent_from_wild-type_chromosomal_location |
+|  | | NCIT:allele_in_chromosomal_location |
+|  | | NCIT:gene_has_physical_location |
+|  | | NCIT:gene_in_chromosomal_location |
+|  | | NCIT:is_location_of_anatomic_structure |
+|  | | NCIT:procedure_has_completely_excised_anatomy |
+|  | | NCIT:procedure_has_excised_anatomy |
+|  | | NCIT:procedure_has_imaged_anatomy |
+|  | | NCIT:procedure_has_partially_excised_anatomy |
+|  | | NCIT:procedure_may_have_completely_excised_anatomy |
+|  | | NCIT:procedure_may_have_excised_anatomy |
+|  | | NCIT:procedure_may_have_partially_excised_anatomy |
+|  | | RO:0002303 |
+|  | | RTXKG1:disease_has_location |
+|  | | SNOMED:has_finding_site |
+|  | | SNOMED:has_indirect_procedure_site |
+|  | | SNOMED:has_inherent_location |
 

@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two entities that are similar to each other
+holds between two entities that are considered a skos:closeMatch to one another
 
 URI: [biolink:close_match](https://w3id.org/biolink/vocab/close_match)
 
@@ -34,6 +34,15 @@ URI: [biolink:close_match](https://w3id.org/biolink/vocab/close_match)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | skos:closeMatch |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | skos:closeMatch |
+|  | | SEMMEDDB:SAME_AS |
+|  | | SEMMEDDB:same_as |
+| **Narrow Mappings:** | | CHEBI:is_enantiomer_of |
+|  | | CHEBI:is_tautomer_of |
+|  | | MEDDRA:classified_as |
+|  | | OBO:xref |
+|  | | oboFormat:xref |
+|  | | RXNORM:has_quantified_form |
+|  | | UMLS:SY |
 

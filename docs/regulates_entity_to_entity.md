@@ -38,6 +38,7 @@ URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulat
 | **Aliases:** | | activity directly regulates activity of |
 | **Local names:** | | regulates (translator) |
 |  | | activity directly regulates activity of (ro) |
-| **Mappings:** | | RO:0002448 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002448 |
+| **Narrow Mappings:** | | WIKIDATA_PROPERTY:P128 |
 

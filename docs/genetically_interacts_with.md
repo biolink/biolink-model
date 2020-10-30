@@ -33,6 +33,6 @@ URI: [biolink:genetically_interacts_with](https://w3id.org/biolink/vocab/genetic
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002435 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002435 |
 

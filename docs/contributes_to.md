@@ -34,8 +34,12 @@ URI: [biolink:contributes_to](https://w3id.org/biolink/vocab/contributes_to)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002326 |
-|  | | CTD:marker_mechanism |
-|  | | CTD:positivecorrelation |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002326 |
+|  | | GO:contributes_to |
+| **Close Mappings:** | | IDO:0000664 |
+| **Narrow Mappings:** | | CTD:marker_mechanism |
+|  | | MONDO:predisposes_towards |
+|  | | RO:0002255 |
+|  | | RO:0003304 |
 

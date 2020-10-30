@@ -30,6 +30,6 @@ URI: [biolink:disease_has_basis_in](https://w3id.org/biolink/vocab/disease_has_b
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | MONDO:disease_has_basis_in_development_of |
+| **Narrow Mappings:** | | MONDO:disease_has_basis_in_development_of |
 |  | | MONDO:disease_has_basis_in_accumulation_of |
 

@@ -33,7 +33,8 @@ URI: [biolink:prevents](https://w3id.org/biolink/vocab/prevents)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002599 |
-|  | | SEMMEDDB:PREVENTS |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | SEMMEDDB:PREVENTS |
+|  | | SEMMEDDB:prevents |
+| **Narrow Mappings:** | | RO:0002599 |
 

@@ -35,8 +35,9 @@ URI: [biolink:affects_molecular_modification_of](https://w3id.org/biolink/vocab/
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:affects_molecular_modification_of |
-|  | | CTD:affects_acetylation |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_molecular_modification_of |
+| **Narrow Mappings:** | | CTD:affects_acetylation |
 |  | | CTD:affects_acylation |
 |  | | CTD:affects_alkylation |
 |  | | CTD:affects_amination |
@@ -67,5 +68,4 @@ URI: [biolink:affects_molecular_modification_of](https://w3id.org/biolink/vocab/
 |  | | CTD:affects_oxidation |
 |  | | CTD:affects_reduction |
 |  | | CTD:affects_carboxylation |
-| **In Subsets:** | | translator_minimal |
 

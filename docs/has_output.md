@@ -39,6 +39,18 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002234 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002234 |
+| **Close Mappings:** | | RO:0002353 |
+|  | | RO:0002354 |
+|  | | RTXKG1:output_of |
+| **Narrow Mappings:** | | NCIT:biological_process_has_result_anatomy |
+|  | | OBI:0000299 |
+|  | | PathWhiz:has_right_element |
+|  | | RO:0002296 |
+|  | | RO:0002297 |
+|  | | RO:0002298 |
+|  | | RO:0002299 |
+|  | | RO:0002588 |
+|  | | RO:0004008 |
 

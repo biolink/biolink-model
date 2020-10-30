@@ -36,9 +36,10 @@ URI: [biolink:negatively_regulates_entity_to_entity](https://w3id.org/biolink/vo
 | **Aliases:** | | activity directly negatively regulates activity of |
 | **Local names:** | | negatively regulates (translator) |
 |  | | activity directly negatively regulates activity of (ro) |
-| **Mappings:** | | RO:0002449 |
-|  | | SEMMEDDB:INHIBITS |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002449 |
+| **Narrow Mappings:** | | SEMMEDDB:INHIBITS |
+|  | | SEMMEDDB:inhibits |
 |  | | hetio:DOWNREGULATES_AdG |
 |  | | hetio:DOWNREGULATES_DdG |
-| **In Subsets:** | | translator_minimal |
 

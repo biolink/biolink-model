@@ -27,6 +27,8 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 
  *  [biomarker for](biomarker_for.md)
  *  [has biomarker](has_biomarker.md)
+ *  [negatively correlated with](negatively_correlated_with.md)
+ *  [positively correlated with](positively_correlated_with.md)
 
 ## Used by
 
@@ -35,6 +37,16 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002610 |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002610 |
+|  | | PATO:correlates_with |
+| **Narrow Mappings:** | | LOINC:associated_with |
+|  | | NCIT:is_associated_disease_of |
+|  | | NCIT:is_cytogenetic_abnormality_of_disease |
+|  | | ORPHA:317345 |
+|  | | PDQ:associated_disease |
+|  | | RO:0004029 |
+|  | | RTXKG1:associated_with_disease |
+|  | | SNOMED:associated_with |
+|  | | SNOMED:has_associated_finding |
 

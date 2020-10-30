@@ -5,16 +5,16 @@ grand_parent: Slots
 layout: default
 ---
 
-# Slot: edge_label
+# Slot: edge_label _(deprecated)_
 
 
-A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+
 
 URI: [biolink:edge_label](https://w3id.org/biolink/vocab/edge_label)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>REQ</sub> [EdgeLabelType](types/EdgeLabelType.md)
+[Association](Association.md) ->  <sub>REQ</sub> [PredicateType](types/PredicateType.md)
 
 ## Parents
 
@@ -33,6 +33,4 @@ URI: [biolink:edge_label](https://w3id.org/biolink/vocab/edge_label)
 | **Local names:** | | annotation predicate (ga4gh) |
 |  | | predicate (translator) |
 | **Mappings:** | | rdf:predicate |
-|  | | owl:annotatedProperty |
-|  | | OBAN:association_has_predicate |
 

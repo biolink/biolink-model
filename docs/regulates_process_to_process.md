@@ -32,5 +32,5 @@ URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regul
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | RO:0002211 |
+| **Exact Mappings:** | | RO:0002211 |
 

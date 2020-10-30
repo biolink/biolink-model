@@ -44,4 +44,6 @@ URI: [biolink:has_attribute_type](https://w3id.org/biolink/vocab/has_attribute_t
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | samples |
+| **Narrow Mappings:** | | LOINC:has_modality_type |
+|  | | LOINC:has_view_type |
 

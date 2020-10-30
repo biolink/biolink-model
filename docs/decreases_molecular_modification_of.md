@@ -33,8 +33,9 @@ URI: [biolink:decreases_molecular_modification_of](https://w3id.org/biolink/voca
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CTD:decreases_molecular_modification_of |
-|  | | CTD:decreases_acetylation |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_molecular_modification_of |
+| **Narrow Mappings:** | | CTD:decreases_acetylation |
 |  | | CTD:decreases_acylation |
 |  | | CTD:decreases_alkylation |
 |  | | CTD:decreases_amination |
@@ -66,5 +67,4 @@ URI: [biolink:decreases_molecular_modification_of](https://w3id.org/biolink/voca
 |  | | CTD:decreases_reduction |
 |  | | CTD:decreases_carboxylation |
 |  | | GAMMA:deoxidizer |
-| **In Subsets:** | | translator_minimal |
 

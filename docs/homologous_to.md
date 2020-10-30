@@ -37,9 +37,9 @@ URI: [biolink:homologous_to](https://w3id.org/biolink/vocab/homologous_to)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | in homology relationship with |
-| **Mappings:** | | RO:HOM0000001 |
-|  | | SIO:010302 |
-|  | | UBERON_CORE:sexually_homologous_to |
 | **Comments:** | | typically used to describe homology relationships between genes or gene products |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:HOM0000001 |
+|  | | SIO:010302 |
+| **Narrow Mappings:** | | UBERON_CORE:sexually_homologous_to |
 
