@@ -60,6 +60,7 @@ prefixes:
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  RO: 'http://purl.obolibrary.org/obo/RO_'
 
 default_prefix: biolink
 default_range: string
@@ -126,14 +127,6 @@ types:
 
   predicate type:
     typeof: uriorcurie
-    description: >-
-      A CURIE from the biolink related_to hierarchy.
-      For example, biolink:related_to, biolink:causes, biolink:treats.
-
-  edge label type:
-    typeof: uriorcurie
-    deprecated: Deprecated in favor of 'predicate type'
-    deprecated_element_has_exact_replacement: predicate type
     description: >-
       A CURIE from the biolink related_to hierarchy.
       For example, biolink:related_to, biolink:causes, biolink:treats.
@@ -316,7 +309,7 @@ slots:
     description: >-
       holds between two classes where the domain class is a super class of the range class
     domain: ontology class
-    range: iri type
+    range: ontology class
     multivalued: True
     inverse: subclass of
     in_subset:
@@ -1999,6 +1992,7 @@ slots:
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
     domain: disease or phenotypic feature
+    range: treatment
     in_subset:
       - translator_minimal
     inverse: treats
@@ -3391,7 +3385,7 @@ slots:
     deprecated_element_has_exact_replacement: predicate
     is_a: association slot
     domain: association
-    range: edge label type
+    range: predicate type
     required: true
     local_names:
       ga4gh: annotation predicate
