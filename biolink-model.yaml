@@ -4299,7 +4299,7 @@ classes:
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
     is_a: disease or phenotypic feature
-    mappings:
+    narrow_mappings:
       - MONDO:0000001
       - DOID:4
       - WIKIDATA:Q12136
@@ -4341,7 +4341,7 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
-      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbrevation for ORPHANET? not used in model
+      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbreviation for ORPHANET? not used in model
       - EFO
       - UMLS
       - MESH
@@ -4433,8 +4433,17 @@ classes:
       - UMLSSC:T185
       - UMLSST:clas
 
-  measurement:
-    is_a: information content entity
+  clinical measurement:
+    is_a: attribute
+    description: >-
+      A clinical measurement is a special kind of attribute which results from a laboratory observation from
+      a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
+    slot_usage:
+      has attribute type:
+        required: true
+        multivalued: false
+        values_from:
+          - EFO
     exact_mappings:
       - EFO:0001444
 
@@ -4630,13 +4639,6 @@ classes:
       - The CHEBI ID represents a role rather than a substance
     mappings:
       - CHEBI:25212
-#
-#    attribute:
-#    subclass_of: PATO:0000001
-#      mixins:
-#        - ontology class
-#      description: >-
-#        A property or characteristic of an entity
 
   anatomical entity:
     is_a: organismal entity
