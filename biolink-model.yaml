@@ -4285,7 +4285,8 @@ classes:
     aliases: ['phenome']
     is_a: biological entity
     description: >-
-      Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+      Either one of a disease or an individual phenotypic feature. Some knowledge resources
+      such as Monarch treat these as distinct, others such as MESH conflate.
     mixins:
       - thing with taxon
     union_of:
@@ -4358,6 +4359,9 @@ classes:
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
+    description: >-
+      this category is considered broad enough to tag lab measurements and other attributes
+      taken as 'traits' with some statistical score, for example, in genetic associations.
     subclass_of: UPHENO:0001001
     mappings:
       - UPHENO:0001001
@@ -4379,6 +4383,7 @@ classes:
       - WBPhenotype
       - SNOMEDCT
       - MESH
+      - LOINC
 
   exposure event:
     aliases: ['exposure', 'experimental condition']
