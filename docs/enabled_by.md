@@ -31,7 +31,6 @@ URI: [biolink:enabled_by](https://w3id.org/biolink/vocab/enabled_by)
 
  * [BiologicalProcess](BiologicalProcess.md)
  * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
- * [MolecularActivity](MolecularActivity.md)
  * [Pathway](Pathway.md)
  * [PhysiologicalProcess](PhysiologicalProcess.md)
 

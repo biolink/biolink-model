@@ -31,7 +31,6 @@ URI: [biolink:description](https://w3id.org/biolink/vocab/description)
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
- * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  * [Gene](Gene.md)
  * [GeneProduct](GeneProduct.md)
  * [GeneProductIsoform](GeneProductIsoform.md)

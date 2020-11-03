@@ -26,4 +26,3 @@ URI: [biolink:change_is_catalyzed_by](https://w3id.org/biolink/vocab/change_is_c
 
 ## Used by
 
- * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)

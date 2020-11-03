@@ -26,7 +26,6 @@ URI: [biolink:quantifier_qualifier](https://w3id.org/biolink/vocab/quantifier_qu
 
 ## Used by
 
- * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
 
 ## Other properties
 

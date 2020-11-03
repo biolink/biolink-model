@@ -30,7 +30,6 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
 
 ## Used by
 
- * [Treatment](Treatment.md)
 
 ## Other properties
 

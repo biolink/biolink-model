@@ -26,4 +26,3 @@ URI: [biolink:has_drug](https://w3id.org/biolink/vocab/has_drug)
 
 ## Used by
 
- * [DrugExposure](DrugExposure.md)

@@ -26,4 +26,3 @@ URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
 
 ## Used by
 
- * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

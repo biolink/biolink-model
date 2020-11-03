@@ -25,7 +25,6 @@ None ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)
 
 ## Used by
 
- * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
 
 ## Other properties
 

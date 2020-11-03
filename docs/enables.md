@@ -21,7 +21,7 @@ URI: [biolink:enables](https://w3id.org/biolink/vocab/enables)
 
 ## Parents
 
- *  is_a: [has participant](has_participant.md)
+ *  is_a: [participates in](participates_in.md)
 
 ## Children
 

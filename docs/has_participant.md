@@ -26,7 +26,6 @@ URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 ## Children
 
  *  [enabled by](enabled_by.md)
- *  [enables](enables.md)
  *  [has input](has_input.md)
  *  [has output](has_output.md)
 

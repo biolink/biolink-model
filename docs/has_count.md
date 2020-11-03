@@ -27,7 +27,6 @@ URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
 ## Used by
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
 
 ## Other properties
 

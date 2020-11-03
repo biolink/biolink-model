@@ -385,7 +385,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
     * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
        * [molecular activity➞enabled by](molecular_activity_enabled_by.md) - The gene product, gene, or complex that catalyzes the reaction
-    * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
     * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
        * [molecular activity➞has input](molecular_activity_has_input.md) - A chemical entity that is the input for the reaction
     * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
@@ -468,6 +467,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
     * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
        * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
+    * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
  * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
     * [molecularly interacts with](molecularly_interacts_with.md)
        * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other molecular entity
@@ -599,7 +599,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
        * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
           * [molecular activity➞enabled by](molecular_activity_enabled_by.md) - The gene product, gene, or complex that catalyzes the reaction
-       * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
        * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
           * [molecular activity➞has input](molecular_activity_has_input.md) - A chemical entity that is the input for the reaction
        * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
@@ -636,6 +635,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
        * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
           * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
+       * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
     * [produced by](produced_by.md)
     * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
     * [related condition](related_condition.md)
