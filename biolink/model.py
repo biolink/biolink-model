@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-11-03 18:09
+# Generation date: 2020-11-03 22:48
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -145,7 +145,7 @@ WORMBASE = CurieNamespace('WormBase', 'https://www.wormbase.org/get?name=')
 XCO = CurieNamespace('XCO', 'http://purl.obolibrary.org/obo/XCO_')
 ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
 ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
-ALLIANCEGENOME = CurieNamespace('alliancegenome', 'http://example.org/UNKNOWN/alliancegenome/')
+ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.org/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
 CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
