@@ -1803,7 +1803,8 @@ slots:
   gene associated with condition:
     is_a: genetic association
     description: >-
-      holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
+      holds between a gene and a disease or phenotypic feature that the gene or its
+      alleles/products may influence, contribute to, or correlate with
     domain: gene
     range: disease or phenotypic feature
     in_subset:
@@ -1824,7 +1825,8 @@ slots:
   condition associated with gene:
     is_a: genetic association
     description: >-
-      holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
+      holds between a gene and a disease or phenotypic feature that may be influenced,
+      contribute to, or be correlated with the gene or its alleles/products
     domain: disease or phenotypic feature
     range: gene
     in_subset:
@@ -3453,7 +3455,8 @@ slots:
     is_a: association slot
     range: float
     description: >-
-      A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+      A quantitative confidence value that represents the probability of obtaining a result at least as
+      extreme as that actually obtained, assuming that the actual value was the result of chance alone.
     mappings:
       - OBI:0000175
 
@@ -4736,7 +4739,8 @@ classes:
     is_a: molecular entity
     aliases: ['sequence feature']
     description: >-
-      an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+      an entity that can either be directly located on a genome
+      (gene, variant, transcript, exon, regulatory region) or is encoded in a genome (protein)
     slots:
       - has biological sequence
     mappings:
@@ -5244,7 +5248,6 @@ classes:
           the object gene in the association. If the relation is symmetric, subject vs object is arbitrary.
           We allow a gene product to stand as proxy for the gene or vice versa
 
-
   gene to gene homology association:
     is_a: gene to gene association
     defining_slots:
@@ -5260,7 +5263,6 @@ classes:
         symmetric: true
         description: >-
           homology relationship type
-
 
   pairwise interaction association:
     is_a: association
@@ -5652,8 +5654,8 @@ classes:
       - subject
       - object
     description: >-
-      Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
-      either in isolation or through environment
+      Any association between one genotype and a phenotypic feature,
+      where having the genotype confers the phenotype, either in isolation or through environment
     mixins:
       - entity to phenotypic feature association
       - genotype to thing association
@@ -5716,6 +5718,8 @@ classes:
       - subject
     abstract: true
     mixin: true
+    slots:
+      - p value
     slot_usage:
       subject:
         range: sequence variant
@@ -5726,6 +5730,12 @@ classes:
             description: "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
+      p value:
+        description: >-
+          sometimes, a variant to thing association (e.g. where 'thing' is a disease or phenotypic feature)
+          is asserted on the basis of a Genome Wide Association Sequencing (GWAS) experiment that computes a 'p value'
+          for genetic associations. In such cases, the said p value may meaningfully qualify the association 'edge'.
+        required: true
 
   gene to phenotypic feature association:
     is_a: association
