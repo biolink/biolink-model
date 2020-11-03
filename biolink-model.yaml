@@ -1796,15 +1796,28 @@ slots:
     is_a: related to
     symmetric: true
     description: >-
-      Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
+      Co-occurrence of a certain allele of a genetic marker and
+      the phenotype of interest in the same individuals at above-chance level
     exact_mappings:
       - WIKIDATA_PROPERTY:P2293
 
-  gene associated with condition:
+  variant associated with condition:
     is_a: genetic association
     description: >-
-      holds between a gene and a disease or phenotypic feature that the gene or its
-      alleles/products may influence, contribute to, or correlate with
+      holds between a variant and a disease or phenotypic feature due to linkage disequilibrium between
+      the variant and proximal genomic sequence variation which may influence, contribute to, or correlate with
+      the given disease or phenotypic feature ('condition'). In certain instances, the sequence variant itself be
+      a functional variant that directly contributes (by coding or regulatory effect) to the condition.
+    domain: sequence variant
+    range: disease or phenotypic feature
+    in_subset:
+      - translator_minimal
+
+  gene associated with condition:
+    is_a: variant associated with condition
+    description: >-
+      holds between a gene and a disease or phenotypic feature in that some of the gene's alleles/products
+      may influence, contribute to, or correlate with the disease or phenotypic feature.
     domain: gene
     range: disease or phenotypic feature
     in_subset:
@@ -5730,9 +5743,15 @@ classes:
             description: "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
+      predicate:
+        description: >-
+          if the 'variant to thing association' is a parent of a GWAS knowledge assertion, the predicate
+          should generally be a subproperty of the biolink:genetic_association predicate.  We don't enforce this
+          as a strict subproperty slot_usage constraint here, since non-GWAS associations may use other predicates.
+        # subproperty_of: genetic association
       p value:
         description: >-
-          sometimes, a variant to thing association (e.g. where 'thing' is a disease or phenotypic feature)
+          sometimes, a 'variant to thing association' (e.g. where 'thing' is a disease or phenotypic feature)
           is asserted on the basis of a Genome Wide Association Sequencing (GWAS) experiment that computes a 'p value'
           for genetic associations. In such cases, the said p value may meaningfully qualify the association 'edge'.
         required: true
