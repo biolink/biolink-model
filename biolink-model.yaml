@@ -13,6 +13,7 @@ version: 1.4.0
 # 1. The following 'prefixes:' delimited list has first precedence in resolution. 
 prefixes:
   Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
+  alliancegenome: 'https://www.alliancegenome.org/'
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
@@ -43,6 +44,7 @@ prefixes:
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
+  RO: 'http://purl.obolibrary.org/obo/RO_'
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
@@ -59,7 +61,6 @@ prefixes:
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
-  RO: 'http://purl.obolibrary.org/obo/RO_'
 
 default_prefix: biolink
 default_range: string
