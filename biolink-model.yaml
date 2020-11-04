@@ -23,6 +23,7 @@ prefixes:
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
+  EDAM: 'http://edamontology.org/'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   foaf: 'http://xmlns.com/foaf/0.1/'
   GAMMA: 'http://translator.renci.org/GAMMA_'
@@ -3855,9 +3856,11 @@ slots:
 
   has attribute type:
     description: >-
-      connects an attribute to a class that describes it
+      connects an attribute to a ontology term that describes it
     domain: attribute
     range: ontology class
+    values_from:
+      - EDAM
     multivalued: false
     in_subset:
       - samples
