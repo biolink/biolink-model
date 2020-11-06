@@ -34,7 +34,7 @@ prefixes:
   # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
   GOP: 'http://purl.obolibrary.org/obo/go#'
   gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
-  GSAPID: 'https://scholar.google.com/citations?view_op=list_works&hl=en&user='
+  GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
@@ -4716,7 +4716,7 @@ classes:
         description: >-
           Different providers have preferred identifiers. For publishers, use the ISBN publisher code.
           For authors, use the individual's ORCID if available, otherwise, a ScopusID, ResearchID or
-          Google Scholar Author Profile ID ('GSAPID') may be used if the author ORCID is unknown.
+          Google Scholar ID ('GSID') may be used if the author ORCID is unknown.
         values_from:
           # CURIE space for publishers
           - ISBN
@@ -4724,7 +4724,7 @@ classes:
           - ORCID
           - ScopusID
           - ResearchID
-          - GSAPID
+          - GSID
       name:
         description: >-
           it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
@@ -4753,7 +4753,7 @@ classes:
       - ORCID
       - ScopusID
       - ResearchID
-      - GSAPID
+      - GSID
 
   molecular entity:
     is_a: biological entity
