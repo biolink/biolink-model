@@ -45,7 +45,6 @@ prefixes:
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   ISBN: 'https://isbn-international.org/'
   ISSN: 'https://portal.issn.org/resource/ISSN/'
-  MESH_PUB: 'https://www.nlm.nih.gov/mesh/pubtypes.html#'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
@@ -3511,7 +3510,7 @@ slots:
       Subtype (e.g. book, journal, article, etc.) of a Publication, with an ontology term value drawn from one of
       Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/),
       FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html),
-      the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html),
+      the MESH publication types (summarized in https://www.nlm.nih.gov/mesh/pubtypes.html),
       the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
       (http://vocabularies.coar-repositories.org/documentation/resource_types/),
       Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology.
@@ -3520,7 +3519,7 @@ slots:
     values_from: # Not sure which prefix namespace takes precedence here, if any...
       - dctypes
       - fabio
-      - MESH_PUB
+      - MESH
       - COAR_RESOURCE
       - WIKIDATA
 
