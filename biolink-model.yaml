@@ -3502,6 +3502,28 @@ slots:
 
   ## Additional Properties for Information Content Entity and Publication Nodes
 
+  publication type:
+    is_a: node property
+    slot_uri: dcterms:type
+    domain: publication
+    range: ontology class
+    description: >-
+      Subtype (e.g. book, journal, article, etc.) of a Publication, with an ontology term value drawn from one of
+      Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/),
+      FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html),
+      the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html),
+      the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
+      (http://vocabularies.coar-repositories.org/documentation/resource_types/),
+      Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology.
+      When a given publication type ontology term is used within a given knowledge graph, then the CURIE
+      identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
+    values_from: # Not sure which prefix namespace takes precedence here, if any...
+      - dctypes
+      - fabio
+      - MESH_PUB
+      - COAR_RESOURCE
+      - WIKIDATA
+
   published in:
     is_a: node property
     description: >-
@@ -4308,11 +4330,11 @@ classes:
   publication:
     is_a: information content entity
     description: >-
-      Any published piece of information. Can refer to a whole publication,
-      or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
-      The scope is intended to be general and include information published on the web as well as journals.
+      Any published piece of information. Can refer to a whole publication, or to a part
+      of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended
+      to be general and include information published on the web as well as journals.
     slots:
-      - type
+      - publication type
       - published in
       - iso abbreviation
       - authors
@@ -4337,25 +4359,8 @@ classes:
         description: >-
           the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing)
           The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
-      type:
-        slot_uri: dcterms:type
+      publication type:
         required: true
-        description: >-
-          Ontology term for publication type may be drawn from
-          Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/),
-          FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html),
-          the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html),
-          the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
-          (http://vocabularies.coar-repositories.org/documentation/resource_types/),
-          Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology.
-          When a given publication type ontology term is used within a given knowledge graph, then the CURIE
-          identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
-        values_from:  # Not sure which takes precedence, if any...
-          - dctypes
-          - fabio
-          - MESH_PUB
-          - COAR_RESOURCE
-          - WIKIDATA
       pages:
         multivalued: true
         description: >-
