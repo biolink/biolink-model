@@ -2,7 +2,7 @@
 
 Following is a primer on understanding the Biolink Model and how to work with the model for representing biological and biomedical knowledge.
 
-The guidelines are organized into four parts:
+The guidelines are organized into five parts:
 - [Understanding the Biolink Model](understanding-the-model.md)
 - [Curating the Biolink Model](curating-the-model.md)
 - [Using the Modeling Language](using-the-modeling-language.md)

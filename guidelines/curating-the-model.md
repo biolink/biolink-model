@@ -17,7 +17,6 @@ Biolink Model has several entitie classes like `gene`, `disease`, `phenotypic fe
 
 All these classes are arranged in a hierarchy with the root of all entities being the `named thing` class.
 
-You as a curator can add new entity classes to the model.
 
 To add an entity class to Biolink Model you need to determine the following,
   - What is an appropriate name for this entity?
@@ -94,6 +93,8 @@ In the above YAML snippet, we are explicitly defining the `gene` class to have `
 
 There are [other BiolinkML slots](https://biolink.github.io/biolinkml/docs/ClassDefinition#Attributes) that can be used to define your class and represent the semantics of your class.
 
+For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
+
 
 ### Adding an Association class
 
@@ -105,7 +106,7 @@ Biolink Model has several Association classes like `gene to gene association`, `
 
 All these classes are arranged in a hierarchy with the root of all associations being the `association` class.
 
-You as a curator can add new Association classes to the model.
+
 
 To add an Association class to Biolink Model you need to determine the following,
   - What is an appropriate name for this association
@@ -210,33 +211,76 @@ In the above YAML snippet, `domain`, `range`, `description`, `is_a`, `in_subset`
 
 You can add slots that represent node properties or edge properties.
 
-To add a slot to Biolink Model you need to,
-  - What is an appropriate name for this slot
+
+To add a node/edge property to Biolink Model you need to,
+  - What is an appropriate name for this slot?
+    - A human readable name for this property
   - Is it an node property or an edge property (association slot)?
-  - Where in the hierarchy does the new slot fit?
+    - Determine whether the property is a node or an edge property
+  - Where in the hierarchy does the new property fit?
+    - Determine where in the property hierarchy does this new property fit
+    - If you want to add a node property then it should be added as part of the [`node property` hierarchy]()
+    - If you want to add an edge property then it should be added as part of the [`association slot` hierarchy]()
+  - Is this a required property?
+    - Determine whether all classes must have a value for this property
   - What are the domain and range constraints (if any)?
+    - Determine which type of classes can have this property and what the value space for this property should be
   - What are the mapping(s) for this slot?
-    - Can the mappings be divided depending on its granularity: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
-  - aliases
-  - required?
-  - slot_uri
+    - Mappings are a way of rooting this new property in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
+    - Determine if the level of granularity for your mappings. Mappings be divided into 5 types depending on its granularity: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 
-Example of node property,
-```
+
+As an example, let's consider the slot `name` which is a node property:
+
+```yaml
+
+  name:
+    is_a: node property
+    aliases: ['label', 'display name']
+    domain: named thing
+    range: label type
+    description: >-
+      A human-readable name for a thing
+    in_subset:
+      - translator_minimal
+    required: true
+    slot_uri: rdfs:label
+    exact_mappings:
+      - gff3:Name
+      - gpi:DB_Object_Name
+
 ```
 
-Example of edge property,
+
+As another example, let's consider the slot `relation` which is an edge property:
+
+```yaml
+
+  relation:
+    is_a: association slot
+    description: >-
+      The relation which describes an association between a subject and an object in a more granular manner.
+      Usually this is a term from Relation Ontology, but it can be any edge CURIE.
+    domain: association
+    range: uriorcurie
+    required: true
+
 ```
-```
+
+In the above YAML snippets, `is_a`, `aliases`, `domain`, `range`, `description`, `in_subset`, `required`, `slot_uri`, `exact_mappings` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the slot definition.
+
+There are [other BiolinkML slots](https://biolink.github.io/biolinkml/docs/ClassDefinition#Attributes) that can be used to define your class and represent the semantics of your class.
+
+For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
+
 
 ### Managing mappings
 
-- Granularity of mappings
-- How to interpret mappings
+In the previous sections there were references to mappings and differentiating these mappings based on their granularity, which can be a bit of a nuanced exercise.
 
+The following are some recommendations when trying to determine the granularity of mapping to an external concept or predicate or property:
 
-Example,
-```
-```
+...
+
 
