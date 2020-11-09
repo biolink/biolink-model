@@ -5127,12 +5127,13 @@ classes:
     comments:
       - This is roughly the model used by biolink and ontobio at the moment
     slots:
-      - subject
-      - relation
-      - object
       - association_id
-      - negated
       - association type
+      - subject
+      - predicate
+      - object
+      - relation
+      - negated
       - qualifiers
       - publications
       - provided by
