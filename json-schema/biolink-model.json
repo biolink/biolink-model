@@ -92,6 +92,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -122,8 +126,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -148,6 +153,10 @@
             },
             "object": {
                "description": "the structure at an earlier time",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -181,6 +190,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -206,6 +216,10 @@
             },
             "object": {
                "description": "the whole",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -239,6 +253,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -264,6 +279,10 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -297,10 +316,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "Association",
          "type": "object"
@@ -591,6 +611,10 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -630,10 +654,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "CaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -729,6 +754,10 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -764,9 +793,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "CellLineAsAModelOfDiseaseAssociation",
@@ -790,6 +820,10 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -822,9 +856,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
@@ -948,6 +983,10 @@
                "description": "the chemical element that is the target of the statement",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -979,9 +1018,10 @@
             }
          },
          "required": [
-            "subject",
-            "relation",
             "id",
+            "subject",
+            "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToChemicalAssociation",
@@ -1012,6 +1052,10 @@
             },
             "object": {
                "description": "the downstream chemical entity",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -1045,6 +1089,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -1072,6 +1117,10 @@
                "description": "the disease or phenotype that is affected by the chemical",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -1103,9 +1152,10 @@
             }
          },
          "required": [
-            "subject",
-            "relation",
             "id",
+            "subject",
+            "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
@@ -1131,6 +1181,10 @@
                "description": "the gene or gene product that is affected by the chemical",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -1162,9 +1216,10 @@
             }
          },
          "required": [
-            "subject",
-            "relation",
             "id",
+            "subject",
+            "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToGeneAssociation",
@@ -1190,6 +1245,10 @@
                "description": "the pathway that is affected by the chemical",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -1221,9 +1280,10 @@
             }
          },
          "required": [
-            "subject",
-            "relation",
             "id",
+            "subject",
+            "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToPathwayAssociation",
@@ -1729,6 +1789,10 @@
                "description": "anatomical entity in which the disease or feature is found",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -1760,8 +1824,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -1785,6 +1850,10 @@
                "type": "boolean"
             },
             "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -1817,8 +1886,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -1855,6 +1925,10 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -1896,10 +1970,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "DiseaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -2162,6 +2237,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -2192,8 +2271,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -2260,6 +2340,10 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -2298,9 +2382,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "ExposureEventToPhenotypicFeatureAssociation",
@@ -2406,6 +2491,10 @@
                "description": "class describing the activity, process or localization of the gene product",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -2437,8 +2526,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -2534,6 +2624,10 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -2569,9 +2663,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "GeneAsAModelOfDiseaseAssociation",
@@ -2640,6 +2735,10 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -2679,9 +2778,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "GeneHasVariantThatContributesToDiseaseAssociation",
@@ -2830,6 +2930,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -2861,6 +2965,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "subject",
             "object"
@@ -2894,6 +2999,10 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -2931,9 +3040,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "GeneToDiseaseAssociation",
@@ -2957,6 +3067,10 @@
             },
             "object": {
                "description": "location in which the gene is expressed",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -2999,6 +3113,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -3024,6 +3139,10 @@
             },
             "object": {
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3058,6 +3177,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -3082,6 +3202,10 @@
                "type": "boolean"
             },
             "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3114,6 +3238,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -3139,6 +3264,10 @@
             },
             "object": {
                "description": "class describing the activity, process or localization of the gene product",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3172,8 +3301,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -3210,6 +3340,10 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3251,9 +3385,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "GeneToPhenotypicFeatureAssociation",
@@ -3368,6 +3503,10 @@
                "description": "The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -3406,6 +3545,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -3483,6 +3623,10 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -3519,6 +3663,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "object",
             "subject"
@@ -3552,6 +3697,10 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3590,6 +3739,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "relation",
             "object"
@@ -3615,6 +3765,10 @@
             },
             "object": {
                "description": "gene implicated in genotype",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3649,6 +3803,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "subject",
             "object"
@@ -3674,6 +3829,10 @@
             },
             "object": {
                "description": "child genotype",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3707,6 +3866,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "subject",
             "object"
@@ -3744,6 +3904,10 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3784,8 +3948,9 @@
             }
          },
          "required": [
-            "object",
             "id",
+            "predicate",
+            "object",
             "relation",
             "subject"
          ],
@@ -3810,6 +3975,10 @@
             },
             "object": {
                "description": "gene implicated in genotype",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3844,6 +4013,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "subject",
             "object"
@@ -4254,6 +4424,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4285,8 +4459,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -4312,6 +4487,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4343,8 +4522,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -4370,6 +4550,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4401,8 +4585,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -4464,6 +4649,10 @@
                "description": "the material entity the sample was derived from. This may be another material sample, or any other material entity, including for example an organism, a geographic feature, or some environmental material.",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4496,6 +4685,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -4521,6 +4711,10 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -4554,10 +4748,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
@@ -4978,6 +5173,10 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -5013,9 +5212,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -5042,6 +5242,10 @@
             },
             "object": {
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -5076,6 +5280,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -5406,6 +5611,10 @@
                "description": "the population that form the object of the association",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -5438,6 +5647,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -5869,6 +6079,10 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -5900,10 +6114,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "SequenceAssociation",
          "type": "object"
@@ -5925,6 +6140,10 @@
                "type": "boolean"
             },
             "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -5957,8 +6176,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -6216,6 +6436,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -6246,8 +6470,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -6317,6 +6542,10 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -6353,6 +6582,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "object",
             "subject"
@@ -6386,6 +6616,10 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -6424,6 +6658,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "relation",
             "object"
@@ -6461,6 +6696,10 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -6502,9 +6741,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "VariantToPhenotypicFeatureAssociation",
@@ -6550,6 +6790,10 @@
                "description": "the population that is observed to have the frequency",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -6581,8 +6825,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],

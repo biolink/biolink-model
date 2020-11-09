@@ -136,11 +136,12 @@ metatype:Nodeidentifier NONLITERAL
 
 <Association>  (
     CLOSED {
-       (  $<Association_tes> (  rdf:subject @<NamedThing> ;
-             <relation> @metatype:Uriorcurie ;
+       (  $<Association_tes> (  <association_type> @<OntologyClass> ? ;
+             rdf:subject @<NamedThing> ;
+             rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
+             <relation> @metatype:Uriorcurie ;
              <negated> @metatype:Boolean ? ;
-             <association_type> @<OntologyClass> ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <provided_by> @<Provider> *
