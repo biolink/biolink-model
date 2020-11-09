@@ -15,7 +15,7 @@ URI: [biolink:VariantToPopulationAssociation](https://w3id.org/biolink/vocab/Var
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[PopulationOfIndividualOrganisms]%3Cobject%201..1-%20[VariantToPopulationAssociation%7Chas_quotient:double%20%3F;has_count:integer%20%3F;has_total:integer%20%3F;has_percentage:double%20%3F;relation(i):uriorcurie;id(i):string;negated(i):boolean%20%3F],[SequenceVariant]%3Csubject%201..1-%20[VariantToPopulationAssociation],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQuantifier],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin],[Association]%5E-[VariantToPopulationAssociation],[SequenceVariant],[Publication],[Provider],[PopulationOfIndividualOrganisms],[OntologyClass],[FrequencyValue],[FrequencyQuantifier],[FrequencyQualifierMixin],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[PopulationOfIndividualOrganisms]%3Cobject%201..1-%20[VariantToPopulationAssociation%7Chas_quotient:double%20%3F;has_count:integer%20%3F;has_total:integer%20%3F;has_percentage:double%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[SequenceVariant]%3Csubject%201..1-%20[VariantToPopulationAssociation],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQuantifier],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin],[Association]%5E-[VariantToPopulationAssociation],[SequenceVariant],[Publication],[Provider],[PopulationOfIndividualOrganisms],[OntologyClass],[FrequencyValue],[FrequencyQuantifier],[FrequencyQualifierMixin],[Association])
 
 ---
 
@@ -61,25 +61,28 @@ URI: [biolink:VariantToPopulationAssociation](https://w3id.org/biolink/vocab/Var
 
 ### Inherited from association:
 
- * [subject](subject.md)  <sub>REQ</sub>
-    * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>REQ</sub>
-    * Description: The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
-    * range: [Uriorcurie](types/Uriorcurie.md)
- * [object](object.md)  <sub>REQ</sub>
-    * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: [NamedThing](NamedThing.md)
  * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
     * range: [String](types/String.md)
     * in subsets: (translator_minimal)
- * [negated](negated.md)  <sub>OPT</sub>
-    * Description: if set to true, then the association is negated i.e. is not true
-    * range: [Boolean](types/Boolean.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
+ * [subject](subject.md)  <sub>REQ</sub>
+    * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+    * range: [NamedThing](NamedThing.md)
+ * [predicate](predicate.md)  <sub>REQ</sub>
+    * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+    * range: [PredicateType](types/PredicateType.md)
+ * [object](object.md)  <sub>REQ</sub>
+    * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+    * range: [NamedThing](NamedThing.md)
+ * [relation](relation.md)  <sub>REQ</sub>
+    * Description: The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
+    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [negated](negated.md)  <sub>OPT</sub>
+    * Description: if set to true, then the association is negated i.e. is not true
+    * range: [Boolean](types/Boolean.md)
  * [qualifiers](qualifiers.md)  <sub>0..*</sub>
     * Description: connects an association to qualifiers that modify or qualify the meaning of that association
     * range: [OntologyClass](OntologyClass.md)
