@@ -279,8 +279,17 @@ For more information on what each slot means and how to use them in Biolink Mode
 
 In the previous sections there were references to mappings and differentiating these mappings based on their granularity, which can be a bit of a nuanced exercise.
 
-The following are some recommendations when trying to determine the granularity of mapping to an external concept or predicate or property:
+What does it mean for a external concept or predicate or property to be one of `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`?
 
-...
+Here is a rule of thumb on how to determine the granularity of mapping:
+- An external concept can be considered as an exact mapping to a Biolink Model class or slot if former can be used interchangeably with the latter. That is, the semantics are identical and any transitive property that the external concept might bring into the model should not violate the internal consistency of the model
+- If it is diffcult to determine if an external concept can be considered an exact mapping then it is much safer to treat it as a close mapping
+- If an external concept can be treated a sub-class of the Biolink Model class or slot then it can be treated as a narrow mapping
+- If an external concept can be treated as a super-class of the Biolink Model class or slot then it can be treated as a broad mapping
+- If an external concept is distantly related to a Biolink Model class or slot then it can be treated as a related mapping
+
+
+
+
 
 

@@ -9,3 +9,7 @@ The guidelines are organized into five parts:
 - [Working with the Biolink Model](working-with-the-model.md)
 - [Maintaining the Biolink Model](maintaining-the-model.md)
 
+
+Chris wants visual examples
+
+KGX -> Obograph -> Obographviz -> PNG
