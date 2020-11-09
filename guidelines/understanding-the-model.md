@@ -182,4 +182,4 @@ Data types do not have any inheritance and thus are not arranged in any hierarch
 
 For example, `iri type` is a type defined in the Biolink Model where the value space is constrained to `uriorcurie`.
 
-> `uriorcurie` is an inbuilt data type provided by BiolinkML where the value space is constrained to either a URI or a CURIE representation.
+> **Note**: `uriorcurie` is an inbuilt data type provided by BiolinkML where the value space is constrained to either a URI or a CURIE representation.
