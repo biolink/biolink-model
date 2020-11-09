@@ -4,12 +4,12 @@ The BiolinkML provides a variety of slots to define the semantics of your Biolin
 
 This document tries to address on how to use most of these slots in Biolink Model.
 
-Refer to [BiolinkML documentation]() for an exhaustive list of slots provided by the modeling language.
+Please refer to [BiolinkML documentation](https://biolink.github.io/biolinkml/docs/) for an exhaustive list of slots provided by the modeling language.
 
 
 ## is_a
 
-The `is_a` slot can be used to define a hierarchy for your Biolink Model class and slot where a new class or slot is defined as a subclass of another defined class or slot.
+The `is_a` slot can be used to define a hierarchy for your Biolink Model class (or slot) where a new class (or slot) is defined as a subclass of another defined class (or slot).
 
 
 ```yaml
@@ -22,7 +22,7 @@ Here we define that the entity class `gene` is a sub-class of `gene or gene prod
 
 ## aliases
 
-The `aliases` slot can be used to define as list of aliases for a Biolink Model class or a slot. This is useful for adding synonymous names to your class or slot.
+The `aliases` slot can be used to define a list of aliases for a Biolink Model class (or slot). This is useful for adding synonymous names to your class (or slot).
 
 
 ```yaml
@@ -37,7 +37,7 @@ Here we define that the entity class `gene` has an alias `locus`.
 
 ## domain
 
-The `domain` slot mimics the idea of `rdfs:domain` where you constrain the types of classes that a given Biolink Model slot can have.
+The `domain` slot mimics the idea of `rdfs:domain` where you constrain the type of classes that a given Biolink Model slot can be a part of.
 
 
 ```yaml
@@ -51,7 +51,7 @@ Here we define that the subject (source node) of the predicate slot `genetically
 
 ## range
 
-The `range` slot mimics the idea of `rdfs:range` where you can constrain the types of classes or values a given Biolink Model slot can have.
+The `range` slot mimics the idea of `rdfs:range` where you can constrain the type of classes (or data types) a given Biolink Model slot can have as its value.
 
 ```yaml
   genetically interacts with:
@@ -65,7 +65,7 @@ Here we define that both the subject (source node) and object (target node) of t
 
 ## description
 
-The `description` slot can be used to provide a human-readable description of a class or slot.
+The `description` slot can be used to provide a human-readable description of a class (or slot).
 
 ```yaml
   genetically interacts with:
@@ -76,12 +76,12 @@ The `description` slot can be used to provide a human-readable description of a 
     range: gene
 ```
 
-Here we define a human readable description that describes the predicate slot and its purpose.
+Here we define a human readable description that describes the predicate slot `genetically interacts with` and its purpose.
 
 
 ## in_subset
 
-The `in_subset` slot can be used tag your class or slot to belong to a pre-defined subset.
+The `in_subset` slot can be used tag your class (or slot) to belong to a pre-defined subset.
 
 The actual subset names are defined as part of the Schema definition.
 
@@ -99,9 +99,9 @@ Here we define the predicate slot `genetically interacts with` as part of the `t
 
 ## symmetric
 
-The `symmetric` slot can be used to specify whether a Biolink Model predicate is symmetric in its meaning.
+The `symmetric` slot can be used to specify whether a Biolink Model predicate slot is symmetric in its semantics.
 
-i.e. if A -[r]-> B and r is symmetric then one can infer B -[r]-> A
+i.e. if `A -[r]-> B` and `r` is symmetric then one can infer `B -[r]-> A`
 
 
 ```yaml
@@ -137,62 +137,6 @@ Here we specify that an association can be determined to be an instance of class
 i.e. One can infer an association to be an instance of `gene to gene association` if both its `subject` and its `object` are an instances of class `gene`.
 
 
-## abstract
-
-The `abstract` slot can be used to define whether a Biolink Model class or slot is abstract.
-
-
-```yaml
-  cell line to thing association:
-    is_a: association
-    defining_slots:
-      - subject
-    abstract: true
-    description: >-
-      A relationship between a cell line and another entity
-    slot_usage:
-      subject:
-        range: cell line
-```
-
-Here we define that the association class `cell line to thing association` is an abstract class. Just like in Object Oriented Paradigm, another class can use this class as part of its inheritance hierarchy but there cannot be instances of the abstract class.
-
-
-## mixin
-
-The `mixin` slot can be used to define whether a Biolink Model class or slot is a mixin.
-
-```yaml
-  thing with taxon:
-    mixin: true
-    description: >-
-      A mixin that can be used on any entity with a taxon
-    slots:
-      - in taxon
-```
-
-Here we define a class `thing with taxon` is a mixin class with a slot `in taxon`. This class can be used as a mixin by other classes. 
-
-Mixins provides the means of reusing property slots in different classes without the need to tie slots to the hierarchy of the class itself.
-
-While mixins can be used by other classes, there cannot be instances of the mixin class.
-
-
-## mixins
-
-The `mixins` slot can be used to specify a list of mixins that a class or slot can use.
-
-The mixins are separate from the `is_a` hierarchy and the mixin classes do not contribute to a classes' inheritance hierarchy.
-
-```yaml
-  individual organism:
-    is_a: organismal entity
-    mixins:
-      - thing with taxon
-```
-
-Here we define an entity class `individual organism` that uses the mixin class `thing with taxon`. By virtue of the mixin, the class `individual organism` will have `in taxon` slot in addition to all its own slots, its parent slots, and its ancestor slots.
-
 
 ## slot_usage
 
@@ -227,6 +171,63 @@ This is useful for documenting what a particular slot means for instances of a p
 Here we document the association class `gene to gene association` with information on how the slot `subject` and `object` ought to be used to represent this association properly.
 
 In the `slot_usage` section we define the range and provide a description for the slot `subject` and `object`.
+
+
+## abstract
+
+The `abstract` slot can be used to define whether a Biolink Model class (or slot) is abstract.
+
+
+```yaml
+  cell line to thing association:
+    is_a: association
+    defining_slots:
+      - subject
+    abstract: true
+    description: >-
+      A relationship between a cell line and another entity
+    slot_usage:
+      subject:
+        range: cell line
+```
+
+Here we define that the association class `cell line to thing association` is an abstract class. Just like in Object Oriented Paradigm, another class can use this class as part of its inheritance hierarchy but there cannot be instances of the abstract class.
+
+
+## mixin
+
+The `mixin` slot can be used to define whether a Biolink Model class (or slot) is a mixin.
+
+```yaml
+  thing with taxon:
+    mixin: true
+    description: >-
+      A mixin that can be used on any entity with a taxon
+    slots:
+      - in taxon
+```
+
+Here we define class `thing with taxon` as a mixin class with a slot `in taxon`. This class can be used as a mixin by other classes. 
+
+Mixins provide the means to reusing property slots in different classes without the need to tie slots to the hierarchy of the class itself.
+
+While mixins can be used by other classes, there cannot be instances of the mixin class.
+
+
+## mixins
+
+The `mixins` slot can be used to specify a list of mixins that a class (or slot) can use.
+
+The mixins are separate from the `is_a` hierarchy and the mixin classes do not contribute to a classes' inheritance hierarchy.
+
+```yaml
+  individual organism:
+    is_a: organismal entity
+    mixins:
+      - thing with taxon
+```
+
+Here we define an entity class `individual organism` that uses the mixin class `thing with taxon`. By virtue of the mixin, the class `individual organism` will have an `in taxon` slot in addition to all its own slots, its parent slots, and its ancestor slots.
 
 
 ## required
@@ -310,7 +311,7 @@ Here we define the entity class `gene` to have a list of ID prefixes with `NCBIG
 
 ## exact_mappings
 
-The `exact_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be exact mappings to the class or slot being defined.
+The `exact_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be exact mappings to the class (or slot) being defined.
 
 
 ```yaml
@@ -333,7 +334,7 @@ Here we define a list of 5 predicates that are semanticially equivalent to the B
 
 ## close_mappings
 
-The `close_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be close mappings to the class or slot being defined.
+The `close_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be close mappings to the class (or slot) being defined.
 
 ```yaml
   same as:
@@ -357,7 +358,7 @@ Here we define `owl:equivalentClass` as being a close match to the Biolink Model
 
 ## narrow_mappings
 
-The `narrow_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be narrow mappings to the class or slot being defined.
+The `narrow_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be narrow mappings to the class (or slot) being defined.
 
 ```yaml
   same as:
@@ -387,8 +388,7 @@ If we were to create a new predicate slot as a proxy for `DRUGBANK:external-iden
 
 ## broad_mappings
 
-The `broad_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be broad mappings to the class or slot being defined.
-
+The `broad_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be broad mappings to the class (or slot) being defined.
 
 ```yaml
   in complex with:
@@ -403,7 +403,7 @@ The `broad_mappings` slot can be used to define external concepts, predicates, o
       - SIO:010285
 ```
 
-Here we define `SIO:010285 molecular complex formation` as a broad mapping to the predicate slot `in complex with`. 
+Here we define `SIO:010285` (molecular complex formation) as a broad mapping to the predicate slot `in complex with`. 
 
 By broad we mean that the scope of `SIO:010285` is more broad and relaxed than `in complex with`.
 
@@ -412,7 +412,7 @@ If we were to create a new predicate slot as a proxy for `SIO:010285` then that 
 
 ## related_mappings
 
-The `related_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be related mappings to the class or slot being defined.
+The `related_mappings` slot can be used to define external concepts, predicates, or properties which are considered to be related mappings to the class (or slot) being defined.
 
 ```yaml
   in complex with:
@@ -429,7 +429,7 @@ The `related_mappings` slot can be used to define external concepts, predicates,
       - SIO:010497
 ```
 
-Here we define `SIO:010497 protein complex` as a related mapping to the predicate slot `in complex with`.
+Here we define `SIO:010497` (protein complex) as a related mapping to the predicate slot `in complex with`.
 
 By related we mean that the scope of `SIO:010497` is related to the predicate slot `in complex with` and it's difficult to infer any further granularity.
 

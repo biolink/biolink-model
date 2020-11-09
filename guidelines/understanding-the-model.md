@@ -11,32 +11,32 @@ Biolink Model was built with the following purposes in mind:
 
 To that end, Biolink Model makes use of [BiolinkML](https://github.com/biolink/biolinkml) (Biolink Modeling Language) for defining the various semantics of the model.
 
-## Understanding the Biolink modeling language
+## Understanding the Biolink Modeling Language
 
 BiolinkML is a general purpose modeling language that follows object-oriented and ontological principles. The modeling language inherits features from the Web Ontology Language (OWL) and thus is capable of representing semantics in addition to the standard object-oriented hierarchy of a data model.
 
 Models are authored in YAML and using BiolinkML one can generate a variety of artifacts including JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and Markdown.
 
 The modeling language provides the following idioms,
-- Class definition
+- **Class definition**
   - Used to define classes
-- Slot definition 
+- **Slot definition**
   - Used to define class properties
-- Type definition
+- **Type definition**
   - Used to define data types
-- Schema definition
+- **Schema definition**
   - Used to define properties of the model itself
 
 Refer to [BiolinkML on GitHub](https://github.com/biolink/biolinkml) for a more detailed guide on BiolinkML.
 
-> **Note:** Biolink Model is authored using BiolinkML. While Biolink Model and BiolinkML share a "biolink" in its name, that is where the similarities end. One can use BiolinkML to author any schema in any domain.
+> **Note:** Biolink Model is authored using BiolinkML. While Biolink Model and BiolinkML share a "Biolink" in its name, that is where the similarities end. One can use BiolinkML to author any schema for any domain.
 
 
-## Structure of the model
+## Structure of the Model
 
-The Biolink Model is a high-level data model where entities, associations, and predicates are arranged in a hierarchy. In addition, the model also defines node properties, edge properties, and types.
+Biolink Model is a high-level data model where entities, associations, and predicates are arranged in a hierarchy. The model also defines node properties, edge properties, and types.
 
-The model is organized using BiolinkML Class definition (class), Slot definition (slot), Type definition (type) and Schema definition.
+The model itself is organized using BiolinkML Class definition (class), Slot definition (slot), Type definition (type) and Schema definition.
 
 > **Conventions**
 > 
@@ -49,8 +49,6 @@ The model is organized using BiolinkML Class definition (class), Slot definition
 >
 > To avoid ambuguity it semantics, prefixes are RECOMMENDED for all slots.
 
-
-The Biolink Model makes use of classes, slots, and types to define various hierarchies in the model that facilitate knowledge representation.
 
 At a glance the structure is as follows,
 - [Classes](#Classes)
@@ -71,19 +69,19 @@ A class represents an entity or an association. A class can have one more more s
 In RDF sense, a class is basically `rdfs:Class`.
 
 Within the Biolink Model there are two hierarchies of classes:
-  - Entities
-  - Associations
+  - [Entities](#Entities)
+  - [Associations](#Associations)
 
 where Entities are disjoint from Associations.
 
 
 #### Entities
 
-Entities are classes that represent entities such as genes, diseases, and chemical substances.
+Entities are classes that represent real world entities such as genes, diseases, chemical substances, etc.
 
-In a graph formalism, entities represent nodes in a graph.
+In a graph formalism, entities are represented using nodes in a graph.
 
-Each class has one or more slots (properties).
+Each Entity class has one or more slots (properties).
 
 The root of all entities is the `named thing` class.
 
@@ -96,7 +94,7 @@ Associations are classes that represent an assertion or statement.
 
 In RDF sense, an association is an `rdf:Statement`.
 
-In a graph formalism, associations represent edges in a graph.
+In a graph formalism, associations are represented using edges in a graph.
 
 Each class has one or more slots (or properties).
 
@@ -104,13 +102,12 @@ The root of all associations is the `association` class.
 
 > **Note:** While we say `association` when defining the model using BiolinkML, the acutal CURIE for this class is `biolink:Association`
 
-Note: talk about reified associations!
 
 #### Mixins
 
 Mixins are classes that contain slots (properties) for use by other classes.
 
-Mixins are abstract classes and they cannot be instantiated by themselves. That is, there cannot be an instance of a mixin.
+Mixins are abstract classes and they cannot be instantiated by themselves. That is, there cannot be an instance of a mixin class.
 
 Mixins are defined as a way of encouraging reuse of specific slots (properties) while ensuring a clear inheritance chain.
 
@@ -141,46 +138,48 @@ In Biolink Model slots are used to represent,
 
 Predicates are slots that connect instances of classes. 
 
-In a graph formalism, predicates are relationships that link instances of classes.
+In a graph formalism, predicates are relationships that link two instances.
 
 In OWL sense, predicates are similar to `owl:ObjectProperty`.
 
-For example, a predicate `biolink:treats` can be used to link an instance of class `biolink:ChemicalSubstance` with an instance of class `biolink:Disease`.
+For example, a predicate `treats` can be used to link an instance of class `chemical substance` with an instance of class `disease`.
 
 
 #### Node Properties
 
-Node properties are slots that a class (à la nodes) can have.
+Node properties are slots that an entity class (à la nodes) can have.
 
-The root of all node properties is `node property`.
+The root of all node properties is `node property` slot.
 
 In OWL sense, node properties are similar to `owl:DataTypeProperty`.
 
-For example, `biolink:id` and `biolink:name` are children of `biolink:node_property` and they are slots assigned to the `biolink:NamedThing` class. So all instances of this class can have `biolink:id` and `biolink:name` as its properties that further describes the instance.
+For example, `id` and `name` are children of `node property` slot and they are assigned to the entity class `named thing`. So all instances of this class can have `id` and `name` as its properties that further describes the instance.
 
 
-> **Note:** In many cases you may see node properties without the `biolink` prefix. This is normal since we can assume that if there is a biolink typed node in a graph, with `id` and `name` as its properties, then they correspond to `biolink:id` and `biolink:name`. But to be sure of the semantics it is advised to use the full CURIE to represent property names.
+> **Note:** In many cases you may see node properties without the `biolink` prefix. This is normal since we can assume that if there is a biolink typed node in a graph, with `id` and `name` as its properties, then they correspond to `biolink:id` and `biolink:name`. But to be sure of the semantics it is advised to use the full CURIE to represent property names in your graph.
 
 
 #### Edge Properties
 
-Edge properties are slots that a class (à la edges) can have.
+Edge properties are slots that an association class (à la edges) can have.
 
-The root of all edge properties is `association slot`.
+The root of all edge properties is `association slot` slot.
 
 In OWL sense, edge properties are similar to `owl:DataTypeProperty`.
 
-For example, `biolink:subject`, `biolink:predicate`, and `biolink:object` are children of `biolink:association_slot` and they are slots assigned to `biolink:Association` class. So all instances of this class can have `biolink:subject`, `biolink:predicate`, and `biolink:object` as its properties that further describes the instance.
+For example, `subject`, `predicate`, and `object` are children of `association_slot` slot and they are assigned to association class `association`. So all instances of this class can have `subject`, `predicate`, and `object` as its properties that further describes the instance.
 
-> **Note:** In many cases you may see edge properties without the `biolink` prefix. This is normal since we can assume that if there is a biolink typed edge in a graph with `subject`, `predicate`, and `object` as its properties then they correspond to `biolink:subject`, `biolink:predicate`, and `biolink:object`, respectively. But to be sure of the semantics it is advised to use the full CURIE to represent property names.
+> **Note:** In many cases you may see edge properties without the `biolink` prefix. This is normal since we can assume that if there is a biolink typed edge in a graph with `subject`, `predicate`, and `object` as its properties then they correspond to `biolink:subject`, `biolink:predicate`, and `biolink:object`, respectively. But to be sure of the semantics it is advised to use the full CURIE to represent property names in your graph.
 
 
 ### Types
 
-BiolinkML provides a handful of inbuilt data types. But in the case where you would like to define custom data types then this can be achieved by defining types.
+BiolinkML provides a handful of inbuilt data types. But you can also define custom data types using the modeling language.
+
+In Biolink Model we have several data types.
 
 Data types do not have any inheritance and thus are not arranged in any hierarchy.
 
-For example, `iri type` is a type defined in the Biolink Model where the type of value is constrained to `uriorcurie`.
+For example, `iri type` is a type defined in the Biolink Model where the value space is constrained to `uriorcurie`.
 
 > `uriorcurie` is an inbuilt data type provided by BiolinkML where the value space is constrained to either a URI or a CURIE representation.

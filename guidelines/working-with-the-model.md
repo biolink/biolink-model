@@ -28,11 +28,13 @@ One modeling consideration we are going to make here is that we will be projecti
 
 Each individual protein and gene can be treated as nodes in a graph.
 
-As per the model, protein nodes should have identifiers from `UniProtKB` and gene nodes should have identifiers `NCBIGene`. 
-
 Each protein node has `protein` as its category.
 
 Each gene node has `gene` as its category.
+
+As per the model, protein nodes should have identifiers from `UniProtKB` and gene nodes should have identifiers `NCBIGene`. 
+
+
 
 One can further type the protein and gene entities using the Biolink node property slot `type` (which corresponds to `rdf:type`).
 
@@ -134,7 +136,9 @@ fe5f9383-c5f6-4eba-9dc4-185e6d331459	NCBIGene:23229	biolink:has_gene_product	Uni
 
 ### Biolink Model representation in RDF
 
-The previous example can be easily converted to RDF N-Triples using [KGX](https://github.com/biolink/kgx),
+Since RDF graphs do not allow for properties on edges, the most practical alternative is to use reification where an edge is transformed into a node of type `biolink:Association` (or its descendants) and any edge properties then becomes properties of this reified node.
+
+Using reification, the previous example can be easily converted to RDF N-Triples using [KGX](https://github.com/biolink/kgx),
 
 ```nt
 <http://identifiers.org/uniprot/P84085> <http://www.w3.org/2000/01/rdf-schema#label> "ARF5"^^<http://www.w3.org/2001/XMLSchema#string> .

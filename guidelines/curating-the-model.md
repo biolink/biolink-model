@@ -6,38 +6,38 @@ In Biolink Model all the curation should happen in one place: [biolink-model.yam
 
 This is the one source of truth for the model and thus any changes must be directed to the Biolink Model YAML.
 
+This section tries to explore on how to go about adding new classes and slots to the model.
 
 ### Adding an Entity class
 
-An entity class represents entities like Genes, Diseases or Chemical Substances.
+An entity class represents entities like Genes, Diseases, Chemical Substances, etc.
 
 Instances of these Entity class are represented as nodes in a graph.
 
-Biolink Model has several entitie classes like `gene`, `disease`, `phenotypic feature`, `chemical substance`.
+Biolink Model has several entitiy classes like `gene`, `disease`, `phenotypic feature`, `chemical substance`.
 
 All these classes are arranged in a hierarchy with the root of all entities being the `named thing` class.
 
 
 To add an entity class to Biolink Model you need to determine the following,
   - What is an appropriate name for this entity?
-    - The name for an entity should be clear and concise. It should describe the instances of this class
+    - The name for an entity should be clear and concise. It should describe instances of this class
   - Where in the [`named thing` hierarchy](https://biolink.github.io/biolink-model/docs/NamedThing) does the new class fit?
-    - Determine what the immediate parent for this is
+    - Determine what the immediate parent for this class is going to be
   - What are the slots that this class can have (in addition to its inherited slots)?
-    - What are the properties that this entity ought to have
+    - Determine what additional properties that this class ought to have
   - Do certain slots have to be constrained to certain values?
-    - Are there properties (new) or inherited properties whose value have to be constrained to a certain value space?
+    - Determine whether there are properties (new or inherited) whose value have to be constrained to a certain value space
   - What are the valid namespace prefixes for identifiers of instances of this class?
-    - For representing an instance of this entity determine the identifier namespace and a valid prefixes
+    - For representing an instance of this entity class determine the identifier namespace and valid prefix(es)
   - What are the mapping(s) for this class?
-    - Mappings are a way of rooting this new entity in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine if the level of granularity for your mappings. Mappings be divided into 5 types depending on its granularity: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
+    - Mappings are a way of rooting this new entity classs in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
+    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 
-As an example, let's consider the definition of class `gene`,
+As an example, let's consider the definition of the entity class `gene`,
 
 ```yaml
-
   gene:
     is_a: gene or gene product
     aliases: ['locus']
@@ -67,7 +67,6 @@ As an example, let's consider the definition of class `gene`,
       - RGD
       - SGD
       - PomBase
-
 ```
 
 In the above YAML snippet, `is_a`, `aliases`, `slots`, `exact_mappings`, and `id_prefixes` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the class definition.
@@ -79,19 +78,17 @@ Say you want to use the mixin class `thing with taxon` that defines an `in taxon
 You can achieve that as follows:
 
 ```yaml
-
   gene:
     is_a: gene or gene product
     mixins:
       - thing with taxon
     aliases: ['locus']
     ...
-
 ```
 
-In the above YAML snippet, we are explicitly defining the `gene` class to have `in taxon` as a slot in addition to all its slots, its parent slots, and all of its ancestor slots.
+In the above YAML snippet, we are explicitly defining the entity class `gene` to have `in taxon` as a slot in addition to all its slots, its parent slots, and all of its ancestor slots.
 
-There are [other BiolinkML slots](https://biolink.github.io/biolinkml/docs/ClassDefinition#Attributes) that can be used to define your class and represent the semantics of your class.
+There are [other BiolinkML slots](https://biolink.github.io/biolinkml/docs/ClassDefinition#Attributes) that can be used to define your class and further capture the semantics of your class.
 
 For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
 
@@ -116,19 +113,18 @@ To add an Association class to Biolink Model you need to determine the following
   - Where in the hierarchy does the new class fit?
     - Determine where in the [`association slot` hierarchy]() does this new assocation class fit
   - What are the slots that this association class can have (in addition to inherited slots)?
-    - What are the properties that this association ought to have
+    - Determine what additional properties that this class ought to have
   - Do certain slots have to be constrained on what values it ought to have?
-    - Determine whethere there are properties (new) or inherited properties whose value have to be constrained to a certain value space
+    - Determine whethere there are properties (new or inherited)  whose value have to be constrained to a certain value space
   - What are the mapping(s) for this class?
     - Mappings are a way of rooting this new association in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine if the level of granularity for your mappings. Mappings be divided into 5 types depending on its granularity: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
+    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 
 
 As an example, let's consider the definition of class  `variant to disease association`:
 
 ```yaml
-
   variant to disease association:
     is_a: association
     defining_slots:
@@ -154,7 +150,6 @@ As an example, let's consider the definition of class  `variant to disease assoc
         examples:
           - value: MONDO:0016419
             description: hereditary breast cancer
-
 ```
 
 In the above YAML snippet, `is_a`, `defining_slots`, `mixins`, and `slot_usage` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the class definition.
@@ -168,22 +163,21 @@ For more information on what each slot means and how to use them in Biolink Mode
 
 A predicate is a slot that links two instances of a class. 
 
-To add a predicate to Biolink Model you need to,
+To add a predicate to Biolink Model you need to determine the following,
   - What is an appropriate name for this predicate?
     - A human readable name for this predicate. It should capture the nature of the relationship
   - Where in the hierarchy does the new slot fit?
-    - Determine where in the [`related to` hierarchy]() does this new predicate slot fit
+    - Determine where in the [`related to` hierarchy](https://biolink.github.io/biolink-model/docs/related_to) does this new predicate slot fit
   - What are the domain and range constraints (if any)?
-    - Determine which type of classes can this predicate link
+    - Determine which type of entity classes can this predicate link
   - What are the mapping(s) for this slot?
     - Mappings are a way of rooting this new association in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine if the level of granularity for your mappings. Mappings be divided into 5 types depending on its granularity: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
+    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 
 As an example, let's consider the definition of slot `interacts with`:
 
 ```yaml
-
   interacts with:
     domain: named thing
     range: named thing
@@ -200,11 +194,11 @@ As an example, let's consider the definition of slot `interacts with`:
       - RO:0002120
       - RO:0002130
       - SEMMEDDB:complicates
-
 ```
 
 In the above YAML snippet, `domain`, `range`, `description`, `is_a`, `in_subset`, `symmetric`, `exact_mappings` and `narrow_mappings` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the slot definition.
 
+For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
 
 
 ### Adding properties
@@ -212,29 +206,27 @@ In the above YAML snippet, `domain`, `range`, `description`, `is_a`, `in_subset`
 You can add slots that represent node properties or edge properties.
 
 
-To add a node/edge property to Biolink Model you need to,
+To add a node/edge property to Biolink Model you need to determine the following,
   - What is an appropriate name for this slot?
     - A human readable name for this property
-  - Is it an node property or an edge property (association slot)?
+  - Is it a node property or an edge property (association slot)?
     - Determine whether the property is a node or an edge property
   - Where in the hierarchy does the new property fit?
     - Determine where in the property hierarchy does this new property fit
-    - If you want to add a node property then it should be added as part of the [`node property` hierarchy]()
-    - If you want to add an edge property then it should be added as part of the [`association slot` hierarchy]()
+    - If you want to add a node property then it should be added as part of the [`node property` hierarchy](https://biolink.github.io/biolink-model/docs/node_property)
+    - If you want to add an edge property then it should be added as part of the [`association slot` hierarchy](https://biolink.github.io/biolink-model/docs/association_slot)
   - Is this a required property?
-    - Determine whether all classes must have a value for this property
+    - Determine whether all instances of a class must have a value for this property
   - What are the domain and range constraints (if any)?
     - Determine which type of classes can have this property and what the value space for this property should be
   - What are the mapping(s) for this slot?
     - Mappings are a way of rooting this new property in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine if the level of granularity for your mappings. Mappings be divided into 5 types depending on its granularity: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
-
+    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 
 As an example, let's consider the slot `name` which is a node property:
 
 ```yaml
-
   name:
     is_a: node property
     aliases: ['label', 'display name']
@@ -249,14 +241,12 @@ As an example, let's consider the slot `name` which is a node property:
     exact_mappings:
       - gff3:Name
       - gpi:DB_Object_Name
-
 ```
 
 
 As another example, let's consider the slot `relation` which is an edge property:
 
 ```yaml
-
   relation:
     is_a: association slot
     description: >-
@@ -265,7 +255,6 @@ As another example, let's consider the slot `relation` which is an edge property
     domain: association
     range: uriorcurie
     required: true
-
 ```
 
 In the above YAML snippets, `is_a`, `aliases`, `domain`, `range`, `description`, `in_subset`, `required`, `slot_uri`, `exact_mappings` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the slot definition.
@@ -279,10 +268,10 @@ For more information on what each slot means and how to use them in Biolink Mode
 
 In the previous sections there were references to mappings and differentiating these mappings based on their granularity, which can be a bit of a nuanced exercise.
 
-What does it mean for a external concept or predicate or property to be one of `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`?
+What does it mean for a external concept (or predicate or property) to be one of `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`?
 
 Here is a rule of thumb on how to determine the granularity of mapping:
-- An external concept can be considered as an exact mapping to a Biolink Model class or slot if former can be used interchangeably with the latter. That is, the semantics are identical and any transitive property that the external concept might bring into the model should not violate the internal consistency of the model
+- An external concept can be considered as an exact mapping to a Biolink Model class or slot if the former can be used interchangeably with the latter. That is, the semantics are identical and any transitive property that the external concept might bring into the model should not violate the internal consistency of the model
 - If it is diffcult to determine if an external concept can be considered an exact mapping then it is much safer to treat it as a close mapping
 - If an external concept can be treated a sub-class of the Biolink Model class or slot then it can be treated as a narrow mapping
 - If an external concept can be treated as a super-class of the Biolink Model class or slot then it can be treated as a broad mapping
