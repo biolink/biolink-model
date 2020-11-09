@@ -8,8 +8,3 @@ The guidelines are organized into five parts:
 - [Using the Modeling Language](using-the-modeling-language.md)
 - [Working with the Biolink Model](working-with-the-model.md)
 - [Maintaining the Biolink Model](maintaining-the-model.md)
-
-
-Chris wants visual examples
-
-KGX -> Obograph -> Obographviz -> PNG

@@ -96,3 +96,111 @@ There are 3 ways of attaching the semantics to an edge:
   - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
 - using the Biolink association slot `association_type` (or `rdf:type`)
   - must have a value from the [`association` hierarchy](https://biolink.github.io/biolink-model/docs/Association)
+
+
+### Biolink Model representation in Neo4j
+
+The model itself is very close to labelled property graphs.
+
+The previous example can be easily converted to a Neo4j compatible TSV using [KGX](https://github.com/biolink/kgx).
+
+`nodes.tsv`:
+
+```tsv
+id:ID	name	category:LABEL	xref	provided_by:string[]	in_taxon	type
+UniProtKB:P84085	ARF5	biolink:Protein	ENSEMBL:ENSP00000000233	STRING	NCBITaxon:9606	
+UniProtKB:P0DP24	CALM2	biolink:Protein	ENSEMBL:ENSP00000272298	STRING	NCBITaxon:9606	
+UniProtKB:O43307	ARHGEF9	biolink:Protein	ENSEMBL:ENSP00000253401	STRING	NCBITaxon:9606	
+UniProtKB:O75460	ERN1	biolink:Protein	ENSEMBL:ENSP00000401445	STRING	NCBITaxon:9606	
+NCBIGene:381	ARF5	biolink:Gene	ENSEMBL:ENSG00000004059	STRING	NCBITaxon:9606	SO:0001217
+NCBIGene:805	CALM2	biolink:Gene	ENSEMBL:ENSG00000143933	STRING	NCBITaxon:9606	SO:0001217
+NCBIGene:23229	ARHGEF9	biolink:Gene	ENSEMBL:ENSG00000131089	STRING	NCBITaxon:9606	SO:0001217
+NCBIGene:2081	ERN1	biolink:Gene	ENSEMBL:ENSG00000178607	STRING	NCBITaxon:9606	SO:0001217
+```
+
+
+`edges.tsv`:
+```tsv
+id	subject:START_ID	predicate:TYPE	object:END_ID	relation	provided_by:string[]	association_type
+985eb9e6-e0bf-4cef-be0a-3d8ea12d228b	NCBIGene:381	biolink:interacts_with	NCBIGene:805	RO:0002436	STRING	biolink:GeneToGeneAssociation
+5550b653-69ff-48cc-a1ef-638ecdc50ea3	NCBIGene:381	biolink:interacts_with	NCBIGene:23229	RO:0002436	STRING	biolink:GeneToGeneAssociation
+8bff8da0-6da2-4154-b507-a8e9f75c55f8	NCBIGene:381	biolink:interacts_with	NCBIGene:2081	RO:0002436	STRING	biolink:GeneToGeneAssociation
+36e2edf0-d490-4417-9407-7070f4320083	NCBIGene:381	biolink:has_gene_product	UniProtKB:P84085	RO:0002205	STRING	
+0dd21d53-4985-467c-8e6d-0a79c0410016	NCBIGene:805	biolink:has_gene_product	UniProtKB:P0DP24	RO:0002205	STRING	
+fe5f9383-c5f6-4eba-9dc4-185e6d331459	NCBIGene:23229	biolink:has_gene_product	UniProtKB:O43307	RO:0002205	STRING	
+8c60c2b2-ff6c-45d5-a18f-e927ab1dec35	NCBIGene:2081	biolink:has_gene_product	UniProtKB:O75460	RO:0002205	STRING	
+```
+
+
+### Biolink Model representation in RDF
+
+The previous example can be easily converted to RDF N-Triples using [KGX](https://github.com/biolink/kgx),
+
+```nt
+<http://identifiers.org/uniprot/P84085> <http://www.w3.org/2000/01/rdf-schema#label> "ARF5"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://identifiers.org/uniprot/P84085> <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Protein> .
+<http://identifiers.org/uniprot/P84085> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<http://identifiers.org/uniprot/P84085> <https://w3id.org/biolink/vocab/xref> <http://identifiers.org/ensembl/ENSP00000000233> .
+<http://identifiers.org/uniprot/P84085> <https://w3id.org/biolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://identifiers.org/uniprot/P0DP24> <http://www.w3.org/2000/01/rdf-schema#label> "CALM2"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://identifiers.org/uniprot/P0DP24> <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Protein> .
+<http://identifiers.org/uniprot/P0DP24> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<http://identifiers.org/uniprot/P0DP24> <https://w3id.org/biolink/vocab/xref> <http://identifiers.org/ensembl/ENSP00000272298> .
+<http://identifiers.org/uniprot/P0DP24> <https://w3id.org/biolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://identifiers.org/uniprot/O43307> <http://www.w3.org/2000/01/rdf-schema#label> "ARHGEF9"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://identifiers.org/uniprot/O43307> <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Protein> .
+<http://identifiers.org/uniprot/O43307> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<http://identifiers.org/uniprot/O43307> <https://w3id.org/biolink/vocab/xref> <http://identifiers.org/ensembl/ENSP00000253401> .
+<http://identifiers.org/uniprot/O43307> <https://w3id.org/biolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://identifiers.org/uniprot/O75460> <http://www.w3.org/2000/01/rdf-schema#label> "ERN1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://identifiers.org/uniprot/O75460> <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Protein> .
+<http://identifiers.org/uniprot/O75460> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<http://identifiers.org/uniprot/O75460> <https://w3id.org/biolink/vocab/xref> <http://identifiers.org/ensembl/ENSP00000401445> .
+<http://identifiers.org/uniprot/O75460> <https://w3id.org/biolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://www.ncbi.nlm.nih.gov/gene/381> <http://www.w3.org/2000/01/rdf-schema#label> "ARF5"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Gene> .
+<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/biolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000004059> .
+<http://www.ncbi.nlm.nih.gov/gene/381> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
+<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/biolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://www.ncbi.nlm.nih.gov/gene/805> <http://www.w3.org/2000/01/rdf-schema#label> "CALM2"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Gene> .
+<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/biolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000143933> .
+<http://www.ncbi.nlm.nih.gov/gene/805> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
+<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/biolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://www.ncbi.nlm.nih.gov/gene/23229> <http://www.w3.org/2000/01/rdf-schema#label> "ARHGEF9"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Gene> .
+<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/biolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000131089> .
+<http://www.ncbi.nlm.nih.gov/gene/23229> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
+<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/biolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://www.ncbi.nlm.nih.gov/gene/2081> <http://www.w3.org/2000/01/rdf-schema#label> "ERN1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Gene> .
+<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/biolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000178607> .
+<http://www.ncbi.nlm.nih.gov/gene/2081> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
+<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/biolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/gene/381> .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://w3id.org/biolink/vocab/interacts_with> .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/gene/805> .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <https://w3id.org/biolink/vocab/relation> <http://purl.obolibrary.org/obo/RO_0002436> .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <https://w3id.org/biolink/vocab/association_type> <https://w3id.org/biolink/vocab/GeneToGeneAssociation> .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/gene/381> .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://w3id.org/biolink/vocab/interacts_with> .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/gene/23229> .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <https://w3id.org/biolink/vocab/relation> <http://purl.obolibrary.org/obo/RO_0002436> .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <https://w3id.org/biolink/vocab/association_type> <https://w3id.org/biolink/vocab/GeneToGeneAssociation> .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/gene/381> .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://w3id.org/biolink/vocab/interacts_with> .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/gene/2081> .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <https://w3id.org/biolink/vocab/relation> <http://purl.obolibrary.org/obo/RO_0002436> .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <https://w3id.org/biolink/vocab/provided_by> "STRING" .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <https://w3id.org/biolink/vocab/association_type> <https://w3id.org/biolink/vocab/GeneToGeneAssociation> .
+<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/biolink/vocab/has_gene_product> <http://identifiers.org/uniprot/P84085> .
+<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/biolink/vocab/has_gene_product> <http://identifiers.org/uniprot/P0DP24> .
+<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/biolink/vocab/has_gene_product> <http://identifiers.org/uniprot/O43307> .
+<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/biolink/vocab/has_gene_product> <http://identifiers.org/uniprot/O75460> .
+```
