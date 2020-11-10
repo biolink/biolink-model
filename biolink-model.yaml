@@ -52,6 +52,7 @@ prefixes:
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
   ResearchID: 'https://publons.com/researcher/'
+  RO: 'http://purl.obolibrary.org/obo/RO_'
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
@@ -69,7 +70,6 @@ prefixes:
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
-  RO: 'http://purl.obolibrary.org/obo/RO_'
 
 default_prefix: biolink
 default_range: string
@@ -2684,7 +2684,7 @@ slots:
       - RO:0002500
 
   enables:
-    is_a: has participant
+    is_a: participates in
     description: >-
       holds between a physical entity and a process, where the physical entity executes the process
     domain: physical entity
@@ -5404,12 +5404,13 @@ classes:
     comments:
       - This is roughly the model used by biolink and ontobio at the moment
     slots:
-      - subject
-      - relation
-      - object
       - association_id
-      - negated
       - association type
+      - subject
+      - predicate
+      - object
+      - relation
+      - negated
       - qualifiers
       - publications
       - provided by
