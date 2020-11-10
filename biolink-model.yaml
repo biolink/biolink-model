@@ -3550,6 +3550,14 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P478
 
+  chapter:
+    is_a: node property
+    description: >-
+      chapter of a book
+    domain: book chapter
+    exact_mappings:
+      - WIKIDATA:Q1980247
+
   issue:
     is_a: node property
     description: >-
@@ -4306,31 +4314,31 @@ classes:
       - type
       - distribution
 
+  ## Publication related entity classes
+
   # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
   publication:
     is_a: information content entity
     description: >-
-      Any published piece of information. Can refer to a whole publication, or to a part
-      of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended
-      to be general and include information published on the web, as well as journals.
+      Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal
+      or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or
+      section highlighted by NLP). The scope is intended to be general and include information published on the web,
+      as well as printed materials.
     slots:
       - type
-      - published in
-      - iso abbreviation
       - authors
-      - volume
-      - issue
       - pages
       - abstract
       - keywords
       - mesh terms
       - xref
+    # In addition to embedded slots, instances of 'contributor association'
+    # may be used to more extensively document publisher, editor and author details
     slot_usage:
       id:
         required: true
         description: >-
-          Different kinds of publications - parent publications like books and journals - versus child publications -
-          such as journal articles - will have different preferred identifiers (curies when feasible).
+          Different kinds of publication subtypes will have different preferred identifiers (curies when feasible).
           Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual
           alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as
           books and journals, should have industry-standard identifier such as from ISBN and ISSN.
@@ -4361,8 +4369,9 @@ classes:
       pages:
         multivalued: true
         description: >-
-          when a 2-tuple of page numbers are provided, they represent
-          the start and end page of the publication within its parent publication context
+          When a 2-tuple of page numbers are provided, they represent
+          the start and end page of the publication within its parent publication context.
+          For books, this may be set to the total number of pages of the book.
     exact_mappings:
       - IAO:0000311
     narrow_mappings:
@@ -4371,12 +4380,77 @@ classes:
       - UMLSSC:T170
       - UMLSST:inpr
     id_prefixes:
-      # By inheritance, a DOI may be used as a publication identifier; there may be other relevant research namespaces
-      - PMID
-      # In some instances, whole books and journals may be modelled as an integral publication node
+      - NLMID
+
+  book:
+    is_a: publication
+    description: >-
+      This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+    slot_usage:
+      id:
+        required: true
+        description: >-
+          Books should have industry-standard identifier such as from ISBN.
+      type:
+        description: >-
+          Should generally be set to an ontology class defined term for 'book'.
+    id_prefixes:
       - isbn
+      - NLMID
+
+  book chapter:
+    is_a: publication
+    slots:
+      - published in
+      - volume
+      - chapter
+    slot_usage:
+      published in:
+        required: true
+        description: >-
+          The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.
+
+  serial:
+    aliases: ['journal']
+    is_a: publication
+    description: >-
+      This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+    slots:
+      - iso abbreviation
+      - volume
+      - issue
+    slot_usage:
+      id:
+        required: true
+        description: >-
+          Serials (journals) should have industry-standard identifier such as from ISSN.
+      type:
+        description: >-
+          Should generally be set to an ontology class defined term for 'serial' or 'journal'.
+    id_prefixes:
       - issn
       - NLMID
+
+  article:
+    is_a: publication
+    slots:
+      - published in
+      - iso abbreviation
+      - volume
+      - issue
+    slot_usage:
+      published in:
+        required: true
+        description: >-
+          The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
+      iso abbreviation:
+        description: >-
+          Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
+    id_prefixes:
+      # By inheritance, a DOI may be used as a publication identifier; there may be other relevant namespaces
+      - PMID
+
+  ## end of Publication related entity classes
 
   distribution level:
     is_a: data set version
