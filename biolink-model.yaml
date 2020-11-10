@@ -42,6 +42,7 @@ prefixes:
   ICD0: 'http://translator.ncats.nih.gov/ICD0_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  isni: 'https://isni.org/isni/'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
@@ -446,14 +447,22 @@ slots:
 
   contributor:
     is_a: related to
-    domain: publication
+    domain: information content entity
     range: agent
     comments:
-      - This is a grouping for publications and associated contributors towards the published end product
+      - This is a grouping for predicates relating entities to their associated contributors realizing them
     abstract: true
+    exact_mappings:
+      - dcterms:contributor
+
+  provider:
+    is_a: contributor
+    description: >-
+      person, group, organization or project that provides a piece of information (e.g. a knowledge association).
 
   publisher:
     is_a: contributor
+    domain: publication
     description: >-
       organization or person responsible for publishing books, periodicals, podcasts, games or software.
       Note that in the case of publications which have a containing "published in" node property, the publisher
@@ -466,6 +475,7 @@ slots:
 
   editor:
     is_a: contributor
+    domain: publication
     description: >-
       editor of a compiled work such as a book or a periodical (newspaper or an academic journal).
       Note that in the case of publications which have a containing "published in" node property, the editor
@@ -477,10 +487,11 @@ slots:
 
   author:
     is_a: contributor
+    domain: publication
     description: >-
-      an instance of one (co-)creator of a written work
+      an instance of one (co-)creator primarily responsible for a written work
     exact_mappings:
-      - dcterms:contributor
+      - dcterms:creator
       - WIKIDATA_PROPERTY:P50
 
   ## end of Publication related predicates
@@ -3478,7 +3489,7 @@ slots:
     is_a: association slot
     description: >-
       connects an association to the agent (person, organization or group) that provided it
-    range: provider
+    range: agent
     multivalued: true
     mappings:
       - pav:providedBy
@@ -4323,7 +4334,7 @@ classes:
     description: >-
       Any published piece of information. Can refer to a whole publication, or to a part
       of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended
-      to be general and include information published on the web as well as journals.
+      to be general and include information published on the web, as well as journals.
     slots:
       - publication type
       - published in
@@ -4365,11 +4376,12 @@ classes:
       - UMLSSC:T170
       - UMLSST:inpr
     id_prefixes:
-      # By inheritance, the id may also be a DOI; there may be other relevant prefixes
+      # By inheritance, a DOI may be used as a publication identifier; there may be other relevant research namespaces
       - PMID
-      # Whole books and journals may be modelled as an integral publication node
+      # In some instances, whole books and journals may be modelled as an integral publication node
       - isbn
       - issn
+      - NLMID
 
   distribution level:
     is_a: data set version
@@ -4695,15 +4707,18 @@ classes:
     is_a: named thing
     abstract: true
 
-  provider:
+  agent:
     is_a: administrative entity
-    aliases: ['agent', 'group']
+    aliases: ['group']
     description: >-
       person, group, organization or project that provides a piece of information (i.e. a knowledge association)
     slots:
       - affiliation
       - address
-    mappings: # Organizations
+    exact_mappings:
+      - prov:Agent
+      - dcterms:Agent
+    narrow_mappings:
       - UMLSSG:ORGA
       # Organization
       - UMLSSC:T092
@@ -4717,39 +4732,35 @@ classes:
       # Self-help or Relief Organization
       - UMLSSC:T095
       - UMLSST:shro
-      - prov:Agent
-
-  agent:
-    is_a: provider
-    description: >-
-      person, group, organization or project that contributes to a publication
     slot_usage:
       id:
         required: true
         description: >-
-          Different publication associated agents have preferred identifiers.
+          Different classes of agents have distinct preferred identifiers.
           For publishers, use the ISBN publisher code.
-          For editors and authors, use the individual's ORCID if available; otherwise, a ScopusID,
-          ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown.
+          For editors, authors and  individual providers, use the individual's ORCID if available;
+          Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown.
+          Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
         values_from:
           # CURIE space for publishers
-          - ISBN
+          - isbn
           # CURIE space for authors
           - ORCID
           - ScopusID
           - ResearchID
           - GSID
+          # Institutional agents
+          - isni
       name:
         description: >-
           it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
     id_prefixes:
-      - NLMID
       - isbn
-      - issn
       - ORCID
       - ScopusID
       - ResearchID
       - GSID
+      - isni
 
   molecular entity:
     is_a: biological entity
@@ -5407,31 +5418,31 @@ classes:
       - "rdf:Statement"
       - "owl:Axiom"
 
-  publication to agent association:
+  contributor association:
     is_a: association
     defining_slots:
       - subject
       - predicate
       - object
     description: >-
-      Any association between a publication and various agents that contribute to its realisation
+      Any association between an entity (such as a publication) and various agents that contribute to its realisation
     slot_usage:
       subject:
-        range: publication
+        range: information content entity
         description: >-
-          publication which an agent has helped realise
+          information content entity which an agent has helped realise
       predicate:
         subproperty_of: contributor
         description: >-
-          generally one of the predicate values 'publisher', 'editor' or 'author'
+          generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'
       object:
         range: agent
         description: >-
-          agent helping to realise the given publication
+          agent helping to realise the given entity (e.g. such as a publication)
       qualifiers:
         description: >-
           this field can be used to annotate special characteristics of an agent relationship, such as the fact
-          that a given author agent is the 'corresponding author'
+          that a given author agent of a publication is the 'corresponding author'
 
   genotype to genotype part association:
     is_a: association
