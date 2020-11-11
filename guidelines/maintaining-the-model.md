@@ -2,7 +2,7 @@
 
 The Biolink Model is under constant development with new classes and slots being added on a monthly basis. The main driver for the model is the NCATS Biomedical Data Translator.
 
-This rapid development of the model may causes tools that directly depend on the model to break. To avoid such a scenario any tool that uses Biolink Model YAML (or it artifacts) must pin to a particular release. A full list of releases can be found on [GitHub](https://github.com/biolink/biolink-model/releases)
+This rapid development of the model may cause tools that directly depend on the model to break. To avoid such a scenario any tool that uses Biolink Model YAML (or it artifacts) must pin to a particular release. A full list of releases can be found on [GitHub](https://github.com/biolink/biolink-model/releases)
 
 
 This section will address the strategies for maintaining the Biolink Model.
