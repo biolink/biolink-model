@@ -1,18 +1,17 @@
 # Curating the Biolink Model
 
-For anyone curating the Biolink Model it is always advised that they are familiar with the basics of [BiolinkML](https://github.com/biolink/biolinkml).
+Before curating the Biolink Model, we recommend that you familiarize yourself with the basics of [BiolinkML](https://github.com/biolink/biolinkml).
 
 In Biolink Model all the curation should happen in one place: [biolink-model.yaml](../biolink-model.yaml)
+This is the one source of truth for the model.
 
-This is the one source of truth for the model and thus any changes must be directed to the Biolink Model YAML.
-
-This section tries to explore on how to go about adding new classes and slots to the model.
+This section explores how to go about adding new classes and slots to the model.
 
 ### Adding an Entity class
 
 An entity class represents entities like Genes, Diseases, Chemical Substances, etc.
 
-Instances of these Entity class are represented as nodes in a graph.
+Instances of these Entity classes are represented as nodes in a graph.
 
 Biolink Model has several entitiy classes like `gene`, `disease`, `phenotypic feature`, `chemical substance`.
 
@@ -35,7 +34,7 @@ To add an entity class to Biolink Model you need to determine the following,
     - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 
-As an example, let's consider the definition of the entity class `gene`,
+As an example, let's consider the definition of the entity class `gene`:
 
 ```yaml
   gene:
@@ -276,9 +275,4 @@ Here is a rule of thumb on how to determine the granularity of mapping:
 - If an external concept can be treated a sub-class of the Biolink Model class or slot then it can be treated as a narrow mapping
 - If an external concept can be treated as a super-class of the Biolink Model class or slot then it can be treated as a broad mapping
 - If an external concept is distantly related to a Biolink Model class or slot then it can be treated as a related mapping
-
-
-
-
-
 
