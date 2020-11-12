@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-11-12 19:41
+# Generation date: 2020-11-12 22:05
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1394,7 +1394,7 @@ class Publication(InformationContentEntity):
     name: Union[str, LabelType] = None
     authors: List[str] = empty_list()
     pages: List[str] = empty_list()
-    abstract: Optional[str] = None
+    summary: Optional[str] = None
     keywords: List[str] = empty_list()
     mesh_terms: List[Union[str, URIorCURIE]] = empty_list()
     xref: List[Union[str, IriType]] = empty_list()
@@ -5991,8 +5991,8 @@ slots.issue = Slot(uri=BIOLINK.issue, name="issue", curie=BIOLINK.curie('issue')
 slots.pages = Slot(uri=BIOLINK.pages, name="pages", curie=BIOLINK.curie('pages'),
                       model_uri=BIOLINK.pages, domain=Publication, range=List[str])
 
-slots.abstract = Slot(uri=BIOLINK.abstract, name="abstract", curie=BIOLINK.curie('abstract'),
-                      model_uri=BIOLINK.abstract, domain=Publication, range=Optional[str])
+slots.summary = Slot(uri=BIOLINK.summary, name="summary", curie=BIOLINK.curie('summary'),
+                      model_uri=BIOLINK.summary, domain=Publication, range=Optional[str])
 
 slots.keywords = Slot(uri=BIOLINK.keywords, name="keywords", curie=BIOLINK.curie('keywords'),
                       model_uri=BIOLINK.keywords, domain=Publication, range=List[str])

@@ -74,7 +74,7 @@ message Article
   type String = 7
   repeated authors String = 8
   repeated pages String = 9
-  optional abstract String = 10
+  optional summary String = 10
   repeated keywords String = 11
   repeated meshTerms Uriorcurie = 12
   repeated xref IriType = 13
@@ -149,7 +149,7 @@ message Book
   optional creationDate Date = 6
   repeated authors String = 7
   repeated pages String = 8
-  optional abstract String = 9
+  optional summary String = 9
   repeated keywords String = 10
   repeated meshTerms Uriorcurie = 11
   repeated xref IriType = 12
@@ -168,7 +168,7 @@ message BookChapter
   type String = 7
   repeated authors String = 8
   repeated pages String = 9
-  optional abstract String = 10
+  optional summary String = 10
   repeated keywords String = 11
   repeated meshTerms Uriorcurie = 12
   repeated xref IriType = 13
@@ -1377,7 +1377,7 @@ message Publication
   type String = 7
   repeated authors String = 8
   repeated pages String = 9
-  optional abstract String = 10
+  optional summary String = 10
   repeated keywords String = 11
   repeated meshTerms Uriorcurie = 12
   repeated xref IriType = 13
@@ -1478,7 +1478,7 @@ message Serial
   optional creationDate Date = 6
   repeated authors String = 7
   repeated pages String = 8
-  optional abstract String = 9
+  optional summary String = 9
   repeated keywords String = 10
   repeated meshTerms Uriorcurie = 11
   repeated xref IriType = 12

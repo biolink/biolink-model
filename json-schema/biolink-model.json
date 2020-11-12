@@ -304,10 +304,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "abstract": {
-               "description": "summary of a publication",
-               "type": "string"
-            },
             "authors": {
                "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
                "items": {
@@ -378,6 +374,10 @@
                "type": "string"
             },
             "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
                "type": "string"
             },
             "type": {
@@ -658,10 +658,6 @@
          "additionalProperties": false,
          "description": "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.",
          "properties": {
-            "abstract": {
-               "description": "summary of a publication",
-               "type": "string"
-            },
             "authors": {
                "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
                "items": {
@@ -722,6 +718,10 @@
             "rights": {
                "type": "string"
             },
+            "summary": {
+               "description": "executive  summary of a publication",
+               "type": "string"
+            },
             "type": {
                "description": "Should generally be set to an ontology class defined term for 'book'.",
                "type": "string"
@@ -747,10 +747,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "abstract": {
-               "description": "summary of a publication",
-               "type": "string"
-            },
             "authors": {
                "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
                "items": {
@@ -817,6 +813,10 @@
                "type": "string"
             },
             "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
                "type": "string"
             },
             "type": {
@@ -6311,10 +6311,6 @@
          "additionalProperties": false,
          "description": "Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.",
          "properties": {
-            "abstract": {
-               "description": "summary of a publication",
-               "type": "string"
-            },
             "authors": {
                "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
                "items": {
@@ -6373,6 +6369,10 @@
                "type": "array"
             },
             "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
                "type": "string"
             },
             "type": {
@@ -6777,10 +6777,6 @@
          "additionalProperties": false,
          "description": "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.",
          "properties": {
-            "abstract": {
-               "description": "summary of a publication",
-               "type": "string"
-            },
             "authors": {
                "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
                "items": {
@@ -6847,6 +6843,10 @@
                "type": "array"
             },
             "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
                "type": "string"
             },
             "type": {
