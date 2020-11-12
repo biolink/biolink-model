@@ -3575,10 +3575,13 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P304
 
-  abstract:
+  summary:
     is_a: node property
+    # since 'abstract' is a BiolinkML keyword denoting a non-instantiable class or slot,
+    # it is generally recommended that knowledge graphs use 'summary' instead to tag a Publication 'abstract'
+    aliases: ['abstract']
     description: >-
-      summary of a publication
+      executive  summary of a publication
     domain: publication
     exact_mappings:
       - dcterms:abstract
@@ -4328,7 +4331,7 @@ classes:
       - type
       - authors
       - pages
-      - abstract
+      - summary
       - keywords
       - mesh terms
       - xref
