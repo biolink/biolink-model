@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2262.3,283"];
+	graph [bb="0,0,2242.3,283"];
 	node [label="\N"];
 	"gene to phenotypic feature association"	 [height=0.5,
 		label="gene to phenotypic feature association",
@@ -56,23 +56,23 @@ digraph {
 	object	 [color=blue,
 		height=0.5,
 		label="named thing",
-		pos="1306,91",
+		pos="1296,91",
 		width=1.5346];
 	"gene to phenotypic feature association" -> object	 [color=blue,
 		label=object,
 		lp="1085,178",
-		pos="e,1255.6,98.447 1151.9,248.34 1101.2,230.36 1038.8,198.99 1068,160 1089.4,131.55 1182.5,111.06 1245.7,100.12",
+		pos="e,1246.4,98.997 1151.5,248.25 1101,230.29 1039.1,199.04 1068,160 1088.2,132.79 1176,112.14 1236.6,100.8",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="1306,18",
+		pos="1296,18",
 		width=1.2638];
 	"gene to phenotypic feature association" -> relation	 [color=blue,
 		label=relation,
-		lp="1070,134.5",
-		pos="e,1261.8,22.228 1123.7,250.21 1108.3,245.1 1093,238.23 1080,229 1041.4,201.54 1022.9,166.51 1049,127 1093.9,59.194 1190.4,33.447 \
-1251.5,23.754",
+		lp="1069,134.5",
+		pos="e,1251.8,22.974 1123.7,250.21 1108.3,245.1 1093,238.23 1080,229 1041.3,201.47 1022.1,166.78 1048,127 1090.8,61.478 1182.7,35.083 \
+1241.9,24.633",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -106,87 +106,87 @@ digraph {
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
-		label=provider,
-		pos="1505,178",
-		width=1.1193];
+		label=agent,
+		pos="1495,178",
+		width=0.83048];
 	"gene to phenotypic feature association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1469,221.5",
-		pos="e,1480.4,192.32 1307,251.64 1337.3,246.18 1370.4,238.78 1400,229 1424.9,220.79 1451.4,207.88 1471.6,197.1",
+		lp="1466,221.5",
+		pos="e,1474.8,191.27 1309.7,251.93 1339.3,246.53 1371.4,239.09 1400,229 1423.3,220.8 1447.8,207.53 1466.1,196.59",
 		style=solid];
 	subject	 [height=0.5,
-		pos="1599,178",
+		pos="1579,178",
 		width=0.99297];
 	"gene to phenotypic feature association" -> subject	 [color=blue,
 		label=subject,
-		lp="1560.5,221.5",
-		pos="e,1577.9,192.64 1314.5,252.61 1398.2,242.8 1501.4,230.51 1506,229 1528.4,221.8 1551.6,209.09 1569.3,198.16",
+		lp="1552.5,221.5",
+		pos="e,1561.1,193.68 1314.3,252.61 1397,242.88 1498.5,230.7 1503,229 1521.1,222.3 1539,210.55 1552.9,200.02",
 		style=solid];
 	"sex qualifier"	 [color=blue,
 		height=0.5,
 		label="biological sex",
-		pos="1713,178",
+		pos="1693,178",
 		width=1.661];
 	"gene to phenotypic feature association" -> "sex qualifier"	 [color=blue,
 		label="sex qualifier",
-		lp="1666,221.5",
-		pos="e,1681.8,193.37 1312.6,252.36 1329.5,250.47 1346.7,248.61 1363,247 1461.1,237.31 1488.1,251.36 1584,229 1614.7,221.85 1647.7,208.7 \
-1672.7,197.54",
+		lp="1654,221.5",
+		pos="e,1664.2,193.76 1312.6,252.4 1329.5,250.5 1346.7,248.64 1363,247 1457.6,237.52 1483.9,252.29 1576,229 1603.5,222.06 1632.7,209.35 \
+1655,198.35",
 		style=solid];
 	description	 [height=0.5,
-		pos="1841,178",
+		pos="1821,178",
 		width=1.3902];
 	"gene to phenotypic feature association" -> description	 [color=blue,
 		label=description,
-		lp="1785.5,221.5",
-		pos="e,1810.6,192.41 1310.9,252.13 1328.3,250.22 1346.2,248.42 1363,247 1514.3,234.24 1555.4,259.83 1704,229 1737.8,222 1774.3,208.07 \
-1801.1,196.54",
+		lp="1770.5,221.5",
+		pos="e,1791.9,192.66 1310.9,252.16 1328.3,250.25 1346.2,248.44 1363,247 1509,234.55 1549,260.32 1692,229 1723.6,222.08 1757.6,208.38 \
+1782.7,196.92",
 		style=solid];
 	"frequency qualifier"	 [color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="1977,178",
+		pos="1957,178",
 		width=1.8776];
 	"gene to phenotypic feature association" -> "frequency qualifier"	 [color=blue,
 		label="frequency qualifier",
-		lp="1930,221.5",
-		pos="e,1940,193.22 1310.1,252.03 1327.7,250.11 1345.9,248.33 1363,247 1565.7,231.26 1619.9,264.74 1820,229 1858.1,222.2 1899.6,208.41 \
-1930.4,196.88",
+		lp="1913,221.5",
+		pos="e,1921,193.34 1310.1,252.05 1327.7,250.13 1345.9,248.34 1363,247 1559.1,231.65 1611.7,264.63 1805,229 1841.7,222.25 1881.6,208.61 \
+1911.3,197.14",
 		style=solid];
 	"severity qualifier"	 [color=blue,
 		height=0.5,
 		label="severity value",
-		pos="2122,178",
+		pos="2102,178",
 		width=1.661];
 	"gene to phenotypic feature association" -> "severity qualifier"	 [color=blue,
 		label="severity qualifier",
-		lp="2082.5,221.5",
-		pos="e,2090.2,193.37 1309.2,251.97 1327.1,250.03 1345.6,248.26 1363,247 1501.2,237 1850.1,255.68 1986,229 2019,222.53 2054.5,209 2080.9,\
-197.49",
+		lp="2064.5,221.5",
+		pos="e,2070.7,193.48 1309.2,251.98 1327.1,250.04 1345.6,248.27 1363,247 1497.4,237.22 1836.9,255.49 1969,229 2001.1,222.58 2035.5,209.2 \
+2061.3,197.76",
 		style=solid];
 	"onset qualifier"	 [color=blue,
 		height=0.5,
 		label=onset,
-		pos="2233,178",
+		pos="2213,178",
 		width=0.81243];
 	"gene to phenotypic feature association" -> "onset qualifier"	 [color=blue,
 		label="onset qualifier",
-		lp="2209.5,221.5",
-		pos="e,2213.4,191.38 1308.8,251.93 1326.8,249.98 1345.5,248.22 1363,247 1448.4,241.06 2050.1,249.96 2133,229 2158.8,222.49 2185.5,208.44 \
-2204.8,196.73",
+		lp="2190.5,221.5",
+		pos="e,2193.5,191.62 1308.8,251.94 1326.8,249.99 1345.5,248.23 1363,247 1446.4,241.17 2034.1,249.83 2115,229 2140.1,222.55 2166,208.73 \
+2184.8,197.11",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label=string,
 		pos="1403,265",
 		width=0.84854];
-	object -> relation	 [pos="e,1306,36.09 1306,72.955 1306,64.883 1306,55.176 1306,46.182",
+	object -> relation	 [pos="e,1296,36.09 1296,72.955 1296,64.883 1296,55.176 1296,46.182",
 		style=dotted];
 	subject -> object	 [label=relation,
-		lp="1459,134.5",
-		pos="e,1338.2,105.67 1571.8,165.95 1566,163.72 1559.9,161.6 1554,160 1503.7,146.22 1488.4,155.48 1438,142 1407,133.7 1373.2,120.57 1347.6,\
-109.71"];
-	subject -> relation	 [pos="e,1332.8,32.59 1574.6,164.63 1522.8,136.34 1401.9,70.318 1341.6,37.39",
+		lp="1444,134.5",
+		pos="e,1327.5,105.89 1551.8,165.98 1546,163.75 1539.9,161.62 1534,160 1485.9,146.64 1471.2,155.39 1423,142 1393.4,133.76 1361.3,120.83 \
+1336.8,110.05"];
+	subject -> relation	 [pos="e,1322.2,32.759 1554.9,164.36 1504.8,136.02 1389.3,70.7 1331,37.757",
 		style=dotted];
 	"gene to phenotypic feature association_subject"	 [color=blue,
 		height=0.5,

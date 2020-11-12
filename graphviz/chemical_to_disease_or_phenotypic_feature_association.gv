@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1757,283"];
+	graph [bb="0,0,1736,283"];
 	node [label="\N"];
 	"chemical to disease or phenotypic feature association"	 [height=0.5,
 		label="chemical to disease or phenotypic feature association",
@@ -104,23 +104,23 @@ digraph {
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
-		label=provider,
-		pos="1667,178",
-		width=1.1193];
+		label=agent,
+		pos="1657,178",
+		width=0.83048];
 	"chemical to disease or phenotypic feature association" -> "provided by"	 [color=blue,
 		label="provided by",
 		lp="1602,221.5",
-		pos="e,1637.4,190.33 1208,252.42 1229.8,250.56 1252,248.7 1273,247 1379.2,238.41 1407.4,248.96 1512,229 1552.5,221.29 1596.9,205.91 1627.8,\
-194.04",
+		pos="e,1633.7,189.35 1208,252.42 1229.8,250.56 1252,248.7 1273,247 1379.2,238.41 1407.4,248.96 1512,229 1560.5,219.75 1572,213.71 1618,\
+196 1620.1,195.2 1622.3,194.33 1624.4,193.43",
 		style=solid];
 	object	 [height=0.5,
 		pos="1235,91",
 		width=0.9027];
 	"chemical to disease or phenotypic feature association" -> object	 [color=blue,
 		label=object,
-		lp="1740,178",
-		pos="e,1267.6,93.234 1205.1,252.16 1227.8,250.29 1251.1,248.49 1273,247 1354.3,241.49 1559.7,247.33 1639,229 1675.3,220.62 1695.5,227.08 \
-1716,196 1724.9,182.64 1726.5,172.09 1716,160 1687.4,127 1390.4,102.24 1277.9,93.982",
+		lp="1719,178",
+		pos="e,1267.3,93.423 1205.1,252.16 1227.8,250.29 1251.1,248.49 1273,247 1354.3,241.49 1560.9,252.05 1639,229 1667.1,220.71 1681.4,221.36 \
+1696,196 1704,182.14 1706.5,172.12 1696,160 1668.8,128.4 1386.5,102.95 1277.6,94.237",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,

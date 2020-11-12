@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1737.7,283"];
+	graph [bb="0,0,1716.7,283"];
 	node [label="\N"];
 	"gene has variant that contributes to disease association"	 [height=0.5,
 		label="gene has variant that contributes to disease association",
@@ -42,23 +42,23 @@ digraph {
 	object	 [color=blue,
 		height=0.5,
 		label="named thing",
-		pos="1146.9,91",
+		pos="1135.9,91",
 		width=1.5346];
 	"gene has variant that contributes to disease association" -> object	 [color=blue,
 		label=object,
 		lp="663.94,178",
-		pos="e,1092.5,94.525 753.41,248.94 684.39,233.01 608.19,204.47 646.94,160 675.18,127.6 953.79,104.34 1082.4,95.234",
+		pos="e,1081.8,94.683 753.1,248.89 684.19,232.96 608.32,204.45 646.94,160 674.42,128.37 945.12,104.81 1071.5,95.439",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="1146.9,18",
+		pos="1135.9,18",
 		width=1.2638];
 	"gene has variant that contributes to disease association" -> relation	 [color=blue,
 		label=relation,
-		lp="666.94,134.5",
-		pos="e,1102.7,22.299 727.91,250.29 696.66,244.74 667.99,237.64 654.94,229 616.99,203.89 611.28,156.49 645.94,127 713.24,69.754 977.41,\
-35.748 1092.7,23.361",
+		lp="665.94,134.5",
+		pos="e,1091.7,22.394 727.91,250.29 696.66,244.74 667.99,237.64 654.94,229 616.95,203.86 610.7,157.04 644.94,127 709.86,70.034 967.64,\
+36.021 1081.5,23.503",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -92,77 +92,77 @@ digraph {
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
-		label=provider,
-		pos="1083.9,178",
-		width=1.1193];
+		label=agent,
+		pos="1073.9,178",
+		width=0.83048];
 	"gene has variant that contributes to disease association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1057.9,221.5",
-		pos="e,1061.5,193.04 930.95,248.59 951.9,243.39 974.03,236.89 993.94,229 1014.4,220.91 1035.8,208.9 1052.7,198.57",
+		lp="1054.9,221.5",
+		pos="e,1055.5,192.24 933.58,248.72 953.82,243.59 974.97,237.09 993.94,229 1012.8,220.95 1032.3,208.66 1047.3,198.16",
 		style=solid];
 	"frequency qualifier"	 [color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="1209.9,178",
+		pos="1188.9,178",
 		width=1.8776];
 	"gene has variant that contributes to disease association" -> "frequency qualifier"	 [color=blue,
 		label="frequency qualifier",
-		lp="1186.9,221.5",
-		pos="e,1179.6,194.23 984.69,251.79 1021,246.48 1059.8,239.13 1094.9,229 1120.9,221.52 1148.6,209.36 1170.3,198.79",
+		lp="1180.9,221.5",
+		pos="e,1162.8,194.85 990.27,252.2 1024.1,246.93 1059.7,239.49 1091.9,229 1113.5,221.98 1136,210.44 1153.9,200.11",
 		style=solid];
 	"severity qualifier"	 [color=blue,
 		height=0.5,
 		label="severity value",
-		pos="1354.9,178",
+		pos="1333.9,178",
 		width=1.661];
 	"gene has variant that contributes to disease association" -> "severity qualifier"	 [color=blue,
 		label="severity qualifier",
-		lp="1331.4,221.5",
-		pos="e,1326.9,193.98 991.65,252.35 1102.3,242.65 1236.7,230.66 1242.9,229 1269,222.09 1296.6,209.59 1317.9,198.69",
+		lp="1320.4,221.5",
+		pos="e,1309.2,194.52 990.84,252.31 1099.6,242.68 1230.9,230.8 1236.9,229 1259.2,222.42 1282.2,210.56 1300.2,199.93",
 		style=solid];
 	"onset qualifier"	 [color=blue,
 		height=0.5,
 		label=onset,
-		pos="1461.9,178",
+		pos="1440.9,178",
 		width=0.81243];
 	"gene has variant that contributes to disease association" -> "onset qualifier"	 [color=blue,
 		label="onset qualifier",
-		lp="1452.4,221.5",
-		pos="e,1444.9,192.61 990.26,252.24 1013.2,250.37 1036.7,248.56 1058.9,247 1130.7,241.97 1313.5,251.04 1381.9,229 1401.9,222.58 1421.7,\
-209.97 1436.7,198.9",
+		lp="1438.4,221.5",
+		pos="e,1425.5,193.32 990.55,252.26 1013.4,250.39 1036.8,248.57 1058.9,247 1128.2,242.08 1305.6,252.4 1370.9,229 1388.2,222.81 1405,210.9 \
+1417.7,200.15",
 		style=solid];
 	"sequence variant qualifier"	 [color=blue,
 		height=0.5,
 		label="sequence variant",
-		pos="1578.9,178",
+		pos="1557.9,178",
 		width=1.9318];
 	"gene has variant that contributes to disease association" -> "sequence variant qualifier"	 [color=blue,
 		label="sequence variant qualifier",
-		lp="1597.4,221.5",
-		pos="e,1557.9,195.16 988.52,252.1 1012,250.21 1036.2,248.43 1058.9,247 1155.9,240.91 1403,257.36 1495.9,229 1515.1,223.14 1534.4,211.75 \
-1549.5,201.22",
+		lp="1581.4,221.5",
+		pos="e,1538.6,195.4 988.81,252.1 1012.2,250.22 1036.3,248.44 1058.9,247 1152.8,241.04 1392.5,258.31 1481.9,229 1499.6,223.22 1516.9,212.1 \
+1530.6,201.72",
 		style=solid];
 	subject	 [height=0.5,
-		pos="1701.9,178",
+		pos="1680.9,178",
 		width=0.99297];
 	"gene has variant that contributes to disease association" -> subject	 [color=blue,
 		label=subject,
-		lp="1705.4,221.5",
-		pos="e,1696.5,195.92 987.08,251.98 1011,250.08 1035.7,248.32 1058.9,247 1093,245.06 1642.6,246.35 1671.9,229 1681,223.64 1687.6,214.41 \
-1692.3,205.26",
+		lp="1688.4,221.5",
+		pos="e,1677.1,196.07 987.08,251.99 1011,250.09 1035.7,248.33 1058.9,247 1092.1,245.1 1628.1,246.98 1655.9,229 1664.3,223.62 1669.9,214.6 \
+1673.7,205.62",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label=string,
 		pos="1098.9,265",
 		width=0.84854];
-	object -> relation	 [pos="e,1146.9,36.09 1146.9,72.955 1146.9,64.883 1146.9,55.176 1146.9,46.182",
+	object -> relation	 [pos="e,1135.9,36.09 1135.9,72.955 1135.9,64.883 1135.9,55.176 1135.9,46.182",
 		style=dotted];
 	subject -> object	 [label=relation,
-		lp="1430.9,134.5",
-		pos="e,1192.3,101.5 1675.4,165.57 1669.7,163.37 1663.7,161.36 1657.9,160 1550.3,134.76 1519.5,156.54 1409.9,142 1337.6,132.4 1255.2,115.41 \
-1202.2,103.7"];
-	subject -> relation	 [pos="e,1186.2,27.24 1674.7,166.26 1669.2,164.06 1663.4,161.87 1657.9,160 1491,102.89 1287.8,51.738 1196,29.605",
+		lp="1414.9,134.5",
+		pos="e,1180.9,101.6 1654.4,165.58 1648.7,163.38 1642.7,161.36 1636.9,160 1531.5,135.19 1501.3,156.53 1393.9,142 1323.3,132.44 1242.9,\
+115.58 1190.9,103.87"];
+	subject -> relation	 [pos="e,1174.7,27.414 1653.7,166.29 1648.2,164.08 1642.4,161.88 1636.9,160 1473.6,103.64 1274.9,52.282 1184.7,29.875",
 		style=dotted];
 	"gene has variant that contributes to disease association_subject"	 [color=blue,
 		height=0.5,

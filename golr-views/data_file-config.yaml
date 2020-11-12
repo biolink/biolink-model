@@ -26,3 +26,15 @@ fields:
     \ bl:NamedThing}"
   display_name: category
   cardinality: multi
+- id: description
+  description: a human-readable description of a thing
+  display_name: description
+- id: license
+  display_name: license
+- id: rights
+  display_name: rights
+- id: format
+  display_name: format
+- id: creation_date
+  description: date on which thing was created. This can be applied to nodes or edges
+  display_name: creation date

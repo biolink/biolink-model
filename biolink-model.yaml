@@ -4,11 +4,13 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-version: 1.4.0
+version: 1.4.1
 
-# CURIE namespaces (prefixes/base URI's) mappings of prefixes used in the body of the Biolink Model specification are resolved using a specific precedence order,
-# for use in the generation of the Biolink Model context.jsonld mappings to namespaces. Any prefixes encountered in the Biolink Model but not resolved by the following 
-# precedence sources, are anonymously declared by biolinkml as http://example.org/UNKNOWN/ rooted base URI's which should ideally be repaired in one of the precedence lists.
+# CURIE namespaces (prefixes/base URI's) mappings of prefixes used in the body of the Biolink Model specification
+# are resolved using a specific precedence order, for use in the generation of the Biolink Model context.jsonld
+# mappings to namespaces. Any prefixes encountered in the Biolink Model but not resolved by the following
+# precedence sources, are anonymously declared by biolinkml as http://example.org/UNKNOWN/ rooted base URI's
+# which should ideally be repaired in one of the precedence lists.
 #
 # 1. The following 'prefixes:' delimited list has first precedence in resolution.
 #
@@ -22,12 +24,15 @@ prefixes:
   chembio: 'http://translator.ncats.nih.gov/chembio_'
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
+  COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DGIdb: 'https://www.dgidb.org/interaction_types'
+  doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
+  fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
@@ -35,6 +40,7 @@ prefixes:
   # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
   GOP: 'http://purl.obolibrary.org/obo/go#'
   gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
+  GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
@@ -44,21 +50,26 @@ prefixes:
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   LOINC: 'http://loinc.org/rdf/'
+  isni: 'https://isni.org/isni/'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
+  NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
   oboformat: 'http://www.geneontology.org/formats/oboInOWL#'
   OBOREL: 'http://purl.obolibrary.org/obo/RO_'
+  ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
   REPODB: 'http://apps.chiragjpgroup.org/repoDB/'
+  ResearchID: 'https://publons.com/researcher/'
   RO: 'http://purl.obolibrary.org/obo/RO_'
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
   RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
+  ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
@@ -446,6 +457,59 @@ slots:
     exact_mappings:
       - skos:exactMatch
       - WIKIDATA:P2888
+
+  ## Publication related predicates
+
+  contributor:
+    is_a: related to
+    domain: information content entity
+    range: agent
+    comments:
+      - This is a grouping for predicates relating entities to their associated contributors realizing them
+    abstract: true
+    exact_mappings:
+      - dcterms:contributor
+
+  provider:
+    is_a: contributor
+    description: >-
+      person, group, organization or project that provides a piece of information (e.g. a knowledge association).
+
+  publisher:
+    is_a: contributor
+    domain: publication
+    description: >-
+      organization or person responsible for publishing books, periodicals, podcasts, games or software.
+      Note that in the case of publications which have a containing "published in" node property, the publisher
+      association may not be attached directly to the embedded child publication, but only made in between the
+      parent's publication node and the publisher agent of the encompassing publication
+      (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
+    exact_mappings:
+      - dcterms:publisher
+      - WIKIDATA_PROPERTY:P123
+
+  editor:
+    is_a: contributor
+    domain: publication
+    description: >-
+      editor of a compiled work such as a book or a periodical (newspaper or an academic journal).
+      Note that in the case of publications which have a containing "published in" node property, the editor
+      association may not be attached directly to the embedded child publication, but only made in between the
+      parent's publication node and the editorial agent of the encompassing publication
+      (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P98
+
+  author:
+    is_a: contributor
+    domain: publication
+    description: >-
+      an instance of one (co-)creator primarily responsible for a written work
+    exact_mappings:
+      - dcterms:creator
+      - WIKIDATA_PROPERTY:P50
+
+  ## end of Publication related predicates
 
   interacts with:
     domain: named thing
@@ -3087,30 +3151,24 @@ slots:
       A grouping for any property that holds between a node and a value
     domain: named thing
 
-  title:
-    is_a: node property
-    domain: data set version
-    mappings:
-      - dcterms:title
-
   source data file:
     is_a: node property
     domain: data set version
     range: data file
-    mappings:
+    broad_mappings:
       - dcterms:source
 
   source web page:
     is_a: node property
     domain: data set summary
-    mappings:
+    broad_mappings:
       - dcterms:source
 
   retrieved on:
     is_a: node property
     domain: source file
     range: date
-    mappings:
+    exact_mappings:
       - pav:retrievedOn
 
   version of:
@@ -3129,32 +3187,35 @@ slots:
 
   license:
     is_a: node property
-    domain: source file
-    mappings:
+    domain: information content entity
+    exact_mappings:
       - dcterms:license
+    narrow_mappings:
+      - WIKIDATA_PROPERTY:P275
 
   rights:
     is_a: node property
-    domain: source file
-    mappings:
+    domain: information content entity
+    exact_mappings:
       - dcterms:rights
 
   format:
     is_a: node property
-    domain: source file
-    mappings:
+    domain: information content entity
+    exact_mappings:
       - dcterms:format
+      - WIKIDATA_PROPERTY:P2701
 
   created_with:
     is_a: node property
     domain: source file
-    mappings:
+    exact_mappings:
       - pav:createdWith
 
   download url:
     is_a: node property
     domain: distribution level
-    mappings:
+    exact_mappings:
       - dcterms:downloadURL
 
   distribution:
@@ -3197,10 +3258,12 @@ slots:
       - translator_minimal
     domain: named thing
     range: iri type
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P854
 
   name:
     is_a: node property
-    aliases: ['label', 'display name']
+    aliases: ['label', 'display name', 'title']
     domain: named thing
     range: label type
     description: >-
@@ -3209,9 +3272,12 @@ slots:
       - translator_minimal
     required: true
     slot_uri: rdfs:label
-    mappings:
+    exact_mappings:
       - gff3:Name
       - gpi:DB_Object_Name
+    narrow_mappings:
+      - dcterms:title
+      - WIKIDATA_PROPERTY:P1476
 
   symbol:
     is_a: node property
@@ -3436,12 +3502,12 @@ slots:
 
   provided by:
     is_a: association slot
-    range: provider
     description: >-
       connects an association to the agent (person, organization or group) that provided it
+    range: agent
+    multivalued: true
     mappings:
       - pav:providedBy
-    multivalued: true
 
   association type:
     is_a: association slot
@@ -3450,6 +3516,107 @@ slots:
       connects an association to the type of association (e.g. gene to phenotype)
     mappings:
       - rdf:type
+
+  ## Additional Properties for Information Content Entity and Publication Nodes
+
+  published in:
+    is_a: node property
+    description: >-
+      CURIE identifier of a broader publication context within which the publication may be placed,
+      e.g. a specified book or journal.
+    domain: publication
+    range: uriorcurie
+    values_from:
+      - NLMID
+      - issn
+      - isbn
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P1433
+
+  iso abbreviation:
+    is_a: node property
+    description: >-
+      Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system
+      See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set,
+      then the iso abbreviation pertains to the broader publication context (the journal) within which the given
+      publication node is embedded, not the publication itself.
+    domain: publication
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P1160
+
+  authors:
+    is_a: node property
+    singular_name: author
+    description: >-
+      connects an publication to the list of authors who contributed to the publication.
+      This property should be a comma-delimited list of author names. It is recommended that an author's name
+      be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing
+      the citation list of authorship which might typically otherwise be more completely documented in
+      biolink:PublicationToProviderAssociation defined edges which point to full details about an author
+      and possibly, some qualifiers which clarify the specific status of a given author in the publication.
+    multivalued: true
+    domain: publication
+
+  volume:
+    is_a: node property
+    description: >-
+      volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
+    domain: publication
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P478
+
+  chapter:
+    is_a: node property
+    description: >-
+      chapter of a book
+    domain: book chapter
+    exact_mappings:
+      - WIKIDATA:Q1980247
+
+  issue:
+    is_a: node property
+    description: >-
+      issue of a newspaper, a scientific journal or magazine for reference purpose
+    domain: publication
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P433
+
+  pages:
+    is_a: node property
+    description: >-
+      page number of source referenced for statement or publication
+    domain: publication
+    multivalued: true
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P304
+
+  abstract:
+    is_a: node property
+    description: >-
+      summary of a publication
+    domain: publication
+    exact_mappings:
+      - dcterms:abstract
+      - WIKIDATA:Q333291
+
+  keywords:
+    is_a: node property
+    description: >-
+      keywords tagging a publication
+    domain: publication
+    multivalued: true
+
+  mesh terms:
+    is_a: node property
+    description: >-
+      mesh terms tagging a publication
+    domain: publication
+    range: uriorcurie
+    values_from:
+      - MESH
+    multivalued: true
+
+  ## End of Additional Properties for Information Content Entity and Publication Nodes
 
   chi squared statistic:
     is_a: association slot
@@ -3469,11 +3636,13 @@ slots:
 
   creation date:
     is_a: node property
+    aliases: ['publication date']
     range: date
     description: >-
       date on which thing was created. This can be applied to nodes or edges
-    mappings:
+    exact_mappings:
       - dcterms:createdOn
+      - WIKIDATA_PROPERTY:P577
 
   has receptor:
     is_a: node property
@@ -3548,6 +3717,22 @@ slots:
       longitude
     mappings:
       - wgs:long
+
+  affiliation:
+    is_a: node property
+    description: >-
+      a professional relationship between one provider (often a person) within another provider (often an organization).
+      Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
+    domain: agent
+    range: uriorcurie
+    multivalued: true
+
+  address:
+    is_a: node property
+    description: >-
+      the particulars of the place where someone or an organization is situated.  For now, this slot is a
+      simple text "blob" containing all relevant details of the given location for fitness of purpose.
+      For the moment, this "address" can include other contact details such as email and phone number(?).
 
   has chemical formula:
     is_a: node property
@@ -3654,7 +3839,7 @@ slots:
 
   sequence variant qualifier:
     description: >-
-      a qualifier used in an association where the variant
+      a qualifier used in an association with the variant
     is_a: association slot
     range: sequence variant
 
@@ -4062,8 +4247,61 @@ classes:
       - UMLSSC:T168
       - UMLSST:food
 
-  data file:
+  information content entity:
+    aliases: ['information', 'information artefact', 'information entity']
+    abstract: true
     is_a: named thing
+    description: >-
+      a piece of information that typically describes some topic of discourse or is used as support.
+    slots:
+      - description
+      - license
+      - rights
+      - format
+      - creation date
+    id_prefixes:
+      - doi
+    exact_mappings:
+      - IAO:0000030
+    narrow_mappings:
+      # UMLS Semantic Group "Concepts & Ideas"
+      - UMLSSG:CONC
+      # Conceptual Entity
+      - UMLSSC:T077
+      - UMLSST:cnce
+      # Idea or Concept
+      - UMLSSC:T078
+      - UMLSST:idcn
+      # Temporal Concept
+      - UMLSSC:T079
+      - UMLSST:tmco
+      # Qualitative Concept
+      - UMLSSC:T080
+      - UMLSST:qlco
+      # Quantitative Concept
+      - UMLSSC:T081
+      - UMLSST:qnco
+      # Spatial Concept
+      - UMLSSC:T082
+      - UMLSST:spco
+      # Regulation or Law
+      - UMLSSC:T089
+      - UMLSST:rnlw
+      # Group Attribute
+      - UMLSSC:T102
+      - UMLSST:grpa
+      # Functional Concept
+      - UMLSSC:T169
+      - UMLSST:ftcn
+      # Language
+      - UMLSSC:T171
+      - UMLSST:lang
+      # Classification
+      - UMLSSC:T185
+      - UMLSST:clas
+
+  data file:
+    is_a: information content entity
     mappings:
       - EFO:0004095
 
@@ -4078,21 +4316,156 @@ classes:
 #    mixin: true
 
   data set:
-    is_a: named thing
-    mappings:
+    is_a: information content entity
+    exact_mappings:
       - IAO:0000100
+      - dctypes:Dataset
 
   data set version:
     is_a: data set
     slots:
-      - title
-#      - description
       - source data file
       - version of
       - type
       - distribution
-    mappings:
-      - dctypes:Dataset
+
+  ## Publication related entity classes
+
+  # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
+  publication:
+    is_a: information content entity
+    description: >-
+      Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal
+      or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or
+      section highlighted by NLP). The scope is intended to be general and include information published on the web,
+      as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+    slots:
+      - type
+      - authors
+      - pages
+      - abstract
+      - keywords
+      - mesh terms
+      - xref
+    # In addition to embedded slots, instances of 'contributor association'
+    # may be used to more extensively document publisher, editor and author details
+    slot_usage:
+      id:
+        required: true
+        description: >-
+          Different kinds of publication subtypes will have different preferred identifiers (curies when feasible).
+          Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual
+          alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as
+          books and journals, should have industry-standard identifier such as from ISBN and ISSN.
+      name:
+        required: true
+        description: >-
+          the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing)
+          The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
+      type:
+        slot_uri: dcterms:type
+        required: true
+        description: >-
+          Ontology term for publication type may be drawn from
+          Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/),
+          FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html),
+          the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html),
+          the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres
+          (http://vocabularies.coar-repositories.org/documentation/resource_types/),
+          Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology.
+          When a given publication type ontology term is used within a given knowledge graph, then the CURIE
+          identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
+        values_from:  # Not sure which takes precedence, if any...
+          - dctypes
+          - fabio
+          - MESH_PUB
+          - COAR_RESOURCE
+          - WIKIDATA
+      pages:
+        multivalued: true
+        description: >-
+          When a 2-tuple of page numbers are provided, they represent
+          the start and end page of the publication within its parent publication context.
+          For books, this may be set to the total number of pages of the book.
+    exact_mappings:
+      - IAO:0000311
+    narrow_mappings:
+      - IAO:0000013
+      # UMLS Semantic Type "Intellectual Product"
+      - UMLSSC:T170
+      - UMLSST:inpr
+    id_prefixes:
+      - NLMID
+
+  book:
+    is_a: publication
+    description: >-
+      This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+    slot_usage:
+      id:
+        required: true
+        description: >-
+          Books should have industry-standard identifier such as from ISBN.
+      type:
+        description: >-
+          Should generally be set to an ontology class defined term for 'book'.
+    id_prefixes:
+      - isbn
+      - NLMID
+
+  book chapter:
+    is_a: publication
+    slots:
+      - published in
+      - volume
+      - chapter
+    slot_usage:
+      published in:
+        required: true
+        description: >-
+          The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.
+
+  serial:
+    aliases: ['journal']
+    is_a: publication
+    description: >-
+      This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+    slots:
+      - iso abbreviation
+      - volume
+      - issue
+    slot_usage:
+      id:
+        required: true
+        description: >-
+          Serials (journals) should have industry-standard identifier such as from ISSN.
+      type:
+        description: >-
+          Should generally be set to an ontology class defined term for 'serial' or 'journal'.
+    id_prefixes:
+      - issn
+      - NLMID
+
+  article:
+    is_a: publication
+    slots:
+      - published in
+      - iso abbreviation
+      - volume
+      - issue
+    slot_usage:
+      published in:
+        required: true
+        description: >-
+          The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
+      iso abbreviation:
+        description: >-
+          Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
+    id_prefixes:
+      # By inheritance, a DOI may be used as a publication identifier; there may be other relevant namespaces
+      - PMID
+
+  ## end of Publication related entity classes
 
   distribution level:
     is_a: data set version
@@ -4393,50 +4766,6 @@ classes:
     mappings:
       - XCO:0000000
 
-  information content entity:
-    aliases: ['information', 'information artefact', 'information entity']
-    abstract: true
-    is_a: named thing
-    description: >-
-      a piece of information that typically describes some piece of biology or is used as support.
-    mappings:
-      - IAO:0000030
-      # UMLS Semantic Group "Concepts & Ideas"
-      - UMLSSG:CONC
-      # Conceptual Entity
-      - UMLSSC:T077
-      - UMLSST:cnce
-      # Idea or Concept
-      - UMLSSC:T078
-      - UMLSST:idcn
-      # Temporal Concept
-      - UMLSSC:T079
-      - UMLSST:tmco
-      # Qualitative Concept
-      - UMLSSC:T080
-      - UMLSST:qlco
-      # Quantitative Concept
-      - UMLSSC:T081
-      - UMLSST:qnco
-      # Spatial Concept
-      - UMLSSC:T082
-      - UMLSST:spco
-      # Regulation or Law
-      - UMLSSC:T089
-      - UMLSST:rnlw
-      # Group Attribute
-      - UMLSSC:T102
-      - UMLSST:grpa
-      # Functional Concept
-      - UMLSSC:T169
-      - UMLSST:ftcn
-      # Language
-      - UMLSSC:T171
-      - UMLSST:lang
-      # Classification
-      - UMLSSC:T185
-      - UMLSST:clas
-
   confidence level:
     is_a: information content entity
     description: >-
@@ -4458,31 +4787,22 @@ classes:
     mappings:
       - ECO:0000000
 
-  publication:
-    is_a: information content entity
-    description: >-
-      Any published piece of information. Can refer to a whole publication,
-      or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP).
-      The scope is intended to be general and include information published on the web as well as journals.
-    mappings:
-      - IAO:0000311
-      - IAO:0000013
-      # UMLS Semantic Type "Intellectual Product"
-      - UMLSSC:T170
-      - UMLSST:inpr
-    id_prefixes:
-      - PMID
-
   administrative entity:
     is_a: named thing
     abstract: true
 
-  provider:
+  agent:
     is_a: administrative entity
-    aliases: ['agent', 'group']
+    aliases: ['group']
     description: >-
-      person, group, organization or project that provides a piece of information
-    mappings: # Organizations
+      person, group, organization or project that provides a piece of information (i.e. a knowledge association)
+    slots:
+      - affiliation
+      - address
+    exact_mappings:
+      - prov:Agent
+      - dcterms:Agent
+    narrow_mappings:
       - UMLSSG:ORGA
       # Organization
       - UMLSSC:T092
@@ -4496,7 +4816,35 @@ classes:
       # Self-help or Relief Organization
       - UMLSSC:T095
       - UMLSST:shro
-      - prov:Agent
+    slot_usage:
+      id:
+        required: true
+        description: >-
+          Different classes of agents have distinct preferred identifiers.
+          For publishers, use the ISBN publisher code.
+          For editors, authors and  individual providers, use the individual's ORCID if available;
+          Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown.
+          Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
+        values_from:
+          # CURIE space for publishers
+          - isbn
+          # CURIE space for authors
+          - ORCID
+          - ScopusID
+          - ResearchID
+          - GSID
+          # Institutional agents
+          - isni
+      name:
+        description: >-
+          it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
+    id_prefixes:
+      - isbn
+      - ORCID
+      - ScopusID
+      - ResearchID
+      - GSID
+      - isni
 
   molecular entity:
     is_a: biological entity
@@ -5154,6 +5502,32 @@ classes:
       - OBAN:association
       - "rdf:Statement"
       - "owl:Axiom"
+
+  contributor association:
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    description: >-
+      Any association between an entity (such as a publication) and various agents that contribute to its realisation
+    slot_usage:
+      subject:
+        range: information content entity
+        description: >-
+          information content entity which an agent has helped realise
+      predicate:
+        subproperty_of: contributor
+        description: >-
+          generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'
+      object:
+        range: agent
+        description: >-
+          agent helping to realise the given entity (e.g. such as a publication)
+      qualifiers:
+        description: >-
+          this field can be used to annotate special characteristics of an agent relationship, such as the fact
+          that a given author agent of a publication is the 'corresponding author'
 
   genotype to genotype part association:
     is_a: association
