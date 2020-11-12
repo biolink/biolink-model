@@ -15,8 +15,6 @@ version: 1.4.0
 #  TODO: prefix namespaces still unmapped:
 #
 #  DGIdb
-#  CHEMBL.MECHANISM
-#  PathWhiz
 #  REPODB
 
 prefixes:
@@ -25,8 +23,9 @@ prefixes:
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
-  # Placeholder: not sure how 'chembio' really resolves
+  # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
   chembio: 'http://translator.ncats.nih.gov/chembio_'
+  CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
@@ -56,6 +55,7 @@ prefixes:
   oboformat: 'http://www.geneontology.org/formats/oboInOWL#'
   OBOREL: 'http://purl.obolibrary.org/obo/RO_'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
+  PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
@@ -361,8 +361,6 @@ slots:
     inverse: superclass of
     slot_uri: rdfs:subClassOf
     close_mappings:
-      # RTX proposed term is actually 'biolink:superclass_of' which is inverse of 'biolink:subclass_of' relationship
-      - CHEMBL.MECHANISM:superset_of
       # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
       # and a an 'instance B' has class 'class A' (inverse term)
       - LOINC:class_of
