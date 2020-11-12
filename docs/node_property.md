@@ -21,7 +21,6 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
 
 ## Children
 
- *  [abstract](abstract.md)
  *  [address](address.md)
  *  [affiliation](affiliation.md)
  *  [aggregate statistic](aggregate_statistic.md)
@@ -61,6 +60,7 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
  *  [source data file](source_data_file.md)
  *  [source version](source_version.md)
  *  [source web page](source_web_page.md)
+ *  [summary](summary.md)
  *  [symbol](symbol.md)
  *  [synonym](synonym.md)
  *  [systematic synonym](systematic_synonym.md)

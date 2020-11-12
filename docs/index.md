@@ -694,7 +694,6 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 #### Node Properties
 
- * [abstract](abstract.md) - summary of a publication
  * [address](address.md) - the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
  * [affiliation](affiliation.md) - a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
  * [agent➞id](agent_id.md) - Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
@@ -767,7 +766,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [macromolecular machine➞name](macromolecular_machine_name.md) - genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * [publication➞name](publication_name.md) - the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
-    * [abstract](abstract.md) - summary of a publication
     * [address](address.md) - the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
     * [affiliation](affiliation.md) - a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
     * [aggregate statistic](aggregate_statistic.md)
@@ -831,6 +829,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [source data file](source_data_file.md)
     * [source version](source_version.md)
     * [source web page](source_web_page.md)
+    * [summary](summary.md) - executive  summary of a publication
     * [symbol](symbol.md) - Symbol for a particular thing
     * [synonym](synonym.md) - Alternate human-readable names for a thing
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
@@ -868,6 +867,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [source data file](source_data_file.md)
  * [source version](source_version.md)
  * [source web page](source_web_page.md)
+ * [summary](summary.md) - executive  summary of a publication
  * [symbol](symbol.md) - Symbol for a particular thing
  * [synonym](synonym.md) - Alternate human-readable names for a thing
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast

@@ -1,16 +1,16 @@
 ---
 parent: Node Properties
-title: biolink:abstract
+title: biolink:summary
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: abstract
+# Slot: summary
 
 
-summary of a publication
+executive  summary of a publication
 
-URI: [biolink:abstract](https://w3id.org/biolink/vocab/abstract)
+URI: [biolink:summary](https://w3id.org/biolink/vocab/summary)
 
 ## Domain and Range
 
@@ -35,6 +35,7 @@ URI: [biolink:abstract](https://w3id.org/biolink/vocab/abstract)
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | abstract |
 | **Exact Mappings:** | | dcterms:abstract |
 |  | | WIKIDATA:Q333291 |
 

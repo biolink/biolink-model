@@ -15,7 +15,7 @@ URI: [biolink:Book](https://w3id.org/biolink/vocab/Book)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Publication]%5E-[Book%7Cid:string;type:string;authors(i):string%20%2A;pages(i):string%20%2A;abstract(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;xref(i):iri_type%20%2A;name(i):label_type;description(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;category(i):category_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Publication]%5E-[Book%7Cid:string;type:string;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;xref(i):iri_type%20%2A;name(i):label_type;description(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;category(i):category_type%20%2B])
 
 ---
 
@@ -78,8 +78,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [publication➞pages](publication_pages.md)  <sub>0..*</sub>
     * Description: When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
     * range: [String](types/String.md)
- * [abstract](abstract.md)  <sub>OPT</sub>
-    * Description: summary of a publication
+ * [summary](summary.md)  <sub>OPT</sub>
+    * Description: executive  summary of a publication
     * range: [String](types/String.md)
  * [keywords](keywords.md)  <sub>0..*</sub>
     * Description: keywords tagging a publication

@@ -15,7 +15,7 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Association]-%20publications%200..%2A%3E[Publication%7Ctype:string;authors:string%20%2A;pages:string%20%2A;abstract:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;xref:iri_type%20%2A;id:string;name:label_type;description(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;category(i):category_type%20%2B],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[BookChapter],[Book],[Association],[Article])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Association]-%20publications%200..%2A%3E[Publication%7Ctype:string;authors:string%20%2A;pages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;xref:iri_type%20%2A;id:string;name:label_type;description(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;category(i):category_type%20%2B],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[BookChapter],[Book],[Association],[Article])
 
 ---
 
@@ -44,9 +44,6 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 ### Own
 
- * [abstract](abstract.md)  <sub>OPT</sub>
-    * Description: summary of a publication
-    * range: [String](types/String.md)
  * [authors](authors.md)  <sub>0..*</sub>
     * Description: connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
     * range: [String](types/String.md)
@@ -67,6 +64,9 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
     * range: [String](types/String.md)
  * [publication➞type](publication_type.md)  <sub>REQ</sub>
     * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
+    * range: [String](types/String.md)
+ * [summary](summary.md)  <sub>OPT</sub>
+    * Description: executive  summary of a publication
     * range: [String](types/String.md)
 
 ### Inherited from information content entity:
@@ -94,9 +94,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [abstract](abstract.md)  <sub>OPT</sub>
-    * Description: summary of a publication
-    * range: [String](types/String.md)
  * [authors](authors.md)  <sub>0..*</sub>
     * Description: connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
     * range: [String](types/String.md)
@@ -117,6 +114,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [String](types/String.md)
  * [publication➞type](publication_type.md)  <sub>REQ</sub>
     * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
+    * range: [String](types/String.md)
+ * [summary](summary.md)  <sub>OPT</sub>
+    * Description: executive  summary of a publication
     * range: [String](types/String.md)
 
 ## Other properties

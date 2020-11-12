@@ -89,8 +89,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [publication➞pages](publication_pages.md)  <sub>0..*</sub>
     * Description: When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
     * range: [String](types/String.md)
- * [abstract](abstract.md)  <sub>OPT</sub>
-    * Description: summary of a publication
+ * [summary](summary.md)  <sub>OPT</sub>
+    * Description: executive  summary of a publication
     * range: [String](types/String.md)
  * [keywords](keywords.md)  <sub>0..*</sub>
     * Description: keywords tagging a publication
