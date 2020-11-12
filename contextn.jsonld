@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-11-09 18:19\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-11-12 19:40\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -15,6 +15,7 @@
       "CIO": "http://purl.obolibrary.org/obo/CIO_",
       "CL": "http://purl.obolibrary.org/obo/CL_",
       "CLO": "http://purl.obolibrary.org/obo/CLO_",
+      "COAR_RESOURCE": "http://purl.org/coar/resource_type/",
       "CTD": "http://translator.ncats.nih.gov/CTD_",
       "ClinVar": "http://www.ncbi.nlm.nih.gov/clinvar/",
       "ClinVarVariant": "http://www.ncbi.nlm.nih.gov/clinvar/variation/",
@@ -39,13 +40,13 @@
       "GOLD.META": "http://identifiers.org/gold.meta/",
       "GOP": "http://purl.obolibrary.org/obo/go#",
       "GOREL": "http://purl.obolibrary.org/obo/GOREL_",
+      "GSID": "https://scholar.google.com/citations?user=",
       "GTEx": "https://www.gtexportal.org/home/gene/",
       "HANCESTRO": "http://www.ebi.ac.uk/ancestro/ancestro_",
       "HGNC": "http://identifiers.org/hgnc/",
       "HGNC.FAMILY": "http://identifiers.org/hgnc.family/",
       "HMDB": "http://identifiers.org/hmdb/",
       "HP": "http://purl.obolibrary.org/obo/HP_",
-      "IAO": "http://purl.obolibrary.org/obo/IAO_",
       "ICD0": "http://translator.ncats.nih.gov/ICD0_",
       "ICD10": "http://translator.ncats.nih.gov/ICD10_",
       "ICD9": "http://translator.ncats.nih.gov/ICD9_",
@@ -64,11 +65,13 @@
       "NCBIGene": "http://www.ncbi.nlm.nih.gov/gene/",
       "NCBITaxon": "http://purl.obolibrary.org/obo/NCBITaxon_",
       "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
+      "NLMID": "https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=",
       "OBAN": "http://purl.org/oban/",
       "OBI": "http://purl.obolibrary.org/obo/OBI_",
       "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
       "OIO": "http://www.geneontology.org/formats/oboInOwl#",
       "OMIM": "http://purl.obolibrary.org/obo/OMIM_",
+      "ORCID": "https://orcid.org/",
       "ORPHA": "http://www.orpha.net/ORDO/Orphanet_",
       "ORPHANET": "http://identifiers.org/orphanet/",
       "PANTHER.FAMILY": "http://identifiers.org/panther.family/",
@@ -87,6 +90,7 @@
       "RHEA": "http://identifiers.org/rhea/",
       "RNACENTRAL": "http://identifiers.org/rnacentral/",
       "RO": "http://purl.obolibrary.org/obo/RO_",
+      "ResearchID": "https://publons.com/researcher/",
       "SEMMEDDB": "https://skr3.nlm.nih.gov/SemMedDB",
       "SEPIO": "http://purl.obolibrary.org/obo/SEPIO_",
       "SGD": "http://identifiers.org/sgd/",
@@ -96,6 +100,7 @@
       "SNPEFF": "http://translator.ncats.nih.gov/SNPEFF_",
       "SO": "http://purl.obolibrary.org/obo/SO_",
       "STATO": "http://purl.obolibrary.org/obo/STATO_",
+      "ScopusID": "https://www.scopus.com/authid/detail.uri?authorId=",
       "UBERGRAPH": "http://translator.renci.org/ubergraph-axioms.ofn#",
       "UBERON": "http://purl.obolibrary.org/obo/UBERON_",
       "UBERON_CORE": "http://purl.obolibrary.org/obo/uberon/core#",
@@ -126,15 +131,19 @@
       "dcterms": "http://purl.org/dc/terms/",
       "dctypes": "http://purl.org/dc/dcmitype/",
       "dictyBase": "http://dictybase.org/gene/",
+      "doi": "https://doi.org/",
+      "fabio": "http://purl.org/spar/fabio/",
       "foaf": "http://xmlns.com/foaf/0.1/",
       "gff3": "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#",
       "gpi": "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
+      "isbn": "http://example.org/UNKNOWN/isbn/",
+      "isni": "https://isni.org/isni/",
+      "issn": "http://example.org/UNKNOWN/issn/",
       "medgen": "https://www.ncbi.nlm.nih.gov/medgen/",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
-      "prov": "http://www.w3.org/ns/prov#",
       "qud": "http://qudt.org/1.1/schema/qudt#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -203,10 +212,16 @@
       "affects_uptake_of": {
          "@type": "@id"
       },
-      "association_type": {
+      "affiliation": {
          "@type": "@id"
       },
       "id": "@id",
+      "association_type": {
+         "@type": "@id"
+      },
+      "author": {
+         "@type": "@id"
+      },
       "biomarker_for": {
          "@type": "@id"
       },
@@ -253,6 +268,9 @@
          "@type": "@id"
       },
       "contributes_to": {
+         "@type": "@id"
+      },
+      "contributor": {
          "@type": "@id"
       },
       "correlated_with": {
@@ -334,6 +352,9 @@
          "@type": "@id"
       },
       "edge_label": {
+         "@type": "@id"
+      },
+      "editor": {
          "@type": "@id"
       },
       "enabled_by": {
@@ -585,6 +606,9 @@
       "manifestation_of": {
          "@type": "@id"
       },
+      "mesh_terms": {
+         "@type": "@id"
+      },
       "model_of": {
          "@type": "@id"
       },
@@ -672,7 +696,16 @@
       "provided_by": {
          "@type": "@id"
       },
+      "provider": {
+         "@type": "@id"
+      },
       "publications": {
+         "@type": "@id"
+      },
+      "published_in": {
+         "@type": "@id"
+      },
+      "publisher": {
          "@type": "@id"
       },
       "qualifiers": {

@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1023.3,283"];
+	graph [bb="0,0,1002.9,283"];
 	node [label="\N"];
 	association	 [height=0.5,
 		label=association,
@@ -97,14 +97,14 @@ digraph {
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
-		label=provider,
-		pos="983,178",
-		width=1.1193];
+		label=agent,
+		pos="973,178",
+		width=0.83048];
 	association -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="931,221.5",
-		pos="e,955.5,191.22 566.19,252.55 573.66,250.38 581.52,248.38 589,247 702.91,225.96 735.87,253.87 849,229 882.99,221.53 919.83,207 946.26,\
-195.36",
+		lp="927,221.5",
+		pos="e,950.46,190.03 566.19,252.55 573.66,250.38 581.52,248.38 589,247 702.91,225.96 735.95,254.25 849,229 881.69,221.7 916.81,206.49 \
+941.3,194.57",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,

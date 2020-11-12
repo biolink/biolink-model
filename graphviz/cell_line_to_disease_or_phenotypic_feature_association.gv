@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1729.8,283"];
+	graph [bb="0,0,1709.8,283"];
 	node [label="\N"];
 	"cell line to disease or phenotypic feature association"	 [height=0.5,
 		label="cell line to disease or phenotypic feature association",
@@ -55,22 +55,22 @@ digraph {
 	object	 [color=blue,
 		height=0.5,
 		label="named thing",
-		pos="1401,91",
+		pos="1391,91",
 		width=1.5346];
 	"cell line to disease or phenotypic feature association" -> object	 [color=blue,
 		label=object,
 		lp="1180,178",
-		pos="e,1353.4,100.2 1115.5,246.72 1126.9,219.92 1148.5,171.85 1163,160 1190.7,137.43 1282.3,115.16 1343.5,102.26",
+		pos="e,1337.1,95.473 1115.6,246.74 1126.9,219.97 1148.6,171.94 1163,160 1209.7,121.41 1277.6,104.39 1327.1,96.891",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="1401,18",
+		pos="1391,18",
 		width=1.2638];
 	"cell line to disease or phenotypic feature association" -> relation	 [color=blue,
 		label=relation,
-		lp="1174,134.5",
-		pos="e,1360.7,26.784 1108.6,246.89 1110.6,217.41 1118.9,159.11 1153,127 1209.7,73.774 1296.5,43.85 1351,29.32",
+		lp="1165,134.5",
+		pos="e,1349,24.974 1108,246.62 1108.8,217.81 1114.5,161.69 1144,127 1194.2,68.03 1282.5,39.776 1338.8,27.153",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -104,35 +104,35 @@ digraph {
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
-		label=provider,
-		pos="1600,178",
-		width=1.1193];
+		label=agent,
+		pos="1590,178",
+		width=0.83048];
 	"cell line to disease or phenotypic feature association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1542,221.5",
-		pos="e,1571.1,190.7 1246.7,252.26 1334.9,243.88 1436.4,233.63 1457,229 1493.4,220.86 1533.2,206.17 1561.6,194.63",
+		lp="1538,221.5",
+		pos="e,1566.7,189.37 1246.7,252.26 1334.9,243.88 1436.4,233.63 1457,229 1492.5,221.06 1531.1,205.43 1557.5,193.56",
 		style=solid];
 	subject	 [height=0.5,
-		pos="1694,178",
+		pos="1674,178",
 		width=0.99297];
 	"cell line to disease or phenotypic feature association" -> subject	 [color=blue,
 		label=subject,
-		lp="1640.5,221.5",
-		pos="e,1670.3,191.52 1247.4,252.32 1269,250.46 1291.1,248.63 1312,247 1430.6,237.77 1463.6,257.54 1579,229 1608,221.85 1638.8,207.82 \
-1661.2,196.29",
+		lp="1630.5,221.5",
+		pos="e,1652.3,192.5 1247.4,252.34 1269,250.48 1291.1,248.64 1312,247 1428.9,237.85 1462.2,260.48 1575,229 1599.4,222.21 1624.6,209.08 \
+1643.6,197.83",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label=string,
 		pos="1352,265",
 		width=0.84854];
-	object -> relation	 [pos="e,1401,36.09 1401,72.955 1401,64.883 1401,55.176 1401,46.182",
+	object -> relation	 [pos="e,1391,36.09 1391,72.955 1391,64.883 1391,55.176 1391,46.182",
 		style=dotted];
 	subject -> object	 [label=relation,
-		lp="1554,134.5",
-		pos="e,1433.2,105.67 1666.8,165.95 1661,163.72 1654.9,161.6 1649,160 1598.7,146.22 1583.4,155.48 1533,142 1502,133.7 1468.2,120.57 1442.6,\
-109.71"];
-	subject -> relation	 [pos="e,1427.8,32.59 1669.6,164.63 1617.8,136.34 1496.9,70.318 1436.6,37.39",
+		lp="1539,134.5",
+		pos="e,1422.5,105.89 1646.8,165.98 1641,163.75 1634.9,161.62 1629,160 1580.9,146.64 1566.2,155.39 1518,142 1488.4,133.76 1456.3,120.83 \
+1431.8,110.05"];
+	subject -> relation	 [pos="e,1417.2,32.759 1649.9,164.36 1599.8,136.02 1484.3,70.7 1426,37.757",
 		style=dotted];
 	"cell line to disease or phenotypic feature association_subject"	 [color=blue,
 		height=0.5,
