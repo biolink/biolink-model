@@ -12,11 +12,6 @@ version: 1.4.0
 #
 # 1. The following 'prefixes:' delimited list has first precedence in resolution.
 #
-#  TODO: prefix namespaces still unmapped:
-#
-#  DGIdb
-#  REPODB
-
 prefixes:
   Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   alliancegenome: 'https://www.alliancegenome.org/'
@@ -29,6 +24,7 @@ prefixes:
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
+  DGIdb: 'https://www.dgidb.org/interaction_types'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
@@ -59,6 +55,7 @@ prefixes:
   PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
+  REPODB: 'http://apps.chiragjpgroup.org/repoDB/'
   RO: 'http://purl.obolibrary.org/obo/RO_'
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
   RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
