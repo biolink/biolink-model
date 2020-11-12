@@ -38,6 +38,45 @@
          "title": "ActivityAndBehavior",
          "type": "object"
       },
+      "Agent": {
+         "additionalProperties": false,
+         "description": "person, group, organization or project that provides a piece of information (i.e. a knowledge association)",
+         "properties": {
+            "address": {
+               "description": "the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text \"blob\" containing all relevant details of the given location for fitness of purpose. For the moment, this \"address\" can include other contact details such as email and phone number(?).",
+               "type": "string"
+            },
+            "affiliation": {
+               "description": "a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.",
+               "type": "string"
+            },
+            "name": {
+               "description": "it is recommended that an author's 'name' property be formatted as \"surname, firstname initial.\"",
+               "type": "string"
+            }
+         },
+         "required": [
+            "category",
+            "id",
+            "name"
+         ],
+         "title": "Agent",
+         "type": "object"
+      },
       "AnatomicalEntity": {
          "additionalProperties": false,
          "description": "A subcellular location, cell type or gross anatomical part",
@@ -259,6 +298,112 @@
             "relation"
          ],
          "title": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+         "type": "object"
+      },
+      "Article": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "abstract": {
+               "description": "summary of a publication",
+               "type": "string"
+            },
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "iso_abbreviation": {
+               "description": "Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.",
+               "type": "string"
+            },
+            "issue": {
+               "description": "issue of a newspaper, a scientific journal or magazine for reference purpose",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "published_in": {
+               "description": "The enclosing parent serial containing the article should have industry-standard identifier from ISSN.",
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "type": {
+               "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+               "type": "string"
+            },
+            "volume": {
+               "description": "volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "category",
+            "type",
+            "id",
+            "name",
+            "published_in"
+         ],
+         "title": "Article",
          "type": "object"
       },
       "Association": {
@@ -507,6 +652,197 @@
             "category"
          ],
          "title": "BiologicalSex",
+         "type": "object"
+      },
+      "Book": {
+         "additionalProperties": false,
+         "description": "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.",
+         "properties": {
+            "abstract": {
+               "description": "summary of a publication",
+               "type": "string"
+            },
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Books should have industry-standard identifier such as from ISBN.",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "type": {
+               "description": "Should generally be set to an ontology class defined term for 'book'.",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "category",
+            "name",
+            "id",
+            "type"
+         ],
+         "title": "Book",
+         "type": "object"
+      },
+      "BookChapter": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "abstract": {
+               "description": "summary of a publication",
+               "type": "string"
+            },
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "chapter": {
+               "description": "chapter of a book",
+               "type": "string"
+            },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "published_in": {
+               "description": "The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.",
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "type": {
+               "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+               "type": "string"
+            },
+            "volume": {
+               "description": "volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "category",
+            "type",
+            "id",
+            "name",
+            "published_in"
+         ],
+         "title": "BookChapter",
          "type": "object"
       },
       "Carbohydrate": {
@@ -1509,12 +1845,29 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             }
          },
@@ -1524,6 +1877,70 @@
             "category"
          ],
          "title": "ConfidenceLevel",
+         "type": "object"
+      },
+      "ContributorAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between an entity (such as a publication) and various agents that contribute to its realisation",
+         "properties": {
+            "association_type": {
+               "description": "connects an association to the type of association (e.g. gene to phenotype)",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an association",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "agent helping to realise the given entity (e.g. such as a publication)",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "information content entity which an agent has helped realise",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "subject",
+            "predicate",
+            "object"
+         ],
+         "title": "ContributorAssociation",
          "type": "object"
       },
       "DataFile": {
@@ -1537,12 +1954,29 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             }
          },
@@ -1565,12 +1999,29 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             }
          },
@@ -1593,24 +2044,38 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
             "distribution": {
+               "type": "string"
+            },
+            "format": {
                "type": "string"
             },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             },
             "source_data_file": {
                "type": "string"
             },
             "source_web_page": {
-               "type": "string"
-            },
-            "title": {
                "type": "string"
             },
             "type": {
@@ -1639,21 +2104,35 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
             "distribution": {
+               "type": "string"
+            },
+            "format": {
                "type": "string"
             },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
             },
-            "source_data_file": {
+            "rights": {
                "type": "string"
             },
-            "title": {
+            "source_data_file": {
                "type": "string"
             },
             "type": {
@@ -1990,24 +2469,38 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
             "distribution": {
                "type": "string"
             },
             "download_url": {
                "type": "string"
             },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "license": {
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
             },
-            "source_data_file": {
+            "rights": {
                "type": "string"
             },
-            "title": {
+            "source_data_file": {
                "type": "string"
             },
             "type": {
@@ -2162,12 +2655,29 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             }
          },
@@ -2765,7 +3275,7 @@
                "type": "string"
             },
             "sequence_variant_qualifier": {
-               "description": "a qualifier used in an association where the variant",
+               "description": "a qualifier used in an association with the variant",
                "type": "string"
             },
             "severity_qualifier": {
@@ -5797,38 +6307,21 @@
          "title": "ProteinIsoform",
          "type": "object"
       },
-      "Provider": {
-         "additionalProperties": false,
-         "description": "person, group, organization or project that provides a piece of information",
-         "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
-         "title": "Provider",
-         "type": "object"
-      },
       "Publication": {
          "additionalProperties": false,
-         "description": "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.",
+         "description": "Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.",
          "properties": {
+            "abstract": {
+               "description": "summary of a publication",
+               "type": "string"
+            },
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
@@ -5836,19 +6329,69 @@
                },
                "type": "array"
             },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
                "type": "string"
             },
-            "name": {
-               "description": "A human-readable name for a thing",
+            "description": {
+               "description": "a human-readable description of a thing",
                "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "type": {
+               "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "category",
+            "type",
             "id",
-            "name",
-            "category"
+            "name"
          ],
          "title": "Publication",
          "type": "object"
@@ -6230,6 +6773,107 @@
          "title": "SequenceVariant",
          "type": "object"
       },
+      "Serial": {
+         "additionalProperties": false,
+         "description": "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.",
+         "properties": {
+            "abstract": {
+               "description": "summary of a publication",
+               "type": "string"
+            },
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Serials (journals) should have industry-standard identifier such as from ISSN.",
+               "type": "string"
+            },
+            "iso_abbreviation": {
+               "description": "Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.",
+               "type": "string"
+            },
+            "issue": {
+               "description": "issue of a newspaper, a scientific journal or magazine for reference purpose",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "type": {
+               "description": "Should generally be set to an ontology class defined term for 'serial' or 'journal'.",
+               "type": "string"
+            },
+            "volume": {
+               "description": "volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "category",
+            "name",
+            "id",
+            "type"
+         ],
+         "title": "Serial",
+         "type": "object"
+      },
       "SeverityValue": {
          "additionalProperties": false,
          "description": "describes the severity of a phenotypic feature or disease",
@@ -6329,8 +6973,22 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "license": {
                "type": "string"
             },
             "name": {
@@ -6338,6 +6996,9 @@
                "type": "string"
             },
             "retrieved_on": {
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             },
             "source_version": {

@@ -16,6 +16,15 @@ interface AdministrativeEntity
     category: [CategoryType]!
   }
 
+type Agent
+  {
+    category: [CategoryType]!
+    affiliation: [Uriorcurie]
+    address: String
+    id: String!
+    name: LabelType!
+  }
+
 type AnatomicalEntity implements ThingWithTaxon, PhysicalEntity
   {
     id: String!
@@ -33,7 +42,7 @@ type AnatomicalEntityToAnatomicalEntityAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
   }
@@ -46,7 +55,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
     relation: Uriorcurie!
@@ -60,10 +69,33 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
     relation: Uriorcurie!
+  }
+
+type Article
+  {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    type: String!
+    authors: [String]
+    pages: [String]
+    abstract: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
+    id: String!
+    name: LabelType!
+    publishedIn: Uriorcurie!
+    isoAbbreviation: String
+    volume: String
+    issue: String
   }
 
 type Association
@@ -77,7 +109,7 @@ type Association
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
   }
 
 type Attribute implements OntologyClass
@@ -127,6 +159,47 @@ type BiologicalSex
     category: [CategoryType]!
   }
 
+type Book
+  {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [String]
+    pages: [String]
+    abstract: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
+    name: LabelType!
+    id: String!
+    type: String!
+  }
+
+type BookChapter
+  {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    type: String!
+    authors: [String]
+    pages: [String]
+    abstract: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
+    id: String!
+    name: LabelType!
+    publishedIn: Uriorcurie!
+    volume: String
+    chapter: String
+  }
+
 type Carbohydrate
   {
     id: String!
@@ -154,7 +227,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     sexQualifier: BiologicalSex
     description: NarrativeText
     frequencyQualifier: FrequencyValue
@@ -172,7 +245,7 @@ interface CaseToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Case!
   }
 
@@ -201,7 +274,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, Entity
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: CellLine!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -218,7 +291,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToThingA
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: DiseaseOrPhenotypicFeature!
   }
 
@@ -232,7 +305,7 @@ interface CellLineToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: CellLine!
   }
 
@@ -269,7 +342,7 @@ type ChemicalToChemicalAssociation implements ChemicalToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: ChemicalSubstance!
   }
 
@@ -281,7 +354,7 @@ type ChemicalToChemicalDerivationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     changeIsCatalyzedBy: [MacromolecularMachine]
     subject: ChemicalSubstance!
     object: ChemicalSubstance!
@@ -298,7 +371,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingA
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: DiseaseOrPhenotypicFeature!
   }
 
@@ -312,7 +385,7 @@ type ChemicalToGeneAssociation implements ChemicalToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: GeneOrGeneProduct!
   }
 
@@ -326,7 +399,7 @@ type ChemicalToPathwayAssociation implements ChemicalToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: Pathway!
   }
 
@@ -340,7 +413,7 @@ interface ChemicalToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: ChemicalSubstance!
   }
 
@@ -399,6 +472,25 @@ type ConfidenceLevel
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
+type ContributorAssociation
+  {
+    id: String!
+    associationType: OntologyClass
+    relation: Uriorcurie!
+    negated: Boolean
+    publications: [Publication]
+    providedBy: [Agent]
+    subject: InformationContentEntity!
+    predicate: PredicateType!
+    object: Agent!
+    qualifiers: [OntologyClass]
   }
 
 type DataFile
@@ -406,6 +498,11 @@ type DataFile
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 type DataSet
@@ -413,6 +510,11 @@ type DataSet
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 interface DataSetSummary
@@ -420,7 +522,11 @@ interface DataSetSummary
     id: String!
     name: LabelType!
     category: [CategoryType]!
-    title: String
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
     sourceDataFile: DataFile
     versionOf: DataSet
     type: String
@@ -433,7 +539,11 @@ type DataSetVersion
     id: String!
     name: LabelType!
     category: [CategoryType]!
-    title: String
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
     sourceDataFile: DataFile
     versionOf: DataSet
     type: String
@@ -472,7 +582,7 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: DiseaseOrPhenotypicFeature!
     object: AnatomicalEntity!
   }
@@ -487,7 +597,7 @@ interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: DiseaseOrPhenotypicFeature!
   }
 
@@ -500,7 +610,7 @@ type DiseaseToExposureAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Disease!
     object: ExposureEvent!
   }
@@ -516,7 +626,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     sexQualifier: BiologicalSex
     description: NarrativeText
     frequencyQualifier: FrequencyValue
@@ -534,7 +644,7 @@ interface DiseaseToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Disease!
   }
 
@@ -543,7 +653,11 @@ interface DistributionLevel
     id: String!
     name: LabelType!
     category: [CategoryType]!
-    title: String
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
     sourceDataFile: DataFile
     versionOf: DataSet
     type: String
@@ -592,7 +706,7 @@ type EntityToPhenotypicFeatureAssociation implements EntityToFeatureOrDiseaseQua
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     sexQualifier: BiologicalSex
     description: NarrativeText
     object: PhenotypicFeature!
@@ -620,6 +734,11 @@ type EvidenceType
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 type Exon
@@ -640,7 +759,7 @@ type ExonToTranscriptRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Exon!
     object: Transcript!
   }
@@ -662,7 +781,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: ExposureEvent!
     sexQualifier: BiologicalSex
     description: NarrativeText
@@ -703,7 +822,7 @@ type FunctionalAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MacromolecularMachine!
     object: GeneOntologyClass!
   }
@@ -731,7 +850,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -760,7 +879,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -816,7 +935,7 @@ type GeneRegulatoryRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
@@ -832,7 +951,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -847,7 +966,7 @@ type GeneToExpressionSiteAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     stageQualifier: LifeStage
     quantifierQualifier: OntologyClass
     subject: GeneOrGeneProduct!
@@ -864,7 +983,7 @@ interface GeneToGeneAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
   }
@@ -877,7 +996,7 @@ type GeneToGeneHomologyAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     relation: Uriorcurie!
@@ -891,7 +1010,7 @@ type GeneToGeneProductRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Gene!
     object: GeneProduct!
     relation: Uriorcurie!
@@ -906,7 +1025,7 @@ type GeneToGoTermAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MolecularEntity!
     object: GeneOntologyClass!
   }
@@ -921,7 +1040,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     sexQualifier: BiologicalSex
     description: NarrativeText
@@ -940,7 +1059,7 @@ interface GeneToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
   }
 
@@ -970,7 +1089,7 @@ type GenomicSequenceLocalization
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     startInterbaseCoordinate: Integer
     endInterbaseCoordinate: Integer
     genomeBuild: String
@@ -999,7 +1118,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, Entity
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
@@ -1016,7 +1135,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToThingAssociation, EntityT
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: NamedThing!
     relation: Uriorcurie!
     object: NamedThing!
@@ -1033,7 +1152,7 @@ type GenotypeToGeneAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: Genotype!
     object: Gene!
@@ -1047,7 +1166,7 @@ type GenotypeToGenotypePartAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: Genotype!
     object: Genotype!
@@ -1062,7 +1181,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: Genotype!
     sexQualifier: BiologicalSex
@@ -1082,7 +1201,7 @@ interface GenotypeToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Genotype!
   }
 
@@ -1094,7 +1213,7 @@ type GenotypeToVariantAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: Genotype!
     object: SequenceVariant!
@@ -1159,6 +1278,11 @@ interface InformationContentEntity
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 type Inheritance
@@ -1206,7 +1330,7 @@ type MacromolecularMachineToBiologicalProcessAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MacromolecularMachine!
     object: BiologicalProcess!
   }
@@ -1220,7 +1344,7 @@ type MacromolecularMachineToCellularComponentAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MacromolecularMachine!
     object: CellularComponent!
   }
@@ -1234,7 +1358,7 @@ type MacromolecularMachineToMolecularActivityAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MacromolecularMachine!
     object: MolecularActivity!
   }
@@ -1255,7 +1379,7 @@ type MaterialSampleDerivationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MaterialSample!
     object: NamedThing!
     relation: Uriorcurie!
@@ -1272,7 +1396,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
   }
 
 interface MaterialSampleToThingAssociation
@@ -1285,7 +1409,7 @@ interface MaterialSampleToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MaterialSample!
   }
 
@@ -1400,7 +1524,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: OrganismalEntity!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -1415,7 +1539,7 @@ type PairwiseGeneToGeneInteraction implements PairwiseInteractionAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     relation: Uriorcurie!
@@ -1429,7 +1553,7 @@ interface PairwiseInteractionAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MolecularEntity!
     id: String!
     relation: Uriorcurie!
@@ -1516,7 +1640,7 @@ type PopulationToPopulationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: PopulationOfIndividualOrganisms!
     object: PopulationOfIndividualOrganisms!
     relation: Uriorcurie!
@@ -1553,18 +1677,23 @@ type ProteinIsoform implements GeneProductIsoform
     xref: [IriType]
   }
 
-type Provider
-  {
-    id: String!
-    name: LabelType!
-    category: [CategoryType]!
-  }
-
 type Publication
   {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    type: String!
+    authors: [String]
+    pages: [String]
+    abstract: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
     id: String!
     name: LabelType!
-    category: [CategoryType]!
   }
 
 type QuantityValue
@@ -1632,7 +1761,7 @@ type SequenceAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
   }
 
 type SequenceFeatureRelationship
@@ -1644,7 +1773,7 @@ type SequenceFeatureRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GenomicEntity!
     object: GenomicEntity!
   }
@@ -1668,9 +1797,31 @@ interface SequenceVariantModulatesTreatmentAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: SequenceVariant!
     object: Treatment!
+  }
+
+type Serial
+  {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [String]
+    pages: [String]
+    abstract: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
+    name: LabelType!
+    isoAbbreviation: String
+    volume: String
+    issue: String
+    id: String!
+    type: String!
   }
 
 type SeverityValue
@@ -1698,6 +1849,11 @@ type SourceFile
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
     sourceVersion: String
     retrievedOn: Date
   }
@@ -1720,7 +1876,7 @@ interface ThingToDiseaseOrPhenotypicFeatureAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: DiseaseOrPhenotypicFeature!
   }
 
@@ -1750,7 +1906,7 @@ type TranscriptToGeneRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Transcript!
     object: Gene!
   }
@@ -1771,7 +1927,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityT
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
@@ -1788,7 +1944,7 @@ type VariantToDiseaseAssociation implements VariantToThingAssociation, EntityToD
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: NamedThing!
     relation: Uriorcurie!
     object: NamedThing!
@@ -1807,7 +1963,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociation,
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: SequenceVariant!
     sexQualifier: BiologicalSex
     description: NarrativeText
@@ -1825,7 +1981,7 @@ type VariantToPopulationAssociation implements VariantToThingAssociation, Freque
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: SequenceVariant!
     object: PopulationOfIndividualOrganisms!
     hasQuotient: Double
@@ -1845,7 +2001,7 @@ interface VariantToThingAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: SequenceVariant!
   }
 
