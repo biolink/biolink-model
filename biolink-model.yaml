@@ -15,12 +15,8 @@ version: 1.4.0
 #  TODO: prefix namespaces still unmapped:
 #
 #  DGIdb
-#  oboFormat
-#  RXNORM
-#  PDQ
 #  CHEMBL.MECHANISM
 #  PathWhiz
-#  OBOREL
 #  REPODB
 
 prefixes:
@@ -57,11 +53,15 @@ prefixes:
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   OBAN: 'http://purl.org/oban/'
+  oboformat: 'http://www.geneontology.org/formats/oboInOWL#'
+  OBOREL: 'http://purl.obolibrary.org/obo/RO_'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
+  PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
   RO: 'http://purl.obolibrary.org/obo/RO_'
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
+  RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
@@ -251,7 +251,7 @@ slots:
       - OBO:envo#has_increased_levels_of
       - OBO:has_role
       - OBO:nbo#is_about
-      - OBOREL:bearer_of
+      - OBOREL:0000053 # bearer_of
       - PATO:decreased_in_magnitude_relative_to
       - PATO:has_cross_section
       - PATO:has_relative_magnitude
