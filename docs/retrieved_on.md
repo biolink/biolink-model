@@ -31,5 +31,5 @@ URI: [biolink:retrieved_on](https://w3id.org/biolink/vocab/retrieved_on)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | pav:retrievedOn |
+| **Exact Mappings:** | | pav:retrievedOn |
 

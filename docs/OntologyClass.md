@@ -15,7 +15,7 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipType],[PairwiseInteractionAssociation],[OrganismTaxon],[Association]-%20association%20type%200..1%3E[OntologyClass%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[Attribute]-%20has%20attribute%20type%200..1%3E[OntologyClass],[PairwiseInteractionAssociation]-%20interacting%20molecules%20category%200..1%3E[OntologyClass],[Association]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[Attribute]uses%20-.-%3E[OntologyClass],[OntologyClass]%5E-[RelationshipType],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass]%5E-[GeneOntologyClass],[NamedThing]%5E-[OntologyClass],[NamedThing],[GeneToExpressionSiteAssociation],[GeneOntologyClass],[Attribute],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipType],[PairwiseInteractionAssociation],[OrganismTaxon],[Association]-%20association%20type%200..1%3E[OntologyClass%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ContributorAssociation]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[Attribute]-%20has%20attribute%20type%200..1%3E[OntologyClass],[PairwiseInteractionAssociation]-%20interacting%20molecules%20category%200..1%3E[OntologyClass],[Association]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[Attribute]uses%20-.-%3E[OntologyClass],[OntologyClass]%5E-[RelationshipType],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass]%5E-[GeneOntologyClass],[NamedThing]%5E-[OntologyClass],[NamedThing],[GeneToExpressionSiteAssociation],[GeneOntologyClass],[ContributorAssociation],[Attribute],[Association])
 
 ---
 
@@ -37,6 +37,7 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 ## Referenced by class
 
  *  **[Association](Association.md)** *[association type](association_type.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
+ *  **[ContributorAssociation](ContributorAssociation.md)** *[contributor association➞qualifiers](contributor_association_qualifiers.md)*  <sub>0..*</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[Attribute](Attribute.md)** *[has attribute type](has_attribute_type.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[NamedThing](NamedThing.md)** *[has molecular consequence](has_molecular_consequence.md)*  <sub>0..*</sub>  **[OntologyClass](OntologyClass.md)**

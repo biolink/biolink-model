@@ -15,7 +15,7 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneAsAModelOfDiseaseAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneAsAModelOfDiseaseAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToDiseaseAssociation],[Agent])
 
 ---
 
@@ -73,7 +73,7 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from entity to feature or disease qualifiers:
 

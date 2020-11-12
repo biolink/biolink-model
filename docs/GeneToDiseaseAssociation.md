@@ -18,7 +18,7 @@ SIO:000983
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GeneToThingAssociation],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToDiseaseAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToThingAssociation],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[Association]%5E-[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToDiseaseAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GeneToThingAssociation],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToDiseaseAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToThingAssociation],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[Association]%5E-[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToDiseaseAssociation],[Association],[Agent])
 
 ---
 
@@ -81,7 +81,7 @@ SIO:000983
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from entity to feature or disease qualifiers:
 

@@ -15,7 +15,7 @@ URI: [biolink:SourceFile](https://w3id.org/biolink/vocab/SourceFile)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DataFile]%5E-[SourceFile%7Csource_version:string%20%3F;retrieved_on:date%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataFile])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DataFile]%5E-[SourceFile%7Csource_version:string%20%3F;retrieved_on:date%20%3F;description(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataFile])
 
 ---
 
@@ -47,6 +47,18 @@ URI: [biolink:SourceFile](https://w3id.org/biolink/vocab/SourceFile)
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
+
+### Inherited from information content entity:
+
+ * [license](license.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [rights](rights.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [format](format.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [creation date](creation_date.md)  <sub>OPT</sub>
+    * Description: date on which thing was created. This can be applied to nodes or edges
+    * range: [Date](types/Date.md)
 
 ### Inherited from named thing:
 

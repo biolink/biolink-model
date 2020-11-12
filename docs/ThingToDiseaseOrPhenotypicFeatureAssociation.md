@@ -15,7 +15,7 @@ URI: [biolink:ThingToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/bio
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Cobject%201..1-%20[ThingToDiseaseOrPhenotypicFeatureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ThingToDiseaseOrPhenotypicFeatureAssociation],[Publication],[Provider],[OntologyClass],[NamedThing],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Cobject%201..1-%20[ThingToDiseaseOrPhenotypicFeatureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ThingToDiseaseOrPhenotypicFeatureAssociation],[Publication],[OntologyClass],[NamedThing],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[Association],[Agent])
 
 ---
 
@@ -76,7 +76,7 @@ URI: [biolink:ThingToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/bio
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

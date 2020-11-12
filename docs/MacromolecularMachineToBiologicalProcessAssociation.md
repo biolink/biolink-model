@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[BiologicalProcess]%3Cobject%201..1-%20[MacromolecularMachineToBiologicalProcessAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachine],[FunctionalAssociation],[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[BiologicalProcess]%3Cobject%201..1-%20[MacromolecularMachineToBiologicalProcessAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachine],[FunctionalAssociation],[BiologicalProcess],[Agent])
 
 ---
 
@@ -67,7 +67,7 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from functional association:
 

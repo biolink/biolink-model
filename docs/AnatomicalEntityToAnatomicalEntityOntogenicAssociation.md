@@ -15,7 +15,7 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation](https://w3
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[AnatomicalEntity]%3Cobject%201..1-%20[AnatomicalEntityToAnatomicalEntityOntogenicAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[AnatomicalEntity]%3Csubject%201..1-%20[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[AnatomicalEntityToAnatomicalEntityAssociation]%5E-[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[AnatomicalEntity]%3Cobject%201..1-%20[AnatomicalEntityToAnatomicalEntityOntogenicAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[AnatomicalEntity]%3Csubject%201..1-%20[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[AnatomicalEntityToAnatomicalEntityAssociation]%5E-[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntity],[Agent])
 
 ---
 
@@ -73,7 +73,7 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation](https://w3
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

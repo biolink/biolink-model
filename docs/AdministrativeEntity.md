@@ -15,7 +15,7 @@ URI: [biolink:AdministrativeEntity](https://w3id.org/biolink/vocab/Administrativ
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Provider],[NamedThing],[AdministrativeEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[Provider],[NamedThing]%5E-[AdministrativeEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Agent],[AdministrativeEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[Agent],[NamedThing]%5E-[AdministrativeEntity])
 
 ---
 
@@ -26,7 +26,7 @@ URI: [biolink:AdministrativeEntity](https://w3id.org/biolink/vocab/Administrativ
 
 ## Children
 
- * [Provider](Provider.md) - person, group, organization or project that provides a piece of information
+ * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 
 ## Referenced by class
 

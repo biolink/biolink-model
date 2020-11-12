@@ -15,7 +15,7 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneHomologyAssociation],[GeneOrGeneProduct]%3Cobject%201..1-%20[GeneToGeneAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToGeneAssociation],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation],[Association]%5E-[GeneToGeneAssociation],[GeneOrGeneProduct],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneHomologyAssociation],[GeneOrGeneProduct]%3Cobject%201..1-%20[GeneToGeneAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToGeneAssociation],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation],[Association]%5E-[GeneToGeneAssociation],[GeneOrGeneProduct],[Association],[Agent])
 
 ---
 
@@ -76,7 +76,7 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

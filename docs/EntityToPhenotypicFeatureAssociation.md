@@ -15,7 +15,7 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[PhenotypicFeature],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[PhenotypicFeature]%3Cobject%201..1-%20[EntityToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[BiologicalSex]%3Csex%20qualifier%200..1-%20[EntityToPhenotypicFeatureAssociation],[EntityToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToFeatureOrDiseaseQualifiers],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[EntityToPhenotypicFeatureAssociation],[VariantToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation],[ExposureEventToPhenotypicFeatureAssociation],[EntityToFeatureOrDiseaseQualifiers],[DiseaseToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[PhenotypicFeature],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[PhenotypicFeature]%3Cobject%201..1-%20[EntityToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[BiologicalSex]%3Csex%20qualifier%200..1-%20[EntityToPhenotypicFeatureAssociation],[EntityToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToFeatureOrDiseaseQualifiers],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[EntityToPhenotypicFeatureAssociation],[VariantToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation],[ExposureEventToPhenotypicFeatureAssociation],[EntityToFeatureOrDiseaseQualifiers],[DiseaseToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[BiologicalSex],[Association],[Agent])
 
 ---
 
@@ -90,7 +90,7 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from entity to feature or disease qualifiers:
 

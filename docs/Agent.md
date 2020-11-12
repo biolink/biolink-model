@@ -1,0 +1,103 @@
+---
+parent: Entities
+title: biolink:Agent
+grand_parent: Classes
+layout: default
+---
+
+# Class: Agent
+
+
+person, group, organization or project that provides a piece of information (i.e. a knowledge association)
+
+URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
+
+
+---
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[InformationContentEntity],[ContributorAssociation],[Association],[ContributorAssociation]-%20object%201..1%3E[Agent%7Caffiliation:uriorcurie%20%2A;address:string%20%3F;id:string;name:label_type;category(i):category_type%20%2B],[Association]-%20provided%20by%200..%2A%3E[Agent],[AdministrativeEntity]%5E-[Agent],[AdministrativeEntity])
+
+---
+
+
+## Identifier prefixes
+
+ * isbn
+ * ORCID
+ * ScopusID
+ * ResearchID
+ * GSID
+ * isni
+
+## Parents
+
+ *  is_a: [AdministrativeEntity](AdministrativeEntity.md)
+
+## Referenced by class
+
+ *  **[Publication](Publication.md)** *[author](author.md)*  <sub>0..*</sub>  **[Agent](Agent.md)**
+ *  **[InformationContentEntity](InformationContentEntity.md)** *[contributor](contributor.md)*  <sub>0..*</sub>  **[Agent](Agent.md)**
+ *  **[ContributorAssociation](ContributorAssociation.md)** *[contributor association➞object](contributor_association_object.md)*  <sub>REQ</sub>  **[Agent](Agent.md)**
+ *  **[Publication](Publication.md)** *[editor](editor.md)*  <sub>0..*</sub>  **[Agent](Agent.md)**
+ *  **[Association](Association.md)** *[provided by](provided_by.md)*  <sub>0..*</sub>  **[Agent](Agent.md)**
+ *  **[InformationContentEntity](InformationContentEntity.md)** *[provider](provider.md)*  <sub>0..*</sub>  **[Agent](Agent.md)**
+ *  **[Publication](Publication.md)** *[publisher](publisher.md)*  <sub>0..*</sub>  **[Agent](Agent.md)**
+
+## Attributes
+
+
+### Own
+
+ * [address](address.md)  <sub>OPT</sub>
+    * Description: the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
+    * range: [String](types/String.md)
+ * [affiliation](affiliation.md)  <sub>0..*</sub>
+    * Description: a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
+    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [agent➞id](agent_id.md)  <sub>REQ</sub>
+    * Description: Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
+    * range: [String](types/String.md)
+ * [agent➞name](agent_name.md)  <sub>REQ</sub>
+    * Description: it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
+    * range: [LabelType](types/LabelType.md)
+
+### Inherited from named thing:
+
+ * [category](category.md)  <sub>1..*</sub>
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
+    * range: [CategoryType](types/CategoryType.md)
+    * in subsets: (translator_minimal)
+
+### Domain for slot:
+
+ * [affiliation](affiliation.md)  <sub>0..*</sub>
+    * Description: a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
+    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [agent➞id](agent_id.md)  <sub>REQ</sub>
+    * Description: Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
+    * range: [String](types/String.md)
+ * [agent➞name](agent_name.md)  <sub>REQ</sub>
+    * Description: it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
+    * range: [LabelType](types/LabelType.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | group |
+| **Exact Mappings:** | | prov:Agent |
+|  | | dcterms:Agent |
+| **Narrow Mappings:** | | UMLSSG:ORGA |
+|  | | UMLSSC:T092 |
+|  | | UMLSST:orgt |
+|  | | UMLSSC:T093 |
+|  | | UMLSST:hcro |
+|  | | UMLSSC:T094 |
+|  | | UMLSST:pros |
+|  | | UMLSSC:T095 |
+|  | | UMLSST:shro |
+

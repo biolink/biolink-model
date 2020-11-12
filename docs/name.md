@@ -25,7 +25,9 @@ URI: [biolink:name](https://w3id.org/biolink/vocab/name)
 
 ## Children
 
+ *  [agent➞name](agent_name.md)
  *  [macromolecular machine➞name](macromolecular_machine_name.md)
+ *  [publication➞name](publication_name.md)
 
 ## Used by
 
@@ -109,8 +111,6 @@ URI: [biolink:name](https://w3id.org/biolink/vocab/name)
  * [Procedure](Procedure.md)
  * [Protein](Protein.md)
  * [ProteinIsoform](ProteinIsoform.md)
- * [Provider](Provider.md)
- * [Publication](Publication.md)
  * [ReagentTargetedGene](ReagentTargetedGene.md)
  * [RelationshipType](RelationshipType.md)
  * [SequenceVariant](SequenceVariant.md)
@@ -127,8 +127,11 @@ URI: [biolink:name](https://w3id.org/biolink/vocab/name)
 | --- | --- | --- |
 | **Aliases:** | | label |
 |  | | display name |
+|  | | title |
 | **Mappings:** | | rdfs:label |
-|  | | gff3:Name |
-|  | | gpi:DB_Object_Name |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | gff3:Name |
+|  | | gpi:DB_Object_Name |
+| **Narrow Mappings:** | | dcterms:title |
+|  | | WIKIDATA_PROPERTY:P1476 |
 

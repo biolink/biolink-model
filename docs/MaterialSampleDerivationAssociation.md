@@ -15,7 +15,7 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[NamedThing]%3Cobject%201..1-%20[MaterialSampleDerivationAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[MaterialSample]%3Csubject%201..1-%20[MaterialSampleDerivationAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[MaterialSample],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[NamedThing]%3Cobject%201..1-%20[MaterialSampleDerivationAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[MaterialSample]%3Csubject%201..1-%20[MaterialSampleDerivationAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[MaterialSample],[Association],[Agent])
 
 ---
 
@@ -74,7 +74,7 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

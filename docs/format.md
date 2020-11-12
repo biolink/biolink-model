@@ -14,7 +14,7 @@ URI: [biolink:format](https://w3id.org/biolink/vocab/format)
 
 ## Domain and Range
 
-[SourceFile](SourceFile.md) ->  <sub>OPT</sub> [String](types/String.md)
+[InformationContentEntity](InformationContentEntity.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,10 +25,25 @@ URI: [biolink:format](https://w3id.org/biolink/vocab/format)
 
 ## Used by
 
+ * [Article](Article.md)
+ * [Book](Book.md)
+ * [BookChapter](BookChapter.md)
+ * [ConfidenceLevel](ConfidenceLevel.md)
+ * [DataFile](DataFile.md)
+ * [DataSet](DataSet.md)
+ * [DataSetSummary](DataSetSummary.md)
+ * [DataSetVersion](DataSetVersion.md)
+ * [DistributionLevel](DistributionLevel.md)
+ * [EvidenceType](EvidenceType.md)
+ * [InformationContentEntity](InformationContentEntity.md)
+ * [Publication](Publication.md)
+ * [Serial](Serial.md)
+ * [SourceFile](SourceFile.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | dcterms:format |
+| **Exact Mappings:** | | dcterms:format |
+|  | | WIKIDATA_PROPERTY:P2701 |
 

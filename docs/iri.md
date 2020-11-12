@@ -34,4 +34,5 @@ URI: [biolink:iri](https://w3id.org/biolink/vocab/iri)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | WIKIDATA_PROPERTY:P854 |
 

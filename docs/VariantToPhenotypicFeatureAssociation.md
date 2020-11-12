@@ -15,7 +15,7 @@ URI: [biolink:VariantToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[SequenceVariant]%3Csubject%201..1-%20[VariantToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[SeverityValue],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[SequenceVariant]%3Csubject%201..1-%20[VariantToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[SeverityValue],[SequenceVariant],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association],[Agent])
 
 ---
 
@@ -73,7 +73,7 @@ URI: [biolink:VariantToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from entity to feature or disease qualifiers:
 

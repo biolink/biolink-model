@@ -15,7 +15,7 @@ URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[SequenceFeatureRelationship],[Publication],[Provider],[OntologyClass],[Transcript]%3Cobject%201..1-%20[ExonToTranscriptRelationship%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[Exon]%3Csubject%201..1-%20[ExonToTranscriptRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Exon])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[SequenceFeatureRelationship],[Publication],[OntologyClass],[Transcript]%3Cobject%201..1-%20[ExonToTranscriptRelationship%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[Exon]%3Csubject%201..1-%20[ExonToTranscriptRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Exon],[Agent])
 
 ---
 
@@ -69,7 +69,7 @@ URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonT
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

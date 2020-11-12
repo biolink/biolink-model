@@ -15,7 +15,7 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachine],[GeneToGoTermAssociation],[GeneOntologyClass],[GeneOntologyClass]%3Cobject%201..1-%20[FunctionalAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[MacromolecularMachine]%3Csubject%201..1-%20[FunctionalAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[Association]%5E-[FunctionalAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachine],[GeneToGoTermAssociation],[GeneOntologyClass],[GeneOntologyClass]%3Cobject%201..1-%20[FunctionalAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[MacromolecularMachine]%3Csubject%201..1-%20[FunctionalAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[Association]%5E-[FunctionalAssociation],[Association],[Agent])
 
 ---
 
@@ -81,7 +81,7 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

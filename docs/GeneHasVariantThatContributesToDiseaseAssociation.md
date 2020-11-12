@@ -15,7 +15,7 @@ URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.or
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[SequenceVariant],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneHasVariantThatContributesToDiseaseAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[SequenceVariant]%3Csequence%20variant%20qualifier%200..1-%20[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[FrequencyValue])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[SequenceVariant],[Publication],[OntologyClass],[Onset],[NamedThing],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneHasVariantThatContributesToDiseaseAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[SequenceVariant]%3Csequence%20variant%20qualifier%200..1-%20[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[FrequencyValue],[Agent])
 
 ---
 
@@ -36,7 +36,7 @@ URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.or
     * Description: A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [sequence variant qualifier](sequence_variant_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in an association where the variant
+    * Description: a qualifier used in an association with the variant
     * range: [SequenceVariant](SequenceVariant.md)
 
 ### Inherited from association:
@@ -71,7 +71,7 @@ URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.or
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from entity to feature or disease qualifiers:
 

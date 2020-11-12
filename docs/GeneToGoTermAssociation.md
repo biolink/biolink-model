@@ -18,7 +18,7 @@ WBVocab:Gene-GO-Association
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[MolecularEntity],[GeneOntologyClass]%3Cobject%201..1-%20[GeneToGoTermAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[MolecularEntity]%3Csubject%201..1-%20[GeneToGoTermAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[GeneOntologyClass],[FunctionalAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MolecularEntity],[GeneOntologyClass]%3Cobject%201..1-%20[GeneToGoTermAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[MolecularEntity]%3Csubject%201..1-%20[GeneToGoTermAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[GeneOntologyClass],[FunctionalAssociation],[Agent])
 
 ---
 
@@ -76,7 +76,7 @@ WBVocab:Gene-GO-Association
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

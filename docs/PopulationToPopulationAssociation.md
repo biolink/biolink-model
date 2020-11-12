@@ -15,7 +15,7 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[PopulationOfIndividualOrganisms]%3Cobject%201..1-%20[PopulationToPopulationAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[PopulationOfIndividualOrganisms]%3Csubject%201..1-%20[PopulationToPopulationAssociation],[Association]%5E-[PopulationToPopulationAssociation],[PopulationOfIndividualOrganisms],[OntologyClass],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PopulationOfIndividualOrganisms]%3Cobject%201..1-%20[PopulationToPopulationAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[PopulationOfIndividualOrganisms]%3Csubject%201..1-%20[PopulationToPopulationAssociation],[Association]%5E-[PopulationToPopulationAssociation],[PopulationOfIndividualOrganisms],[OntologyClass],[Association],[Agent])
 
 ---
 
@@ -74,7 +74,7 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

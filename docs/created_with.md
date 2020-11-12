@@ -30,5 +30,5 @@ URI: [biolink:created_with](https://w3id.org/biolink/vocab/created_with)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | pav:createdWith |
+| **Exact Mappings:** | | pav:createdWith |
 

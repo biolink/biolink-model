@@ -15,7 +15,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https:
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[AnatomicalEntity]%3Cobject%201..1-%20[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]%5E-[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[DiseaseOrPhenotypicFeature],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[AnatomicalEntity]%3Cobject%201..1-%20[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]%5E-[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[DiseaseOrPhenotypicFeature],[AnatomicalEntity],[Agent])
 
 ---
 
@@ -69,7 +69,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https:
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from disease or phenotypic feature association to thing association:
 

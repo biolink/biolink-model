@@ -12,20 +12,17 @@ layout: default
 
 URI: [biolink:DataSet](https://w3id.org/biolink/vocab/DataSet)
 
-IAO:0000100
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[DataSetVersion],[DataSetVersion]-%20version%20of%200..1%3E[DataSet%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSet]%5E-[DataSetVersion],[NamedThing]%5E-[DataSet])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[DataSetVersion],[DataSetVersion]-%20version%20of%200..1%3E[DataSet%7Cdescription(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataSet]%5E-[DataSetVersion],[InformationContentEntity]%5E-[DataSet])
 
 ---
 
 
 ## Parents
 
- *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+ *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
 
 ## Children
 
@@ -49,6 +46,18 @@ IAO:0000100
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
 
+### Inherited from information content entity:
+
+ * [license](license.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [rights](rights.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [format](format.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [creation date](creation_date.md)  <sub>OPT</sub>
+    * Description: date on which thing was created. This can be applied to nodes or edges
+    * range: [Date](types/Date.md)
+
 ### Inherited from named thing:
 
  * [category](category.md)  <sub>1..*</sub>
@@ -64,5 +73,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | IAO:0000100 |
+| **Exact Mappings:** | | IAO:0000100 |
+|  | | dctypes:Dataset |
 

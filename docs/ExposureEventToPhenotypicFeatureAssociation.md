@@ -15,7 +15,7 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ExposureEvent]%3Csubject%201..1-%20[ExposureEventToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[ExposureEvent],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ExposureEvent]%3Csubject%201..1-%20[ExposureEventToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[ExposureEvent],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association],[Agent])
 
 ---
 
@@ -71,7 +71,7 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from entity to feature or disease qualifiers:
 

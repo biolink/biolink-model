@@ -8,89 +8,21 @@ layout: default
 # Class: InformationContentEntity
 
 
-a piece of information that typically describes some piece of biology or is used as support.
+a piece of information that typically describes some topic of discourse or is used as support.
 
 URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/InformationContentEntity)
 
-IAO:0000030
-{: .mapping-label }
-
-UMLSSG:CONC
-{: .mapping-label }
-
-UMLSSC:T077
-{: .mapping-label }
-
-UMLSST:cnce
-{: .mapping-label }
-
-UMLSSC:T078
-{: .mapping-label }
-
-UMLSST:idcn
-{: .mapping-label }
-
-UMLSSC:T079
-{: .mapping-label }
-
-UMLSST:tmco
-{: .mapping-label }
-
-UMLSSC:T080
-{: .mapping-label }
-
-UMLSST:qlco
-{: .mapping-label }
-
-UMLSSC:T081
-{: .mapping-label }
-
-UMLSST:qnco
-{: .mapping-label }
-
-UMLSSC:T082
-{: .mapping-label }
-
-UMLSST:spco
-{: .mapping-label }
-
-UMLSSC:T089
-{: .mapping-label }
-
-UMLSST:rnlw
-{: .mapping-label }
-
-UMLSSC:T102
-{: .mapping-label }
-
-UMLSST:grpa
-{: .mapping-label }
-
-UMLSSC:T169
-{: .mapping-label }
-
-UMLSST:ftcn
-{: .mapping-label }
-
-UMLSSC:T171
-{: .mapping-label }
-
-UMLSST:lang
-{: .mapping-label }
-
-UMLSSC:T185
-{: .mapping-label }
-
-UMLSST:clas
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[InformationContentEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]%5E-[Publication],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[ConfidenceLevel],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[ConfidenceLevel])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[ContributorAssociation]-%20subject%201..1%3E[InformationContentEntity%7Cdescription:narrative_text%20%3F;license:string%20%3F;rights:string%20%3F;format:string%20%3F;creation_date:date%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[InformationContentEntity]%5E-[Publication],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[DataSet],[InformationContentEntity]%5E-[DataFile],[InformationContentEntity]%5E-[ConfidenceLevel],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[DataSet],[DataFile],[ContributorAssociation],[ConfidenceLevel])
 
 ---
 
+
+## Identifier prefixes
+
+ * doi
 
 ## Parents
 
@@ -99,14 +31,29 @@ UMLSST:clas
 ## Children
 
  * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
+ * [DataFile](DataFile.md)
+ * [DataSet](DataSet.md)
  * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
- * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
+ * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
 
 ## Referenced by class
 
+ *  **[ContributorAssociation](ContributorAssociation.md)** *[contributor association➞subject](contributor_association_subject.md)*  <sub>REQ</sub>  **[InformationContentEntity](InformationContentEntity.md)**
 
 ## Attributes
 
+
+### Own
+
+ * [creation date](creation_date.md)  <sub>OPT</sub>
+    * Description: date on which thing was created. This can be applied to nodes or edges
+    * range: [Date](types/Date.md)
+ * [format](format.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [license](license.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [rights](rights.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
 
 ### Inherited from gene product:
 
@@ -130,6 +77,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
+### Domain for slot:
+
+ * [format](format.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [license](license.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [rights](rights.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+
 ## Other properties
 
 |  |  |  |
@@ -137,8 +93,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Aliases:** | | information |
 |  | | information artefact |
 |  | | information entity |
-| **Mappings:** | | IAO:0000030 |
-|  | | UMLSSG:CONC |
+| **Exact Mappings:** | | IAO:0000030 |
+| **Narrow Mappings:** | | UMLSSG:CONC |
 |  | | UMLSSC:T077 |
 |  | | UMLSST:cnce |
 |  | | UMLSSC:T078 |

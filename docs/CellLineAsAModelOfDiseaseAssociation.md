@@ -15,7 +15,7 @@ URI: [biolink:CellLineAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[FrequencyValue],[EntityToDiseaseAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine]%3Csubject%201..1-%20[CellLineAsAModelOfDiseaseAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]%5E-[CellLineAsAModelOfDiseaseAssociation],[CellLine])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseMixin],[FrequencyValue],[EntityToDiseaseAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine]%3Csubject%201..1-%20[CellLineAsAModelOfDiseaseAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseMixin],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]%5E-[CellLineAsAModelOfDiseaseAssociation],[CellLine],[Agent])
 
 ---
 
@@ -73,7 +73,7 @@ URI: [biolink:CellLineAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from entity to feature or disease qualifiers:
 

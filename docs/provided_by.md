@@ -14,7 +14,7 @@ URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..*</sub> [Provider](Provider.md)
+[Association](Association.md) ->  <sub>0..*</sub> [Agent](Agent.md)
 
 ## Parents
 
@@ -40,6 +40,7 @@ URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
  * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
  * [ChemicalToThingAssociation](ChemicalToThingAssociation.md)
+ * [ContributorAssociation](ContributorAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
  * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)

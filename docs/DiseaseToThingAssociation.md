@@ -15,7 +15,7 @@ URI: [biolink:DiseaseToThingAssociation](https://w3id.org/biolink/vocab/DiseaseT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[Disease]%3Csubject%201..1-%20[DiseaseToThingAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToThingAssociation],[DiseaseToThingAssociation]%5E-[DiseaseToExposureAssociation],[Association]%5E-[DiseaseToThingAssociation],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureAssociation],[Disease],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[Disease]%3Csubject%201..1-%20[DiseaseToThingAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToThingAssociation],[DiseaseToThingAssociation]%5E-[DiseaseToExposureAssociation],[Association]%5E-[DiseaseToThingAssociation],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureAssociation],[Disease],[Association],[Agent])
 
 ---
 
@@ -77,7 +77,7 @@ URI: [biolink:DiseaseToThingAssociation](https://w3id.org/biolink/vocab/DiseaseT
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

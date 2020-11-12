@@ -14,7 +14,7 @@ URI: [biolink:rights](https://w3id.org/biolink/vocab/rights)
 
 ## Domain and Range
 
-[SourceFile](SourceFile.md) ->  <sub>OPT</sub> [String](types/String.md)
+[InformationContentEntity](InformationContentEntity.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,10 +25,24 @@ URI: [biolink:rights](https://w3id.org/biolink/vocab/rights)
 
 ## Used by
 
+ * [Article](Article.md)
+ * [Book](Book.md)
+ * [BookChapter](BookChapter.md)
+ * [ConfidenceLevel](ConfidenceLevel.md)
+ * [DataFile](DataFile.md)
+ * [DataSet](DataSet.md)
+ * [DataSetSummary](DataSetSummary.md)
+ * [DataSetVersion](DataSetVersion.md)
+ * [DistributionLevel](DistributionLevel.md)
+ * [EvidenceType](EvidenceType.md)
+ * [InformationContentEntity](InformationContentEntity.md)
+ * [Publication](Publication.md)
+ * [Serial](Serial.md)
+ * [SourceFile](SourceFile.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | dcterms:rights |
+| **Exact Mappings:** | | dcterms:rights |
 

@@ -15,7 +15,7 @@ URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/Pai
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-%20[PairwiseInteractionAssociation%7Cid:string;relation:uriorcurie;predicate(i):predicate_type;negated(i):boolean%20%3F],[MolecularEntity]%3Cobject%201..1-%20[PairwiseInteractionAssociation],[MolecularEntity]%3Csubject%201..1-%20[PairwiseInteractionAssociation],[PairwiseGeneToGeneInteraction]uses%20-.-%3E[PairwiseInteractionAssociation],[Association]%5E-[PairwiseInteractionAssociation],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-%20[PairwiseInteractionAssociation%7Cid:string;relation:uriorcurie;predicate(i):predicate_type;negated(i):boolean%20%3F],[MolecularEntity]%3Cobject%201..1-%20[PairwiseInteractionAssociation],[MolecularEntity]%3Csubject%201..1-%20[PairwiseInteractionAssociation],[PairwiseGeneToGeneInteraction]uses%20-.-%3E[PairwiseInteractionAssociation],[Association]%5E-[PairwiseInteractionAssociation],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[Association],[Agent])
 
 ---
 
@@ -84,7 +84,7 @@ URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/Pai
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

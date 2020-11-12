@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[Gene]%3Cobject%201..1-%20[GenotypeToGeneAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Genotype],[Gene],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[Gene]%3Cobject%201..1-%20[GenotypeToGeneAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Genotype],[Gene],[Association],[Agent])
 
 ---
 
@@ -74,7 +74,7 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

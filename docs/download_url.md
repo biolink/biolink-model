@@ -31,5 +31,5 @@ URI: [biolink:download_url](https://w3id.org/biolink/vocab/download_url)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | dcterms:downloadURL |
+| **Exact Mappings:** | | dcterms:downloadURL |
 

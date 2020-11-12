@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[Provider],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation%7Crelation:uriorcurie;description:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociation],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation%7Crelation:uriorcurie;description:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association],[Agent])
 
 ---
 
@@ -75,7 +75,7 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from entity to feature or disease qualifiers:
 

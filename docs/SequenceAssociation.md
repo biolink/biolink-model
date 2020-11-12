@@ -15,7 +15,7 @@ URI: [biolink:SequenceAssociation](https://w3id.org/biolink/vocab/SequenceAssoci
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F]%5E-[GenomicSequenceLocalization],[Association]%5E-[SequenceAssociation],[Publication],[Provider],[OntologyClass],[NamedThing],[GenomicSequenceLocalization],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F]%5E-[GenomicSequenceLocalization],[Association]%5E-[SequenceAssociation],[Publication],[OntologyClass],[NamedThing],[GenomicSequenceLocalization],[Association],[Agent])
 
 ---
 
@@ -66,4 +66,4 @@ URI: [biolink:SequenceAssociation](https://w3id.org/biolink/vocab/SequenceAssoci
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)

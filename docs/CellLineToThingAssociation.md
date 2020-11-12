@@ -15,7 +15,7 @@ URI: [biolink:CellLineToThingAssociation](https://w3id.org/biolink/vocab/CellLin
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[CellLine]%3Csubject%201..1-%20[CellLineToThingAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToThingAssociation],[Association]%5E-[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[CellLine]%3Csubject%201..1-%20[CellLineToThingAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToThingAssociation],[Association]%5E-[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine],[Association],[Agent])
 
 ---
 
@@ -71,7 +71,7 @@ URI: [biolink:CellLineToThingAssociation](https://w3id.org/biolink/vocab/CellLin
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

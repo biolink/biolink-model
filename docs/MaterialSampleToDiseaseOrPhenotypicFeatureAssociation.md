@@ -15,7 +15,7 @@ URI: [biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](https://w3i
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToDiseaseOrPhenotypicFeatureAssociation],[Publication],[Provider],[OntologyClass],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F]uses%20-.-%3E[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToDiseaseOrPhenotypicFeatureAssociation],[Publication],[OntologyClass],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F]uses%20-.-%3E[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[Association],[Agent])
 
 ---
 
@@ -64,4 +64,4 @@ URI: [biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](https://w3i
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)

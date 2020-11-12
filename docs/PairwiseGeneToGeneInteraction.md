@@ -15,7 +15,7 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[PairwiseInteractionAssociation],[PairwiseGeneToGeneInteraction%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F]uses%20-.-%3E[PairwiseInteractionAssociation],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneAssociation],[GeneOrGeneProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PairwiseInteractionAssociation],[PairwiseGeneToGeneInteraction%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F]uses%20-.-%3E[PairwiseInteractionAssociation],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneAssociation],[GeneOrGeneProduct],[Agent])
 
 ---
 
@@ -72,7 +72,7 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from gene to gene association:
 

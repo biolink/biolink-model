@@ -24,14 +24,14 @@ SEPIO:0000187
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[InformationContentEntity]%5E-[ConfidenceLevel%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[InformationContentEntity]%5E-[ConfidenceLevel%7Cdescription(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[Association])
 
 ---
 
 
 ## Parents
 
- *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
+ *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
 
 ## Referenced by class
 
@@ -50,6 +50,18 @@ SEPIO:0000187
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
+
+### Inherited from information content entity:
+
+ * [license](license.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [rights](rights.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [format](format.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [creation date](creation_date.md)  <sub>OPT</sub>
+    * Description: date on which thing was created. This can be applied to nodes or edges
+    * range: [Date](types/Date.md)
 
 ### Inherited from named thing:
 

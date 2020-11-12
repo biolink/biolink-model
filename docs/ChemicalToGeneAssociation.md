@@ -18,7 +18,7 @@ SIO:001257
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[NamedThing],[GeneOrGeneProduct],[ChemicalToThingAssociation],[GeneOrGeneProduct]%3Cobject%201..1-%20[ChemicalToGeneAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToGeneAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[GeneOrGeneProduct],[ChemicalToThingAssociation],[GeneOrGeneProduct]%3Cobject%201..1-%20[ChemicalToGeneAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToGeneAssociation],[Association],[Agent])
 
 ---
 
@@ -75,7 +75,7 @@ SIO:001257
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

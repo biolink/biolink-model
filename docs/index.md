@@ -15,7 +15,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [NamedThing](NamedThing.md) - a databased entity or concept/class
     * [AdministrativeEntity](AdministrativeEntity.md)
-       * [Provider](Provider.md) - person, group, organization or project that provides a piece of information
+       * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
     * [BiologicalEntity](BiologicalEntity.md)
        * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
           * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
@@ -70,17 +70,21 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
        * [ClinicalIntervention](ClinicalIntervention.md)
        * [ClinicalTrial](ClinicalTrial.md)
-    * [DataFile](DataFile.md)
-       * [SourceFile](SourceFile.md)
-    * [DataSet](DataSet.md)
-       * [DataSetVersion](DataSetVersion.md)
-          * [DataSetSummary](DataSetSummary.md)
-          * [DistributionLevel](DistributionLevel.md)
     * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
-    * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
+    * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
        * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
+       * [DataFile](DataFile.md)
+          * [SourceFile](SourceFile.md)
+       * [DataSet](DataSet.md)
+          * [DataSetVersion](DataSetVersion.md)
+             * [DataSetSummary](DataSetSummary.md)
+             * [DistributionLevel](DistributionLevel.md)
        * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
-       * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
+       * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+          * [Article](Article.md)
+          * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+          * [BookChapter](BookChapter.md)
+          * [Serial](Serial.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
     * [MaterialSample](MaterialSample.md) - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
     * [Occurrent](Occurrent.md) - A processual entity
        * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
@@ -114,6 +118,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) - An interaction between a chemical entity and a gene or gene product
     * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) - An interaction between a chemical entity and a biological process or pathway
     * [ChemicalToThingAssociation](ChemicalToThingAssociation.md) - An interaction between a chemical entity and another entity
+    * [ContributorAssociation](ContributorAssociation.md) - Any association between an entity (such as a publication) and various agents that contribute to its realisation
     * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
        * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
     * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
@@ -307,6 +312,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [affects uptake of](affects_uptake_of.md) - holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
     * [decreases uptake of](decreases_uptake_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
     * [increases uptake of](increases_uptake_of.md) - holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+ * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
  * [biomarker for](biomarker_for.md) - holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
@@ -328,6 +334,11 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
     * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
        * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
+ * [contributor](contributor.md)
+    * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
+    * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
+    * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
+    * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
  * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     * [biomarker for](biomarker_for.md) - holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
     * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -356,6 +367,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [directly interacts with](directly_interacts_with.md) - Holds between molecular entities that physically and directly interact with each other
  * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
  * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
+ * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
  * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
     * [molecular activity➞enabled by](molecular_activity_enabled_by.md) - The gene product, gene, or complex that catalyzes the reaction
  * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
@@ -482,6 +494,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
  * [produced by](produced_by.md)
  * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
+ * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
+ * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
  * [regulates](regulates.md)
     * [negatively regulates](negatively_regulates.md)
     * [positively regulates](positively_regulates.md)
@@ -576,6 +590,11 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
        * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
           * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
+    * [contributor](contributor.md)
+       * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
+       * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
+       * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
+       * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
     * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
        * [biomarker for](biomarker_for.md) - holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
        * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -675,6 +694,11 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 #### Node Properties
 
+ * [abstract](abstract.md) - summary of a publication
+ * [address](address.md) - the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
+ * [affiliation](affiliation.md) - a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
+ * [agent➞id](agent_id.md) - Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
+ * [agent➞name](agent_name.md) - it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
  * [aggregate statistic](aggregate_statistic.md)
     * [has count](has_count.md) - number of things with a particular property
        * [variant to population association➞has count](variant_to_population_association_has_count.md) - number in object population that carry a particular allele, aka allele count
@@ -683,7 +707,14 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [variant to population association➞has quotient](variant_to_population_association_has_quotient.md) - frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
     * [has total](has_total.md) - total number of things in a particular reference set
        * [variant to population association➞has total](variant_to_population_association_has_total.md) - number all populations that carry a particular allele, aka allele number
+ * [article➞iso abbreviation](article_iso_abbreviation.md) - Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
+ * [article➞published in](article_published_in.md) - The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
+ * [authors](authors.md) - connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
+ * [book chapter➞published in](book_chapter_published_in.md) - The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.
+ * [book➞id](book_id.md) - Books should have industry-standard identifier such as from ISBN.
+ * [book➞type](book_type.md) - Should generally be set to an ontology class defined term for 'book'.
  * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * [chapter](chapter.md) - chapter of a book
  * [created_with](created_with.md)
  * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
  * [description](description.md) - a human-readable description of a thing
@@ -715,16 +746,30 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [variant to population association➞has total](variant_to_population_association_has_total.md) - number all populations that carry a particular allele, aka allele number
  * [has zygosity](has_zygosity.md)
  * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+    * [agent➞id](agent_id.md) - Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
     * [pairwise interaction association➞id](pairwise_interaction_association_id.md) - identifier for the interaction. This may come from an interaction database such as IMEX.
+    * [publication➞id](publication_id.md) - Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
+       * [book➞id](book_id.md) - Books should have industry-standard identifier such as from ISBN.
+       * [serial➞id](serial_id.md) - Serials (journals) should have industry-standard identifier such as from ISSN.
     * [sequence variant➞id](sequence_variant_id.md)
  * [iri](iri.md) - An IRI for the node. This is determined by the id using expansion rules.
+ * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
+    * [article➞iso abbreviation](article_iso_abbreviation.md) - Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
+ * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
+ * [keywords](keywords.md) - keywords tagging a publication
  * [latitude](latitude.md) - latitude
  * [license](license.md)
  * [longitude](longitude.md) - longitude
  * [macromolecular machine➞name](macromolecular_machine_name.md) - genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+ * [mesh terms](mesh_terms.md) - mesh terms tagging a publication
  * [name](name.md) - A human-readable name for a thing
+    * [agent➞name](agent_name.md) - it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
     * [macromolecular machine➞name](macromolecular_machine_name.md) - genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * [publication➞name](publication_name.md) - the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
+    * [abstract](abstract.md) - summary of a publication
+    * [address](address.md) - the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
+    * [affiliation](affiliation.md) - a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
     * [aggregate statistic](aggregate_statistic.md)
        * [has count](has_count.md) - number of things with a particular property
           * [variant to population association➞has count](variant_to_population_association_has_count.md) - number in object population that carry a particular allele, aka allele count
@@ -733,6 +778,8 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [variant to population association➞has quotient](variant_to_population_association_has_quotient.md) - frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
        * [has total](has_total.md) - total number of things in a particular reference set
           * [variant to population association➞has total](variant_to_population_association_has_total.md) - number all populations that carry a particular allele, aka allele number
+    * [authors](authors.md) - connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
+    * [chapter](chapter.md) - chapter of a book
     * [created_with](created_with.md)
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
     * [description](description.md) - a human-readable description of a thing
@@ -755,14 +802,30 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
     * [has zygosity](has_zygosity.md)
     * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+       * [agent➞id](agent_id.md) - Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
        * [pairwise interaction association➞id](pairwise_interaction_association_id.md) - identifier for the interaction. This may come from an interaction database such as IMEX.
+       * [publication➞id](publication_id.md) - Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
+          * [book➞id](book_id.md) - Books should have industry-standard identifier such as from ISBN.
+          * [serial➞id](serial_id.md) - Serials (journals) should have industry-standard identifier such as from ISSN.
        * [sequence variant➞id](sequence_variant_id.md)
     * [iri](iri.md) - An IRI for the node. This is determined by the id using expansion rules.
+    * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
+       * [article➞iso abbreviation](article_iso_abbreviation.md) - Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
+    * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
+    * [keywords](keywords.md) - keywords tagging a publication
     * [latitude](latitude.md) - latitude
     * [license](license.md)
     * [longitude](longitude.md) - longitude
+    * [mesh terms](mesh_terms.md) - mesh terms tagging a publication
     * [name](name.md) - A human-readable name for a thing
+       * [agent➞name](agent_name.md) - it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
        * [macromolecular machine➞name](macromolecular_machine_name.md) - genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+       * [publication➞name](publication_name.md) - the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
+    * [pages](pages.md) - page number of source referenced for statement or publication
+       * [publication➞pages](publication_pages.md) - When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
+    * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
+       * [article➞published in](article_published_in.md) - The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
+       * [book chapter➞published in](book_chapter_published_in.md) - The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.
     * [retrieved on](retrieved_on.md)
     * [rights](rights.md)
     * [source data file](source_data_file.md)
@@ -772,18 +835,36 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [synonym](synonym.md) - Alternate human-readable names for a thing
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
     * [timepoint](timepoint.md) - a point in time
-    * [title](title.md)
     * [type](type.md)
        * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+       * [publication➞type](publication_type.md) - Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
+          * [book➞type](book_type.md) - Should generally be set to an ontology class defined term for 'book'.
+          * [serial➞type](serial_type.md) - Should generally be set to an ontology class defined term for 'serial' or 'journal'.
     * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
     * [version of](version_of.md)
+    * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
     * [xref](xref.md) - Alternate CURIEs for a thing
+ * [pages](pages.md) - page number of source referenced for statement or publication
+    * [publication➞pages](publication_pages.md) - When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
  * [pairwise interaction association➞id](pairwise_interaction_association_id.md) - identifier for the interaction. This may come from an interaction database such as IMEX.
+ * [publication➞id](publication_id.md) - Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
+    * [book➞id](book_id.md) - Books should have industry-standard identifier such as from ISBN.
+    * [serial➞id](serial_id.md) - Serials (journals) should have industry-standard identifier such as from ISSN.
+ * [publication➞name](publication_name.md) - the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
+ * [publication➞pages](publication_pages.md) - When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
+ * [publication➞type](publication_type.md) - Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
+    * [book➞type](book_type.md) - Should generally be set to an ontology class defined term for 'book'.
+    * [serial➞type](serial_type.md) - Should generally be set to an ontology class defined term for 'serial' or 'journal'.
+ * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
+    * [article➞published in](article_published_in.md) - The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
+    * [book chapter➞published in](book_chapter_published_in.md) - The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.
  * [retrieved on](retrieved_on.md)
  * [rights](rights.md)
  * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md) - The state of the sequence w.r.t a reference sequence
  * [sequence variant➞has gene](sequence_variant_has_gene.md) - Each allele can be associated with any number of genes
  * [sequence variant➞id](sequence_variant_id.md)
+ * [serial➞id](serial_id.md) - Serials (journals) should have industry-standard identifier such as from ISSN.
+ * [serial➞type](serial_type.md) - Should generally be set to an ontology class defined term for 'serial' or 'journal'.
  * [source data file](source_data_file.md)
  * [source version](source_version.md)
  * [source web page](source_web_page.md)
@@ -791,14 +872,17 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [synonym](synonym.md) - Alternate human-readable names for a thing
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
  * [timepoint](timepoint.md) - a point in time
- * [title](title.md)
  * [type](type.md)
     * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    * [publication➞type](publication_type.md) - Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
+       * [book➞type](book_type.md) - Should generally be set to an ontology class defined term for 'book'.
+       * [serial➞type](serial_type.md) - Should generally be set to an ontology class defined term for 'serial' or 'journal'.
  * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
  * [variant to population association➞has count](variant_to_population_association_has_count.md) - number in object population that carry a particular allele, aka allele count
  * [variant to population association➞has quotient](variant_to_population_association_has_quotient.md) - frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
  * [variant to population association➞has total](variant_to_population_association_has_total.md) - number all populations that carry a particular allele, aka allele number
  * [version of](version_of.md)
+ * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
  * [xref](xref.md) - Alternate CURIEs for a thing
 
 #### Edge Properties
@@ -836,6 +920,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [chemical to disease or phenotypic feature association➞object](chemical_to_disease_or_phenotypic_feature_association_object.md) - the disease or phenotype that is affected by the chemical
        * [chemical to gene association➞object](chemical_to_gene_association_object.md) - the gene or gene product that is affected by the chemical
        * [chemical to pathway association➞object](chemical_to_pathway_association_object.md) - the pathway that is affected by the chemical
+       * [contributor association➞object](contributor_association_object.md) - agent helping to realise the given entity (e.g. such as a publication)
        * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md) - anatomical entity in which the disease or feature is found
        * [disease to exposure association➞object](disease_to_exposure_association_object.md)
        * [entity to disease association➞object](entity_to_disease_association_object.md) - disease
@@ -867,9 +952,11 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * [p value](p_value.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
     * [predicate](predicate.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+       * [contributor association➞predicate](contributor_association_predicate.md) - generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'
     * [provided by](provided_by.md) - connects an association to the agent (person, organization or group) that provided it
     * [publications](publications.md) - connects an association to publications supporting the association
     * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
+       * [contributor association➞qualifiers](contributor_association_qualifiers.md) - this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'
     * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
        * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md) - can be used to indicate magnitude, or also ranking
     * [relation](relation.md) - The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
@@ -899,7 +986,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [start interbase coordinate](start_interbase_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
        * [phase](phase.md) - The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
        * [strand](strand.md) - The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
-    * [sequence variant qualifier](sequence_variant_qualifier.md) - a qualifier used in an association where the variant
+    * [sequence variant qualifier](sequence_variant_qualifier.md) - a qualifier used in an association with the variant
     * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
     * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     * [stage qualifier](stage_qualifier.md) - stage at which expression takes place
@@ -914,6 +1001,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [cell line to thing association➞subject](cell_line_to_thing_association_subject.md)
        * [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md) - the upstream chemical entity
        * [chemical to thing association➞subject](chemical_to_thing_association_subject.md) - the chemical substance or entity that is an interactor
+       * [contributor association➞subject](contributor_association_subject.md) - information content entity which an agent has helped realise
        * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md) - disease or phenotype
        * [disease to thing association➞subject](disease_to_thing_association_subject.md) - disease class
           * [disease to exposure association➞subject](disease_to_exposure_association_subject.md)
@@ -973,6 +1061,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [chemical to thing association➞subject](chemical_to_thing_association_subject.md) - the chemical substance or entity that is an interactor
  * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
  * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+ * [contributor association➞object](contributor_association_object.md) - agent helping to realise the given entity (e.g. such as a publication)
+ * [contributor association➞predicate](contributor_association_predicate.md) - generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'
+ * [contributor association➞qualifiers](contributor_association_qualifiers.md) - this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'
+ * [contributor association➞subject](contributor_association_subject.md) - information content entity which an agent has helped realise
  * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md) - anatomical entity in which the disease or feature is found
  * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md) - disease or phenotype
  * [disease to exposure association➞object](disease_to_exposure_association_object.md)
@@ -1062,6 +1154,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [chemical to disease or phenotypic feature association➞object](chemical_to_disease_or_phenotypic_feature_association_object.md) - the disease or phenotype that is affected by the chemical
     * [chemical to gene association➞object](chemical_to_gene_association_object.md) - the gene or gene product that is affected by the chemical
     * [chemical to pathway association➞object](chemical_to_pathway_association_object.md) - the pathway that is affected by the chemical
+    * [contributor association➞object](contributor_association_object.md) - agent helping to realise the given entity (e.g. such as a publication)
     * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md) - anatomical entity in which the disease or feature is found
     * [disease to exposure association➞object](disease_to_exposure_association_object.md)
     * [entity to disease association➞object](entity_to_disease_association_object.md) - disease
@@ -1103,9 +1196,11 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [population to population association➞relation](population_to_population_association_relation.md) - A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
  * [population to population association➞subject](population_to_population_association_subject.md) - the population that form the subject of the association
  * [predicate](predicate.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+    * [contributor association➞predicate](contributor_association_predicate.md) - generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'
  * [provided by](provided_by.md) - connects an association to the agent (person, organization or group) that provided it
  * [publications](publications.md) - connects an association to publications supporting the association
  * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
+    * [contributor association➞qualifiers](contributor_association_qualifiers.md) - this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'
  * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
     * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md) - can be used to indicate magnitude, or also ranking
  * [relation](relation.md) - The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
@@ -1145,7 +1240,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [strand](strand.md) - The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
  * [sequence variant modulates treatment association➞object](sequence_variant_modulates_treatment_association_object.md) - treatment whose efficacy is modulated by the subject variant
  * [sequence variant modulates treatment association➞subject](sequence_variant_modulates_treatment_association_subject.md) - variant that modulates the treatment of some disease
- * [sequence variant qualifier](sequence_variant_qualifier.md) - a qualifier used in an association where the variant
+ * [sequence variant qualifier](sequence_variant_qualifier.md) - a qualifier used in an association with the variant
  * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
  * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
  * [stage qualifier](stage_qualifier.md) - stage at which expression takes place
@@ -1162,6 +1257,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [cell line to thing association➞subject](cell_line_to_thing_association_subject.md)
     * [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md) - the upstream chemical entity
     * [chemical to thing association➞subject](chemical_to_thing_association_subject.md) - the chemical substance or entity that is an interactor
+    * [contributor association➞subject](contributor_association_subject.md) - information content entity which an agent has helped realise
     * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md) - disease or phenotype
     * [disease to thing association➞subject](disease_to_thing_association_subject.md) - disease class
        * [disease to exposure association➞subject](disease_to_exposure_association_subject.md)

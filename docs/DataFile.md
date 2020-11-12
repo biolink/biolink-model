@@ -18,14 +18,14 @@ EFO:0004095
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SourceFile],[NamedThing],[DataSetVersion],[DataSetVersion]-%20source%20data%20file%200..1%3E[DataFile%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DataFile]%5E-[SourceFile],[NamedThing]%5E-[DataFile])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SourceFile],[InformationContentEntity],[DataSetVersion],[DataSetVersion]-%20source%20data%20file%200..1%3E[DataFile%7Cdescription(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;name(i):label_type;category(i):category_type%20%2B],[DataFile]%5E-[SourceFile],[InformationContentEntity]%5E-[DataFile])
 
 ---
 
 
 ## Parents
 
- *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+ *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
 
 ## Children
 
@@ -48,6 +48,18 @@ EFO:0004095
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
+
+### Inherited from information content entity:
+
+ * [license](license.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [rights](rights.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [format](format.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [creation date](creation_date.md)  <sub>OPT</sub>
+    * Description: date on which thing was created. This can be applied to nodes or edges
+    * range: [Date](types/Date.md)
 
 ### Inherited from named thing:
 

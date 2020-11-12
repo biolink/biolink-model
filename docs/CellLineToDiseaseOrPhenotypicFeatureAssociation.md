@@ -15,7 +15,7 @@ URI: [biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToDiseaseOrPhenotypicFeatureAssociation],[Publication],[Provider],[OntologyClass],[NamedThing],[DiseaseOrPhenotypicFeature],[CellLineToThingAssociation],[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[CellLineToDiseaseOrPhenotypicFeatureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]%5E-[CellLineAsAModelOfDiseaseAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLineAsAModelOfDiseaseAssociation],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToDiseaseOrPhenotypicFeatureAssociation],[Publication],[OntologyClass],[NamedThing],[DiseaseOrPhenotypicFeature],[CellLineToThingAssociation],[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[CellLineToDiseaseOrPhenotypicFeatureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToThingAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation]%5E-[CellLineAsAModelOfDiseaseAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLineAsAModelOfDiseaseAssociation],[Association],[Agent])
 
 ---
 
@@ -76,7 +76,7 @@ URI: [biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

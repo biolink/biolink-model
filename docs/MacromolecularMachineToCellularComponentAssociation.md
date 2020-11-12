@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToCellularComponentAssociation](https://w3id.
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Provider],[OntologyClass],[CellularComponent]%3Cobject%201..1-%20[MacromolecularMachineToCellularComponentAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachine],[FunctionalAssociation],[CellularComponent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[CellularComponent]%3Cobject%201..1-%20[MacromolecularMachineToCellularComponentAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachine],[FunctionalAssociation],[CellularComponent],[Agent])
 
 ---
 
@@ -67,7 +67,7 @@ URI: [biolink:MacromolecularMachineToCellularComponentAssociation](https://w3id.
     * range: [Publication](Publication.md)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Provider](Provider.md)
+    * range: [Agent](Agent.md)
 
 ### Inherited from functional association:
 

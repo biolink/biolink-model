@@ -30,6 +30,9 @@ URI: [biolink:xref](https://w3id.org/biolink/vocab/xref)
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Article](Article.md)
+ * [Book](Book.md)
+ * [BookChapter](BookChapter.md)
  * [Gene](Gene.md)
  * [GeneProduct](GeneProduct.md)
  * [GeneProductIsoform](GeneProductIsoform.md)
@@ -37,6 +40,8 @@ URI: [biolink:xref](https://w3id.org/biolink/vocab/xref)
  * [NoncodingRNAProduct](NoncodingRNAProduct.md)
  * [Protein](Protein.md)
  * [ProteinIsoform](ProteinIsoform.md)
+ * [Publication](Publication.md)
+ * [Serial](Serial.md)
  * [Transcript](Transcript.md)
 
 ## Other properties
