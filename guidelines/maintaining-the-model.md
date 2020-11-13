@@ -1,3 +1,10 @@
+---
+title: "Maintaining the Biolink Model"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 5
+---
+
 # Maintaining the Biolink Model
 
 The Biolink Model is under constant development with new classes and slots being added on a monthly basis. The main driver for the model is the NCATS Biomedical Data Translator.

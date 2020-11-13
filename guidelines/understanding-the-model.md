@@ -1,3 +1,10 @@
+---
+title: "Understanding the Biolink Model"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 1
+---
+
 # Understanding the Biolink Model
 
 Biolink Model is a high-level data model built to provide a schema for representing biological and biomedical knowledge. The model itself is agnostic to the graph formalism used to represent knowledge. i.e. You can use Biolink Model as a schema for labelled property graphs (Neo4j) or for edge labelled graphs (RDF). 

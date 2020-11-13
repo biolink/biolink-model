@@ -1,3 +1,10 @@
+---
+title: "Curating the Biolink Model"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 2
+---
+
 # Curating the Biolink Model
 
 Before curating the Biolink Model, we recommend that you familiarize yourself with the basics of [BiolinkML](https://github.com/biolink/biolinkml).
