@@ -54,17 +54,17 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         os.makedirs(self.types_directory, exist_ok=True)
         self.doc_root_title = f'Browse {self.schema.name.title().replace("-", " ")}'
 
-        with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
+        with open(os.path.join(directory, 'README.md'), 'w') as ixfile:
             with redirect_stdout(ixfile):
                 self.frontmatter(**{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2, 'layout': 'default'})
                 self.para(be(self.schema.description))
-
+                os.makedirs(os.path.join(directory, 'classes'), exist_ok=True)
                 self.header(3, 'Classes')
-                with open(os.path.join(directory, 'Classes.md'), 'w') as file:
+                with open(os.path.join(directory, 'classes', 'README.md'), 'w') as file:
                     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Classes\nhas_children: true\nnav_order: 1\nlayout: default\n---')
 
                 self.header(3, 'Entities')
-                with open(os.path.join(directory, 'Entities.md'), 'w') as file:
+                with open(os.path.join(directory, 'classes', 'Entities.md'), 'w') as file:
                     file.write(f'---\nparent: Classes\ntitle: Entities\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     ancs = self.ancestors(cls)
@@ -73,7 +73,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             self.class_hier(cls)
 
                 self.header(3, 'Associations')
-                with open(os.path.join(directory, 'Associations.md'), 'w') as file:
+                with open(os.path.join(directory, 'classes', 'Associations.md'), 'w') as file:
                     file.write(f'---\nparent: Classes\ntitle: Associations\nhas_children: true\nnav_order: 2\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     ancs = self.ancestors(cls)
@@ -82,26 +82,34 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             self.class_hier(cls)
 
                 self.header(3, 'Mixins')
-                with open(os.path.join(directory, 'Mixins.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+                with open(os.path.join(directory, 'classes', 'Mixins.md'), 'w') as file:
+                    file.write(f'---\nparent: Classes\ntitle: Mixins\nhas_children: true\nnav_order: 3\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     if cls.mixin and self.is_secondary_ref(cls.name):
                         self.class_hier(cls)
 
+                self.header(3, 'Other')
+                with open(os.path.join(directory, 'classes', 'Other.md'), 'w') as file:
+                    file.write(f'---\nparent: Clases\ntitle: Other\nhas_children: true\nnav_order: 4\nlayout: default\n---')
+                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
+                    if cls.mixin and self.is_secondary_ref(cls.name):
+                        self.class_hier(cls)
+
+                os.makedirs(os.path.join(directory, 'slots'), exist_ok=True)
+                self.header(3, 'Slots')
+                with open(os.path.join(directory, 'slots', 'README.md'), 'w') as file:
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+
                 self.header(3, 'Relations')
-                with open(os.path.join(directory, 'Relations.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Relations\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                with open(os.path.join(directory, 'slots', 'Relations.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\ntitle: Relations\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 for slot in sorted(self.schema.slots.values(), key=lambda c: c.name):
                     if 'related to' in self.ancestors(slot):
                         self.pred_hier(slot)
 
-                self.header(3, 'Slots')
-                with open(os.path.join(directory, 'Slots.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 4\nlayout: default\n---')
-
                 self.header(4, 'Node Properties')
-                with open(os.path.join(directory, 'NodeProperties.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\ntitle: Node Properties\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+                with open(os.path.join(directory, 'slots', 'NodeProperties.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\ntitle: Node Properties\nhas_children: true\nnav_order: 2\nlayout: default\n---')
 
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     ancs = self.ancestors(slot)
@@ -110,8 +118,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             self.pred_hier(slot)
 
                 self.header(4, 'Edge Properties')
-                with open(os.path.join(directory, 'EdgeProperties.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\ntitle: Edge Properties\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+                with open(os.path.join(directory, 'slots', 'EdgeProperties.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\ntitle: Edge Properties\nhas_children: true\nnav_order: 3\nlayout: default\n---')
 
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     ancs = self.ancestors(slot)
@@ -119,8 +127,9 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                         if 'association slot' in ancs:
                             self.pred_hier(slot)
 
+                os.makedirs(os.path.join(directory, 'types'), exist_ok=True)
                 self.header(3, 'Types')
-                with open(os.path.join(directory, 'Types.md'), 'w') as file:
+                with open(os.path.join(directory, 'types', 'Types.md'), 'w') as file:
                     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 7\nlayout: default\n---')
                 self.header(4, 'Built in')
                 for builtin_name in sorted(self.synopsis.typebases.keys()):
@@ -134,6 +143,21 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             typ_typ = f'**{typ.base}**'
 
                         self.bullet(self.type_link(typ, after_link=f' ({typ_typ})', use_desc=True))
+
+    def dir_path(self, obj: Union[ClassDefinition, SlotDefinition, TypeDefinition]) -> str:
+        filename = self.formatted_element_name(obj) if isinstance(obj, ClassDefinition) \
+            else underscore(obj.name) if isinstance(obj, SlotDefinition) \
+            else camelcase(obj.name)
+        subdir = ''
+        if isinstance(obj, ClassDefinition):
+            subdir = 'classes'
+        elif isinstance(obj, SlotDefinition):
+            subdir = 'slots'
+        elif isinstance(obj, TypeDefinition):
+            subdir = 'types'
+        path = f"{self.directory}{os.path.sep}{subdir}{os.path.sep}{filename}.md"
+        return path
+
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         if self.gen_classes and cls.name not in self.gen_classes:
