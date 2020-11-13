@@ -45,7 +45,7 @@ In the above example we use the `deprecated` and `deprecated_element_has_exact_r
 - Using the `deprecated` slot one can provide a human readable description of why the slot was deprecated
 - Using the `deprecated_element_has_exact_replacement` slot one can define what is the ideal replacement for this slot (if any)
 
-It's recommended that deprecated classes and slots remain in the model until the next minor release.
+It's recommended that deprecated classes and slots remain in the model until the next major release.
 
 
 ## Artifacts
