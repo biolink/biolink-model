@@ -13,7 +13,7 @@ An entity class represents entities like Genes, Diseases, Chemical Substances, e
 
 Instances of these Entity classes are represented as nodes in a graph.
 
-Biolink Model has several entitiy classes like `gene`, `disease`, `phenotypic feature`, `chemical substance`.
+Biolink Model has several entity classes like `gene`, `disease`, `phenotypic feature`, `chemical substance`.
 
 All these classes are arranged in a hierarchy with the root of all entities being the `named thing` class.
 
