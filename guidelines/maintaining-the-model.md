@@ -65,4 +65,4 @@ This step is automated as part of [GitHub Actions](https://github.com/biolink/bi
 
 The [Biolink Model Documentation](https://biolink.github.io/biolink-model/) site is driven from the `gh-pages` branch.
 
-That means no pull request to the Biolink Model repo should include generated Markdown.
+That means no pull request to the Biolink Model repo should include generated Markdown. It is advised to ensure that [GitHub Actions](https://github.com/biolink/biolink-model/actions) remain disabled in the fork from which pull requests are made back to the main Biolink repository.
