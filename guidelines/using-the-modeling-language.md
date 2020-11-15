@@ -1,4 +1,37 @@
-# Using the modeling language
+# Using the Modeling Language
+
+- [Overview](#overview)
+- [Inheritance Related Slots](#inheritance-related-slots)
+    - [is_a](#is_a)
+    - [abstract](#abstract)
+    - [mixin](#mixin)
+    - [mixins](#mixins)
+- [Identification, Descriptive and Indexing Related Slots](#identification-descriptive-and-indexing-related-slots)
+    - [aliases](#aliases)
+    - [description](#description)
+    - [slot_uri](#slot_uri)
+    - [in_subset](#in_subset)
+    - [id_prefixes](#id_prefixes)
+- [Slots Relating to Class Composition](#slots-relating-to-class-composition)
+    - [slots](#slots)
+    - [defining_slots](#defining_slots)
+    - [slot_usage](#slot_usage)
+    - [required](#required)
+- [Slots Relating to Constraints on Slot Composition](#slots-relating-to-constraints-on-slot-composition)
+    - [domain](#domain)
+    - [range](#range)
+    - [symmetric](#symmetric)
+- [Slots Relating Semantic Mappings and Anchoring to External Ontology](#slots-relating-semantic-mappings-and-anchoring-to-external-ontology)
+    - [inverse](#inverse)
+    - [exact_mappings](#exact_mappings)
+    - [close_mappings](#close_mappings)
+    - [narrow_mappings](#narrow_mappings)
+    - [broad_mappings](#broad_mappings)
+    - [related_mappings](#related_mappings)
+    - [subproperty_of](#subproperty_of)
+    - [subclass_of](#subclass_of)
+
+# Overview
 
 The BiolinkML provides a variety of slots to define the semantics of your Biolink Model class and slots.
 
