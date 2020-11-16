@@ -104,10 +104,10 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 with open(os.path.join(directory, 'slots', 'index.md'), 'w') as file:
                     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 2\nlayout: default\n---')
 
-                os.makedirs(os.path.join(directory, 'slots', 'relations'), exist_ok=True)
-                self.header(3, 'Relations')
-                with open(os.path.join(directory, 'slots', 'relations', 'index.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\n\ngrand_parent: {self.doc_root_title}\ntitle: Relations\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+                os.makedirs(os.path.join(directory, 'slots', 'predicates'), exist_ok=True)
+                self.header(3, 'Predicates')
+                with open(os.path.join(directory, 'slots', 'predicates', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\n\ngrand_parent: {self.doc_root_title}\ntitle: Predicates\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 for slot in sorted(self.schema.slots.values(), key=lambda c: c.name):
                     if 'related to' in self.ancestors(slot):
                         self.pred_hier(slot)
@@ -176,7 +176,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             ancs = self.ancestors(obj)
             subdir = 'slots'
             if 'related to' in ancs:
-                subdir = f"{subdir}{os.path.sep}relations"
+                subdir = f"{subdir}{os.path.sep}predicates"
             elif 'node property' in ancs:
                 subdir = f"{subdir}{os.path.sep}node_properties"
             elif 'association slot' in ancs:
@@ -300,7 +300,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 slot_uri = self.namespaces.uri_for(slot_curie)
                 ancs = self.ancestors(slot)
                 if 'related to' in ancs:
-                    parent = 'Relations'
+                    parent = 'Predicates'
                     grand_parent = 'Slots'
                     slot_type = 'Relation'
                 elif 'node property' in ancs:
