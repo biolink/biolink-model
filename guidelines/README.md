@@ -1,3 +1,10 @@
+---
+title: "Biolink Model Guidelines"
+layout: default
+has_children: true
+has_toc: false
+---
+
 # Biolink Model Guidelines
 
 Following is a primer on understanding the Biolink Model and how to work with the model for representing biological and biomedical knowledge.
