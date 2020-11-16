@@ -4190,16 +4190,18 @@ classes:
     is_a: attribute
 
   relationship quantifier:
-    abstract: true
     mixin: true
+    abstract: true
 
   sensitivity quantifier:
     is_a: relationship quantifier
     mixin: true
+    abstract: true
 
   specificity quantifier:
     is_a: relationship quantifier
     mixin: true
+    abstract: true
 
   pathognomonicity quantifier:
     is_a: specificity quantifier
@@ -4207,10 +4209,12 @@ classes:
       A relationship quantifier between a variant or symptom and a disease, which is
       high when the presence of the feature implies the existence of the disease
     mixin: true
+    abstract: true
 
   frequency quantifier:
     is_a: relationship quantifier
     mixin: true
+    abstract: true
     slots:
       - has count
       - has total
@@ -4306,8 +4310,8 @@ classes:
       - retrieved on
 
 #  data set descriptor:
-#    abstract: true
 #    mixin: true
+#    abstract: true
 
   data set:
     is_a: information content entity
@@ -4464,6 +4468,7 @@ classes:
   distribution level:
     is_a: data set version
     mixin: true
+    abstract: true
     slots:
       - download url
     mappings:
@@ -4472,6 +4477,7 @@ classes:
   data set summary:
     is_a: data set version
     mixin: true
+    abstract: true
     slots:
       - source web page
 
@@ -4501,8 +4507,8 @@ classes:
       - testing
 
   thing with taxon:
-    abstract: true
     mixin: true
+    abstract: true
     description: >-
       A mixin that can be used on any entity with a taxon
     slots:
@@ -4631,8 +4637,8 @@ classes:
       - HANCESTRO
 
   subject of investigation:
-    abstract: true
     mixin: true
+    abstract: true
     description: >-
       An entity that has the role of being studied in an investigation, study, or experiment
       
@@ -5289,8 +5295,8 @@ classes:
       - REACT
 
   gene grouping:
-    abstract: true
     mixin: true
+    abstract: true
     description: >-
       any grouping of multiple genes or gene products
 
@@ -5907,14 +5913,15 @@ classes:
 
   frequency qualifier mixin:
     mixin: true
+    abstract: true
     description: >-
       Qualifier for frequency type associations
     slots:
       - frequency qualifier
 
   entity to feature or disease qualifiers:
-    abstract: true
     mixin: true
+    abstract: true
     is_a: frequency qualifier mixin
     description: >-
       Qualifiers for entity to disease or phenotype associations
@@ -5951,8 +5958,8 @@ classes:
   entity to disease association:
     description: >-
       mixin class for any association whose object (target node) is a disease
-    abstract: true
     mixin: true
+    abstract: true
     is_a: entity to feature or disease qualifiers
     defining_slots:
       - object
@@ -6075,8 +6082,8 @@ classes:
       ga4gh: variant annotation
     defining_slots:
       - subject
-    abstract: true
     mixin: true
+    abstract: true
     slot_usage:
       subject:
         range: sequence variant
