@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/String
+title: metatype:String
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/String
+# Type: String
 
 
 A character string
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/String](https://w3id.org/biolink/vocab/biolinkml:types/String)
+URI: [metatype:String](https://biolink.github.io/biolinkml/docs/types/String)
 
 |  |  |  |
 | --- | --- | --- |

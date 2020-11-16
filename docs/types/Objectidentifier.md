@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier
+title: metatype:Objectidentifier
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier
+# Type: Objectidentifier
 
 
 A URI or CURIE that represents an object in the model.
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier](https://w3id.org/biolink/vocab/biolinkml:types/Objectidentifier)
+URI: [metatype:Objectidentifier](https://biolink.github.io/biolinkml/docs/types/Objectidentifier)
 
 |  |  |  |
 | --- | --- | --- |

@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie
+title: metatype:Uriorcurie
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie
+# Type: Uriorcurie
 
 
 a URI or a CURIE
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie](https://w3id.org/biolink/vocab/biolinkml:types/Uriorcurie)
+URI: [metatype:Uriorcurie](https://biolink.github.io/biolinkml/docs/types/Uriorcurie)
 
 |  |  |  |
 | --- | --- | --- |

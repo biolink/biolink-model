@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Datetime
+title: metatype:Datetime
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Datetime
+# Type: Datetime
 
 
 The combination of a date and time
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/Datetime](https://w3id.org/biolink/vocab/biolinkml:types/Datetime)
+URI: [metatype:Datetime](https://biolink.github.io/biolinkml/docs/types/Datetime)
 
 |  |  |  |
 | --- | --- | --- |

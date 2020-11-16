@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Uri
+title: metatype:Uri
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Uri
+# Type: Uri
 
 
 a complete URI
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/Uri](https://w3id.org/biolink/vocab/biolinkml:types/Uri)
+URI: [metatype:Uri](https://biolink.github.io/biolinkml/docs/types/Uri)
 
 |  |  |  |
 | --- | --- | --- |

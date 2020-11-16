@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Integer
+title: metatype:Integer
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Integer
+# Type: Integer
 
 
 An integer
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/Integer](https://w3id.org/biolink/vocab/biolinkml:types/Integer)
+URI: [metatype:Integer](https://biolink.github.io/biolinkml/docs/types/Integer)
 
 |  |  |  |
 | --- | --- | --- |

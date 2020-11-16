@@ -3,12 +3,13 @@ title: Browse Biolink Model
 has_children: true
 nav_order: 2
 layout: default
+has_toc: false
 ---
 
 Entity and association taxonomy and datamodel for life-sciences data
 
 
-### Classes
+## Classes
 
 
 ### Entities
@@ -195,7 +196,37 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
  * [VariantToThingAssociation](VariantToThingAssociation.md)
 
-### Relations
+### Others
+
+ * [DataSetSummary](DataSetSummary.md)
+ * [DistributionLevel](DistributionLevel.md)
+ * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
+ * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
+    * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
+ * [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for frequency type associations
+    * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
+       * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
+ * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [GeneGrouping](GeneGrouping.md) - any grouping of multiple genes or gene products
+ * [ModelToDiseaseMixin](ModelToDiseaseMixin.md) - This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
+ * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
+ * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [RelationshipQuantifier](RelationshipQuantifier.md)
+    * [FrequencyQuantifier](FrequencyQuantifier.md)
+    * [SensitivityQuantifier](SensitivityQuantifier.md)
+    * [SpecificityQuantifier](SpecificityQuantifier.md)
+       * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [SensitivityQuantifier](SensitivityQuantifier.md)
+ * [SpecificityQuantifier](SpecificityQuantifier.md)
+    * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
+ * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
+ * [VariantToThingAssociation](VariantToThingAssociation.md)
+
+## Slots
+
+
+### Predicates
 
  * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
     * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
@@ -689,10 +720,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
  * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
 
-### Slots
-
-
-#### Node Properties
+### Node Properties
 
  * [address](address.md) - the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
  * [affiliation](affiliation.md) - a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
@@ -885,7 +913,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
  * [xref](xref.md) - Alternate CURIEs for a thing
 
-#### Edge Properties
+### Edge Properties
 
  * [anatomical entity to anatomical entity association➞object](anatomical_entity_to_anatomical_entity_association_object.md)
     * [anatomical entity to anatomical entity ontogenic association➞object](anatomical_entity_to_anatomical_entity_ontogenic_association_object.md) - the structure at an earlier time
@@ -1309,10 +1337,13 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [variant to population association➞subject](variant_to_population_association_subject.md) - an allele that has a certain frequency in a given population
  * [variant to thing association➞subject](variant_to_thing_association_subject.md) - a sequence variant in which the allele state is associated with some other entity
 
-### Types
+### Other
 
 
-#### Built in
+## Types
+
+
+### Built in
 
  * **Bool**
  * **ElementIdentifier**
@@ -1327,7 +1358,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * **int**
  * **str**
 
-#### Defined
+### Defined
 
  * [BiologicalSequence](types/BiologicalSequence.md)  ([String](types/String.md)) 
  * [Boolean](types/Boolean.md)  (**Bool**)  - A binary (true or false) value

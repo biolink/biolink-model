@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Date
+title: metatype:Date
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Date
+# Type: Date
 
 
 a date (year, month and day) in an idealized calendar
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/Date](https://w3id.org/biolink/vocab/biolinkml:types/Date)
+URI: [metatype:Date](https://biolink.github.io/biolinkml/docs/types/Date)
 
 |  |  |  |
 | --- | --- | --- |

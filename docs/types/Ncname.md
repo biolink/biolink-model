@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Ncname
+title: metatype:Ncname
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Ncname
+# Type: Ncname
 
 
 Prefix part of CURIE
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/Ncname](https://w3id.org/biolink/vocab/biolinkml:types/Ncname)
+URI: [metatype:Ncname](https://biolink.github.io/biolinkml/docs/types/Ncname)
 
 |  |  |  |
 | --- | --- | --- |

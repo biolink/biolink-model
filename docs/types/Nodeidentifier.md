@@ -1,16 +1,16 @@
 ---
 parent: Types
-title: https://w3id.org/biolink/vocab/biolinkml:types/Nodeidentifier
+title: metatype:Nodeidentifier
 grand_parent: Browse Biolink Model
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/vocab/biolinkml:types/Nodeidentifier
+# Type: Nodeidentifier
 
 
 A URI, CURIE or BNODE that represents a node in a model.
 
-URI: [https://w3id.org/biolink/vocab/biolinkml:types/Nodeidentifier](https://w3id.org/biolink/vocab/biolinkml:types/Nodeidentifier)
+URI: [metatype:Nodeidentifier](https://biolink.github.io/biolinkml/docs/types/Nodeidentifier)
 
 |  |  |  |
 | --- | --- | --- |
