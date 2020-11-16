@@ -1395,9 +1395,11 @@ slots:
       - CTD:decreases_import
 
   regulates:
-    is_a: affects
+    # direct is_a inheritance from a non-mixin class is not allowed
+    # we defer this inheritance to the classes which this mixin in its mixins
+    # is_a: affects
     comments:
-      - This is a grouping for process-process and entity-entity relations
+      - This is a grouping for process-process and entity-entity regulation.
     mixin: true
     abstract: true
     close_mappings:
@@ -1419,7 +1421,7 @@ slots:
 
   positively regulates:
     comments:
-      - This is a grouping for process-process and entity-entity relations
+      - This is a grouping for positive process-process and entity-entity regulation.
     is_a: regulates
     mixin: true
     abstract: true
@@ -1439,7 +1441,7 @@ slots:
 
   negatively regulates:
     comments:
-      - This is a grouping for process-process and entity-entity relations
+      - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
     mixin: true
     abstract: true
@@ -1463,7 +1465,9 @@ slots:
       - RO:0002630
 
   regulates, process to process:
-    is_a: regulates
+    is_a: affects
+    mixins:
+      - regulates
     domain: occurrent
     range: occurrent
     exact_mappings:
@@ -1485,7 +1489,9 @@ slots:
 
   regulates, entity to entity:
     aliases: ['activity directly regulates activity of']
-    is_a: regulates
+    is_a: affects
+    mixins:
+      - regulates
     domain: molecular entity
     range: molecular entity
     local_names:
