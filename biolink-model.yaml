@@ -4104,8 +4104,11 @@ classes:
     mappings:
       - SIO:000614
     is_a: abstract entity
-    mixins:
-      - ontology class
+    # biolink:OntologyClass is not a mixin thus cannot be used as such here.  Moreover,
+    # the 'biolink:has_attribute_type' slot is also of a biolink:OntologyClass which points
+    # to  semantic redundancy in this class.  Better to simply remove the mixins declaration
+    #mixins:
+    #  - ontology class
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
@@ -4644,7 +4647,9 @@ classes:
       
   material sample:
     aliases: ['biospecimen', 'sample', 'biosample', 'physical sample']
-    is_a: named thing
+    # physical entity is not a mixin but is_a namedThing, should simply inherit directly
+    # is_a: named thing
+    is_a: named  thing
     mixins:
       - subject of investigation
       - physical entity
@@ -6692,7 +6697,11 @@ classes:
   physical entity:
     description: >-
       An entity that has physical properties such as mass, volume, or charge
-    is_a: named thing
+    # biolink:PhysicalEntity is most consistently used as a nixin thus it should
+    # be declared as such and cannot inherit from the non-mixin  biolink:NamedThing
+    #is_a: named thing
+    mixin: true
+    abstract: true
 
   biological process or activity:
     is_a: biological entity
