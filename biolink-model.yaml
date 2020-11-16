@@ -4647,9 +4647,7 @@ classes:
       
   material sample:
     aliases: ['biospecimen', 'sample', 'biosample', 'physical sample']
-    # physical entity is not a mixin but is_a namedThing, should simply inherit directly
-    # is_a: named thing
-    is_a: named  thing
+    is_a: named thing
     mixins:
       - subject of investigation
       - physical entity
