@@ -45,6 +45,7 @@ prefixes:
   isni: 'https://isni.org/isni/'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  MI: 'http://purl.obolibrary.org/obo/MI_'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
   ORCID: 'https://orcid.org/'
@@ -3736,6 +3737,13 @@ slots:
     mappings:
       - WIKIDATA_PROPERTY:P274
 
+  interacting molecules category:
+    range: ontology class
+    subclass_of: MI:1046
+    examples:
+      - value: MI:1048
+        description: smallmolecule-protein
+
   aggregate statistic:
     is_a: node property
     abstract: true
@@ -4134,19 +4142,19 @@ classes:
   ## ------
 
   biological sex:
-    subclass_of: "PATO:0000047"
+    subclass_of: PATO:0000047
     is_a: attribute
 
   phenotypic sex:
     description: >-
       An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-    subclass_of: "PATO:0001894"
+    subclass_of: PATO:0001894
     is_a: biological sex
 
   genotypic sex:
     description: >-
       An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
-    subclass_of: "PATO:0020000"
+    subclass_of: PATO:0020000
     is_a: biological sex
 
   severity value:
@@ -4542,7 +4550,7 @@ classes:
     mixins:
       - thing with taxon
     is_a: organismal entity
-    subclass_of: "NCBITaxon:1"
+    subclass_of: NCBITaxon:1
     mappings:
       - SIO:010000
       - WIKIDATA:Q795052
@@ -4872,7 +4880,7 @@ classes:
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
-    subclass_of: "CHEBI:24431"
+    subclass_of: CHEBI:24431
     mappings:
       - SIO:010004
       - WIKIDATA:Q79529
@@ -5282,7 +5290,7 @@ classes:
 
   macromolecular complex:
     is_a: macromolecular machine
-    subclass_of: "GO:0032991"
+    subclass_of: GO:0032991
     mappings:
       - SIO:010046
       - WIKIDATA:Q22325163
@@ -5627,12 +5635,35 @@ classes:
           homology relationship type
 
 
-  pairwise interaction association:
-    is_a: association
-    mixin: true
-    abstract: true
+  pairwise gene to gene interaction:
+    is_a: gene to gene association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    description: >-
+      An interaction between two genes or two gene products.
+      May be physical (e.g. protein binding) or genetic (between genes).
+      May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+    slot_usage:
+      predicate:
+        subproperty_of: interacts with
+        symmetric: true
+      relation:
+        values_from:
+          - ro
+          - mi
+        description: "interaction relationship type"
+
+
+  pairwise molecular interaction:
+    is_a: pairwise gene to gene interaction
     description: >-
       An interaction at the molecular level between two physical entities
+    slots:
+      # need to declare a slot before it is used,
+      # then list it in 'slots', not just a slot_usage
+      - interacting molecules category
     defining_slots:
       - subject
       - object
@@ -5648,9 +5679,9 @@ classes:
         values_from:
           - IMEX
           - BioGRID
-      relation:
+      predicate:
         subproperty_of: molecularly interacts with
-#        range: molecularly interacts with
+      relation:
         values_from:
           - ro
           - mi
@@ -5660,34 +5691,7 @@ classes:
             description: the subject molecular phosphorylates the object molecule
       object:
         range: molecular entity
-      interacting molecules category:
-        # TODO: Is this correct?
-        range: ontology class
-#        subclass_of: "MI:1046"
-        examples:
-          - value: MI:1048
-            description: smallmolecule-protein
 
-  pairwise gene to gene interaction:
-    is_a: gene to gene association
-    defining_slots:
-      - subject
-      - object
-      - relation
-    mixins:
-      - pairwise interaction association
-    description: >-
-      An interaction between two genes or two gene products.
-      May be physical (e.g. protein binding) or genetic (between genes).
-      May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
-    slot_usage:
-      relation:
-        subproperty_of: molecularly interacts with
-        symmetric: true
-        values_from:
-          - ro
-          - mi
-        description: "interaction relationship type"
 
   cell line to thing association:
     is_a: association
