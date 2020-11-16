@@ -4980,13 +4980,6 @@ classes:
       - The CHEBI ID represents a role rather than a substance
     mappings:
       - CHEBI:25212
-#
-#    attribute:
-#    subclass_of: PATO:0000001
-#      mixins:
-#        - ontology class
-#      description: >-
-#        A property or characteristic of an entity
 
   anatomical entity:
     is_a: organismal entity
@@ -6688,7 +6681,11 @@ classes:
   occurrent:
     description: >-
       A processual entity
-    is_a: named thing
+    # biolink:Occurrent is most consistently used as a nixin thus it should
+    # be declared as such and cannot inherit from the non-mixin biolink:NamedThing
+    #is_a: named thing
+    mixin: true
+    abstract: true
     mappings:
       - BFO:0000003
 
@@ -6696,7 +6693,7 @@ classes:
     description: >-
       An entity that has physical properties such as mass, volume, or charge
     # biolink:PhysicalEntity is most consistently used as a nixin thus it should
-    # be declared as such and cannot inherit from the non-mixin  biolink:NamedThing
+    # be declared as such and cannot inherit from the non-mixin biolink:NamedThing
     #is_a: named thing
     mixin: true
     abstract: true
@@ -6752,7 +6749,11 @@ classes:
       - KEGG
 
   activity and behavior:
-    is_a: occurrent
+    # can't inherit directly from mixin biolink:Occurrent
+    # is_a: occurrent
+    is_a: named thing
+    mixins:
+      - occurrent
     description: >-
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
     mappings:
@@ -6787,7 +6788,11 @@ classes:
       - UMLSST:mcha
 
   procedure:
-    is_a: occurrent
+    # can't inherit directly from mixin biolink:Occurrent
+    # is_a: occurrent
+    is_a: named thing
+    mixins:
+      - occurrent
     description: >-
       A series of actions conducted in a certain order or manner
     mappings: # Procedures
@@ -6815,7 +6820,11 @@ classes:
       - UMLSST:edac
 
   phenomenon:
-    is_a: occurrent
+    # can't inherit directly from mixin biolink:Occurrent
+    # is_a: occurrent
+    is_a: named thing
+    mixins:
+      - occurrent
     description: >-
       a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
     mappings:
