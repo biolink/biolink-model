@@ -1,3 +1,9 @@
+---
+title: "Frequently Asked Questions"
+parent: "Biolink Model Guidelines"
+layout: default
+---
+
 ## FAQ
 
 ### How do I type nodes in a graph with concepts that are not in the Biolink Model?
