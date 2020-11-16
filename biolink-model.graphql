@@ -86,7 +86,7 @@ type Article
     type: String!
     authors: [String]
     pages: [String]
-    abstract: String
+    summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [IriType]
@@ -169,7 +169,7 @@ type Book
     creationDate: Date
     authors: [String]
     pages: [String]
-    abstract: String
+    summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [IriType]
@@ -189,7 +189,7 @@ type BookChapter
     type: String!
     authors: [String]
     pages: [String]
-    abstract: String
+    summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [IriType]
@@ -1688,7 +1688,7 @@ type Publication
     type: String!
     authors: [String]
     pages: [String]
-    abstract: String
+    summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [IriType]
@@ -1812,7 +1812,7 @@ type Serial
     creationDate: Date
     authors: [String]
     pages: [String]
-    abstract: String
+    summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
     xref: [IriType]

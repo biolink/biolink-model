@@ -1,4 +1,11 @@
-## Working with Biolink Model
+---
+title: "Working with the Biolink Model"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 4
+---
+
+# Working with Biolink Model
 
 The [model](understanding-the-model.md) and how to [curate the model](curating-the-model.md) has been addressed in other sections. But how to make use of the Biolink Model in practical terms?
 How to use the classes and slots defined in the model for representing nodes and edges in a graph?
@@ -24,7 +31,7 @@ The information can be represented using Biolink Model as follows:
 One modeling consideration we are going to make here is that we will be projecting the interaction between proteins to interaction between genes.
 
 
-### Annotating nodes
+## Annotating nodes
 
 Each individual protein and gene can be treated as nodes in a graph.
 
@@ -54,7 +61,7 @@ NCBIGene:2081	ERN1	biolink:Gene	STRING	ENSEMBL:ENSG00000178607	SO:0001217	NCBITa
 > **Note:** While the entity classes are defined as `gene` and `protein` in the model, when using them the reference to the class should always be in their CURIE form which includes the `biolink` prefix.
 
 
-#### Node semantics
+### Node semantics
 
 There are three ways of attaching semantics to a node:
 - using Biolink node property slot `category`
@@ -65,7 +72,7 @@ There are three ways of attaching semantics to a node:
   - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
 
 
-### Annotating edges
+## Annotating edges
 
 Each individual interaction between genes can be treated as an edge with,
 - `interacts with` as its `predicate`
@@ -89,7 +96,7 @@ fe5f9383-c5f6-4eba-9dc4-185e6d331459	NCBIGene:23229	biolink:has_gene_product	Uni
 > **Note:** While association class is defined as `gene to gene association` and predicate slots are defined as `interacts with` and `has gene product` in the model, when using them the reference to the class should always be in their CURIE form which includes the `biolink` prefix.
 
 
-#### Edge semantics
+### Edge semantics
 
 There are 3 ways of attaching the semantics to an edge:
 - using the Biolink association slot `predicate`
@@ -100,7 +107,7 @@ There are 3 ways of attaching the semantics to an edge:
   - must have a value from the [`association` hierarchy](https://biolink.github.io/biolink-model/docs/Association)
 
 
-### Biolink Model representation in Neo4j
+## Biolink Model representation in Neo4j
 
 The model itself is very close to labelled property graphs.
 
@@ -134,7 +141,7 @@ fe5f9383-c5f6-4eba-9dc4-185e6d331459	NCBIGene:23229	biolink:has_gene_product	Uni
 ```
 
 
-### Biolink Model representation in RDF
+## Biolink Model representation in RDF
 
 Since RDF graphs do not allow for properties on edges, the most practical alternative is to use reification where an edge is transformed into a node of type `biolink:Association` (or its descendants) and any edge properties then becomes properties of this reified node.
 

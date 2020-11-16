@@ -1,3 +1,10 @@
+---
+title: "Curating the Biolink Model"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 2
+---
+
 # Curating the Biolink Model
 
 Before curating the Biolink Model, we recommend that you familiarize yourself with the basics of [BiolinkML](https://github.com/biolink/biolinkml).
@@ -271,7 +278,7 @@ What does it mean for a external concept (or predicate or property) to be one of
 
 Here is a rule of thumb on how to determine the granularity of mapping:
 - An external concept can be considered as an exact mapping to a Biolink Model class or slot if the former can be used interchangeably with the latter. That is, the semantics are identical and any transitive property that the external concept might bring into the model should not violate the internal consistency of the model
-- If it is diffcult to determine if an external concept can be considered an exact mapping then it is much safer to treat it as a close mapping
+- If it is difficult to determine if an external concept can be considered an exact mapping then it is much safer to treat it as a close mapping
 - If an external concept can be treated a sub-class of the Biolink Model class or slot then it can be treated as a narrow mapping
 - If an external concept can be treated as a super-class of the Biolink Model class or slot then it can be treated as a broad mapping
 - If an external concept is distantly related to a Biolink Model class or slot then it can be treated as a related mapping

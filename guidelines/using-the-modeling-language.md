@@ -1,3 +1,10 @@
+---
+title: "Using the Modeling Language"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 3
+---
+
 # Using the modeling language
 
 The BiolinkML provides a variety of slots to define the semantics of your Biolink Model class and slots.
