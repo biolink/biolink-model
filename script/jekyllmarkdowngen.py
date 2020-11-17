@@ -153,7 +153,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 os.makedirs(os.path.join(directory, 'types'), exist_ok=True)
                 self.header(2, 'Types')
                 with open(os.path.join(directory, 'types', 'index.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: false\nnav_order: 3\nlayout: default\n---')
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 3\nlayout: default\n---')
                 self.header(3, 'Built in')
                 for builtin_name in sorted(self.synopsis.typebases.keys()):
                     self.bullet(f'**{builtin_name}**')
