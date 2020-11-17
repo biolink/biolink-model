@@ -83,17 +83,17 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             seen_elements.update(cls.name)
                             self.class_hier(cls)
 
-                self.header(3, 'Mixins')
-                with open(os.path.join(directory, 'classes_mixins.md'), 'w') as file:
-                    file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                self.header(3, 'Class Mixins')
+                with open(os.path.join(directory, 'class_mixins.md'), 'w') as file:
+                    file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Class Mixins\nhas_children: true\nnav_order: 3\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     if cls.mixin and self.is_secondary_ref(cls.name):
                         seen_elements.update(cls.name)
                         self.class_hier(cls)
 
-                self.header(3, 'Others')
-                with open(os.path.join(directory, 'classes_others.md'), 'w') as file:
-                    file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Others\nhas_children: true\nnav_order: 4\nlayout: default\n---')
+                self.header(3, 'Other Classes')
+                with open(os.path.join(directory, 'other_classes.md'), 'w') as file:
+                    file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Other Classes\nhas_children: true\nnav_order: 4\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     if cls.name not in seen_elements:
                         seen_elements.update(cls)
@@ -132,18 +132,18 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             seen_elements.update(slot.name)
                             self.pred_hier(slot)
 
-                self.header(3, 'Mixins')
+                self.header(3, 'Slot Mixins')
                 with open(os.path.join(directory, 'slot_mixins.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                    file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Slot Mixins\nhas_children: true\nnav_order: 4\nlayout: default\n---')
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     if not slot.alias:
                         if slot.mixin:
                             seen_elements.update(slot.name)
                             self.pred_hier(slot)
 
-                self.header(3, 'Other')
-                with open(os.path.join(directory, 'slots_others.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Others\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                self.header(3, 'Other Slots')
+                with open(os.path.join(directory, 'other_slots.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Other Slots\nhas_children: true\nnav_order: 5\nlayout: default\n---')
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     if not slot.alias:
                         if slot.name not in seen_elements:
@@ -153,7 +153,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 os.makedirs(os.path.join(directory, 'types'), exist_ok=True)
                 self.header(2, 'Types')
                 with open(os.path.join(directory, 'types', 'index.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: false\nnav_order: 3\nlayout: default\n---')
                 self.header(3, 'Built in')
                 for builtin_name in sorted(self.synopsis.typebases.keys()):
                     self.bullet(f'**{builtin_name}**')
@@ -182,10 +182,10 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     parent = 'Associations'
                     grand_parent = 'Classes'
                 elif cls.mixin:
-                    parent = 'Mixins'
+                    parent = 'Class Mixins'
                     grand_parent = 'Classes'
                 else:
-                    parent = 'Others'
+                    parent = 'Other Classes'
                     grand_parent = 'Classes'
                 self.frontmatter(**{'parent': parent, 'title': class_curi, 'grand_parent': grand_parent, 'layout': 'default'})
                 self.element_header(cls, cls.name, class_curi, class_uri)
@@ -281,30 +281,30 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     ancs = self.ancestors(slot)
                     if 'related to' in ancs:
                         if slot.mixin:
-                            parent = 'Mixins'
+                            parent = 'Slot Mixins'
                         else:
                             parent = 'Predicates'
                         grand_parent = 'Slots'
                         slot_type = 'Relation'
                     elif 'node property' in ancs:
                         if slot.mixin:
-                            parent = 'Mixins'
+                            parent = 'Slot Mixins'
                         else:
                             parent = 'Node Properties'
                         grand_parent = 'Slots'
                         slot_type = 'Slot'
                     elif 'association slot' in ancs:
                         if slot.mixin:
-                            parent = 'Mixins'
+                            parent = 'Slot Mixins'
                         else:
                             parent = 'Edge Properties'
                         grand_parent = 'Slots'
                         slot_type = 'Slot'
                     else:
                         if slot.mixin:
-                            parent = 'Mixins'
+                            parent = 'Slot Mixins'
                         else:
-                            parent = 'Others'
+                            parent = 'Other Slots'
                         grand_parent = 'Slots'
                         slot_type = 'Slot'
                     self.frontmatter(**{'parent': parent, 'title': slot_curie, 'grand_parent': grand_parent, 'layout': 'default'})
