@@ -53,91 +53,102 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         self.types_directory = os.path.join(directory, 'types')
         os.makedirs(self.types_directory, exist_ok=True)
         self.doc_root_title = f'Browse {self.schema.name.title().replace("-", " ")}'
-
+        seen_elements = set()
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
             with redirect_stdout(ixfile):
                 self.frontmatter(**{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2, 'layout': 'default', 'has_toc': 'false'})
                 self.para(be(self.schema.description))
-                os.makedirs(os.path.join(directory, 'classes'), exist_ok=True)
+
                 self.header(2, 'Classes')
-                with open(os.path.join(directory, 'classes', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'classes.md'), 'w') as file:
                     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Classes\nhas_children: true\nnav_order: 1\nlayout: default\n---')
 
-                os.makedirs(os.path.join(directory, 'classes', 'entities'), exist_ok=True)
                 self.header(3, 'Entities')
-                with open(os.path.join(directory, 'classes', 'entities', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'entities.md'), 'w') as file:
                     file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Entities\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     ancs = self.ancestors(cls)
                     if 'named thing' in ancs:
                         if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
+                            seen_elements.update(cls.name)
                             self.class_hier(cls)
 
-                os.makedirs(os.path.join(directory, 'classes', 'associations'), exist_ok=True)
                 self.header(3, 'Associations')
-                with open(os.path.join(directory, 'classes', 'associations', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'associations.md'), 'w') as file:
                     file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Associations\nhas_children: true\nnav_order: 2\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     ancs = self.ancestors(cls)
                     if 'association' in ancs:
                         if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
+                            seen_elements.update(cls.name)
                             self.class_hier(cls)
 
-                os.makedirs(os.path.join(directory, 'classes', 'mixins'), exist_ok=True)
                 self.header(3, 'Mixins')
-                with open(os.path.join(directory, 'classes', 'mixins', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'classes_mixins.md'), 'w') as file:
                     file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 3\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     if cls.mixin and self.is_secondary_ref(cls.name):
+                        seen_elements.update(cls.name)
                         self.class_hier(cls)
 
-                os.makedirs(os.path.join(directory, 'classes', 'others'), exist_ok=True)
                 self.header(3, 'Others')
-                with open(os.path.join(directory, 'classes', 'others', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'classes_others.md'), 'w') as file:
                     file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Others\nhas_children: true\nnav_order: 4\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
-                    if cls.mixin and self.is_secondary_ref(cls.name):
+                    if cls.name not in seen_elements:
+                        seen_elements.update(cls)
                         self.class_hier(cls)
 
-                os.makedirs(os.path.join(directory, 'slots'), exist_ok=True)
                 self.header(2, 'Slots')
-                with open(os.path.join(directory, 'slots', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'slots.md'), 'w') as file:
                     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 2\nlayout: default\n---')
 
-                os.makedirs(os.path.join(directory, 'slots', 'predicates'), exist_ok=True)
                 self.header(3, 'Predicates')
-                with open(os.path.join(directory, 'slots', 'predicates', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'predicates.md'), 'w') as file:
                     file.write(f'---\nparent: Slots\n\ngrand_parent: {self.doc_root_title}\ntitle: Predicates\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 for slot in sorted(self.schema.slots.values(), key=lambda c: c.name):
-                    if 'related to' in self.ancestors(slot):
-                        self.pred_hier(slot)
+                    if not slot.alias:
+                        if 'related to' in self.ancestors(slot) and not slot.mixin:
+                            seen_elements.update(slot.name)
+                            self.pred_hier(slot)
 
-                os.makedirs(os.path.join(directory, 'slots', 'node_properties'), exist_ok=True)
                 self.header(3, 'Node Properties')
-                with open(os.path.join(directory, 'slots', 'node_properties', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'node_properties.md'), 'w') as file:
                     file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Node Properties\nhas_children: true\nnav_order: 2\nlayout: default\n---')
-
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     ancs = self.ancestors(slot)
-                    if 'related to' not in ancs:
-                        if 'node property' in ancs:
+                    if not slot.alias:
+                        if 'node property' in ancs and not slot.mixin:
+                            seen_elements.update(slot.name)
                             self.pred_hier(slot)
 
-                os.makedirs(os.path.join(directory, 'slots', 'edge_properties'), exist_ok=True)
                 self.header(3, 'Edge Properties')
-                with open(os.path.join(directory, 'slots', 'edge_properties', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'edge_properties.md'), 'w') as file:
                     file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Edge Properties\nhas_children: true\nnav_order: 3\nlayout: default\n---')
-
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     ancs = self.ancestors(slot)
-                    if 'related to' not in ancs:
-                        if 'association slot' in ancs:
+                    if not slot.alias:
+                        if 'association slot' in ancs and not slot.mixin:
+                            seen_elements.update(slot.name)
                             self.pred_hier(slot)
 
-                os.makedirs(os.path.join(directory, 'slots', 'others'), exist_ok=True)
+                self.header(3, 'Mixins')
+                with open(os.path.join(directory, 'slot_mixins.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
+                    if not slot.alias:
+                        if slot.mixin:
+                            seen_elements.update(slot.name)
+                            self.pred_hier(slot)
+
                 self.header(3, 'Other')
-                with open(os.path.join(directory, 'slots', 'others', 'index.md'), 'w') as file:
+                with open(os.path.join(directory, 'slots_others.md'), 'w') as file:
                     file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Others\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
+                    if not slot.alias:
+                        if slot.name not in seen_elements:
+                            seen_elements.update(slot)
+                            self.pred_hier(slot)
 
                 os.makedirs(os.path.join(directory, 'types'), exist_ok=True)
                 self.header(2, 'Types')
@@ -155,38 +166,6 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             typ_typ = f'**{typ.base}**'
 
                         self.bullet(self.type_link(typ, after_link=f' ({typ_typ})', use_desc=True))
-
-    def dir_path(self, obj: Union[ClassDefinition, SlotDefinition, TypeDefinition]) -> str:
-        filename = self.formatted_element_name(obj) if isinstance(obj, ClassDefinition) \
-            else underscore(obj.name) if isinstance(obj, SlotDefinition) \
-            else camelcase(obj.name)
-        subdir = ''
-        if isinstance(obj, ClassDefinition):
-            ancs = self.ancestors(obj)
-            subdir = 'classes'
-            if 'named thing' in ancs:
-                subdir = f"{subdir}{os.path.sep}entities"
-            elif 'association' in ancs:
-                subdir = f"{subdir}{os.path.sep}associations"
-            elif obj.mixin:
-                subdir = f"{subdir}{os.path.sep}mixins"
-            else:
-                subdir = f"{subdir}{os.path.sep}others"
-        elif isinstance(obj, SlotDefinition):
-            ancs = self.ancestors(obj)
-            subdir = 'slots'
-            if 'related to' in ancs:
-                subdir = f"{subdir}{os.path.sep}predicates"
-            elif 'node property' in ancs:
-                subdir = f"{subdir}{os.path.sep}node_properties"
-            elif 'association slot' in ancs:
-                subdir = f"{subdir}{os.path.sep}edge_properties"
-            else:
-                subdir = f"{subdir}{os.path.sep}others"
-        elif isinstance(obj, TypeDefinition):
-            subdir = 'types'
-        path = f"{self.directory}{os.path.sep}{subdir}{os.path.sep}{filename}.md"
-        return path
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         if self.gen_classes and cls.name not in self.gen_classes:
@@ -294,57 +273,70 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         return True
 
     def visit_slot(self, aliased_slot_name: str, slot: SlotDefinition) -> None:
-        with open(self.dir_path(slot), 'w') as slotfile:
-            with redirect_stdout(slotfile):
-                slot_curie = self.namespaces.uri_or_curie_for(self.namespaces._base, underscore(slot.name))
-                slot_uri = self.namespaces.uri_for(slot_curie)
-                ancs = self.ancestors(slot)
-                if 'related to' in ancs:
-                    parent = 'Predicates'
-                    grand_parent = 'Slots'
-                    slot_type = 'Relation'
-                elif 'node property' in ancs:
-                    parent = 'Node Properties'
-                    grand_parent = 'Slots'
-                    slot_type = 'Slot'
-                elif 'association slot' in ancs:
-                    parent = 'Edge Properties'
-                    grand_parent = 'Slots'
-                    slot_type = 'Slot'
-                else:
-                    parent = 'Others'
-                    grand_parent = 'Slots'
-                    slot_type = 'Slot'
-                self.frontmatter(**{'parent': parent, 'title': slot_curie, 'grand_parent': grand_parent, 'layout': 'default'})
-                simple_name = slot_curie.split(':', 1)[1]
-                self.header(1, f"{slot_type}: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
-                for s in slot.in_subset:
-                    self.badges(s, f'{s}-subset-label')
+        if not slot.alias:
+            with open(self.dir_path(slot), 'w') as slotfile:
+                with redirect_stdout(slotfile):
+                    slot_curie = self.namespaces.uri_or_curie_for(self.namespaces._base, underscore(slot.name))
+                    slot_uri = self.namespaces.uri_for(slot_curie)
+                    ancs = self.ancestors(slot)
+                    if 'related to' in ancs:
+                        if slot.mixin:
+                            parent = 'Mixins'
+                        else:
+                            parent = 'Predicates'
+                        grand_parent = 'Slots'
+                        slot_type = 'Relation'
+                    elif 'node property' in ancs:
+                        if slot.mixin:
+                            parent = 'Mixins'
+                        else:
+                            parent = 'Node Properties'
+                        grand_parent = 'Slots'
+                        slot_type = 'Slot'
+                    elif 'association slot' in ancs:
+                        if slot.mixin:
+                            parent = 'Mixins'
+                        else:
+                            parent = 'Edge Properties'
+                        grand_parent = 'Slots'
+                        slot_type = 'Slot'
+                    else:
+                        if slot.mixin:
+                            parent = 'Mixins'
+                        else:
+                            parent = 'Others'
+                        grand_parent = 'Slots'
+                        slot_type = 'Slot'
+                    self.frontmatter(**{'parent': parent, 'title': slot_curie, 'grand_parent': grand_parent, 'layout': 'default'})
+                    simple_name = slot_curie.split(':', 1)[1]
+                    self.header(1, f"{slot_type}: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
+                    for s in slot.in_subset:
+                        self.badges(s, f'{s}-subset-label')
 
-                self.para(be(slot.description))
-                print(f'URI: [{slot_curie}]({slot_uri})')
+                    self.para(be(slot.description))
+                    print(f'URI: [{slot_curie}]({slot_uri})')
 
-                self.header(2, 'Domain and Range')
-                print(f'{self.class_link(slot.domain)} ->{self.predicate_cardinality(slot)} '
-                      f'{self.class_type_link(slot.range)}')
+                    self.header(2, 'Domain and Range')
+                    print(f'{self.class_link(slot.domain)} ->{self.predicate_cardinality(slot)} '
+                          f'{self.class_type_link(slot.range)}')
 
-                self.header(2, 'Parents')
-                if slot.is_a:
-                    self.bullet(f' is_a: {self.slot_link(slot.is_a)}')
+                    self.header(2, 'Parents')
+                    if slot.is_a:
+                        self.bullet(f' is_a: {self.slot_link(slot.is_a)}')
 
-                self.header(2, 'Children')
-                if slot.name in sorted(self.synopsis.isarefs):
-                    for child in sorted(self.synopsis.isarefs[slot.name].slotrefs):
-                        self.bullet(f' {self.slot_link(child)}')
+                    self.header(2, 'Children')
+                    if slot.name in sorted(self.synopsis.isarefs):
+                        for child in sorted(self.synopsis.isarefs[slot.name].slotrefs):
+                            self.bullet(f' {self.slot_link(child)}')
 
-                self.header(2, 'Used by')
-                if slot.name in sorted(self.synopsis.slotrefs):
-                    for rc in sorted(self.synopsis.slotrefs[slot.name].classrefs):
-                        self.bullet(f'{self.class_link(rc)}')
-                if aliased_slot_name == 'relation':
-                    if slot.subproperty_of:
-                        self.bullet(f' reifies: {self.slot_link(slot.subproperty_of) if slot.subproperty_of in self.schema.slots else slot.subproperty_of}')
-                self.element_properties(slot)
+                    self.header(2, 'Used by')
+                    if slot.name in sorted(self.synopsis.slotrefs):
+                        for rc in sorted(self.synopsis.slotrefs[slot.name].classrefs):
+                            self.bullet(f'{self.class_link(rc)}')
+                    if aliased_slot_name == 'relation':
+                        if slot.subproperty_of:
+                            self.bullet(f' reifies: {self.slot_link(slot.subproperty_of) if slot.subproperty_of in self.schema.slots else slot.subproperty_of}')
+                    self.element_properties(slot)
 
     def visit_type(self, typ: TypeDefinition) -> None:
         with open(self.dir_path(typ), 'w') as typefile:
