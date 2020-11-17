@@ -1,5 +1,5 @@
 ---
-parent: Predicates
+parent: Mixins
 title: biolink:regulates
 grand_parent: Slots
 layout: default
