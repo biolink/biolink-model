@@ -42,7 +42,7 @@ URI: [biolink:close_match](https://w3id.org/biolink/vocab/close_match)
 |  | | CHEBI:is_tautomer_of |
 |  | | MEDDRA:classified_as |
 |  | | OBO:xref |
-|  | | oboFormat:xref |
+|  | | oboformat:xref |
 |  | | RXNORM:has_quantified_form |
 |  | | UMLS:SY |
 

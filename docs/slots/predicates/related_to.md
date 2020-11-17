@@ -123,7 +123,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 |  | | OBO:envo#has_increased_levels_of |
 |  | | OBO:has_role |
 |  | | OBO:nbo#is_about |
-|  | | OBOREL:bearer_of |
+|  | | OBOREL:0000053 |
 |  | | PATO:decreased_in_magnitude_relative_to |
 |  | | PATO:has_cross_section |
 |  | | PATO:has_relative_magnitude |

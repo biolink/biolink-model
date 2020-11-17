@@ -65,7 +65,7 @@ URI: [biolink:affects](https://w3id.org/biolink/vocab/affects)
 |  | | UPHENO:0000001 |
 |  | | GO:acts_upstream_of |
 |  | | GO:acts_upstream_of_or_within |
-|  | | CIT:allele_plays_altered_role_in_process |
+|  | | NCIT:allele_plays_altered_role_in_process |
 |  | | NCIT:allele_plays_role_in_metabolism_of_chemical_or_drug |
 |  | | NCIT:biological_process_has_associated_location |
 |  | | NCIT:chemical_or_drug_affects_abnormal_cell |

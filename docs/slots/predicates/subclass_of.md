@@ -45,8 +45,7 @@ URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
 |  | | RTXKG1:subclass_of |
 |  | | RXNORM:isa |
 |  | | VANDF:isa |
-| **Close Mappings:** | | CHEMBL.MECHANISM:superset_of |
-|  | | LOINC:class_of |
+| **Close Mappings:** | | LOINC:class_of |
 |  | | LOINC:has_class |
 | **Narrow Mappings:** | | CHEBI:has_parent_hydride |
 |  | | LOINC:has_archetype |
