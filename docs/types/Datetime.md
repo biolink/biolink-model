@@ -1,7 +1,7 @@
 ---
-parent: Types
+parent: Built-in Types
+grand_parent: Types
 title: metatype:Datetime
-grand_parent: Browse Biolink Model
 layout: default
 ---
 

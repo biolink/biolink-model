@@ -1,7 +1,7 @@
 ---
-parent: Types
+parent: Defined Types
+grand_parent: Types
 title: biolink:TimeType
-grand_parent: Browse Biolink Model
 layout: default
 ---
 

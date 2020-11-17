@@ -1,7 +1,7 @@
 ---
-parent: Types
+parent: Built-in Types
+grand_parent: Types
 title: metatype:Double
-grand_parent: Browse Biolink Model
 layout: default
 ---
 

@@ -1,7 +1,7 @@
 ---
-parent: Types
+parent: Defined Types
+grand_parent: Types
 title: biolink:LabelType
-grand_parent: Browse Biolink Model
 layout: default
 ---
 
