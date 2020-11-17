@@ -5894,12 +5894,12 @@ classes:
 
   material sample to disease or phenotypic feature association:
     is_a: association
-    defining_slots:
-      - subject
-      - object
     mixins:
       - material sample to thing association
       - thing to disease or phenotypic feature association mixin
+    defining_slots:
+      - subject
+      - object
     description: >-
       An association between a material sample and a disease or phenotype
 
@@ -5918,7 +5918,9 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
 
   disease to exposure association:
-    is_a: disease to thing association mixin
+    is_a: association
+    mixins:
+      - disease to thing association mixin
     defining_slots:
       - subject
       - object
