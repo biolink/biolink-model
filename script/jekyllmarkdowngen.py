@@ -1,3 +1,4 @@
+import logging
 import os
 from contextlib import redirect_stdout
 from io import StringIO
@@ -151,13 +152,19 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             self.pred_hier(slot)
 
                 os.makedirs(os.path.join(directory, 'types'), exist_ok=True)
-                self.header(2, 'Types')
                 with open(os.path.join(directory, 'types', 'index.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+
+                self.header(2, 'Types')
+                with open(os.path.join(directory, 'types', 'built_in_types.md'), 'w') as file:
+                    file.write(f'---\nparent: Types\ngrand_parent: {self.doc_root_title}\ntitle: Built-in Types\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 self.header(3, 'Built in')
                 for builtin_name in sorted(self.synopsis.typebases.keys()):
                     self.bullet(f'**{builtin_name}**')
+
                 self.header(3, 'Defined')
+                with open(os.path.join(directory, 'types', 'defined_types.md'), 'w') as file:
+                    file.write(f'---\nparent: Types\ngrand_parent: {self.doc_root_title}\ntitle: Defined Types\nhas_children: true\nnav_order: 2\nlayout: default\n---')
                 for typ in sorted(self.schema.types.values(), key=lambda t: t.name):
                     if self.is_secondary_ref(typ.name):
                         if typ.typeof:
@@ -348,7 +355,12 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     ref = type_curie.split('/')[-1]
                     type_uri = f"https://biolink.github.io/biolinkml/docs/types/{ref}"
                     type_curie = f"metatype:{ref}"
-                self.frontmatter(**{'parent': 'Types', 'title': type_curie, 'grand_parent': self.doc_root_title, 'layout': 'default'})
+
+                if typ.imported_from and 'biolinkml:types' in typ.imported_from:
+                    parent = 'Built-in Types'
+                else:
+                    parent = 'Defined Types'
+                self.frontmatter(**{'parent': parent, 'grand_parent': 'Types', 'title': type_curie, 'layout': 'default'})
                 self.element_header(typ, typ.name, type_curie, type_uri)
 
                 print("|  |  |  |")
