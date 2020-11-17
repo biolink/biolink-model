@@ -5933,10 +5933,9 @@ classes:
   thing to phenotypic feature association mixin:
     mixin: true
     abstract: true
+    is_a: entity to feature or disease qualifiers mixin
     defining_slots:
       - object
-    mixins:
-      - entity to feature or disease qualifiers mixin
     slot_usage:
       description:
         description: >-
