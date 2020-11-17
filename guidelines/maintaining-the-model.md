@@ -1,3 +1,10 @@
+---
+title: "Maintaining the Biolink Model"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 5
+---
+
 # Maintaining the Biolink Model
 
 The Biolink Model is under constant development with new classes and slots being added on a monthly basis. The main driver for the model is the NCATS Biomedical Data Translator.
@@ -65,4 +72,4 @@ This step is automated as part of [GitHub Actions](https://github.com/biolink/bi
 
 The [Biolink Model Documentation](https://biolink.github.io/biolink-model/) site is driven from the `gh-pages` branch.
 
-That means no pull request to the Biolink Model repo should include generated Markdown.
+That means no pull request to the Biolink Model repo should include generated Markdown. It is advised to ensure that [GitHub Actions](https://github.com/biolink/biolink-model/actions) remain disabled in the fork from which pull requests are made back to the main Biolink repository.

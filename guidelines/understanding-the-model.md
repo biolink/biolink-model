@@ -1,3 +1,10 @@
+---
+title: "Understanding the Biolink Model"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 1
+---
+
 # Understanding the Biolink Model
 
 Biolink Model is a high-level data model built to provide a schema for representing biological and biomedical knowledge. The model itself is agnostic to the graph formalism used to represent knowledge. i.e. You can use Biolink Model as a schema for labelled property graphs (Neo4j) or for edge labelled graphs (RDF). 
@@ -51,15 +58,15 @@ The model itself is organized using BiolinkML Class definition (class), Slot def
 
 
 At a glance the structure is as follows,
-- [Classes](#Classes)
-    - [Entities](#Entities)
-    - [Associations](#Associations)
-    - [Mixins](#Mixins)
-- [Slots](#Slots)
-    - [Predicates](#Predicates)
-    - [Node Properties](#Node%20Properties)
-    - [Edge Properties](#Edge%20Properties)
-- [Types](#Types)
+- [Classes](#classes)
+    - [Entities](#entities)
+    - [Associations](#associations)
+    - [Mixins](#mixins)
+- [Slots](#slots)
+    - [Predicates](#predicates)
+    - [Node Properties](#node-properties)
+    - [Edge Properties](#edge-properties)
+- [Types](#types)
 
 
 ### Classes
@@ -69,13 +76,13 @@ A class represents an entity or an association. A class can have one more more s
 In RDF sense, a class is basically `rdfs:Class`.
 
 Within the Biolink Model there are two hierarchies of classes:
-  - [Entities](#Entities)
-  - [Associations](#Associations)
+  - [Entities](#entities)
+  - [Associations](#associations)
 
 where Entities are disjoint from Associations.
 
 
-#### Entities
+##### Entities
 
 Entities are classes that represent real world entities such as genes, diseases, chemical substances, etc.
 
@@ -88,7 +95,7 @@ The root of all entities is the `named thing` class.
 > **Note:** While we say `named thing` when defining the model using BiolinkML, the actual CURIE for this class is `biolink:NamedThing`
 
 
-#### Associations
+##### Associations
 
 Associations are classes that represent an assertion or statement. 
 
@@ -103,7 +110,7 @@ The root of all associations is the `association` class.
 > **Note:** While we say `association` when defining the model using BiolinkML, the acutal CURIE for this class is `biolink:Association`
 
 
-#### Mixins
+##### Mixins
 
 Mixins are classes that contain slots (properties) or  slots  which embody a generic slot semantic definition, for use across several other classes or slots.
 
@@ -131,9 +138,9 @@ A slot is similar to `rdf:Property` where it can link
 
 
 In Biolink Model slots are used to represent
-  - [Predicates](#Predicates)
-  - [Node Properties](#Node%20Properties)
-  - [Edge Properties](#Edge%20Properties)
+  - [Predicates](#predicates)
+  - [Node Properties](#node-properties)
+  - [Edge Properties](#edge-properties)
 
 
 #### Predicates

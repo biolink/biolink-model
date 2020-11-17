@@ -56,52 +56,66 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
             with redirect_stdout(ixfile):
-                self.frontmatter(**{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2, 'layout': 'default'})
+                self.frontmatter(**{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2, 'layout': 'default', 'has_toc': 'false'})
                 self.para(be(self.schema.description))
-
-                self.header(3, 'Classes')
-                with open(os.path.join(directory, 'Classes.md'), 'w') as file:
+                os.makedirs(os.path.join(directory, 'classes'), exist_ok=True)
+                self.header(2, 'Classes')
+                with open(os.path.join(directory, 'classes', 'index.md'), 'w') as file:
                     file.write(f'---\nparent: {self.doc_root_title}\ntitle: Classes\nhas_children: true\nnav_order: 1\nlayout: default\n---')
 
+                os.makedirs(os.path.join(directory, 'classes', 'entities'), exist_ok=True)
                 self.header(3, 'Entities')
-                with open(os.path.join(directory, 'Entities.md'), 'w') as file:
-                    file.write(f'---\nparent: Classes\ntitle: Entities\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+                with open(os.path.join(directory, 'classes', 'entities', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Entities\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     ancs = self.ancestors(cls)
                     if 'named thing' in ancs:
                         if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
                             self.class_hier(cls)
 
+                os.makedirs(os.path.join(directory, 'classes', 'associations'), exist_ok=True)
                 self.header(3, 'Associations')
-                with open(os.path.join(directory, 'Associations.md'), 'w') as file:
-                    file.write(f'---\nparent: Classes\ntitle: Associations\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+                with open(os.path.join(directory, 'classes', 'associations', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Associations\nhas_children: true\nnav_order: 2\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     ancs = self.ancestors(cls)
                     if 'association' in ancs:
                         if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
                             self.class_hier(cls)
 
+                os.makedirs(os.path.join(directory, 'classes', 'mixins'), exist_ok=True)
                 self.header(3, 'Mixins')
-                with open(os.path.join(directory, 'Mixins.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+                with open(os.path.join(directory, 'classes', 'mixins', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Mixins\nhas_children: true\nnav_order: 3\nlayout: default\n---')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
                     if cls.mixin and self.is_secondary_ref(cls.name):
                         self.class_hier(cls)
 
-                self.header(3, 'Relations')
-                with open(os.path.join(directory, 'Relations.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Relations\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                os.makedirs(os.path.join(directory, 'classes', 'others'), exist_ok=True)
+                self.header(3, 'Others')
+                with open(os.path.join(directory, 'classes', 'others', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Others\nhas_children: true\nnav_order: 4\nlayout: default\n---')
+                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
+                    if cls.mixin and self.is_secondary_ref(cls.name):
+                        self.class_hier(cls)
+
+                os.makedirs(os.path.join(directory, 'slots'), exist_ok=True)
+                self.header(2, 'Slots')
+                with open(os.path.join(directory, 'slots', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+
+                os.makedirs(os.path.join(directory, 'slots', 'predicates'), exist_ok=True)
+                self.header(3, 'Predicates')
+                with open(os.path.join(directory, 'slots', 'predicates', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\n\ngrand_parent: {self.doc_root_title}\ntitle: Predicates\nhas_children: true\nnav_order: 1\nlayout: default\n---')
                 for slot in sorted(self.schema.slots.values(), key=lambda c: c.name):
                     if 'related to' in self.ancestors(slot):
                         self.pred_hier(slot)
 
-                self.header(3, 'Slots')
-                with open(os.path.join(directory, 'Slots.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Slots\nhas_children: true\nnav_order: 4\nlayout: default\n---')
-
-                self.header(4, 'Node Properties')
-                with open(os.path.join(directory, 'NodeProperties.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\ntitle: Node Properties\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+                os.makedirs(os.path.join(directory, 'slots', 'node_properties'), exist_ok=True)
+                self.header(3, 'Node Properties')
+                with open(os.path.join(directory, 'slots', 'node_properties', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Node Properties\nhas_children: true\nnav_order: 2\nlayout: default\n---')
 
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     ancs = self.ancestors(slot)
@@ -109,9 +123,10 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                         if 'node property' in ancs:
                             self.pred_hier(slot)
 
-                self.header(4, 'Edge Properties')
-                with open(os.path.join(directory, 'EdgeProperties.md'), 'w') as file:
-                    file.write(f'---\nparent: Slots\ntitle: Edge Properties\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+                os.makedirs(os.path.join(directory, 'slots', 'edge_properties'), exist_ok=True)
+                self.header(3, 'Edge Properties')
+                with open(os.path.join(directory, 'slots', 'edge_properties', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Edge Properties\nhas_children: true\nnav_order: 3\nlayout: default\n---')
 
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     ancs = self.ancestors(slot)
@@ -119,13 +134,19 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                         if 'association slot' in ancs:
                             self.pred_hier(slot)
 
-                self.header(3, 'Types')
-                with open(os.path.join(directory, 'Types.md'), 'w') as file:
-                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 7\nlayout: default\n---')
-                self.header(4, 'Built in')
+                os.makedirs(os.path.join(directory, 'slots', 'others'), exist_ok=True)
+                self.header(3, 'Other')
+                with open(os.path.join(directory, 'slots', 'others', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Others\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+
+                os.makedirs(os.path.join(directory, 'types'), exist_ok=True)
+                self.header(2, 'Types')
+                with open(os.path.join(directory, 'types', 'index.md'), 'w') as file:
+                    file.write(f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                self.header(3, 'Built in')
                 for builtin_name in sorted(self.synopsis.typebases.keys()):
                     self.bullet(f'**{builtin_name}**')
-                self.header(4, 'Defined')
+                self.header(3, 'Defined')
                 for typ in sorted(self.schema.types.values(), key=lambda t: t.name):
                     if self.is_secondary_ref(typ.name):
                         if typ.typeof:
@@ -134,6 +155,38 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             typ_typ = f'**{typ.base}**'
 
                         self.bullet(self.type_link(typ, after_link=f' ({typ_typ})', use_desc=True))
+
+    def dir_path(self, obj: Union[ClassDefinition, SlotDefinition, TypeDefinition]) -> str:
+        filename = self.formatted_element_name(obj) if isinstance(obj, ClassDefinition) \
+            else underscore(obj.name) if isinstance(obj, SlotDefinition) \
+            else camelcase(obj.name)
+        subdir = ''
+        if isinstance(obj, ClassDefinition):
+            ancs = self.ancestors(obj)
+            subdir = 'classes'
+            if 'named thing' in ancs:
+                subdir = f"{subdir}{os.path.sep}entities"
+            elif 'association' in ancs:
+                subdir = f"{subdir}{os.path.sep}associations"
+            elif obj.mixin:
+                subdir = f"{subdir}{os.path.sep}mixins"
+            else:
+                subdir = f"{subdir}{os.path.sep}others"
+        elif isinstance(obj, SlotDefinition):
+            ancs = self.ancestors(obj)
+            subdir = 'slots'
+            if 'related to' in ancs:
+                subdir = f"{subdir}{os.path.sep}predicates"
+            elif 'node property' in ancs:
+                subdir = f"{subdir}{os.path.sep}node_properties"
+            elif 'association slot' in ancs:
+                subdir = f"{subdir}{os.path.sep}edge_properties"
+            else:
+                subdir = f"{subdir}{os.path.sep}others"
+        elif isinstance(obj, TypeDefinition):
+            subdir = 'types'
+        path = f"{self.directory}{os.path.sep}{subdir}{os.path.sep}{filename}.md"
+        return path
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         if self.gen_classes and cls.name not in self.gen_classes:
@@ -149,9 +202,12 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 elif 'association' in ancs:
                     parent = 'Associations'
                     grand_parent = 'Classes'
+                elif cls.mixin:
+                    parent = 'Mixins'
+                    grand_parent = 'Classes'
                 else:
-                    parent = 'Mixins' if cls.mixin else 'Classes'
-                    grand_parent = self.doc_root_title
+                    parent = 'Others'
+                    grand_parent = 'Classes'
                 self.frontmatter(**{'parent': parent, 'title': class_curi, 'grand_parent': grand_parent, 'layout': 'default'})
                 self.element_header(cls, cls.name, class_curi, class_uri)
                 for m in cls.mappings:
@@ -244,8 +300,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 slot_uri = self.namespaces.uri_for(slot_curie)
                 ancs = self.ancestors(slot)
                 if 'related to' in ancs:
-                    parent = 'Relations'
-                    grand_parent = self.doc_root_title
+                    parent = 'Predicates'
+                    grand_parent = 'Slots'
                     slot_type = 'Relation'
                 elif 'node property' in ancs:
                     parent = 'Node Properties'
@@ -256,8 +312,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     grand_parent = 'Slots'
                     slot_type = 'Slot'
                 else:
-                    parent = 'Slots'
-                    grand_parent = self.doc_root_title
+                    parent = 'Others'
+                    grand_parent = 'Slots'
                     slot_type = 'Slot'
                 self.frontmatter(**{'parent': parent, 'title': slot_curie, 'grand_parent': grand_parent, 'layout': 'default'})
                 simple_name = slot_curie.split(':', 1)[1]
@@ -296,6 +352,10 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 full_path = sfx(self.namespaces._base) + (sfx(typ.imported_from) if typ.imported_from else '')
                 type_curie = self.namespaces.uri_or_curie_for(full_path, camelcase(typ.name))
                 type_uri = self.namespaces.uri_for(type_curie)
+                if type_curie.startswith('https://w3id.org/biolink/vocab/biolinkml:types/'):
+                    ref = type_curie.split('/')[-1]
+                    type_uri = f"https://biolink.github.io/biolinkml/docs/types/{ref}"
+                    type_curie = f"metatype:{ref}"
                 self.frontmatter(**{'parent': 'Types', 'title': type_curie, 'grand_parent': self.doc_root_title, 'layout': 'default'})
                 self.element_header(typ, typ.name, type_curie, type_uri)
 
@@ -315,10 +375,14 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
     def element_header(self, obj: Element, name: str, curie: str, uri: str) -> None:
         if curie.startswith('http'):
-            simple_name = curie
+            if curie.startswith('https://w3id.org/biolink/vocab/biolinkml:types/'):
+                simple_name = curie.split('/')[-1]
+                uri = f"https://biolink.github.io/biolinkml/docs/types/{simple_name}"
+                simple_name = f"metatype:{simple_name}"
+            else:
+                simple_name = curie
         else:
             simple_name = curie.split(':', 1)[1]
-        instance_type = type(obj)
         if isinstance(obj, TypeDefinition):
             obj_type = 'Type'
         elif isinstance(obj, ClassDefinition):

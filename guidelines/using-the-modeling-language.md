@@ -1,3 +1,10 @@
+---
+title: "Using the Modeling Language"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 3
+---
+
 # Using the Modeling Language
 
 - [Overview](#overview)
