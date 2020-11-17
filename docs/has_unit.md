@@ -1,5 +1,5 @@
 ---
-parent: Others
+parent: Other Slots
 title: biolink:has_unit
 grand_parent: Slots
 layout: default

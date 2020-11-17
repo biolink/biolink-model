@@ -1,5 +1,5 @@
 ---
-parent: Mixins
+parent: Slot Mixins
 title: biolink:negatively_regulates
 grand_parent: Slots
 layout: default

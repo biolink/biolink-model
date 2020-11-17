@@ -1,5 +1,5 @@
 ---
-parent: Others
+parent: Other Classes
 title: biolink:ClinicalCourse
 grand_parent: Classes
 layout: default

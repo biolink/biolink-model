@@ -1,5 +1,5 @@
 ---
-parent: Mixins
+parent: Class Mixins
 title: biolink:RelationshipQuantifier
 grand_parent: Classes
 layout: default

@@ -1,5 +1,5 @@
 ---
-parent: Others
+parent: Other Slots
 title: biolink:interacting_molecules_category
 grand_parent: Slots
 layout: default

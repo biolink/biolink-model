@@ -1,5 +1,5 @@
 ---
-parent: Others
+parent: Other Classes
 title: biolink:PhenotypicSex
 grand_parent: Classes
 layout: default

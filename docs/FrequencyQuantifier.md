@@ -1,5 +1,5 @@
 ---
-parent: Mixins
+parent: Class Mixins
 title: biolink:FrequencyQuantifier
 grand_parent: Classes
 layout: default

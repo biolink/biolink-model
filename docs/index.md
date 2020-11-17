@@ -169,7 +169,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
     * [VariantToThingAssociation](VariantToThingAssociation.md)
 
-### Mixins
+### Class Mixins
 
  * [DataSetSummary](DataSetSummary.md)
  * [DistributionLevel](DistributionLevel.md)
@@ -196,7 +196,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
  * [VariantToThingAssociation](VariantToThingAssociation.md)
 
-### Others
+### Other Classes
 
  * [RNAProduct](RNAProduct.md)
     * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
@@ -1715,7 +1715,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [variant to population association➞subject](variant_to_population_association_subject.md) - an allele that has a certain frequency in a given population
     * [variant to thing association➞subject](variant_to_thing_association_subject.md) - a sequence variant in which the allele state is associated with some other entity
 
-### Mixins
+### Slot Mixins
 
  * [negatively regulates](negatively_regulates.md)
  * [positively regulates](positively_regulates.md)
@@ -1729,7 +1729,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [negatively regulates, process to process](negatively_regulates_process_to_process.md)
        * [positively regulates, process to process](positively_regulates_process_to_process.md)
 
-### Other
+### Other Slots
 
  * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
     * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.

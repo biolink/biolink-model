@@ -1,5 +1,5 @@
 ---
-parent: Mixins
+parent: Class Mixins
 title: biolink:SubjectOfInvestigation
 grand_parent: Classes
 layout: default

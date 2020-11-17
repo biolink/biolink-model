@@ -1,8 +1,8 @@
 ---
-parent: Classes
+parent: Slots
 grand_parent: Browse Biolink Model
-title: Mixins
+title: Other Slots
 has_children: true
-nav_order: 3
+nav_order: 5
 layout: default
 ---
