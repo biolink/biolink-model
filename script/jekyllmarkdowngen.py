@@ -450,9 +450,9 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         self.bullet(self.slot_link(slot, use_desc=True), level)
         if slot.name in sorted(self.synopsis.isarefs):
             for child in sorted(self.synopsis.isarefs[slot.name].slotrefs):
-                self.seen_elements.add(child)
                 child_slot = self.schema.slots[child]
-                if not child_slot.alias:
+                if not child_slot.alias and not child_slot.mixin:
+                    self.seen_elements.add(child)
                     self.pred_hier(child_slot, level+1)
 
     def visit_type(self, typ: TypeDefinition) -> None:
