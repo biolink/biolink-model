@@ -25,7 +25,6 @@ URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
 
 ## Children
 
- *  [molecular activity➞has input](molecular_activity_has_input.md)
 
 ## Used by
 

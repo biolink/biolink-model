@@ -25,9 +25,6 @@ URI: [biolink:name](https://w3id.org/biolink/vocab/name)
 
 ## Children
 
- *  [agent➞name](agent_name.md)
- *  [macromolecular machine➞name](macromolecular_machine_name.md)
- *  [publication➞name](publication_name.md)
 
 ## Used by
 

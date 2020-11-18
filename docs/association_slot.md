@@ -22,7 +22,6 @@ URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
 ## Children
 
  *  [association type](association_type.md)
- *  [association➞id](association_id.md)
  *  [change is catalyzed by](change_is_catalyzed_by.md)
  *  [chi squared statistic](chi_squared_statistic.md)
  *  [clinical modifier qualifier](clinical_modifier_qualifier.md)

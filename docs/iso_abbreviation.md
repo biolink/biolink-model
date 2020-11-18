@@ -22,7 +22,6 @@ URI: [biolink:iso_abbreviation](https://w3id.org/biolink/vocab/iso_abbreviation)
 
 ## Children
 
- *  [article➞iso abbreviation](article_iso_abbreviation.md)
 
 ## Used by
 

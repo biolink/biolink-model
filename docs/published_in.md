@@ -22,8 +22,6 @@ URI: [biolink:published_in](https://w3id.org/biolink/vocab/published_in)
 
 ## Children
 
- *  [article➞published in](article_published_in.md)
- *  [book chapter➞published in](book_chapter_published_in.md)
 
 ## Used by
 

@@ -22,7 +22,6 @@ URI: [biolink:pages](https://w3id.org/biolink/vocab/pages)
 
 ## Children
 
- *  [publication➞pages](publication_pages.md)
 
 ## Used by
 

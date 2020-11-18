@@ -25,7 +25,6 @@ URI: [biolink:enabled_by](https://w3id.org/biolink/vocab/enabled_by)
 
 ## Children
 
- *  [molecular activity➞enabled by](molecular_activity_enabled_by.md)
 
 ## Used by
 

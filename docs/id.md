@@ -25,10 +25,6 @@ URI: [biolink:id](https://w3id.org/biolink/vocab/id)
 
 ## Children
 
- *  [agent➞id](agent_id.md)
- *  [pairwise interaction association➞id](pairwise_interaction_association_id.md)
- *  [publication➞id](publication_id.md)
- *  [sequence variant➞id](sequence_variant_id.md)
 
 ## Used by
 

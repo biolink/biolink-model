@@ -22,7 +22,6 @@ URI: [biolink:qualifiers](https://w3id.org/biolink/vocab/qualifiers)
 
 ## Children
 
- *  [contributor association➞qualifiers](contributor_association_qualifiers.md)
 
 ## Used by
 

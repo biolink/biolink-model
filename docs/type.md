@@ -23,7 +23,6 @@ URI: [biolink:type](https://w3id.org/biolink/vocab/type)
 ## Children
 
  *  [category](category.md)
- *  [publication➞type](publication_type.md)
 
 ## Used by
 

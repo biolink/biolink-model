@@ -22,7 +22,6 @@ URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)
 
 ## Children
 
- *  [variant to population association➞has total](variant_to_population_association_has_total.md)
 
 ## Used by
 

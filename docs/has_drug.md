@@ -22,7 +22,6 @@ URI: [biolink:has_drug](https://w3id.org/biolink/vocab/has_drug)
 
 ## Children
 
- *  [drug exposure➞has drug](drug_exposure_has_drug.md)
 
 ## Used by
 

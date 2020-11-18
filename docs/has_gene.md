@@ -22,7 +22,6 @@ URI: [biolink:has_gene](https://w3id.org/biolink/vocab/has_gene)
 
 ## Children
 
- *  [sequence variant➞has gene](sequence_variant_has_gene.md)
 
 ## Used by
 

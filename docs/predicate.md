@@ -22,7 +22,6 @@ URI: [biolink:predicate](https://w3id.org/biolink/vocab/predicate)
 
 ## Children
 
- *  [contributor association➞predicate](contributor_association_predicate.md)
 
 ## Used by
 

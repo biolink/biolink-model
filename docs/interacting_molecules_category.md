@@ -21,7 +21,6 @@ None ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)
 
 ## Children
 
- *  [pairwise interaction association➞interacting molecules category](pairwise_interaction_association_interacting_molecules_category.md)
 
 ## Used by
 

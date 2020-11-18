@@ -25,7 +25,6 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 
 ## Children
 
- *  [molecular activity➞has output](molecular_activity_has_output.md)
 
 ## Used by
 
