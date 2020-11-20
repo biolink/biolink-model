@@ -2017,9 +2017,30 @@ slots:
       - RTXKG1:realized_in_response_to
       - RTXKG1:realized_in_response_to_stimulus
 
+  ameliorates:
+    is_a: affects
+    description: >-
+      hA relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+    required: true
+    # 'exposure event' may not be adequate here since genetics is not included?
+    domain: exposure event
+    range: disease or phenotypic feature
+    exact_mappings:
+      - RO:0003307
+
+  exacerbates:
+    is_a: affects
+    description: >-
+      A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+    # 'exposure event' may not be adequate here since genetics is not included?
+    domain: exposure event
+    range: disease or phenotypic feature
+    exact_mappings:
+      - RO:0003309
+
   treats:
     aliases: ['is substance that treats']
-    is_a: affects
+    is_a: ameliorates
     description: >-
       holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
     required: true
