@@ -16,6 +16,15 @@ interface AdministrativeEntity
     category: [CategoryType]!
   }
 
+type Agent
+  {
+    category: [CategoryType]!
+    affiliation: [Uriorcurie]
+    address: String
+    id: String!
+    name: LabelType!
+  }
+
 type AnatomicalEntity implements ThingWithTaxon, PhysicalEntity
   {
     id: String!
@@ -26,13 +35,14 @@ type AnatomicalEntity implements ThingWithTaxon, PhysicalEntity
 
 type AnatomicalEntityToAnatomicalEntityAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
   }
@@ -40,11 +50,12 @@ type AnatomicalEntityToAnatomicalEntityAssociation
 type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
     relation: Uriorcurie!
@@ -53,27 +64,52 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
 type AnatomicalEntityToAnatomicalEntityPartOfAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
     relation: Uriorcurie!
   }
 
+type Article
+  {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    type: String!
+    authors: [String]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
+    id: String!
+    name: LabelType!
+    publishedIn: Uriorcurie!
+    isoAbbreviation: String
+    volume: String
+    issue: String
+  }
+
 type Association
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
   }
 
 type Attribute implements OntologyClass
@@ -123,6 +159,47 @@ type BiologicalSex
     category: [CategoryType]!
   }
 
+type Book
+  {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [String]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
+    name: LabelType!
+    id: String!
+    type: String!
+  }
+
+type BookChapter
+  {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    type: String!
+    authors: [String]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
+    id: String!
+    name: LabelType!
+    publishedIn: Uriorcurie!
+    volume: String
+    chapter: String
+  }
+
 type Carbohydrate
   {
     id: String!
@@ -141,15 +218,16 @@ type Case
 
 type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     sexQualifier: BiologicalSex
     description: NarrativeText
     frequencyQualifier: FrequencyValue
@@ -159,14 +237,15 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
 
 interface CaseToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Case!
   }
 
@@ -187,14 +266,15 @@ type CellLine
 
 type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: CellLine!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -203,27 +283,29 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, Entity
 
 type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: DiseaseOrPhenotypicFeature!
   }
 
 interface CellLineToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: CellLine!
   }
 
@@ -252,25 +334,27 @@ type ChemicalSubstance
 
 type ChemicalToChemicalAssociation implements ChemicalToThingAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: ChemicalSubstance!
   }
 
 type ChemicalToChemicalDerivationAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     changeIsCatalyzedBy: [MacromolecularMachine]
     subject: ChemicalSubstance!
     object: ChemicalSubstance!
@@ -279,53 +363,57 @@ type ChemicalToChemicalDerivationAssociation
 
 type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: DiseaseOrPhenotypicFeature!
   }
 
 type ChemicalToGeneAssociation implements ChemicalToThingAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: GeneOrGeneProduct!
   }
 
 type ChemicalToPathwayAssociation implements ChemicalToThingAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: Pathway!
   }
 
 interface ChemicalToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: ChemicalSubstance!
   }
 
@@ -384,6 +472,25 @@ type ConfidenceLevel
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
+type ContributorAssociation
+  {
+    id: String!
+    associationType: OntologyClass
+    relation: Uriorcurie!
+    negated: Boolean
+    publications: [Publication]
+    providedBy: [Agent]
+    subject: InformationContentEntity!
+    predicate: PredicateType!
+    object: Agent!
+    qualifiers: [OntologyClass]
   }
 
 type DataFile
@@ -391,6 +498,11 @@ type DataFile
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 type DataSet
@@ -398,6 +510,11 @@ type DataSet
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 interface DataSetSummary
@@ -405,7 +522,11 @@ interface DataSetSummary
     id: String!
     name: LabelType!
     category: [CategoryType]!
-    title: String
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
     sourceDataFile: DataFile
     versionOf: DataSet
     type: String
@@ -418,7 +539,11 @@ type DataSetVersion
     id: String!
     name: LabelType!
     category: [CategoryType]!
-    title: String
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
     sourceDataFile: DataFile
     versionOf: DataSet
     type: String
@@ -450,54 +575,58 @@ type DiseaseOrPhenotypicFeature implements ThingWithTaxon
 
 type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: DiseaseOrPhenotypicFeature!
     object: AnatomicalEntity!
   }
 
 interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: DiseaseOrPhenotypicFeature!
   }
 
 type DiseaseToExposureAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Disease!
     object: ExposureEvent!
   }
 
 type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     sexQualifier: BiologicalSex
     description: NarrativeText
     frequencyQualifier: FrequencyValue
@@ -507,14 +636,15 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
 
 interface DiseaseToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Disease!
   }
 
@@ -523,7 +653,11 @@ interface DistributionLevel
     id: String!
     name: LabelType!
     category: [CategoryType]!
-    title: String
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
     sourceDataFile: DataFile
     versionOf: DataSet
     type: String
@@ -564,14 +698,15 @@ interface EntityToFeatureOrDiseaseQualifiers
 
 type EntityToPhenotypicFeatureAssociation implements EntityToFeatureOrDiseaseQualifiers
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     sexQualifier: BiologicalSex
     description: NarrativeText
     object: PhenotypicFeature!
@@ -599,6 +734,11 @@ type EvidenceType
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 type Exon
@@ -612,13 +752,14 @@ type Exon
 
 type ExonToTranscriptRelationship
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Exon!
     object: Transcript!
   }
@@ -632,14 +773,15 @@ type ExposureEvent
 
 type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: ExposureEvent!
     sexQualifier: BiologicalSex
     description: NarrativeText
@@ -673,13 +815,14 @@ type FrequencyValue
 
 type FunctionalAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MacromolecularMachine!
     object: GeneOntologyClass!
   }
@@ -699,14 +842,15 @@ type Gene
 
 type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -727,14 +871,15 @@ interface GeneGrouping
 
 type GeneHasVariantThatContributesToDiseaseAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -785,11 +930,12 @@ interface GeneProductIsoform
 type GeneRegulatoryRelationship
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
@@ -797,14 +943,15 @@ type GeneRegulatoryRelationship
 
 type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -814,11 +961,12 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
 type GeneToExpressionSiteAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     stageQualifier: LifeStage
     quantifierQualifier: OntologyClass
     subject: GeneOrGeneProduct!
@@ -828,13 +976,14 @@ type GeneToExpressionSiteAssociation
 
 interface GeneToGeneAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
   }
@@ -842,11 +991,12 @@ interface GeneToGeneAssociation
 type GeneToGeneHomologyAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     relation: Uriorcurie!
@@ -855,11 +1005,12 @@ type GeneToGeneHomologyAssociation
 type GeneToGeneProductRelationship
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Gene!
     object: GeneProduct!
     relation: Uriorcurie!
@@ -867,27 +1018,29 @@ type GeneToGeneProductRelationship
 
 type GeneToGoTermAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MolecularEntity!
     object: GeneOntologyClass!
   }
 
 type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     sexQualifier: BiologicalSex
     description: NarrativeText
@@ -898,14 +1051,15 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
 
 interface GeneToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
   }
 
@@ -930,11 +1084,12 @@ type GenomicEntity
 type GenomicSequenceLocalization
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     startInterbaseCoordinate: Integer
     endInterbaseCoordinate: Integer
     genomeBuild: String
@@ -958,11 +1113,12 @@ type Genotype
 type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
@@ -974,11 +1130,12 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, Entity
 type GenotypeToDiseaseAssociation implements GenotypeToThingAssociation, EntityToDiseaseAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: NamedThing!
     relation: Uriorcurie!
     object: NamedThing!
@@ -990,11 +1147,12 @@ type GenotypeToDiseaseAssociation implements GenotypeToThingAssociation, EntityT
 type GenotypeToGeneAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: Genotype!
     object: Gene!
@@ -1003,11 +1161,12 @@ type GenotypeToGeneAssociation
 type GenotypeToGenotypePartAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: Genotype!
     object: Genotype!
@@ -1015,13 +1174,14 @@ type GenotypeToGenotypePartAssociation
 
 type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation
   {
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: Genotype!
     sexQualifier: BiologicalSex
@@ -1033,25 +1193,27 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
 
 interface GenotypeToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Genotype!
   }
 
 type GenotypeToVariantAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     subject: Genotype!
     object: SequenceVariant!
@@ -1116,6 +1278,11 @@ interface InformationContentEntity
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 type Inheritance
@@ -1156,39 +1323,42 @@ type MacromolecularMachine
 
 type MacromolecularMachineToBiologicalProcessAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MacromolecularMachine!
     object: BiologicalProcess!
   }
 
 type MacromolecularMachineToCellularComponentAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MacromolecularMachine!
     object: CellularComponent!
   }
 
 type MacromolecularMachineToMolecularActivityAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MacromolecularMachine!
     object: MolecularActivity!
   }
@@ -1204,11 +1374,12 @@ type MaterialSample implements SubjectOfInvestigation, PhysicalEntity
 type MaterialSampleDerivationAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MaterialSample!
     object: NamedThing!
     relation: Uriorcurie!
@@ -1216,27 +1387,29 @@ type MaterialSampleDerivationAssociation
 
 type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
   }
 
 interface MaterialSampleToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MaterialSample!
   }
 
@@ -1343,14 +1516,15 @@ interface OrganismalEntity
 
 type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: OrganismalEntity!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -1360,11 +1534,12 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin
 type PairwiseGeneToGeneInteraction implements PairwiseInteractionAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     relation: Uriorcurie!
@@ -1373,11 +1548,12 @@ type PairwiseGeneToGeneInteraction implements PairwiseInteractionAssociation
 
 interface PairwiseInteractionAssociation
   {
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: MolecularEntity!
     id: String!
     relation: Uriorcurie!
@@ -1459,11 +1635,12 @@ type PopulationOfIndividualOrganisms implements ThingWithTaxon
 type PopulationToPopulationAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: PopulationOfIndividualOrganisms!
     object: PopulationOfIndividualOrganisms!
     relation: Uriorcurie!
@@ -1500,18 +1677,23 @@ type ProteinIsoform implements GeneProductIsoform
     xref: [IriType]
   }
 
-type Provider
-  {
-    id: String!
-    name: LabelType!
-    category: [CategoryType]!
-  }
-
 type Publication
   {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    type: String!
+    authors: [String]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
     id: String!
     name: LabelType!
-    category: [CategoryType]!
   }
 
 type QuantityValue
@@ -1570,26 +1752,28 @@ interface SensitivityQuantifier
 
 type SequenceAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
   }
 
 type SequenceFeatureRelationship
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: GenomicEntity!
     object: GenomicEntity!
   }
@@ -1606,15 +1790,38 @@ type SequenceVariant
 
 interface SequenceVariantModulatesTreatmentAssociation
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: SequenceVariant!
     object: Treatment!
+  }
+
+type Serial
+  {
+    category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [String]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [IriType]
+    name: LabelType!
+    isoAbbreviation: String
+    volume: String
+    issue: String
+    id: String!
+    type: String!
   }
 
 type SeverityValue
@@ -1642,6 +1849,11 @@ type SourceFile
     id: String!
     name: LabelType!
     category: [CategoryType]!
+    description: NarrativeText
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
     sourceVersion: String
     retrievedOn: Date
   }
@@ -1656,14 +1868,15 @@ interface SubjectOfInvestigation
 
 interface ThingToDiseaseOrPhenotypicFeatureAssociation
   {
-    subject: NamedThing!
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    subject: NamedThing!
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     object: DiseaseOrPhenotypicFeature!
   }
 
@@ -1686,13 +1899,14 @@ type Transcript
 
 type TranscriptToGeneRelationship
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: Transcript!
     object: Gene!
   }
@@ -1708,11 +1922,12 @@ type Treatment
 type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     relation: Uriorcurie!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
@@ -1724,11 +1939,12 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityT
 type VariantToDiseaseAssociation implements VariantToThingAssociation, EntityToDiseaseAssociation
   {
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: NamedThing!
     relation: Uriorcurie!
     object: NamedThing!
@@ -1739,14 +1955,15 @@ type VariantToDiseaseAssociation implements VariantToThingAssociation, EntityToD
 
 type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociation, EntityToPhenotypicFeatureAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: SequenceVariant!
     sexQualifier: BiologicalSex
     description: NarrativeText
@@ -1757,13 +1974,14 @@ type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociation,
 
 type VariantToPopulationAssociation implements VariantToThingAssociation, FrequencyQuantifier, FrequencyQualifierMixin
   {
-    relation: Uriorcurie!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: SequenceVariant!
     object: PopulationOfIndividualOrganisms!
     hasQuotient: Double
@@ -1775,14 +1993,15 @@ type VariantToPopulationAssociation implements VariantToThingAssociation, Freque
 
 interface VariantToThingAssociation
   {
-    relation: Uriorcurie!
-    object: NamedThing!
     id: String!
-    negated: Boolean
     associationType: OntologyClass
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    providedBy: [Provider]
+    providedBy: [Agent]
     subject: SequenceVariant!
   }
 

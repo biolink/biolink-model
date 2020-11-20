@@ -82,8 +82,19 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <AdministrativeEntity> ]
        )
-    } OR @<Provider>
+    } OR @<Agent>
 )
+
+<Agent> CLOSED {
+    (  $<Agent_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ? ;
+          <affiliation> @metatype:Uriorcurie * ;
+          <address> @metatype:String ? ;
+          <name> @<LabelType>
+       ) ;
+       rdf:type [ <Agent> ]
+    )
+}
 
 <AnatomicalEntity>  (
     CLOSED {
@@ -134,23 +145,36 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<Article> CLOSED {
+    (  $<Article_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ? ;
+          <published_in> @metatype:Uriorcurie ;
+          <iso_abbreviation> @metatype:String ? ;
+          <volume> @metatype:String ? ;
+          <issue> @metatype:String ?
+       ) ;
+       rdf:type [ <Article> ]
+    )
+}
+
 <Association>  (
     CLOSED {
-       (  $<Association_tes> (  rdf:subject @<NamedThing> ;
-             <relation> @metatype:Uriorcurie ;
+       (  $<Association_tes> (  <association_type> @<OntologyClass> ? ;
+             rdf:subject @<NamedThing> ;
+             rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
+             <relation> @metatype:Uriorcurie ;
              <negated> @metatype:Boolean ? ;
-             <association_type> @<OntologyClass> ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
-             <provided_by> @<Provider> *
+             <provided_by> @<Agent> *
           ) ;
           rdf:type [ <Association> ]
        )
     } OR @<AnatomicalEntityToAnatomicalEntityAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToThingAssociation> OR
     @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<CellLineToThingAssociation> OR @<ChemicalToChemicalAssociation> OR
     @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR @<ChemicalToPathwayAssociation> OR
-    @<ChemicalToThingAssociation> OR @<DiseaseOrPhenotypicFeatureAssociationToThingAssociation> OR
+    @<ChemicalToThingAssociation> OR @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureAssociationToThingAssociation> OR
     @<DiseaseToPhenotypicFeatureAssociation> OR @<DiseaseToThingAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneRegulatoryRelationship> OR
     @<GeneToDiseaseAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR
@@ -231,6 +255,26 @@ metatype:Nodeidentifier NONLITERAL
        )
     } OR @<GenotypicSex> OR @<PhenotypicSex>
 )
+
+<Book> CLOSED {
+    (  $<Book_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ? ;
+          <type> @metatype:String
+       ) ;
+       rdf:type [ <Book> ]
+    )
+}
+
+<BookChapter> CLOSED {
+    (  $<BookChapter_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ? ;
+          <published_in> @metatype:Uriorcurie ;
+          <volume> @metatype:String ? ;
+          <chapter> @metatype:String ?
+       ) ;
+       rdf:type [ <BookChapter> ]
+    )
+}
 
 <Carbohydrate> CLOSED {
     (  $<Carbohydrate_tes> (  &<ChemicalSubstance_tes> ;
@@ -487,10 +531,22 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<ContributorAssociation> CLOSED {
+    (  $<ContributorAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject> @<InformationContentEntity> ;
+          <predicate> @<PredicateType> ;
+          <object> @<Agent> ;
+          <qualifiers> @<OntologyClass> *
+       ) ;
+       rdf:type [ <ContributorAssociation> ]
+    )
+}
+
 <DataFile>  (
     CLOSED {
-       (  $<DataFile_tes> (  &<NamedThing_tes> ;
-             rdf:type [ <NamedThing> ] ?
+       (  $<DataFile_tes> (  &<InformationContentEntity_tes> ;
+             rdf:type [ <InformationContentEntity> ] ?
           ) ;
           rdf:type [ <DataFile> ]
        )
@@ -499,8 +555,8 @@ metatype:Nodeidentifier NONLITERAL
 
 <DataSet>  (
     CLOSED {
-       (  $<DataSet_tes> (  &<NamedThing_tes> ;
-             rdf:type [ <NamedThing> ] ?
+       (  $<DataSet_tes> (  &<InformationContentEntity_tes> ;
+             rdf:type [ <InformationContentEntity> ] ?
           ) ;
           rdf:type [ <DataSet> ]
        )
@@ -520,7 +576,6 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<DataSetVersion_tes> (  &<DataSet_tes> ;
              rdf:type [ <DataSet> ] ? ;
-             <title> @metatype:String ? ;
              <source_data_file> @<DataFile> ? ;
              <version_of> @<DataSet> ? ;
              rdf:type @metatype:String ? ;
@@ -1196,12 +1251,17 @@ metatype:Nodeidentifier NONLITERAL
 )
 
 <InformationContentEntity>  (
-    @<ConfidenceLevel> OR @<EvidenceType> OR @<Publication>
+    @<ConfidenceLevel> OR @<DataFile> OR @<DataSet> OR @<EvidenceType> OR @<Publication>
 )
 
 <InformationContentEntity_struct> {
     (  $<InformationContentEntity_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ?
+          rdf:type [ <NamedThing> ] ? ;
+          dcterms:description @<NarrativeText> ? ;
+          <license> @metatype:String ? ;
+          <rights> @metatype:String ? ;
+          <format> @metatype:String ? ;
+          <creation_date> @metatype:Date ?
        ) ;
        rdf:type [ <InformationContentEntity> ]
     )
@@ -1376,8 +1436,8 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <NamedThing> ]
        )
-    } OR @<AdministrativeEntity> OR @<BiologicalEntity> OR @<ClinicalEntity> OR @<DataFile> OR @<DataSet> OR @<Device> OR
-    @<InformationContentEntity> OR @<MaterialSample> OR @<Occurrent> OR @<OntologyClass> OR @<PhysicalEntity> OR @<PlanetaryEntity>
+    } OR @<AdministrativeEntity> OR @<BiologicalEntity> OR @<ClinicalEntity> OR @<Device> OR @<InformationContentEntity> OR
+    @<MaterialSample> OR @<Occurrent> OR @<OntologyClass> OR @<PhysicalEntity> OR @<PlanetaryEntity>
 )
 
 <NoncodingRNAProduct>  (
@@ -1594,21 +1654,23 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
-<Provider> CLOSED {
-    (  $<Provider_tes> (  &<AdministrativeEntity_tes> ;
-          rdf:type [ <AdministrativeEntity> ] ?
-       ) ;
-       rdf:type [ <Provider> ]
-    )
-}
-
-<Publication> CLOSED {
-    (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
-          rdf:type [ <InformationContentEntity> ] ?
-       ) ;
-       rdf:type [ <Publication> ]
-    )
-}
+<Publication>  (
+    CLOSED {
+       (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
+             rdf:type [ <InformationContentEntity> ] ? ;
+             dcterms:type @metatype:String ;
+             <authors> @metatype:String * ;
+             <pages> @metatype:String * ;
+             <summary> @metatype:String ? ;
+             <keywords> @metatype:String * ;
+             <mesh_terms> @metatype:Uriorcurie * ;
+             <xref> @<IriType> * ;
+             <name> @<LabelType>
+          ) ;
+          rdf:type [ <Publication> ]
+       )
+    } OR @<Article> OR @<Book> OR @<BookChapter> OR @<Serial>
+)
 
 <QuantityValue> CLOSED {
     (  $<QuantityValue_tes> (  &<AbstractEntity_tes> ;
@@ -1715,6 +1777,18 @@ metatype:Nodeidentifier NONLITERAL
           <object> @<Treatment>
        ) ;
        rdf:type [ <SequenceVariantModulatesTreatmentAssociation> ]
+    )
+}
+
+<Serial> CLOSED {
+    (  $<Serial_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ? ;
+          <iso_abbreviation> @metatype:String ? ;
+          <volume> @metatype:String ? ;
+          <issue> @metatype:String ? ;
+          <type> @metatype:String
+       ) ;
+       rdf:type [ <Serial> ]
     )
 }
 

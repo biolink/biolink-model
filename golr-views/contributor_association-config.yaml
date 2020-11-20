@@ -1,0 +1,47 @@
+id: contributor_association
+schema_generating: true
+description: Any association between an entity (such as a publication) and various
+  agents that contribute to its realisation
+display_name: contributor association
+document_category: contributor association
+weight: 20
+fields:
+- id: id
+  description: A unique identifier for an association
+  display_name: association_id
+- id: association_type
+  description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+- id: relation
+  description: The relation which describes an association between a subject and an
+    object in a more granular manner. Usually this is a term from Relation Ontology,
+    but it can be any edge CURIE.
+  display_name: relation
+- id: negated
+  description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+- id: publications
+  description: connects an association to publications supporting the association
+  display_name: publications
+  cardinality: multi
+- id: provided_by
+  description: connects an association to the agent (person, organization or group)
+    that provided it
+  display_name: provided by
+  cardinality: multi
+- id: subject
+  description: information content entity which an agent has helped realise
+  display_name: contributor association_subject
+- id: predicate
+  description: generally one of the predicate values 'provider', 'publisher', 'editor'
+    or 'author'
+  display_name: contributor association_predicate
+- id: object
+  description: agent helping to realise the given entity (e.g. such as a publication)
+  display_name: contributor association_object
+- id: qualifiers
+  description: this field can be used to annotate special characteristics of an agent
+    relationship, such as the fact that a given author agent of a publication is the
+    'corresponding author'
+  display_name: contributor association_qualifiers
+  cardinality: multi
