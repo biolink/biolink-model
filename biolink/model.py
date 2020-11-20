@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-11-17 00:02
+# Generation date: 2020-11-20 23:32
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -34,6 +34,7 @@ AEOLUS = CurieNamespace('Aeolus', 'http://translator.ncats.nih.gov/Aeolus_')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 BIOGRID = CurieNamespace('BIOGRID', 'http://identifiers.org/biogrid/')
 BIOSAMPLE = CurieNamespace('BIOSAMPLE', 'http://identifiers.org/biosample/')
+BSPO = CurieNamespace('BSPO', 'http://purl.obolibrary.org/obo/BSPO_')
 CAID = CurieNamespace('CAID', 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=')
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL_COMPOUND = CurieNamespace('CHEMBL_COMPOUND', 'http://identifiers.org/chembl.compound/')
@@ -175,6 +176,7 @@ DICTYBASE = CurieNamespace('dictyBase', 'http://dictybase.org/gene/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
 FABIO = CurieNamespace('fabio', 'http://purl.org/spar/fabio/')
 FOAF = CurieNamespace('foaf', 'http://xmlns.com/foaf/0.1/')
+FOODB_COMPOUND = CurieNamespace('foodb_compound', 'http://foodb.ca/compounds/')
 GFF3 = CurieNamespace('gff3', 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#')
 GPI = CurieNamespace('gpi', 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#')
 GTPO = CurieNamespace('gtpo', 'https://rdf.guidetopharmacology.org/ns/gtpo#')
@@ -471,7 +473,15 @@ class CarbohydrateId(ChemicalSubstanceId):
     pass
 
 
-class DrugId(ChemicalSubstanceId):
+class ProcessedMaterialId(ChemicalSubstanceId):
+    pass
+
+
+class DrugId(MolecularEntityId):
+    pass
+
+
+class FoodId(MolecularEntityId):
     pass
 
 
@@ -2042,7 +2052,31 @@ class Carbohydrate(ChemicalSubstance):
 
 
 @dataclass
-class Drug(ChemicalSubstance):
+class ProcessedMaterial(ChemicalSubstance):
+    """
+    A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ProcessedMaterial
+    class_class_curie: ClassVar[str] = "biolink:ProcessedMaterial"
+    class_name: ClassVar[str] = "processed material"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ProcessedMaterial
+
+    id: Union[str, ProcessedMaterialId] = None
+    name: Union[str, LabelType] = None
+    category: List[Union[str, CategoryType]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, ProcessedMaterialId):
+            self.id = ProcessedMaterialId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Drug(MolecularEntity):
     """
     A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     """
@@ -2056,12 +2090,51 @@ class Drug(ChemicalSubstance):
     id: Union[str, DrugId] = None
     name: Union[str, LabelType] = None
     category: List[Union[str, CategoryType]] = empty_list()
+    has_active_ingredient: List[Union[str, ChemicalSubstanceId]] = empty_list()
+    has_excipient: List[Union[str, ChemicalSubstanceId]] = empty_list()
+    has_constituent: List[Union[str, ChemicalSubstanceId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, DrugId):
             self.id = DrugId(self.id)
+        self.has_active_ingredient = [v if isinstance(v, ChemicalSubstanceId)
+                                      else ChemicalSubstanceId(v) for v in ([self.has_active_ingredient] if isinstance(self.has_active_ingredient, str) else self.has_active_ingredient)]
+        self.has_excipient = [v if isinstance(v, ChemicalSubstanceId)
+                              else ChemicalSubstanceId(v) for v in ([self.has_excipient] if isinstance(self.has_excipient, str) else self.has_excipient)]
+        self.has_constituent = [v if isinstance(v, ChemicalSubstanceId)
+                                else ChemicalSubstanceId(v) for v in ([self.has_constituent] if isinstance(self.has_constituent, str) else self.has_constituent)]
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Food(MolecularEntity):
+    """
+    A substance consumed by a living organism as a source of nutrition
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Food
+    class_class_curie: ClassVar[str] = "biolink:Food"
+    class_name: ClassVar[str] = "food"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Food
+
+    id: Union[str, FoodId] = None
+    name: Union[str, LabelType] = None
+    category: List[Union[str, CategoryType]] = empty_list()
+    has_nutrient: List[Union[str, ChemicalSubstanceId]] = empty_list()
+    has_constituent: List[Union[str, ChemicalSubstanceId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, FoodId):
+            self.id = FoodId(self.id)
+        self.has_nutrient = [v if isinstance(v, ChemicalSubstanceId)
+                             else ChemicalSubstanceId(v) for v in ([self.has_nutrient] if isinstance(self.has_nutrient, str) else self.has_nutrient)]
+        self.has_constituent = [v if isinstance(v, ChemicalSubstanceId)
+                                else ChemicalSubstanceId(v) for v in ([self.has_constituent] if isinstance(self.has_constituent, str) else self.has_constituent)]
         super().__post_init__(**kwargs)
 
 
@@ -5693,6 +5766,12 @@ slots.causes = Slot(uri=BIOLINK.causes, name="causes", curie=BIOLINK.curie('caus
 slots.caused_by = Slot(uri=BIOLINK.caused_by, name="caused by", curie=BIOLINK.curie('caused_by'),
                       model_uri=BIOLINK.caused_by, domain=NamedThing, range=List[Union[str, NamedThingId]])
 
+slots.ameliorates = Slot(uri=BIOLINK.ameliorates, name="ameliorates", curie=BIOLINK.curie('ameliorates'),
+                      model_uri=BIOLINK.ameliorates, domain=BiologicalEntity, range=List[Union[str, DiseaseOrPhenotypicFeatureId]])
+
+slots.exacerbates = Slot(uri=BIOLINK.exacerbates, name="exacerbates", curie=BIOLINK.curie('exacerbates'),
+                      model_uri=BIOLINK.exacerbates, domain=BiologicalEntity, range=List[Union[str, DiseaseOrPhenotypicFeatureId]])
+
 slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('treats'),
                       model_uri=BIOLINK.treats, domain=Treatment, range=List[Union[str, DiseaseOrPhenotypicFeatureId]])
 
@@ -6028,6 +6107,18 @@ slots.has_receptor = Slot(uri=BIOLINK.has_receptor, name="has receptor", curie=B
 
 slots.has_stressor = Slot(uri=BIOLINK.has_stressor, name="has stressor", curie=BIOLINK.curie('has_stressor'),
                       model_uri=BIOLINK.has_stressor, domain=ExposureEvent, range=Optional[str], mappings = [EXO["0000000"]])
+
+slots.has_constituent = Slot(uri=BIOLINK.has_constituent, name="has constituent", curie=BIOLINK.curie('has_constituent'),
+                      model_uri=BIOLINK.has_constituent, domain=NamedThing, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.has_active_ingredient = Slot(uri=BIOLINK.has_active_ingredient, name="has active ingredient", curie=BIOLINK.curie('has_active_ingredient'),
+                      model_uri=BIOLINK.has_active_ingredient, domain=Drug, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.has_excipient = Slot(uri=BIOLINK.has_excipient, name="has excipient", curie=BIOLINK.curie('has_excipient'),
+                      model_uri=BIOLINK.has_excipient, domain=Drug, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.has_nutrient = Slot(uri=BIOLINK.has_nutrient, name="has nutrient", curie=BIOLINK.curie('has_nutrient'),
+                      model_uri=BIOLINK.has_nutrient, domain=Food, range=List[Union[str, ChemicalSubstanceId]])
 
 slots.has_route = Slot(uri=BIOLINK.has_route, name="has route", curie=BIOLINK.curie('has_route'),
                       model_uri=BIOLINK.has_route, domain=ExposureEvent, range=Optional[str], mappings = [EXO["0000055"]])
