@@ -21,7 +21,7 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [ameliorates](ameliorates.md)
 
 ## Children
 

@@ -33,8 +33,10 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
           * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
              * [Carbohydrate](Carbohydrate.md)
-             * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
              * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+             * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+          * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+          * [Food](Food.md) - A substance consumed by a living organism as a source of nutrition
           * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
           * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
              * [CodingSequence](CodingSequence.md)
@@ -179,6 +181,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
  * [FrequencyQuantifier](FrequencyQuantifier.md)
  * [GeneGrouping](GeneGrouping.md) - any grouping of multiple genes or gene products
+ * [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
  * [ModelToDiseaseMixin](ModelToDiseaseMixin.md) - This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
  * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
  * [RelationshipQuantifier](RelationshipQuantifier.md)
@@ -262,8 +265,10 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [affects uptake of](affects_uptake_of.md) - holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
        * [decreases uptake of](decreases_uptake_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
        * [increases uptake of](increases_uptake_of.md) - holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+    * [ameliorates](ameliorates.md) - hA relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+       * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
     * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
-    * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+    * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
  * [affects abundance of](affects_abundance_of.md) - holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
     * [decreases abundance of](decreases_abundance_of.md) - holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
     * [increases abundance of](increases_abundance_of.md) - holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
@@ -316,6 +321,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [affects uptake of](affects_uptake_of.md) - holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
     * [decreases uptake of](decreases_uptake_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
     * [increases uptake of](increases_uptake_of.md) - holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+ * [ameliorates](ameliorates.md) - hA relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+    * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
  * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
  * [biomarker for](biomarker_for.md) - holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
@@ -374,6 +381,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
  * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
  * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
+ * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
  * [exact match](exact_match.md) - holds between two entities that are identical to each other, with a high degree of confidence
     * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
  * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
@@ -545,8 +553,10 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [affects uptake of](affects_uptake_of.md) - holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
           * [decreases uptake of](decreases_uptake_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
           * [increases uptake of](increases_uptake_of.md) - holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+       * [ameliorates](ameliorates.md) - hA relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+          * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
        * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
-       * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+       * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
     * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
        * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
        * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
@@ -677,11 +687,15 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [filler](filler.md) - The value in a property-value tuple
  * [format](format.md)
  * [full name](full_name.md) - a long-form human readable name for a thing
+ * [has active ingredient](has_active_ingredient.md) - one or more chemical substance which are the active ingredient(s) of a drug
  * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
  * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
+ * [has constituent](has_constituent.md) - one or more chemical substances within a mixture
  * [has count](has_count.md) - number of things with a particular property
  * [has drug](has_drug.md) - connects an entity to a single drug
+ * [has excipient](has_excipient.md) - one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
  * [has gene](has_gene.md) - connects an entity to a single gene
+ * [has nutrient](has_nutrient.md) - one or more chemical substance which are growth factors for a living organism
  * [has percentage](has_percentage.md) - equivalent to has quotient multiplied by 100
  * [has quotient](has_quotient.md)
  * [has receptor](has_receptor.md) - the organism or organism part being exposed
@@ -718,10 +732,14 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [filler](filler.md) - The value in a property-value tuple
     * [format](format.md)
     * [full name](full_name.md) - a long-form human readable name for a thing
+    * [has active ingredient](has_active_ingredient.md) - one or more chemical substance which are the active ingredient(s) of a drug
     * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
     * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
+    * [has constituent](has_constituent.md) - one or more chemical substances within a mixture
     * [has drug](has_drug.md) - connects an entity to a single drug
+    * [has excipient](has_excipient.md) - one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
     * [has gene](has_gene.md) - connects an entity to a single gene
+    * [has nutrient](has_nutrient.md) - one or more chemical substance which are growth factors for a living organism
     * [has receptor](has_receptor.md) - the organism or organism part being exposed
     * [has route](has_route.md) - the process that results in the stressor coming into direct contact with the receptor
     * [has stressor](has_stressor.md) - the process or entity that the receptor is being exposed to

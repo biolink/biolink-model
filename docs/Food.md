@@ -1,28 +1,28 @@
 ---
 parent: Entities
-title: biolink:Drug
+title: biolink:Food
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Drug
+# Class: Food
 
 
-A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+A substance consumed by a living organism as a source of nutrition
 
-URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
+URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[ChemicalSubstance]%3Chas%20excipient%200..%2A-%20[Drug%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalSubstance]%3Chas%20active%20ingredient%200..%2A-%20[Drug],[Drug]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Drug],[ChemicalSubstance])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MolecularEntity],[Mixture],[ChemicalSubstance]%3Chas%20nutrient%200..%2A-%20[Food%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Food]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Food],[ChemicalSubstance])
 
 ---
 
 
 ## Identifier prefixes
 
- * PHARMGKB.DRUG
+ * foodb.compound
 
 ## Parents
 
@@ -34,18 +34,14 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ## Referenced by class
 
- *  **[NamedThing](NamedThing.md)** *[has drug](has_drug.md)*  <sub>OPT</sub>  **[Drug](Drug.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [has active ingredient](has_active_ingredient.md)  <sub>0..*</sub>
-    * Description: one or more chemical substance which are the active ingredient(s) of a drug
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
- * [has excipient](has_excipient.md)  <sub>0..*</sub>
-    * Description: one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
+ * [has nutrient](has_nutrient.md)  <sub>0..*</sub>
+    * Description: one or more chemical substance which are growth factors for a living organism
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ### Inherited from gene product:
@@ -85,20 +81,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [has active ingredient](has_active_ingredient.md)  <sub>0..*</sub>
-    * Description: one or more chemical substance which are the active ingredient(s) of a drug
+ * [has nutrient](has_nutrient.md)  <sub>0..*</sub>
+    * Description: one or more chemical substance which are growth factors for a living organism
     * range: [ChemicalSubstance](ChemicalSubstance.md)
- * [has excipient](has_excipient.md)  <sub>0..*</sub>
-    * Description: one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Comments:** | | The CHEBI ID represents a role rather than a substance |
-| **Exact Mappings:** | | WIKIDATA:Q12140 |
-|  | | CHEBI:23888 |
-|  | | UMLSSC:T200 |
-|  | | UMLSST:clnd |
-

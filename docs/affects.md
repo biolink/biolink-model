@@ -42,9 +42,10 @@ URI: [biolink:affects](https://w3id.org/biolink/vocab/affects)
  *  [affects synthesis of](affects_synthesis_of.md)
  *  [affects transport of](affects_transport_of.md)
  *  [affects uptake of](affects_uptake_of.md)
+ *  [ameliorates](ameliorates.md)
  *  [disrupts](disrupts.md)
+ *  [exacerbates](exacerbates.md)
  *  [regulates](regulates.md)
- *  [treats](treats.md)
 
 ## Used by
 

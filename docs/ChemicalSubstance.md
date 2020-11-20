@@ -138,7 +138,7 @@ UMLSST:inch
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MolecularEntity],[MolecularActivity],[Metabolite],[DrugExposure],[Drug],[ChemicalToThingAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],[ChemicalToThingAssociation]-%20subject%201..1%3E[ChemicalSubstance],[DrugExposure]-%20has%20drug%201..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20input%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20output%200..%2A%3E[ChemicalSubstance],[ChemicalSubstance]%5E-[Metabolite],[ChemicalSubstance]%5E-[Drug],[ChemicalSubstance]%5E-[Carbohydrate],[MolecularEntity]%5E-[ChemicalSubstance],[Carbohydrate])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[OrganismTaxon],[NamedThing],[MolecularEntity],[MolecularActivity],[Metabolite],[Food],[DrugExposure],[Drug],[ChemicalToThingAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],[ChemicalToThingAssociation]-%20subject%201..1%3E[ChemicalSubstance],[DrugExposure]-%20has%20drug%201..%2A%3E[ChemicalSubstance],[Drug]-%20has%20active%20ingredient%200..%2A%3E[ChemicalSubstance],[Mixture]-%20has%20constituent%200..%2A%3E[ChemicalSubstance],[Drug]-%20has%20excipient%200..%2A%3E[ChemicalSubstance],[Food]-%20has%20nutrient%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20input%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20output%200..%2A%3E[ChemicalSubstance],[ChemicalSubstance]%5E-[ProcessedMaterial],[ChemicalSubstance]%5E-[Metabolite],[ChemicalSubstance]%5E-[Carbohydrate],[MolecularEntity]%5E-[ChemicalSubstance],[Mixture],[Carbohydrate])
 
 ---
 
@@ -164,8 +164,8 @@ UMLSST:inch
 ## Children
 
  * [Carbohydrate](Carbohydrate.md)
- * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
  * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+ * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
 
 ## Referenced by class
 
@@ -174,6 +174,10 @@ UMLSST:inch
  *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)*  <sub>REQ</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[ChemicalToThingAssociation](ChemicalToThingAssociation.md)** *[chemical to thing association➞subject](chemical_to_thing_association_subject.md)*  <sub>REQ</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[DrugExposure](DrugExposure.md)** *[drug exposure➞has drug](drug_exposure_has_drug.md)*  <sub>1..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  **[Drug](Drug.md)** *[has active ingredient](has_active_ingredient.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  **[NamedThing](NamedThing.md)** *[has constituent](has_constituent.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  **[Drug](Drug.md)** *[has excipient](has_excipient.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  **[Food](Food.md)** *[has nutrient](has_nutrient.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[molecular activity➞has input](molecular_activity_has_input.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[molecular activity➞has output](molecular_activity_has_output.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
 
