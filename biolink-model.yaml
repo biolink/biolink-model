@@ -3666,6 +3666,13 @@ slots:
     mappings:
       - ExO:0000000
 
+  has constituent:
+    is_a: node property
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more chemical substances within a mixture
+
   has active ingredient:
     is_a: node property
     domain: drug
@@ -5001,11 +5008,7 @@ classes:
     description: >-
       The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
     slots:
-      - has component
-    slot_usage:
-      component of:
-        range: chemical substance
-        multivalued: true
+      - has constituent
 
   drug:
     is_a: molecular entity
