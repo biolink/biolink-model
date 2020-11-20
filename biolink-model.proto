@@ -542,6 +542,9 @@ message Drug
   name LabelType = 2
   repeated category CategoryType = 3
   repeated inTaxon OrganismTaxon = 4
+  repeated hasActiveIngredient ChemicalSubstance = 5
+  repeated hasExcipient ChemicalSubstance = 6
+  repeated hasConstituent ChemicalSubstance = 7
  }
 // A drug exposure is an intake of a particular chemical substance
 message DrugExposure
@@ -623,6 +626,16 @@ message ExposureEventToPhenotypicFeatureAssociation
   optional frequencyQualifier FrequencyValue = 13
   optional severityQualifier SeverityValue = 14
   optional onsetQualifier Onset = 15
+ }
+// A substance consumed by a living organism as a source of nutrition
+message Food
+ {
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
+  repeated hasNutrient ChemicalSubstance = 5
+  repeated hasConstituent ChemicalSubstance = 6
  }
 // describes the frequency of occurrence of an event or condition
 message FrequencyValue
@@ -1340,6 +1353,14 @@ message Procedure
   id String = 1
   name LabelType = 2
   repeated category CategoryType = 3
+ }
+// A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+message ProcessedMaterial
+ {
+  id String = 1
+  name LabelType = 2
+  repeated category CategoryType = 3
+  repeated inTaxon OrganismTaxon = 4
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein

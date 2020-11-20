@@ -399,7 +399,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <ChemicalSubstance> ]
        )
-    } OR @<Carbohydrate> OR @<Drug> OR @<Metabolite>
+    } OR @<Carbohydrate> OR @<Metabolite> OR @<ProcessedMaterial>
 )
 
 <ChemicalToChemicalAssociation>  (
@@ -684,8 +684,13 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <Drug> CLOSED {
-    (  $<Drug_tes> (  &<ChemicalSubstance_tes> ;
-          rdf:type [ <ChemicalSubstance> ] ?
+    (  $<Drug_tes> (  &<MolecularEntity_tes> ;
+          rdf:type [ <MolecularEntity> ] ? ;
+          &<Mixture_tes> ;
+          rdf:type [ <Mixture> ] ? ;
+          <has_active_ingredient> @<ChemicalSubstance> * ;
+          <has_excipient> @<ChemicalSubstance> * ;
+          <has_constituent> @<ChemicalSubstance> *
        ) ;
        rdf:type [ <Drug> ]
     )
@@ -804,6 +809,18 @@ metatype:Nodeidentifier NONLITERAL
           <onset_qualifier> @<Onset> ?
        ) ;
        rdf:type [ <ExposureEventToPhenotypicFeatureAssociation> ]
+    )
+}
+
+<Food> CLOSED {
+    (  $<Food_tes> (  &<MolecularEntity_tes> ;
+          rdf:type [ <MolecularEntity> ] ? ;
+          &<Mixture_tes> ;
+          rdf:type [ <Mixture> ] ? ;
+          <has_nutrient> @<ChemicalSubstance> * ;
+          <has_constituent> @<ChemicalSubstance> *
+       ) ;
+       rdf:type [ <Food> ]
     )
 }
 
@@ -1393,6 +1410,12 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<Mixture> {
+    (  $<Mixture_tes> <has_constituent> @<ChemicalSubstance> * ;
+       rdf:type [ <Mixture> ] ?
+    )
+}
+
 <ModelToDiseaseMixin> {
     (  $<ModelToDiseaseMixin_tes> (  <subject> @<NamedThing> ;
           <relation> @metatype:Uriorcurie
@@ -1426,7 +1449,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <MolecularEntity> ]
        )
-    } OR @<ChemicalSubstance> OR @<GeneFamily> OR @<GenomicEntity>
+    } OR @<ChemicalSubstance> OR @<Drug> OR @<Food> OR @<GeneFamily> OR @<GenomicEntity>
 )
 
 <NamedThing>  (
@@ -1631,6 +1654,14 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <Occurrent> ] ?
        ) ;
        rdf:type [ <Procedure> ]
+    )
+}
+
+<ProcessedMaterial> CLOSED {
+    (  $<ProcessedMaterial_tes> (  &<ChemicalSubstance_tes> ;
+          rdf:type [ <ChemicalSubstance> ] ?
+       ) ;
+       rdf:type [ <ProcessedMaterial> ]
     )
 }
 

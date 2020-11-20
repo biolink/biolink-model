@@ -34,6 +34,7 @@ prefixes:
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
+  foodb.compound: 'http://foodb.ca/compounds/'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
@@ -2017,9 +2018,30 @@ slots:
       - RTXKG1:realized_in_response_to
       - RTXKG1:realized_in_response_to_stimulus
 
+  ameliorates:
+    is_a: affects
+    description: >-
+      hA relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+    required: true
+    # 'biological entity' currently includes 'exposure event' which covers alot of related ground
+    domain: biological entity
+    range: disease or phenotypic feature
+    exact_mappings:
+      - RO:0003307
+
+  exacerbates:
+    is_a: affects
+    description: >-
+      A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+    # 'biological entity' currently includes 'exposure event' which covers alot of related ground
+    domain: biological entity
+    range: disease or phenotypic feature
+    exact_mappings:
+      - RO:0003309
+
   treats:
     aliases: ['is substance that treats']
-    is_a: affects
+    is_a: ameliorates
     description: >-
       holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
     required: true
@@ -3479,6 +3501,10 @@ slots:
     domain: association
     range: uriorcurie
     required: true
+    id_prefixes:
+      - RO
+      - BSPO
+      - SIO
 
   negated:
     is_a: association slot
@@ -3664,6 +3690,43 @@ slots:
       the process or entity that the receptor is being exposed to
     mappings:
       - ExO:0000000
+
+  has constituent:
+    is_a: node property
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more chemical substances within a mixture
+
+  has active ingredient:
+    is_a: node property
+    domain: drug
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more chemical substance which are the active ingredient(s) of a drug
+    exact_mappings:
+      - WIKIDATA:Q912807
+
+  has excipient:
+    is_a: node property
+    domain: drug
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
+    exact_mappings:
+      - WIKIDATA:Q902638
+
+  has nutrient:
+    is_a: node property
+    domain: food
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more chemical substance which are growth factors for a living organism
+    exact_mappings:
+      - WIKIDATA:Q181394
 
   has route:
     is_a: node property
@@ -4957,13 +5020,33 @@ classes:
     id_prefixes:
       - PUBCHEM.SUBSTANCE
 
-  drug:
+  processed material:
     is_a: chemical substance
     description: >-
+      A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+    mappings:
+      - OBI:0000047
+
+  mixture:
+    abstract: true
+    mixin: true
+    description: >-
+      The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
+    slots:
+      - has constituent
+
+  drug:
+    is_a: molecular entity
+    mixins:
+      - mixture
+    description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    slots:
+      - has active ingredient
+      - has excipient
     comments:
       - The CHEBI ID represents a role rather than a substance
-    mappings:
+    exact_mappings:
       - WIKIDATA:Q12140
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
@@ -4971,6 +5054,17 @@ classes:
       - UMLSST:clnd
     id_prefixes:
       - PHARMGKB.DRUG
+
+  food:
+    is_a: molecular entity
+    mixins:
+      - mixture
+    description: >-
+      A substance consumed by a living organism as a source of nutrition
+    slots:
+      - has nutrient
+    id_prefixes:
+      - foodb.compound
 
   metabolite:
     is_a: chemical substance
