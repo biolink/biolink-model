@@ -3669,12 +3669,32 @@ slots:
   has active ingredient:
     is_a: node property
     domain: drug
-    range: molecular entity
+    range: chemical substance
     multivalued: true
     description: >-
-      one or more molecular entities which are the active ingredient(s) of a drug
+      one or more chemical substance which are the active ingredient(s) of a drug
     exact_mappings:
       - WIKIDATA:Q912807
+
+   has excipient:
+    is_a: node property
+    domain: drug
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
+    exact_mappings:
+      - WIKIDATA:Q902638
+
+   has nutrient:
+    is_a: node property
+    domain: food
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more chemical substance which are growth factors for a living organism
+    exact_mappings:
+      - WIKIDATA:Q181394
 
   has route:
     is_a: node property
@@ -4979,7 +4999,13 @@ classes:
     abstract: true
     mixin: true
     description: >-
-      any grouping of multiple molecular entities
+      The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
+    slots:
+      - has component
+    slot_usage:
+      component of:
+        range: chemical substance
+        multivalued: true
 
   drug:
     is_a: molecular entity
@@ -4989,6 +5015,7 @@ classes:
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     slots:
       - has active ingredient
+      - has excipient
     comments:
       - The CHEBI ID represents a role rather than a substance
     exact_mappings:
@@ -5002,11 +5029,12 @@ classes:
 
   food:
     is_a: molecular entity
-    # I think that food is also generally a mixture
     mixins:
       - mixture
     description: >-
-      A substance encountered by nutritional consumption
+      A substance consumed by a living organism as a source of nutrition
+    slots:
+      - has nutrient
     id_prefixes:
       - foodb.compound
 
