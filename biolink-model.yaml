@@ -34,6 +34,7 @@ prefixes:
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
+  foodb.compound: 'http://foodb.ca/compounds/'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
@@ -3665,6 +3666,43 @@ slots:
     mappings:
       - ExO:0000000
 
+  has constituent:
+    is_a: node property
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more chemical substances within a mixture
+
+  has active ingredient:
+    is_a: node property
+    domain: drug
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more chemical substance which are the active ingredient(s) of a drug
+    exact_mappings:
+      - WIKIDATA:Q912807
+
+  has excipient:
+    is_a: node property
+    domain: drug
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
+    exact_mappings:
+      - WIKIDATA:Q902638
+
+  has nutrient:
+    is_a: node property
+    domain: food
+    range: chemical substance
+    multivalued: true
+    description: >-
+      one or more chemical substance which are growth factors for a living organism
+    exact_mappings:
+      - WIKIDATA:Q181394
+
   has route:
     is_a: node property
     domain: exposure event
@@ -4957,13 +4995,33 @@ classes:
     id_prefixes:
       - PUBCHEM.SUBSTANCE
 
-  drug:
+  processed material:
     is_a: chemical substance
     description: >-
+      A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+    mappings:
+      - OBI:0000047
+
+  mixture:
+    abstract: true
+    mixin: true
+    description: >-
+      The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
+    slots:
+      - has constituent
+
+  drug:
+    is_a: molecular entity
+    mixins:
+      - mixture
+    description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    slots:
+      - has active ingredient
+      - has excipient
     comments:
       - The CHEBI ID represents a role rather than a substance
-    mappings:
+    exact_mappings:
       - WIKIDATA:Q12140
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
@@ -4971,6 +5029,17 @@ classes:
       - UMLSST:clnd
     id_prefixes:
       - PHARMGKB.DRUG
+
+  food:
+    is_a: molecular entity
+    mixins:
+      - mixture
+    description: >-
+      A substance consumed by a living organism as a source of nutrition
+    slots:
+      - has nutrient
+    id_prefixes:
+      - foodb.compound
 
   metabolite:
     is_a: chemical substance
