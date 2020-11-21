@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-11-17 00:02\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-11-21 00:06\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"
@@ -9,6 +9,7 @@
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://identifiers.org/biogrid/",
       "BIOSAMPLE": "http://identifiers.org/biosample/",
+      "BSPO": "http://purl.obolibrary.org/obo/BSPO_",
       "CAID": "http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=",
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
       "CHEMBL.COMPOUND": "http://identifiers.org/chembl.compound/",
@@ -149,6 +150,7 @@
       "doi": "https://doi.org/",
       "fabio": "http://purl.org/spar/fabio/",
       "foaf": "http://xmlns.com/foaf/0.1/",
+      "foodb.compound": "http://foodb.ca/compounds/",
       "gff3": "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#",
       "gpi": "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
@@ -232,6 +234,9 @@
          "@type": "@id"
       },
       "id": "@id",
+      "ameliorates": {
+         "@type": "@id"
+      },
       "association_type": {
          "@type": "@id"
       },
@@ -386,6 +391,9 @@
       "end_interbase_coordinate": {
          "@type": "xsd:integer"
       },
+      "exacerbates": {
+         "@type": "@id"
+      },
       "exact_match": {
          "@type": "@id"
       },
@@ -410,6 +418,9 @@
       "genetically_interacts_with": {
          "@type": "@id"
       },
+      "has_active_ingredient": {
+         "@type": "@id"
+      },
       "has_attribute": {
          "@type": "@id"
       },
@@ -425,6 +436,9 @@
       "has_confidence_level": {
          "@type": "@id"
       },
+      "has_constituent": {
+         "@type": "@id"
+      },
       "has_count": {
          "@type": "xsd:integer"
       },
@@ -435,6 +449,9 @@
          "@type": "@id"
       },
       "has_evidence": {
+         "@type": "@id"
+      },
+      "has_excipient": {
          "@type": "@id"
       },
       "has_gene": {
@@ -457,6 +474,9 @@
       },
       "has_numeric_value": {
          "@type": "xsd:double"
+      },
+      "has_nutrient": {
+         "@type": "@id"
       },
       "has_output": {
          "@type": "@id"

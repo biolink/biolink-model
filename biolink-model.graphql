@@ -665,12 +665,15 @@ interface DistributionLevel
     downloadUrl: String
   }
 
-type Drug
+type Drug implements Mixture
   {
     id: String!
     name: LabelType!
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    hasActiveIngredient: [ChemicalSubstance]
+    hasExcipient: [ChemicalSubstance]
+    hasConstituent: [ChemicalSubstance]
   }
 
 type DrugExposure
@@ -788,6 +791,16 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+  }
+
+type Food implements Mixture
+  {
+    id: String!
+    name: LabelType!
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasNutrient: [ChemicalSubstance]
+    hasConstituent: [ChemicalSubstance]
   }
 
 interface FrequencyQualifierMixin
@@ -1433,6 +1446,11 @@ type MicroRNA
     xref: [IriType]
   }
 
+interface Mixture
+  {
+    hasConstituent: [ChemicalSubstance]
+  }
+
 interface ModelToDiseaseMixin
   {
     subject: NamedThing!
@@ -1651,6 +1669,14 @@ type Procedure
     id: String!
     name: LabelType!
     category: [CategoryType]!
+  }
+
+type ProcessedMaterial
+  {
+    id: String!
+    name: LabelType!
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
   }
 
 type Protein
