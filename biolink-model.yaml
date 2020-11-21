@@ -54,6 +54,7 @@ prefixes:
   isni: 'https://isni.org/isni/'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  MI: 'http://purl.obolibrary.org/obo/MI_'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
@@ -1411,9 +1412,11 @@ slots:
       - CTD:decreases_import
 
   regulates:
-    is_a: affects
+    # direct is_a inheritance from a non-mixin class is not allowed
+    # we defer this inheritance to the classes which this mixin in its mixins
+    # is_a: affects
     comments:
-      - This is a grouping for process-process and entity-entity relations
+      - This is a grouping for process-process and entity-entity regulation.
     mixin: true
     abstract: true
     close_mappings:
@@ -1435,7 +1438,7 @@ slots:
 
   positively regulates:
     comments:
-      - This is a grouping for process-process and entity-entity relations
+      - This is a grouping for positive process-process and entity-entity regulation.
     is_a: regulates
     mixin: true
     abstract: true
@@ -1455,7 +1458,7 @@ slots:
 
   negatively regulates:
     comments:
-      - This is a grouping for process-process and entity-entity relations
+      - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
     mixin: true
     abstract: true
@@ -1479,7 +1482,9 @@ slots:
       - RO:0002630
 
   regulates, process to process:
-    is_a: regulates
+    is_a: affects
+    mixins:
+      - regulates
     domain: occurrent
     range: occurrent
     exact_mappings:
@@ -1501,7 +1506,9 @@ slots:
 
   regulates, entity to entity:
     aliases: ['activity directly regulates activity of']
-    is_a: regulates
+    is_a: affects
+    mixins:
+      - regulates
     domain: molecular entity
     range: molecular entity
     local_names:
@@ -3808,6 +3815,16 @@ slots:
     mappings:
       - WIKIDATA_PROPERTY:P274
 
+  interacting molecules category:
+    range: ontology class
+    exact_mappings:
+      - MI:1046
+    values_from:
+      - MI
+    examples:
+      - value: MI:1048
+        description: smallmolecule-protein
+
   aggregate statistic:
     is_a: node property
     abstract: true
@@ -4176,8 +4193,11 @@ classes:
     mappings:
       - SIO:000614
     is_a: abstract entity
-    mixins:
-      - ontology class
+    # biolink:OntologyClass is not a mixin thus cannot be used as such here.  Moreover,
+    # the 'biolink:has_attribute_type' slot is also of a biolink:OntologyClass which points
+    # to  semantic redundancy in this class.  Better to simply remove the mixins declaration
+    #mixins:
+    #  - ontology class
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
@@ -4203,19 +4223,19 @@ classes:
   ## ------
 
   biological sex:
-    subclass_of: "PATO:0000047"
+    subclass_of: PATO:0000047
     is_a: attribute
 
   phenotypic sex:
     description: >-
       An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-    subclass_of: "PATO:0001894"
+    subclass_of: PATO:0001894
     is_a: biological sex
 
   genotypic sex:
     description: >-
       An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
-    subclass_of: "PATO:0020000"
+    subclass_of: PATO:0020000
     is_a: biological sex
 
   severity value:
@@ -4262,16 +4282,18 @@ classes:
     is_a: attribute
 
   relationship quantifier:
-    abstract: true
     mixin: true
+    abstract: true
 
   sensitivity quantifier:
     is_a: relationship quantifier
     mixin: true
+    abstract: true
 
   specificity quantifier:
     is_a: relationship quantifier
     mixin: true
+    abstract: true
 
   pathognomonicity quantifier:
     is_a: specificity quantifier
@@ -4279,10 +4301,12 @@ classes:
       A relationship quantifier between a variant or symptom and a disease, which is
       high when the presence of the feature implies the existence of the disease
     mixin: true
+    abstract: true
 
   frequency quantifier:
     is_a: relationship quantifier
     mixin: true
+    abstract: true
     slots:
       - has count
       - has total
@@ -4378,8 +4402,8 @@ classes:
       - retrieved on
 
 #  data set descriptor:
-#    abstract: true
 #    mixin: true
+#    abstract: true
 
   data set:
     is_a: information content entity
@@ -4536,6 +4560,7 @@ classes:
   distribution level:
     is_a: data set version
     mixin: true
+    abstract: true
     slots:
       - download url
     mappings:
@@ -4544,6 +4569,7 @@ classes:
   data set summary:
     is_a: data set version
     mixin: true
+    abstract: true
     slots:
       - source web page
 
@@ -4573,8 +4599,8 @@ classes:
       - testing
 
   thing with taxon:
-    abstract: true
     mixin: true
+    abstract: true
     description: >-
       A mixin that can be used on any entity with a taxon
     slots:
@@ -4605,7 +4631,7 @@ classes:
     mixins:
       - thing with taxon
     is_a: organismal entity
-    subclass_of: "NCBITaxon:1"
+    subclass_of: NCBITaxon:1
     mappings:
       - SIO:010000
       - WIKIDATA:Q795052
@@ -4703,17 +4729,16 @@ classes:
       - HANCESTRO
 
   subject of investigation:
-    abstract: true
     mixin: true
+    abstract: true
     description: >-
       An entity that has the role of being studied in an investigation, study, or experiment
       
   material sample:
     aliases: ['biospecimen', 'sample', 'biosample', 'physical sample']
-    is_a: named thing
+    is_a: physical entity
     mixins:
       - subject of investigation
-      - physical entity
     description: >-
       A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
     mappings:
@@ -4916,7 +4941,7 @@ classes:
     is_a: biological entity
     mixins:
       - thing with taxon
-      - physical entity
+      - physical essence
     aliases: ['bioentity']
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
     #notes:
@@ -4935,7 +4960,7 @@ classes:
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
-    subclass_of: "CHEBI:24431"
+    subclass_of: CHEBI:24431
     mappings:
       - SIO:010004
       - WIKIDATA:Q79529
@@ -5074,19 +5099,12 @@ classes:
       - The CHEBI ID represents a role rather than a substance
     mappings:
       - CHEBI:25212
-#
-#    attribute:
-#    subclass_of: PATO:0000001
-#      mixins:
-#        - ontology class
-#      description: >-
-#        A property or characteristic of an entity
 
   anatomical entity:
     is_a: organismal entity
     mixins:
       - thing with taxon
-      - physical entity
+      - physical essence
     subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
@@ -5320,12 +5338,14 @@ classes:
       - ENSEMBL
 
   gene product isoform:
-    is_a: gene product
+    # biolink:GeneProductIsoform is most consistently used as a mixin thus it should
+    # be declared as such and cannot inherit from the non-mixin biolink:GeneProduct
+    #is_a: gene product
     description: >-
       This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to
       represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary,
       or it may represent the superclass of all isoforms.
-#    entity: true
+    mixin: true
     abstract: true
 
   protein isoform:
@@ -5381,7 +5401,7 @@ classes:
 
   macromolecular complex:
     is_a: macromolecular machine
-    subclass_of: "GO:0032991"
+    subclass_of: GO:0032991
     mappings:
       - SIO:010046
       - WIKIDATA:Q22325163
@@ -5392,8 +5412,8 @@ classes:
       - REACT
 
   gene grouping:
-    abstract: true
     mixin: true
+    abstract: true
     description: >-
       any grouping of multiple genes or gene products
 
@@ -5726,12 +5746,35 @@ classes:
           homology relationship type
 
 
-  pairwise interaction association:
-    is_a: association
-    mixin: true
-    abstract: true
+  pairwise gene to gene interaction:
+    is_a: gene to gene association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    description: >-
+      An interaction between two genes or two gene products.
+      May be physical (e.g. protein binding) or genetic (between genes).
+      May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+    slot_usage:
+      predicate:
+        subproperty_of: interacts with
+        symmetric: true
+      relation:
+        values_from:
+          - ro
+          - mi
+        description: "interaction relationship type"
+
+
+  pairwise molecular interaction:
+    is_a: pairwise gene to gene interaction
     description: >-
       An interaction at the molecular level between two physical entities
+    slots:
+      # need to declare a slot before it is used,
+      # then list it in 'slots', not just a slot_usage
+      - interacting molecules category
     defining_slots:
       - subject
       - object
@@ -5747,9 +5790,9 @@ classes:
         values_from:
           - IMEX
           - BioGRID
-      relation:
+      predicate:
         subproperty_of: molecularly interacts with
-#        range: molecularly interacts with
+      relation:
         values_from:
           - ro
           - mi
@@ -5759,40 +5802,12 @@ classes:
             description: the subject molecular phosphorylates the object molecule
       object:
         range: molecular entity
-      interacting molecules category:
-        # TODO: Is this correct?
-        range: ontology class
-#        subclass_of: "MI:1046"
-        examples:
-          - value: MI:1048
-            description: smallmolecule-protein
 
-  pairwise gene to gene interaction:
-    is_a: gene to gene association
-    defining_slots:
-      - subject
-      - object
-      - relation
-    mixins:
-      - pairwise interaction association
-    description: >-
-      An interaction between two genes or two gene products.
-      May be physical (e.g. protein binding) or genetic (between genes).
-      May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
-    slot_usage:
-      relation:
-        subproperty_of: molecularly interacts with
-        symmetric: true
-        values_from:
-          - ro
-          - mi
-        description: "interaction relationship type"
-
-  cell line to thing association:
-    is_a: association
-    defining_slots:
-      - subject
+  cell line to thing association mixin:
+    mixin: true
     abstract: true
+    defining_slots:
+      - subject
     description: >-
       An relationship between a cell line and another entity
     slot_usage:
@@ -5803,8 +5818,8 @@ classes:
   cell line to disease or phenotypic feature association:
     is_a: association
     mixins:
-      - cell line to thing association
-      - thing to disease or phenotypic feature association
+      - cell line to thing association mixin
+      - thing to disease or phenotypic feature association mixin
     description: >-
       An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
     slot_usage:
@@ -5825,11 +5840,11 @@ classes:
         range: chemical substance
         description: "the chemical substance or entity that is an interactor"
 
-  case to thing association:
-    is_a: association
+  case to thing association mixin:
+    mixin: true
+    abstract: true
     defining_slots:
       - subject
-    abstract: true
     description: >-
       An abstract association for use where the case is the subject
     slot_usage:
@@ -5894,7 +5909,7 @@ classes:
       - object
     mixins:
       - chemical to thing association
-      - thing to disease or phenotypic feature association
+      - thing to disease or phenotypic feature association mixin
     description: >-
       An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to
       or exacerbates the phenotype
@@ -5972,18 +5987,18 @@ classes:
 
   material sample to disease or phenotypic feature association:
     is_a: association
+    mixins:
+      - material sample to thing association
+      - thing to disease or phenotypic feature association mixin
     defining_slots:
       - subject
       - object
-    mixins:
-      - material sample to thing association
-      - thing to disease or phenotypic feature association
     description: >-
       An association between a material sample and a disease or phenotype
 
-  disease to thing association:
+  disease to thing association mixin:
+    mixin: true
     abstract: true
-    is_a: association
     defining_slots:
       - subject
     slot_usage:
@@ -5996,7 +6011,9 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
 
   disease to exposure association:
-    is_a: disease to thing association
+    is_a: association
+    mixins:
+      - disease to thing association mixin
     defining_slots:
       - subject
       - object
@@ -6010,14 +6027,15 @@ classes:
 
   frequency qualifier mixin:
     mixin: true
+    abstract: true
     description: >-
       Qualifier for frequency type associations
     slots:
       - frequency qualifier
 
-  entity to feature or disease qualifiers:
-    abstract: true
+  entity to feature or disease qualifiers mixin:
     mixin: true
+    abstract: true
     is_a: frequency qualifier mixin
     description: >-
       Qualifiers for entity to disease or phenotype associations
@@ -6025,13 +6043,12 @@ classes:
       - severity qualifier
       - onset qualifier
 
-  entity to phenotypic feature association:
+  thing to phenotypic feature association mixin:
+    mixin: true
     abstract: true
+    is_a: entity to feature or disease qualifiers mixin
     defining_slots:
       - object
-    is_a: association
-    mixins:
-      - entity to feature or disease qualifiers
     slot_usage:
       description:
         description: >-
@@ -6051,12 +6068,12 @@ classes:
     slots:
       - sex qualifier
 
-  entity to disease association:
+  thing to disease association mixin:
     description: >-
       mixin class for any association whose object (target node) is a disease
-    abstract: true
     mixin: true
-    is_a: entity to feature or disease qualifiers
+    abstract: true
+    is_a: entity to feature or disease qualifiers mixin
     defining_slots:
       - object
     slot_usage:
@@ -6095,9 +6112,9 @@ classes:
           - value: UBERON:0002048
             description: "lung"
 
-  thing to disease or phenotypic feature association:
+  thing to disease or phenotypic feature association mixin:
+    mixin: true
     abstract: true
-    is_a: association
     defining_slots:
       - object
     slot_usage:
@@ -6110,6 +6127,16 @@ classes:
           - value: MP:0013229
             description: "abnormal brain ventricle size"
 
+  genotype to thing association mixin:
+    mixin: true
+    abstract: true
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: genotype
+        description: "genotype that is the subject of the association"
+
   genotype to phenotypic feature association:
     is_a: association
     defining_slots:
@@ -6119,8 +6146,8 @@ classes:
       Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
       either in isolation or through environment
     mixins:
-      - entity to phenotypic feature association
-      - genotype to thing association
+      - thing to phenotypic feature association mixin
+      - genotype to thing association mixin
     slot_usage:
       relation:
         subproperty_of: has phenotype
@@ -6137,7 +6164,7 @@ classes:
     description: >-
       Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
     mixins:
-      - entity to phenotypic feature association
+      - thing to phenotypic feature association mixin
     slot_usage:
       subject:
         range: exposure event
@@ -6149,8 +6176,8 @@ classes:
       - object
     description: "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
     mixins:
-      - entity to phenotypic feature association
-      - disease to thing association
+      - thing to phenotypic feature association mixin
+      - disease to thing association mixin
 
   case to phenotypic feature association:
     is_a: association
@@ -6159,27 +6186,26 @@ classes:
       - object
     description: "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
     mixins:
-      - entity to phenotypic feature association
-      - case to thing association
+      - thing to phenotypic feature association mixin
+      - case to thing association mixin
 
-  gene to thing association:
-    is_a: association
+  gene to thing association mixin:
+    mixin: true
+    abstract: true
     defining_slots:
       - subject
-    abstract: true
     slot_usage:
       subject:
         range: gene or gene product
         description: "gene that is the subject of the association"
 
-  variant to thing association:
-    is_a: association
+  variant to thing association mixin:
     local_names:
       ga4gh: variant annotation
+    mixin: true
+    abstract: true
     defining_slots:
       - subject
-    abstract: true
-    mixin: true
     slot_usage:
       subject:
         range: sequence variant
@@ -6199,8 +6225,8 @@ classes:
       - subject
       - object
     mixins:
-      - entity to phenotypic feature association
-      - gene to thing association
+      - thing to phenotypic feature association mixin
+      - gene to thing association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -6219,8 +6245,8 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association
-      - gene to thing association
+      - thing to disease association mixin
+      - gene to thing association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -6235,7 +6261,7 @@ classes:
       - subject
       - object
     mixins:
-      - variant to thing association
+      - variant to thing association mixin
       - frequency quantifier
       - frequency qualifier mixin
     slot_usage:
@@ -6300,8 +6326,8 @@ classes:
       - subject
       - object
     mixins:
-      - variant to thing association
-      - entity to phenotypic feature association
+      - variant to thing association mixin
+      - thing to phenotypic feature association mixin
     slot_usage:
       subject:
         range: sequence variant
@@ -6316,8 +6342,8 @@ classes:
       - subject
       - object
     mixins:
-      - variant to thing association
-      - entity to disease association
+      - variant to thing association mixin
+      - thing to disease association mixin
     slot_usage:
       subject:
         description: >-
@@ -6336,7 +6362,6 @@ classes:
           - value: MONDO:0016419
             description: hereditary breast cancer
 
-
   genotype to disease association:
     is_a: association
     comments:
@@ -6345,8 +6370,8 @@ classes:
       - subject
       - object
     mixins:
-      - genotype to thing association
-      - entity to disease association
+      - genotype to thing association mixin
+      - thing to disease association mixin
     slot_usage:
       subject:
         description: >-
@@ -6362,7 +6387,7 @@ classes:
           - value: MONDO:0016419
             description: hereditary breast cancer
 
-  model to disease mixin:
+  model to disease association mixin:
     mixin: true
     abstract: true
     description: >-
@@ -6385,8 +6410,8 @@ classes:
       - object
       - relation
     mixins:
-      - model to disease mixin
-      - entity to disease association
+      - model to disease association mixin
+      - thing to disease association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -6401,8 +6426,8 @@ classes:
       - object
       - relation
     mixins:
-      - model to disease mixin
-      - entity to disease association
+      - model to disease association mixin
+      - thing to disease association mixin
     slot_usage:
       subject:
         range: sequence variant
@@ -6416,8 +6441,8 @@ classes:
       - object
       - relation
     mixins:
-      - model to disease mixin
-      - entity to disease association
+      - model to disease association mixin
+      - thing to disease association mixin
     slot_usage:
       subject:
         range: genotype
@@ -6431,8 +6456,8 @@ classes:
       - object
       - relation
     mixins:
-      - model to disease mixin
-      - entity to disease association
+      - model to disease association mixin
+      - thing to disease association mixin
     slot_usage:
       subject:
         range: cell line
@@ -6447,8 +6472,8 @@ classes:
       - object
       - relation
     mixins:
-      - model to disease mixin
-      - entity to disease association
+      - model to disease association mixin
+      - thing to disease association mixin
     slot_usage:
       subject:
         range: organismal entity
@@ -6470,16 +6495,6 @@ classes:
         description: >-
           A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene,
           or it may be a gene whose mutants recapitulate core features of the disease.
-
-  genotype to thing association:
-    is_a: association
-    defining_slots:
-      - subject
-    abstract: true
-    slot_usage:
-      subject:
-        range: genotype
-        description: "genotype that is the subject of the association"
 
   gene to expression site association:
     is_a: association
@@ -6781,14 +6796,26 @@ classes:
   occurrent:
     description: >-
       A processual entity
-    is_a: named thing
+    # biolink:Occurrent is most consistently used as a mixin thus it should
+    # be declared as such and cannot inherit from the non-mixin biolink:NamedThing
+    #is_a: named thing
+    mixin: true
+    abstract: true
     mappings:
       - BFO:0000003
 
-  physical entity:
+  physical essence:
     description: >-
-      An entity that has physical properties such as mass, volume, or charge
+      Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
+    mixin: true
+    abstract: true
+
+  physical entity:
     is_a: named thing
+    mixins:
+      - physical essence
+    description: >-
+      An entity that has material reality (a.k.a. physical essence).
 
   biological process or activity:
     is_a: biological entity
@@ -6841,7 +6868,11 @@ classes:
       - KEGG
 
   activity and behavior:
-    is_a: occurrent
+    # can't inherit directly from mixin biolink:Occurrent
+    # is_a: occurrent
+    is_a: named thing
+    mixins:
+      - occurrent
     description: >-
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
     mappings:
@@ -6876,7 +6907,11 @@ classes:
       - UMLSST:mcha
 
   procedure:
-    is_a: occurrent
+    # can't inherit directly from mixin biolink:Occurrent
+    # is_a: occurrent
+    is_a: named thing
+    mixins:
+      - occurrent
     description: >-
       A series of actions conducted in a certain order or manner
     mappings: # Procedures
@@ -6904,7 +6939,11 @@ classes:
       - UMLSST:edac
 
   phenomenon:
-    is_a: occurrent
+    # can't inherit directly from mixin biolink:Occurrent
+    # is_a: occurrent
+    is_a: named thing
+    mixins:
+      - occurrent
     description: >-
       a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
     mappings:

@@ -1,0 +1,34 @@
+digraph {
+	graph [bb="0,0,507.68,123"];
+	node [label="\N"];
+	"model to disease association mixin"	 [height=0.5,
+		label="model to disease association mixin",
+		pos="135.19,105",
+		width=3.7552];
+	subject	 [height=0.5,
+		pos="90.188,18",
+		width=0.99297];
+	"model to disease association mixin" -> subject	 [color=blue,
+		label=subject,
+		lp="135.69,61.5",
+		pos="e,99.346,35.706 125.86,86.974 119.55,74.761 111.09,58.412 104,44.697",
+		style=solid];
+	relation	 [height=0.5,
+		pos="181.19,18",
+		width=1.0471];
+	"model to disease association mixin" -> relation	 [color=blue,
+		label=relation,
+		lp="186.19,61.5",
+		pos="e,174.42,35.838 148.3,86.713 152.04,81.154 155.96,74.94 159.19,69 163.27,61.493 167.16,53.074 170.5,45.273",
+		style=solid];
+	"model to disease association mixin_subject"	 [color=blue,
+		height=0.5,
+		label="named thing",
+		pos="343.19,105",
+		width=1.5346];
+	"model to disease association mixin_relation"	 [color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="462.19,105",
+		width=1.2638];
+}

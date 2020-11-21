@@ -105,9 +105,6 @@ message Attribute
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -134,9 +131,6 @@ message BiologicalSex
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -206,11 +200,11 @@ message CaseToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated providedBy Agent = 10
-  optional sexQualifier BiologicalSex = 11
-  optional description NarrativeText = 12
-  optional frequencyQualifier FrequencyValue = 13
-  optional severityQualifier SeverityValue = 14
-  optional onsetQualifier Onset = 15
+  optional frequencyQualifier FrequencyValue = 11
+  optional severityQualifier SeverityValue = 12
+  optional onsetQualifier Onset = 13
+  optional sexQualifier BiologicalSex = 14
+  optional description NarrativeText = 15
  }
 message Cell
  {
@@ -362,9 +356,6 @@ message ClinicalCourse
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 // Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 message ClinicalEntity
@@ -385,9 +376,6 @@ message ClinicalModifier
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 message ClinicalTrial
  {
@@ -529,11 +517,11 @@ message DiseaseToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated providedBy Agent = 10
-  optional sexQualifier BiologicalSex = 11
-  optional description NarrativeText = 12
-  optional frequencyQualifier FrequencyValue = 13
-  optional severityQualifier SeverityValue = 14
-  optional onsetQualifier Onset = 15
+  optional frequencyQualifier FrequencyValue = 11
+  optional severityQualifier SeverityValue = 12
+  optional onsetQualifier Onset = 13
+  optional sexQualifier BiologicalSex = 14
+  optional description NarrativeText = 15
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
@@ -621,11 +609,11 @@ message ExposureEventToPhenotypicFeatureAssociation
   repeated publications Publication = 8
   repeated providedBy Agent = 9
   subject ExposureEvent = 10
-  optional sexQualifier BiologicalSex = 11
-  optional description NarrativeText = 12
-  optional frequencyQualifier FrequencyValue = 13
-  optional severityQualifier SeverityValue = 14
-  optional onsetQualifier Onset = 15
+  optional frequencyQualifier FrequencyValue = 11
+  optional severityQualifier SeverityValue = 12
+  optional onsetQualifier Onset = 13
+  optional sexQualifier BiologicalSex = 14
+  optional description NarrativeText = 15
  }
 // A substance consumed by a living organism as a source of nutrition
 message Food
@@ -643,9 +631,6 @@ message FrequencyValue
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 // An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
 message FunctionalAssociation
@@ -841,11 +826,11 @@ message GeneToPhenotypicFeatureAssociation
   repeated publications Publication = 8
   repeated providedBy Agent = 9
   subject GeneOrGeneProduct = 10
-  optional sexQualifier BiologicalSex = 11
-  optional description NarrativeText = 12
-  optional frequencyQualifier FrequencyValue = 13
-  optional severityQualifier SeverityValue = 14
-  optional onsetQualifier Onset = 15
+  optional frequencyQualifier FrequencyValue = 11
+  optional severityQualifier SeverityValue = 12
+  optional onsetQualifier Onset = 13
+  optional sexQualifier BiologicalSex = 14
+  optional description NarrativeText = 15
  }
 // A genome is the sum of genetic material within a cell or virion.
 message Genome
@@ -967,11 +952,11 @@ message GenotypeToPhenotypicFeatureAssociation
   repeated providedBy Agent = 8
   relation Uriorcurie = 9
   subject Genotype = 10
-  optional sexQualifier BiologicalSex = 11
-  optional description NarrativeText = 12
-  optional frequencyQualifier FrequencyValue = 13
-  optional severityQualifier SeverityValue = 14
-  optional onsetQualifier Onset = 15
+  optional frequencyQualifier FrequencyValue = 11
+  optional severityQualifier SeverityValue = 12
+  optional onsetQualifier Onset = 13
+  optional sexQualifier BiologicalSex = 14
+  optional description NarrativeText = 15
  }
 // Any association between a genotype and a sequence variant.
 message GenotypeToVariantAssociation
@@ -993,9 +978,6 @@ message GenotypicSex
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
@@ -1045,9 +1027,6 @@ message Inheritance
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 // A stage of development or growth of an organism, including post-natal adult stages
 message LifeStage
@@ -1207,22 +1186,12 @@ message NoncodingRNAProduct
   repeated synonym LabelType = 7
   repeated xref IriType = 8
  }
-// A processual entity
-message Occurrent
- {
-  id String = 1
-  name LabelType = 2
-  repeated category CategoryType = 3
- }
 // The age group in which manifestations appear
 message Onset
  {
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 // a concept or class in an ontology, vocabulary or thesaurus
 message OntologyClass
@@ -1259,15 +1228,29 @@ message PairwiseGeneToGeneInteraction
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
-  optional negated Boolean = 4
-  repeated qualifiers OntologyClass = 5
-  repeated publications Publication = 6
-  repeated providedBy Agent = 7
-  subject GeneOrGeneProduct = 8
-  object GeneOrGeneProduct = 9
+  optional negated Boolean = 3
+  repeated qualifiers OntologyClass = 4
+  repeated publications Publication = 5
+  repeated providedBy Agent = 6
+  subject GeneOrGeneProduct = 7
+  object GeneOrGeneProduct = 8
+  predicate PredicateType = 9
   relation Uriorcurie = 10
-  optional interactingMoleculesCategory OntologyClass = 11
+ }
+// An interaction at the molecular level between two physical entities
+message PairwiseMolecularInteraction
+ {
+  optional associationType OntologyClass = 1
+  optional negated Boolean = 2
+  repeated qualifiers OntologyClass = 3
+  repeated publications Publication = 4
+  repeated providedBy Agent = 5
+  optional interactingMoleculesCategory OntologyClass = 6
+  subject MolecularEntity = 7
+  id String = 8
+  predicate PredicateType = 9
+  relation Uriorcurie = 10
+  object MolecularEntity = 11
  }
 message Pathway
  {
@@ -1298,11 +1281,8 @@ message PhenotypicSex
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
-// An entity that has physical properties such as mass, volume, or charge
+// An entity that has material reality (a.k.a. physical essence).
 message PhysicalEntity
  {
   id String = 1
@@ -1516,9 +1496,6 @@ message SeverityValue
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
@@ -1621,11 +1598,11 @@ message VariantToPhenotypicFeatureAssociation
   repeated publications Publication = 8
   repeated providedBy Agent = 9
   subject SequenceVariant = 10
-  optional sexQualifier BiologicalSex = 11
-  optional description NarrativeText = 12
-  optional frequencyQualifier FrequencyValue = 13
-  optional severityQualifier SeverityValue = 14
-  optional onsetQualifier Onset = 15
+  optional frequencyQualifier FrequencyValue = 11
+  optional severityQualifier SeverityValue = 12
+  optional onsetQualifier Onset = 13
+  optional sexQualifier BiologicalSex = 14
+  optional description NarrativeText = 15
  }
 // An association between a variant and a population, where the variant has particular frequency in the population
 message VariantToPopulationAssociation
@@ -1651,8 +1628,5 @@ message Zygosity
   optional hasAttributeType OntologyClass = 1
   repeated hasQuantitativeValue QuantityValue = 2
   optional hasQualitativeValue NamedThing = 3
-  id String = 4
-  name LabelType = 5
-  repeated category CategoryType = 6
  }
 

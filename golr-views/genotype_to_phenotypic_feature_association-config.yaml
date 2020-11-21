@@ -42,14 +42,6 @@ fields:
 - id: subject
   description: genotype that is associated with the phenotypic feature
   display_name: genotype to phenotypic feature association_subject
-- id: sex_qualifier
-  description: a qualifier used in a phenotypic association to state whether the association
-    is specific to a particular sex.
-  display_name: sex qualifier
-- id: description
-  description: A description of specific aspects of this phenotype, not otherwise
-    covered by the phenotype ontology class
-  display_name: entity to phenotypic feature association_description
 - id: frequency_qualifier
   description: a qualifier used in a phenotypic association to state how frequent
     the phenotype is observed in the subject
@@ -62,3 +54,11 @@ fields:
   description: a qualifier used in a phenotypic association to state when the phenotype
     appears is in the subject
   display_name: onset qualifier
+- id: sex_qualifier
+  description: a qualifier used in a phenotypic association to state whether the association
+    is specific to a particular sex.
+  display_name: sex qualifier
+- id: description
+  description: A description of specific aspects of this phenotype, not otherwise
+    covered by the phenotype ontology class
+  display_name: thing to phenotypic feature association mixin_description

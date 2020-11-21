@@ -1,0 +1,21 @@
+digraph {
+	graph [bb="0,0,352.04,123"];
+	node [label="\N"];
+	"disease to thing association mixin"	 [height=0.5,
+		label="disease to thing association mixin",
+		pos="130.64,105",
+		width=3.6288];
+	subject	 [height=0.5,
+		pos="130.64,18",
+		width=0.99297];
+	"disease to thing association mixin" -> subject	 [color=blue,
+		label=subject,
+		lp="150.14,61.5",
+		pos="e,130.64,36.003 130.64,86.974 130.64,75.192 130.64,59.561 130.64,46.158",
+		style=solid];
+	"disease to thing association mixin_subject"	 [color=blue,
+		height=0.5,
+		label=disease,
+		pos="315.64,105",
+		width=1.011];
+}
