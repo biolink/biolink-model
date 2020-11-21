@@ -18,7 +18,7 @@ foaf:Person
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[IndividualOrganism],[CaseToThingAssociation],[CaseToThingAssociation]-%20subject%201..1%3E[Case%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[IndividualOrganism]%5E-[Case])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[IndividualOrganism],[CaseToThingAssociationMixin],[CaseToThingAssociationMixin]-%20subject%201..1%3E[Case%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[IndividualOrganism]%5E-[Case])
 
 ---
 
@@ -29,7 +29,7 @@ foaf:Person
 
 ## Referenced by class
 
- *  **[CaseToThingAssociation](CaseToThingAssociation.md)** *[case to thing association➞subject](case_to_thing_association_subject.md)*  <sub>REQ</sub>  **[Case](Case.md)**
+ *  **[CaseToThingAssociationMixin](CaseToThingAssociationMixin.md)** *[case to thing association mixin➞subject](case_to_thing_association_mixin_subject.md)*  <sub>REQ</sub>  **[Case](Case.md)**
 
 ## Attributes
 

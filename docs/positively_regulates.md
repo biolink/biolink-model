@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: positively_regulates
+# Slot: positively_regulates
 
 
 
@@ -14,7 +14,7 @@ URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_re
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+None ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -30,7 +30,7 @@ URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_re
 
 |  |  |  |
 | --- | --- | --- |
-| **Comments:** | | This is a grouping for process-process and entity-entity relations |
+| **Comments:** | | This is a grouping for positive process-process and entity-entity regulation. |
 | **Exact Mappings:** | | RO:0002213 |
 |  | | GO:positively_regulates |
 | **Close Mappings:** | | GO:positively_regulated_by |

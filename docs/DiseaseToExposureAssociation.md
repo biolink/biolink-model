@@ -15,14 +15,18 @@ URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/Disea
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[ExposureEvent],[DiseaseToThingAssociation],[ExposureEvent]%3Cobject%201..1-%20[DiseaseToExposureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[Disease]%3Csubject%201..1-%20[DiseaseToExposureAssociation],[DiseaseToThingAssociation]%5E-[DiseaseToExposureAssociation],[Disease],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[ExposureEvent],[DiseaseToThingAssociationMixin],[ExposureEvent]%3Cobject%201..1-%20[DiseaseToExposureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[Disease]%3Csubject%201..1-%20[DiseaseToExposureAssociation],[DiseaseToExposureAssociation]uses%20-.-%3E[DiseaseToThingAssociationMixin],[Association]%5E-[DiseaseToExposureAssociation],[Disease],[Association],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
+ *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
+## Uses Mixins
+
+ *  mixin: [DiseaseToThingAssociationMixin](DiseaseToThingAssociationMixin.md)
 
 ## Referenced by class
 

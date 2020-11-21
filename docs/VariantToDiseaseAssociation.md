@@ -15,7 +15,7 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociation],[NamedThing]%3Cobject%201..1-%20[VariantToDiseaseAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[NamedThing]%3Csubject%201..1-%20[VariantToDiseaseAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociation],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[Association]%5E-[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToDiseaseAssociation],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociationMixin],[NamedThing]%3Cobject%201..1-%20[VariantToDiseaseAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[NamedThing]%3Csubject%201..1-%20[VariantToDiseaseAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[Association]%5E-[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[ThingToDiseaseAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[Association],[Agent])
 
 ---
 
@@ -26,8 +26,8 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
 
 ## Uses Mixins
 
- *  mixin: [VariantToThingAssociation](VariantToThingAssociation.md)
- *  mixin: [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
+ *  mixin: [VariantToThingAssociationMixin](VariantToThingAssociationMixin.md)
+ *  mixin: [ThingToDiseaseAssociationMixin](ThingToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
 
 ## Children
 
@@ -87,7 +87,7 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from entity to feature or disease qualifiers:
+### Inherited from entity to feature or disease qualifiers mixin:
 
  * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject

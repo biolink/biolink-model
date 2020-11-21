@@ -15,7 +15,7 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ExposureEvent]%3Csubject%201..1-%20[ExposureEventToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[ExposureEvent],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ExposureEvent]%3Csubject%201..1-%20[ExposureEventToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[ExposureEvent],[BiologicalSex],[Association],[Agent])
 
 ---
 
@@ -26,7 +26,7 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
 
 ## Uses Mixins
 
- *  mixin: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+ *  mixin: [ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)
 
 ## Referenced by class
 
@@ -73,7 +73,7 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from entity to feature or disease qualifiers:
+### Inherited from entity to feature or disease qualifiers mixin:
 
  * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
@@ -82,26 +82,26 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * range: [Onset](Onset.md)
 
-### Inherited from entity to phenotypic feature association:
-
- * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-    * range: [BiologicalSex](BiologicalSex.md)
- * [entity to phenotypic feature association➞description](entity_to_phenotypic_feature_association_description.md)  <sub>OPT</sub>
-    * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
-    * range: [NarrativeText](types/NarrativeText.md)
- * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
-    * Description: phenotypic class
-    * range: [PhenotypicFeature](PhenotypicFeature.md)
-    * Example:    
-    * Example:    
-    * Example:    
-
 ### Inherited from frequency qualifier mixin:
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)
+
+### Inherited from thing to phenotypic feature association mixin:
+
+ * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+    * range: [BiologicalSex](BiologicalSex.md)
+ * [thing to phenotypic feature association mixin➞description](thing_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
+    * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
+    * range: [NarrativeText](types/NarrativeText.md)
+ * [thing to phenotypic feature association mixin➞object](thing_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+    * Description: phenotypic class
+    * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * Example:    
+    * Example:    
+    * Example:    
 
 ### Domain for slot:
 

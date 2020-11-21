@@ -15,14 +15,14 @@ URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/vocab/FrequencyQ
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[FrequencyValue],[FrequencyValue]%3Cfrequency%20qualifier%200..1-%20[FrequencyQualifierMixin],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiers],[VariantToPopulationAssociation],[EntityToFeatureOrDiseaseQualifiers])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[FrequencyValue],[FrequencyValue]%3Cfrequency%20qualifier%200..1-++[FrequencyQualifierMixin],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[VariantToPopulationAssociation],[EntityToFeatureOrDiseaseQualifiersMixin])
 
 ---
 
 
 ## Children
 
- * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
+ * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations
 
 ## Mixin for
 

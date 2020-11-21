@@ -8,14 +8,14 @@ layout: default
 # Class: PhysicalEntity
 
 
-An entity that has physical properties such as mass, volume, or charge
+An entity that has material reality (a.k.a. physical essence).
 
 URI: [biolink:PhysicalEntity](https://w3id.org/biolink/vocab/PhysicalEntity)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalProcessOrActivity]-%20enabled%20by%200..%2A%3E[PhysicalEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[MolecularEntity]uses%20-.-%3E[PhysicalEntity],[MaterialSample]uses%20-.-%3E[PhysicalEntity],[AnatomicalEntity]uses%20-.-%3E[PhysicalEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing],[MolecularEntity],[MaterialSample],[BiologicalProcessOrActivity],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[BiologicalProcessOrActivity]-%20enabled%20by%200..%2A%3E[PhysicalEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[PhysicalEntity]uses%20-.-%3E[PhysicalEssence],[PhysicalEntity]%5E-[MaterialSample],[NamedThing]%5E-[PhysicalEntity],[NamedThing],[MaterialSample],[BiologicalProcessOrActivity])
 
 ---
 
@@ -24,11 +24,13 @@ URI: [biolink:PhysicalEntity](https://w3id.org/biolink/vocab/PhysicalEntity)
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
 
-## Mixin for
+## Uses Mixins
 
- * [AnatomicalEntity](AnatomicalEntity.md) (mixin)  - A subcellular location, cell type or gross anatomical part
- * [MaterialSample](MaterialSample.md) (mixin)  - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
- * [MolecularEntity](MolecularEntity.md) (mixin)  - A gene, gene product, small molecule or macromolecule (including protein complex)
+ *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
+
+## Children
+
+ * [MaterialSample](MaterialSample.md) - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 
 ## Referenced by class
 

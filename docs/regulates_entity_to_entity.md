@@ -21,7 +21,7 @@ URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulat
 
 ## Parents
 
- *  is_a: [regulates](regulates.md)
+ *  is_a: [affects](affects.md)
 
 ## Children
 

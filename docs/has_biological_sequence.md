@@ -32,7 +32,6 @@ URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biolog
  * [Gene](Gene.md)
  * [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [GeneProduct](GeneProduct.md)
- * [GeneProductIsoform](GeneProductIsoform.md)
  * [Genome](Genome.md)
  * [GenomicEntity](GenomicEntity.md)
  * [Genotype](Genotype.md)

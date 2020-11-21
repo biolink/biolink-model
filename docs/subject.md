@@ -32,10 +32,8 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
  * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
- * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md)
  * [SequenceAssociation](SequenceAssociation.md)
- * [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
 
 ## Other properties
 

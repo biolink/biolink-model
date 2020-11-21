@@ -24,7 +24,7 @@ WIKIDATA:Q169872
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[EntityToPhenotypicFeatureAssociation]-%20object%201..1%3E[PhenotypicFeature%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],[OrganismTaxon],[EntityToPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[BiologicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[ThingToPhenotypicFeatureAssociationMixin]-%20object%201..1%3E[PhenotypicFeature%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],[OrganismTaxon],[DiseaseOrPhenotypicFeature],[BiologicalEntity])
 
 ---
 
@@ -51,8 +51,8 @@ WIKIDATA:Q169872
 
 ## Referenced by class
 
- *  **[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)** *[entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)*  <sub>REQ</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
  *  **[BiologicalEntity](BiologicalEntity.md)** *[has phenotype](has_phenotype.md)*  <sub>0..*</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
+ *  **[ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)** *[thing to phenotypic feature association mixin➞object](thing_to_phenotypic_feature_association_mixin_object.md)*  <sub>REQ</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
 
 ## Attributes
 

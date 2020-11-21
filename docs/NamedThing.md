@@ -45,23 +45,24 @@ UMLSST:food
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[PlanetaryEntity],[PhysicalEntity],[OntologyClass],[Occurrent],[GenotypeToDiseaseAssociation]-%20object%201..1%3E[NamedThing%7Cid:string;name:label_type;category:category_type%20%2B],[GenotypeToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20input%200..%2A%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20output%200..%2A%3E[NamedThing],[Attribute]-%20has%20qualitative%20value%200..1%3E[NamedThing],[MaterialSampleDerivationAssociation]-%20object%201..1%3E[NamedThing],[ModelToDiseaseMixin]-%20subject%201..1%3E[NamedThing],[Association]-%20object%201..1%3E[NamedThing],[Association]-%20subject%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[NamedThing]%5E-[PlanetaryEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing]%5E-[OntologyClass],[NamedThing]%5E-[Occurrent],[NamedThing]%5E-[MaterialSample],[NamedThing]%5E-[InformationContentEntity],[NamedThing]%5E-[Device],[NamedThing]%5E-[ClinicalEntity],[NamedThing]%5E-[BiologicalEntity],[NamedThing]%5E-[AdministrativeEntity],[ModelToDiseaseMixin],[MaterialSampleDerivationAssociation],[MaterialSample],[InformationContentEntity],[GenotypeToDiseaseAssociation],[Device],[ClinicalEntity],[BiologicalProcessOrActivity],[BiologicalEntity],[Attribute],[Association],[AdministrativeEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[Procedure],[PlanetaryEntity],[PhysicalEntity],[Phenomenon],[OntologyClass],[Occurrent],[GenotypeToDiseaseAssociation]-%20object%201..1%3E[NamedThing%7Cid:string;name:label_type;category:category_type%20%2B],[GenotypeToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20input%200..%2A%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20output%200..%2A%3E[NamedThing],[Attribute]-%20has%20qualitative%20value%200..1%3E[NamedThing],[MaterialSampleDerivationAssociation]-%20object%201..1%3E[NamedThing],[ModelToDiseaseAssociationMixin]-%20subject%201..1%3E[NamedThing],[Association]-%20object%201..1%3E[NamedThing],[Association]-%20subject%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[NamedThing]%5E-[Procedure],[NamedThing]%5E-[PlanetaryEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing]%5E-[Phenomenon],[NamedThing]%5E-[OntologyClass],[NamedThing]%5E-[InformationContentEntity],[NamedThing]%5E-[Device],[NamedThing]%5E-[ClinicalEntity],[NamedThing]%5E-[BiologicalEntity],[NamedThing]%5E-[AdministrativeEntity],[NamedThing]%5E-[ActivityAndBehavior],[ModelToDiseaseAssociationMixin],[MaterialSampleDerivationAssociation],[InformationContentEntity],[GenotypeToDiseaseAssociation],[Device],[ClinicalEntity],[BiologicalProcessOrActivity],[BiologicalEntity],[Attribute],[Association],[AdministrativeEntity],[ActivityAndBehavior])
 
 ---
 
 
 ## Children
 
+ * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [BiologicalEntity](BiologicalEntity.md)
  * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
  * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
  * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
- * [MaterialSample](MaterialSample.md) - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
- * [Occurrent](Occurrent.md) - A processual entity
  * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
- * [PhysicalEntity](PhysicalEntity.md) - An entity that has physical properties such as mass, volume, or charge
+ * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+ * [PhysicalEntity](PhysicalEntity.md) - An entity that has material reality (a.k.a. physical essence).
  * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
+ * [Procedure](Procedure.md) - A series of actions conducted in a certain order or manner
 
 ## Referenced by class
 
@@ -105,9 +106,8 @@ UMLSST:food
  *  **[NamedThing](NamedThing.md)** *[location of](location_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md)** *[material sample derivation association➞object](material_sample_derivation_association_object.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[model of](model_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[ModelToDiseaseMixin](ModelToDiseaseMixin.md)** *[model to disease mixin➞subject](model_to_disease_mixin_subject.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
+ *  **[ModelToDiseaseAssociationMixin](ModelToDiseaseAssociationMixin.md)** *[model to disease association mixin➞subject](model_to_disease_association_mixin_subject.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[negatively correlated with](negatively_correlated_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[negatively regulates](negatively_regulates.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Association](Association.md)** *[object](object.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[occurs in](occurs_in.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[orthologous to](orthologous_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
@@ -116,12 +116,10 @@ UMLSST:food
  *  **[NamedThing](NamedThing.md)** *[part of](part_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[physically interacts with](physically_interacts_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[positively correlated with](positively_correlated_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[positively regulates](positively_regulates.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[predisposes](predisposes.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[prevents](prevents.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[produced by](produced_by.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[produces](produces.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[regulates](regulates.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[related condition](related_condition.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[related to](related_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[same as](same_as.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**

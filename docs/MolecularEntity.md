@@ -30,7 +30,7 @@ UMLSST:mosq
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[PhysicalEntity],[PairwiseInteractionAssociation],[OrganismTaxon],[GeneToGoTermAssociation]-%20subject%201..1%3E[MolecularEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[PairwiseInteractionAssociation]-%20object%201..1%3E[MolecularEntity],[PairwiseInteractionAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]uses%20-.-%3E[ThingWithTaxon],[MolecularEntity]uses%20-.-%3E[PhysicalEntity],[MolecularEntity]%5E-[GenomicEntity],[MolecularEntity]%5E-[GeneFamily],[MolecularEntity]%5E-[Food],[MolecularEntity]%5E-[Drug],[MolecularEntity]%5E-[ChemicalSubstance],[BiologicalEntity]%5E-[MolecularEntity],[GenomicEntity],[GeneToGoTermAssociation],[GeneFamily],[Food],[Drug],[DiseaseOrPhenotypicFeature],[ChemicalSubstance],[BiologicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[PhysicalEssence],[PairwiseMolecularInteraction],[OrganismTaxon],[GeneToGoTermAssociation]-%20subject%201..1%3E[MolecularEntity%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[PairwiseMolecularInteraction]-%20object%201..1%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]uses%20-.-%3E[ThingWithTaxon],[MolecularEntity]uses%20-.-%3E[PhysicalEssence],[MolecularEntity]%5E-[GenomicEntity],[MolecularEntity]%5E-[GeneFamily],[MolecularEntity]%5E-[Food],[MolecularEntity]%5E-[Drug],[MolecularEntity]%5E-[ChemicalSubstance],[BiologicalEntity]%5E-[MolecularEntity],[GenomicEntity],[GeneToGoTermAssociation],[GeneFamily],[Food],[Drug],[DiseaseOrPhenotypicFeature],[ChemicalSubstance],[BiologicalEntity])
 
 ---
 
@@ -42,7 +42,7 @@ UMLSST:mosq
 ## Uses Mixins
 
  *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
- *  mixin: [PhysicalEntity](PhysicalEntity.md) - An entity that has physical properties such as mass, volume, or charge
+ *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
 
 ## Children
 
@@ -99,8 +99,8 @@ UMLSST:mosq
  *  **[MolecularEntity](MolecularEntity.md)** *[increases uptake of](increases_uptake_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[molecularly interacts with](molecularly_interacts_with.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[pairwise interaction association➞object](pairwise_interaction_association_object.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[pairwise interaction association➞subject](pairwise_interaction_association_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[positively regulates, entity to entity](positively_regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[regulates, entity to entity](regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
 

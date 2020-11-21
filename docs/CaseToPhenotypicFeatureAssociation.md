@@ -15,7 +15,7 @@ URI: [biolink:CaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[CaseToThingAssociation],[CaseToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToThingAssociation],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[BiologicalSex],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[CaseToThingAssociationMixin],[CaseToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToThingAssociationMixin],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[BiologicalSex],[Association],[Agent])
 
 ---
 
@@ -26,8 +26,8 @@ URI: [biolink:CaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
 
 ## Uses Mixins
 
- *  mixin: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- *  mixin: [CaseToThingAssociation](CaseToThingAssociation.md) - An abstract association for use where the case is the subject
+ *  mixin: [ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)
+ *  mixin: [CaseToThingAssociationMixin](CaseToThingAssociationMixin.md) - An abstract association for use where the case is the subject
 
 ## Attributes
 
@@ -66,7 +66,7 @@ URI: [biolink:CaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from entity to feature or disease qualifiers:
+### Inherited from entity to feature or disease qualifiers mixin:
 
  * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
@@ -75,23 +75,23 @@ URI: [biolink:CaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * range: [Onset](Onset.md)
 
-### Inherited from entity to phenotypic feature association:
-
- * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-    * range: [BiologicalSex](BiologicalSex.md)
- * [entity to phenotypic feature association➞description](entity_to_phenotypic_feature_association_description.md)  <sub>OPT</sub>
-    * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
-    * range: [NarrativeText](types/NarrativeText.md)
- * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
-    * Description: phenotypic class
-    * range: [PhenotypicFeature](PhenotypicFeature.md)
-    * Example:    
-    * Example:    
-    * Example:    
-
 ### Inherited from frequency qualifier mixin:
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)
+
+### Inherited from thing to phenotypic feature association mixin:
+
+ * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+    * range: [BiologicalSex](BiologicalSex.md)
+ * [thing to phenotypic feature association mixin➞description](thing_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
+    * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
+    * range: [NarrativeText](types/NarrativeText.md)
+ * [thing to phenotypic feature association mixin➞object](thing_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+    * Description: phenotypic class
+    * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * Example:    
+    * Example:    
+    * Example:    

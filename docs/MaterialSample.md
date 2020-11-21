@@ -21,7 +21,7 @@ SIO:001050
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleDerivationAssociation],[Attribute]%3Chas%20attribute%200..%2A-%20[MaterialSample%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSampleToThingAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[MaterialSample]uses%20-.-%3E[PhysicalEntity],[NamedThing]%5E-[MaterialSample],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[MaterialSampleToThingAssociation],[MaterialSampleDerivationAssociation],[Attribute]%3Chas%20attribute%200..%2A-++[MaterialSample%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSampleToThingAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[PhysicalEntity]%5E-[MaterialSample],[Attribute])
 
 ---
 
@@ -33,12 +33,11 @@ SIO:001050
 
 ## Parents
 
- *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+ *  is_a: [PhysicalEntity](PhysicalEntity.md) - An entity that has material reality (a.k.a. physical essence).
 
 ## Uses Mixins
 
  *  mixin: [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
- *  mixin: [PhysicalEntity](PhysicalEntity.md) - An entity that has physical properties such as mass, volume, or charge
 
 ## Referenced by class
 

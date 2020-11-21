@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: negatively_regulates
+# Slot: negatively_regulates
 
 
 
@@ -14,7 +14,7 @@ URI: [biolink:negatively_regulates](https://w3id.org/biolink/vocab/negatively_re
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+None ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -30,7 +30,7 @@ URI: [biolink:negatively_regulates](https://w3id.org/biolink/vocab/negatively_re
 
 |  |  |  |
 | --- | --- | --- |
-| **Comments:** | | This is a grouping for process-process and entity-entity relations |
+| **Comments:** | | This is a grouping for negative process-process and entity-entity regulation. |
 | **Exact Mappings:** | | RO:0004035 |
 |  | | GO:negatively_regulates |
 | **Close Mappings:** | | GO:negatively_regulated_by |

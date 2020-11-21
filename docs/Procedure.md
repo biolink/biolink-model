@@ -60,14 +60,18 @@ UMLSST:edac
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent]%5E-[Procedure%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[Occurrent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[Occurrent],[NamedThing]%5E-[Procedure],[Occurrent],[NamedThing])
 
 ---
 
 
 ## Parents
 
- *  is_a: [Occurrent](Occurrent.md) - A processual entity
+ *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+
+## Uses Mixins
+
+ *  mixin: [Occurrent](Occurrent.md) - A processual entity
 
 ## Attributes
 

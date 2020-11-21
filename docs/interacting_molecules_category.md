@@ -24,10 +24,12 @@ None ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)
 
 ## Used by
 
+ * [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
 | **Examples:** | | Example(value='MI:1048', description='smallmolecule-protein') |
+| **Exact Mappings:** | | MI:1046 |
 

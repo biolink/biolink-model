@@ -18,7 +18,7 @@ WBVocab:Gene-Phenotype-Association
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GeneToThingAssociation],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToThingAssociation],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[GeneOrGeneProduct],[FrequencyValue],[EntityToPhenotypicFeatureAssociation],[BiologicalSex],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GeneToThingAssociationMixin],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToThingAssociationMixin],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[GeneOrGeneProduct],[FrequencyValue],[BiologicalSex],[Association],[Agent])
 
 ---
 
@@ -29,8 +29,8 @@ WBVocab:Gene-Phenotype-Association
 
 ## Uses Mixins
 
- *  mixin: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- *  mixin: [GeneToThingAssociation](GeneToThingAssociation.md)
+ *  mixin: [ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)
+ *  mixin: [GeneToThingAssociationMixin](GeneToThingAssociationMixin.md)
 
 ## Referenced by class
 
@@ -79,7 +79,7 @@ WBVocab:Gene-Phenotype-Association
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from entity to feature or disease qualifiers:
+### Inherited from entity to feature or disease qualifiers mixin:
 
  * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
@@ -88,26 +88,26 @@ WBVocab:Gene-Phenotype-Association
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * range: [Onset](Onset.md)
 
-### Inherited from entity to phenotypic feature association:
-
- * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-    * range: [BiologicalSex](BiologicalSex.md)
- * [entity to phenotypic feature association➞description](entity_to_phenotypic_feature_association_description.md)  <sub>OPT</sub>
-    * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
-    * range: [NarrativeText](types/NarrativeText.md)
- * [entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
-    * Description: phenotypic class
-    * range: [PhenotypicFeature](PhenotypicFeature.md)
-    * Example:    
-    * Example:    
-    * Example:    
-
 ### Inherited from frequency qualifier mixin:
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)
+
+### Inherited from thing to phenotypic feature association mixin:
+
+ * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+    * range: [BiologicalSex](BiologicalSex.md)
+ * [thing to phenotypic feature association mixin➞description](thing_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
+    * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
+    * range: [NarrativeText](types/NarrativeText.md)
+ * [thing to phenotypic feature association mixin➞object](thing_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+    * Description: phenotypic class
+    * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * Example:    
+    * Example:    
+    * Example:    
 
 ### Domain for slot:
 

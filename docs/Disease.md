@@ -90,7 +90,7 @@ UMLSST:neop
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[EntityToDiseaseAssociation],[DiseaseToThingAssociation],[DiseaseToExposureAssociation],[DiseaseOrPhenotypicFeature],[DiseaseToExposureAssociation]-%20subject%201..1%3E[Disease%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseToThingAssociation]-%20subject%201..1%3E[Disease],[EntityToDiseaseAssociation]-%20object%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToDiseaseAssociationMixin],[OrganismTaxon],[NamedThing],[DiseaseToThingAssociationMixin],[DiseaseToExposureAssociation],[DiseaseOrPhenotypicFeature],[DiseaseToExposureAssociation]-%20subject%201..1%3E[Disease%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B],[DiseaseToThingAssociationMixin]-%20subject%201..1%3E[Disease],[ThingToDiseaseAssociationMixin]-%20object%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease])
 
 ---
 
@@ -121,9 +121,9 @@ UMLSST:neop
 ## Referenced by class
 
  *  **[DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)** *[disease to exposure association➞subject](disease_to_exposure_association_subject.md)*  <sub>REQ</sub>  **[Disease](Disease.md)**
- *  **[DiseaseToThingAssociation](DiseaseToThingAssociation.md)** *[disease to thing association➞subject](disease_to_thing_association_subject.md)*  <sub>REQ</sub>  **[Disease](Disease.md)**
- *  **[EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)** *[entity to disease association➞object](entity_to_disease_association_object.md)*  <sub>REQ</sub>  **[Disease](Disease.md)**
+ *  **[DiseaseToThingAssociationMixin](DiseaseToThingAssociationMixin.md)** *[disease to thing association mixin➞subject](disease_to_thing_association_mixin_subject.md)*  <sub>REQ</sub>  **[Disease](Disease.md)**
  *  **[NamedThing](NamedThing.md)** *[manifestation of](manifestation_of.md)*  <sub>0..*</sub>  **[Disease](Disease.md)**
+ *  **[ThingToDiseaseAssociationMixin](ThingToDiseaseAssociationMixin.md)** *[thing to disease association mixin➞object](thing_to_disease_association_mixin_object.md)*  <sub>REQ</sub>  **[Disease](Disease.md)**
 
 ## Attributes
 

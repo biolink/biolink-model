@@ -45,7 +45,8 @@ URI: [biolink:affects](https://w3id.org/biolink/vocab/affects)
  *  [ameliorates](ameliorates.md)
  *  [disrupts](disrupts.md)
  *  [exacerbates](exacerbates.md)
- *  [regulates](regulates.md)
+ *  [regulates, entity to entity](regulates_entity_to_entity.md)
+ *  [regulates, process to process](regulates_process_to_process.md)
 
 ## Used by
 

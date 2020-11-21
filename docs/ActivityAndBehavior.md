@@ -72,14 +72,18 @@ UMLSST:mcha
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[Occurrent]%5E-[ActivityAndBehavior%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[NamedThing],[ActivityAndBehavior%7Cid(i):string;name(i):label_type;category(i):category_type%20%2B]uses%20-.-%3E[Occurrent],[NamedThing]%5E-[ActivityAndBehavior])
 
 ---
 
 
 ## Parents
 
- *  is_a: [Occurrent](Occurrent.md) - A processual entity
+ *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+
+## Uses Mixins
+
+ *  mixin: [Occurrent](Occurrent.md) - A processual entity
 
 ## Attributes
 

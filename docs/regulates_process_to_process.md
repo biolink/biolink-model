@@ -18,7 +18,7 @@ URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regul
 
 ## Parents
 
- *  is_a: [regulates](regulates.md)
+ *  is_a: [affects](affects.md)
 
 ## Children
 
