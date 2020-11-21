@@ -52,6 +52,7 @@ URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
 |  | | CHEBI:is_substituent_group_from |
 |  | | CPT:panel_element_of |
 |  | | CPT:panel_element_of_possibly_included |
+|  | | DRUGBANK:component_of |
 |  | | FMA:constitutional_part_of |
 |  | | FMA:member_of |
 |  | | FMA:regional_part_of |
