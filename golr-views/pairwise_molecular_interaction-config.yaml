@@ -1,0 +1,42 @@
+id: pairwise_molecular_interaction
+schema_generating: true
+description: An interaction at the molecular level between two physical entities
+display_name: pairwise molecular interaction
+document_category: pairwise molecular interaction
+weight: 20
+fields:
+- id: association_type
+  description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+- id: negated
+  description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+- id: qualifiers
+  description: connects an association to qualifiers that modify or qualify the meaning
+    of that association
+  display_name: qualifiers
+  cardinality: multi
+- id: publications
+  description: connects an association to publications supporting the association
+  display_name: publications
+  cardinality: multi
+- id: provided_by
+  description: connects an association to the agent (person, organization or group)
+    that provided it
+  display_name: provided by
+  cardinality: multi
+- id: interacting_molecules_category
+  display_name: interacting molecules category
+- id: subject
+  display_name: pairwise molecular interaction_subject
+- id: id
+  description: identifier for the interaction. This may come from an interaction database
+    such as IMEX.
+  display_name: pairwise molecular interaction_id
+- id: predicate
+  display_name: pairwise molecular interaction_predicate
+- id: relation
+  description: interaction relationship type
+  display_name: pairwise molecular interaction_relation
+- id: object
+  display_name: pairwise molecular interaction_object

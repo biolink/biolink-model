@@ -38,6 +38,45 @@
          "title": "ActivityAndBehavior",
          "type": "object"
       },
+      "Agent": {
+         "additionalProperties": false,
+         "description": "person, group, organization or project that provides a piece of information (i.e. a knowledge association)",
+         "properties": {
+            "address": {
+               "description": "the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text \"blob\" containing all relevant details of the given location for fitness of purpose. For the moment, this \"address\" can include other contact details such as email and phone number(?).",
+               "type": "string"
+            },
+            "affiliation": {
+               "description": "a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.",
+               "type": "string"
+            },
+            "name": {
+               "description": "it is recommended that an author's 'name' property be formatted as \"surname, firstname initial.\"",
+               "type": "string"
+            }
+         },
+         "required": [
+            "category",
+            "id",
+            "name"
+         ],
+         "title": "Agent",
+         "type": "object"
+      },
       "AnatomicalEntity": {
          "additionalProperties": false,
          "description": "A subcellular location, cell type or gross anatomical part",
@@ -92,6 +131,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -122,8 +165,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -148,6 +192,10 @@
             },
             "object": {
                "description": "the structure at an earlier time",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -181,6 +229,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -206,6 +255,10 @@
             },
             "object": {
                "description": "the whole",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -239,11 +292,118 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
          ],
          "title": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+         "type": "object"
+      },
+      "Article": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "iso_abbreviation": {
+               "description": "Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.",
+               "type": "string"
+            },
+            "issue": {
+               "description": "issue of a newspaper, a scientific journal or magazine for reference purpose",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "published_in": {
+               "description": "The enclosing parent serial containing the article should have industry-standard identifier from ISSN.",
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
+               "type": "string"
+            },
+            "type": {
+               "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+               "type": "string"
+            },
+            "volume": {
+               "description": "volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "category",
+            "type",
+            "id",
+            "name",
+            "published_in"
+         ],
+         "title": "Article",
          "type": "object"
       },
       "Association": {
@@ -264,6 +424,10 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -297,10 +461,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "Association",
          "type": "object"
@@ -309,13 +474,6 @@
          "additionalProperties": false,
          "description": "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -330,21 +488,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "Attribute",
          "type": "object"
       },
@@ -450,13 +596,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -471,22 +610,201 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            }
+         },
+         "required": [],
+         "title": "BiologicalSex",
+         "type": "object"
+      },
+      "Book": {
+         "additionalProperties": false,
+         "description": "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.",
+         "properties": {
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "Books should have industry-standard identifier such as from ISBN.",
                "type": "string"
             },
-            "name": {
-               "description": "A human-readable name for a thing",
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
                "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
+               "type": "string"
+            },
+            "type": {
+               "description": "Should generally be set to an ontology class defined term for 'book'.",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "category",
+            "name",
+            "id",
+            "type"
+         ],
+         "title": "Book",
+         "type": "object"
+      },
+      "BookChapter": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "chapter": {
+               "description": "chapter of a book",
+               "type": "string"
+            },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "published_in": {
+               "description": "The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.",
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
+               "type": "string"
+            },
+            "type": {
+               "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+               "type": "string"
+            },
+            "volume": {
+               "description": "volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "category",
+            "type",
             "id",
             "name",
-            "category"
+            "published_in"
          ],
-         "title": "BiologicalSex",
+         "title": "BookChapter",
          "type": "object"
       },
       "Carbohydrate": {
@@ -572,8 +890,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -588,7 +906,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -617,12 +939,12 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
+               "$ref": "#/definitions/BiologicalSex",
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -630,10 +952,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "CaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -710,8 +1033,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -726,7 +1049,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -755,8 +1082,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "A cell line derived from an organismal entity with a disease state that is used as a model of that disease.",
@@ -764,9 +1091,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "CellLineAsAModelOfDiseaseAssociation",
@@ -790,6 +1118,10 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -822,9 +1154,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
@@ -948,6 +1281,10 @@
                "description": "the chemical element that is the target of the statement",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -979,9 +1316,10 @@
             }
          },
          "required": [
-            "subject",
-            "relation",
             "id",
+            "subject",
+            "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToChemicalAssociation",
@@ -1012,6 +1350,10 @@
             },
             "object": {
                "description": "the downstream chemical entity",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -1045,6 +1387,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -1072,6 +1415,10 @@
                "description": "the disease or phenotype that is affected by the chemical",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -1103,9 +1450,10 @@
             }
          },
          "required": [
-            "subject",
-            "relation",
             "id",
+            "subject",
+            "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
@@ -1131,6 +1479,10 @@
                "description": "the gene or gene product that is affected by the chemical",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -1162,9 +1514,10 @@
             }
          },
          "required": [
-            "subject",
-            "relation",
             "id",
+            "subject",
+            "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToGeneAssociation",
@@ -1190,6 +1543,10 @@
                "description": "the pathway that is affected by the chemical",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -1221,9 +1578,10 @@
             }
          },
          "required": [
-            "subject",
-            "relation",
             "id",
+            "subject",
+            "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToPathwayAssociation",
@@ -1233,13 +1591,6 @@
          "additionalProperties": false,
          "description": "The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -1254,21 +1605,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "ClinicalCourse",
          "type": "object"
       },
@@ -1332,13 +1671,6 @@
          "additionalProperties": false,
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -1353,21 +1685,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "ClinicalModifier",
          "type": "object"
       },
@@ -1449,12 +1769,29 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             }
          },
@@ -1464,6 +1801,70 @@
             "category"
          ],
          "title": "ConfidenceLevel",
+         "type": "object"
+      },
+      "ContributorAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between an entity (such as a publication) and various agents that contribute to its realisation",
+         "properties": {
+            "association_type": {
+               "description": "connects an association to the type of association (e.g. gene to phenotype)",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an association",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "agent helping to realise the given entity (e.g. such as a publication)",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "information content entity which an agent has helped realise",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "subject",
+            "predicate",
+            "object"
+         ],
+         "title": "ContributorAssociation",
          "type": "object"
       },
       "DataFile": {
@@ -1477,12 +1878,29 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             }
          },
@@ -1505,12 +1923,29 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             }
          },
@@ -1520,52 +1955,6 @@
             "category"
          ],
          "title": "DataSet",
-         "type": "object"
-      },
-      "DataSetSummary": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "distribution": {
-               "type": "string"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
-            },
-            "source_data_file": {
-               "type": "string"
-            },
-            "source_web_page": {
-               "type": "string"
-            },
-            "title": {
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            },
-            "version_of": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
-         "title": "DataSetSummary",
          "type": "object"
       },
       "DataSetVersion": {
@@ -1579,21 +1968,35 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
             "distribution": {
+               "type": "string"
+            },
+            "format": {
                "type": "string"
             },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
             },
-            "source_data_file": {
+            "rights": {
                "type": "string"
             },
-            "title": {
+            "source_data_file": {
                "type": "string"
             },
             "type": {
@@ -1729,6 +2132,10 @@
                "description": "anatomical entity in which the disease or feature is found",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -1760,8 +2167,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -1785,6 +2193,10 @@
                "type": "boolean"
             },
             "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -1817,8 +2229,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -1838,8 +2251,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -1854,7 +2267,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -1883,12 +2300,12 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
+               "$ref": "#/definitions/BiologicalSex",
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -1896,58 +2313,13 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "DiseaseToPhenotypicFeatureAssociation",
-         "type": "object"
-      },
-      "DistributionLevel": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "distribution": {
-               "type": "string"
-            },
-            "download_url": {
-               "type": "string"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
-            },
-            "source_data_file": {
-               "type": "string"
-            },
-            "title": {
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            },
-            "version_of": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
-         "title": "DistributionLevel",
          "type": "object"
       },
       "Drug": {
@@ -1956,6 +2328,27 @@
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_active_ingredient": {
+               "description": "one or more chemical substance which are the active ingredient(s) of a drug",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_constituent": {
+               "description": "one or more chemical substances within a mixture",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_excipient": {
+               "description": "one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug",
                "items": {
                   "type": "string"
                },
@@ -2087,12 +2480,29 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "license": {
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             }
          },
@@ -2162,6 +2572,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -2192,8 +2606,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -2241,8 +2656,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2257,7 +2672,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -2286,66 +2705,30 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
+               "$ref": "#/definitions/BiologicalSex",
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "subject": {
                "type": "string"
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "ExposureEventToPhenotypicFeatureAssociation",
          "type": "object"
       },
-      "FrequencyQualifierMixin": {
+      "Food": {
          "additionalProperties": false,
-         "description": "Qualifier for frequency type associations",
-         "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "FrequencyQualifierMixin",
-         "type": "object"
-      },
-      "FrequencyQuantifier": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "has_count": {
-               "description": "number of things with a particular property",
-               "type": "integer"
-            },
-            "has_percentage": {
-               "description": "equivalent to has quotient multiplied by 100",
-               "type": "number"
-            },
-            "has_quotient": {
-               "type": "number"
-            },
-            "has_total": {
-               "description": "total number of things in a particular reference set",
-               "type": "integer"
-            }
-         },
-         "required": [],
-         "title": "FrequencyQuantifier",
-         "type": "object"
-      },
-      "FrequencyValue": {
-         "additionalProperties": false,
-         "description": "describes the frequency of occurrence of an event or condition",
+         "description": "A substance consumed by a living organism as a source of nutrition",
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
@@ -2354,6 +2737,48 @@
                },
                "type": "array"
             },
+            "has_constituent": {
+               "description": "one or more chemical substances within a mixture",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_nutrient": {
+               "description": "one or more chemical substance which are growth factors for a living organism",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for a thing",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "name",
+            "category"
+         ],
+         "title": "Food",
+         "type": "object"
+      },
+      "FrequencyValue": {
+         "additionalProperties": false,
+         "description": "describes the frequency of occurrence of an event or condition",
+         "properties": {
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -2368,21 +2793,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "FrequencyValue",
          "type": "object"
       },
@@ -2404,6 +2817,10 @@
             },
             "object": {
                "description": "class describing the activity, process or localization of the gene product",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -2437,8 +2854,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -2515,8 +2933,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2531,7 +2949,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -2560,8 +2982,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
@@ -2569,9 +2991,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "GeneAsAModelOfDiseaseAssociation",
@@ -2621,8 +3044,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2637,7 +3060,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -2666,12 +3093,12 @@
                "type": "string"
             },
             "sequence_variant_qualifier": {
-               "description": "a qualifier used in an association where the variant",
+               "description": "a qualifier used in an association with the variant",
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
@@ -2679,9 +3106,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "GeneHasVariantThatContributesToDiseaseAssociation",
@@ -2830,6 +3258,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -2861,6 +3293,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "subject",
             "object"
@@ -2877,8 +3310,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2893,7 +3326,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -2922,8 +3359,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model",
@@ -2931,9 +3368,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "GeneToDiseaseAssociation",
@@ -2957,6 +3395,10 @@
             },
             "object": {
                "description": "location in which the gene is expressed",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -2999,6 +3441,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -3024,6 +3467,10 @@
             },
             "object": {
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3058,6 +3505,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -3082,6 +3530,10 @@
                "type": "boolean"
             },
             "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3114,6 +3566,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -3139,6 +3592,10 @@
             },
             "object": {
                "description": "class describing the activity, process or localization of the gene product",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3172,8 +3629,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -3193,8 +3651,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3209,7 +3667,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3238,12 +3700,12 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
+               "$ref": "#/definitions/BiologicalSex",
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "subject": {
                "description": "gene in which variation is correlated with the phenotypic feature",
@@ -3251,9 +3713,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "GeneToPhenotypicFeatureAssociation",
@@ -3368,6 +3831,10 @@
                "description": "The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -3406,6 +3873,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -3429,7 +3897,7 @@
                "type": "string"
             },
             "has_zygosity": {
-               "type": "string"
+               "$ref": "#/definitions/Zygosity"
             },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -3464,8 +3932,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3480,7 +3948,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3509,8 +3981,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "A genotype that has a role in modeling the disease.",
@@ -3519,6 +3991,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "object",
             "subject"
@@ -3535,8 +4008,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3551,7 +4024,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3580,8 +4057,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "a genotype that is associated in some way with a disease state",
@@ -3590,6 +4067,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "relation",
             "object"
@@ -3617,6 +4095,10 @@
                "description": "gene implicated in genotype",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -3649,6 +4131,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "subject",
             "object"
@@ -3676,6 +4159,10 @@
                "description": "child genotype",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -3707,6 +4194,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "subject",
             "object"
@@ -3727,8 +4215,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3743,7 +4231,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3771,12 +4263,12 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
+               "$ref": "#/definitions/BiologicalSex",
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "subject": {
                "description": "genotype that is associated with the phenotypic feature",
@@ -3784,8 +4276,9 @@
             }
          },
          "required": [
-            "object",
             "id",
+            "predicate",
+            "object",
             "relation",
             "subject"
          ],
@@ -3810,6 +4303,10 @@
             },
             "object": {
                "description": "gene implicated in genotype",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -3844,6 +4341,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "subject",
             "object"
@@ -3855,13 +4353,6 @@
          "additionalProperties": false,
          "description": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -3876,21 +4367,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "GenotypicSex",
          "type": "object"
       },
@@ -4083,13 +4562,6 @@
          "additionalProperties": false,
          "description": "The pattern in which a particular genetic trait or disorder is passed from one generation to the next",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -4104,21 +4576,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "Inheritance",
          "type": "object"
       },
@@ -4254,6 +4714,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4285,8 +4749,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -4312,6 +4777,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4343,8 +4812,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -4370,6 +4840,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4401,8 +4875,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -4423,7 +4898,7 @@
             "has_attribute": {
                "description": "connects any named thing to an attribute",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
@@ -4464,6 +4939,10 @@
                "description": "the material entity the sample was derived from. This may be another material sample, or any other material entity, including for example an organism, a geographic feature, or some environmental material.",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4496,6 +4975,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -4521,6 +5001,10 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -4554,10 +5038,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
@@ -4823,45 +5308,10 @@
          "title": "NoncodingRNAProduct",
          "type": "object"
       },
-      "Occurrent": {
-         "additionalProperties": false,
-         "description": "A processual entity",
-         "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
-         "title": "Occurrent",
-         "type": "object"
-      },
       "Onset": {
          "additionalProperties": false,
          "description": "The age group in which manifestations appear",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -4876,21 +5326,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "Onset",
          "type": "object"
       },
@@ -4959,8 +5397,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -4975,7 +5413,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -5004,8 +5446,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.",
@@ -5013,9 +5455,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -5033,15 +5476,15 @@
                "description": "A unique identifier for an association",
                "type": "string"
             },
-            "interacting_molecules_category": {
-               "type": "string"
-            },
             "negated": {
                "description": "if set to true, then the association is negated i.e. is not true",
                "type": "boolean"
             },
             "object": {
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+               "type": "string"
+            },
+            "predicate": {
                "type": "string"
             },
             "provided_by": {
@@ -5078,17 +5521,74 @@
             "id",
             "subject",
             "object",
+            "predicate",
             "relation"
          ],
          "title": "PairwiseGeneToGeneInteraction",
          "type": "object"
       },
-      "PathognomonicityQuantifier": {
+      "PairwiseMolecularInteraction": {
          "additionalProperties": false,
-         "description": "A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease",
-         "properties": {},
-         "required": [],
-         "title": "PathognomonicityQuantifier",
+         "description": "An interaction at the molecular level between two physical entities",
+         "properties": {
+            "association_type": {
+               "description": "connects an association to the type of association (e.g. gene to phenotype)",
+               "type": "string"
+            },
+            "id": {
+               "description": "identifier for the interaction. This may come from an interaction database such as IMEX.",
+               "type": "string"
+            },
+            "interacting_molecules_category": {
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "interaction relationship type",
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "subject",
+            "id",
+            "predicate",
+            "relation",
+            "object"
+         ],
+         "title": "PairwiseMolecularInteraction",
          "type": "object"
       },
       "Pathway": {
@@ -5207,13 +5707,6 @@
          "additionalProperties": false,
          "description": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -5228,27 +5721,15 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "PhenotypicSex",
          "type": "object"
       },
       "PhysicalEntity": {
          "additionalProperties": false,
-         "description": "An entity that has physical properties such as mass, volume, or charge",
+         "description": "An entity that has material reality (a.k.a. physical essence).",
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
@@ -5406,6 +5887,10 @@
                "description": "the population that form the object of the association",
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -5438,6 +5923,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "object",
             "relation"
@@ -5471,6 +5957,41 @@
             "category"
          ],
          "title": "Procedure",
+         "type": "object"
+      },
+      "ProcessedMaterial": {
+         "additionalProperties": false,
+         "description": "A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.",
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for a thing",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "name",
+            "category"
+         ],
+         "title": "ProcessedMaterial",
          "type": "object"
       },
       "Protein": {
@@ -5587,38 +6108,17 @@
          "title": "ProteinIsoform",
          "type": "object"
       },
-      "Provider": {
-         "additionalProperties": false,
-         "description": "person, group, organization or project that provides a piece of information",
-         "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
-         "title": "Provider",
-         "type": "object"
-      },
       "Publication": {
          "additionalProperties": false,
-         "description": "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.",
+         "description": "Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.",
          "properties": {
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
@@ -5626,19 +6126,73 @@
                },
                "type": "array"
             },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
                "type": "string"
             },
-            "name": {
-               "description": "A human-readable name for a thing",
+            "description": {
+               "description": "a human-readable description of a thing",
                "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
+               "type": "string"
+            },
+            "type": {
+               "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "category",
+            "type",
             "id",
-            "name",
-            "category"
+            "name"
          ],
          "title": "Publication",
          "type": "object"
@@ -5841,14 +6395,6 @@
          "title": "RelationshipType",
          "type": "object"
       },
-      "SensitivityQuantifier": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {},
-         "required": [],
-         "title": "SensitivityQuantifier",
-         "type": "object"
-      },
       "SequenceAssociation": {
          "additionalProperties": false,
          "description": "An association between a sequence feature and a genomic entity it is localized to.",
@@ -5867,6 +6413,10 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -5900,10 +6450,11 @@
             }
          },
          "required": [
+            "id",
             "subject",
-            "relation",
+            "predicate",
             "object",
-            "id"
+            "relation"
          ],
          "title": "SequenceAssociation",
          "type": "object"
@@ -5925,6 +6476,10 @@
                "type": "boolean"
             },
             "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -5957,8 +6512,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -6010,10 +6566,17 @@
          "title": "SequenceVariant",
          "type": "object"
       },
-      "SeverityValue": {
+      "Serial": {
          "additionalProperties": false,
-         "description": "describes the severity of a phenotypic feature or disease",
+         "description": "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.",
          "properties": {
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
@@ -6021,6 +6584,93 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Serials (journals) should have industry-standard identifier such as from ISSN.",
+               "type": "string"
+            },
+            "iso_abbreviation": {
+               "description": "Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.",
+               "type": "string"
+            },
+            "issue": {
+               "description": "issue of a newspaper, a scientific journal or magazine for reference purpose",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "mesh_terms": {
+               "description": "mesh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
+               "type": "string"
+            },
+            "type": {
+               "description": "Should generally be set to an ontology class defined term for 'serial' or 'journal'.",
+               "type": "string"
+            },
+            "volume": {
+               "description": "volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "category",
+            "name",
+            "id",
+            "type"
+         ],
+         "title": "Serial",
+         "type": "object"
+      },
+      "SeverityValue": {
+         "additionalProperties": false,
+         "description": "describes the severity of a phenotypic feature or disease",
+         "properties": {
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -6035,21 +6685,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "SeverityValue",
          "type": "object"
       },
@@ -6109,8 +6747,22 @@
                },
                "type": "array"
             },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "license": {
                "type": "string"
             },
             "name": {
@@ -6118,6 +6770,9 @@
                "type": "string"
             },
             "retrieved_on": {
+               "type": "string"
+            },
+            "rights": {
                "type": "string"
             },
             "source_version": {
@@ -6130,14 +6785,6 @@
             "category"
          ],
          "title": "SourceFile",
-         "type": "object"
-      },
-      "SpecificityQuantifier": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {},
-         "required": [],
-         "title": "SpecificityQuantifier",
          "type": "object"
       },
       "Transcript": {
@@ -6216,6 +6863,10 @@
             "object": {
                "type": "string"
             },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -6246,8 +6897,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -6298,8 +6950,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -6314,7 +6966,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -6343,8 +6999,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "A variant that has a role in modeling the disease.",
@@ -6353,6 +7009,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "relation",
             "object",
             "subject"
@@ -6369,8 +7026,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -6385,7 +7042,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -6414,8 +7075,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "subject": {
                "description": "a sequence variant in which the allele state is associated in some way with the disease state",
@@ -6424,6 +7085,7 @@
          },
          "required": [
             "id",
+            "predicate",
             "subject",
             "relation",
             "object"
@@ -6444,8 +7106,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -6460,7 +7122,11 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "$ref": "#/definitions/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -6489,12 +7155,12 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
+               "$ref": "#/definitions/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
+               "$ref": "#/definitions/BiologicalSex",
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "subject": {
                "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
@@ -6502,9 +7168,10 @@
             }
          },
          "required": [
-            "relation",
-            "object",
             "id",
+            "predicate",
+            "object",
+            "relation",
             "subject"
          ],
          "title": "VariantToPhenotypicFeatureAssociation",
@@ -6519,8 +7186,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
+               "$ref": "#/definitions/FrequencyValue",
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_count": {
                "description": "number in object population that carry a particular allele, aka allele count",
@@ -6548,6 +7215,10 @@
             },
             "object": {
                "description": "the population that is observed to have the frequency",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
             },
             "provided_by": {
@@ -6581,8 +7252,9 @@
             }
          },
          "required": [
-            "relation",
             "id",
+            "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -6593,13 +7265,6 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
                "type": "string"
@@ -6614,21 +7279,9 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "name",
-            "category"
-         ],
+         "required": [],
          "title": "Zygosity",
          "type": "object"
       }

@@ -1,5 +1,7 @@
 ---
+title: "Mapping Biolink Model to a Neo4j property graph"
 parent: "Mapping to a graph store"
+layout: default
 ---
 
 # Mapping Biolink Model to a Neo4j property graph

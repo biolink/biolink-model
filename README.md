@@ -8,7 +8,6 @@
 
 # Biolink Model
 
-
 Quickstart docs:
 
  * Browse the model: [https://biolink.github.io/biolink-model](https://biolink.github.io/biolink-model)
@@ -18,6 +17,8 @@ Quickstart docs:
 
 See [Introduction to the Biolink datamodel](https://www.slideshare.net/cmungall/introduction-to-the-biolink-datamodel)
 slides for a background on the Biolink Model and its inception.
+
+See also [Biolink Model Guidelines](./guidelines/index.md) for understanding, curating and working with the model.
 
 Conversion/validation code: https://github.com/NCATS-Tangerine/kgx
 

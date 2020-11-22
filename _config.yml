@@ -6,11 +6,11 @@ logo: "/assets/images/biolink-logo.png"
 
 remote_theme: deepakunni3/just-the-docs
 
-ga_tracking: UA-157380109-1
-
 aux_links:
   "Biolink Model on GitHub":
     - "//github.com/biolink/biolink-model"
+
+ga_tracking: UA-157380109-1
 
 search_enabled: true
 heading_anchors: true
@@ -20,7 +20,12 @@ heading_anchors: true
 collections:
   docs:
     output: true
+  about:
+    output: true
+  guidelines:
+    output: true
 
 includes:
 - about
+- guidelines
 - index.md
