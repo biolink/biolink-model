@@ -4321,22 +4321,13 @@ classes:
       - name
       - category
     subclass_of: BFO:0000001
-    mappings:
+    exact_mappings:
       - WIKIDATA:Q35120
       # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
       # Entity
       - UMLSSC:T071
       - UMLSST:enty
-      # Physical Object
-      - UMLSSC:T072
-      - UMLSST:phob
-      # Manufactured Object
-      - UMLSSC:T073
-      - UMLSST:mnob
-      # Food
-      - UMLSSC:T168
-      - UMLSST:food
 
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
@@ -5089,6 +5080,10 @@ classes:
       - has nutrient
     id_prefixes:
       - foodb.compound
+    exact_mappings:
+      # Food
+      - UMLSSC:T168
+      - UMLSST:food
 
   metabolite:
     is_a: chemical substance
@@ -6811,7 +6806,15 @@ classes:
       - physical essence
     description: >-
       An entity that has material reality (a.k.a. physical essence).
-
+    exact_mappings:
+      # Physical Object
+      - UMLSSC:T072
+      - UMLSST:phob
+    narrow_mappings:
+      # Manufactured Object
+      - UMLSSC:T073
+      - UMLSST:mnob
+      
   biological process or activity:
     is_a: biological entity
     mixins:
