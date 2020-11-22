@@ -4504,14 +4504,12 @@ classes:
     # may be used to more extensively document publisher, editor and author details
     slot_usage:
       id:
-        required: true
         description: >-
           Different kinds of publication subtypes will have different preferred identifiers (curies when feasible).
           Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual
           alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as
           books and journals, should have industry-standard identifier such as from ISBN and ISSN.
       name:
-        required: true
         description: >-
           the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing)
           The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).

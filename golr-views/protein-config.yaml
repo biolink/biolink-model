@@ -6,6 +6,10 @@ display_name: protein
 document_category: protein
 weight: 20
 fields:
+- id: id
+  description: A unique identifier for a thing. Must be either a CURIE shorthand for
+    a URI or a complete URI
+  display_name: id
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\
@@ -28,13 +32,11 @@ fields:
 - id: has_biological_sequence
   description: connects a genomic feature to its sequence
   display_name: has biological sequence
-- id: id
-  description: A unique identifier for a thing. Must be either a CURIE shorthand for
-    a URI or a complete URI
-  display_name: id
 - id: name
-  description: A human-readable name for a thing
-  display_name: name
+  description: genes are typically designated by a short symbol and a full name. We
+    map the symbol to the default display name and use an additional slot for full
+    name
+  display_name: macromolecular machine_name
 - id: description
   description: a human-readable description of a thing
   display_name: description
