@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-11-21 05:05
+# Generation date: 2020-11-22 05:06
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -2308,7 +2308,7 @@ class Gene(GeneOrGeneProduct):
 
     id: Union[str, GeneId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
     symbol: Optional[str] = None
     description: Optional[Union[str, NarrativeText]] = None
     synonym: List[Union[str, LabelType]] = empty_list()
@@ -2319,10 +2319,6 @@ class Gene(GeneOrGeneProduct):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GeneId):
             self.id = GeneId(self.id)
-        if self.name is None:
-            raise ValueError(f"name must be supplied")
-        if not isinstance(self.name, LabelType):
-            self.name = LabelType(self.name)
         if self.description is not None and not isinstance(self.description, NarrativeText):
             self.description = NarrativeText(self.description)
         self.synonym = [v if isinstance(v, LabelType)
@@ -2346,7 +2342,7 @@ class GeneProduct(GeneOrGeneProduct):
 
     id: Union[str, GeneProductId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
     description: Optional[Union[str, NarrativeText]] = None
     synonym: List[Union[str, LabelType]] = empty_list()
     xref: List[Union[str, IriType]] = empty_list()
@@ -2356,10 +2352,6 @@ class GeneProduct(GeneOrGeneProduct):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GeneProductId):
             self.id = GeneProductId(self.id)
-        if self.name is None:
-            raise ValueError(f"name must be supplied")
-        if not isinstance(self.name, LabelType):
-            self.name = LabelType(self.name)
         if self.description is not None and not isinstance(self.description, NarrativeText):
             self.description = NarrativeText(self.description)
         self.synonym = [v if isinstance(v, LabelType)
@@ -2383,7 +2375,7 @@ class Transcript(GeneProduct):
 
     id: Union[str, TranscriptId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2408,7 +2400,7 @@ class Protein(GeneProduct):
 
     id: Union[str, ProteinId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2433,7 +2425,7 @@ class ProteinIsoform(Protein):
 
     id: Union[str, ProteinIsoformId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2454,7 +2446,7 @@ class RNAProduct(GeneProduct):
 
     id: Union[str, RNAProductId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2478,7 +2470,7 @@ class RNAProductIsoform(RNAProduct):
 
     id: Union[str, RNAProductIsoformId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2499,7 +2491,7 @@ class NoncodingRNAProduct(RNAProduct):
 
     id: Union[str, NoncodingRNAProductId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2520,7 +2512,7 @@ class MicroRNA(NoncodingRNAProduct):
 
     id: Union[str, MicroRNAId] = None
     category: List[Union[str, CategoryType]] = empty_list()
-    name: Union[str, LabelType] = None
+    name: Union[str, SymbolType] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
