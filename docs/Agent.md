@@ -55,7 +55,7 @@ URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
     * Description: a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [agent➞id](agent_id.md)  <sub>REQ</sub>
-    * Description: Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
+    * Description: Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
     * range: [String](types/String.md)
  * [agent➞name](agent_name.md)  <sub>REQ</sub>
     * Description: it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
@@ -86,7 +86,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [agent➞id](agent_id.md)  <sub>REQ</sub>
-    * Description: Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
+    * Description: Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
     * range: [String](types/String.md)
  * [agent➞name](agent_name.md)  <sub>REQ</sub>
     * Description: it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
