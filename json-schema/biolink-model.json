@@ -2894,7 +2894,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "symbol": {
@@ -2917,8 +2917,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "Gene",
@@ -3213,7 +3213,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "synonym": {
@@ -3232,8 +3232,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "GeneProduct",
@@ -5113,7 +5113,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "synonym": {
@@ -5132,8 +5132,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "MicroRNA",
@@ -5282,7 +5282,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "synonym": {
@@ -5301,8 +5301,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "NoncodingRNAProduct",
@@ -6025,7 +6025,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "synonym": {
@@ -6044,8 +6044,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "Protein",
@@ -6082,7 +6082,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "synonym": {
@@ -6101,8 +6101,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "ProteinIsoform",
@@ -6245,7 +6245,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "synonym": {
@@ -6264,8 +6264,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "RNAProduct",
@@ -6302,7 +6302,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "synonym": {
@@ -6321,8 +6321,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "RNAProductIsoform",
@@ -6818,7 +6818,7 @@
                "type": "array"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             },
             "synonym": {
@@ -6837,8 +6837,8 @@
             }
          },
          "required": [
-            "category",
             "id",
+            "category",
             "name"
          ],
          "title": "Transcript",
