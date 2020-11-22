@@ -832,7 +832,6 @@ metatype:Nodeidentifier NONLITERAL
 <Gene> CLOSED {
     (  $<Gene_tes> (  &<GeneOrGeneProduct_tes> ;
           rdf:type [ <GeneOrGeneProduct> ] ? ;
-          rdfs:label @<LabelType> ;
           <symbol> @metatype:String ? ;
           dcterms:description @<NarrativeText> ? ;
           <synonym> @<LabelType> * ;
@@ -903,7 +902,6 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<GeneProduct_tes> (  &<GeneOrGeneProduct_tes> ;
              rdf:type [ <GeneOrGeneProduct> ] ? ;
-             rdfs:label @<LabelType> ;
              dcterms:description @<NarrativeText> ? ;
              <synonym> @<LabelType> * ;
              <xref> @<IriType> *
