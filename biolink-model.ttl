@@ -197,147 +197,147 @@
         <https://w3id.org/biolink/vocab/VariantToThingAssociationMixin>,
         <https://w3id.org/biolink/vocab/Zygosity> ;
     meta:default_range <https://w3id.org/biolink/vocab/string> ;
-    meta:generation_date "2020-11-22 04:49"^^xsd:dateTime ;
+    meta:generation_date "2020-11-22 05:06"^^xsd:dateTime ;
     meta:id <https://w3id.org/biolink/biolink-model> ;
     meta:imports biolinkml:types ;
-    meta:prefixes [ meta:prefix_reference <https://isni.org/isni/> ;
-            metatype:prefix_prefix "isni" ],
-        [ meta:prefix_reference <https://scholar.google.com/citations?user=> ;
-            metatype:prefix_prefix "GSID" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/chembio_> ;
-            metatype:prefix_prefix "chembio" ],
-        [ meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ;
-            metatype:prefix_prefix "UMLSSG" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ;
-            metatype:prefix_prefix "hetio" ],
-        [ meta:prefix_reference <https://orcid.org/> ;
-            metatype:prefix_prefix "ORCID" ],
-        [ meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ;
-            metatype:prefix_prefix "qud" ],
-        [ meta:prefix_reference <https://www.gtexportal.org/home/gene/> ;
-            metatype:prefix_prefix "GTEx" ],
-        [ meta:prefix_reference <http://purl.org/oban/> ;
-            metatype:prefix_prefix "OBAN" ],
-        [ meta:prefix_reference <http://purl.obolibrary.org/obo/ECTO_> ;
-            metatype:prefix_prefix "ECTO" ],
-        [ meta:prefix_reference <http://purl.obolibrary.org/obo/ExO_> ;
-            metatype:prefix_prefix "ExO" ],
-        [ meta:prefix_reference <https://www.wikidata.org/wiki/> ;
-            metatype:prefix_prefix "WIKIDATA" ],
-        [ meta:prefix_reference <https://www.wikidata.org/wiki/Property:> ;
-            metatype:prefix_prefix "WIKIDATA_PROPERTY" ],
-        [ meta:prefix_reference <http://purl.obolibrary.org/obo/RO_> ;
-            metatype:prefix_prefix "RO" ],
-        [ meta:prefix_reference <http://purl.bioontology.org/ontology/HCPCS/> ;
-            metatype:prefix_prefix "HCPCS" ],
-        [ meta:prefix_reference <http://purl.bioontology.org/ontology/RXNORM/> ;
-            metatype:prefix_prefix "RXNORM" ],
-        [ meta:prefix_reference <http://pubchem.ncbi.nlm.nih.gov/compound/> ;
-            metatype:prefix_prefix "CID" ],
-        [ meta:prefix_reference <https://w3id.org/biolink/vocab/> ;
-            metatype:prefix_prefix "biolink" ],
-        [ meta:prefix_reference <https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#> ;
-            metatype:prefix_prefix "gpi" ],
-        [ meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ;
-            metatype:prefix_prefix "UMLSST" ],
-        [ meta:prefix_reference <https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/> ;
-            metatype:prefix_prefix "VANDF" ],
-        [ meta:prefix_reference <http://xmlns.com/foaf/0.1/> ;
-            metatype:prefix_prefix "foaf" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ;
-            metatype:prefix_prefix "Aeolus" ],
-        [ meta:prefix_reference <https://www.alliancegenome.org/> ;
-            metatype:prefix_prefix "alliancegenome" ],
-        [ meta:prefix_reference <http://purl.obolibrary.org/obo/RO_> ;
-            metatype:prefix_prefix "OBOREL" ],
-        [ meta:prefix_reference <https://www.ama-assn.org/practice-management/cpt/> ;
-            metatype:prefix_prefix "CPT" ],
-        [ meta:prefix_reference <https://www.dgidb.org/interaction_types> ;
-            metatype:prefix_prefix "DGIdb" ],
+    meta:prefixes [ meta:prefix_reference <http://purl.org/coar/resource_type/> ;
+            metatype:prefix_prefix "COAR_RESOURCE" ],
         [ meta:prefix_reference <http://translator.renci.org/GAMMA_> ;
             metatype:prefix_prefix "GAMMA" ],
-        [ meta:prefix_reference <http://kg1endpoint.rtx.ai/> ;
-            metatype:prefix_prefix "RTXKG1" ],
-        [ meta:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ;
-            metatype:prefix_prefix "GOREL" ],
-        [ meta:prefix_reference biolinkml: ;
-            metatype:prefix_prefix "biolinkml" ],
-        [ meta:prefix_reference <http://purl.obolibrary.org/obo/go#> ;
-            metatype:prefix_prefix "GOP" ],
         [ meta:prefix_reference <http://semanticscience.org/resource/SIO_> ;
             metatype:prefix_prefix "SIO" ],
+        [ meta:prefix_reference <https://orcid.org/> ;
+            metatype:prefix_prefix "ORCID" ],
+        [ meta:prefix_reference biolinkml: ;
+            metatype:prefix_prefix "biolinkml" ],
+        [ meta:prefix_reference <https://www.dgidb.org/interaction_types> ;
+            metatype:prefix_prefix "DGIdb" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/chembio_> ;
+            metatype:prefix_prefix "chembio" ],
+        [ meta:prefix_reference <http://purl.org/oban/> ;
+            metatype:prefix_prefix "OBAN" ],
+        [ meta:prefix_reference <https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#> ;
+            metatype:prefix_prefix "gff3" ],
+        [ meta:prefix_reference <http://pharos.nih.gov/> ;
+            metatype:prefix_prefix "PHAROS" ],
         [ meta:prefix_reference <http://bio2rdf.org/wormbase_vocabulary> ;
             metatype:prefix_prefix "WBVocab" ],
+        [ meta:prefix_reference <http://purl.org/spar/fabio/> ;
+            metatype:prefix_prefix "fabio" ],
+        [ meta:prefix_reference <http://purl.obolibrary.org/obo/RO_> ;
+            metatype:prefix_prefix "OBOREL" ],
+        [ meta:prefix_reference <http://qudt.org/1.1/schema/qudt#> ;
+            metatype:prefix_prefix "qud" ],
+        [ meta:prefix_reference <http://smpdb.ca/pathways/#> ;
+            metatype:prefix_prefix "PathWhiz" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ;
+            metatype:prefix_prefix "ICD9" ],
+        [ meta:prefix_reference <https://www.ncbi.nlm.nih.gov/medgen/> ;
+            metatype:prefix_prefix "medgen" ],
+        [ meta:prefix_reference <https://w3id.org/biolink/vocab/> ;
+            metatype:prefix_prefix "biolink" ],
+        [ meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ;
+            metatype:prefix_prefix "UMLSST" ],
+        [ meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ;
+            metatype:prefix_prefix "gtpo" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ;
+            metatype:prefix_prefix "ICD0" ],
+        [ meta:prefix_reference <http://foodb.ca/compounds/> ;
+            metatype:prefix_prefix "foodb.compound" ],
+        [ meta:prefix_reference <https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/> ;
+            metatype:prefix_prefix "VANDF" ],
+        [ meta:prefix_reference <https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#> ;
+            metatype:prefix_prefix "gpi" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/Aeolus_> ;
+            metatype:prefix_prefix "Aeolus" ],
+        [ meta:prefix_reference <http://purl.bioontology.org/ontology/RXNORM/> ;
+            metatype:prefix_prefix "RXNORM" ],
+        [ meta:prefix_reference <https://www.alliancegenome.org/> ;
+            metatype:prefix_prefix "alliancegenome" ],
+        [ meta:prefix_reference <https://www.wikidata.org/wiki/Property:> ;
+            metatype:prefix_prefix "WIKIDATA_PROPERTY" ],
         [ meta:prefix_reference <https://doi.org/> ;
             metatype:prefix_prefix "doi" ],
-        [ meta:prefix_reference <http://www.orpha.net/ORDO/Orphanet_> ;
-            metatype:prefix_prefix "ORPHA" ],
-        [ meta:prefix_reference <https://publons.com/researcher/> ;
-            metatype:prefix_prefix "ResearchID" ],
         [ meta:prefix_reference <http://purl.bioontology.org/ontology/NDDF/> ;
             metatype:prefix_prefix "NDDF" ],
         [ meta:prefix_reference <https://www.ebi.ac.uk/chembl/mechanism/inspect/> ;
             metatype:prefix_prefix "CHEMBL.MECHANISM" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/ICD0_> ;
-            metatype:prefix_prefix "ICD0" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ;
-            metatype:prefix_prefix "MetaCyc" ],
-        [ meta:prefix_reference <http://www.ebi.ac.uk/ancestro/ancestro_> ;
-            metatype:prefix_prefix "HANCESTRO" ],
         [ meta:prefix_reference <http://translator.ncats.nih.gov/CTD_> ;
             metatype:prefix_prefix "CTD" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ;
-            metatype:prefix_prefix "DrugCentral" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ;
-            metatype:prefix_prefix "ICD9" ],
-        [ meta:prefix_reference <http://www.geneontology.org/formats/oboInOWL#> ;
-            metatype:prefix_prefix "oboformat" ],
-        [ meta:prefix_reference <http://purl.org/coar/resource_type/> ;
-            metatype:prefix_prefix "COAR_RESOURCE" ],
-        [ meta:prefix_reference <http://smpdb.ca/pathways/#> ;
-            metatype:prefix_prefix "PathWhiz" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/ICD10_> ;
-            metatype:prefix_prefix "ICD10" ],
-        [ meta:prefix_reference <https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#> ;
-            metatype:prefix_prefix "gff3" ],
-        [ meta:prefix_reference <https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=> ;
-            metatype:prefix_prefix "NLMID" ],
-        [ meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ;
-            metatype:prefix_prefix "UMLSSC" ],
-        [ meta:prefix_reference <http://purl.org/spar/fabio/> ;
-            metatype:prefix_prefix "fabio" ],
-        [ meta:prefix_reference <https://www.cancer.gov/publications/pdq#> ;
-            metatype:prefix_prefix "PDQ" ],
-        [ meta:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ;
-            metatype:prefix_prefix "gtpo" ],
-        [ meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ;
-            metatype:prefix_prefix "wgs" ],
-        [ meta:prefix_reference <http://translator.ncats.nih.gov/SNPEFF_> ;
-            metatype:prefix_prefix "SNPEFF" ],
-        [ meta:prefix_reference <https://www.ncbi.nlm.nih.gov/medgen/> ;
-            metatype:prefix_prefix "medgen" ],
-        [ meta:prefix_reference <http://purl.obolibrary.org/obo/uberon/core#> ;
-            metatype:prefix_prefix "UBERON_CORE" ],
+        [ meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ;
+            metatype:prefix_prefix "UMLSSG" ],
         [ meta:prefix_reference <http://apps.chiragjpgroup.org/repoDB/> ;
             metatype:prefix_prefix "REPODB" ],
-        [ meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ;
-            metatype:prefix_prefix "CAID" ],
-        [ meta:prefix_reference <http://loinc.org/rdf/> ;
-            metatype:prefix_prefix "LOINC" ],
-        [ meta:prefix_reference <http://purl.obolibrary.org/obo/MI_> ;
-            metatype:prefix_prefix "MI" ],
-        [ meta:prefix_reference <https://www.scopus.com/authid/detail.uri?authorId=> ;
-            metatype:prefix_prefix "ScopusID" ],
-        [ meta:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ;
-            metatype:prefix_prefix "UBERGRAPH" ],
-        [ meta:prefix_reference <https://skr3.nlm.nih.gov/SemMedDB> ;
-            metatype:prefix_prefix "SEMMEDDB" ],
-        [ meta:prefix_reference <http://pharos.nih.gov/> ;
-            metatype:prefix_prefix "PHAROS" ],
+        [ meta:prefix_reference <https://www.ama-assn.org/practice-management/cpt/> ;
+            metatype:prefix_prefix "CPT" ],
+        [ meta:prefix_reference <https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=> ;
+            metatype:prefix_prefix "NLMID" ],
+        [ meta:prefix_reference <http://purl.obolibrary.org/obo/ExO_> ;
+            metatype:prefix_prefix "ExO" ],
         [ meta:prefix_reference <https://github.com/ga4gh/vr-spec/> ;
             metatype:prefix_prefix "VMC" ],
-        [ meta:prefix_reference <http://foodb.ca/compounds/> ;
-            metatype:prefix_prefix "foodb.compound" ] ;
+        [ meta:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ;
+            metatype:prefix_prefix "GOREL" ],
+        [ meta:prefix_reference <http://kg1endpoint.rtx.ai/> ;
+            metatype:prefix_prefix "RTXKG1" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/DrugCentral_> ;
+            metatype:prefix_prefix "DrugCentral" ],
+        [ meta:prefix_reference <https://scholar.google.com/citations?user=> ;
+            metatype:prefix_prefix "GSID" ],
+        [ meta:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ;
+            metatype:prefix_prefix "CAID" ],
+        [ meta:prefix_reference <http://purl.obolibrary.org/obo/go#> ;
+            metatype:prefix_prefix "GOP" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/ICD10_> ;
+            metatype:prefix_prefix "ICD10" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/SNPEFF_> ;
+            metatype:prefix_prefix "SNPEFF" ],
+        [ meta:prefix_reference <http://www.ebi.ac.uk/ancestro/ancestro_> ;
+            metatype:prefix_prefix "HANCESTRO" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/hetio_> ;
+            metatype:prefix_prefix "hetio" ],
+        [ meta:prefix_reference <https://www.wikidata.org/wiki/> ;
+            metatype:prefix_prefix "WIKIDATA" ],
+        [ meta:prefix_reference <http://xmlns.com/foaf/0.1/> ;
+            metatype:prefix_prefix "foaf" ],
+        [ meta:prefix_reference <http://translator.ncats.nih.gov/MetaCyc_> ;
+            metatype:prefix_prefix "MetaCyc" ],
+        [ meta:prefix_reference <https://www.cancer.gov/publications/pdq#> ;
+            metatype:prefix_prefix "PDQ" ],
+        [ meta:prefix_reference <http://purl.obolibrary.org/obo/ECTO_> ;
+            metatype:prefix_prefix "ECTO" ],
+        [ meta:prefix_reference <http://purl.obolibrary.org/obo/uberon/core#> ;
+            metatype:prefix_prefix "UBERON_CORE" ],
+        [ meta:prefix_reference <http://www.orpha.net/ORDO/Orphanet_> ;
+            metatype:prefix_prefix "ORPHA" ],
+        [ meta:prefix_reference <https://www.gtexportal.org/home/gene/> ;
+            metatype:prefix_prefix "GTEx" ],
+        [ meta:prefix_reference <http://pubchem.ncbi.nlm.nih.gov/compound/> ;
+            metatype:prefix_prefix "CID" ],
+        [ meta:prefix_reference <http://loinc.org/rdf/> ;
+            metatype:prefix_prefix "LOINC" ],
+        [ meta:prefix_reference <https://skr3.nlm.nih.gov/SemMedDB> ;
+            metatype:prefix_prefix "SEMMEDDB" ],
+        [ meta:prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ;
+            metatype:prefix_prefix "UMLSSC" ],
+        [ meta:prefix_reference <https://www.scopus.com/authid/detail.uri?authorId=> ;
+            metatype:prefix_prefix "ScopusID" ],
+        [ meta:prefix_reference <http://www.geneontology.org/formats/oboInOWL#> ;
+            metatype:prefix_prefix "oboformat" ],
+        [ meta:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+            metatype:prefix_prefix "wgs" ],
+        [ meta:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ;
+            metatype:prefix_prefix "UBERGRAPH" ],
+        [ meta:prefix_reference <http://purl.bioontology.org/ontology/HCPCS/> ;
+            metatype:prefix_prefix "HCPCS" ],
+        [ meta:prefix_reference <http://purl.obolibrary.org/obo/MI_> ;
+            metatype:prefix_prefix "MI" ],
+        [ meta:prefix_reference <http://purl.obolibrary.org/obo/RO_> ;
+            metatype:prefix_prefix "RO" ],
+        [ meta:prefix_reference <https://publons.com/researcher/> ;
+            metatype:prefix_prefix "ResearchID" ],
+        [ meta:prefix_reference <https://isni.org/isni/> ;
+            metatype:prefix_prefix "isni" ] ;
     meta:slots <https://w3id.org/biolink/vocab/actively_involved_in>,
         <https://w3id.org/biolink/vocab/address>,
         <https://w3id.org/biolink/vocab/affects>,
@@ -731,8 +731,8 @@
         <https://w3id.org/biolink/vocab/volume>,
         <https://w3id.org/biolink/vocab/xenologous_to>,
         <https://w3id.org/biolink/vocab/xref> ;
-    meta:source_file_date "Sun Nov 22 04:47:42 2020"^^xsd:dateTime ;
-    meta:source_file_size 218782 ;
+    meta:source_file_date "Sun Nov 22 05:04:54 2020"^^xsd:dateTime ;
+    meta:source_file_size 218734 ;
     meta:subsets <https://w3id.org/biolink/vocab/samples>,
         <https://w3id.org/biolink/vocab/testing>,
         <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -2280,10 +2280,10 @@
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     meta:domain <https://w3id.org/biolink/vocab/ThingToPhenotypicFeatureAssociationMixin> ;
     meta:domain_of <https://w3id.org/biolink/vocab/ThingToPhenotypicFeatureAssociationMixin> ;
-    meta:examples [ skos:definition "Hyperkinesis" ;
-            skos:example "HP:0002487" ],
-        [ skos:definition "axon morphology variant" ;
+    meta:examples [ skos:definition "axon morphology variant" ;
             skos:example "WBPhenotype:0000180" ],
+        [ skos:definition "Hyperkinesis" ;
+            skos:example "HP:0002487" ],
         [ skos:definition "abnormal circulating bilirubin level" ;
             skos:example "MP:0001569" ] ;
     meta:is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2476,10 +2476,10 @@
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     meta:domain <https://w3id.org/biolink/vocab/VariantToThingAssociationMixin> ;
     meta:domain_of <https://w3id.org/biolink/vocab/VariantToThingAssociationMixin> ;
-    meta:examples [ skos:definition "chr13:g.32921033G>C (hg19) in ClinGen" ;
-            skos:example "ClinGen:CA024716" ],
-        [ skos:definition "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)" ;
-            skos:example "ClinVar:38077" ] ;
+    meta:examples [ skos:definition "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)" ;
+            skos:example "ClinVar:38077" ],
+        [ skos:definition "chr13:g.32921033G>C (hg19) in ClinGen" ;
+            skos:example "ClinGen:CA024716" ] ;
     meta:is_a <https://w3id.org/biolink/vocab/subject> ;
     meta:is_usage_slot true ;
     meta:owner <https://w3id.org/biolink/vocab/VariantToThingAssociationMixin> ;
@@ -2809,7 +2809,7 @@
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/id>,
         <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/xref> ;
     metatype:id_prefixes "HGNC",
@@ -2943,7 +2943,7 @@
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/id>,
         <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/xref> ;
     metatype:id_prefixes "ENSEMBL",
@@ -2962,7 +2962,7 @@
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/id>,
         <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/xref> ;
     metatype:id_prefixes "RNACENTRAL" .
@@ -3052,10 +3052,10 @@
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     meta:domain <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation> ;
     meta:domain_of <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation> ;
-    meta:examples [ skos:definition "abnormal brain ventricle size" ;
-            skos:example "MP:0013229" ],
-        [ skos:definition "Ehlers-Danlos syndrome, vascular type" ;
-            skos:example "MONDO:0017314" ] ;
+    meta:examples [ skos:definition "Ehlers-Danlos syndrome, vascular type" ;
+            skos:example "MONDO:0017314" ],
+        [ skos:definition "abnormal brain ventricle size" ;
+            skos:example "MP:0013229" ] ;
     meta:is_a <https://w3id.org/biolink/vocab/subject> ;
     meta:is_usage_slot true ;
     meta:owner <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation> ;
@@ -3530,7 +3530,7 @@
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/id>,
         <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/xref> ;
     metatype:id_prefixes "ENSEMBL",
@@ -5157,20 +5157,6 @@
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/lacks_part> .
 
-<https://w3id.org/biolink/vocab/macromolecular_machine_name> a metatype:SlotDefinition ;
-    skos:definition "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    meta:domain <https://w3id.org/biolink/vocab/MacromolecularMachine> ;
-    meta:domain_of <https://w3id.org/biolink/vocab/MacromolecularMachine> ;
-    meta:is_a <https://w3id.org/biolink/vocab/name> ;
-    meta:is_usage_slot true ;
-    meta:owner <https://w3id.org/biolink/vocab/MacromolecularMachine> ;
-    meta:range <https://w3id.org/biolink/vocab/symbol_type> ;
-    meta:required true ;
-    meta:slot_uri <https://w3id.org/biolink/vocab/name> ;
-    metatype:alias "name" ;
-    metatype:usage_slot_name "name" .
-
 <https://w3id.org/biolink/vocab/manifestation_of> a metatype:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:broadMatch <https://w3id.org/biolink/vocab/WIKIDATA_PROPERTY:P1557> ;
@@ -5217,11 +5203,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:local_names [ a metatype:LocalName ;
-            skos:altLabel "negatively regulates" ;
-            metatype:local_name_source "translator" ],
-        [ a metatype:LocalName ;
             skos:altLabel "activity directly negatively regulates activity of" ;
-            metatype:local_name_source "ro" ] ;
+            metatype:local_name_source "ro" ],
+        [ a metatype:LocalName ;
+            skos:altLabel "negatively regulates" ;
+            metatype:local_name_source "translator" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/negatively_regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/negatively_regulates_entity_to_entity> ;
@@ -5343,11 +5329,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     meta:local_names [ a metatype:LocalName ;
-            skos:altLabel "activity directly positively regulates activity of" ;
-            metatype:local_name_source "ro" ],
-        [ a metatype:LocalName ;
             skos:altLabel "positively regulates" ;
-            metatype:local_name_source "translator" ] ;
+            metatype:local_name_source "translator" ],
+        [ a metatype:LocalName ;
+            skos:altLabel "activity directly positively regulates activity of" ;
+            metatype:local_name_source "ro" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/positively_regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/positively_regulates_entity_to_entity> ;
@@ -5715,7 +5701,7 @@
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/id>,
         <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/xref> ;
     metatype:id_prefixes "ENSEMBL",
@@ -7027,7 +7013,7 @@
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/id>,
         <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/xref> ;
     metatype:id_prefixes "RNACENTRAL" .
@@ -7496,10 +7482,10 @@
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     meta:domain <https://w3id.org/biolink/vocab/FunctionalAssociation> ;
     meta:domain_of <https://w3id.org/biolink/vocab/FunctionalAssociation> ;
-    meta:examples [ skos:definition "kinase activity" ;
-            skos:example "GO:0016301" ],
-        [ skos:definition "postsynaptic membrane" ;
-            skos:example "GO:0045211" ] ;
+    meta:examples [ skos:definition "postsynaptic membrane" ;
+            skos:example "GO:0045211" ],
+        [ skos:definition "kinase activity" ;
+            skos:example "GO:0016301" ] ;
     meta:is_a <https://w3id.org/biolink/vocab/object> ;
     meta:is_usage_slot true ;
     meta:owner <https://w3id.org/biolink/vocab/FunctionalAssociation> ;
@@ -7795,11 +7781,11 @@
     meta:inherited true ;
     meta:is_a <https://w3id.org/biolink/vocab/affects> ;
     meta:local_names [ a metatype:LocalName ;
-            skos:altLabel "regulates" ;
-            metatype:local_name_source "translator" ],
-        [ a metatype:LocalName ;
             skos:altLabel "activity directly regulates activity of" ;
-            metatype:local_name_source "ro" ] ;
+            metatype:local_name_source "ro" ],
+        [ a metatype:LocalName ;
+            skos:altLabel "regulates" ;
+            metatype:local_name_source "translator" ] ;
     meta:mixins <https://w3id.org/biolink/vocab/regulates> ;
     meta:multivalued true ;
     meta:owner <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
@@ -8337,7 +8323,7 @@
         <https://w3id.org/biolink/vocab/has_biological_sequence>,
         <https://w3id.org/biolink/vocab/id>,
         <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/xref> .
 
@@ -9624,6 +9610,27 @@
         <https://w3id.org/biolink/vocab/qualifiers>,
         <https://w3id.org/biolink/vocab/relation> .
 
+<https://w3id.org/biolink/vocab/GeneProduct> a metatype:ClassDefinition ;
+    skos:definition "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wikidata:Q424689> ;
+    meta:class_uri <https://w3id.org/biolink/vocab/GeneProduct> ;
+    meta:definition_uri <https://w3id.org/biolink/vocab/GeneProduct> ;
+    meta:is_a <https://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
+    meta:slots <https://w3id.org/biolink/vocab/category>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/has_biological_sequence>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/in_taxon>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
+        <https://w3id.org/biolink/vocab/synonym>,
+        <https://w3id.org/biolink/vocab/xref> ;
+    metatype:id_prefixes "PR",
+        "UniProtKB",
+        "gtpo" ;
+    meta:union_of <https://w3id.org/biolink/vocab/Protein>,
+        <https://w3id.org/biolink/vocab/RNAProduct> .
+
 <https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation> a metatype:ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:note "TODO decide no how to model pathogenicity" ;
@@ -9697,6 +9704,20 @@
         <https://w3id.org/biolink/vocab/variant_to_disease_association_object>,
         <https://w3id.org/biolink/vocab/variant_to_disease_association_relation>,
         <https://w3id.org/biolink/vocab/variant_to_disease_association_subject> .
+
+<https://w3id.org/biolink/vocab/macromolecular_machine_name> a metatype:SlotDefinition ;
+    skos:definition "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    meta:domain <https://w3id.org/biolink/vocab/MacromolecularMachine> ;
+    meta:domain_of <https://w3id.org/biolink/vocab/MacromolecularMachine> ;
+    meta:is_a <https://w3id.org/biolink/vocab/name> ;
+    meta:is_usage_slot true ;
+    meta:owner <https://w3id.org/biolink/vocab/MacromolecularMachine> ;
+    meta:range <https://w3id.org/biolink/vocab/symbol_type> ;
+    meta:required true ;
+    meta:slot_uri <https://w3id.org/biolink/vocab/name> ;
+    metatype:alias "name" ;
+    metatype:usage_slot_name "name" .
 
 <https://w3id.org/biolink/vocab/synonym> a metatype:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -9950,27 +9971,6 @@
         <https://w3id.org/biolink/vocab/provided_by>,
         <https://w3id.org/biolink/vocab/publications>,
         <https://w3id.org/biolink/vocab/qualifiers> .
-
-<https://w3id.org/biolink/vocab/GeneProduct> a metatype:ClassDefinition ;
-    skos:definition "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wikidata:Q424689> ;
-    meta:class_uri <https://w3id.org/biolink/vocab/GeneProduct> ;
-    meta:definition_uri <https://w3id.org/biolink/vocab/GeneProduct> ;
-    meta:is_a <https://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
-    meta:slots <https://w3id.org/biolink/vocab/category>,
-        <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/has_biological_sequence>,
-        <https://w3id.org/biolink/vocab/id>,
-        <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/synonym>,
-        <https://w3id.org/biolink/vocab/xref> ;
-    metatype:id_prefixes "PR",
-        "UniProtKB",
-        "gtpo" ;
-    meta:union_of <https://w3id.org/biolink/vocab/Protein>,
-        <https://w3id.org/biolink/vocab/RNAProduct> .
 
 <https://w3id.org/biolink/vocab/ThingToPhenotypicFeatureAssociationMixin> a metatype:ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -10305,6 +10305,39 @@
     meta:range <https://w3id.org/biolink/vocab/biological_sequence> ;
     meta:slot_uri <https://w3id.org/biolink/vocab/has_biological_sequence> .
 
+<https://w3id.org/biolink/vocab/Gene> a metatype:ClassDefinition ;
+    skos:altLabel "locus" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010035>,
+        <https://w3id.org/biolink/vocab/SO:0000704>,
+        <wikidata:Q7187> ;
+    meta:class_uri <https://w3id.org/biolink/vocab/Gene> ;
+    meta:definition_uri <https://w3id.org/biolink/vocab/Gene> ;
+    meta:is_a <https://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
+    meta:slots <https://w3id.org/biolink/vocab/category>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/has_biological_sequence>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/in_taxon>,
+        <https://w3id.org/biolink/vocab/macromolecular_machine_name>,
+        <https://w3id.org/biolink/vocab/symbol>,
+        <https://w3id.org/biolink/vocab/synonym>,
+        <https://w3id.org/biolink/vocab/xref> ;
+    metatype:id_prefixes "ENSEMBL",
+        "FB",
+        "FlyBase",
+        "HGNC",
+        "MGI",
+        "NCBIGene",
+        "PomBase",
+        "RGD",
+        "SGD",
+        "UniProtKB",
+        "WB",
+        "WormBase",
+        "ZFIN",
+        "dictyBase" .
+
 <https://w3id.org/biolink/vocab/affects> a metatype:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
@@ -10392,39 +10425,6 @@
         <https://w3id.org/biolink/vocab/qualifiers>,
         <https://w3id.org/biolink/vocab/start_interbase_coordinate>,
         <https://w3id.org/biolink/vocab/strand> .
-
-<https://w3id.org/biolink/vocab/Gene> a metatype:ClassDefinition ;
-    skos:altLabel "locus" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010035>,
-        <https://w3id.org/biolink/vocab/SO:0000704>,
-        <wikidata:Q7187> ;
-    meta:class_uri <https://w3id.org/biolink/vocab/Gene> ;
-    meta:definition_uri <https://w3id.org/biolink/vocab/Gene> ;
-    meta:is_a <https://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
-    meta:slots <https://w3id.org/biolink/vocab/category>,
-        <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/has_biological_sequence>,
-        <https://w3id.org/biolink/vocab/id>,
-        <https://w3id.org/biolink/vocab/in_taxon>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/symbol>,
-        <https://w3id.org/biolink/vocab/synonym>,
-        <https://w3id.org/biolink/vocab/xref> ;
-    metatype:id_prefixes "ENSEMBL",
-        "FB",
-        "FlyBase",
-        "HGNC",
-        "MGI",
-        "NCBIGene",
-        "PomBase",
-        "RGD",
-        "SGD",
-        "UniProtKB",
-        "WB",
-        "WormBase",
-        "ZFIN",
-        "dictyBase" .
 
 <https://w3id.org/biolink/vocab/Occurrent> a metatype:ClassDefinition ;
     skos:definition "A processual entity" ;
@@ -10804,15 +10804,36 @@
     meta:domain_of <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a metatype:LocalName ;
-            skos:altLabel "annotation predicate" ;
-            metatype:local_name_source "ga4gh" ],
-        [ a metatype:LocalName ;
             skos:altLabel "predicate" ;
-            metatype:local_name_source "translator" ] ;
+            metatype:local_name_source "translator" ],
+        [ a metatype:LocalName ;
+            skos:altLabel "annotation predicate" ;
+            metatype:local_name_source "ga4gh" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/predicate_type> ;
     meta:required true ;
     meta:slot_uri rdf:predicate .
+
+<https://w3id.org/biolink/vocab/name> a metatype:SlotDefinition ;
+    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
+    skos:altLabel "display name",
+        "label",
+        "title" ;
+    skos:definition "A human-readable name for a thing" ;
+    skos:exactMatch <gff3:Name>,
+        <gpi:DB_Object_Name> ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation rdfs:label ;
+    skos:narrowMatch dcterms:title,
+        <https://w3id.org/biolink/vocab/WIKIDATA_PROPERTY:P1476> ;
+    meta:definition_uri <https://w3id.org/biolink/vocab/name> ;
+    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:domain_of <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:is_a <https://w3id.org/biolink/vocab/node_property> ;
+    meta:owner <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:range <https://w3id.org/biolink/vocab/label_type> ;
+    meta:required true ;
+    meta:slot_uri rdfs:label .
 
 <https://w3id.org/biolink/vocab/Association> a metatype:ClassDefinition ;
     skos:definition "A typed association between two entities, supported by evidence" ;
@@ -10833,29 +10854,6 @@
         <https://w3id.org/biolink/vocab/qualifiers>,
         <https://w3id.org/biolink/vocab/relation>,
         <https://w3id.org/biolink/vocab/subject> .
-
-<https://w3id.org/biolink/vocab/name> a metatype:SlotDefinition ;
-    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
-    skos:altLabel "display name",
-        "label",
-        "title" ;
-    skos:definition "A human-readable name for a thing" ;
-    skos:exactMatch <gff3:Name>,
-        <gpi:DB_Object_Name> ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation rdfs:label ;
-    skos:narrowMatch dcterms:title,
-        <https://w3id.org/biolink/vocab/WIKIDATA_PROPERTY:P1476> ;
-    meta:definition_uri <https://w3id.org/biolink/vocab/name> ;
-    meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:domain_of <https://w3id.org/biolink/vocab/Gene>,
-        <https://w3id.org/biolink/vocab/GeneProduct>,
-        <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:is_a <https://w3id.org/biolink/vocab/node_property> ;
-    meta:owner <https://w3id.org/biolink/vocab/GeneProduct> ;
-    meta:range <https://w3id.org/biolink/vocab/label_type> ;
-    meta:required true ;
-    meta:slot_uri rdfs:label .
 
 <https://w3id.org/biolink/vocab/category> a metatype:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -10900,12 +10898,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
         <gpi:DB_Object_ID> ;
     meta:definition_uri <https://w3id.org/biolink/vocab/id> ;
     meta:domain <https://w3id.org/biolink/vocab/NamedThing> ;
-    meta:domain_of <https://w3id.org/biolink/vocab/Gene>,
-        <https://w3id.org/biolink/vocab/GeneProduct>,
-        <https://w3id.org/biolink/vocab/NamedThing> ;
+    meta:domain_of <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:identifier true ;
     meta:is_a <https://w3id.org/biolink/vocab/node_property> ;
-    meta:owner <https://w3id.org/biolink/vocab/GeneProduct> ;
+    meta:owner <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:range <https://w3id.org/biolink/vocab/string> ;
     meta:required true ;
     meta:slot_uri <https://w3id.org/biolink/vocab/id> .
@@ -10966,11 +10962,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     meta:domain_of <https://w3id.org/biolink/vocab/Association> ;
     meta:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     meta:local_names [ a metatype:LocalName ;
-            skos:altLabel "node with outgoing relationship" ;
-            metatype:local_name_source "neo4j" ],
-        [ a metatype:LocalName ;
             skos:altLabel "annotation subject" ;
-            metatype:local_name_source "ga4gh" ] ;
+            metatype:local_name_source "ga4gh" ],
+        [ a metatype:LocalName ;
+            skos:altLabel "node with outgoing relationship" ;
+            metatype:local_name_source "neo4j" ] ;
     meta:owner <https://w3id.org/biolink/vocab/Association> ;
     meta:range <https://w3id.org/biolink/vocab/NamedThing> ;
     meta:required true ;
