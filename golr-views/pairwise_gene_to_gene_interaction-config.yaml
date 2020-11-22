@@ -10,12 +10,12 @@ fields:
 - id: id
   description: A unique identifier for an association
   display_name: association_id
-- id: negated
-  description: if set to true, then the association is negated i.e. is not true
-  display_name: negated
 - id: association_type
   description: connects an association to the type of association (e.g. gene to phenotype)
   display_name: association type
+- id: negated
+  description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
 - id: qualifiers
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
@@ -40,8 +40,8 @@ fields:
     vs object is arbitrary. We allow a gene product to stand as proxy for the gene
     or vice versa
   display_name: gene to gene association_object
+- id: predicate
+  display_name: pairwise gene to gene interaction_predicate
 - id: relation
   description: interaction relationship type
   display_name: pairwise gene to gene interaction_relation
-- id: interacting_molecules_category
-  display_name: pairwise interaction association_interacting molecules category
