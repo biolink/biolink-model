@@ -3289,6 +3289,7 @@ slots:
     range: iri type
     in_subset:
       - translator_minimal
+      - samples
     exact_mappings:
       - WIKIDATA_PROPERTY:P854
 
@@ -3303,6 +3304,7 @@ slots:
     range: label type
     in_subset:
       - translator_minimal
+      - samples
     required: true
     slot_uri: rdfs:label
     exact_mappings:
@@ -4211,15 +4213,6 @@ slots:
     in_subset:
       - samples
 
-  has url:
-    description: >-
-      Human-consumable URL to link out and read about a given attribute value.
-      If given as a CURIE, it should specify an internet resolvable URI.
-    domain: attribute
-    range: iri type
-    in_subset:
-      - samples
-
   ## ----------------------
   ## End of Attribute Slots
   ## ----------------------
@@ -4244,9 +4237,9 @@ classes:
 
   attribute:
     subclass_of: PATO:0000001
-    mappings:
-      - SIO:000614
     is_a: abstract entity
+    mixins:
+      - resource mixin
     # biolink:OntologyClass is not a mixin thus cannot be used as such here.  Moreover,
     # the 'biolink:has_attribute_type' slot is also of a biolink:OntologyClass which points
     # to  semantic redundancy in this class.  Better to simply remove the mixins declaration
@@ -4261,8 +4254,8 @@ classes:
       - has attribute type
       - has quantitative value
       - has qualitative value
-    mixins:
-      - resource mixin
+    exact_mappings:
+      - SIO:000614
     in_subset:
       - samples
 
@@ -4378,29 +4371,20 @@ classes:
 
   named thing:
     description: "a databased entity or concept/class"
-    slots:
-      - id
-      - category
+    subclass_of: BFO:0000001
     mixins:
       - resource mixin
       - attribute mixin
-    subclass_of: BFO:0000001
-    mappings:
+    slots:
+      - id
+      - category
+    exact_mappings:
       - WIKIDATA:Q35120
       # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
       # Entity
       - UMLSSC:T071
       - UMLSST:enty
-      # Physical Object
-      - UMLSSC:T072
-      - UMLSST:phob
-      # Manufactured Object
-      - UMLSSC:T073
-      - UMLSST:mnob
-      # Food
-      - UMLSSC:T168
-      - UMLSST:food
 
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
@@ -5154,6 +5138,10 @@ classes:
       - has nutrient
     id_prefixes:
       - foodb.compound
+    exact_mappings:
+      # Food
+      - UMLSSC:T168
+      - UMLSST:food
 
   metabolite:
     is_a: chemical substance
@@ -6878,6 +6866,14 @@ classes:
       - physical essence
     description: >-
       An entity that has material reality (a.k.a. physical essence).
+    exact_mappings:
+      # Physical Object
+      - UMLSSC:T072
+      - UMLSST:phob
+    narrow_mappings:
+      # Manufactured Object
+      - UMLSSC:T073
+      - UMLSST:mnob
 
   biological process or activity:
     is_a: biological entity
