@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-11-22 05:06
+# Generation date: 2020-11-22 20:14
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -182,9 +182,9 @@ GFF3 = CurieNamespace('gff3', 'https://github.com/The-Sequence-Ontology/Specific
 GPI = CurieNamespace('gpi', 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#')
 GTPO = CurieNamespace('gtpo', 'https://rdf.guidetopharmacology.org/ns/gtpo#')
 HETIO = CurieNamespace('hetio', 'http://translator.ncats.nih.gov/hetio_')
-ISBN = CurieNamespace('isbn', 'http://example.org/UNKNOWN/isbn/')
+ISBN = CurieNamespace('isbn', 'https://www.isbn-international.org/identifier/')
 ISNI = CurieNamespace('isni', 'https://isni.org/isni/')
-ISSN = CurieNamespace('issn', 'http://example.org/UNKNOWN/issn/')
+ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOWL#')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')

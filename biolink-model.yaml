@@ -50,8 +50,10 @@ prefixes:
   ICD0: 'http://translator.ncats.nih.gov/ICD0_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
-  LOINC: 'http://loinc.org/rdf/'
+  isbn: 'https://www.isbn-international.org/identifier/' # note: a resolvable base URI not available from isbn-international
   isni: 'https://isni.org/isni/'
+  issn: 'https://portal.issn.org/resource/ISSN/'
+  LOINC: 'http://loinc.org/rdf/'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   MI: 'http://purl.obolibrary.org/obo/MI_'
@@ -4974,7 +4976,7 @@ classes:
         required: true
         description: >-
           Different classes of agents have distinct preferred identifiers.
-          For publishers, use the ISBN publisher code.
+          For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups.
           For editors, authors and  individual providers, use the individual's ORCID if available;
           Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown.
           Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
