@@ -2028,8 +2028,7 @@ slots:
   ameliorates:
     is_a: affects
     description: >-
-      hA relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
-    required: true
+      A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: biological entity
     range: disease or phenotypic feature
@@ -3280,23 +3279,26 @@ slots:
       - gpi:DB_Object_ID
 
   iri:
-    is_a: node property
     description: >-
       An IRI for the node. This is determined by the id using expansion rules.
+    # 'iri' is generalized, via the 'resource mixin', to be used for both NamedThing and Attribute classes
+    # is_a: node property
+    # domain: named thing
+    range: iri type
     in_subset:
       - translator_minimal
-    domain: named thing
-    range: iri type
     exact_mappings:
       - WIKIDATA_PROPERTY:P854
 
   name:
-    is_a: node property
-    aliases: ['label', 'display name', 'title']
-    domain: named thing
-    range: label type
+    aliases: [ 'label', 'display name', 'title' ]
     description: >-
       A human-readable name for a thing
+    #
+    # 'name' is generalized, via the 'resource mixin', to be used for both NamedThing and Attribute classes
+    # is_a: node property
+    # domain: named thing
+    range: label type
     in_subset:
       - translator_minimal
     required: true
@@ -3307,6 +3309,14 @@ slots:
     narrow_mappings:
       - dcterms:title
       - WIKIDATA_PROPERTY:P1476
+
+  source:
+    description: >-
+      a lightweight analog to the association class 'has provider' slot, which is the string name, or
+      the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+    range: label type
+    in_subset:
+      - translator_minimal
 
   symbol:
     is_a: node property
@@ -4112,12 +4122,29 @@ slots:
       - UMLS:has_supported_concept_relationship
       - UMLS:may_be_qualified_by
 
+  ## ---------------
+  ## Attribute Slots
+  ## ---------------
+
+  has attribute label:
+    description: >-
+      A human-readable name for an attribute which can be set a string which reflects its
+      context of interpretation, or default to the name associated with the 'has attribute type' slot
+    domain: attribute
+    range: label type
+    multivalued: false
+    required: true
+    slot_uri: rdfs:label
+    in_subset:
+      - samples
+
   has attribute type:
     description: >-
       connects an attribute to a class that describes it
     domain: attribute
     range: ontology class
     multivalued: false
+    required: true
     in_subset:
       - samples
     narrow_mappings:
@@ -4182,11 +4209,36 @@ slots:
     in_subset:
       - samples
 
+  has url:
+    description: >-
+      Human-consumable URL to link out and read about a given attribute value.
+      If given as a CURIE, it should specify an internet resolvable URI.
+    domain: attribute
+    range: iri type
+    in_subset:
+      - samples
+
+  ## ----------------------
+  ## End of Attribute Slots
+  ## ----------------------
+
 classes:
 
   abstract entity:
     description: >-
       Any thing that is not a process or a physical mass-bearing entity
+
+  resource mixin:
+    mixin: true
+    abstract: true
+    slots:
+      - iri
+      - name
+      - source
+
+  ## ----------
+  ## ATTRIBUTES
+  ## ----------
 
   attribute:
     subclass_of: PATO:0000001
@@ -4203,9 +4255,12 @@ classes:
       For example, an apple may have properties such as color, shape, age, crispiness.
       An environmental sample may have attributes such as depth, lat, long, material.
     slots:
+      - has attribute label
       - has attribute type
       - has quantitative value
       - has qualitative value
+    mixins:
+      - resource mixin
     in_subset:
       - samples
 
@@ -4217,7 +4272,13 @@ classes:
     slots:
       - has unit
       - has numeric value
-      
+
+  attribute mixin:
+    mixin: true
+    abstract: true
+    slots:
+      - has attribute
+
   ## ------
   ## THINGS
   ## ------
@@ -4317,8 +4378,10 @@ classes:
     description: "a databased entity or concept/class"
     slots:
       - id
-      - name
       - category
+    mixins:
+      - resource mixin
+      - attribute mixin
     subclass_of: BFO:0000001
     mappings:
       - WIKIDATA:Q35120
@@ -4744,8 +4807,9 @@ classes:
     mappings:
       - OBI:0000747
       - SIO:001050
-    slots:
-      - has attribute
+    # 'has attribute' usage being generalized by relocation to NamedThing (and beyond)
+    #slots:
+    #  - has attribute
     id_prefixes:
       - BIOSAMPLE
       - GOLD.META
@@ -5269,8 +5333,6 @@ classes:
     is_a: gene or gene product
     aliases: ['locus']
     slots:
-      - id
-      - name
       - symbol
       - description
       - synonym
@@ -5304,8 +5366,6 @@ classes:
       - protein
       - RNA product
     slots:
-      - id
-      - name
       - description
       - synonym
       - xref
@@ -5615,6 +5675,8 @@ classes:
       - qualifiers
       - publications
       - provided by
+    mixins:
+      - attribute mixin
     mappings:
       - OBAN:association
       - "rdf:Statement"
