@@ -4704,21 +4704,6 @@ classes:
       # Human
       - UMLSSC:T016
       - UMLSST:humn
-      # Group
-      - UMLSSC:T096
-      - UMLSST:grup
-      # Professional or Occupational Group
-      - UMLSSC:T097
-      - UMLSST:prog
-      # Family Group
-      - UMLSSC:T099
-      - UMLSST:famg
-      # Age Group
-      - UMLSSC:T100
-      - UMLSST:aggp
-      # Patient or Disabled Group
-      - UMLSSC:T101
-      - UMLSST:podg
       # Archaeon
       - UMLSSC:T194
       - UMLSST:arch
@@ -4745,7 +4730,11 @@ classes:
       - thing with taxon
     is_a: organismal entity
     subclass_of: PCO:0000001
-    mappings:
+    broad_mappings:
+      # Group
+      - UMLSSC:T096
+      - UMLSST:grup
+    exact_mappings:
       - SIO:001061
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
@@ -4767,8 +4756,21 @@ classes:
       A group of people banded together or treated as a group who share common characteristics.
       A cohort 'study' is a particular form of longitudinal study that samples a cohort,
       performing a cross-section at intervals through time.
-    mappings:
+    exact_mappings:
       - WIKIDATA:Q1303415
+    narrow_mappings:
+      # Professional or Occupational Group
+      - UMLSSC:T097
+      - UMLSST:prog
+      # Family Group
+      - UMLSSC:T099
+      - UMLSST:famg
+      # Age Group
+      - UMLSSC:T100
+      - UMLSST:aggp
+      # Patient or Disabled Group
+      - UMLSSC:T101
+      - UMLSST:podg
 
   subject of investigation:
     mixin: true
