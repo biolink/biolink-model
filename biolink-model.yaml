@@ -3966,6 +3966,20 @@ slots:
     range: drug
     multivalued: true
 
+  has device:
+    is_a: node property
+    description: >-
+      connects an entity to one or more (medical) devices
+    range: device
+    multivalued: true
+
+  has procedure:
+    is_a: node property
+    description: >-
+      connects an entity to one or more (medical) procedures
+    range: procedure
+    multivalued: true
+
     ## genotypes
 
   has gene:
@@ -5661,8 +5675,9 @@ classes:
     description: >-
       A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
     slots:
-      # list of slots needs to be generalised beyond drug treatments
       - has drug
+      - has device
+      - has procedure
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
