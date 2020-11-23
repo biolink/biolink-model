@@ -4392,6 +4392,27 @@ classes:
       - UMLSSC:T185
       - UMLSST:clas
 
+  confidence level:
+    is_a: information content entity
+    description: >-
+      Level of confidence in a statement
+    values_from:
+      - cio
+    mappings:
+      - CIO:0000028
+      - SEPIO:0000167
+      - SEPIO:0000187
+
+  evidence type:
+    is_a: information content entity
+    aliases: ['evidence code']
+    description: >-
+      Class of evidence that supports an association
+    values_from:
+      - eco
+    mappings:
+      - ECO:0000000
+
   data file:
     is_a: information content entity
     mappings:
@@ -4421,7 +4442,9 @@ classes:
       - type
       - distribution
 
-  ## Publication related entity classes
+  ## -------------------
+  ## Publication Related
+  ## -------------------
 
   # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
   publication:
@@ -4555,7 +4578,9 @@ classes:
       # By inheritance, a DOI may be used as a publication identifier; there may be other relevant namespaces
       - PMID
 
-  ## end of Publication related entity classes
+  ## -------------------
+  ## End of Publications
+  ## -------------------
 
   distribution level:
     is_a: data set version
@@ -4744,36 +4769,6 @@ classes:
     mappings:
       - WIKIDATA:Q1303415
 
-  outcome:
-    is_a: named thing
-    mixin: true
-    abstract: true
-    description: >-
-      An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping
-      of various categories of possible biological or non-biological (e.g. clinical) outcomes.
-
-  disease or phenotypic outcome:
-    is_a: disease or phenotypic feature
-    mixins:
-      - outcome
-    description: >-
-      An outcome from an exposure event which is the manifestation of a disease or other characteristic phenotype.
-
-  hospitalization outcome:
-    is_a: hospitalization
-    mixins:
-      - outcome
-    description: >-
-      An outcome from an exposure event which is the increased manifestation of
-      acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
-
-  mortality outcome:
-    is_a: death
-    mixins:
-      - outcome
-    description: >-
-      An outcome of death from an exposure event.
-
   subject of investigation:
     mixin: true
     abstract: true
@@ -4870,17 +4865,6 @@ classes:
       - HP
       - MP
 
-  hospitalization:
-    is_a: clinical intervention
-    mappings:
-      - SNOMEDCT:32485007
-      - WIKIDATA:Q3140971
-
-  death:
-    is_a: biological process
-    mappings:
-      - GO:0016265
-
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
@@ -4905,26 +4889,78 @@ classes:
       - SNOMEDCT
       - MESH
 
-  confidence level:
-    is_a: information content entity
-    description: >-
-      Level of confidence in a statement
-    values_from:
-      - cio
+  death:
+    is_a: biological process
     mappings:
-      - CIO:0000028
-      - SEPIO:0000167
-      - SEPIO:0000187
+      - GO:0016265
 
-  evidence type:
-    is_a: information content entity
-    aliases: ['evidence code']
-    description: >-
-      Class of evidence that supports an association
-    values_from:
-      - eco
+  hospitalization:
+    is_a: clinical intervention
     mappings:
-      - ECO:0000000
+      - SNOMEDCT:32485007
+      - WIKIDATA:Q3140971
+
+  ## ------------------
+  ## Clinical Outcomes
+  ## ------------------
+
+  outcome:
+    is_a: named thing
+    mixin: true
+    abstract: true
+    description: >-
+      An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping
+      of various categories of possible biological or non-biological (e.g. clinical) outcomes.
+
+  disease or phenotypic feature outcome:
+    is_a: disease or phenotypic feature
+    mixins:
+      - outcome
+    description: >-
+      Physiological outcomes resulting from an exposure event which is the manifestation
+      of a disease or other characteristic phenotype.
+
+  behavioral outcome:
+    is_a: activity and behavior
+    mixins:
+      - outcome
+    description: >-
+      An outcome resulting from an exposure event which is the manifestation of human behavior.
+
+  hospitalization outcome:
+    is_a: hospitalization
+    mixins:
+      - outcome
+    description: >-
+      An outcome resulting from an exposure event which is the increased manifestation of
+      acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
+
+  mortality outcome:
+    is_a: death
+    mixins:
+      - outcome
+    description: >-
+      An outcome of death from resulting from an exposure event.
+
+  epidemiological outcome:
+    is_a: biological entity
+    mixins:
+      - outcome
+    description: >-
+      An epidemiological outcome, such as societal disease burden, resulting from an exposure event,
+    related_mappings:
+      - NCIT:C19291
+
+  socioeconomic outcome:
+    is_a: activity and behavior
+    mixins:
+      - outcome
+    description: >-
+      An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+
+  ## ------------------------
+  ## End of Clinical Outcomes
+  ## ------------------------
 
   administrative entity:
     is_a: named thing
