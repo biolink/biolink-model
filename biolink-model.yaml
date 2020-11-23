@@ -4770,6 +4770,17 @@ classes:
       A group of people banded together or treated as a group who share common characteristics.
       A cohort 'study' is a particular form of longitudinal study that samples a cohort,
       performing a cross-section at intervals through time.
+    #
+    # As of this moment (Nov. 22), the jury is still out on what metadata of a cohort
+    # will be common to all cohort descriptions versus cohort-specific annotation.
+    # The former should be embedded as explicit slots in the cohort category. The latter
+    # ought to be documented as (ontology term constrained) extended node attributes.
+    #
+    #slots:
+    #  - general disease focus,
+    #  - specific inclusion/exclusion criteria,
+    #  - year(s) of cohort creation,
+    #  - institution.
     exact_mappings:
       - WIKIDATA:Q1303415
     narrow_mappings:
@@ -5630,9 +5641,11 @@ classes:
     # need to generalise 'exposure event' to include other non-biological events
     mixin: true
     abstract: true
+    slots:
+      - timepoint
     description: >-
-      A feature of the environment of an organism that influences one or more phenotypic features
-      of that organism, potentially mediated by genes
+      A (possibly time bounded) incidence of a feature of the environment of an organism that
+      influences one or more phenotypic features of that organism, potentially mediated by genes
     exact_mappings:
       - XCO:0000000
 
@@ -5673,7 +5686,8 @@ classes:
     mixins:
       - exposure event
     description: >-
-      A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+      A treatment is targeted at a disease or phenotype and may involve
+      multiple drug 'exposures', medical devices and/or procedures
     slots:
       - has drug
       - has device
@@ -5689,6 +5703,15 @@ classes:
       - exposure event
     description: >-
       A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
+    # exact_mappings:
+    #  -
+
+  geographic exposure:
+    is_a: geographic location
+    mixins:
+      - exposure event
+    description: >-
+      A geographic exposure is a factor relating to geographic proximity to some impactful entity.
     # exact_mappings:
     #  -
 
