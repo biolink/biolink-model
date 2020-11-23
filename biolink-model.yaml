@@ -5638,7 +5638,6 @@ classes:
 
   exposure event:
     aliases: ['exposure', 'experimental condition']
-    # need to generalise 'exposure event' to include other non-biological events
     mixin: true
     abstract: true
     slots:
@@ -6195,7 +6194,8 @@ classes:
       subject:
         range: disease
       object:
-        range: exposure event
+        description: >-
+          The object should be a class implementing the 'mixin' biolink:ExposureEvent.
 
   exposure to outcome association:
     is_a: association
@@ -6207,11 +6207,11 @@ classes:
       An association between an exposure event and an outcome
     slot_usage:
       subject:
-        range: exposure event
-      #predicate:
-      #  subproperty_of: ??? # future semantic constraint here may be feasible and desired
+        description: >-
+          The subject should be a class implementing the 'mixin' biolink:ExposureEvent.
       object:
-        range: outcome
+        description: >-
+          The object should be a class implementing the 'mixin' biolink:Outcome.
 
   frequency qualifier mixin:
     mixin: true
@@ -6355,7 +6355,8 @@ classes:
       - thing to phenotypic feature association mixin
     slot_usage:
       subject:
-        range: exposure event
+        description: >-
+          The subject should be a class implementing the 'mixin' biolink:ExposureEvent.
 
   disease to phenotypic feature association:
     is_a: association
