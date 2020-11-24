@@ -5649,7 +5649,7 @@ classes:
     description: >-
       Any association between one genotype and a genotypic entity that is a sub-component of it
     slot_usage:
-      relation:
+      predicate:
         subproperty_of: has variant part
       subject:
         range: genotype
@@ -5669,7 +5669,7 @@ classes:
       Any association between a genotype and a gene.
       The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
     slot_usage:
-      relation:
+      predicate:
         description: >-
           the relationship type used to connect genotype to gene
       subject:
@@ -5689,7 +5689,8 @@ classes:
     description: >-
       Any association between a genotype and a sequence variant.
     slot_usage:
-      relation:
+      predicate:
+        # subproperty_of: ???
         description: >-
           the relationship type used to connect genotype to gene
       subject:
@@ -5734,7 +5735,7 @@ classes:
       A homology association between two genes. May be orthology (in which case the species of subject and object
       should differ) or paralogy (in which case the species may be the same)
     slot_usage:
-      relation:
+      predicate:
         subproperty_of: homologous to
         symmetric: true
         description: >-
@@ -5760,7 +5761,6 @@ classes:
           - ro
           - mi
         description: "interaction relationship type"
-
 
   pairwise molecular interaction:
     is_a: pairwise gene to gene interaction
@@ -5888,7 +5888,7 @@ classes:
         range: chemical substance
         description: >-
           the downstream chemical entity
-      relation:
+      predicate:
         subproperty_of: derives into
       change is catalyzed by:
         description: >-
@@ -5975,7 +5975,7 @@ classes:
           the material entity the sample was derived from. This may be another material sample, or
           any other material entity, including for example an organism, a geographic feature, or some
           environmental material.
-      relation:
+      predicate:
         description: >-
           derivation relationship
         subproperty_of: derives from
@@ -6144,7 +6144,7 @@ classes:
       - thing to phenotypic feature association mixin
       - genotype to thing association mixin
     slot_usage:
-      relation:
+      predicate:
         subproperty_of: has phenotype
       subject:
         range: genotype
@@ -6309,7 +6309,8 @@ classes:
         range: population of individual organisms
         description: >-
           the population that form the object of the association
-      relation:
+      predicate:
+        # subproperty_of: ???
         description: >-
           A relationship type that holds between the subject and object populations. Standard mereological
           relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships
@@ -6346,7 +6347,7 @@ classes:
         examples:
           - value: ClinVar:52241
             description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
-      relation:
+      predicate:
         description: >-
           E.g. is pathogenic for
         subproperty_of: related condition
@@ -6371,7 +6372,7 @@ classes:
       subject:
         description: >-
           a genotype that is associated in some way with a disease state
-      relation:
+      predicate:
         description: >-
           E.g. is pathogenic for
         subproperty_of: related condition
@@ -6393,7 +6394,7 @@ classes:
         description: >-
           The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits
           similar features, or a gene that when mutated exhibits features of the disease
-      relation:
+      predicate:
         subproperty_of: model of
         description: >-
           The relationship to the disease
@@ -6515,7 +6516,7 @@ classes:
         examples:
           - value: UBERON:0002037
             description: cerebellum
-      relation:
+      predicate:
         description: "expression relationship"
         subproperty_of: expressed in
       stage qualifier:
@@ -6657,7 +6658,7 @@ classes:
       object:
         aliases: ['reference']
         range: genomic entity ## typically a chromosome use monochrom
-      relation:
+      predicate:
         subproperty_of: has sequence location
     slots:
       - start interbase coordinate
@@ -6704,7 +6705,7 @@ classes:
         range: gene
       object:
         range: gene product
-      relation:
+      predicate:
         subproperty_of: has gene product
 
   exon to transcript relationship:
@@ -6725,7 +6726,8 @@ classes:
     description: >-
       A regulatory relationship between two genes
     slot_usage:
-      relation:
+      predicate:
+        # subproperty_of: ???
         description: >-
           the direction is always from regulator to regulated
       subject:
@@ -6736,7 +6738,7 @@ classes:
         role: regulated gene
 
   anatomical entity to anatomical entity association:
-#      schema: gocam
+    # schema: gocam
     is_a: association
     defining_slots:
       - subject
@@ -6765,7 +6767,7 @@ classes:
         range: anatomical entity
         description: >-
           the whole
-      relation:
+      predicate:
         subproperty_of: part of
 
   anatomical entity to anatomical entity ontogenic association:
@@ -6785,7 +6787,7 @@ classes:
         range: anatomical entity
         description: >-
           the structure at an earlier time
-      relation:
+      predicate:
          subproperty_of: develops from
 
   occurrent:
