@@ -3305,7 +3305,10 @@ slots:
     in_subset:
       - translator_minimal
       - samples
-    required: true
+    #
+    # BiolinkML doesn't like mixin slots to be "required: true".
+    # Besides, some entity nodes/attributes may not have names?
+    # required: true
     slot_uri: rdfs:label
     exact_mappings:
       - gff3:Name
