@@ -4133,18 +4133,6 @@ slots:
   ## Attribute Slots
   ## ---------------
 
-  has attribute label:
-    description: >-
-      A human-readable name for an attribute which can be set a string which reflects its
-      context of interpretation, or default to the name associated with the 'has attribute type' slot
-    domain: attribute
-    range: label type
-    multivalued: false
-    required: true
-    slot_uri: rdfs:label
-    in_subset:
-      - samples
-
   has attribute type:
     description: >-
       connects an attribute to a class that describes it
@@ -4245,7 +4233,7 @@ classes:
       - resource mixin
     # biolink:OntologyClass is not a mixin thus cannot be used as such here.  Moreover,
     # the 'biolink:has_attribute_type' slot is also of a biolink:OntologyClass which points
-    # to  semantic redundancy in this class.  Better to simply remove the mixins declaration
+    # to  semantic redundancy in this class. Better to simply remove the mixins declaration
     #mixins:
     #  - ontology class
     description: >-
@@ -4253,10 +4241,16 @@ classes:
       For example, an apple may have properties such as color, shape, age, crispiness.
       An environmental sample may have attributes such as depth, lat, long, material.
     slots:
-      - has attribute label
       - has attribute type
+      # the 'value type' and 'value name' of values can be discerned from these value slots
       - has quantitative value
       - has qualitative value
+    slot_usage:
+      name:
+        description: >-
+          The human-readable 'attribute name' can be set to a string which
+          reflects its context of interpretation, or can default to the name
+          associated with the 'has attribute type' slot ontology term
     exact_mappings:
       - SIO:000614
     in_subset:
@@ -4265,8 +4259,8 @@ classes:
   quantity value:
     is_a: abstract entity
     description: >-
-      A value of an attribute that is quantitative and measurable, expressed as a combination
-      of a unit and a numeric value
+      A value of an attribute that is quantitative and measurable,
+      expressed as a combination of a unit and a numeric value
     slots:
       - has unit
       - has numeric value
