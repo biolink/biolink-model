@@ -3173,6 +3173,37 @@ slots:
       - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
+  in taxon:
+    is_a: related to
+    domain: thing with taxon
+    range: organism taxon
+    description: >-
+      connects a thing to a class representing a taxon
+    in_subset:
+      - translator_minimal
+    related_mappings:
+      # RO term 'never in taxon' is a negation of this biolink term
+      - RO:0002162
+    close_mappings:
+      # RTX contributed term is an inverse mapping
+      - NCIT:is_organism_source_of_gene_product
+      - NCIT:organism_has_gene
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P703
+    narrow_mappings:
+      - NCIT:gene_found_in_organism
+      - NCIT:gene_product_has_organism_source
+      - RO:0002160
+
+  has molecular consequence:
+    is_a: related to
+    description: >-
+      connects a sequence variant to a class describing the molecular
+      consequence. E.g.  SO:0001583
+    range: ontology class
+    narrow_mappings:
+      - NCIT:allele_has_activity
+
 
 ## property slots
 
@@ -3754,28 +3785,6 @@ slots:
     description: >-
       date on which thing was updated. This can be applied to nodes or edges
 
-  in taxon:
-    is_a: related to
-    domain: thing with taxon
-    range: organism taxon
-    description: >-
-      connects a thing to a class representing a taxon
-    in_subset:
-      - translator_minimal
-    related_mappings:
-      # RO term 'never in taxon' is a negation of this biolink term
-      - RO:0002162
-    close_mappings:
-      # RTX contributed term is an inverse mapping
-      - NCIT:is_organism_source_of_gene_product
-      - NCIT:organism_has_gene
-    exact_mappings:
-      - WIKIDATA_PROPERTY:P703
-    narrow_mappings:
-      - NCIT:gene_found_in_organism
-      - NCIT:gene_product_has_organism_source
-      - RO:0002160
-
   latitude:
     is_a: node property
     range: float
@@ -3948,15 +3957,6 @@ slots:
     description: >-
       connects a genomic feature to its sequence
     range: biological sequence
-
-  has molecular consequence:
-    is_a: related to
-    description: >-
-      connects a sequence variant to a class describing the molecular
-      consequence. E.g.  SO:0001583
-    range: ontology class
-    narrow_mappings:
-      - NCIT:allele_has_activity
 
   has drug:
     is_a: node property
