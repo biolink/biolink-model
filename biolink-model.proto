@@ -40,28 +40,28 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
   subject AnatomicalEntity = 8
   object AnatomicalEntity = 9
-  relation Uriorcurie = 10
+  predicate PredicateType = 10
  }
 // A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
 message AnatomicalEntityToAnatomicalEntityPartOfAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
   subject AnatomicalEntity = 8
   object AnatomicalEntity = 9
-  relation Uriorcurie = 10
+  predicate PredicateType = 10
  }
 message Article
  {
@@ -298,7 +298,7 @@ message ChemicalToChemicalDerivationAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
@@ -306,7 +306,7 @@ message ChemicalToChemicalDerivationAssociation
   repeated changeIsCatalyzedBy MacromolecularMachine = 8
   subject ChemicalSubstance = 9
   object ChemicalSubstance = 10
-  relation Uriorcurie = 11
+  predicate PredicateType = 11
  }
 // An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
 message ChemicalToDiseaseOrPhenotypicFeatureAssociation
@@ -732,12 +732,12 @@ message GeneRegulatoryRelationship
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
-  relation Uriorcurie = 8
+  predicate PredicateType = 8
   subject GeneOrGeneProduct = 9
   object GeneOrGeneProduct = 10
  }
@@ -762,7 +762,7 @@ message GeneToExpressionSiteAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
@@ -771,35 +771,35 @@ message GeneToExpressionSiteAssociation
   optional quantifierQualifier OntologyClass = 9
   subject GeneOrGeneProduct = 10
   object AnatomicalEntity = 11
-  relation Uriorcurie = 12
+  predicate PredicateType = 12
  }
 // A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 message GeneToGeneHomologyAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
   subject GeneOrGeneProduct = 8
   object GeneOrGeneProduct = 9
-  relation Uriorcurie = 10
+  predicate PredicateType = 10
  }
 // A gene is transcribed and potentially translated to a gene product
 message GeneToGeneProductRelationship
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
   subject Gene = 8
   object GeneProduct = 9
-  relation Uriorcurie = 10
+  predicate PredicateType = 10
  }
 message GeneToGoTermAssociation
  {
@@ -855,7 +855,7 @@ message GenomicSequenceLocalization
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
@@ -867,7 +867,7 @@ message GenomicSequenceLocalization
   optional phase String = 12
   subject GenomicEntity = 13
   object GenomicEntity = 14
-  relation Uriorcurie = 15
+  predicate PredicateType = 15
  }
 // An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
 message Genotype
@@ -883,12 +883,12 @@ message GenotypeAsAModelOfDiseaseAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
-  relation Uriorcurie = 8
+  predicate PredicateType = 8
   object NamedThing = 9
   optional frequencyQualifier FrequencyValue = 10
   optional severityQualifier SeverityValue = 11
@@ -899,13 +899,13 @@ message GenotypeToDiseaseAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
   subject NamedThing = 8
-  relation Uriorcurie = 9
+  predicate PredicateType = 9
   object NamedThing = 10
   optional frequencyQualifier FrequencyValue = 11
   optional severityQualifier SeverityValue = 12
@@ -916,12 +916,12 @@ message GenotypeToGeneAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
-  relation Uriorcurie = 8
+  predicate PredicateType = 8
   subject Genotype = 9
   object Gene = 10
  }
@@ -930,12 +930,12 @@ message GenotypeToGenotypePartAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
-  relation Uriorcurie = 8
+  predicate PredicateType = 8
   subject Genotype = 9
   object Genotype = 10
  }
@@ -944,13 +944,13 @@ message GenotypeToPhenotypicFeatureAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
-  object NamedThing = 4
+  object NamedThing = 3
+  relation Uriorcurie = 4
   optional negated Boolean = 5
   repeated qualifiers OntologyClass = 6
   repeated publications Publication = 7
   repeated providedBy Agent = 8
-  relation Uriorcurie = 9
+  predicate PredicateType = 9
   subject Genotype = 10
   optional frequencyQualifier FrequencyValue = 11
   optional severityQualifier SeverityValue = 12
@@ -963,12 +963,12 @@ message GenotypeToVariantAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
-  relation Uriorcurie = 8
+  predicate PredicateType = 8
   subject Genotype = 9
   object SequenceVariant = 10
  }
@@ -1108,14 +1108,14 @@ message MaterialSampleDerivationAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
   subject MaterialSample = 8
   object NamedThing = 9
-  relation Uriorcurie = 10
+  predicate PredicateType = 10
  }
 // An association between a material sample and a disease or phenotype
 message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
@@ -1318,14 +1318,14 @@ message PopulationToPopulationAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
   subject PopulationOfIndividualOrganisms = 8
   object PopulationOfIndividualOrganisms = 9
-  relation Uriorcurie = 10
+  predicate PredicateType = 10
  }
 // A series of actions conducted in a certain order or manner
 message Procedure
@@ -1558,12 +1558,12 @@ message VariantAsAModelOfDiseaseAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
-  relation Uriorcurie = 8
+  predicate PredicateType = 8
   object NamedThing = 9
   optional frequencyQualifier FrequencyValue = 10
   optional severityQualifier SeverityValue = 11
@@ -1574,13 +1574,13 @@ message VariantToDiseaseAssociation
  {
   id String = 1
   optional associationType OntologyClass = 2
-  predicate PredicateType = 3
+  relation Uriorcurie = 3
   optional negated Boolean = 4
   repeated qualifiers OntologyClass = 5
   repeated publications Publication = 6
   repeated providedBy Agent = 7
   subject NamedThing = 8
-  relation Uriorcurie = 9
+  predicate PredicateType = 9
   object NamedThing = 10
   optional frequencyQualifier FrequencyValue = 11
   optional severityQualifier SeverityValue = 12
