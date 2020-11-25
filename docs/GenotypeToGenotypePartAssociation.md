@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[Genotype]%3Cobject%201..1-%20[GenotypeToGenotypePartAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Genotype],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[Genotype]%3Cobject%201..1-%20[GenotypeToGenotypePartAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Genotype],[Attribute],[Association],[Agent])
 
 ---
 
@@ -74,6 +74,13 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

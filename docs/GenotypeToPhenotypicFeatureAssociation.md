@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociationMixin],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation%7Cpredicate:predicate_type;description:narrative_text%20%3F;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociationMixin],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[BiologicalSex],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociationMixin],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation%7Cpredicate:predicate_type;description:narrative_text%20%3F;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociationMixin],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[BiologicalSex],[Attribute],[Association],[Agent])
 
 ---
 
@@ -76,6 +76,13 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from entity to feature or disease qualifiers mixin:
 

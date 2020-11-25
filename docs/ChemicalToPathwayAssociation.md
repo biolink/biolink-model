@@ -18,7 +18,7 @@ SIO:001250
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Pathway],[OntologyClass],[NamedThing],[ChemicalToThingAssociation],[Pathway]%3Cobject%201..1-%20[ChemicalToPathwayAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Pathway],[OntologyClass],[NamedThing],[ChemicalToThingAssociation],[Pathway]%3Cobject%201..1-%20[ChemicalToPathwayAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Attribute],[Association],[Agent])
 
 ---
 
@@ -76,6 +76,13 @@ SIO:001250
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

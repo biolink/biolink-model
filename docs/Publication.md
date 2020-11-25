@@ -15,7 +15,7 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Association]-%20publications%200..%2A%3E[Publication%7Ctype:string;authors:string%20%2A;pages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;xref:iri_type%20%2A;id:string;name:label_type;description(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;category(i):category_type%20%2B],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[BookChapter],[Book],[Association],[Article])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Association]-%20publications%200..%2A%3E[Publication%7Ctype:string;authors:string%20%2A;pages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;xref:iri_type%20%2A;id:string;name:label_type%20%3F;description(i):narrative_text%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;category(i):category_type%20%2B;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[BookChapter],[Book],[Attribute],[Association],[Article])
 
 ---
 
@@ -56,7 +56,7 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
  * [publication➞id](publication_id.md)  <sub>REQ</sub>
     * Description: Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
     * range: [String](types/String.md)
- * [publication➞name](publication_name.md)  <sub>REQ</sub>
+ * [publication➞name](publication_name.md)  <sub>OPT</sub>
     * Description: the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
     * range: [LabelType](types/LabelType.md)
  * [publication➞pages](publication_pages.md)  <sub>0..*</sub>
@@ -68,6 +68,13 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
  * [summary](summary.md)  <sub>OPT</sub>
     * Description: executive  summary of a publication
     * range: [String](types/String.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from information content entity:
 
@@ -87,10 +94,6 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
     * in subsets: (translator_minimal)
- * [name](name.md)  <sub>REQ</sub>
-    * Description: A human-readable name for a thing
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -98,6 +101,21 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
     * range: [CategoryType](types/CategoryType.md)
+    * in subsets: (translator_minimal)
+
+### Inherited from resource mixin:
+
+ * [iri](iri.md)  <sub>OPT</sub>
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
+    * range: [IriType](types/IriType.md)
+    * in subsets: (translator_minimal,samples)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal,samples)
+ * [source](source.md)  <sub>OPT</sub>
+    * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+    * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
 
 ### Domain for slot:
@@ -114,7 +132,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [publication➞id](publication_id.md)  <sub>REQ</sub>
     * Description: Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
     * range: [String](types/String.md)
- * [publication➞name](publication_name.md)  <sub>REQ</sub>
+ * [publication➞name](publication_name.md)  <sub>OPT</sub>
     * Description: the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
     * range: [LabelType](types/LabelType.md)
  * [publication➞pages](publication_pages.md)  <sub>0..*</sub>

@@ -12,43 +12,18 @@ a databased entity or concept/class
 
 URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
 
-WIKIDATA:Q35120
-{: .mapping-label }
-
-UMLSSG:OBJC
-{: .mapping-label }
-
-UMLSSC:T071
-{: .mapping-label }
-
-UMLSST:enty
-{: .mapping-label }
-
-UMLSSC:T072
-{: .mapping-label }
-
-UMLSST:phob
-{: .mapping-label }
-
-UMLSSC:T073
-{: .mapping-label }
-
-UMLSST:mnob
-{: .mapping-label }
-
-UMLSSC:T168
-{: .mapping-label }
-
-UMLSST:food
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[Procedure],[PlanetaryEntity],[PhysicalEntity],[Phenomenon],[OntologyClass],[Occurrent],[GenotypeToDiseaseAssociation]-%20object%201..1%3E[NamedThing%7Cid:string;name:label_type;category:category_type%20%2B],[GenotypeToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20input%200..%2A%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20output%200..%2A%3E[NamedThing],[Attribute]-%20has%20qualitative%20value%200..1%3E[NamedThing],[MaterialSampleDerivationAssociation]-%20object%201..1%3E[NamedThing],[ModelToDiseaseAssociationMixin]-%20subject%201..1%3E[NamedThing],[Association]-%20object%201..1%3E[NamedThing],[Association]-%20subject%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[NamedThing]%5E-[Procedure],[NamedThing]%5E-[PlanetaryEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing]%5E-[Phenomenon],[NamedThing]%5E-[OntologyClass],[NamedThing]%5E-[InformationContentEntity],[NamedThing]%5E-[Device],[NamedThing]%5E-[ClinicalEntity],[NamedThing]%5E-[BiologicalEntity],[NamedThing]%5E-[AdministrativeEntity],[NamedThing]%5E-[ActivityAndBehavior],[ModelToDiseaseAssociationMixin],[MaterialSampleDerivationAssociation],[InformationContentEntity],[GenotypeToDiseaseAssociation],[Device],[ClinicalEntity],[BiologicalProcessOrActivity],[BiologicalEntity],[Attribute],[Association],[AdministrativeEntity],[ActivityAndBehavior])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[ResourceMixin],[Procedure],[PlanetaryEntity],[PhysicalEntity],[Phenomenon],[OntologyClass],[Occurrent],[GenotypeToDiseaseAssociation]-%20object%201..1%3E[NamedThing%7Cid:string;category:category_type%20%2B;iri:iri_type%20%3F;name:label_type%20%3F;source:label_type%20%3F],[GenotypeToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20input%200..%2A%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20output%200..%2A%3E[NamedThing],[Attribute]-%20has%20qualitative%20value%200..1%3E[NamedThing],[MaterialSampleDerivationAssociation]-%20object%201..1%3E[NamedThing],[ModelToDiseaseAssociationMixin]-%20subject%201..1%3E[NamedThing],[Association]-%20object%201..1%3E[NamedThing],[Association]-%20subject%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[NamedThing]uses%20-.-%3E[ResourceMixin],[NamedThing]uses%20-.-%3E[AttributeMixin],[NamedThing]%5E-[Procedure],[NamedThing]%5E-[PlanetaryEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing]%5E-[Phenomenon],[NamedThing]%5E-[OntologyClass],[NamedThing]%5E-[InformationContentEntity],[NamedThing]%5E-[Device],[NamedThing]%5E-[ClinicalEntity],[NamedThing]%5E-[BiologicalEntity],[NamedThing]%5E-[AdministrativeEntity],[NamedThing]%5E-[ActivityAndBehavior],[ModelToDiseaseAssociationMixin],[MaterialSampleDerivationAssociation],[InformationContentEntity],[GenotypeToDiseaseAssociation],[Device],[ClinicalEntity],[BiologicalProcessOrActivity],[BiologicalEntity],[AttributeMixin],[Attribute],[Association],[AdministrativeEntity],[ActivityAndBehavior])
 
 ---
 
+
+## Uses Mixins
+
+ *  mixin: [ResourceMixin](ResourceMixin.md)
+ *  mixin: [AttributeMixin](AttributeMixin.md)
 
 ## Children
 
@@ -146,8 +121,26 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
     * in subsets: (translator_minimal)
- * [name](name.md)  <sub>REQ</sub>
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
+
+### Inherited from resource mixin:
+
+ * [iri](iri.md)  <sub>OPT</sub>
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
+    * range: [IriType](types/IriType.md)
+    * in subsets: (translator_minimal,samples)
+ * [name](name.md)  <sub>OPT</sub>
     * Description: A human-readable name for a thing
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal,samples)
+ * [source](source.md)  <sub>OPT</sub>
+    * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
 
@@ -165,23 +158,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
     * in subsets: (translator_minimal)
- * [name](name.md)  <sub>REQ</sub>
-    * Description: A human-readable name for a thing
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA:Q35120 |
+| **Exact Mappings:** | | WIKIDATA:Q35120 |
 |  | | UMLSSG:OBJC |
 |  | | UMLSSC:T071 |
 |  | | UMLSST:enty |
-|  | | UMLSSC:T072 |
-|  | | UMLSST:phob |
-|  | | UMLSSC:T073 |
-|  | | UMLSST:mnob |
-|  | | UMLSSC:T168 |
-|  | | UMLSST:food |
 

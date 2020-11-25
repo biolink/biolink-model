@@ -15,7 +15,7 @@ URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/Trans
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Gene]%3Cobject%201..1-%20[TranscriptToGeneRelationship%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[Transcript]%3Csubject%201..1-%20[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[Transcript],[SequenceFeatureRelationship],[Publication],[OntologyClass],[Gene],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Gene]%3Cobject%201..1-%20[TranscriptToGeneRelationship%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[Transcript]%3Csubject%201..1-%20[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[Transcript],[SequenceFeatureRelationship],[Publication],[OntologyClass],[Gene],[Attribute],[Agent])
 
 ---
 
@@ -70,6 +70,13 @@ URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/Trans
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

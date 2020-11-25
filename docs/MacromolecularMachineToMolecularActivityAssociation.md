@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToMolecularActivityAssociation](https://w3id.
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MolecularActivity],[MolecularActivity]%3Cobject%201..1-%20[MacromolecularMachineToMolecularActivityAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachine],[FunctionalAssociation],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MolecularActivity],[MolecularActivity]%3Cobject%201..1-%20[MacromolecularMachineToMolecularActivityAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachine],[FunctionalAssociation],[Attribute],[Agent])
 
 ---
 
@@ -68,6 +68,13 @@ URI: [biolink:MacromolecularMachineToMolecularActivityAssociation](https://w3id.
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from functional association:
 

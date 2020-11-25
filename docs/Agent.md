@@ -15,7 +15,7 @@ URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[InformationContentEntity],[ContributorAssociation],[Association],[ContributorAssociation]-%20object%201..1%3E[Agent%7Caffiliation:uriorcurie%20%2A;address:string%20%3F;id:string;name:label_type;category(i):category_type%20%2B],[Association]-%20provided%20by%200..%2A%3E[Agent],[AdministrativeEntity]%5E-[Agent],[AdministrativeEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[InformationContentEntity],[ContributorAssociation],[Attribute],[Association],[ContributorAssociation]-%20object%201..1%3E[Agent%7Caffiliation:uriorcurie%20%2A;address:string%20%3F;id:string;name:label_type%20%3F;category(i):category_type%20%2B;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[Association]-%20provided%20by%200..%2A%3E[Agent],[AdministrativeEntity]%5E-[Agent],[AdministrativeEntity])
 
 ---
 
@@ -57,19 +57,22 @@ URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
  * [agent➞id](agent_id.md)  <sub>REQ</sub>
     * Description: Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
     * range: [String](types/String.md)
- * [agent➞name](agent_name.md)  <sub>REQ</sub>
+ * [agent➞name](agent_name.md)  <sub>OPT</sub>
     * Description: it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
     * range: [LabelType](types/LabelType.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [String](types/String.md)
-    * in subsets: (translator_minimal)
- * [name](name.md)  <sub>REQ</sub>
-    * Description: A human-readable name for a thing
-    * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -80,6 +83,21 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
 
+### Inherited from resource mixin:
+
+ * [iri](iri.md)  <sub>OPT</sub>
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
+    * range: [IriType](types/IriType.md)
+    * in subsets: (translator_minimal,samples)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal,samples)
+ * [source](source.md)  <sub>OPT</sub>
+    * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal)
+
 ### Domain for slot:
 
  * [affiliation](affiliation.md)  <sub>0..*</sub>
@@ -88,7 +106,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [agent➞id](agent_id.md)  <sub>REQ</sub>
     * Description: Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
     * range: [String](types/String.md)
- * [agent➞name](agent_name.md)  <sub>REQ</sub>
+ * [agent➞name](agent_name.md)  <sub>OPT</sub>
     * Description: it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
     * range: [LabelType](types/LabelType.md)
 

@@ -163,6 +163,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Class Mixins
 
+ * [AttributeMixin](AttributeMixin.md)
  * [CaseToThingAssociationMixin](CaseToThingAssociationMixin.md) - An abstract association for use where the case is the subject
  * [CellLineToThingAssociationMixin](CellLineToThingAssociationMixin.md) - An relationship between a cell line and another entity
  * [DiseaseToThingAssociationMixin](DiseaseToThingAssociationMixin.md)
@@ -188,6 +189,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [SensitivityQuantifier](SensitivityQuantifier.md)
     * [SpecificityQuantifier](SpecificityQuantifier.md)
        * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [ResourceMixin](ResourceMixin.md)
  * [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
  * [ThingToDiseaseOrPhenotypicFeatureAssociationMixin](ThingToDiseaseOrPhenotypicFeatureAssociationMixin.md)
  * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
@@ -718,7 +720,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has total](has_total.md) - total number of things in a particular reference set
  * [has zygosity](has_zygosity.md)
  * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
- * [iri](iri.md) - An IRI for the node. This is determined by the id using expansion rules.
  * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
  * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
  * [keywords](keywords.md) - keywords tagging a publication
@@ -726,7 +727,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [license](license.md)
  * [longitude](longitude.md) - longitude
  * [mesh terms](mesh_terms.md) - mesh terms tagging a publication
- * [name](name.md) - A human-readable name for a thing
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
     * [address](address.md) - the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
     * [affiliation](affiliation.md) - a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
@@ -759,7 +759,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
     * [has zygosity](has_zygosity.md)
     * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * [iri](iri.md) - An IRI for the node. This is determined by the id using expansion rules.
     * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
     * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
     * [keywords](keywords.md) - keywords tagging a publication
@@ -767,7 +766,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [license](license.md)
     * [longitude](longitude.md) - longitude
     * [mesh terms](mesh_terms.md) - mesh terms tagging a publication
-    * [name](name.md) - A human-readable name for a thing
     * [pages](pages.md) - page number of source referenced for statement or publication
     * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
     * [retrieved on](retrieved_on.md)
@@ -892,6 +890,9 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
  * [has unit](has_unit.md) - connects a quantity value to a unit
  * [interacting molecules category](interacting_molecules_category.md)
+ * [iri](iri.md) - An IRI for the node. This is determined by the id using expansion rules.
+ * [name](name.md) - A human-readable name for a thing
+ * [source](source.md) - a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
 
 ## Types
 

@@ -18,7 +18,7 @@ WBVocab:Gene-Phenotype-Association
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GeneToThingAssociationMixin],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToThingAssociationMixin],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[GeneOrGeneProduct],[FrequencyValue],[BiologicalSex],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GeneToThingAssociationMixin],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToPhenotypicFeatureAssociation%7Cdescription:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToThingAssociationMixin],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[GeneOrGeneProduct],[FrequencyValue],[BiologicalSex],[Attribute],[Association],[Agent])
 
 ---
 
@@ -78,6 +78,13 @@ WBVocab:Gene-Phenotype-Association
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from entity to feature or disease qualifiers mixin:
 

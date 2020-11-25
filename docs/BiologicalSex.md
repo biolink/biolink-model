@@ -15,7 +15,7 @@ URI: [biolink:BiologicalSex](https://w3id.org/biolink/vocab/BiologicalSex)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[PhenotypicSex],[OntologyClass],[NamedThing],[GenotypicSex],[ThingToPhenotypicFeatureAssociationMixin]++-%20sex%20qualifier%200..1%3E[BiologicalSex],[BiologicalSex]%5E-[PhenotypicSex],[BiologicalSex]%5E-[GenotypicSex],[Attribute]%5E-[BiologicalSex],[ThingToPhenotypicFeatureAssociationMixin],[Attribute],[Association])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[PhenotypicSex],[OntologyClass],[NamedThing],[GenotypicSex],[ThingToPhenotypicFeatureAssociationMixin]++-%20sex%20qualifier%200..1%3E[BiologicalSex%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[BiologicalSex]%5E-[PhenotypicSex],[BiologicalSex]%5E-[GenotypicSex],[Attribute]%5E-[BiologicalSex],[ThingToPhenotypicFeatureAssociationMixin],[Attribute],[Association])
 
 ---
 
@@ -38,7 +38,7 @@ URI: [biolink:BiologicalSex](https://w3id.org/biolink/vocab/BiologicalSex)
 
 ### Inherited from attribute:
 
- * [has attribute type](has_attribute_type.md)  <sub>OPT</sub>
+ * [has attribute type](has_attribute_type.md)  <sub>REQ</sub>
     * Description: connects an attribute to a class that describes it
     * range: [OntologyClass](OntologyClass.md)
     * in subsets: (samples)
@@ -50,3 +50,21 @@ URI: [biolink:BiologicalSex](https://w3id.org/biolink/vocab/BiologicalSex)
     * Description: connects an attribute to a value
     * range: [NamedThing](NamedThing.md)
     * in subsets: (samples)
+ * [attribute➞name](attribute_name.md)  <sub>OPT</sub>
+    * Description: The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.
+    * range: [LabelType](types/LabelType.md)
+
+### Inherited from resource mixin:
+
+ * [iri](iri.md)  <sub>OPT</sub>
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
+    * range: [IriType](types/IriType.md)
+    * in subsets: (translator_minimal,samples)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal,samples)
+ * [source](source.md)  <sub>OPT</sub>
+    * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal)

@@ -15,7 +15,7 @@ URI: [biolink:ContributorAssociation](https://w3id.org/biolink/vocab/Contributor
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationContentEntity],[OntologyClass]%3Cqualifiers%200..%2A-%20[ContributorAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Agent]%3Cobject%201..1-%20[ContributorAssociation],[InformationContentEntity]%3Csubject%201..1-%20[ContributorAssociation],[Association]%5E-[ContributorAssociation],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationContentEntity],[OntologyClass]%3Cqualifiers%200..%2A-%20[ContributorAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Agent]%3Cobject%201..1-%20[ContributorAssociation],[InformationContentEntity]%3Csubject%201..1-%20[ContributorAssociation],[Association]%5E-[ContributorAssociation],[Attribute],[Association],[Agent])
 
 ---
 
@@ -78,6 +78,13 @@ URI: [biolink:ContributorAssociation](https://w3id.org/biolink/vocab/Contributor
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

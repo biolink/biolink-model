@@ -15,7 +15,7 @@ URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/Disea
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[ExposureEvent],[DiseaseToThingAssociationMixin],[ExposureEvent]%3Cobject%201..1-%20[DiseaseToExposureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[Disease]%3Csubject%201..1-%20[DiseaseToExposureAssociation],[DiseaseToExposureAssociation]uses%20-.-%3E[DiseaseToThingAssociationMixin],[Association]%5E-[DiseaseToExposureAssociation],[Disease],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[ExposureEvent],[DiseaseToThingAssociationMixin],[ExposureEvent]%3Cobject%201..1-%20[DiseaseToExposureAssociation%7Cid(i):string;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F],[Disease]%3Csubject%201..1-%20[DiseaseToExposureAssociation],[DiseaseToExposureAssociation]uses%20-.-%3E[DiseaseToThingAssociationMixin],[Association]%5E-[DiseaseToExposureAssociation],[Disease],[Attribute],[Association],[Agent])
 
 ---
 
@@ -74,6 +74,13 @@ URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/Disea
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

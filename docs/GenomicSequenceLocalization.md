@@ -15,7 +15,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation],[Publication],[OntologyClass],[GenomicEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;genome_build:string%20%3F;strand:string%20%3F;phase:string%20%3F;predicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[GenomicEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[SequenceAssociation]%5E-[GenomicSequenceLocalization],[GenomicEntity],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation],[Publication],[OntologyClass],[GenomicEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;genome_build:string%20%3F;strand:string%20%3F;phase:string%20%3F;predicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[GenomicEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[SequenceAssociation]%5E-[GenomicSequenceLocalization],[GenomicEntity],[Attribute],[Agent])
 
 ---
 
@@ -84,6 +84,13 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

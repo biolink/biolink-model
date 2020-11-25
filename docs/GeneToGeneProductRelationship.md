@@ -15,7 +15,7 @@ URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/Gene
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceFeatureRelationship],[Publication],[OntologyClass],[GeneProduct]%3Cobject%201..1-%20[GeneToGeneProductRelationship%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Gene]%3Csubject%201..1-%20[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[GeneProduct],[Gene],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceFeatureRelationship],[Publication],[OntologyClass],[GeneProduct]%3Cobject%201..1-%20[GeneToGeneProductRelationship%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Gene]%3Csubject%201..1-%20[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[GeneProduct],[Gene],[Attribute],[Agent])
 
 ---
 
@@ -72,6 +72,13 @@ URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/Gene
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
+
+### Inherited from attribute mixin:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

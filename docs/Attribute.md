@@ -12,13 +12,10 @@ A property or characteristic of an entity. For example, an apple may have proper
 
 URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
-SIO:000614
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[QuantityValue],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalModifier],[ClinicalCourse],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%200..1-%20[Attribute],[MaterialSample]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalModifier],[Attribute]%5E-[ClinicalCourse],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[MaterialSample],[AbstractEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[ResourceMixin],[QuantityValue],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalModifier],[ClinicalCourse],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[AttributeMixin]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]uses%20-.-%3E[ResourceMixin],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalModifier],[Attribute]%5E-[ClinicalCourse],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[AttributeMixin],[AbstractEntity])
 
 ---
 
@@ -26,6 +23,10 @@ SIO:000614
 ## Parents
 
  *  is_a: [AbstractEntity](AbstractEntity.md) - Any thing that is not a process or a physical mass-bearing entity
+
+## Uses Mixins
+
+ *  mixin: [ResourceMixin](ResourceMixin.md)
 
 ## Children
 
@@ -46,7 +47,10 @@ SIO:000614
 
 ### Own
 
- * [has attribute type](has_attribute_type.md)  <sub>OPT</sub>
+ * [attribute➞name](attribute_name.md)  <sub>OPT</sub>
+    * Description: The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.
+    * range: [LabelType](types/LabelType.md)
+ * [has attribute type](has_attribute_type.md)  <sub>REQ</sub>
     * Description: connects an attribute to a class that describes it
     * range: [OntologyClass](OntologyClass.md)
     * in subsets: (samples)
@@ -59,9 +63,27 @@ SIO:000614
     * range: [QuantityValue](QuantityValue.md)
     * in subsets: (samples)
 
+### Inherited from resource mixin:
+
+ * [iri](iri.md)  <sub>OPT</sub>
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
+    * range: [IriType](types/IriType.md)
+    * in subsets: (translator_minimal,samples)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal,samples)
+ * [source](source.md)  <sub>OPT</sub>
+    * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal)
+
 ### Domain for slot:
 
- * [has attribute type](has_attribute_type.md)  <sub>OPT</sub>
+ * [attribute➞name](attribute_name.md)  <sub>OPT</sub>
+    * Description: The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.
+    * range: [LabelType](types/LabelType.md)
+ * [has attribute type](has_attribute_type.md)  <sub>REQ</sub>
     * Description: connects an attribute to a class that describes it
     * range: [OntologyClass](OntologyClass.md)
     * in subsets: (samples)
@@ -78,6 +100,6 @@ SIO:000614
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SIO:000614 |
 | **In Subsets:** | | samples |
+| **Exact Mappings:** | | SIO:000614 |
 
