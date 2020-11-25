@@ -3682,13 +3682,15 @@ slots:
       - dcterms:createdOn
       - WIKIDATA_PROPERTY:P577
 
-  has receptor:
+  # formerly called "has receptor" given that the word "receptor" has a more general role in biology,
+  # we need to be a bit more precise in naming on specifically associated with exposures.
+  has exposure receptor:
     is_a: node property
     domain: exposure event
     range: organismal entity
     description: >-
       the organism or organism part being exposed
-    mappings:
+    exact_mappings:
       - ExO:0000001
 
   has stressor:
