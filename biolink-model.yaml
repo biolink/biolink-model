@@ -4231,11 +4231,6 @@ classes:
     is_a: abstract entity
     mixins:
       - resource mixin
-    # biolink:OntologyClass is not a mixin thus cannot be used as such here.  Moreover,
-    # the 'biolink:has_attribute_type' slot is also of a biolink:OntologyClass which points
-    # to  semantic redundancy in this class. Better to simply remove the mixins declaration
-    #mixins:
-    #  - ontology class
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
@@ -4248,9 +4243,9 @@ classes:
     slot_usage:
       name:
         description: >-
-          The human-readable 'attribute name' can be set to a string which
-          reflects its context of interpretation, or can default to the name
-          associated with the 'has attribute type' slot ontology term
+          The human-readable 'attribute name' can be set to a string which reflects its context of
+          interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default
+          to the name associated with the 'has attribute type' slot ontology term.
     exact_mappings:
       - SIO:000614
     in_subset:
