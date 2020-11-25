@@ -3259,7 +3259,6 @@ slots:
       - dctypes:Dataset
 
   type:
-    is_a: node property
     slot_uri: rdf:type
     mappings:
       - alliancegenome:soTermId
@@ -3267,14 +3266,12 @@ slots:
       - gpi:DB_Object_Type
 
   id:
-    is_a: node property
     identifier: true
     description: >-
-      A unique identifier for a thing.
+      A unique identifier for a resource.
       Must be either a CURIE shorthand for a URI or a complete URI
     in_subset:
       - translator_minimal
-    domain: named thing
     required: true
     mappings:
       - alliancegenome:primaryId
@@ -3448,6 +3445,9 @@ slots:
   association_id:
     is_a: association slot
     identifier: true
+    deprecated: >-
+      This slot is deprecated in favor of 'id' slot.
+    deprecated_element_has_exact_replacement: id
     description: >-
         A unique identifier for an association
     in_subset:
@@ -3563,6 +3563,9 @@ slots:
   association type:
     is_a: association slot
     range: ontology class
+    deprecated: >-
+      This slot is deprecated in favor of 'type' slot.
+    deprecated_element_has_exact_replacement: type
     description: >-
       connects an association to the type of association (e.g. gene to phenotype)
     mappings:
@@ -4219,9 +4222,12 @@ classes:
     mixin: true
     abstract: true
     slots:
+      - id
       - iri
+      - type
       - name
       - source
+      - provided by
 
   ## ----------
   ## ATTRIBUTES
@@ -5646,8 +5652,8 @@ classes:
     comments:
       - This is roughly the model used by biolink and ontobio at the moment
     slots:
-      - association_id
-      - association type
+      - id
+      - type
       - subject
       - predicate
       - object
@@ -5655,8 +5661,8 @@ classes:
       - negated
       - qualifiers
       - publications
-      - provided by
     mixins:
+      - resource mixin
       - attribute mixin
     mappings:
       - OBAN:association
