@@ -5784,7 +5784,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     description: >-
       A homology association between two genes. May be orthology (in which case the species of subject and object
       should differ) or paralogy (in which case the species may be the same)
@@ -5801,7 +5801,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
@@ -5827,7 +5827,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     slot_usage:
       subject:
         range: molecular entity
@@ -5920,7 +5920,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     slots:
       - change is catalyzed by
     description: >-
@@ -6016,7 +6016,7 @@ classes:
     is_a: association
     defining_slots:
       - subject
-      - relation
+      - predicate
     description: >-
       An association between a material sample and the material entity it is derived from
     slot_usage:
@@ -6458,7 +6458,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6474,7 +6474,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6489,7 +6489,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6504,7 +6504,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6520,7 +6520,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6536,7 +6536,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     slots:
       - sequence variant qualifier
     slot_usage:
@@ -6551,7 +6551,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     description: >-
       An association between a gene and an expression site, possibly qualified by stage/timing info.
     notes:
@@ -6811,7 +6811,7 @@ classes:
       the two entities are related by parthood. This includes relationships between cellular components
       and cells, between cells and tissues, tissues and whole organisms
     defining_slots:
-      - relation
+      - predicate
     slot_usage:
       subject:
         range: anatomical entity
@@ -6831,7 +6831,7 @@ classes:
       the two entities are related by development. A number of different relationship types
       can be used to specify the precise nature of the relationship
     defining_slots:
-      - relation
+      - predicate
     slot_usage:
       subject:
         range: anatomical entity
