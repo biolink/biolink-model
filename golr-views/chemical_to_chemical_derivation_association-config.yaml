@@ -37,6 +37,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: change_is_catalyzed_by
   description: this connects the derivation edge to the molecular entity that catalyzes
     the reaction that causes the subject chemical to transform into the object chemical

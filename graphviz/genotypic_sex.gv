@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,572.79,123"];
+	graph [bb="0,0,828.29,123"];
 	node [label="\N"];
 	"genotypic sex"	 [height=0.5,
 		label="genotypic sex",
-		pos="265.79,105",
+		pos="478.79,105",
 		width=1.661];
 	"biological sex"	 [height=0.5,
 		pos="59.795,18",
 		width=1.661];
 	"genotypic sex" -> "biological sex"	 [label=is_a,
-		lp="186.79,61.5",
-		pos="e,94.567,32.685 230.85,90.242 195.82,75.449 141.79,52.629 103.85,36.604"];
+		lp="213.79,61.5",
+		pos="e,94.423,32.699 420.25,101 363.93,96.298 276.67,86.777 202.79,69 168.87,60.836 131.79,47.476 103.89,36.478"];
 	"has attribute type"	 [color=blue,
 		height=0.5,
 		label="ontology class",
@@ -18,8 +18,8 @@ digraph {
 		width=1.7151];
 	"genotypic sex" -> "has attribute type"	 [color=blue,
 		label="has attribute type",
-		lp="267.79,61.5",
-		pos="e,204.78,36.145 240.38,88.308 233.36,82.793 226.2,76.204 220.79,69 215.57,62.028 211.4,53.569 208.21,45.56",
+		lp="295.79,61.5",
+		pos="e,212.24,36.026 421.09,100.2 363,94.621 277.96,84.197 248.79,69 237.22,62.972 226.82,53.162 218.6,43.749",
 		style=solid];
 	"has quantitative value"	 [color=blue,
 		height=0.5,
@@ -28,8 +28,8 @@ digraph {
 		width=1.6971];
 	"genotypic sex" -> "has quantitative value"	 [color=blue,
 		label="has quantitative value",
-		lp="384.29,61.5",
-		pos="e,333.97,36.229 292.62,88.718 300.41,83.132 308.51,76.401 314.79,69 320.72,62.032 325.74,53.486 329.74,45.395",
+		lp="415.29,61.5",
+		pos="e,341.88,36.246 428.15,95.295 399.05,88.764 366.26,79.456 355.79,69 349.67,62.88 346.02,54.393 343.85,46.098",
 		style=solid];
 	"has qualitative value"	 [color=blue,
 		height=0.5,
@@ -38,7 +38,42 @@ digraph {
 		width=1.5346];
 	"genotypic sex" -> "has qualitative value"	 [color=blue,
 		label="has qualitative value",
-		lp="516.79,61.5",
-		pos="e,472.25,36.04 322.47,98.83 368.12,92.952 427.86,82.93 447.79,69 456.3,63.053 462.9,53.949 467.78,45.07",
+		lp="534.79,61.5",
+		pos="e,478.79,36.003 478.79,86.974 478.79,75.192 478.79,59.561 478.79,46.158",
 		style=solid];
+	name	 [height=0.5,
+		pos="597.79,18",
+		width=0.84854];
+	"genotypic sex" -> name	 [color=blue,
+		label=name,
+		lp="614.29,61.5",
+		pos="e,600.22,36.405 523.92,93.122 553.37,84.951 587.18,74.599 591.79,69 596.92,62.784 599.18,54.599 599.95,46.611",
+		style=solid];
+	iri	 [color=blue,
+		height=0.5,
+		label="iri type",
+		pos="682.79,18",
+		width=1.011];
+	"genotypic sex" -> iri	 [color=blue,
+		label=iri,
+		lp="659.29,61.5",
+		pos="e,670.61,35.284 523.63,92.965 531.66,90.907 539.96,88.84 547.79,87 585.81,78.069 599.63,87.922 633.79,69 645.37,62.585 655.89,52.528 \
+664.19,43.034",
+		style=solid];
+	source	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="782.79,18",
+		width=1.2638];
+	"genotypic sex" -> source	 [color=blue,
+		label=source,
+		lp="726.79,61.5",
+		pos="e,755.75,32.786 522.8,92.759 531.07,90.676 539.67,88.655 547.79,87 601.5,76.066 617.2,84.422 669.79,69 696.42,61.192 724.89,48.314 \
+746.59,37.453",
+		style=solid];
+	attribute_name	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="601.79,105",
+		width=1.2638];
 }

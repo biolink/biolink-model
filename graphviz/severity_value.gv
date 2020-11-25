@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,533.3,123"];
+	graph [bb="0,0,788.79,123"];
 	node [label="\N"];
 	"severity value"	 [height=0.5,
 		label="severity value",
-		pos="226.3,105",
+		pos="439.3,105",
 		width=1.661];
 	attribute	 [height=0.5,
 		pos="40.296,18",
 		width=1.1193];
 	"severity value" -> attribute	 [label=is_a,
-		lp="158.3,61.5",
-		pos="e,67.947,31.34 192.8,89.887 178.72,83.498 162.19,75.941 147.3,69 123.84,58.068 97.615,45.571 76.996,35.684"];
+		lp="174.3,61.5",
+		pos="e,67.415,31.686 380.27,101.81 323.79,97.703 236.59,88.605 163.3,69 133.13,60.931 100.56,47.179 76.513,35.988"];
 	"has attribute type"	 [color=blue,
 		height=0.5,
 		label="ontology class",
@@ -18,8 +18,8 @@ digraph {
 		width=1.7151];
 	"severity value" -> "has attribute type"	 [color=blue,
 		label="has attribute type",
-		lp="228.3,61.5",
-		pos="e,165.28,36.145 200.88,88.308 193.86,82.793 186.7,76.204 181.3,69 176.07,62.028 171.9,53.569 168.71,45.56",
+		lp="256.3,61.5",
+		pos="e,172.74,36.026 381.59,100.2 323.5,94.621 238.46,84.197 209.3,69 197.73,62.972 187.32,53.162 179.1,43.749",
 		style=solid];
 	"has quantitative value"	 [color=blue,
 		height=0.5,
@@ -28,8 +28,8 @@ digraph {
 		width=1.6971];
 	"severity value" -> "has quantitative value"	 [color=blue,
 		label="has quantitative value",
-		lp="344.8,61.5",
-		pos="e,294.47,36.229 253.12,88.718 260.91,83.132 269.01,76.401 275.3,69 281.22,62.032 286.24,53.486 290.25,45.395",
+		lp="375.8,61.5",
+		pos="e,302.38,36.246 388.65,95.295 359.56,88.764 326.77,79.456 316.3,69 310.17,62.88 306.52,54.393 304.35,46.098",
 		style=solid];
 	"has qualitative value"	 [color=blue,
 		height=0.5,
@@ -38,7 +38,42 @@ digraph {
 		width=1.5346];
 	"severity value" -> "has qualitative value"	 [color=blue,
 		label="has qualitative value",
-		lp="477.3,61.5",
-		pos="e,432.75,36.04 282.97,98.83 328.62,92.952 388.36,82.93 408.3,69 416.81,63.053 423.4,53.949 428.28,45.07",
+		lp="495.3,61.5",
+		pos="e,439.3,36.003 439.3,86.974 439.3,75.192 439.3,59.561 439.3,46.158",
 		style=solid];
+	name	 [height=0.5,
+		pos="558.3,18",
+		width=0.84854];
+	"severity value" -> name	 [color=blue,
+		label=name,
+		lp="574.8,61.5",
+		pos="e,560.73,36.405 484.42,93.122 513.87,84.951 547.68,74.599 552.3,69 557.42,62.784 559.68,54.599 560.45,46.611",
+		style=solid];
+	iri	 [color=blue,
+		height=0.5,
+		label="iri type",
+		pos="643.3,18",
+		width=1.011];
+	"severity value" -> iri	 [color=blue,
+		label=iri,
+		lp="619.8,61.5",
+		pos="e,631.11,35.284 484.13,92.965 492.16,90.907 500.46,88.84 508.3,87 546.31,78.069 560.14,87.922 594.3,69 605.88,62.585 616.39,52.528 \
+624.69,43.034",
+		style=solid];
+	source	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="743.3,18",
+		width=1.2638];
+	"severity value" -> source	 [color=blue,
+		label=source,
+		lp="687.3,61.5",
+		pos="e,716.25,32.786 483.3,92.759 491.57,90.676 500.17,88.655 508.3,87 562,76.066 577.7,84.422 630.3,69 656.92,61.192 685.39,48.314 707.09,\
+37.453",
+		style=solid];
+	attribute_name	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="562.3,105",
+		width=1.2638];
 }

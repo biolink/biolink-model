@@ -92,7 +92,7 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <AdministrativeEntity> ] ? ;
           <affiliation> @metatype:Uriorcurie * ;
           <address> @metatype:String ? ;
-          <name> @<LabelType>
+          <name> @<LabelType> ?
        ) ;
        rdf:type [ <Agent> ]
     )
@@ -161,7 +161,9 @@ metatype:Nodeidentifier NONLITERAL
 
 <Association>  (
     CLOSED {
-       (  $<Association_tes> (  <association_type> @<OntologyClass> ? ;
+       (  $<Association_tes> (  &<AttributeMixin_tes> ;
+             rdf:type [ <AttributeMixin> ] ? ;
+             <association_type> @<OntologyClass> ? ;
              rdf:subject @<NamedThing> ;
              rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
@@ -169,7 +171,8 @@ metatype:Nodeidentifier NONLITERAL
              <negated> @metatype:Boolean ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
-             <provided_by> @<Agent> *
+             <provided_by> @<Agent> * ;
+             <has_attribute> @<Attribute> *
           ) ;
           rdf:type [ <Association> ]
        )
@@ -192,15 +195,26 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<Attribute_tes> (  &<AbstractEntity_tes> ;
              rdf:type [ <AbstractEntity> ] ? ;
-             <has_attribute_type> @<OntologyClass> ? ;
+             &<ResourceMixin_tes> ;
+             rdf:type [ <ResourceMixin> ] ? ;
+             <has_attribute_type> @<OntologyClass> ;
              <has_quantitative_value> @<QuantityValue> * ;
-             <has_qualitative_value> @<NamedThing> ?
+             <has_qualitative_value> @<NamedThing> ? ;
+             <name> @<LabelType> ? ;
+             <iri> @<IriType> ? ;
+             <source> @<LabelType> ?
           ) ;
           rdf:type [ <Attribute> ] ?
        )
     } OR @<BiologicalSex> OR @<ClinicalCourse> OR @<ClinicalModifier> OR @<FrequencyValue> OR @<Inheritance> OR @<SeverityValue> OR
     @<Zygosity>
 )
+
+<AttributeMixin> {
+    (  $<AttributeMixin_tes> <has_attribute> @<Attribute> * ;
+       rdf:type [ <AttributeMixin> ] ?
+    )
+}
 
 <BiologicalEntity>  (
     @<BiologicalProcessOrActivity> OR @<DiseaseOrPhenotypicFeature> OR @<ExposureEvent> OR @<MolecularEntity> OR
@@ -1269,7 +1283,7 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<MacromolecularMachine_tes> (  &<GenomicEntity_tes> ;
              rdf:type [ <GenomicEntity> ] ? ;
-             <name> @<SymbolType>
+             <name> @<SymbolType> ?
           ) ;
           rdf:type [ <MacromolecularMachine> ]
        )
@@ -1307,8 +1321,7 @@ metatype:Nodeidentifier NONLITERAL
     (  $<MaterialSample_tes> (  &<PhysicalEntity_tes> ;
           rdf:type [ <PhysicalEntity> ] ? ;
           &<SubjectOfInvestigation_tes> ;
-          rdf:type [ <SubjectOfInvestigation> ] ? ;
-          <has_attribute> @<Attribute> *
+          rdf:type [ <SubjectOfInvestigation> ] ?
        ) ;
        rdf:type [ <MaterialSample> ]
     )
@@ -1406,8 +1419,15 @@ metatype:Nodeidentifier NONLITERAL
 
 <NamedThing>  (
     CLOSED {
-       (  $<NamedThing_tes> (  rdfs:label @<LabelType> ;
-             <category> @<CategoryType> +
+       (  $<NamedThing_tes> (  &<ResourceMixin_tes> ;
+             rdf:type [ <ResourceMixin> ] ? ;
+             &<AttributeMixin_tes> ;
+             rdf:type [ <AttributeMixin> ] ? ;
+             <category> @<CategoryType> + ;
+             <iri> @<IriType> ? ;
+             rdfs:label @<LabelType> ? ;
+             <source> @<LabelType> ? ;
+             <has_attribute> @<Attribute> *
           ) ;
           rdf:type [ <NamedThing> ]
        )
@@ -1659,7 +1679,7 @@ metatype:Nodeidentifier NONLITERAL
              <keywords> @metatype:String * ;
              <mesh_terms> @metatype:Uriorcurie * ;
              <xref> @<IriType> * ;
-             <name> @<LabelType>
+             <name> @<LabelType> ?
           ) ;
           rdf:type [ <Publication> ]
        )
@@ -1699,6 +1719,15 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <RelationshipType> ]
+    )
+}
+
+<ResourceMixin> {
+    (  $<ResourceMixin_tes> (  <iri> @<IriType> ? ;
+          rdfs:label @<LabelType> ? ;
+          <source> @<LabelType> ?
+       ) ;
+       rdf:type [ <ResourceMixin> ] ?
     )
 }
 

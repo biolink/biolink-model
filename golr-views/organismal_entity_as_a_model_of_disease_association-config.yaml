@@ -40,6 +40,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: subject
   description: A organismal entity (strain, breed) with a predisposition to a disease,
     or bred/created specifically to model a disease.
