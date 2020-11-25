@@ -21,18 +21,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ActivityAndBehavior",
@@ -60,19 +74,33 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "it is recommended that an author's 'name' property be formatted as \"surname, firstname initial.\"",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "category",
-            "id",
-            "name"
+            "id"
          ],
          "title": "Agent",
          "type": "object"
@@ -88,6 +116,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -99,14 +134,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "AnatomicalEntity",
@@ -119,6 +161,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -182,6 +231,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -244,6 +300,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -329,8 +392,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "iso_abbreviation": {
@@ -376,6 +450,10 @@
             "rights": {
                "type": "string"
             },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
             "summary": {
                "description": "executive  summary of a publication",
                "type": "string"
@@ -400,7 +478,6 @@
             "category",
             "type",
             "id",
-            "name",
             "published_in"
          ],
          "title": "Article",
@@ -413,6 +490,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -488,9 +572,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "Attribute",
          "type": "object"
       },
@@ -512,6 +610,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_input": {
                "description": "holds between a process and a continuant, where the continuant is an input into the process",
                "items": {
@@ -530,14 +635,21 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "BiologicalProcess",
@@ -561,6 +673,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_input": {
                "description": "holds between a process and a continuant, where the continuant is an input into the process",
                "items": {
@@ -579,14 +698,21 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "BiologicalProcessOrActivity",
@@ -610,9 +736,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "BiologicalSex",
          "type": "object"
       },
@@ -645,8 +785,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "Books should have industry-standard identifier such as from ISBN.",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "keywords": {
@@ -680,6 +831,10 @@
             "rights": {
                "type": "string"
             },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
             "summary": {
                "description": "executive  summary of a publication",
                "type": "string"
@@ -698,7 +853,6 @@
          },
          "required": [
             "category",
-            "name",
             "id",
             "type"
          ],
@@ -738,8 +892,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "keywords": {
@@ -777,6 +942,10 @@
             "rights": {
                "type": "string"
             },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
             "summary": {
                "description": "executive  summary of a publication",
                "type": "string"
@@ -801,7 +970,6 @@
             "category",
             "type",
             "id",
-            "name",
             "published_in"
          ],
          "title": "BookChapter",
@@ -818,6 +986,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -829,14 +1004,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Carbohydrate",
@@ -853,6 +1035,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -864,14 +1053,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Case",
@@ -892,6 +1088,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -972,6 +1175,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -983,14 +1193,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Cell",
@@ -1007,18 +1224,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "CellLine",
@@ -1035,6 +1266,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -1108,6 +1346,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -1174,6 +1419,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -1185,14 +1437,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "CellularComponent",
@@ -1209,18 +1468,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ChemicalExposure",
@@ -1237,6 +1510,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -1248,14 +1528,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ChemicalSubstance",
@@ -1268,6 +1555,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -1340,6 +1634,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -1402,6 +1703,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -1467,6 +1775,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -1530,6 +1845,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -1605,9 +1927,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "ClinicalCourse",
          "type": "object"
       },
@@ -1622,18 +1958,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ClinicalEntity",
@@ -1650,18 +2000,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ClinicalIntervention",
@@ -1685,9 +2049,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "ClinicalModifier",
          "type": "object"
       },
@@ -1702,18 +2080,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ClinicalTrial",
@@ -1727,6 +2119,13 @@
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
@@ -1745,14 +2144,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "CodingSequence",
@@ -1780,8 +2186,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "license": {
@@ -1793,11 +2210,14 @@
             },
             "rights": {
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ConfidenceLevel",
@@ -1810,6 +2230,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -1889,8 +2316,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "license": {
@@ -1902,11 +2340,14 @@
             },
             "rights": {
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "DataFile",
@@ -1934,8 +2375,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "license": {
@@ -1947,11 +2399,14 @@
             },
             "rights": {
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "DataSet",
@@ -1982,8 +2437,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "license": {
@@ -1994,6 +2460,10 @@
                "type": "string"
             },
             "rights": {
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "source_data_file": {
@@ -2008,7 +2478,6 @@
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "DataSetVersion",
@@ -2025,18 +2494,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Device",
@@ -2053,6 +2536,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -2064,14 +2554,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Disease",
@@ -2088,6 +2585,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -2099,14 +2603,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "DiseaseOrPhenotypicFeature",
@@ -2119,6 +2630,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2183,6 +2701,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2253,6 +2778,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2340,6 +2872,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_constituent": {
                "description": "one or more chemical substances within a mixture",
                "items": {
@@ -2365,14 +2904,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Drug",
@@ -2389,6 +2935,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_drug": {
                "items": {
                   "type": "string"
@@ -2399,14 +2952,21 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category",
             "has_drug"
          ],
@@ -2424,18 +2984,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "EnvironmentalFeature",
@@ -2452,18 +3026,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "EnvironmentalProcess",
@@ -2491,8 +3079,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "license": {
@@ -2504,11 +3103,14 @@
             },
             "rights": {
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "EvidenceType",
@@ -2522,6 +3124,13 @@
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
@@ -2540,14 +3149,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Exon",
@@ -2560,6 +3176,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2626,18 +3249,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ExposureEvent",
@@ -2658,6 +3295,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2737,6 +3381,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_constituent": {
                "description": "one or more chemical substances within a mixture",
                "items": {
@@ -2762,14 +3413,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Food",
@@ -2793,9 +3451,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "FrequencyValue",
          "type": "object"
       },
@@ -2806,6 +3478,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -2878,6 +3557,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -2893,8 +3579,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "symbol": {
@@ -2918,8 +3612,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "Gene",
          "type": "object"
@@ -2935,6 +3628,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3011,6 +3711,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -3022,14 +3729,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "GeneFamily",
@@ -3046,6 +3760,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3126,18 +3847,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "GeneOntologyClass",
@@ -3151,6 +3886,13 @@
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
@@ -3169,15 +3911,22 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "GeneOrGeneProduct",
          "type": "object"
@@ -3197,6 +3946,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -3212,8 +3968,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "synonym": {
@@ -3233,8 +3997,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "GeneProduct",
          "type": "object"
@@ -3246,6 +4009,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3312,6 +4082,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3385,6 +4162,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -3457,6 +4241,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -3521,6 +4312,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -3581,6 +4379,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3653,6 +4458,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3733,6 +4545,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -3748,14 +4567,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Genome",
@@ -3772,6 +4598,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -3787,14 +4620,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "GenomicEntity",
@@ -3815,6 +4655,13 @@
             "genome_build": {
                "description": "The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -3892,6 +4739,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -3910,14 +4764,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Genotype",
@@ -3934,6 +4795,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -4011,6 +4879,13 @@
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -4083,6 +4958,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -4146,6 +5028,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -4217,6 +5106,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -4293,6 +5189,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -4367,9 +5270,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "GenotypicSex",
          "type": "object"
       },
@@ -4384,8 +5301,19 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "latitude": {
@@ -4399,11 +5327,14 @@
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "GeographicLocation",
@@ -4420,8 +5351,19 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "latitude": {
@@ -4436,6 +5378,10 @@
                "description": "A human-readable name for a thing",
                "type": "string"
             },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
@@ -4443,7 +5389,6 @@
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "GeographicLocationAtTime",
@@ -4460,6 +5405,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -4471,14 +5423,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "GrossAnatomicalStructure",
@@ -4492,6 +5451,13 @@
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
@@ -4510,14 +5476,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Haplotype",
@@ -4534,6 +5507,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -4545,14 +5525,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "IndividualOrganism",
@@ -4576,9 +5563,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "Inheritance",
          "type": "object"
       },
@@ -4593,6 +5594,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -4604,14 +5612,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "LifeStage",
@@ -4628,6 +5643,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -4643,15 +5665,22 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "MacromolecularComplex",
          "type": "object"
@@ -4667,6 +5696,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -4682,15 +5718,22 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "MacromolecularMachine",
          "type": "object"
@@ -4702,6 +5745,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -4766,6 +5816,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -4828,6 +5885,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -4906,14 +5970,21 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "MaterialSample",
@@ -4926,6 +5997,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -4990,6 +6068,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -5058,6 +6143,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -5069,14 +6161,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Metabolite",
@@ -5097,6 +6196,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -5112,8 +6218,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "synonym": {
@@ -5133,8 +6247,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "MicroRNA",
          "type": "object"
@@ -5157,6 +6270,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_input": {
                "description": "A chemical entity that is the input for the reaction",
                "items": {
@@ -5175,14 +6295,21 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "MolecularActivity",
@@ -5199,6 +6326,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -5210,14 +6344,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "MolecularEntity",
@@ -5234,18 +6375,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "NamedThing",
@@ -5266,6 +6421,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -5281,8 +6443,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "synonym": {
@@ -5302,8 +6472,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "NoncodingRNAProduct",
          "type": "object"
@@ -5326,9 +6495,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "Onset",
          "type": "object"
       },
@@ -5343,18 +6526,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "OntologyClass",
@@ -5371,18 +6568,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "OrganismTaxon",
@@ -5399,6 +6610,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -5472,6 +6690,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -5534,6 +6759,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "identifier for the interaction. This may come from an interaction database such as IMEX.",
@@ -5609,6 +6841,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_input": {
                "description": "holds between a process and a continuant, where the continuant is an input into the process",
                "items": {
@@ -5627,14 +6866,21 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Pathway",
@@ -5651,18 +6897,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Phenomenon",
@@ -5679,6 +6939,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -5690,14 +6957,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "PhenotypicFeature",
@@ -5721,9 +6995,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "PhenotypicSex",
          "type": "object"
       },
@@ -5738,18 +7026,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "PhysicalEntity",
@@ -5773,6 +7075,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_input": {
                "description": "holds between a process and a continuant, where the continuant is an input into the process",
                "items": {
@@ -5791,14 +7100,21 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "PhysiologicalProcess",
@@ -5815,18 +7131,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "PlanetaryEntity",
@@ -5843,6 +7173,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -5854,14 +7191,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "PopulationOfIndividualOrganisms",
@@ -5874,6 +7218,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -5942,18 +7293,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "Procedure",
@@ -5970,6 +7335,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -5981,14 +7353,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ProcessedMaterial",
@@ -6009,6 +7388,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -6024,8 +7410,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "synonym": {
@@ -6045,8 +7439,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "Protein",
          "type": "object"
@@ -6066,6 +7459,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -6081,8 +7481,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "synonym": {
@@ -6102,8 +7510,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "ProteinIsoform",
          "type": "object"
@@ -6137,8 +7544,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "keywords": {
@@ -6172,6 +7590,10 @@
             "rights": {
                "type": "string"
             },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
             "summary": {
                "description": "executive  summary of a publication",
                "type": "string"
@@ -6191,8 +7613,7 @@
          "required": [
             "category",
             "type",
-            "id",
-            "name"
+            "id"
          ],
          "title": "Publication",
          "type": "object"
@@ -6229,6 +7650,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -6244,8 +7672,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "synonym": {
@@ -6265,8 +7701,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "RNAProduct",
          "type": "object"
@@ -6286,6 +7721,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -6301,8 +7743,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "synonym": {
@@ -6322,8 +7772,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "RNAProductIsoform",
          "type": "object"
@@ -6336,6 +7785,13 @@
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
@@ -6354,14 +7810,21 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "ReagentTargetedGene",
@@ -6378,18 +7841,32 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "RelationshipType",
@@ -6402,6 +7879,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -6466,6 +7950,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -6532,6 +8023,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "The state of the sequence w.r.t a reference sequence",
                "type": "string"
@@ -6553,13 +8051,20 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
-            "name",
             "category",
             "id"
          ],
@@ -6595,8 +8100,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "Serials (journals) should have industry-standard identifier such as from ISSN.",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "iso_abbreviation": {
@@ -6638,6 +8154,10 @@
             "rights": {
                "type": "string"
             },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
             "summary": {
                "description": "executive  summary of a publication",
                "type": "string"
@@ -6660,7 +8180,6 @@
          },
          "required": [
             "category",
-            "name",
             "id",
             "type"
          ],
@@ -6685,9 +8204,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "SeverityValue",
          "type": "object"
       },
@@ -6699,6 +8232,13 @@
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
@@ -6723,13 +8263,20 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
-            "name",
             "category",
             "id"
          ],
@@ -6758,8 +8305,19 @@
             "format": {
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
             "license": {
@@ -6775,13 +8333,16 @@
             "rights": {
                "type": "string"
             },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
             "source_version": {
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category"
          ],
          "title": "SourceFile",
@@ -6802,6 +8363,13 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -6817,8 +8385,16 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
             "synonym": {
@@ -6838,8 +8414,7 @@
          },
          "required": [
             "id",
-            "category",
-            "name"
+            "category"
          ],
          "title": "Transcript",
          "type": "object"
@@ -6851,6 +8426,13 @@
             "association_type": {
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -6917,6 +8499,13 @@
                },
                "type": "array"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "has_part": {
                "items": {
                   "type": "string"
@@ -6927,14 +8516,21 @@
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
             "name": {
                "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "name",
             "category",
             "has_part"
          ],
@@ -6952,6 +8548,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -7028,6 +8631,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an association",
@@ -7109,6 +8719,13 @@
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an association",
                "type": "string"
@@ -7188,6 +8805,13 @@
             "frequency_qualifier": {
                "$ref": "#/definitions/FrequencyValue",
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
             },
             "has_count": {
                "description": "number in object population that carry a particular allele, aka allele count",
@@ -7279,9 +8903,23 @@
                   "$ref": "#/definitions/QuantityValue"
                },
                "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "has_attribute_type"
+         ],
          "title": "Zygosity",
          "type": "object"
       }

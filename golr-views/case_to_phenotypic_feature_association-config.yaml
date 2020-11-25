@@ -46,6 +46,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: frequency_qualifier
   description: a qualifier used in a phenotypic association to state how frequent
     the phenotype is observed in the subject
