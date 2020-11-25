@@ -1073,11 +1073,9 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    mappings:
-    #  - CTD:decreases_synthesis_of
-      - GAMMA:inhibition_of_synthesis
     exact_mappings:
       - CTD:decreases_synthesis_of
+      - GAMMA:inhibition_of_synthesis
 
   affects degradation of:
     description: >-
@@ -3284,14 +3282,13 @@ slots:
     is_a: node property
     domain: data set version
     range: distribution level
-    mappings:
+    exact_mappings:
       - void:Dataset
       - dctypes:Dataset
 
   type:
     is_a: node property
-    slot_uri: rdf:type
-    mappings:
+    exact_mappings:
       - alliancegenome:soTermId
       - gff3:type
       - gpi:DB_Object_Type
@@ -3306,7 +3303,7 @@ slots:
       - translator_minimal
     domain: named thing
     required: true
-    mappings:
+    exact_mappings:
       - alliancegenome:primaryId
       - gff3:ID
       - gpi:DB_Object_ID
@@ -3345,7 +3342,7 @@ slots:
     domain: named thing
     description: >-
       Symbol for a particular thing
-    mappings:
+    exact_mappings:
       - alliancegenome:symbol
       - gpi:DB_Object_Symbol
 
@@ -3571,7 +3568,7 @@ slots:
       connects an association to the agent (person, organization or group) that provided it
     range: agent
     multivalued: true
-    mappings:
+    exact_mappings:
       - pav:providedBy
 
   association type:
@@ -3579,7 +3576,7 @@ slots:
     range: ontology class
     description: >-
       connects an association to the type of association (e.g. gene to phenotype)
-    mappings:
+    exact_mappings:
       - rdf:type
 
   ## Additional Properties for Information Content Entity and Publication Nodes
@@ -3691,7 +3688,7 @@ slots:
     range: float
     description: >-
       represents the chi-squared statistic computed from observations
-    mappings:
+    exact_mappings:
       - STATO:0000030
 
   p value:
@@ -3699,8 +3696,10 @@ slots:
     range: float
     description: >-
       A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
-    mappings:
+    exact_mappings:
       - OBI:0000175
+      - NCIT:C44185
+      - http://edamontology.org/data_1669
 
   creation date:
     is_a: node property
