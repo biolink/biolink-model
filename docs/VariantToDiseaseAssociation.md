@@ -15,7 +15,7 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociationMixin],[NamedThing]%3Cobject%201..1-%20[VariantToDiseaseAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[NamedThing]%3Csubject%201..1-%20[VariantToDiseaseAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[Association]%5E-[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[ThingToDiseaseAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociationMixin],[NamedThing]%3Cobject%201..1-%20[VariantToDiseaseAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[NamedThing]%3Csubject%201..1-%20[VariantToDiseaseAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[Association]%5E-[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[ThingToDiseaseAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[Association],[Agent])
 
 ---
 
@@ -45,9 +45,9 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
     * Description: a disease that is associated with that variant
     * range: [NamedThing](NamedThing.md)
     * Example:    
- * [variant to disease association➞relation](variant_to_disease_association_relation.md)  <sub>REQ</sub>
+ * [variant to disease association➞predicate](variant_to_disease_association_predicate.md)  <sub>REQ</sub>
     * Description: E.g. is pathogenic for
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [variant to disease association➞subject](variant_to_disease_association_subject.md)  <sub>REQ</sub>
     * Description: a sequence variant in which the allele state is associated in some way with the disease state
     * range: [NamedThing](NamedThing.md)
@@ -108,9 +108,9 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
     * Description: a disease that is associated with that variant
     * range: [NamedThing](NamedThing.md)
     * Example:    
- * [variant to disease association➞relation](variant_to_disease_association_relation.md)  <sub>REQ</sub>
+ * [variant to disease association➞predicate](variant_to_disease_association_predicate.md)  <sub>REQ</sub>
     * Description: E.g. is pathogenic for
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [variant to disease association➞subject](variant_to_disease_association_subject.md)  <sub>REQ</sub>
     * Description: a sequence variant in which the allele state is associated in some way with the disease state
     * range: [NamedThing](NamedThing.md)

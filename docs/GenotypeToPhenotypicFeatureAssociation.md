@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociationMixin],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation%7Crelation:uriorcurie;description:narrative_text%20%3F;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociationMixin],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[BiologicalSex],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[GenotypeToThingAssociationMixin],[Genotype]%3Csubject%201..1-%20[GenotypeToPhenotypicFeatureAssociation%7Cpredicate:predicate_type;description:narrative_text%20%3F;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToThingAssociationMixin],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Genotype],[FrequencyValue],[BiologicalSex],[Association],[Agent])
 
 ---
 
@@ -37,8 +37,8 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
 
 ### Own
 
- * [genotype to phenotypic feature association➞relation](genotype_to_phenotypic_feature_association_relation.md)  <sub>REQ</sub>
-    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [genotype to phenotypic feature association➞predicate](genotype_to_phenotypic_feature_association_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
  * [genotype to phenotypic feature association➞subject](genotype_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
     * Description: genotype that is associated with the phenotypic feature
     * range: [Genotype](Genotype.md)
@@ -109,8 +109,8 @@ URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/v
 
 ### Domain for slot:
 
- * [genotype to phenotypic feature association➞relation](genotype_to_phenotypic_feature_association_relation.md)  <sub>REQ</sub>
-    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [genotype to phenotypic feature association➞predicate](genotype_to_phenotypic_feature_association_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
  * [genotype to phenotypic feature association➞subject](genotype_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
     * Description: genotype that is associated with the phenotypic feature
     * range: [Genotype](Genotype.md)

@@ -15,7 +15,7 @@ URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/Gene
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceFeatureRelationship],[Publication],[OntologyClass],[GeneProduct]%3Cobject%201..1-%20[GeneToGeneProductRelationship%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[Gene]%3Csubject%201..1-%20[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[GeneProduct],[Gene],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceFeatureRelationship],[Publication],[OntologyClass],[GeneProduct]%3Cobject%201..1-%20[GeneToGeneProductRelationship%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Gene]%3Csubject%201..1-%20[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[GeneProduct],[Gene],[Agent])
 
 ---
 
@@ -34,8 +34,8 @@ URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/Gene
 
  * [gene to gene product relationship➞object](gene_to_gene_product_relationship_object.md)  <sub>REQ</sub>
     * range: [GeneProduct](GeneProduct.md)
- * [gene to gene product relationship➞relation](gene_to_gene_product_relationship_relation.md)  <sub>REQ</sub>
-    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [gene to gene product relationship➞predicate](gene_to_gene_product_relationship_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
  * [gene to gene product relationship➞subject](gene_to_gene_product_relationship_subject.md)  <sub>REQ</sub>
     * range: [Gene](Gene.md)
 
@@ -77,7 +77,7 @@ URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/Gene
 
  * [gene to gene product relationship➞object](gene_to_gene_product_relationship_object.md)  <sub>REQ</sub>
     * range: [GeneProduct](GeneProduct.md)
- * [gene to gene product relationship➞relation](gene_to_gene_product_relationship_relation.md)  <sub>REQ</sub>
-    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [gene to gene product relationship➞predicate](gene_to_gene_product_relationship_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
  * [gene to gene product relationship➞subject](gene_to_gene_product_relationship_subject.md)  <sub>REQ</sub>
     * range: [Gene](Gene.md)

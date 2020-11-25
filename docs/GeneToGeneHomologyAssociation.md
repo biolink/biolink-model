@@ -15,7 +15,7 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[GeneToGeneAssociation],[GeneOrGeneProduct],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneToGeneAssociation],[GeneOrGeneProduct],[Agent])
 
 ---
 
@@ -32,9 +32,9 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
 
 ### Own
 
- * [gene to gene homology association➞relation](gene_to_gene_homology_association_relation.md)  <sub>REQ</sub>
+ * [gene to gene homology association➞predicate](gene_to_gene_homology_association_predicate.md)  <sub>REQ</sub>
     * Description: homology relationship type
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
 
 ### Inherited from association:
 
@@ -81,6 +81,6 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
 
 ### Domain for slot:
 
- * [gene to gene homology association➞relation](gene_to_gene_homology_association_relation.md)  <sub>REQ</sub>
+ * [gene to gene homology association➞predicate](gene_to_gene_homology_association_predicate.md)  <sub>REQ</sub>
     * Description: homology relationship type
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)

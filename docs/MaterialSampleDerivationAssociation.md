@@ -15,7 +15,7 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[NamedThing]%3Cobject%201..1-%20[MaterialSampleDerivationAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[MaterialSample]%3Csubject%201..1-%20[MaterialSampleDerivationAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[MaterialSample],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[NamedThing]%3Cobject%201..1-%20[MaterialSampleDerivationAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[MaterialSample]%3Csubject%201..1-%20[MaterialSampleDerivationAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[MaterialSample],[Association],[Agent])
 
 ---
 
@@ -35,9 +35,9 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
  * [material sample derivation association➞object](material_sample_derivation_association_object.md)  <sub>REQ</sub>
     * Description: the material entity the sample was derived from. This may be another material sample, or any other material entity, including for example an organism, a geographic feature, or some environmental material.
     * range: [NamedThing](NamedThing.md)
- * [material sample derivation association➞relation](material_sample_derivation_association_relation.md)  <sub>REQ</sub>
+ * [material sample derivation association➞predicate](material_sample_derivation_association_predicate.md)  <sub>REQ</sub>
     * Description: derivation relationship
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [material sample derivation association➞subject](material_sample_derivation_association_subject.md)  <sub>REQ</sub>
     * Description: the material sample being described
     * range: [MaterialSample](MaterialSample.md)
@@ -81,9 +81,9 @@ URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/voca
  * [material sample derivation association➞object](material_sample_derivation_association_object.md)  <sub>REQ</sub>
     * Description: the material entity the sample was derived from. This may be another material sample, or any other material entity, including for example an organism, a geographic feature, or some environmental material.
     * range: [NamedThing](NamedThing.md)
- * [material sample derivation association➞relation](material_sample_derivation_association_relation.md)  <sub>REQ</sub>
+ * [material sample derivation association➞predicate](material_sample_derivation_association_predicate.md)  <sub>REQ</sub>
     * Description: derivation relationship
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [material sample derivation association➞subject](material_sample_derivation_association_subject.md)  <sub>REQ</sub>
     * Description: the material sample being described
     * range: [MaterialSample](MaterialSample.md)

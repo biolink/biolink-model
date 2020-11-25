@@ -15,7 +15,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[LifeStage],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[Association],[AnatomicalEntity],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[LifeStage],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[Association],[AnatomicalEntity],[Agent])
 
 ---
 
@@ -36,12 +36,12 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
     * Description: location in which the gene is expressed
     * range: [AnatomicalEntity](AnatomicalEntity.md)
     * Example:    
+ * [gene to expression site association➞predicate](gene_to_expression_site_association_predicate.md)  <sub>REQ</sub>
+    * Description: expression relationship
+    * range: [PredicateType](types/PredicateType.md)
  * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
     * Description: can be used to indicate magnitude, or also ranking
     * range: [OntologyClass](OntologyClass.md)
- * [gene to expression site association➞relation](gene_to_expression_site_association_relation.md)  <sub>REQ</sub>
-    * Description: expression relationship
-    * range: [Uriorcurie](types/Uriorcurie.md)
  * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
     * Description: stage at which the gene is expressed in the site
     * range: [LifeStage](LifeStage.md)
@@ -90,12 +90,12 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
     * Description: location in which the gene is expressed
     * range: [AnatomicalEntity](AnatomicalEntity.md)
     * Example:    
+ * [gene to expression site association➞predicate](gene_to_expression_site_association_predicate.md)  <sub>REQ</sub>
+    * Description: expression relationship
+    * range: [PredicateType](types/PredicateType.md)
  * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
     * Description: can be used to indicate magnitude, or also ranking
     * range: [OntologyClass](OntologyClass.md)
- * [gene to expression site association➞relation](gene_to_expression_site_association_relation.md)  <sub>REQ</sub>
-    * Description: expression relationship
-    * range: [Uriorcurie](types/Uriorcurie.md)
  * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
     * Description: stage at which the gene is expressed in the site
     * range: [LifeStage](LifeStage.md)

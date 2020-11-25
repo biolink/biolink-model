@@ -15,7 +15,7 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PopulationOfIndividualOrganisms]%3Cobject%201..1-%20[PopulationToPopulationAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[PopulationOfIndividualOrganisms]%3Csubject%201..1-%20[PopulationToPopulationAssociation],[Association]%5E-[PopulationToPopulationAssociation],[PopulationOfIndividualOrganisms],[OntologyClass],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PopulationOfIndividualOrganisms]%3Cobject%201..1-%20[PopulationToPopulationAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[PopulationOfIndividualOrganisms]%3Csubject%201..1-%20[PopulationToPopulationAssociation],[Association]%5E-[PopulationToPopulationAssociation],[PopulationOfIndividualOrganisms],[OntologyClass],[Association],[Agent])
 
 ---
 
@@ -35,9 +35,9 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
  * [population to population association➞object](population_to_population_association_object.md)  <sub>REQ</sub>
     * Description: the population that form the object of the association
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
- * [population to population association➞relation](population_to_population_association_relation.md)  <sub>REQ</sub>
+ * [population to population association➞predicate](population_to_population_association_predicate.md)  <sub>REQ</sub>
     * Description: A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [population to population association➞subject](population_to_population_association_subject.md)  <sub>REQ</sub>
     * Description: the population that form the subject of the association
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
@@ -81,9 +81,9 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
  * [population to population association➞object](population_to_population_association_object.md)  <sub>REQ</sub>
     * Description: the population that form the object of the association
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
- * [population to population association➞relation](population_to_population_association_relation.md)  <sub>REQ</sub>
+ * [population to population association➞predicate](population_to_population_association_predicate.md)  <sub>REQ</sub>
     * Description: A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [population to population association➞subject](population_to_population_association_subject.md)  <sub>REQ</sub>
     * Description: the population that form the subject of the association
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)

@@ -15,7 +15,7 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[GeneOrGeneProduct]%3Cobject%201..1-%20[GeneRegulatoryRelationship%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneRegulatoryRelationship],[Association]%5E-[GeneRegulatoryRelationship],[GeneOrGeneProduct],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[GeneOrGeneProduct]%3Cobject%201..1-%20[GeneRegulatoryRelationship%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneRegulatoryRelationship],[Association]%5E-[GeneRegulatoryRelationship],[GeneOrGeneProduct],[Association],[Agent])
 
 ---
 
@@ -34,9 +34,9 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
 
  * [gene regulatory relationship➞object](gene_regulatory_relationship_object.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [gene regulatory relationship➞relation](gene_regulatory_relationship_relation.md)  <sub>REQ</sub>
+ * [gene regulatory relationship➞predicate](gene_regulatory_relationship_predicate.md)  <sub>REQ</sub>
     * Description: the direction is always from regulator to regulated
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [gene regulatory relationship➞subject](gene_regulatory_relationship_subject.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
@@ -78,8 +78,8 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
 
  * [gene regulatory relationship➞object](gene_regulatory_relationship_object.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [gene regulatory relationship➞relation](gene_regulatory_relationship_relation.md)  <sub>REQ</sub>
+ * [gene regulatory relationship➞predicate](gene_regulatory_relationship_predicate.md)  <sub>REQ</sub>
     * Description: the direction is always from regulator to regulated
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [gene regulatory relationship➞subject](gene_regulatory_relationship_subject.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)

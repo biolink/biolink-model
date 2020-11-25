@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[Publication],[OntologyClass],[SequenceVariant]%3Cobject%201..1-%20[GenotypeToVariantAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Genotype],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[Publication],[OntologyClass],[SequenceVariant]%3Cobject%201..1-%20[GenotypeToVariantAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Genotype],[Association],[Agent])
 
 ---
 
@@ -35,9 +35,9 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
  * [genotype to variant association➞object](genotype_to_variant_association_object.md)  <sub>REQ</sub>
     * Description: gene implicated in genotype
     * range: [SequenceVariant](SequenceVariant.md)
- * [genotype to variant association➞relation](genotype_to_variant_association_relation.md)  <sub>REQ</sub>
+ * [genotype to variant association➞predicate](genotype_to_variant_association_predicate.md)  <sub>REQ</sub>
     * Description: the relationship type used to connect genotype to gene
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [genotype to variant association➞subject](genotype_to_variant_association_subject.md)  <sub>REQ</sub>
     * Description: parent genotype
     * range: [Genotype](Genotype.md)
@@ -81,9 +81,9 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
  * [genotype to variant association➞object](genotype_to_variant_association_object.md)  <sub>REQ</sub>
     * Description: gene implicated in genotype
     * range: [SequenceVariant](SequenceVariant.md)
- * [genotype to variant association➞relation](genotype_to_variant_association_relation.md)  <sub>REQ</sub>
+ * [genotype to variant association➞predicate](genotype_to_variant_association_predicate.md)  <sub>REQ</sub>
     * Description: the relationship type used to connect genotype to gene
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [genotype to variant association➞subject](genotype_to_variant_association_subject.md)  <sub>REQ</sub>
     * Description: parent genotype
     * range: [Genotype](Genotype.md)

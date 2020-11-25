@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[Gene]%3Cobject%201..1-%20[GenotypeToGeneAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Genotype],[Gene],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[Gene]%3Cobject%201..1-%20[GenotypeToGeneAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Genotype],[Gene],[Association],[Agent])
 
 ---
 
@@ -35,9 +35,9 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
  * [genotype to gene association➞object](genotype_to_gene_association_object.md)  <sub>REQ</sub>
     * Description: gene implicated in genotype
     * range: [Gene](Gene.md)
- * [genotype to gene association➞relation](genotype_to_gene_association_relation.md)  <sub>REQ</sub>
+ * [genotype to gene association➞predicate](genotype_to_gene_association_predicate.md)  <sub>REQ</sub>
     * Description: the relationship type used to connect genotype to gene
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [genotype to gene association➞subject](genotype_to_gene_association_subject.md)  <sub>REQ</sub>
     * Description: parent genotype
     * range: [Genotype](Genotype.md)
@@ -81,9 +81,9 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
  * [genotype to gene association➞object](genotype_to_gene_association_object.md)  <sub>REQ</sub>
     * Description: gene implicated in genotype
     * range: [Gene](Gene.md)
- * [genotype to gene association➞relation](genotype_to_gene_association_relation.md)  <sub>REQ</sub>
+ * [genotype to gene association➞predicate](genotype_to_gene_association_predicate.md)  <sub>REQ</sub>
     * Description: the relationship type used to connect genotype to gene
-    * range: [Uriorcurie](types/Uriorcurie.md)
+    * range: [PredicateType](types/PredicateType.md)
  * [genotype to gene association➞subject](genotype_to_gene_association_subject.md)  <sub>REQ</sub>
     * Description: parent genotype
     * range: [Genotype](Genotype.md)

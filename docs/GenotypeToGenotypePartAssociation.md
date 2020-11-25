@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[Genotype]%3Cobject%201..1-%20[GenotypeToGenotypePartAssociation%7Crelation:uriorcurie;id(i):string;predicate(i):predicate_type;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Genotype],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[Genotype]%3Cobject%201..1-%20[GenotypeToGenotypePartAssociation%7Cpredicate:predicate_type;id(i):string;relation(i):uriorcurie;negated(i):boolean%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Genotype],[Association],[Agent])
 
 ---
 
@@ -35,8 +35,8 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
  * [genotype to genotype part association➞object](genotype_to_genotype_part_association_object.md)  <sub>REQ</sub>
     * Description: child genotype
     * range: [Genotype](Genotype.md)
- * [genotype to genotype part association➞relation](genotype_to_genotype_part_association_relation.md)  <sub>REQ</sub>
-    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [genotype to genotype part association➞predicate](genotype_to_genotype_part_association_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
  * [genotype to genotype part association➞subject](genotype_to_genotype_part_association_subject.md)  <sub>REQ</sub>
     * Description: parent genotype
     * range: [Genotype](Genotype.md)
@@ -80,8 +80,8 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
  * [genotype to genotype part association➞object](genotype_to_genotype_part_association_object.md)  <sub>REQ</sub>
     * Description: child genotype
     * range: [Genotype](Genotype.md)
- * [genotype to genotype part association➞relation](genotype_to_genotype_part_association_relation.md)  <sub>REQ</sub>
-    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [genotype to genotype part association➞predicate](genotype_to_genotype_part_association_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
  * [genotype to genotype part association➞subject](genotype_to_genotype_part_association_subject.md)  <sub>REQ</sub>
     * Description: parent genotype
     * range: [Genotype](Genotype.md)
