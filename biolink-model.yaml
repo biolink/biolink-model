@@ -4730,7 +4730,9 @@ classes:
     mixins:
       - subject of investigation
     description: >-
-      A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+      A sample is a limited quantity of something (e.g. an individual or set of individuals
+      from a population, or a portion of a substance) to be used for testing, analysis,
+      inspection, investigation, demonstration, or trial use. [SIO]
     mappings:
       - OBI:0000747
       - SIO:001050
@@ -4860,10 +4862,13 @@ classes:
       Level of confidence in a statement
     values_from:
       - cio
-    mappings:
+    exact_mappings:
       - CIO:0000028
-      - SEPIO:0000167
+      # statement confidence
       - SEPIO:0000187
+    close_mappings:
+      # assertion confidence levels
+      - SEPIO:0000167
 
   evidence type:
     is_a: information content entity
@@ -4872,7 +4877,7 @@ classes:
       Class of evidence that supports an association
     values_from:
       - eco
-    mappings:
+    exact_mappings:
       - ECO:0000000
 
   administrative entity:
@@ -4949,11 +4954,9 @@ classes:
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
     #notes:
     #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
-    mappings:
+    narrow_mappings:
       - SIO:010341
       - WIKIDATA:Q43460564
-      # UMLS Semantic Group "Genes & Molecular Sequences"
-      - UMLSSG:GENE
       # Molecular Sequence
       - UMLSSC:T085
       - UMLSST:mosq
@@ -5182,7 +5185,8 @@ classes:
     is_a: named thing
     description: >-
       A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
-    mappings: # Devices
+    narrow_mappings:
+      - # Devices
       - UMLSSG:DEVI
       # Medical Device
       - UMLSSC:T074
@@ -5201,7 +5205,10 @@ classes:
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
     slots:
       - has biological sequence
+    exact_mappings:
+      # UMLS Semantic Group "Genes & Molecular Sequences"
     mappings:
+      - UMLSSG:GENE
       - SO:0000110
       - GENO:0000897
       # Gene or Genome
