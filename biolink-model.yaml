@@ -7216,7 +7216,7 @@ classes:
   gross anatomical structure:
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
-    mappings:
+    exact_mappings:
       - UBERON:0010000
       - WIKIDATA:Q4936952
       # UMLS Semantic Type "Anatomical Structure"
@@ -7225,6 +7225,7 @@ classes:
       # UMLS Semantic Type "Fully Formed Anatomical Structure"
       - UMLSSC:T021
       - UMLSST:ffas
+    narrow_mappings:
       # UMLS Semantic Type "Body Part, Organ, or Organ Component"
       - UMLSSC:T023
       - UMLSST:bpoc
