@@ -5232,7 +5232,7 @@ classes:
     is_a: genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
-    mappings:
+    exact_mappings:
       - SO:0001026
       - SIO:000984
       - WIKIDATA:Q7020
@@ -5241,9 +5241,10 @@ classes:
     is_a: gene product
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
-    mappings:
+    exact_mappings:
       - SO:0000673
       - SIO:010450
+      - WIKIDATA:Q7243183
 
   exon:
     is_a: genomic entity
