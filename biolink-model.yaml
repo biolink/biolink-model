@@ -4609,18 +4609,24 @@ classes:
       - WIKIDATA:Q16521
       - NCBITaxon:1
     narrow_mappings:
-      # Plant
-      - UMLSSC:T002
-      - UMLSST:plnt
-      # Fungus
-      - UMLSSC:T004
-      - UMLSST:fngs
       # Virus
       - UMLSSC:T005
       - UMLSST:virs
       # Bacterium
       - UMLSSC:T007
       - UMLSST:bact
+      # Archaeon
+      - UMLSSC:T194
+      - UMLSST:arch
+      # Eukaryote
+      - UMLSSC:T204
+      - UMLSST:euka
+      # Plant
+      - UMLSSC:T002
+      - UMLSST:plnt
+      # Fungus
+      - UMLSSC:T004
+      - UMLSST:fngs
       # Animal
       - UMLSSC:T008
       - UMLSST:anim
@@ -4666,20 +4672,14 @@ classes:
       - thing with taxon
     is_a: organismal entity
     subclass_of: NCBITaxon:1
-    mappings:
+    exact_mappings:
       - SIO:010000
       # Organism
       - UMLSSC:T001
       - UMLSST:orgm
     narrow_mappings:
-      # Wikidata consider's its definition of 'individual' to be constrained to people?
+      # Wikidata considers its definition of 'individual' to be constrained to human persons?
       - WIKIDATA:Q795052
-      # Archaeon
-      - UMLSSC:T194
-      - UMLSST:arch
-      # Eukaryote
-      - UMLSSC:T204
-      - UMLSST:euka
 
   case:
     aliases: ['patient', 'proband']
@@ -4759,13 +4759,17 @@ classes:
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
     is_a: disease or phenotypic feature
-    mappings:
+    exact_mappings:
       - MONDO:0000001
       - DOID:4
       - WIKIDATA:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
       - UMLSSG:DISO
+      # Disease or Syndrome
+      - UMLSSC:T047
+      - UMLSST:dsyn
+    narrow_mappings:
       # Congenital Abnormality
       - UMLSSC:T019
       - UMLSST:cgab
@@ -4778,18 +4782,12 @@ classes:
       # Pathologic Function
       - UMLSSC:T046
       - UMLSST:patf
-      # Disease or Syndrome
-      - UMLSSC:T047
-      - UMLSST:dsyn
       # Mental or Behavioral Dysfunction
       - UMLSSC:T048
       - UMLSST:mobd
       # Cell or Molecular Dysfunction
       - UMLSSC:T049
       - UMLSST:comd
-      # Sign or Symptom
-      - UMLSSC:T184
-      - UMLSST:sosy
       # Anatomical Abnormality
       - UMLSSC:T190
       - UMLSST:anab
@@ -4819,11 +4817,19 @@ classes:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
     subclass_of: UPHENO:0001001
-    mappings:
+    exact_mappings:
       - UPHENO:0001001
       - SIO:010056
+      - WIKIDATA:Q104053
+    narrow_mappings:
+      # Sign or Symptom
+      - UMLSSC:T184
+      - UMLSST:sosy
       - WIKIDATA:Q169872
-      # - HP:0000118  needs to be a narrow mapping
+      # presentation of a disease in clinical medicine
+      - WIKIDATA:Q25203551
+      # Phenotypic abnormality
+      - HP:0000118
     id_prefixes:
       - HP
       - EFO
