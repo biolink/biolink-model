@@ -4906,6 +4906,10 @@ classes:
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
+    broad_mappings:
+      # Event
+      - UMLSSC:T051
+      - UMLSST:evnt
     narrow_mappings:
       # term restricted to experimental context
       - XCO:0000000
@@ -5710,10 +5714,10 @@ classes:
       - provided by
     mixins:
       - attribute mixin
-    mappings:
+    exact_mappings:
       - OBAN:association
-      - "rdf:Statement"
-      - "owl:Axiom"
+      - rdf:Statement
+      - owl:Axiom
 
   contributor association:
     is_a: association
@@ -6314,7 +6318,7 @@ classes:
 
   gene to phenotypic feature association:
     is_a: association
-    mappings:
+    exact_mappings:
       - WBVocab:Gene-Phenotype-Association
     defining_slots:
       - subject
@@ -6334,7 +6338,7 @@ classes:
     is_a: association
     comments:
       - NCIT:R176 refers to the inverse relationship
-    mappings:
+    exact_mappings:
       - SIO:000983
     defining_slots:
       - subject
@@ -6710,7 +6714,7 @@ classes:
   gene to go term association:
     aliases: ['functional association']
     is_a: functional association
-    mappings:
+    exact_mappings:
       - WBVocab:Gene-GO-Association
     defining_slots:
       - subject
@@ -6898,7 +6902,7 @@ classes:
     #is_a: named thing
     mixin: true
     abstract: true
-    mappings:
+    exact_mappings:
       - BFO:0000003
 
   physical essence:
@@ -6959,7 +6963,7 @@ classes:
         range: macromolecular machine
         description: >-
           The gene product, gene, or complex that catalyzes the reaction
-    mappings:
+    exact_mappings:
       - GO:0003674
       # UMLS Semantic Type "Molecular Function"
       - UMLSSC:T044
@@ -6973,25 +6977,21 @@ classes:
       - KEGG
 
   activity and behavior:
-    # can't inherit directly from mixin biolink:Occurrent
-    # is_a: occurrent
     is_a: named thing
     mixins:
       - occurrent
     description: >-
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
-    mappings:
-      #Activities & Behaviors
+    exact_mappings:
+      # Activities & Behaviors
       - UMLSSG:ACTI
-      # Event
-      - UMLSSC:T051
-      - UMLSST:evnt
       # Activity
       - UMLSSC:T052
       - UMLSST:acty
       # Behavior
       - UMLSSC:T053
       - UMLSST:bhvr
+    narrow_mappings:
       # Social Behavior
       - UMLSSC:T054
       - UMLSST:socb
@@ -7010,20 +7010,26 @@ classes:
       # Machine Activity
       - UMLSSC:T066
       - UMLSST:mcha
+      # Research Activity
+      - UMLSSC:T062
+      - UMLSST:resa
+      # Educational Activity
+      - UMLSSC:T065
+      - UMLSST:edac
+      # Health Care Activity
+      - UMLSSC:T058
+      - UMLSST:hlca
 
   procedure:
-    # can't inherit directly from mixin biolink:Occurrent
-    # is_a: occurrent
-    is_a: named thing
+    is_a: activity and behavior
     mixins:
       - occurrent
     description: >-
       A series of actions conducted in a certain order or manner
-    mappings: # Procedures
+    exact_mappings:
+      # Procedures
       - UMLSSG:PROC
-      # Health Care Activity
-      - UMLSSC:T058
-      - UMLSST:hlca
+    narrow_mappings:
       # Laboratory Procedure
       - UMLSSC:T059
       - UMLSST:lbpr
@@ -7033,45 +7039,40 @@ classes:
       # Therapeutic or Preventive Procedure
       - UMLSSC:T061
       - UMLSST:topp
-      # Research Activity
-      - UMLSSC:T062
-      - UMLSST:resa
       # Molecular Biology Research Technique
       - UMLSSC:T063
       - UMLSST:mbrt
-      # Educational Activity
-      - UMLSSC:T065
-      - UMLSST:edac
 
   phenomenon:
-    # can't inherit directly from mixin biolink:Occurrent
-    # is_a: occurrent
     is_a: named thing
     mixins:
       - occurrent
     description: >-
       a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
-    mappings:
+    broad_mappings:
+      # the inclusion of 'process' in the definition of these terms broadens them, relative to 'phenomenon'
+      # Phenomenon or Process
+      - UMLSSC:T067
+      - UMLSST:phpr
+      # Human-caused Phenomenon or Process
+      - UMLSSC:T068
+      - UMLSST:hcpp
+      # Natural Phenomenon or Process
+      - UMLSSC:T070
+      - UMLSST:npop
+    exact_mappings:
       # Phenomena
       - UMLSSG:PHEN
+    narrow_mappings:
       # Laboratory or Test Result
       - UMLSSC:T034
       - UMLSST:lbtr
       # Biologic Function
       - UMLSSC:T038
       - UMLSST:biof
-      #  Phenomenon or Process
-      - UMLSSC:T067
-      - UMLSST:phpr
-      # Human-caused Phenomenon or Process
-      - UMLSSC:T068
-      - UMLSST:hcpp
       # Environmental Effect of Humans
       - UMLSSC:T069
       - UMLSST:eehu
-      # Natural Phenomenon or Process
-      - UMLSSC:T070
-      - UMLSST:npop
 
   biological process:
     is_a: biological process or activity
