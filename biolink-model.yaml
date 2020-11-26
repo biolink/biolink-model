@@ -4680,14 +4680,13 @@ classes:
     narrow_mappings:
       # Wikidata considers its definition of 'individual' to be constrained to human persons?
       - WIKIDATA:Q795052
+      - foaf:Person
 
   case:
     aliases: ['patient', 'proband']
     is_a: individual organism
     description: >-
-      An individual organism that has a patient role in some clinical context.
-    mappings:
-      - foaf:Person
+      An individual (human) organism that has a patient role in some clinical context.
 
   population of individual organisms:
     description: >-
@@ -4700,7 +4699,7 @@ classes:
       - thing with taxon
     is_a: organismal entity
     subclass_of: PCO:0000001
-    mappings:
+    exact_mappings:
       - SIO:001061
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
@@ -4751,8 +4750,8 @@ classes:
     union_of:
       - disease
       - phenotypic feature
-    mappings:
-      # UMLS Semantic Type "Finding"
+    narrow_mappings:
+      # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - UMLSSC:T033
       - UMLSST:fndg
 
@@ -4851,7 +4850,8 @@ classes:
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
-    mappings:
+    narrow_mappings:
+      # term restricted to experimental context
       - XCO:0000000
 
   confidence level:
