@@ -5217,10 +5217,10 @@ classes:
       - has biological sequence
     exact_mappings:
       # UMLS Semantic Group "Genes & Molecular Sequences"
-    mappings:
       - UMLSSG:GENE
       - SO:0000110
       - GENO:0000897
+    narrow_mappings:
       # Gene or Genome
       - UMLSSC:T028
       - UMLSST:gngm
