@@ -4574,6 +4574,8 @@ classes:
       # UMLS Semantic Type "Experimental Model of Disease"
       - UMLSSC:T050
       - UMLSST:emod
+      # SIO term is 'biological entity' but less inclusive than the Biolink scope
+      - SIO:010046
 
   ontology class:
     is_a: named thing
@@ -5115,7 +5117,7 @@ classes:
       Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
     comments:
       - The CHEBI ID represents a role rather than a substance
-    mappings:
+    exact_mappings:
       - CHEBI:25212
 
   anatomical entity:
@@ -5126,12 +5128,12 @@ classes:
     subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
-    mappings:
-      - SIO:010046
+    exact_mappings:
       - UBERON:0001062
       - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
+    narrow_mappings:
       # Body System
       - UMLSSC:T022
       - UMLSST:bdsy
@@ -5170,12 +5172,12 @@ classes:
     mixins:
       - occurrent
     subclass_of: ENVO:02500000
-    mappings:
+    exact_mappings:
       - ENVO:02500000
 
   environmental feature:
     is_a: planetary entity
-    mappings:
+    exact_mappings:
       - ENVO:01000254
 
   clinical entity:
@@ -5421,7 +5423,6 @@ classes:
     is_a: macromolecular machine
     subclass_of: GO:0032991
     mappings:
-      - SIO:010046
       - WIKIDATA:Q22325163
     id_prefixes:
       - INTACT
@@ -7111,7 +7112,6 @@ classes:
     is_a: anatomical entity
     mappings:
       - UBERON:0010000
-      - SIO:010046
       - WIKIDATA:Q4936952
       # UMLS Semantic Type "Anatomical Structure"
       - UMLSSC:T017
