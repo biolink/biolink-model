@@ -80,9 +80,11 @@ prefixes:
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
-  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
-  UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
-  UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
+  # The UMLS Semantic types and groups namespaces don't have a directly
+  # resolvable Base URI, but we point to a pair of sensible web documents
+  UMLSSC: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#'
+  UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
+  UMLSST: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
   # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and

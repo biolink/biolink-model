@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-11-25 21:27
+# Generation date: 2020-11-26 00:15
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -147,9 +147,9 @@ UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-a
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
 UMLS = CurieNamespace('UMLS', 'http://identifiers.org/umls/')
-UMLSSC = CurieNamespace('UMLSSC', 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/')
-UMLSSG = CurieNamespace('UMLSSG', 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/')
-UMLSST = CurieNamespace('UMLSST', 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/')
+UMLSSC = CurieNamespace('UMLSSC', 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#')
+UMLSSG = CurieNamespace('UMLSSG', 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#')
+UMLSST = CurieNamespace('UMLSST', 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#')
 UNII = CurieNamespace('UNII', 'http://identifiers.org/unii/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 UPHENO = CurieNamespace('UPHENO', 'http://purl.obolibrary.org/obo/UPHENO_')
