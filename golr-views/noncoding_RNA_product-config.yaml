@@ -23,6 +23,18 @@ fields:
     \ bl:NamedThing}"
   display_name: category
   cardinality: multi
+- id: iri
+  description: An IRI for the node. This is determined by the id using expansion rules.
+  display_name: iri
+- id: source
+  description: a lightweight analog to the association class 'has provider' slot,
+    which is the string name, or the authoritative (i.e. database) namespace, designating
+    the origin of the entity to which the slot belongs.
+  display_name: source
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: in_taxon
   description: connects a thing to a class representing a taxon
   display_name: in taxon

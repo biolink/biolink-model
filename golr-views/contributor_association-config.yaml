@@ -29,6 +29,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: subject
   description: information content entity which an agent has helped realise
   display_name: contributor association_subject
