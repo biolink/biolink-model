@@ -5517,7 +5517,7 @@ classes:
 
   zygosity:
     is_a: attribute
-    mappings:
+    exact_mappings:
       - GENO:0000133
 
   genotype:
@@ -5528,7 +5528,7 @@ classes:
       - Consider renaming as genotypic entity
     slots:
       - has zygosity
-    mappings:
+    exact_mappings:
       - GENO:0000536
       - SIO:001079
 
@@ -5538,10 +5538,10 @@ classes:
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
 #      - completeness
-    mappings:
+    exact_mappings:
       - GENO:0000871
       - SO:0001024
-      # - VMC:Haplotype  needs IRI mapping
+      - VMC:Haplotype
 
   sequence variant:
     aliases: ['allele']
@@ -5550,17 +5550,19 @@ classes:
     is_a: genomic entity
     description: >-
       An allele that varies in its sequence from what is considered the reference allele at that locus.
-    comments:
-      - >-
-          This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
-          than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
-    mappings:
+    comments: >-
+      This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
+      than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
+    broad_mappings:
+      # slightly broader semantics than SO:0001059 - 'sequence alteration'
+      # describes a sequence feature that may have 1..* sequence alterations
+      - SO:0001060
+    exact_mappings:
       - GENO:0000002
       - WIKIDATA:Q15304597
       - SIO:010277
       - VMC:Allele
       - SO:0001059
-      - SO:0001060
     id_prefixes:
       - CAID # ClinGen Allele Registry
       - ClinVar
@@ -5598,11 +5600,11 @@ classes:
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
   snv:
-    aliases: ['single nucleotide variant']
+    aliases: ['single nucleotide variant','single nucleotide polymorphism', 'snp']
     is_a: sequence variant
     description: >-
       SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
-    mappings:
+    exact_mappings:
       - SO:0001483
 
   reagent targeted gene:
@@ -5610,7 +5612,7 @@ classes:
     description: >-
        A gene altered in its expression level in the context of some experiment as a result of being
        targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
-    mappings:
+    exact_mappings:
       - GENO:0000504
 
   chemical exposure:
