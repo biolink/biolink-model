@@ -4301,30 +4301,49 @@ classes:
       describes the frequency of occurrence of an event or condition
     is_a: attribute
 
-  clinical modifier:
+  organism attribute:
     description: >-
-      Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality subontology,
-      with respect to severity, laterality, and other aspects
+      describes a characteristic of an organismal entity.
+    is_a: attribute
+    exact_mappings:
+      # Organism Attribute
+      - UMLSSC:T032
+      - UMLSST:orga
+
+  clinical attribute:
+    is_a: attribute
+    description: >-
+      Attributes relating to a clinical manifestation
+    exact_mappings:
+      # Clinical Attribute
+      - UMLSSC:T201
+      - UMLSST:clna
+
+  clinical modifier:
+    is_a: clinical attribute
+    description: >-
+      Used to characterize and specify the phenotypic abnormalities defined in the
+      phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
     exact_mappings:
       - HP:0012823
-    is_a: attribute
 
   clinical course:
+    is_a: clinical attribute
     description: >-
-      The course a disease typically takes from its onset, progression in time, and eventual resolution or death of
-      the affected individual
+      The course a disease typically takes from its onset, progression in time, and
+      eventual resolution or death of the affected individual
     exact_mappings:
       - HP:0031797
-    is_a: attribute
 
   onset:
+    is_a: clinical course
     description: >-
       The age group in which (disease) symptom manifestations appear
     exact_mappings:
       - HP:0003674
-    is_a: clinical course
     
   inheritance:
+    is_a: attribute
     description: >-
       The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
       generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
@@ -4332,7 +4351,6 @@ classes:
       - HP:0000005
       - GENO:0000141
       - NCIT:C45827
-    is_a: attribute
 
   relationship quantifier:
     mixin: true
@@ -4714,6 +4732,10 @@ classes:
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
     abstract: true
     is_a: biological entity
+    slot_usage:
+      has attribute:
+        description: >-
+          may be an organism attribute
     exact_mappings:
       - WIKIDATA:Q7239
       # UMLS Semantic Group "Living Beings"
@@ -6977,27 +6999,18 @@ classes:
       - KEGG
 
   activity and behavior:
-    is_a: named thing
-    mixins:
-      - occurrent
+    is_a: occurrent
+    mixin: true
+    abstract: true
     description: >-
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
     exact_mappings:
       # Activities & Behaviors
       - UMLSSG:ACTI
+    narrow_mappings:
       # Activity
       - UMLSSC:T052
       - UMLSST:acty
-      # Behavior
-      - UMLSSC:T053
-      - UMLSST:bhvr
-    narrow_mappings:
-      # Social Behavior
-      - UMLSSC:T054
-      - UMLSST:socb
-      # Individual Behavior
-      - UMLSSC:T055
-      - UMLSST:inbe
       # Daily or Recreational Activity
       - UMLSSC:T056
       - UMLSST:dora
@@ -7021,9 +7034,9 @@ classes:
       - UMLSST:hlca
 
   procedure:
-    is_a: activity and behavior
+    is_a: named thing
     mixins:
-      - occurrent
+      - activity and behavior
     description: >-
       A series of actions conducted in a certain order or manner
     exact_mappings:
@@ -7048,9 +7061,11 @@ classes:
     mixins:
       - occurrent
     description: >-
-      a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+      a fact or situation that is observed to exist or happen,
+      especially one whose cause or explanation is in question
     broad_mappings:
-      # the inclusion of 'process' in the definition of these terms broadens them, relative to 'phenomenon'
+      # the inclusion of 'process' in the definition of these
+      # terms broadens them, relative to 'phenomenon'
       # Phenomenon or Process
       - UMLSSC:T067
       - UMLSST:phpr
@@ -7080,7 +7095,7 @@ classes:
       - occurrent
     description: >-
       One or more causally connected executions of molecular functions
-    mappings:
+    exact_mappings:
       - GO:0008150
       - SIO:000006
       - WIKIDATA:Q2996394
@@ -7092,11 +7107,12 @@ classes:
 
   pathway:
     is_a: biological process
-    mappings:
-      - GO:0007165
-      - SIO:010526
+    exact_mappings:
       - PW:0000001
       - WIKIDATA:Q4915012
+    narrow_mappings:
+      - SIO:010526
+      - GO:0007165
     id_prefixes:
       - GO
       - REACT
@@ -7108,20 +7124,18 @@ classes:
   physiological process:
     aliases: ['physiology']
     is_a: biological process
-    mappings: # Physiology
+    close_mappings:
+      # Physiology
       - UMLSSG:PHYS
-      # Organism Attribute
-      - UMLSSC:T032
-      - UMLSST:orga
+    exact_mappings:
       # Physiologic Function
       - UMLSSC:T039
       - UMLSST:phsf
+      - WIKIDATA:Q30892994
+    narrow_mappings:
       # Organism Function
       - UMLSSC:T040
       - UMLSST:orgf
-      # Mental Process
-      - UMLSSC:T041
-      - UMLSST:menp
       # Organ or Tissue Function
       - UMLSSC:T042
       - UMLSST:ortf
@@ -7131,12 +7145,27 @@ classes:
       # Genetic Function
       - UMLSSC:T045
       - UMLSST:genf
-      # Clinical Attribute
-      - UMLSSC:T201
-      - UMLSST:clna
     id_prefixes:
       - GO
       - REACT
+
+  behavior:
+    is_a: biological process
+    exact_mappings:
+      - GO:0007610
+      # Behavior
+      - UMLSSC:T053
+      - UMLSST:bhvr
+    narrow_mappings:
+      # Mental Process
+      - UMLSSC:T041
+      - UMLSST:menp
+      # Social Behavior
+      - UMLSSC:T054
+      - UMLSST:socb
+      # Individual Behavior
+      - UMLSSC:T055
+      - UMLSST:inbe
 
   cellular component:
     is_a: anatomical entity
