@@ -5674,7 +5674,8 @@ classes:
     slots:
       - latitude
       - longitude
-    mappings: # Geographic Areas
+    exact_mappings:
+      # Geographic Areas
       - UMLSSG:GEOG
       # Geographic Area
       - UMLSST:geoa
