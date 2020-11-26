@@ -4733,11 +4733,11 @@ classes:
       A sample is a limited quantity of something (e.g. an individual or set of individuals
       from a population, or a portion of a substance) to be used for testing, analysis,
       inspection, investigation, demonstration, or trial use. [SIO]
-    mappings:
-      - OBI:0000747
-      - SIO:001050
     slots:
       - has attribute
+    exact_mappings:
+      - OBI:0000747
+      - SIO:001050
     id_prefixes:
       - BIOSAMPLE
       - GOLD.META
@@ -4957,9 +4957,26 @@ classes:
     narrow_mappings:
       - SIO:010341
       - WIKIDATA:Q43460564
+      # UMLS Semantic Group "Chemicals & Drugs"
+      - UMLSSG:CHEM
       # Molecular Sequence
       - UMLSSC:T085
       - UMLSST:mosq
+      # Biologically Active Substance
+      - UMLSSC:T123
+      - UMLSST:bacs
+      # Hormone
+      - UMLSSC:T125
+      - UMLSST:horm
+      # Enzyme
+      - UMLSSC:T126
+      - UMLSST:enzy
+      # Immunologic Factor
+      - UMLSSC:T129
+      - UMLSST:imft
+      # Receptor
+      - UMLSSC:T192
+      - UMLSST:rcpt
 
   chemical substance:
     is_a: molecular entity
@@ -4967,17 +4984,17 @@ classes:
       May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
     subclass_of: CHEBI:24431
-    mappings:
-      - SIO:010004
-      - WIKIDATA:Q79529
+    broad_mappings:
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
       - UMLSST:sbst
-      # UMLS Semantic Group "Chemicals & Drugs"
-      - UMLSSG:CHEM
+    exact_mappings:
+      - SIO:010004
+      - WIKIDATA:Q79529
       # Chemical
       - UMLSSC:T103
       - UMLSST:chem
+    narrow_mappings:
       # Chemical Viewed Structurally
       - UMLSSC:T104
       - UMLSST:chvs
@@ -4990,39 +5007,15 @@ classes:
       # Chemical Viewed Functionally
       - UMLSSC:T120
       - UMLSST:chvf
-      # Pharmacologic Substance
-      - UMLSSC:T121
-      - UMLSST:phsu
       # Biomedical or Dental Material
       - UMLSSC:T122
       - UMLSST:bodm
-      # Biologically Active Substance
-      - UMLSSC:T123
-      - UMLSST:bacs
-      # Hormone
-      - UMLSSC:T125
-      - UMLSST:horm
-      # Enzyme
-      - UMLSSC:T126
-      - UMLSST:enzy
-      # Vitamin
-      - UMLSSC:T127
-      - UMLSST:vita
-      # Immunologic Factor
-      - UMLSSC:T129
-      - UMLSST:imft
       # Indicator, Reagent, or Diagnostic Aid
       - UMLSSC:T130
       - UMLSST:irda
       # Hazardous or Poisonous Substance
       - UMLSSC:T131
       - UMLSST:hops
-      # Receptor
-      - UMLSSC:T192
-      - UMLSST:rcpt
-      # Antibiotic
-      - UMLSSC:T195
-      - UMLSST:antb
       # Element, Ion, or Isotope
       - UMLSSC:T196
       - UMLSST:elii
@@ -5077,12 +5070,21 @@ classes:
       - has excipient
     comments:
       - The CHEBI ID represents a role rather than a substance
+    broad_mappings:
+      # Pharmacologic Substance: Any natural, endogenously-derived,
+      # synthetic or semi-synthetic compound with pharmacologic activity.
+      - UMLSSC:T121
+      - UMLSST:phsu
     exact_mappings:
       - WIKIDATA:Q12140
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
       - UMLSSC:T200
       - UMLSST:clnd
+  narrow_mappings:
+      # Antibiotic
+      - UMLSSC:T195
+      - UMLSST:antb
     id_prefixes:
       - PHARMGKB.DRUG
 
@@ -5100,6 +5102,10 @@ classes:
       # Food
       - UMLSSC:T168
       - UMLSST:food
+    narrow_mappings:
+      # Vitamin
+      - UMLSSC:T127
+      - UMLSST:vita
 
   metabolite:
     is_a: chemical substance
