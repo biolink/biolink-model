@@ -5627,7 +5627,10 @@ classes:
 #        range: chemical substance
 #        required: true
 #        multivalued: true
-    mappings:
+    exact_mappings:
+      # this ECTO term is not visibly defined but
+      # the 9000000-series identifiers seems to be the
+      # numeric space of chemical exposure definitions
       - ECTO:9000000
       - SIO:001399
 
@@ -5643,21 +5646,24 @@ classes:
         range: chemical substance
         required: true
         multivalued: true
-    mappings:
-      - ECTO:0000509
+    broadmappings:
+      # slightly broader than just drug effects on a biological system
       - SIO:001005
+    exact_mappings:
+      - ECTO:0000509
 
   treatment:
-    aliases: ['medical action']
+    aliases: ['medical action', 'medical intervention']
     is_a: exposure event
     description: >-
-      A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+      A treatment is targeted at a disease or phenotype and
+      may involve multiple drug, device or procedural 'exposures'
     slot_usage:
       has part:
         multivalued: true
         range: drug exposure
         required: true
-    mappings:
+    exact_mappings:
       - OGMS:0000090
       - SIO:001398
 
