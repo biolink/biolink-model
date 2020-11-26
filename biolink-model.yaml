@@ -7171,7 +7171,7 @@ classes:
     is_a: anatomical entity
     description: >-
       A location in or around a cell
-    mappings:
+    exact_mappings:
       - GO:0005575
       - SIO:001400
       - WIKIDATA:Q5058355
@@ -7189,7 +7189,7 @@ classes:
 
   cell:
     is_a: anatomical entity
-    mappings:
+    exact_mappings:
       - GO:0005623
       - CL:0000000
       - SIO:010001
@@ -7208,7 +7208,7 @@ classes:
 
   cell line:
     is_a: organismal entity
-    mappings:
+    exact_mappings:
       - CLO:0000031
     id_prefixes:
       - CLO
