@@ -5037,19 +5037,12 @@ classes:
 
   carbohydrate:
     is_a: chemical substance
-    mappings:
+    exact_mappings:
       # UMLS Semantic Type "Carbohydrate Sequence"
       - UMLSSC:T088
       - UMLSST:crbs
     id_prefixes:
       - PUBCHEM.SUBSTANCE
-
-  processed material:
-    is_a: chemical substance
-    description: >-
-      A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
-    mappings:
-      - OBI:0000047
 
   mixture:
     abstract: true
@@ -5058,6 +5051,15 @@ classes:
       The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
     slots:
       - has constituent
+
+  processed material:
+    is_a: chemical substance
+    mixins:
+      - mixture
+    description: >-
+      A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+    exact_mappings:
+      - OBI:0000047
 
   drug:
     is_a: molecular entity
