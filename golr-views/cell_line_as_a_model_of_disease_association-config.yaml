@@ -40,6 +40,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: subject
   description: A cell line derived from an organismal entity with a disease state
     that is used as a model of that disease.
