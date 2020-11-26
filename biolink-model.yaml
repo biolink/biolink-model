@@ -3717,7 +3717,7 @@ slots:
     range: organismal entity
     description: >-
       the organism or organism part being exposed
-    mappings:
+    exact_mappings:
       - ExO:0000001
 
   has stressor:
@@ -3726,7 +3726,7 @@ slots:
     aliases: ['has stimulus']
     description: >-
       the process or entity that the receptor is being exposed to
-    mappings:
+    exact_mappings:
       - ExO:0000000
 
   has constituent:
@@ -3771,7 +3771,7 @@ slots:
     domain: exposure event
     description: >-
       the process that results in the stressor coming into direct contact with the receptor
-    mappings:
+    exact_mappings:
       - ExO:0000055
     narrow_mappings:
       - LOINC:has_pharmaceutical_route
@@ -3789,7 +3789,7 @@ slots:
     range: float
     description: >-
       latitude
-    mappings:
+    exact_mappings:
       - wgs:lat
 
   longitude:
@@ -3797,7 +3797,7 @@ slots:
     range: float
     description: >-
       longitude
-    mappings:
+    exact_mappings:
       - wgs:long
 
   affiliation:
@@ -3821,7 +3821,7 @@ slots:
     range: chemical formula value
     description: >-
       description of chemical compound based on element symbols
-    mappings:
+    exact_mappings:
       - WIKIDATA_PROPERTY:P274
 
   interacting molecules category:
@@ -4155,7 +4155,7 @@ slots:
     domain: quantity value
     range: double
     multivalued: false
-    mappings:
+    exact_mappings:
       - qud:quantityValue
     in_subset:
       - samples
@@ -4190,8 +4190,11 @@ classes:
 
   attribute:
     subclass_of: PATO:0000001
-    mappings:
+    exact_mappings:
       - SIO:000614
+    narrow_mappings:
+      # Considered a 'narrow mapping' in that PATO mainly concerns itself with biological traits
+      - PATO:0000001
     is_a: abstract entity
     # biolink:OntologyClass is not a mixin thus cannot be used as such here.  Moreover,
     # the 'biolink:has_attribute_type' slot is also of a biolink:OntologyClass which points
@@ -4250,9 +4253,9 @@ classes:
 
   clinical modifier:
     description: >-
-      Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
+      Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality subontology,
       with respect to severity, laterality, and other aspects
-    mappings:
+    exact_mappings:
       - HP:0012823
     is_a: attribute
 
@@ -4260,22 +4263,22 @@ classes:
     description: >-
       The course a disease typically takes from its onset, progression in time, and eventual resolution or death of
       the affected individual
-    mappings:
+    exact_mappings:
       - HP:0031797
     is_a: attribute
 
   onset:
     description: >-
-      The age group in which manifestations appear
-    mappings:
+      The age group in which (disease) symptom manifestations appear
+    exact_mappings:
       - HP:0003674
     is_a: clinical course
     
   inheritance:
     description: >-
-      The pattern in which a particular genetic trait or disorder is passed from one
-      generation to the next
-    mappings:
+      The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
+      generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+    exact_mappings:
       - HP:0000005
       - GENO:0000141
       - NCIT:C45827
@@ -4383,7 +4386,7 @@ classes:
 
   data file:
     is_a: information content entity
-    mappings:
+    exact_mappings:
       - EFO:0004095
 
   source file:
@@ -4546,13 +4549,14 @@ classes:
 
   ## end of Publication related entity classes
 
+  # curious class name.
   distribution level:
     is_a: data set version
     mixin: true
     abstract: true
     slots:
       - download url
-    mappings:
+    exact_mappings:
       - dcat:Distribution
 
   data set summary:
@@ -4601,36 +4605,10 @@ classes:
     is_a: ontology class
     values_from:
       - NCBITaxon
-    mappings:
+    exact_mappings:
       - WIKIDATA:Q16521
       - NCBITaxon:1
-    id_prefixes:
-      - NCBITaxon
-      - MESH
-
-  organismal entity:
-    description: >-
-      A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
-    abstract: true
-    is_a: biological entity
-    mappings:
-      - WIKIDATA:Q7239
-
-  individual organism:
-    mixins:
-      - thing with taxon
-    is_a: organismal entity
-    subclass_of: NCBITaxon:1
-    mappings:
-      - SIO:010000
-      - WIKIDATA:Q795052
-      # UMLS Semantic Group "Living Beings"
-      # Several of the associated semantic types here are probably not
-      # that relevant to the Biolink world but we keep them here for now.
-      - UMLSSG:LIVB
-      # Organism
-      - UMLSSC:T001
-      - UMLSST:orgm
+    narrow_mappings:
       # Plant
       - UMLSSC:T002
       - UMLSST:plnt
@@ -4667,21 +4645,35 @@ classes:
       # Human
       - UMLSSC:T016
       - UMLSST:humn
-      # Group
-      - UMLSSC:T096
-      - UMLSST:grup
-      # Professional or Occupational Group
-      - UMLSSC:T097
-      - UMLSST:prog
-      # Family Group
-      - UMLSSC:T099
-      - UMLSST:famg
-      # Age Group
-      - UMLSSC:T100
-      - UMLSST:aggp
-      # Patient or Disabled Group
-      - UMLSSC:T101
-      - UMLSST:podg
+    id_prefixes:
+      - NCBITaxon
+      - MESH
+
+  organismal entity:
+    description: >-
+      A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+    abstract: true
+    is_a: biological entity
+    exact_mappings:
+      - WIKIDATA:Q7239
+      # UMLS Semantic Group "Living Beings"
+      # Several of the associated semantic types here are probably not
+      # that relevant to the Biolink world but we keep them here for now.
+      - UMLSSG:LIVB
+
+  individual organism:
+    mixins:
+      - thing with taxon
+    is_a: organismal entity
+    subclass_of: NCBITaxon:1
+    mappings:
+      - SIO:010000
+      # Organism
+      - UMLSSC:T001
+      - UMLSST:orgm
+    narrow_mappings:
+      # Wikidata consider's its definition of 'individual' to be constrained to people?
+      - WIKIDATA:Q795052
       # Archaeon
       - UMLSSC:T194
       - UMLSST:arch
@@ -4714,6 +4706,16 @@ classes:
       - UMLSSC:T098
       - UMLSST:popg
       - OBI:0000181
+    narrow_mappings:
+      # Family Group
+      - UMLSSC:T099
+      - UMLSST:famg
+      # Age Group
+      - UMLSSC:T100
+      - UMLSST:aggp
+      # Patient or Disabled Group
+      - UMLSSC:T101
+      - UMLSST:podg
     id_prefixes:
       - HANCESTRO
 
@@ -4883,8 +4885,8 @@ classes:
       - prov:Agent
       - dcterms:Agent
     narrow_mappings:
-      - UMLSSG:ORGA
       # Organization
+      - UMLSSG:ORGA
       - UMLSSC:T092
       - UMLSST:orgt
       # Health Care Related Organization
@@ -4896,6 +4898,12 @@ classes:
       # Self-help or Relief Organization
       - UMLSSC:T095
       - UMLSST:shro
+      # Group
+      - UMLSSC:T096
+      - UMLSST:grup
+      # Professional or Occupational Group
+      - UMLSSC:T097
+      - UMLSST:prog
     slot_usage:
       id:
         required: true
