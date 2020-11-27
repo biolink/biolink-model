@@ -1883,6 +1883,8 @@ slots:
       - RO:00002325
       - GO:colocalizes_with
 
+  # Despite the name, note that this particular entity is
+  # NOT a biolink:Association but rather, a biolink:predicate
   genetic association:
     is_a: related to
     symmetric: true
@@ -6843,6 +6845,10 @@ classes:
           the structure at an earlier time
       predicate:
          subproperty_of: develops from
+
+  ## -------------------------------
+  ## END OF ASSOCIATIONS DEFINITIONS
+  ## -------------------------------
 
   occurrent:
     description: >-
