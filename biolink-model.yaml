@@ -4056,6 +4056,10 @@ slots:
     exact_mappings:
       - SIO:000008
     narrow_mappings:
+      # if 'has attribute' annotates a NamedThing as subject or
+      # object of an association, these OBAN mappings may apply
+      - OBAN:association_has_subject_property
+      - OBAN:association_has_object_property
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
       # RTX contributed terms. Could perhaps review for more semantically precise mappings?
