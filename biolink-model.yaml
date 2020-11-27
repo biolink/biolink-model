@@ -3689,7 +3689,9 @@ slots:
     is_a: association slot
     range: float
     description: >-
-      A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+      A quantitative confidence value that represents the probability of
+      obtaining a result at least as extreme as that actually obtained,
+      assuming that the actual value was the result of chance alone.
     mappings:
       - OBI:0000175
 
@@ -4252,6 +4254,11 @@ classes:
           The human-readable 'attribute name' can be set to a string which reflects its context of
           interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default
           to the name associated with the 'has attribute type' slot ontology term.
+    id_prefixes:
+      - EDAM-DATA
+      - EDAM-FORMAT
+      - EDAM-OPERATION
+      - EDAM-TOPIC
     exact_mappings:
       - SIO:000614
     in_subset:
