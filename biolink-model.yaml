@@ -31,7 +31,10 @@ prefixes:
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
-  EDAM: 'http://edamontology.org/'
+  # EDAM-DATA: 'http://edamontology.org/data_'  # already defined in monarch_context of default_curi_maps?
+  EDAM-FORMAT: 'http://edamontology.org/format_'
+  EDAM-OPERATION: 'http://edamontology.org/operation_'
+  EDAM-TOPIC: 'http://edamontology.org/topic_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
