@@ -2169,7 +2169,6 @@ slots:
       - RO:0004029
       - RTXKG1:associated_with_disease
       - SNOMED:associated_with
-      - SNOMED:has_associated_finding
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -2205,11 +2204,14 @@ slots:
     in_subset:
       - translator_minimal
     inverse: biomarker for
+    broad_mappings:
+      - NCIT:disease_may_have_finding
     narrow_mappings:
       # some RTX terms contributed as inverses of 'biolink:biomarker_for'
       - NCIT:disease_has_finding
       - NCIT:disease_has_molecular_abnormality
       - NCIT:disease_is_marked_by_gene
+      - SNOMED:has_associated_finding
 
   biomarker for:
     is_a: correlated with
@@ -2268,7 +2270,9 @@ slots:
   has phenotype:
     is_a: related to
     description: >-
-      holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+      holds between a biological entity and a phenotype, where a phenotype is construed broadly
+      as any kind of quality of an organism part, a collection of these qualities, or a change
+      in quality or qualities (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
     notes:
@@ -2283,9 +2287,8 @@ slots:
       - RTXKG1:has_phenotype
       - SNOMED:characterized_by
     broad_mappings:
-      # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
+      # Disease–presents–Symptom; symptom may be a phenotype but not necessarily
       - hetio:PRESENTS_DpS
-      - NCIT:disease_may_have_finding
       - OMIM:has_phenotype
     narrow_mappings:
       - NCIT:disease_may_have_molecular_abnormality
@@ -2358,6 +2361,7 @@ slots:
       - UBERON_CORE:in_outermost_side_of
       - NCIT:R100
       - EFO:0000784
+      - EFO:is_executed_in
       - FMA:has_location
       - HMDB:at_cellular_location
       - HMDB:at_tissue
@@ -3581,6 +3585,8 @@ slots:
     multivalued: true
     mappings:
       - pav:providedBy
+    narrow_mappings:
+      - SNOMED:has_finding_informer
 
   association type:
     is_a: association slot
@@ -4082,7 +4088,6 @@ slots:
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
       # RTX contributed terms. Could perhaps review for more semantically precise mappings?
-      - EFO:is_executed_in
       - HANCESTRO:0301
       - LOINC:has_action_guidance
       - LOINC:has_adjustment
@@ -4128,7 +4133,6 @@ slots:
       - SNOMED:has_dose_form_release_characteristic
       - SNOMED:has_dose_form_transformation
       - SNOMED:has_finding_context
-      - SNOMED:has_finding_informer
       - SNOMED:has_inherent_attribute
       - SNOMED:has_intent
       - SNOMED:has_interpretation
@@ -4324,28 +4328,52 @@ classes:
       describes the frequency of occurrence of an event or condition
     is_a: attribute
 
+  clinical attribute:
+    is_a: attribute
+    description: >-
+      Attributes relating to a clinical manifestation.
+    exact_mappings:
+      # Clinical Attribute
+      - UMLSSC:T201
+      - UMLSST:clna
+
+  clinical measurement:
+    is_a: clinical attribute
+    description: >-
+      A clinical measurement is a special kind of attribute which results from a laboratory observation from
+      a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
+    slot_usage:
+      has attribute type:
+        required: true
+        multivalued: false
+        values_from:
+          - EFO
+          - LOINC
+    exact_mappings:
+      - EFO:0001444
+
   clinical modifier:
+    is_a: clinical attribute
     description: >-
       Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
       with respect to severity, laterality, and other aspects
-    mappings:
+    exact_mappings:
       - HP:0012823
-    is_a: attribute
 
   clinical course:
+    is_a: clinical attribute
     description: >-
       The course a disease typically takes from its onset, progression in time, and eventual resolution or death of
       the affected individual
-    mappings:
+    exact_mappings:
       - HP:0031797
-    is_a: attribute
 
   onset:
+    is_a: clinical course
     description: >-
       The age group in which manifestations appear
-    mappings:
+    exact_mappings:
       - HP:0003674
-    is_a: clinical course
     
   inheritance:
     description: >-
@@ -4879,7 +4907,6 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
-      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbreviation for ORPHANET? not used in model
       - EFO
       - UMLS
       - MESH
@@ -4897,15 +4924,16 @@ classes:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
     description: >-
-      this category is considered broad enough to tag lab measurements and other attributes
-      taken as 'traits' with some statistical score, for example, in genetic associations.
+      The assemblage of genetically determined traits or outward appearance of an individual.
+      It is the visible biological manifestations of interactions between genes and the environment.
     subclass_of: UPHENO:0001001
-    mappings:
+    exact_mappings:
       - UPHENO:0001001
       - SIO:010056
       - WIKIDATA:Q169872
-      # - HP:0000118  needs to be a narrow mapping
       - EFO:0000651
+    narrow_mappings:
+      - HP:0000118
     id_prefixes:
       - HP
       - EFO
@@ -4922,6 +4950,15 @@ classes:
       - MESH
       - LOINC
 
+  clinical finding:
+    is_a: phenotypic feature
+    comment: >-
+      this category is currently considered broad enough to tag clinical lab measurements and other biological
+      attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+    slot_usage:
+      has attribute:
+        subproperty_of: clinical attribute
+
   exposure event:
     aliases: ['exposure', 'experimental condition']
     is_a: biological entity
@@ -4930,21 +4967,6 @@ classes:
       of that organism, potentially mediated by genes
     mappings:
       - XCO:0000000
-
-  clinical measurement:
-    is_a: attribute
-    description: >-
-      A clinical measurement is a special kind of attribute which results from a laboratory observation from
-      a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
-    slot_usage:
-      has attribute type:
-        required: true
-        multivalued: false
-        values_from:
-          - EFO
-          - LOINC
-    exact_mappings:
-      - EFO:0001444
 
   confidence level:
     is_a: information content entity
@@ -7142,9 +7164,6 @@ classes:
       # Genetic Function
       - UMLSSC:T045
       - UMLSST:genf
-      # Clinical Attribute
-      - UMLSSC:T201
-      - UMLSST:clna
     id_prefixes:
       - GO
       - REACT
