@@ -31,7 +31,6 @@ prefixes:
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
-  EDAM: 'http://edamontology.org/'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
@@ -3718,7 +3717,7 @@ slots:
     exact_mappings:
       - OBI:0000175
       - NCIT:C44185
-      - http://edamontology.org/data_1669
+      - EDAM-DATA:1669
 
   creation date:
     is_a: node property
