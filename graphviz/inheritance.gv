@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,533.3,123"];
+	graph [bb="0,0,788.79,123"];
 	node [label="\N"];
 	inheritance	 [height=0.5,
 		label=inheritance,
-		pos="226.3,105",
+		pos="439.3,105",
 		width=1.3902];
 	attribute	 [height=0.5,
 		pos="40.296,18",
 		width=1.1193];
 	inheritance -> attribute	 [label=is_a,
-		lp="158.3,61.5",
-		pos="e,67.947,31.34 194.72,90.759 180.24,84.192 162.87,76.259 147.3,69 123.84,58.068 97.615,45.571 76.996,35.684"];
+		lp="174.3,61.5",
+		pos="e,67.415,31.686 389.68,102.47 333.83,98.712 240.79,89.729 163.3,69 133.13,60.931 100.56,47.179 76.513,35.988"];
 	"has attribute type"	 [color=blue,
 		height=0.5,
 		label="ontology class",
@@ -18,8 +18,8 @@ digraph {
 		width=1.7151];
 	inheritance -> "has attribute type"	 [color=blue,
 		label="has attribute type",
-		lp="228.3,61.5",
-		pos="e,165.28,36.145 201.82,89.037 194.5,83.377 186.94,76.525 181.3,69 176.07,62.028 171.9,53.569 168.71,45.56",
+		lp="256.3,61.5",
+		pos="e,172.74,36.026 390.46,101.03 332.54,95.697 239.99,84.991 209.3,69 197.73,62.972 187.32,53.162 179.1,43.749",
 		style=solid];
 	"has quantitative value"	 [color=blue,
 		height=0.5,
@@ -28,8 +28,8 @@ digraph {
 		width=1.6971];
 	inheritance -> "has quantitative value"	 [color=blue,
 		label="has quantitative value",
-		lp="344.8,61.5",
-		pos="e,294.47,36.229 252.1,89.44 260.2,83.716 268.73,76.723 275.3,69 281.22,62.032 286.24,53.486 290.25,45.395",
+		lp="375.8,61.5",
+		pos="e,302.38,36.246 394.82,96.652 364.35,90.088 327.51,80.202 316.3,69 310.17,62.88 306.52,54.393 304.35,46.098",
 		style=solid];
 	"has qualitative value"	 [color=blue,
 		height=0.5,
@@ -38,7 +38,42 @@ digraph {
 		width=1.5346];
 	inheritance -> "has qualitative value"	 [color=blue,
 		label="has qualitative value",
-		lp="477.3,61.5",
-		pos="e,432.75,36.04 274.54,99.89 320.95,94.198 387.11,83.807 408.3,69 416.81,63.053 423.4,53.949 428.28,45.07",
+		lp="495.3,61.5",
+		pos="e,439.3,36.003 439.3,86.974 439.3,75.192 439.3,59.561 439.3,46.158",
 		style=solid];
+	name	 [height=0.5,
+		pos="558.3,18",
+		width=0.84854];
+	inheritance -> name	 [color=blue,
+		label=name,
+		lp="574.8,61.5",
+		pos="e,560.73,36.405 477.59,93.329 509.87,83.411 551.03,70.539 552.3,69 557.42,62.784 559.68,54.599 560.45,46.611",
+		style=solid];
+	iri	 [color=blue,
+		height=0.5,
+		label="iri type",
+		pos="643.3,18",
+		width=1.011];
+	inheritance -> iri	 [color=blue,
+		label=iri,
+		lp="621.8,61.5",
+		pos="e,631.16,35.375 476.9,93.066 484.29,90.907 492.01,88.779 499.3,87 541.04,76.812 556.51,89.464 594.3,69 605.94,62.696 616.46,52.657 \
+624.75,43.146",
+		style=solid];
+	source	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="743.3,18",
+		width=1.2638];
+	inheritance -> source	 [color=blue,
+		label=source,
+		lp="688.3,61.5",
+		pos="e,716.79,32.899 476.51,92.85 484,90.684 491.86,88.609 499.3,87 557.6,74.391 575.01,85.634 632.3,69 658.55,61.376 686.52,48.496 707.81,\
+37.588",
+		style=solid];
+	attribute_name	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="553.3,105",
+		width=1.2638];
 }

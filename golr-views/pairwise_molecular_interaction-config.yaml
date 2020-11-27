@@ -25,6 +25,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: interacting_molecules_category
   display_name: interacting molecules category
 - id: subject

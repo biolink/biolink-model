@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,533.3,123"];
+	graph [bb="0,0,788.79,123"];
 	node [label="\N"];
 	zygosity	 [height=0.5,
 		label=zygosity,
-		pos="226.3,105",
+		pos="439.3,105",
 		width=1.1193];
 	attribute	 [height=0.5,
 		pos="40.296,18",
 		width=1.1193];
 	zygosity -> attribute	 [label=is_a,
-		lp="158.3,61.5",
-		pos="e,67.947,31.34 197.72,92.121 182.69,85.309 163.96,76.769 147.3,69 123.84,58.068 97.615,45.571 76.996,35.684"];
+		lp="174.3,61.5",
+		pos="e,67.415,31.686 398.89,103.06 344.53,99.702 245.22,90.915 163.3,69 133.13,60.931 100.56,47.179 76.513,35.988"];
 	"has attribute type"	 [color=blue,
 		height=0.5,
 		label="ontology class",
@@ -18,8 +18,8 @@ digraph {
 		width=1.7151];
 	zygosity -> "has attribute type"	 [color=blue,
 		label="has attribute type",
-		lp="228.3,61.5",
-		pos="e,165.28,36.145 203.22,90.106 195.48,84.249 187.3,77.005 181.3,69 176.07,62.028 171.9,53.569 168.71,45.56",
+		lp="256.3,61.5",
+		pos="e,172.74,36.026 399.52,101.85 342.72,96.838 241.64,85.855 209.3,69 197.73,62.972 187.32,53.162 179.1,43.749",
 		style=solid];
 	"has quantitative value"	 [color=blue,
 		height=0.5,
@@ -28,8 +28,8 @@ digraph {
 		width=1.6971];
 	zygosity -> "has quantitative value"	 [color=blue,
 		label="has quantitative value",
-		lp="344.8,61.5",
-		pos="e,294.47,36.229 250.59,90.499 259.13,84.587 268.32,77.205 275.3,69 281.22,62.032 286.24,53.486 290.25,45.395",
+		lp="375.8,61.5",
+		pos="e,302.38,36.246 401.74,98.111 370.19,91.606 328.38,81.067 316.3,69 310.17,62.88 306.52,54.393 304.35,46.098",
 		style=solid];
 	"has qualitative value"	 [color=blue,
 		height=0.5,
@@ -38,7 +38,43 @@ digraph {
 		width=1.5346];
 	zygosity -> "has qualitative value"	 [color=blue,
 		label="has qualitative value",
-		lp="477.3,61.5",
-		pos="e,432.75,36.04 265.7,100.95 312.1,95.538 385.72,84.775 408.3,69 416.81,63.053 423.4,53.949 428.28,45.07",
+		lp="495.3,61.5",
+		pos="e,439.3,36.003 439.3,86.974 439.3,75.192 439.3,59.561 439.3,46.158",
 		style=solid];
+	name	 [height=0.5,
+		pos="558.3,18",
+		width=0.84854];
+	zygosity -> name	 [color=blue,
+		label=name,
+		lp="575.8,61.5",
+		pos="e,560.8,35.996 470.39,93.44 476.63,91.226 483.15,88.982 489.3,87 517.01,78.063 533.43,91.182 552.3,69 557.66,62.697 559.92,54.261 \
+560.63,46.067",
+		style=solid];
+	iri	 [color=blue,
+		height=0.5,
+		label="iri type",
+		pos="643.3,18",
+		width=1.011];
+	zygosity -> iri	 [color=blue,
+		label=iri,
+		lp="621.8,61.5",
+		pos="e,631.53,35.466 469.7,93.086 476.11,90.85 482.87,88.688 489.3,87 535.51,74.859 553.18,91.571 595.3,69 606.74,62.87 616.98,52.986 \
+625.04,43.544",
+		style=solid];
+	source	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="743.3,18",
+		width=1.2638];
+	zygosity -> source	 [color=blue,
+		label=source,
+		lp="691.3,61.5",
+		pos="e,716.81,32.974 469.38,92.964 475.87,90.709 482.75,88.571 489.3,87 551.59,72.061 570.7,86.577 632.3,69 658.59,61.498 686.55,48.618 \
+707.83,37.679",
+		style=solid];
+	attribute_name	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="543.3,105",
+		width=1.2638];
 }

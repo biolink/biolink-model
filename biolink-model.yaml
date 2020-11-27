@@ -80,9 +80,11 @@ prefixes:
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
-  UMLSSC: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/'
-  UMLSSG: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/'
-  UMLSST: 'https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/'
+  # The UMLS Semantic types and groups namespaces don't have a directly
+  # resolvable Base URI, but we point to a pair of sensible web documents
+  UMLSSC: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#'
+  UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
+  UMLSST: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
   # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
@@ -3282,26 +3284,34 @@ slots:
       - gpi:DB_Object_ID
 
   iri:
-    is_a: node property
     description: >-
       An IRI for the node. This is determined by the id using expansion rules.
+    # 'iri' is generalized, via the 'resource mixin', to be used for both NamedThing and Attribute classes
+    # is_a: node property
+    # domain: named thing
+    range: iri type
     in_subset:
       - translator_minimal
-    domain: named thing
-    range: iri type
+      - samples
     exact_mappings:
       - WIKIDATA_PROPERTY:P854
 
   name:
-    is_a: node property
-    aliases: ['label', 'display name', 'title']
-    domain: named thing
-    range: label type
+    aliases: [ 'label', 'display name', 'title' ]
     description: >-
       A human-readable name for a thing
+    #
+    # 'name' is generalized, via the 'resource mixin', to be used for both NamedThing and Attribute classes
+    # is_a: node property
+    # domain: named thing
+    range: label type
     in_subset:
       - translator_minimal
-    required: true
+      - samples
+    #
+    # BiolinkML doesn't like mixin slots to be "required: true".
+    # Besides, some entity nodes/attributes may not have names?
+    # required: true
     slot_uri: rdfs:label
     exact_mappings:
       - gff3:Name
@@ -3309,6 +3319,14 @@ slots:
     narrow_mappings:
       - dcterms:title
       - WIKIDATA_PROPERTY:P1476
+
+  source:
+    description: >-
+      a lightweight analog to the association class 'has provider' slot, which is the string name, or
+      the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+    range: label type
+    in_subset:
+      - translator_minimal
 
   symbol:
     is_a: node property
@@ -4114,12 +4132,17 @@ slots:
       - UMLS:has_supported_concept_relationship
       - UMLS:may_be_qualified_by
 
+  ## ---------------
+  ## Attribute Slots
+  ## ---------------
+
   has attribute type:
     description: >-
       connects an attribute to a class that describes it
     domain: attribute
     range: ontology class
     multivalued: false
+    required: true
     in_subset:
       - samples
     narrow_mappings:
@@ -4184,42 +4207,68 @@ slots:
     in_subset:
       - samples
 
+  ## ----------------------
+  ## End of Attribute Slots
+  ## ----------------------
+
 classes:
 
   abstract entity:
     description: >-
       Any thing that is not a process or a physical mass-bearing entity
 
+  resource mixin:
+    mixin: true
+    abstract: true
+    slots:
+      - iri
+      - name
+      - source
+
+  ## ----------
+  ## ATTRIBUTES
+  ## ----------
+
   attribute:
     subclass_of: PATO:0000001
-    mappings:
-      - SIO:000614
     is_a: abstract entity
-    # biolink:OntologyClass is not a mixin thus cannot be used as such here.  Moreover,
-    # the 'biolink:has_attribute_type' slot is also of a biolink:OntologyClass which points
-    # to  semantic redundancy in this class.  Better to simply remove the mixins declaration
-    #mixins:
-    #  - ontology class
+    mixins:
+      - resource mixin
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
       An environmental sample may have attributes such as depth, lat, long, material.
     slots:
       - has attribute type
+      # the 'value type' and 'value name' of values can be discerned from these value slots
       - has quantitative value
       - has qualitative value
+    slot_usage:
+      name:
+        description: >-
+          The human-readable 'attribute name' can be set to a string which reflects its context of
+          interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default
+          to the name associated with the 'has attribute type' slot ontology term.
+    exact_mappings:
+      - SIO:000614
     in_subset:
       - samples
 
   quantity value:
     is_a: abstract entity
     description: >-
-      A value of an attribute that is quantitative and measurable, expressed as a combination
-      of a unit and a numeric value
+      A value of an attribute that is quantitative and measurable,
+      expressed as a combination of a unit and a numeric value
     slots:
       - has unit
       - has numeric value
-      
+
+  attribute mixin:
+    mixin: true
+    abstract: true
+    slots:
+      - has attribute
+
   ## ------
   ## THINGS
   ## ------
@@ -4317,27 +4366,20 @@ classes:
 
   named thing:
     description: "a databased entity or concept/class"
+    subclass_of: BFO:0000001
+    mixins:
+      - resource mixin
+      - attribute mixin
     slots:
       - id
-      - name
       - category
-    subclass_of: BFO:0000001
-    mappings:
+    exact_mappings:
       - WIKIDATA:Q35120
       # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
       # Entity
       - UMLSSC:T071
       - UMLSST:enty
-      # Physical Object
-      - UMLSSC:T072
-      - UMLSST:phob
-      # Manufactured Object
-      - UMLSSC:T073
-      - UMLSST:mnob
-      # Food
-      - UMLSSC:T168
-      - UMLSST:food
 
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
@@ -4744,8 +4786,9 @@ classes:
     mappings:
       - OBI:0000747
       - SIO:001050
-    slots:
-      - has attribute
+    # 'has attribute' usage being generalized by relocation to NamedThing (and beyond)
+    #slots:
+    #  - has attribute
     id_prefixes:
       - BIOSAMPLE
       - GOLD.META
@@ -5090,6 +5133,10 @@ classes:
       - has nutrient
     id_prefixes:
       - foodb.compound
+    exact_mappings:
+      # Food
+      - UMLSSC:T168
+      - UMLSST:food
 
   metabolite:
     is_a: chemical substance
@@ -5611,6 +5658,8 @@ classes:
       - qualifiers
       - publications
       - provided by
+    mixins:
+      - attribute mixin
     mappings:
       - OBAN:association
       - "rdf:Statement"
@@ -6814,6 +6863,14 @@ classes:
       - physical essence
     description: >-
       An entity that has material reality (a.k.a. physical essence).
+    exact_mappings:
+      # Physical Object
+      - UMLSSC:T072
+      - UMLSST:phob
+    narrow_mappings:
+      # Manufactured Object
+      - UMLSSC:T073
+      - UMLSST:mnob
 
   biological process or activity:
     is_a: biological entity

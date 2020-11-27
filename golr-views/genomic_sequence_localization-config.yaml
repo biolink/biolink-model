@@ -35,6 +35,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: start_interbase_coordinate
   description: The position at which the subject genomic entity starts on the chromosome
     or other entity to which it is located on.
