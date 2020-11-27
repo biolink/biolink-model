@@ -4957,7 +4957,7 @@ classes:
       attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
     slot_usage:
       has attribute:
-        subproperty_of: clinical attribute
+        range: clinical attribute
 
   exposure event:
     aliases: ['exposure', 'experimental condition']
