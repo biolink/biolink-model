@@ -1,9 +1,7 @@
-id: case
+id: behavior
 schema_generating: true
-description: An individual (human) organism that has a patient role in some clinical
-  context.
-display_name: case
-document_category: case
+display_name: behavior
+document_category: behavior
 weight: 20
 fields:
 - id: id
@@ -37,10 +35,21 @@ fields:
     the origin of the entity to which the slot belongs.
   display_name: source
 - id: has_attribute
-  description: may be an organism attribute
-  display_name: organismal entity_has attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
   cardinality: multi
-- id: in_taxon
-  description: connects a thing to a class representing a taxon
-  display_name: in taxon
+- id: has_input
+  description: holds between a process and a continuant, where the continuant is an
+    input into the process
+  display_name: has input
+  cardinality: multi
+- id: has_output
+  description: holds between a process and a continuant, where the continuant is an
+    output of the process
+  display_name: has output
+  cardinality: multi
+- id: enabled_by
+  description: holds between a process and a physical entity, where the physical entity
+    executes the process
+  display_name: enabled by
   cardinality: multi

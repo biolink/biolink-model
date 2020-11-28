@@ -2,14 +2,8 @@ type AbstractEntity
   {
   }
 
-type ActivityAndBehavior implements Occurrent
+interface ActivityAndBehavior
   {
-    id: String!
-    category: [CategoryType]!
-    iri: IriType
-    name: LabelType
-    source: LabelType
-    hasAttribute: [Attribute]
   }
 
 interface AdministrativeEntity
@@ -144,6 +138,19 @@ type Attribute implements ResourceMixin
 interface AttributeMixin
   {
     hasAttribute: [Attribute]
+  }
+
+type Behavior
+  {
+    id: String!
+    category: [CategoryType]!
+    iri: IriType
+    name: LabelType
+    source: LabelType
+    hasAttribute: [Attribute]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
   }
 
 interface BiologicalEntity
@@ -466,6 +473,16 @@ interface ChemicalToThingAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     subject: ChemicalSubstance!
+  }
+
+type ClinicalAttribute
+  {
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    name: LabelType
+    iri: IriType
+    source: LabelType
   }
 
 type ClinicalCourse
@@ -1672,6 +1689,16 @@ type OntologyClass
     hasAttribute: [Attribute]
   }
 
+type OrganismAttribute
+  {
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    name: LabelType
+    iri: IriType
+    source: LabelType
+  }
+
 type OrganismTaxon
   {
     id: String!
@@ -1852,7 +1879,7 @@ type PopulationToPopulationAssociation
     predicate: PredicateType!
   }
 
-type Procedure implements Occurrent
+type Procedure implements ActivityAndBehavior
   {
     id: String!
     category: [CategoryType]!
@@ -1862,7 +1889,7 @@ type Procedure implements Occurrent
     hasAttribute: [Attribute]
   }
 
-type ProcessedMaterial
+type ProcessedMaterial implements Mixture
   {
     id: String!
     category: [CategoryType]!
@@ -1871,6 +1898,7 @@ type ProcessedMaterial
     source: LabelType
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasConstituent: [ChemicalSubstance]
   }
 
 type Protein

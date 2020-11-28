@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1072.4,123"];
+	graph [bb="0,0,1099.4,123"];
 	node [label="\N"];
 	"population of individual organisms"	 [height=0.5,
 		label="population of individual organisms",
@@ -68,25 +68,27 @@ digraph {
 		lp="711.79,61.5",
 		pos="e,748.34,31.471 613.88,87.881 628.81,81.996 645.57,75.301 660.79,69 686.96,58.174 716.17,45.552 738.99,35.573",
 		style=solid];
-	"has attribute"	 [color=blue,
-		height=0.5,
-		label=attribute,
-		pos="882.79,18",
-		width=1.1193];
+	"has attribute"	 [height=0.5,
+		pos="895.79,18",
+		width=1.4985];
 	"population of individual organisms" -> "has attribute"	 [color=blue,
 		label="has attribute",
-		lp="816.29,61.5",
-		pos="e,851.36,29.445 645.73,90.08 673.58,84.148 705.27,76.861 733.79,69 778.51,56.677 788.97,51.189 832.79,36 835.71,34.99 838.71,33.937 \
-841.73,32.87",
+		lp="817.29,61.5",
+		pos="e,858.1,30.913 644.83,89.994 672.88,84.001 704.92,76.697 733.79,69 772.78,58.606 816.38,44.751 848.51,34.106",
 		style=solid];
 	"in taxon"	 [color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="1006.8,18",
+		pos="1033.8,18",
 		width=1.8234];
 	"population of individual organisms" -> "in taxon"	 [color=blue,
 		label="in taxon",
-		lp="928.29,61.5",
-		pos="e,969.03,32.893 685.04,95.561 737.01,89.984 798.91,81.498 853.79,69 889.85,60.789 929.42,47.476 959.29,36.511",
+		lp="937.29,61.5",
+		pos="e,991.93,31.884 668.35,92.638 749.78,82.411 852.44,69.481 854.79,69 898.35,60.099 946.78,46.037 982.27,34.931",
 		style=solid];
+	"organismal entity_has attribute"	 [color=blue,
+		height=0.5,
+		label=attribute,
+		pos="762.79,105",
+		width=1.1193];
 }

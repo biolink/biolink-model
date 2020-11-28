@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-11-28 16:53
+# Generation date: 2020-11-28 17:04
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -31,7 +31,6 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 APO = CurieNamespace('APO', 'http://purl.obolibrary.org/obo/APO_')
 AEOLUS = CurieNamespace('Aeolus', 'http://translator.ncats.nih.gov/Aeolus_')
-BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 BIOGRID = CurieNamespace('BIOGRID', 'http://identifiers.org/biogrid/')
 BIOSAMPLE = CurieNamespace('BIOSAMPLE', 'http://identifiers.org/biosample/')
 BSPO = CurieNamespace('BSPO', 'http://purl.obolibrary.org/obo/BSPO_')
@@ -41,7 +40,6 @@ CHEMBL_COMPOUND = CurieNamespace('CHEMBL_COMPOUND', 'http://identifiers.org/chem
 CHEMBL_MECHANISM = CurieNamespace('CHEMBL_MECHANISM', 'https://www.ebi.ac.uk/chembl/mechanism/inspect/')
 CHEMBL_TARGET = CurieNamespace('CHEMBL_TARGET', 'http://identifiers.org/chembl.target/')
 CID = CurieNamespace('CID', 'http://pubchem.ncbi.nlm.nih.gov/compound/')
-CIO = CurieNamespace('CIO', 'http://purl.obolibrary.org/obo/CIO_')
 CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
 CLO = CurieNamespace('CLO', 'http://purl.obolibrary.org/obo/CLO_')
 COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://purl.org/coar/resource_type/')
@@ -55,7 +53,6 @@ DOID = CurieNamespace('DOID', 'http://purl.obolibrary.org/obo/DOID_')
 DRUGBANK = CurieNamespace('DRUGBANK', 'http://identifiers.org/drugbank/')
 DRUGCENTRAL = CurieNamespace('DrugCentral', 'http://translator.ncats.nih.gov/DrugCentral_')
 EC = CurieNamespace('EC', 'http://www.enzyme-database.org/query.php?ec=')
-ECO = CurieNamespace('ECO', 'http://purl.obolibrary.org/obo/ECO_')
 ECTO = CurieNamespace('ECTO', 'http://purl.obolibrary.org/obo/ECTO_')
 EDAM_DATA = CurieNamespace('EDAM-DATA', 'http://example.org/UNKNOWN/EDAM-DATA/')
 EDAM_FORMAT = CurieNamespace('EDAM-FORMAT', 'http://edamontology.org/format_')
@@ -63,14 +60,12 @@ EDAM_OPERATION = CurieNamespace('EDAM-OPERATION', 'http://edamontology.org/opera
 EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
 EFO = CurieNamespace('EFO', 'http://identifiers.org/efo/')
 ENSEMBL = CurieNamespace('ENSEMBL', 'http://identifiers.org/ensembl/')
-ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
 EXO = CurieNamespace('ExO', 'http://purl.obolibrary.org/obo/ExO_')
 FAO = CurieNamespace('FAO', 'http://purl.obolibrary.org/obo/FAO_')
 FB = CurieNamespace('FB', 'http://identifiers.org/fb/')
 FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
 FLYBASE = CurieNamespace('FlyBase', 'http://flybase.org/reports/')
 GAMMA = CurieNamespace('GAMMA', 'http://translator.renci.org/GAMMA_')
-GENO = CurieNamespace('GENO', 'http://purl.obolibrary.org/obo/GENO_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 GOLD_META = CurieNamespace('GOLD_META', 'http://identifiers.org/gold.meta/')
 GOP = CurieNamespace('GOP', 'http://purl.obolibrary.org/obo/go#')
@@ -106,9 +101,7 @@ NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 NDDF = CurieNamespace('NDDF', 'http://purl.bioontology.org/ontology/NDDF/')
 NLMID = CurieNamespace('NLMID', 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=')
 OBAN = CurieNamespace('OBAN', 'http://purl.org/oban/')
-OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 OBOREL = CurieNamespace('OBOREL', 'http://purl.obolibrary.org/obo/RO_')
-OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
 OIO = CurieNamespace('OIO', 'http://www.geneontology.org/formats/oboInOwl#')
 OMIM = CurieNamespace('OMIM', 'http://purl.obolibrary.org/obo/OMIM_')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
@@ -125,7 +118,6 @@ PO = CurieNamespace('PO', 'http://purl.obolibrary.org/obo/PO_')
 PR = CurieNamespace('PR', 'http://purl.obolibrary.org/obo/PR_')
 PUBCHEM_COMPOUND = CurieNamespace('PUBCHEM_COMPOUND', 'http://identifiers.org/pubchem.compound/')
 PUBCHEM_SUBSTANCE = CurieNamespace('PUBCHEM_SUBSTANCE', 'http://identifiers.org/pubchem.substance/')
-PW = CurieNamespace('PW', 'http://purl.obolibrary.org/obo/PW_')
 PATHWHIZ = CurieNamespace('PathWhiz', 'http://smpdb.ca/pathways/#')
 POMBASE = CurieNamespace('PomBase', 'https://www.pombase.org/spombe/result/')
 REACT = CurieNamespace('REACT', 'http://www.reactome.org/PathwayBrowser/#/')
@@ -138,14 +130,11 @@ RTXKG1 = CurieNamespace('RTXKG1', 'http://kg1endpoint.rtx.ai/')
 RXNORM = CurieNamespace('RXNORM', 'http://purl.bioontology.org/ontology/RXNORM/')
 RESEARCHID = CurieNamespace('ResearchID', 'https://publons.com/researcher/')
 SEMMEDDB = CurieNamespace('SEMMEDDB', 'https://skr3.nlm.nih.gov/SemMedDB')
-SEPIO = CurieNamespace('SEPIO', 'http://purl.obolibrary.org/obo/SEPIO_')
 SGD = CurieNamespace('SGD', 'http://identifiers.org/sgd/')
 SIO = CurieNamespace('SIO', 'http://semanticscience.org/resource/SIO_')
 SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
 SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://identifiers.org/snomedct/')
 SNPEFF = CurieNamespace('SNPEFF', 'http://translator.ncats.nih.gov/SNPEFF_')
-SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
-STATO = CurieNamespace('STATO', 'http://purl.obolibrary.org/obo/STATO_')
 SCOPUSID = CurieNamespace('ScopusID', 'https://www.scopus.com/authid/detail.uri?authorId=')
 UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-axioms.ofn#')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
@@ -167,7 +156,6 @@ WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
 WORMBASE = CurieNamespace('WormBase', 'https://www.wormbase.org/get?name=')
-XCO = CurieNamespace('XCO', 'http://purl.obolibrary.org/obo/XCO_')
 ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
 ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
 ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.org/')
@@ -175,9 +163,7 @@ BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
 CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
 DBSNP = CurieNamespace('dbSNP', 'http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=')
-DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
-DCTYPES = CurieNamespace('dctypes', 'http://purl.org/dc/dcmitype/')
 DICTYBASE = CurieNamespace('dictyBase', 'http://dictybase.org/gene/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
 FABIO = CurieNamespace('fabio', 'http://purl.org/spar/fabio/')
@@ -192,13 +178,10 @@ ISNI = CurieNamespace('isni', 'https://isni.org/isni/')
 ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOWL#')
-OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
-PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
 SKOS = CurieNamespace('skos', 'https://www.w3.org/TR/skos-reference/#')
-VOID = CurieNamespace('void', 'http://rdfs.org/ns/void#')
 WGS = CurieNamespace('wgs', 'http://www.w3.org/2003/01/geo/wgs84_pos')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
 DEFAULT_ = BIOLINK
@@ -835,10 +818,6 @@ class MolecularActivityId(BiologicalProcessOrActivityId):
     pass
 
 
-class ActivityAndBehaviorId(NamedThingId):
-    pass
-
-
 class ProcedureId(NamedThingId):
     pass
 
@@ -856,6 +835,10 @@ class PathwayId(BiologicalProcessId):
 
 
 class PhysiologicalProcessId(BiologicalProcessId):
+    pass
+
+
+class BehaviorId(BiologicalProcessId):
     pass
 
 
@@ -1017,9 +1000,37 @@ class FrequencyValue(Attribute):
     has_attribute_type: Union[str, OntologyClassId] = None
 
 @dataclass
-class ClinicalModifier(Attribute):
+class OrganismAttribute(Attribute):
     """
-    Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
+    describes a characteristic of an organismal entity.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
+    class_class_curie: ClassVar[str] = "biolink:OrganismAttribute"
+    class_name: ClassVar[str] = "organism attribute"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class ClinicalAttribute(Attribute):
+    """
+    Attributes relating to a clinical manifestation
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
+    class_class_curie: ClassVar[str] = "biolink:ClinicalAttribute"
+    class_name: ClassVar[str] = "clinical attribute"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class ClinicalModifier(ClinicalAttribute):
+    """
+    Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology,
     with respect to severity, laterality, and other aspects
     """
     _inherited_slots: ClassVar[List[str]] = []
@@ -1032,7 +1043,7 @@ class ClinicalModifier(Attribute):
     has_attribute_type: Union[str, OntologyClassId] = None
 
 @dataclass
-class ClinicalCourse(Attribute):
+class ClinicalCourse(ClinicalAttribute):
     """
     The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the
     affected individual
@@ -1049,7 +1060,7 @@ class ClinicalCourse(Attribute):
 @dataclass
 class Onset(ClinicalCourse):
     """
-    The age group in which manifestations appear
+    The age group in which (disease) symptom manifestations appear
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1063,7 +1074,8 @@ class Onset(ClinicalCourse):
 @dataclass
 class Inheritance(Attribute):
     """
-    The pattern in which a particular genetic trait or disorder is passed from one generation to the next
+    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
+    e.g. autosomal dominant, autosomal recessive, etc.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1510,6 +1522,14 @@ class OrganismalEntity(BiologicalEntity):
 
     id: Union[str, OrganismalEntityId] = None
     category: List[Union[str, CategoryType]] = empty_list()
+    has_attribute: List[Union[dict, Attribute]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        self.has_attribute = [Attribute(*e) for e in self.has_attribute.items()] if isinstance(self.has_attribute, dict) \
+                              else [v if isinstance(v, Attribute) else Attribute(**v)
+                                    for v in ([self.has_attribute] if isinstance(self.has_attribute, str) else self.has_attribute)]
+        super().__post_init__(**kwargs)
+
 
 @dataclass
 class IndividualOrganism(OrganismalEntity):
@@ -1537,7 +1557,7 @@ class IndividualOrganism(OrganismalEntity):
 @dataclass
 class Case(IndividualOrganism):
     """
-    An individual organism that has a patient role in some clinical context.
+    An individual (human) organism that has a patient role in some clinical context.
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -1848,12 +1868,15 @@ class ProcessedMaterial(ChemicalSubstance):
 
     id: Union[str, ProcessedMaterialId] = None
     category: List[Union[str, CategoryType]] = empty_list()
+    has_constituent: List[Union[str, ChemicalSubstanceId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, ProcessedMaterialId):
             self.id = ProcessedMaterialId(self.id)
+        self.has_constituent = [v if isinstance(v, ChemicalSubstanceId)
+                                else ChemicalSubstanceId(v) for v in ([self.has_constituent] if isinstance(self.has_constituent, str) else self.has_constituent)]
         super().__post_init__(**kwargs)
 
 
@@ -2737,7 +2760,7 @@ class DrugExposure(ChemicalExposure):
 @dataclass
 class Treatment(ExposureEvent):
     """
-    A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+    A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
     """
     _inherited_slots: ClassVar[List[str]] = ["has_part"]
 
@@ -4762,12 +4785,16 @@ class MaterialSample(PhysicalEntity):
 
     id: Union[str, MaterialSampleId] = None
     category: List[Union[str, CategoryType]] = empty_list()
+    has_attribute: List[Union[dict, Attribute]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, MaterialSampleId):
             self.id = MaterialSampleId(self.id)
+        self.has_attribute = [Attribute(*e) for e in self.has_attribute.items()] if isinstance(self.has_attribute, dict) \
+                              else [v if isinstance(v, Attribute) else Attribute(**v)
+                                    for v in ([self.has_attribute] if isinstance(self.has_attribute, str) else self.has_attribute)]
         super().__post_init__(**kwargs)
 
 
@@ -4832,29 +4859,6 @@ class MolecularActivity(BiologicalProcessOrActivity):
                            else ChemicalSubstanceId(v) for v in ([self.has_output] if isinstance(self.has_output, str) else self.has_output)]
         self.enabled_by = [v if isinstance(v, MacromolecularMachineId)
                            else MacromolecularMachineId(v) for v in ([self.enabled_by] if isinstance(self.enabled_by, str) else self.enabled_by)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ActivityAndBehavior(NamedThing):
-    """
-    Activity or behavior of any independent integral living, organization or mechanical actor in the world
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ActivityAndBehavior
-    class_class_curie: ClassVar[str] = "biolink:ActivityAndBehavior"
-    class_name: ClassVar[str] = "activity and behavior"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ActivityAndBehavior
-
-    id: Union[str, ActivityAndBehaviorId] = None
-    category: List[Union[str, CategoryType]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ActivityAndBehaviorId):
-            self.id = ActivityAndBehaviorId(self.id)
         super().__post_init__(**kwargs)
 
 
@@ -4964,6 +4968,26 @@ class PhysiologicalProcess(BiologicalProcess):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, PhysiologicalProcessId):
             self.id = PhysiologicalProcessId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Behavior(BiologicalProcess):
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Behavior
+    class_class_curie: ClassVar[str] = "biolink:Behavior"
+    class_name: ClassVar[str] = "behavior"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Behavior
+
+    id: Union[str, BehaviorId] = None
+    category: List[Union[str, CategoryType]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, BehaviorId):
+            self.id = BehaviorId(self.id)
         super().__post_init__(**kwargs)
 
 
@@ -5173,7 +5197,7 @@ slots.increases_synthesis_of = Slot(uri=BIOLINK.increases_synthesis_of, name="in
                       model_uri=BIOLINK.increases_synthesis_of, domain=MolecularEntity, range=List[Union[str, MolecularEntityId]])
 
 slots.decreases_synthesis_of = Slot(uri=BIOLINK.decreases_synthesis_of, name="decreases synthesis of", curie=BIOLINK.curie('decreases_synthesis_of'),
-                      model_uri=BIOLINK.decreases_synthesis_of, domain=MolecularEntity, range=List[Union[str, MolecularEntityId]], mappings = [GAMMA.inhibition_of_synthesis])
+                      model_uri=BIOLINK.decreases_synthesis_of, domain=MolecularEntity, range=List[Union[str, MolecularEntityId]])
 
 slots.affects_degradation_of = Slot(uri=BIOLINK.affects_degradation_of, name="affects degradation of", curie=BIOLINK.curie('affects_degradation_of'),
                       model_uri=BIOLINK.affects_degradation_of, domain=MolecularEntity, range=List[Union[str, MolecularEntityId]])
@@ -5520,6 +5544,12 @@ slots.lacks_part = Slot(uri=BIOLINK.lacks_part, name="lacks part", curie=BIOLINK
 slots.develops_from = Slot(uri=BIOLINK.develops_from, name="develops from", curie=BIOLINK.curie('develops_from'),
                       model_uri=BIOLINK.develops_from, domain=NamedThing, range=List[Union[str, NamedThingId]])
 
+slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
+                      model_uri=BIOLINK.in_taxon, domain=None, range=List[Union[str, OrganismTaxonId]])
+
+slots.has_molecular_consequence = Slot(uri=BIOLINK.has_molecular_consequence, name="has molecular consequence", curie=BIOLINK.curie('has_molecular_consequence'),
+                      model_uri=BIOLINK.has_molecular_consequence, domain=NamedThing, range=List[Union[str, OntologyClassId]])
+
 slots.node_property = Slot(uri=BIOLINK.node_property, name="node property", curie=BIOLINK.curie('node_property'),
                       model_uri=BIOLINK.node_property, domain=NamedThing, range=Optional[str])
 
@@ -5533,10 +5563,10 @@ slots.retrieved_on = Slot(uri=BIOLINK.retrieved_on, name="retrieved on", curie=B
                       model_uri=BIOLINK.retrieved_on, domain=SourceFile, range=Optional[Union[str, XSDDate]])
 
 slots.version_of = Slot(uri=BIOLINK.version_of, name="version of", curie=BIOLINK.curie('version_of'),
-                      model_uri=BIOLINK.version_of, domain=DataSetVersion, range=Optional[Union[str, DataSetId]], mappings = [DCTERMS.isVersionOf])
+                      model_uri=BIOLINK.version_of, domain=DataSetVersion, range=Optional[Union[str, DataSetId]])
 
 slots.source_version = Slot(uri=BIOLINK.source_version, name="source version", curie=BIOLINK.curie('source_version'),
-                      model_uri=BIOLINK.source_version, domain=SourceFile, range=Optional[str], mappings = [PAV.version, OWL.versionInfo])
+                      model_uri=BIOLINK.source_version, domain=SourceFile, range=Optional[str])
 
 slots.license = Slot(uri=BIOLINK.license, name="license", curie=BIOLINK.curie('license'),
                       model_uri=BIOLINK.license, domain=InformationContentEntity, range=Optional[str])
@@ -5554,13 +5584,13 @@ slots.download_url = Slot(uri=BIOLINK.download_url, name="download url", curie=B
                       model_uri=BIOLINK.download_url, domain=None, range=Optional[str])
 
 slots.distribution = Slot(uri=BIOLINK.distribution, name="distribution", curie=BIOLINK.curie('distribution'),
-                      model_uri=BIOLINK.distribution, domain=DataSetVersion, range=Optional[Union[str, DistributionLevelId]], mappings = [VOID.Dataset, DCTYPES.Dataset])
+                      model_uri=BIOLINK.distribution, domain=DataSetVersion, range=Optional[Union[str, DistributionLevelId]])
 
-slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
-                      model_uri=BIOLINK.type, domain=NamedThing, range=Optional[str], mappings = [ALLIANCEGENOME.soTermId, GFF3.type, GPI.DB_Object_Type])
+slots.type = Slot(uri=BIOLINK.type, name="type", curie=BIOLINK.curie('type'),
+                      model_uri=BIOLINK.type, domain=NamedThing, range=Optional[str])
 
 slots.id = Slot(uri=BIOLINK.id, name="id", curie=BIOLINK.curie('id'),
-                      model_uri=BIOLINK.id, domain=NamedThing, range=Union[str, NamedThingId], mappings = [ALLIANCEGENOME.primaryId, GFF3.ID, GPI.DB_Object_ID])
+                      model_uri=BIOLINK.id, domain=NamedThing, range=Union[str, NamedThingId])
 
 slots.iri = Slot(uri=BIOLINK.iri, name="iri", curie=BIOLINK.curie('iri'),
                       model_uri=BIOLINK.iri, domain=None, range=Optional[Union[str, IriType]])
@@ -5572,7 +5602,7 @@ slots.source = Slot(uri=BIOLINK.source, name="source", curie=BIOLINK.curie('sour
                       model_uri=BIOLINK.source, domain=None, range=Optional[Union[str, LabelType]])
 
 slots.symbol = Slot(uri=BIOLINK.symbol, name="symbol", curie=BIOLINK.curie('symbol'),
-                      model_uri=BIOLINK.symbol, domain=NamedThing, range=Optional[str], mappings = [ALLIANCEGENOME.symbol, GPI.DB_Object_Symbol])
+                      model_uri=BIOLINK.symbol, domain=NamedThing, range=Optional[str])
 
 slots.synonym = Slot(uri=BIOLINK.synonym, name="synonym", curie=BIOLINK.curie('synonym'),
                       model_uri=BIOLINK.synonym, domain=NamedThing, range=List[Union[str, LabelType]])
@@ -5626,10 +5656,10 @@ slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=B
                       model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[str, EvidenceTypeId]])
 
 slots.provided_by = Slot(uri=BIOLINK.provided_by, name="provided by", curie=BIOLINK.curie('provided_by'),
-                      model_uri=BIOLINK.provided_by, domain=Association, range=List[Union[str, AgentId]], mappings = [PAV.providedBy])
+                      model_uri=BIOLINK.provided_by, domain=Association, range=List[Union[str, AgentId]])
 
 slots.association_type = Slot(uri=BIOLINK.association_type, name="association type", curie=BIOLINK.curie('association_type'),
-                      model_uri=BIOLINK.association_type, domain=Association, range=Optional[Union[str, OntologyClassId]], mappings = [RDF.type])
+                      model_uri=BIOLINK.association_type, domain=Association, range=Optional[Union[str, OntologyClassId]])
 
 slots.published_in = Slot(uri=BIOLINK.published_in, name="published in", curie=BIOLINK.curie('published_in'),
                       model_uri=BIOLINK.published_in, domain=Publication, range=Optional[Union[str, URIorCURIE]])
@@ -5662,19 +5692,19 @@ slots.mesh_terms = Slot(uri=BIOLINK.mesh_terms, name="mesh terms", curie=BIOLINK
                       model_uri=BIOLINK.mesh_terms, domain=Publication, range=List[Union[str, URIorCURIE]])
 
 slots.chi_squared_statistic = Slot(uri=BIOLINK.chi_squared_statistic, name="chi squared statistic", curie=BIOLINK.curie('chi_squared_statistic'),
-                      model_uri=BIOLINK.chi_squared_statistic, domain=Association, range=Optional[float], mappings = [STATO["0000030"]])
+                      model_uri=BIOLINK.chi_squared_statistic, domain=Association, range=Optional[float])
 
 slots.p_value = Slot(uri=BIOLINK.p_value, name="p value", curie=BIOLINK.curie('p_value'),
-                      model_uri=BIOLINK.p_value, domain=Association, range=Optional[float], mappings = [OBI["0000175"]])
+                      model_uri=BIOLINK.p_value, domain=Association, range=Optional[float])
 
 slots.creation_date = Slot(uri=BIOLINK.creation_date, name="creation date", curie=BIOLINK.curie('creation_date'),
                       model_uri=BIOLINK.creation_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
 
 slots.has_receptor = Slot(uri=BIOLINK.has_receptor, name="has receptor", curie=BIOLINK.curie('has_receptor'),
-                      model_uri=BIOLINK.has_receptor, domain=ExposureEvent, range=Optional[Union[str, OrganismalEntityId]], mappings = [EXO["0000001"]])
+                      model_uri=BIOLINK.has_receptor, domain=ExposureEvent, range=Optional[Union[str, OrganismalEntityId]])
 
 slots.has_stressor = Slot(uri=BIOLINK.has_stressor, name="has stressor", curie=BIOLINK.curie('has_stressor'),
-                      model_uri=BIOLINK.has_stressor, domain=ExposureEvent, range=Optional[str], mappings = [EXO["0000000"]])
+                      model_uri=BIOLINK.has_stressor, domain=ExposureEvent, range=Optional[str])
 
 slots.has_constituent = Slot(uri=BIOLINK.has_constituent, name="has constituent", curie=BIOLINK.curie('has_constituent'),
                       model_uri=BIOLINK.has_constituent, domain=NamedThing, range=List[Union[str, ChemicalSubstanceId]])
@@ -5689,19 +5719,16 @@ slots.has_nutrient = Slot(uri=BIOLINK.has_nutrient, name="has nutrient", curie=B
                       model_uri=BIOLINK.has_nutrient, domain=Food, range=List[Union[str, ChemicalSubstanceId]])
 
 slots.has_route = Slot(uri=BIOLINK.has_route, name="has route", curie=BIOLINK.curie('has_route'),
-                      model_uri=BIOLINK.has_route, domain=ExposureEvent, range=Optional[str], mappings = [EXO["0000055"]])
+                      model_uri=BIOLINK.has_route, domain=ExposureEvent, range=Optional[str])
 
 slots.update_date = Slot(uri=BIOLINK.update_date, name="update date", curie=BIOLINK.curie('update_date'),
                       model_uri=BIOLINK.update_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
 
-slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
-                      model_uri=BIOLINK.in_taxon, domain=None, range=List[Union[str, OrganismTaxonId]])
-
 slots.latitude = Slot(uri=BIOLINK.latitude, name="latitude", curie=BIOLINK.curie('latitude'),
-                      model_uri=BIOLINK.latitude, domain=NamedThing, range=Optional[float], mappings = [WGS.lat])
+                      model_uri=BIOLINK.latitude, domain=NamedThing, range=Optional[float])
 
 slots.longitude = Slot(uri=BIOLINK.longitude, name="longitude", curie=BIOLINK.curie('longitude'),
-                      model_uri=BIOLINK.longitude, domain=NamedThing, range=Optional[float], mappings = [WGS.long])
+                      model_uri=BIOLINK.longitude, domain=NamedThing, range=Optional[float])
 
 slots.affiliation = Slot(uri=BIOLINK.affiliation, name="affiliation", curie=BIOLINK.curie('affiliation'),
                       model_uri=BIOLINK.affiliation, domain=Agent, range=List[Union[str, URIorCURIE]])
@@ -5710,7 +5737,7 @@ slots.address = Slot(uri=BIOLINK.address, name="address", curie=BIOLINK.curie('a
                       model_uri=BIOLINK.address, domain=NamedThing, range=Optional[str])
 
 slots.has_chemical_formula = Slot(uri=BIOLINK.has_chemical_formula, name="has chemical formula", curie=BIOLINK.curie('has_chemical_formula'),
-                      model_uri=BIOLINK.has_chemical_formula, domain=NamedThing, range=Optional[str], mappings = [WIKIDATA_PROPERTY.P274])
+                      model_uri=BIOLINK.has_chemical_formula, domain=NamedThing, range=Optional[str])
 
 slots.interacting_molecules_category = Slot(uri=BIOLINK.interacting_molecules_category, name="interacting molecules category", curie=BIOLINK.curie('interacting_molecules_category'),
                       model_uri=BIOLINK.interacting_molecules_category, domain=None, range=Optional[Union[str, OntologyClassId]])
@@ -5769,9 +5796,6 @@ slots.change_is_catalyzed_by = Slot(uri=BIOLINK.change_is_catalyzed_by, name="ch
 slots.has_biological_sequence = Slot(uri=BIOLINK.has_biological_sequence, name="has biological sequence", curie=BIOLINK.curie('has_biological_sequence'),
                       model_uri=BIOLINK.has_biological_sequence, domain=NamedThing, range=Optional[Union[str, BiologicalSequence]])
 
-slots.has_molecular_consequence = Slot(uri=BIOLINK.has_molecular_consequence, name="has molecular consequence", curie=BIOLINK.curie('has_molecular_consequence'),
-                      model_uri=BIOLINK.has_molecular_consequence, domain=NamedThing, range=List[Union[str, OntologyClassId]])
-
 slots.has_drug = Slot(uri=BIOLINK.has_drug, name="has drug", curie=BIOLINK.curie('has_drug'),
                       model_uri=BIOLINK.has_drug, domain=NamedThing, range=Optional[Union[str, DrugId]])
 
@@ -5818,7 +5842,7 @@ slots.has_quantitative_value = Slot(uri=BIOLINK.has_quantitative_value, name="ha
                       model_uri=BIOLINK.has_quantitative_value, domain=Attribute, range=List[Union[dict, "QuantityValue"]])
 
 slots.has_numeric_value = Slot(uri=BIOLINK.has_numeric_value, name="has numeric value", curie=BIOLINK.curie('has_numeric_value'),
-                      model_uri=BIOLINK.has_numeric_value, domain=QuantityValue, range=Optional[float], mappings = [QUD.quantityValue])
+                      model_uri=BIOLINK.has_numeric_value, domain=QuantityValue, range=Optional[float])
 
 slots.has_unit = Slot(uri=BIOLINK.has_unit, name="has unit", curie=BIOLINK.curie('has_unit'),
                       model_uri=BIOLINK.has_unit, domain=QuantityValue, range=Optional[Union[str, Unit]])
@@ -5858,6 +5882,9 @@ slots.article_published_in = Slot(uri=BIOLINK.published_in, name="article_publis
 
 slots.article_iso_abbreviation = Slot(uri=BIOLINK.iso_abbreviation, name="article_iso abbreviation", curie=BIOLINK.curie('iso_abbreviation'),
                       model_uri=BIOLINK.article_iso_abbreviation, domain=Article, range=Optional[str])
+
+slots.organismal_entity_has_attribute = Slot(uri=BIOLINK.has_attribute, name="organismal entity_has attribute", curie=BIOLINK.curie('has_attribute'),
+                      model_uri=BIOLINK.organismal_entity_has_attribute, domain=OrganismalEntity, range=List[Union[dict, Attribute]])
 
 slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
                       model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])

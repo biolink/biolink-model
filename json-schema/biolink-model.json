@@ -10,48 +10,6 @@
          "title": "AbstractEntity",
          "type": "object"
       },
-      "ActivityAndBehavior": {
-         "additionalProperties": false,
-         "description": "Activity or behavior of any independent integral living, organization or mechanical actor in the world",
-         "properties": {
-            "category": {
-               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_attribute": {
-               "description": "connects any named thing to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for the node. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for a thing",
-               "type": "string"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
-         "title": "ActivityAndBehavior",
-         "type": "object"
-      },
       "Agent": {
          "additionalProperties": false,
          "description": "person, group, organization or project that provides a piece of information (i.e. a knowledge association)",
@@ -117,7 +75,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -592,6 +550,69 @@
          "title": "Attribute",
          "type": "object"
       },
+      "Behavior": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "enabled_by": {
+               "description": "holds between a process and a physical entity, where the physical entity executes the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "has_input": {
+               "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "holds between a process and a continuant, where the continuant is an output of the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Behavior",
+         "type": "object"
+      },
       "BiologicalProcess": {
          "additionalProperties": false,
          "description": "One or more causally connected executions of molecular functions",
@@ -1026,7 +1047,7 @@
       },
       "Case": {
          "additionalProperties": false,
-         "description": "An individual organism that has a patient role in some clinical context.",
+         "description": "An individual (human) organism that has a patient role in some clinical context.",
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
@@ -1036,7 +1057,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -1176,7 +1197,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -1225,7 +1246,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -1420,7 +1441,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -1909,6 +1930,44 @@
          "title": "ChemicalToPathwayAssociation",
          "type": "object"
       },
+      "ClinicalAttribute": {
+         "additionalProperties": false,
+         "description": "Attributes relating to a clinical manifestation",
+         "properties": {
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/definitions/QuantityValue"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_attribute_type"
+         ],
+         "title": "ClinicalAttribute",
+         "type": "object"
+      },
       "ClinicalCourse": {
          "additionalProperties": false,
          "description": "The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual",
@@ -2033,7 +2092,7 @@
       },
       "ClinicalModifier": {
          "additionalProperties": false,
-         "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects",
+         "description": "Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects",
          "properties": {
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
@@ -5406,7 +5465,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -5508,7 +5567,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -5547,7 +5606,7 @@
       },
       "Inheritance": {
          "additionalProperties": false,
-         "description": "The pattern in which a particular genetic trait or disorder is passed from one generation to the next",
+         "description": "The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.",
          "properties": {
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
@@ -5595,7 +5654,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -6479,7 +6538,7 @@
       },
       "Onset": {
          "additionalProperties": false,
-         "description": "The age group in which manifestations appear",
+         "description": "The age group in which (disease) symptom manifestations appear",
          "properties": {
             "has_attribute_type": {
                "description": "connects an attribute to a class that describes it",
@@ -6555,6 +6614,44 @@
             "category"
          ],
          "title": "OntologyClass",
+         "type": "object"
+      },
+      "OrganismAttribute": {
+         "additionalProperties": false,
+         "description": "describes a characteristic of an organismal entity.",
+         "properties": {
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/definitions/QuantityValue"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_attribute_type"
+         ],
+         "title": "OrganismAttribute",
          "type": "object"
       },
       "OrganismTaxon": {
@@ -7174,7 +7271,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "may be an organism attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -7339,6 +7436,13 @@
                "description": "connects any named thing to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "has_constituent": {
+               "description": "one or more chemical substances within a mixture",
+               "items": {
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8490,7 +8594,7 @@
       },
       "Treatment": {
          "additionalProperties": false,
-         "description": "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'",
+         "description": "A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'",
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}",
