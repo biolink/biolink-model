@@ -4841,13 +4841,14 @@ organism taxon:
     mixins:
       - subject of investigation
     description: >-
-      A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
-    mappings:
+      A sample is a limited quantity of something (e.g. an individual or set of individuals
+      from a population, or a portion of a substance) to be used for testing, analysis,
+      inspection, investigation, demonstration, or trial use. [SIO]
+    slots:
+      - has attribute
+    exact_mappings:
       - OBI:0000747
       - SIO:001050
-    # 'has attribute' usage being generalized by relocation to NamedThing (and beyond)
-    #slots:
-    #  - has attribute
     id_prefixes:
       - BIOSAMPLE
       - GOLD.META
@@ -4862,21 +4863,25 @@ organism taxon:
     union_of:
       - disease
       - phenotypic feature
-    mappings:
-      # UMLS Semantic Type "Finding"
+    narrow_mappings:
+      # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - UMLSSC:T033
       - UMLSST:fndg
 
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
     is_a: disease or phenotypic feature
-    mappings:
+    exact_mappings:
       - MONDO:0000001
       - DOID:4
       - WIKIDATA:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
       - UMLSSG:DISO
+      # Disease or Syndrome
+      - UMLSSC:T047
+      - UMLSST:dsyn
+    narrow_mappings:
       # Congenital Abnormality
       - UMLSSC:T019
       - UMLSST:cgab
@@ -4889,18 +4894,12 @@ organism taxon:
       # Pathologic Function
       - UMLSSC:T046
       - UMLSST:patf
-      # Disease or Syndrome
-      - UMLSSC:T047
-      - UMLSST:dsyn
       # Mental or Behavioral Dysfunction
       - UMLSSC:T048
       - UMLSST:mobd
       # Cell or Molecular Dysfunction
       - UMLSSC:T049
       - UMLSST:comd
-      # Sign or Symptom
-      - UMLSSC:T184
-      - UMLSST:sosy
       # Anatomical Abnormality
       - UMLSSC:T190
       - UMLSST:anab
@@ -4912,7 +4911,6 @@ organism taxon:
       - DOID
       - OMIM
       - ORPHANET
-      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbrevation for ORPHANET? not used in model
       - EFO
       - UMLS
       - MESH
