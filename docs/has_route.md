@@ -30,7 +30,7 @@ URI: [biolink:has_route](https://w3id.org/biolink/vocab/has_route)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ExO:0000055 |
+| **Exact Mappings:** | | ExO:0000055 |
 | **Narrow Mappings:** | | LOINC:has_pharmaceutical_route |
 |  | | SNOMED:has_dose_form_intended_site |
 |  | | SNOMED:has_route_of_administration |

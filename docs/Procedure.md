@@ -12,55 +12,10 @@ A series of actions conducted in a certain order or manner
 
 URI: [biolink:Procedure](https://w3id.org/biolink/vocab/Procedure)
 
-UMLSSG:PROC
-{: .mapping-label }
-
-UMLSSC:T058
-{: .mapping-label }
-
-UMLSST:hlca
-{: .mapping-label }
-
-UMLSSC:T059
-{: .mapping-label }
-
-UMLSST:lbpr
-{: .mapping-label }
-
-UMLSSC:T060
-{: .mapping-label }
-
-UMLSST:diap
-{: .mapping-label }
-
-UMLSSC:T061
-{: .mapping-label }
-
-UMLSST:topp
-{: .mapping-label }
-
-UMLSSC:T062
-{: .mapping-label }
-
-UMLSST:resa
-{: .mapping-label }
-
-UMLSSC:T063
-{: .mapping-label }
-
-UMLSST:mbrt
-{: .mapping-label }
-
-UMLSSC:T065
-{: .mapping-label }
-
-UMLSST:edac
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Occurrent],[NamedThing]%5E-[Procedure],[Occurrent],[NamedThing],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ActivityAndBehavior],[NamedThing]%5E-[Procedure],[NamedThing],[Attribute],[ActivityAndBehavior])
 
 ---
 
@@ -71,12 +26,12 @@ UMLSST:edac
 
 ## Uses Mixins
 
- *  mixin: [Occurrent](Occurrent.md) - A processual entity
+ *  mixin: [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -117,19 +72,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | UMLSSG:PROC |
-|  | | UMLSSC:T058 |
-|  | | UMLSST:hlca |
-|  | | UMLSSC:T059 |
+| **Exact Mappings:** | | UMLSSG:PROC |
+| **Narrow Mappings:** | | UMLSSC:T059 |
 |  | | UMLSST:lbpr |
 |  | | UMLSSC:T060 |
 |  | | UMLSST:diap |
 |  | | UMLSSC:T061 |
 |  | | UMLSST:topp |
-|  | | UMLSSC:T062 |
-|  | | UMLSST:resa |
 |  | | UMLSSC:T063 |
 |  | | UMLSST:mbrt |
-|  | | UMLSSC:T065 |
-|  | | UMLSST:edac |
 

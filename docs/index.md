@@ -15,12 +15,12 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Entities
 
  * [NamedThing](NamedThing.md) - a databased entity or concept/class
-    * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
     * [AdministrativeEntity](AdministrativeEntity.md)
        * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
     * [BiologicalEntity](BiologicalEntity.md)
        * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
           * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
+             * [Behavior](Behavior.md)
              * [Pathway](Pathway.md)
              * [PhysiologicalProcess](PhysiologicalProcess.md)
           * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -30,7 +30,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
           * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
              * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
-          * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+          * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
        * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
           * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
              * [Carbohydrate](Carbohydrate.md)
@@ -67,7 +67,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
           * [CellLine](CellLine.md)
           * [IndividualOrganism](IndividualOrganism.md)
-             * [Case](Case.md) - An individual organism that has a patient role in some clinical context.
+             * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
           * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
           * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
     * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
@@ -163,6 +163,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Class Mixins
 
+ * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
  * [AttributeMixin](AttributeMixin.md)
  * [CaseToThingAssociationMixin](CaseToThingAssociationMixin.md) - An abstract association for use where the case is the subject
  * [CellLineToThingAssociationMixin](CellLineToThingAssociationMixin.md) - An relationship between a cell line and another entity
@@ -182,6 +183,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
  * [ModelToDiseaseAssociationMixin](ModelToDiseaseAssociationMixin.md) - This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
  * [Occurrent](Occurrent.md) - A processual entity
+    * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
  * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
  * [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
  * [RelationshipQuantifier](RelationshipQuantifier.md)
@@ -202,11 +204,13 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [BiologicalSex](BiologicalSex.md)
           * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
           * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-       * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
-          * [Onset](Onset.md) - The age group in which manifestations appear
-       * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects
+       * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
+          * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
+             * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
+          * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
        * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
-       * [Inheritance](Inheritance.md) - The pattern in which a particular genetic trait or disorder is passed from one generation to the next
+       * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+       * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
        * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
        * [Zygosity](Zygosity.md)
     * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value

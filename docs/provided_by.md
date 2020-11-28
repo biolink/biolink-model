@@ -86,5 +86,5 @@ URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | pav:providedBy |
+| **Exact Mappings:** | | pav:providedBy |
 

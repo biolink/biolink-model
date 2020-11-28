@@ -12,45 +12,6 @@ a fact or situation that is observed to exist or happen, especially one whose ca
 
 URI: [biolink:Phenomenon](https://w3id.org/biolink/vocab/Phenomenon)
 
-UMLSSG:PHEN
-{: .mapping-label }
-
-UMLSSC:T034
-{: .mapping-label }
-
-UMLSST:lbtr
-{: .mapping-label }
-
-UMLSSC:T038
-{: .mapping-label }
-
-UMLSST:biof
-{: .mapping-label }
-
-UMLSSC:T067
-{: .mapping-label }
-
-UMLSST:phpr
-{: .mapping-label }
-
-UMLSSC:T068
-{: .mapping-label }
-
-UMLSST:hcpp
-{: .mapping-label }
-
-UMLSSC:T069
-{: .mapping-label }
-
-UMLSST:eehu
-{: .mapping-label }
-
-UMLSSC:T070
-{: .mapping-label }
-
-UMLSST:npop
-{: .mapping-label }
-
 
 ---
 
@@ -70,7 +31,7 @@ UMLSST:npop
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -111,17 +72,17 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | UMLSSG:PHEN |
-|  | | UMLSSC:T034 |
+| **Exact Mappings:** | | UMLSSG:PHEN |
+| **Narrow Mappings:** | | UMLSSC:T034 |
 |  | | UMLSST:lbtr |
 |  | | UMLSSC:T038 |
 |  | | UMLSST:biof |
-|  | | UMLSSC:T067 |
+|  | | UMLSSC:T069 |
+|  | | UMLSST:eehu |
+| **Broad Mappings:** | | UMLSSC:T067 |
 |  | | UMLSST:phpr |
 |  | | UMLSSC:T068 |
 |  | | UMLSST:hcpp |
-|  | | UMLSSC:T069 |
-|  | | UMLSST:eehu |
 |  | | UMLSSC:T070 |
 |  | | UMLSST:npop |
 

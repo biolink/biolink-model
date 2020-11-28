@@ -12,9 +12,6 @@ An interaction between a chemical entity and a phenotype or disease, where the p
 
 URI: [biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
 
-SIO:000993
-{: .mapping-label }
-
 
 ---
 
@@ -78,7 +75,7 @@ SIO:000993
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -95,5 +92,5 @@ SIO:000993
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SIO:000993 |
+| **Narrow Mappings:** | | SIO:000993 |
 

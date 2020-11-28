@@ -35,13 +35,6 @@ URI: [biolink:RNAProductIsoform](https://w3id.org/biolink/vocab/RNAProductIsofor
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from genomic entity:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
@@ -53,6 +46,13 @@ URI: [biolink:RNAProductIsoform](https://w3id.org/biolink/vocab/RNAProductIsofor
  * [macromolecular machine➞name](macromolecular_machine_name.md)  <sub>OPT</sub>
     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 

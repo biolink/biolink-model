@@ -12,9 +12,6 @@ Class of evidence that supports an association
 
 URI: [biolink:EvidenceType](https://w3id.org/biolink/vocab/EvidenceType)
 
-ECO:0000000
-{: .mapping-label }
-
 
 ---
 
@@ -34,13 +31,6 @@ ECO:0000000
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from information content entity:
 
  * [license](license.md)  <sub>OPT</sub>
@@ -52,6 +42,13 @@ ECO:0000000
  * [creation date](creation_date.md)  <sub>OPT</sub>
     * Description: date on which thing was created. This can be applied to nodes or edges
     * range: [Date](types/Date.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -88,5 +85,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | evidence code |
-| **Mappings:** | | ECO:0000000 |
+| **Exact Mappings:** | | ECO:0000000 |
 

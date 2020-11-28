@@ -12,9 +12,6 @@ layout: default
 
 URI: [biolink:DataFile](https://w3id.org/biolink/vocab/DataFile)
 
-EFO:0004095
-{: .mapping-label }
-
 
 ---
 
@@ -38,13 +35,6 @@ EFO:0004095
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from information content entity:
 
  * [license](license.md)  <sub>OPT</sub>
@@ -56,6 +46,13 @@ EFO:0004095
  * [creation date](creation_date.md)  <sub>OPT</sub>
     * Description: date on which thing was created. This can be applied to nodes or edges
     * range: [Date](types/Date.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -91,5 +88,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | EFO:0004095 |
+| **Exact Mappings:** | | EFO:0004095 |
 

@@ -12,21 +12,6 @@ A gene, gene product, small molecule or macromolecule (including protein complex
 
 URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
-SIO:010341
-{: .mapping-label }
-
-WIKIDATA:Q43460564
-{: .mapping-label }
-
-UMLSSG:GENE
-{: .mapping-label }
-
-UMLSSC:T085
-{: .mapping-label }
-
-UMLSST:mosq
-{: .mapping-label }
-
 
 ---
 
@@ -107,7 +92,7 @@ UMLSST:mosq
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -156,9 +141,19 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | bioentity |
-| **Mappings:** | | SIO:010341 |
+| **Narrow Mappings:** | | SIO:010341 |
 |  | | WIKIDATA:Q43460564 |
-|  | | UMLSSG:GENE |
+|  | | UMLSSG:CHEM |
 |  | | UMLSSC:T085 |
 |  | | UMLSST:mosq |
+|  | | UMLSSC:T123 |
+|  | | UMLSST:bacs |
+|  | | UMLSSC:T125 |
+|  | | UMLSST:horm |
+|  | | UMLSSC:T126 |
+|  | | UMLSST:enzy |
+|  | | UMLSSC:T129 |
+|  | | UMLSST:imft |
+|  | | UMLSSC:T192 |
+|  | | UMLSST:rcpt |
 

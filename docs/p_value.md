@@ -30,5 +30,7 @@ URI: [biolink:p_value](https://w3id.org/biolink/vocab/p_value)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | OBI:0000175 |
+| **Exact Mappings:** | | OBI:0000175 |
+|  | | NCIT:C44185 |
+|  | | EDAM-DATA:1669 |
 

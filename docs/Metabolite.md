@@ -12,9 +12,6 @@ Any intermediate or product resulting from metabolism. Includes primary and seco
 
 URI: [biolink:Metabolite](https://w3id.org/biolink/vocab/Metabolite)
 
-CHEBI:25212
-{: .mapping-label }
-
 
 ---
 
@@ -30,7 +27,7 @@ CHEBI:25212
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -78,6 +75,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CHEBI:25212 |
 | **Comments:** | | The CHEBI ID represents a role rather than a substance |
+| **Exact Mappings:** | | CHEBI:25212 |
 

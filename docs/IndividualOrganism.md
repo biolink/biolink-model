@@ -12,135 +12,6 @@ layout: default
 
 URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrganism)
 
-SIO:010000
-{: .mapping-label }
-
-WIKIDATA:Q795052
-{: .mapping-label }
-
-UMLSSG:LIVB
-{: .mapping-label }
-
-UMLSSC:T001
-{: .mapping-label }
-
-UMLSST:orgm
-{: .mapping-label }
-
-UMLSSC:T002
-{: .mapping-label }
-
-UMLSST:plnt
-{: .mapping-label }
-
-UMLSSC:T004
-{: .mapping-label }
-
-UMLSST:fngs
-{: .mapping-label }
-
-UMLSSC:T005
-{: .mapping-label }
-
-UMLSST:virs
-{: .mapping-label }
-
-UMLSSC:T007
-{: .mapping-label }
-
-UMLSST:bact
-{: .mapping-label }
-
-UMLSSC:T008
-{: .mapping-label }
-
-UMLSST:anim
-{: .mapping-label }
-
-UMLSSC:T010
-{: .mapping-label }
-
-UMLSST:vtbt
-{: .mapping-label }
-
-UMLSSC:T011
-{: .mapping-label }
-
-UMLSST:amph
-{: .mapping-label }
-
-UMLSSC:T012
-{: .mapping-label }
-
-UMLSST:bird
-{: .mapping-label }
-
-UMLSSC:T013
-{: .mapping-label }
-
-UMLSST:fish
-{: .mapping-label }
-
-UMLSSC:T014
-{: .mapping-label }
-
-UMLSST:rept
-{: .mapping-label }
-
-UMLSSC:T015
-{: .mapping-label }
-
-UMLSST:mamm
-{: .mapping-label }
-
-UMLSSC:T016
-{: .mapping-label }
-
-UMLSST:humn
-{: .mapping-label }
-
-UMLSSC:T096
-{: .mapping-label }
-
-UMLSST:grup
-{: .mapping-label }
-
-UMLSSC:T097
-{: .mapping-label }
-
-UMLSST:prog
-{: .mapping-label }
-
-UMLSSC:T099
-{: .mapping-label }
-
-UMLSST:famg
-{: .mapping-label }
-
-UMLSSC:T100
-{: .mapping-label }
-
-UMLSST:aggp
-{: .mapping-label }
-
-UMLSSC:T101
-{: .mapping-label }
-
-UMLSST:podg
-{: .mapping-label }
-
-UMLSSC:T194
-{: .mapping-label }
-
-UMLSST:arch
-{: .mapping-label }
-
-UMLSSC:T204
-{: .mapping-label }
-
-UMLSST:euka
-{: .mapping-label }
-
 
 ---
 
@@ -159,20 +30,13 @@ UMLSST:euka
 
 ## Children
 
- * [Case](Case.md) - An individual organism that has a patient role in some clinical context.
+ * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
 
 ## Referenced by class
 
 
 ## Attributes
 
-
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -188,6 +52,12 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
+
+### Inherited from organismal entity:
+
+ * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
+    * Description: may be an organism attribute
+    * range: [Attribute](Attribute.md)
 
 ### Inherited from resource mixin:
 
@@ -215,47 +85,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SIO:010000 |
-|  | | WIKIDATA:Q795052 |
-|  | | UMLSSG:LIVB |
+| **Exact Mappings:** | | SIO:010000 |
 |  | | UMLSSC:T001 |
 |  | | UMLSST:orgm |
-|  | | UMLSSC:T002 |
-|  | | UMLSST:plnt |
-|  | | UMLSSC:T004 |
-|  | | UMLSST:fngs |
-|  | | UMLSSC:T005 |
-|  | | UMLSST:virs |
-|  | | UMLSSC:T007 |
-|  | | UMLSST:bact |
-|  | | UMLSSC:T008 |
-|  | | UMLSST:anim |
-|  | | UMLSSC:T010 |
-|  | | UMLSST:vtbt |
-|  | | UMLSSC:T011 |
-|  | | UMLSST:amph |
-|  | | UMLSSC:T012 |
-|  | | UMLSST:bird |
-|  | | UMLSSC:T013 |
-|  | | UMLSST:fish |
-|  | | UMLSSC:T014 |
-|  | | UMLSST:rept |
-|  | | UMLSSC:T015 |
-|  | | UMLSST:mamm |
-|  | | UMLSSC:T016 |
-|  | | UMLSST:humn |
-|  | | UMLSSC:T096 |
-|  | | UMLSST:grup |
-|  | | UMLSSC:T097 |
-|  | | UMLSST:prog |
-|  | | UMLSSC:T099 |
-|  | | UMLSST:famg |
-|  | | UMLSSC:T100 |
-|  | | UMLSST:aggp |
-|  | | UMLSSC:T101 |
-|  | | UMLSST:podg |
-|  | | UMLSSC:T194 |
-|  | | UMLSST:arch |
-|  | | UMLSSC:T204 |
-|  | | UMLSST:euka |
+| **Narrow Mappings:** | | WIKIDATA:Q795052 |
+|  | | foaf:Person |
 

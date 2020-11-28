@@ -12,129 +12,6 @@ May be a chemical entity or a formulation with a chemical entity as active ingre
 
 URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstance)
 
-SIO:010004
-{: .mapping-label }
-
-WIKIDATA:Q79529
-{: .mapping-label }
-
-UMLSSC:T167
-{: .mapping-label }
-
-UMLSST:sbst
-{: .mapping-label }
-
-UMLSSG:CHEM
-{: .mapping-label }
-
-UMLSSC:T103
-{: .mapping-label }
-
-UMLSST:chem
-{: .mapping-label }
-
-UMLSSC:T104
-{: .mapping-label }
-
-UMLSST:chvs
-{: .mapping-label }
-
-UMLSSC:T109
-{: .mapping-label }
-
-UMLSST:orch
-{: .mapping-label }
-
-UMLSSC:T114
-{: .mapping-label }
-
-UMLSST:nnon
-{: .mapping-label }
-
-UMLSSC:T120
-{: .mapping-label }
-
-UMLSST:chvf
-{: .mapping-label }
-
-UMLSSC:T121
-{: .mapping-label }
-
-UMLSST:phsu
-{: .mapping-label }
-
-UMLSSC:T122
-{: .mapping-label }
-
-UMLSST:bodm
-{: .mapping-label }
-
-UMLSSC:T123
-{: .mapping-label }
-
-UMLSST:bacs
-{: .mapping-label }
-
-UMLSSC:T125
-{: .mapping-label }
-
-UMLSST:horm
-{: .mapping-label }
-
-UMLSSC:T126
-{: .mapping-label }
-
-UMLSST:enzy
-{: .mapping-label }
-
-UMLSSC:T127
-{: .mapping-label }
-
-UMLSST:vita
-{: .mapping-label }
-
-UMLSSC:T129
-{: .mapping-label }
-
-UMLSST:imft
-{: .mapping-label }
-
-UMLSSC:T130
-{: .mapping-label }
-
-UMLSST:irda
-{: .mapping-label }
-
-UMLSSC:T131
-{: .mapping-label }
-
-UMLSST:hops
-{: .mapping-label }
-
-UMLSSC:T192
-{: .mapping-label }
-
-UMLSST:rcpt
-{: .mapping-label }
-
-UMLSSC:T195
-{: .mapping-label }
-
-UMLSST:antb
-{: .mapping-label }
-
-UMLSSC:T196
-{: .mapping-label }
-
-UMLSST:elii
-{: .mapping-label }
-
-UMLSSC:T197
-{: .mapping-label }
-
-UMLSST:inch
-{: .mapping-label }
-
 
 ---
 
@@ -184,7 +61,7 @@ UMLSST:inch
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -232,14 +109,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SIO:010004 |
+| **Exact Mappings:** | | SIO:010004 |
 |  | | WIKIDATA:Q79529 |
-|  | | UMLSSC:T167 |
-|  | | UMLSST:sbst |
-|  | | UMLSSG:CHEM |
 |  | | UMLSSC:T103 |
 |  | | UMLSST:chem |
-|  | | UMLSSC:T104 |
+| **Narrow Mappings:** | | UMLSSC:T104 |
 |  | | UMLSST:chvs |
 |  | | UMLSSC:T109 |
 |  | | UMLSST:orch |
@@ -247,30 +121,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | UMLSST:nnon |
 |  | | UMLSSC:T120 |
 |  | | UMLSST:chvf |
-|  | | UMLSSC:T121 |
-|  | | UMLSST:phsu |
 |  | | UMLSSC:T122 |
 |  | | UMLSST:bodm |
-|  | | UMLSSC:T123 |
-|  | | UMLSST:bacs |
-|  | | UMLSSC:T125 |
-|  | | UMLSST:horm |
-|  | | UMLSSC:T126 |
-|  | | UMLSST:enzy |
-|  | | UMLSSC:T127 |
-|  | | UMLSST:vita |
-|  | | UMLSSC:T129 |
-|  | | UMLSST:imft |
 |  | | UMLSSC:T130 |
 |  | | UMLSST:irda |
 |  | | UMLSSC:T131 |
 |  | | UMLSST:hops |
-|  | | UMLSSC:T192 |
-|  | | UMLSST:rcpt |
-|  | | UMLSSC:T195 |
-|  | | UMLSST:antb |
 |  | | UMLSSC:T196 |
 |  | | UMLSST:elii |
 |  | | UMLSSC:T197 |
 |  | | UMLSST:inch |
+| **Broad Mappings:** | | UMLSSC:T167 |
+|  | | UMLSST:sbst |
 

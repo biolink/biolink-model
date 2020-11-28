@@ -12,15 +12,6 @@ A typed association between two entities, supported by evidence
 
 URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
-OBAN:association
-{: .mapping-label }
-
-rdf:Statement
-{: .mapping-label }
-
-owl:Axiom
-{: .mapping-label }
-
 
 ---
 
@@ -111,7 +102,7 @@ owl:Axiom
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -156,8 +147,8 @@ owl:Axiom
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | OBAN:association |
+| **Comments:** | | This is roughly the model used by biolink and ontobio at the moment |
+| **Exact Mappings:** | | OBAN:association |
 |  | | rdf:Statement |
 |  | | owl:Axiom |
-| **Comments:** | | This is roughly the model used by biolink and ontobio at the moment |
 

@@ -69,13 +69,6 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from functional association:
 
  * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
@@ -87,6 +80,13 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
     * range: [GeneOntologyClass](GeneOntologyClass.md)
     * Example:    
     * Example:    
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

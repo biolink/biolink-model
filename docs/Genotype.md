@@ -12,12 +12,6 @@ An information content entity that describes a genome by specifying the total va
 
 URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 
-GENO:0000536
-{: .mapping-label }
-
-SIO:001079
-{: .mapping-label }
-
 
 ---
 
@@ -43,18 +37,18 @@ SIO:001079
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from genomic entity:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
     * Description: connects a genomic feature to its sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -97,7 +91,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | GENO:0000536 |
-|  | | SIO:001079 |
 | **Comments:** | | Consider renaming as genotypic entity |
+| **Exact Mappings:** | | GENO:0000536 |
+|  | | SIO:001079 |
 

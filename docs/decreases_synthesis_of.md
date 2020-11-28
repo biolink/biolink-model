@@ -33,7 +33,7 @@ URI: [biolink:decreases_synthesis_of](https://w3id.org/biolink/vocab/decreases_s
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | GAMMA:inhibition_of_synthesis |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | CTD:decreases_synthesis_of |
+|  | | GAMMA:inhibition_of_synthesis |
 

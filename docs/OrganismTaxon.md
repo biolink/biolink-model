@@ -12,12 +12,6 @@ A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens),
 
 URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
-WIKIDATA:Q16521
-{: .mapping-label }
-
-NCBITaxon:1
-{: .mapping-label }
-
 
 ---
 
@@ -42,7 +36,7 @@ NCBITaxon:1
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -83,6 +77,34 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA:Q16521 |
+| **Exact Mappings:** | | WIKIDATA:Q16521 |
 |  | | NCBITaxon:1 |
+| **Narrow Mappings:** | | UMLSSC:T005 |
+|  | | UMLSST:virs |
+|  | | UMLSSC:T007 |
+|  | | UMLSST:bact |
+|  | | UMLSSC:T194 |
+|  | | UMLSST:arch |
+|  | | UMLSSC:T204 |
+|  | | UMLSST:euka |
+|  | | UMLSSC:T002 |
+|  | | UMLSST:plnt |
+|  | | UMLSSC:T004 |
+|  | | UMLSST:fngs |
+|  | | UMLSSC:T008 |
+|  | | UMLSST:anim |
+|  | | UMLSSC:T010 |
+|  | | UMLSST:vtbt |
+|  | | UMLSSC:T011 |
+|  | | UMLSST:amph |
+|  | | UMLSSC:T012 |
+|  | | UMLSST:bird |
+|  | | UMLSSC:T013 |
+|  | | UMLSST:fish |
+|  | | UMLSSC:T014 |
+|  | | UMLSST:rept |
+|  | | UMLSSC:T015 |
+|  | | UMLSST:mamm |
+|  | | UMLSSC:T016 |
+|  | | UMLSST:humn |
 

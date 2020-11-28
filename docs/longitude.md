@@ -32,5 +32,5 @@ URI: [biolink:longitude](https://w3id.org/biolink/vocab/longitude)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | wgs:long |
+| **Exact Mappings:** | | wgs:long |
 

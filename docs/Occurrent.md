@@ -12,26 +12,25 @@ A processual entity
 
 URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 
-BFO:0000003
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure]uses%20-.-%3E[Occurrent],[Phenomenon]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[Occurrent],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[ActivityAndBehavior]uses%20-.-%3E[Occurrent],[Procedure],[Phenomenon],[NamedThing],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Phenomenon]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[Occurrent],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[Occurrent]%5E-[ActivityAndBehavior],[Phenomenon],[NamedThing],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
 
 ---
 
+
+## Children
+
+ * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
 ## Mixin for
 
- * [ActivityAndBehavior](ActivityAndBehavior.md) (mixin)  - Activity or behavior of any independent integral living, organization or mechanical actor in the world
  * [BiologicalProcess](BiologicalProcess.md) (mixin)  - One or more causally connected executions of molecular functions
  * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) (mixin)  - Either an individual molecular activity, or a collection of causally connected molecular activities
  * [EnvironmentalProcess](EnvironmentalProcess.md) (mixin) 
  * [MolecularActivity](MolecularActivity.md) (mixin)  - An execution of a molecular function carried out by a gene product or macromolecular complex.
  * [Phenomenon](Phenomenon.md) (mixin)  - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
- * [Procedure](Procedure.md) (mixin)  - A series of actions conducted in a certain order or manner
 
 ## Referenced by class
 
@@ -52,5 +51,5 @@ BFO:0000003
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | BFO:0000003 |
+| **Exact Mappings:** | | BFO:0000003 |
 

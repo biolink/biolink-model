@@ -35,13 +35,6 @@ URI: [biolink:DataSet](https://w3id.org/biolink/vocab/DataSet)
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from information content entity:
 
  * [license](license.md)  <sub>OPT</sub>
@@ -53,6 +46,13 @@ URI: [biolink:DataSet](https://w3id.org/biolink/vocab/DataSet)
  * [creation date](creation_date.md)  <sub>OPT</sub>
     * Description: date on which thing was created. This can be applied to nodes or edges
     * range: [Date](types/Date.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 

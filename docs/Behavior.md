@@ -1,31 +1,38 @@
 ---
 parent: Entities
-title: biolink:Device
+title: biolink:Behavior
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Device
+# Class: Behavior
 
 
-A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 
-URI: [biolink:Device](https://w3id.org/biolink/vocab/Device)
+
+URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]%5E-[Device%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[NamedThing],[BiologicalProcess],[BiologicalProcess]%5E-[Behavior%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F],[Attribute])
 
 ---
 
 
 ## Parents
 
- *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+ *  is_a: [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
 
 ## Attributes
 
+
+### Inherited from biological process or activity:
+
+ * [enabled by](enabled_by.md)  <sub>0..*</sub>
+    * Description: holds between a process and a physical entity, where the physical entity executes the process
+    * range: [PhysicalEntity](PhysicalEntity.md)
+    * in subsets: (translator_minimal)
 
 ### Inherited from material sample:
 
@@ -68,11 +75,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Narrow Mappings:** | | UMLSSG:DEVI |
-|  | | UMLSSC:T074 |
-|  | | UMLSST:medd |
-|  | | UMLSSC:T075 |
-|  | | UMLSST:resd |
-|  | | UMLSSC:T203 |
-|  | | UMLSST:drdd |
+| **Exact Mappings:** | | GO:0007610 |
+|  | | UMLSSC:T053 |
+|  | | UMLSST:bhvr |
+| **Narrow Mappings:** | | UMLSSC:T041 |
+|  | | UMLSST:menp |
+|  | | UMLSSC:T054 |
+|  | | UMLSST:socb |
+|  | | UMLSSC:T055 |
+|  | | UMLSST:inbe |
 

@@ -12,13 +12,10 @@ A chemical substance (often a mixture) processed for consumption for nutritional
 
 URI: [biolink:ProcessedMaterial](https://w3id.org/biolink/vocab/ProcessedMaterial)
 
-OBI:0000047
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalSubstance]%5E-[ProcessedMaterial%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F],[OrganismTaxon],[ChemicalSubstance],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[ChemicalSubstance]%5E-[ProcessedMaterial],[OrganismTaxon],[Mixture],[ChemicalSubstance],[Attribute])
 
 ---
 
@@ -27,15 +24,25 @@ OBI:0000047
 
  *  is_a: [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
 
+## Uses Mixins
+
+ *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
+
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
+
+### Inherited from mixture:
+
+ * [has constituent](has_constituent.md)  <sub>0..*</sub>
+    * Description: one or more chemical substances within a mixture
+    * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ### Inherited from named thing:
 
@@ -78,5 +85,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | OBI:0000047 |
+| **Exact Mappings:** | | OBI:0000047 |
 

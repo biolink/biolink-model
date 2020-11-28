@@ -12,9 +12,6 @@ layout: default
 
 URI: [biolink:GeneToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation)
 
-WBVocab:Gene-Phenotype-Association
-{: .mapping-label }
-
 
 ---
 
@@ -79,13 +76,6 @@ WBVocab:Gene-Phenotype-Association
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from entity to feature or disease qualifiers mixin:
 
  * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
@@ -100,6 +90,13 @@ WBVocab:Gene-Phenotype-Association
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from thing to phenotypic feature association mixin:
 
@@ -127,5 +124,5 @@ WBVocab:Gene-Phenotype-Association
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WBVocab:Gene-Phenotype-Association |
+| **Exact Mappings:** | | WBVocab:Gene-Phenotype-Association |
 

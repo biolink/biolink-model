@@ -12,9 +12,6 @@ layout: default
 
 URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDiseaseAssociation)
 
-SIO:000983
-{: .mapping-label }
-
 
 ---
 
@@ -83,13 +80,6 @@ SIO:000983
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from entity to feature or disease qualifiers mixin:
 
  * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
@@ -105,6 +95,13 @@ SIO:000983
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)
 
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
+
 ### Domain for slot:
 
  * [gene to disease association➞subject](gene_to_disease_association_subject.md)  <sub>REQ</sub>
@@ -115,6 +112,6 @@ SIO:000983
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SIO:000983 |
 | **Comments:** | | NCIT:R176 refers to the inverse relationship |
+| **Exact Mappings:** | | SIO:000983 |
 

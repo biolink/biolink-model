@@ -12,57 +12,6 @@ layout: default
 
 URI: [biolink:PhysiologicalProcess](https://w3id.org/biolink/vocab/PhysiologicalProcess)
 
-UMLSSG:PHYS
-{: .mapping-label }
-
-UMLSSC:T032
-{: .mapping-label }
-
-UMLSST:orga
-{: .mapping-label }
-
-UMLSSC:T039
-{: .mapping-label }
-
-UMLSST:phsf
-{: .mapping-label }
-
-UMLSSC:T040
-{: .mapping-label }
-
-UMLSST:orgf
-{: .mapping-label }
-
-UMLSSC:T041
-{: .mapping-label }
-
-UMLSST:menp
-{: .mapping-label }
-
-UMLSSC:T042
-{: .mapping-label }
-
-UMLSST:ortf
-{: .mapping-label }
-
-UMLSSC:T043
-{: .mapping-label }
-
-UMLSST:celf
-{: .mapping-label }
-
-UMLSSC:T045
-{: .mapping-label }
-
-UMLSST:genf
-{: .mapping-label }
-
-UMLSSC:T201
-{: .mapping-label }
-
-UMLSST:clna
-{: .mapping-label }
-
 
 ---
 
@@ -83,19 +32,19 @@ UMLSST:clna
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from biological process or activity:
 
  * [enabled by](enabled_by.md)  <sub>0..*</sub>
     * Description: holds between a process and a physical entity, where the physical entity executes the process
     * range: [PhysicalEntity](PhysicalEntity.md)
     * in subsets: (translator_minimal)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -132,21 +81,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | physiology |
-| **Mappings:** | | UMLSSG:PHYS |
-|  | | UMLSSC:T032 |
-|  | | UMLSST:orga |
-|  | | UMLSSC:T039 |
+| **Exact Mappings:** | | UMLSSC:T039 |
 |  | | UMLSST:phsf |
-|  | | UMLSSC:T040 |
+|  | | WIKIDATA:Q30892994 |
+| **Close Mappings:** | | UMLSSG:PHYS |
+| **Narrow Mappings:** | | UMLSSC:T040 |
 |  | | UMLSST:orgf |
-|  | | UMLSSC:T041 |
-|  | | UMLSST:menp |
 |  | | UMLSSC:T042 |
 |  | | UMLSST:ortf |
 |  | | UMLSSC:T043 |
 |  | | UMLSST:celf |
 |  | | UMLSSC:T045 |
 |  | | UMLSST:genf |
-|  | | UMLSSC:T201 |
-|  | | UMLSST:clna |
 

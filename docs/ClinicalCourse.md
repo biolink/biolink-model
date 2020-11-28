@@ -12,24 +12,21 @@ The course a disease typically takes from its onset, progression in time, and ev
 
 URI: [biolink:ClinicalCourse](https://w3id.org/biolink/vocab/ClinicalCourse)
 
-HP:0031797
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[Onset],[NamedThing],[ClinicalCourse%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F]%5E-[Onset],[Attribute]%5E-[ClinicalCourse],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[Onset],[NamedThing],[ClinicalCourse%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F]%5E-[Onset],[ClinicalAttribute]%5E-[ClinicalCourse],[ClinicalAttribute])
 
 ---
 
 
 ## Parents
 
- *  is_a: [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+ *  is_a: [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
 
 ## Children
 
- * [Onset](Onset.md) - The age group in which manifestations appear
+ * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
 
 ## Referenced by class
 
@@ -74,5 +71,5 @@ HP:0031797
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | HP:0031797 |
+| **Exact Mappings:** | | HP:0031797 |
 

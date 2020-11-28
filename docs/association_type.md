@@ -86,5 +86,5 @@ URI: [biolink:association_type](https://w3id.org/biolink/vocab/association_type)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | rdf:type |
+| **Exact Mappings:** | | rdf:type |
 

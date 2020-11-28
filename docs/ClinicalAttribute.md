@@ -1,21 +1,21 @@
 ---
 parent: Other Classes
-title: biolink:Inheritance
+title: biolink:ClinicalAttribute
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Inheritance
+# Class: ClinicalAttribute
 
 
-The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+Attributes relating to a clinical manifestation
 
-URI: [biolink:Inheritance](https://w3id.org/biolink/vocab/Inheritance)
+URI: [biolink:ClinicalAttribute](https://w3id.org/biolink/vocab/ClinicalAttribute)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[Attribute]%5E-[Inheritance%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[ClinicalModifier],[ClinicalCourse],[ClinicalAttribute%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F]%5E-[ClinicalModifier],[ClinicalAttribute]%5E-[ClinicalCourse],[Attribute]%5E-[ClinicalAttribute],[Attribute])
 
 ---
 
@@ -23,6 +23,14 @@ URI: [biolink:Inheritance](https://w3id.org/biolink/vocab/Inheritance)
 ## Parents
 
  *  is_a: [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+
+## Children
+
+ * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
+ * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
+
+## Referenced by class
+
 
 ## Attributes
 
@@ -64,7 +72,6 @@ URI: [biolink:Inheritance](https://w3id.org/biolink/vocab/Inheritance)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | HP:0000005 |
-|  | | GENO:0000141 |
-|  | | NCIT:C45827 |
+| **Exact Mappings:** | | UMLSSC:T201 |
+|  | | UMLSST:clna |
 

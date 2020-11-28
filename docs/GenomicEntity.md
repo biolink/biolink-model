@@ -12,24 +12,6 @@ an entity that can either be directly located on a genome (gene, transcript, exo
 
 URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
-SO:0000110
-{: .mapping-label }
-
-GENO:0000897
-{: .mapping-label }
-
-UMLSSC:T028
-{: .mapping-label }
-
-UMLSST:gngm
-{: .mapping-label }
-
-UMLSSC:T086
-{: .mapping-label }
-
-UMLSST:nusq
-{: .mapping-label }
-
 
 ---
 
@@ -77,7 +59,7 @@ UMLSST:nusq
     * Description: connects a genomic feature to its sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -126,9 +108,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | sequence feature |
-| **Mappings:** | | SO:0000110 |
+| **Exact Mappings:** | | UMLSSG:GENE |
+|  | | SO:0000110 |
 |  | | GENO:0000897 |
-|  | | UMLSSC:T028 |
+| **Narrow Mappings:** | | UMLSSC:T028 |
 |  | | UMLSST:gngm |
 |  | | UMLSSC:T086 |
 |  | | UMLSST:nusq |

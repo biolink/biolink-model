@@ -31,6 +31,6 @@ URI: [biolink:symbol](https://w3id.org/biolink/vocab/symbol)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | alliancegenome:symbol |
+| **Exact Mappings:** | | alliancegenome:symbol |
 |  | | gpi:DB_Object_Symbol |
 

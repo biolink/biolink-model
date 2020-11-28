@@ -1,21 +1,21 @@
 ---
 parent: Other Classes
-title: biolink:Inheritance
+title: biolink:OrganismAttribute
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Inheritance
+# Class: OrganismAttribute
 
 
-The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+describes a characteristic of an organismal entity.
 
-URI: [biolink:Inheritance](https://w3id.org/biolink/vocab/Inheritance)
+URI: [biolink:OrganismAttribute](https://w3id.org/biolink/vocab/OrganismAttribute)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[Attribute]%5E-[Inheritance%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[Attribute]%5E-[OrganismAttribute%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[OntologyClass],[NamedThing],[Attribute])
 
 ---
 
@@ -64,7 +64,6 @@ URI: [biolink:Inheritance](https://w3id.org/biolink/vocab/Inheritance)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | HP:0000005 |
-|  | | GENO:0000141 |
-|  | | NCIT:C45827 |
+| **Exact Mappings:** | | UMLSSC:T032 |
+|  | | UMLSST:orga |
 

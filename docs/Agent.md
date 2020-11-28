@@ -61,7 +61,7 @@ URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
     * Description: it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
     * range: [LabelType](types/LabelType.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -126,4 +126,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | UMLSST:pros |
 |  | | UMLSSC:T095 |
 |  | | UMLSST:shro |
+|  | | UMLSSC:T096 |
+|  | | UMLSST:grup |
+|  | | UMLSSC:T097 |
+|  | | UMLSST:prog |
 

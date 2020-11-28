@@ -30,9 +30,9 @@ None ->  <sub>OPT</sub> [LabelType](types/LabelType.md)
 
 ## Used by
 
- * [ActivityAndBehavior](ActivityAndBehavior.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [AnatomicalEntity](AnatomicalEntity.md)
+ * [Behavior](Behavior.md)
  * [BiologicalEntity](BiologicalEntity.md)
  * [BiologicalProcess](BiologicalProcess.md)
  * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)

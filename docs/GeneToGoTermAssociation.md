@@ -12,9 +12,6 @@ layout: default
 
 URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTermAssociation)
 
-WBVocab:Gene-GO-Association
-{: .mapping-label }
-
 
 ---
 
@@ -78,7 +75,7 @@ WBVocab:Gene-GO-Association
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -101,5 +98,5 @@ WBVocab:Gene-GO-Association
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | functional association |
-| **Mappings:** | | WBVocab:Gene-GO-Association |
+| **Exact Mappings:** | | WBVocab:Gene-GO-Association |
 

@@ -12,12 +12,6 @@ A chemical exposure is an intake of a particular chemical substance
 
 URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 
-ECTO:9000000
-{: .mapping-label }
-
-SIO:001399
-{: .mapping-label }
-
 
 ---
 
@@ -40,7 +34,7 @@ SIO:001399
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -81,6 +75,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ECTO:9000000 |
+| **Exact Mappings:** | | ECTO:9000000 |
 |  | | SIO:001399 |
 

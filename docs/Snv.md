@@ -12,9 +12,6 @@ SNVs are single nucleotide positions in genomic DNA at which different sequence 
 
 URI: [biolink:Snv](https://w3id.org/biolink/vocab/Snv)
 
-SO:0001483
-{: .mapping-label }
-
 
 ---
 
@@ -30,7 +27,7 @@ SO:0001483
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -92,5 +89,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | single nucleotide variant |
-| **Mappings:** | | SO:0001483 |
+|  | | single nucleotide polymorphism |
+|  | | snp |
+| **Exact Mappings:** | | SO:0001483 |
 

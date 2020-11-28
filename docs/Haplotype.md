@@ -12,12 +12,6 @@ A set of zero or more Alleles on a single instance of a Sequence[VMC]
 
 URI: [biolink:Haplotype](https://w3id.org/biolink/vocab/Haplotype)
 
-GENO:0000871
-{: .mapping-label }
-
-SO:0001024
-{: .mapping-label }
-
 
 ---
 
@@ -33,18 +27,18 @@ SO:0001024
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from genomic entity:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
     * Description: connects a genomic feature to its sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -87,6 +81,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | GENO:0000871 |
+| **Exact Mappings:** | | GENO:0000871 |
 |  | | SO:0001024 |
+|  | | VMC:Haplotype |
 

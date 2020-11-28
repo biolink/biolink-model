@@ -12,12 +12,6 @@ layout: default
 
 URI: [biolink:CodingSequence](https://w3id.org/biolink/vocab/CodingSequence)
 
-SO:0000316
-{: .mapping-label }
-
-SIO:001390
-{: .mapping-label }
-
 
 ---
 
@@ -36,18 +30,18 @@ SIO:001390
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from genomic entity:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
     * Description: connects a genomic feature to its sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -90,6 +84,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SO:0000316 |
+| **Exact Mappings:** | | SO:0000316 |
 |  | | SIO:001390 |
 

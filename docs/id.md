@@ -30,9 +30,9 @@ URI: [biolink:id](https://w3id.org/biolink/vocab/id)
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
- * [ActivityAndBehavior](ActivityAndBehavior.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [AnatomicalEntity](AnatomicalEntity.md)
+ * [Behavior](Behavior.md)
  * [BiologicalEntity](BiologicalEntity.md)
  * [BiologicalProcess](BiologicalProcess.md)
  * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
@@ -112,8 +112,8 @@ URI: [biolink:id](https://w3id.org/biolink/vocab/id)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | alliancegenome:primaryId |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | alliancegenome:primaryId |
 |  | | gff3:ID |
 |  | | gpi:DB_Object_ID |
-| **In Subsets:** | | translator_minimal |
 

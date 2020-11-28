@@ -12,15 +12,6 @@ A genome is the sum of genetic material within a cell or virion.
 
 URI: [biolink:Genome](https://w3id.org/biolink/vocab/Genome)
 
-SO:0001026
-{: .mapping-label }
-
-SIO:000984
-{: .mapping-label }
-
-WIKIDATA:Q7020
-{: .mapping-label }
-
 
 ---
 
@@ -36,18 +27,18 @@ WIKIDATA:Q7020
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from genomic entity:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
     * Description: connects a genomic feature to its sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -90,7 +81,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SO:0001026 |
+| **Exact Mappings:** | | SO:0001026 |
 |  | | SIO:000984 |
 |  | | WIKIDATA:Q7020 |
 

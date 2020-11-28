@@ -33,6 +33,6 @@ URI: [biolink:has_numeric_value](https://w3id.org/biolink/vocab/has_numeric_valu
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | qud:quantityValue |
 | **In Subsets:** | | samples |
+| **Exact Mappings:** | | qud:quantityValue |
 

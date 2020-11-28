@@ -12,81 +12,6 @@ layout: default
 
 URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 
-MONDO:0000001
-{: .mapping-label }
-
-DOID:4
-{: .mapping-label }
-
-WIKIDATA:Q12136
-{: .mapping-label }
-
-SIO:010299
-{: .mapping-label }
-
-UMLSSG:DISO
-{: .mapping-label }
-
-UMLSSC:T019
-{: .mapping-label }
-
-UMLSST:cgab
-{: .mapping-label }
-
-UMLSSC:T020
-{: .mapping-label }
-
-UMLSST:acab
-{: .mapping-label }
-
-UMLSSC:T037
-{: .mapping-label }
-
-UMLSST:inpo
-{: .mapping-label }
-
-UMLSSC:T046
-{: .mapping-label }
-
-UMLSST:patf
-{: .mapping-label }
-
-UMLSSC:T047
-{: .mapping-label }
-
-UMLSST:dsyn
-{: .mapping-label }
-
-UMLSSC:T048
-{: .mapping-label }
-
-UMLSST:mobd
-{: .mapping-label }
-
-UMLSSC:T049
-{: .mapping-label }
-
-UMLSST:comd
-{: .mapping-label }
-
-UMLSSC:T184
-{: .mapping-label }
-
-UMLSST:sosy
-{: .mapping-label }
-
-UMLSSC:T190
-{: .mapping-label }
-
-UMLSST:anab
-{: .mapping-label }
-
-UMLSSC:T191
-{: .mapping-label }
-
-UMLSST:neop
-{: .mapping-label }
-
 
 ---
 
@@ -128,7 +53,7 @@ UMLSST:neop
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -179,12 +104,14 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Aliases:** | | condition |
 |  | | disorder |
 |  | | medical condition |
-| **Mappings:** | | MONDO:0000001 |
+| **Exact Mappings:** | | MONDO:0000001 |
 |  | | DOID:4 |
 |  | | WIKIDATA:Q12136 |
 |  | | SIO:010299 |
 |  | | UMLSSG:DISO |
-|  | | UMLSSC:T019 |
+|  | | UMLSSC:T047 |
+|  | | UMLSST:dsyn |
+| **Narrow Mappings:** | | UMLSSC:T019 |
 |  | | UMLSST:cgab |
 |  | | UMLSSC:T020 |
 |  | | UMLSST:acab |
@@ -192,14 +119,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | UMLSST:inpo |
 |  | | UMLSSC:T046 |
 |  | | UMLSST:patf |
-|  | | UMLSSC:T047 |
-|  | | UMLSST:dsyn |
 |  | | UMLSSC:T048 |
 |  | | UMLSST:mobd |
 |  | | UMLSSC:T049 |
 |  | | UMLSST:comd |
-|  | | UMLSSC:T184 |
-|  | | UMLSST:sosy |
 |  | | UMLSSC:T190 |
 |  | | UMLSST:anab |
 |  | | UMLSSC:T191 |

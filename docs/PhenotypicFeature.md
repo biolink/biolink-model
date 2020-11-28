@@ -12,15 +12,6 @@ layout: default
 
 URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
 
-UPHENO:0001001
-{: .mapping-label }
-
-SIO:010056
-{: .mapping-label }
-
-WIKIDATA:Q169872
-{: .mapping-label }
-
 
 ---
 
@@ -57,7 +48,7 @@ WIKIDATA:Q169872
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -110,7 +101,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | phenotype |
 |  | | trait |
 |  | | endophenotype |
-| **Mappings:** | | UPHENO:0001001 |
+| **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |
+|  | | WIKIDATA:Q104053 |
+| **Narrow Mappings:** | | UMLSSC:T184 |
+|  | | UMLSST:sosy |
 |  | | WIKIDATA:Q169872 |
+|  | | WIKIDATA:Q25203551 |
+|  | | HP:0000118 |
 

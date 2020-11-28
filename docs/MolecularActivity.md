@@ -12,15 +12,6 @@ An execution of a molecular function carried out by a gene product or macromolec
 
 URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivity)
 
-GO:0003674
-{: .mapping-label }
-
-UMLSSC:T044
-{: .mapping-label }
-
-UMLSST:moft
-{: .mapping-label }
-
 
 ---
 
@@ -65,7 +56,7 @@ UMLSST:moft
     * Description: A chemical entity that is the output for the reaction
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -121,7 +112,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Aliases:** | | molecular function |
 |  | | molecular event |
 |  | | reaction |
-| **Mappings:** | | GO:0003674 |
+| **Exact Mappings:** | | GO:0003674 |
 |  | | UMLSSC:T044 |
 |  | | UMLSST:moft |
 

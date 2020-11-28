@@ -12,12 +12,6 @@ Either one of a disease or an individual phenotypic feature. Some knowledge reso
 
 URI: [biolink:DiseaseOrPhenotypicFeature](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature)
 
-UMLSSC:T033
-{: .mapping-label }
-
-UMLSST:fndg
-{: .mapping-label }
-
 
 ---
 
@@ -56,7 +50,7 @@ UMLSST:fndg
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -105,6 +99,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | phenome |
-| **Mappings:** | | UMLSSC:T033 |
+| **Narrow Mappings:** | | UMLSSC:T033 |
 |  | | UMLSST:fndg |
 

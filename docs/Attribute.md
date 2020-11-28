@@ -15,7 +15,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[ResourceMixin],[QuantityValue],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalModifier],[ClinicalCourse],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[AttributeMixin]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]uses%20-.-%3E[ResourceMixin],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalModifier],[Attribute]%5E-[ClinicalCourse],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[AttributeMixin],[AbstractEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[ResourceMixin],[QuantityValue],[OrganismalEntity],[OrganismAttribute],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalAttribute],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[AttributeMixin]++-%20has%20attribute%200..%2A%3E[Attribute],[MaterialSample]++-%20has%20attribute(i)%200..%2A%3E[Attribute],[OrganismalEntity]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]uses%20-.-%3E[ResourceMixin],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[OrganismAttribute],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalAttribute],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[MaterialSample],[AttributeMixin],[AbstractEntity])
 
 ---
 
@@ -38,16 +38,17 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 ## Children
 
  * [BiologicalSex](BiologicalSex.md)
- * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
- * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, and other aspects
+ * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
  * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
- * [Inheritance](Inheritance.md) - The pattern in which a particular genetic trait or disorder is passed from one generation to the next
+ * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+ * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
  * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
  * [Zygosity](Zygosity.md)
 
 ## Referenced by class
 
  *  **None** *[has attribute](has_attribute.md)*  <sub>0..*</sub>  **[Attribute](Attribute.md)**
+ *  **[OrganismalEntity](OrganismalEntity.md)** *[organismal entity➞has attribute](organismal_entity_has_attribute.md)*  <sub>0..*</sub>  **[Attribute](Attribute.md)**
 
 ## Attributes
 
@@ -109,4 +110,5 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 | --- | --- | --- |
 | **In Subsets:** | | samples |
 | **Exact Mappings:** | | SIO:000614 |
+| **Narrow Mappings:** | | PATO:0000001 |
 

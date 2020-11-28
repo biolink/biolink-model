@@ -12,9 +12,6 @@ An interaction between a chemical entity and a biological process or pathway
 
 URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation)
 
-SIO:001250
-{: .mapping-label }
-
 
 ---
 
@@ -77,7 +74,7 @@ SIO:001250
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -94,5 +91,5 @@ SIO:001250
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SIO:001250 |
+| **Exact Mappings:** | | SIO:001250 |
 

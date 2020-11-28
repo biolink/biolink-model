@@ -12,9 +12,6 @@ layout: default
 
 URI: [biolink:EnvironmentalProcess](https://w3id.org/biolink/vocab/EnvironmentalProcess)
 
-ENVO:02500000
-{: .mapping-label }
-
 
 ---
 
@@ -34,7 +31,7 @@ ENVO:02500000
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -75,5 +72,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ENVO:02500000 |
+| **Exact Mappings:** | | ENVO:02500000 |
 

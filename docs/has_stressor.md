@@ -31,5 +31,5 @@ URI: [biolink:has_stressor](https://w3id.org/biolink/vocab/has_stressor)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | has stimulus |
-| **Mappings:** | | ExO:0000000 |
+| **Exact Mappings:** | | ExO:0000000 |
 

@@ -32,5 +32,5 @@ URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | wgs:lat |
+| **Exact Mappings:** | | wgs:lat |
 

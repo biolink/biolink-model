@@ -15,7 +15,7 @@ URI: [biolink:Mixture](https://w3id.org/biolink/vocab/Mixture)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalSubstance]%3Chas%20constituent%200..%2A-%20[Mixture],[Food]uses%20-.-%3E[Mixture],[Drug]uses%20-.-%3E[Mixture],[Food],[Drug],[ChemicalSubstance])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalSubstance]%3Chas%20constituent%200..%2A-%20[Mixture],[ProcessedMaterial]uses%20-.-%3E[Mixture],[Food]uses%20-.-%3E[Mixture],[Drug]uses%20-.-%3E[Mixture],[ProcessedMaterial],[Food],[Drug],[ChemicalSubstance])
 
 ---
 
@@ -24,6 +24,7 @@ URI: [biolink:Mixture](https://w3id.org/biolink/vocab/Mixture)
 
  * [Drug](Drug.md) (mixin)  - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
  * [Food](Food.md) (mixin)  - A substance consumed by a living organism as a source of nutrition
+ * [ProcessedMaterial](ProcessedMaterial.md) (mixin)  - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
 
 ## Referenced by class
 

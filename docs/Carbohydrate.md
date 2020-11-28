@@ -12,12 +12,6 @@ layout: default
 
 URI: [biolink:Carbohydrate](https://w3id.org/biolink/vocab/Carbohydrate)
 
-UMLSSC:T088
-{: .mapping-label }
-
-UMLSST:crbs
-{: .mapping-label }
-
 
 ---
 
@@ -37,7 +31,7 @@ UMLSST:crbs
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -85,6 +79,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | UMLSSC:T088 |
+| **Exact Mappings:** | | UMLSSC:T088 |
 |  | | UMLSST:crbs |
 

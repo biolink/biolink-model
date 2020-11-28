@@ -12,24 +12,6 @@ An allele that varies in its sequence from what is considered the reference alle
 
 URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
-GENO:0000002
-{: .mapping-label }
-
-WIKIDATA:Q15304597
-{: .mapping-label }
-
-SIO:010277
-{: .mapping-label }
-
-VMC:Allele
-{: .mapping-label }
-
-SO:0001059
-{: .mapping-label }
-
-SO:0001060
-{: .mapping-label }
-
 
 ---
 
@@ -87,7 +69,7 @@ SO:0001060
     * Example:    
     * Example:    
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -150,13 +132,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | allele |
 | **Local names:** | | allele (agr) |
-| **Mappings:** | | GENO:0000002 |
+| **Alt Descriptions:** | | An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition (AGR) |
+|  | | A contiguous change at a Location (VMC) |
+| **Comments:** | | This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743) |
+| **Exact Mappings:** | | GENO:0000002 |
 |  | | WIKIDATA:Q15304597 |
 |  | | SIO:010277 |
 |  | | VMC:Allele |
 |  | | SO:0001059 |
-|  | | SO:0001060 |
-| **Alt Descriptions:** | | An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition (AGR) |
-|  | | A contiguous change at a Location (VMC) |
-| **Comments:** | | This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743) |
+| **Broad Mappings:** | | SO:0001060 |
 

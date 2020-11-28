@@ -12,9 +12,6 @@ layout: default
 
 URI: [biolink:Zygosity](https://w3id.org/biolink/vocab/Zygosity)
 
-GENO:0000133
-{: .mapping-label }
-
 
 ---
 
@@ -71,5 +68,5 @@ GENO:0000133
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | GENO:0000133 |
+| **Exact Mappings:** | | GENO:0000133 |
 

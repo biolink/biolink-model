@@ -12,15 +12,6 @@ any grouping of multiple genes or gene products related by common descent
 
 URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
-SIO:001380
-{: .mapping-label }
-
-NCIT:C20130
-{: .mapping-label }
-
-WIKIDATA:Q417841
-{: .mapping-label }
-
 
 ---
 
@@ -45,7 +36,7 @@ WIKIDATA:Q417841
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -93,7 +84,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SIO:001380 |
+| **Exact Mappings:** | | NCIT:C26004 |
+|  | | WIKIDATA:Q2278983 |
+| **Narrow Mappings:** | | SIO:001380 |
 |  | | NCIT:C20130 |
 |  | | WIKIDATA:Q417841 |
 

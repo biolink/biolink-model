@@ -48,7 +48,7 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
     * Description: one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -116,4 +116,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | CHEBI:23888 |
 |  | | UMLSSC:T200 |
 |  | | UMLSST:clnd |
+| **Narrow Mappings:** | | UMLSSC:T195 |
+|  | | UMLSST:antb |
+| **Broad Mappings:** | | UMLSSC:T121 |
+|  | | UMLSST:phsu |
 

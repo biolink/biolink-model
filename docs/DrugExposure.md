@@ -12,12 +12,6 @@ A drug exposure is an intake of a particular chemical substance
 
 URI: [biolink:DrugExposure](https://w3id.org/biolink/vocab/DrugExposure)
 
-ECTO:0000509
-{: .mapping-label }
-
-SIO:001005
-{: .mapping-label }
-
 
 ---
 
@@ -42,7 +36,7 @@ SIO:001005
  * [drug exposure➞has drug](drug_exposure_has_drug.md)  <sub>1..*</sub>
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -90,6 +84,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | drug intake |
 |  | | drug dose |
-| **Mappings:** | | ECTO:0000509 |
-|  | | SIO:001005 |
+| **Exact Mappings:** | | ECTO:0000509 |
+| **Broad Mappings:** | | SIO:001005 |
 

@@ -44,7 +44,7 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
     * Description: one or more chemical substance which are growth factors for a living organism
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -106,4 +106,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Exact Mappings:** | | UMLSSC:T168 |
 |  | | UMLSST:food |
+| **Narrow Mappings:** | | UMLSSC:T127 |
+|  | | UMLSST:vita |
 

@@ -8,15 +8,9 @@ layout: default
 # Class: Treatment
 
 
-A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
 
 URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
-
-OGMS:0000090
-{: .mapping-label }
-
-SIO:001398
-{: .mapping-label }
 
 
 ---
@@ -43,7 +37,7 @@ SIO:001398
  * [treatment➞has part](treatment_has_part.md)  <sub>1..*</sub>
     * range: [DrugExposure](DrugExposure.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -90,6 +84,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | medical action |
-| **Mappings:** | | OGMS:0000090 |
+|  | | medical intervention |
+| **Exact Mappings:** | | OGMS:0000090 |
 |  | | SIO:001398 |
 

@@ -12,18 +12,6 @@ layout: default
 
 URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
 
-GO:0007165
-{: .mapping-label }
-
-SIO:010526
-{: .mapping-label }
-
-PW:0000001
-{: .mapping-label }
-
-WIKIDATA:Q4915012
-{: .mapping-label }
-
 
 ---
 
@@ -52,19 +40,19 @@ WIKIDATA:Q4915012
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from biological process or activity:
 
  * [enabled by](enabled_by.md)  <sub>0..*</sub>
     * Description: holds between a process and a physical entity, where the physical entity executes the process
     * range: [PhysicalEntity](PhysicalEntity.md)
     * in subsets: (translator_minimal)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -100,8 +88,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | GO:0007165 |
-|  | | SIO:010526 |
-|  | | PW:0000001 |
+| **Exact Mappings:** | | PW:0000001 |
 |  | | WIKIDATA:Q4915012 |
+| **Narrow Mappings:** | | SIO:010526 |
+|  | | GO:0007165 |
 

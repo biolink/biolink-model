@@ -12,9 +12,6 @@ The functional molecular product of a single gene. Gene products are either prot
 
 URI: [biolink:GeneProduct](https://w3id.org/biolink/vocab/GeneProduct)
 
-WIKIDATA:Q424689
-{: .mapping-label }
-
 
 ---
 
@@ -47,13 +44,6 @@ WIKIDATA:Q424689
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from genomic entity:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
@@ -65,6 +55,13 @@ WIKIDATA:Q424689
  * [macromolecular machine➞name](macromolecular_machine_name.md)  <sub>OPT</sub>
     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -107,5 +104,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA:Q424689 |
+| **Exact Mappings:** | | WIKIDATA:Q424689 |
+|  | | GENO:0000907 |
+|  | | NCIT:C26548 |
 

@@ -12,13 +12,10 @@ A named entity that is either a part of an organism, a whole organism, populatio
 
 URI: [biolink:OrganismalEntity](https://w3id.org/biolink/vocab/OrganismalEntity)
 
-WIKIDATA:Q7239
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PopulationOfIndividualOrganisms],[OrganismalEntityAsAModelOfDiseaseAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[OrganismalEntity%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity]%5E-[LifeStage],[OrganismalEntity]%5E-[IndividualOrganism],[OrganismalEntity]%5E-[CellLine],[OrganismalEntity]%5E-[AnatomicalEntity],[BiologicalEntity]%5E-[OrganismalEntity],[LifeStage],[IndividualOrganism],[ExposureEvent],[CellLine],[BiologicalEntity],[Attribute],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PopulationOfIndividualOrganisms],[OrganismalEntityAsAModelOfDiseaseAssociation],[Attribute]%3Chas%20attribute%200..%2A-++[OrganismalEntity%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F],[OrganismalEntityAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[OrganismalEntity],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity]%5E-[LifeStage],[OrganismalEntity]%5E-[IndividualOrganism],[OrganismalEntity]%5E-[CellLine],[OrganismalEntity]%5E-[AnatomicalEntity],[BiologicalEntity]%5E-[OrganismalEntity],[LifeStage],[IndividualOrganism],[ExposureEvent],[CellLine],[BiologicalEntity],[Attribute],[AnatomicalEntity])
 
 ---
 
@@ -43,12 +40,11 @@ WIKIDATA:Q7239
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Own
 
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
+ * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
+    * Description: may be an organism attribute
     * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -80,9 +76,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
 
+### Domain for slot:
+
+ * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
+    * Description: may be an organism attribute
+    * range: [Attribute](Attribute.md)
+
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | WIKIDATA:Q7239 |
+| **Exact Mappings:** | | WIKIDATA:Q7239 |
+|  | | UMLSSG:LIVB |
 

@@ -12,15 +12,6 @@ a location that can be described in lat/long coordinates
 
 URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocation)
 
-UMLSSG:GEOG
-{: .mapping-label }
-
-UMLSST:geoa
-{: .mapping-label }
-
-UMLSSC:T083
-{: .mapping-label }
-
 
 ---
 
@@ -52,7 +43,7 @@ UMLSSC:T083
     * Description: longitude
     * range: [Float](types/Float.md)
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -93,7 +84,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | UMLSSG:GEOG |
+| **Exact Mappings:** | | UMLSSG:GEOG |
 |  | | UMLSST:geoa |
 |  | | UMLSSC:T083 |
 

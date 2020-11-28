@@ -12,15 +12,6 @@ A region of the transcript sequence within a gene which is not removed from the 
 
 URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 
-SO:0000147
-{: .mapping-label }
-
-SIO:010445
-{: .mapping-label }
-
-WIKIDATA:Q373027
-{: .mapping-label }
-
 
 ---
 
@@ -40,18 +31,18 @@ WIKIDATA:Q373027
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from genomic entity:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
     * Description: connects a genomic feature to its sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -94,7 +85,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | SO:0000147 |
+| **Exact Mappings:** | | SO:0000147 |
 |  | | SIO:010445 |
 |  | | WIKIDATA:Q373027 |
 

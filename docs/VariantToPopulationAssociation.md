@@ -93,13 +93,6 @@ URI: [biolink:VariantToPopulationAssociation](https://w3id.org/biolink/vocab/Var
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from frequency qualifier mixin:
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
@@ -119,6 +112,13 @@ URI: [biolink:VariantToPopulationAssociation](https://w3id.org/biolink/vocab/Var
  * [has percentage](has_percentage.md)  <sub>OPT</sub>
     * Description: equivalent to has quotient multiplied by 100
     * range: [Double](types/Double.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Domain for slot:
 

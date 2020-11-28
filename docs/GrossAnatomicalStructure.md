@@ -12,45 +12,6 @@ layout: default
 
 URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/vocab/GrossAnatomicalStructure)
 
-UBERON:0010000
-{: .mapping-label }
-
-SIO:010046
-{: .mapping-label }
-
-WIKIDATA:Q4936952
-{: .mapping-label }
-
-UMLSSC:T017
-{: .mapping-label }
-
-UMLSST:anst
-{: .mapping-label }
-
-UMLSSC:T021
-{: .mapping-label }
-
-UMLSST:ffas
-{: .mapping-label }
-
-UMLSSC:T023
-{: .mapping-label }
-
-UMLSST:bpoc
-{: .mapping-label }
-
-UMLSSC:T024
-{: .mapping-label }
-
-UMLSST:tisu
-{: .mapping-label }
-
-UMLSSC:T018
-{: .mapping-label }
-
-UMLSST:emst
-{: .mapping-label }
-
 
 ---
 
@@ -72,13 +33,6 @@ UMLSST:emst
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -93,6 +47,12 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
+
+### Inherited from organismal entity:
+
+ * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
+    * Description: may be an organism attribute
+    * range: [Attribute](Attribute.md)
 
 ### Inherited from resource mixin:
 
@@ -122,14 +82,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | tissue |
 |  | | organ |
-| **Mappings:** | | UBERON:0010000 |
-|  | | SIO:010046 |
+| **Exact Mappings:** | | UBERON:0010000 |
 |  | | WIKIDATA:Q4936952 |
 |  | | UMLSSC:T017 |
 |  | | UMLSST:anst |
 |  | | UMLSSC:T021 |
 |  | | UMLSST:ffas |
-|  | | UMLSSC:T023 |
+| **Narrow Mappings:** | | UMLSSC:T023 |
 |  | | UMLSST:bpoc |
 |  | | UMLSSC:T024 |
 |  | | UMLSST:tisu |

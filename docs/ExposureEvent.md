@@ -12,9 +12,6 @@ A feature of the environment of an organism that influences one or more phenotyp
 
 URI: [biolink:ExposureEvent](https://w3id.org/biolink/vocab/ExposureEvent)
 
-XCO:0000000
-{: .mapping-label }
-
 
 ---
 
@@ -30,7 +27,7 @@ XCO:0000000
 ## Children
 
  * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
- * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+ * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
 
 ## Referenced by class
 
@@ -40,7 +37,7 @@ XCO:0000000
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -83,5 +80,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | exposure |
 |  | | experimental condition |
-| **Mappings:** | | XCO:0000000 |
+| **Narrow Mappings:** | | XCO:0000000 |
+| **Broad Mappings:** | | UMLSSC:T051 |
+|  | | UMLSST:evnt |
 

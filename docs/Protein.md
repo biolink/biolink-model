@@ -12,30 +12,6 @@ A gene product that is composed of a chain of amino acid sequences and is produc
 
 URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
-PR:000000001
-{: .mapping-label }
-
-SIO:010043
-{: .mapping-label }
-
-WIKIDATA:Q8054
-{: .mapping-label }
-
-SO:0000104
-{: .mapping-label }
-
-UMLSSC:T087
-{: .mapping-label }
-
-UMLSST:amas
-{: .mapping-label }
-
-UMLSSC:T116
-{: .mapping-label }
-
-UMLSST:aapp
-{: .mapping-label }
-
 
 ---
 
@@ -64,13 +40,6 @@ UMLSST:aapp
 ## Attributes
 
 
-### Inherited from attribute mixin:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
-
 ### Inherited from genomic entity:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
@@ -82,6 +51,13 @@ UMLSST:aapp
  * [macromolecular machine➞name](macromolecular_machine_name.md)  <sub>OPT</sub>
     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
+
+### Inherited from material sample:
+
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any named thing to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)
 
 ### Inherited from named thing:
 
@@ -125,12 +101,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | polypeptide |
-| **Mappings:** | | PR:000000001 |
+| **Exact Mappings:** | | PR:000000001 |
 |  | | SIO:010043 |
 |  | | WIKIDATA:Q8054 |
 |  | | SO:0000104 |
 |  | | UMLSSC:T087 |
 |  | | UMLSST:amas |
-|  | | UMLSSC:T116 |
+| **Broad Mappings:** | | UMLSSC:T116 |
 |  | | UMLSST:aapp |
 

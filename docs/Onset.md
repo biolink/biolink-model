@@ -8,12 +8,9 @@ layout: default
 # Class: Onset
 
 
-The age group in which manifestations appear
+The age group in which (disease) symptom manifestations appear
 
 URI: [biolink:Onset](https://w3id.org/biolink/vocab/Onset)
-
-HP:0003674
-{: .mapping-label }
 
 
 ---
@@ -71,5 +68,5 @@ HP:0003674
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | HP:0003674 |
+| **Exact Mappings:** | | HP:0003674 |
 

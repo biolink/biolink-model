@@ -12,16 +12,10 @@ A sample is a limited quantity of something (e.g. an individual or set of indivi
 
 URI: [biolink:MaterialSample](https://w3id.org/biolink/vocab/MaterialSample)
 
-OBI:0000747
-{: .mapping-label }
-
-SIO:001050
-{: .mapping-label }
-
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[MaterialSampleToThingAssociation],[MaterialSampleDerivationAssociation],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F],[MaterialSampleToThingAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[PhysicalEntity]%5E-[MaterialSample],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[MaterialSampleToThingAssociation],[MaterialSampleDerivationAssociation],[Attribute]%3Chas%20attribute(i)%200..%2A-++[MaterialSample%7Cid(i):string;category(i):category_type%20%2B;iri(i):iri_type%20%3F;name(i):label_type%20%3F;source(i):label_type%20%3F],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSampleToThingAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[PhysicalEntity]%5E-[MaterialSample],[Attribute])
 
 ---
 
@@ -47,7 +41,7 @@ SIO:001050
 ## Attributes
 
 
-### Inherited from attribute mixin:
+### Own
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any named thing to an attribute
@@ -92,6 +86,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | sample |
 |  | | biosample |
 |  | | physical sample |
-| **Mappings:** | | OBI:0000747 |
+| **Exact Mappings:** | | OBI:0000747 |
 |  | | SIO:001050 |
 
