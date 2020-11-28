@@ -4432,6 +4432,8 @@ classes:
       - UMLSSC:T071
       - UMLSST:enty
 
+  ## Ontology Classes
+
   ontology class:
     is_a: named thing
     description: "a concept or class in an ontology, vocabulary or thesaurus"
@@ -4505,6 +4507,8 @@ organism taxon:
       - NCBITaxon
       - MESH
 
+  ## General Information Entities
+
   information content entity:
     aliases: ['information', 'information artefact', 'information entity']
     abstract: true
@@ -4560,7 +4564,7 @@ organism taxon:
 
   data file:
     is_a: information content entity
-    mappings:
+    exact_mappings:
       - EFO:0004095
 
   source file:
@@ -4586,6 +4590,22 @@ organism taxon:
       - version of
       - type
       - distribution
+
+  distribution level:
+    is_a: data set version
+    mixin: true
+    abstract: true
+    slots:
+      - download url
+    exact_mappings:
+      - dcat:Distribution
+
+  data set summary:
+    is_a: data set version
+    mixin: true
+    abstract: true
+    slots:
+      - source web page
 
   ## Publication related entity classes
 
@@ -4723,30 +4743,16 @@ organism taxon:
 
   ## end of Publication related entity classes
 
-  distribution level:
-    is_a: data set version
-    mixin: true
-    abstract: true
-    slots:
-      - download url
-    mappings:
-      - dcat:Distribution
-
-  data set summary:
-    is_a: data set version
-    mixin: true
-    abstract: true
-    slots:
-      - source web page
-
   biological entity:
     is_a: named thing
     abstract: true
-    mappings:
+    narrow_mappings:
       - WIKIDATA:Q28845870
       # UMLS Semantic Type "Experimental Model of Disease"
       - UMLSSC:T050
       - UMLSST:emod
+      # SIO term is 'biological entity' but less inclusive than the Biolink scope
+      - SIO:010046
 
   thing with taxon:
     mixin: true
@@ -4761,8 +4767,16 @@ organism taxon:
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
     abstract: true
     is_a: biological entity
-    mappings:
+    slot_usage:
+      has attribute:
+        description: >-
+          may be an organism attribute
+    exact_mappings:
       - WIKIDATA:Q7239
+      # UMLS Semantic Group "Living Beings"
+      # Several of the associated semantic types here are probably not
+      # that relevant to the Biolink world but we keep them here for now.
+      - UMLSSG:LIVB
 
   individual organism:
     mixins:
@@ -4783,9 +4797,7 @@ organism taxon:
     aliases: ['patient', 'proband']
     is_a: individual organism
     description: >-
-      An individual organism that has a patient role in some clinical context.
-    mappings:
-      - foaf:Person
+      An individual (human) organism that has a patient role in some clinical context.
 
   population of individual organisms:
     description: >-
@@ -4798,12 +4810,22 @@ organism taxon:
       - thing with taxon
     is_a: organismal entity
     subclass_of: PCO:0000001
-    mappings:
+    exact_mappings:
       - SIO:001061
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
       - UMLSST:popg
       - OBI:0000181
+    narrow_mappings:
+      # Family Group
+      - UMLSSC:T099
+      - UMLSST:famg
+      # Age Group
+      - UMLSSC:T100
+      - UMLSST:aggp
+      # Patient or Disabled Group
+      - UMLSSC:T101
+      - UMLSST:podg
     id_prefixes:
       - HANCESTRO
 
