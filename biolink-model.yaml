@@ -4265,9 +4265,13 @@ classes:
     mixin: true
     abstract: true
     slots:
+      - id
       - iri
+      - type
       - name
       - source
+      - provided by
+
 
   ## ----------
   ## ATTRIBUTES
@@ -4293,8 +4297,16 @@ classes:
           The human-readable 'attribute name' can be set to a string which reflects its context of
           interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default
           to the name associated with the 'has attribute type' slot ontology term.
+    id_prefixes:
+      - EDAM-DATA
+      - EDAM-FORMAT
+      - EDAM-OPERATION
+      - EDAM-TOPIC
     exact_mappings:
       - SIO:000614
+    narrow_mappings:
+      # Considered a 'narrow mapping' in that PATO mainly concerns itself with biological traits
+      - PATO:0000001
     in_subset:
       - samples
 
@@ -4415,7 +4427,6 @@ classes:
       - resource mixin
       - attribute mixin
     slots:
-      - id
       - category
     exact_mappings:
       - WIKIDATA:Q35120
@@ -6132,13 +6143,12 @@ organism taxon:
           the object gene in the association. If the relation is symmetric, subject vs object is arbitrary.
           We allow a gene product to stand as proxy for the gene or vice versa
 
-
   gene to gene homology association:
     is_a: gene to gene association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     description: >-
       A homology association between two genes. May be orthology (in which case the species of subject and object
       should differ) or paralogy (in which case the species may be the same)
@@ -6149,13 +6159,12 @@ organism taxon:
         description: >-
           homology relationship type
 
-
   pairwise gene to gene interaction:
     is_a: gene to gene association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
@@ -6180,8 +6189,8 @@ organism taxon:
       - interacting molecules category
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     slot_usage:
       subject:
         range: molecular entity
@@ -6273,8 +6282,8 @@ organism taxon:
     is_a: chemical to chemical association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     slots:
       - change is catalyzed by
     description: >-
@@ -6370,7 +6379,7 @@ organism taxon:
     is_a: association
     defining_slots:
       - subject
-      - relation
+      - predicate
     description: >-
       An association between a material sample and the material entity it is derived from
     slot_usage:
@@ -6811,8 +6820,8 @@ organism taxon:
     is_a: gene to disease association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6827,8 +6836,8 @@ organism taxon:
     is_a: variant to disease association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6842,8 +6851,8 @@ organism taxon:
     is_a: genotype to disease association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6857,8 +6866,8 @@ organism taxon:
     is_a: cell line to disease or phenotypic feature association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6873,8 +6882,8 @@ organism taxon:
     is_a: association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6889,8 +6898,8 @@ organism taxon:
     is_a: gene to disease association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     slots:
       - sequence variant qualifier
     slot_usage:
@@ -6904,8 +6913,8 @@ organism taxon:
     is_a: association
     defining_slots:
       - subject
+      - predicate
       - object
-      - relation
     description: >-
       An association between a gene and an expression site, possibly qualified by stage/timing info.
     notes:
@@ -7165,7 +7174,7 @@ organism taxon:
       the two entities are related by parthood. This includes relationships between cellular components
       and cells, between cells and tissues, tissues and whole organisms
     defining_slots:
-      - relation
+      - predicate
     slot_usage:
       subject:
         range: anatomical entity
@@ -7185,7 +7194,7 @@ organism taxon:
       the two entities are related by development. A number of different relationship types
       can be used to specify the precise nature of the relationship
     defining_slots:
-      - relation
+      - predicate
     slot_usage:
       subject:
         range: anatomical entity
