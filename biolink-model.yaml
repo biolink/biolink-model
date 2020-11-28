@@ -5640,6 +5640,9 @@ classes:
       A typed association between two entities, supported by evidence
     comments:
       - This is roughly the model used by biolink and ontobio at the moment
+    mixins:
+      - resource mixin
+      - attribute mixin
     slots:
       - subject
       - predicate
@@ -5648,9 +5651,6 @@ classes:
       - negated
       - qualifiers
       - publications
-    mixins:
-      - resource mixin
-      - attribute mixin
     mappings:
       - OBAN:association
       - "rdf:Statement"
