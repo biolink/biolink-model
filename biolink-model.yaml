@@ -66,6 +66,7 @@ prefixes:
   ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
+  PATO-PROPERTY: 'http://purl.obolibrary.org/obo/pato#'  # Phenotypic Quality Ontology properties, not core terms
   PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
@@ -267,11 +268,11 @@ slots:
       - OBO:has_role
       - OBO:nbo#is_about
       - OBOREL:0000053 # bearer_of
-      - PATO:decreased_in_magnitude_relative_to
-      - PATO:has_cross_section
-      - PATO:has_relative_magnitude
-      - PATO:increased_in_magnitude_relative_to
-      - PATO:reciprocal_of
+      - PATO-PROPERTY:decreased_in_magnitude_relative_to
+      - PATO-PROPERTY:has_cross_section
+      - PATO-PROPERTY:has_relative_magnitude
+      - PATO-PROPERTY:increased_in_magnitude_relative_to
+      - PATO-PROPERTY:reciprocal_of
       - RO:0000052
       - RO:0002001
       - RO:0002002
@@ -2138,7 +2139,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002610
-      - PATO:correlates_with
+      - PATO-PROPERTY:correlates_with
     narrow_mappings:
       # RTX contributed term: note that association is not always correlation?
       - LOINC:associated_with
@@ -2714,7 +2715,7 @@ slots:
       - ORPHA:317348
       - ORPHA:317349
       - ORPHA:327767
-      - PATO:towards
+      - PATO-PROPERTY:towards
 
   capable of:
     is_a: actively involved in
