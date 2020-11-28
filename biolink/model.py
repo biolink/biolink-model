@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-11-26 00:15
+# Generation date: 2020-11-28 16:53
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -57,7 +57,10 @@ DRUGCENTRAL = CurieNamespace('DrugCentral', 'http://translator.ncats.nih.gov/Dru
 EC = CurieNamespace('EC', 'http://www.enzyme-database.org/query.php?ec=')
 ECO = CurieNamespace('ECO', 'http://purl.obolibrary.org/obo/ECO_')
 ECTO = CurieNamespace('ECTO', 'http://purl.obolibrary.org/obo/ECTO_')
-EDAM = CurieNamespace('EDAM', 'http://edamontology.org/')
+EDAM_DATA = CurieNamespace('EDAM-DATA', 'http://example.org/UNKNOWN/EDAM-DATA/')
+EDAM_FORMAT = CurieNamespace('EDAM-FORMAT', 'http://edamontology.org/format_')
+EDAM_OPERATION = CurieNamespace('EDAM-OPERATION', 'http://edamontology.org/operation_')
+EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
 EFO = CurieNamespace('EFO', 'http://identifiers.org/efo/')
 ENSEMBL = CurieNamespace('ENSEMBL', 'http://identifiers.org/ensembl/')
 ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
@@ -112,6 +115,7 @@ ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 ORPHA = CurieNamespace('ORPHA', 'http://www.orpha.net/ORDO/Orphanet_')
 ORPHANET = CurieNamespace('ORPHANET', 'http://identifiers.org/orphanet/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://identifiers.org/panther.family/')
+PATO_PROPERTY = CurieNamespace('PATO-PROPERTY', 'http://purl.obolibrary.org/obo/pato#')
 PDQ = CurieNamespace('PDQ', 'https://www.cancer.gov/publications/pdq#')
 PHARMGKB_DRUG = CurieNamespace('PHARMGKB_DRUG', 'http://identifiers.org/pharmgkb.drug/')
 PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'http://identifiers.org/pharmgkb.pathways/')
