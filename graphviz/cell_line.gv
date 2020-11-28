@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,767.09,123"];
+	graph [bb="0,0,793.74,123"];
 	node [label="\N"];
 	"cell line"	 [height=0.5,
 		label="cell line",
@@ -61,15 +61,18 @@ digraph {
 		lp="555.79,61.5",
 		pos="e,592.34,31.471 443.81,93.398 461.59,86.456 484.54,77.38 504.79,69 530.96,58.174 560.17,45.552 582.99,35.573",
 		style=solid];
-	"has attribute"	 [color=blue,
-		height=0.5,
-		label=attribute,
-		pos="726.79,18",
-		width=1.1193];
+	"has attribute"	 [height=0.5,
+		pos="739.79,18",
+		width=1.4985];
 	"cell line" -> "has attribute"	 [color=blue,
 		label="has attribute",
-		lp="660.29,61.5",
-		pos="e,695.36,29.445 450.22,98.153 483.63,91.601 534.38,80.966 577.79,69 622.51,56.677 632.97,51.189 676.79,36 679.71,34.99 682.71,33.937 \
-685.73,32.87",
+		lp="666.29,61.5",
+		pos="e,703.24,31.253 442.93,92.989 449.09,90.759 455.59,88.625 461.79,87 512.26,73.771 526.99,80.867 577.79,69 617.48,59.731 661.53,45.606 \
+693.66,34.57",
 		style=solid];
+	"organismal entity_has attribute"	 [color=blue,
+		height=0.5,
+		label=attribute,
+		pos="510.79,105",
+		width=1.1193];
 }

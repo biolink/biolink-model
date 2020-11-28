@@ -44,3 +44,7 @@ fields:
   description: connects a thing to a class representing a taxon
   display_name: in taxon
   cardinality: multi
+- id: has_constituent
+  description: one or more chemical substances within a mixture
+  display_name: has constituent
+  cardinality: multi
