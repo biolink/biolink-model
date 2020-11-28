@@ -3296,7 +3296,7 @@ slots:
     in_subset:
       - translator_minimal
       - samples
-    required: true
+    # required: true  # BiolinkML bug doesn't like name being 'required: true'
     slot_uri: rdfs:label
     exact_mappings:
       - gff3:Name
