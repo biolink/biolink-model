@@ -31,7 +31,10 @@ prefixes:
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
-  EDAM: 'http://edamontology.org/'
+  # EDAM-DATA: 'http://edamontology.org/data_'  # already defined in monarch_context of default_curi_maps?
+  EDAM-FORMAT: 'http://edamontology.org/format_'
+  EDAM-OPERATION: 'http://edamontology.org/operation_'
+  EDAM-TOPIC: 'http://edamontology.org/topic_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
@@ -66,6 +69,7 @@ prefixes:
   ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
+  PATO-PROPERTY: 'http://purl.obolibrary.org/obo/pato#'  # Phenotypic Quality Ontology properties, not core terms
   PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
@@ -267,11 +271,11 @@ slots:
       - OBO:has_role
       - OBO:nbo#is_about
       - OBOREL:0000053 # bearer_of
-      - PATO:decreased_in_magnitude_relative_to
-      - PATO:has_cross_section
-      - PATO:has_relative_magnitude
-      - PATO:increased_in_magnitude_relative_to
-      - PATO:reciprocal_of
+      - PATO-PROPERTY:decreased_in_magnitude_relative_to
+      - PATO-PROPERTY:has_cross_section
+      - PATO-PROPERTY:has_relative_magnitude
+      - PATO-PROPERTY:increased_in_magnitude_relative_to
+      - PATO-PROPERTY:reciprocal_of
       - RO:0000052
       - RO:0002001
       - RO:0002002
@@ -2138,7 +2142,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002610
-      - PATO:correlates_with
+      - PATO-PROPERTY:correlates_with
     narrow_mappings:
       # RTX contributed term: note that association is not always correlation?
       - LOINC:associated_with
@@ -2714,7 +2718,7 @@ slots:
       - ORPHA:317348
       - ORPHA:317349
       - ORPHA:327767
-      - PATO:towards
+      - PATO-PROPERTY:towards
 
   capable of:
     is_a: actively involved in
@@ -3686,7 +3690,9 @@ slots:
     is_a: association slot
     range: float
     description: >-
-      A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+      A quantitative confidence value that represents the probability of
+      obtaining a result at least as extreme as that actually obtained,
+      assuming that the actual value was the result of chance alone.
     mappings:
       - OBI:0000175
 
@@ -4249,6 +4255,11 @@ classes:
           The human-readable 'attribute name' can be set to a string which reflects its context of
           interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default
           to the name associated with the 'has attribute type' slot ontology term.
+    id_prefixes:
+      - EDAM-DATA
+      - EDAM-FORMAT
+      - EDAM-OPERATION
+      - EDAM-TOPIC
     exact_mappings:
       - SIO:000614
     in_subset:

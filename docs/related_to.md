@@ -124,11 +124,11 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 |  | | OBO:has_role |
 |  | | OBO:nbo#is_about |
 |  | | OBOREL:0000053 |
-|  | | PATO:decreased_in_magnitude_relative_to |
-|  | | PATO:has_cross_section |
-|  | | PATO:has_relative_magnitude |
-|  | | PATO:increased_in_magnitude_relative_to |
-|  | | PATO:reciprocal_of |
+|  | | PATO-PROPERTY:decreased_in_magnitude_relative_to |
+|  | | PATO-PROPERTY:has_cross_section |
+|  | | PATO-PROPERTY:has_relative_magnitude |
+|  | | PATO-PROPERTY:increased_in_magnitude_relative_to |
+|  | | PATO-PROPERTY:reciprocal_of |
 |  | | RO:0000052 |
 |  | | RO:0002001 |
 |  | | RO:0002002 |

@@ -20,6 +20,13 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 ---
 
 
+## Identifier prefixes
+
+ * EDAM-DATA
+ * EDAM-FORMAT
+ * EDAM-OPERATION
+ * EDAM-TOPIC
+
 ## Parents
 
  *  is_a: [AbstractEntity](AbstractEntity.md) - Any thing that is not a process or a physical mass-bearing entity
