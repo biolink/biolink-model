@@ -5327,9 +5327,12 @@ organism taxon:
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
     slots:
       - has biological sequence
-    mappings:
+    exact_mappings:
+      # UMLS Semantic Group "Genes & Molecular Sequences"
+      - UMLSSG:GENE
       - SO:0000110
       - GENO:0000897
+    narrow_mappings:
       # Gene or Genome
       - UMLSSC:T028
       - UMLSST:gngm
@@ -5341,7 +5344,7 @@ organism taxon:
     is_a: genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
-    mappings:
+    exact_mappings:
       - SO:0001026
       - SIO:000984
       - WIKIDATA:Q7020
@@ -5350,22 +5353,23 @@ organism taxon:
     is_a: gene product
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
-    mappings:
+    exact_mappings:
       - SO:0000673
       - SIO:010450
+      - WIKIDATA:Q7243183
 
   exon:
     is_a: genomic entity
     description: >-
       A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
-    mappings:
+    exact_mappings:
       - SO:0000147
       - SIO:010445
       - WIKIDATA:Q373027
 
   coding sequence:
     is_a: genomic entity
-    mappings:
+    exact_mappings:
       - SO:0000316
       - SIO:001390
 
@@ -5406,7 +5410,7 @@ organism taxon:
       - description
       - synonym
       - xref
-    mappings:
+    exact_mappings:
       - SO:0000704
       - SIO:010035
       - WIKIDATA:Q7187
@@ -5438,8 +5442,10 @@ organism taxon:
       - description
       - synonym
       - xref
-    mappings:
+    exact_mappings:
       - WIKIDATA:Q424689
+      - GENO:0000907
+      - NCIT:C26548
     id_prefixes:
       - UniProtKB
       - gtpo
@@ -5450,7 +5456,11 @@ organism taxon:
     aliases: ['polypeptide']
     description: >-
       A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
-    mappings:
+    broad_mappings:
+      # Amino Acid, Peptide, or Protein
+      - UMLSSC:T116
+      - UMLSST:aapp
+    exact_mappings:
       - PR:000000001
       - SIO:010043
       - WIKIDATA:Q8054
@@ -5458,9 +5468,6 @@ organism taxon:
       # UMLS Semantic Type: "Amino Acid Sequence"
       - UMLSSC:T087
       - UMLSST:amas
-      # Amino Acid, Peptide, or Protein
-      - UMLSSC:T116
-      - UMLSST:aapp
     id_prefixes:
       - UniProtKB
       - PR
@@ -5491,9 +5498,12 @@ organism taxon:
 
   RNA product:
     is_a: gene product
-    mappings:
+    exact_mappings:
       - CHEBI:33697
-      - SIO:010450
+      # This SIO term here also mapped to 'biolink:Transcript'; however,
+      # since this 'biolink:RNAProduct' relates more to the biochemical
+      # essence of RNA, then map the SIO term instead to 'biolink:Transcript'
+      # - SIO:010450
       - WIKIDATA:Q11053
     id_prefixes:
       - RNACENTRAL
@@ -5514,13 +5524,13 @@ organism taxon:
       - NCBIGene
       - ENSEMBL
     subclass_of: SO:0000655
-    mappings:
+    exact_mappings:
       - SIO:001235
 
   microRNA:
     is_a: noncoding RNA product
     subclass_of: SO:0000276
-    mappings:
+    exact_mappings:
       - SIO:001397
       - WIKIDATA:Q310899
     id_prefixes:
@@ -5531,8 +5541,7 @@ organism taxon:
   macromolecular complex:
     is_a: macromolecular machine
     subclass_of: GO:0032991
-    mappings:
-      - SIO:010046
+    exact_mappings:
       - WIKIDATA:Q22325163
     id_prefixes:
       - INTACT
@@ -5548,7 +5557,13 @@ organism taxon:
 
   gene family:
     is_a: molecular entity
-    mappings:
+    exact_mappings:
+      - NCIT:C26004
+      - WIKIDATA:Q2278983
+    narrow_mappings:
+      # These term definitions focus only on proteins;
+      # the 'biolink:GeneFamily' term would be more inclusive
+      # to describe gene loci, non-coding RNA, etc.
       - SIO:001380
       - NCIT:C20130
       - WIKIDATA:Q417841
@@ -5562,7 +5577,7 @@ organism taxon:
 
   zygosity:
     is_a: attribute
-    mappings:
+    exact_mappings:
       - GENO:0000133
 
   genotype:
@@ -5573,7 +5588,7 @@ organism taxon:
       - Consider renaming as genotypic entity
     slots:
       - has zygosity
-    mappings:
+    exact_mappings:
       - GENO:0000536
       - SIO:001079
 
@@ -5583,10 +5598,10 @@ organism taxon:
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
 #      - completeness
-    mappings:
+    exact_mappings:
       - GENO:0000871
       - SO:0001024
-      # - VMC:Haplotype  needs IRI mapping
+      - VMC:Haplotype
 
   sequence variant:
     aliases: ['allele']
@@ -5595,17 +5610,19 @@ organism taxon:
     is_a: genomic entity
     description: >-
       An allele that varies in its sequence from what is considered the reference allele at that locus.
-    comments:
-      - >-
-          This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
-          than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
-    mappings:
+    comments: >-
+      This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
+      than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
+    broad_mappings:
+      # slightly broader semantics than SO:0001059 - 'sequence alteration'
+      # describes a sequence feature that may have 1..* sequence alterations
+      - SO:0001060
+    exact_mappings:
       - GENO:0000002
       - WIKIDATA:Q15304597
       - SIO:010277
       - VMC:Allele
       - SO:0001059
-      - SO:0001060
     id_prefixes:
       - CAID # ClinGen Allele Registry
       - ClinVar
@@ -5643,11 +5660,11 @@ organism taxon:
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
   snv:
-    aliases: ['single nucleotide variant']
+    aliases: ['single nucleotide variant','single nucleotide polymorphism', 'snp']
     is_a: sequence variant
     description: >-
       SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
-    mappings:
+    exact_mappings:
       - SO:0001483
 
   reagent targeted gene:
@@ -5655,7 +5672,7 @@ organism taxon:
     description: >-
        A gene altered in its expression level in the context of some experiment as a result of being
        targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
-    mappings:
+    exact_mappings:
       - GENO:0000504
 
   chemical exposure:
@@ -5670,7 +5687,10 @@ organism taxon:
 #        range: chemical substance
 #        required: true
 #        multivalued: true
-    mappings:
+    exact_mappings:
+      # this ECTO term is not visibly defined but
+      # the 9000000-series identifiers seems to be the
+      # numeric space of chemical exposure definitions
       - ECTO:9000000
       - SIO:001399
 
@@ -5686,21 +5706,24 @@ organism taxon:
         range: chemical substance
         required: true
         multivalued: true
-    mappings:
-      - ECTO:0000509
+    broad_mappings:
+      # slightly broader than just drug effects on a biological system
       - SIO:001005
+    exact_mappings:
+      - ECTO:0000509
 
   treatment:
-    aliases: ['medical action']
+    aliases: ['medical action', 'medical intervention']
     is_a: exposure event
     description: >-
-      A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+      A treatment is targeted at a disease or phenotype and
+      may involve multiple drug, device or procedural 'exposures'
     slot_usage:
       has part:
         multivalued: true
         range: drug exposure
         required: true
-    mappings:
+    exact_mappings:
       - OGMS:0000090
       - SIO:001398
 
@@ -5711,7 +5734,8 @@ organism taxon:
     slots:
       - latitude
       - longitude
-    mappings: # Geographic Areas
+    exact_mappings:
+      # Geographic Areas
       - UMLSSG:GEOG
       # Geographic Area
       - UMLSST:geoa
@@ -5724,7 +5748,6 @@ organism taxon:
     slots:
       - timepoint
 
-
   occurrent:
     description: >-
       A processual entity
@@ -5733,7 +5756,7 @@ organism taxon:
     #is_a: named thing
     mixin: true
     abstract: true
-    mappings:
+    exact_mappings:
       - BFO:0000003
 
   physical essence:
@@ -5794,7 +5817,7 @@ organism taxon:
         range: macromolecular machine
         description: >-
           The gene product, gene, or complex that catalyzes the reaction
-    mappings:
+    exact_mappings:
       - GO:0003674
       # UMLS Semantic Type "Molecular Function"
       - UMLSSC:T044
@@ -5808,31 +5831,18 @@ organism taxon:
       - KEGG
 
   activity and behavior:
-    # can't inherit directly from mixin biolink:Occurrent
-    # is_a: occurrent
-    is_a: named thing
-    mixins:
-      - occurrent
+    is_a: occurrent
+    mixin: true
+    abstract: true
     description: >-
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
-    mappings:
-      #Activities & Behaviors
+    exact_mappings:
+      # Activities & Behaviors
       - UMLSSG:ACTI
-      # Event
-      - UMLSSC:T051
-      - UMLSST:evnt
+    narrow_mappings:
       # Activity
       - UMLSSC:T052
       - UMLSST:acty
-      # Behavior
-      - UMLSSC:T053
-      - UMLSST:bhvr
-      # Social Behavior
-      - UMLSSC:T054
-      - UMLSST:socb
-      # Individual Behavior
-      - UMLSSC:T055
-      - UMLSST:inbe
       # Daily or Recreational Activity
       - UMLSSC:T056
       - UMLSST:dora
@@ -5845,6 +5855,15 @@ organism taxon:
       # Machine Activity
       - UMLSSC:T066
       - UMLSST:mcha
+      # Research Activity
+      - UMLSSC:T062
+      - UMLSST:resa
+      # Educational Activity
+      - UMLSSC:T065
+      - UMLSST:edac
+      # Health Care Activity
+      - UMLSSC:T058
+      - UMLSST:hlca
 
   procedure:
     is_a: named thing
@@ -5908,7 +5927,7 @@ organism taxon:
       - occurrent
     description: >-
       One or more causally connected executions of molecular functions
-    mappings:
+    exact_mappings:
       - GO:0008150
       - SIO:000006
       - WIKIDATA:Q2996394
@@ -6359,7 +6378,7 @@ organism taxon:
         
   chemical to disease or phenotypic feature association:
     is_a: association
-    mappings:
+    narrow_mappings:
       - SIO:000993
     defining_slots:
       - subject
@@ -6377,7 +6396,7 @@ organism taxon:
 
   chemical to pathway association:
     is_a: association
-    mappings:
+    exact_mappings:
       - SIO:001250
     defining_slots:
       - subject
@@ -6393,7 +6412,7 @@ organism taxon:
 
   chemical to gene association:
     is_a: association
-    mappings:
+    exact_mappings:
       - SIO:001257
     defining_slots:
       - subject
@@ -6676,7 +6695,7 @@ organism taxon:
 
   gene to phenotypic feature association:
     is_a: association
-    mappings:
+    exact_mappings:
       - WBVocab:Gene-Phenotype-Association
     defining_slots:
       - subject
@@ -6696,7 +6715,7 @@ organism taxon:
     is_a: association
     comments:
       - NCIT:R176 refers to the inverse relationship
-    mappings:
+    exact_mappings:
       - SIO:000983
     defining_slots:
       - subject
@@ -7072,7 +7091,7 @@ organism taxon:
   gene to go term association:
     aliases: ['functional association']
     is_a: functional association
-    mappings:
+    exact_mappings:
       - WBVocab:Gene-GO-Association
     defining_slots:
       - subject
@@ -7099,9 +7118,9 @@ organism taxon:
           - value: GO:0016301
             description: kinase activity
 
-  ## ------
+  ## -----------------
   ## SEQUENCE FEATURES
-  ## ------
+  ## -----------------
 
   sequence association:
     is_a: association
