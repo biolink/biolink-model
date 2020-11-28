@@ -4887,7 +4887,6 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
-      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbrevation for ORPHANET? not used in model
       - EFO
       - UMLS
       - MESH
@@ -6774,9 +6773,9 @@ classes:
           - value: GO:0016301
             description: kinase activity
 
-  ## ------
+  ## -----------------
   ## SEQUENCE FEATURES
-  ## ------
+  ## -----------------
 
   sequence association:
     is_a: association
