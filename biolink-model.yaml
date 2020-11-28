@@ -404,14 +404,12 @@ slots:
     domain: named thing
 
   id:
-    is_a: node property
     identifier: true
     description: >-
-      A unique identifier for a thing.
+      A unique identifier for a resource.
       Must be either a CURIE shorthand for a URI or a complete URI
     in_subset:
       - translator_minimal
-    domain: named thing
     required: true
     exact_mappings:
       - alliancegenome:primaryId
@@ -432,7 +430,6 @@ slots:
       - WIKIDATA_PROPERTY:P854
 
   type:
-    is_a: node property
     slot_uri: rdf:type
     exact_mappings:
       - alliancegenome:soTermId
@@ -463,10 +460,6 @@ slots:
     aliases: [ 'label', 'display name', 'title' ]
     description: >-
       A human-readable name for a thing
-    #
-    # 'name' is generalized, via the 'resource mixin', to be used for both NamedThing and Attribute classes
-    # is_a: node property
-    # domain: named thing
     range: label type
     in_subset:
       - translator_minimal
@@ -3981,6 +3974,9 @@ slots:
   association_id:
     is_a: association slot
     identifier: true
+    deprecated: >-
+      This slot is deprecated in favor of 'id' slot.
+    deprecated_element_has_exact_replacement: id
     description: >-
         A unique identifier for an association
     in_subset:
