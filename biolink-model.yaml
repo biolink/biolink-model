@@ -5108,7 +5108,7 @@ classes:
       of a disease or other characteristic phenotype.
 
   behavioral outcome:
-    is_a: activity and behavior
+    is_a: behavior
     mixins:
       - outcome
     description: >-
@@ -5139,7 +5139,7 @@ classes:
       - NCIT:C19291
 
   socioeconomic outcome:
-    is_a: activity and behavior
+    is_a: behavior
     mixins:
       - outcome
     description: >-
@@ -5928,8 +5928,17 @@ classes:
     # exact_mappings:
     #  -
 
+  behavioral exposure:
+    is_a: behavior
+    mixins:
+      - exposure event
+    description: >-
+      A behavioral exposure is a factor relating to behavior impacting an individual.
+    # exact_mappings:
+    #  -
+
   socioeconomic exposure:
-    is_a: activity and behavior
+    is_a: behavior
     mixins:
       - exposure event
     description: >-
