@@ -4788,7 +4788,7 @@ classes:
     slot_usage:
       has attribute:
         description: >-
-          may be an organism attribute
+          range may often be an organism attribute
     exact_mappings:
       - WIKIDATA:Q7239
       # UMLS Semantic Group "Living Beings"
@@ -4810,12 +4810,6 @@ classes:
       # Wikidata considers its definition of 'individual' to be constrained to human persons?
       - WIKIDATA:Q795052
       - foaf:Person
-
-  case:
-    aliases: ['patient', 'proband']
-    is_a: individual organism
-    description: >-
-      An individual (human) organism that has a patient role in some clinical context.
 
   population of individual organisms:
     description: >-
@@ -5768,7 +5762,26 @@ classes:
     exact_mappings:
       - GO:0016265
 
+  socioeconomic attribute:
+    is_a: attribute
+    description: >-
+      Attributes relating to a socioeconomic manifestation
+    #slot_usage:
+    # need a suitable qualifying socioeconomic ontology target here?
+    # Perhaps some subset of ECTO: https://github.com/EnvironmentOntology/environmental-exposure-ontology
+    #  has attribute type:
+    #     range: socioeconomic ontology
+    # exact_mappings:
+    #  - ??
+
+
   ## Cohorts
+
+  case:
+    aliases: ['patient', 'proband']
+    is_a: individual organism
+    description: >-
+      An individual (human) organism that has a patient role in some clinical context.
 
   cohort:
     is_a: study population
@@ -5919,13 +5932,8 @@ classes:
       A socioeconomic exposure is a factor relating to social and
       financial status of an affected individual (e.g. poverty).
     slot_usage:
-      # Perhaps something more semantically precise than 'attribute' is needed
-      # but this gives us the greatest flexibility for the moment?
       has attribute:
-        multivalued: true
-        # need a suitable qualifying socioeconomic ontology target here?
-        # Perhaps some subset of ECTO: https://github.com/EnvironmentOntology/environmental-exposure-ontology
-        range: ontology class
+        range: socioeconomic attribute
         required: true
     # exact_mappings:
     #  -
