@@ -11,9 +11,6 @@ fields:
   description: A unique identifier for a thing. Must be either a CURIE shorthand for
     a URI or a complete URI
   display_name: id
-- id: name
-  description: A human-readable name for a thing
-  display_name: name
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\
@@ -28,6 +25,21 @@ fields:
     \ anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity,\
     \ bl:NamedThing}"
   display_name: category
+  cardinality: multi
+- id: iri
+  description: An IRI for the node. This is determined by the id using expansion rules.
+  display_name: iri
+- id: name
+  description: A human-readable name for a thing
+  display_name: name
+- id: source
+  description: a lightweight analog to the association class 'has provider' slot,
+    which is the string name, or the authoritative (i.e. database) namespace, designating
+    the origin of the entity to which the slot belongs.
+  display_name: source
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
   cardinality: multi
 - id: in_taxon
   description: connects a thing to a class representing a taxon
