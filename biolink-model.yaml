@@ -4367,53 +4367,6 @@ classes:
       - UMLSSC:T032
       - UMLSST:orga
 
-  clinical attribute:
-    is_a: attribute
-    description: >-
-      Attributes relating to a clinical manifestation
-    exact_mappings:
-      # Clinical Attribute
-      - UMLSSC:T201
-      - UMLSST:clna
-
-  clinical measurement:
-    is_a: clinical attribute
-    description: >-
-      A clinical measurement is a special kind of attribute which results from a laboratory observation from
-      a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
-    slot_usage:
-      has attribute type:
-        required: true
-        multivalued: false
-        values_from:
-          - EFO
-          - LOINC
-    exact_mappings:
-      - EFO:0001444
-
-  clinical modifier:
-    is_a: clinical attribute
-    description: >-
-      Used to characterize and specify the phenotypic abnormalities defined in the
-      phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
-    exact_mappings:
-      - HP:0012823
-
-  clinical course:
-    is_a: clinical attribute
-    description: >-
-      The course a disease typically takes from its onset, progression in time, and
-      eventual resolution or death of the affected individual
-    exact_mappings:
-      - HP:0031797
-
-  onset:
-    is_a: clinical course
-    description: >-
-      The age group in which (disease) symptom manifestations appear
-    exact_mappings:
-      - HP:0003674
-    
   inheritance:
     is_a: attribute
     description: >-
@@ -5037,9 +4990,93 @@ classes:
 
 
   ## --------------------
-  ## Clinical Cohort,
+  ## Clinical
+  ## Attributes, Cohort,
   ## Exposures & Outcomes
   ## --------------------
+
+  ## Attributes
+
+  clinical attribute:
+    is_a: attribute
+    description: >-
+      Attributes relating to a clinical manifestation
+    exact_mappings:
+      # Clinical Attribute
+      - UMLSSC:T201
+      - UMLSST:clna
+
+  clinical finding:
+    is_a: phenotypic feature
+    description: >-
+      this category is currently considered broad enough to tag clinical lab measurements and other biological
+      attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+    slot_usage:
+      has attribute:
+        range: clinical attribute
+
+  clinical measurement:
+    is_a: clinical attribute
+    description: >-
+      A clinical measurement is a special kind of attribute which results from a laboratory observation from
+      a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
+    slot_usage:
+      has attribute type:
+        required: true
+        multivalued: false
+        values_from:
+          - EFO
+          - LOINC
+    exact_mappings:
+      - EFO:0001444
+
+  clinical modifier:
+    is_a: clinical attribute
+    description: >-
+      Used to characterize and specify the phenotypic abnormalities defined in the
+      phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
+    exact_mappings:
+      - HP:0012823
+
+  clinical course:
+    is_a: clinical attribute
+    description: >-
+      The course a disease typically takes from its onset, progression in time, and
+      eventual resolution or death of the affected individual
+    exact_mappings:
+      - HP:0031797
+
+  onset:
+    is_a: clinical course
+    description: >-
+      The age group in which (disease) symptom manifestations appear
+    exact_mappings:
+      - HP:0003674
+
+  clinical entity:
+    is_a: named thing
+    description: >-
+      Any entity or process that exists in the clinical domain and outside the
+      biological realm. Diseases are placed under biological entities
+
+  clinical trial:
+    is_a: clinical entity
+
+  clinical intervention:
+    is_a: clinical entity
+
+  hospitalization:
+    is_a: clinical intervention
+    mappings:
+      - SNOMEDCT:32485007
+      - WIKIDATA:Q3140971
+
+  death:
+    is_a: biological process
+    mappings:
+      - GO:0016265
+
+  ## Cohorts
 
   cohort:
     is_a: study population
@@ -5073,6 +5110,8 @@ classes:
       # Patient or Disabled Group
       - UMLSSC:T101
       - UMLSST:podg
+
+  ## Exposures
 
   exposure event:
     aliases: ['exposure', 'experimental condition']
@@ -5199,55 +5238,40 @@ classes:
     # exact_mappings:
     #  -
 
-  clinical finding:
-    is_a: phenotypic feature
-    description: >-
-      this category is currently considered broad enough to tag clinical lab measurements and other biological
-      attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
-    slot_usage:
-      has attribute:
-        range: clinical attribute
-
-  death:
-    is_a: biological process
-    mappings:
-      - GO:0016265
-
-  hospitalization:
-    is_a: clinical intervention
-    mappings:
-      - SNOMEDCT:32485007
-      - WIKIDATA:Q3140971
+  ## Outcomes
 
   outcome:
     mixin: true
     abstract: true
     description: >-
-      An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping
-      of various categories of possible biological or non-biological (e.g. clinical) outcomes.
+      An entity that has the role of being the consequence of an exposure event.
+      This is an abstract mixin grouping of various categories of possible
+      biological or non-biological (e.g. clinical) outcomes.
 
   disease or phenotypic feature outcome:
     is_a: disease or phenotypic feature
     mixins:
       - outcome
     description: >-
-      Physiological outcomes resulting from an exposure event which is the manifestation
-      of a disease or other characteristic phenotype.
+      Physiological outcomes resulting from an exposure event which
+      is the manifestation of a disease or other characteristic phenotype.
 
   behavioral outcome:
     is_a: behavior
     mixins:
       - outcome
     description: >-
-      An outcome resulting from an exposure event which is the manifestation of human behavior.
+      An outcome resulting from an exposure event which is
+      the manifestation of human behavior.
 
   hospitalization outcome:
     is_a: hospitalization
     mixins:
       - outcome
     description: >-
-      An outcome resulting from an exposure event which is the increased manifestation of
-      acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
+      An outcome resulting from an exposure event which is
+      the increased manifestation of acute (e.g. emergency
+      room visit) or chronic (inpatient) hospitalization.
 
   mortality outcome:
     is_a: death
@@ -5261,7 +5285,8 @@ classes:
     mixins:
       - outcome
     description: >-
-      An epidemiological outcome, such as societal disease burden, resulting from an exposure event,
+      An epidemiological outcome, such as societal disease
+      burden, resulting from an exposure event.
     related_mappings:
       - NCIT:C19291
 
@@ -5270,11 +5295,14 @@ classes:
     mixins:
       - outcome
     description: >-
-      An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+      An general social or economic outcome, such as
+      healthcare costs, utilization, etc., resulting from an exposure event
 
-  ## ------------------------
-  ## End of Clinical Outcomes
-  ## ------------------------
+  ## --------------------
+  ## End of Clinical
+  ## Attributes, Cohort,
+  ## Exposures & Outcomes
+  ## --------------------
 
   administrative entity:
     is_a: named thing
@@ -5573,17 +5601,6 @@ classes:
     is_a: planetary entity
     exact_mappings:
       - ENVO:01000254
-
-  clinical entity:
-    is_a: named thing
-    description: >-
-      Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
-
-  clinical trial:
-    is_a: clinical entity
-
-  clinical intervention:
-    is_a: clinical entity
 
   device:
     is_a: named thing
