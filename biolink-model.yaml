@@ -4500,7 +4500,7 @@ classes:
       Class of evidence that supports an association
     values_from:
       - eco
-    mappings:
+    exact_mappings:
       - ECO:0000000
 
   data file:
@@ -4851,7 +4851,7 @@ classes:
     is_a: population of individual organisms
     description: >-
       A group of people banded together or treated as a group as participants in a research study.
-    mappings:
+    close_mappings:
       - WIKIDATA:Q7229825
 
   subject of investigation:
@@ -5759,13 +5759,13 @@ classes:
 
   hospitalization:
     is_a: clinical intervention
-    mappings:
+    exact_mappings:
       - SNOMEDCT:32485007
       - WIKIDATA:Q3140971
 
   death:
     is_a: biological process
-    mappings:
+    exact_mappings:
       - GO:0016265
 
   ## Cohorts
