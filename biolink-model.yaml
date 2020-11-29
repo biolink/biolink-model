@@ -597,8 +597,9 @@ slots:
     is_a: related to
     description: >-
       describes an entity that has a direct affect on the state or quality of another existing entity.
-      Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as
-      'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
+      Use of the 'affects' predicate implies that the affected entity already
+      exists, unlike predicates such as 'affects risk for' and 'prevents,
+      where the outcome is something that may or may not come to be.
     in_subset:
       - translator_minimal
     related_mappings:
@@ -1890,14 +1891,28 @@ slots:
     is_a: related to
     symmetric: true
     description: >-
-      Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
+      Co-occurrence of a certain allele of a genetic marker and
+      the phenotype of interest in the same individuals at above-chance level
     exact_mappings:
       - WIKIDATA_PROPERTY:P2293
 
-  gene associated with condition:
+  variant associated with condition:
     is_a: genetic association
     description: >-
-      holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
+      holds between a variant and a disease or phenotypic feature due to linkage disequilibrium between
+      the variant and proximal genomic sequence variation which may influence, contribute to, or correlate with
+      the given disease or phenotypic feature ('condition'). In certain instances, the sequence variant itself be
+      a functional variant that directly contributes (by coding or regulatory effect) to the condition.
+    domain: sequence variant
+    range: disease or phenotypic feature
+    in_subset:
+      - translator_minimal
+
+  gene associated with condition:
+    is_a: variant associated with condition
+    description: >-
+      holds between a gene and a disease or phenotypic feature in that some of the gene's alleles/products
+      may influence, contribute to, or correlate with the disease or phenotypic feature.
     domain: gene
     range: disease or phenotypic feature
     in_subset:
@@ -1918,7 +1933,8 @@ slots:
   condition associated with gene:
     is_a: genetic association
     description: >-
-      holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
+      holds between a gene and a disease or phenotypic feature that may be influenced,
+      contribute to, or be correlated with the gene or its alleles/products
     domain: disease or phenotypic feature
     range: gene
     in_subset:
@@ -2134,7 +2150,9 @@ slots:
   correlated with:
     is_a: related to
     description: >-
-      holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+      holds between any two named thing entities. For example, correlated_with holds
+      between a disease or phenotypic feature and a measurable molecular entity that
+      is used as an indicator of the presence or state of the disease or feature.
     domain: named thing
     range: named thing
     in_subset:
@@ -2154,7 +2172,6 @@ slots:
       - RO:0004029
       - RTXKG1:associated_with_disease
       - SNOMED:associated_with
-      - SNOMED:has_associated_finding
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -2183,17 +2200,21 @@ slots:
   has biomarker:
     is_a: correlated with
     description: >-
-      holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+      holds between a disease or phenotypic feature and a measurable molecular entity
+      that is used as an indicator of the presence or state of the disease or feature.
     domain: disease or phenotypic feature
     range: molecular entity
     in_subset:
       - translator_minimal
     inverse: biomarker for
+    broad_mappings:
+      - NCIT:disease_may_have_finding
     narrow_mappings:
       # some RTX terms contributed as inverses of 'biolink:biomarker_for'
       - NCIT:disease_has_finding
       - NCIT:disease_has_molecular_abnormality
       - NCIT:disease_is_marked_by_gene
+      - SNOMED:has_associated_finding
 
   biomarker for:
     is_a: correlated with
@@ -2252,7 +2273,9 @@ slots:
   has phenotype:
     is_a: related to
     description: >-
-      holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+      holds between a biological entity and a phenotype, where a phenotype is construed broadly
+      as any kind of quality of an organism part, a collection of these qualities, or a change
+      in quality or qualities (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
     notes:
@@ -2267,9 +2290,8 @@ slots:
       - RTXKG1:has_phenotype
       - SNOMED:characterized_by
     broad_mappings:
-      # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
+      # Disease–presents–Symptom; symptom may be a phenotype but not necessarily
       - hetio:PRESENTS_DpS
-      - NCIT:disease_may_have_finding
       - OMIM:has_phenotype
     narrow_mappings:
       - NCIT:disease_may_have_molecular_abnormality
@@ -2319,6 +2341,7 @@ slots:
     exact_mappings:
       - RO:0001025
       - FMA:has_location
+      - BFO:0000029
     narrow_mappings:
       - GOREL:0001004
       - BSPO:0000107
@@ -2341,6 +2364,7 @@ slots:
       - UBERON_CORE:in_outermost_side_of
       - NCIT:R100
       - EFO:0000784
+      - EFO:is_executed_in
       - FMA:has_location
       - HMDB:at_cellular_location
       - HMDB:at_tissue
@@ -3594,6 +3618,8 @@ slots:
     multivalued: true
     exact_mappings:
       - pav:providedBy
+    narrow_mappings:
+      - SNOMED:has_finding_informer
 
   association type:
     is_a: association slot
@@ -4078,11 +4104,12 @@ slots:
       - OBI:0001927
     exact_mappings:
       - SIO:000008
+      # BFO term for 'material property'
+      - BFO:0000020
     narrow_mappings:
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
       # RTX contributed terms. Could perhaps review for more semantically precise mappings?
-      - EFO:is_executed_in
       - HANCESTRO:0301
       - LOINC:has_action_guidance
       - LOINC:has_adjustment
@@ -4128,7 +4155,6 @@ slots:
       - SNOMED:has_dose_form_release_characteristic
       - SNOMED:has_dose_form_transformation
       - SNOMED:has_finding_context
-      - SNOMED:has_finding_informer
       - SNOMED:has_inherent_attribute
       - SNOMED:has_intent
       - SNOMED:has_interpretation
@@ -4161,9 +4187,11 @@ slots:
 
   has attribute type:
     description: >-
-      connects an attribute to a class that describes it
+      connects an attribute to a ontology term that describes it
     domain: attribute
     range: ontology class
+    values_from:
+      - EDAM
     multivalued: false
     required: true
     in_subset:
@@ -4347,6 +4375,21 @@ classes:
       # Clinical Attribute
       - UMLSSC:T201
       - UMLSST:clna
+
+  clinical measurement:
+    is_a: clinical attribute
+    description: >-
+      A clinical measurement is a special kind of attribute which results from a laboratory observation from
+      a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
+    slot_usage:
+      has attribute type:
+        required: true
+        multivalued: false
+        values_from:
+          - EFO
+          - LOINC
+    exact_mappings:
+      - EFO:0001444
 
   clinical modifier:
     is_a: clinical attribute
@@ -4906,8 +4949,9 @@ classes:
       A sample is a limited quantity of something (e.g. an individual or set of individuals
       from a population, or a portion of a substance) to be used for testing, analysis,
       inspection, investigation, demonstration, or trial use. [SIO]
-    slots:
-      - has attribute
+    broad_mappings:
+      # BFO term for 'material entity' seems slightly broader semantically than a 'sample'
+      - BFO:0000040
     exact_mappings:
       - OBI:0000747
       - SIO:001050
@@ -4919,7 +4963,8 @@ classes:
     aliases: ['phenome']
     is_a: biological entity
     description: >-
-      Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+      Either one of a disease or an individual phenotypic feature. Some knowledge resources
+      such as Monarch treat these as distinct, others such as MESH conflate.
     mixins:
       - thing with taxon
     union_of:
@@ -4973,7 +5018,6 @@ classes:
       - DOID
       - OMIM
       - ORPHANET
-      # - ORPHA  # no idea what this prefix resolves to globally. Is is an abbrevation for ORPHANET? not used in model
       - EFO
       - UMLS
       - MESH
@@ -4990,11 +5034,15 @@ classes:
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
+    description: >-
+      The assemblage of genetically determined traits or outward appearance of an individual.
+      It is the visible biological manifestations of interactions between genes and the environment.
     subclass_of: UPHENO:0001001
     exact_mappings:
       - UPHENO:0001001
       - SIO:010056
       - WIKIDATA:Q104053
+      - EFO:0000651
     narrow_mappings:
       # Sign or Symptom
       - UMLSSC:T184
@@ -5018,6 +5066,16 @@ classes:
       - WBPhenotype
       - SNOMEDCT
       - MESH
+      - LOINC
+
+  clinical finding:
+    is_a: phenotypic feature
+    description: >-
+      this category is currently considered broad enough to tag clinical lab measurements and other biological
+      attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+    slot_usage:
+      has attribute:
+        range: clinical attribute
 
   death:
     is_a: biological process
@@ -5421,7 +5479,8 @@ classes:
     is_a: molecular entity
     aliases: ['sequence feature']
     description: >-
-      an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+      an entity that can either be directly located on a genome
+      (gene, variant, transcript, exon, regulatory region) or is encoded in a genome (protein)
     slots:
       - has biological sequence
     exact_mappings:
@@ -6045,7 +6104,6 @@ classes:
           the object gene in the association. If the relation is symmetric, subject vs object is arbitrary.
           We allow a gene product to stand as proxy for the gene or vice versa
 
-
   gene to gene homology association:
     is_a: gene to gene association
     defining_slots:
@@ -6061,7 +6119,6 @@ classes:
         symmetric: true
         description: >-
           homology relationship type
-
 
   pairwise gene to gene interaction:
     is_a: gene to gene association
@@ -6479,8 +6536,8 @@ classes:
       - subject
       - object
     description: >-
-      Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
-      either in isolation or through environment
+      Any association between one genotype and a phenotypic feature,
+      where having the genotype confers the phenotype, either in isolation or through environment
     mixins:
       - thing to phenotypic feature association mixin
       - genotype to thing association mixin
@@ -6541,6 +6598,8 @@ classes:
       ga4gh: variant annotation
     mixin: true
     abstract: true
+    slots:
+      - p value
     defining_slots:
       - subject
     slot_usage:
@@ -6553,6 +6612,18 @@ classes:
             description: "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
+      predicate:
+        description: >-
+          if the 'variant to thing association' is a parent of a GWAS knowledge assertion, the predicate
+          should generally be a subproperty of the biolink:genetic_association predicate.  We don't enforce this
+          as a strict subproperty slot_usage constraint here, since non-GWAS associations may use other predicates.
+        # subproperty_of: genetic association
+      p value:
+        description: >-
+          sometimes, a 'variant to thing association' (e.g. where 'thing' is a disease or phenotypic feature)
+          is asserted on the basis of a Genome Wide Association Sequencing (GWAS) experiment that computes a 'p value'
+          for genetic associations. In such cases, the said p value may meaningfully qualify the association 'edge'.
+        required: true
 
   gene to phenotypic feature association:
     is_a: association
@@ -7313,8 +7384,11 @@ classes:
       One or more causally connected executions of molecular functions
     exact_mappings:
       - GO:0008150
-      - SIO:000006
       - WIKIDATA:Q2996394
+    broad_mappings:
+      # These 'process' ontology terms are not specifically constrained to biology
+      - SIO:000006
+      - BFO:0000015
     id_prefixes:
       - GO
       - REACT
