@@ -418,10 +418,7 @@ slots:
 
   iri:
     description: >-
-      An IRI for the node. This is determined by the id using expansion rules.
-    # 'iri' is generalized, via the 'resource mixin', to be used for both NamedThing and Attribute classes
-    # is_a: node property
-    # domain: named thing
+      An IRI for the resource. This is determined by the id using expansion rules.
     range: iri type
     in_subset:
       - translator_minimal
