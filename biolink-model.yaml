@@ -4212,17 +4212,15 @@ slots:
 
 classes:
 
-  abstract entity:
+  entity:
     description: >-
-      Any thing that is not a process or a physical mass-bearing entity
-
-  resource mixin:
-    mixin: true
+      Root Biolink Model class for all things, real or imagined.
     abstract: true
     slots:
       - id
       - iri
-      - type
+      - category
+      - type   # rdf:type
       - name
       - description
       - source
@@ -4234,9 +4232,7 @@ classes:
 
   attribute:
     subclass_of: PATO:0000001
-    is_a: abstract entity
-    mixins:
-      - resource mixin
+    is_a: entity
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
@@ -4247,6 +4243,10 @@ classes:
       - has quantitative value
       - has qualitative value
     slot_usage:
+      id:
+        required: false
+      category:
+        required: false
       name:
         description: >-
           The human-readable 'attribute name' can be set to a string which reflects its context of
@@ -4394,13 +4394,14 @@ classes:
       - has percentage
 
   named thing:
+    is_a: entity
     description: "a databased entity or concept/class"
     subclass_of: BFO:0000001
     mixins:
-      - resource mixin
       - attribute mixin
-    slots:
-      - category
+    slot_usage:
+      category:
+        range: named thing
     exact_mappings:
       - WIKIDATA:Q35120
       # UMLS Semantic Group "Objects"
@@ -5722,12 +5723,12 @@ classes:
   ## ------
 
   association:
+    is_a: entity
     description: >-
       A typed association between two entities, supported by evidence
     comments:
       - This is roughly the model used by biolink and ontobio at the moment
     mixins:
-      - resource mixin
       - attribute mixin
     slots:
       - subject
@@ -5737,6 +5738,14 @@ classes:
       - negated
       - qualifiers
       - publications
+    slot_usage:
+      type:
+        required: false
+        description: actual rdf:type of biolink:Association is rdf:Statement
+      category:
+        range: association
+      name:
+        required: false
     exact_mappings:
       - OBAN:association
       - rdf:Statement
