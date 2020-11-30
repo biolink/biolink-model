@@ -3319,21 +3319,19 @@ slots:
       - dctypes:Dataset
 
   type:
-    is_a: node property
+    slot_uri: rdf:type
     exact_mappings:
       - alliancegenome:soTermId
       - gff3:type
       - gpi:DB_Object_Type
 
   id:
-    is_a: node property
     identifier: true
     description: >-
-      A unique identifier for a thing.
+      A unique identifier for a resource.
       Must be either a CURIE shorthand for a URI or a complete URI
     in_subset:
       - translator_minimal
-    domain: named thing
     required: true
     exact_mappings:
       - alliancegenome:primaryId
@@ -3343,9 +3341,6 @@ slots:
   iri:
     description: >-
       An IRI for the node. This is determined by the id using expansion rules.
-    # 'iri' is generalized, via the 'resource mixin', to be used for both NamedThing and Attribute classes
-    # is_a: node property
-    # domain: named thing
     range: iri type
     in_subset:
       - translator_minimal
@@ -3357,15 +3352,10 @@ slots:
     aliases: [ 'label', 'display name', 'title' ]
     description: >-
       A human-readable name for a thing
-    #
-    # 'name' is generalized, via the 'resource mixin', to be used for both NamedThing and Attribute classes
-    # is_a: node property
-    # domain: named thing
     range: label type
     in_subset:
       - translator_minimal
       - samples
-    #
     # BiolinkML doesn't like mixin slots to be "required: true".
     # Besides, some entity nodes/attributes may not have names?
     # required: true
@@ -3473,9 +3463,7 @@ slots:
       a long-form human readable name for a thing
 
   description:
-    is_a: node property
     aliases: ['definition']
-    domain: named thing
     range: narrative text
     description: >-
       a human-readable description of a thing
@@ -3507,6 +3495,9 @@ slots:
   association_id:
     is_a: association slot
     identifier: true
+    deprecated: >-
+      This slot is deprecated in favor of 'id' slot.
+    deprecated_element_has_exact_replacement: id
     description: >-
         A unique identifier for an association
     in_subset:
@@ -3624,6 +3615,9 @@ slots:
   association type:
     is_a: association slot
     range: ontology class
+    deprecated: >-
+      This slot is deprecated in favor of 'type' slot.
+    deprecated_element_has_exact_replacement: type
     description: >-
       connects an association to the type of association (e.g. gene to phenotype)
     exact_mappings:
@@ -4272,9 +4266,13 @@ classes:
     mixin: true
     abstract: true
     slots:
+      - id
       - iri
+      - type
       - name
+      - description
       - source
+      - provided by
 
   ## ----------
   ## ATTRIBUTES
@@ -4416,7 +4414,6 @@ classes:
       - resource mixin
       - attribute mixin
     slots:
-      - id
       - category
     exact_mappings:
       - WIKIDATA:Q35120
@@ -4433,7 +4430,6 @@ classes:
     description: >-
       a piece of information that typically describes some topic of discourse or is used as support.
     slots:
-      - description
       - license
       - rights
       - format
@@ -4529,7 +4525,6 @@ classes:
     slots:
       - source data file
       - version of
-      - type
       - distribution
 
   ## -------------------
@@ -4545,7 +4540,6 @@ classes:
       section highlighted by NLP). The scope is intended to be general and include information published on the web,
       as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
     slots:
-      - type
       - authors
       - pages
       - summary
@@ -5385,7 +5379,6 @@ classes:
     aliases: ['locus']
     slots:
       - symbol
-      - description
       - synonym
       - xref
     exact_mappings:
@@ -5417,7 +5410,6 @@ classes:
       - protein
       - RNA product
     slots:
-      - description
       - synonym
       - xref
     exact_mappings:
@@ -6007,9 +5999,10 @@ classes:
       A typed association between two entities, supported by evidence
     comments:
       - This is roughly the model used by biolink and ontobio at the moment
+    mixins:
+      - resource mixin
+      - attribute mixin
     slots:
-      - association_id
-      - association type
       - subject
       - predicate
       - object
@@ -6017,9 +6010,6 @@ classes:
       - negated
       - qualifiers
       - publications
-      - provided by
-    mixins:
-      - attribute mixin
     exact_mappings:
       - OBAN:association
       - rdf:Statement
@@ -6139,7 +6129,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     description: >-
       A homology association between two genes. May be orthology (in which case the species of subject and object
       should differ) or paralogy (in which case the species may be the same)
@@ -6155,7 +6145,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
@@ -6181,7 +6171,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     slot_usage:
       subject:
         range: molecular entity
@@ -6274,7 +6264,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     slots:
       - change is catalyzed by
     description: >-
@@ -6370,7 +6360,7 @@ classes:
     is_a: association
     defining_slots:
       - subject
-      - relation
+      - predicate
     description: >-
       An association between a material sample and the material entity it is derived from
     slot_usage:
@@ -6847,7 +6837,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6863,7 +6853,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6878,7 +6868,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6893,7 +6883,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6909,7 +6899,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     mixins:
       - model to disease association mixin
       - thing to disease association mixin
@@ -6925,7 +6915,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     slots:
       - sequence variant qualifier
     slot_usage:
@@ -6940,7 +6930,7 @@ classes:
     defining_slots:
       - subject
       - object
-      - relation
+      - predicate
     description: >-
       An association between a gene and an expression site, possibly qualified by stage/timing info.
     notes:
@@ -7200,7 +7190,7 @@ classes:
       the two entities are related by parthood. This includes relationships between cellular components
       and cells, between cells and tissues, tissues and whole organisms
     defining_slots:
-      - relation
+      - predicate
     slot_usage:
       subject:
         range: anatomical entity
@@ -7220,7 +7210,7 @@ classes:
       the two entities are related by development. A number of different relationship types
       can be used to specify the precise nature of the relationship
     defining_slots:
-      - relation
+      - predicate
     slot_usage:
       subject:
         range: anatomical entity
