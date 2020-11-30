@@ -4230,6 +4230,14 @@ classes:
   ## ATTRIBUTES
   ## ----------
 
+  quantity value:
+    description: >-
+      A value of an attribute that is quantitative and measurable,
+      expressed as a combination of a unit and a numeric value
+    slots:
+      - has unit
+      - has numeric value
+
   attribute:
     subclass_of: PATO:0000001
     is_a: entity
@@ -4264,15 +4272,6 @@ classes:
       - PATO:0000001
     in_subset:
       - samples
-
-  quantity value:
-    is_a: abstract entity
-    description: >-
-      A value of an attribute that is quantitative and measurable,
-      expressed as a combination of a unit and a numeric value
-    slots:
-      - has unit
-      - has numeric value
 
   attribute mixin:
     mixin: true
