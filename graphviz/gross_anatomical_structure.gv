@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,915.79,123"];
+	graph [bb="0,0,942.79,123"];
 	node [label="\N"];
 	"gross anatomical structure"	 [height=0.5,
 		label="gross anatomical structure",
@@ -61,24 +61,28 @@ digraph {
 		lp="571.14,61.5",
 		pos="e,595.29,32.695 494.56,87.812 520.98,73.352 558.76,52.68 586.35,37.583",
 		style=solid];
-	"has attribute"	 [color=blue,
-		height=0.5,
-		label=attribute,
-		pos="726.14,18",
-		width=1.1193];
+	"has attribute"	 [height=0.5,
+		pos="739.14,18",
+		width=1.4985];
 	"gross anatomical structure" -> "has attribute"	 [color=blue,
 		label="has attribute",
-		lp="667.64,61.5",
-		pos="e,696.59,30.27 521.74,90.055 544.22,83.989 570.01,76.619 593.14,69 625.11,58.471 660.69,44.721 686.99,34.151",
+		lp="671.64,61.5",
+		pos="e,702.77,31.457 520.66,89.949 543.34,83.785 569.56,76.375 593.14,69 626.84,58.462 664.44,45.294 693.04,34.978",
 		style=solid];
 	"in taxon"	 [color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="850.14,18",
+		pos="877.14,18",
 		width=1.8234];
 	"gross anatomical structure" -> "in taxon"	 [color=blue,
 		label="in taxon",
-		lp="776.64,61.5",
-		pos="e,813.48,33.082 552.73,95.804 598.7,90.047 655.36,81.338 705.14,69 738.86,60.645 775.77,47.603 803.91,36.799",
+		lp="788.64,61.5",
+		pos="e,836.55,32.327 539.09,92.653 551.46,90.712 564.16,88.766 576.14,87 635.16,78.308 650.86,81.704 709.14,69 749.22,60.263 793.59,46.618 \
+826.66,35.64",
 		style=solid];
+	"organismal entity_has attribute"	 [color=blue,
+		height=0.5,
+		label=attribute,
+		pos="625.14,105",
+		width=1.1193];
 }

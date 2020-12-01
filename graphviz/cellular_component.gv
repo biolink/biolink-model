@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,915.79,123"];
+	graph [bb="0,0,942.79,123"];
 	node [label="\N"];
 	"cellular component"	 [height=0.5,
 		label="cellular component",
@@ -61,24 +61,28 @@ digraph {
 		lp="571.14,61.5",
 		pos="e,595.28,32.697 493.8,88.226 520.23,73.763 558.42,52.867 586.27,37.63",
 		style=solid];
-	"has attribute"	 [color=blue,
-		height=0.5,
-		label=attribute,
-		pos="726.14,18",
-		width=1.1193];
+	"has attribute"	 [height=0.5,
+		pos="739.14,18",
+		width=1.4985];
 	"cellular component" -> "has attribute"	 [color=blue,
 		label="has attribute",
-		lp="667.64,61.5",
-		pos="e,696.59,30.27 516.3,91.515 539.98,85.192 568.12,77.242 593.14,69 625.11,58.471 660.69,44.721 686.99,34.151",
+		lp="671.64,61.5",
+		pos="e,702.77,31.457 515.25,91.414 539.1,84.979 567.66,76.969 593.14,69 626.84,58.462 664.44,45.294 693.04,34.978",
 		style=solid];
 	"in taxon"	 [color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="850.14,18",
+		pos="877.14,18",
 		width=1.8234];
 	"cellular component" -> "in taxon"	 [color=blue,
 		label="in taxon",
-		lp="776.64,61.5",
-		pos="e,813.48,33.082 536.12,97.814 584.52,92.154 649.18,82.871 705.14,69 738.86,60.645 775.77,47.603 803.91,36.799",
+		lp="788.64,61.5",
+		pos="e,837.28,32.332 520.94,92.565 531.3,90.549 542.02,88.601 552.14,87 621.52,76.029 640.37,83.259 709.14,69 749.58,60.616 794.27,46.822 \
+827.39,35.692",
 		style=solid];
+	"organismal entity_has attribute"	 [color=blue,
+		height=0.5,
+		label=attribute,
+		pos="601.14,105",
+		width=1.1193];
 }

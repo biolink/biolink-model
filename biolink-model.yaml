@@ -3340,7 +3340,7 @@ slots:
 
   iri:
     description: >-
-      An IRI for the node. This is determined by the id using expansion rules.
+      An IRI for an entity. This is determined by the id using expansion rules.
     range: iri type
     in_subset:
       - translator_minimal
@@ -3616,12 +3616,10 @@ slots:
     is_a: association slot
     range: ontology class
     deprecated: >-
-      This slot is deprecated in favor of 'type' slot.
-    deprecated_element_has_exact_replacement: type
+      This slot is deprecated in favor of 'category' slot.
+    deprecated_element_has_exact_replacement: category
     description: >-
       connects an association to the type of association (e.g. gene to phenotype)
-    exact_mappings:
-      - rdf:type
 
   ## Additional Properties for Information Content Entity and Publication Nodes
 
@@ -4194,6 +4192,10 @@ slots:
       - LOINC:has_modality_type
       - LOINC:has_view_type
 
+  # TRAPI Attribute schema alignment:
+  # value: NamedThing.name
+  # value_type: NamedThing.category
+  # value_type_name: quantity_value.NamedThing.name
   has qualitative value:
     description: >-
       connects an attribute to a value
@@ -4203,6 +4205,10 @@ slots:
     in_subset:
       - samples
 
+  # TRAPI Attribute schema alignment:
+  # value: quantity_value.has_numeric_value[double]
+  # value_type: quantity_value.has_unit.unit.uri
+  # value_type_name: quantity_value.has_unit.unit.name[string]
   has quantitative value:
     description: >-
       connects an attribute to a value
@@ -4258,40 +4264,50 @@ slots:
 
 classes:
 
-  abstract entity:
-    description: >-
-      Any thing that is not a process or a physical mass-bearing entity
-
-  resource mixin:
-    mixin: true
-    abstract: true
-    slots:
-      - id
-      - iri
-      - type
-      - name
-      - description
-      - source
-      - provided by
-
   ## ----------
   ## ATTRIBUTES
   ## ----------
 
+  annotation:
+    description: >-
+      Biolink Model root class for entity annotations.
+    abstract: true
+
+  quantity value:
+    is_a: annotation
+    description: >-
+      A value of an attribute that is quantitative and measurable,
+      expressed as a combination of a unit and a numeric value
+    slots:
+      - has unit
+      - has numeric value
+
+  # Alignment attempted of the biolink:Attribute model
+  # to the proposed TRAPI Release 1.1 Attribute schema, i.e.
+  #
+  # attribute_name: "assertionAuthoredBy",
+  # attribute_type: SEPIO:0000130,
+  # value: "ORCID:12345",
+  # value_type: "wd:Q51044",
+  # value_type_name: "ORCID ID"
+  # url: https://orcid.org/12345
+  # source: ORCID
+
   attribute:
-    subclass_of: PATO:0000001
-    is_a: abstract entity
-    mixins:
-      - resource mixin
+    is_a: annotation
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
       An environmental sample may have attributes such as depth, lat, long, material.
     slots:
-      - has attribute type
-      # the 'value type' and 'value name' of values can be discerned from these value slots
+      - name                   # 'attribute_name'
+      - has attribute type     # 'attribute_type'
+      # 'value', 'value_type', 'value_type_name'
+      # extracted from either of the next two slots
       - has quantitative value
       - has qualitative value
+      - iri                    # 'url'
+      - source                 # 'source'
     slot_usage:
       name:
         description: >-
@@ -4311,55 +4327,43 @@ classes:
     in_subset:
       - samples
 
-  quantity value:
-    is_a: abstract entity
-    description: >-
-      A value of an attribute that is quantitative and measurable,
-      expressed as a combination of a unit and a numeric value
-    slots:
-      - has unit
-      - has numeric value
-
-  attribute mixin:
-    mixin: true
-    abstract: true
-    slots:
-      - has attribute
-
   ## ------
   ## THINGS
   ## ------
 
   biological sex:
-    subclass_of: PATO:0000047
     is_a: attribute
+    exact_mappings:
+     - PATO:0000047
 
   phenotypic sex:
+    is_a: biological sex
     description: >-
       An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-    subclass_of: PATO:0001894
-    is_a: biological sex
+    exact_mappings:
+     - PATO:0001894
 
   genotypic sex:
+    is_a: biological sex
     description: >-
       An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
-    subclass_of: PATO:0020000
-    is_a: biological sex
+    exact_mappings:
+     - PATO:0020000
 
   severity value:
+    is_a: attribute
     description: >-
       describes the severity of a phenotypic feature or disease
-    is_a: attribute
 
   frequency value:
+    is_a: attribute
     description: >-
       describes the frequency of occurrence of an event or condition
-    is_a: attribute
 
   organism attribute:
+    is_a: attribute
     description: >-
       describes a characteristic of an organismal entity.
-    is_a: attribute
     exact_mappings:
       # Organism Attribute
       - UMLSSC:T032
@@ -4407,15 +4411,29 @@ classes:
       - has quotient
       - has percentage
 
-  named thing:
-    description: "a databased entity or concept/class"
-    subclass_of: BFO:0000001
-    mixins:
-      - resource mixin
-      - attribute mixin
+  entity:
+    description: >-
+      Root Biolink Model class for all things and informational relationships, real or imagined.
+    abstract: true
     slots:
+      - id
+      - iri
       - category
+      - type   # rdf:type
+      - name
+      - description
+      - source
+      - provided by
+      - has attribute
+
+  named thing:
+    is_a: entity
+    description: "a databased entity or concept/class"
+    slot_usage:
+      category:
+        range: named thing
     exact_mappings:
+      - BFO:0000001
       - WIKIDATA:Q35120
       # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
@@ -4794,7 +4812,6 @@ classes:
     mixins:
       - thing with taxon
     is_a: organismal entity
-    subclass_of: NCBITaxon:1
     exact_mappings:
       - SIO:010000
       # Organism
@@ -4815,8 +4832,8 @@ classes:
     mixins:
       - thing with taxon
     is_a: organismal entity
-    subclass_of: PCO:0000001
     exact_mappings:
+      - PCO:0000001
       - SIO:001061
       # UMLS Semantic Type "Population Group"
       - UMLSSC:T098
@@ -4945,7 +4962,6 @@ classes:
     description: >-
       The assemblage of genetically determined traits or outward appearance of an individual.
       It is the visible biological manifestations of interactions between genes and the environment.
-    subclass_of: UPHENO:0001001
     exact_mappings:
       - UPHENO:0001001
       - SIO:010056
@@ -5079,12 +5095,12 @@ classes:
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
-    subclass_of: CHEBI:24431
     broad_mappings:
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
       - UMLSST:sbst
     exact_mappings:
+      - CHEBI:24431
       - SIO:010004
       - WIKIDATA:Q79529
       # Chemical
@@ -5219,7 +5235,6 @@ classes:
     mixins:
       - thing with taxon
       - physical essence
-    subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
     exact_mappings:
@@ -5252,7 +5267,8 @@ classes:
     is_a: organismal entity
     mixins:
       - thing with taxon
-    subclass_of: UBERON:0000105
+    exact_mappings:
+      - UBERON:0000105
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
 
@@ -5265,7 +5281,6 @@ classes:
     is_a: planetary entity
     mixins:
       - occurrent
-    subclass_of: ENVO:02500000
     exact_mappings:
       - ENVO:02500000
 
@@ -5493,14 +5508,14 @@ classes:
       - RNACENTRAL
       - NCBIGene
       - ENSEMBL
-    subclass_of: SO:0000655
     exact_mappings:
+      - SO:0000655
       - SIO:001235
 
   microRNA:
     is_a: noncoding RNA product
-    subclass_of: SO:0000276
     exact_mappings:
+      - SO:0000276
       - SIO:001397
       - WIKIDATA:Q310899
     id_prefixes:
@@ -5510,8 +5525,8 @@ classes:
 
   macromolecular complex:
     is_a: macromolecular machine
-    subclass_of: GO:0032991
     exact_mappings:
+      - GO:0032991
       - WIKIDATA:Q22325163
     id_prefixes:
       - INTACT
@@ -5995,6 +6010,7 @@ classes:
   ## ------
 
   association:
+    is_a: entity
     description: >-
       A typed association between two entities, supported by evidence
     comments:
@@ -6010,6 +6026,11 @@ classes:
       - negated
       - qualifiers
       - publications
+    slot_usage:
+      type:
+        description: rdf:type of biolink:Association should be fixed at rdf:Statement
+      category:
+        range: association
     exact_mappings:
       - OBAN:association
       - rdf:Statement
@@ -7070,9 +7091,9 @@ classes:
           - value: GO:0016301
             description: kinase activity
 
-  ## ------
+  ## -----------------
   ## SEQUENCE FEATURES
-  ## ------
+  ## -----------------
 
   sequence association:
     is_a: association
