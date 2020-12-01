@@ -35,8 +35,8 @@ fields:
     the origin of the entity to which the slot belongs.
   display_name: source
 - id: has_attribute
-  description: connects any named thing to an attribute
-  display_name: has attribute
+  description: may be an organism attribute
+  display_name: organismal entity_has attribute
   cardinality: multi
 - id: in_taxon
   description: connects a thing to a class representing a taxon
