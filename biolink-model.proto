@@ -1916,6 +1916,7 @@ message Phenomenon
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
+// The assemblage of genetically determined traits or outward appearance of an individual. It is the visible biological manifestations of interactions between genes and the environment.
 message PhenotypicFeature
  {
   id String = 1

@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-01 17:45
+# Generation date: 2020-12-01 17:55
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1688,6 +1688,10 @@ class Disease(DiseaseOrPhenotypicFeature):
 
 @dataclass
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
+    """
+    The assemblage of genetically determined traits or outward appearance of an individual. It is the visible
+    biological manifestations of interactions between genes and the environment.
+    """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
