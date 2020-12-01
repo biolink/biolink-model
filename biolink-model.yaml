@@ -4914,10 +4914,14 @@ classes:
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
+    description: >-
+      The assemblage of genetically determined traits or outward appearance of an individual.
+      It is the visible biological manifestations of interactions between genes and the environment.
     exact_mappings:
       - UPHENO:0001001
       - SIO:010056
       - WIKIDATA:Q104053
+      - EFO:0000651
     narrow_mappings:
       # Sign or Symptom
       - UMLSSC:T184
