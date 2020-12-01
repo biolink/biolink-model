@@ -15,14 +15,14 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToDiseaseAssociation],[SequenceVariantModulatesTreatmentAssociation],[SequenceFeatureRelationship],[SequenceAssociation],[Publication],[PopulationToPopulationAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation],[OntologyClass],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSampleDerivationAssociation],[GenotypeToVariantAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeToDiseaseAssociation],[GeneToPhenotypicFeatureAssociation],[GeneToGeneAssociation],[GeneToExpressionSiteAssociation],[GeneToDiseaseAssociation],[GeneRegulatoryRelationship],[FunctionalAssociation],[ExposureEventToPhenotypicFeatureAssociation],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureAssociation],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[ContributorAssociation],[ChemicalToThingAssociation],[ChemicalToPathwayAssociation],[ChemicalToGeneAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[AttributeMixin],[Attribute],[Agent]%3Cprovided%20by%200..%2A-%20[Association%7Cid:string;predicate:predicate_type;relation:uriorcurie;negated:boolean%20%3F],[Publication]%3Cpublications%200..%2A-%20[Association],[OntologyClass]%3Cqualifiers%200..%2A-%20[Association],[NamedThing]%3Cobject%201..1-%20[Association],[NamedThing]%3Csubject%201..1-%20[Association],[OntologyClass]%3Cassociation%20type%200..1-%20[Association],[Association]uses%20-.-%3E[AttributeMixin],[Association]%5E-[VariantToPopulationAssociation],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[Association]%5E-[VariantToDiseaseAssociation],[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],[Association]%5E-[SequenceFeatureRelationship],[Association]%5E-[SequenceAssociation],[Association]%5E-[PopulationToPopulationAssociation],[Association]%5E-[OrganismalEntityAsAModelOfDiseaseAssociation],[Association]%5E-[MaterialSampleToThingAssociation],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToDiseaseAssociation],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[Association]%5E-[GeneToGeneAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToDiseaseAssociation],[Association]%5E-[GeneRegulatoryRelationship],[Association]%5E-[FunctionalAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[Association]%5E-[DiseaseToExposureAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[Association]%5E-[ContributorAssociation],[Association]%5E-[ChemicalToThingAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Association]%5E-[ChemicalToGeneAssociation],[Association]%5E-[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[Association]%5E-[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntityToAnatomicalEntityAssociation],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToDiseaseAssociation],[SequenceVariantModulatesTreatmentAssociation],[SequenceFeatureRelationship],[SequenceAssociation],[Publication],[PopulationToPopulationAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation],[OntologyClass],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSampleDerivationAssociation],[GenotypeToVariantAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeToDiseaseAssociation],[GeneToPhenotypicFeatureAssociation],[GeneToGeneAssociation],[GeneToExpressionSiteAssociation],[GeneToDiseaseAssociation],[GeneRegulatoryRelationship],[FunctionalAssociation],[ExposureEventToPhenotypicFeatureAssociation],[Entity],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureAssociation],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[ContributorAssociation],[ChemicalToThingAssociation],[ChemicalToPathwayAssociation],[ChemicalToGeneAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[Attribute],[Association]%3Ccategory%201..%2A-%20[Association%7Cpredicate:predicate_type;relation:uriorcurie;negated:boolean%20%3F;type:string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Publication]%3Cpublications%200..%2A-%20[Association],[OntologyClass]%3Cqualifiers%200..%2A-%20[Association],[NamedThing]%3Cobject%201..1-%20[Association],[NamedThing]%3Csubject%201..1-%20[Association],[Association]%5E-[VariantToPopulationAssociation],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[Association]%5E-[VariantToDiseaseAssociation],[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],[Association]%5E-[SequenceFeatureRelationship],[Association]%5E-[SequenceAssociation],[Association]%5E-[PopulationToPopulationAssociation],[Association]%5E-[OrganismalEntityAsAModelOfDiseaseAssociation],[Association]%5E-[MaterialSampleToThingAssociation],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToDiseaseAssociation],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[Association]%5E-[GeneToGeneAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToDiseaseAssociation],[Association]%5E-[GeneRegulatoryRelationship],[Association]%5E-[FunctionalAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[Association]%5E-[DiseaseToExposureAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[Association]%5E-[ContributorAssociation],[Association]%5E-[ChemicalToThingAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Association]%5E-[ChemicalToGeneAssociation],[Association]%5E-[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[Association]%5E-[AnatomicalEntityToAnatomicalEntityAssociation],[Entity]%5E-[Association],[AnatomicalEntityToAnatomicalEntityAssociation],[Agent])
 
 ---
 
 
-## Uses Mixins
+## Parents
 
- *  mixin: [AttributeMixin](AttributeMixin.md)
+ *  is_a: [Entity](Entity.md) - Root Biolink Model class for all things and informational relationships, real or imagined.
 
 ## Children
 
@@ -64,19 +64,18 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
 ## Referenced by class
 
+ *  **[Association](Association.md)** *[association➞category](association_category.md)*  <sub>1..*</sub>  **[Association](Association.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [association type](association_type.md)  <sub>OPT</sub>
-    * Description: connects an association to the type of association (e.g. gene to phenotype)
-    * range: [OntologyClass](OntologyClass.md)
- * [association➞id](association_id.md)  <sub>REQ</sub>
-    * Description: A unique identifier for an association
+ * [association➞category](association_category.md)  <sub>1..*</sub>
+    * range: [Association](Association.md)
+ * [association➞type](association_type.md)  <sub>OPT</sub>
+    * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
     * range: [String](types/String.md)
-    * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
     * range: [Boolean](types/Boolean.md)
@@ -86,9 +85,6 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [predicate](predicate.md)  <sub>REQ</sub>
     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
     * range: [PredicateType](types/PredicateType.md)
- * [provided by](provided_by.md)  <sub>0..*</sub>
-    * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Agent](Agent.md)
  * [publications](publications.md)  <sub>0..*</sub>
     * Description: connects an association to publications supporting the association
     * range: [Publication](Publication.md)
@@ -102,6 +98,34 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
 
+### Inherited from entity:
+
+ * [id](id.md)  <sub>REQ</sub>
+    * Description: A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI
+    * range: [String](types/String.md)
+    * in subsets: (translator_minimal)
+ * [iri](iri.md)  <sub>OPT</sub>
+    * Description: An IRI for an entity. This is determined by the id using expansion rules.
+    * range: [IriType](types/IriType.md)
+    * in subsets: (translator_minimal,samples)
+ * [type](type.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal,samples)
+ * [description](description.md)  <sub>OPT</sub>
+    * Description: a human-readable description of a thing
+    * range: [NarrativeText](types/NarrativeText.md)
+    * in subsets: (translator_minimal)
+ * [source](source.md)  <sub>OPT</sub>
+    * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal)
+ * [provided by](provided_by.md)  <sub>0..*</sub>
+    * Description: connects an association to the agent (person, organization or group) that provided it
+    * range: [Agent](Agent.md)
+
 ### Inherited from material sample:
 
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
@@ -111,13 +135,11 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
 ### Domain for slot:
 
- * [association type](association_type.md)  <sub>OPT</sub>
-    * Description: connects an association to the type of association (e.g. gene to phenotype)
-    * range: [OntologyClass](OntologyClass.md)
- * [association➞id](association_id.md)  <sub>REQ</sub>
-    * Description: A unique identifier for an association
+ * [association➞category](association_category.md)  <sub>1..*</sub>
+    * range: [Association](Association.md)
+ * [association➞type](association_type.md)  <sub>OPT</sub>
+    * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
     * range: [String](types/String.md)
-    * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
     * range: [Boolean](types/Boolean.md)

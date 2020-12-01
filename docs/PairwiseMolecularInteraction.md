@@ -15,7 +15,7 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;relation:uriorcurie;negated(i):boolean%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-%20[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;relation:uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-%20[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[Attribute],[Association],[Agent])
 
 ---
 
@@ -52,13 +52,6 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
 
 ### Inherited from association:
 
- * [association➞id](association_id.md)  <sub>REQ</sub>
-    * Description: A unique identifier for an association
-    * range: [String](types/String.md)
-    * in subsets: (translator_minimal)
- * [association type](association_type.md)  <sub>OPT</sub>
-    * Description: connects an association to the type of association (e.g. gene to phenotype)
-    * range: [OntologyClass](OntologyClass.md)
  * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
@@ -80,6 +73,36 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
  * [publications](publications.md)  <sub>0..*</sub>
     * Description: connects an association to publications supporting the association
     * range: [Publication](Publication.md)
+ * [association➞type](association_type.md)  <sub>OPT</sub>
+    * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
+    * range: [String](types/String.md)
+ * [association➞category](association_category.md)  <sub>1..*</sub>
+    * range: [Association](Association.md)
+
+### Inherited from entity:
+
+ * [id](id.md)  <sub>REQ</sub>
+    * Description: A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI
+    * range: [String](types/String.md)
+    * in subsets: (translator_minimal)
+ * [iri](iri.md)  <sub>OPT</sub>
+    * Description: An IRI for an entity. This is determined by the id using expansion rules.
+    * range: [IriType](types/IriType.md)
+    * in subsets: (translator_minimal,samples)
+ * [type](type.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal,samples)
+ * [description](description.md)  <sub>OPT</sub>
+    * Description: a human-readable description of a thing
+    * range: [NarrativeText](types/NarrativeText.md)
+    * in subsets: (translator_minimal)
+ * [source](source.md)  <sub>OPT</sub>
+    * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+    * range: [LabelType](types/LabelType.md)
+    * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)

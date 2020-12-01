@@ -15,7 +15,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[ResourceMixin],[QuantityValue],[OrganismalEntity],[OrganismAttribute],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalAttribute],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[AttributeMixin]++-%20has%20attribute%200..%2A%3E[Attribute],[MaterialSample]++-%20has%20attribute(i)%200..%2A%3E[Attribute],[OrganismalEntity]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]uses%20-.-%3E[ResourceMixin],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[OrganismAttribute],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalAttribute],[Attribute]%5E-[BiologicalSex],[AbstractEntity]%5E-[Attribute],[MaterialSample],[AttributeMixin],[AbstractEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[QuantityValue],[OrganismalEntity],[OrganismAttribute],[OntologyClass],[NamedThing],[Inheritance],[FrequencyValue],[ClinicalAttribute],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[Entity]++-%20has%20attribute%200..%2A%3E[Attribute],[MaterialSample]++-%20has%20attribute(i)%200..%2A%3E[Attribute],[OrganismalEntity]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[OrganismAttribute],[Attribute]%5E-[Inheritance],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalAttribute],[Attribute]%5E-[BiologicalSex],[Annotation]%5E-[Attribute],[MaterialSample],[Entity],[Annotation])
 
 ---
 
@@ -29,11 +29,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
 ## Parents
 
- *  is_a: [AbstractEntity](AbstractEntity.md) - Any thing that is not a process or a physical mass-bearing entity
-
-## Uses Mixins
-
- *  mixin: [ResourceMixin](ResourceMixin.md)
+ *  is_a: [Annotation](Annotation.md) - Biolink Model root class for entity annotations.
 
 ## Children
 
@@ -71,20 +67,33 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
     * range: [QuantityValue](QuantityValue.md)
     * in subsets: (samples)
 
-### Inherited from resource mixin:
+### Inherited from entity:
 
+ * [id](id.md)  <sub>REQ</sub>
+    * Description: A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI
+    * range: [String](types/String.md)
+    * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>OPT</sub>
-    * Description: An IRI for the node. This is determined by the id using expansion rules.
+    * Description: An IRI for an entity. This is determined by the id using expansion rules.
     * range: [IriType](types/IriType.md)
     * in subsets: (translator_minimal,samples)
+ * [type](type.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
  * [name](name.md)  <sub>OPT</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal,samples)
+ * [description](description.md)  <sub>OPT</sub>
+    * Description: a human-readable description of a thing
+    * range: [NarrativeText](types/NarrativeText.md)
+    * in subsets: (translator_minimal)
  * [source](source.md)  <sub>OPT</sub>
     * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
+ * [provided by](provided_by.md)  <sub>0..*</sub>
+    * Description: connects an association to the agent (person, organization or group) that provided it
+    * range: [Agent](Agent.md)
 
 ### Domain for slot:
 

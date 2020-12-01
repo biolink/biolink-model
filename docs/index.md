@@ -14,96 +14,77 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Entities
 
- * [NamedThing](NamedThing.md) - a databased entity or concept/class
-    * [AdministrativeEntity](AdministrativeEntity.md)
-       * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
-    * [BiologicalEntity](BiologicalEntity.md)
-       * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
-          * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
-             * [Behavior](Behavior.md)
-             * [Pathway](Pathway.md)
-             * [PhysiologicalProcess](PhysiologicalProcess.md)
-          * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
-       * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
-          * [Disease](Disease.md)
-          * [PhenotypicFeature](PhenotypicFeature.md)
-       * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-          * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
-             * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
-          * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
-       * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
-          * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
-             * [Carbohydrate](Carbohydrate.md)
-             * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
-             * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
-          * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
-          * [Food](Food.md) - A substance consumed by a living organism as a source of nutrition
-          * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
-          * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
-             * [CodingSequence](CodingSequence.md)
-             * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
-             * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
-             * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
-             * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
-             * [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
-                * [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
-                   * [Gene](Gene.md)
-                   * [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
-                      * [RNAProduct](RNAProduct.md)
-                         * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
-                         * [NoncodingRNAProduct](NoncodingRNAProduct.md)
-                            * [MicroRNA](MicroRNA.md)
-                      * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
-                         * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
-                      * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
-                * [MacromolecularComplex](MacromolecularComplex.md)
-             * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
-             * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
-                * [Snv](Snv.md) - SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
-       * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
-          * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
-             * [Cell](Cell.md)
-             * [CellularComponent](CellularComponent.md) - A location in or around a cell
-             * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
-          * [CellLine](CellLine.md)
-          * [IndividualOrganism](IndividualOrganism.md)
-             * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
-          * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
-          * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
-    * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
-       * [ClinicalIntervention](ClinicalIntervention.md)
-       * [ClinicalTrial](ClinicalTrial.md)
-    * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
-    * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
-       * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
-       * [DataFile](DataFile.md)
-          * [SourceFile](SourceFile.md)
-       * [DataSet](DataSet.md)
-          * [DataSetVersion](DataSetVersion.md)
-             * [DataSetSummary](DataSetSummary.md)
-             * [DistributionLevel](DistributionLevel.md)
-       * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
-       * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
-          * [Article](Article.md)
-          * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
-          * [BookChapter](BookChapter.md)
-          * [Serial](Serial.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
-    * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
-       * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-       * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
-       * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
-    * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
-    * [PhysicalEntity](PhysicalEntity.md) - An entity that has material reality (a.k.a. physical essence).
-       * [MaterialSample](MaterialSample.md) - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
-    * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
-       * [EnvironmentalFeature](EnvironmentalFeature.md)
-       * [EnvironmentalProcess](EnvironmentalProcess.md)
-       * [GeographicLocation](GeographicLocation.md) - a location that can be described in lat/long coordinates
-          * [GeographicLocationAtTime](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
-    * [Procedure](Procedure.md) - A series of actions conducted in a certain order or manner
 
 ### Associations
 
+
+### Class Mixins
+
+ * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
+ * [CaseToThingAssociationMixin](CaseToThingAssociationMixin.md) - An abstract association for use where the case is the subject
+ * [CellLineToThingAssociationMixin](CellLineToThingAssociationMixin.md) - An relationship between a cell line and another entity
+ * [DataSetSummary](DataSetSummary.md)
+ * [DiseaseToThingAssociationMixin](DiseaseToThingAssociationMixin.md)
+ * [DistributionLevel](DistributionLevel.md)
+ * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations
+    * [ThingToDiseaseAssociationMixin](ThingToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
+    * [ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)
+ * [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for frequency type associations
+    * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations
+       * [ThingToDiseaseAssociationMixin](ThingToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
+       * [ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)
+ * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [GeneGrouping](GeneGrouping.md) - any grouping of multiple genes or gene products
+ * [GeneProductIsoform](GeneProductIsoform.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
+ * [GeneToThingAssociationMixin](GeneToThingAssociationMixin.md)
+ * [GenotypeToThingAssociationMixin](GenotypeToThingAssociationMixin.md)
+ * [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
+ * [ModelToDiseaseAssociationMixin](ModelToDiseaseAssociationMixin.md) - This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
+ * [Occurrent](Occurrent.md) - A processual entity
+    * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
+ * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
+ * [RelationshipQuantifier](RelationshipQuantifier.md)
+    * [FrequencyQuantifier](FrequencyQuantifier.md)
+    * [SensitivityQuantifier](SensitivityQuantifier.md)
+    * [SpecificityQuantifier](SpecificityQuantifier.md)
+       * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
+ * [ThingToDiseaseOrPhenotypicFeatureAssociationMixin](ThingToDiseaseOrPhenotypicFeatureAssociationMixin.md)
+ * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
+ * [VariantToThingAssociationMixin](VariantToThingAssociationMixin.md)
+
+### Other Classes
+
+ * [RNAProduct](RNAProduct.md)
+    * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
+    * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+       * [MicroRNA](MicroRNA.md)
+ * [AdministrativeEntity](AdministrativeEntity.md)
+    * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
+ * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
+    * [Cell](Cell.md)
+    * [CellularComponent](CellularComponent.md) - A location in or around a cell
+    * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+ * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
+    * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+    * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+ * [Annotation](Annotation.md) - Biolink Model root class for entity annotations.
+    * [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+       * [BiologicalSex](BiologicalSex.md)
+          * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+          * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+       * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
+          * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
+             * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
+          * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
+       * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
+       * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+       * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
+       * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
+       * [Zygosity](Zygosity.md)
+    * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+ * [Article](Article.md)
  * [Association](Association.md) - A typed association between two entities, supported by evidence
     * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
        * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
@@ -160,60 +141,217 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
     * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
     * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
-
-### Class Mixins
-
- * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
- * [AttributeMixin](AttributeMixin.md)
- * [CaseToThingAssociationMixin](CaseToThingAssociationMixin.md) - An abstract association for use where the case is the subject
- * [CellLineToThingAssociationMixin](CellLineToThingAssociationMixin.md) - An relationship between a cell line and another entity
- * [DiseaseToThingAssociationMixin](DiseaseToThingAssociationMixin.md)
- * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations
-    * [ThingToDiseaseAssociationMixin](ThingToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
-    * [ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)
- * [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for frequency type associations
-    * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations
-       * [ThingToDiseaseAssociationMixin](ThingToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
-       * [ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)
- * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [GeneGrouping](GeneGrouping.md) - any grouping of multiple genes or gene products
- * [GeneProductIsoform](GeneProductIsoform.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
- * [GeneToThingAssociationMixin](GeneToThingAssociationMixin.md)
- * [GenotypeToThingAssociationMixin](GenotypeToThingAssociationMixin.md)
- * [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
- * [ModelToDiseaseAssociationMixin](ModelToDiseaseAssociationMixin.md) - This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
- * [Occurrent](Occurrent.md) - A processual entity
-    * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
- * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
- * [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
- * [RelationshipQuantifier](RelationshipQuantifier.md)
-    * [FrequencyQuantifier](FrequencyQuantifier.md)
-    * [SensitivityQuantifier](SensitivityQuantifier.md)
-    * [SpecificityQuantifier](SpecificityQuantifier.md)
-       * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
- * [ResourceMixin](ResourceMixin.md)
- * [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
- * [ThingToDiseaseOrPhenotypicFeatureAssociationMixin](ThingToDiseaseOrPhenotypicFeatureAssociationMixin.md)
- * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
- * [VariantToThingAssociationMixin](VariantToThingAssociationMixin.md)
-
-### Other Classes
-
- * [AbstractEntity](AbstractEntity.md) - Any thing that is not a process or a physical mass-bearing entity
-    * [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
-       * [BiologicalSex](BiologicalSex.md)
-          * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
-          * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-       * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
-          * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
-             * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
-          * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
-       * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
-       * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
-       * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
-       * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
-       * [Zygosity](Zygosity.md)
-    * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+ * [Behavior](Behavior.md)
+ * [BiologicalEntity](BiologicalEntity.md)
+    * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
+       * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
+          * [Behavior](Behavior.md)
+          * [Pathway](Pathway.md)
+          * [PhysiologicalProcess](PhysiologicalProcess.md)
+       * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
+    * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+       * [Disease](Disease.md)
+       * [PhenotypicFeature](PhenotypicFeature.md)
+    * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+       * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
+          * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
+       * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
+    * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
+       * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+          * [Carbohydrate](Carbohydrate.md)
+          * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+          * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+       * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+       * [Food](Food.md) - A substance consumed by a living organism as a source of nutrition
+       * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
+       * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+          * [CodingSequence](CodingSequence.md)
+          * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+          * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
+          * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
+          * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
+          * [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+             * [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+                * [Gene](Gene.md)
+                * [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
+                   * [RNAProduct](RNAProduct.md)
+                      * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
+                      * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+                         * [MicroRNA](MicroRNA.md)
+                   * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+                      * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+                   * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
+             * [MacromolecularComplex](MacromolecularComplex.md)
+          * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
+          * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
+             * [Snv](Snv.md) - SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
+    * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+       * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
+          * [Cell](Cell.md)
+          * [CellularComponent](CellularComponent.md) - A location in or around a cell
+          * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+       * [CellLine](CellLine.md)
+       * [IndividualOrganism](IndividualOrganism.md)
+          * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
+       * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
+       * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+ * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+ * [BookChapter](BookChapter.md)
+ * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+    * [ClinicalIntervention](ClinicalIntervention.md)
+    * [ClinicalTrial](ClinicalTrial.md)
+ * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
+ * [DataFile](DataFile.md)
+    * [SourceFile](SourceFile.md)
+ * [DataSet](DataSet.md)
+    * [DataSetVersion](DataSetVersion.md)
+       * [DataSetSummary](DataSetSummary.md)
+       * [DistributionLevel](DistributionLevel.md)
+ * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+ * [Entity](Entity.md) - Root Biolink Model class for all things and informational relationships, real or imagined.
+    * [Association](Association.md) - A typed association between two entities, supported by evidence
+       * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
+          * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+          * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+       * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+       * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+          * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
+       * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+          * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) - A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
+       * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) - An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
+       * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) - An interaction between a chemical entity and a gene or gene product
+       * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) - An interaction between a chemical entity and a biological process or pathway
+       * [ChemicalToThingAssociation](ChemicalToThingAssociation.md) - An interaction between a chemical entity and another entity
+       * [ContributorAssociation](ContributorAssociation.md) - Any association between an entity (such as a publication) and various agents that contribute to its realisation
+       * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+          * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+       * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md) - An association between an exposure event and a disease
+       * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+       * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+       * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+          * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
+          * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+          * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+          * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+       * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) - A regulatory relationship between two genes
+       * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+          * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
+          * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+       * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) - An association between a gene and an expression site, possibly qualified by stage/timing info.
+       * [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+          * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) - A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+          * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+             * [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) - An interaction at the molecular level between two physical entities
+       * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+       * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
+          * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
+       * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) - Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
+       * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) - Any association between one genotype and a genotypic entity that is a sub-component of it
+       * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+       * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
+       * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) - An association between a material sample and the material entity it is derived from
+       * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a material sample and a disease or phenotype
+       * [MaterialSampleToThingAssociation](MaterialSampleToThingAssociation.md) - An association between a material sample and something
+       * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)
+       * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
+       * [SequenceAssociation](SequenceAssociation.md) - An association between a sequence feature and a genomic entity it is localized to.
+          * [GenomicSequenceLocalization](GenomicSequenceLocalization.md) - A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+       * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
+          * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) - A transcript is formed from multiple exons
+          * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) - A gene is transcribed and potentially translated to a gene product
+          * [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) - A gene is a collection of transcripts
+       * [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) - An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
+       * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+          * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
+       * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+       * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
+    * [NamedThing](NamedThing.md) - a databased entity or concept/class
+       * [AdministrativeEntity](AdministrativeEntity.md)
+          * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
+       * [BiologicalEntity](BiologicalEntity.md)
+          * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
+             * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
+                * [Behavior](Behavior.md)
+                * [Pathway](Pathway.md)
+                * [PhysiologicalProcess](PhysiologicalProcess.md)
+             * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
+          * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+             * [Disease](Disease.md)
+             * [PhenotypicFeature](PhenotypicFeature.md)
+          * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+             * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
+                * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
+             * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
+          * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
+             * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+                * [Carbohydrate](Carbohydrate.md)
+                * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+                * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+             * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+             * [Food](Food.md) - A substance consumed by a living organism as a source of nutrition
+             * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
+             * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+                * [CodingSequence](CodingSequence.md)
+                * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+                * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
+                * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
+                * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
+                * [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+                   * [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+                      * [Gene](Gene.md)
+                      * [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
+                         * [RNAProduct](RNAProduct.md)
+                            * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
+                            * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+                               * [MicroRNA](MicroRNA.md)
+                         * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+                            * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+                         * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
+                   * [MacromolecularComplex](MacromolecularComplex.md)
+                * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
+                * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
+                   * [Snv](Snv.md) - SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
+          * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+             * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
+                * [Cell](Cell.md)
+                * [CellularComponent](CellularComponent.md) - A location in or around a cell
+                * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+             * [CellLine](CellLine.md)
+             * [IndividualOrganism](IndividualOrganism.md)
+                * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
+             * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
+             * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+       * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+          * [ClinicalIntervention](ClinicalIntervention.md)
+          * [ClinicalTrial](ClinicalTrial.md)
+       * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+       * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
+          * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
+          * [DataFile](DataFile.md)
+             * [SourceFile](SourceFile.md)
+          * [DataSet](DataSet.md)
+             * [DataSetVersion](DataSetVersion.md)
+                * [DataSetSummary](DataSetSummary.md)
+                * [DistributionLevel](DistributionLevel.md)
+          * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
+          * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+             * [Article](Article.md)
+             * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+             * [BookChapter](BookChapter.md)
+             * [Serial](Serial.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+       * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
+          * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+          * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
+          * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
+       * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+       * [PhysicalEntity](PhysicalEntity.md) - An entity that has material reality (a.k.a. physical essence).
+          * [MaterialSample](MaterialSample.md) - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+       * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
+          * [EnvironmentalFeature](EnvironmentalFeature.md)
+          * [EnvironmentalProcess](EnvironmentalProcess.md)
+          * [GeographicLocation](GeographicLocation.md) - a location that can be described in lat/long coordinates
+             * [GeographicLocationAtTime](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
+       * [Procedure](Procedure.md) - A series of actions conducted in a certain order or manner
 
 ## Slots
 
@@ -696,11 +834,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has quotient](has_quotient.md)
     * [has total](has_total.md) - total number of things in a particular reference set
  * [authors](authors.md) - connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
- * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * [chapter](chapter.md) - chapter of a book
  * [created_with](created_with.md)
  * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
- * [description](description.md) - a human-readable description of a thing
  * [distribution](distribution.md)
  * [download url](download_url.md)
  * [filler](filler.md) - The value in a property-value tuple
@@ -723,7 +859,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
  * [has total](has_total.md) - total number of things in a particular reference set
  * [has zygosity](has_zygosity.md)
- * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
  * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
  * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
  * [keywords](keywords.md) - keywords tagging a publication
@@ -743,7 +878,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [chapter](chapter.md) - chapter of a book
     * [created_with](created_with.md)
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
-    * [description](description.md) - a human-readable description of a thing
     * [distribution](distribution.md)
     * [download url](download_url.md)
     * [filler](filler.md) - The value in a property-value tuple
@@ -762,7 +896,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has stressor](has_stressor.md) - the process or entity that the receptor is being exposed to
     * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
     * [has zygosity](has_zygosity.md)
-    * [id](id.md) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
     * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
     * [keywords](keywords.md) - keywords tagging a publication
@@ -782,8 +915,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [synonym](synonym.md) - Alternate human-readable names for a thing
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
     * [timepoint](timepoint.md) - a point in time
-    * [type](type.md)
-       * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
     * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
     * [version of](version_of.md)
     * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
@@ -800,8 +931,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [synonym](synonym.md) - Alternate human-readable names for a thing
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
  * [timepoint](timepoint.md) - a point in time
- * [type](type.md)
-    * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
  * [version of](version_of.md)
  * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
@@ -887,16 +1016,21 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Other Slots
 
+ * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * [description](description.md) - a human-readable description of a thing
  * [has attribute](has_attribute.md) - connects any named thing to an attribute
  * [has attribute type](has_attribute_type.md) - connects an attribute to a class that describes it
  * [has numeric value](has_numeric_value.md) - connects a quantity value to a number
  * [has qualitative value](has_qualitative_value.md) - connects an attribute to a value
  * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
  * [has unit](has_unit.md) - connects a quantity value to a unit
+ * [id](id.md) - A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI
  * [interacting molecules category](interacting_molecules_category.md)
- * [iri](iri.md) - An IRI for the node. This is determined by the id using expansion rules.
+ * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
  * [name](name.md) - A human-readable name for a thing
  * [source](source.md) - a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+ * [type](type.md)
+    * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
 
 ## Types
 

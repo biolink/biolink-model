@@ -1,21 +1,21 @@
 ---
 parent: Other Classes
-title: biolink:AbstractEntity
+title: biolink:Annotation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: AbstractEntity
+# Class: Annotation
 
 
-Any thing that is not a process or a physical mass-bearing entity
+Biolink Model root class for entity annotations.
 
-URI: [biolink:AbstractEntity](https://w3id.org/biolink/vocab/AbstractEntity)
+URI: [biolink:Annotation](https://w3id.org/biolink/vocab/Annotation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[Attribute],[AbstractEntity]%5E-[QuantityValue],[AbstractEntity]%5E-[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[Attribute],[Annotation]%5E-[QuantityValue],[Annotation]%5E-[Attribute])
 
 ---
 
