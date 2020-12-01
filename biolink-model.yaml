@@ -3589,12 +3589,10 @@ slots:
     is_a: association slot
     range: ontology class
     deprecated: >-
-      This slot is deprecated in favor of 'type' slot.
-    deprecated_element_has_exact_replacement: type
+      This slot is deprecated in favor of 'category' slot.
+    deprecated_element_has_exact_replacement: category
     description: >-
       connects an association to the type of association (e.g. gene to phenotype)
-    exact_mappings:
-      - rdf:type
 
   ## Additional Properties for Information Content Entity and Publication Nodes
 
@@ -5754,7 +5752,7 @@ classes:
       - publications
     slot_usage:
       type:
-        description:  rdf:type of biolink:Association is fixed at rdf:Statement
+        description: rdf:type of biolink:Association should be fixed at rdf:Statement
       category:
         range: association
     exact_mappings:
