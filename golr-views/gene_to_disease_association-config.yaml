@@ -5,11 +5,33 @@ document_category: gene to disease association
 weight: 20
 fields:
 - id: id
-  description: A unique identifier for an association
-  display_name: association_id
-- id: association_type
-  description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: association type
+  description: A unique identifier for a resource. Must be either a CURIE shorthand
+    for a URI or a complete URI
+  display_name: id
+- id: iri
+  description: An IRI for an entity. This is determined by the id using expansion
+    rules.
+  display_name: iri
+- id: name
+  description: A human-readable name for a thing
+  display_name: name
+- id: description
+  description: a human-readable description of a thing
+  display_name: description
+- id: source
+  description: a lightweight analog to the association class 'has provider' slot,
+    which is the string name, or the authoritative (i.e. database) namespace, designating
+    the origin of the entity to which the slot belongs.
+  display_name: source
+- id: provided_by
+  description: connects an association to the agent (person, organization or group)
+    that provided it
+  display_name: provided by
+  cardinality: multi
+- id: has_attribute
+  description: connects any named thing to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: predicate
   description: A high-level grouping for the relationship type. AKA minimal predicate.
     This is analogous to category for nodes.
@@ -35,14 +57,11 @@ fields:
   description: connects an association to publications supporting the association
   display_name: publications
   cardinality: multi
-- id: provided_by
-  description: connects an association to the agent (person, organization or group)
-    that provided it
-  display_name: provided by
-  cardinality: multi
-- id: has_attribute
-  description: connects any named thing to an attribute
-  display_name: has attribute
+- id: type
+  description: rdf:type of biolink:Association should be fixed at rdf:Statement
+  display_name: association_type
+- id: category
+  display_name: association_category
   cardinality: multi
 - id: subject
   description: gene in which variation is correlated with the disease - may be protective
