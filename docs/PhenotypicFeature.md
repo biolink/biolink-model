@@ -8,7 +8,7 @@ layout: default
 # Class: PhenotypicFeature
 
 
-
+The assemblage of genetically determined traits or outward appearance of an individual. It is the visible biological manifestations of interactions between genes and the environment.
 
 URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
 
@@ -107,6 +107,7 @@ URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeatur
 | **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |
 |  | | WIKIDATA:Q104053 |
+|  | | EFO:0000651 |
 | **Narrow Mappings:** | | UMLSSC:T184 |
 |  | | UMLSST:sosy |
 |  | | WIKIDATA:Q169872 |

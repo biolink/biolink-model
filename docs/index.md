@@ -151,7 +151,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
     * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
        * [Disease](Disease.md)
-       * [PhenotypicFeature](PhenotypicFeature.md)
+       * [PhenotypicFeature](PhenotypicFeature.md) - The assemblage of genetically determined traits or outward appearance of an individual. It is the visible biological manifestations of interactions between genes and the environment.
     * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
        * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
           * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
@@ -277,7 +277,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
           * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
              * [Disease](Disease.md)
-             * [PhenotypicFeature](PhenotypicFeature.md)
+             * [PhenotypicFeature](PhenotypicFeature.md) - The assemblage of genetically determined traits or outward appearance of an individual. It is the visible biological manifestations of interactions between genes and the environment.
           * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
              * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
                 * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance

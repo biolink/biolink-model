@@ -31,7 +31,7 @@ URI: [biolink:DiseaseOrPhenotypicFeature](https://w3id.org/biolink/vocab/Disease
 ## Children
 
  * [Disease](Disease.md)
- * [PhenotypicFeature](PhenotypicFeature.md)
+ * [PhenotypicFeature](PhenotypicFeature.md) - The assemblage of genetically determined traits or outward appearance of an individual. It is the visible biological manifestations of interactions between genes and the environment.
 
 ## Referenced by class
 
