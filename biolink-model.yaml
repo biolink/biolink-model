@@ -120,6 +120,10 @@ emit_prefixes:
   - BIOGRID
 
 subsets:
+  model_organism_database:
+    description: >-
+      Subset that is relevant for a typical Model Organism Database (MOD)
+
   translator_minimal:
     description: >-
       Minimum subset of translator work
@@ -4571,6 +4575,8 @@ classes:
       - UMLSST:inpr
     id_prefixes:
       - NLMID
+    in_subset:
+      - model_organism_database
 
   book:
     is_a: publication
@@ -4749,6 +4755,8 @@ classes:
     id_prefixes:
       - NCBITaxon
       - MESH
+    in_subset:
+      - model_organism_database
 
   organismal entity:
     description: >-
@@ -4815,6 +4823,8 @@ classes:
       - UMLSST:podg
     id_prefixes:
       - HANCESTRO
+    in_subset:
+      - model_organism_database
 
   subject of investigation:
     mixin: true
@@ -4910,6 +4920,8 @@ classes:
       - ICD0
       - HP
       - MP
+    in_subset:
+      - model_organism_database
 
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
@@ -4945,6 +4957,8 @@ classes:
       - WBPhenotype
       - SNOMEDCT
       - MESH
+    in_subset:
+      - model_organism_database
 
   exposure event:
     aliases: ['exposure', 'experimental condition']
@@ -4959,6 +4973,8 @@ classes:
     narrow_mappings:
       # term restricted to experimental context
       - XCO:0000000
+    in_subset:
+      - model_organism_database
 
   confidence level:
     is_a: information content entity
@@ -5138,6 +5154,8 @@ classes:
       - UNII
       - KEGG
       - gtpo
+    in_subset:
+      - model_organism_database
 
   carbohydrate:
     is_a: chemical substance
@@ -5254,6 +5272,8 @@ classes:
       - UMLS
       - MESH
       - NCIT
+    in_subset:
+      - model_organism_database
 
   life stage:
     is_a: organismal entity
@@ -5263,6 +5283,8 @@ classes:
       - UBERON:0000105
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
+    in_subset:
+      - model_organism_database
 
   planetary entity:
     is_a: named thing
@@ -5328,6 +5350,8 @@ classes:
       # Nucleotide Sequence
       - UMLSSC:T086
       - UMLSST:nusq
+    in_subset:
+      - model_organism_database
 
   genome:
     is_a: genomic entity
@@ -5337,6 +5361,8 @@ classes:
       - SO:0001026
       - SIO:000984
       - WIKIDATA:Q7020
+    in_subset:
+      - model_organism_database
 
   transcript:
     is_a: gene product
@@ -5346,6 +5372,11 @@ classes:
       - SO:0000673
       - SIO:010450
       - WIKIDATA:Q7243183
+    id_prefixes:
+      - ENSEMBL ## ENSEMBL:ENST for human
+      - FlyBase  ## FlyBase:FBtr
+    in_subset:
+      - model_organism_database
 
   exon:
     is_a: genomic entity
@@ -5418,6 +5449,8 @@ classes:
       - SGD
       - PomBase
       # - IUPHAR
+    in_subset:
+      - model_organism_database
 
   gene product:
     is_a: gene or gene product
@@ -5561,6 +5594,10 @@ classes:
     id_prefixes:
       - PANTHER.FAMILY
       - HGNC.FAMILY
+      - FlyBase ## FlyBase:FBgg
+      - InterPro # note: may be better to introduce a protein domain/family
+    in_subset:
+      - model_organism_database
 
   zygosity:
     is_a: attribute
@@ -7142,6 +7179,7 @@ classes:
       - SMPDB
       - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
+      - FlyBase ## FlyBase:FBgg
 
   physiological process:
     aliases: ['physiology']
