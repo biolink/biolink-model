@@ -59,14 +59,6 @@ metatype:Objectidentifier IRI
 
 metatype:Nodeidentifier NONLITERAL
 
-<AbstractEntity>  (
-    CLOSED {
-       (  $<AbstractEntity_tes> rdf:type . * ;
-          rdf:type [ <AbstractEntity> ] ?
-       )
-    } OR @<Attribute> OR @<QuantityValue>
-)
-
 <ActivityAndBehavior> {
     (  $<ActivityAndBehavior_tes> (  &<Occurrent_tes> ;
           rdf:type [ <Occurrent> ] ?
@@ -145,6 +137,16 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<Annotation>  (
+    @<Attribute> OR @<QuantityValue>
+)
+
+<Annotation_struct> {
+    (  $<Annotation_tes> rdf:type . * ;
+       rdf:type [ <Annotation> ] ?
+    )
+}
+
 <Article> CLOSED {
     (  $<Article_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
@@ -159,9 +161,8 @@ metatype:Nodeidentifier NONLITERAL
 
 <Association>  (
     CLOSED {
-       (  $<Association_tes> (  &<AttributeMixin_tes> ;
-             rdf:type [ <AttributeMixin> ] ? ;
-             <association_type> @<OntologyClass> ? ;
+       (  $<Association_tes> (  &<Entity_tes> ;
+             rdf:type [ <Entity> ] ? ;
              rdf:subject @<NamedThing> ;
              rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
@@ -169,8 +170,8 @@ metatype:Nodeidentifier NONLITERAL
              <negated> @metatype:Boolean ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
-             <provided_by> @<Agent> * ;
-             <has_attribute> @<Attribute> *
+             <type> @metatype:String ? ;
+             <category> @<Association> +
           ) ;
           rdf:type [ <Association> ]
        )
@@ -191,14 +192,12 @@ metatype:Nodeidentifier NONLITERAL
 
 <Attribute>  (
     CLOSED {
-       (  $<Attribute_tes> (  &<AbstractEntity_tes> ;
-             rdf:type [ <AbstractEntity> ] ? ;
-             &<ResourceMixin_tes> ;
-             rdf:type [ <ResourceMixin> ] ? ;
+       (  $<Attribute_tes> (  &<Annotation_tes> ;
+             rdf:type [ <Annotation> ] ? ;
+             <name> @<LabelType> ? ;
              <has_attribute_type> @<OntologyClass> ;
              <has_quantitative_value> @<QuantityValue> * ;
              <has_qualitative_value> @<NamedThing> ? ;
-             <name> @<LabelType> ? ;
              <iri> @<IriType> ? ;
              <source> @<LabelType> ?
           ) ;
@@ -207,12 +206,6 @@ metatype:Nodeidentifier NONLITERAL
     } OR @<BiologicalSex> OR @<ClinicalAttribute> OR @<FrequencyValue> OR @<Inheritance> OR @<OrganismAttribute> OR
     @<SeverityValue> OR @<Zygosity>
 )
-
-<AttributeMixin> {
-    (  $<AttributeMixin_tes> <has_attribute> @<Attribute> * ;
-       rdf:type [ <AttributeMixin> ] ?
-    )
-}
 
 <Behavior> CLOSED {
     (  $<Behavior_tes> (  &<BiologicalProcess_tes> ;
@@ -318,8 +311,7 @@ metatype:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
-          <description> @<NarrativeText> ?
+          <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <CaseToPhenotypicFeatureAssociation> ]
     )
@@ -598,7 +590,6 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <DataSet> ] ? ;
              <source_data_file> @<DataFile> ? ;
              <version_of> @<DataSet> ? ;
-             <type> @metatype:String ? ;
              <distribution> @<DistributionLevel> ?
           ) ;
           rdf:type [ <DataSetVersion> ]
@@ -678,8 +669,7 @@ metatype:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
-          <description> @<NarrativeText> ?
+          <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <DiseaseToPhenotypicFeatureAssociation> ]
     )
@@ -719,6 +709,24 @@ metatype:Nodeidentifier NONLITERAL
           <has_drug> @<ChemicalSubstance> +
        ) ;
        rdf:type [ <DrugExposure> ]
+    )
+}
+
+<Entity>  (
+    @<Association> OR @<NamedThing>
+)
+
+<Entity_struct> {
+    (  $<Entity_tes> (  <iri> @<IriType> ? ;
+          <category> @<CategoryType> + ;
+          rdf:type @metatype:String ? ;
+          rdfs:label @<LabelType> ? ;
+          dcterms:description @<NarrativeText> ? ;
+          <source> @<LabelType> ? ;
+          <provided_by> @<Agent> * ;
+          <has_attribute> @<Attribute> *
+       ) ;
+       rdf:type [ <Entity> ]
     )
 }
 
@@ -799,8 +807,7 @@ metatype:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
-          <description> @<NarrativeText> ?
+          <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <ExposureEventToPhenotypicFeatureAssociation> ]
     )
@@ -863,7 +870,6 @@ metatype:Nodeidentifier NONLITERAL
     (  $<Gene_tes> (  &<GeneOrGeneProduct_tes> ;
           rdf:type [ <GeneOrGeneProduct> ] ? ;
           <symbol> @metatype:String ? ;
-          dcterms:description @<NarrativeText> ? ;
           <synonym> @<LabelType> * ;
           <xref> @<IriType> *
        ) ;
@@ -932,7 +938,6 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<GeneProduct_tes> (  &<GeneOrGeneProduct_tes> ;
              rdf:type [ <GeneOrGeneProduct> ] ? ;
-             dcterms:description @<NarrativeText> ? ;
              <synonym> @<LabelType> * ;
              <xref> @<IriType> *
           ) ;
@@ -1044,8 +1049,7 @@ metatype:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
-          <description> @<NarrativeText> ?
+          <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <GeneToPhenotypicFeatureAssociation> ]
     )
@@ -1169,8 +1173,7 @@ metatype:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
-          <description> @<NarrativeText> ?
+          <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <GenotypeToPhenotypicFeatureAssociation> ]
     )
@@ -1258,7 +1261,6 @@ metatype:Nodeidentifier NONLITERAL
 <InformationContentEntity_struct> {
     (  $<InformationContentEntity_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          dcterms:description @<NarrativeText> ? ;
           <license> @metatype:String ? ;
           <rights> @metatype:String ? ;
           <format> @metatype:String ? ;
@@ -1435,15 +1437,9 @@ metatype:Nodeidentifier NONLITERAL
 
 <NamedThing>  (
     CLOSED {
-       (  $<NamedThing_tes> (  &<ResourceMixin_tes> ;
-             rdf:type [ <ResourceMixin> ] ? ;
-             &<AttributeMixin_tes> ;
-             rdf:type [ <AttributeMixin> ] ? ;
-             <category> @<CategoryType> + ;
-             <iri> @<IriType> ? ;
-             rdfs:label @<LabelType> ? ;
-             <source> @<LabelType> ? ;
-             <has_attribute> @<Attribute> *
+       (  $<NamedThing_tes> (  &<Entity_tes> ;
+             rdf:type [ <Entity> ] ? ;
+             <category> @<NamedThing> +
           ) ;
           rdf:type [ <NamedThing> ]
        )
@@ -1702,14 +1698,14 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
              rdf:type [ <InformationContentEntity> ] ? ;
-             dcterms:type @metatype:String ;
              <authors> @metatype:String * ;
              <pages> @metatype:String * ;
              <summary> @metatype:String ? ;
              <keywords> @metatype:String * ;
              <mesh_terms> @metatype:Uriorcurie * ;
              <xref> @<IriType> * ;
-             <name> @<LabelType> ?
+             <name> @<LabelType> ? ;
+             dcterms:type @metatype:String
           ) ;
           rdf:type [ <Publication> ]
        )
@@ -1717,8 +1713,8 @@ metatype:Nodeidentifier NONLITERAL
 )
 
 <QuantityValue> CLOSED {
-    (  $<QuantityValue_tes> (  &<AbstractEntity_tes> ;
-          rdf:type [ <AbstractEntity> ] ? ;
+    (  $<QuantityValue_tes> (  &<Annotation_tes> ;
+          rdf:type [ <Annotation> ] ? ;
           <has_unit> @<Unit> ? ;
           <has_numeric_value> @metatype:Double ?
        ) ;
@@ -1749,15 +1745,6 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <RelationshipType> ]
-    )
-}
-
-<ResourceMixin> {
-    (  $<ResourceMixin_tes> (  <iri> @<IriType> ? ;
-          rdfs:label @<LabelType> ? ;
-          <source> @<LabelType> ?
-       ) ;
-       rdf:type [ <ResourceMixin> ] ?
     )
 }
 
@@ -1990,8 +1977,7 @@ metatype:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
-          <description> @<NarrativeText> ?
+          <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <VariantToPhenotypicFeatureAssociation> ]
     )
