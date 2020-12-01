@@ -3315,7 +3315,7 @@ slots:
 
   iri:
     description: >-
-      An IRI for the node. This is determined by the id using expansion rules.
+      An IRI for an entity. This is determined by the id using expansion rules.
     range: iri type
     in_subset:
       - translator_minimal
@@ -4148,6 +4148,10 @@ slots:
       - LOINC:has_modality_type
       - LOINC:has_view_type
 
+  # TRAPI Attribute schema alignment:
+  # value: NamedThing.name
+  # value_type: NamedThing.category
+  # value_type_name: quantity_value.NamedThing.name
   has qualitative value:
     description: >-
       connects an attribute to a value
@@ -4157,6 +4161,10 @@ slots:
     in_subset:
       - samples
 
+  # TRAPI Attribute schema alignment:
+  # value: quantity_value.has_numeric_value[double]
+  # value_type: quantity_value.has_unit.unit.uri
+  # value_type_name: quantity_value.has_unit.unit.name[string]
   has quantitative value:
     description: >-
       connects an attribute to a value
@@ -4212,25 +4220,17 @@ slots:
 
 classes:
 
-  entity:
-    description: >-
-      Root Biolink Model class for all things, real or imagined.
-    abstract: true
-    slots:
-      - id
-      - iri
-      - category
-      - type   # rdf:type
-      - name
-      - description
-      - source
-      - provided by
-
   ## ----------
   ## ATTRIBUTES
   ## ----------
 
+  annotation:
+    description: >-
+      Biolink Model root class for entity annotations.
+    abstract: true
+
   quantity value:
+    is_a: annotation
     description: >-
       A value of an attribute that is quantitative and measurable,
       expressed as a combination of a unit and a numeric value
@@ -4238,23 +4238,34 @@ classes:
       - has unit
       - has numeric value
 
+  # Alignment attempted of the biolink:Attribute model
+  # to the proposed TRAPI Release 1.1 Attribute schema, i.e.
+  #
+  # attribute_name: "assertionAuthoredBy",
+  # attribute_type: SEPIO:0000130,
+  # value: "ORCID:12345",
+  # value_type: "wd:Q51044",
+  # value_type_name: "ORCID ID"
+  # url: https://orcid.org/12345
+  # source: ORCID
+
   attribute:
     subclass_of: PATO:0000001
-    is_a: entity
+    is_a: annotation
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
       An environmental sample may have attributes such as depth, lat, long, material.
     slots:
-      - has attribute type
-      # the 'value type' and 'value name' of values can be discerned from these value slots
+      - name                   # 'attribute_name'
+      - has attribute type     # 'attribute_type'
+      # 'value', 'value_type', 'value_type_name'
+      # extracted from either of the next two slots
       - has quantitative value
       - has qualitative value
+      - iri                    # 'url'
+      - source                 # 'source'
     slot_usage:
-      id:
-        required: false
-      category:
-        required: false
       name:
         description: >-
           The human-readable 'attribute name' can be set to a string which reflects its context of
@@ -4272,12 +4283,6 @@ classes:
       - PATO:0000001
     in_subset:
       - samples
-
-  attribute mixin:
-    mixin: true
-    abstract: true
-    slots:
-      - has attribute
 
   ## ------
   ## THINGS
@@ -4392,12 +4397,25 @@ classes:
       - has quotient
       - has percentage
 
+  entity:
+    description: >-
+      Root Biolink Model class for all things and informational relationships, real or imagined.
+    abstract: true
+    slots:
+      - id
+      - iri
+      - category
+      - type   # rdf:type
+      - name
+      - description
+      - source
+      - provided by
+      - has attribute
+
   named thing:
     is_a: entity
     description: "a databased entity or concept/class"
     subclass_of: BFO:0000001
-    mixins:
-      - attribute mixin
     slot_usage:
       category:
         range: named thing
@@ -5727,8 +5745,6 @@ classes:
       A typed association between two entities, supported by evidence
     comments:
       - This is roughly the model used by biolink and ontobio at the moment
-    mixins:
-      - attribute mixin
     slots:
       - subject
       - predicate
@@ -5739,12 +5755,9 @@ classes:
       - publications
     slot_usage:
       type:
-        required: false
-        description: actual rdf:type of biolink:Association is rdf:Statement
+        description:  rdf:type of biolink:Association is fixed at rdf:Statement
       category:
         range: association
-      name:
-        required: false
     exact_mappings:
       - OBAN:association
       - rdf:Statement
