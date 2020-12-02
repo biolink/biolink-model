@@ -130,6 +130,10 @@ emit_prefixes:
 
 subsets:
 
+  model_organism_database:
+    description: >-
+      Subset that is relevant for a typical Model Organism Database (MOD)
+
   translator_minimal:
     description: >-
       Minimum subset of translator work
@@ -4516,6 +4520,8 @@ classes:
     id_prefixes:
       - NCBITaxon
       - MESH
+    in_subset:
+      - model_organism_database
 
   ## Administrative Entities
 
@@ -4770,6 +4776,8 @@ classes:
       - UMLSST:inpr
     id_prefixes:
       - NLMID
+    in_subset:
+      - model_organism_database
 
   book:
     is_a: publication
@@ -4786,6 +4794,8 @@ classes:
     id_prefixes:
       - isbn
       - NLMID
+    in_subset:
+      - model_organism_database
 
   book chapter:
     is_a: publication
@@ -4798,6 +4808,8 @@ classes:
         required: true
         description: >-
           The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.
+    in_subset:
+      - model_organism_database
 
   serial:
     aliases: ['journal']
@@ -4819,6 +4831,8 @@ classes:
     id_prefixes:
       - issn
       - NLMID
+    in_subset:
+      - model_organism_database
 
   article:
     is_a: publication
@@ -4838,6 +4852,8 @@ classes:
     id_prefixes:
       # By inheritance, a DOI may be used as a publication identifier; there may be other relevant namespaces
       - PMID
+    in_subset:
+      - model_organism_database
 
   ## Top Level Abstractions of Material & Process Entities
 
@@ -5182,6 +5198,7 @@ classes:
       - SMPDB
       - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
+      - FlyBase ## FlyBase:FBgg
 
   physiological process:
     aliases: ['physiology']
@@ -5295,6 +5312,8 @@ classes:
       - UNII
       - KEGG
       - gtpo
+    in_subset:
+      - model_organism_database
 
   carbohydrate:
     is_a: chemical substance
@@ -5415,6 +5434,8 @@ classes:
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
     exact_mappings: UBERON:0000105
+    in_subset:
+      - model_organism_database
 
   individual organism:
     aliases:
@@ -5472,6 +5493,8 @@ classes:
       - UMLSST:podg
     id_prefixes:
       - HANCESTRO
+    in_subset:
+      - model_organism_database
 
   disease or phenotypic feature:
     aliases: ['phenome']
@@ -5543,6 +5566,8 @@ classes:
       - ICD0
       - HP
       - MP
+    in_subset:
+      - model_organism_database
 
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
@@ -5574,6 +5599,8 @@ classes:
       - WBPhenotype
       - SNOMEDCT
       - MESH
+    in_subset:
+      - model_organism_database
 
   anatomical entity:
     is_a: organismal entity
@@ -5608,6 +5635,8 @@ classes:
       - UMLS
       - MESH
       - NCIT
+    in_subset:
+      - model_organism_database
 
   cellular component:
     is_a: anatomical entity
@@ -5701,6 +5730,8 @@ classes:
       # Nucleotide Sequence
       - UMLSSC:T086
       - UMLSST:nusq
+    in_subset:
+      - model_organism_database
 
   genome:
     is_a: genomic entity
@@ -5710,6 +5741,8 @@ classes:
       - SO:0001026
       - SIO:000984
       - WIKIDATA:Q7020
+    in_subset:
+      - model_organism_database
 
   transcript:
     is_a: gene product
@@ -5719,6 +5752,11 @@ classes:
       - SO:0000673
       - SIO:010450
       - WIKIDATA:Q7243183
+    id_prefixes:
+      - ENSEMBL ## ENSEMBL:ENST for human
+      - FlyBase  ## FlyBase:FBtr
+    in_subset:
+      - model_organism_database
 
   exon:
     is_a: genomic entity
@@ -5791,6 +5829,8 @@ classes:
       - SGD
       - PomBase
       # - IUPHAR
+    in_subset:
+      - model_organism_database
 
   gene product:
     is_a: gene or gene product
@@ -5831,7 +5871,10 @@ classes:
     id_prefixes:
       - UniProtKB
       - PR
-      - ENSEMBL
+      - ENSEMBL ## ENSEMBL:ENSP*
+      - FlyBase ## FlyBase:FBpp*
+    in_subset:
+        - model_organism_database
 
   gene product isoform:
     # biolink:GeneProductIsoform is most consistently used as a mixin thus it should
@@ -5852,7 +5895,7 @@ classes:
     mixins:
       - gene product isoform
     id_prefixes:
-      - UniProtKB
+      - UniProtKB ## UniProtKB:([A-Z0-9]+-\d+)
       - PR
       - ENSEMBL
 
@@ -5897,6 +5940,8 @@ classes:
       - MIR
       - HGNC
       - WormBase
+    in_subset:
+      - model_organism_database
 
   macromolecular complex:
     is_a: macromolecular machine
@@ -5908,6 +5953,8 @@ classes:
       - GO
       - PR
       - REACT
+    in_subset:
+      - model_organism_database
 
   gene grouping:
     mixin: true
@@ -5934,6 +5981,10 @@ classes:
     id_prefixes:
       - PANTHER.FAMILY
       - HGNC.FAMILY
+      - FlyBase ## FlyBase:FBgg
+      - InterPro # note: may be better to introduce a protein domain/family
+    in_subset:
+      - model_organism_database
 
   zygosity:
     is_a: attribute
@@ -5951,6 +6002,11 @@ classes:
     exact_mappings:
       - GENO:0000536
       - SIO:001079
+    id_prefixes:
+      - ZFIN
+      - FlyBase
+    in_subset:
+      - model_organism_database
 
   haplotype:
     is_a: genomic entity
@@ -5995,13 +6051,13 @@ classes:
       # - MYVARIANT_HG38 needs IRI mapping
       # - HGVS needs IRI mapping
       - MGI
-      - ZFIN
-      - FlyBase
+      - ZFIN ## ZFIN:ZDB-ALT-*
+      - FlyBase ## FlyBase:FBal*
       - FB
       - WB
-      - WormBase
+      - WormBase ## WormBase:WBVar*
     alt_descriptions:
-      AGR: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
+      AGR: "An entity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
       VMC: "A contiguous change at a Location"
     slots:
       - has gene
@@ -6018,6 +6074,8 @@ classes:
             description: ti282a allele from ZFIN
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
+    in_subset:
+      - model_organism_database
 
   snv:
     aliases: ['single nucleotide variant','single nucleotide polymorphism', 'snp']
@@ -6093,6 +6151,8 @@ classes:
     narrow_mappings:
       # term restricted to experimental context
       - XCO:0000000
+    in_subset:
+      - model_organism_database
 
   chemical exposure:
 #    aliases: ['drug intake', 'drug dose']

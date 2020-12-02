@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-02 01:28
+# Generation date: 2020-12-02 18:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -85,6 +85,7 @@ INCHI = CurieNamespace('INCHI', 'http://identifiers.org/inchi/')
 INCHIKEY = CurieNamespace('INCHIKEY', 'http://identifiers.org/inchikey/')
 INTACT = CurieNamespace('INTACT', 'http://identifiers.org/intact/')
 IUPHAR_FAMILY = CurieNamespace('IUPHAR_FAMILY', 'http://identifiers.org/iuphar.family/')
+INTERPRO = CurieNamespace('InterPro', 'http://example.org/UNKNOWN/InterPro/')
 KEGG = CurieNamespace('KEGG', 'http://identifiers.org/kegg/')
 LOINC = CurieNamespace('LOINC', 'http://loinc.org/rdf/')
 MEDDRA = CurieNamespace('MEDDRA', 'http://identifiers.org/meddra/')
