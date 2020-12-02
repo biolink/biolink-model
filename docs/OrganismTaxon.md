@@ -105,8 +105,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Aliases:** | | taxon |
 |  | | taxonomic classification |
 | **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | NCBITaxon:1 |
-|  | | WIKIDATA:Q16521 |
+| **Exact Mappings:** | | WIKIDATA:Q16521 |
 | **Narrow Mappings:** | | UMLSSC:T005 |
 |  | | UMLSST:virs |
 |  | | UMLSSC:T007 |
