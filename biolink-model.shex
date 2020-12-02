@@ -1479,7 +1479,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <OntologyClass> ]
        )
-    } OR @<GeneOntologyClass> OR @<OrganismTaxon> OR @<RelationshipType>
+    } OR @<GeneOntologyClass> OR @<OrganismTaxon> OR @<RelationshipType> OR @<TaxonomicRank>
 )
 
 <OrganismAttribute>  (
@@ -1494,7 +1494,9 @@ metatype:Nodeidentifier NONLITERAL
 
 <OrganismTaxon> CLOSED {
     (  $<OrganismTaxon_tes> (  &<OntologyClass_tes> ;
-          rdf:type [ <OntologyClass> ] ?
+          rdf:type [ <OntologyClass> ] ? ;
+          <has_taxonomic_rank> @<TaxonomicRank> ? ;
+          <subclass_of> @<OrganismTaxon> *
        ) ;
        rdf:type [ <OrganismTaxon> ]
     )
@@ -1872,6 +1874,14 @@ metatype:Nodeidentifier NONLITERAL
 <SubjectOfInvestigation> {
     (  $<SubjectOfInvestigation_tes> rdf:type . * ;
        rdf:type [ <SubjectOfInvestigation> ] ?
+    )
+}
+
+<TaxonomicRank> CLOSED {
+    (  $<TaxonomicRank_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <TaxonomicRank> ]
     )
 }
 
