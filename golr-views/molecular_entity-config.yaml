@@ -7,7 +7,7 @@ document_category: molecular entity
 weight: 20
 fields:
 - id: id
-  description: A unique identifier for a resource. Must be either a CURIE shorthand
+  description: A unique identifier for an entity. Must be either a CURIE shorthand
     for a URI or a complete URI
   display_name: id
 - id: iri
@@ -17,10 +17,10 @@ fields:
 - id: type
   display_name: type
 - id: name
-  description: A human-readable name for a thing
+  description: A human-readable name for an attribute or entity.
   display_name: name
 - id: description
-  description: a human-readable description of a thing
+  description: a human-readable description of an entity
   display_name: description
 - id: source
   description: a lightweight analog to the association class 'has provider' slot,
@@ -33,7 +33,7 @@ fields:
   display_name: provided by
   cardinality: multi
 - id: has_attribute
-  description: connects any named thing to an attribute
+  description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
 - id: category
