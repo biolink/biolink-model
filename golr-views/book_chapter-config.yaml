@@ -9,7 +9,7 @@ fields:
     rules.
   display_name: iri
 - id: description
-  description: a human-readable description of a thing
+  description: a human-readable description of an entity
   display_name: description
 - id: source
   description: a lightweight analog to the association class 'has provider' slot,
@@ -22,7 +22,7 @@ fields:
   display_name: provided by
   cardinality: multi
 - id: has_attribute
-  description: connects any named thing to an attribute
+  description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
 - id: category
@@ -35,7 +35,8 @@ fields:
 - id: format
   display_name: format
 - id: creation_date
-  description: date on which thing was created. This can be applied to nodes or edges
+  description: date on which an entity was created. This can be applied to nodes or
+    edges
   display_name: creation date
 - id: authors
   description: connects an publication to the list of authors who contributed to the
