@@ -4349,25 +4349,6 @@ classes:
     description: >-
       describes the frequency of occurrence of an event or condition
 
-  organism attribute:
-    is_a: attribute
-    description: >-
-      describes a characteristic of an organismal entity.
-    exact_mappings:
-      # Organism Attribute
-      - UMLSSC:T032
-      - UMLSST:orga
-
-  inheritance:
-    is_a: attribute
-    description: >-
-      The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
-      generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
-    exact_mappings:
-      - HP:0000005
-      - GENO:0000141
-      - NCIT:C45827
-
   relationship quantifier:
     mixin: true
     abstract: true
@@ -5363,6 +5344,25 @@ classes:
 
   ## Biology and Biomedical Sciences
 
+  organism attribute:
+    is_a: attribute
+    description: >-
+      describes a characteristic of an organismal entity.
+    exact_mappings:
+      # Organism Attribute
+      - UMLSSC:T032
+      - UMLSST:orga
+
+  inheritance:
+    is_a: organism attribute
+    description: >-
+      The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
+      generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+    exact_mappings:
+      - HP:0000005
+      - GENO:0000141
+      - NCIT:C45827
+
   organismal entity:
     description: >-
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
@@ -5371,7 +5371,7 @@ classes:
     slot_usage:
       has attribute:
         description: >-
-          may be an organism attribute
+          may often be an organism attribute
     exact_mappings:
       - WIKIDATA:Q7239
       # UMLS Semantic Group "Living Beings"
@@ -6010,15 +6010,6 @@ classes:
       - UMLSSC:T201
       - UMLSST:clna
 
-  clinical finding:
-    is_a: phenotypic feature
-    description: >-
-      this category is currently considered broad enough to tag clinical lab measurements and other biological
-      attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
-    slot_usage:
-      has attribute:
-        range: clinical attribute
-
   clinical measurement:
     is_a: clinical attribute
     description: >-
@@ -6069,6 +6060,15 @@ classes:
   clinical intervention:
     is_a: clinical entity
 
+  clinical finding:
+    is_a: phenotypic feature
+    description: >-
+      this category is currently considered broad enough to tag clinical lab measurements and other biological
+      attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+    slot_usage:
+      has attribute:
+        range: clinical attribute
+
   hospitalization:
     is_a: clinical intervention
     exact_mappings:
@@ -6091,7 +6091,6 @@ classes:
     #     range: socioeconomic ontology
     # exact_mappings:
     #  - ??
-
 
   ## Cohorts
 
