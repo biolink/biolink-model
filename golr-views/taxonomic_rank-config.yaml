@@ -1,7 +1,9 @@
-id: gene
+id: taxonomic_rank
 schema_generating: true
-display_name: gene
-document_category: gene
+description: 'A descriptor for the rank within a taxonomic classification. Example
+  instance: TAXRANK:0000017 (kingdom)'
+display_name: taxonomic rank
+document_category: taxonomic rank
 weight: 20
 fields:
 - id: id
@@ -14,6 +16,9 @@ fields:
   display_name: iri
 - id: type
   display_name: type
+- id: name
+  description: A human-readable name for an attribute or entity.
+  display_name: name
 - id: description
   description: a human-readable description of an entity
   display_name: description
@@ -33,28 +38,4 @@ fields:
   cardinality: multi
 - id: category
   display_name: named thing_category
-  cardinality: multi
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
-  cardinality: multi
-- id: has_biological_sequence
-  description: connects a genomic feature to its sequence
-  display_name: has biological sequence
-- id: name
-  description: genes are typically designated by a short symbol and a full name. We
-    map the symbol to the default display name and use an additional slot for full
-    name
-  display_name: macromolecular machine_name
-- id: symbol
-  description: Symbol for a particular thing
-  display_name: symbol
-- id: synonym
-  description: Alternate human-readable names for a thing
-  display_name: synonym
-  cardinality: multi
-- id: xref
-  description: Alternate CURIEs for a thing
-  display_name: xref
   cardinality: multi

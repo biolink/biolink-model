@@ -1511,6 +1511,7 @@ message Haplotype
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
+// An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 message IndividualOrganism
  {
   id String = 1
@@ -1812,7 +1813,7 @@ message OrganismAttribute
   optional iri IriType = 5
   optional source LabelType = 6
  }
-// A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
+// A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
 message OrganismTaxon
  {
   id String = 1
@@ -1824,6 +1825,8 @@ message OrganismTaxon
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional hasTaxonomicRank TaxonomicRank = 10
+  repeated subclassOf OrganismTaxon = 11
  }
 message OrganismalEntityAsAModelOfDiseaseAssociation
  {
@@ -2291,6 +2294,19 @@ message SourceFile
   optional creationDate Date = 13
   optional sourceVersion String = 14
   optional retrievedOn Date = 15
+ }
+// A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
+message TaxonomicRank
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase
 message Transcript
