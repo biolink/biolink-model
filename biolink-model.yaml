@@ -893,6 +893,18 @@ slots:
       connects an entity to a single drug
     range: drug
 
+  has device:
+    is_a: node property
+    description: >-
+      connects an entity to a single (medical) device
+    range: device
+
+  has procedure:
+    is_a: node property
+    description: >-
+      connects an entity to a single procedure
+    range: procedure
+
   has active ingredient:
     is_a: node property
     domain: drug
