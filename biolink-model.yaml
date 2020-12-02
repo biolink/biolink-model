@@ -3930,11 +3930,14 @@ slots:
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
   in taxon:
+    aliases:
+      - instance of
     is_a: related to
     domain: thing with taxon
     range: organism taxon
     description: >-
-      connects a thing to a class representing a taxon
+      connects an entity to its taxonomic classification. Only certain kinds
+      of entities can be taxonomically classified; see 'thing with taxon'
     in_subset:
       - translator_minimal
     related_mappings:
@@ -4433,16 +4436,40 @@ classes:
     in_subset:
       - testing
 
-  organism taxon:
+  taxonomic rank:
     description: >-
-      A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens),
-      NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
+      A descriptor for the rank within a taxonomic classification.
+      Example instance: TAXRANK:0000017 (kingdom)
     is_a: ontology class
+    id_prefixes:
+      - TAXRANK
+    mappings:
+      - WIKIDATA:Q427626
+
+  organism taxon:
+    aliases:
+      - taxon
+      - taxonomic classification
+    description: >-
+      A classification of a set of organisms. Example instances:
+      NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
+      Can also be used to represent strains or subspecies.
+    is_a: ontology class
+    slot_usage:
+      has taxonomic rank:
+        range: taxonomic rank
+        multivalued: false
+        mappings:
+          - WIKIDATA:P105
+      subclass of:
+        description: >-
+          subclass of holds between two taxa, e.g. human subclass of mammal
+        range: organism taxon
     values_from:
       - NCBITaxon
     exact_mappings:
-      - WIKIDATA:Q16521
       - NCBITaxon:1
+      - WIKIDATA:Q16521
     narrow_mappings:
       # Virus
       - UMLSSC:T005
@@ -5035,7 +5062,9 @@ classes:
     mixin: true
     abstract: true
     description: >-
-      A mixin that can be used on any entity with a taxon
+      A mixin that can be used on any entity that can be taxonomically classified.
+      This includes individual organsms; genes, their products and other molecular
+      entities; body parts; biological processes
     slots:
       - in taxon
 
@@ -5388,6 +5417,11 @@ classes:
     exact_mappings: UBERON:0000105
 
   individual organism:
+    aliases:
+      - organism
+    description: >-
+      An instance of an organism. For example, Richard Nixon,
+      Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
     mixins:
       - thing with taxon
     is_a: organismal entity
@@ -5400,6 +5434,8 @@ classes:
       # Wikidata considers its definition of 'individual' to be constrained to human persons?
       - WIKIDATA:Q795052
       - foaf:Person
+    id_prefixes:
+      - ORCID
 
   case:
     aliases: ['patient', 'proband']
