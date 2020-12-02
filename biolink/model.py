@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-01 17:45
+# Generation date: 2020-12-02 00:19
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -213,7 +213,7 @@ class IriType(Uriorcurie):
 
 
 class LabelType(String):
-    """ A string that provides a human-readable name for a thing """
+    """ A string that provides a human-readable name for an entity """
     type_class_uri = XSD.string
     type_class_curie = "xsd:string"
     type_name = "label type"
@@ -294,6 +294,30 @@ class NamedThingId(EntityId):
     pass
 
 
+class OntologyClassId(NamedThingId):
+    pass
+
+
+class RelationshipTypeId(OntologyClassId):
+    pass
+
+
+class GeneOntologyClassId(OntologyClassId):
+    pass
+
+
+class OrganismTaxonId(OntologyClassId):
+    pass
+
+
+class AdministrativeEntityId(NamedThingId):
+    pass
+
+
+class AgentId(AdministrativeEntityId):
+    pass
+
+
 class InformationContentEntityId(NamedThingId):
     pass
 
@@ -311,6 +335,22 @@ class DataSetId(InformationContentEntityId):
 
 
 class DataSetVersionId(DataSetId):
+    pass
+
+
+class DistributionLevelId(DataSetVersionId):
+    pass
+
+
+class DataSetSummaryId(DataSetVersionId):
+    pass
+
+
+class ConfidenceLevelId(InformationContentEntityId):
+    pass
+
+
+class EvidenceTypeId(InformationContentEntityId):
     pass
 
 
@@ -334,11 +374,43 @@ class ArticleId(PublicationId):
     pass
 
 
-class DistributionLevelId(DataSetVersionId):
+class PhysicalEntityId(NamedThingId):
     pass
 
 
-class DataSetSummaryId(DataSetVersionId):
+class ProcedureId(NamedThingId):
+    pass
+
+
+class PhenomenonId(NamedThingId):
+    pass
+
+
+class DeviceId(NamedThingId):
+    pass
+
+
+class MaterialSampleId(PhysicalEntityId):
+    pass
+
+
+class PlanetaryEntityId(NamedThingId):
+    pass
+
+
+class EnvironmentalProcessId(PlanetaryEntityId):
+    pass
+
+
+class EnvironmentalFeatureId(PlanetaryEntityId):
+    pass
+
+
+class GeographicLocationId(PlanetaryEntityId):
+    pass
+
+
+class GeographicLocationAtTimeId(GeographicLocationId):
     pass
 
 
@@ -346,71 +418,31 @@ class BiologicalEntityId(NamedThingId):
     pass
 
 
-class OntologyClassId(NamedThingId):
-    pass
-
-
-class RelationshipTypeId(OntologyClassId):
-    pass
-
-
-class GeneOntologyClassId(OntologyClassId):
-    pass
-
-
-class OrganismTaxonId(OntologyClassId):
-    pass
-
-
-class OrganismalEntityId(BiologicalEntityId):
-    pass
-
-
-class IndividualOrganismId(OrganismalEntityId):
-    pass
-
-
-class CaseId(IndividualOrganismId):
-    pass
-
-
-class PopulationOfIndividualOrganismsId(OrganismalEntityId):
-    pass
-
-
-class DiseaseOrPhenotypicFeatureId(BiologicalEntityId):
-    pass
-
-
-class DiseaseId(DiseaseOrPhenotypicFeatureId):
-    pass
-
-
-class PhenotypicFeatureId(DiseaseOrPhenotypicFeatureId):
-    pass
-
-
-class ExposureEventId(BiologicalEntityId):
-    pass
-
-
-class ConfidenceLevelId(InformationContentEntityId):
-    pass
-
-
-class EvidenceTypeId(InformationContentEntityId):
-    pass
-
-
-class AdministrativeEntityId(NamedThingId):
-    pass
-
-
-class AgentId(AdministrativeEntityId):
-    pass
-
-
 class MolecularEntityId(BiologicalEntityId):
+    pass
+
+
+class BiologicalProcessOrActivityId(BiologicalEntityId):
+    pass
+
+
+class MolecularActivityId(BiologicalProcessOrActivityId):
+    pass
+
+
+class BiologicalProcessId(BiologicalProcessOrActivityId):
+    pass
+
+
+class PathwayId(BiologicalProcessId):
+    pass
+
+
+class PhysiologicalProcessId(BiologicalProcessId):
+    pass
+
+
+class BehaviorId(BiologicalProcessId):
     pass
 
 
@@ -438,7 +470,7 @@ class MetaboliteId(ChemicalSubstanceId):
     pass
 
 
-class AnatomicalEntityId(OrganismalEntityId):
+class OrganismalEntityId(BiologicalEntityId):
     pass
 
 
@@ -446,31 +478,47 @@ class LifeStageId(OrganismalEntityId):
     pass
 
 
-class PlanetaryEntityId(NamedThingId):
+class IndividualOrganismId(OrganismalEntityId):
     pass
 
 
-class EnvironmentalProcessId(PlanetaryEntityId):
+class CaseId(IndividualOrganismId):
     pass
 
 
-class EnvironmentalFeatureId(PlanetaryEntityId):
+class PopulationOfIndividualOrganismsId(OrganismalEntityId):
     pass
 
 
-class ClinicalEntityId(NamedThingId):
+class DiseaseOrPhenotypicFeatureId(BiologicalEntityId):
     pass
 
 
-class ClinicalTrialId(ClinicalEntityId):
+class DiseaseId(DiseaseOrPhenotypicFeatureId):
     pass
 
 
-class ClinicalInterventionId(ClinicalEntityId):
+class PhenotypicFeatureId(DiseaseOrPhenotypicFeatureId):
     pass
 
 
-class DeviceId(NamedThingId):
+class AnatomicalEntityId(OrganismalEntityId):
+    pass
+
+
+class CellularComponentId(AnatomicalEntityId):
+    pass
+
+
+class CellId(AnatomicalEntityId):
+    pass
+
+
+class CellLineId(OrganismalEntityId):
+    pass
+
+
+class GrossAnatomicalStructureId(AnatomicalEntityId):
     pass
 
 
@@ -562,6 +610,22 @@ class ReagentTargetedGeneId(GenomicEntityId):
     pass
 
 
+class ClinicalEntityId(NamedThingId):
+    pass
+
+
+class ClinicalTrialId(ClinicalEntityId):
+    pass
+
+
+class ClinicalInterventionId(ClinicalEntityId):
+    pass
+
+
+class ExposureEventId(BiologicalEntityId):
+    pass
+
+
 class ChemicalExposureId(ExposureEventId):
     pass
 
@@ -571,14 +635,6 @@ class DrugExposureId(ChemicalExposureId):
 
 
 class TreatmentId(ExposureEventId):
-    pass
-
-
-class GeographicLocationId(PlanetaryEntityId):
-    pass
-
-
-class GeographicLocationAtTimeId(GeographicLocationId):
     pass
 
 
@@ -803,62 +859,6 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociationId(AnatomicalEntityToAn
 
 
 class AnatomicalEntityToAnatomicalEntityOntogenicAssociationId(AnatomicalEntityToAnatomicalEntityAssociationId):
-    pass
-
-
-class PhysicalEntityId(NamedThingId):
-    pass
-
-
-class MaterialSampleId(PhysicalEntityId):
-    pass
-
-
-class BiologicalProcessOrActivityId(BiologicalEntityId):
-    pass
-
-
-class MolecularActivityId(BiologicalProcessOrActivityId):
-    pass
-
-
-class ProcedureId(NamedThingId):
-    pass
-
-
-class PhenomenonId(NamedThingId):
-    pass
-
-
-class BiologicalProcessId(BiologicalProcessOrActivityId):
-    pass
-
-
-class PathwayId(BiologicalProcessId):
-    pass
-
-
-class PhysiologicalProcessId(BiologicalProcessId):
-    pass
-
-
-class BehaviorId(BiologicalProcessId):
-    pass
-
-
-class CellularComponentId(AnatomicalEntityId):
-    pass
-
-
-class CellId(AnatomicalEntityId):
-    pass
-
-
-class CellLineId(OrganismalEntityId):
-    pass
-
-
-class GrossAnatomicalStructureId(AnatomicalEntityId):
     pass
 
 
@@ -1165,6 +1165,141 @@ class NamedThing(Entity):
 
 
 @dataclass
+class OntologyClass(NamedThing):
+    """
+    a concept or class in an ontology, vocabulary or thesaurus
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.OntologyClass
+    class_class_curie: ClassVar[str] = "biolink:OntologyClass"
+    class_name: ClassVar[str] = "ontology class"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.OntologyClass
+
+    id: Union[str, OntologyClassId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, OntologyClassId):
+            self.id = OntologyClassId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class RelationshipType(OntologyClass):
+    """
+    An OWL property used as an edge label
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.RelationshipType
+    class_class_curie: ClassVar[str] = "biolink:RelationshipType"
+    class_name: ClassVar[str] = "relationship type"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.RelationshipType
+
+    id: Union[str, RelationshipTypeId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, RelationshipTypeId):
+            self.id = RelationshipTypeId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GeneOntologyClass(OntologyClass):
+    """
+    an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneOntologyClass
+    class_class_curie: ClassVar[str] = "biolink:GeneOntologyClass"
+    class_name: ClassVar[str] = "gene ontology class"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneOntologyClass
+
+    id: Union[str, GeneOntologyClassId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, GeneOntologyClassId):
+            self.id = GeneOntologyClassId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class OrganismTaxon(OntologyClass):
+    """
+    A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also
+    be used to represent strains or subspecies.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
+    class_class_curie: ClassVar[str] = "biolink:OrganismTaxon"
+    class_name: ClassVar[str] = "organism taxon"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
+
+    id: Union[str, OrganismTaxonId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, OrganismTaxonId):
+            self.id = OrganismTaxonId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class AdministrativeEntity(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.AdministrativeEntity
+    class_class_curie: ClassVar[str] = "biolink:AdministrativeEntity"
+    class_name: ClassVar[str] = "administrative entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.AdministrativeEntity
+
+    id: Union[str, AdministrativeEntityId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+@dataclass
+class Agent(AdministrativeEntity):
+    """
+    person, group, organization or project that provides a piece of information (i.e. a knowledge association)
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Agent
+    class_class_curie: ClassVar[str] = "biolink:Agent"
+    class_name: ClassVar[str] = "agent"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Agent
+
+    id: Union[str, AgentId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+    affiliation: List[Union[str, URIorCURIE]] = empty_list()
+    address: Optional[str] = None
+    name: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, AgentId):
+            self.id = AgentId(self.id)
+        self.affiliation = [v if isinstance(v, URIorCURIE)
+                            else URIorCURIE(v) for v in ([self.affiliation] if isinstance(self.affiliation, str) else self.affiliation)]
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class InformationContentEntity(NamedThing):
     """
     a piece of information that typically describes some topic of discourse or is used as support.
@@ -1279,6 +1414,52 @@ class DataSetVersion(DataSet):
             self.version_of = DataSetId(self.version_of)
         if self.distribution is not None and not isinstance(self.distribution, DistributionLevelId):
             self.distribution = DistributionLevelId(self.distribution)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ConfidenceLevel(InformationContentEntity):
+    """
+    Level of confidence in a statement
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ConfidenceLevel
+    class_class_curie: ClassVar[str] = "biolink:ConfidenceLevel"
+    class_name: ClassVar[str] = "confidence level"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ConfidenceLevel
+
+    id: Union[str, ConfidenceLevelId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, ConfidenceLevelId):
+            self.id = ConfidenceLevelId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class EvidenceType(InformationContentEntity):
+    """
+    Class of evidence that supports an association
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EvidenceType
+    class_class_curie: ClassVar[str] = "biolink:EvidenceType"
+    class_name: ClassVar[str] = "evidence type"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EvidenceType
+
+    id: Union[str, EvidenceTypeId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, EvidenceTypeId):
+            self.id = EvidenceTypeId(self.id)
         super().__post_init__(**kwargs)
 
 
@@ -1437,6 +1618,237 @@ class Article(Publication):
 
 
 @dataclass
+class PhysicalEntity(NamedThing):
+    """
+    An entity that has material reality (a.k.a. physical essence).
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
+    class_class_curie: ClassVar[str] = "biolink:PhysicalEntity"
+    class_name: ClassVar[str] = "physical entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
+
+    id: Union[str, PhysicalEntityId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, PhysicalEntityId):
+            self.id = PhysicalEntityId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Procedure(NamedThing):
+    """
+    A series of actions conducted in a certain order or manner
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Procedure
+    class_class_curie: ClassVar[str] = "biolink:Procedure"
+    class_name: ClassVar[str] = "procedure"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Procedure
+
+    id: Union[str, ProcedureId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, ProcedureId):
+            self.id = ProcedureId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Phenomenon(NamedThing):
+    """
+    a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Phenomenon
+    class_class_curie: ClassVar[str] = "biolink:Phenomenon"
+    class_name: ClassVar[str] = "phenomenon"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Phenomenon
+
+    id: Union[str, PhenomenonId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, PhenomenonId):
+            self.id = PhenomenonId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Device(NamedThing):
+    """
+    A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Device
+    class_class_curie: ClassVar[str] = "biolink:Device"
+    class_name: ClassVar[str] = "device"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Device
+
+    id: Union[str, DeviceId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, DeviceId):
+            self.id = DeviceId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MaterialSample(PhysicalEntity):
+    """
+    A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a
+    portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use.
+    [SIO]
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
+    class_class_curie: ClassVar[str] = "biolink:MaterialSample"
+    class_name: ClassVar[str] = "material sample"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
+
+    id: Union[str, MaterialSampleId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, MaterialSampleId):
+            self.id = MaterialSampleId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PlanetaryEntity(NamedThing):
+    """
+    Any entity or process that exists at the level of the whole planet
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PlanetaryEntity
+    class_class_curie: ClassVar[str] = "biolink:PlanetaryEntity"
+    class_name: ClassVar[str] = "planetary entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PlanetaryEntity
+
+    id: Union[str, PlanetaryEntityId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, PlanetaryEntityId):
+            self.id = PlanetaryEntityId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class EnvironmentalProcess(PlanetaryEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalProcess
+    class_class_curie: ClassVar[str] = "biolink:EnvironmentalProcess"
+    class_name: ClassVar[str] = "environmental process"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalProcess
+
+    id: Union[str, EnvironmentalProcessId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, EnvironmentalProcessId):
+            self.id = EnvironmentalProcessId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class EnvironmentalFeature(PlanetaryEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFeature
+    class_class_curie: ClassVar[str] = "biolink:EnvironmentalFeature"
+    class_name: ClassVar[str] = "environmental feature"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFeature
+
+    id: Union[str, EnvironmentalFeatureId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, EnvironmentalFeatureId):
+            self.id = EnvironmentalFeatureId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GeographicLocation(PlanetaryEntity):
+    """
+    a location that can be described in lat/long coordinates
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicLocation
+    class_class_curie: ClassVar[str] = "biolink:GeographicLocation"
+    class_name: ClassVar[str] = "geographic location"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicLocation
+
+    id: Union[str, GeographicLocationId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, GeographicLocationId):
+            self.id = GeographicLocationId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GeographicLocationAtTime(GeographicLocation):
+    """
+    a location that can be described in lat/long coordinates, for a particular time
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicLocationAtTime
+    class_class_curie: ClassVar[str] = "biolink:GeographicLocationAtTime"
+    class_name: ClassVar[str] = "geographic location at time"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicLocationAtTime
+
+    id: Union[str, GeographicLocationAtTimeId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+    timepoint: Optional[Union[str, TimeType]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, GeographicLocationAtTimeId):
+            self.id = GeographicLocationAtTimeId(self.id)
+        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
+            self.timepoint = TimeType(self.timepoint)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class BiologicalEntity(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1447,376 +1859,6 @@ class BiologicalEntity(NamedThing):
 
     id: Union[str, BiologicalEntityId] = None
     category: List[Union[str, NamedThingId]] = empty_list()
-
-@dataclass
-class OntologyClass(NamedThing):
-    """
-    a concept or class in an ontology, vocabulary or thesaurus
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OntologyClass
-    class_class_curie: ClassVar[str] = "biolink:OntologyClass"
-    class_name: ClassVar[str] = "ontology class"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.OntologyClass
-
-    id: Union[str, OntologyClassId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, OntologyClassId):
-            self.id = OntologyClassId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class RelationshipType(OntologyClass):
-    """
-    An OWL property used as an edge label
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.RelationshipType
-    class_class_curie: ClassVar[str] = "biolink:RelationshipType"
-    class_name: ClassVar[str] = "relationship type"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.RelationshipType
-
-    id: Union[str, RelationshipTypeId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, RelationshipTypeId):
-            self.id = RelationshipTypeId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class GeneOntologyClass(OntologyClass):
-    """
-    an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneOntologyClass
-    class_class_curie: ClassVar[str] = "biolink:GeneOntologyClass"
-    class_name: ClassVar[str] = "gene ontology class"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneOntologyClass
-
-    id: Union[str, GeneOntologyClassId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneOntologyClassId):
-            self.id = GeneOntologyClassId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OrganismTaxon(OntologyClass):
-    """
-    A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also
-    be used to represent strains or subspecies.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
-    class_class_curie: ClassVar[str] = "biolink:OrganismTaxon"
-    class_name: ClassVar[str] = "organism taxon"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
-
-    id: Union[str, OrganismTaxonId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, OrganismTaxonId):
-            self.id = OrganismTaxonId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OrganismalEntity(BiologicalEntity):
-    """
-    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
-    molecular entities
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntity
-    class_class_curie: ClassVar[str] = "biolink:OrganismalEntity"
-    class_name: ClassVar[str] = "organismal entity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntity
-
-    id: Union[str, OrganismalEntityId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    has_attribute: List[Union[dict, Attribute]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        self.has_attribute = [Attribute(*e) for e in self.has_attribute.items()] if isinstance(self.has_attribute, dict) \
-                              else [v if isinstance(v, Attribute) else Attribute(**v)
-                                    for v in ([self.has_attribute] if isinstance(self.has_attribute, str) else self.has_attribute)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class IndividualOrganism(OrganismalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.IndividualOrganism
-    class_class_curie: ClassVar[str] = "biolink:IndividualOrganism"
-    class_name: ClassVar[str] = "individual organism"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.IndividualOrganism
-
-    id: Union[str, IndividualOrganismId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    in_taxon: List[Union[str, OrganismTaxonId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, IndividualOrganismId):
-            self.id = IndividualOrganismId(self.id)
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId)
-                         else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Case(IndividualOrganism):
-    """
-    An individual (human) organism that has a patient role in some clinical context.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Case
-    class_class_curie: ClassVar[str] = "biolink:Case"
-    class_name: ClassVar[str] = "case"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Case
-
-    id: Union[str, CaseId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, CaseId):
-            self.id = CaseId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PopulationOfIndividualOrganisms(OrganismalEntity):
-    """
-    A collection of individuals from the same taxonomic class distinguished by one or more characteristics.
-    Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance
-    for Genome Resources]
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PopulationOfIndividualOrganisms
-    class_class_curie: ClassVar[str] = "biolink:PopulationOfIndividualOrganisms"
-    class_name: ClassVar[str] = "population of individual organisms"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.PopulationOfIndividualOrganisms
-
-    id: Union[str, PopulationOfIndividualOrganismsId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    in_taxon: List[Union[str, OrganismTaxonId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PopulationOfIndividualOrganismsId):
-            self.id = PopulationOfIndividualOrganismsId(self.id)
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId)
-                         else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class DiseaseOrPhenotypicFeature(BiologicalEntity):
-    """
-    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these
-    as distinct, others such as MESH conflate.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeature
-    class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeature"
-    class_name: ClassVar[str] = "disease or phenotypic feature"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeature
-
-    id: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    in_taxon: List[Union[str, OrganismTaxonId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, DiseaseOrPhenotypicFeatureId):
-            self.id = DiseaseOrPhenotypicFeatureId(self.id)
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId)
-                         else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Disease(DiseaseOrPhenotypicFeature):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Disease
-    class_class_curie: ClassVar[str] = "biolink:Disease"
-    class_name: ClassVar[str] = "disease"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Disease
-
-    id: Union[str, DiseaseId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, DiseaseId):
-            self.id = DiseaseId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PhenotypicFeature(DiseaseOrPhenotypicFeature):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
-    class_class_curie: ClassVar[str] = "biolink:PhenotypicFeature"
-    class_name: ClassVar[str] = "phenotypic feature"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
-
-    id: Union[str, PhenotypicFeatureId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PhenotypicFeatureId):
-            self.id = PhenotypicFeatureId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ExposureEvent(BiologicalEntity):
-    """
-    A feature of the environment of an organism that influences one or more phenotypic features of that organism,
-    potentially mediated by genes
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ExposureEvent
-    class_class_curie: ClassVar[str] = "biolink:ExposureEvent"
-    class_name: ClassVar[str] = "exposure event"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEvent
-
-    id: Union[str, ExposureEventId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ExposureEventId):
-            self.id = ExposureEventId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ConfidenceLevel(InformationContentEntity):
-    """
-    Level of confidence in a statement
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ConfidenceLevel
-    class_class_curie: ClassVar[str] = "biolink:ConfidenceLevel"
-    class_name: ClassVar[str] = "confidence level"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ConfidenceLevel
-
-    id: Union[str, ConfidenceLevelId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ConfidenceLevelId):
-            self.id = ConfidenceLevelId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EvidenceType(InformationContentEntity):
-    """
-    Class of evidence that supports an association
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EvidenceType
-    class_class_curie: ClassVar[str] = "biolink:EvidenceType"
-    class_name: ClassVar[str] = "evidence type"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EvidenceType
-
-    id: Union[str, EvidenceTypeId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, EvidenceTypeId):
-            self.id = EvidenceTypeId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class AdministrativeEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.AdministrativeEntity
-    class_class_curie: ClassVar[str] = "biolink:AdministrativeEntity"
-    class_name: ClassVar[str] = "administrative entity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.AdministrativeEntity
-
-    id: Union[str, AdministrativeEntityId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-@dataclass
-class Agent(AdministrativeEntity):
-    """
-    person, group, organization or project that provides a piece of information (i.e. a knowledge association)
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Agent
-    class_class_curie: ClassVar[str] = "biolink:Agent"
-    class_name: ClassVar[str] = "agent"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Agent
-
-    id: Union[str, AgentId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    affiliation: List[Union[str, URIorCURIE]] = empty_list()
-    address: Optional[str] = None
-    name: Optional[Union[str, LabelType]] = None
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, AgentId):
-            self.id = AgentId(self.id)
-        self.affiliation = [v if isinstance(v, URIorCURIE)
-                            else URIorCURIE(v) for v in ([self.affiliation] if isinstance(self.affiliation, str) else self.affiliation)]
-        if self.name is not None and not isinstance(self.name, LabelType):
-            self.name = LabelType(self.name)
-        super().__post_init__(**kwargs)
-
 
 @dataclass
 class MolecularEntity(BiologicalEntity):
@@ -1841,6 +1883,153 @@ class MolecularEntity(BiologicalEntity):
             self.id = MolecularEntityId(self.id)
         self.in_taxon = [v if isinstance(v, OrganismTaxonId)
                          else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BiologicalProcessOrActivity(BiologicalEntity):
+    """
+    Either an individual molecular activity, or a collection of causally connected molecular activities
+    """
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivity
+    class_class_curie: ClassVar[str] = "biolink:BiologicalProcessOrActivity"
+    class_name: ClassVar[str] = "biological process or activity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivity
+
+    id: Union[str, BiologicalProcessOrActivityId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+    has_input: List[Union[str, NamedThingId]] = empty_list()
+    has_output: List[Union[str, NamedThingId]] = empty_list()
+    enabled_by: List[Union[str, PhysicalEntityId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, BiologicalProcessOrActivityId):
+            self.id = BiologicalProcessOrActivityId(self.id)
+        self.has_input = [v if isinstance(v, NamedThingId)
+                          else NamedThingId(v) for v in ([self.has_input] if isinstance(self.has_input, str) else self.has_input)]
+        self.has_output = [v if isinstance(v, NamedThingId)
+                           else NamedThingId(v) for v in ([self.has_output] if isinstance(self.has_output, str) else self.has_output)]
+        self.enabled_by = [v if isinstance(v, PhysicalEntityId)
+                           else PhysicalEntityId(v) for v in ([self.enabled_by] if isinstance(self.enabled_by, str) else self.enabled_by)]
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MolecularActivity(BiologicalProcessOrActivity):
+    """
+    An execution of a molecular function carried out by a gene product or macromolecular complex.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularActivity
+    class_class_curie: ClassVar[str] = "biolink:MolecularActivity"
+    class_name: ClassVar[str] = "molecular activity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivity
+
+    id: Union[str, MolecularActivityId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+    has_input: List[Union[str, ChemicalSubstanceId]] = empty_list()
+    has_output: List[Union[str, ChemicalSubstanceId]] = empty_list()
+    enabled_by: List[Union[str, MacromolecularMachineId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, MolecularActivityId):
+            self.id = MolecularActivityId(self.id)
+        self.has_input = [v if isinstance(v, ChemicalSubstanceId)
+                          else ChemicalSubstanceId(v) for v in ([self.has_input] if isinstance(self.has_input, str) else self.has_input)]
+        self.has_output = [v if isinstance(v, ChemicalSubstanceId)
+                           else ChemicalSubstanceId(v) for v in ([self.has_output] if isinstance(self.has_output, str) else self.has_output)]
+        self.enabled_by = [v if isinstance(v, MacromolecularMachineId)
+                           else MacromolecularMachineId(v) for v in ([self.enabled_by] if isinstance(self.enabled_by, str) else self.enabled_by)]
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BiologicalProcess(BiologicalProcessOrActivity):
+    """
+    One or more causally connected executions of molecular functions
+    """
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcess
+    class_class_curie: ClassVar[str] = "biolink:BiologicalProcess"
+    class_name: ClassVar[str] = "biological process"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcess
+
+    id: Union[str, BiologicalProcessId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, BiologicalProcessId):
+            self.id = BiologicalProcessId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Pathway(BiologicalProcess):
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Pathway
+    class_class_curie: ClassVar[str] = "biolink:Pathway"
+    class_name: ClassVar[str] = "pathway"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Pathway
+
+    id: Union[str, PathwayId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, PathwayId):
+            self.id = PathwayId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PhysiologicalProcess(BiologicalProcess):
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysiologicalProcess
+    class_class_curie: ClassVar[str] = "biolink:PhysiologicalProcess"
+    class_name: ClassVar[str] = "physiological process"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhysiologicalProcess
+
+    id: Union[str, PhysiologicalProcessId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, PhysiologicalProcessId):
+            self.id = PhysiologicalProcessId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Behavior(BiologicalProcess):
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Behavior
+    class_class_curie: ClassVar[str] = "biolink:Behavior"
+    class_name: ClassVar[str] = "behavior"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Behavior
+
+    id: Union[str, BehaviorId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, BehaviorId):
+            self.id = BehaviorId(self.id)
         super().__post_init__(**kwargs)
 
 
@@ -1999,28 +2188,26 @@ class Metabolite(ChemicalSubstance):
 
 
 @dataclass
-class AnatomicalEntity(OrganismalEntity):
+class OrganismalEntity(BiologicalEntity):
     """
-    A subcellular location, cell type or gross anatomical part
+    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
+    molecular entities
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntity
-    class_class_curie: ClassVar[str] = "biolink:AnatomicalEntity"
-    class_name: ClassVar[str] = "anatomical entity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntity
+    class_class_curie: ClassVar[str] = "biolink:OrganismalEntity"
+    class_name: ClassVar[str] = "organismal entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntity
 
-    id: Union[str, AnatomicalEntityId] = None
+    id: Union[str, OrganismalEntityId] = None
     category: List[Union[str, NamedThingId]] = empty_list()
-    in_taxon: List[Union[str, OrganismTaxonId]] = empty_list()
+    has_attribute: List[Union[dict, Attribute]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, AnatomicalEntityId):
-            self.id = AnatomicalEntityId(self.id)
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId)
-                         else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
+        self.has_attribute = [Attribute(*e) for e in self.has_attribute.items()] if isinstance(self.has_attribute, dict) \
+                              else [v if isinstance(v, Attribute) else Attribute(**v)
+                                    for v in ([self.has_attribute] if isinstance(self.has_attribute, str) else self.has_attribute)]
         super().__post_init__(**kwargs)
 
 
@@ -2051,152 +2238,252 @@ class LifeStage(OrganismalEntity):
 
 
 @dataclass
-class PlanetaryEntity(NamedThing):
-    """
-    Any entity or process that exists at the level of the whole planet
-    """
-    _inherited_slots: ClassVar[List[str]] = []
+class IndividualOrganism(OrganismalEntity):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PlanetaryEntity
-    class_class_curie: ClassVar[str] = "biolink:PlanetaryEntity"
-    class_name: ClassVar[str] = "planetary entity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.PlanetaryEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK.IndividualOrganism
+    class_class_curie: ClassVar[str] = "biolink:IndividualOrganism"
+    class_name: ClassVar[str] = "individual organism"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.IndividualOrganism
 
-    id: Union[str, PlanetaryEntityId] = None
+    id: Union[str, IndividualOrganismId] = None
     category: List[Union[str, NamedThingId]] = empty_list()
+    in_taxon: List[Union[str, OrganismTaxonId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PlanetaryEntityId):
-            self.id = PlanetaryEntityId(self.id)
+        if not isinstance(self.id, IndividualOrganismId):
+            self.id = IndividualOrganismId(self.id)
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId)
+                         else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class EnvironmentalProcess(PlanetaryEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalProcess
-    class_class_curie: ClassVar[str] = "biolink:EnvironmentalProcess"
-    class_name: ClassVar[str] = "environmental process"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalProcess
-
-    id: Union[str, EnvironmentalProcessId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, EnvironmentalProcessId):
-            self.id = EnvironmentalProcessId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EnvironmentalFeature(PlanetaryEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFeature
-    class_class_curie: ClassVar[str] = "biolink:EnvironmentalFeature"
-    class_name: ClassVar[str] = "environmental feature"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalFeature
-
-    id: Union[str, EnvironmentalFeatureId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, EnvironmentalFeatureId):
-            self.id = EnvironmentalFeatureId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ClinicalEntity(NamedThing):
+class Case(IndividualOrganism):
     """
-    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed
-    under biological entities
+    An individual (human) organism that has a patient role in some clinical context.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalEntity
-    class_class_curie: ClassVar[str] = "biolink:ClinicalEntity"
-    class_name: ClassVar[str] = "clinical entity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalEntity
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Case
+    class_class_curie: ClassVar[str] = "biolink:Case"
+    class_name: ClassVar[str] = "case"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Case
 
-    id: Union[str, ClinicalEntityId] = None
+    id: Union[str, CaseId] = None
     category: List[Union[str, NamedThingId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ClinicalEntityId):
-            self.id = ClinicalEntityId(self.id)
+        if not isinstance(self.id, CaseId):
+            self.id = CaseId(self.id)
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ClinicalTrial(ClinicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+class PopulationOfIndividualOrganisms(OrganismalEntity):
+    """
+    A collection of individuals from the same taxonomic class distinguished by one or more characteristics.
+    Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance
+    for Genome Resources]
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalTrial
-    class_class_curie: ClassVar[str] = "biolink:ClinicalTrial"
-    class_name: ClassVar[str] = "clinical trial"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalTrial
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PopulationOfIndividualOrganisms
+    class_class_curie: ClassVar[str] = "biolink:PopulationOfIndividualOrganisms"
+    class_name: ClassVar[str] = "population of individual organisms"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PopulationOfIndividualOrganisms
 
-    id: Union[str, ClinicalTrialId] = None
+    id: Union[str, PopulationOfIndividualOrganismsId] = None
     category: List[Union[str, NamedThingId]] = empty_list()
+    in_taxon: List[Union[str, OrganismTaxonId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ClinicalTrialId):
-            self.id = ClinicalTrialId(self.id)
+        if not isinstance(self.id, PopulationOfIndividualOrganismsId):
+            self.id = PopulationOfIndividualOrganismsId(self.id)
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId)
+                         else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ClinicalIntervention(ClinicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+class DiseaseOrPhenotypicFeature(BiologicalEntity):
+    """
+    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these
+    as distinct, others such as MESH conflate.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalIntervention
-    class_class_curie: ClassVar[str] = "biolink:ClinicalIntervention"
-    class_name: ClassVar[str] = "clinical intervention"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalIntervention
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeature
+    class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeature"
+    class_name: ClassVar[str] = "disease or phenotypic feature"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeature
 
-    id: Union[str, ClinicalInterventionId] = None
+    id: Union[str, DiseaseOrPhenotypicFeatureId] = None
     category: List[Union[str, NamedThingId]] = empty_list()
+    in_taxon: List[Union[str, OrganismTaxonId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ClinicalInterventionId):
-            self.id = ClinicalInterventionId(self.id)
+        if not isinstance(self.id, DiseaseOrPhenotypicFeatureId):
+            self.id = DiseaseOrPhenotypicFeatureId(self.id)
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId)
+                         else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class Device(NamedThing):
-    """
-    A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
-    """
-    _inherited_slots: ClassVar[List[str]] = []
+class Disease(DiseaseOrPhenotypicFeature):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Device
-    class_class_curie: ClassVar[str] = "biolink:Device"
-    class_name: ClassVar[str] = "device"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Device
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Disease
+    class_class_curie: ClassVar[str] = "biolink:Disease"
+    class_name: ClassVar[str] = "disease"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Disease
 
-    id: Union[str, DeviceId] = None
+    id: Union[str, DiseaseId] = None
     category: List[Union[str, NamedThingId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, DeviceId):
-            self.id = DeviceId(self.id)
+        if not isinstance(self.id, DiseaseId):
+            self.id = DiseaseId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PhenotypicFeature(DiseaseOrPhenotypicFeature):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
+    class_class_curie: ClassVar[str] = "biolink:PhenotypicFeature"
+    class_name: ClassVar[str] = "phenotypic feature"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
+
+    id: Union[str, PhenotypicFeatureId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, PhenotypicFeatureId):
+            self.id = PhenotypicFeatureId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class AnatomicalEntity(OrganismalEntity):
+    """
+    A subcellular location, cell type or gross anatomical part
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntity
+    class_class_curie: ClassVar[str] = "biolink:AnatomicalEntity"
+    class_name: ClassVar[str] = "anatomical entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.AnatomicalEntity
+
+    id: Union[str, AnatomicalEntityId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+    in_taxon: List[Union[str, OrganismTaxonId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, AnatomicalEntityId):
+            self.id = AnatomicalEntityId(self.id)
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId)
+                         else OrganismTaxonId(v) for v in ([self.in_taxon] if isinstance(self.in_taxon, str) else self.in_taxon)]
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CellularComponent(AnatomicalEntity):
+    """
+    A location in or around a cell
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.CellularComponent
+    class_class_curie: ClassVar[str] = "biolink:CellularComponent"
+    class_name: ClassVar[str] = "cellular component"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.CellularComponent
+
+    id: Union[str, CellularComponentId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, CellularComponentId):
+            self.id = CellularComponentId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Cell(AnatomicalEntity):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Cell
+    class_class_curie: ClassVar[str] = "biolink:Cell"
+    class_name: ClassVar[str] = "cell"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Cell
+
+    id: Union[str, CellId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, CellId):
+            self.id = CellId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CellLine(OrganismalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.CellLine
+    class_class_curie: ClassVar[str] = "biolink:CellLine"
+    class_name: ClassVar[str] = "cell line"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.CellLine
+
+    id: Union[str, CellLineId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, CellLineId):
+            self.id = CellLineId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GrossAnatomicalStructure(AnatomicalEntity):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GrossAnatomicalStructure
+    class_class_curie: ClassVar[str] = "biolink:GrossAnatomicalStructure"
+    class_name: ClassVar[str] = "gross anatomical structure"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GrossAnatomicalStructure
+
+    id: Union[str, GrossAnatomicalStructureId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, GrossAnatomicalStructureId):
+            self.id = GrossAnatomicalStructureId(self.id)
         super().__post_init__(**kwargs)
 
 
@@ -2735,6 +3022,94 @@ class ReagentTargetedGene(GenomicEntity):
 
 
 @dataclass
+class ClinicalEntity(NamedThing):
+    """
+    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed
+    under biological entities
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalEntity
+    class_class_curie: ClassVar[str] = "biolink:ClinicalEntity"
+    class_name: ClassVar[str] = "clinical entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalEntity
+
+    id: Union[str, ClinicalEntityId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, ClinicalEntityId):
+            self.id = ClinicalEntityId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ClinicalTrial(ClinicalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalTrial
+    class_class_curie: ClassVar[str] = "biolink:ClinicalTrial"
+    class_name: ClassVar[str] = "clinical trial"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalTrial
+
+    id: Union[str, ClinicalTrialId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, ClinicalTrialId):
+            self.id = ClinicalTrialId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ClinicalIntervention(ClinicalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalIntervention
+    class_class_curie: ClassVar[str] = "biolink:ClinicalIntervention"
+    class_name: ClassVar[str] = "clinical intervention"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalIntervention
+
+    id: Union[str, ClinicalInterventionId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, ClinicalInterventionId):
+            self.id = ClinicalInterventionId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ExposureEvent(BiologicalEntity):
+    """
+    A feature of the environment of an organism that influences one or more phenotypic features of that organism,
+    potentially mediated by genes
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ExposureEvent
+    class_class_curie: ClassVar[str] = "biolink:ExposureEvent"
+    class_name: ClassVar[str] = "exposure event"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEvent
+
+    id: Union[str, ExposureEventId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, ExposureEventId):
+            self.id = ExposureEventId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class ChemicalExposure(ExposureEvent):
     """
     A chemical exposure is an intake of a particular chemical substance
@@ -2810,57 +3185,6 @@ class Treatment(ExposureEvent):
             raise ValueError(f"has_part must be a non-empty list")
         self.has_part = [v if isinstance(v, DrugExposureId)
                          else DrugExposureId(v) for v in ([self.has_part] if isinstance(self.has_part, str) else self.has_part)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class GeographicLocation(PlanetaryEntity):
-    """
-    a location that can be described in lat/long coordinates
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicLocation
-    class_class_curie: ClassVar[str] = "biolink:GeographicLocation"
-    class_name: ClassVar[str] = "geographic location"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicLocation
-
-    id: Union[str, GeographicLocationId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    latitude: Optional[float] = None
-    longitude: Optional[float] = None
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeographicLocationId):
-            self.id = GeographicLocationId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class GeographicLocationAtTime(GeographicLocation):
-    """
-    a location that can be described in lat/long coordinates, for a particular time
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicLocationAtTime
-    class_class_curie: ClassVar[str] = "biolink:GeographicLocationAtTime"
-    class_name: ClassVar[str] = "geographic location at time"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicLocationAtTime
-
-    id: Union[str, GeographicLocationAtTimeId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeographicLocationAtTimeId):
-            self.id = GeographicLocationAtTimeId(self.id)
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
         super().__post_init__(**kwargs)
 
 
@@ -4807,338 +5131,208 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
         super().__post_init__(**kwargs)
 
 
-@dataclass
-class PhysicalEntity(NamedThing):
-    """
-    An entity that has material reality (a.k.a. physical essence).
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
-    class_class_curie: ClassVar[str] = "biolink:PhysicalEntity"
-    class_name: ClassVar[str] = "physical entity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
-
-    id: Union[str, PhysicalEntityId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PhysicalEntityId):
-            self.id = PhysicalEntityId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MaterialSample(PhysicalEntity):
-    """
-    A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a
-    portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use.
-    [SIO]
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
-    class_class_curie: ClassVar[str] = "biolink:MaterialSample"
-    class_name: ClassVar[str] = "material sample"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
-
-    id: Union[str, MaterialSampleId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    has_attribute: List[Union[dict, Attribute]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, MaterialSampleId):
-            self.id = MaterialSampleId(self.id)
-        self.has_attribute = [Attribute(*e) for e in self.has_attribute.items()] if isinstance(self.has_attribute, dict) \
-                              else [v if isinstance(v, Attribute) else Attribute(**v)
-                                    for v in ([self.has_attribute] if isinstance(self.has_attribute, str) else self.has_attribute)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BiologicalProcessOrActivity(BiologicalEntity):
-    """
-    Either an individual molecular activity, or a collection of causally connected molecular activities
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivity
-    class_class_curie: ClassVar[str] = "biolink:BiologicalProcessOrActivity"
-    class_name: ClassVar[str] = "biological process or activity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivity
-
-    id: Union[str, BiologicalProcessOrActivityId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    has_input: List[Union[str, NamedThingId]] = empty_list()
-    has_output: List[Union[str, NamedThingId]] = empty_list()
-    enabled_by: List[Union[str, PhysicalEntityId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, BiologicalProcessOrActivityId):
-            self.id = BiologicalProcessOrActivityId(self.id)
-        self.has_input = [v if isinstance(v, NamedThingId)
-                          else NamedThingId(v) for v in ([self.has_input] if isinstance(self.has_input, str) else self.has_input)]
-        self.has_output = [v if isinstance(v, NamedThingId)
-                           else NamedThingId(v) for v in ([self.has_output] if isinstance(self.has_output, str) else self.has_output)]
-        self.enabled_by = [v if isinstance(v, PhysicalEntityId)
-                           else PhysicalEntityId(v) for v in ([self.enabled_by] if isinstance(self.enabled_by, str) else self.enabled_by)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MolecularActivity(BiologicalProcessOrActivity):
-    """
-    An execution of a molecular function carried out by a gene product or macromolecular complex.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularActivity
-    class_class_curie: ClassVar[str] = "biolink:MolecularActivity"
-    class_name: ClassVar[str] = "molecular activity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivity
-
-    id: Union[str, MolecularActivityId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-    has_input: List[Union[str, ChemicalSubstanceId]] = empty_list()
-    has_output: List[Union[str, ChemicalSubstanceId]] = empty_list()
-    enabled_by: List[Union[str, MacromolecularMachineId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, MolecularActivityId):
-            self.id = MolecularActivityId(self.id)
-        self.has_input = [v if isinstance(v, ChemicalSubstanceId)
-                          else ChemicalSubstanceId(v) for v in ([self.has_input] if isinstance(self.has_input, str) else self.has_input)]
-        self.has_output = [v if isinstance(v, ChemicalSubstanceId)
-                           else ChemicalSubstanceId(v) for v in ([self.has_output] if isinstance(self.has_output, str) else self.has_output)]
-        self.enabled_by = [v if isinstance(v, MacromolecularMachineId)
-                           else MacromolecularMachineId(v) for v in ([self.enabled_by] if isinstance(self.enabled_by, str) else self.enabled_by)]
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Procedure(NamedThing):
-    """
-    A series of actions conducted in a certain order or manner
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Procedure
-    class_class_curie: ClassVar[str] = "biolink:Procedure"
-    class_name: ClassVar[str] = "procedure"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Procedure
-
-    id: Union[str, ProcedureId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ProcedureId):
-            self.id = ProcedureId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Phenomenon(NamedThing):
-    """
-    a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Phenomenon
-    class_class_curie: ClassVar[str] = "biolink:Phenomenon"
-    class_name: ClassVar[str] = "phenomenon"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Phenomenon
-
-    id: Union[str, PhenomenonId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PhenomenonId):
-            self.id = PhenomenonId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BiologicalProcess(BiologicalProcessOrActivity):
-    """
-    One or more causally connected executions of molecular functions
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcess
-    class_class_curie: ClassVar[str] = "biolink:BiologicalProcess"
-    class_name: ClassVar[str] = "biological process"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcess
-
-    id: Union[str, BiologicalProcessId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, BiologicalProcessId):
-            self.id = BiologicalProcessId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Pathway(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Pathway
-    class_class_curie: ClassVar[str] = "biolink:Pathway"
-    class_name: ClassVar[str] = "pathway"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Pathway
-
-    id: Union[str, PathwayId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PathwayId):
-            self.id = PathwayId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PhysiologicalProcess(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysiologicalProcess
-    class_class_curie: ClassVar[str] = "biolink:PhysiologicalProcess"
-    class_name: ClassVar[str] = "physiological process"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.PhysiologicalProcess
-
-    id: Union[str, PhysiologicalProcessId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PhysiologicalProcessId):
-            self.id = PhysiologicalProcessId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Behavior(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Behavior
-    class_class_curie: ClassVar[str] = "biolink:Behavior"
-    class_name: ClassVar[str] = "behavior"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Behavior
-
-    id: Union[str, BehaviorId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, BehaviorId):
-            self.id = BehaviorId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class CellularComponent(AnatomicalEntity):
-    """
-    A location in or around a cell
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CellularComponent
-    class_class_curie: ClassVar[str] = "biolink:CellularComponent"
-    class_name: ClassVar[str] = "cellular component"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.CellularComponent
-
-    id: Union[str, CellularComponentId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, CellularComponentId):
-            self.id = CellularComponentId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Cell(AnatomicalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Cell
-    class_class_curie: ClassVar[str] = "biolink:Cell"
-    class_name: ClassVar[str] = "cell"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Cell
-
-    id: Union[str, CellId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, CellId):
-            self.id = CellId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class CellLine(OrganismalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.CellLine
-    class_class_curie: ClassVar[str] = "biolink:CellLine"
-    class_name: ClassVar[str] = "cell line"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.CellLine
-
-    id: Union[str, CellLineId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, CellLineId):
-            self.id = CellLineId(self.id)
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class GrossAnatomicalStructure(AnatomicalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GrossAnatomicalStructure
-    class_class_curie: ClassVar[str] = "biolink:GrossAnatomicalStructure"
-    class_name: ClassVar[str] = "gross anatomical structure"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GrossAnatomicalStructure
-
-    id: Union[str, GrossAnatomicalStructureId] = None
-    category: List[Union[str, NamedThingId]] = empty_list()
-
-    def __post_init__(self, **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GrossAnatomicalStructureId):
-            self.id = GrossAnatomicalStructureId(self.id)
-        super().__post_init__(**kwargs)
-
-
 
 # Slots
 class slots:
     pass
+
+slots.has_attribute = Slot(uri=BIOLINK.has_attribute, name="has attribute", curie=BIOLINK.curie('has_attribute'),
+                      model_uri=BIOLINK.has_attribute, domain=None, range=List[Union[dict, Attribute]])
+
+slots.has_attribute_type = Slot(uri=BIOLINK.has_attribute_type, name="has attribute type", curie=BIOLINK.curie('has_attribute_type'),
+                      model_uri=BIOLINK.has_attribute_type, domain=Attribute, range=Union[str, OntologyClassId])
+
+slots.has_qualitative_value = Slot(uri=BIOLINK.has_qualitative_value, name="has qualitative value", curie=BIOLINK.curie('has_qualitative_value'),
+                      model_uri=BIOLINK.has_qualitative_value, domain=Attribute, range=Optional[Union[str, NamedThingId]])
+
+slots.has_quantitative_value = Slot(uri=BIOLINK.has_quantitative_value, name="has quantitative value", curie=BIOLINK.curie('has_quantitative_value'),
+                      model_uri=BIOLINK.has_quantitative_value, domain=Attribute, range=List[Union[dict, QuantityValue]])
+
+slots.has_numeric_value = Slot(uri=BIOLINK.has_numeric_value, name="has numeric value", curie=BIOLINK.curie('has_numeric_value'),
+                      model_uri=BIOLINK.has_numeric_value, domain=QuantityValue, range=Optional[float])
+
+slots.has_unit = Slot(uri=BIOLINK.has_unit, name="has unit", curie=BIOLINK.curie('has_unit'),
+                      model_uri=BIOLINK.has_unit, domain=QuantityValue, range=Optional[Union[str, Unit]])
+
+slots.node_property = Slot(uri=BIOLINK.node_property, name="node property", curie=BIOLINK.curie('node_property'),
+                      model_uri=BIOLINK.node_property, domain=NamedThing, range=Optional[str])
+
+slots.id = Slot(uri=BIOLINK.id, name="id", curie=BIOLINK.curie('id'),
+                      model_uri=BIOLINK.id, domain=None, range=URIRef)
+
+slots.iri = Slot(uri=BIOLINK.iri, name="iri", curie=BIOLINK.curie('iri'),
+                      model_uri=BIOLINK.iri, domain=None, range=Optional[Union[str, IriType]])
+
+slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
+                      model_uri=BIOLINK.type, domain=None, range=Optional[str])
+
+slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie('category'),
+                      model_uri=BIOLINK.category, domain=Entity, range=List[Union[str, CategoryType]])
+
+slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
+                      model_uri=BIOLINK.name, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.source = Slot(uri=BIOLINK.source, name="source", curie=BIOLINK.curie('source'),
+                      model_uri=BIOLINK.source, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.filler = Slot(uri=BIOLINK.filler, name="filler", curie=BIOLINK.curie('filler'),
+                      model_uri=BIOLINK.filler, domain=NamedThing, range=Optional[Union[str, NamedThingId]])
+
+slots.symbol = Slot(uri=BIOLINK.symbol, name="symbol", curie=BIOLINK.curie('symbol'),
+                      model_uri=BIOLINK.symbol, domain=NamedThing, range=Optional[str])
+
+slots.synonym = Slot(uri=BIOLINK.synonym, name="synonym", curie=BIOLINK.curie('synonym'),
+                      model_uri=BIOLINK.synonym, domain=NamedThing, range=List[Union[str, LabelType]])
+
+slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.curie('has_topic'),
+                      model_uri=BIOLINK.has_topic, domain=NamedThing, range=Optional[Union[str, OntologyClassId]])
+
+slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
+                      model_uri=BIOLINK.xref, domain=NamedThing, range=List[Union[str, IriType]])
+
+slots.full_name = Slot(uri=BIOLINK.full_name, name="full name", curie=BIOLINK.curie('full_name'),
+                      model_uri=BIOLINK.full_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
+
+slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
+                      model_uri=BIOLINK.description, domain=None, range=Optional[Union[str, NarrativeText]])
+
+slots.systematic_synonym = Slot(uri=GOP.systematic_synonym, name="systematic synonym", curie=GOP.curie('systematic_synonym'),
+                      model_uri=BIOLINK.systematic_synonym, domain=NamedThing, range=List[Union[str, LabelType]])
+
+slots.affiliation = Slot(uri=BIOLINK.affiliation, name="affiliation", curie=BIOLINK.curie('affiliation'),
+                      model_uri=BIOLINK.affiliation, domain=Agent, range=List[Union[str, URIorCURIE]])
+
+slots.address = Slot(uri=BIOLINK.address, name="address", curie=BIOLINK.curie('address'),
+                      model_uri=BIOLINK.address, domain=NamedThing, range=Optional[str])
+
+slots.latitude = Slot(uri=BIOLINK.latitude, name="latitude", curie=BIOLINK.curie('latitude'),
+                      model_uri=BIOLINK.latitude, domain=NamedThing, range=Optional[float])
+
+slots.longitude = Slot(uri=BIOLINK.longitude, name="longitude", curie=BIOLINK.curie('longitude'),
+                      model_uri=BIOLINK.longitude, domain=NamedThing, range=Optional[float])
+
+slots.timepoint = Slot(uri=BIOLINK.timepoint, name="timepoint", curie=BIOLINK.curie('timepoint'),
+                      model_uri=BIOLINK.timepoint, domain=NamedThing, range=Optional[Union[str, TimeType]])
+
+slots.creation_date = Slot(uri=BIOLINK.creation_date, name="creation date", curie=BIOLINK.curie('creation_date'),
+                      model_uri=BIOLINK.creation_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
+
+slots.update_date = Slot(uri=BIOLINK.update_date, name="update date", curie=BIOLINK.curie('update_date'),
+                      model_uri=BIOLINK.update_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
+
+slots.aggregate_statistic = Slot(uri=BIOLINK.aggregate_statistic, name="aggregate statistic", curie=BIOLINK.curie('aggregate_statistic'),
+                      model_uri=BIOLINK.aggregate_statistic, domain=NamedThing, range=Optional[str])
+
+slots.has_count = Slot(uri=BIOLINK.has_count, name="has count", curie=BIOLINK.curie('has_count'),
+                      model_uri=BIOLINK.has_count, domain=NamedThing, range=Optional[int])
+
+slots.has_total = Slot(uri=BIOLINK.has_total, name="has total", curie=BIOLINK.curie('has_total'),
+                      model_uri=BIOLINK.has_total, domain=NamedThing, range=Optional[int])
+
+slots.has_quotient = Slot(uri=BIOLINK.has_quotient, name="has quotient", curie=BIOLINK.curie('has_quotient'),
+                      model_uri=BIOLINK.has_quotient, domain=NamedThing, range=Optional[float])
+
+slots.has_percentage = Slot(uri=BIOLINK.has_percentage, name="has percentage", curie=BIOLINK.curie('has_percentage'),
+                      model_uri=BIOLINK.has_percentage, domain=NamedThing, range=Optional[float])
+
+slots.source_data_file = Slot(uri=BIOLINK.source_data_file, name="source data file", curie=BIOLINK.curie('source_data_file'),
+                      model_uri=BIOLINK.source_data_file, domain=DataSetVersion, range=Optional[Union[str, DataFileId]])
+
+slots.source_web_page = Slot(uri=BIOLINK.source_web_page, name="source web page", curie=BIOLINK.curie('source_web_page'),
+                      model_uri=BIOLINK.source_web_page, domain=None, range=Optional[str])
+
+slots.retrieved_on = Slot(uri=BIOLINK.retrieved_on, name="retrieved on", curie=BIOLINK.curie('retrieved_on'),
+                      model_uri=BIOLINK.retrieved_on, domain=SourceFile, range=Optional[Union[str, XSDDate]])
+
+slots.version_of = Slot(uri=BIOLINK.version_of, name="version of", curie=BIOLINK.curie('version_of'),
+                      model_uri=BIOLINK.version_of, domain=DataSetVersion, range=Optional[Union[str, DataSetId]])
+
+slots.source_version = Slot(uri=BIOLINK.source_version, name="source version", curie=BIOLINK.curie('source_version'),
+                      model_uri=BIOLINK.source_version, domain=SourceFile, range=Optional[str])
+
+slots.license = Slot(uri=BIOLINK.license, name="license", curie=BIOLINK.curie('license'),
+                      model_uri=BIOLINK.license, domain=InformationContentEntity, range=Optional[str])
+
+slots.rights = Slot(uri=BIOLINK.rights, name="rights", curie=BIOLINK.curie('rights'),
+                      model_uri=BIOLINK.rights, domain=InformationContentEntity, range=Optional[str])
+
+slots.format = Slot(uri=BIOLINK.format, name="format", curie=BIOLINK.curie('format'),
+                      model_uri=BIOLINK.format, domain=InformationContentEntity, range=Optional[str])
+
+slots.created_with = Slot(uri=BIOLINK.created_with, name="created_with", curie=BIOLINK.curie('created_with'),
+                      model_uri=BIOLINK.created_with, domain=SourceFile, range=Optional[str])
+
+slots.download_url = Slot(uri=BIOLINK.download_url, name="download url", curie=BIOLINK.curie('download_url'),
+                      model_uri=BIOLINK.download_url, domain=None, range=Optional[str])
+
+slots.distribution = Slot(uri=BIOLINK.distribution, name="distribution", curie=BIOLINK.curie('distribution'),
+                      model_uri=BIOLINK.distribution, domain=DataSetVersion, range=Optional[Union[str, DistributionLevelId]])
+
+slots.published_in = Slot(uri=BIOLINK.published_in, name="published in", curie=BIOLINK.curie('published_in'),
+                      model_uri=BIOLINK.published_in, domain=Publication, range=Optional[Union[str, URIorCURIE]])
+
+slots.iso_abbreviation = Slot(uri=BIOLINK.iso_abbreviation, name="iso abbreviation", curie=BIOLINK.curie('iso_abbreviation'),
+                      model_uri=BIOLINK.iso_abbreviation, domain=Publication, range=Optional[str])
+
+slots.authors = Slot(uri=BIOLINK.authors, name="authors", curie=BIOLINK.curie('authors'),
+                      model_uri=BIOLINK.authors, domain=Publication, range=List[str])
+
+slots.volume = Slot(uri=BIOLINK.volume, name="volume", curie=BIOLINK.curie('volume'),
+                      model_uri=BIOLINK.volume, domain=Publication, range=Optional[str])
+
+slots.chapter = Slot(uri=BIOLINK.chapter, name="chapter", curie=BIOLINK.curie('chapter'),
+                      model_uri=BIOLINK.chapter, domain=BookChapter, range=Optional[str])
+
+slots.issue = Slot(uri=BIOLINK.issue, name="issue", curie=BIOLINK.curie('issue'),
+                      model_uri=BIOLINK.issue, domain=Publication, range=Optional[str])
+
+slots.pages = Slot(uri=BIOLINK.pages, name="pages", curie=BIOLINK.curie('pages'),
+                      model_uri=BIOLINK.pages, domain=Publication, range=List[str])
+
+slots.summary = Slot(uri=BIOLINK.summary, name="summary", curie=BIOLINK.curie('summary'),
+                      model_uri=BIOLINK.summary, domain=Publication, range=Optional[str])
+
+slots.keywords = Slot(uri=BIOLINK.keywords, name="keywords", curie=BIOLINK.curie('keywords'),
+                      model_uri=BIOLINK.keywords, domain=Publication, range=List[str])
+
+slots.mesh_terms = Slot(uri=BIOLINK.mesh_terms, name="mesh terms", curie=BIOLINK.curie('mesh_terms'),
+                      model_uri=BIOLINK.mesh_terms, domain=Publication, range=List[Union[str, URIorCURIE]])
+
+slots.has_biological_sequence = Slot(uri=BIOLINK.has_biological_sequence, name="has biological sequence", curie=BIOLINK.curie('has_biological_sequence'),
+                      model_uri=BIOLINK.has_biological_sequence, domain=NamedThing, range=Optional[Union[str, BiologicalSequence]])
+
+slots.has_gene = Slot(uri=BIOLINK.has_gene, name="has gene", curie=BIOLINK.curie('has_gene'),
+                      model_uri=BIOLINK.has_gene, domain=NamedThing, range=Optional[Union[str, GeneId]])
+
+slots.has_zygosity = Slot(uri=BIOLINK.has_zygosity, name="has zygosity", curie=BIOLINK.curie('has_zygosity'),
+                      model_uri=BIOLINK.has_zygosity, domain=GenomicEntity, range=Optional[Union[dict, "Zygosity"]])
+
+slots.has_chemical_formula = Slot(uri=BIOLINK.has_chemical_formula, name="has chemical formula", curie=BIOLINK.curie('has_chemical_formula'),
+                      model_uri=BIOLINK.has_chemical_formula, domain=NamedThing, range=Optional[str])
+
+slots.has_constituent = Slot(uri=BIOLINK.has_constituent, name="has constituent", curie=BIOLINK.curie('has_constituent'),
+                      model_uri=BIOLINK.has_constituent, domain=NamedThing, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.has_drug = Slot(uri=BIOLINK.has_drug, name="has drug", curie=BIOLINK.curie('has_drug'),
+                      model_uri=BIOLINK.has_drug, domain=NamedThing, range=Optional[Union[str, DrugId]])
+
+slots.has_active_ingredient = Slot(uri=BIOLINK.has_active_ingredient, name="has active ingredient", curie=BIOLINK.curie('has_active_ingredient'),
+                      model_uri=BIOLINK.has_active_ingredient, domain=Drug, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.has_excipient = Slot(uri=BIOLINK.has_excipient, name="has excipient", curie=BIOLINK.curie('has_excipient'),
+                      model_uri=BIOLINK.has_excipient, domain=Drug, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.has_nutrient = Slot(uri=BIOLINK.has_nutrient, name="has nutrient", curie=BIOLINK.curie('has_nutrient'),
+                      model_uri=BIOLINK.has_nutrient, domain=Food, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.has_receptor = Slot(uri=BIOLINK.has_receptor, name="has receptor", curie=BIOLINK.curie('has_receptor'),
+                      model_uri=BIOLINK.has_receptor, domain=ExposureEvent, range=Optional[Union[str, OrganismalEntityId]])
+
+slots.has_stressor = Slot(uri=BIOLINK.has_stressor, name="has stressor", curie=BIOLINK.curie('has_stressor'),
+                      model_uri=BIOLINK.has_stressor, domain=ExposureEvent, range=Optional[str])
+
+slots.has_route = Slot(uri=BIOLINK.has_route, name="has route", curie=BIOLINK.curie('has_route'),
+                      model_uri=BIOLINK.has_route, domain=ExposureEvent, range=Optional[str])
 
 slots.related_to = Slot(uri=BIOLINK.related_to, name="related to", curie=BIOLINK.curie('related_to'),
                       model_uri=BIOLINK.related_to, domain=NamedThing, range=List[Union[str, NamedThingId]])
@@ -5611,81 +5805,6 @@ slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie
 slots.has_molecular_consequence = Slot(uri=BIOLINK.has_molecular_consequence, name="has molecular consequence", curie=BIOLINK.curie('has_molecular_consequence'),
                       model_uri=BIOLINK.has_molecular_consequence, domain=NamedThing, range=List[Union[str, OntologyClassId]])
 
-slots.node_property = Slot(uri=BIOLINK.node_property, name="node property", curie=BIOLINK.curie('node_property'),
-                      model_uri=BIOLINK.node_property, domain=NamedThing, range=Optional[str])
-
-slots.source_data_file = Slot(uri=BIOLINK.source_data_file, name="source data file", curie=BIOLINK.curie('source_data_file'),
-                      model_uri=BIOLINK.source_data_file, domain=DataSetVersion, range=Optional[Union[str, DataFileId]])
-
-slots.source_web_page = Slot(uri=BIOLINK.source_web_page, name="source web page", curie=BIOLINK.curie('source_web_page'),
-                      model_uri=BIOLINK.source_web_page, domain=None, range=Optional[str])
-
-slots.retrieved_on = Slot(uri=BIOLINK.retrieved_on, name="retrieved on", curie=BIOLINK.curie('retrieved_on'),
-                      model_uri=BIOLINK.retrieved_on, domain=SourceFile, range=Optional[Union[str, XSDDate]])
-
-slots.version_of = Slot(uri=BIOLINK.version_of, name="version of", curie=BIOLINK.curie('version_of'),
-                      model_uri=BIOLINK.version_of, domain=DataSetVersion, range=Optional[Union[str, DataSetId]])
-
-slots.source_version = Slot(uri=BIOLINK.source_version, name="source version", curie=BIOLINK.curie('source_version'),
-                      model_uri=BIOLINK.source_version, domain=SourceFile, range=Optional[str])
-
-slots.license = Slot(uri=BIOLINK.license, name="license", curie=BIOLINK.curie('license'),
-                      model_uri=BIOLINK.license, domain=InformationContentEntity, range=Optional[str])
-
-slots.rights = Slot(uri=BIOLINK.rights, name="rights", curie=BIOLINK.curie('rights'),
-                      model_uri=BIOLINK.rights, domain=InformationContentEntity, range=Optional[str])
-
-slots.format = Slot(uri=BIOLINK.format, name="format", curie=BIOLINK.curie('format'),
-                      model_uri=BIOLINK.format, domain=InformationContentEntity, range=Optional[str])
-
-slots.created_with = Slot(uri=BIOLINK.created_with, name="created_with", curie=BIOLINK.curie('created_with'),
-                      model_uri=BIOLINK.created_with, domain=SourceFile, range=Optional[str])
-
-slots.download_url = Slot(uri=BIOLINK.download_url, name="download url", curie=BIOLINK.curie('download_url'),
-                      model_uri=BIOLINK.download_url, domain=None, range=Optional[str])
-
-slots.distribution = Slot(uri=BIOLINK.distribution, name="distribution", curie=BIOLINK.curie('distribution'),
-                      model_uri=BIOLINK.distribution, domain=DataSetVersion, range=Optional[Union[str, DistributionLevelId]])
-
-slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
-                      model_uri=BIOLINK.type, domain=None, range=Optional[str])
-
-slots.id = Slot(uri=BIOLINK.id, name="id", curie=BIOLINK.curie('id'),
-                      model_uri=BIOLINK.id, domain=None, range=URIRef)
-
-slots.iri = Slot(uri=BIOLINK.iri, name="iri", curie=BIOLINK.curie('iri'),
-                      model_uri=BIOLINK.iri, domain=None, range=Optional[Union[str, IriType]])
-
-slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
-                      model_uri=BIOLINK.name, domain=None, range=Optional[Union[str, LabelType]])
-
-slots.source = Slot(uri=BIOLINK.source, name="source", curie=BIOLINK.curie('source'),
-                      model_uri=BIOLINK.source, domain=None, range=Optional[Union[str, LabelType]])
-
-slots.symbol = Slot(uri=BIOLINK.symbol, name="symbol", curie=BIOLINK.curie('symbol'),
-                      model_uri=BIOLINK.symbol, domain=NamedThing, range=Optional[str])
-
-slots.synonym = Slot(uri=BIOLINK.synonym, name="synonym", curie=BIOLINK.curie('synonym'),
-                      model_uri=BIOLINK.synonym, domain=NamedThing, range=List[Union[str, LabelType]])
-
-slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.curie('has_topic'),
-                      model_uri=BIOLINK.has_topic, domain=NamedThing, range=Optional[Union[str, OntologyClassId]])
-
-slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
-                      model_uri=BIOLINK.xref, domain=NamedThing, range=List[Union[str, IriType]])
-
-slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie('category'),
-                      model_uri=BIOLINK.category, domain=NamedThing, range=List[Union[str, CategoryType]])
-
-slots.full_name = Slot(uri=BIOLINK.full_name, name="full name", curie=BIOLINK.curie('full_name'),
-                      model_uri=BIOLINK.full_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
-
-slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
-                      model_uri=BIOLINK.description, domain=None, range=Optional[Union[str, NarrativeText]])
-
-slots.systematic_synonym = Slot(uri=GOP.systematic_synonym, name="systematic synonym", curie=GOP.curie('systematic_synonym'),
-                      model_uri=BIOLINK.systematic_synonym, domain=NamedThing, range=List[Union[str, LabelType]])
-
 slots.association_slot = Slot(uri=BIOLINK.association_slot, name="association slot", curie=BIOLINK.curie('association_slot'),
                       model_uri=BIOLINK.association_slot, domain=Association, range=Optional[str])
 
@@ -5722,104 +5841,14 @@ slots.provided_by = Slot(uri=BIOLINK.provided_by, name="provided by", curie=BIOL
 slots.association_type = Slot(uri=BIOLINK.association_type, name="association type", curie=BIOLINK.curie('association_type'),
                       model_uri=BIOLINK.association_type, domain=Association, range=Optional[Union[str, OntologyClassId]])
 
-slots.published_in = Slot(uri=BIOLINK.published_in, name="published in", curie=BIOLINK.curie('published_in'),
-                      model_uri=BIOLINK.published_in, domain=Publication, range=Optional[Union[str, URIorCURIE]])
-
-slots.iso_abbreviation = Slot(uri=BIOLINK.iso_abbreviation, name="iso abbreviation", curie=BIOLINK.curie('iso_abbreviation'),
-                      model_uri=BIOLINK.iso_abbreviation, domain=Publication, range=Optional[str])
-
-slots.authors = Slot(uri=BIOLINK.authors, name="authors", curie=BIOLINK.curie('authors'),
-                      model_uri=BIOLINK.authors, domain=Publication, range=List[str])
-
-slots.volume = Slot(uri=BIOLINK.volume, name="volume", curie=BIOLINK.curie('volume'),
-                      model_uri=BIOLINK.volume, domain=Publication, range=Optional[str])
-
-slots.chapter = Slot(uri=BIOLINK.chapter, name="chapter", curie=BIOLINK.curie('chapter'),
-                      model_uri=BIOLINK.chapter, domain=BookChapter, range=Optional[str])
-
-slots.issue = Slot(uri=BIOLINK.issue, name="issue", curie=BIOLINK.curie('issue'),
-                      model_uri=BIOLINK.issue, domain=Publication, range=Optional[str])
-
-slots.pages = Slot(uri=BIOLINK.pages, name="pages", curie=BIOLINK.curie('pages'),
-                      model_uri=BIOLINK.pages, domain=Publication, range=List[str])
-
-slots.summary = Slot(uri=BIOLINK.summary, name="summary", curie=BIOLINK.curie('summary'),
-                      model_uri=BIOLINK.summary, domain=Publication, range=Optional[str])
-
-slots.keywords = Slot(uri=BIOLINK.keywords, name="keywords", curie=BIOLINK.curie('keywords'),
-                      model_uri=BIOLINK.keywords, domain=Publication, range=List[str])
-
-slots.mesh_terms = Slot(uri=BIOLINK.mesh_terms, name="mesh terms", curie=BIOLINK.curie('mesh_terms'),
-                      model_uri=BIOLINK.mesh_terms, domain=Publication, range=List[Union[str, URIorCURIE]])
-
 slots.chi_squared_statistic = Slot(uri=BIOLINK.chi_squared_statistic, name="chi squared statistic", curie=BIOLINK.curie('chi_squared_statistic'),
                       model_uri=BIOLINK.chi_squared_statistic, domain=Association, range=Optional[float])
 
 slots.p_value = Slot(uri=BIOLINK.p_value, name="p value", curie=BIOLINK.curie('p_value'),
                       model_uri=BIOLINK.p_value, domain=Association, range=Optional[float])
 
-slots.creation_date = Slot(uri=BIOLINK.creation_date, name="creation date", curie=BIOLINK.curie('creation_date'),
-                      model_uri=BIOLINK.creation_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
-
-slots.has_receptor = Slot(uri=BIOLINK.has_receptor, name="has receptor", curie=BIOLINK.curie('has_receptor'),
-                      model_uri=BIOLINK.has_receptor, domain=ExposureEvent, range=Optional[Union[str, OrganismalEntityId]])
-
-slots.has_stressor = Slot(uri=BIOLINK.has_stressor, name="has stressor", curie=BIOLINK.curie('has_stressor'),
-                      model_uri=BIOLINK.has_stressor, domain=ExposureEvent, range=Optional[str])
-
-slots.has_constituent = Slot(uri=BIOLINK.has_constituent, name="has constituent", curie=BIOLINK.curie('has_constituent'),
-                      model_uri=BIOLINK.has_constituent, domain=NamedThing, range=List[Union[str, ChemicalSubstanceId]])
-
-slots.has_active_ingredient = Slot(uri=BIOLINK.has_active_ingredient, name="has active ingredient", curie=BIOLINK.curie('has_active_ingredient'),
-                      model_uri=BIOLINK.has_active_ingredient, domain=Drug, range=List[Union[str, ChemicalSubstanceId]])
-
-slots.has_excipient = Slot(uri=BIOLINK.has_excipient, name="has excipient", curie=BIOLINK.curie('has_excipient'),
-                      model_uri=BIOLINK.has_excipient, domain=Drug, range=List[Union[str, ChemicalSubstanceId]])
-
-slots.has_nutrient = Slot(uri=BIOLINK.has_nutrient, name="has nutrient", curie=BIOLINK.curie('has_nutrient'),
-                      model_uri=BIOLINK.has_nutrient, domain=Food, range=List[Union[str, ChemicalSubstanceId]])
-
-slots.has_route = Slot(uri=BIOLINK.has_route, name="has route", curie=BIOLINK.curie('has_route'),
-                      model_uri=BIOLINK.has_route, domain=ExposureEvent, range=Optional[str])
-
-slots.update_date = Slot(uri=BIOLINK.update_date, name="update date", curie=BIOLINK.curie('update_date'),
-                      model_uri=BIOLINK.update_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
-
-slots.latitude = Slot(uri=BIOLINK.latitude, name="latitude", curie=BIOLINK.curie('latitude'),
-                      model_uri=BIOLINK.latitude, domain=NamedThing, range=Optional[float])
-
-slots.longitude = Slot(uri=BIOLINK.longitude, name="longitude", curie=BIOLINK.curie('longitude'),
-                      model_uri=BIOLINK.longitude, domain=NamedThing, range=Optional[float])
-
-slots.affiliation = Slot(uri=BIOLINK.affiliation, name="affiliation", curie=BIOLINK.curie('affiliation'),
-                      model_uri=BIOLINK.affiliation, domain=Agent, range=List[Union[str, URIorCURIE]])
-
-slots.address = Slot(uri=BIOLINK.address, name="address", curie=BIOLINK.curie('address'),
-                      model_uri=BIOLINK.address, domain=NamedThing, range=Optional[str])
-
-slots.has_chemical_formula = Slot(uri=BIOLINK.has_chemical_formula, name="has chemical formula", curie=BIOLINK.curie('has_chemical_formula'),
-                      model_uri=BIOLINK.has_chemical_formula, domain=NamedThing, range=Optional[str])
-
 slots.interacting_molecules_category = Slot(uri=BIOLINK.interacting_molecules_category, name="interacting molecules category", curie=BIOLINK.curie('interacting_molecules_category'),
-                      model_uri=BIOLINK.interacting_molecules_category, domain=None, range=Optional[Union[str, OntologyClassId]])
-
-slots.aggregate_statistic = Slot(uri=BIOLINK.aggregate_statistic, name="aggregate statistic", curie=BIOLINK.curie('aggregate_statistic'),
-                      model_uri=BIOLINK.aggregate_statistic, domain=NamedThing, range=Optional[str])
-
-slots.has_count = Slot(uri=BIOLINK.has_count, name="has count", curie=BIOLINK.curie('has_count'),
-                      model_uri=BIOLINK.has_count, domain=NamedThing, range=Optional[int])
-
-slots.has_total = Slot(uri=BIOLINK.has_total, name="has total", curie=BIOLINK.curie('has_total'),
-                      model_uri=BIOLINK.has_total, domain=NamedThing, range=Optional[int])
-
-slots.has_quotient = Slot(uri=BIOLINK.has_quotient, name="has quotient", curie=BIOLINK.curie('has_quotient'),
-                      model_uri=BIOLINK.has_quotient, domain=NamedThing, range=Optional[float])
-
-slots.has_percentage = Slot(uri=BIOLINK.has_percentage, name="has percentage", curie=BIOLINK.curie('has_percentage'),
-                      model_uri=BIOLINK.has_percentage, domain=NamedThing, range=Optional[float])
-
-slots.timepoint = Slot(uri=BIOLINK.timepoint, name="timepoint", curie=BIOLINK.curie('timepoint'),
-                      model_uri=BIOLINK.timepoint, domain=NamedThing, range=Optional[Union[str, TimeType]])
+                      model_uri=BIOLINK.interacting_molecules_category, domain=Association, range=Optional[Union[str, OntologyClassId]])
 
 slots.stage_qualifier = Slot(uri=BIOLINK.stage_qualifier, name="stage qualifier", curie=BIOLINK.curie('stage_qualifier'),
                       model_uri=BIOLINK.stage_qualifier, domain=Association, range=Optional[Union[str, LifeStageId]])
@@ -5854,21 +5883,6 @@ slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=B
 slots.change_is_catalyzed_by = Slot(uri=BIOLINK.change_is_catalyzed_by, name="change is catalyzed by", curie=BIOLINK.curie('change_is_catalyzed_by'),
                       model_uri=BIOLINK.change_is_catalyzed_by, domain=Association, range=List[Union[str, MacromolecularMachineId]])
 
-slots.has_biological_sequence = Slot(uri=BIOLINK.has_biological_sequence, name="has biological sequence", curie=BIOLINK.curie('has_biological_sequence'),
-                      model_uri=BIOLINK.has_biological_sequence, domain=NamedThing, range=Optional[Union[str, BiologicalSequence]])
-
-slots.has_drug = Slot(uri=BIOLINK.has_drug, name="has drug", curie=BIOLINK.curie('has_drug'),
-                      model_uri=BIOLINK.has_drug, domain=NamedThing, range=Optional[Union[str, DrugId]])
-
-slots.has_gene = Slot(uri=BIOLINK.has_gene, name="has gene", curie=BIOLINK.curie('has_gene'),
-                      model_uri=BIOLINK.has_gene, domain=NamedThing, range=Optional[Union[str, GeneId]])
-
-slots.has_zygosity = Slot(uri=BIOLINK.has_zygosity, name="has zygosity", curie=BIOLINK.curie('has_zygosity'),
-                      model_uri=BIOLINK.has_zygosity, domain=GenomicEntity, range=Optional[Union[dict, "Zygosity"]])
-
-slots.filler = Slot(uri=BIOLINK.filler, name="filler", curie=BIOLINK.curie('filler'),
-                      model_uri=BIOLINK.filler, domain=NamedThing, range=Optional[Union[str, NamedThingId]])
-
 slots.sequence_localization_attribute = Slot(uri=BIOLINK.sequence_localization_attribute, name="sequence localization attribute", curie=BIOLINK.curie('sequence_localization_attribute'),
                       model_uri=BIOLINK.sequence_localization_attribute, domain=GenomicSequenceLocalization, range=Optional[str])
 
@@ -5890,29 +5904,17 @@ slots.strand = Slot(uri=BIOLINK.strand, name="strand", curie=BIOLINK.curie('stra
 slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase'),
                       model_uri=BIOLINK.phase, domain=CodingSequence, range=Optional[str])
 
-slots.has_attribute = Slot(uri=BIOLINK.has_attribute, name="has attribute", curie=BIOLINK.curie('has_attribute'),
-                      model_uri=BIOLINK.has_attribute, domain=None, range=List[Union[dict, Attribute]])
-
-slots.has_attribute_type = Slot(uri=BIOLINK.has_attribute_type, name="has attribute type", curie=BIOLINK.curie('has_attribute_type'),
-                      model_uri=BIOLINK.has_attribute_type, domain=Attribute, range=Union[str, OntologyClassId])
-
-slots.has_qualitative_value = Slot(uri=BIOLINK.has_qualitative_value, name="has qualitative value", curie=BIOLINK.curie('has_qualitative_value'),
-                      model_uri=BIOLINK.has_qualitative_value, domain=Attribute, range=Optional[Union[str, NamedThingId]])
-
-slots.has_quantitative_value = Slot(uri=BIOLINK.has_quantitative_value, name="has quantitative value", curie=BIOLINK.curie('has_quantitative_value'),
-                      model_uri=BIOLINK.has_quantitative_value, domain=Attribute, range=List[Union[dict, QuantityValue]])
-
-slots.has_numeric_value = Slot(uri=BIOLINK.has_numeric_value, name="has numeric value", curie=BIOLINK.curie('has_numeric_value'),
-                      model_uri=BIOLINK.has_numeric_value, domain=QuantityValue, range=Optional[float])
-
-slots.has_unit = Slot(uri=BIOLINK.has_unit, name="has unit", curie=BIOLINK.curie('has_unit'),
-                      model_uri=BIOLINK.has_unit, domain=QuantityValue, range=Optional[Union[str, Unit]])
-
 slots.attribute_name = Slot(uri=BIOLINK.name, name="attribute_name", curie=BIOLINK.curie('name'),
                       model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
 
 slots.named_thing_category = Slot(uri=BIOLINK.category, name="named thing_category", curie=BIOLINK.curie('category'),
                       model_uri=BIOLINK.named_thing_category, domain=NamedThing, range=List[Union[str, NamedThingId]])
+
+slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
+                      model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])
+
+slots.agent_name = Slot(uri=BIOLINK.name, name="agent_name", curie=BIOLINK.curie('name'),
+                      model_uri=BIOLINK.agent_name, domain=Agent, range=Optional[Union[str, LabelType]])
 
 slots.publication_id = Slot(uri=BIOLINK.id, name="publication_id", curie=BIOLINK.curie('id'),
                       model_uri=BIOLINK.publication_id, domain=Publication, range=Union[str, PublicationId])
@@ -5947,14 +5949,17 @@ slots.article_published_in = Slot(uri=BIOLINK.published_in, name="article_publis
 slots.article_iso_abbreviation = Slot(uri=BIOLINK.iso_abbreviation, name="article_iso abbreviation", curie=BIOLINK.curie('iso_abbreviation'),
                       model_uri=BIOLINK.article_iso_abbreviation, domain=Article, range=Optional[str])
 
+slots.molecular_activity_has_input = Slot(uri=BIOLINK.has_input, name="molecular activity_has input", curie=BIOLINK.curie('has_input'),
+                      model_uri=BIOLINK.molecular_activity_has_input, domain=MolecularActivity, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.molecular_activity_has_output = Slot(uri=BIOLINK.has_output, name="molecular activity_has output", curie=BIOLINK.curie('has_output'),
+                      model_uri=BIOLINK.molecular_activity_has_output, domain=MolecularActivity, range=List[Union[str, ChemicalSubstanceId]])
+
+slots.molecular_activity_enabled_by = Slot(uri=BIOLINK.enabled_by, name="molecular activity_enabled by", curie=BIOLINK.curie('enabled_by'),
+                      model_uri=BIOLINK.molecular_activity_enabled_by, domain=MolecularActivity, range=List[Union[str, MacromolecularMachineId]])
+
 slots.organismal_entity_has_attribute = Slot(uri=BIOLINK.has_attribute, name="organismal entity_has attribute", curie=BIOLINK.curie('has_attribute'),
                       model_uri=BIOLINK.organismal_entity_has_attribute, domain=OrganismalEntity, range=List[Union[dict, Attribute]])
-
-slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
-                      model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])
-
-slots.agent_name = Slot(uri=BIOLINK.name, name="agent_name", curie=BIOLINK.curie('name'),
-                      model_uri=BIOLINK.agent_name, domain=Agent, range=Optional[Union[str, LabelType]])
 
 slots.macromolecular_machine_name = Slot(uri=BIOLINK.name, name="macromolecular machine_name", curie=BIOLINK.curie('name'),
                       model_uri=BIOLINK.macromolecular_machine_name, domain=MacromolecularMachine, range=Optional[Union[str, SymbolType]])
@@ -6327,12 +6332,3 @@ slots.anatomical_entity_to_anatomical_entity_ontogenic_association_object = Slot
 
 slots.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate = Slot(uri=BIOLINK.predicate, name="anatomical entity to anatomical entity ontogenic association_predicate", curie=BIOLINK.curie('predicate'),
                       model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate, domain=AnatomicalEntityToAnatomicalEntityOntogenicAssociation, range=Union[str, PredicateType])
-
-slots.molecular_activity_has_input = Slot(uri=BIOLINK.has_input, name="molecular activity_has input", curie=BIOLINK.curie('has_input'),
-                      model_uri=BIOLINK.molecular_activity_has_input, domain=MolecularActivity, range=List[Union[str, ChemicalSubstanceId]])
-
-slots.molecular_activity_has_output = Slot(uri=BIOLINK.has_output, name="molecular activity_has output", curie=BIOLINK.curie('has_output'),
-                      model_uri=BIOLINK.molecular_activity_has_output, domain=MolecularActivity, range=List[Union[str, ChemicalSubstanceId]])
-
-slots.molecular_activity_enabled_by = Slot(uri=BIOLINK.enabled_by, name="molecular activity_enabled by", curie=BIOLINK.curie('enabled_by'),
-                      model_uri=BIOLINK.molecular_activity_enabled_by, domain=MolecularActivity, range=List[Union[str, MacromolecularMachineId]])

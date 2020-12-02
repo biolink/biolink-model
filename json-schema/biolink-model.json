@@ -24,11 +24,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -79,7 +79,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -90,7 +90,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -105,7 +105,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -141,18 +141,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -160,7 +160,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -233,18 +233,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -252,7 +252,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -326,18 +326,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -345,7 +345,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -426,18 +426,18 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -545,18 +545,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -564,7 +564,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -677,7 +677,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "enabled_by": {
@@ -688,7 +688,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -709,7 +709,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -717,7 +717,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -753,7 +753,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "enabled_by": {
@@ -764,7 +764,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -785,7 +785,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -793,7 +793,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -829,7 +829,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "enabled_by": {
@@ -840,7 +840,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -861,7 +861,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -869,7 +869,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -950,18 +950,18 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -1063,18 +1063,18 @@
                "type": "string"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -1174,18 +1174,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -1200,7 +1200,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -1236,7 +1236,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -1247,7 +1247,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -1262,7 +1262,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -1298,7 +1298,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -1306,14 +1306,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -1321,7 +1321,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -1408,7 +1408,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -1419,7 +1419,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -1434,7 +1434,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -1470,7 +1470,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -1481,7 +1481,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -1489,7 +1489,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -1525,7 +1525,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -1533,14 +1533,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -1548,7 +1548,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -1631,18 +1631,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -1650,7 +1650,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -1724,7 +1724,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -1735,7 +1735,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -1750,7 +1750,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -1786,18 +1786,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -1805,7 +1805,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -1841,18 +1841,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -1867,7 +1867,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -1903,18 +1903,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -1922,7 +1922,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -2004,18 +2004,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2023,7 +2023,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -2097,18 +2097,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2116,7 +2116,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -2191,18 +2191,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2210,7 +2210,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -2285,18 +2285,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2304,7 +2304,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -2455,18 +2455,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2474,7 +2474,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -2510,18 +2510,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2529,7 +2529,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -2603,18 +2603,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2622,7 +2622,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -2658,11 +2658,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -2673,7 +2673,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -2688,7 +2688,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -2724,25 +2724,25 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2753,7 +2753,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -2792,18 +2792,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2811,7 +2811,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -2886,25 +2886,25 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2915,7 +2915,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -2954,25 +2954,25 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -2983,7 +2983,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3022,11 +3022,11 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "distribution": {
@@ -3036,14 +3036,14 @@
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3054,7 +3054,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3099,18 +3099,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3118,7 +3118,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3154,18 +3154,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -3180,7 +3180,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3216,18 +3216,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -3242,7 +3242,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3278,18 +3278,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3297,7 +3297,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -3372,18 +3372,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3391,7 +3391,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -3464,7 +3464,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -3472,14 +3472,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3487,7 +3487,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -3574,7 +3574,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_active_ingredient": {
@@ -3585,7 +3585,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -3606,7 +3606,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -3621,7 +3621,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3657,11 +3657,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -3674,7 +3674,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3682,7 +3682,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3719,18 +3719,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3738,7 +3738,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3774,18 +3774,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3793,7 +3793,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3829,25 +3829,25 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3858,7 +3858,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3897,11 +3897,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -3912,7 +3912,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -3927,7 +3927,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -3963,18 +3963,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -3982,7 +3982,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -4055,18 +4055,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -4074,7 +4074,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -4110,7 +4110,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -4118,14 +4118,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -4133,7 +4133,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -4219,11 +4219,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -4244,7 +4244,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -4259,7 +4259,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -4333,18 +4333,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -4352,7 +4352,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -4427,11 +4427,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -4442,7 +4442,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -4511,7 +4511,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -4519,14 +4519,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -4534,7 +4534,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -4617,18 +4617,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -4643,7 +4643,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -4679,7 +4679,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -4687,14 +4687,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -4702,7 +4702,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -4789,18 +4789,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -4808,7 +4808,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -4844,11 +4844,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -4859,7 +4859,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -4910,11 +4910,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -4925,7 +4925,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -4990,18 +4990,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -5009,7 +5009,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -5082,7 +5082,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -5090,14 +5090,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -5105,7 +5105,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -5188,18 +5188,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -5207,7 +5207,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -5290,18 +5290,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -5309,7 +5309,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -5384,18 +5384,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -5403,7 +5403,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -5475,18 +5475,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -5494,7 +5494,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -5569,7 +5569,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -5577,14 +5577,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -5592,7 +5592,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -5679,11 +5679,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -5694,7 +5694,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -5709,7 +5709,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -5745,11 +5745,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -5760,7 +5760,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -5775,7 +5775,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -5811,7 +5811,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "end_interbase_coordinate": {
@@ -5823,14 +5823,14 @@
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -5838,7 +5838,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -5922,11 +5922,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -5940,7 +5940,7 @@
                "$ref": "#/definitions/Zygosity"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -5955,7 +5955,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -5991,7 +5991,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -5999,14 +5999,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -6014,7 +6014,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -6097,7 +6097,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -6105,14 +6105,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -6120,7 +6120,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -6203,18 +6203,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -6222,7 +6222,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -6297,18 +6297,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -6316,7 +6316,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -6390,7 +6390,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -6398,14 +6398,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -6413,7 +6413,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -6499,18 +6499,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -6518,7 +6518,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -6631,18 +6631,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -6658,7 +6658,7 @@
                "type": "number"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -6694,18 +6694,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -6721,7 +6721,7 @@
                "type": "number"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -6761,7 +6761,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -6772,7 +6772,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -6787,7 +6787,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -6823,11 +6823,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -6838,7 +6838,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -6853,7 +6853,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -6889,7 +6889,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -6900,7 +6900,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -6915,7 +6915,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -6989,7 +6989,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -7000,7 +7000,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -7015,7 +7015,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -7051,11 +7051,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -7066,7 +7066,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -7117,11 +7117,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -7132,7 +7132,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -7183,18 +7183,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -7202,7 +7202,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -7276,18 +7276,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -7295,7 +7295,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -7369,18 +7369,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -7388,7 +7388,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -7462,18 +7462,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -7481,7 +7481,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -7517,18 +7517,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -7536,7 +7536,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -7611,18 +7611,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -7630,7 +7630,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -7705,18 +7705,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -7731,7 +7731,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -7767,11 +7767,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -7782,7 +7782,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -7847,7 +7847,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "enabled_by": {
@@ -7858,7 +7858,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -7879,7 +7879,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -7887,7 +7887,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -7923,18 +7923,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -7949,7 +7949,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -7985,18 +7985,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8004,7 +8004,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -8040,11 +8040,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -8055,7 +8055,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -8158,18 +8158,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8177,7 +8177,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -8251,18 +8251,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8270,7 +8270,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -8306,7 +8306,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -8314,14 +8314,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8329,7 +8329,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -8412,18 +8412,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8431,7 +8431,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -8505,11 +8505,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -8527,7 +8527,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -8599,7 +8599,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "enabled_by": {
@@ -8610,7 +8610,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -8631,7 +8631,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8639,7 +8639,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -8675,18 +8675,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8694,7 +8694,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -8730,18 +8730,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -8756,7 +8756,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -8830,18 +8830,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8849,7 +8849,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -8885,7 +8885,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "enabled_by": {
@@ -8896,7 +8896,7 @@
                "type": "array"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -8917,7 +8917,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8925,7 +8925,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -8961,18 +8961,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -8980,7 +8980,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -9016,7 +9016,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
@@ -9027,7 +9027,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -9042,7 +9042,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -9078,18 +9078,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -9097,7 +9097,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -9172,18 +9172,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -9191,7 +9191,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -9227,11 +9227,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -9245,7 +9245,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -9260,7 +9260,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -9296,11 +9296,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -9311,7 +9311,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -9376,11 +9376,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -9391,7 +9391,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -9463,18 +9463,18 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -9582,11 +9582,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -9597,7 +9597,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -9662,11 +9662,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -9677,7 +9677,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -9742,11 +9742,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -9757,7 +9757,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -9772,7 +9772,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -9808,18 +9808,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -9827,7 +9827,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -9863,18 +9863,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -9882,7 +9882,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -9957,18 +9957,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -9976,7 +9976,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -10049,11 +10049,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -10085,7 +10085,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -10128,18 +10128,18 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -10280,11 +10280,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -10316,7 +10316,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -10352,25 +10352,25 @@
                "type": "array"
             },
             "creation_date": {
-               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
                "type": "string"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "format": {
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -10381,7 +10381,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -10426,11 +10426,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -10441,7 +10441,7 @@
                "type": "string"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "in_taxon": {
@@ -10506,18 +10506,18 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -10525,7 +10525,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -10598,11 +10598,11 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -10615,7 +10615,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -10623,7 +10623,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "provided_by": {
@@ -10660,7 +10660,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -10668,14 +10668,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -10683,7 +10683,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -10766,7 +10766,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -10774,14 +10774,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -10789,7 +10789,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -10872,7 +10872,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -10880,14 +10880,14 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -10895,7 +10895,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
@@ -10982,7 +10982,7 @@
                "type": "array"
             },
             "description": {
-               "description": "a human-readable description of a thing",
+               "description": "a human-readable description of an entity",
                "type": "string"
             },
             "frequency_qualifier": {
@@ -10990,7 +10990,7 @@
                "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
             },
             "has_attribute": {
-               "description": "connects any named thing to an attribute",
+               "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/definitions/Attribute"
                },
@@ -11013,7 +11013,7 @@
                "type": "integer"
             },
             "id": {
-               "description": "A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI",
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
@@ -11021,7 +11021,7 @@
                "type": "string"
             },
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
             "negated": {
