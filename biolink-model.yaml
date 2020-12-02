@@ -5491,7 +5491,10 @@ classes:
     id_prefixes:
       - UniProtKB
       - PR
-      - ENSEMBL
+      - ENSEMBL ## ENSEMBL:ENSP*
+      - FlyBase ## FlyBase:FBpp*
+    in_subset:
+      - model_organism_database
 
   gene product isoform:
     # biolink:GeneProductIsoform is most consistently used as a mixin thus it should
@@ -5512,7 +5515,7 @@ classes:
     mixins:
       - gene product isoform
     id_prefixes:
-      - UniProtKB
+      - UniProtKB ## UniProtKB:([A-Z0-9]+-\d+)
       - PR
       - ENSEMBL
 
@@ -5557,6 +5560,8 @@ classes:
       - MIR
       - HGNC
       - WormBase
+    in_subset:
+      - model_organism_database
 
   macromolecular complex:
     is_a: macromolecular machine
@@ -5568,6 +5573,8 @@ classes:
       - GO
       - PR
       - REACT
+    in_subset:
+      - model_organism_database
 
   gene grouping:
     mixin: true
@@ -5615,6 +5622,11 @@ classes:
     exact_mappings:
       - GENO:0000536
       - SIO:001079
+    id_prefixes:
+      - ZFIN
+      - FlyBase
+    in_subset:
+      - model_organism_database
 
   haplotype:
     is_a: genomic entity
@@ -5659,11 +5671,11 @@ classes:
       # - MYVARIANT_HG38 needs IRI mapping
       # - HGVS needs IRI mapping
       - MGI
-      - ZFIN
-      - FlyBase
+      - ZFIN ## ZFIN:ZDB-ALT-*
+      - FlyBase ## FlyBase:FBal*
       - FB
       - WB
-      - WormBase
+      - WormBase ## WormBase:WBVar*
     alt_descriptions:
       AGR: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
       VMC: "A contiguous change at a Location"
@@ -5682,6 +5694,8 @@ classes:
             description: ti282a allele from ZFIN
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
+    in_subset:
+      - model_organism_database
 
   snv:
     aliases: ['single nucleotide variant','single nucleotide polymorphism', 'snp']
