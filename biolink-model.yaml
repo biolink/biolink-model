@@ -890,20 +890,23 @@ slots:
   has drug:
     is_a: node property
     description: >-
-      connects an entity to a single drug
+      connects an entity to one or more drugs
     range: drug
+    multivalued: true
 
   has device:
     is_a: node property
     description: >-
-      connects an entity to a single (medical) device
+      connects an entity to one or more (medical) devices
     range: device
+    multivalued: true
 
   has procedure:
     is_a: node property
     description: >-
-      connects an entity to a single procedure
+      connects an entity to one or more (medical) procedures
     range: procedure
+    multivalued: true
 
   has active ingredient:
     is_a: node property
@@ -4967,6 +4970,13 @@ classes:
       - UMLSST:drdd
 
   ## Scientific Studies
+
+  study population:
+    is_a: population of individual organisms
+    description: >-
+      A group of people banded together or treated as a group as participants in a research study.
+    close_mappings:
+      - WIKIDATA:Q7229825
 
   subject of investigation:
     mixin: true
