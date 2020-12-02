@@ -22,7 +22,7 @@ shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.
 json-schema: json-schema/biolink-model.json
 
 build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz java context.jsonld contextn.jsonld \
-json-schema/biolink-model.json biolink-model.owl biolink-model.proto biolink-model.shex biolink-model.ttl
+json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto biolink-model.shex biolink-model.ttl
 
 # TODO: Get this working
 build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
@@ -111,7 +111,7 @@ json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
-biolink-model.owl: biolink-model.yaml env.lock
+biolink-model.owl.ttl: biolink-model.yaml env.lock
 	pipenv run gen-owl -o $@ $<
 
 
