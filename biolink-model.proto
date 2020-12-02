@@ -1647,8 +1647,8 @@ message MaterialSample
   optional description NarrativeText = 5
   optional source LabelType = 6
   repeated providedBy Agent = 7
-  repeated category NamedThing = 8
-  repeated hasAttribute Attribute = 9
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
  }
 // An association between a material sample and the material entity it is derived from
 message MaterialSampleDerivationAssociation
@@ -1916,7 +1916,6 @@ message Phenomenon
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
-// The assemblage of genetically determined traits or outward appearance of an individual. It is the visible biological manifestations of interactions between genes and the environment.
 message PhenotypicFeature
  {
   id String = 1
