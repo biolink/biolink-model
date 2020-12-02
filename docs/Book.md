@@ -136,3 +136,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [book➞type](book_type.md)  <sub>REQ</sub>
     * Description: Should generally be set to an ontology class defined term for 'book'.
     * range: [String](types/String.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | model_organism_database |
+

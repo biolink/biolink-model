@@ -102,6 +102,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | GO:0032991 |
 |  | | WIKIDATA:Q22325163 |
 

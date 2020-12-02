@@ -88,6 +88,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | exposure |
 |  | | experimental condition |
+| **In Subsets:** | | model_organism_database |
 | **Narrow Mappings:** | | XCO:0000000 |
 | **Broad Mappings:** | | UMLSSC:T051 |
 |  | | UMLSST:evnt |

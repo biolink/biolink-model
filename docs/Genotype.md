@@ -20,6 +20,11 @@ URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 ---
 
 
+## Identifier prefixes
+
+ * ZFIN
+ * FlyBase
+
 ## Parents
 
  *  is_a: [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
@@ -100,6 +105,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Comments:** | | Consider renaming as genotypic entity |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | GENO:0000536 |
 |  | | SIO:001079 |
 

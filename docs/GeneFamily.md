@@ -24,6 +24,8 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
  * PANTHER.FAMILY
  * HGNC.FAMILY
+ * FlyBase
+ * InterPro
 
 ## Parents
 
@@ -92,6 +94,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | NCIT:C26004 |
 |  | | WIKIDATA:Q2278983 |
 | **Narrow Mappings:** | | SIO:001380 |

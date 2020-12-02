@@ -112,6 +112,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Aliases:** | | condition |
 |  | | disorder |
 |  | | medical condition |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | MONDO:0000001 |
 |  | | DOID:4 |
 |  | | WIKIDATA:Q12136 |

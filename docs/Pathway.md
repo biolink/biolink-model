@@ -28,6 +28,7 @@ URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
  * SMPDB
  * PHARMGKB.PATHWAYS
  * WIKIPATHWAYS
+ * FlyBase
 
 ## Parents
 

@@ -135,3 +135,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [article➞published in](article_published_in.md)  <sub>REQ</sub>
     * Description: The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
     * range: [Uriorcurie](types/Uriorcurie.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | model_organism_database |
+

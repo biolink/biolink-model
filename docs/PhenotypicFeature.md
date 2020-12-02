@@ -109,6 +109,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | phenotype |
 |  | | trait |
 |  | | endophenotype |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |
 |  | | WIKIDATA:Q104053 |

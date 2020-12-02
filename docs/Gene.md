@@ -130,6 +130,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | locus |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | SO:0000704 |
 |  | | SIO:010035 |
 |  | | WIKIDATA:Q7187 |

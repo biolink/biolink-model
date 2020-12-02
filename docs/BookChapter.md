@@ -131,3 +131,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [chapter](chapter.md)  <sub>OPT</sub>
     * Description: chapter of a book
     * range: [String](types/String.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | model_organism_database |
+

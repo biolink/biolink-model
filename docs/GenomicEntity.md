@@ -116,6 +116,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | sequence feature |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | UMLSSG:GENE |
 |  | | SO:0000110 |
 |  | | GENO:0000897 |

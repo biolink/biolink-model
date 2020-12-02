@@ -20,6 +20,11 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 ---
 
 
+## Identifier prefixes
+
+ * ENSEMBL
+ * FlyBase
+
 ## Parents
 
  *  is_a: [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
@@ -103,6 +108,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | SO:0000673 |
 |  | | SIO:010450 |
 |  | | WIKIDATA:Q7243183 |

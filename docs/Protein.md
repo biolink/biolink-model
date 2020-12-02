@@ -25,6 +25,7 @@ URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
  * UniProtKB
  * PR
  * ENSEMBL
+ * FlyBase
 
 ## Parents
 
@@ -109,6 +110,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | polypeptide |
+| **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | PR:000000001 |
 |  | | SIO:010043 |
 |  | | WIKIDATA:Q8054 |

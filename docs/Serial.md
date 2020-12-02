@@ -142,4 +142,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | journal |
+| **In Subsets:** | | model_organism_database |
 
