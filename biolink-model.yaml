@@ -4349,57 +4349,6 @@ classes:
     description: >-
       describes the frequency of occurrence of an event or condition
 
-  organism attribute:
-    is_a: attribute
-    description: >-
-      describes a characteristic of an organismal entity.
-    exact_mappings:
-      # Organism Attribute
-      - UMLSSC:T032
-      - UMLSST:orga
-
-  clinical attribute:
-    is_a: attribute
-    description: >-
-      Attributes relating to a clinical manifestation
-    exact_mappings:
-      # Clinical Attribute
-      - UMLSSC:T201
-      - UMLSST:clna
-
-  clinical modifier:
-    is_a: clinical attribute
-    description: >-
-      Used to characterize and specify the phenotypic abnormalities defined in the
-      phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
-    exact_mappings:
-      - HP:0012823
-
-  clinical course:
-    is_a: clinical attribute
-    description: >-
-      The course a disease typically takes from its onset, progression in time, and
-      eventual resolution or death of the affected individual
-    exact_mappings:
-      - HP:0031797
-
-  onset:
-    is_a: clinical course
-    description: >-
-      The age group in which (disease) symptom manifestations appear
-    exact_mappings:
-      - HP:0003674
-
-  inheritance:
-    is_a: attribute
-    description: >-
-      The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
-      generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
-    exact_mappings:
-      - HP:0000005
-      - GENO:0000141
-      - NCIT:C45827
-
   relationship quantifier:
     mixin: true
     abstract: true
@@ -5395,6 +5344,25 @@ classes:
 
   ## Biology and Biomedical Sciences
 
+  organism attribute:
+    is_a: attribute
+    description: >-
+      describes a characteristic of an organismal entity.
+    exact_mappings:
+      # Organism Attribute
+      - UMLSSC:T032
+      - UMLSST:orga
+
+  inheritance:
+    is_a: organism attribute
+    description: >-
+      The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
+      generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+    exact_mappings:
+      - HP:0000005
+      - GENO:0000141
+      - NCIT:C45827
+
   organismal entity:
     description: >-
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
@@ -5403,7 +5371,7 @@ classes:
     slot_usage:
       has attribute:
         description: >-
-          may be an organism attribute
+          may often be an organism attribute
     exact_mappings:
       - WIKIDATA:Q7239
       # UMLS Semantic Group "Living Beings"
@@ -6032,6 +6000,38 @@ classes:
       - GENO:0000504
 
   ## Clinical Models
+
+  clinical attribute:
+    is_a: attribute
+    description: >-
+      Attributes relating to a clinical manifestation
+    exact_mappings:
+      # Clinical Attribute
+      - UMLSSC:T201
+      - UMLSST:clna
+
+  clinical modifier:
+    is_a: clinical attribute
+    description: >-
+      Used to characterize and specify the phenotypic abnormalities defined in the
+      phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
+    exact_mappings:
+      - HP:0012823
+
+  clinical course:
+    is_a: clinical attribute
+    description: >-
+      The course a disease typically takes from its onset, progression in time, and
+      eventual resolution or death of the affected individual
+    exact_mappings:
+      - HP:0031797
+
+  onset:
+    is_a: clinical course
+    description: >-
+      The age group in which (disease) symptom manifestations appear
+    exact_mappings:
+      - HP:0003674
 
   clinical entity:
     is_a: named thing
