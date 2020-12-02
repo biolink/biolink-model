@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-02 00:19
+# Generation date: 2020-12-02 01:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1000,93 +1000,6 @@ class FrequencyValue(Attribute):
     class_class_curie: ClassVar[str] = "biolink:FrequencyValue"
     class_name: ClassVar[str] = "frequency value"
     class_model_uri: ClassVar[URIRef] = BIOLINK.FrequencyValue
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class OrganismAttribute(Attribute):
-    """
-    describes a characteristic of an organismal entity.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
-    class_class_curie: ClassVar[str] = "biolink:OrganismAttribute"
-    class_name: ClassVar[str] = "organism attribute"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class ClinicalAttribute(Attribute):
-    """
-    Attributes relating to a clinical manifestation
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
-    class_class_curie: ClassVar[str] = "biolink:ClinicalAttribute"
-    class_name: ClassVar[str] = "clinical attribute"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class ClinicalModifier(ClinicalAttribute):
-    """
-    Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology,
-    with respect to severity, laterality, and other aspects
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
-    class_class_curie: ClassVar[str] = "biolink:ClinicalModifier"
-    class_name: ClassVar[str] = "clinical modifier"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class ClinicalCourse(ClinicalAttribute):
-    """
-    The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the
-    affected individual
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
-    class_class_curie: ClassVar[str] = "biolink:ClinicalCourse"
-    class_name: ClassVar[str] = "clinical course"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class Onset(ClinicalCourse):
-    """
-    The age group in which (disease) symptom manifestations appear
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Onset
-    class_class_curie: ClassVar[str] = "biolink:Onset"
-    class_name: ClassVar[str] = "onset"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Onset
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class Inheritance(Attribute):
-    """
-    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
-    e.g. autosomal dominant, autosomal recessive, etc.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Inheritance
-    class_class_curie: ClassVar[str] = "biolink:Inheritance"
-    class_name: ClassVar[str] = "inheritance"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Inheritance
 
     has_attribute_type: Union[str, OntologyClassId] = None
 
@@ -2188,6 +2101,35 @@ class Metabolite(ChemicalSubstance):
 
 
 @dataclass
+class OrganismAttribute(Attribute):
+    """
+    describes a characteristic of an organismal entity.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
+    class_class_curie: ClassVar[str] = "biolink:OrganismAttribute"
+    class_name: ClassVar[str] = "organism attribute"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class Inheritance(OrganismAttribute):
+    """
+    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
+    e.g. autosomal dominant, autosomal recessive, etc.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Inheritance
+    class_class_curie: ClassVar[str] = "biolink:Inheritance"
+    class_name: ClassVar[str] = "inheritance"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Inheritance
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
 class OrganismalEntity(BiologicalEntity):
     """
     A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
@@ -3020,6 +2962,64 @@ class ReagentTargetedGene(GenomicEntity):
             self.id = ReagentTargetedGeneId(self.id)
         super().__post_init__(**kwargs)
 
+
+@dataclass
+class ClinicalAttribute(Attribute):
+    """
+    Attributes relating to a clinical manifestation
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
+    class_class_curie: ClassVar[str] = "biolink:ClinicalAttribute"
+    class_name: ClassVar[str] = "clinical attribute"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class ClinicalModifier(ClinicalAttribute):
+    """
+    Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology,
+    with respect to severity, laterality, and other aspects
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
+    class_class_curie: ClassVar[str] = "biolink:ClinicalModifier"
+    class_name: ClassVar[str] = "clinical modifier"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class ClinicalCourse(ClinicalAttribute):
+    """
+    The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the
+    affected individual
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
+    class_class_curie: ClassVar[str] = "biolink:ClinicalCourse"
+    class_name: ClassVar[str] = "clinical course"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class Onset(ClinicalCourse):
+    """
+    The age group in which (disease) symptom manifestations appear
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Onset
+    class_class_curie: ClassVar[str] = "biolink:Onset"
+    class_name: ClassVar[str] = "onset"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Onset
+
+    has_attribute_type: Union[str, OntologyClassId] = None
 
 @dataclass
 class ClinicalEntity(NamedThing):
