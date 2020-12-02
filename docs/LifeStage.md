@@ -84,7 +84,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from organismal entity:
 
  * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
-    * Description: may be an organism attribute
+    * Description: may often be an organism attribute
     * range: [Attribute](Attribute.md)
 
 ### Inherited from thing with taxon:

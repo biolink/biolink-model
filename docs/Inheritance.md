@@ -15,14 +15,14 @@ URI: [biolink:Inheritance](https://w3id.org/biolink/vocab/Inheritance)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[Attribute]%5E-[Inheritance%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OrganismAttribute],[OntologyClass],[NamedThing],[OrganismAttribute]%5E-[Inheritance%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F])
 
 ---
 
 
 ## Parents
 
- *  is_a: [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+ *  is_a: [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
 
 ## Attributes
 

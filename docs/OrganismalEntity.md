@@ -43,7 +43,7 @@ URI: [biolink:OrganismalEntity](https://w3id.org/biolink/vocab/OrganismalEntity)
 ### Own
 
  * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
-    * Description: may be an organism attribute
+    * Description: may often be an organism attribute
     * range: [Attribute](Attribute.md)
 
 ### Inherited from entity:
@@ -94,7 +94,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Domain for slot:
 
  * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
-    * Description: may be an organism attribute
+    * Description: may often be an organism attribute
     * range: [Attribute](Attribute.md)
 
 ## Other properties

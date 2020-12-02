@@ -15,7 +15,7 @@ URI: [biolink:OrganismAttribute](https://w3id.org/biolink/vocab/OrganismAttribut
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[Attribute]%5E-[OrganismAttribute%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[OntologyClass],[NamedThing],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OrganismAttribute%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F]%5E-[Inheritance],[Attribute]%5E-[OrganismAttribute],[OntologyClass],[NamedThing],[Inheritance],[Attribute])
 
 ---
 
@@ -23,6 +23,13 @@ URI: [biolink:OrganismAttribute](https://w3id.org/biolink/vocab/OrganismAttribut
 ## Parents
 
  *  is_a: [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+
+## Children
+
+ * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+
+## Referenced by class
+
 
 ## Attributes
 

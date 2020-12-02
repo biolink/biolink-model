@@ -79,8 +79,8 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
           * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
        * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
-       * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
        * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
+          * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
        * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
        * [Zygosity](Zygosity.md)
     * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
