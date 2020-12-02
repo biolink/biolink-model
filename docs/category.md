@@ -21,7 +21,7 @@ URI: [biolink:category](https://w3id.org/biolink/vocab/category)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>1..*</sub> [CategoryType](types/CategoryType.md)
+[Entity](Entity.md) ->  <sub>1..*</sub> [CategoryType](types/CategoryType.md)
 
 ## Parents
 

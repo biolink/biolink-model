@@ -43,6 +43,6 @@ URI: [biolink:actively_involved_in](https://w3id.org/biolink/vocab/actively_invo
 |  | | ORPHA:317348 |
 |  | | ORPHA:317349 |
 |  | | ORPHA:327767 |
-|  | | PATO-PROPERTY:towards |
+|  | | PATO:towards |
 | **Broad Mappings:** | | RTXKG1:involved_in |
 

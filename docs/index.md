@@ -151,7 +151,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
     * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
        * [Disease](Disease.md)
-       * [PhenotypicFeature](PhenotypicFeature.md) - The assemblage of genetically determined traits or outward appearance of an individual. It is the visible biological manifestations of interactions between genes and the environment.
+       * [PhenotypicFeature](PhenotypicFeature.md)
     * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
        * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
           * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
@@ -277,7 +277,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
           * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
              * [Disease](Disease.md)
-             * [PhenotypicFeature](PhenotypicFeature.md) - The assemblage of genetically determined traits or outward appearance of an individual. It is the visible biological manifestations of interactions between genes and the environment.
+             * [PhenotypicFeature](PhenotypicFeature.md)
           * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
              * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
                 * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
@@ -836,7 +836,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [authors](authors.md) - connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
  * [chapter](chapter.md) - chapter of a book
  * [created_with](created_with.md)
- * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
+ * [creation date](creation_date.md) - date on which an entity was created. This can be applied to nodes or edges
  * [distribution](distribution.md)
  * [download url](download_url.md)
  * [filler](filler.md) - The value in a property-value tuple
@@ -877,7 +877,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [authors](authors.md) - connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
     * [chapter](chapter.md) - chapter of a book
     * [created_with](created_with.md)
-    * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
+    * [creation date](creation_date.md) - date on which an entity was created. This can be applied to nodes or edges
     * [distribution](distribution.md)
     * [download url](download_url.md)
     * [filler](filler.md) - The value in a property-value tuple
@@ -915,7 +915,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [synonym](synonym.md) - Alternate human-readable names for a thing
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
     * [timepoint](timepoint.md) - a point in time
-    * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
+    * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
     * [version of](version_of.md)
     * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
     * [xref](xref.md) - Alternate CURIEs for a thing
@@ -931,7 +931,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [synonym](synonym.md) - Alternate human-readable names for a thing
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
  * [timepoint](timepoint.md) - a point in time
- * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
+ * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
  * [version of](version_of.md)
  * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
  * [xref](xref.md) - Alternate CURIEs for a thing
@@ -939,7 +939,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Edge Properties
 
  * [association slot](association_slot.md) - any slot that relates an association to another entity
-    * [association type](association_type.md) - connects an association to the type of association (e.g. gene to phenotype)
+    * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
     * [change is catalyzed by](change_is_catalyzed_by.md) - hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
     * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
@@ -947,6 +947,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
     * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
+    * [interacting molecules category](interacting_molecules_category.md)
     * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
     * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
@@ -969,7 +970,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     * [stage qualifier](stage_qualifier.md) - stage at which expression takes place
     * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
- * [association type](association_type.md) - connects an association to the type of association (e.g. gene to phenotype)
+ * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
  * [change is catalyzed by](change_is_catalyzed_by.md) - hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
  * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
  * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
@@ -979,6 +980,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [genome build](genome_build.md) - The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
  * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
  * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
+ * [interacting molecules category](interacting_molecules_category.md)
  * [interbase coordinate](interbase_coordinate.md) - A position in interbase coordinates. This is applied to a sequence localization edge.
     * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
     * [start interbase coordinate](start_interbase_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
@@ -1017,17 +1019,16 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Other Slots
 
  * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * [description](description.md) - a human-readable description of a thing
- * [has attribute](has_attribute.md) - connects any named thing to an attribute
+ * [description](description.md) - a human-readable description of an entity
+ * [has attribute](has_attribute.md) - connects any entity to an attribute
  * [has attribute type](has_attribute_type.md) - connects an attribute to a class that describes it
  * [has numeric value](has_numeric_value.md) - connects a quantity value to a number
  * [has qualitative value](has_qualitative_value.md) - connects an attribute to a value
  * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
  * [has unit](has_unit.md) - connects a quantity value to a unit
- * [id](id.md) - A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI
- * [interacting molecules category](interacting_molecules_category.md)
+ * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
- * [name](name.md) - A human-readable name for a thing
+ * [name](name.md) - A human-readable name for an attribute or entity.
  * [source](source.md) - a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
  * [type](type.md)
     * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1063,7 +1064,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Frequency](types/Frequency.md)  ([String](types/String.md)) 
  * [Integer](types/Integer.md)  (**int**)  - An integer
  * [IriType](types/IriType.md)  ([Uriorcurie](types/Uriorcurie.md))  - An IRI
- * [LabelType](types/LabelType.md)  ([String](types/String.md))  - A string that provides a human-readable name for a thing
+ * [LabelType](types/LabelType.md)  ([String](types/String.md))  - A string that provides a human-readable name for an entity
  * [NarrativeText](types/NarrativeText.md)  ([String](types/String.md))  - A string that provides a human-readable description of something
  * [Ncname](types/Ncname.md)  (**NCName**)  - Prefix part of CURIE
  * [Nodeidentifier](types/Nodeidentifier.md)  (**NodeIdentifier**)  - A URI, CURIE or BNODE that represents a node in a model.

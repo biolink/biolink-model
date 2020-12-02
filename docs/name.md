@@ -14,7 +14,7 @@ samples
 {: .samples-subset-label }
 
 
-A human-readable name for a thing
+A human-readable name for an attribute or entity.
 
 URI: [biolink:name](https://w3id.org/biolink/vocab/name)
 

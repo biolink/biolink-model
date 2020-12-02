@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-A unique identifier for a resource. Must be either a CURIE shorthand for a URI or a complete URI
+A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
 
 URI: [biolink:id](https://w3id.org/biolink/vocab/id)
 

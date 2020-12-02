@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-a human-readable description of a thing
+a human-readable description of an entity
 
 URI: [biolink:description](https://w3id.org/biolink/vocab/description)
 

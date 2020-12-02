@@ -8,7 +8,7 @@ layout: default
 # Slot: creation_date
 
 
-date on which thing was created. This can be applied to nodes or edges
+date on which an entity was created. This can be applied to nodes or edges
 
 URI: [biolink:creation_date](https://w3id.org/biolink/vocab/creation_date)
 

@@ -11,7 +11,7 @@ samples
 {: .samples-subset-label }
 
 
-connects any named thing to an attribute
+connects any entity to an attribute
 
 URI: [biolink:has_attribute](https://w3id.org/biolink/vocab/has_attribute)
 
@@ -169,7 +169,9 @@ None ->  <sub>0..*</sub> [Attribute](Attribute.md)
 | **In Subsets:** | | samples |
 | **Exact Mappings:** | | SIO:000008 |
 | **Close Mappings:** | | OBI:0001927 |
-| **Narrow Mappings:** | | CPT:has_possibly_included_panel_element |
+| **Narrow Mappings:** | | OBAN:association_has_subject_property |
+|  | | OBAN:association_has_object_property |
+|  | | CPT:has_possibly_included_panel_element |
 |  | | DRUGBANK:category |
 |  | | EFO:is_executed_in |
 |  | | HANCESTRO:0301 |
