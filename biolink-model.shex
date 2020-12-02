@@ -203,8 +203,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <Attribute> ] ?
        )
-    } OR @<BiologicalSex> OR @<ClinicalAttribute> OR @<FrequencyValue> OR @<Inheritance> OR @<OrganismAttribute> OR
-    @<SeverityValue> OR @<Zygosity>
+    } OR @<BiologicalSex> OR @<ClinicalAttribute> OR @<FrequencyValue> OR @<OrganismAttribute> OR @<SeverityValue> OR @<Zygosity>
 )
 
 <Behavior> CLOSED {
@@ -1271,8 +1270,8 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <Inheritance> CLOSED {
-    (  $<Inheritance_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ?
+    (  $<Inheritance_tes> (  &<OrganismAttribute_tes> ;
+          rdf:type [ <OrganismAttribute> ] ?
        ) ;
        rdf:type [ <Inheritance> ] ?
     )
@@ -1480,20 +1479,24 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <OntologyClass> ]
        )
-    } OR @<GeneOntologyClass> OR @<OrganismTaxon> OR @<RelationshipType>
+    } OR @<GeneOntologyClass> OR @<OrganismTaxon> OR @<RelationshipType> OR @<TaxonomicRank>
 )
 
-<OrganismAttribute> CLOSED {
-    (  $<OrganismAttribute_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ?
-       ) ;
-       rdf:type [ <OrganismAttribute> ] ?
-    )
-}
+<OrganismAttribute>  (
+    CLOSED {
+       (  $<OrganismAttribute_tes> (  &<Attribute_tes> ;
+             rdf:type [ <Attribute> ] ?
+          ) ;
+          rdf:type [ <OrganismAttribute> ] ?
+       )
+    } OR @<Inheritance>
+)
 
 <OrganismTaxon> CLOSED {
     (  $<OrganismTaxon_tes> (  &<OntologyClass_tes> ;
-          rdf:type [ <OntologyClass> ] ?
+          rdf:type [ <OntologyClass> ] ? ;
+          <has_taxonomic_rank> @<TaxonomicRank> ? ;
+          <subclass_of> @<OrganismTaxon> *
        ) ;
        rdf:type [ <OrganismTaxon> ]
     )
@@ -1871,6 +1874,14 @@ metatype:Nodeidentifier NONLITERAL
 <SubjectOfInvestigation> {
     (  $<SubjectOfInvestigation_tes> rdf:type . * ;
        rdf:type [ <SubjectOfInvestigation> ] ?
+    )
+}
+
+<TaxonomicRank> CLOSED {
+    (  $<TaxonomicRank_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <TaxonomicRank> ]
     )
 }
 

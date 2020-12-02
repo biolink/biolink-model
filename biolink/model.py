@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-02 00:19
+# Generation date: 2020-12-02 21:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -85,6 +85,7 @@ INCHI = CurieNamespace('INCHI', 'http://identifiers.org/inchi/')
 INCHIKEY = CurieNamespace('INCHIKEY', 'http://identifiers.org/inchikey/')
 INTACT = CurieNamespace('INTACT', 'http://identifiers.org/intact/')
 IUPHAR_FAMILY = CurieNamespace('IUPHAR_FAMILY', 'http://identifiers.org/iuphar.family/')
+INTERPRO = CurieNamespace('InterPro', 'http://example.org/UNKNOWN/InterPro/')
 KEGG = CurieNamespace('KEGG', 'http://identifiers.org/kegg/')
 LOINC = CurieNamespace('LOINC', 'http://loinc.org/rdf/')
 MEDDRA = CurieNamespace('MEDDRA', 'http://identifiers.org/meddra/')
@@ -136,6 +137,7 @@ SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
 SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://identifiers.org/snomedct/')
 SNPEFF = CurieNamespace('SNPEFF', 'http://translator.ncats.nih.gov/SNPEFF_')
 SCOPUSID = CurieNamespace('ScopusID', 'https://www.scopus.com/authid/detail.uri?authorId=')
+TAXRANK = CurieNamespace('TAXRANK', 'http://purl.obolibrary.org/obo/TAXRANK_')
 UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-axioms.ofn#')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
@@ -303,6 +305,10 @@ class RelationshipTypeId(OntologyClassId):
 
 
 class GeneOntologyClassId(OntologyClassId):
+    pass
+
+
+class TaxonomicRankId(OntologyClassId):
     pass
 
 
@@ -1004,93 +1010,6 @@ class FrequencyValue(Attribute):
     has_attribute_type: Union[str, OntologyClassId] = None
 
 @dataclass
-class OrganismAttribute(Attribute):
-    """
-    describes a characteristic of an organismal entity.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
-    class_class_curie: ClassVar[str] = "biolink:OrganismAttribute"
-    class_name: ClassVar[str] = "organism attribute"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class ClinicalAttribute(Attribute):
-    """
-    Attributes relating to a clinical manifestation
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
-    class_class_curie: ClassVar[str] = "biolink:ClinicalAttribute"
-    class_name: ClassVar[str] = "clinical attribute"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class ClinicalModifier(ClinicalAttribute):
-    """
-    Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology,
-    with respect to severity, laterality, and other aspects
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
-    class_class_curie: ClassVar[str] = "biolink:ClinicalModifier"
-    class_name: ClassVar[str] = "clinical modifier"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class ClinicalCourse(ClinicalAttribute):
-    """
-    The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the
-    affected individual
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
-    class_class_curie: ClassVar[str] = "biolink:ClinicalCourse"
-    class_name: ClassVar[str] = "clinical course"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class Onset(ClinicalCourse):
-    """
-    The age group in which (disease) symptom manifestations appear
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Onset
-    class_class_curie: ClassVar[str] = "biolink:Onset"
-    class_name: ClassVar[str] = "onset"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Onset
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class Inheritance(Attribute):
-    """
-    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
-    e.g. autosomal dominant, autosomal recessive, etc.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Inheritance
-    class_class_curie: ClassVar[str] = "biolink:Inheritance"
-    class_name: ClassVar[str] = "inheritance"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Inheritance
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
 class Entity(YAMLRoot):
     """
     Root Biolink Model class for all things and informational relationships, real or imagined.
@@ -1234,12 +1153,35 @@ class GeneOntologyClass(OntologyClass):
 
 
 @dataclass
-class OrganismTaxon(OntologyClass):
+class TaxonomicRank(OntologyClass):
     """
-    A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also
-    be used to represent strains or subspecies.
+    A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
     """
     _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.TaxonomicRank
+    class_class_curie: ClassVar[str] = "biolink:TaxonomicRank"
+    class_name: ClassVar[str] = "taxonomic rank"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.TaxonomicRank
+
+    id: Union[str, TaxonomicRankId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, TaxonomicRankId):
+            self.id = TaxonomicRankId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class OrganismTaxon(OntologyClass):
+    """
+    A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
+    Can also be used to represent strains or subspecies.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["subclass_of"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxon"
@@ -1248,12 +1190,18 @@ class OrganismTaxon(OntologyClass):
 
     id: Union[str, OrganismTaxonId] = None
     category: List[Union[str, NamedThingId]] = empty_list()
+    has_taxonomic_rank: Optional[Union[str, TaxonomicRankId]] = None
+    subclass_of: List[Union[str, OrganismTaxonId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, OrganismTaxonId):
             self.id = OrganismTaxonId(self.id)
+        if self.has_taxonomic_rank is not None and not isinstance(self.has_taxonomic_rank, TaxonomicRankId):
+            self.has_taxonomic_rank = TaxonomicRankId(self.has_taxonomic_rank)
+        self.subclass_of = [v if isinstance(v, OrganismTaxonId)
+                            else OrganismTaxonId(v) for v in ([self.subclass_of] if isinstance(self.subclass_of, str) else self.subclass_of)]
         super().__post_init__(**kwargs)
 
 
@@ -2188,6 +2136,35 @@ class Metabolite(ChemicalSubstance):
 
 
 @dataclass
+class OrganismAttribute(Attribute):
+    """
+    describes a characteristic of an organismal entity.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
+    class_class_curie: ClassVar[str] = "biolink:OrganismAttribute"
+    class_name: ClassVar[str] = "organism attribute"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class Inheritance(OrganismAttribute):
+    """
+    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
+    e.g. autosomal dominant, autosomal recessive, etc.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Inheritance
+    class_class_curie: ClassVar[str] = "biolink:Inheritance"
+    class_name: ClassVar[str] = "inheritance"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Inheritance
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
 class OrganismalEntity(BiologicalEntity):
     """
     A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
@@ -2239,6 +2216,10 @@ class LifeStage(OrganismalEntity):
 
 @dataclass
 class IndividualOrganism(OrganismalEntity):
+    """
+    An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID:
+    ORCID:0000-0002-5355-2576
+    """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.IndividualOrganism
@@ -3020,6 +3001,64 @@ class ReagentTargetedGene(GenomicEntity):
             self.id = ReagentTargetedGeneId(self.id)
         super().__post_init__(**kwargs)
 
+
+@dataclass
+class ClinicalAttribute(Attribute):
+    """
+    Attributes relating to a clinical manifestation
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
+    class_class_curie: ClassVar[str] = "biolink:ClinicalAttribute"
+    class_name: ClassVar[str] = "clinical attribute"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class ClinicalModifier(ClinicalAttribute):
+    """
+    Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology,
+    with respect to severity, laterality, and other aspects
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
+    class_class_curie: ClassVar[str] = "biolink:ClinicalModifier"
+    class_name: ClassVar[str] = "clinical modifier"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class ClinicalCourse(ClinicalAttribute):
+    """
+    The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the
+    affected individual
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
+    class_class_curie: ClassVar[str] = "biolink:ClinicalCourse"
+    class_name: ClassVar[str] = "clinical course"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
+
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+@dataclass
+class Onset(ClinicalCourse):
+    """
+    The age group in which (disease) symptom manifestations appear
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Onset
+    class_class_curie: ClassVar[str] = "biolink:Onset"
+    class_name: ClassVar[str] = "onset"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Onset
+
+    has_attribute_type: Union[str, OntologyClassId] = None
 
 @dataclass
 class ClinicalEntity(NamedThing):
@@ -5904,11 +5943,20 @@ slots.strand = Slot(uri=BIOLINK.strand, name="strand", curie=BIOLINK.curie('stra
 slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase'),
                       model_uri=BIOLINK.phase, domain=CodingSequence, range=Optional[str])
 
+slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
+                      model_uri=BIOLINK.has_taxonomic_rank, domain=None, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
+
 slots.attribute_name = Slot(uri=BIOLINK.name, name="attribute_name", curie=BIOLINK.curie('name'),
                       model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
 
 slots.named_thing_category = Slot(uri=BIOLINK.category, name="named thing_category", curie=BIOLINK.curie('category'),
                       model_uri=BIOLINK.named_thing_category, domain=NamedThing, range=List[Union[str, NamedThingId]])
+
+slots.organism_taxon_has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="organism taxon_has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
+                      model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
+
+slots.organism_taxon_subclass_of = Slot(uri=BIOLINK.subclass_of, name="organism taxon_subclass of", curie=BIOLINK.curie('subclass_of'),
+                      model_uri=BIOLINK.organism_taxon_subclass_of, domain=OrganismTaxon, range=List[Union[str, OrganismTaxonId]])
 
 slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
                       model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])

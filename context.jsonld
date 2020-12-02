@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-02 00:19\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-02 21:44\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"
@@ -60,6 +60,7 @@
       "INCHIKEY": "http://identifiers.org/inchikey/",
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
+      "InterPro": "http://example.org/UNKNOWN/InterPro/",
       "KEGG": "http://identifiers.org/kegg/",
       "LOINC": "http://loinc.org/rdf/",
       "MEDDRA": "http://identifiers.org/meddra/",
@@ -111,6 +112,7 @@
       "SNOMEDCT": "http://identifiers.org/snomedct/",
       "SNPEFF": "http://translator.ncats.nih.gov/SNPEFF_",
       "ScopusID": "https://www.scopus.com/authid/detail.uri?authorId=",
+      "TAXRANK": "http://purl.obolibrary.org/obo/TAXRANK_",
       "UBERGRAPH": "http://translator.renci.org/ubergraph-axioms.ofn#",
       "UBERON": "http://purl.obolibrary.org/obo/UBERON_",
       "UBERON_CORE": "http://purl.obolibrary.org/obo/uberon/core#",
@@ -495,6 +497,9 @@
          "@type": "@id"
       },
       "has_sequence_location": {
+         "@type": "@id"
+      },
+      "has_taxonomic_rank": {
          "@type": "@id"
       },
       "has_topic": {

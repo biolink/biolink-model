@@ -35,10 +35,11 @@ fields:
   display_name: named thing_category
   cardinality: multi
 - id: has_attribute
-  description: may be an organism attribute
+  description: may often be an organism attribute
   display_name: organismal entity_has attribute
   cardinality: multi
 - id: in_taxon
-  description: connects a thing to a class representing a taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
