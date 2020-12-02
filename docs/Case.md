@@ -22,7 +22,7 @@ URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
 
 ## Parents
 
- *  is_a: [IndividualOrganism](IndividualOrganism.md)
+ *  is_a: [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 
 ## Referenced by class
 
@@ -85,7 +85,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from thing with taxon:
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects a thing to a class representing a taxon
+    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
     * range: [OrganismTaxon](OrganismTaxon.md)
     * in subsets: (translator_minimal)
 

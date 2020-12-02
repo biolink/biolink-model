@@ -26,7 +26,7 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
 ## Uses Mixins
 
- *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
+ *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
  *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
 
 ## Children
@@ -140,7 +140,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from thing with taxon:
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects a thing to a class representing a taxon
+    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
     * range: [OrganismTaxon](OrganismTaxon.md)
     * in subsets: (translator_minimal)
 

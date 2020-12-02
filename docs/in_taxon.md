@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-connects a thing to a class representing a taxon
+connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
 
 URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
 
@@ -74,6 +74,7 @@ URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | instance of |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | WIKIDATA_PROPERTY:P703 |
 | **Close Mappings:** | | NCIT:is_organism_source_of_gene_product |

@@ -106,6 +106,7 @@ None ->  <sub>OPT</sub> [String](types/String.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Snv](Snv.md)
  * [SourceFile](SourceFile.md)
+ * [TaxonomicRank](TaxonomicRank.md)
  * [Transcript](Transcript.md)
  * [Treatment](Treatment.md)
 

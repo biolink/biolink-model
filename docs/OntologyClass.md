@@ -15,7 +15,7 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipType],[OrganismTaxon],[ContributorAssociation]-%20qualifiers%200..%2A%3E[OntologyClass%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[Attribute]-%20has%20attribute%20type%201..1%3E[OntologyClass],[PairwiseMolecularInteraction]-%20interacting%20molecules%20category%200..1%3E[OntologyClass],[Association]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[OntologyClass]%5E-[RelationshipType],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass]%5E-[GeneOntologyClass],[NamedThing]%5E-[OntologyClass],[PairwiseMolecularInteraction],[NamedThing],[GeneToExpressionSiteAssociation],[GeneOntologyClass],[ContributorAssociation],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TaxonomicRank],[RelationshipType],[OrganismTaxon],[ContributorAssociation]-%20qualifiers%200..%2A%3E[OntologyClass%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[Attribute]-%20has%20attribute%20type%201..1%3E[OntologyClass],[PairwiseMolecularInteraction]-%20interacting%20molecules%20category%200..1%3E[OntologyClass],[Association]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[OntologyClass]%5E-[TaxonomicRank],[OntologyClass]%5E-[RelationshipType],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass]%5E-[GeneOntologyClass],[NamedThing]%5E-[OntologyClass],[PairwiseMolecularInteraction],[NamedThing],[GeneToExpressionSiteAssociation],[GeneOntologyClass],[ContributorAssociation],[Attribute],[Association],[Agent])
 
 ---
 
@@ -27,8 +27,9 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 ## Children
 
  * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
- * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
+ * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
  * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
+ * [TaxonomicRank](TaxonomicRank.md) - A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
 
 ## Referenced by class
 

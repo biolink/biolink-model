@@ -51,7 +51,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
  * [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
  * [ThingToDiseaseOrPhenotypicFeatureAssociationMixin](ThingToDiseaseOrPhenotypicFeatureAssociationMixin.md)
- * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
+ * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
  * [VariantToThingAssociationMixin](VariantToThingAssociationMixin.md)
 
 ### Other Classes
@@ -191,7 +191,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [CellularComponent](CellularComponent.md) - A location in or around a cell
           * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
        * [CellLine](CellLine.md)
-       * [IndividualOrganism](IndividualOrganism.md)
+       * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
           * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
        * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
        * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
@@ -317,7 +317,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                 * [CellularComponent](CellularComponent.md) - A location in or around a cell
                 * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
              * [CellLine](CellLine.md)
-             * [IndividualOrganism](IndividualOrganism.md)
+             * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
                 * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
              * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
              * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
@@ -341,8 +341,9 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [Serial](Serial.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
        * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
           * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-          * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
+          * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
           * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
+          * [TaxonomicRank](TaxonomicRank.md) - A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
        * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
        * [PhysicalEntity](PhysicalEntity.md) - An entity that has material reality (a.k.a. physical essence).
           * [MaterialSample](MaterialSample.md) - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
@@ -568,7 +569,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
  * [in linkage disequilibrium with](in_linkage_disequilibrium_with.md) - holds between two sequence variants, the presence of which are correlated in a population
  * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
- * [in taxon](in_taxon.md) - connects a thing to a class representing a taxon
+ * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
  * [increases abundance of](increases_abundance_of.md) - holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
  * [increases activity of](increases_activity_of.md) - holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
  * [increases degradation of](increases_degradation_of.md) - holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest
@@ -762,7 +763,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
     * [has sequence location](has_sequence_location.md) - holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
     * [in linkage disequilibrium with](in_linkage_disequilibrium_with.md) - holds between two sequence variants, the presence of which are correlated in a population
-    * [in taxon](in_taxon.md) - connects a thing to a class representing a taxon
+    * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
     * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
        * [directly interacts with](directly_interacts_with.md) - Holds between molecular entities that physically and directly interact with each other
        * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
@@ -1025,6 +1026,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has numeric value](has_numeric_value.md) - connects a quantity value to a number
  * [has qualitative value](has_qualitative_value.md) - connects an attribute to a value
  * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
+ * [has taxonomic rank](has_taxonomic_rank.md)
  * [has unit](has_unit.md) - connects a quantity value to a unit
  * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.

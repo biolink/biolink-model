@@ -1,32 +1,40 @@
 ---
 parent: Entities
-title: biolink:Exon
+title: biolink:TaxonomicRank
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Exon
+# Class: TaxonomicRank
 
 
-A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
 
-URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
+URI: [biolink:TaxonomicRank](https://w3id.org/biolink/vocab/TaxonomicRank)
+
+WIKIDATA:Q427626
+{: .mapping-label }
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[GenomicEntity],[ExonToTranscriptRelationship],[ExonToTranscriptRelationship]-%20subject%201..1%3E[Exon%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicEntity]%5E-[Exon],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]-%20has%20taxonomic%20rank%200..1%3E[TaxonomicRank%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OntologyClass]%5E-[TaxonomicRank],[OrganismTaxon],[OntologyClass],[NamedThing],[Attribute],[Agent])
 
 ---
 
+
+## Identifier prefixes
+
+ * TAXRANK
 
 ## Parents
 
- *  is_a: [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+ *  is_a: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
 
 ## Referenced by class
 
- *  **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[exon to transcript relationship➞subject](exon_to_transcript_relationship_subject.md)*  <sub>REQ</sub>  **[Exon](Exon.md)**
+ *  **None** *[has taxonomic rank](has_taxonomic_rank.md)*  <sub>OPT</sub>  **[TaxonomicRank](TaxonomicRank.md)**
+ *  **[OrganismTaxon](OrganismTaxon.md)** *[organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)*  <sub>OPT</sub>  **[TaxonomicRank](TaxonomicRank.md)**
 
 ## Attributes
 
@@ -71,29 +79,14 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-    * Description: connects a genomic feature to its sequence
-    * range: [BiologicalSequence](types/BiologicalSequence.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
 
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-    * range: [OrganismTaxon](OrganismTaxon.md)
-    * in subsets: (translator_minimal)
-
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | SO:0000147 |
-|  | | SIO:010445 |
-|  | | WIKIDATA:Q373027 |
+| **Mappings:** | | WIKIDATA:Q427626 |
 

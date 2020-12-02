@@ -8,7 +8,7 @@ layout: default
 # Class: IndividualOrganism
 
 
-
+An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 
 URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrganism)
 
@@ -20,13 +20,17 @@ URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrgan
 ---
 
 
+## Identifier prefixes
+
+ * ORCID
+
 ## Parents
 
  *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
 
 ## Uses Mixins
 
- *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
+ *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
 
 ## Children
 
@@ -92,7 +96,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from thing with taxon:
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects a thing to a class representing a taxon
+    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
     * range: [OrganismTaxon](OrganismTaxon.md)
     * in subsets: (translator_minimal)
 
@@ -100,6 +104,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | organism |
 | **Exact Mappings:** | | SIO:010000 |
 |  | | UMLSSC:T001 |
 |  | | UMLSST:orgm |

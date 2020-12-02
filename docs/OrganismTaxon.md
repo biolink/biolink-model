@@ -8,14 +8,14 @@ layout: default
 # Class: OrganismTaxon
 
 
-A classification of a set of organisms. Examples: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
+A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
 
 URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass],[NamedThing],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[OrganismTaxon]%3Csubclass%20of%200..%2A-%20[OrganismTaxon%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-%20[OrganismTaxon],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass],[NamedThing],[Attribute],[Agent])
 
 ---
 
@@ -32,9 +32,18 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 ## Referenced by class
 
  *  **[ThingWithTaxon](ThingWithTaxon.md)** *[in taxon](in_taxon.md)*  <sub>0..*</sub>  **[OrganismTaxon](OrganismTaxon.md)**
+ *  **[OrganismTaxon](OrganismTaxon.md)** *[organism taxon➞subclass of](organism_taxon_subclass_of.md)*  <sub>0..*</sub>  **[OrganismTaxon](OrganismTaxon.md)**
 
 ## Attributes
 
+
+### Own
+
+ * [organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)  <sub>OPT</sub>
+    * range: [TaxonomicRank](TaxonomicRank.md)
+ * [organism taxon➞subclass of](organism_taxon_subclass_of.md)  <sub>0..*</sub>
+    * Description: subclass of holds between two taxa, e.g. human subclass of mammal
+    * range: [OrganismTaxon](OrganismTaxon.md)
 
 ### Inherited from entity:
 
@@ -81,13 +90,23 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
 
+### Domain for slot:
+
+ * [organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)  <sub>OPT</sub>
+    * range: [TaxonomicRank](TaxonomicRank.md)
+ * [organism taxon➞subclass of](organism_taxon_subclass_of.md)  <sub>0..*</sub>
+    * Description: subclass of holds between two taxa, e.g. human subclass of mammal
+    * range: [OrganismTaxon](OrganismTaxon.md)
+
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | taxon |
+|  | | taxonomic classification |
 | **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | WIKIDATA:Q16521 |
-|  | | NCBITaxon:1 |
+| **Exact Mappings:** | | NCBITaxon:1 |
+|  | | WIKIDATA:Q16521 |
 | **Narrow Mappings:** | | UMLSSC:T005 |
 |  | | UMLSST:virs |
 |  | | UMLSSC:T007 |
