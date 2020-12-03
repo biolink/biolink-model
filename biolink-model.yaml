@@ -4181,7 +4181,7 @@ slots:
 
   phenotypic state:
     is_a: association slot
-    range: disease or phenotype
+    range: disease or phenotypic feature
     description: >-
       in experiments (e.g. gene expression) assaying diseased or unhealthy
       tissue, the phenotypic state can be put here, e.g. MONDO ID.
@@ -6396,7 +6396,8 @@ classes:
   gene to gene co-expression association:
     is_a: gene to gene association
     description: >-
-      Indicates that two genes are co-expressed, possibly under the same conditions.
+      Indicates that two genes are co-expressed,
+      possibly under the same conditions.
     slots:
       - quantifier qualifier
       - expression site
