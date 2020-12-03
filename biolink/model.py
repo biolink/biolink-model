@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-02 22:12
+# Generation date: 2020-12-03 02:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -2982,7 +2982,7 @@ class Snv(SequenceVariant):
 class ReagentTargetedGene(GenomicEntity):
     """
     A gene altered in its expression level in the context of some experiment as a result of being targeted by
-    gene-knockdown reagent(s) such as a morpholino or RNAi
+    gene-knockdown reagent(s) such as a morpholino or RNAi.
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -3592,7 +3592,7 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
 class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an
-    individual with that disease or phenotype
+    individual with that disease or phenotype.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3733,7 +3733,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
 class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise
-    to or exacerbates the phenotype
+    to or exacerbates the phenotype.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3764,7 +3764,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
 @dataclass
 class ChemicalToPathwayAssociation(Association):
     """
-    An interaction between a chemical entity and a biological process or pathway
+    An interaction between a chemical entity and a biological process or pathway.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3795,7 +3795,7 @@ class ChemicalToPathwayAssociation(Association):
 @dataclass
 class ChemicalToGeneAssociation(Association):
     """
-    An interaction between a chemical entity and a gene or gene product
+    An interaction between a chemical entity and a gene or gene product.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3826,7 +3826,7 @@ class ChemicalToGeneAssociation(Association):
 @dataclass
 class MaterialSampleToThingAssociation(Association):
     """
-    An association between a material sample and something
+    An association between a material sample and something.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3853,7 +3853,7 @@ class MaterialSampleToThingAssociation(Association):
 @dataclass
 class MaterialSampleDerivationAssociation(Association):
     """
-    An association between a material sample and the material entity it is derived from
+    An association between a material sample and the material entity from which it is derived.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3892,7 +3892,7 @@ class MaterialSampleDerivationAssociation(Association):
 @dataclass
 class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
-    An association between a material sample and a disease or phenotype
+    An association between a material sample and a disease or phenotype.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3919,7 +3919,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
 @dataclass
 class DiseaseToExposureAssociation(Association):
     """
-    An association between an exposure event and a disease
+    An association between an exposure event and a disease.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -4050,7 +4050,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
 class ExposureEventToPhenotypicFeatureAssociation(Association):
     """
     Any association between an environment and a phenotypic feature, where being in the environment influences the
-    phenotype
+    phenotype.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -4085,7 +4085,7 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
 class DiseaseToPhenotypicFeatureAssociation(Association):
     """
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the
-    disease in some way
+    disease in some way.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -4116,7 +4116,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
 class CaseToPhenotypicFeatureAssociation(Association):
     """
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or
-    has had the phenotype
+    has had the phenotype.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -5673,6 +5673,9 @@ slots.positively_correlated_with = Slot(uri=BIOLINK.positively_correlated_with, 
 slots.negatively_correlated_with = Slot(uri=BIOLINK.negatively_correlated_with, name="negatively correlated with", curie=BIOLINK.curie('negatively_correlated_with'),
                       model_uri=BIOLINK.negatively_correlated_with, domain=NamedThing, range=List[Union[str, NamedThingId]])
 
+slots.coexpressed_with = Slot(uri=BIOLINK.coexpressed_with, name="coexpressed with", curie=BIOLINK.curie('coexpressed_with'),
+                      model_uri=BIOLINK.coexpressed_with, domain=GeneOrGeneProduct, range=List[Union[str, GeneOrGeneProductId]])
+
 slots.has_biomarker = Slot(uri=BIOLINK.has_biomarker, name="has biomarker", curie=BIOLINK.curie('has_biomarker'),
                       model_uri=BIOLINK.has_biomarker, domain=DiseaseOrPhenotypicFeature, range=List[Union[str, MolecularEntityId]])
 
@@ -5889,11 +5892,11 @@ slots.p_value = Slot(uri=BIOLINK.p_value, name="p value", curie=BIOLINK.curie('p
 slots.interacting_molecules_category = Slot(uri=BIOLINK.interacting_molecules_category, name="interacting molecules category", curie=BIOLINK.curie('interacting_molecules_category'),
                       model_uri=BIOLINK.interacting_molecules_category, domain=Association, range=Optional[Union[str, OntologyClassId]])
 
-slots.stage_qualifier = Slot(uri=BIOLINK.stage_qualifier, name="stage qualifier", curie=BIOLINK.curie('stage_qualifier'),
-                      model_uri=BIOLINK.stage_qualifier, domain=Association, range=Optional[Union[str, LifeStageId]])
-
 slots.quantifier_qualifier = Slot(uri=BIOLINK.quantifier_qualifier, name="quantifier qualifier", curie=BIOLINK.curie('quantifier_qualifier'),
                       model_uri=BIOLINK.quantifier_qualifier, domain=Association, range=Optional[Union[str, OntologyClassId]])
+
+slots.stage_qualifier = Slot(uri=BIOLINK.stage_qualifier, name="stage qualifier", curie=BIOLINK.curie('stage_qualifier'),
+                      model_uri=BIOLINK.stage_qualifier, domain=Association, range=Optional[Union[str, LifeStageId]])
 
 slots.qualifiers = Slot(uri=BIOLINK.qualifiers, name="qualifiers", curie=BIOLINK.curie('qualifiers'),
                       model_uri=BIOLINK.qualifiers, domain=Association, range=List[Union[str, OntologyClassId]])
