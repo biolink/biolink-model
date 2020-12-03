@@ -223,13 +223,11 @@ types:
   biological sequence:
     typeof: string
 
-
 ## ------------
 ## SLOTS
 ## ------------
 
 slots:
-
 
 ## --------------------
 ## ATTRIBUTE SLOTS
@@ -4165,20 +4163,39 @@ slots:
       - SEMMEDDB:measures
       - UMLS:measures
 
+  expression site:
+    description: >-
+      location in which gene or protein expression takes place.
+      May be cell, tissue, or organ.
+    is_a: association slot
+    range: anatomical entity
+    examples:
+      - value: UBERON:0002037
+        description: cerebellum
+
   stage qualifier:
+    description: >-
+      stage during which gene or protein expression of takes place.
     is_a: association slot
     range: life stage
     # path: "object/during"
-    description: >-
-      stage during which gene or protein expression of takes place.
     examples:
       - value: UBERON:0000069
         description: larval stage
 
+  phenotypic state:
+    description: >-
+      in experiments (e.g. gene expression) assaying diseased or unhealthy
+      tissue, the phenotypic state can be put here, e.g. MONDO ID.
+      For healthy tissues, use XXX.
+    is_a: association slot
+    range: disease or phenotypic feature
+
   qualifiers:
     singular_name: qualifier
     description: >-
-      connects an association to qualifiers that modify or qualify the meaning of that association
+      connects an association to qualifiers that modify or
+      qualify the meaning of that association
     local_names:
       ga4gh: annotation qualifier
     is_a: association slot
@@ -4280,7 +4297,6 @@ slots:
       The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
 
 classes:
-
 
   ## ----------
   ## ATTRIBUTES
@@ -6385,6 +6401,36 @@ classes:
         description: >-
           homology relationship type
 
+  gene expression mixin:
+    description: >-
+      Observed gene expression intensity, context (site, stage) and
+      associated phenotypic status within which the expression occurs.
+    slots:
+      - quantifier qualifier
+      - expression site
+      - stage qualifier
+      - phenotypic state
+    slot_usage:
+      quantifier qualifier:
+        description: >-
+          Optional quantitative value indicating degree of expression.
+
+  gene to gene coexpression association:
+    description: >-
+      Indicates that two genes are co-expressed,
+      generally under the same conditions.
+    is_a: gene to gene association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - gene expression mixin
+    slot_usage:
+      predicate:
+        subproperty_of: coexpressed with
+        symmetric: true
+
   pairwise gene to gene interaction:
     description: >-
       An interaction between two genes or two gene products.
@@ -6901,6 +6947,37 @@ classes:
         description: >-
           gene in which variation is correlated with the disease,
           may be protective or causative or associative, or as a model
+
+  variant to gene association:
+    description: >-
+      An association between a variant and a gene, where the variant has
+      a genetic association with the gene (i.e. is in linkage disequilibrium)
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - variant to thing association mixin
+    slot_usage:
+      object:
+        range: gene
+      predicate:
+        subproperty_of: genetic association
+
+  variant to gene expression association:
+    description: >-
+      An association between a variant and expression of a gene (i.e. e-QTL)
+    is_a: variant to gene association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - gene expression mixin
+    slot_usage:
+      predicate:
+        subproperty_of: affects expression of
 
   variant to population association:
     description: >-
