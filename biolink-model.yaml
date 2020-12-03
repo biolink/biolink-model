@@ -6875,20 +6875,60 @@ classes:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
 
-  disease to exposure association:
+  entity to exposure event association mixin:
+    description: >-
+      An association between some entity and an exposure event.
+    mixin: true
+    abstract: true
+    defining_slots:
+      - object
+    slot_usage:
+      object:
+        range: exposure event
+
+  disease to exposure event association:
     description: >-
       An association between an exposure event and a disease.
     is_a: association
     mixins:
       - disease to thing association mixin
+      - entity to exposure event association mixin
     defining_slots:
       - subject
       - object
+
+  exposure event to entity association mixin:
+    description: >-
+      An association between some exposure event and some entity.
+    mixin: true
+    abstract: true
+    defining_slots:
+      - subject
     slot_usage:
       subject:
-        range: disease
-      object:
         range: exposure event
+
+  entity to outcome association mixin:
+    description: >-
+      An association between some entity and an outcome
+    mixin: true
+    abstract: true
+    defining_slots:
+      - object
+    slot_usage:
+      object:
+        range: outcome
+
+  exposure to outcome association:
+    description: >-
+      An association between an exposure event and an outcome.
+    is_a: association
+    mixins:
+      - exposure event to entity association mixin
+      - entity to outcome association mixin
+    defining_slots:
+      - subject
+      - object
 
   frequency qualifier mixin:
     mixin: true
