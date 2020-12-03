@@ -975,6 +975,12 @@ slots:
       - SNOMED:has_dose_form_intended_site
       - SNOMED:has_route_of_administration
 
+  # would 'has cohort context' might be more precise
+  has population context:
+    is_a: association slot
+    domain: exposure event to outcome association
+    range: cohort
+
 
 ## --------------------
 ## PREDICATES/RELATIONS
@@ -6919,7 +6925,7 @@ classes:
       object:
         range: outcome
 
-  exposure to outcome association:
+  exposure event to outcome association:
     description: >-
       An association between an exposure event and an outcome.
     is_a: association
