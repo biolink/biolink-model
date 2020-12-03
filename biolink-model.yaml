@@ -6294,6 +6294,16 @@ classes:
     in_subset:
       - model_organism_database
 
+  genotype exposure:
+    is_a: genotype
+    mixins:
+      - exposure event
+    description: >-
+      A genotype exposure is where genetic background constitutes
+      a kind of 'exposure' to the organism, leading to or influencing an outcome.
+    #exact_mappings:
+    #  -
+
   chemical exposure:
     is_a: chemical substance
     mixins:
