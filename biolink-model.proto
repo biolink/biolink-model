@@ -273,7 +273,7 @@ message Case
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
-// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
 message CaseToPhenotypicFeatureAssociation
  {
   id String = 1
@@ -344,7 +344,7 @@ message CellLineAsAModelOfDiseaseAssociation
   optional severityQualifier SeverityValue = 18
   optional onsetQualifier Onset = 19
  }
-// An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+// An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
  {
   id String = 1
@@ -453,7 +453,7 @@ message ChemicalToChemicalDerivationAssociation
   object ChemicalSubstance = 16
   predicate PredicateType = 17
  }
-// An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
+// An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
 message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  {
   id String = 1
@@ -473,7 +473,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   repeated category Association = 15
   object DiseaseOrPhenotypicFeature = 16
  }
-// An interaction between a chemical entity and a gene or gene product
+// An interaction between a chemical entity and a gene or gene product.
 message ChemicalToGeneAssociation
  {
   id String = 1
@@ -493,7 +493,7 @@ message ChemicalToGeneAssociation
   repeated category Association = 15
   object GeneOrGeneProduct = 16
  }
-// An interaction between a chemical entity and a biological process or pathway
+// An interaction between a chemical entity and a biological process or pathway.
 message ChemicalToPathwayAssociation
  {
   id String = 1
@@ -742,7 +742,7 @@ message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
   subject DiseaseOrPhenotypicFeature = 15
   object AnatomicalEntity = 16
  }
-// An association between an exposure event and a disease
+// An association between an exposure event and a disease.
 message DiseaseToExposureAssociation
  {
   id String = 1
@@ -762,7 +762,7 @@ message DiseaseToExposureAssociation
   subject Disease = 15
   object ExposureEvent = 16
  }
-// An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+// An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
 message DiseaseToPhenotypicFeatureAssociation
  {
   id String = 1
@@ -906,7 +906,7 @@ message ExposureEvent
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
-// Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+// Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
 message ExposureEventToPhenotypicFeatureAssociation
  {
   id String = 1
@@ -1651,7 +1651,7 @@ message MaterialSample
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
-// An association between a material sample and the material entity it is derived from
+// An association between a material sample and the material entity from which it is derived.
 message MaterialSampleDerivationAssociation
  {
   id String = 1
@@ -1671,7 +1671,7 @@ message MaterialSampleDerivationAssociation
   object NamedThing = 15
   predicate PredicateType = 16
  }
-// An association between a material sample and a disease or phenotype
+// An association between a material sample and a disease or phenotype.
 message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  {
   id String = 1
@@ -2108,7 +2108,7 @@ message QuantityValue
   optional hasUnit Unit = 1
   optional hasNumericValue Double = 2
  }
-// A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi
+// A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
 message ReagentTargetedGene
  {
   id String = 1
