@@ -982,6 +982,14 @@ slots:
     is_a: association slot
     range: population of individual organisms
 
+  has temporal context:
+    description: >-
+      a constraint of time placed upon the truth value of an association.
+    is_a: association slot
+    # this resolves to the 'time' datatype, but not sure
+    # if this also represents an interval of time.
+    range: timepoint
+
 
 ## --------------------
 ## PREDICATES/RELATIONS
@@ -6304,6 +6312,18 @@ classes:
     #exact_mappings:
     #  -
 
+  disease or phenotypic feature exposure:
+    is_a: disease or phenotypic feature
+    mixins:
+      - exposure event
+    description: >-
+      A disease or phenotypic feature exposure is where a disease state is
+      manifested which represents an precondition, leading to or influencing
+      an outcome, e.g. hypertension leading to a related disease outcome such
+      as cardiovascular disease.
+    #exact_mappings:
+    #  -
+
   chemical exposure:
     is_a: chemical substance
     mixins:
@@ -6945,6 +6965,7 @@ classes:
       - entity to outcome association mixin
     slots:
       - has population context
+      - has temporal context
     defining_slots:
       - subject
       - object
