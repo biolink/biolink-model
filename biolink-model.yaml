@@ -975,11 +975,12 @@ slots:
       - SNOMED:has_dose_form_intended_site
       - SNOMED:has_route_of_administration
 
-  # would 'has cohort context' might be more precise
   has population context:
+    description: >-
+      a biological population (general, study, cohort, etc.) with a specific
+      set of characteristics to constrain an association.
     is_a: association slot
-    domain: exposure event to outcome association
-    range: cohort
+    range: population of individual organisms
 
 
 ## --------------------
@@ -6932,6 +6933,8 @@ classes:
     mixins:
       - exposure event to entity association mixin
       - entity to outcome association mixin
+    slots:
+      - has population context
     defining_slots:
       - subject
       - object
