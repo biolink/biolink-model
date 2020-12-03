@@ -1,34 +1,32 @@
 ---
 parent: Associations
-title: biolink:GeneToGeneAssociation
+title: biolink:VariantToGeneExpressionAssociation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: GeneToGeneAssociation
+# Class: VariantToGeneExpressionAssociation
 
 
-abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+An association between a variant and expression of a gene (i.e. e-QTL)
 
-URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAssociation)
+URI: [biolink:VariantToGeneExpressionAssociation](https://w3id.org/biolink/vocab/VariantToGeneExpressionAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneHomologyAssociation],[GeneToGeneCoexpressionAssociation],[GeneOrGeneProduct]%3Cobject%201..1-%20[GeneToGeneAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToGeneAssociation],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation],[GeneToGeneAssociation]%5E-[GeneToGeneCoexpressionAssociation],[Association]%5E-[GeneToGeneAssociation],[GeneOrGeneProduct],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneExpressionAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneExpressionMixin],[VariantToGeneAssociation]%5E-[VariantToGeneExpressionAssociation],[VariantToGeneAssociation],[Publication],[OntologyClass],[NamedThing],[LifeStage],[GeneExpressionMixin],[Gene],[DiseaseOrPhenotypicFeature],[Attribute],[Association],[AnatomicalEntity],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+ *  is_a: [VariantToGeneAssociation](VariantToGeneAssociation.md) - An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
 
-## Children
+## Uses Mixins
 
- * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) - Indicates that two genes are co-expressed, generally under the same conditions.
- * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) - A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
- * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+ *  mixin: [GeneExpressionMixin](GeneExpressionMixin.md) - Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
 
 ## Referenced by class
 
@@ -38,12 +36,8 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
 
 ### Own
 
- * [gene to gene association➞object](gene_to_gene_association_object.md)  <sub>REQ</sub>
-    * Description: the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [gene to gene association➞subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
-    * Description: the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+ * [variant to gene expression association➞predicate](variant_to_gene_expression_association_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
 
 ### Inherited from association:
 
@@ -114,18 +108,47 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from gene expression mixin:
+
+ * [gene expression mixin➞quantifier qualifier](gene_expression_mixin_quantifier_qualifier.md)  <sub>OPT</sub>
+    * Description: Optional quantitative value indicating degree of expression.
+    * range: [OntologyClass](OntologyClass.md)
+ * [expression site](expression_site.md)  <sub>OPT</sub>
+    * Description: location in which gene or protein expression takes place. May be cell, tissue, or organ.
+    * range: [AnatomicalEntity](AnatomicalEntity.md)
+    * Example: UBERON:0002037 cerebellum
+ * [phenotypic state](phenotypic_state.md)  <sub>OPT</sub>
+    * Description: in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
+    * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+
+### Inherited from gene to expression site association:
+
+ * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
+    * Description: stage at which the gene is expressed in the site
+    * range: [LifeStage](LifeStage.md)
+    * Example:    
+ * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
+    * Description: can be used to indicate magnitude, or also ranking
+    * range: [OntologyClass](OntologyClass.md)
+ * [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
+    * Description: gene in which variation is correlated with the phenotypic feature
+    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+ * [gene to expression site association➞object](gene_to_expression_site_association_object.md)  <sub>REQ</sub>
+    * Description: location in which the gene is expressed
+    * range: [AnatomicalEntity](AnatomicalEntity.md)
+    * Example:    
+ * [gene to expression site association➞predicate](gene_to_expression_site_association_predicate.md)  <sub>REQ</sub>
+    * Description: expression relationship
+    * range: [PredicateType](types/PredicateType.md)
+
+### Inherited from variant to gene association:
+
+ * [variant to gene association➞object](variant_to_gene_association_object.md)  <sub>REQ</sub>
+    * range: [Gene](Gene.md)
+ * [variant to gene association➞predicate](variant_to_gene_association_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
+
 ### Domain for slot:
 
- * [gene to gene association➞object](gene_to_gene_association_object.md)  <sub>REQ</sub>
-    * Description: the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [gene to gene association➞subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
-    * Description: the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | molecular or genetic interaction |
-
+ * [variant to gene expression association➞predicate](variant_to_gene_expression_association_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)

@@ -1015,6 +1015,14 @@ message GeneAsAModelOfDiseaseAssociation
   optional onsetQualifier Onset = 18
   subject GeneOrGeneProduct = 19
  }
+// Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
+message GeneExpressionMixin
+ {
+  optional quantifierQualifier OntologyClass = 1
+  optional expressionSite AnatomicalEntity = 2
+  optional stageQualifier LifeStage = 3
+  optional phenotypicState DiseaseOrPhenotypicFeature = 4
+ }
 // any grouping of multiple genes or gene products related by common descent
 message GeneFamily
  {
@@ -1160,6 +1168,30 @@ message GeneToExpressionSiteAssociation
   subject GeneOrGeneProduct = 16
   object AnatomicalEntity = 17
   predicate PredicateType = 18
+ }
+// Indicates that two genes are co-expressed, generally under the same conditions.
+message GeneToGeneCoexpressionAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  relation Uriorcurie = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  optional type String = 12
+  repeated category Association = 13
+  subject GeneOrGeneProduct = 14
+  object GeneOrGeneProduct = 15
+  predicate PredicateType = 16
+  optional quantifierQualifier OntologyClass = 17
+  optional expressionSite AnatomicalEntity = 18
+  optional stageQualifier LifeStage = 19
+  optional phenotypicState DiseaseOrPhenotypicFeature = 20
  }
 // A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 message GeneToGeneHomologyAssociation
@@ -2402,6 +2434,50 @@ message VariantToDiseaseAssociation
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
   optional onsetQualifier Onset = 19
+ }
+// An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
+message VariantToGeneAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  subject NamedThing = 8
+  relation Uriorcurie = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  optional type String = 13
+  repeated category Association = 14
+  object Gene = 15
+  predicate PredicateType = 16
+ }
+// An association between a variant and expression of a gene (i.e. e-QTL)
+message VariantToGeneExpressionAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  subject NamedThing = 8
+  relation Uriorcurie = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  optional type String = 13
+  repeated category Association = 14
+  object Gene = 15
+  predicate PredicateType = 16
+  optional quantifierQualifier OntologyClass = 17
+  optional expressionSite AnatomicalEntity = 18
+  optional stageQualifier LifeStage = 19
+  optional phenotypicState DiseaseOrPhenotypicFeature = 20
  }
 message VariantToPhenotypicFeatureAssociation
  {

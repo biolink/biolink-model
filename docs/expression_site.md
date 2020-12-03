@@ -1,20 +1,20 @@
 ---
 parent: Edge Properties
-title: biolink:stage_qualifier
+title: biolink:expression_site
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: stage_qualifier
+# Slot: expression_site
 
 
-stage during which gene or protein expression of takes place.
+location in which gene or protein expression takes place. May be cell, tissue, or organ.
 
-URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
+URI: [biolink:expression_site](https://w3id.org/biolink/vocab/expression_site)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [LifeStage](LifeStage.md)
+[Association](Association.md) ->  <sub>OPT</sub> [AnatomicalEntity](AnatomicalEntity.md)
 
 ## Parents
 
@@ -33,5 +33,5 @@ URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='UBERON:0000069', description='larval stage') |
+| **Examples:** | | Example(value='UBERON:0002037', description='cerebellum') |
 

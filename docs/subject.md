@@ -34,6 +34,8 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md)
  * [SequenceAssociation](SequenceAssociation.md)
+ * [VariantToGeneAssociation](VariantToGeneAssociation.md)
+ * [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md)
 
 ## Other properties
 

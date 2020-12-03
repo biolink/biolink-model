@@ -15,7 +15,7 @@ URI: [biolink:VariantToThingAssociationMixin](https://w3id.org/biolink/vocab/Var
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToThingAssociationMixin],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToDiseaseAssociation],[SequenceVariant])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToThingAssociationMixin],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToGeneAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToGeneAssociation],[VariantToDiseaseAssociation],[SequenceVariant])
 
 ---
 
@@ -23,6 +23,7 @@ URI: [biolink:VariantToThingAssociationMixin](https://w3id.org/biolink/vocab/Var
 ## Mixin for
 
  * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) (mixin) 
+ * [VariantToGeneAssociation](VariantToGeneAssociation.md) (mixin)  - An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) (mixin) 
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population
 
