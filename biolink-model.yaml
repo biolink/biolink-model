@@ -1354,8 +1354,11 @@ slots:
   affects:
     is_a: related to
     description: >-
-      describes an entity that has a direct affect on the state or quality of another existing entity.
-      Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
+      describes an entity that has a direct affect on the state or quality
+      of another existing entity. Use of the 'affects' predicate implies that
+      the affected entity already exists, unlike predicates such as
+      'affects risk for' and 'prevents, where the outcome is something
+      that may or may not come to be.
     in_subset:
       - translator_minimal
     related_mappings:
@@ -6160,8 +6163,8 @@ classes:
     aliases: ['exposure', 'experimental condition']
     is_a: biological entity
     description: >-
-      A feature of the environment of an organism that influences one or more phenotypic features
-      of that organism, potentially mediated by genes
+      A feature of the environment of an organism that influences one or more
+      phenotypic features of that organism, potentially mediated by genes
     broad_mappings:
       # Event
       - UMLSSC:T051
