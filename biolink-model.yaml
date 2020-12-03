@@ -2646,7 +2646,8 @@ slots:
     is_a: related to
     symmetric: true
     description: >-
-      Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
+      Co-occurrence of a certain allele of a genetic marker and the phenotype
+      of interest in the same individuals at above-chance level
     exact_mappings:
       - WIKIDATA_PROPERTY:P2293
 
@@ -6314,13 +6315,14 @@ classes:
           child genotype
 
   genotype to gene association:
+    description: >-
+      Any association between a genotype and a gene.
+      The genotype have have multiple variants in that gene or a single one.
+      There is no assumption of cardinality
     is_a: association
     defining_slots:
       - subject
       - object
-    description: >-
-      Any association between a genotype and a gene.
-      The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
     slot_usage:
       predicate:
         description: >-
@@ -6335,12 +6337,12 @@ classes:
           gene implicated in genotype
 
   genotype to variant association:
+    description: >-
+      Any association between a genotype and a sequence variant.
     is_a: association
     defining_slots:
       - subject
       - object
-    description: >-
-      Any association between a genotype and a sequence variant.
     slot_usage:
       predicate:
         # subproperty_of: ???
@@ -6357,35 +6359,38 @@ classes:
 
   gene to gene association:
     aliases: ['molecular or genetic interaction']
+    description: >-
+      abstract parent class for different kinds of gene-gene or gene product
+      to gene product relationships. Includes homology and interaction.
     abstract: true
     is_a: association
     defining_slots:
       - subject
       - object
-    description: >-
-      abstract parent class for different kinds of gene-gene or gene product to gene product relationships.
-      Includes homology and interaction.
     slot_usage:
       subject:
         range: gene or gene product
         description: >-
-          the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary.
-          We allow a gene product to stand as proxy for the gene or vice versa
+          the subject gene in the association. If the relation is symmetric,
+          subject vs object is arbitrary. We allow a gene product to stand
+          as a proxy for the gene or vice versa.
       object:
         range: gene or gene product
         description: >-
-          the object gene in the association. If the relation is symmetric, subject vs object is arbitrary.
-          We allow a gene product to stand as proxy for the gene or vice versa
+          the object gene in the association. If the relation is symmetric,
+          subject vs object is arbitrary. We allow a gene product to stand
+          as a proxy for the gene or vice versa.
 
   gene to gene homology association:
+    description: >-
+      A homology association between two genes. May be orthology (in which
+      case the species of subject and object should differ) or paralogy
+      (in which case the species may be the same)
     is_a: gene to gene association
     defining_slots:
       - subject
       - predicate
       - object
-    description: >-
-      A homology association between two genes. May be orthology (in which case the species of subject and object
-      should differ) or paralogy (in which case the species may be the same)
     slot_usage:
       predicate:
         subproperty_of: homologous to
@@ -6393,34 +6398,46 @@ classes:
         description: >-
           homology relationship type
 
-  gene to gene coexpression association:
-    is_a: gene to gene association
+  gene expression mixin:
     description: >-
-      Indicates that two genes are co-expressed,
-      possibly under the same conditions.
+      Observed gene expression intensity, context (site, stage) and
+      associated phenotypic status within which the expression occurs.
     slots:
       - quantifier qualifier
       - expression site
       - stage qualifier
       - phenotypic state
     slot_usage:
-      predicate:
-        subproperty_of: coexpressed with
-        symmetric: true
       quantifier qualifier:
         description: >-
           Optional quantitative value indicating degree of expression.
 
-  pairwise gene to gene interaction:
+  gene to gene coexpression association:
+    description: >-
+      Indicates that two genes are co-expressed,
+      generally under the same conditions.
     is_a: gene to gene association
     defining_slots:
       - subject
       - predicate
       - object
+    mixins:
+      - gene expression mixin
+    slot_usage:
+      predicate:
+        subproperty_of: coexpressed with
+        symmetric: true
+
+  pairwise gene to gene interaction:
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
       May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+    is_a: gene to gene association
+    defining_slots:
+      - subject
+      - predicate
+      - object
     slot_usage:
       predicate:
         subproperty_of: interacts with
@@ -6432,9 +6449,9 @@ classes:
         description: "interaction relationship type"
 
   pairwise molecular interaction:
-    is_a: pairwise gene to gene interaction
     description: >-
       An interaction at the molecular level between two physical entities
+    is_a: pairwise gene to gene interaction
     slots:
       # need to declare a slot before it is used,
       # then list it in 'slots', not just a slot_usage
@@ -6468,12 +6485,12 @@ classes:
         range: molecular entity
 
   cell line to thing association mixin:
+    description: >-
+      An relationship between a cell line and another entity
     mixin: true
     abstract: true
     defining_slots:
       - subject
-    description: >-
-      An relationship between a cell line and another entity
     slot_usage:
       subject:
         range: cell line
@@ -6485,7 +6502,8 @@ classes:
       - cell line to thing association mixin
       - thing to disease or phenotypic feature association mixin
     description: >-
-      An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+      An relationship between a cell line and a disease or a phenotype, where
+      the cell line is derived from an individual with that disease or phenotype.
     slot_usage:
       subject:
 #        - range: cell line
@@ -6493,53 +6511,48 @@ classes:
         range: disease or phenotypic feature
 
   chemical to thing association:
+    description: >-
+      An interaction between a chemical entity and another entity
     is_a: association
     defining_slots:
       - subject
     abstract: true
-    description: >-
-      An interaction between a chemical entity and another entity
     slot_usage:
       subject:
         range: chemical substance
         description: "the chemical substance or entity that is an interactor"
 
   case to thing association mixin:
+    description: >-
+      An abstract association for use where the case is the subject
     mixin: true
     abstract: true
     defining_slots:
       - subject
-    description: >-
-      An abstract association for use where the case is the subject
     slot_usage:
       subject:
         range: case
         description: "the case (e.g. patient) that has the property"
 
   chemical to chemical association:
+    description: >-
+      A relationship between two chemical entities. This can encompass actual
+      interactions as well as temporal causal edges, e.g. one chemical converted to another.
     is_a: association
     defining_slots:
       - subject
       - object
     mixins:
       - chemical to thing association
-    description: >-
-      A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
     slot_usage:
       object:
         range: chemical substance
         description: "the chemical element that is the target of the statement"
 
   chemical to chemical derivation association:
-    is_a: chemical to chemical association
-    defining_slots:
-      - subject
-      - predicate
-      - object
-    slots:
-      - change is catalyzed by
     description: >-
-      A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream.
+      A causal relationship between two chemical entities, where the subject
+      represents the upstream entity and the object represents the downstream.
       For any such association there is an implicit reaction:
         IF
         R has-input C1 AND
@@ -6548,6 +6561,13 @@ classes:
         R type Reaction
         THEN
         C1 derives-into C2 <<change is catalyzed by P>>
+    is_a: chemical to chemical association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slots:
+      - change is catalyzed by
     slot_usage:
       subject:
         range: chemical substance
@@ -6565,6 +6585,9 @@ classes:
           subject chemical to transform into the object chemical
 
   chemical to disease or phenotypic feature association:
+    description: >-
+      An interaction between a chemical entity and a phenotype or disease,
+      where the presence of the chemical gives rise to or exacerbates the phenotype.
     is_a: association
     narrow_mappings:
       - SIO:000993
@@ -6574,15 +6597,14 @@ classes:
     mixins:
       - chemical to thing association
       - thing to disease or phenotypic feature association mixin
-    description: >-
-      An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to
-      or exacerbates the phenotype
     slot_usage:
       object:
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
 
   chemical to pathway association:
+    description: >-
+      An interaction between a chemical entity and a biological process or pathway.
     is_a: association
     exact_mappings:
       - SIO:001250
@@ -6591,14 +6613,14 @@ classes:
       - object
     mixins:
       - chemical to thing association
-    description: >-
-      An interaction between a chemical entity and a biological process or pathway
     slot_usage:
       object:
         range: pathway
         description: "the pathway that is affected by the chemical"
 
   chemical to gene association:
+    description: >-
+      An interaction between a chemical entity and a gene or gene product.
     is_a: association
     exact_mappings:
       - SIO:001257
@@ -6607,20 +6629,18 @@ classes:
       - object
     mixins:
       - chemical to thing association
-    description: >-
-      An interaction between a chemical entity and a gene or gene product
     slot_usage:
       object:
         range: gene or gene product
         description: "the gene or gene product that is affected by the chemical"
 
   material sample to thing association:
+    description: >-
+      An association between a material sample and something.
     is_a: association
     defining_slots:
       - subject
     abstract: true
-    description: >-
-      An association between a material sample and something
     slot_usage:
       subject:
         range: material sample
@@ -6628,12 +6648,13 @@ classes:
           the material sample being described
 
   material sample derivation association:
+    description: >-
+      An association between a material sample and
+      the material entity from which it is derived.
     is_a: association
     defining_slots:
       - subject
       - predicate
-    description: >-
-      An association between a material sample and the material entity it is derived from
     slot_usage:
       subject:
         range: material sample
@@ -6641,15 +6662,17 @@ classes:
           the material sample being described
       object:
         description: >-
-          the material entity the sample was derived from. This may be another material sample, or
-          any other material entity, including for example an organism, a geographic feature, or some
-          environmental material.
+          the material entity the sample was derived from. This may be another
+          material sample, or any other material entity, including for example
+          an organism, a geographic feature, or some environmental material.
       predicate:
         description: >-
           derivation relationship
         subproperty_of: derives from
 
   material sample to disease or phenotypic feature association:
+    description: >-
+      An association between a material sample and a disease or phenotype.
     is_a: association
     mixins:
       - material sample to thing association
@@ -6657,8 +6680,6 @@ classes:
     defining_slots:
       - subject
       - object
-    description: >-
-      An association between a material sample and a disease or phenotype
 
   disease to thing association mixin:
     mixin: true
@@ -6675,14 +6696,14 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
 
   disease to exposure association:
+    description: >-
+      An association between an exposure event and a disease.
     is_a: association
     mixins:
       - disease to thing association mixin
     defining_slots:
       - subject
       - object
-    description: >-
-      An association between an exposure event and a disease
     slot_usage:
       subject:
         range: disease
@@ -6698,11 +6719,11 @@ classes:
       - frequency qualifier
 
   entity to feature or disease qualifiers mixin:
+    description: >-
+      Qualifiers for entity to disease or phenotype associations.
     mixin: true
     abstract: true
     is_a: frequency qualifier mixin
-    description: >-
-      Qualifiers for entity to disease or phenotype associations
     slots:
       - severity qualifier
       - onset qualifier
@@ -6764,14 +6785,15 @@ classes:
             description: "abnormal brain ventricle size"
 
   disease or phenotypic feature association to location association:
-    is_a: disease or phenotypic feature association to thing association
     description: >-
-      An association between either a disease or a phenotypic feature and an anatomical entity,
-      where the disease/feature manifests in that site.
+      An association between either a disease or a phenotypic feature and
+      an anatomical entity, where the disease/feature manifests in that site.
+    is_a: disease or phenotypic feature association to thing association
     slot_usage:
       object:
         range: anatomical entity
-        description: "anatomical entity in which the disease or feature is found"
+        description: >-
+          anatomical entity in which the disease or feature is found.
         examples:
           - value: UBERON:0002048
             description: "lung"
@@ -6807,8 +6829,8 @@ classes:
       - subject
       - object
     description: >-
-      Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
-      either in isolation or through environment
+      Any association between one genotype and a phenotypic feature, where having
+      the genotype confers the phenotype, either in isolation or through environment
     mixins:
       - thing to phenotypic feature association mixin
       - genotype to thing association mixin
@@ -6826,7 +6848,8 @@ classes:
       - subject
       - object
     description: >-
-      Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+      Any association between an environment and a phenotypic feature,
+      where being in the environment influences the phenotype.
     mixins:
       - thing to phenotypic feature association mixin
     slot_usage:
@@ -6838,17 +6861,21 @@ classes:
     defining_slots:
       - subject
       - object
-    description: "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+    description: >-
+      An association between a disease and a phenotypic feature in which the
+      phenotypic feature is associated with the disease in some way.
     mixins:
       - thing to phenotypic feature association mixin
       - disease to thing association mixin
 
   case to phenotypic feature association:
+    description: >-
+      An association between a case (e.g. individual patient) and a phenotypic
+      feature in which the individual has or has had the phenotype.
     is_a: association
     defining_slots:
       - subject
       - object
-    description: "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
     mixins:
       - thing to phenotypic feature association mixin
       - case to thing association mixin
@@ -6915,11 +6942,44 @@ classes:
       subject:
         range: gene or gene product
         description: >-
-          gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+          gene in which variation is correlated with the disease,
+          may be protective or causative or associative, or as a model
+
+  variant to gene association:
+    description: >-
+      An association between a variant and a gene, where the variant has
+      a genetic association with the gene (i.e. is in linkage disequilibrium)
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - variant to thing association mixin
+   slot_usage:
+     object:
+        range: gene
+     predicate:
+       subproperty_of: genetic association
+
+  variant to gene expression association:
+    description: >-
+      An association between a variant and expression of a gene (i.e. e-QTL)
+    is_a: variant to gene association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - gene expression mixin
+    slot_usage:
+      predicate:
+        subproperty_of: affects expression of
 
   variant to population association:
     description: >-
-      An association between a variant and a population, where the variant has particular frequency in the population
+      An association between a variant and a population, where the variant has
+      particular frequency in the population
     is_a: association
     defining_slots:
       - subject
