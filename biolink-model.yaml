@@ -6612,6 +6612,22 @@ classes:
         range: gene or gene product
         description: "the gene or gene product that is affected by the chemical"
 
+  drug to gene association:
+    description: >-
+      An interaction between a drug and a gene or gene product.
+    is_a: association
+    related_mappings:
+      - SIO:001257
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - drug to thing association
+    slot_usage:
+      object:
+        range: gene or gene product
+        description: "the gene or gene product that is affected by the drug"
+
   material sample to thing association:
     description: >-
       An association between a material sample and something.
