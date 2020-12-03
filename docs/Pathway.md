@@ -26,6 +26,7 @@ URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
  * REACT
  * KEGG
  * SMPDB
+ * MSigDB
  * PHARMGKB.PATHWAYS
  * WIKIPATHWAYS
  * FlyBase
