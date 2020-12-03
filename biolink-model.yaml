@@ -6464,10 +6464,34 @@ classes:
 #        - range: disease or phenotypic feature
         range: disease or phenotypic feature
 
+  molecular entity to thing association:
+    description: >-
+      An interaction between a molecular entity and another entity
+    is_a: association
+    defining_slots:
+      - subject
+    abstract: true
+    slot_usage:
+      subject:
+        range: molecular entity
+        description: "the molecular entity that is an interactor"
+
+  drug to thing association:
+    description: >-
+      An interaction between a drug and another entity
+    is_a: molecular entity to thing association
+    defining_slots:
+      - subject
+    abstract: true
+    slot_usage:
+      subject:
+        range: drug
+        description: "the drug that is an interactor"
+
   chemical to thing association:
     description: >-
       An interaction between a chemical entity and another entity
-    is_a: association
+    is_a: molecular entity to thing association
     defining_slots:
       - subject
     abstract: true
