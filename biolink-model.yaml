@@ -2938,7 +2938,7 @@ slots:
     exact_mappings:
       - CTD:negativecorrelation
 
-  co-expressed with:
+  coexpressed with:
     is_a: correlated with
     description: >-
       holds between any two genes or gene products, in which both are
@@ -6393,7 +6393,7 @@ classes:
         description: >-
           homology relationship type
 
-  gene to gene co-expression association:
+  gene to gene coexpression association:
     is_a: gene to gene association
     description: >-
       Indicates that two genes are co-expressed,
@@ -6405,7 +6405,7 @@ classes:
       - phenotypic state
     slot_usage:
       predicate:
-        subproperty_of: co-expressed with
+        subproperty_of: coexpressed with
         symmetric: true
       quantifier qualifier:
         description: >-
