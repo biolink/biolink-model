@@ -55,13 +55,13 @@ fields:
   cardinality: multi
 - id: subject
   description: the subject gene in the association. If the relation is symmetric,
-    subject vs object is arbitrary. We allow a gene product to stand as proxy for
-    the gene or vice versa
+    subject vs object is arbitrary. We allow a gene product to stand as a proxy for
+    the gene or vice versa.
   display_name: gene to gene association_subject
 - id: object
   description: the object gene in the association. If the relation is symmetric, subject
-    vs object is arbitrary. We allow a gene product to stand as proxy for the gene
-    or vice versa
+    vs object is arbitrary. We allow a gene product to stand as a proxy for the gene
+    or vice versa.
   display_name: gene to gene association_object
 - id: predicate
   display_name: pairwise gene to gene interaction_predicate

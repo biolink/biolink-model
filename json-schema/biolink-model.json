@@ -1289,7 +1289,7 @@
       },
       "CaseToPhenotypicFeatureAssociation": {
          "additionalProperties": false,
-         "description": "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype",
+         "description": "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.",
          "properties": {
             "category": {
                "items": {
@@ -1622,7 +1622,7 @@
       },
       "CellLineToDiseaseOrPhenotypicFeatureAssociation": {
          "additionalProperties": false,
-         "description": "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype",
+         "description": "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.",
          "properties": {
             "category": {
                "items": {
@@ -2088,7 +2088,7 @@
       },
       "ChemicalToDiseaseOrPhenotypicFeatureAssociation": {
          "additionalProperties": false,
-         "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype",
+         "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.",
          "properties": {
             "category": {
                "items": {
@@ -2182,7 +2182,7 @@
       },
       "ChemicalToGeneAssociation": {
          "additionalProperties": false,
-         "description": "An interaction between a chemical entity and a gene or gene product",
+         "description": "An interaction between a chemical entity and a gene or gene product.",
          "properties": {
             "category": {
                "items": {
@@ -2276,7 +2276,7 @@
       },
       "ChemicalToPathwayAssociation": {
          "additionalProperties": false,
-         "description": "An interaction between a chemical entity and a biological process or pathway",
+         "description": "An interaction between a chemical entity and a biological process or pathway.",
          "properties": {
             "category": {
                "items": {
@@ -3305,7 +3305,7 @@
                "type": "boolean"
             },
             "object": {
-               "description": "anatomical entity in which the disease or feature is found",
+               "description": "anatomical entity in which the disease or feature is found.",
                "type": "string"
             },
             "predicate": {
@@ -3363,7 +3363,7 @@
       },
       "DiseaseToExposureAssociation": {
          "additionalProperties": false,
-         "description": "An association between an exposure event and a disease",
+         "description": "An association between an exposure event and a disease.",
          "properties": {
             "category": {
                "items": {
@@ -3455,7 +3455,7 @@
       },
       "DiseaseToPhenotypicFeatureAssociation": {
          "additionalProperties": false,
-         "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way",
+         "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.",
          "properties": {
             "category": {
                "items": {
@@ -4101,7 +4101,7 @@
       },
       "ExposureEventToPhenotypicFeatureAssociation": {
          "additionalProperties": false,
-         "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype",
+         "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.",
          "properties": {
             "category": {
                "items": {
@@ -5158,7 +5158,7 @@
                "type": "string"
             },
             "subject": {
-               "description": "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model",
+               "description": "gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model",
                "type": "string"
             },
             "type": {
@@ -5317,7 +5317,7 @@
                "type": "boolean"
             },
             "object": {
-               "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+               "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                "type": "string"
             },
             "predicate": {
@@ -5354,7 +5354,7 @@
                "type": "string"
             },
             "subject": {
-               "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+               "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                "type": "string"
             },
             "type": {
@@ -7508,7 +7508,7 @@
       },
       "MaterialSampleDerivationAssociation": {
          "additionalProperties": false,
-         "description": "An association between a material sample and the material entity it is derived from",
+         "description": "An association between a material sample and the material entity from which it is derived.",
          "properties": {
             "category": {
                "items": {
@@ -7602,7 +7602,7 @@
       },
       "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation": {
          "additionalProperties": false,
-         "description": "An association between a material sample and a disease or phenotype",
+         "description": "An association between a material sample and a disease or phenotype.",
          "properties": {
             "category": {
                "items": {
@@ -8449,7 +8449,7 @@
                "type": "boolean"
             },
             "object": {
-               "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+               "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                "type": "string"
             },
             "predicate": {
@@ -8485,7 +8485,7 @@
                "type": "string"
             },
             "subject": {
-               "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+               "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                "type": "string"
             },
             "type": {
@@ -9743,7 +9743,7 @@
       },
       "ReagentTargetedGene": {
          "additionalProperties": false,
-         "description": "A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi",
+         "description": "A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.",
          "properties": {
             "category": {
                "items": {
