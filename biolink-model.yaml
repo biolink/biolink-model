@@ -66,6 +66,7 @@ prefixes:
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   MI: 'http://purl.obolibrary.org/obo/MI_'
+  MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
@@ -5209,6 +5210,7 @@ classes:
       - REACT
       - KEGG
       - SMPDB
+      - MSigDB
       - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
       - FlyBase ## FlyBase:FBgg
