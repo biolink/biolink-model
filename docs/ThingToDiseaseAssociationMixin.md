@@ -22,7 +22,7 @@ URI: [biolink:ThingToDiseaseAssociationMixin](https://w3id.org/biolink/vocab/Thi
 
 ## Parents
 
- *  is_a: [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations
+ *  is_a: [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations.
 
 ## Mixin for
 

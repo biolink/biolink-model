@@ -33,7 +33,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https:
 ### Own
 
  * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md)  <sub>REQ</sub>
-    * Description: anatomical entity in which the disease or feature is found
+    * Description: anatomical entity in which the disease or feature is found.
     * range: [AnatomicalEntity](AnatomicalEntity.md)
     * Example:    
 
@@ -117,6 +117,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Domain for slot:
 
  * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md)  <sub>REQ</sub>
-    * Description: anatomical entity in which the disease or feature is found
+    * Description: anatomical entity in which the disease or feature is found.
     * range: [AnatomicalEntity](AnatomicalEntity.md)
     * Example:    

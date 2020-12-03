@@ -26,6 +26,7 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 ## Children
 
  *  [biomarker for](biomarker_for.md)
+ *  [coexpressed with](coexpressed_with.md)
  *  [has biomarker](has_biomarker.md)
  *  [negatively correlated with](negatively_correlated_with.md)
  *  [positively correlated with](positively_correlated_with.md)

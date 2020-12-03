@@ -8,7 +8,7 @@ layout: default
 # Class: CaseToPhenotypicFeatureAssociation
 
 
-An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
 
 URI: [biolink:CaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation)
 

@@ -8,7 +8,7 @@ layout: default
 # Class: CellLineToDiseaseOrPhenotypicFeatureAssociation
 
 
-An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
 
 URI: [biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation)
 

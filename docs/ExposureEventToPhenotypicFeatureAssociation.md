@@ -8,7 +8,7 @@ layout: default
 # Class: ExposureEventToPhenotypicFeatureAssociation
 
 
-Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
 
 URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/ExposureEventToPhenotypicFeatureAssociation)
 

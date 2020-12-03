@@ -8,7 +8,7 @@ layout: default
 # Class: MaterialSampleToThingAssociation
 
 
-An association between a material sample and something
+An association between a material sample and something.
 
 URI: [biolink:MaterialSampleToThingAssociation](https://w3id.org/biolink/vocab/MaterialSampleToThingAssociation)
 
@@ -26,7 +26,7 @@ URI: [biolink:MaterialSampleToThingAssociation](https://w3id.org/biolink/vocab/M
 
 ## Mixin for
 
- * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) (mixin)  - An association between a material sample and a disease or phenotype
+ * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) (mixin)  - An association between a material sample and a disease or phenotype.
 
 ## Referenced by class
 

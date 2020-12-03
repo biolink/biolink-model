@@ -8,7 +8,7 @@ layout: default
 # Class: DiseaseToPhenotypicFeatureAssociation
 
 
-An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
 
 URI: [biolink:DiseaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation)
 

@@ -22,8 +22,8 @@ URI: [biolink:DiseaseToThingAssociationMixin](https://w3id.org/biolink/vocab/Dis
 
 ## Mixin for
 
- * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md) (mixin)  - An association between an exposure event and a disease
- * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+ * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md) (mixin)  - An association between an exposure event and a disease.
+ * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
 
 ## Referenced by class
 

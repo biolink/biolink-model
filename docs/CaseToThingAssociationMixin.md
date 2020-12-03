@@ -22,7 +22,7 @@ URI: [biolink:CaseToThingAssociationMixin](https://w3id.org/biolink/vocab/CaseTo
 
 ## Mixin for
 
- * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+ * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
 
 ## Referenced by class
 

@@ -114,10 +114,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from gene to gene association:
 
  * [gene to gene association➞subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
-    * Description: the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
+    * Description: the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [gene to gene association➞object](gene_to_gene_association_object.md)  <sub>REQ</sub>
-    * Description: the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
+    * Description: the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ### Domain for slot:

@@ -8,7 +8,7 @@ layout: default
 # Class: ChemicalToPathwayAssociation
 
 
-An interaction between a chemical entity and a biological process or pathway
+An interaction between a chemical entity and a biological process or pathway.
 
 URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation)
 

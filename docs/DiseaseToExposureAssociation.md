@@ -8,7 +8,7 @@ layout: default
 # Class: DiseaseToExposureAssociation
 
 
-An association between an exposure event and a disease
+An association between an exposure event and a disease.
 
 URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/DiseaseToExposureAssociation)
 
