@@ -1,23 +1,17 @@
-display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- frequency quantifier
-document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
-- frequency quantifier
-fields:
-- description: number of things with a particular property
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - has count
-  id: has_count
-- description: total number of things in a particular reference set
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - has total
-  id: has_total
-- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - has quotient
-  id: has_quotient
-- description: equivalent to has quotient multiplied by 100
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - has percentage
-  id: has_percentage
 id: frequency_quantifier
 schema_generating: true
+display_name: frequency quantifier
+document_category: frequency quantifier
 weight: 20
+fields:
+- id: has_count
+  description: number of things with a particular property
+  display_name: has count
+- id: has_total
+  description: total number of things in a particular reference set
+  display_name: has total
+- id: has_quotient
+  display_name: has quotient
+- id: has_percentage
+  description: equivalent to has quotient multiplied by 100
+  display_name: has percentage

@@ -1,5 +1,7 @@
 ---
+title: "Mapping Biolink Model to a RDF and RDF*"
 parent: "Mapping to a graph store"
+layout: default
 ---
 
 # Mapping Biolink Model to a RDF and RDF*
