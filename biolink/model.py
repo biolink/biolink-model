@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-03 02:54
+# Generation date: 2020-12-03 05:01
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -95,6 +95,7 @@ MI = CurieNamespace('MI', 'http://purl.obolibrary.org/obo/MI_')
 MIR = CurieNamespace('MIR', 'http://identifiers.org/mir/')
 MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
+MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
 METACYC = CurieNamespace('MetaCyc', 'http://translator.ncats.nih.gov/MetaCyc_')
 NCBIGENE = CurieNamespace('NCBIGene', 'http://www.ncbi.nlm.nih.gov/gene/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
