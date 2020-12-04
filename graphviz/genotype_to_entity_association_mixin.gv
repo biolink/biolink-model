@@ -1,0 +1,21 @@
+digraph {
+	graph [bb="0,0,383.63,123"];
+	node [label="\N"];
+	"genotype to entity association mixin"	 [height=0.5,
+		label="genotype to entity association mixin",
+		pos="139.74,105",
+		width=3.8816];
+	subject	 [height=0.5,
+		pos="139.74,18",
+		width=0.99297];
+	"genotype to entity association mixin" -> subject	 [color=blue,
+		label=subject,
+		lp="159.24,61.5",
+		pos="e,139.74,36.003 139.74,86.974 139.74,75.192 139.74,59.561 139.74,46.158",
+		style=solid];
+	"genotype to entity association mixin_subject"	 [color=blue,
+		height=0.5,
+		label=genotype,
+		pos="340.74,105",
+		width=1.1916];
+}
