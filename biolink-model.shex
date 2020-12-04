@@ -187,7 +187,7 @@ metatype:Nodeidentifier NONLITERAL
     @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MaterialSampleToThingAssociation> OR
     @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR
     @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR @<VariantToDiseaseAssociation> OR
-    @<VariantToPhenotypicFeatureAssociation> OR @<VariantToPopulationAssociation>
+    @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR @<VariantToPopulationAssociation>
 )
 
 <Attribute>  (
@@ -889,6 +889,16 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<GeneExpressionMixin> CLOSED {
+    (  $<GeneExpressionMixin_tes> (  <quantifier_qualifier> @<OntologyClass> ? ;
+          <expression_site> @<AnatomicalEntity> ? ;
+          <stage_qualifier> @<LifeStage> ? ;
+          <phenotypic_state> @<DiseaseOrPhenotypicFeature> ?
+       ) ;
+       rdf:type [ <GeneExpressionMixin> ] ?
+    )
+}
+
 <GeneFamily> CLOSED {
     (  $<GeneFamily_tes> (  &<MolecularEntity_tes> ;
           rdf:type [ <MolecularEntity> ] ? ;
@@ -994,7 +1004,7 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <GeneToGeneAssociation>  (
-    @<GeneToGeneHomologyAssociation> OR @<PairwiseGeneToGeneInteraction>
+    @<GeneToGeneCoexpressionAssociation> OR @<GeneToGeneHomologyAssociation> OR @<PairwiseGeneToGeneInteraction>
 )
 
 <GeneToGeneAssociation_struct> {
@@ -1004,6 +1014,21 @@ metatype:Nodeidentifier NONLITERAL
           <object> @<GeneOrGeneProduct>
        ) ;
        rdf:type [ <GeneToGeneAssociation> ]
+    )
+}
+
+<GeneToGeneCoexpressionAssociation> CLOSED {
+    (  $<GeneToGeneCoexpressionAssociation_tes> (  &<GeneToGeneAssociation_tes> ;
+          rdf:type [ <GeneToGeneAssociation> ] ? ;
+          &<GeneExpressionMixin_tes> ;
+          rdf:type [ <GeneExpressionMixin> ] ? ;
+          <predicate> @<PredicateType> ;
+          <quantifier_qualifier> @<OntologyClass> ? ;
+          <expression_site> @<AnatomicalEntity> ? ;
+          <stage_qualifier> @<LifeStage> ? ;
+          <phenotypic_state> @<DiseaseOrPhenotypicFeature> ?
+       ) ;
+       rdf:type [ <GeneToGeneCoexpressionAssociation> ]
     )
 }
 
@@ -1976,6 +2001,35 @@ metatype:Nodeidentifier NONLITERAL
        )
     } OR @<VariantAsAModelOfDiseaseAssociation>
 )
+
+<VariantToGeneAssociation>  (
+    CLOSED {
+       (  $<VariantToGeneAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<VariantToThingAssociationMixin_tes> ;
+             rdf:type [ <VariantToThingAssociationMixin> ] ? ;
+             <object> @<Gene> ;
+             <predicate> @<PredicateType>
+          ) ;
+          rdf:type [ <VariantToGeneAssociation> ]
+       )
+    } OR @<VariantToGeneExpressionAssociation>
+)
+
+<VariantToGeneExpressionAssociation> CLOSED {
+    (  $<VariantToGeneExpressionAssociation_tes> (  &<VariantToGeneAssociation_tes> ;
+          rdf:type [ <VariantToGeneAssociation> ] ? ;
+          &<GeneExpressionMixin_tes> ;
+          rdf:type [ <GeneExpressionMixin> ] ? ;
+          <predicate> @<PredicateType> ;
+          <quantifier_qualifier> @<OntologyClass> ? ;
+          <expression_site> @<AnatomicalEntity> ? ;
+          <stage_qualifier> @<LifeStage> ? ;
+          <phenotypic_state> @<DiseaseOrPhenotypicFeature> ?
+       ) ;
+       rdf:type [ <VariantToGeneExpressionAssociation> ]
+    )
+}
 
 <VariantToPhenotypicFeatureAssociation> CLOSED {
     (  $<VariantToPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;

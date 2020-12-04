@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-03 05:00\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-03 17:57\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -392,6 +392,9 @@
       "expresses": {
          "@type": "@id"
       },
+      "expression_site": {
+         "@type": "@id"
+      },
       "filler": {
          "@type": "@id"
       },
@@ -684,6 +687,9 @@
          "@type": "@id"
       },
       "participates_in": {
+         "@type": "@id"
+      },
+      "phenotypic_state": {
          "@type": "@id"
       },
       "physically_interacts_with": {
