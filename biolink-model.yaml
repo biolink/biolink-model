@@ -6513,13 +6513,13 @@ classes:
 #        - range: disease or phenotypic feature
         range: disease or phenotypic feature
 
-  chemical to entity association:
+  chemical to entity association mixin:
     description: >-
       An interaction between a chemical entity and another entity
-    is_a: association
+    mixin: true
+    abstract: true
     defining_slots:
       - subject
-    abstract: true
     slot_usage:
       subject:
         range: chemical substance
@@ -6546,7 +6546,7 @@ classes:
       - subject
       - object
     mixins:
-      - chemical to entity association
+      - chemical to entity association mixin
     slot_usage:
       object:
         range: chemical substance
@@ -6598,7 +6598,7 @@ classes:
       - subject
       - object
     mixins:
-      - chemical to entity association
+      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
     slot_usage:
       object:
@@ -6615,7 +6615,7 @@ classes:
       - subject
       - object
     mixins:
-      - chemical to entity association
+      - chemical to entity association mixin
     slot_usage:
       object:
         range: pathway
@@ -6631,19 +6631,19 @@ classes:
       - subject
       - object
     mixins:
-      - chemical to entity association
+      - chemical to entity association mixin
     slot_usage:
       object:
         range: gene or gene product
         description: "the gene or gene product that is affected by the chemical"
 
-  material sample to entity association:
+  material sample to entity association mixin:
     description: >-
       An association between a material sample and something.
-    is_a: association
+    mixin: true
+    abstract: true
     defining_slots:
       - subject
-    abstract: true
     slot_usage:
       subject:
         range: material sample
@@ -6678,7 +6678,7 @@ classes:
       An association between a material sample and a disease or phenotype.
     is_a: association
     mixins:
-      - material sample to entity association
+      - material sample to entity association mixin
       - entity to disease or phenotypic feature association mixin
     defining_slots:
       - subject
@@ -6772,9 +6772,9 @@ classes:
           - value: MONDO:0020066
             description: "Ehlers-Danlos syndrome"
 
-  disease or phenotypic feature association to entity association:
+  disease or phenotypic feature to entity association mixin:
+    mixin: true
     abstract: true
-    is_a: association
     defining_slots:
       - subject
     slot_usage:
@@ -6788,10 +6788,24 @@ classes:
             description: "abnormal brain ventricle size"
 
   disease or phenotypic feature association to location association:
+    deprecated: >-
+      This association class name is deprecated in favor of the
+      'disease or phenotypic feature to location association' class.
+    deprecated_element_has_exact_replacement: disease or phenotypic feature to location association
+    is_a: association
+    mixins:
+      - disease or phenotypic feature to entity association mixin
+    slot_usage:
+      object:
+        range: anatomical entity
+
+  disease or phenotypic feature to location association:
     description: >-
       An association between either a disease or a phenotypic feature and
       an anatomical entity, where the disease/feature manifests in that site.
-    is_a: disease or phenotypic feature association to entity association
+    is_a: association
+    mixins:
+      - disease or phenotypic feature to entity association mixin
     slot_usage:
       object:
         range: anatomical entity
