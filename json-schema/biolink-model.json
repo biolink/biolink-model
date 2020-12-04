@@ -3269,6 +3269,99 @@
       },
       "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation": {
          "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "subject",
+            "predicate",
+            "relation",
+            "category",
+            "object"
+         ],
+         "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
+         "type": "object"
+      },
+      "DiseaseOrPhenotypicFeatureToLocationAssociation": {
+         "additionalProperties": false,
          "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
          "properties": {
             "category": {
@@ -3342,7 +3435,7 @@
                "type": "string"
             },
             "subject": {
-               "description": "disease or phenotype",
+               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
             "type": {
@@ -3352,13 +3445,13 @@
          },
          "required": [
             "id",
+            "subject",
             "predicate",
             "relation",
             "category",
-            "subject",
             "object"
          ],
-         "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
+         "title": "DiseaseOrPhenotypicFeatureToLocationAssociation",
          "type": "object"
       },
       "DiseaseToExposureAssociation": {
