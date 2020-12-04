@@ -1192,6 +1192,14 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     subject: GeneOrGeneProduct!
   }
 
+type GeneExpressionMixin
+  {
+    quantifierQualifier: OntologyClass
+    expressionSite: AnatomicalEntity
+    stageQualifier: LifeStage
+    phenotypicState: DiseaseOrPhenotypicFeature
+  }
+
 type GeneFamily implements GeneGrouping
   {
     id: String!
@@ -1366,6 +1374,30 @@ interface GeneToGeneAssociation
     category: [Association]!
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
+  }
+
+type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    subject: GeneOrGeneProduct!
+    object: GeneOrGeneProduct!
+    predicate: PredicateType!
+    quantifierQualifier: OntologyClass
+    expressionSite: AnatomicalEntity
+    stageQualifier: LifeStage
+    phenotypicState: DiseaseOrPhenotypicFeature
   }
 
 type GeneToGeneHomologyAssociation
@@ -2771,6 +2803,50 @@ type VariantToDiseaseAssociation implements VariantToThingAssociationMixin, Thin
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+  }
+
+type VariantToGeneAssociation implements VariantToThingAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    subject: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    object: Gene!
+    predicate: PredicateType!
+  }
+
+type VariantToGeneExpressionAssociation implements GeneExpressionMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    subject: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    object: Gene!
+    predicate: PredicateType!
+    quantifierQualifier: OntologyClass
+    expressionSite: AnatomicalEntity
+    stageQualifier: LifeStage
+    phenotypicState: DiseaseOrPhenotypicFeature
   }
 
 type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociationMixin, ThingToPhenotypicFeatureAssociationMixin

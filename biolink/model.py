@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-03 05:01
+# Generation date: 2020-12-03 17:57
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -673,6 +673,10 @@ class GeneToGeneHomologyAssociationId(GeneToGeneAssociationId):
     pass
 
 
+class GeneToGeneCoexpressionAssociationId(GeneToGeneAssociationId):
+    pass
+
+
 class PairwiseGeneToGeneInteractionId(GeneToGeneAssociationId):
     pass
 
@@ -754,6 +758,14 @@ class GeneToPhenotypicFeatureAssociationId(AssociationId):
 
 
 class GeneToDiseaseAssociationId(AssociationId):
+    pass
+
+
+class VariantToGeneAssociationId(AssociationId):
+    pass
+
+
+class VariantToGeneExpressionAssociationId(VariantToGeneAssociationId):
     pass
 
 
@@ -3508,6 +3520,79 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
 
 @dataclass
+class GeneExpressionMixin(YAMLRoot):
+    """
+    Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the
+    expression occurs.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneExpressionMixin
+    class_class_curie: ClassVar[str] = "biolink:GeneExpressionMixin"
+    class_name: ClassVar[str] = "gene expression mixin"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneExpressionMixin
+
+    quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
+    expression_site: Optional[Union[str, AnatomicalEntityId]] = None
+    stage_qualifier: Optional[Union[str, LifeStageId]] = None
+    phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
+            self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
+        if self.expression_site is not None and not isinstance(self.expression_site, AnatomicalEntityId):
+            self.expression_site = AnatomicalEntityId(self.expression_site)
+        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifeStageId):
+            self.stage_qualifier = LifeStageId(self.stage_qualifier)
+        if self.phenotypic_state is not None and not isinstance(self.phenotypic_state, DiseaseOrPhenotypicFeatureId):
+            self.phenotypic_state = DiseaseOrPhenotypicFeatureId(self.phenotypic_state)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
+    """
+    Indicates that two genes are co-expressed, generally under the same conditions.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneCoexpressionAssociation
+    class_class_curie: ClassVar[str] = "biolink:GeneToGeneCoexpressionAssociation"
+    class_name: ClassVar[str] = "gene to gene coexpression association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneCoexpressionAssociation
+
+    id: Union[str, GeneToGeneCoexpressionAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: List[Union[str, AssociationId]] = empty_list()
+    subject: Union[str, GeneOrGeneProductId] = None
+    object: Union[str, GeneOrGeneProductId] = None
+    predicate: Union[str, PredicateType] = None
+    quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
+    expression_site: Optional[Union[str, AnatomicalEntityId]] = None
+    stage_qualifier: Optional[Union[str, LifeStageId]] = None
+    phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, GeneToGeneCoexpressionAssociationId):
+            self.id = GeneToGeneCoexpressionAssociationId(self.id)
+        if self.predicate is None:
+            raise ValueError(f"predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+        if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
+            self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
+        if self.expression_site is not None and not isinstance(self.expression_site, AnatomicalEntityId):
+            self.expression_site = AnatomicalEntityId(self.expression_site)
+        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifeStageId):
+            self.stage_qualifier = LifeStageId(self.stage_qualifier)
+        if self.phenotypic_state is not None and not isinstance(self.phenotypic_state, DiseaseOrPhenotypicFeatureId):
+            self.phenotypic_state = DiseaseOrPhenotypicFeatureId(self.phenotypic_state)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     """
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
@@ -4200,6 +4285,85 @@ class GeneToDiseaseAssociation(Association):
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GeneOrGeneProductId):
             self.subject = GeneOrGeneProductId(self.subject)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class VariantToGeneAssociation(Association):
+    """
+    An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in
+    linkage disequilibrium)
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneAssociation
+    class_class_curie: ClassVar[str] = "biolink:VariantToGeneAssociation"
+    class_name: ClassVar[str] = "variant to gene association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneAssociation
+
+    id: Union[str, VariantToGeneAssociationId] = None
+    subject: Union[str, NamedThingId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: List[Union[str, AssociationId]] = empty_list()
+    object: Union[str, GeneId] = None
+    predicate: Union[str, PredicateType] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, VariantToGeneAssociationId):
+            self.id = VariantToGeneAssociationId(self.id)
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, GeneId):
+            self.object = GeneId(self.object)
+        if self.predicate is None:
+            raise ValueError(f"predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
+    """
+    An association between a variant and expression of a gene (i.e. e-QTL)
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneExpressionAssociation
+    class_class_curie: ClassVar[str] = "biolink:VariantToGeneExpressionAssociation"
+    class_name: ClassVar[str] = "variant to gene expression association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.VariantToGeneExpressionAssociation
+
+    id: Union[str, VariantToGeneExpressionAssociationId] = None
+    subject: Union[str, NamedThingId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: List[Union[str, AssociationId]] = empty_list()
+    object: Union[str, GeneId] = None
+    predicate: Union[str, PredicateType] = None
+    quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
+    expression_site: Optional[Union[str, AnatomicalEntityId]] = None
+    stage_qualifier: Optional[Union[str, LifeStageId]] = None
+    phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, VariantToGeneExpressionAssociationId):
+            self.id = VariantToGeneExpressionAssociationId(self.id)
+        if self.predicate is None:
+            raise ValueError(f"predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+        if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
+            self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
+        if self.expression_site is not None and not isinstance(self.expression_site, AnatomicalEntityId):
+            self.expression_site = AnatomicalEntityId(self.expression_site)
+        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifeStageId):
+            self.stage_qualifier = LifeStageId(self.stage_qualifier)
+        if self.phenotypic_state is not None and not isinstance(self.phenotypic_state, DiseaseOrPhenotypicFeatureId):
+            self.phenotypic_state = DiseaseOrPhenotypicFeatureId(self.phenotypic_state)
         super().__post_init__(**kwargs)
 
 
@@ -5896,8 +6060,14 @@ slots.interacting_molecules_category = Slot(uri=BIOLINK.interacting_molecules_ca
 slots.quantifier_qualifier = Slot(uri=BIOLINK.quantifier_qualifier, name="quantifier qualifier", curie=BIOLINK.curie('quantifier_qualifier'),
                       model_uri=BIOLINK.quantifier_qualifier, domain=Association, range=Optional[Union[str, OntologyClassId]])
 
+slots.expression_site = Slot(uri=BIOLINK.expression_site, name="expression site", curie=BIOLINK.curie('expression_site'),
+                      model_uri=BIOLINK.expression_site, domain=Association, range=Optional[Union[str, AnatomicalEntityId]])
+
 slots.stage_qualifier = Slot(uri=BIOLINK.stage_qualifier, name="stage qualifier", curie=BIOLINK.curie('stage_qualifier'),
                       model_uri=BIOLINK.stage_qualifier, domain=Association, range=Optional[Union[str, LifeStageId]])
+
+slots.phenotypic_state = Slot(uri=BIOLINK.phenotypic_state, name="phenotypic state", curie=BIOLINK.curie('phenotypic_state'),
+                      model_uri=BIOLINK.phenotypic_state, domain=Association, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
 
 slots.qualifiers = Slot(uri=BIOLINK.qualifiers, name="qualifiers", curie=BIOLINK.curie('qualifiers'),
                       model_uri=BIOLINK.qualifiers, domain=Association, range=List[Union[str, OntologyClassId]])
@@ -6085,6 +6255,12 @@ slots.gene_to_gene_association_object = Slot(uri=BIOLINK.object, name="gene to g
 slots.gene_to_gene_homology_association_predicate = Slot(uri=BIOLINK.predicate, name="gene to gene homology association_predicate", curie=BIOLINK.curie('predicate'),
                       model_uri=BIOLINK.gene_to_gene_homology_association_predicate, domain=GeneToGeneHomologyAssociation, range=Union[str, PredicateType])
 
+slots.gene_expression_mixin_quantifier_qualifier = Slot(uri=BIOLINK.quantifier_qualifier, name="gene expression mixin_quantifier qualifier", curie=BIOLINK.curie('quantifier_qualifier'),
+                      model_uri=BIOLINK.gene_expression_mixin_quantifier_qualifier, domain=GeneExpressionMixin, range=Optional[Union[str, OntologyClassId]])
+
+slots.gene_to_gene_coexpression_association_predicate = Slot(uri=BIOLINK.predicate, name="gene to gene coexpression association_predicate", curie=BIOLINK.curie('predicate'),
+                      model_uri=BIOLINK.gene_to_gene_coexpression_association_predicate, domain=GeneToGeneCoexpressionAssociation, range=Union[str, PredicateType])
+
 slots.pairwise_gene_to_gene_interaction_predicate = Slot(uri=BIOLINK.predicate, name="pairwise gene to gene interaction_predicate", curie=BIOLINK.curie('predicate'),
                       model_uri=BIOLINK.pairwise_gene_to_gene_interaction_predicate, domain=PairwiseGeneToGeneInteraction, range=Union[str, PredicateType])
 
@@ -6204,6 +6380,15 @@ slots.gene_to_phenotypic_feature_association_subject = Slot(uri=BIOLINK.subject,
 
 slots.gene_to_disease_association_subject = Slot(uri=BIOLINK.subject, name="gene to disease association_subject", curie=BIOLINK.curie('subject'),
                       model_uri=BIOLINK.gene_to_disease_association_subject, domain=GeneToDiseaseAssociation, range=Union[str, GeneOrGeneProductId])
+
+slots.variant_to_gene_association_object = Slot(uri=BIOLINK.object, name="variant to gene association_object", curie=BIOLINK.curie('object'),
+                      model_uri=BIOLINK.variant_to_gene_association_object, domain=VariantToGeneAssociation, range=Union[str, GeneId])
+
+slots.variant_to_gene_association_predicate = Slot(uri=BIOLINK.predicate, name="variant to gene association_predicate", curie=BIOLINK.curie('predicate'),
+                      model_uri=BIOLINK.variant_to_gene_association_predicate, domain=VariantToGeneAssociation, range=Union[str, PredicateType])
+
+slots.variant_to_gene_expression_association_predicate = Slot(uri=BIOLINK.predicate, name="variant to gene expression association_predicate", curie=BIOLINK.curie('predicate'),
+                      model_uri=BIOLINK.variant_to_gene_expression_association_predicate, domain=VariantToGeneExpressionAssociation, range=Union[str, PredicateType])
 
 slots.variant_to_population_association_subject = Slot(uri=BIOLINK.subject, name="variant to population association_subject", curie=BIOLINK.curie('subject'),
                       model_uri=BIOLINK.variant_to_population_association_subject, domain=VariantToPopulationAssociation, range=Union[str, SequenceVariantId])
