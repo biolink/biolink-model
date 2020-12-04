@@ -15,7 +15,7 @@ URI: [biolink:VariantToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociationMixin],[SequenceVariant]%3Csubject%201..1-%20[VariantToPhenotypicFeatureAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[ThingToPhenotypicFeatureAssociationMixin],[SeverityValue],[SequenceVariant],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[BiologicalSex],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToPhenotypicFeatureAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[VariantToEntityAssociationMixin],[SeverityValue],[SequenceVariant],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute],[Association],[Agent])
 
 ---
 
@@ -26,8 +26,8 @@ URI: [biolink:VariantToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
 
 ## Uses Mixins
 
- *  mixin: [VariantToThingAssociationMixin](VariantToThingAssociationMixin.md)
- *  mixin: [ThingToPhenotypicFeatureAssociationMixin](ThingToPhenotypicFeatureAssociationMixin.md)
+ *  mixin: [VariantToEntityAssociationMixin](VariantToEntityAssociationMixin.md)
+ *  mixin: [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
 
 ## Referenced by class
 
@@ -119,26 +119,26 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * range: [Onset](Onset.md)
 
-### Inherited from frequency qualifier mixin:
-
- * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    * range: [FrequencyValue](FrequencyValue.md)
-
-### Inherited from thing to phenotypic feature association mixin:
+### Inherited from entity to phenotypic feature association mixin:
 
  * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     * range: [BiologicalSex](BiologicalSex.md)
- * [thing to phenotypic feature association mixin➞description](thing_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
+ * [entity to phenotypic feature association mixin➞description](entity_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
     * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
     * range: [NarrativeText](types/NarrativeText.md)
- * [thing to phenotypic feature association mixin➞object](thing_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to phenotypic feature association mixin➞object](entity_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
     * Description: phenotypic class
     * range: [PhenotypicFeature](PhenotypicFeature.md)
     * Example:    
     * Example:    
     * Example:    
+
+### Inherited from frequency qualifier mixin:
+
+ * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+    * range: [FrequencyValue](FrequencyValue.md)
 
 ### Domain for slot:
 

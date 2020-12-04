@@ -15,7 +15,7 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociationMixin],[NamedThing]%3Cobject%201..1-%20[VariantToDiseaseAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing]%3Csubject%201..1-%20[VariantToDiseaseAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[Association]%5E-[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[ThingToDiseaseAssociationMixin],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToEntityAssociationMixin],[NamedThing]%3Cobject%201..1-%20[VariantToDiseaseAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing]%3Csubject%201..1-%20[VariantToDiseaseAssociation],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[VariantToDiseaseAssociation]%5E-[VariantAsAModelOfDiseaseAssociation],[Association]%5E-[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[EntityToDiseaseAssociationMixin],[Attribute],[Association],[Agent])
 
 ---
 
@@ -26,8 +26,8 @@ URI: [biolink:VariantToDiseaseAssociation](https://w3id.org/biolink/vocab/Varian
 
 ## Uses Mixins
 
- *  mixin: [VariantToThingAssociationMixin](VariantToThingAssociationMixin.md)
- *  mixin: [ThingToDiseaseAssociationMixin](ThingToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
+ *  mixin: [VariantToEntityAssociationMixin](VariantToEntityAssociationMixin.md)
+ *  mixin: [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
 
 ## Children
 

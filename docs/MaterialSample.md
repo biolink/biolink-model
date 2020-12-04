@@ -15,7 +15,7 @@ URI: [biolink:MaterialSample](https://w3id.org/biolink/vocab/MaterialSample)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[NamedThing],[MaterialSampleToThingAssociation],[MaterialSampleDerivationAssociation],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MaterialSampleToThingAssociation]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[PhysicalEntity]%5E-[MaterialSample],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[NamedThing],[MaterialSampleToEntityAssociationMixin],[MaterialSampleDerivationAssociation],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MaterialSampleToEntityAssociationMixin]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[PhysicalEntity]%5E-[MaterialSample],[Attribute],[Agent])
 
 ---
 
@@ -36,7 +36,7 @@ URI: [biolink:MaterialSample](https://w3id.org/biolink/vocab/MaterialSample)
 ## Referenced by class
 
  *  **[MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md)** *[material sample derivation association➞subject](material_sample_derivation_association_subject.md)*  <sub>REQ</sub>  **[MaterialSample](MaterialSample.md)**
- *  **[MaterialSampleToThingAssociation](MaterialSampleToThingAssociation.md)** *[material sample to thing association➞subject](material_sample_to_thing_association_subject.md)*  <sub>REQ</sub>  **[MaterialSample](MaterialSample.md)**
+ *  **[MaterialSampleToEntityAssociationMixin](MaterialSampleToEntityAssociationMixin.md)** *[material sample to entity association mixin➞subject](material_sample_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[MaterialSample](MaterialSample.md)**
 
 ## Attributes
 

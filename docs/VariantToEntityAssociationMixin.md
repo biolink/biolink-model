@@ -1,21 +1,21 @@
 ---
 parent: Class Mixins
-title: biolink:VariantToThingAssociationMixin
+title: biolink:VariantToEntityAssociationMixin
 grand_parent: Classes
 layout: default
 ---
 
-# Class: VariantToThingAssociationMixin
+# Class: VariantToEntityAssociationMixin
 
 
 
 
-URI: [biolink:VariantToThingAssociationMixin](https://w3id.org/biolink/vocab/VariantToThingAssociationMixin)
+URI: [biolink:VariantToEntityAssociationMixin](https://w3id.org/biolink/vocab/VariantToEntityAssociationMixin)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToThingAssociationMixin],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToGeneAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToGeneAssociation],[VariantToDiseaseAssociation],[SequenceVariant])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToEntityAssociationMixin],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToGeneAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToGeneAssociation],[VariantToDiseaseAssociation],[SequenceVariant])
 
 ---
 
@@ -35,7 +35,7 @@ URI: [biolink:VariantToThingAssociationMixin](https://w3id.org/biolink/vocab/Var
 
 ### Own
 
- * [variant to thing association mixin➞subject](variant_to_thing_association_mixin_subject.md)  <sub>REQ</sub>
+ * [variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
     * Description: a sequence variant in which the allele state is associated with some other entity
     * range: [SequenceVariant](SequenceVariant.md)
     * Example:    
@@ -43,7 +43,7 @@ URI: [biolink:VariantToThingAssociationMixin](https://w3id.org/biolink/vocab/Var
 
 ### Domain for slot:
 
- * [variant to thing association mixin➞subject](variant_to_thing_association_mixin_subject.md)  <sub>REQ</sub>
+ * [variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
     * Description: a sequence variant in which the allele state is associated with some other entity
     * range: [SequenceVariant](SequenceVariant.md)
     * Example:    

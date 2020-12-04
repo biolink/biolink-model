@@ -15,7 +15,7 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[ChemicalToThingAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalSubstance]%3Cobject%201..1-%20[ChemicalToChemicalAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[ChemicalSubstance],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalSubstance]%3Cobject%201..1-%20[ChemicalToChemicalAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[ChemicalSubstance],[Attribute],[Association],[Agent])
 
 ---
 
@@ -26,7 +26,7 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
 ## Uses Mixins
 
- *  mixin: [ChemicalToThingAssociation](ChemicalToThingAssociation.md) - An interaction between a chemical entity and another entity
+ *  mixin: [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
 
 ## Children
 

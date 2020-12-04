@@ -1,21 +1,21 @@
 ---
 parent: Associations
-title: biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation
+title: biolink:DiseaseOrPhenotypicFeatureToLocationAssociation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: DiseaseOrPhenotypicFeatureAssociationToThingAssociation
+# Class: DiseaseOrPhenotypicFeatureToLocationAssociation
 
 
+An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 
-
-URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation)
+URI: [biolink:DiseaseOrPhenotypicFeatureToLocationAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToLocationAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[DiseaseOrPhenotypicFeatureAssociationToThingAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]%5E-[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[DiseaseOrPhenotypicFeature],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[AnatomicalEntity]%3Cobject%201..1-%20[DiseaseOrPhenotypicFeatureToLocationAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DiseaseOrPhenotypicFeatureToLocationAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[Association]%5E-[DiseaseOrPhenotypicFeatureToLocationAssociation],[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[Attribute],[Association],[AnatomicalEntity],[Agent])
 
 ---
 
@@ -24,9 +24,9 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation](https://w
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
 
-## Children
+## Uses Mixins
 
- * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+ *  mixin: [DiseaseOrPhenotypicFeatureToEntityAssociationMixin](DiseaseOrPhenotypicFeatureToEntityAssociationMixin.md)
 
 ## Referenced by class
 
@@ -36,10 +36,9 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation](https://w
 
 ### Own
 
- * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)  <sub>REQ</sub>
-    * Description: disease or phenotype
-    * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-    * Example:    
+ * [disease or phenotypic feature to location association➞object](disease_or_phenotypic_feature_to_location_association_object.md)  <sub>REQ</sub>
+    * Description: anatomical entity in which the disease or feature is found.
+    * range: [AnatomicalEntity](AnatomicalEntity.md)
     * Example:    
 
 ### Inherited from association:
@@ -113,8 +112,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)  <sub>REQ</sub>
-    * Description: disease or phenotype
-    * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-    * Example:    
+ * [disease or phenotypic feature to location association➞object](disease_or_phenotypic_feature_to_location_association_object.md)  <sub>REQ</sub>
+    * Description: anatomical entity in which the disease or feature is found.
+    * range: [AnatomicalEntity](AnatomicalEntity.md)
     * Example:    

@@ -1,21 +1,21 @@
 ---
 parent: Class Mixins
-title: biolink:CaseToThingAssociationMixin
+title: biolink:CaseToEntityAssociationMixin
 grand_parent: Classes
 layout: default
 ---
 
-# Class: CaseToThingAssociationMixin
+# Class: CaseToEntityAssociationMixin
 
 
 An abstract association for use where the case is the subject
 
-URI: [biolink:CaseToThingAssociationMixin](https://w3id.org/biolink/vocab/CaseToThingAssociationMixin)
+URI: [biolink:CaseToEntityAssociationMixin](https://w3id.org/biolink/vocab/CaseToEntityAssociationMixin)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Case]%3Csubject%201..1-%20[CaseToThingAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToThingAssociationMixin],[CaseToPhenotypicFeatureAssociation],[Case])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Case]%3Csubject%201..1-%20[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation],[Case])
 
 ---
 
@@ -32,12 +32,12 @@ URI: [biolink:CaseToThingAssociationMixin](https://w3id.org/biolink/vocab/CaseTo
 
 ### Own
 
- * [case to thing association mixin➞subject](case_to_thing_association_mixin_subject.md)  <sub>REQ</sub>
+ * [case to entity association mixin➞subject](case_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
     * Description: the case (e.g. patient) that has the property
     * range: [Case](Case.md)
 
 ### Domain for slot:
 
- * [case to thing association mixin➞subject](case_to_thing_association_mixin_subject.md)  <sub>REQ</sub>
+ * [case to entity association mixin➞subject](case_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
     * Description: the case (e.g. patient) that has the property
     * range: [Case](Case.md)

@@ -15,7 +15,7 @@ URI: [biolink:VariantToGeneAssociation](https://w3id.org/biolink/vocab/VariantTo
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToThingAssociationMixin],[VariantToGeneExpressionAssociation],[Gene]%3Cobject%201..1-%20[VariantToGeneAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[VariantToGeneAssociation]uses%20-.-%3E[VariantToThingAssociationMixin],[VariantToGeneAssociation]%5E-[VariantToGeneExpressionAssociation],[Association]%5E-[VariantToGeneAssociation],[Publication],[OntologyClass],[NamedThing],[Gene],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneExpressionAssociation],[Gene]%3Cobject%201..1-%20[VariantToGeneAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[VariantToGeneAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToGeneAssociation]%5E-[VariantToGeneExpressionAssociation],[Association]%5E-[VariantToGeneAssociation],[VariantToEntityAssociationMixin],[Publication],[OntologyClass],[NamedThing],[Gene],[Attribute],[Association],[Agent])
 
 ---
 
@@ -26,7 +26,7 @@ URI: [biolink:VariantToGeneAssociation](https://w3id.org/biolink/vocab/VariantTo
 
 ## Uses Mixins
 
- *  mixin: [VariantToThingAssociationMixin](VariantToThingAssociationMixin.md)
+ *  mixin: [VariantToEntityAssociationMixin](VariantToEntityAssociationMixin.md)
 
 ## Children
 

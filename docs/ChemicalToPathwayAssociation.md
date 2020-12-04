@@ -15,7 +15,7 @@ URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/vocab/Chemi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Pathway],[OntologyClass],[NamedThing],[ChemicalToThingAssociation],[Pathway]%3Cobject%201..1-%20[ChemicalToPathwayAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToThingAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Pathway],[OntologyClass],[NamedThing],[Pathway]%3Cobject%201..1-%20[ChemicalToPathwayAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[Association]%5E-[ChemicalToPathwayAssociation],[ChemicalToEntityAssociationMixin],[Attribute],[Association],[Agent])
 
 ---
 
@@ -26,7 +26,7 @@ URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/vocab/Chemi
 
 ## Uses Mixins
 
- *  mixin: [ChemicalToThingAssociation](ChemicalToThingAssociation.md) - An interaction between a chemical entity and another entity
+ *  mixin: [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
 
 ## Referenced by class
 

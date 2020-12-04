@@ -15,7 +15,7 @@ URI: [biolink:CellLine](https://w3id.org/biolink/vocab/CellLine)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[NamedThing],[CellLineToThingAssociationMixin],[CellLineAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[CellLine%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[CellLineToThingAssociationMixin]-%20subject%201..1%3E[CellLine],[OrganismalEntity]%5E-[CellLine],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[NamedThing],[CellLineToEntityAssociationMixin],[CellLineAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[CellLine%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[CellLineToEntityAssociationMixin]-%20subject%201..1%3E[CellLine],[OrganismalEntity]%5E-[CellLine],[Attribute],[Agent])
 
 ---
 
@@ -31,7 +31,7 @@ URI: [biolink:CellLine](https://w3id.org/biolink/vocab/CellLine)
 ## Referenced by class
 
  *  **[CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)** *[cell line as a model of disease association➞subject](cell_line_as_a_model_of_disease_association_subject.md)*  <sub>REQ</sub>  **[CellLine](CellLine.md)**
- *  **[CellLineToThingAssociationMixin](CellLineToThingAssociationMixin.md)** *[cell line to thing association mixin➞subject](cell_line_to_thing_association_mixin_subject.md)*  <sub>REQ</sub>  **[CellLine](CellLine.md)**
+ *  **[CellLineToEntityAssociationMixin](CellLineToEntityAssociationMixin.md)** *[cell line to entity association mixin➞subject](cell_line_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[CellLine](CellLine.md)**
 
 ## Attributes
 

@@ -1,21 +1,21 @@
 ---
 parent: Class Mixins
-title: biolink:ThingToDiseaseAssociationMixin
+title: biolink:EntityToDiseaseAssociationMixin
 grand_parent: Classes
 layout: default
 ---
 
-# Class: ThingToDiseaseAssociationMixin
+# Class: EntityToDiseaseAssociationMixin
 
 
 mixin class for any association whose object (target node) is a disease
 
-URI: [biolink:ThingToDiseaseAssociationMixin](https://w3id.org/biolink/vocab/ThingToDiseaseAssociationMixin)
+URI: [biolink:EntityToDiseaseAssociationMixin](https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Disease]%3Cobject%201..1-%20[ThingToDiseaseAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[VariantAsAModelOfDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[OrganismalEntityAsAModelOfDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[GenotypeToDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[ThingToDiseaseAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[ThingToDiseaseAssociationMixin],[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[SeverityValue],[OrganismalEntityAsAModelOfDiseaseAssociation],[Onset],[GenotypeToDiseaseAssociation],[GenotypeAsAModelOfDiseaseAssociation],[GeneToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[FrequencyValue],[EntityToFeatureOrDiseaseQualifiersMixin],[Disease],[CellLineAsAModelOfDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Onset],[FrequencyValue],[EntityToFeatureOrDiseaseQualifiersMixin],[Disease]%3Cobject%201..1-%20[EntityToDiseaseAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[VariantAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[OrganismalEntityAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GenotypeToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToDiseaseAssociationMixin],[VariantToDiseaseAssociation],[VariantAsAModelOfDiseaseAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation],[GenotypeToDiseaseAssociation],[GenotypeAsAModelOfDiseaseAssociation],[GeneToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[Disease],[CellLineAsAModelOfDiseaseAssociation])
 
 ---
 
@@ -43,7 +43,7 @@ URI: [biolink:ThingToDiseaseAssociationMixin](https://w3id.org/biolink/vocab/Thi
 
 ### Own
 
- * [thing to disease association mixin➞object](thing_to_disease_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to disease association mixin➞object](entity_to_disease_association_mixin_object.md)  <sub>REQ</sub>
     * Description: disease
     * range: [Disease](Disease.md)
     * Example:    
@@ -65,7 +65,7 @@ URI: [biolink:ThingToDiseaseAssociationMixin](https://w3id.org/biolink/vocab/Thi
 
 ### Domain for slot:
 
- * [thing to disease association mixin➞object](thing_to_disease_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to disease association mixin➞object](entity_to_disease_association_mixin_object.md)  <sub>REQ</sub>
     * Description: disease
     * range: [Disease](Disease.md)
     * Example:    

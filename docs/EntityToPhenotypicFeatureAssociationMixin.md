@@ -1,21 +1,21 @@
 ---
 parent: Class Mixins
-title: biolink:ThingToPhenotypicFeatureAssociationMixin
+title: biolink:EntityToPhenotypicFeatureAssociationMixin
 grand_parent: Classes
 layout: default
 ---
 
-# Class: ThingToPhenotypicFeatureAssociationMixin
+# Class: EntityToPhenotypicFeatureAssociationMixin
 
 
 
 
-URI: [biolink:ThingToPhenotypicFeatureAssociationMixin](https://w3id.org/biolink/vocab/ThingToPhenotypicFeatureAssociationMixin)
+URI: [biolink:EntityToPhenotypicFeatureAssociationMixin](https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhenotypicFeature]%3Cobject%201..1-%20[ThingToPhenotypicFeatureAssociationMixin%7Cdescription:narrative_text%20%3F],[BiologicalSex]%3Csex%20qualifier%200..1-++[ThingToPhenotypicFeatureAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[ThingToPhenotypicFeatureAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[ThingToPhenotypicFeatureAssociationMixin],[VariantToPhenotypicFeatureAssociation],[SeverityValue],[PhenotypicFeature],[Onset],[GenotypeToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation],[FrequencyValue],[ExposureEventToPhenotypicFeatureAssociation],[EntityToFeatureOrDiseaseQualifiersMixin],[DiseaseToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[BiologicalSex])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[PhenotypicFeature],[Onset],[FrequencyValue],[PhenotypicFeature]%3Cobject%201..1-%20[EntityToPhenotypicFeatureAssociationMixin%7Cdescription:narrative_text%20%3F],[BiologicalSex]%3Csex%20qualifier%200..1-++[EntityToPhenotypicFeatureAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToPhenotypicFeatureAssociationMixin],[VariantToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation],[ExposureEventToPhenotypicFeatureAssociation],[EntityToFeatureOrDiseaseQualifiersMixin],[DiseaseToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[BiologicalSex])
 
 ---
 
@@ -41,18 +41,18 @@ URI: [biolink:ThingToPhenotypicFeatureAssociationMixin](https://w3id.org/biolink
 
 ### Own
 
- * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-    * range: [BiologicalSex](BiologicalSex.md)
- * [thing to phenotypic feature association mixin➞description](thing_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
+ * [entity to phenotypic feature association mixin➞description](entity_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
     * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
     * range: [NarrativeText](types/NarrativeText.md)
- * [thing to phenotypic feature association mixin➞object](thing_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to phenotypic feature association mixin➞object](entity_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
     * Description: phenotypic class
     * range: [PhenotypicFeature](PhenotypicFeature.md)
     * Example:    
     * Example:    
     * Example:    
+ * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+    * range: [BiologicalSex](BiologicalSex.md)
 
 ### Inherited from entity to feature or disease qualifiers mixin:
 
@@ -71,10 +71,10 @@ URI: [biolink:ThingToPhenotypicFeatureAssociationMixin](https://w3id.org/biolink
 
 ### Domain for slot:
 
- * [thing to phenotypic feature association mixin➞description](thing_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
+ * [entity to phenotypic feature association mixin➞description](entity_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
     * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
     * range: [NarrativeText](types/NarrativeText.md)
- * [thing to phenotypic feature association mixin➞object](thing_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to phenotypic feature association mixin➞object](entity_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
     * Description: phenotypic class
     * range: [PhenotypicFeature](PhenotypicFeature.md)
     * Example:    
