@@ -313,7 +313,12 @@ type Case
     inTaxon: [OrganismTaxon]
   }
 
-type CaseToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureAssociationMixin, CaseToThingAssociationMixin
+interface CaseToEntityAssociationMixin
+  {
+    subject: Case!
+  }
+
+type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, CaseToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -335,11 +340,6 @@ type CaseToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureAssoc
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
-  }
-
-interface CaseToThingAssociationMixin
-  {
-    subject: Case!
   }
 
 type Cell
@@ -369,7 +369,7 @@ type CellLine
     hasAttribute: [Attribute]
   }
 
-type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, ThingToDiseaseAssociationMixin
+type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!
     iri: IriType
@@ -392,7 +392,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     onsetQualifier: Onset
   }
 
-type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToThingAssociationMixin, ThingToDiseaseOrPhenotypicFeatureAssociationMixin
+type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -412,7 +412,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToThingA
     subject: DiseaseOrPhenotypicFeature!
   }
 
-interface CellLineToThingAssociationMixin
+interface CellLineToEntityAssociationMixin
   {
     subject: CellLine!
   }
@@ -458,7 +458,7 @@ type ChemicalSubstance
     inTaxon: [OrganismTaxon]
   }
 
-type ChemicalToChemicalAssociation implements ChemicalToThingAssociation
+type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -499,7 +499,7 @@ type ChemicalToChemicalDerivationAssociation
     predicate: PredicateType!
   }
 
-type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociationMixin
+type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -519,7 +519,12 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingA
     object: DiseaseOrPhenotypicFeature!
   }
 
-type ChemicalToGeneAssociation implements ChemicalToThingAssociation
+interface ChemicalToEntityAssociationMixin
+  {
+    subject: ChemicalSubstance!
+  }
+
+type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -539,7 +544,7 @@ type ChemicalToGeneAssociation implements ChemicalToThingAssociation
     object: GeneOrGeneProduct!
   }
 
-type ChemicalToPathwayAssociation implements ChemicalToThingAssociation
+type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -557,26 +562,6 @@ type ChemicalToPathwayAssociation implements ChemicalToThingAssociation
     type: String
     category: [Association]!
     object: Pathway!
-  }
-
-interface ChemicalToThingAssociation
-  {
-    id: String!
-    iri: IriType
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    predicate: PredicateType!
-    object: NamedThing!
-    relation: Uriorcurie!
-    negated: Boolean
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    type: String
-    category: [Association]!
-    subject: ChemicalSubstance!
   }
 
 type ClinicalAttribute
@@ -816,7 +801,7 @@ type DiseaseOrPhenotypicFeature implements ThingWithTaxon
     inTaxon: [OrganismTaxon]
   }
 
-type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
+type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation implements DiseaseOrPhenotypicFeatureToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -825,6 +810,7 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
+    subject: NamedThing!
     predicate: PredicateType!
     relation: Uriorcurie!
     negated: Boolean
@@ -832,11 +818,15 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
     publications: [Publication]
     type: String
     category: [Association]!
-    subject: DiseaseOrPhenotypicFeature!
     object: AnatomicalEntity!
   }
 
-interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation
+interface DiseaseOrPhenotypicFeatureToEntityAssociationMixin
+  {
+    subject: DiseaseOrPhenotypicFeature!
+  }
+
+type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenotypicFeatureToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -845,18 +835,23 @@ interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
+    subject: NamedThing!
     predicate: PredicateType!
-    object: NamedThing!
     relation: Uriorcurie!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
     category: [Association]!
-    subject: DiseaseOrPhenotypicFeature!
+    object: AnatomicalEntity!
   }
 
-type DiseaseToExposureAssociation implements DiseaseToThingAssociationMixin
+interface DiseaseToEntityAssociationMixin
+  {
+    subject: Disease!
+  }
+
+type DiseaseToExposureAssociation implements DiseaseToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -876,7 +871,7 @@ type DiseaseToExposureAssociation implements DiseaseToThingAssociationMixin
     object: ExposureEvent!
   }
 
-type DiseaseToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureAssociationMixin, DiseaseToThingAssociationMixin
+type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, DiseaseToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -898,11 +893,6 @@ type DiseaseToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureAs
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
-  }
-
-interface DiseaseToThingAssociationMixin
-  {
-    subject: Disease!
   }
 
 interface DistributionLevel
@@ -970,11 +960,34 @@ interface Entity
     hasAttribute: [Attribute]
   }
 
+interface EntityToDiseaseAssociationMixin
+  {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    object: Disease!
+  }
+
+interface EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+  {
+    object: DiseaseOrPhenotypicFeature!
+  }
+
 interface EntityToFeatureOrDiseaseQualifiersMixin
   {
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+  }
+
+interface EntityToPhenotypicFeatureAssociationMixin
+  {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    description: NarrativeText
+    object: PhenotypicFeature!
   }
 
 type EnvironmentalFeature
@@ -1068,7 +1081,7 @@ type ExposureEvent
     category: [NamedThing]!
   }
 
-type ExposureEventToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureAssociationMixin
+type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1169,7 +1182,7 @@ type Gene
     xref: [IriType]
   }
 
-type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, ThingToDiseaseAssociationMixin
+type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1311,7 +1324,7 @@ type GeneRegulatoryRelationship
     object: GeneOrGeneProduct!
   }
 
-type GeneToDiseaseAssociation implements ThingToDiseaseAssociationMixin, GeneToThingAssociationMixin
+type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1332,6 +1345,11 @@ type GeneToDiseaseAssociation implements ThingToDiseaseAssociationMixin, GeneToT
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+  }
+
+interface GeneToEntityAssociationMixin
+  {
+    subject: GeneOrGeneProduct!
   }
 
 type GeneToExpressionSiteAssociation
@@ -1460,7 +1478,7 @@ type GeneToGoTermAssociation
     object: GeneOntologyClass!
   }
 
-type GeneToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureAssociationMixin, GeneToThingAssociationMixin
+type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1482,11 +1500,6 @@ type GeneToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureAssoc
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
-  }
-
-interface GeneToThingAssociationMixin
-  {
-    subject: GeneOrGeneProduct!
   }
 
 type Genome
@@ -1560,7 +1573,7 @@ type Genotype
     hasZygosity: Zygosity
   }
 
-type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, ThingToDiseaseAssociationMixin
+type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1583,7 +1596,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     subject: Genotype!
   }
 
-type GenotypeToDiseaseAssociation implements GenotypeToThingAssociationMixin, ThingToDiseaseAssociationMixin
+type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1604,6 +1617,11 @@ type GenotypeToDiseaseAssociation implements GenotypeToThingAssociationMixin, Th
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+  }
+
+interface GenotypeToEntityAssociationMixin
+  {
+    subject: Genotype!
   }
 
 type GenotypeToGeneAssociation
@@ -1646,7 +1664,7 @@ type GenotypeToGenotypePartAssociation
     object: Genotype!
   }
 
-type GenotypeToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureAssociationMixin, GenotypeToThingAssociationMixin
+type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GenotypeToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1668,11 +1686,6 @@ type GenotypeToPhenotypicFeatureAssociation implements ThingToPhenotypicFeatureA
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
-  }
-
-interface GenotypeToThingAssociationMixin
-  {
-    subject: Genotype!
   }
 
 type GenotypeToVariantAssociation
@@ -1943,7 +1956,7 @@ type MaterialSampleDerivationAssociation
     predicate: PredicateType!
   }
 
-type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociationMixin
+type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSampleToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -1963,23 +1976,8 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     category: [Association]!
   }
 
-interface MaterialSampleToThingAssociation
+interface MaterialSampleToEntityAssociationMixin
   {
-    id: String!
-    iri: IriType
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    predicate: PredicateType!
-    object: NamedThing!
-    relation: Uriorcurie!
-    negated: Boolean
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    type: String
-    category: [Association]!
     subject: MaterialSample!
   }
 
@@ -2150,7 +2148,7 @@ interface OrganismalEntity
     hasAttribute: [Attribute]
   }
 
-type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, ThingToDiseaseAssociationMixin
+type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2680,29 +2678,6 @@ type TaxonomicRank
     category: [NamedThing]!
   }
 
-interface ThingToDiseaseAssociationMixin
-  {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    object: Disease!
-  }
-
-interface ThingToDiseaseOrPhenotypicFeatureAssociationMixin
-  {
-    object: DiseaseOrPhenotypicFeature!
-  }
-
-interface ThingToPhenotypicFeatureAssociationMixin
-  {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
-    description: NarrativeText
-    object: PhenotypicFeature!
-  }
-
 interface ThingWithTaxon
   {
     inTaxon: [OrganismTaxon]
@@ -2759,7 +2734,7 @@ type Treatment
     hasPart: [DrugExposure]!
   }
 
-type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, ThingToDiseaseAssociationMixin
+type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2782,7 +2757,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     subject: SequenceVariant!
   }
 
-type VariantToDiseaseAssociation implements VariantToThingAssociationMixin, ThingToDiseaseAssociationMixin
+type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2805,7 +2780,12 @@ type VariantToDiseaseAssociation implements VariantToThingAssociationMixin, Thin
     onsetQualifier: Onset
   }
 
-type VariantToGeneAssociation implements VariantToThingAssociationMixin
+interface VariantToEntityAssociationMixin
+  {
+    subject: SequenceVariant!
+  }
+
+type VariantToGeneAssociation implements VariantToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2849,7 +2829,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     phenotypicState: DiseaseOrPhenotypicFeature
   }
 
-type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociationMixin, ThingToPhenotypicFeatureAssociationMixin
+type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2873,7 +2853,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociationM
     sexQualifier: BiologicalSex
   }
 
-type VariantToPopulationAssociation implements VariantToThingAssociationMixin, FrequencyQuantifier, FrequencyQualifierMixin
+type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, FrequencyQuantifier, FrequencyQualifierMixin
   {
     id: String!
     iri: IriType
@@ -2896,11 +2876,6 @@ type VariantToPopulationAssociation implements VariantToThingAssociationMixin, F
     hasTotal: Integer
     hasPercentage: Double
     frequencyQualifier: FrequencyValue
-  }
-
-interface VariantToThingAssociationMixin
-  {
-    subject: SequenceVariant!
   }
 
 type Zygosity
