@@ -5298,6 +5298,11 @@ classes:
       - UMLSSC:T055
       - UMLSST:inbe
 
+  death:
+    is_a: biological process
+    exact_mappings:
+      - GO:0016265
+
   ## (Bio)chemistry
 
   mixture:
@@ -6223,11 +6228,6 @@ classes:
     exact_mappings:
       - SNOMEDCT:32485007
       - WIKIDATA:Q3140971
-
-  death:
-    is_a: biological process
-    exact_mappings:
-      - GO:0016265
 
   socioeconomic attribute:
     is_a: attribute
