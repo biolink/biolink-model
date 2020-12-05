@@ -5840,7 +5840,8 @@ classes:
   exon:
     is_a: genomic entity
     description: >-
-      A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+      A region of the transcript sequence within a gene which is not
+      removed from the primary RNA transcript by RNA splicing
     exact_mappings:
       - SO:0000147
       - SIO:010445
@@ -6332,12 +6333,14 @@ classes:
     in_subset:
       - model_organism_database
 
-  genotype exposure:
-    is_a: genotype
+  genomic background exposure:
+    is_a: genomic entity
     mixins:
       - exposure event
+      - gene grouping mixin
     description: >-
-      A genotype exposure is where genetic background constitutes
+      A genomic background exposure is where an individual's specific genomic background
+      of genes, sequence variants or other pre-existing genomic conditions constitute
       a kind of 'exposure' to the organism, leading to or influencing an outcome.
     #exact_mappings:
     #  -
@@ -6368,26 +6371,37 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
+    description: >-
+      A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
     is_a: chemical exposure
     mixins:
       - mixture
-    description: >-
-      A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
     # exact_mappings:
     #  -
 
   drug exposure:
     aliases: ['drug intake', 'drug dose', 'medication intake']
+    description: >-
+      A drug exposure is an intake of a particular drug.
     is_a: drug
     mixins:
       - exposure event
-    description: >-
-      A drug exposure is an intake of a particular drug.
     broad_mappings:
       # slightly broader than just drug effects on a biological system
       - SIO:001005
     exact_mappings:
       - ECTO:0000509
+
+  drug to gene interaction exposure:
+    description: >-
+      drug to gene interaction exposure is a drug exposure is where the
+      interactions of the drug with specific genes are known to constitute
+      an 'exposure' to the organism, leading to or influencing an outcome.
+    is_a: drug exposure
+    mixins:
+      - gene grouping mixin
+    # exact_mappings:
+    #  -
 
   treatment:
     aliases: ['medical action', 'medical intervention']
@@ -6499,16 +6513,6 @@ classes:
       - outcome
     description: >-
       An outcome of death from resulting from an exposure event.
-
-  synthetic lethal:
-    description: >-
-      An outcome of death from resulting from gene (product)
-      to gene (product) and/or drug to gene interactions.
-    is_a: mortality outcome
-    mixins:
-      - gene grouping mixin
-    slots:
-      - has drug
 
   epidemiological outcome:
     is_a: biological entity
