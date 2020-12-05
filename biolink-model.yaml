@@ -865,12 +865,12 @@ slots:
   has gene or gene product:
     is_a: node property
     description: >-
-      connects an entity associated with one or more gene products
+      connects an entity with one or more gene products
     range: gene
     multivalued: true
 
   has gene:
-    is_a: node property
+    is_a: has gene or gene product
     description: >-
       connects an entity associated with one or more genes
     range: gene
@@ -892,17 +892,18 @@ slots:
       - WIKIDATA_PROPERTY:P274
 
   has constituent:
+    description: >-
+      one or more chemical substances within a mixture
     is_a: node property
     range: chemical substance
     multivalued: true
-    description: >-
-      one or more chemical substances within a mixture
 
   has drug:
-    is_a: node property
     description: >-
-      connects an entity to a single drug
+      entity has one or more drugs
+    is_a: node property
     range: drug
+    multivalued: true
 
   has active ingredient:
     is_a: node property
@@ -5289,6 +5290,11 @@ classes:
       - UMLSSC:T055
       - UMLSST:inbe
 
+  death:
+    is_a: biological process
+    exact_mappings:
+      - GO:0016265
+
   ## (Bio)chemistry
 
   mixture:
@@ -5999,7 +6005,7 @@ classes:
     in_subset:
       - model_organism_database
 
-  gene grouping:
+  gene grouping mixin:
     description: >-
       any grouping of multiple genes or gene products
     mixin: true
@@ -6020,7 +6026,7 @@ classes:
       - NCIT:C20130
       - WIKIDATA:Q417841
     mixins:
-      - gene grouping
+      - gene grouping mixin
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
@@ -6230,9 +6236,7 @@ classes:
 #      - has input
     slot_usage:
       has drug:
-        range: chemical substance
         required: true
-        multivalued: true
     broad_mappings:
       # slightly broader than just drug effects on a biological system
       - SIO:001005
@@ -6253,6 +6257,26 @@ classes:
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
+
+  mortality outcome:
+    description: >-
+      An outcome of death from resulting from an exposure event.
+    is_a: death
+    #
+    # Outcomes not yet implemented
+    #
+    #mixins:
+    #  - outcome
+
+  synthetic lethal:
+    description: >-
+      An outcome of death from resulting from gene (product)
+      to gene (product) and/or drug to gene interactions.
+    is_a: mortality outcome
+    mixins:
+      - gene grouping mixin
+    slots:
+      - has drug
 
 
   ## ------------
