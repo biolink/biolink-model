@@ -862,11 +862,19 @@ slots:
       connects a genomic feature to its sequence
     range: biological sequence
 
+  has gene or gene product:
+    is_a: node property
+    description: >-
+      connects an entity associated with one or more gene products
+    range: gene
+    multivalued: true
+
   has gene:
     is_a: node property
     description: >-
-      connects an entity to a single gene
+      connects an entity associated with one or more genes
     range: gene
+    multivalued: true
 
   has zygosity:
     is_a: node property
@@ -2351,7 +2359,8 @@ slots:
   has gene product:
     is_a: related to
     description: >-
-      holds between a gene and a transcribed and/or translated product generated from it
+      holds between a gene and a transcribed and/or
+      translated product generated from it
     domain: gene
     range: gene product
     in_subset:
@@ -5991,10 +6000,12 @@ classes:
       - model_organism_database
 
   gene grouping:
-    mixin: true
-    abstract: true
     description: >-
       any grouping of multiple genes or gene products
+    mixin: true
+    abstract: true
+    slots:
+      - has gene or gene product
 
   gene family:
     is_a: molecular entity
