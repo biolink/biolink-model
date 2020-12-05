@@ -722,7 +722,6 @@ message DiseaseOrPhenotypicFeature
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
  }
-// An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
  {
   id String = 1
@@ -732,14 +731,34 @@ message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  predicate PredicateType = 8
-  relation Uriorcurie = 9
-  optional negated Boolean = 10
-  repeated qualifiers OntologyClass = 11
-  repeated publications Publication = 12
-  optional type String = 13
-  repeated category Association = 14
-  subject DiseaseOrPhenotypicFeature = 15
+  subject NamedThing = 8
+  predicate PredicateType = 9
+  relation Uriorcurie = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional type String = 14
+  repeated category Association = 15
+  object AnatomicalEntity = 16
+ }
+// An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+message DiseaseOrPhenotypicFeatureToLocationAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  subject NamedThing = 8
+  predicate PredicateType = 9
+  relation Uriorcurie = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional type String = 14
+  repeated category Association = 15
   object AnatomicalEntity = 16
  }
 // An association between an exposure event and a disease.

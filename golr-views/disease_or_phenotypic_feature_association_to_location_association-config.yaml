@@ -1,7 +1,5 @@
 id: disease_or_phenotypic_feature_association_to_location_association
 schema_generating: true
-description: An association between either a disease or a phenotypic feature and an
-  anatomical entity, where the disease/feature manifests in that site.
 display_name: disease or phenotypic feature association to location association
 document_category: disease or phenotypic feature association to location association
 weight: 20
@@ -34,6 +32,10 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
+- id: subject
+  description: connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: subject
 - id: predicate
   description: A high-level grouping for the relationship type. AKA minimal predicate.
     This is analogous to category for nodes.
@@ -61,9 +63,5 @@ fields:
 - id: category
   display_name: association_category
   cardinality: multi
-- id: subject
-  description: disease or phenotype
-  display_name: disease or phenotypic feature association to thing association_subject
 - id: object
-  description: anatomical entity in which the disease or feature is found.
   display_name: disease or phenotypic feature association to location association_object

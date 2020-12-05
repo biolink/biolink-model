@@ -1,0 +1,21 @@
+digraph {
+	graph [bb="0,0,316.19,123"];
+	node [label="\N"];
+	"case to entity association mixin"	 [height=0.5,
+		label="case to entity association mixin",
+		pos="122.19,105",
+		width=3.3941];
+	subject	 [height=0.5,
+		pos="122.19,18",
+		width=0.99297];
+	"case to entity association mixin" -> subject	 [color=blue,
+		label=subject,
+		lp="141.69,61.5",
+		pos="e,122.19,36.003 122.19,86.974 122.19,75.192 122.19,59.561 122.19,46.158",
+		style=solid];
+	"case to entity association mixin_subject"	 [color=blue,
+		height=0.5,
+		label=case,
+		pos="289.19,105",
+		width=0.75];
+}
