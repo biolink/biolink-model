@@ -1357,6 +1357,7 @@ slots:
       the affected entity already exists, unlike predicates such as
       'affects risk for' and 'prevents, where the outcome is something
       that may or may not come to be.
+    inverse: affected by
     in_subset:
       - translator_minimal
     related_mappings:
@@ -1397,6 +1398,13 @@ slots:
       - RO:0002592
       - RO:0012003
       - SNOMED:has_pathological_process
+
+  affected by:
+    is_a: related to
+    description: >-
+      describes an entity of which the state or quality is affected by
+      another existing entity.
+    inverse: affects
 
   affects abundance of:
     description: >-
@@ -2185,6 +2193,7 @@ slots:
       - This is a grouping for process-process and entity-entity regulation.
     mixin: true
     abstract: true
+    inverse: regulated by
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - GO:regulated_by
@@ -2201,11 +2210,17 @@ slots:
       - RO:0002578
       - RTXKG1:regulates_activity_of
       - RTXKG1:regulates_expression_of
+  
+  regulated by:
+    mixin: true
+    abstract: true
+    inverse: regulates
 
   positively regulates:
     comments:
       - This is a grouping for positive process-process and entity-entity regulation.
     is_a: regulates
+    inverse: positively regulated by
     mixin: true
     abstract: true
     close_mappings:
@@ -2222,10 +2237,17 @@ slots:
       - RO:0002629
       - SEMMEDDB:augments
 
+  positively regulated by:
+    is_a: regulated by
+    mixin: true
+    abstract: true
+    inverse: positively regulates
+
   negatively regulates:
     comments:
       - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
+    inverse: negatively regulated by
     mixin: true
     abstract: true
     close_mappings:
@@ -2246,6 +2268,12 @@ slots:
       - GO:acts_upstream_of_negative_effect
       - GO:acts_upstream_of_or_within_negative_effect
       - RO:0002630
+  
+  negatively regulated by:
+    is_a: regulated by
+    mixin: true
+    abstract: true
+    inverse: negatively regulates
 
   regulates, process to process:
     is_a: affects
@@ -2339,6 +2367,7 @@ slots:
       describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
     in_subset:
       - translator_minimal
+    inverse: disrupted by
     exact_mappings:
       - SEMMEDDB:DISRUPTS
       - SEMMEDDB:disrupts
@@ -2347,6 +2376,12 @@ slots:
       - RO:0004024
       - RO:0004025
       - RTXKG1:disease_causes_disruption_of
+
+  disrupted by:
+    is_a: affected by
+    description: >-
+      describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
+    inverse: disrupts
 
   has gene product:
     is_a: related to
@@ -2881,6 +2916,7 @@ slots:
       holds between an entity whose application or use reduces the likelihood of a potential outcome.
       Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent
       the onset a disease or phenotypic feature.
+    inverse: prevented by
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -2889,6 +2925,12 @@ slots:
     narrow_mappings:
       # more restricted case of a material entity mitigating a pathological process
       - RO:0002599
+  
+  prevented by:
+    is_a: related to
+    description: >-
+      holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
+    inverse: prevents
 
   correlated with:
     is_a: related to
