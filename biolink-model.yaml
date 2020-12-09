@@ -2811,6 +2811,7 @@ slots:
     range: disease or phenotypic feature
     exact_mappings:
       - RO:0003309
+      - CTD:therapeutic
 
   treats:
     aliases: ['is substance that treats']
@@ -2828,7 +2829,6 @@ slots:
       - SEMMEDDB:TREATS
       - SEMMEDDB:treats
       - WIKIDATA_PROPERTY:P2175
-      - CTD:therapeutic
     broad_mappings:
       - RO:0003307
     narrow_mappings:
