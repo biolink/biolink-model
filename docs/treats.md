@@ -38,7 +38,6 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 | **Exact Mappings:** | | SEMMEDDB:TREATS |
 |  | | SEMMEDDB:treats |
 |  | | WIKIDATA_PROPERTY:P2175 |
-|  | | CTD:therapeutic |
 | **Narrow Mappings:** | | RO:0002606 |
 |  | | NCIT:regimen_has_accepted_use_for_disease |
 |  | | REPODB:clinically_tested_approved_unknown_phase |
