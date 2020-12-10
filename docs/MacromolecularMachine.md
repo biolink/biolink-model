@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachine](https://w3id.org/biolink/vocab/Macromolecul
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularActivity],[ChemicalToChemicalDerivationAssociation]-%20change%20is%20catalyzed%20by(i)%200..%2A%3E[MacromolecularMachine%7Cname:symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalDerivationAssociation]-%20change%20is%20catalyzed%20by%200..%2A%3E[MacromolecularMachine],[FunctionalAssociation]-%20subject%201..1%3E[MacromolecularMachine],[MolecularActivity]-%20enabled%20by%200..%2A%3E[MacromolecularMachine],[MacromolecularMachine]%5E-[MacromolecularComplex],[MacromolecularMachine]%5E-[GeneOrGeneProduct],[GenomicEntity]%5E-[MacromolecularMachine],[MacromolecularComplex],[GenomicEntity],[GeneOrGeneProduct],[FunctionalAssociation],[ChemicalToChemicalDerivationAssociation],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularActivity],[ChemicalToChemicalDerivationAssociation]-%20catalyst%20qualifier(i)%200..%2A%3E[MacromolecularMachine%7Cname:symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalDerivationAssociation]-%20catalyst%20qualifier%200..%2A%3E[MacromolecularMachine],[FunctionalAssociation]-%20subject%201..1%3E[MacromolecularMachine],[MolecularActivity]-%20enabled%20by%200..%2A%3E[MacromolecularMachine],[MacromolecularMachine]%5E-[MacromolecularComplex],[MacromolecularMachine]%5E-[GeneOrGeneProduct],[GenomicEntity]%5E-[MacromolecularMachine],[MacromolecularComplex],[GenomicEntity],[GeneOrGeneProduct],[FunctionalAssociation],[ChemicalToChemicalDerivationAssociation],[Attribute],[Association],[Agent])
 
 ---
 
@@ -31,8 +31,8 @@ URI: [biolink:MacromolecularMachine](https://w3id.org/biolink/vocab/Macromolecul
 
 ## Referenced by class
 
- *  **[Association](Association.md)** *[change is catalyzed by](change_is_catalyzed_by.md)*  <sub>0..*</sub>  **[MacromolecularMachine](MacromolecularMachine.md)**
- *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)*  <sub>0..*</sub>  **[MacromolecularMachine](MacromolecularMachine.md)**
+ *  **[Association](Association.md)** *[catalyst qualifier](catalyst_qualifier.md)*  <sub>0..*</sub>  **[MacromolecularMachine](MacromolecularMachine.md)**
+ *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞catalyst qualifier](chemical_to_chemical_derivation_association_catalyst_qualifier.md)*  <sub>0..*</sub>  **[MacromolecularMachine](MacromolecularMachine.md)**
  *  **[FunctionalAssociation](FunctionalAssociation.md)** *[functional association➞subject](functional_association_subject.md)*  <sub>REQ</sub>  **[MacromolecularMachine](MacromolecularMachine.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[molecular activity➞enabled by](molecular_activity_enabled_by.md)*  <sub>0..*</sub>  **[MacromolecularMachine](MacromolecularMachine.md)**
 

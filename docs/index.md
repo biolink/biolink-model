@@ -951,7 +951,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [association slot](association_slot.md) - any slot that relates an association to another entity
     * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
-    * [change is catalyzed by](change_is_catalyzed_by.md) - hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+    * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
     * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
     * [edge label](edge_label.md)
@@ -984,7 +984,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [stage qualifier](stage_qualifier.md) - stage during which gene or protein expression of takes place.
     * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
  * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
- * [change is catalyzed by](change_is_catalyzed_by.md) - hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+ * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
  * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
  * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
  * [edge label](edge_label.md)
