@@ -4202,6 +4202,16 @@ slots:
       - SEMMEDDB:measures
       - UMLS:measures
 
+  catalyst qualifier:
+    is_a: association slot
+    multivalued: true
+    range: macromolecular machine
+    description: >-
+      a qualifier that connects an association between two causally connected
+      entities (for example, two chemical entities, or a chemical entity in
+      that changes location) and the gene product, gene, or complex that
+      enables or catalyzes the change.
+
   expression site:
     description: >-
       location in which gene or protein expression takes place.
@@ -4285,14 +4295,6 @@ slots:
     is_a: association slot
     multivalued: true
     range: publication
-
-  change is catalyzed by:
-    is_a: association slot
-    multivalued: true
-    range: macromolecular machine
-    description: >-
-      hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in
-      that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
 
   sequence localization attribute:
     is_a: association slot
@@ -6877,14 +6879,14 @@ classes:
         R enabled-by P AND
         R type Reaction
         THEN
-        C1 derives-into C2 <<change is catalyzed by P>>
+        C1 derives-into C2 <<catalyst qualifier P>>
     is_a: chemical to chemical association
     defining_slots:
       - subject
       - predicate
       - object
     slots:
-      - change is catalyzed by
+      - catalyst qualifier
     slot_usage:
       subject:
         range: chemical substance
@@ -6896,10 +6898,11 @@ classes:
           the downstream chemical entity
       predicate:
         subproperty_of: derives into
-      change is catalyzed by:
+      catalyst qualifier:
         description: >-
-          this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the
-          subject chemical to transform into the object chemical
+          this connects the derivation edge to the molecular entity that
+          catalyzes the reaction that causes the subject chemical to
+          transform into the object chemical.
 
   chemical to disease or phenotypic feature association:
     description: >-
