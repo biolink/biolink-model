@@ -432,7 +432,7 @@ message ChemicalToChemicalAssociation
 //   R enabled-by P AND
 //   R type Reaction
 //   THEN
-//   C1 derives-into C2 <<change is catalyzed by P>>
+//   C1 derives-into C2 <<catalyst qualifier P>>
 message ChemicalToChemicalDerivationAssociation
  {
   id String = 1
@@ -448,7 +448,7 @@ message ChemicalToChemicalDerivationAssociation
   repeated publications Publication = 11
   optional type String = 12
   repeated category Association = 13
-  repeated changeIsCatalyzedBy MacromolecularMachine = 14
+  repeated catalystQualifier MacromolecularMachine = 14
   subject ChemicalSubstance = 15
   object ChemicalSubstance = 16
   predicate PredicateType = 17
