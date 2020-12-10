@@ -1988,16 +1988,16 @@
       },
       "ChemicalToChemicalDerivationAssociation": {
          "additionalProperties": false,
-         "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:\n  IF\n  R has-input C1 AND\n  R has-output C2 AND\n  R enabled-by P AND\n  R type Reaction\n  THEN\n  C1 derives-into C2 <<change is catalyzed by P>>",
+         "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:\n  IF\n  R has-input C1 AND\n  R has-output C2 AND\n  R enabled-by P AND\n  R type Reaction\n  THEN\n  C1 derives-into C2 <<catalyst qualifier P>>",
          "properties": {
-            "category": {
+            "catalyst_qualifier": {
+               "description": "this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical.",
                "items": {
                   "type": "string"
                },
                "type": "array"
             },
-            "change_is_catalyzed_by": {
-               "description": "this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical",
+            "category": {
                "items": {
                   "type": "string"
                },

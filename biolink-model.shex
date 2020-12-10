@@ -419,7 +419,7 @@ metatype:Nodeidentifier NONLITERAL
 <ChemicalToChemicalDerivationAssociation> CLOSED {
     (  $<ChemicalToChemicalDerivationAssociation_tes> (  &<ChemicalToChemicalAssociation_tes> ;
           rdf:type [ <ChemicalToChemicalAssociation> ] ? ;
-          <change_is_catalyzed_by> @<MacromolecularMachine> * ;
+          <catalyst_qualifier> @<MacromolecularMachine> * ;
           <subject> @<ChemicalSubstance> ;
           <object> @<ChemicalSubstance> ;
           <predicate> @<PredicateType>

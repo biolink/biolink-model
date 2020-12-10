@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-09 21:11
+# Generation date: 2020-12-10 01:17
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -3741,7 +3741,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     R enabled-by P AND
     R type Reaction
     THEN
-    C1 derives-into C2 <<change is catalyzed by P>>
+    C1 derives-into C2 <<catalyst qualifier P>>
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3756,15 +3756,15 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     subject: Union[str, ChemicalSubstanceId] = None
     object: Union[str, ChemicalSubstanceId] = None
     predicate: Union[str, PredicateType] = None
-    change_is_catalyzed_by: List[Union[str, MacromolecularMachineId]] = empty_list()
+    catalyst_qualifier: List[Union[str, MacromolecularMachineId]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, ChemicalToChemicalDerivationAssociationId):
             self.id = ChemicalToChemicalDerivationAssociationId(self.id)
-        self.change_is_catalyzed_by = [v if isinstance(v, MacromolecularMachineId)
-                                       else MacromolecularMachineId(v) for v in ([self.change_is_catalyzed_by] if isinstance(self.change_is_catalyzed_by, str) else self.change_is_catalyzed_by)]
+        self.catalyst_qualifier = [v if isinstance(v, MacromolecularMachineId)
+                                   else MacromolecularMachineId(v) for v in ([self.catalyst_qualifier] if isinstance(self.catalyst_qualifier, str) else self.catalyst_qualifier)]
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, ChemicalSubstanceId):
@@ -6002,6 +6002,9 @@ slots.interacting_molecules_category = Slot(uri=BIOLINK.interacting_molecules_ca
 slots.quantifier_qualifier = Slot(uri=BIOLINK.quantifier_qualifier, name="quantifier qualifier", curie=BIOLINK.curie('quantifier_qualifier'),
                       model_uri=BIOLINK.quantifier_qualifier, domain=Association, range=Optional[Union[str, OntologyClassId]])
 
+slots.catalyst_qualifier = Slot(uri=BIOLINK.catalyst_qualifier, name="catalyst qualifier", curie=BIOLINK.curie('catalyst_qualifier'),
+                      model_uri=BIOLINK.catalyst_qualifier, domain=Association, range=List[Union[str, MacromolecularMachineId]])
+
 slots.expression_site = Slot(uri=BIOLINK.expression_site, name="expression site", curie=BIOLINK.curie('expression_site'),
                       model_uri=BIOLINK.expression_site, domain=Association, range=Optional[Union[str, AnatomicalEntityId]])
 
@@ -6034,9 +6037,6 @@ slots.sequence_variant_qualifier = Slot(uri=BIOLINK.sequence_variant_qualifier, 
 
 slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=BIOLINK.curie('publications'),
                       model_uri=BIOLINK.publications, domain=Association, range=List[Union[str, PublicationId]])
-
-slots.change_is_catalyzed_by = Slot(uri=BIOLINK.change_is_catalyzed_by, name="change is catalyzed by", curie=BIOLINK.curie('change_is_catalyzed_by'),
-                      model_uri=BIOLINK.change_is_catalyzed_by, domain=Association, range=List[Union[str, MacromolecularMachineId]])
 
 slots.sequence_localization_attribute = Slot(uri=BIOLINK.sequence_localization_attribute, name="sequence localization attribute", curie=BIOLINK.curie('sequence_localization_attribute'),
                       model_uri=BIOLINK.sequence_localization_attribute, domain=GenomicSequenceLocalization, range=Optional[str])
@@ -6248,8 +6248,8 @@ slots.chemical_to_chemical_derivation_association_object = Slot(uri=BIOLINK.obje
 slots.chemical_to_chemical_derivation_association_predicate = Slot(uri=BIOLINK.predicate, name="chemical to chemical derivation association_predicate", curie=BIOLINK.curie('predicate'),
                       model_uri=BIOLINK.chemical_to_chemical_derivation_association_predicate, domain=ChemicalToChemicalDerivationAssociation, range=Union[str, PredicateType])
 
-slots.chemical_to_chemical_derivation_association_change_is_catalyzed_by = Slot(uri=BIOLINK.change_is_catalyzed_by, name="chemical to chemical derivation association_change is catalyzed by", curie=BIOLINK.curie('change_is_catalyzed_by'),
-                      model_uri=BIOLINK.chemical_to_chemical_derivation_association_change_is_catalyzed_by, domain=ChemicalToChemicalDerivationAssociation, range=List[Union[str, MacromolecularMachineId]])
+slots.chemical_to_chemical_derivation_association_catalyst_qualifier = Slot(uri=BIOLINK.catalyst_qualifier, name="chemical to chemical derivation association_catalyst qualifier", curie=BIOLINK.curie('catalyst_qualifier'),
+                      model_uri=BIOLINK.chemical_to_chemical_derivation_association_catalyst_qualifier, domain=ChemicalToChemicalDerivationAssociation, range=List[Union[str, MacromolecularMachineId]])
 
 slots.chemical_to_disease_or_phenotypic_feature_association_object = Slot(uri=BIOLINK.object, name="chemical to disease or phenotypic feature association_object", curie=BIOLINK.curie('object'),
                       model_uri=BIOLINK.chemical_to_disease_or_phenotypic_feature_association_object, domain=ChemicalToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
