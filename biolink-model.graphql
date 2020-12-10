@@ -493,7 +493,7 @@ type ChemicalToChemicalDerivationAssociation
     publications: [Publication]
     type: String
     category: [Association]!
-    changeIsCatalyzedBy: [MacromolecularMachine]
+    catalystQualifier: [MacromolecularMachine]
     subject: ChemicalSubstance!
     object: ChemicalSubstance!
     predicate: PredicateType!
