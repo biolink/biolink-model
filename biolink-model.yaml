@@ -5264,6 +5264,19 @@ classes:
       - GO
       - REACT
 
+  pathological process:
+    description: >-
+      A biologic function or a process having an abnormal or deleterious
+      effect at the subcellular, cellular, multicellular, or organismal level.
+    is_a: biological process
+    exact_mappings:
+      - OBI:1110122
+      - NCIT:C16956
+    narrow_mappings:
+      # metastasis
+      - NCIT:C19151
+      - EFO:0009708
+
   behavior:
     is_a: biological process
     exact_mappings:
