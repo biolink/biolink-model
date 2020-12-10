@@ -86,12 +86,12 @@ digraph {
 	relation	 [color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="1731,18",
+		pos="1687,18",
 		width=1.2638];
 	"chemical to chemical derivation association" -> relation	 [color=blue,
 		label=relation,
-		lp="1063,134.5",
-		pos="e,1685.6,19.594 1009.4,246.87 996.36,224.04 979.58,184.81 1000,160 1086.1,55.663 1519.6,27.025 1675.3,20.041",
+		lp="1060,134.5",
+		pos="e,1641.8,20.188 1009.4,246.91 996.46,224.12 979.73,184.94 1000,160 1079.9,61.9 1482.6,29.502 1631.6,20.776",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -139,41 +139,41 @@ digraph {
 		lp="1416.5,221.5",
 		pos="e,1448.1,191.34 1140.8,252.42 1228.9,243.06 1334.9,231.49 1345,229 1377.6,221 1413,206.89 1438.7,195.53",
 		style=solid];
-	"change is catalyzed by"	 [height=0.5,
-		pos="1626,178",
-		width=2.5276];
-	"chemical to chemical derivation association" -> "change is catalyzed by"	 [color=blue,
-		label="change is catalyzed by",
-		lp="1572,221.5",
-		pos="e,1580.2,193.59 1139.6,252.32 1158.5,250.44 1177.8,248.6 1196,247 1306.1,237.35 1335.2,248.01 1444,229 1487.2,221.47 1534.8,207.93 \
-1570.5,196.69",
+	"catalyst qualifier"	 [height=0.5,
+		pos="1604,178",
+		width=1.9318];
+	"chemical to chemical derivation association" -> "catalyst qualifier"	 [color=blue,
+		label="catalyst qualifier",
+		lp="1548.5,221.5",
+		pos="e,1565.6,193.09 1139.6,252.32 1158.5,250.44 1177.8,248.6 1196,247 1306.1,237.35 1335.5,249.93 1444,229 1482.4,221.6 1524.4,207.98 \
+1555.8,196.67",
 		style=solid];
 	subject	 [height=0.5,
-		pos="1771,178",
+		pos="1727,178",
 		width=0.99297];
 	"chemical to chemical derivation association" -> subject	 [color=blue,
 		label=subject,
-		lp="1706.5,221.5",
-		pos="e,1745.3,190.82 1137.2,252.04 1156.8,250.14 1177,248.37 1196,247 1294.1,239.97 1541.7,248.5 1638,229 1672.6,222.01 1709.9,207 1736.2,\
-195.06",
+		lp="1665.5,221.5",
+		pos="e,1701.7,191.02 1137.2,252.1 1156.8,250.2 1177,248.4 1196,247 1285.2,240.42 1510.5,247.43 1598,229 1631.3,222 1667,207.25 1692.4,\
+195.4",
 		style=solid];
 	object	 [height=0.5,
-		pos="1791,91",
+		pos="1747,91",
 		width=0.9027];
 	"chemical to chemical derivation association" -> object	 [color=blue,
 		label=object,
-		lp="1851,178",
-		pos="e,1811.2,105.27 1136.3,252.01 1156.2,250.09 1176.7,248.32 1196,247 1314.5,238.92 1613.7,252.59 1730,229 1770.2,220.86 1789.3,227.01 \
-1816,196 1836.4,172.43 1840.1,155.68 1828,127 1825.8,121.74 1822.4,116.86 1818.5,112.51",
+		lp="1807,178",
+		pos="e,1767.2,105.27 1136.7,252.01 1156.5,250.1 1176.8,248.34 1196,247 1305.4,239.39 1581.8,251.58 1689,229 1727.9,220.82 1746.3,226.22 \
+1772,196 1792.2,172.3 1796.1,155.68 1784,127 1781.8,121.74 1778.4,116.86 1774.5,112.51",
 		style=solid];
 	predicate	 [height=0.5,
-		pos="1938,178",
+		pos="1894,178",
 		width=1.1916];
 	"chemical to chemical derivation association" -> predicate	 [color=blue,
 		label=predicate,
-		lp="1912,221.5",
-		pos="e,1918.9,194.25 1135.8,251.95 1155.8,250.03 1176.5,248.27 1196,247 1269.4,242.24 1786.7,250.33 1857,229 1876.4,223.11 1895.8,211.25 \
-1910.7,200.44",
+		lp="1868,221.5",
+		pos="e,1874.9,194.24 1136.3,251.94 1156.2,250.03 1176.7,248.28 1196,247 1264.5,242.49 1747.4,248.98 1813,229 1832.4,223.09 1851.8,211.23 \
+1866.7,200.43",
 		style=solid];
 	association_type	 [color=blue,
 		height=0.5,
@@ -185,22 +185,22 @@ digraph {
 		label=association,
 		pos="1335,265",
 		width=1.3902];
-	"chemical to chemical derivation association_change is catalyzed by"	 [color=blue,
+	"chemical to chemical derivation association_catalyst qualifier"	 [color=blue,
 		height=0.5,
 		label="macromolecular machine",
 		pos="1504,265",
 		width=2.8164];
-	subject -> relation	 [pos="e,1734.3,36.239 1765.1,159.97 1760.6,146.12 1754.5,126.47 1750,109 1744.7,88.088 1739.7,64.188 1736.2,46.13",
+	subject -> relation	 [pos="e,1690.3,36.239 1721.1,159.97 1716.6,146.12 1710.5,126.47 1706,109 1700.7,88.088 1695.7,64.188 1692.2,46.13",
 		style=dotted];
 	subject -> object	 [label=relation,
-		lp="1803,134.5",
-		pos="e,1786.9,109 1775.2,159.97 1777.9,148.08 1781.6,132.25 1784.7,118.76"];
+		lp="1759,134.5",
+		pos="e,1742.9,109 1731.2,159.97 1733.9,148.08 1737.6,132.25 1740.7,118.76"];
 	"chemical to chemical derivation association_subject"	 [color=blue,
 		height=0.5,
 		label="chemical substance",
 		pos="1703,265",
 		width=2.2026];
-	object -> relation	 [pos="e,1745.2,35.261 1777.4,74.435 1769.8,65.207 1760.2,53.528 1751.7,43.191",
+	object -> relation	 [pos="e,1701.2,35.261 1733.4,74.435 1725.8,65.207 1716.2,53.528 1707.7,43.191",
 		style=dotted];
 	"chemical to chemical derivation association_object"	 [color=blue,
 		height=0.5,
