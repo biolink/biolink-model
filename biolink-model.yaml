@@ -680,16 +680,21 @@ slots:
 
   source data file:
     is_a: node property
-    domain: data set version
+    domain: dataset version
     range: data file
     broad_mappings:
       - dcterms:source
 
   source web page:
     is_a: node property
-    domain: data set summary
+    domain: dataset summary
     broad_mappings:
       - dcterms:source
+
+  source logo:
+    is_a: node property
+    domain: dataset summary
+    slot_uri: schema:logo
 
   retrieved on:
     is_a: node property
@@ -700,8 +705,8 @@ slots:
 
   version of:
     is_a: node property
-    domain: data set version
-    range: data set
+    domain: dataset version
+    range: dataset summary
     exact_mappings:
       - dcterms:isVersionOf
 
@@ -741,18 +746,21 @@ slots:
 
   download url:
     is_a: node property
-    domain: distribution level
+    domain: dataset distribution
     exact_mappings:
       - dcterms:downloadURL
+
+  ingest date:
+    is_a: node property
+    domain: dataset version
+    slot_uri: pav:version
 
   distribution:
     aliases: ['dataset']
     is_a: node property
-    domain: data set version
-    range: distribution level
-    exact_mappings:
-      - void:Dataset
-      - dctypes:Dataset
+    domain: dataset version
+    range: dataset distribution
+    slot_uri: dct:distribution
 
   published in:
     is_a: node property
@@ -4632,7 +4640,8 @@ classes:
     abstract: true
     is_a: named thing
     description: >-
-      a piece of information that typically describes some topic of discourse or is used as support.
+      a piece of information that typically describes
+      some topic of discourse or is used as support.
     slots:
       - license
       - rights
@@ -4690,25 +4699,33 @@ classes:
       - source version
       - retrieved on
 
-#  data set descriptor:
-#    mixin: true
-#    abstract: true
-
-  data set:
+  dataset:
+    description: >-
+      an item that refers to a collection of data files from a data source.
     is_a: information content entity
     exact_mappings:
       - IAO:0000100
       - dctypes:Dataset
 
-  data set version:
-    is_a: data set
+  dataset distribution:
+    is_a: dataset
+    description: >-
+      an item that holds distribution level information about a dataset.
     slots:
+      - download url
+
+  dataset version:
+    description: >-
+      an item that holds version level information about a dataset.
+    is_a: dataset
+    slots:
+      - source web page
       - source data file
-      - version of
+      - ingest date
       - distribution
 
   distribution level:
-    is_a: data set version
+    is_a: dataset version
     mixin: true
     abstract: true
     slots:
@@ -4716,12 +4733,15 @@ classes:
     exact_mappings:
       - dcat:Distribution
 
-  data set summary:
-    is_a: data set version
+  dataset summary:
+    description: >-
+      an item that holds summary level information about a dataset.
+    is_a: dataset
     mixin: true
     abstract: true
     slots:
       - source web page
+      - source logo
 
   confidence level:
     is_a: information content entity
