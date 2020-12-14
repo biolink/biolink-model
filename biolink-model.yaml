@@ -33,6 +33,7 @@ prefixes:
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DGIdb: 'https://www.dgidb.org/interaction_types'
+  dcat: 'http://www.w3.org/ns/dcat#'
   dct: 'http://purl.org/dc/terms/'
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
@@ -680,12 +681,11 @@ slots:
 
   ## Properties for Information Content Entity and Publication Nodes
 
-  source data file:
+  has dataset:
     is_a: node property
     domain: dataset version
-    range: data file
-    broad_mappings:
-      - dct:source
+    range: dataset
+    slot_uri: dct:source
 
   source web page:
     is_a: node property
@@ -700,7 +700,7 @@ slots:
 
   retrieved on:
     is_a: node property
-    domain: source file
+    domain: dataset
     range: date
     exact_mappings:
       - pav:retrievedOn
@@ -712,9 +712,9 @@ slots:
     exact_mappings:
       - dct:isVersionOf
 
-  source version:
+  version:
     is_a: node property
-    domain: source file
+    domain: dataset
     broad_mappings:
       - pav:version
       - owl:versionInfo
@@ -747,18 +747,27 @@ slots:
       - pav:createdWith
 
   download url:
+   is_a: node property
+    domain: information content entity
+    slot_uri: dcat:downloadURL
+
+  dataset download url:
+    is_a: node property
+    domain: dataset
+    slot_uri: dcat:downloadURL
+
+  distribution download url:
     is_a: node property
     domain: dataset distribution
     exact_mappings:
-      - dct:downloadURL
+      - dcat:downloadURL
 
   ingest date:
     is_a: node property
     domain: dataset version
     slot_uri: pav:version
 
-  distribution:
-    aliases: ['dataset']
+  has distribution:
     is_a: node property
     domain: dataset version
     range: dataset distribution
@@ -4690,20 +4699,9 @@ classes:
       - UMLSSC:T185
       - UMLSST:clas
 
-  data file:
-    is_a: information content entity
-    exact_mappings:
-      - EFO:0004095
-
-  source file:
-    is_a: data file
-    slots:
-      - source version
-      - retrieved on
-
   dataset:
     description: >-
-      an item that refers to a collection of data files from a data source.
+      an item that refers to a collection of data from a data source.
     is_a: information content entity
     exact_mappings:
       - IAO:0000100
@@ -4711,37 +4709,27 @@ classes:
       - schema:dataset
 
   dataset distribution:
-    is_a: dataset
+    is_a: information content entity
     description: >-
       an item that holds distribution level information about a dataset.
     slots:
-      - download url
+      - distribution download url
+    exact_mappings:
+      - dcat:Distribution
 
   dataset version:
     description: >-
       an item that holds version level information about a dataset.
-    is_a: dataset
+    is_a: information content entity
     slots:
-      - source web page
-      - source data file
+      - has dataset
       - ingest date
-      - distribution
-
-  distribution level:
-    is_a: dataset version
-    mixin: true
-    abstract: true
-    slots:
-      - download url
-    exact_mappings:
-      - dcat:Distribution
+      - has distribution
 
   dataset summary:
     description: >-
       an item that holds summary level information about a dataset.
-    is_a: dataset
-    mixin: true
-    abstract: true
+    is_a: information content entity
     slots:
       - source web page
       - source logo
