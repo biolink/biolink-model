@@ -33,6 +33,7 @@ prefixes:
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DGIdb: 'https://www.dgidb.org/interaction_types'
+  dct: 'http://purl.org/dc/terms/'
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
@@ -84,6 +85,7 @@ prefixes:
   RO: 'http://purl.obolibrary.org/obo/RO_'
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
   RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
+  schema: 'http://schema.org/'
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
@@ -481,7 +483,7 @@ slots:
       - gff3:Name
       - gpi:DB_Object_Name
     narrow_mappings:
-      - dcterms:title
+      - dct:title
       - WIKIDATA_PROPERTY:P1476
 
   source:
@@ -572,7 +574,7 @@ slots:
       a human-readable description of an entity
     in_subset:
       - translator_minimal
-    slot_uri: dcterms:description
+    slot_uri: dct:description
     exact_mappings:
       - IAO:0000115
       - skos:definitions
@@ -637,7 +639,7 @@ slots:
     description: >-
       date on which an entity was created. This can be applied to nodes or edges
     exact_mappings:
-      - dcterms:createdOn
+      - dct:createdOn
       - WIKIDATA_PROPERTY:P577
 
   update date:
@@ -683,13 +685,13 @@ slots:
     domain: dataset version
     range: data file
     broad_mappings:
-      - dcterms:source
+      - dct:source
 
   source web page:
     is_a: node property
     domain: dataset summary
     broad_mappings:
-      - dcterms:source
+      - dct:source
 
   source logo:
     is_a: node property
@@ -708,7 +710,7 @@ slots:
     domain: dataset version
     range: dataset summary
     exact_mappings:
-      - dcterms:isVersionOf
+      - dct:isVersionOf
 
   source version:
     is_a: node property
@@ -721,7 +723,7 @@ slots:
     is_a: node property
     domain: information content entity
     exact_mappings:
-      - dcterms:license
+      - dct:license
     narrow_mappings:
       - WIKIDATA_PROPERTY:P275
 
@@ -729,13 +731,13 @@ slots:
     is_a: node property
     domain: information content entity
     exact_mappings:
-      - dcterms:rights
+      - dct:rights
 
   format:
     is_a: node property
     domain: information content entity
     exact_mappings:
-      - dcterms:format
+      - dct:format
       - WIKIDATA_PROPERTY:P2701
 
   created_with:
@@ -748,7 +750,7 @@ slots:
     is_a: node property
     domain: dataset distribution
     exact_mappings:
-      - dcterms:downloadURL
+      - dct:downloadURL
 
   ingest date:
     is_a: node property
@@ -842,7 +844,7 @@ slots:
       executive  summary of a publication
     domain: publication
     exact_mappings:
-      - dcterms:abstract
+      - dct:abstract
       - WIKIDATA:Q333291
 
   keywords:
@@ -1243,7 +1245,7 @@ slots:
       - This is a grouping for predicates relating entities to their associated contributors realizing them
     abstract: true
     exact_mappings:
-      - dcterms:contributor
+      - dct:contributor
 
   provider:
     is_a: contributor
@@ -1260,7 +1262,7 @@ slots:
       parent's publication node and the publisher agent of the encompassing publication
       (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
     exact_mappings:
-      - dcterms:publisher
+      - dct:publisher
       - WIKIDATA_PROPERTY:P123
 
   editor:
@@ -1281,7 +1283,7 @@ slots:
     description: >-
       an instance of one (co-)creator primarily responsible for a written work
     exact_mappings:
-      - dcterms:creator
+      - dct:creator
       - WIKIDATA_PROPERTY:P50
 
   ## end of Publication related predicates
@@ -4582,7 +4584,7 @@ classes:
       - address
     exact_mappings:
       - prov:Agent
-      - dcterms:Agent
+      - dct:Agent
     narrow_mappings:
       # Organization
       - UMLSSG:ORGA
@@ -4706,6 +4708,7 @@ classes:
     exact_mappings:
       - IAO:0000100
       - dctypes:Dataset
+      - schema:dataset
 
   dataset distribution:
     is_a: dataset
@@ -4798,7 +4801,7 @@ classes:
           the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing)
           The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
       type:
-        slot_uri: dcterms:type
+        slot_uri: dct:type
         required: true
         description: >-
           Ontology term for publication type may be drawn from
