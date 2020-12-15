@@ -36,7 +36,7 @@ prefixes:
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
-  # EDAM-DATA: 'http://edamontology.org/data_'  # already defined in monarch_context of default_curi_maps?
+  EDAM-DATA: 'http://edamontology.org/data_'
   EDAM-FORMAT: 'http://edamontology.org/format_'
   EDAM-OPERATION: 'http://edamontology.org/operation_'
   EDAM-TOPIC: 'http://edamontology.org/topic_'
@@ -59,6 +59,7 @@ prefixes:
   ICD0: 'http://translator.ncats.nih.gov/ICD0_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  interpro: 'https://www.ebi.ac.uk/interpro/entry/'
   isbn: 'https://www.isbn-international.org/identifier/' # note: a resolvable base URI not available from isbn-international
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
@@ -6066,7 +6067,7 @@ classes:
       - PANTHER.FAMILY
       - HGNC.FAMILY
       - FlyBase ## FlyBase:FBgg
-      - InterPro # note: may be better to introduce a protein domain/family
+      - interpro # note: may be better to introduce a protein domain/family
     in_subset:
       - model_organism_database
 
