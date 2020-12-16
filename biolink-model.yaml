@@ -26,6 +26,7 @@ prefixes:
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
   # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
+  ChemBank: 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid='
   chembio: 'http://translator.ncats.nih.gov/chembio_'
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
@@ -52,6 +53,7 @@ prefixes:
   gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
   GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
+  GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
@@ -5384,17 +5386,25 @@ classes:
       - UMLSSC:T197
       - UMLSST:inch
     id_prefixes:
-      - CHEBI
-      - CHEMBL.COMPOUND
-      - DRUGBANK
       - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
       - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
       - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      - UNII
-      - KEGG
-      - gtpo
+      - IUPAC
+      - SMILES
     in_subset:
       - model_organism_database
 
