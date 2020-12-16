@@ -904,16 +904,6 @@ slots:
       connects an entity to a single drug
     range: drug
 
-  has active ingredient:
-    is_a: node property
-    domain: drug
-    range: chemical substance
-    multivalued: true
-    description: >-
-      one or more chemical substance which are the active ingredient(s) of a drug
-    exact_mappings:
-      - WIKIDATA:Q912807
-
   has excipient:
     is_a: node property
     domain: drug
@@ -3593,6 +3583,28 @@ slots:
     mappings:
       - CHEBI:25212
 
+  is active ingredient of:
+    is_a: part of
+    description: >-
+      holds between two chemical substances in which the first one is a part of the the second one, 
+      and is the biologically active component
+    in_subset:
+      - translator_minimal
+    inverse: has active ingredient
+    mappings:
+      - RO:0002249
+
+  has active ingredient:
+    is_a: has part
+    description: >-
+      holds between two chemical substances in which the second one is a part of the the first one, 
+      and is the biologically active component
+    in_subset:
+      - translator_minimal
+    inverse: is active ingredient of
+    mappings:
+      - RO:0002248
+
   manifestation of:
     is_a: related to
     description: >-
@@ -5412,7 +5424,6 @@ classes:
     description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     slots:
-      - has active ingredient
       - has excipient
     comments:
       - The CHEBI ID represents a role rather than a substance
