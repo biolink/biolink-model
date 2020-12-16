@@ -5850,7 +5850,7 @@ classes:
       - SIO:010035
       - WIKIDATA:Q7187
     id_prefixes:
-      - NCBIGene
+      - NCBIGENE
       - ENSEMBL
       - HGNC
       - UniProtKB
@@ -5863,7 +5863,7 @@ classes:
       - FB
       - RGD
       - SGD
-      - PomBase
+      - POMBASE
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -5960,7 +5960,7 @@ classes:
     is_a: RNA product
     id_prefixes:
       - RNACENTRAL
-      - NCBIGene
+      - NCBIGENE
       - ENSEMBL
     exact_mappings:
       - SO:0000655
@@ -6065,7 +6065,7 @@ classes:
     description: >-
       An allele that varies in its sequence from what is considered the reference allele at that locus.
     comments: >-
-      This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
+      This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more
       than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
     broad_mappings:
       # slightly broader semantics than SO:0001059 - 'sequence alteration'
@@ -6079,12 +6079,12 @@ classes:
       - SO:0001059
     id_prefixes:
       - CAID # ClinGen Allele Registry
-      - ClinVar
+      - CLINVAR
       - ClinVarVariant
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
-      - dbSNP
+      - DBSNP
       # - MYVARIANT_HG19 needs IRI mapping
       # - MYVARIANT_HG38 needs IRI mapping
       # - HGVS needs IRI mapping
