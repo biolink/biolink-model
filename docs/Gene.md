@@ -22,7 +22,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
 ## Identifier prefixes
 
- * NCBIGene
+ * NCBIGENE
  * ENSEMBL
  * HGNC
  * UniProtKB
@@ -35,7 +35,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
  * FB
  * RGD
  * SGD
- * PomBase
+ * POMBASE
 
 ## Parents
 

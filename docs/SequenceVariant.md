@@ -23,11 +23,11 @@ URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 ## Identifier prefixes
 
  * CAID
- * ClinVar
+ * CLINVAR
  * ClinVarVariant
  * WIKIDATA
  * DBSNP
- * dbSNP
+ * DBSNP
  * MGI
  * ZFIN
  * FlyBase
@@ -142,7 +142,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Local names:** | | allele (agr) |
 | **Alt Descriptions:** | | An entity that describes a single affected, endogenous allele.  These can be of any type that matches that definition (AGR) |
 |  | | A contiguous change at a Location (VMC) |
-| **Comments:** | | This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743) |
+| **Comments:** | | This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743) |
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | GENO:0000002 |
 |  | | WIKIDATA:Q15304597 |
