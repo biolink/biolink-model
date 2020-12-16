@@ -5352,6 +5352,8 @@ classes:
       - model_organism_database
 
   carbohydrate:
+    deprecated: >-
+      This class will be removed from the Biolink model
     is_a: chemical substance
     exact_mappings:
       # UMLS Semantic Type "Carbohydrate Sequence"
