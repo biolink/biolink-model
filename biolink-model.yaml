@@ -883,6 +883,14 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P274
 
+  is_metabolite:
+    is_a: node property
+    range: chemical substance
+    description: >-
+      indicates whether a chemical substance is a metabolite
+    exact_mappings:
+      - CHEBI:25212
+
   has constituent:
     is_a: node property
     range: chemical substance
@@ -5297,6 +5305,8 @@ classes:
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
+    slots:
+      - is metabolite
     broad_mappings:
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
@@ -5420,6 +5430,9 @@ classes:
       - UMLSST:vita
 
   metabolite:
+    deprecated: >-
+      Metabolite is replaced by a slot/role of chemical substance and will be removed 
+      from the Biolink model.
     is_a: chemical substance
     description: >-
       Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
