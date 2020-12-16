@@ -84,6 +84,7 @@ prefixes:
   RO: 'http://purl.obolibrary.org/obo/RO_'
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
   RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
+  RXCUI: 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm='
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
@@ -5443,6 +5444,8 @@ classes:
       - UMLSSC:T195
       - UMLSST:antb
     id_prefixes:
+      - RXCUI
+      - NDC
       - PHARMGKB.DRUG
 
   food:
