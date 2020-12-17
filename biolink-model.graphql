@@ -2216,6 +2216,22 @@ interface PathognomonicityQuantifier
   {
   }
 
+type PathologicalProcess
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+  }
+
 type Pathway
   {
     id: String!
@@ -2620,6 +2636,23 @@ type SeverityValue
     hasQualitativeValue: NamedThing
     iri: IriType
     source: LabelType
+  }
+
+type SiRNA
+  {
+    id: String!
+    iri: IriType
+    type: String
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    hasBiologicalSequence: BiologicalSequence
+    name: SymbolType
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type Snv
