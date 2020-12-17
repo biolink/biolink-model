@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-16 03:00
+# Generation date: 2020-12-17 20:08
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -448,6 +448,10 @@ class PhysiologicalProcessId(BiologicalProcessId):
     pass
 
 
+class PathologicalProcessId(BiologicalProcessId):
+    pass
+
+
 class BehaviorId(BiologicalProcessId):
     pass
 
@@ -585,6 +589,10 @@ class NoncodingRNAProductId(RNAProductId):
 
 
 class MicroRNAId(NoncodingRNAProductId):
+    pass
+
+
+class SiRNAId(NoncodingRNAProductId):
     pass
 
 
@@ -1966,6 +1974,30 @@ class PhysiologicalProcess(BiologicalProcess):
 
 
 @dataclass
+class PathologicalProcess(BiologicalProcess):
+    """
+    A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular,
+    multicellular, or organismal level.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcess
+    class_class_curie: ClassVar[str] = "biolink:PathologicalProcess"
+    class_name: ClassVar[str] = "pathological process"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcess
+
+    id: Union[str, PathologicalProcessId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, PathologicalProcessId):
+            self.id = PathologicalProcessId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Behavior(BiologicalProcess):
     _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
 
@@ -2823,6 +2855,31 @@ class MicroRNA(NoncodingRNAProduct):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, MicroRNAId):
             self.id = MicroRNAId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SiRNA(NoncodingRNAProduct):
+    """
+    A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular
+    duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both
+    strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.SiRNA
+    class_class_curie: ClassVar[str] = "biolink:SiRNA"
+    class_name: ClassVar[str] = "siRNA"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.SiRNA
+
+    id: Union[str, SiRNAId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, SiRNAId):
+            self.id = SiRNAId(self.id)
         super().__post_init__(**kwargs)
 
 

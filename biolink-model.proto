@@ -1942,6 +1942,22 @@ message PairwiseMolecularInteraction
   relation Uriorcurie = 16
   object MolecularEntity = 17
  }
+// A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+message PathologicalProcess
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
+ }
 message Pathway
  {
   id String = 1
@@ -2311,6 +2327,23 @@ message SeverityValue
   optional hasQualitativeValue NamedThing = 4
   optional iri IriType = 5
   optional source LabelType = 6
+ }
+// A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
+message SiRNA
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  repeated category NamedThing = 8
+  repeated inTaxon OrganismTaxon = 9
+  optional hasBiologicalSequence BiologicalSequence = 10
+  optional name SymbolType = 11
+  repeated synonym LabelType = 12
+  repeated xref IriType = 13
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
