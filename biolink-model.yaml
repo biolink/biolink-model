@@ -5979,6 +5979,25 @@ classes:
     in_subset:
       - model_organism_database
 
+  siRNA:
+    aliases: ['small interfering RNA', 'RNAi']
+    description: >-
+      A small RNA molecule that is the product of a longer exogenous or
+      endogenous dsRNA, which is either a bimolecular duplex or very long
+      hairpin, processed (via the Dicer pathway) such that numerous siRNAs
+      accumulate from both strands of the dsRNA. SRNAs trigger the cleavage
+      of their target molecules.
+    is_a: noncoding RNA product
+    exact_mappings:
+      - SO:0000646
+      - WIKIDATA:Q203221
+    id_prefixes:
+      - MIR
+      - HGNC
+      - WormBase
+    in_subset:
+      - model_organism_database
+
   macromolecular complex:
     is_a: macromolecular machine
     exact_mappings:
