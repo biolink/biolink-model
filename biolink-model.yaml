@@ -4180,14 +4180,13 @@ slots:
 
   macromolecular machine:
     description: >-
-      A union of gene, gene product, and macromolecular complex. These are
+      A union of gene locus, gene product, and macromolecular complex. These are
       the basic units of function in a cell. They either carry out individual
       biological activities, or they encode molecules which do this.
     mixin: true
     abstract: true
-    union_of:
-      - gene locus or gene product
-      - macromolecular complex
+    slots:
+      - name
     slot_usage:
       name:
         range: symbol type
@@ -4198,14 +4197,11 @@ slots:
 
   gene locus or gene product:
     description: >-
-      a union of genes or gene products.
+      a union of gene loci or gene products.
       Frequently an identifier for one will be used as proxy for another
     is_a: macromolecular machine
     mixin: true
     abstract: true
-    union_of:
-      - gene locus
-      - gene product
     id_prefixes:
       - CHEMBL.TARGET
       - IUPHAR.FAMILY
