@@ -41,6 +41,7 @@ URI: [biolink:xref](https://w3id.org/biolink/vocab/xref)
  * [ProteinIsoform](ProteinIsoform.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
+ * [SiRNA](SiRNA.md)
  * [Transcript](Transcript.md)
 
 ## Other properties

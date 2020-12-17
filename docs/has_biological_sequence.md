@@ -43,4 +43,5 @@ URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biolog
  * [Protein](Protein.md)
  * [ProteinIsoform](ProteinIsoform.md)
  * [ReagentTargetedGene](ReagentTargetedGene.md)
+ * [SiRNA](SiRNA.md)
  * [Transcript](Transcript.md)

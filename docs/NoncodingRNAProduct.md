@@ -15,7 +15,7 @@ URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAPr
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NoncodingRNAProduct%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;name(i):symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[NamedThing],[MicroRNA],[Attribute],[Agent],[RNAProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SiRNA],[OrganismTaxon],[NoncodingRNAProduct%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;name(i):symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SiRNA],[NoncodingRNAProduct]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[NamedThing],[MicroRNA],[Attribute],[Agent],[RNAProduct])
 
 ---
 
@@ -33,6 +33,7 @@ URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAPr
 ## Children
 
  * [MicroRNA](MicroRNA.md)
+ * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
 
 ## Referenced by class
 

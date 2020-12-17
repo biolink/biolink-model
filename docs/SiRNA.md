@@ -1,60 +1,37 @@
 ---
 parent: Entities
-title: biolink:BiologicalProcess
+title: biolink:SiRNA
 grand_parent: Classes
 layout: default
 ---
 
-# Class: BiologicalProcess
+# Class: SiRNA
 
 
-One or more causally connected executions of molecular functions
+A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
 
-URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProcess)
+URI: [biolink:SiRNA](https://w3id.org/biolink/vocab/SiRNA)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[PhysicalEntity],[Pathway],[PathologicalProcess],[Occurrent],[NamedThing],[MacromolecularMachineToBiologicalProcessAssociation],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcess]%5E-[PathologicalProcess],[BiologicalProcess]%5E-[Behavior],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[Behavior],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NoncodingRNAProduct]%5E-[SiRNA%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;name(i):symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon],[NoncodingRNAProduct],[NamedThing],[Attribute],[Agent])
 
 ---
 
 
 ## Identifier prefixes
 
- * GO
- * REACT
- * MetaCyc
- * KEGG
+ * MIR
+ * HGNC
+ * WormBase
 
 ## Parents
 
- *  is_a: [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
-
-## Uses Mixins
-
- *  mixin: [Occurrent](Occurrent.md) - A processual entity
-
-## Children
-
- * [Behavior](Behavior.md)
- * [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
- * [Pathway](Pathway.md)
- * [PhysiologicalProcess](PhysiologicalProcess.md)
-
-## Referenced by class
-
- *  **[MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)** *[macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)*  <sub>REQ</sub>  **[BiologicalProcess](BiologicalProcess.md)**
+ *  is_a: [NoncodingRNAProduct](NoncodingRNAProduct.md)
 
 ## Attributes
 
-
-### Inherited from biological process or activity:
-
- * [enabled by](enabled_by.md)  <sub>0..*</sub>
-    * Description: holds between a process and a physical entity, where the physical entity executes the process
-    * range: [PhysicalEntity](PhysicalEntity.md)
-    * in subsets: (translator_minimal)
 
 ### Inherited from entity:
 
@@ -96,16 +73,37 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from genomic entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
+    * Description: connects a genomic feature to its sequence
+    * range: [BiologicalSequence](types/BiologicalSequence.md)
+
+### Inherited from macromolecular machine:
+
+ * [macromolecular machine➞name](macromolecular_machine_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
 
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..*</sub>
+    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * in subsets: (translator_minimal)
+
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | GO:0008150 |
-|  | | SIO:000006 |
-|  | | WIKIDATA:Q2996394 |
+| **Aliases:** | | small interfering RNA |
+|  | | RNAi |
+| **In Subsets:** | | model_organism_database |
+| **Exact Mappings:** | | SO:0000646 |
+|  | | WIKIDATA:Q203221 |
 

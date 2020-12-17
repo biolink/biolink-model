@@ -1,50 +1,28 @@
 ---
 parent: Entities
-title: biolink:BiologicalProcess
+title: biolink:PathologicalProcess
 grand_parent: Classes
 layout: default
 ---
 
-# Class: BiologicalProcess
+# Class: PathologicalProcess
 
 
-One or more causally connected executions of molecular functions
+A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 
-URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProcess)
+URI: [biolink:PathologicalProcess](https://w3id.org/biolink/vocab/PathologicalProcess)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[PhysicalEntity],[Pathway],[PathologicalProcess],[Occurrent],[NamedThing],[MacromolecularMachineToBiologicalProcessAssociation],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcess]%5E-[PathologicalProcess],[BiologicalProcess]%5E-[Behavior],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[Behavior],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[BiologicalProcess]%5E-[PathologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing],[BiologicalProcess],[Attribute],[Agent])
 
 ---
 
-
-## Identifier prefixes
-
- * GO
- * REACT
- * MetaCyc
- * KEGG
 
 ## Parents
 
- *  is_a: [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
-
-## Uses Mixins
-
- *  mixin: [Occurrent](Occurrent.md) - A processual entity
-
-## Children
-
- * [Behavior](Behavior.md)
- * [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
- * [Pathway](Pathway.md)
- * [PhysiologicalProcess](PhysiologicalProcess.md)
-
-## Referenced by class
-
- *  **[MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)** *[macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)*  <sub>REQ</sub>  **[BiologicalProcess](BiologicalProcess.md)**
+ *  is_a: [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
 
 ## Attributes
 
@@ -105,7 +83,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | GO:0008150 |
-|  | | SIO:000006 |
-|  | | WIKIDATA:Q2996394 |
+| **Exact Mappings:** | | OBI:1110122 |
+|  | | NCIT:C16956 |
+| **Narrow Mappings:** | | NCIT:C19151 |
+|  | | EFO:0009708 |
 

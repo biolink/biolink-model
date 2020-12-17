@@ -64,6 +64,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
     * [NoncodingRNAProduct](NoncodingRNAProduct.md)
        * [MicroRNA](MicroRNA.md)
+       * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
  * [AdministrativeEntity](AdministrativeEntity.md)
     * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
  * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
@@ -151,6 +152,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
        * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
           * [Behavior](Behavior.md)
+          * [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
           * [Pathway](Pathway.md)
           * [PhysiologicalProcess](PhysiologicalProcess.md)
        * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -183,6 +185,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                       * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
                       * [NoncodingRNAProduct](NoncodingRNAProduct.md)
                          * [MicroRNA](MicroRNA.md)
+                         * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
                    * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
                       * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
                    * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
@@ -278,6 +281,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
              * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
                 * [Behavior](Behavior.md)
+                * [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
                 * [Pathway](Pathway.md)
                 * [PhysiologicalProcess](PhysiologicalProcess.md)
              * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -310,6 +314,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                             * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
                             * [NoncodingRNAProduct](NoncodingRNAProduct.md)
                                * [MicroRNA](MicroRNA.md)
+                               * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
                          * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
                             * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
                          * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase

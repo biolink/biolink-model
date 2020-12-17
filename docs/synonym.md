@@ -36,6 +36,7 @@ URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
  * [NoncodingRNAProduct](NoncodingRNAProduct.md)
  * [Protein](Protein.md)
  * [ProteinIsoform](ProteinIsoform.md)
+ * [SiRNA](SiRNA.md)
  * [Transcript](Transcript.md)
 
 ## Other properties

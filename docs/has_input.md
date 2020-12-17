@@ -31,6 +31,7 @@ URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
  * [Behavior](Behavior.md)
  * [BiologicalProcess](BiologicalProcess.md)
  * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
+ * [PathologicalProcess](PathologicalProcess.md)
  * [Pathway](Pathway.md)
  * [PhysiologicalProcess](PhysiologicalProcess.md)
 
