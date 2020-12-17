@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-15 14:55
+# Generation date: 2020-12-16 03:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -41,11 +41,11 @@ CHEMBL_MECHANISM = CurieNamespace('CHEMBL_MECHANISM', 'https://www.ebi.ac.uk/che
 CHEMBL_TARGET = CurieNamespace('CHEMBL_TARGET', 'http://identifiers.org/chembl.target/')
 CID = CurieNamespace('CID', 'http://pubchem.ncbi.nlm.nih.gov/compound/')
 CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
+CLINVAR = CurieNamespace('CLINVAR', 'http://identifiers.org/clinvar/')
 CLO = CurieNamespace('CLO', 'http://purl.obolibrary.org/obo/CLO_')
 COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://purl.org/coar/resource_type/')
 CPT = CurieNamespace('CPT', 'https://www.ama-assn.org/practice-management/cpt/')
 CTD = CurieNamespace('CTD', 'http://translator.ncats.nih.gov/CTD_')
-CLINVAR = CurieNamespace('ClinVar', 'http://www.ncbi.nlm.nih.gov/clinvar/')
 CLINVARVARIANT = CurieNamespace('ClinVarVariant', 'http://www.ncbi.nlm.nih.gov/clinvar/variation/')
 DBSNP = CurieNamespace('DBSNP', 'http://identifiers.org/dbsnp/')
 DGIDB = CurieNamespace('DGIdb', 'https://www.dgidb.org/interaction_types')
@@ -96,7 +96,7 @@ MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
 METACYC = CurieNamespace('MetaCyc', 'http://translator.ncats.nih.gov/MetaCyc_')
-NCBIGENE = CurieNamespace('NCBIGene', 'http://www.ncbi.nlm.nih.gov/gene/')
+NCBIGENE = CurieNamespace('NCBIGENE', 'http://identifiers.org/ncbigene/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 NDDF = CurieNamespace('NDDF', 'http://purl.bioontology.org/ontology/NDDF/')
@@ -116,11 +116,11 @@ PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'http://identifiers.org/
 PHAROS = CurieNamespace('PHAROS', 'http://pharos.nih.gov')
 PMID = CurieNamespace('PMID', 'http://www.ncbi.nlm.nih.gov/pubmed/')
 PO = CurieNamespace('PO', 'http://purl.obolibrary.org/obo/PO_')
+POMBASE = CurieNamespace('POMBASE', 'http://identifiers.org/pombase/')
 PR = CurieNamespace('PR', 'http://purl.obolibrary.org/obo/PR_')
 PUBCHEM_COMPOUND = CurieNamespace('PUBCHEM_COMPOUND', 'http://identifiers.org/pubchem.compound/')
 PUBCHEM_SUBSTANCE = CurieNamespace('PUBCHEM_SUBSTANCE', 'http://identifiers.org/pubchem.substance/')
 PATHWHIZ = CurieNamespace('PathWhiz', 'http://smpdb.ca/pathways/#')
-POMBASE = CurieNamespace('PomBase', 'https://www.pombase.org/spombe/result/')
 REACT = CurieNamespace('REACT', 'http://www.reactome.org/PathwayBrowser/#/')
 REPODB = CurieNamespace('REPODB', 'http://apps.chiragjpgroup.org/repoDB/')
 RGD = CurieNamespace('RGD', 'http://identifiers.org/rgd/')
@@ -164,7 +164,6 @@ ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.or
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
 CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
-DBSNP = CurieNamespace('dbSNP', 'http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 DICTYBASE = CurieNamespace('dictyBase', 'http://dictybase.org/gene/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
