@@ -4177,7 +4177,7 @@ slots:
       - SEMMEDDB:measures
       - UMLS:measures
 
-  ## Genomic  Mixins
+  ## Genomic Mixins
 
   macromolecular machine:
     description: >-
@@ -4188,13 +4188,16 @@ slots:
     abstract: true
     slots:
       - name
-    slot_usage:
-      name:
-        range: symbol type
-        description: >-
-          genes are typically designated by a short symbol and a full name.
-          We map the symbol to the default display name and use an
-          additional slot for full name
+    #
+    # BiolinkML doesn't seem to parse out slot_usage within mixins
+    #
+    #slot_usage:
+    #  name:
+    #    range: symbol type
+    #    description: >-
+    #      genes are typically designated by a short symbol and a full name.
+    #      We map the symbol to the default display name and use an
+    #      additional slot for full name
 
   gene locus or gene product:
     description: >-
