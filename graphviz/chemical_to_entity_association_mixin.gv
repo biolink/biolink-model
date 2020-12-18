@@ -1,21 +1,27 @@
 digraph {
-	graph [bb="0,0,456.03,123"];
+	graph [bb="0,0,590.38,123"];
 	node [label="\N"];
 	"chemical to entity association mixin"	 [height=0.5,
 		label="chemical to entity association mixin",
-		pos="139.74,105",
+		pos="274.09,105",
 		width=3.8816];
+	"molecular entity to entity association mixin"	 [height=0.5,
+		pos="165.09,18",
+		width=4.5857];
+	"chemical to entity association mixin" -> "molecular entity to entity association mixin"	 [label=is_a,
+		lp="238.09,61.5",
+		pos="e,187.75,36.091 251.76,87.184 235.56,74.251 213.44,56.599 195.61,42.362"];
 	subject	 [height=0.5,
-		pos="139.74,18",
+		pos="384.09,18",
 		width=0.99297];
 	"chemical to entity association mixin" -> subject	 [color=blue,
 		label=subject,
-		lp="159.24,61.5",
-		pos="e,139.74,36.003 139.74,86.974 139.74,75.192 139.74,59.561 139.74,46.158",
+		lp="355.59,61.5",
+		pos="e,364.54,33.462 296.61,87.184 313.94,73.475 337.98,54.464 356.47,39.838",
 		style=solid];
 	"chemical to entity association mixin_subject"	 [color=blue,
 		height=0.5,
 		label="chemical substance",
-		pos="376.74,105",
+		pos="511.09,105",
 		width=2.2026];
 }
