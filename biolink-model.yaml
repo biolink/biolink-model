@@ -433,12 +433,13 @@ slots:
       An IRI for an entity. This is determined by the id using expansion rules.
     range: iri type
 
-  url:
+  primary web url:
     description: >-
       Human-consumable URL to link out and provide additional
       information about an attribute (not the node or the edge).
     domain: attribute
     range: uriorcurie
+    multivalued: true
     in_subset:
       - translator_minimal
       - samples
@@ -4351,7 +4352,7 @@ classes:
       - has quantitative value
       - has qualitative value
       - iri                    # was to be used to model TRAPI 'url' but now deprecated
-      - url                    # 'url'
+      - primary web url        # 'url'
       - source                 # 'source'
     slot_usage:
       name:
@@ -4361,7 +4362,7 @@ classes:
           to the name associated with the 'has attribute type' slot ontology term.
       iri:
         deprecated: >-
-          This slot is deprecated in favor of 'url' slot.
+          This slot is deprecated in favor of 'primary web url' slot.
     id_prefixes:
       - EDAM-DATA
       - EDAM-FORMAT
@@ -4446,7 +4447,8 @@ classes:
     abstract: true
     slots:
       - id
-      - iri
+      - iri                    # now deprecated
+      - primary web url        # 'url'
       - category
       - type   # rdf:type
       - name
@@ -4454,6 +4456,10 @@ classes:
       - source
       - provided by
       - has attribute
+    slot_usage:
+      iri:
+        deprecated: >-
+          This slot is deprecated in favor of 'primary web url' slot.
 
   named thing:
     is_a: entity
