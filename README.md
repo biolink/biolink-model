@@ -57,33 +57,35 @@ be relatively simple to view and edit in its native form.
 
 The yaml definition is currently used to derive:
 
- - [GOlr YAML schemas](golr-views)
+  - [JSON Schema](json-schema)
+  - [Python dataclasses](biolink/model.py)
+  - [Java code gen](java)
+  - [ProtoBuf definitions](biolink-model.proto)
+  - [GraphQL](biolink-model.graphql)
+  - [RDF](biolink-model.ttl)
+  - [OWL](biolink-model.owl.ttl)
+  - [RDF Shape Expressions](biolink-model.shex)
+  - [JSON-LD context](context.jsonld)
+  - [Graphviz](graphviz)
+  - [GOlr YAML schemas](golr-views)
     - these can be compiled down to Solr XML schemas
     - these are also intermediate targets used within the BBOP/AmiGO framework
- - [JSON Schema](json-schema)
- - [Python dataclasses](biolink/model.py)
- - [marshmallow schema definitions](biolink/schema.py)
-    - can be used to serialize/deserialize python object model to JSON and YAML
- - [Java code gen](java)
-    - [Jackson annotations](https://github.com/FasterXML/jackson-annotations) used be default
-    - generated from JSON schema
- - [ProtoBuf definitions](proto)
- - [ontology](ontology)
- - [graphviz](graphviz) to replace existing cmaps
- - [markdown docs](docs)
- - [JSON-LD context](context.jsonld)
+  - [Markdown documentation](docs)
+
 
 
 
 ## Make and build instructions
 
-Prerequisites: Python 3.7+ and pipenv:
+Prerequisites: Python 3.7+ and pipenv
+
+To install pipenv,
 
 ```sh
 pip3 install pipenv
 ```
 
-To install the project:
+To install the project,
 ```sh
 make install
 ```
