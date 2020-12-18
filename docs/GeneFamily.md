@@ -25,7 +25,7 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
  * PANTHER.FAMILY
  * HGNC.FAMILY
  * FlyBase
- * InterPro
+ * interpro
 
 ## Parents
 
