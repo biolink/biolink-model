@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-15 14:55
+# Generation date: 2020-12-17 20:08
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -41,11 +41,11 @@ CHEMBL_MECHANISM = CurieNamespace('CHEMBL_MECHANISM', 'https://www.ebi.ac.uk/che
 CHEMBL_TARGET = CurieNamespace('CHEMBL_TARGET', 'http://identifiers.org/chembl.target/')
 CID = CurieNamespace('CID', 'http://pubchem.ncbi.nlm.nih.gov/compound/')
 CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
+CLINVAR = CurieNamespace('CLINVAR', 'http://identifiers.org/clinvar/')
 CLO = CurieNamespace('CLO', 'http://purl.obolibrary.org/obo/CLO_')
 COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://purl.org/coar/resource_type/')
 CPT = CurieNamespace('CPT', 'https://www.ama-assn.org/practice-management/cpt/')
 CTD = CurieNamespace('CTD', 'http://translator.ncats.nih.gov/CTD_')
-CLINVAR = CurieNamespace('ClinVar', 'http://www.ncbi.nlm.nih.gov/clinvar/')
 CLINVARVARIANT = CurieNamespace('ClinVarVariant', 'http://www.ncbi.nlm.nih.gov/clinvar/variation/')
 DBSNP = CurieNamespace('DBSNP', 'http://identifiers.org/dbsnp/')
 DGIDB = CurieNamespace('DGIdb', 'https://www.dgidb.org/interaction_types')
@@ -96,7 +96,7 @@ MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
 METACYC = CurieNamespace('MetaCyc', 'http://translator.ncats.nih.gov/MetaCyc_')
-NCBIGENE = CurieNamespace('NCBIGene', 'http://www.ncbi.nlm.nih.gov/gene/')
+NCBIGENE = CurieNamespace('NCBIGENE', 'http://identifiers.org/ncbigene/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 NDDF = CurieNamespace('NDDF', 'http://purl.bioontology.org/ontology/NDDF/')
@@ -116,11 +116,11 @@ PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'http://identifiers.org/
 PHAROS = CurieNamespace('PHAROS', 'http://pharos.nih.gov')
 PMID = CurieNamespace('PMID', 'http://www.ncbi.nlm.nih.gov/pubmed/')
 PO = CurieNamespace('PO', 'http://purl.obolibrary.org/obo/PO_')
+POMBASE = CurieNamespace('POMBASE', 'http://identifiers.org/pombase/')
 PR = CurieNamespace('PR', 'http://purl.obolibrary.org/obo/PR_')
 PUBCHEM_COMPOUND = CurieNamespace('PUBCHEM_COMPOUND', 'http://identifiers.org/pubchem.compound/')
 PUBCHEM_SUBSTANCE = CurieNamespace('PUBCHEM_SUBSTANCE', 'http://identifiers.org/pubchem.substance/')
 PATHWHIZ = CurieNamespace('PathWhiz', 'http://smpdb.ca/pathways/#')
-POMBASE = CurieNamespace('PomBase', 'https://www.pombase.org/spombe/result/')
 REACT = CurieNamespace('REACT', 'http://www.reactome.org/PathwayBrowser/#/')
 REPODB = CurieNamespace('REPODB', 'http://apps.chiragjpgroup.org/repoDB/')
 RGD = CurieNamespace('RGD', 'http://identifiers.org/rgd/')
@@ -164,7 +164,6 @@ ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.or
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
 CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
-DBSNP = CurieNamespace('dbSNP', 'http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 DICTYBASE = CurieNamespace('dictyBase', 'http://dictybase.org/gene/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
@@ -449,6 +448,10 @@ class PhysiologicalProcessId(BiologicalProcessId):
     pass
 
 
+class PathologicalProcessId(BiologicalProcessId):
+    pass
+
+
 class BehaviorId(BiologicalProcessId):
     pass
 
@@ -586,6 +589,10 @@ class NoncodingRNAProductId(RNAProductId):
 
 
 class MicroRNAId(NoncodingRNAProductId):
+    pass
+
+
+class SiRNAId(NoncodingRNAProductId):
     pass
 
 
@@ -1967,6 +1974,30 @@ class PhysiologicalProcess(BiologicalProcess):
 
 
 @dataclass
+class PathologicalProcess(BiologicalProcess):
+    """
+    A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular,
+    multicellular, or organismal level.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcess
+    class_class_curie: ClassVar[str] = "biolink:PathologicalProcess"
+    class_name: ClassVar[str] = "pathological process"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcess
+
+    id: Union[str, PathologicalProcessId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, PathologicalProcessId):
+            self.id = PathologicalProcessId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Behavior(BiologicalProcess):
     _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
 
@@ -2824,6 +2855,31 @@ class MicroRNA(NoncodingRNAProduct):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, MicroRNAId):
             self.id = MicroRNAId(self.id)
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SiRNA(NoncodingRNAProduct):
+    """
+    A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular
+    duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both
+    strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.SiRNA
+    class_class_curie: ClassVar[str] = "biolink:SiRNA"
+    class_name: ClassVar[str] = "siRNA"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.SiRNA
+
+    id: Union[str, SiRNAId] = None
+    category: List[Union[str, NamedThingId]] = empty_list()
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, SiRNAId):
+            self.id = SiRNAId(self.id)
         super().__post_init__(**kwargs)
 
 
