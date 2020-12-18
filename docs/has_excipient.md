@@ -26,6 +26,8 @@ URI: [biolink:has_excipient](https://w3id.org/biolink/vocab/has_excipient)
 ## Used by
 
  * [Drug](Drug.md)
+ * [DrugExposure](DrugExposure.md)
+ * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
 
 ## Other properties
 

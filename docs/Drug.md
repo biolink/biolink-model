@@ -15,7 +15,7 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[ChemicalSubstance]%3Chas%20excipient%200..%2A-%20[Drug%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance]%3Chas%20active%20ingredient%200..%2A-%20[Drug],[Drug]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Drug],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[DrugToEntityAssociationMixin],[DrugExposure],[ChemicalSubstance]%3Chas%20excipient%200..%2A-%20[Drug%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance]%3Chas%20active%20ingredient%200..%2A-%20[Drug],[DrugToEntityAssociationMixin]-%20subject%201..1%3E[Drug],[Treatment]-%20has%20drug%200..%2A%3E[Drug],[Drug]uses%20-.-%3E[Mixture],[Drug]%5E-[DrugExposure],[MolecularEntity]%5E-[Drug],[Treatment],[ChemicalSubstance],[Attribute],[Agent])
 
 ---
 
@@ -32,9 +32,14 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
  *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
 
+## Children
+
+ * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular drug.
+
 ## Referenced by class
 
- *  **[NamedThing](NamedThing.md)** *[has drug](has_drug.md)*  <sub>OPT</sub>  **[Drug](Drug.md)**
+ *  **[DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md)** *[drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[Drug](Drug.md)**
+ *  **[NamedThing](NamedThing.md)** *[has drug](has_drug.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
 
 ## Attributes
 

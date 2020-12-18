@@ -15,7 +15,7 @@ URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[EntityToDiseaseAssociationMixin],[DiseaseToExposureAssociation],[DiseaseToEntityAssociationMixin],[DiseaseOrPhenotypicFeature],[DiseaseToEntityAssociationMixin]-%20subject%201..1%3E[Disease%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DiseaseToExposureAssociation]-%20subject%201..1%3E[Disease],[EntityToDiseaseAssociationMixin]-%20object%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[EntityToDiseaseAssociationMixin],[DiseaseToEntityAssociationMixin],[DiseaseOrPhenotypicFeature],[DiseaseToEntityAssociationMixin]-%20subject%201..1%3E[Disease%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[EntityToDiseaseAssociationMixin]-%20object%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease],[Attribute],[Agent])
 
 ---
 
@@ -46,7 +46,6 @@ URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 ## Referenced by class
 
  *  **[DiseaseToEntityAssociationMixin](DiseaseToEntityAssociationMixin.md)** *[disease to entity association mixin➞subject](disease_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[Disease](Disease.md)**
- *  **[DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)** *[disease to exposure association➞subject](disease_to_exposure_association_subject.md)*  <sub>REQ</sub>  **[Disease](Disease.md)**
  *  **[EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md)** *[entity to disease association mixin➞object](entity_to_disease_association_mixin_object.md)*  <sub>REQ</sub>  **[Disease](Disease.md)**
  *  **[NamedThing](NamedThing.md)** *[manifestation of](manifestation_of.md)*  <sub>0..*</sub>  **[Disease](Disease.md)**
 

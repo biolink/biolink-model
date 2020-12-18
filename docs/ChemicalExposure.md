@@ -8,25 +8,29 @@ layout: default
 # Class: ChemicalExposure
 
 
-A chemical exposure is an intake of a particular chemical substance
+A chemical exposure is an intake of a particular chemical substance, other than a drug.
 
 URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ExposureEvent],[DrugExposure],[ChemicalExposure%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[DrugExposure],[ExposureEvent]%5E-[ChemicalExposure],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ExposureEvent],[ComplexChemicalExposure],[ChemicalSubstance],[ChemicalExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[ChemicalExposure]%5E-[ComplexChemicalExposure],[ChemicalSubstance]%5E-[ChemicalExposure],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ *  is_a: [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+
+## Uses Mixins
+
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 
 ## Children
 
- * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
+ * [ComplexChemicalExposure](ComplexChemicalExposure.md) - A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
 
 ## Referenced by class
 
@@ -74,10 +78,23 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from exposure event:
+
+ * [timepoint](timepoint.md)  <sub>OPT</sub>
+    * Description: a point in time
+    * range: [TimeType](types/TimeType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
+
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..*</sub>
+    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * in subsets: (translator_minimal)
 
 ## Other properties
 

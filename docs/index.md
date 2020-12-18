@@ -28,25 +28,34 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [DiseaseOrPhenotypicFeatureToEntityAssociationMixin](DiseaseOrPhenotypicFeatureToEntityAssociationMixin.md)
  * [DiseaseToEntityAssociationMixin](DiseaseToEntityAssociationMixin.md)
  * [DistributionLevel](DistributionLevel.md)
+ * [DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md) - An interaction between a drug and another entity
  * [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
  * [EntityToDiseaseOrPhenotypicFeatureAssociationMixin](EntityToDiseaseOrPhenotypicFeatureAssociationMixin.md)
+ * [EntityToExposureEventAssociationMixin](EntityToExposureEventAssociationMixin.md) - An association between some entity and an exposure event.
  * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations.
     * [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
     * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
+ * [EntityToOutcomeAssociationMixin](EntityToOutcomeAssociationMixin.md) - An association between some entity and an outcome
+ * [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ * [ExposureEventToEntityAssociationMixin](ExposureEventToEntityAssociationMixin.md) - An association between some exposure event and some entity.
  * [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for frequency type associations
     * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations.
        * [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
        * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [GeneGrouping](GeneGrouping.md) - any grouping of multiple genes or gene products
+ * [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
  * [GeneProductIsoform](GeneProductIsoform.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
  * [GeneToEntityAssociationMixin](GeneToEntityAssociationMixin.md)
  * [GenotypeToEntityAssociationMixin](GenotypeToEntityAssociationMixin.md)
  * [MaterialSampleToEntityAssociationMixin](MaterialSampleToEntityAssociationMixin.md) - An association between a material sample and something.
  * [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
  * [ModelToDiseaseAssociationMixin](ModelToDiseaseAssociationMixin.md) - This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
+ * [MolecularEntityToEntityAssociationMixin](MolecularEntityToEntityAssociationMixin.md) - An interaction between a molecular entity and another entity
+    * [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
+    * [DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md) - An interaction between a drug and another entity
  * [Occurrent](Occurrent.md) - A processual entity
     * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
+ * [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
  * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
  * [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
  * [RelationshipQuantifier](RelationshipQuantifier.md)
@@ -82,11 +91,13 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
           * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
              * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
+          * [ClinicalMeasurement](ClinicalMeasurement.md) - A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
           * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
        * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
        * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
           * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
        * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
+       * [SocioeconomicAttribute](SocioeconomicAttribute.md) - Attributes relating to a socioeconomic manifestation
        * [Zygosity](Zygosity.md)
     * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
  * [Article](Article.md)
@@ -105,8 +116,10 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [ContributorAssociation](ContributorAssociation.md) - Any association between an entity (such as a publication) and various agents that contribute to its realisation
     * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
     * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
-    * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md) - An association between an exposure event and a disease.
+    * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) - An association between an exposure event and a disease.
     * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
+    * [DrugToGeneAssociation](DrugToGeneAssociation.md) - An interaction between a drug and a gene or gene product.
+    * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) - An association between an exposure event and an outcome.
     * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
     * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
        * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
@@ -148,33 +161,48 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
     * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
  * [Behavior](Behavior.md)
+    * [BehavioralExposure](BehavioralExposure.md) - A behavioral exposure is a factor relating to behavior impacting an individual.
+    * [BehavioralOutcome](BehavioralOutcome.md) - An outcome resulting from an exposure event which is the manifestation of human behavior.
+    * [SocioeconomicExposure](SocioeconomicExposure.md) - A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
+    * [SocioeconomicOutcome](SocioeconomicOutcome.md) - An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
  * [BiologicalEntity](BiologicalEntity.md)
     * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
        * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
           * [Behavior](Behavior.md)
+             * [BehavioralExposure](BehavioralExposure.md) - A behavioral exposure is a factor relating to behavior impacting an individual.
+             * [BehavioralOutcome](BehavioralOutcome.md) - An outcome resulting from an exposure event which is the manifestation of human behavior.
+             * [SocioeconomicExposure](SocioeconomicExposure.md) - A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
+             * [SocioeconomicOutcome](SocioeconomicOutcome.md) - An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+          * [Death](Death.md)
+             * [MortalityOutcome](MortalityOutcome.md) - An outcome of death from resulting from an exposure event.
           * [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
           * [Pathway](Pathway.md)
           * [PhysiologicalProcess](PhysiologicalProcess.md)
        * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
     * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
        * [Disease](Disease.md)
+       * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature exposure is where a disease state is manifested which represents an precondition, leading to or influencing an outcome, e.g. hypertension leading to a related disease outcome such as cardiovascular disease.
+       * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
        * [PhenotypicFeature](PhenotypicFeature.md)
-    * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-       * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
-          * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
-       * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
+          * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+    * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
     * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
        * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
           * [Carbohydrate](Carbohydrate.md)
+          * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance, other than a drug.
+             * [ComplexChemicalExposure](ComplexChemicalExposure.md) - A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
           * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
           * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
        * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+          * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular drug.
+             * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) - drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
        * [Food](Food.md) - A substance consumed by a living organism as a source of nutrition
        * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
        * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
           * [CodingSequence](CodingSequence.md)
           * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
           * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
+          * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
           * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
           * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
           * [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
@@ -203,10 +231,15 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
        * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
        * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+          * [StudyPopulation](StudyPopulation.md) - A group of people banded together or treated as a group as participants in a research study.
+             * [Cohort](Cohort.md) - A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
+ * [BioticExposure](BioticExposure.md) - A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
  * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
  * [BookChapter](BookChapter.md)
  * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
     * [ClinicalIntervention](ClinicalIntervention.md)
+       * [Hospitalization](Hospitalization.md)
+          * [HospitalizationOutcome](HospitalizationOutcome.md) - An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
     * [ClinicalTrial](ClinicalTrial.md)
  * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
  * [DataFile](DataFile.md)
@@ -232,8 +265,10 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [ContributorAssociation](ContributorAssociation.md) - Any association between an entity (such as a publication) and various agents that contribute to its realisation
        * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
        * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
-       * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md) - An association between an exposure event and a disease.
+       * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) - An association between an exposure event and a disease.
        * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
+       * [DrugToGeneAssociation](DrugToGeneAssociation.md) - An interaction between a drug and a gene or gene product.
+       * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) - An association between an exposure event and an outcome.
        * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
        * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
           * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
@@ -281,29 +316,40 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
              * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
                 * [Behavior](Behavior.md)
+                   * [BehavioralExposure](BehavioralExposure.md) - A behavioral exposure is a factor relating to behavior impacting an individual.
+                   * [BehavioralOutcome](BehavioralOutcome.md) - An outcome resulting from an exposure event which is the manifestation of human behavior.
+                   * [SocioeconomicExposure](SocioeconomicExposure.md) - A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
+                   * [SocioeconomicOutcome](SocioeconomicOutcome.md) - An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+                * [Death](Death.md)
+                   * [MortalityOutcome](MortalityOutcome.md) - An outcome of death from resulting from an exposure event.
                 * [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
                 * [Pathway](Pathway.md)
                 * [PhysiologicalProcess](PhysiologicalProcess.md)
              * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
           * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
              * [Disease](Disease.md)
+             * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature exposure is where a disease state is manifested which represents an precondition, leading to or influencing an outcome, e.g. hypertension leading to a related disease outcome such as cardiovascular disease.
+             * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
              * [PhenotypicFeature](PhenotypicFeature.md)
-          * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-             * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
-                * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
-             * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
+                * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+          * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
           * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
              * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
                 * [Carbohydrate](Carbohydrate.md)
+                * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance, other than a drug.
+                   * [ComplexChemicalExposure](ComplexChemicalExposure.md) - A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
                 * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
                 * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
              * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+                * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular drug.
+                   * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) - drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
              * [Food](Food.md) - A substance consumed by a living organism as a source of nutrition
              * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
              * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
                 * [CodingSequence](CodingSequence.md)
                 * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
                 * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
+                * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
                 * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
                 * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
                 * [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
@@ -332,8 +378,12 @@ Entity and association taxonomy and datamodel for life-sciences data
                 * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
              * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
              * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+                * [StudyPopulation](StudyPopulation.md) - A group of people banded together or treated as a group as participants in a research study.
+                   * [Cohort](Cohort.md) - A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
        * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
           * [ClinicalIntervention](ClinicalIntervention.md)
+             * [Hospitalization](Hospitalization.md)
+                * [HospitalizationOutcome](HospitalizationOutcome.md) - An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
           * [ClinicalTrial](ClinicalTrial.md)
        * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
        * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
@@ -353,6 +403,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
           * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
           * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
+             * [BioticExposure](BioticExposure.md) - A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
           * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
           * [TaxonomicRank](TaxonomicRank.md) - A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
        * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -361,9 +412,12 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
           * [EnvironmentalFeature](EnvironmentalFeature.md)
           * [EnvironmentalProcess](EnvironmentalProcess.md)
+             * [EnvironmentalExposure](EnvironmentalExposure.md) - A environmental exposure is a factor relating to abiotic processes in the environment including atmospheric (heat, cold, general pollution) and water-born contaminants
           * [GeographicLocation](GeographicLocation.md) - a location that can be described in lat/long coordinates
+             * [GeographicExposure](GeographicExposure.md) - A geographic exposure is a factor relating to geographic proximity to some impactful entity.
              * [GeographicLocationAtTime](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
        * [Procedure](Procedure.md) - A series of actions conducted in a certain order or manner
+       * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
  * [GeneExpressionMixin](GeneExpressionMixin.md) - Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
 
 ## Slots
@@ -863,11 +917,15 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
  * [has constituent](has_constituent.md) - one or more chemical substances within a mixture
  * [has count](has_count.md) - number of things with a particular property
- * [has drug](has_drug.md) - connects an entity to a single drug
+ * [has device](has_device.md) - connects an entity to one or more (medical) devices
+ * [has drug](has_drug.md) - connects an entity to one or more drugs
  * [has excipient](has_excipient.md) - one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
- * [has gene](has_gene.md) - connects an entity to a single gene
+ * [has gene](has_gene.md) - connects an entity associated with one or more genes
+ * [has gene or gene product](has_gene_or_gene_product.md) - connects an entity with one or more gene products
+    * [has gene](has_gene.md) - connects an entity associated with one or more genes
  * [has nutrient](has_nutrient.md) - one or more chemical substance which are growth factors for a living organism
  * [has percentage](has_percentage.md) - equivalent to has quotient multiplied by 100
+ * [has procedure](has_procedure.md) - connects an entity to one or more (medical) procedures
  * [has quotient](has_quotient.md)
  * [has receptor](has_receptor.md) - the organism or organism part being exposed
  * [has route](has_route.md) - the process that results in the stressor coming into direct contact with the receptor
@@ -903,10 +961,13 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
     * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
     * [has constituent](has_constituent.md) - one or more chemical substances within a mixture
-    * [has drug](has_drug.md) - connects an entity to a single drug
+    * [has device](has_device.md) - connects an entity to one or more (medical) devices
+    * [has drug](has_drug.md) - connects an entity to one or more drugs
     * [has excipient](has_excipient.md) - one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    * [has gene](has_gene.md) - connects an entity to a single gene
+    * [has gene or gene product](has_gene_or_gene_product.md) - connects an entity with one or more gene products
+       * [has gene](has_gene.md) - connects an entity associated with one or more genes
     * [has nutrient](has_nutrient.md) - one or more chemical substance which are growth factors for a living organism
+    * [has procedure](has_procedure.md) - connects an entity to one or more (medical) procedures
     * [has receptor](has_receptor.md) - the organism or organism part being exposed
     * [has route](has_route.md) - the process that results in the stressor coming into direct contact with the receptor
     * [has stressor](has_stressor.md) - the process or entity that the receptor is being exposed to
@@ -964,6 +1025,8 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
     * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
+    * [has population context](has_population_context.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
+    * [has temporal context](has_temporal_context.md) - a constraint of time placed upon the truth value of an association.
     * [interacting molecules category](interacting_molecules_category.md)
     * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
     * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -999,6 +1062,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [genome build](genome_build.md) - The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
  * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
  * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
+ * [has population context](has_population_context.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
+ * [has temporal context](has_temporal_context.md) - a constraint of time placed upon the truth value of an association.
  * [interacting molecules category](interacting_molecules_category.md)
  * [interbase coordinate](interbase_coordinate.md) - A position in interbase coordinates. This is applied to a sequence localization edge.
     * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.

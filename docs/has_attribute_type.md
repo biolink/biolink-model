@@ -39,6 +39,7 @@ URI: [biolink:has_attribute_type](https://w3id.org/biolink/vocab/has_attribute_t
  * [OrganismAttribute](OrganismAttribute.md)
  * [PhenotypicSex](PhenotypicSex.md)
  * [SeverityValue](SeverityValue.md)
+ * [SocioeconomicAttribute](SocioeconomicAttribute.md)
  * [Zygosity](Zygosity.md)
 
 ## Other properties

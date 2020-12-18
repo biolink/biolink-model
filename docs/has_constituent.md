@@ -25,7 +25,10 @@ URI: [biolink:has_constituent](https://w3id.org/biolink/vocab/has_constituent)
 
 ## Used by
 
+ * [ComplexChemicalExposure](ComplexChemicalExposure.md)
  * [Drug](Drug.md)
+ * [DrugExposure](DrugExposure.md)
+ * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
  * [Food](Food.md)
  * [Mixture](Mixture.md)
  * [ProcessedMaterial](ProcessedMaterial.md)

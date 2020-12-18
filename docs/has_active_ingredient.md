@@ -26,6 +26,8 @@ URI: [biolink:has_active_ingredient](https://w3id.org/biolink/vocab/has_active_i
 ## Used by
 
  * [Drug](Drug.md)
+ * [DrugExposure](DrugExposure.md)
+ * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
 
 ## Other properties
 

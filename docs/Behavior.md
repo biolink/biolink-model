@@ -15,7 +15,7 @@ URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[NamedThing],[BiologicalProcess],[BiologicalProcess]%5E-[Behavior%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicOutcome],[SocioeconomicExposure],[PhysicalEntity],[NamedThing],[BiologicalProcess],[BehavioralOutcome],[BehavioralExposure],[Behavior%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SocioeconomicOutcome],[Behavior]%5E-[SocioeconomicExposure],[Behavior]%5E-[BehavioralOutcome],[Behavior]%5E-[BehavioralExposure],[BiologicalProcess]%5E-[Behavior],[Attribute],[Agent])
 
 ---
 
@@ -23,6 +23,16 @@ URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 ## Parents
 
  *  is_a: [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
+
+## Children
+
+ * [BehavioralExposure](BehavioralExposure.md) - A behavioral exposure is a factor relating to behavior impacting an individual.
+ * [BehavioralOutcome](BehavioralOutcome.md) - An outcome resulting from an exposure event which is the manifestation of human behavior.
+ * [SocioeconomicExposure](SocioeconomicExposure.md) - A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
+ * [SocioeconomicOutcome](SocioeconomicOutcome.md) - An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+
+## Referenced by class
+
 
 ## Attributes
 

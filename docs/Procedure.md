@@ -15,7 +15,7 @@ URI: [biolink:Procedure](https://w3id.org/biolink/vocab/Procedure)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ActivityAndBehavior],[NamedThing]%5E-[Procedure],[NamedThing],[Attribute],[Agent],[ActivityAndBehavior])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment]-%20has%20procedure%200..%2A%3E[Procedure%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Procedure]uses%20-.-%3E[ActivityAndBehavior],[NamedThing]%5E-[Procedure],[Treatment],[NamedThing],[Attribute],[Agent],[ActivityAndBehavior])
 
 ---
 
@@ -27,6 +27,10 @@ URI: [biolink:Procedure](https://w3id.org/biolink/vocab/Procedure)
 ## Uses Mixins
 
  *  mixin: [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
+
+## Referenced by class
+
+ *  **[NamedThing](NamedThing.md)** *[has procedure](has_procedure.md)*  <sub>0..*</sub>  **[Procedure](Procedure.md)**
 
 ## Attributes
 

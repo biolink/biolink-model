@@ -15,7 +15,7 @@ URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/vocab/ClinicalInter
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ClinicalEntity]%5E-[ClinicalIntervention%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ClinicalEntity],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Hospitalization],[ClinicalIntervention%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[Hospitalization],[ClinicalEntity]%5E-[ClinicalIntervention],[ClinicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -23,6 +23,13 @@ URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/vocab/ClinicalInter
 ## Parents
 
  *  is_a: [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+
+## Children
+
+ * [Hospitalization](Hospitalization.md)
+
+## Referenced by class
+
 
 ## Attributes
 

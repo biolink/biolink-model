@@ -27,12 +27,6 @@ URI: [biolink:GeographicLocationAtTime](https://w3id.org/biolink/vocab/Geographi
 ## Attributes
 
 
-### Own
-
- * [timepoint](timepoint.md)  <sub>OPT</sub>
-    * Description: a point in time
-    * range: [TimeType](types/TimeType.md)
-
 ### Inherited from entity:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -72,6 +66,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
+
+### Inherited from exposure event:
+
+ * [timepoint](timepoint.md)  <sub>OPT</sub>
+    * Description: a point in time
+    * range: [TimeType](types/TimeType.md)
 
 ### Inherited from geographic location:
 

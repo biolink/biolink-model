@@ -8,32 +8,43 @@ layout: default
 # Class: DrugExposure
 
 
-A drug exposure is an intake of a particular chemical substance
+A drug exposure is an intake of a particular drug.
 
 URI: [biolink:DrugExposure](https://w3id.org/biolink/vocab/DrugExposure)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment],[NamedThing],[ChemicalSubstance]%3Chas%20drug%201..%2A-%20[DrugExposure%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Treatment]-%20has%20part%201..%2A%3E[DrugExposure],[ChemicalExposure]%5E-[DrugExposure],[ChemicalSubstance],[ChemicalExposure],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ExposureEvent],[DrugToGeneInteractionExposure],[DrugExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[DrugExposure]%5E-[DrugToGeneInteractionExposure],[Drug]%5E-[DrugExposure],[Drug],[ChemicalSubstance],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance
+ *  is_a: [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+
+## Uses Mixins
+
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+
+## Children
+
+ * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) - drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 
 ## Referenced by class
 
- *  **[Treatment](Treatment.md)** *[treatment➞has part](treatment_has_part.md)*  <sub>1..*</sub>  **[DrugExposure](DrugExposure.md)**
 
 ## Attributes
 
 
-### Own
+### Inherited from drug:
 
- * [drug exposure➞has drug](drug_exposure_has_drug.md)  <sub>1..*</sub>
+ * [has active ingredient](has_active_ingredient.md)  <sub>0..*</sub>
+    * Description: one or more chemical substance which are the active ingredient(s) of a drug
+    * range: [ChemicalSubstance](ChemicalSubstance.md)
+ * [has excipient](has_excipient.md)  <sub>0..*</sub>
+    * Description: one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ### Inherited from entity:
@@ -76,15 +87,29 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from exposure event:
+
+ * [timepoint](timepoint.md)  <sub>OPT</sub>
+    * Description: a point in time
+    * range: [TimeType](types/TimeType.md)
+
+### Inherited from mixture:
+
+ * [has constituent](has_constituent.md)  <sub>0..*</sub>
+    * Description: one or more chemical substances within a mixture
+    * range: [ChemicalSubstance](ChemicalSubstance.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
 
-### Domain for slot:
+### Inherited from thing with taxon:
 
- * [drug exposure➞has drug](drug_exposure_has_drug.md)  <sub>1..*</sub>
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
+ * [in taxon](in_taxon.md)  <sub>0..*</sub>
+    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * in subsets: (translator_minimal)
 
 ## Other properties
 
@@ -92,6 +117,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | drug intake |
 |  | | drug dose |
+|  | | medication intake |
 | **Exact Mappings:** | | ECTO:0000509 |
 | **Broad Mappings:** | | SIO:001005 |
 

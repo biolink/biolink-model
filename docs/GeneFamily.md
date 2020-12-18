@@ -15,7 +15,7 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[GeneGrouping],[GeneFamily%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneGrouping],[MolecularEntity]%5E-[GeneFamily],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[GeneGroupingMixin],[GeneFamily%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneGroupingMixin],[MolecularEntity]%5E-[GeneFamily],[Gene],[Attribute],[Agent])
 
 ---
 
@@ -33,7 +33,7 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
 ## Uses Mixins
 
- *  mixin: [GeneGrouping](GeneGrouping.md) - any grouping of multiple genes or gene products
+ *  mixin: [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
 
 ## Attributes
 
@@ -77,6 +77,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
+
+### Inherited from gene grouping mixin:
+
+ * [has gene or gene product](has_gene_or_gene_product.md)  <sub>0..*</sub>
+    * Description: connects an entity with one or more gene products
+    * range: [Gene](Gene.md)
 
 ### Inherited from named thing:
 

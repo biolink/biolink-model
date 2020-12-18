@@ -15,7 +15,7 @@ URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/Po
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[ThingWithTaxon],[PopulationToPopulationAssociation],[PopulationToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[PopulationToPopulationAssociation]-%20subject%201..1%3E[PopulationOfIndividualOrganisms],[VariantToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity],[OrganismTaxon],[NamedThing],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[ThingWithTaxon],[StudyPopulation],[PopulationToPopulationAssociation],[ExposureEventToOutcomeAssociation]-%20has%20population%20context%200..1%3E[PopulationOfIndividualOrganisms%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[PopulationToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],[PopulationToPopulationAssociation]-%20subject%201..1%3E[PopulationOfIndividualOrganisms],[VariantToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[PopulationOfIndividualOrganisms]%5E-[StudyPopulation],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity],[OrganismTaxon],[NamedThing],[ExposureEventToOutcomeAssociation],[Attribute],[Association],[Agent])
 
 ---
 
@@ -32,8 +32,13 @@ URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/Po
 
  *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
 
+## Children
+
+ * [StudyPopulation](StudyPopulation.md) - A group of people banded together or treated as a group as participants in a research study.
+
 ## Referenced by class
 
+ *  **[Association](Association.md)** *[has population context](has_population_context.md)*  <sub>OPT</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
  *  **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association➞object](population_to_population_association_object.md)*  <sub>REQ</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
  *  **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association➞subject](population_to_population_association_subject.md)*  <sub>REQ</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
  *  **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[variant to population association➞object](variant_to_population_association_object.md)*  <sub>REQ</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**

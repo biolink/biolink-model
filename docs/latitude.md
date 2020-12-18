@@ -25,6 +25,7 @@ URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
 
 ## Used by
 
+ * [GeographicExposure](GeographicExposure.md)
  * [GeographicLocation](GeographicLocation.md)
  * [GeographicLocationAtTime](GeographicLocationAtTime.md)
 

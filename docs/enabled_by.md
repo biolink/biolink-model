@@ -29,11 +29,17 @@ URI: [biolink:enabled_by](https://w3id.org/biolink/vocab/enabled_by)
 ## Used by
 
  * [Behavior](Behavior.md)
+ * [BehavioralExposure](BehavioralExposure.md)
+ * [BehavioralOutcome](BehavioralOutcome.md)
  * [BiologicalProcess](BiologicalProcess.md)
  * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
+ * [Death](Death.md)
+ * [MortalityOutcome](MortalityOutcome.md)
  * [PathologicalProcess](PathologicalProcess.md)
  * [Pathway](Pathway.md)
  * [PhysiologicalProcess](PhysiologicalProcess.md)
+ * [SocioeconomicExposure](SocioeconomicExposure.md)
+ * [SocioeconomicOutcome](SocioeconomicOutcome.md)
 
 ## Other properties
 

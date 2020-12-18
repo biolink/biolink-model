@@ -15,7 +15,7 @@ URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[NamedThing],[MolecularEntity],[ExposureEvent],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[MolecularEntity],[BiologicalEntity]%5E-[ExposureEvent],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[NamedThing],[MolecularEntity],[EpidemiologicalOutcome],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[MolecularEntity],[BiologicalEntity]%5E-[EpidemiologicalOutcome],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -28,7 +28,7 @@ URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
  * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
  * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
- * [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
  * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
  * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
 

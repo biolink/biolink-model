@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[OrganismTaxon]%3Csubclass%20of%200..%2A-%20[OrganismTaxon%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-%20[OrganismTaxon],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass],[NamedThing],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[OrganismTaxon]%3Csubclass%20of%200..%2A-%20[OrganismTaxon%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-%20[OrganismTaxon],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OrganismTaxon]%5E-[BioticExposure],[OntologyClass]%5E-[OrganismTaxon],[OntologyClass],[NamedThing],[BioticExposure],[Attribute],[Agent])
 
 ---
 
@@ -28,6 +28,10 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 ## Parents
 
  *  is_a: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
+
+## Children
+
+ * [BioticExposure](BioticExposure.md) - A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
 
 ## Referenced by class
 

@@ -8,21 +8,25 @@ layout: default
 # Class: Treatment
 
 
-A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
+A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
 
 URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DrugExposure]%3Chas%20part%201..%2A-%20[Treatment%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[ExposureEvent]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[NamedThing],[ExposureEvent],[DrugExposure],[DiseaseOrPhenotypicFeature],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Procedure]%3Chas%20procedure%200..%2A-%20[Treatment%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Device]%3Chas%20device%200..%2A-%20[Treatment],[Drug]%3Chas%20drug%200..%2A-%20[Treatment],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[Treatment]uses%20-.-%3E[ExposureEvent],[NamedThing]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[Procedure],[NamedThing],[ExposureEvent],[Drug],[DiseaseOrPhenotypicFeature],[Device],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [ExposureEvent](ExposureEvent.md) - A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+
+## Uses Mixins
+
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 
 ## Referenced by class
 
@@ -34,8 +38,15 @@ URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
 
 ### Own
 
- * [treatment➞has part](treatment_has_part.md)  <sub>1..*</sub>
-    * range: [DrugExposure](DrugExposure.md)
+ * [has device](has_device.md)  <sub>0..*</sub>
+    * Description: connects an entity to one or more (medical) devices
+    * range: [Device](Device.md)
+ * [has drug](has_drug.md)  <sub>0..*</sub>
+    * Description: connects an entity to one or more drugs
+    * range: [Drug](Drug.md)
+ * [has procedure](has_procedure.md)  <sub>0..*</sub>
+    * Description: connects an entity to one or more (medical) procedures
+    * range: [Procedure](Procedure.md)
 
 ### Inherited from entity:
 
@@ -77,15 +88,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from exposure event:
+
+ * [timepoint](timepoint.md)  <sub>OPT</sub>
+    * Description: a point in time
+    * range: [TimeType](types/TimeType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
-
-### Domain for slot:
-
- * [treatment➞has part](treatment_has_part.md)  <sub>1..*</sub>
-    * range: [DrugExposure](DrugExposure.md)
 
 ## Other properties
 

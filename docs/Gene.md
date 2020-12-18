@@ -15,7 +15,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneAssociation],[TranscriptToGeneRelationship],[SequenceVariant],[OrganismTaxon],[NamedThing],[GenotypeToGeneAssociation],[GeneToGeneProductRelationship],[GeneOrGeneProduct],[GeneToGeneProductRelationship]-%20subject%201..1%3E[Gene%7Csymbol:string%20%3F;synonym:label_type%20%2A;xref:iri_type%20%2A;name(i):symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenotypeToGeneAssociation]-%20object%201..1%3E[Gene],[SequenceVariant]-%20has%20gene(i)%200..1%3E[Gene],[SequenceVariant]-%20has%20gene%200..%2A%3E[Gene],[TranscriptToGeneRelationship]-%20object%201..1%3E[Gene],[VariantToGeneAssociation]-%20object%201..1%3E[Gene],[GeneOrGeneProduct]%5E-[Gene],[DiseaseOrPhenotypicFeature],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneAssociation],[TranscriptToGeneRelationship],[SequenceVariant],[OrganismTaxon],[NamedThing],[GenotypeToGeneAssociation],[GeneToGeneProductRelationship],[GeneOrGeneProduct],[GeneToGeneProductRelationship]-%20subject%201..1%3E[Gene%7Csymbol:string%20%3F;synonym:label_type%20%2A;xref:iri_type%20%2A;name(i):symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenotypeToGeneAssociation]-%20object%201..1%3E[Gene],[SequenceVariant]-%20has%20gene(i)%200..%2A%3E[Gene],[GeneGroupingMixin]-%20has%20gene%20or%20gene%20product%200..%2A%3E[Gene],[SequenceVariant]-%20has%20gene%200..%2A%3E[Gene],[TranscriptToGeneRelationship]-%20object%201..1%3E[Gene],[VariantToGeneAssociation]-%20object%201..1%3E[Gene],[GeneOrGeneProduct]%5E-[Gene],[GeneGroupingMixin],[DiseaseOrPhenotypicFeature],[Attribute],[Agent])
 
 ---
 
@@ -47,7 +47,8 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
  *  **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[gene to gene product relationship➞subject](gene_to_gene_product_relationship_subject.md)*  <sub>REQ</sub>  **[Gene](Gene.md)**
  *  **[Gene](Gene.md)** *[genetically interacts with](genetically_interacts_with.md)*  <sub>0..*</sub>  **[Gene](Gene.md)**
  *  **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[genotype to gene association➞object](genotype_to_gene_association_object.md)*  <sub>REQ</sub>  **[Gene](Gene.md)**
- *  **[NamedThing](NamedThing.md)** *[has gene](has_gene.md)*  <sub>OPT</sub>  **[Gene](Gene.md)**
+ *  **[NamedThing](NamedThing.md)** *[has gene](has_gene.md)*  <sub>0..*</sub>  **[Gene](Gene.md)**
+ *  **[NamedThing](NamedThing.md)** *[has gene or gene product](has_gene_or_gene_product.md)*  <sub>0..*</sub>  **[Gene](Gene.md)**
  *  **[SequenceVariant](SequenceVariant.md)** *[is frameshift variant of](is_frameshift_variant_of.md)*  <sub>0..*</sub>  **[Gene](Gene.md)**
  *  **[SequenceVariant](SequenceVariant.md)** *[is missense variant of](is_missense_variant_of.md)*  <sub>0..*</sub>  **[Gene](Gene.md)**
  *  **[SequenceVariant](SequenceVariant.md)** *[is nearby variant of](is_nearby_variant_of.md)*  <sub>0..*</sub>  **[Gene](Gene.md)**

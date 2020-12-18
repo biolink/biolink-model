@@ -15,7 +15,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SeverityValue],[QuantityValue],[OrganismalEntity],[OrganismAttribute],[OntologyClass],[NamedThing],[FrequencyValue],[ClinicalAttribute],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[Entity]++-%20has%20attribute%200..%2A%3E[Attribute],[OrganismalEntity]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[OrganismAttribute],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalAttribute],[Attribute]%5E-[BiologicalSex],[Annotation]%5E-[Attribute],[Entity],[Annotation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SocioeconomicAttribute],[SeverityValue],[QuantityValue],[OrganismalEntity],[OrganismAttribute],[OntologyClass],[NamedThing],[FrequencyValue],[ClinicalAttribute],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[Entity]++-%20has%20attribute%200..%2A%3E[Attribute],[OrganismalEntity]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SocioeconomicAttribute],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[OrganismAttribute],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalAttribute],[Attribute]%5E-[BiologicalSex],[Annotation]%5E-[Attribute],[Entity],[Annotation])
 
 ---
 
@@ -38,6 +38,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
  * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
  * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
  * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
+ * [SocioeconomicAttribute](SocioeconomicAttribute.md) - Attributes relating to a socioeconomic manifestation
  * [Zygosity](Zygosity.md)
 
 ## Referenced by class

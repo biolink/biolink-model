@@ -1,21 +1,21 @@
 ---
 parent: Associations
-title: biolink:DiseaseToExposureAssociation
+title: biolink:DiseaseToExposureEventAssociation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: DiseaseToExposureAssociation
+# Class: DiseaseToExposureEventAssociation
 
 
 An association between an exposure event and a disease.
 
-URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/DiseaseToExposureAssociation)
+URI: [biolink:DiseaseToExposureEventAssociation](https://w3id.org/biolink/vocab/DiseaseToExposureEventAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[ExposureEvent],[ExposureEvent]%3Cobject%201..1-%20[DiseaseToExposureAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Disease]%3Csubject%201..1-%20[DiseaseToExposureAssociation],[DiseaseToExposureAssociation]uses%20-.-%3E[DiseaseToEntityAssociationMixin],[Association]%5E-[DiseaseToExposureAssociation],[DiseaseToEntityAssociationMixin],[Disease],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[DiseaseToEntityAssociationMixin],[DiseaseToExposureEventAssociation]uses%20-.-%3E[EntityToExposureEventAssociationMixin],[Association]%5E-[DiseaseToExposureEventAssociation],[DiseaseToEntityAssociationMixin],[Attribute],[Association],[Agent])
 
 ---
 
@@ -27,19 +27,10 @@ URI: [biolink:DiseaseToExposureAssociation](https://w3id.org/biolink/vocab/Disea
 ## Uses Mixins
 
  *  mixin: [DiseaseToEntityAssociationMixin](DiseaseToEntityAssociationMixin.md)
-
-## Referenced by class
-
+ *  mixin: [EntityToExposureEventAssociationMixin](EntityToExposureEventAssociationMixin.md) - An association between some entity and an exposure event.
 
 ## Attributes
 
-
-### Own
-
- * [disease to exposure association➞object](disease_to_exposure_association_object.md)  <sub>REQ</sub>
-    * range: [ExposureEvent](ExposureEvent.md)
- * [disease to exposure association➞subject](disease_to_exposure_association_subject.md)  <sub>REQ</sub>
-    * range: [Disease](Disease.md)
 
 ### Inherited from association:
 
@@ -109,10 +100,3 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
-
-### Domain for slot:
-
- * [disease to exposure association➞object](disease_to_exposure_association_object.md)  <sub>REQ</sub>
-    * range: [ExposureEvent](ExposureEvent.md)
- * [disease to exposure association➞subject](disease_to_exposure_association_subject.md)  <sub>REQ</sub>
-    * range: [Disease](Disease.md)
