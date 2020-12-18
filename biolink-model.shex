@@ -236,7 +236,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <BiologicalProcess> ]
        )
-    } OR @<Behavior> OR @<Pathway> OR @<PhysiologicalProcess>
+    } OR @<Behavior> OR @<PathologicalProcess> OR @<Pathway> OR @<PhysiologicalProcess>
 )
 
 <BiologicalProcessOrActivity>  (
@@ -1505,7 +1505,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <NoncodingRNAProduct> ]
        )
-    } OR @<MicroRNA>
+    } OR @<MicroRNA> OR @<SiRNA>
 )
 
 <Occurrent>  (
@@ -1613,6 +1613,14 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <SpecificityQuantifier> ] ?
        ) ;
        rdf:type [ <PathognomonicityQuantifier> ] ?
+    )
+}
+
+<PathologicalProcess> CLOSED {
+    (  $<PathologicalProcess_tes> (  &<BiologicalProcess_tes> ;
+          rdf:type [ <BiologicalProcess> ] ?
+       ) ;
+       rdf:type [ <PathologicalProcess> ]
     )
 }
 
@@ -1892,6 +1900,14 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <Attribute> ] ?
        ) ;
        rdf:type [ <SeverityValue> ] ?
+    )
+}
+
+<SiRNA> CLOSED {
+    (  $<SiRNA_tes> (  &<NoncodingRNAProduct_tes> ;
+          rdf:type [ <NoncodingRNAProduct> ] ?
+       ) ;
+       rdf:type [ <SiRNA> ]
     )
 }
 

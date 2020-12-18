@@ -5311,6 +5311,19 @@ classes:
       - GO
       - REACT
 
+  pathological process:
+    description: >-
+      A biologic function or a process having an abnormal or deleterious
+      effect at the subcellular, cellular, multicellular, or organismal level.
+    is_a: biological process
+    exact_mappings:
+      - OBI:1110122
+      - NCIT:C16956
+    narrow_mappings:
+      # metastasis
+      - NCIT:C19151
+      - EFO:0009708
+
   behavior:
     is_a: biological process
     exact_mappings:
@@ -5897,7 +5910,7 @@ classes:
       - SIO:010035
       - WIKIDATA:Q7187
     id_prefixes:
-      - NCBIGene
+      - NCBIGENE
       - ENSEMBL
       - HGNC
       - UniProtKB
@@ -5910,7 +5923,7 @@ classes:
       - FB
       - RGD
       - SGD
-      - PomBase
+      - POMBASE
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -6007,7 +6020,7 @@ classes:
     is_a: RNA product
     id_prefixes:
       - RNACENTRAL
-      - NCBIGene
+      - NCBIGENE
       - ENSEMBL
     exact_mappings:
       - SO:0000655
@@ -6019,6 +6032,25 @@ classes:
       - SO:0000276
       - SIO:001397
       - WIKIDATA:Q310899
+    id_prefixes:
+      - MIR
+      - HGNC
+      - WormBase
+    in_subset:
+      - model_organism_database
+
+  siRNA:
+    aliases: ['small interfering RNA', 'RNAi']
+    description: >-
+      A small RNA molecule that is the product of a longer exogenous or
+      endogenous dsRNA, which is either a bimolecular duplex or very long
+      hairpin, processed (via the Dicer pathway) such that numerous siRNAs
+      accumulate from both strands of the dsRNA. SRNAs trigger the cleavage
+      of their target molecules.
+    is_a: noncoding RNA product
+    exact_mappings:
+      - SO:0000646
+      - WIKIDATA:Q203221
     id_prefixes:
       - MIR
       - HGNC
@@ -6114,7 +6146,7 @@ classes:
     description: >-
       An allele that varies in its sequence from what is considered the reference allele at that locus.
     comments: >-
-      This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
+      This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more
       than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
     broad_mappings:
       # slightly broader semantics than SO:0001059 - 'sequence alteration'
@@ -6128,12 +6160,12 @@ classes:
       - SO:0001059
     id_prefixes:
       - CAID # ClinGen Allele Registry
-      - ClinVar
+      - CLINVAR
       - ClinVarVariant
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
-      - dbSNP
+      - DBSNP
       # - MYVARIANT_HG19 needs IRI mapping
       # - MYVARIANT_HG38 needs IRI mapping
       # - HGVS needs IRI mapping

@@ -8825,6 +8825,82 @@
          "title": "PairwiseMolecularInteraction",
          "type": "object"
       },
+      "PathologicalProcess": {
+         "additionalProperties": false,
+         "description": "A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled_by": {
+               "description": "holds between a process and a physical entity, where the physical entity executes the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "has_input": {
+               "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "holds between a process and a continuant, where the continuant is an output of the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "PathologicalProcess",
+         "type": "object"
+      },
       "Pathway": {
          "additionalProperties": false,
          "description": "",
@@ -10504,6 +10580,86 @@
             "has_attribute_type"
          ],
          "title": "SeverityValue",
+         "type": "object"
+      },
+      "SiRNA": {
+         "additionalProperties": false,
+         "description": "A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "has_biological_sequence": {
+               "description": "connects a genomic feature to its sequence",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "synonym": {
+               "description": "Alternate human-readable names for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "SiRNA",
          "type": "object"
       },
       "Snv": {
