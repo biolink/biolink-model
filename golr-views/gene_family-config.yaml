@@ -43,3 +43,7 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: has_gene_or_gene_product
+  description: connects an entity with one or more gene products
+  display_name: has gene or gene product
+  cardinality: multi

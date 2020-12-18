@@ -1,6 +1,6 @@
 id: drug_exposure
 schema_generating: true
-description: A drug exposure is an intake of a particular chemical substance
+description: A drug exposure is an intake of a particular drug.
 display_name: drug exposure
 document_category: drug exposure
 weight: 20
@@ -38,6 +38,25 @@ fields:
 - id: category
   display_name: named thing_category
   cardinality: multi
-- id: has_drug
-  display_name: drug exposure_has drug
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
   cardinality: multi
+- id: has_active_ingredient
+  description: one or more chemical substance which are the active ingredient(s) of
+    a drug
+  display_name: has active ingredient
+  cardinality: multi
+- id: has_excipient
+  description: one or more (generally inert) chemical substances which are formulated
+    alongside the active ingredient of a drug
+  display_name: has excipient
+  cardinality: multi
+- id: has_constituent
+  description: one or more chemical substances within a mixture
+  display_name: has constituent
+  cardinality: multi
+- id: timepoint
+  description: a point in time
+  display_name: timepoint

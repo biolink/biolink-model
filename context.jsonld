@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-18 14:56\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-18 18:59\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"
@@ -443,6 +443,9 @@
       "has_decreased_amount": {
          "@type": "@id"
       },
+      "has_device": {
+         "@type": "@id"
+      },
       "has_drug": {
          "@type": "@id"
       },
@@ -453,6 +456,9 @@
          "@type": "@id"
       },
       "has_gene": {
+         "@type": "@id"
+      },
+      "has_gene_or_gene_product": {
          "@type": "@id"
       },
       "has_gene_product": {
@@ -491,6 +497,12 @@
       "has_phenotype": {
          "@type": "@id"
       },
+      "has_population_context": {
+         "@type": "@id"
+      },
+      "has_procedure": {
+         "@type": "@id"
+      },
       "has_qualitative_value": {
          "@type": "@id"
       },
@@ -508,6 +520,9 @@
       },
       "has_taxonomic_rank": {
          "@type": "@id"
+      },
+      "has_temporal_context": {
+         "@type": "xsd:dateTime"
       },
       "has_topic": {
          "@type": "@id"
