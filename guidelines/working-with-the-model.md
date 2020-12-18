@@ -215,3 +215,101 @@ Using reification, the previous example can be easily converted to RDF N-Triples
 <http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/biolink/vocab/has_gene_product> <http://identifiers.org/uniprot/O43307> .
 <http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/biolink/vocab/has_gene_product> <http://identifiers.org/uniprot/O75460> .
 ```
+
+This RDF can be represented in the Turtle format for better readability:
+
+```turtle
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://identifiers.org/uniprot/P84085>
+  rdfs:label "ARF5"^^xsd:string ;
+  biolink:category biolink:Protein ;
+  biolink:provided_by "STRING" ;
+  biolink:xref <http://identifiers.org/ensembl/ENSP00000000233> ;
+  biolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+<http://identifiers.org/uniprot/P0DP24>
+  rdfs:label "CALM2"^^xsd:string ;
+  biolink:category biolink:Protein ;
+  biolink:provided_by "STRING" ;
+  biolink:xref <http://identifiers.org/ensembl/ENSP00000272298> ;
+  biolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+<http://identifiers.org/uniprot/O43307>
+  rdfs:label "ARHGEF9"^^xsd:string ;
+  biolink:category biolink:Protein ;
+  biolink:provided_by "STRING" ;
+  biolink:xref <http://identifiers.org/ensembl/ENSP00000253401> ;
+  biolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+<http://identifiers.org/uniprot/O75460>
+  rdfs:label "ERN1"^^xsd:string ;
+  biolink:category biolink:Protein ;
+  biolink:provided_by "STRING" ;
+  biolink:xref <http://identifiers.org/ensembl/ENSP00000401445> ;
+  biolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+<http://www.ncbi.nlm.nih.gov/gene/381>
+  rdfs:label "ARF5"^^xsd:string ;
+  biolink:category biolink:Gene ;
+  biolink:provided_by "STRING" ;
+  biolink:xref <http://identifiers.org/ensembl/ENSG00000004059> ;
+  a <http://purl.obolibrary.org/obo/SO_0001217> ;
+  biolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
+  biolink:has_gene_product <http://identifiers.org/uniprot/P84085> .
+
+<http://www.ncbi.nlm.nih.gov/gene/805>
+  rdfs:label "CALM2"^^xsd:string ;
+  biolink:category biolink:Gene ;
+  biolink:provided_by "STRING" ;
+  biolink:xref <http://identifiers.org/ensembl/ENSG00000143933> ;
+  a <http://purl.obolibrary.org/obo/SO_0001217> ;
+  biolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
+  biolink:has_gene_product <http://identifiers.org/uniprot/P0DP24> .
+
+<http://www.ncbi.nlm.nih.gov/gene/23229>
+  rdfs:label "ARHGEF9"^^xsd:string ;
+  biolink:category biolink:Gene ;
+  biolink:provided_by "STRING" ;
+  biolink:xref <http://identifiers.org/ensembl/ENSG00000131089> ;
+  a <http://purl.obolibrary.org/obo/SO_0001217> ;
+  biolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
+  biolink:has_gene_product <http://identifiers.org/uniprot/O43307> .
+
+<http://www.ncbi.nlm.nih.gov/gene/2081>
+  rdfs:label "ERN1"^^xsd:string ;
+  biolink:category biolink:Gene ;
+  biolink:provided_by "STRING" ;
+  biolink:xref <http://identifiers.org/ensembl/ENSG00000178607> ;
+  a <http://purl.obolibrary.org/obo/SO_0001217> ;
+  biolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
+  biolink:has_gene_product <http://identifiers.org/uniprot/O75460> .
+
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b>
+  rdf:subject <http://www.ncbi.nlm.nih.gov/gene/381> ;
+  rdf:predicate biolink:interacts_with ;
+  rdf:object <http://www.ncbi.nlm.nih.gov/gene/805> ;
+  biolink:relation <http://purl.obolibrary.org/obo/RO_0002436> ;
+  biolink:provided_by "STRING" ;
+  biolink:association_type biolink:GeneToGeneAssociation .
+
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3>
+  rdf:subject <http://www.ncbi.nlm.nih.gov/gene/381> ;
+  rdf:predicate biolink:interacts_with ;
+  rdf:object <http://www.ncbi.nlm.nih.gov/gene/23229> ;
+  biolink:relation <http://purl.obolibrary.org/obo/RO_0002436> ;
+  biolink:provided_by "STRING" ;
+  biolink:association_type biolink:GeneToGeneAssociation .
+
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8>
+  rdf:subject <http://www.ncbi.nlm.nih.gov/gene/381> ;
+  rdf:predicate biolink:interacts_with ;
+  rdf:object <http://www.ncbi.nlm.nih.gov/gene/2081> ;
+  biolink:relation <http://purl.obolibrary.org/obo/RO_0002436> ;
+  biolink:provided_by "STRING" ;
+  biolink:association_type biolink:GeneToGeneAssociation .
+```
+
