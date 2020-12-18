@@ -437,7 +437,6 @@ slots:
     description: >-
       Human-consumable URL to link out and provide additional
       information about an attribute (not the node or the edge).
-    domain: attribute
     range: uriorcurie
     multivalued: true
     in_subset:
@@ -4317,6 +4316,8 @@ classes:
     description: >-
       Biolink Model root class for entity annotations.
     abstract: true
+    slots:
+      - primary web url  # 'url' originally in biolink:Attribute
 
   quantity value:
     is_a: annotation
@@ -4335,7 +4336,7 @@ classes:
   # value: "ORCID:12345",
   # value_type: "wd:Q51044",
   # value_type_name: "ORCID ID"
-  # url: https://orcid.org/12345
+  # primary web url: https://orcid.org/12345
   # source: ORCID
 
   attribute:
@@ -4351,8 +4352,9 @@ classes:
       # extracted from either of the next two slots
       - has quantitative value
       - has qualitative value
-      - iri                    # was to be used to model TRAPI 'url' but now deprecated
-      - primary web url        # 'url'
+      # 'iri' was to be used to model TRAPI 'url' but now deprecated;
+      # use instead 'primary web attribute' inherited from 'biolink:Annotation'
+      - iri
       - source                 # 'source'
     slot_usage:
       name:
