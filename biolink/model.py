@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.4.0
-# Generation date: 2020-12-17 20:08
+# Generation date: 2020-12-18 14:57
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -54,7 +54,7 @@ DRUGBANK = CurieNamespace('DRUGBANK', 'http://identifiers.org/drugbank/')
 DRUGCENTRAL = CurieNamespace('DrugCentral', 'http://translator.ncats.nih.gov/DrugCentral_')
 EC = CurieNamespace('EC', 'http://www.enzyme-database.org/query.php?ec=')
 ECTO = CurieNamespace('ECTO', 'http://purl.obolibrary.org/obo/ECTO_')
-EDAM_DATA = CurieNamespace('EDAM-DATA', 'http://example.org/UNKNOWN/EDAM-DATA/')
+EDAM_DATA = CurieNamespace('EDAM-DATA', 'http://edamontology.org/data_')
 EDAM_FORMAT = CurieNamespace('EDAM-FORMAT', 'http://edamontology.org/format_')
 EDAM_OPERATION = CurieNamespace('EDAM-OPERATION', 'http://edamontology.org/operation_')
 EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
@@ -85,7 +85,6 @@ INCHI = CurieNamespace('INCHI', 'http://identifiers.org/inchi/')
 INCHIKEY = CurieNamespace('INCHIKEY', 'http://identifiers.org/inchikey/')
 INTACT = CurieNamespace('INTACT', 'http://identifiers.org/intact/')
 IUPHAR_FAMILY = CurieNamespace('IUPHAR_FAMILY', 'http://identifiers.org/iuphar.family/')
-INTERPRO = CurieNamespace('InterPro', 'http://example.org/UNKNOWN/InterPro/')
 KEGG = CurieNamespace('KEGG', 'http://identifiers.org/kegg/')
 LOINC = CurieNamespace('LOINC', 'http://loinc.org/rdf/')
 MEDDRA = CurieNamespace('MEDDRA', 'http://identifiers.org/meddra/')
@@ -175,11 +174,13 @@ GFF3 = CurieNamespace('gff3', 'https://github.com/The-Sequence-Ontology/Specific
 GPI = CurieNamespace('gpi', 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#')
 GTPO = CurieNamespace('gtpo', 'https://rdf.guidetopharmacology.org/ns/gtpo#')
 HETIO = CurieNamespace('hetio', 'http://translator.ncats.nih.gov/hetio_')
+INTERPRO = CurieNamespace('interpro', 'https://www.ebi.ac.uk/interpro/entry/')
 ISBN = CurieNamespace('isbn', 'https://www.isbn-international.org/identifier/')
 ISNI = CurieNamespace('isni', 'https://isni.org/isni/')
 ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOWL#')
+PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
