@@ -2235,7 +2235,6 @@ slots:
     comments:
       - This is a grouping for process-process and entity-entity regulation.
     mixin: true
-    abstract: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - GO:regulated_by
@@ -2258,7 +2257,6 @@ slots:
       - This is a grouping for positive process-process and entity-entity regulation.
     is_a: regulates
     mixin: true
-    abstract: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - GO:positively_regulated_by
@@ -2278,7 +2276,6 @@ slots:
       - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
     mixin: true
-    abstract: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - GO:negatively_regulated_by
@@ -4217,125 +4214,6 @@ slots:
       - SEMMEDDB:measures
       - UMLS:measures
 
-  ## Genomic Mixins
-
-  macromolecular machine:
-    description: >-
-      A union of gene locus, gene product, and macromolecular complex. These are
-      the basic units of function in a cell. They either carry out individual
-      biological activities, or they encode molecules which do this.
-    mixin: true
-    abstract: true
-    slots:
-      - name
-    #
-    # BiolinkML doesn't seem to parse out slot_usage within mixins
-    #
-    #slot_usage:
-    #  name:
-    #    range: symbol type
-    #    description: >-
-    #      genes are typically designated by a short symbol and a full name.
-    #      We map the symbol to the default display name and use an
-    #      additional slot for full name
-
-  gene locus or gene product:
-    description: >-
-      a union of gene loci or gene products.
-      Frequently an identifier for one will be used as proxy for another
-    is_a: macromolecular machine
-    mixin: true
-    abstract: true
-    id_prefixes:
-      - CHEMBL.TARGET
-      - IUPHAR.FAMILY
-
-  gene locus:
-    aliases: ['locus']
-    description: >-
-      A region (or regions) that includes all of the sequence elements
-      necessary to encode a functional transcript. A gene locus may include
-      regulatory regions, transcribed regions and/or other
-      functional sequence regions.
-    is_a: gene locus or gene product
-    mixin: true
-    abstract: true
-    slots:
-      - symbol
-      - synonym
-      - xref
-    exact_mappings:
-      - SO:0000704
-      - SIO:010035
-      - WIKIDATA:Q7187
-    id_prefixes:
-      - NCBIGENE
-      - ENSEMBL
-      - HGNC
-      - UniProtKB
-      - MGI
-      - ZFIN
-      - dictyBase
-      - WB
-      - WormBase
-      - FlyBase
-      - FB
-      - RGD
-      - SGD
-      - POMBASE
-      # - IUPHAR
-    in_subset:
-      - model_organism_database
-
-  gene product:
-    description: >-
-      The functional molecular product of a single gene locus.
-      Gene products are either proteins or functional RNA molecules.
-    is_a: gene locus or gene product
-    mixin: true
-    abstract: true
-    slots:
-      - synonym
-      - xref
-    exact_mappings:
-      - WIKIDATA:Q424689
-      - GENO:0000907
-      - NCIT:C26548
-    id_prefixes:
-      - UniProtKB
-      - gtpo
-      - PR
-
-  gene product isoform:
-    description: >-
-      This is an abstract class that can be mixed in with different kinds of
-      gene products to indicate that the gene product is intended to represent
-      a specific isoform rather than a canonical or reference or generic
-      product. The designation of canonical or reference may be arbitrary,
-      or it may represent the superclass of all isoforms.
-    is_a: gene product
-    mixin: true
-    abstract: true
-
-  macromolecular complex:
-    description: >-
-      A stable assembly of two or more macromolecules, i.e. proteins,
-      nucleic acids, carbohydrates or lipids, in which at least one
-      component is a protein and the constituent parts function together.
-    is_a: macromolecular machine
-    mixin: true
-    abstract: true
-    exact_mappings:
-      - GO:0032991
-      - WIKIDATA:Q22325163
-    id_prefixes:
-      - INTACT
-      - GO
-      - PR
-      - REACT
-    in_subset:
-      - model_organism_database
-
   catalyst qualifier:
     is_a: association slot
     multivalued: true
@@ -4567,17 +4445,14 @@ classes:
 
   relationship quantifier:
     mixin: true
-    abstract: true
 
   sensitivity quantifier:
     is_a: relationship quantifier
     mixin: true
-    abstract: true
 
   specificity quantifier:
     is_a: relationship quantifier
     mixin: true
-    abstract: true
 
   pathognomonicity quantifier:
     is_a: specificity quantifier
@@ -4585,12 +4460,10 @@ classes:
       A relationship quantifier between a variant or symptom and a disease, which is
       high when the presence of the feature implies the existence of the disease
     mixin: true
-    abstract: true
 
   frequency quantifier:
     is_a: relationship quantifier
     mixin: true
-    abstract: true
     slots:
       - has count
       - has total
@@ -4883,7 +4756,6 @@ classes:
   distribution level:
     is_a: data set version
     mixin: true
-    abstract: true
     slots:
       - download url
     exact_mappings:
@@ -4892,7 +4764,6 @@ classes:
   data set summary:
     is_a: data set version
     mixin: true
-    abstract: true
     slots:
       - source web page
 
@@ -5069,7 +4940,6 @@ classes:
     description: >-
       Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
     mixin: true
-    abstract: true
 
   physical entity:
     is_a: named thing
@@ -5093,14 +4963,12 @@ classes:
     # be declared as such and cannot inherit from the non-mixin biolink:NamedThing
     #is_a: named thing
     mixin: true
-    abstract: true
     exact_mappings:
       - BFO:0000003
 
   activity and behavior:
     is_a: occurrent
     mixin: true
-    abstract: true
     description: >-
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
     exact_mappings:
@@ -5216,7 +5084,6 @@ classes:
 
   subject of investigation:
     mixin: true
-    abstract: true
     description: >-
       An entity that has the role of being studied in an investigation, study, or experiment
 
@@ -5291,7 +5158,6 @@ classes:
 
   thing with taxon:
     mixin: true
-    abstract: true
     description: >-
       A mixin that can be used on any entity that can be taxonomically classified.
       This includes individual organisms; genes, their products and other molecular
@@ -5485,7 +5351,6 @@ classes:
 
   mixture:
     abstract: true
-    mixin: true
     description: >-
       The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
     slots:
@@ -5940,6 +5805,118 @@ classes:
       - PO
       - FAO
 
+  ## Genomic Class Mixins
+
+  macromolecular machine:
+    description: >-
+      A union of gene locus, gene product, and macromolecular complex. These are
+      the basic units of function in a cell. They either carry out individual
+      biological activities, or they encode molecules which do this.
+    mixin: true
+    slots:
+      - name
+    slot_usage:
+      name:
+        range: symbol type
+        description: >-
+          genes are typically designated by a short symbol and a full name.
+          We map the symbol to the default display name and use an
+          additional slot for full name
+
+  gene locus or gene product:
+    description: >-
+      a union of gene loci or gene products.
+      Frequently an identifier for one will be used as proxy for another
+    is_a: macromolecular machine
+    mixin: true
+    id_prefixes:
+      - CHEMBL.TARGET
+      - IUPHAR.FAMILY
+
+  gene locus:
+    aliases: ['locus']
+    description: >-
+      A region (or regions) that includes all of the sequence elements
+      necessary to encode a functional transcript. A gene locus may include
+      regulatory regions, transcribed regions and/or other
+      functional sequence regions.
+    is_a: gene locus or gene product
+    mixin: true
+    slots:
+      - symbol
+      - synonym
+      - xref
+    exact_mappings:
+      - SO:0000704
+      - SIO:010035
+      - WIKIDATA:Q7187
+    id_prefixes:
+      - NCBIGENE
+      - ENSEMBL
+      - HGNC
+      - UniProtKB
+      - MGI
+      - ZFIN
+      - dictyBase
+      - WB
+      - WormBase
+      - FlyBase
+      - FB
+      - RGD
+      - SGD
+      - POMBASE
+      # - IUPHAR
+    in_subset:
+      - model_organism_database
+
+  gene product:
+    description: >-
+      The functional molecular product of a single gene locus.
+      Gene products are either proteins or functional RNA molecules.
+    is_a: gene locus or gene product
+    mixin: true
+    slots:
+      - synonym
+      - xref
+    exact_mappings:
+      - WIKIDATA:Q424689
+      - GENO:0000907
+      - NCIT:C26548
+    id_prefixes:
+      - UniProtKB
+      - gtpo
+      - PR
+
+  gene product isoform:
+    description: >-
+      This is an abstract class that can be mixed in with different kinds of
+      gene products to indicate that the gene product is intended to represent
+      a specific isoform rather than a canonical or reference or generic
+      product. The designation of canonical or reference may be arbitrary,
+      or it may represent the superclass of all isoforms.
+    is_a: gene product
+    mixin: true
+
+  macromolecular complex:
+    description: >-
+      A stable assembly of two or more macromolecules, i.e. proteins,
+      nucleic acids, carbohydrates or lipids, in which at least one
+      component is a protein and the constituent parts function together.
+    is_a: macromolecular machine
+    mixin: true
+    exact_mappings:
+      - GO:0032991
+      - WIKIDATA:Q22325163
+    id_prefixes:
+      - INTACT
+      - GO
+      - PR
+      - REACT
+    in_subset:
+      - model_organism_database
+
+  ## Genomic Classes
+
   genomic entity:
     is_a: molecular entity
     aliases: ['sequence feature']
@@ -6130,7 +6107,6 @@ classes:
     description: >-
       any grouping of multiple genes or gene products
     mixin: true
-    abstract: true
     slots:
       - has gene or gene product
 
@@ -6408,7 +6384,6 @@ classes:
   exposure event:
     aliases: ['exposure', 'experimental condition']
     mixin: true
-    abstract: true
     slots:
       - timepoint
     description: >-
@@ -6566,7 +6541,6 @@ classes:
 
   outcome:
     mixin: true
-    abstract: true
     description: >-
       An entity that has the role of being the consequence of an exposure event.
       This is an abstract mixin grouping of various categories of possible
@@ -6783,6 +6757,7 @@ classes:
     description: >-
       Observed gene expression intensity, context (site, stage) and
       associated phenotypic status within which the expression occurs.
+    mixin: true
     slots:
       - quantifier qualifier
       - expression site
@@ -6869,7 +6844,6 @@ classes:
     description: >-
       An relationship between a cell line and another entity
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -6895,7 +6869,6 @@ classes:
     description: >-
       An interaction between a molecular entity and another entity
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -6908,7 +6881,6 @@ classes:
       An interaction between a drug and another entity
     is_a: molecular entity to entity association mixin
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -6921,7 +6893,6 @@ classes:
       An interaction between a chemical entity and another entity
     is_a: molecular entity to entity association mixin
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -6933,7 +6904,6 @@ classes:
     description: >-
       An abstract association for use where the case is the subject
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -7063,7 +7033,6 @@ classes:
     description: >-
       An association between a material sample and something.
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -7108,7 +7077,6 @@ classes:
 
   disease to entity association mixin:
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -7124,7 +7092,6 @@ classes:
     description: >-
       An association between some entity and an exposure event.
     mixin: true
-    abstract: true
     defining_slots:
       - object
     slot_usage:
@@ -7146,7 +7113,6 @@ classes:
     description: >-
       An association between some exposure event and some entity.
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -7157,7 +7123,6 @@ classes:
     description: >-
       An association between some entity and an outcome
     mixin: true
-    abstract: true
     defining_slots:
       - object
     slot_usage:
@@ -7180,7 +7145,6 @@ classes:
 
   frequency qualifier mixin:
     mixin: true
-    abstract: true
     description: >-
       Qualifier for frequency type associations
     slots:
@@ -7190,7 +7154,6 @@ classes:
     description: >-
       Qualifiers for entity to disease or phenotype associations.
     mixin: true
-    abstract: true
     is_a: frequency qualifier mixin
     slots:
       - severity qualifier
@@ -7198,7 +7161,6 @@ classes:
 
   entity to phenotypic feature association mixin:
     mixin: true
-    abstract: true
     is_a: entity to feature or disease qualifiers mixin
     defining_slots:
       - object
@@ -7225,7 +7187,6 @@ classes:
     description: >-
       mixin class for any association whose object (target node) is a disease
     mixin: true
-    abstract: true
     is_a: entity to feature or disease qualifiers mixin
     defining_slots:
       - object
@@ -7239,7 +7200,6 @@ classes:
 
   disease or phenotypic feature to entity association mixin:
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -7281,7 +7241,6 @@ classes:
 
   entity to disease or phenotypic feature association mixin:
     mixin: true
-    abstract: true
     defining_slots:
       - object
     slot_usage:
@@ -7296,7 +7255,6 @@ classes:
 
   genotype to entity association mixin:
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -7363,7 +7321,6 @@ classes:
 
   gene to entity association mixin:
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -7376,7 +7333,6 @@ classes:
     local_names:
       ga4gh: variant annotation
     mixin: true
-    abstract: true
     defining_slots:
       - subject
     slot_usage:
@@ -7596,7 +7552,6 @@ classes:
 
   model to disease association mixin:
     mixin: true
-    abstract: true
     description: >-
       This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some
       features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
@@ -7797,7 +7752,6 @@ classes:
     description: >-
       an association which has a macromolecular machine as a subject
     mixin: true
-    abstract: true
     slot_usage:
       subject:
         range: macromolecular machine
