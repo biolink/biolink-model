@@ -6090,19 +6090,6 @@ classes:
     in_subset:
       - model_organism_database
 
-  macromolecular complex:
-    is_a: macromolecular machine
-    exact_mappings:
-      - GO:0032991
-      - WIKIDATA:Q22325163
-    id_prefixes:
-      - INTACT
-      - GO
-      - PR
-      - REACT
-    in_subset:
-      - model_organism_database
-
   gene grouping mixin:
     description: >-
       any grouping of multiple genes or gene products
