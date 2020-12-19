@@ -2367,7 +2367,10 @@ slots:
     exact_mappings:
       - RO:0002448
     narrow_mappings:
-      # Wikidata mapping copied over from 'regulates' above;  considered a slightly narrower term since it applies to protein and RNA as subject regulator whereas molecular_entity may also be another class of chemical_substance?
+      # Wikidata mapping copied over from 'regulates' above;
+      # considered a slightly narrower term since it applies to
+      # protein and RNA as subject regulator whereas molecular_entity
+      # may also be another class of chemical_substance?
       - WIKIDATA_PROPERTY:P128
 
   regulated by, entity to entity:
@@ -2391,7 +2394,8 @@ slots:
       # causally positive effect of A over B but not specific to nature of B
       - RO:0004034
     narrow_mappings:
-      # Defined more narrowly as increasing, facilitating the action or function of a "substance interaction", where "substance" is deemed a subclass of possible entity
+      # Defined more narrowly as increasing, facilitating the
+      # action or function of a "substance interaction", where "substance" is deemed a subclass of possible entity
       - SEMMEDDB:STIMULATES
       - SEMMEDDB:stimulates
       # Positive regulation is defined more narrowly here, as "Anatomy upregulates Gene"
@@ -2432,7 +2436,8 @@ slots:
   disrupts:
     is_a: affects
     description: >-
-      describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
+      describes a relationship where one entity degrades or interferes
+      with the structure, function, or occurrence of another.
     in_subset:
       - translator_minimal
     inverse: disrupted by
@@ -2448,7 +2453,8 @@ slots:
   disrupted by:
     is_a: affected by
     description: >-
-      describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
+      describes a relationship where the structure, function, or occurrence
+      of one entity is degraded or interfered with by another.
     inverse: disrupts
 
   has gene product:
@@ -2877,7 +2883,8 @@ slots:
 
   caused by:
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+      holds between two entities where the occurrence, existence,
+      or activity of one is caused by the occurrence or generation of the other
     is_a: related to
     in_subset:
       - translator_minimal
@@ -2899,7 +2906,11 @@ slots:
   ameliorates:
     is_a: affects
     description: >-
-      A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+      A relationship between an entity (e.g. a genotype,
+      genetic variation, chemical, or environmental exposure)
+      and a condition (a phenotype or disease), where the
+      presence of the entity reduces or eliminates some or
+      all aspects of the condition.
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: biological entity
     range: disease or phenotypic feature
@@ -2909,7 +2920,10 @@ slots:
   exacerbates:
     is_a: affects
     description: >-
-      A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+      A relationship between an entity (e.g. a chemical,
+      environmental exposure, or some form of genetic variation)
+      and a condition (a phenotype or disease), where the presence
+      of the entity worsens some or all aspects of the condition.
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: biological entity
     range: disease or phenotypic feature
@@ -2921,7 +2935,8 @@ slots:
     aliases: ['is substance that treats']
     is_a: ameliorates
     description: >-
-      holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+      holds between a therapeutic procedure or chemical substance
+      and a disease or phenotypic feature that it is used to treat
     domain: treatment
     range: disease or phenotypic feature
     in_subset:
@@ -2936,7 +2951,8 @@ slots:
     broad_mappings:
       - RO:0003307
     narrow_mappings:
-      # "is substance that treats" constrains statements to a subset of the universe of all possible treatments
+      # "is substance that treats" constrains statements to
+      # a subset of the universe of all possible treatments
       - RO:0002606
       - NCIT:regimen_has_accepted_use_for_disease
       # RTX mapped REPODB terms
@@ -2965,7 +2981,8 @@ slots:
   treated by:
     is_a: related to
     description: >-
-      holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
+      holds between a disease or phenotypic feature and a therapeutic process
+      or chemical substance that is used to treat the condition
     domain: disease or phenotypic feature
     range: treatment
     in_subset:
@@ -2976,7 +2993,8 @@ slots:
       # RTX contributed term tagged as inverse of 'biolink:treats'
       - MONDO:disease_responds_to
     narrow_mappings:
-      # "is treated by substance" constrains statements to a subset of the universe of all possible treatments
+      # "is treated by substance" constrains statements to
+      # subset of the universe of all possible treatments
       - RO:0002302
 
   prevents :
@@ -2998,7 +3016,8 @@ slots:
   prevented by:
     is_a: related to
     description: >-
-      holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
+      holds between a potential outcome of which the likelihood
+      was reduced by the application or use of an entity.
     inverse: prevents
 
   correlated with:
