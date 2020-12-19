@@ -30,7 +30,7 @@ URI: [biolink:OrganismalEntity](https://w3id.org/biolink/vocab/OrganismalEntity)
  * [CellLine](CellLine.md)
  * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
  * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
- * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+ * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
 
 ## Referenced by class
 

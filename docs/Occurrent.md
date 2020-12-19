@@ -8,17 +8,21 @@ layout: default
 # Class: Occurrent
 
 
-A processual entity
+A processual entity.
 
 URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Phenomenon]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[Occurrent],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[Occurrent]%5E-[ActivityAndBehavior],[Phenomenon],[NamedThing],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssenceOrOccurrent],[Phenomenon]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[Occurrent],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[Occurrent]%5E-[ActivityAndBehavior],[PhysicalEssenceOrOccurrent]%5E-[Occurrent],[Phenomenon],[NamedThing],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
 
 ---
 
+
+## Parents
+
+ *  is_a: [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) - Either a physical or processual entity.
 
 ## Children
 

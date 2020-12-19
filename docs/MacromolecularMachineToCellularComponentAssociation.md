@@ -22,7 +22,7 @@ URI: [biolink:MacromolecularMachineToCellularComponentAssociation](https://w3id.
 
 ## Parents
 
- *  is_a: [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+ *  is_a: [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 
 ## Referenced by class
 

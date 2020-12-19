@@ -26,7 +26,7 @@ URI: [biolink:Phenomenon](https://w3id.org/biolink/vocab/Phenomenon)
 
 ## Uses Mixins
 
- *  mixin: [Occurrent](Occurrent.md) - A processual entity
+ *  mixin: [Occurrent](Occurrent.md) - A processual entity.
 
 ## Attributes
 

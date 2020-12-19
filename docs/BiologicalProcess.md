@@ -33,7 +33,7 @@ URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProces
 
 ## Uses Mixins
 
- *  mixin: [Occurrent](Occurrent.md) - A processual entity
+ *  mixin: [Occurrent](Occurrent.md) - A processual entity.
 
 ## Children
 

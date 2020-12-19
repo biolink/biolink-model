@@ -21,6 +21,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 
 ## Children
 
+ *  [affected by](affected_by.md)
  *  [affects](affects.md)
  *  [affects risk for](affects_risk_for.md)
  *  [caused by](caused_by.md)
@@ -57,6 +58,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
  *  [occurs in](occurs_in.md)
  *  [overlaps](overlaps.md)
  *  [participates in](participates_in.md)
+ *  [prevented by](prevented_by.md)
  *  [produced by](produced_by.md)
  *  [produces](produces.md)
  *  [related condition](related_condition.md)

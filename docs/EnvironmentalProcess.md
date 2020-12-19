@@ -26,7 +26,7 @@ URI: [biolink:EnvironmentalProcess](https://w3id.org/biolink/vocab/Environmental
 
 ## Uses Mixins
 
- *  mixin: [Occurrent](Occurrent.md) - A processual entity
+ *  mixin: [Occurrent](Occurrent.md) - A processual entity.
 
 ## Children
 

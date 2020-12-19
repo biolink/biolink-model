@@ -14,7 +14,7 @@ URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_re
 
 ## Domain and Range
 
-None ->  <sub>OPT</sub> [String](types/String.md)
+[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) ->  <sub>OPT</sub> [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
 
 ## Parents
 

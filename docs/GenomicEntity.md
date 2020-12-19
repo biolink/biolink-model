@@ -22,7 +22,7 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
 ## Parents
 
- *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
+ *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)"
 
 ## Children
 

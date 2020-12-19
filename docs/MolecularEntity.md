@@ -8,7 +8,7 @@ layout: default
 # Class: MolecularEntity
 
 
-A gene, gene product, small molecule or macromolecule (including protein complex)
+A gene, gene product, small molecule or macromolecule (including protein complex)"
 
 URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 

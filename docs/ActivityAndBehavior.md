@@ -22,7 +22,7 @@ URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBeh
 
 ## Parents
 
- *  is_a: [Occurrent](Occurrent.md) - A processual entity
+ *  is_a: [Occurrent](Occurrent.md) - A processual entity.
 
 ## Mixin for
 
