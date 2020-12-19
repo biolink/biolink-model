@@ -36,7 +36,7 @@ prefixes:
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
-  # EDAM-DATA: 'http://edamontology.org/data_'  # already defined in monarch_context of default_curi_maps?
+  EDAM-DATA: 'http://edamontology.org/data_'
   EDAM-FORMAT: 'http://edamontology.org/format_'
   EDAM-OPERATION: 'http://edamontology.org/operation_'
   EDAM-TOPIC: 'http://edamontology.org/topic_'
@@ -59,6 +59,7 @@ prefixes:
   ICD0: 'http://translator.ncats.nih.gov/ICD0_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
+  interpro: 'https://www.ebi.ac.uk/interpro/entry/'
   isbn: 'https://www.isbn-international.org/identifier/' # note: a resolvable base URI not available from isbn-international
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
@@ -76,6 +77,7 @@ prefixes:
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   PATO-PROPERTY: 'http://purl.obolibrary.org/obo/pato#'  # Phenotypic Quality Ontology properties, not core terms
+  pav: 'http://purl.org/pav/'
   PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   qud: 'http://qudt.org/1.1/schema/qudt#'
@@ -862,11 +864,19 @@ slots:
       connects a genomic feature to its sequence
     range: biological sequence
 
-  has gene:
+  has gene or gene product:
     is_a: node property
     description: >-
-      connects an entity to a single gene
+      connects an entity with one or more gene products
     range: gene
+    multivalued: true
+
+  has gene:
+    is_a: has gene or gene product
+    description: >-
+      connects an entity associated with one or more genes
+    range: gene
+    multivalued: true
 
   has zygosity:
     is_a: node property
@@ -884,17 +894,32 @@ slots:
       - WIKIDATA_PROPERTY:P274
 
   has constituent:
+    description: >-
+      one or more chemical substances within a mixture
     is_a: node property
     range: chemical substance
     multivalued: true
-    description: >-
-      one or more chemical substances within a mixture
 
   has drug:
     is_a: node property
     description: >-
-      connects an entity to a single drug
+      connects an entity to one or more drugs
     range: drug
+    multivalued: true
+
+  has device:
+    is_a: node property
+    description: >-
+      connects an entity to one or more (medical) devices
+    range: device
+    multivalued: true
+
+  has procedure:
+    is_a: node property
+    description: >-
+      connects an entity to one or more (medical) procedures
+    range: procedure
+    multivalued: true
 
   has active ingredient:
     is_a: node property
@@ -957,6 +982,21 @@ slots:
       - LOINC:has_pharmaceutical_route
       - SNOMED:has_dose_form_intended_site
       - SNOMED:has_route_of_administration
+
+  has population context:
+    description: >-
+      a biological population (general, study, cohort, etc.) with a specific
+      set of characteristics to constrain an association.
+    is_a: association slot
+    range: population of individual organisms
+
+  has temporal context:
+    description: >-
+      a constraint of time placed upon the truth value of an association.
+    is_a: association slot
+    # this resolves to the 'time' datatype, but not sure
+    # if this also represents an interval of time.
+    range: time type
 
 
 ## --------------------
@@ -2386,7 +2426,8 @@ slots:
   has gene product:
     is_a: related to
     description: >-
-      holds between a gene and a transcribed and/or translated product generated from it
+      holds between a gene and a transcribed and/or
+      translated product generated from it
     domain: gene
     range: gene product
     in_subset:
@@ -2846,6 +2887,7 @@ slots:
     range: disease or phenotypic feature
     exact_mappings:
       - RO:0003309
+      - CTD:therapeutic
 
   treats:
     aliases: ['is substance that treats']
@@ -2863,7 +2905,6 @@ slots:
       - SEMMEDDB:TREATS
       - SEMMEDDB:treats
       - WIKIDATA_PROPERTY:P2175
-      - CTD:therapeutic
     broad_mappings:
       - RO:0003307
     narrow_mappings:
@@ -4205,6 +4246,16 @@ slots:
       - SEMMEDDB:measures
       - UMLS:measures
 
+  catalyst qualifier:
+    is_a: association slot
+    multivalued: true
+    range: macromolecular machine
+    description: >-
+      a qualifier that connects an association between two causally connected
+      entities (for example, two chemical entities, or a chemical entity in
+      that changes location) and the gene product, gene, or complex that
+      enables or catalyzes the change.
+
   expression site:
     description: >-
       location in which gene or protein expression takes place.
@@ -4288,14 +4339,6 @@ slots:
     is_a: association slot
     multivalued: true
     range: publication
-
-  change is catalyzed by:
-    is_a: association slot
-    multivalued: true
-    range: macromolecular machine
-    description: >-
-      hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in
-      that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
 
   sequence localization attribute:
     is_a: association slot
@@ -5074,6 +5117,13 @@ classes:
 
   ## Scientific Studies
 
+  study population:
+    is_a: population of individual organisms
+    description: >-
+      A group of people banded together or treated as a group as participants in a research study.
+    close_mappings:
+      - WIKIDATA:Q7229825
+
   subject of investigation:
     mixin: true
     abstract: true
@@ -5304,6 +5354,19 @@ classes:
       - GO
       - REACT
 
+  pathological process:
+    description: >-
+      A biologic function or a process having an abnormal or deleterious
+      effect at the subcellular, cellular, multicellular, or organismal level.
+    is_a: biological process
+    exact_mappings:
+      - OBI:1110122
+      - NCIT:C16956
+    narrow_mappings:
+      # metastasis
+      - NCIT:C19151
+      - EFO:0009708
+
   behavior:
     is_a: biological process
     exact_mappings:
@@ -5321,6 +5384,11 @@ classes:
       # Individual Behavior
       - UMLSSC:T055
       - UMLSST:inbe
+
+  death:
+    is_a: biological process
+    exact_mappings:
+      - GO:0016265
 
   ## (Bio)chemistry
 
@@ -5533,12 +5601,6 @@ classes:
       - foaf:Person
     id_prefixes:
       - ORCID
-
-  case:
-    aliases: ['patient', 'proband']
-    is_a: individual organism
-    description: >-
-      An individual (human) organism that has a patient role in some clinical context.
 
   population of individual organisms:
     description: >-
@@ -5837,7 +5899,8 @@ classes:
   exon:
     is_a: genomic entity
     description: >-
-      A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+      A region of the transcript sequence within a gene which is not
+      removed from the primary RNA transcript by RNA splicing
     exact_mappings:
       - SO:0000147
       - SIO:010445
@@ -5890,7 +5953,7 @@ classes:
       - SIO:010035
       - WIKIDATA:Q7187
     id_prefixes:
-      - NCBIGene
+      - NCBIGENE
       - ENSEMBL
       - HGNC
       - UniProtKB
@@ -5903,7 +5966,7 @@ classes:
       - FB
       - RGD
       - SGD
-      - PomBase
+      - POMBASE
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -6000,7 +6063,7 @@ classes:
     is_a: RNA product
     id_prefixes:
       - RNACENTRAL
-      - NCBIGene
+      - NCBIGENE
       - ENSEMBL
     exact_mappings:
       - SO:0000655
@@ -6012,6 +6075,25 @@ classes:
       - SO:0000276
       - SIO:001397
       - WIKIDATA:Q310899
+    id_prefixes:
+      - MIR
+      - HGNC
+      - WormBase
+    in_subset:
+      - model_organism_database
+
+  siRNA:
+    aliases: ['small interfering RNA', 'RNAi']
+    description: >-
+      A small RNA molecule that is the product of a longer exogenous or
+      endogenous dsRNA, which is either a bimolecular duplex or very long
+      hairpin, processed (via the Dicer pathway) such that numerous siRNAs
+      accumulate from both strands of the dsRNA. SRNAs trigger the cleavage
+      of their target molecules.
+    is_a: noncoding RNA product
+    exact_mappings:
+      - SO:0000646
+      - WIKIDATA:Q203221
     id_prefixes:
       - MIR
       - HGNC
@@ -6032,11 +6114,13 @@ classes:
     in_subset:
       - model_organism_database
 
-  gene grouping:
-    mixin: true
-    abstract: true
+  gene grouping mixin:
     description: >-
       any grouping of multiple genes or gene products
+    mixin: true
+    abstract: true
+    slots:
+      - has gene or gene product
 
   gene family:
     is_a: molecular entity
@@ -6051,14 +6135,14 @@ classes:
       - NCIT:C20130
       - WIKIDATA:Q417841
     mixins:
-      - gene grouping
+      - gene grouping mixin
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
       - PANTHER.FAMILY
       - HGNC.FAMILY
       - FlyBase ## FlyBase:FBgg
-      - InterPro # note: may be better to introduce a protein domain/family
+      - interpro # note: may be better to introduce a protein domain/family
     in_subset:
       - model_organism_database
 
@@ -6105,7 +6189,7 @@ classes:
     description: >-
       An allele that varies in its sequence from what is considered the reference allele at that locus.
     comments: >-
-      This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
+      This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more
       than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
     broad_mappings:
       # slightly broader semantics than SO:0001059 - 'sequence alteration'
@@ -6119,12 +6203,12 @@ classes:
       - SO:0001059
     id_prefixes:
       - CAID # ClinGen Allele Registry
-      - ClinVar
+      - CLINVAR
       - ClinVarVariant
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
-      - dbSNP
+      - DBSNP
       # - MYVARIANT_HG19 needs IRI mapping
       # - MYVARIANT_HG38 needs IRI mapping
       # - HGVS needs IRI mapping
@@ -6172,7 +6256,13 @@ classes:
     exact_mappings:
       - GENO:0000504
 
-  ## Clinical Models
+  ## --------------------
+  ## Clinical
+  ## Attributes, Cohort,
+  ## Exposures & Outcomes
+  ## --------------------
+
+  ## Clinical Attributes
 
   clinical attribute:
     is_a: attribute
@@ -6182,6 +6272,21 @@ classes:
       # Clinical Attribute
       - UMLSSC:T201
       - UMLSST:clna
+
+  clinical measurement:
+    is_a: clinical attribute
+    description: >-
+      A clinical measurement is a special kind of attribute which results from a laboratory observation from
+      a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
+    slot_usage:
+      has attribute type:
+        required: true
+        multivalued: false
+        values_from:
+          - EFO
+          - LOINC
+    exact_mappings:
+      - EFO:0001444
 
   clinical modifier:
     is_a: clinical attribute
@@ -6209,7 +6314,8 @@ classes:
   clinical entity:
     is_a: named thing
     description: >-
-      Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+      Any entity or process that exists in the clinical domain and outside the
+      biological realm. Diseases are placed under biological entities
 
   clinical trial:
     is_a: clinical entity
@@ -6217,34 +6323,124 @@ classes:
   clinical intervention:
     is_a: clinical entity
 
+  clinical finding:
+    is_a: phenotypic feature
+    description: >-
+      this category is currently considered broad enough to tag clinical lab measurements and other biological
+      attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+    slot_usage:
+      has attribute:
+        range: clinical attribute
+
+  hospitalization:
+    is_a: clinical intervention
+    exact_mappings:
+      - SNOMEDCT:32485007
+      - WIKIDATA:Q3140971
+
+  socioeconomic attribute:
+    is_a: attribute
+    description: >-
+      Attributes relating to a socioeconomic manifestation
+    #slot_usage:
+    # need a suitable qualifying socioeconomic ontology target here?
+    # Perhaps some subset of ECTO: https://github.com/EnvironmentOntology/environmental-exposure-ontology
+    #  has attribute type:
+    #     range: socioeconomic ontology
+    # exact_mappings:
+    #  - ??
+
+  ## Cohorts
+
+  case:
+    aliases: ['patient', 'proband']
+    is_a: individual organism
+    description: >-
+      An individual (human) organism that has a patient role in some clinical context.
+
+  cohort:
+    is_a: study population
+    description: >-
+      A group of people banded together or treated as a group who share common characteristics.
+      A cohort 'study' is a particular form of longitudinal study that samples a cohort,
+      performing a cross-section at intervals through time.
+    #
+    # As of this moment (Nov. 22), the jury is still out on what metadata of a cohort
+    # will be common to all cohort descriptions versus cohort-specific annotation.
+    # The former should be embedded as explicit slots in the cohort category. The latter
+    # ought to be documented as (ontology term constrained) extended node attributes.
+    #
+    #slots:
+    #  - general disease focus,
+    #  - specific inclusion/exclusion criteria,
+    #  - year(s) of cohort creation,
+    #  - institution.
+    exact_mappings:
+      - WIKIDATA:Q1303415
+    narrow_mappings:
+      # Professional or Occupational Group
+      - UMLSSC:T097
+      - UMLSST:prog
+      # Family Group
+      - UMLSSC:T099
+      - UMLSST:famg
+      # Age Group
+      - UMLSSC:T100
+      - UMLSST:aggp
+      # Patient or Disabled Group
+      - UMLSSC:T101
+      - UMLSST:podg
+
+  ## Exposures
+
   exposure event:
     aliases: ['exposure', 'experimental condition']
-    is_a: biological entity
+    mixin: true
+    abstract: true
+    slots:
+      - timepoint
     description: >-
-      A feature of the environment of an organism that influences one or more
-      phenotypic features of that organism, potentially mediated by genes
+      A (possibly time bounded) incidence of a feature of the environment of an organism that
+      influences one or more phenotypic features of that organism, potentially mediated by genes
     broad_mappings:
       # Event
       - UMLSSC:T051
       - UMLSST:evnt
-    narrow_mappings:
-      # term restricted to experimental context
+    exact_mappings:
       - XCO:0000000
     in_subset:
       - model_organism_database
 
-  chemical exposure:
-#    aliases: ['drug intake', 'drug dose']
-    is_a: exposure event
+  genomic background exposure:
+    is_a: genomic entity
+    mixins:
+      - exposure event
+      - gene grouping mixin
     description: >-
-      A chemical exposure is an intake of a particular chemical substance
-#    slots:
-#      - has input
-#    slot_usage:
-#      chemical substance:
-#        range: chemical substance
-#        required: true
-#        multivalued: true
+      A genomic background exposure is where an individual's specific genomic background
+      of genes, sequence variants or other pre-existing genomic conditions constitute
+      a kind of 'exposure' to the organism, leading to or influencing an outcome.
+    #exact_mappings:
+    #  -
+
+  disease or phenotypic feature exposure:
+    is_a: disease or phenotypic feature
+    mixins:
+      - exposure event
+    description: >-
+      A disease or phenotypic feature exposure is where a disease state is
+      manifested which represents an precondition, leading to or influencing
+      an outcome, e.g. hypertension leading to a related disease outcome such
+      as cardiovascular disease.
+    #exact_mappings:
+    #  -
+
+  chemical exposure:
+    is_a: chemical substance
+    mixins:
+      - exposure event
+    description: >-
+      A chemical exposure is an intake of a particular chemical substance, other than a drug.
     exact_mappings:
       # this ECTO term is not visibly defined but
       # the 9000000-series identifiers seems to be the
@@ -6252,39 +6448,167 @@ classes:
       - ECTO:9000000
       - SIO:001399
 
-  drug exposure:
-    aliases: ['drug intake', 'drug dose']
-    is_a: chemical exposure
+  complex chemical exposure:
     description: >-
-      A drug exposure is an intake of a particular chemical substance
-#    slots:
-#      - has input
-    slot_usage:
-      has drug:
-        range: chemical substance
-        required: true
-        multivalued: true
+      A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+    is_a: chemical exposure
+    mixins:
+      - mixture
+    # exact_mappings:
+    #  -
+
+  drug exposure:
+    aliases: ['drug intake', 'drug dose', 'medication intake']
+    description: >-
+      A drug exposure is an intake of a particular drug.
+    is_a: drug
+    mixins:
+      - exposure event
     broad_mappings:
       # slightly broader than just drug effects on a biological system
       - SIO:001005
     exact_mappings:
       - ECTO:0000509
 
+  drug to gene interaction exposure:
+    description: >-
+      drug to gene interaction exposure is a drug exposure is where the
+      interactions of the drug with specific genes are known to constitute
+      an 'exposure' to the organism, leading to or influencing an outcome.
+    is_a: drug exposure
+    mixins:
+      - gene grouping mixin
+    # exact_mappings:
+    #  -
+
   treatment:
     aliases: ['medical action', 'medical intervention']
-    is_a: exposure event
+    # 'named thing' seems too generic here but not sure what applies better here
+    is_a: named thing
+    mixins:
+      - exposure event
     description: >-
-      A treatment is targeted at a disease or phenotype and
-      may involve multiple drug, device or procedural 'exposures'
-    slot_usage:
-      has part:
-        multivalued: true
-        range: drug exposure
-        required: true
+      A treatment is targeted at a disease or phenotype and may involve
+      multiple drug 'exposures', medical devices and/or procedures
+    slots:
+      - has drug
+      - has device
+      - has procedure
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
 
+  biotic exposure:
+    aliases: ['viral exposure','bacterial exposure']
+    is_a: organism taxon
+    mixins:
+      - exposure event
+    description: >-
+      A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
+    # exact_mappings:
+    #  -
+
+  geographic exposure:
+    is_a: geographic location
+    mixins:
+      - exposure event
+    description: >-
+      A geographic exposure is a factor relating to geographic proximity to some impactful entity.
+    # exact_mappings:
+    #  -
+
+  environmental exposure:
+    is_a: environmental process
+    mixins:
+      - exposure event
+    description: >-
+      A environmental exposure is a factor relating to abiotic processes in the environment
+      including atmospheric (heat, cold, general pollution) and water-born contaminants
+    # exact_mappings:
+    #  -
+
+  behavioral exposure:
+    is_a: behavior
+    mixins:
+      - exposure event
+    description: >-
+      A behavioral exposure is a factor relating to behavior impacting an individual.
+    # exact_mappings:
+    #  -
+
+  socioeconomic exposure:
+    is_a: behavior
+    mixins:
+      - exposure event
+    description: >-
+      A socioeconomic exposure is a factor relating to social and
+      financial status of an affected individual (e.g. poverty).
+    slot_usage:
+      has attribute:
+        range: socioeconomic attribute
+        required: true
+    # exact_mappings:
+    #  -
+
+  ## Outcomes
+
+  outcome:
+    mixin: true
+    abstract: true
+    description: >-
+      An entity that has the role of being the consequence of an exposure event.
+      This is an abstract mixin grouping of various categories of possible
+      biological or non-biological (e.g. clinical) outcomes.
+
+  disease or phenotypic feature outcome:
+    is_a: disease or phenotypic feature
+    mixins:
+      - outcome
+    description: >-
+      Physiological outcomes resulting from an exposure event which
+      is the manifestation of a disease or other characteristic phenotype.
+
+  behavioral outcome:
+    is_a: behavior
+    mixins:
+      - outcome
+    description: >-
+      An outcome resulting from an exposure event which is
+      the manifestation of human behavior.
+
+  hospitalization outcome:
+    is_a: hospitalization
+    mixins:
+      - outcome
+    description: >-
+      An outcome resulting from an exposure event which is
+      the increased manifestation of acute (e.g. emergency
+      room visit) or chronic (inpatient) hospitalization.
+
+  mortality outcome:
+    is_a: death
+    mixins:
+      - outcome
+    description: >-
+      An outcome of death from resulting from an exposure event.
+
+  epidemiological outcome:
+    is_a: biological entity
+    mixins:
+      - outcome
+    description: >-
+      An epidemiological outcome, such as societal disease
+      burden, resulting from an exposure event.
+    related_mappings:
+      - NCIT:C19291
+
+  socioeconomic outcome:
+    is_a: behavior
+    mixins:
+      - outcome
+    description: >-
+      An general social or economic outcome, such as
+      healthcare costs, utilization, etc., resulting from an exposure event
 
   ## ------------
   ## ASSOCIATIONS
@@ -6555,9 +6879,35 @@ classes:
 #        - range: disease or phenotypic feature
         range: disease or phenotypic feature
 
+  molecular entity to entity association mixin:
+    description: >-
+      An interaction between a molecular entity and another entity
+    mixin: true
+    abstract: true
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: molecular entity
+        description: "the molecular entity that is an interactor"
+
+  drug to entity association mixin:
+    description: >-
+      An interaction between a drug and another entity
+    is_a: molecular entity to entity association mixin
+    mixin: true
+    abstract: true
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: drug
+        description: "the drug that is an interactor"
+
   chemical to entity association mixin:
     description: >-
       An interaction between a chemical entity and another entity
+    is_a: molecular entity to entity association mixin
     mixin: true
     abstract: true
     defining_slots:
@@ -6605,14 +6955,14 @@ classes:
         R enabled-by P AND
         R type Reaction
         THEN
-        C1 derives-into C2 <<change is catalyzed by P>>
+        C1 derives-into C2 <<catalyst qualifier P>>
     is_a: chemical to chemical association
     defining_slots:
       - subject
       - predicate
       - object
     slots:
-      - change is catalyzed by
+      - catalyst qualifier
     slot_usage:
       subject:
         range: chemical substance
@@ -6624,10 +6974,11 @@ classes:
           the downstream chemical entity
       predicate:
         subproperty_of: derives into
-      change is catalyzed by:
+      catalyst qualifier:
         description: >-
-          this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the
-          subject chemical to transform into the object chemical
+          this connects the derivation edge to the molecular entity that
+          catalyzes the reaction that causes the subject chemical to
+          transform into the object chemical.
 
   chemical to disease or phenotypic feature association:
     description: >-
@@ -6678,6 +7029,22 @@ classes:
       object:
         range: gene or gene product
         description: "the gene or gene product that is affected by the chemical"
+
+  drug to gene association:
+    description: >-
+      An interaction between a drug and a gene or gene product.
+    is_a: association
+    related_mappings:
+      - SIO:001257
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - drug to entity association mixin
+    slot_usage:
+      object:
+        range: gene or gene product
+        description: "the gene or gene product that is affected by the drug"
 
   material sample to entity association mixin:
     description: >-
@@ -6740,20 +7107,63 @@ classes:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
 
-  disease to exposure association:
+  entity to exposure event association mixin:
+    description: >-
+      An association between some entity and an exposure event.
+    mixin: true
+    abstract: true
+    defining_slots:
+      - object
+    slot_usage:
+      object:
+        range: exposure event
+
+  disease to exposure event association:
     description: >-
       An association between an exposure event and a disease.
     is_a: association
     mixins:
       - disease to entity association mixin
+      - entity to exposure event association mixin
     defining_slots:
       - subject
       - object
+
+  exposure event to entity association mixin:
+    description: >-
+      An association between some exposure event and some entity.
+    mixin: true
+    abstract: true
+    defining_slots:
+      - subject
     slot_usage:
       subject:
-        range: disease
-      object:
         range: exposure event
+
+  entity to outcome association mixin:
+    description: >-
+      An association between some entity and an outcome
+    mixin: true
+    abstract: true
+    defining_slots:
+      - object
+    slot_usage:
+      object:
+        range: outcome
+
+  exposure event to outcome association:
+    description: >-
+      An association between an exposure event and an outcome.
+    is_a: association
+    mixins:
+      - exposure event to entity association mixin
+      - entity to outcome association mixin
+    slots:
+      - has population context
+      - has temporal context
+    defining_slots:
+      - subject
+      - object
 
   frequency qualifier mixin:
     mixin: true

@@ -157,6 +157,39 @@ message Behavior
   repeated hasOutput NamedThing = 11
   repeated enabledBy PhysicalEntity = 12
  }
+// A behavioral exposure is a factor relating to behavior impacting an individual.
+message BehavioralExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
+  optional timepoint TimeType = 13
+ }
+// An outcome resulting from an exposure event which is the manifestation of human behavior.
+message BehavioralOutcome
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
+ }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
  {
@@ -197,6 +230,22 @@ message BiologicalSex
   optional hasQualitativeValue NamedThing = 4
   optional iri IriType = 5
   optional source LabelType = 6
+ }
+// A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
+message BioticExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  optional hasTaxonomicRank TaxonomicRank = 10
+  repeated subclassOf OrganismTaxon = 11
+  optional timepoint TimeType = 12
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -378,7 +427,7 @@ message CellularComponent
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
-// A chemical exposure is an intake of a particular chemical substance
+// A chemical exposure is an intake of a particular chemical substance, other than a drug.
 message ChemicalExposure
  {
   id String = 1
@@ -390,6 +439,8 @@ message ChemicalExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional timepoint TimeType = 11
  }
 // May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
 message ChemicalSubstance
@@ -432,7 +483,7 @@ message ChemicalToChemicalAssociation
 //   R enabled-by P AND
 //   R type Reaction
 //   THEN
-//   C1 derives-into C2 <<change is catalyzed by P>>
+//   C1 derives-into C2 <<catalyst qualifier P>>
 message ChemicalToChemicalDerivationAssociation
  {
   id String = 1
@@ -448,7 +499,7 @@ message ChemicalToChemicalDerivationAssociation
   repeated publications Publication = 11
   optional type String = 12
   repeated category Association = 13
-  repeated changeIsCatalyzedBy MacromolecularMachine = 14
+  repeated catalystQualifier MacromolecularMachine = 14
   subject ChemicalSubstance = 15
   object ChemicalSubstance = 16
   predicate PredicateType = 17
@@ -546,6 +597,20 @@ message ClinicalEntity
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
+// this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+message ClinicalFinding
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated category NamedThing = 8
+  repeated inTaxon OrganismTaxon = 9
+  repeated hasAttribute ClinicalAttribute = 10
+ }
 message ClinicalIntervention
  {
   id String = 1
@@ -557,6 +622,16 @@ message ClinicalIntervention
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+ }
+// A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
+message ClinicalMeasurement
+ {
+  optional name LabelType = 1
+  repeated hasQuantitativeValue QuantityValue = 2
+  optional hasQualitativeValue NamedThing = 3
+  optional iri IriType = 4
+  optional source LabelType = 5
+  hasAttributeType OntologyClass = 6
  }
 // Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
 message ClinicalModifier
@@ -593,6 +668,36 @@ message CodingSequence
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
+ }
+// A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
+message Cohort
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated category NamedThing = 8
+  repeated hasAttribute Attribute = 9
+  repeated inTaxon OrganismTaxon = 10
+ }
+// A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+message ComplexChemicalExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional timepoint TimeType = 11
+  repeated hasConstituent ChemicalSubstance = 12
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -682,6 +787,21 @@ message DataSetVersion
   optional versionOf DataSet = 15
   optional distribution DistributionLevel = 16
  }
+message Death
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
+ }
 // A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 message Device
  {
@@ -741,6 +861,35 @@ message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
   repeated category Association = 15
   object AnatomicalEntity = 16
  }
+// A disease or phenotypic feature exposure is where a disease state is manifested which represents an precondition, leading to or influencing an outcome, e.g. hypertension leading to a related disease outcome such as cardiovascular disease.
+message DiseaseOrPhenotypicFeatureExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional timepoint TimeType = 11
+ }
+// Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
+message DiseaseOrPhenotypicFeatureOutcome
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+ }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 message DiseaseOrPhenotypicFeatureToLocationAssociation
  {
@@ -762,7 +911,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   object AnatomicalEntity = 16
  }
 // An association between an exposure event and a disease.
-message DiseaseToExposureAssociation
+message DiseaseToExposureEventAssociation
  {
   id String = 1
   optional iri IriType = 2
@@ -771,15 +920,15 @@ message DiseaseToExposureAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  predicate PredicateType = 8
-  relation Uriorcurie = 9
-  optional negated Boolean = 10
-  repeated qualifiers OntologyClass = 11
-  repeated publications Publication = 12
-  optional type String = 13
-  repeated category Association = 14
-  subject Disease = 15
-  object ExposureEvent = 16
+  subject NamedThing = 8
+  predicate PredicateType = 9
+  object NamedThing = 10
+  relation Uriorcurie = 11
+  optional negated Boolean = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional type String = 15
+  repeated category Association = 16
  }
 // An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
 message DiseaseToPhenotypicFeatureAssociation
@@ -822,7 +971,7 @@ message Drug
   repeated hasExcipient ChemicalSubstance = 12
   repeated hasConstituent ChemicalSubstance = 13
  }
-// A drug exposure is an intake of a particular chemical substance
+// A drug exposure is an intake of a particular drug.
 message DrugExposure
  {
   id String = 1
@@ -834,7 +983,64 @@ message DrugExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasDrug ChemicalSubstance = 10
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasActiveIngredient ChemicalSubstance = 11
+  repeated hasExcipient ChemicalSubstance = 12
+  repeated hasConstituent ChemicalSubstance = 13
+  optional timepoint TimeType = 14
+ }
+// An interaction between a drug and a gene or gene product.
+message DrugToGeneAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  subject NamedThing = 8
+  predicate PredicateType = 9
+  relation Uriorcurie = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional type String = 14
+  repeated category Association = 15
+  object GeneOrGeneProduct = 16
+ }
+// drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
+message DrugToGeneInteractionExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasActiveIngredient ChemicalSubstance = 11
+  repeated hasExcipient ChemicalSubstance = 12
+  repeated hasConstituent ChemicalSubstance = 13
+  optional timepoint TimeType = 14
+  repeated hasGeneOrGeneProduct Gene = 15
+ }
+// A environmental exposure is a factor relating to abiotic processes in the environment including atmospheric (heat, cold, general pollution) and water-born contaminants
+message EnvironmentalExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  optional timepoint TimeType = 10
  }
 message EnvironmentalFeature
  {
@@ -849,6 +1055,19 @@ message EnvironmentalFeature
   repeated category NamedThing = 9
  }
 message EnvironmentalProcess
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+ }
+// An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
+message EpidemiologicalOutcome
  {
   id String = 1
   optional iri IriType = 2
@@ -912,18 +1131,27 @@ message ExonToTranscriptRelationship
   subject Exon = 15
   object Transcript = 16
  }
-// A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-message ExposureEvent
+// An association between an exposure event and an outcome.
+message ExposureEventToOutcomeAssociation
  {
   id String = 1
   optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  subject NamedThing = 8
+  predicate PredicateType = 9
+  object NamedThing = 10
+  relation Uriorcurie = 11
+  optional negated Boolean = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional type String = 15
+  repeated category Association = 16
+  optional hasPopulationContext PopulationOfIndividualOrganisms = 17
+  optional hasTemporalContext TimeType = 18
  }
 // Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
 message ExposureEventToPhenotypicFeatureAssociation
@@ -1055,6 +1283,7 @@ message GeneFamily
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
+  repeated hasGeneOrGeneProduct Gene = 11
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
@@ -1309,6 +1538,23 @@ message Genome
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
+// A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
+message GenomicBackgroundExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
+  optional timepoint TimeType = 12
+  repeated hasGeneOrGeneProduct Gene = 13
+ }
 // an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
 message GenomicEntity
  {
@@ -1503,6 +1749,22 @@ message GenotypicSex
   optional iri IriType = 5
   optional source LabelType = 6
  }
+// A geographic exposure is a factor relating to geographic proximity to some impactful entity.
+message GeographicExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  optional latitude Float = 10
+  optional longitude Float = 11
+  optional timepoint TimeType = 12
+ }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
  {
@@ -1561,6 +1823,31 @@ message Haplotype
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
+ }
+message Hospitalization
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+ }
+// An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
+message HospitalizationOutcome
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
  }
 // An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 message IndividualOrganism
@@ -1802,6 +2089,22 @@ message MolecularEntity
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
  }
+// An outcome of death from resulting from an exposure event.
+message MortalityOutcome
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
+ }
 // a databased entity or concept/class
 message NamedThing
  {
@@ -1941,6 +2244,22 @@ message PairwiseMolecularInteraction
   predicate PredicateType = 15
   relation Uriorcurie = 16
   object MolecularEntity = 17
+ }
+// A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+message PathologicalProcess
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
  }
 message Pathway
  {
@@ -2312,6 +2631,23 @@ message SeverityValue
   optional iri IriType = 5
   optional source LabelType = 6
  }
+// A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
+message SiRNA
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  repeated category NamedThing = 8
+  repeated inTaxon OrganismTaxon = 9
+  optional hasBiologicalSequence BiologicalSequence = 10
+  optional name SymbolType = 11
+  repeated synonym LabelType = 12
+  repeated xref IriType = 13
+ }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
  {
@@ -2327,6 +2663,49 @@ message Snv
   repeated hasGene Gene = 10
   optional hasBiologicalSequence BiologicalSequence = 11
   id String = 12
+ }
+// Attributes relating to a socioeconomic manifestation
+message SocioeconomicAttribute
+ {
+  optional name LabelType = 1
+  hasAttributeType OntologyClass = 2
+  repeated hasQuantitativeValue QuantityValue = 3
+  optional hasQualitativeValue NamedThing = 4
+  optional iri IriType = 5
+  optional source LabelType = 6
+ }
+// A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
+message SocioeconomicExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated category NamedThing = 8
+  repeated hasInput NamedThing = 9
+  repeated hasOutput NamedThing = 10
+  repeated enabledBy PhysicalEntity = 11
+  repeated hasAttribute SocioeconomicAttribute = 12
+  optional timepoint TimeType = 13
+ }
+// An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+message SocioeconomicOutcome
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
  }
 message SourceFile
  {
@@ -2345,6 +2724,20 @@ message SourceFile
   optional creationDate Date = 13
   optional sourceVersion String = 14
   optional retrievedOn Date = 15
+ }
+// A group of people banded together or treated as a group as participants in a research study.
+message StudyPopulation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated category NamedThing = 8
+  repeated hasAttribute Attribute = 9
+  repeated inTaxon OrganismTaxon = 10
  }
 // A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
 message TaxonomicRank
@@ -2396,7 +2789,7 @@ message TranscriptToGeneRelationship
   subject Transcript = 15
   object Gene = 16
  }
-// A treatment is targeted at a disease or phenotype and may involve multiple drug, device or procedural 'exposures'
+// A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
 message Treatment
  {
   id String = 1
@@ -2408,7 +2801,10 @@ message Treatment
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasPart DrugExposure = 10
+  repeated hasDrug Drug = 10
+  repeated hasDevice Device = 11
+  repeated hasProcedure Procedure = 12
+  optional timepoint TimeType = 13
  }
 message VariantAsAModelOfDiseaseAssociation
  {

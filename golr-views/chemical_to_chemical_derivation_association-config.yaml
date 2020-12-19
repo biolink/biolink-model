@@ -4,7 +4,7 @@ description: "A causal relationship between two chemical entities, where the sub
   \ represents the upstream entity and the object represents the downstream. For any\
   \ such association there is an implicit reaction:\n  IF\n  R has-input C1 AND\n\
   \  R has-output C2 AND\n  R enabled-by P AND\n  R type Reaction\n  THEN\n  C1 derives-into\
-  \ C2 <<change is catalyzed by P>>"
+  \ C2 <<catalyst qualifier P>>"
 display_name: chemical to chemical derivation association
 document_category: chemical to chemical derivation association
 weight: 20
@@ -60,10 +60,10 @@ fields:
 - id: category
   display_name: association_category
   cardinality: multi
-- id: change_is_catalyzed_by
+- id: catalyst_qualifier
   description: this connects the derivation edge to the molecular entity that catalyzes
-    the reaction that causes the subject chemical to transform into the object chemical
-  display_name: chemical to chemical derivation association_change is catalyzed by
+    the reaction that causes the subject chemical to transform into the object chemical.
+  display_name: chemical to chemical derivation association_catalyst qualifier
   cardinality: multi
 - id: subject
   description: the upstream chemical entity
