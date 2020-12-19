@@ -7538,10 +7538,10 @@ classes:
             description: hereditary breast cancer
 
   model to disease association mixin:
-    mixin: true
     description: >-
       This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some
       features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
+    mixin: true
     slot_usage:
       subject:
         description: >-
@@ -7749,7 +7749,7 @@ classes:
       a molecular activity (as represented in the GO molecular function branch), where the entity
       carries out the activity, or contributes to its execution
     is_a: functional association
-    mixin:
+    mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
       object:
@@ -7761,7 +7761,7 @@ classes:
       a biological process or pathway (as represented in the GO biological process branch), where the entity
       carries out some part of the process, regulates it, or acts upstream of it
     is_a: functional association
-    mixin:
+    mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
       object:
@@ -7773,7 +7773,7 @@ classes:
       a cellular component (as represented in the GO cellular component branch), where the entity
       carries out its function in the cellular component
     is_a: functional association
-    mixin:
+    mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
       object:
