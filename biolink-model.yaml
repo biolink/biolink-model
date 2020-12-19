@@ -2402,7 +2402,7 @@ slots:
       holds between a gene and a transcribed and/or
       translated product generated from it
     domain: gene
-    range: gene product
+    range: gene product mixin
     in_subset:
       - translator_minimal
     close_mappings:
@@ -7880,7 +7880,7 @@ classes:
       subject:
         range: gene locus mixin
       object:
-        range: gene product
+        range: gene product mixin
       predicate:
         subproperty_of: has gene product
 
