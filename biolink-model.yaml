@@ -7735,46 +7735,46 @@ classes:
           - value: GO:0045211
             description: postsynaptic membrane
 
-  macromolecular machine mixin to entity association mixin:
+  macromolecular machine to entity association mixin:
     description: >-
       an association which has a macromolecular machine mixin as a subject
     mixin: true
     slot_usage:
       subject:
-        range: macromolecular machine mixin
+        domain: macromolecular machine mixin
 
-  macromolecular machine mixin to molecular activity association:
+  macromolecular machine to molecular activity association:
     description: >-
       A functional association between a macromolecular machine mixin (gene, gene product or complex) and
       a molecular activity (as represented in the GO molecular function branch), where the entity
       carries out the activity, or contributes to its execution
     is_a: functional association
     mixin:
-      - macromolecular machine mixin to entity association mixin
+      - macromolecular machine to entity association mixin
     slot_usage:
       object:
         range: molecular activity
 
-  macromolecular machine mixin to biological process association:
+  macromolecular machine to biological process association:
     description: >-
       A functional association between a macromolecular machine mixin (gene, gene product or complex) and
       a biological process or pathway (as represented in the GO biological process branch), where the entity
       carries out some part of the process, regulates it, or acts upstream of it
     is_a: functional association
     mixin:
-      - macromolecular machine mixin to entity association mixin
+      - macromolecular machine to entity association mixin
     slot_usage:
       object:
         range: biological process
 
-  macromolecular machine mixin to cellular component association:
+  macromolecular machine to cellular component association:
     description: >-
       A functional association between a macromolecular machine mixin (gene, gene product or complex) and
       a cellular component (as represented in the GO cellular component branch), where the entity
       carries out its function in the cellular component
     is_a: functional association
     mixin:
-      - macromolecular machine mixin to entity association mixin
+      - macromolecular machine to entity association mixin
     slot_usage:
       object:
         range: cellular component
