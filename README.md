@@ -21,7 +21,7 @@ Quickstart docs:
 
 Refer to the following resources for a quick introduction to the Biolink Model:
 - [Introduction to the Biolink Datamodel](https://www.slideshare.net/cmungall/introduction-to-the-biolink-datamodel)
-- [Biolink Model - A community driven data model for life sciences](https://bit.ly/biolink-model-workshop-biocuration-2020)
+- [Biolink Model - A community driven data model for life sciences](https://bit.ly/biolink-model-workshop-biocuration-2020) (Biocuration 2020)
     - Slides: https://bit.ly/biolink-model-workshop-biocuration-2020
     - Video: https://www.youtube.com/watch?v=RE1hFm8lvJA
 
