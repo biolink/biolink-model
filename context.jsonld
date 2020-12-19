@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-16 03:00\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-18 18:59\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"
@@ -29,7 +29,7 @@
       "DrugCentral": "http://translator.ncats.nih.gov/DrugCentral_",
       "EC": "http://www.enzyme-database.org/query.php?ec=",
       "ECTO": "http://purl.obolibrary.org/obo/ECTO_",
-      "EDAM-DATA": "http://example.org/UNKNOWN/EDAM-DATA/",
+      "EDAM-DATA": "http://edamontology.org/data_",
       "EDAM-FORMAT": "http://edamontology.org/format_",
       "EDAM-OPERATION": "http://edamontology.org/operation_",
       "EDAM-TOPIC": "http://edamontology.org/topic_",
@@ -60,7 +60,6 @@
       "INCHIKEY": "http://identifiers.org/inchikey/",
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
-      "InterPro": "http://example.org/UNKNOWN/InterPro/",
       "KEGG": "http://identifiers.org/kegg/",
       "LOINC": "http://loinc.org/rdf/",
       "MEDDRA": "http://identifiers.org/meddra/",
@@ -149,11 +148,13 @@
       "gpi": "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
+      "interpro": "https://www.ebi.ac.uk/interpro/entry/",
       "isbn": "https://www.isbn-international.org/identifier/",
       "isni": "https://isni.org/isni/",
       "issn": "https://portal.issn.org/resource/ISSN/",
       "medgen": "https://www.ncbi.nlm.nih.gov/medgen/",
       "oboformat": "http://www.geneontology.org/formats/oboInOWL#",
+      "pav": "http://purl.org/pav/",
       "qud": "http://qudt.org/1.1/schema/qudt#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -442,6 +443,9 @@
       "has_decreased_amount": {
          "@type": "@id"
       },
+      "has_device": {
+         "@type": "@id"
+      },
       "has_drug": {
          "@type": "@id"
       },
@@ -452,6 +456,9 @@
          "@type": "@id"
       },
       "has_gene": {
+         "@type": "@id"
+      },
+      "has_gene_or_gene_product": {
          "@type": "@id"
       },
       "has_gene_product": {
@@ -490,6 +497,12 @@
       "has_phenotype": {
          "@type": "@id"
       },
+      "has_population_context": {
+         "@type": "@id"
+      },
+      "has_procedure": {
+         "@type": "@id"
+      },
       "has_qualitative_value": {
          "@type": "@id"
       },
@@ -507,6 +520,9 @@
       },
       "has_taxonomic_rank": {
          "@type": "@id"
+      },
+      "has_temporal_context": {
+         "@type": "xsd:dateTime"
       },
       "has_topic": {
          "@type": "@id"

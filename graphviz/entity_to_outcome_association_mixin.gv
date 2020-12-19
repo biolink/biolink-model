@@ -1,0 +1,21 @@
+digraph {
+	graph [bb="0,0,376.38,123"];
+	node [label="\N"];
+	"entity to outcome association mixin"	 [height=0.5,
+		label="entity to outcome association mixin",
+		pos="137.79,105",
+		width=3.8274];
+	object	 [height=0.5,
+		pos="137.79,18",
+		width=0.9027];
+	"entity to outcome association mixin" -> object	 [color=blue,
+		label=object,
+		lp="154.79,61.5",
+		pos="e,137.79,36.003 137.79,86.974 137.79,75.192 137.79,59.561 137.79,46.158",
+		style=solid];
+	"entity to outcome association mixin_object"	 [color=blue,
+		height=0.5,
+		label=outcome,
+		pos="334.79,105",
+		width=1.1555];
+}
