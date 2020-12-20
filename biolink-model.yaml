@@ -941,10 +941,19 @@ slots:
     exact_mappings:
       - WIKIDATA:Q902638
 
+  has food component:
+    is_a: node property
+    domain: food
+    range: food component
+    multivalued: true
+    description: >-
+      one or more chemical substances present in food, irrespective
+      of nutritional value (i.e. could also be a contaminant or additive)
+
   has nutrient:
     is_a: node property
     domain: food
-    range: chemical substance
+    range: nutrient
     multivalued: true
     description: >-
       one or more chemical substance which are growth factors for a living organism
@@ -5618,6 +5627,46 @@ classes:
     id_prefixes:
       - PHARMGKB.DRUG
 
+  ## Food
+
+  food component:
+    is_a: chemical substance
+    mappings:
+      - CHEBI:78295
+
+  environmental food contaminant:
+    is_a: food component
+    mappings:
+      - CHEBI:78299
+
+  food additive:
+    is_a: food component
+    mappings:
+      - CHEBI:64047
+
+  nutrient:
+    is_a: food component
+    mappings:
+      - CHEBI:33284
+
+  macronutrient:
+    is_a: nutrient
+    mappings:
+      - CHEBI:33937
+
+  micronutrient:
+    is_a: nutrient
+    mappings:
+      - CHEBI:27027
+
+  vitamin:
+    is_a: micronutrient
+    mappings:
+      - CHEBI:33229
+      # Vitamin
+      - UMLSSC:T127
+      - UMLSST:vita
+
   food:
     is_a: molecular entity
     mixins:
@@ -5625,6 +5674,7 @@ classes:
     description: >-
       A substance consumed by a living organism as a source of nutrition
     slots:
+      - has food component
       - has nutrient
     id_prefixes:
       - foodb.compound
@@ -5632,10 +5682,6 @@ classes:
       # Food
       - UMLSSC:T168
       - UMLSST:food
-    narrow_mappings:
-      # Vitamin
-      - UMLSSC:T127
-      - UMLSST:vita
 
   metabolite:
     is_a: chemical substance
