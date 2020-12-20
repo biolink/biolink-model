@@ -1248,7 +1248,11 @@ slots:
   close match:
     is_a: related to
     description: >-
-      holds between two entities that are considered a skos:closeMatch to one another
+      a list of terms from different schemas or terminology systems that have
+      a semantically similar but not strictly equivalent, broader, or narrower
+      meaning. Such terms often describe the same general concept from
+      different ontological perspectives (e.g. drug as a type of chemical
+      entity versus drug as a type of role borne by a chemical entity).
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -1268,12 +1272,40 @@ slots:
   exact match:
     is_a: close match
     description: >-
-      holds between two entities that are identical to each other, with a high degree of confidence
+      holds between two entities that have strictly equivalent
+      meanings, with a high degree of confidence
     in_subset:
       - translator_minimal
     exact_mappings:
       - skos:exactMatch
+      - WIKIDATA:Q39893449
       - WIKIDATA:P2888
+
+  broad match:
+    description: >-
+      a list of terms from different schemas or terminology systems
+      that have a broader, more general meaning. Broader terms are
+      typically shown as parents in a hierarchy or tree.
+    is_a: related to
+    inverse: narrow match
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - skos:broadMatch
+      - WIKIDATA:Q39894595
+
+  narrow match:
+    description: >-
+      a list of terms from different schemas or terminology systems
+      that have a narrower, more specific meaning. Narrower terms are
+      typically shown as children in a hierarchy or tree.
+    is_a: related to
+    inverse: broad match
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - skos:narrowMatch
+      - WIKIDATA:Q39893967
 
   ## Publication related predicates
 
