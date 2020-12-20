@@ -4539,9 +4539,6 @@ classes:
       - EDAM-TOPIC
     exact_mappings:
       - SIO:000614
-    narrow_mappings:
-      # Considered a 'narrow mapping' in that PATO mainly concerns itself with biological traits
-      - PATO:0000001
     in_subset:
       - samples
 
@@ -5695,6 +5692,8 @@ classes:
 
   ## Biology and Biomedical Sciences
 
+  ## Biological Attributes
+
   organism attribute:
     is_a: attribute
     description: >-
@@ -5703,6 +5702,14 @@ classes:
       # Organism Attribute
       - UMLSSC:T032
       - UMLSST:orga
+
+  phenotypic quality:
+    aliases: ['phenotypic properties']
+    is_a: organism attribute
+    description: >-
+      A property of a phenotype
+    mappings:
+      - PATO:0000001
 
   inheritance:
     is_a: organism attribute
@@ -5713,6 +5720,8 @@ classes:
       - HP:0000005
       - GENO:0000141
       - NCIT:C45827
+
+  ## Biological Entities
 
   organismal entity:
     description: >-
