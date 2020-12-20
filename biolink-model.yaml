@@ -1490,6 +1490,22 @@ slots:
       another existing entity.
     inverse: affects
 
+  ## role mixins for use in tagging corresponding role predicates
+
+  chemical role mixin:
+    description: >-
+      A role played by the molecular entity or part thereof within a chemical context.
+    mixin: true
+    exact_mappings:
+      - CHEBI:51086
+
+  biological role mixin:
+    description: >-
+      A role played by the molecular entity or part thereof within a biological context.
+    mixin: true
+    exact_mappings:
+      - CHEBI:24432
+
   affects abundance of:
     description: >-
       holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
