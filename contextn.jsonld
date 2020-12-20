@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-18 18:59\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-19 19:33\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -161,6 +161,9 @@
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://w3id.org/biolink/vocab/",
       "actively_involved_in": {
+         "@type": "@id"
+      },
+      "affected_by": {
          "@type": "@id"
       },
       "affects": {
@@ -357,6 +360,9 @@
          "@type": "@id"
       },
       "disease_has_basis_in": {
+         "@type": "@id"
+      },
+      "disrupted_by": {
          "@type": "@id"
       },
       "disrupts": {
@@ -671,6 +677,18 @@
       "negatively_correlated_with": {
          "@type": "@id"
       },
+      "negatively_regulated_by": {
+         "@type": "@id"
+      },
+      "negatively_regulated_by_entity_to_entity": {
+         "@type": "@id"
+      },
+      "negatively_regulated_by_process_to_process": {
+         "@type": "@id"
+      },
+      "negatively_regulates": {
+         "@type": "@id"
+      },
       "negatively_regulates_entity_to_entity": {
          "@type": "@id"
       },
@@ -713,6 +731,18 @@
       "positively_correlated_with": {
          "@type": "@id"
       },
+      "positively_regulated_by": {
+         "@type": "@id"
+      },
+      "positively_regulated_by_entity_to_entity": {
+         "@type": "@id"
+      },
+      "positively_regulated_by_process_to_process": {
+         "@type": "@id"
+      },
+      "positively_regulates": {
+         "@type": "@id"
+      },
       "positively_regulates_entity_to_entity": {
          "@type": "@id"
       },
@@ -729,6 +759,9 @@
          "@type": "@id"
       },
       "predisposes": {
+         "@type": "@id"
+      },
+      "prevented_by": {
          "@type": "@id"
       },
       "prevents": {
@@ -759,6 +792,18 @@
          "@type": "@id"
       },
       "quantifier_qualifier": {
+         "@type": "@id"
+      },
+      "regulated_by": {
+         "@type": "@id"
+      },
+      "regulated_by_entity_to_entity": {
+         "@type": "@id"
+      },
+      "regulated_by_process_to_process": {
+         "@type": "@id"
+      },
+      "regulates": {
          "@type": "@id"
       },
       "regulates_entity_to_entity": {

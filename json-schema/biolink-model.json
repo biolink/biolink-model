@@ -224,7 +224,7 @@
       },
       "AnatomicalEntityToAnatomicalEntityOntogenicAssociation": {
          "additionalProperties": false,
-         "description": "A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship",
+         "description": "A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.",
          "properties": {
             "category": {
                "items": {
@@ -477,7 +477,7 @@
                "type": "array"
             },
             "name": {
-               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
                "type": "string"
             },
             "pages": {
@@ -1218,7 +1218,7 @@
                "type": "array"
             },
             "name": {
-               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
                "type": "string"
             },
             "pages": {
@@ -1331,7 +1331,7 @@
                "type": "array"
             },
             "name": {
-               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
                "type": "string"
             },
             "pages": {
@@ -5466,7 +5466,7 @@
       },
       "FunctionalAssociation": {
          "additionalProperties": false,
-         "description": "An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed",
+         "description": "An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.",
          "properties": {
             "category": {
                "items": {
@@ -7162,7 +7162,7 @@
       },
       "GenomicSequenceLocalization": {
          "additionalProperties": false,
-         "description": "A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig",
+         "description": "A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.",
          "properties": {
             "category": {
                "items": {
@@ -9451,7 +9451,7 @@
       },
       "MolecularEntity": {
          "additionalProperties": false,
-         "description": "A gene, gene product, small molecule or macromolecule (including protein complex)",
+         "description": "A gene, gene product, small molecule or macromolecule (including protein complex)\"",
          "properties": {
             "category": {
                "items": {
@@ -10706,7 +10706,7 @@
       },
       "PopulationOfIndividualOrganisms": {
          "additionalProperties": false,
-         "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]",
+         "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]",
          "properties": {
             "category": {
                "items": {
@@ -11205,7 +11205,7 @@
                "type": "array"
             },
             "name": {
-               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
                "type": "string"
             },
             "pages": {
@@ -11878,7 +11878,7 @@
                "type": "array"
             },
             "name": {
-               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing) The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
                "type": "string"
             },
             "pages": {

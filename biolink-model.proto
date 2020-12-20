@@ -46,7 +46,7 @@ message AnatomicalEntityToAnatomicalEntityAssociation
   subject AnatomicalEntity = 15
   object AnatomicalEntity = 16
  }
-// A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+// A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
 message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  {
   id String = 1
@@ -1203,7 +1203,7 @@ message FrequencyValue
   optional iri IriType = 5
   optional source LabelType = 6
  }
-// An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+// An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
  {
   id String = 1
@@ -1570,7 +1570,7 @@ message GenomicEntity
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
-// A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+// A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
  {
   id String = 1
@@ -2075,7 +2075,7 @@ message MolecularActivity
   repeated hasOutput ChemicalSubstance = 11
   repeated enabledBy MacromolecularMachine = 12
  }
-// A gene, gene product, small molecule or macromolecule (including protein complex)
+// A gene, gene product, small molecule or macromolecule (including protein complex)"
 message MolecularEntity
  {
   id String = 1
@@ -2353,7 +2353,7 @@ message PlanetaryEntity
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
-// A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+// A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
 message PopulationOfIndividualOrganisms
  {
   id String = 1

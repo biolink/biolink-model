@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2020-12-18 18:59
+# Generation date: 2020-12-19 19:33
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1922,7 +1922,19 @@ class Article(Publication):
         super().__post_init__(**kwargs)
 
 
-class PhysicalEssence(YAMLRoot):
+class PhysicalEssenceOrOccurrent(YAMLRoot):
+    """
+    Either a physical or processual entity.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysicalEssenceOrOccurrent
+    class_class_curie: ClassVar[str] = "biolink:PhysicalEssenceOrOccurrent"
+    class_name: ClassVar[str] = "physical essence or occurrent"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEssenceOrOccurrent
+
+
+class PhysicalEssence(PhysicalEssenceOrOccurrent):
     """
     Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
     """
@@ -1958,9 +1970,9 @@ class PhysicalEntity(NamedThing):
         super().__post_init__(**kwargs)
 
 
-class Occurrent(YAMLRoot):
+class Occurrent(PhysicalEssenceOrOccurrent):
     """
-    A processual entity
+    A processual entity.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2258,7 +2270,7 @@ class ThingWithTaxon(YAMLRoot):
 @dataclass
 class MolecularEntity(BiologicalEntity):
     """
-    A gene, gene product, small molecule or macromolecule (including protein complex)
+    A gene, gene product, small molecule or macromolecule (including protein complex)"
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -6774,7 +6786,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
 class FunctionalAssociation(Association):
     """
     An association between a macromolecular machine (gene, gene product or complex of gene products) and either a
-    molecular activity, a biological process or a cellular location in which a function is executed
+    molecular activity, a biological process or a cellular location in which a function is executed.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -6981,7 +6993,7 @@ class SequenceAssociation(Association):
 class GenomicSequenceLocalization(SequenceAssociation):
     """
     A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a
-    chromosome, chromosome region or information entity such as a contig
+    chromosome, chromosome region or information entity such as a contig.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -7324,9 +7336,9 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
 @dataclass
 class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
-    A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are
+    A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are
     related by development. A number of different relationship types can be used to specify the precise nature of the
-    relationship
+    relationship.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -7632,6 +7644,9 @@ slots.genetically_interacts_with = Slot(uri=BIOLINK.genetically_interacts_with, 
 slots.affects = Slot(uri=BIOLINK.affects, name="affects", curie=BIOLINK.curie('affects'),
                    model_uri=BIOLINK.affects, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.affected_by = Slot(uri=BIOLINK.affected_by, name="affected by", curie=BIOLINK.curie('affected_by'),
+                   model_uri=BIOLINK.affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.affects_abundance_of = Slot(uri=BIOLINK.affects_abundance_of, name="affects abundance of", curie=BIOLINK.curie('affects_abundance_of'),
                    model_uri=BIOLINK.affects_abundance_of, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
 
@@ -7777,34 +7792,64 @@ slots.decreases_uptake_of = Slot(uri=BIOLINK.decreases_uptake_of, name="decrease
                    model_uri=BIOLINK.decreases_uptake_of, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
 
 slots.regulates = Slot(uri=BIOLINK.regulates, name="regulates", curie=BIOLINK.curie('regulates'),
-                   model_uri=BIOLINK.regulates, domain=None, range=Optional[str])
+                   model_uri=BIOLINK.regulates, domain=None, range=Optional[Union[dict, "PhysicalEssenceOrOccurrent"]])
+
+slots.regulated_by = Slot(uri=BIOLINK.regulated_by, name="regulated by", curie=BIOLINK.curie('regulated_by'),
+                   model_uri=BIOLINK.regulated_by, domain=None, range=Optional[Union[dict, "PhysicalEssenceOrOccurrent"]])
 
 slots.positively_regulates = Slot(uri=BIOLINK.positively_regulates, name="positively regulates", curie=BIOLINK.curie('positively_regulates'),
-                   model_uri=BIOLINK.positively_regulates, domain=None, range=Optional[str])
+                   model_uri=BIOLINK.positively_regulates, domain=None, range=Optional[Union[dict, "PhysicalEssenceOrOccurrent"]])
+
+slots.positively_regulated_by = Slot(uri=BIOLINK.positively_regulated_by, name="positively regulated by", curie=BIOLINK.curie('positively_regulated_by'),
+                   model_uri=BIOLINK.positively_regulated_by, domain=None, range=Optional[Union[dict, "PhysicalEssenceOrOccurrent"]])
 
 slots.negatively_regulates = Slot(uri=BIOLINK.negatively_regulates, name="negatively regulates", curie=BIOLINK.curie('negatively_regulates'),
-                   model_uri=BIOLINK.negatively_regulates, domain=None, range=Optional[str])
+                   model_uri=BIOLINK.negatively_regulates, domain=None, range=Optional[Union[dict, "PhysicalEssenceOrOccurrent"]])
+
+slots.negatively_regulated_by = Slot(uri=BIOLINK.negatively_regulated_by, name="negatively regulated by", curie=BIOLINK.curie('negatively_regulated_by'),
+                   model_uri=BIOLINK.negatively_regulated_by, domain=None, range=Optional[Union[dict, "PhysicalEssenceOrOccurrent"]])
 
 slots.regulates_process_to_process = Slot(uri=BIOLINK.regulates_process_to_process, name="regulates, process to process", curie=BIOLINK.curie('regulates_process_to_process'),
                    model_uri=BIOLINK.regulates_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
+slots.regulated_by_process_to_process = Slot(uri=BIOLINK.regulated_by_process_to_process, name="regulated by, process to process", curie=BIOLINK.curie('regulated_by_process_to_process'),
+                   model_uri=BIOLINK.regulated_by_process_to_process, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.positively_regulates_process_to_process = Slot(uri=BIOLINK.positively_regulates_process_to_process, name="positively regulates, process to process", curie=BIOLINK.curie('positively_regulates_process_to_process'),
                    model_uri=BIOLINK.positively_regulates_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+
+slots.positively_regulated_by_process_to_process = Slot(uri=BIOLINK.positively_regulated_by_process_to_process, name="positively regulated by, process to process", curie=BIOLINK.curie('positively_regulated_by_process_to_process'),
+                   model_uri=BIOLINK.positively_regulated_by_process_to_process, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.negatively_regulates_process_to_process = Slot(uri=BIOLINK.negatively_regulates_process_to_process, name="negatively regulates, process to process", curie=BIOLINK.curie('negatively_regulates_process_to_process'),
                    model_uri=BIOLINK.negatively_regulates_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
+slots.negatively_regulated_by_process_to_process = Slot(uri=BIOLINK.negatively_regulated_by_process_to_process, name="negatively regulated by, process to process", curie=BIOLINK.curie('negatively_regulated_by_process_to_process'),
+                   model_uri=BIOLINK.negatively_regulated_by_process_to_process, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.regulates_entity_to_entity = Slot(uri=BIOLINK.regulates_entity_to_entity, name="regulates, entity to entity", curie=BIOLINK.curie('regulates_entity_to_entity'),
                    model_uri=BIOLINK.regulates_entity_to_entity, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
+
+slots.regulated_by_entity_to_entity = Slot(uri=BIOLINK.regulated_by_entity_to_entity, name="regulated by, entity to entity", curie=BIOLINK.curie('regulated_by_entity_to_entity'),
+                   model_uri=BIOLINK.regulated_by_entity_to_entity, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.positively_regulates_entity_to_entity = Slot(uri=BIOLINK.positively_regulates_entity_to_entity, name="positively regulates, entity to entity", curie=BIOLINK.curie('positively_regulates_entity_to_entity'),
                    model_uri=BIOLINK.positively_regulates_entity_to_entity, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
 
+slots.positively_regulated_by_entity_to_entity = Slot(uri=BIOLINK.positively_regulated_by_entity_to_entity, name="positively regulated by, entity to entity", curie=BIOLINK.curie('positively_regulated_by_entity_to_entity'),
+                   model_uri=BIOLINK.positively_regulated_by_entity_to_entity, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.negatively_regulates_entity_to_entity = Slot(uri=BIOLINK.negatively_regulates_entity_to_entity, name="negatively regulates, entity to entity", curie=BIOLINK.curie('negatively_regulates_entity_to_entity'),
                    model_uri=BIOLINK.negatively_regulates_entity_to_entity, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
 
+slots.negatively_regulated_by_entity_to_entity = Slot(uri=BIOLINK.negatively_regulated_by_entity_to_entity, name="negatively regulated by, entity to entity", curie=BIOLINK.curie('negatively_regulated_by_entity_to_entity'),
+                   model_uri=BIOLINK.negatively_regulated_by_entity_to_entity, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.disrupts = Slot(uri=BIOLINK.disrupts, name="disrupts", curie=BIOLINK.curie('disrupts'),
                    model_uri=BIOLINK.disrupts, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.disrupted_by = Slot(uri=BIOLINK.disrupted_by, name="disrupted by", curie=BIOLINK.curie('disrupted_by'),
+                   model_uri=BIOLINK.disrupted_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.has_gene_product = Slot(uri=BIOLINK.has_gene_product, name="has gene product", curie=BIOLINK.curie('has_gene_product'),
                    model_uri=BIOLINK.has_gene_product, domain=Gene, range=Optional[Union[Union[str, GeneProductId], List[Union[str, GeneProductId]]]])
@@ -7874,6 +7919,9 @@ slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK
 
 slots.prevents = Slot(uri=BIOLINK.prevents, name="prevents", curie=BIOLINK.curie('prevents'),
                    model_uri=BIOLINK.prevents, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.prevented_by = Slot(uri=BIOLINK.prevented_by, name="prevented by", curie=BIOLINK.curie('prevented_by'),
+                   model_uri=BIOLINK.prevented_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.correlated_with = Slot(uri=BIOLINK.correlated_with, name="correlated with", curie=BIOLINK.curie('correlated_with'),
                    model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])

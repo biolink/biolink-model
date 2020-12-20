@@ -1,8 +1,14 @@
 digraph {
-	graph [bb="0,0,88.392,36"];
+	graph [bb="0,0,228.78,123"];
 	node [label="\N"];
 	occurrent	 [height=0.5,
 		label=occurrent,
-		pos="44.196,18",
+		pos="114.39,105",
 		width=1.2277];
+	"physical essence or occurrent"	 [height=0.5,
+		pos="114.39,18",
+		width=3.1775];
+	occurrent -> "physical essence or occurrent"	 [label=is_a,
+		lp="125.39,61.5",
+		pos="e,114.39,36.003 114.39,86.974 114.39,75.192 114.39,59.561 114.39,46.158"];
 }
