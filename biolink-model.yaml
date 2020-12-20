@@ -56,6 +56,7 @@ prefixes:
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
   hetio: 'http://translator.ncats.nih.gov/hetio_'
+  HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
   ICD0: 'http://translator.ncats.nih.gov/ICD0_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
@@ -5785,9 +5786,13 @@ classes:
     mixins:
       - thing with taxon
     description: >-
-      A stage of development or growth of an organism, including post-natal adult stages
+      A stage of development or growth of an organism,
+      including post-natal adult stages
     exact_mappings:
       - UBERON:0000105
+    narrow_mappings:
+      # constrained to human life cycles
+      - HsapDv:0000000
     in_subset:
       - model_organism_database
 
