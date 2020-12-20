@@ -5628,37 +5628,44 @@ classes:
 
   food component:
     is_a: chemical substance
-    mappings:
+    related_mappings:
+      # substance role
       - CHEBI:78295
 
   environmental food contaminant:
     is_a: food component
-    mappings:
+    related_mappings:
+      # substance role
       - CHEBI:78299
 
   food additive:
     is_a: food component
-    mappings:
+    related_mappings:
+      # substance role
       - CHEBI:64047
 
   nutrient:
     is_a: food component
-    mappings:
+    related_mappings:
+      # substance role
       - CHEBI:33284
 
   macronutrient:
     is_a: nutrient
-    mappings:
+    related_mappings:
+      # substance role
       - CHEBI:33937
 
   micronutrient:
     is_a: nutrient
-    mappings:
+    related_mappings:
+      # substance role
       - CHEBI:27027
 
   vitamin:
     is_a: micronutrient
-    mappings:
+    related_mappings:
+      # substance role
       - CHEBI:33229
       # Vitamin
       - UMLSSC:T127
@@ -5746,7 +5753,8 @@ classes:
       - thing with taxon
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
-    exact_mappings: UBERON:0000105
+    exact_mappings:
+      - UBERON:0000105
     in_subset:
       - model_organism_database
 
