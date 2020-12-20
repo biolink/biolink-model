@@ -5364,15 +5364,12 @@ classes:
       - UMLSST:rcpt
 
   biological process or activity:
+    description: >-
+      Either an individual molecular activity, or a collection of
+      causally connected molecular activities in a biological system.
     is_a: biological entity
     mixins:
       - occurrent
-    description: >-
-      Either an individual molecular activity, or a collection
-      of causally connected molecular activities
-#    union_of:
-#      - molecular activity
-#      - biological process
     id_prefixes:
       - GO
       - REACT
@@ -5382,13 +5379,13 @@ classes:
       - enabled by
 
   molecular activity:
+    description: >-
+      An execution of a molecular function carried out by a
+      gene product or macromolecular complex.
     is_a: biological process or activity
     aliases: ['molecular function', 'molecular event', 'reaction']
     mixins:
       - occurrent
-    description: >-
-      An execution of a molecular function carried out by a
-      gene product or macromolecular complex mixin.
     slot_usage:
       has input:
         range: chemical substance
@@ -5982,7 +5979,7 @@ classes:
       - FAO
 
   ## Genomic Entity Mixins
-  
+
   macromolecular machine mixin:
     description: >-
       A union of gene locus, gene product, and macromolecular complex mixin. These are
