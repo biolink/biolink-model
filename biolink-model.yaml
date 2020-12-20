@@ -239,6 +239,7 @@ slots:
   has attribute:
     description: >-
       connects any entity to an attribute
+    domain: entity
     range: attribute
     multivalued: true
     in_subset:
@@ -5396,11 +5397,8 @@ classes:
     mixins:
       - occurrent
     description: >-
-      Either an individual molecular activity, or a collection
-      of causally connected molecular activities
-#    union_of:
-#      - molecular activity
-#      - biological process
+      Either an individual molecular activity, or a
+      collection of causally connected molecular activities
     id_prefixes:
       - GO
       - REACT
@@ -5961,6 +5959,13 @@ classes:
       - MESH
     in_subset:
       - model_organism_database
+
+  behavioral phenotypic feature:
+    description: >-
+      A phenotypic feature which is behavioral in nature.
+    is_a: phenotypic feature
+    exact_mappings:
+      - NBO:0000243
 
   anatomical entity:
     is_a: organismal entity
