@@ -863,11 +863,12 @@ slots:
   has phenotypic feature:
     is_a: node property
     description: >-
-      Connects a genomic feature to a biological entity (may describe
+      Connects a phenotypic feature to a biological entity (may describe
       an organism, a disease or qualify some specific class of phenotype,
-      molecular system or other biological entity.
+      molecular system or other biological entity).
     domain: biological entity
     range: phenotypic feature
+    multivalued: true
 
   has biological sequence:
     is_a: node property
