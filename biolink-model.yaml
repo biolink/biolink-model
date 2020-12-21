@@ -5826,8 +5826,6 @@ classes:
       - WIKIDATA:Q169872
       # presentation of a disease in clinical medicine
       - WIKIDATA:Q25203551
-      # Phenotypic abnormality
-      - HP:0000118
     id_prefixes:
       - HP
       - EFO
@@ -6546,6 +6544,7 @@ classes:
     mixin: true
     exact_mappings:
       - MPATH:0
+    narrow_mappings:
       - HP:0000118
 
   pathological process:
@@ -6599,6 +6598,7 @@ classes:
     is_a: disease or phenotypic feature
     mixins:
       - exposure event
+      - pathological entity mixin
     description: >-
       A disease or phenotypic feature state, when viewed as an exposure,
       represents an precondition, leading to or influencing an outcome,
