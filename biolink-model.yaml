@@ -232,9 +232,9 @@ types:
 
 slots:
 
-## --------------------
+## ---------------
 ## ATTRIBUTE SLOTS
-## --------------------
+## ---------------
 
   has attribute:
     description: >-
@@ -859,6 +859,15 @@ slots:
     multivalued: true
 
   ## Biology
+
+  has phenotypic feature:
+    is_a: node property
+    description: >-
+      Connects a genomic feature to a biological entity (may describe
+      an organism, a disease or qualify some specific class of phenotype,
+      molecular system or other biological entity.
+    domain: biological entity
+    range: phenotypic feature
 
   has biological sequence:
     is_a: node property
@@ -5355,6 +5364,8 @@ classes:
   biological entity:
     is_a: named thing
     abstract: true
+    slots:
+      - has phenotypic feature
     narrow_mappings:
       - WIKIDATA:Q28845870
       # UMLS Semantic Type "Experimental Model of Disease"
@@ -5533,6 +5544,9 @@ classes:
 
   behavior:
     is_a: biological process
+    slot_usage:
+      has phenotypic feature:
+        range: behavioral phenotypic feature
     exact_mappings:
       - GO:0007610
       # Behavior
