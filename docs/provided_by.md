@@ -27,6 +27,7 @@ URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Activity](Activity.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [Agent](Agent.md)
  * [AnatomicalEntity](AnatomicalEntity.md)

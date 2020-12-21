@@ -78,6 +78,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [NoncodingRNAProduct](NoncodingRNAProduct.md)
        * [MicroRNA](MicroRNA.md)
        * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
+ * [Activity](Activity.md) - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
  * [AdministrativeEntity](AdministrativeEntity.md)
     * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
  * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
@@ -314,6 +315,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
        * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
     * [NamedThing](NamedThing.md) - a databased entity or concept/class
+       * [Activity](Activity.md) - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
        * [AdministrativeEntity](AdministrativeEntity.md)
           * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
        * [BiologicalEntity](BiologicalEntity.md)

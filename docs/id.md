@@ -29,6 +29,7 @@ None ->  <sub>REQ</sub> [String](types/String.md)
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Activity](Activity.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [AnatomicalEntity](AnatomicalEntity.md)
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)

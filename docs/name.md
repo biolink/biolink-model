@@ -30,6 +30,7 @@ None ->  <sub>OPT</sub> [LabelType](types/LabelType.md)
 
 ## Used by
 
+ * [Activity](Activity.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [AnatomicalEntity](AnatomicalEntity.md)
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)

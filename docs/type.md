@@ -27,6 +27,7 @@ None ->  <sub>OPT</sub> [String](types/String.md)
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Activity](Activity.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [Agent](Agent.md)
  * [AnatomicalEntity](AnatomicalEntity.md)

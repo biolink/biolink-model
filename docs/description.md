@@ -29,6 +29,7 @@ None ->  <sub>OPT</sub> [NarrativeText](types/NarrativeText.md)
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Activity](Activity.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [Agent](Agent.md)
  * [AnatomicalEntity](AnatomicalEntity.md)
