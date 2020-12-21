@@ -6453,13 +6453,6 @@ classes:
   clinical intervention:
     is_a: clinical entity
 
-  pathological entity:
-    description: >-
-      A pathological structure or process.
-    mixin: true
-    exact_mappings:
-      - MPATH:0
-
   clinical finding:
     is_a: phenotypic feature
     description: >-
@@ -6559,6 +6552,13 @@ classes:
       a kind of 'exposure' to the organism, leading to or influencing an outcome.
     #exact_mappings:
     #  -
+
+  pathological entity:
+    description: >-
+      A pathological structure or process.
+    mixin: true
+    exact_mappings:
+      - MPATH:0
 
   disease or phenotypic feature exposure:
     is_a: disease or phenotypic feature
