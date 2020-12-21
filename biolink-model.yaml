@@ -6456,9 +6456,7 @@ classes:
   pathological entity:
     description: >-
       A pathological structure or process.
-    is_a: organismal entity
-    mixins:
-      - thing with taxon
+    mixin: true
     exact_mappings:
       - MPATH:0
 
