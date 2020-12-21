@@ -5867,7 +5867,6 @@ classes:
       A subcellular location, cell type or gross anatomical part
     exact_mappings:
       - UBERON:0001062
-      - UBERON:0001062
       - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
@@ -6453,6 +6452,15 @@ classes:
 
   clinical intervention:
     is_a: clinical entity
+
+  pathological entity:
+    description: >-
+      A pathological structure or process.
+    is_a: organismal entity
+    mixins:
+      - thing with taxon
+    exact_mappings:
+      - MPATH:0
 
   clinical finding:
     is_a: phenotypic feature
