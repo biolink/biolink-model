@@ -5463,19 +5463,6 @@ classes:
       - GO
       - REACT
 
-  pathological process:
-    description: >-
-      A biologic function or a process having an abnormal or deleterious
-      effect at the subcellular, cellular, multicellular, or organismal level.
-    is_a: biological process
-    exact_mappings:
-      - OBI:1110122
-      - NCIT:C16956
-    narrow_mappings:
-      # metastasis
-      - NCIT:C19151
-      - EFO:0009708
-
   behavior:
     is_a: biological process
     exact_mappings:
@@ -6553,22 +6540,69 @@ classes:
     #exact_mappings:
     #  -
 
-  pathological entity:
+  pathological entity mixin:
     description: >-
       A pathological structure or process.
     mixin: true
     exact_mappings:
       - MPATH:0
 
+  pathological process:
+    description: >-
+      A biologic function or a process having an abnormal or deleterious
+      effect at the subcellular, cellular, multicellular, or organismal level.
+    is_a: biological process
+    mixins:
+      - pathological entity mixin
+    exact_mappings:
+      - OBI:1110122
+      - NCIT:C16956
+    narrow_mappings:
+      # metastasis
+      - NCIT:C19151
+      - EFO:0009708
+
+  pathological process exposure:
+    is_a: pathological process
+    mixins:
+      - exposure event
+    description: >-
+      A pathological process, when viewed as an exposure, representing
+      an precondition, leading to or influencing an outcome,
+      e.g. autoimmunity leading to disease.
+    #exact_mappings:
+    #  -
+
+  pathological anatomical structure:
+    description: >-
+      An anatomical structure with the potential of have an abnormal or deleterious
+      effect at the subcellular, cellular, multicellular, or organismal level.
+    is_a: anatomical entity
+    mixins:
+      - pathological entity mixin
+    #exact_mappings:
+    #  -
+
+  pathological anatomical exposure:
+    is_a: pathological anatomic structure
+    mixins:
+      - exposure event
+    description: >-
+      An abnormal anatomical structure, when viewed as an exposure,
+      representing an precondition, leading to or influencing an outcome,
+      e.g. thrombosis leading to an ischemic disease outcome.
+    #exact_mappings:
+    #  -
+
   disease or phenotypic feature exposure:
     is_a: disease or phenotypic feature
     mixins:
       - exposure event
     description: >-
-      A disease or phenotypic feature exposure is where a disease state is
-      manifested which represents an precondition, leading to or influencing
-      an outcome, e.g. hypertension leading to a related disease outcome such
-      as cardiovascular disease.
+      A disease or phenotypic feature state, when viewed as an exposure,
+      represents an precondition, leading to or influencing an outcome,
+      e.g. HIV predisposing an individual to infections; a relative deficiency
+      of skin pigmentation predisposing an individual to skin cancer.
     #exact_mappings:
     #  -
 
@@ -6577,7 +6611,8 @@ classes:
     mixins:
       - exposure event
     description: >-
-      A chemical exposure is an intake of a particular chemical substance, other than a drug.
+      A chemical exposure is an intake of a particular
+      chemical substance, other than a drug.
     exact_mappings:
       # this ECTO term is not visibly defined but
       # the 9000000-series identifiers seems to be the
@@ -6642,8 +6677,8 @@ classes:
     mixins:
       - exposure event
     description: >-
-      A biotic exposure is an intake of (sometimes pathological)
-      biological organisms (including viruses)
+      An external biotic exposure is an intake of (sometimes pathological)
+      biological organisms (including viruses).
     # exact_mappings:
     #  -
 
@@ -6662,8 +6697,9 @@ classes:
     mixins:
       - exposure event
     description: >-
-      A environmental exposure is a factor relating to abiotic processes in the environment
-      including atmospheric (heat, cold, general pollution) and water-born contaminants
+      A environmental exposure is a factor relating to abiotic processes
+      in the environment including sunlight (UV-B), atmospheric (heat,
+      cold, general pollution) and water-born contaminants.
     # exact_mappings:
     #  -
 
@@ -6698,6 +6734,26 @@ classes:
       An entity that has the role of being the consequence of an exposure event.
       This is an abstract mixin grouping of various categories of possible
       biological or non-biological (e.g. clinical) outcomes.
+
+  pathological process outcome:
+    is_a: pathological process
+    mixins:
+      - outcome
+    description: >-
+      An outcome resulting from an exposure event which
+      is the manifestation of a pathological process.
+    #exact_mappings:
+    #  -
+
+  pathological anatomical outcome:
+    is_a: pathological anatomic structure
+    mixins:
+      - outcome
+    description: >-
+      An outcome resulting from an exposure event which
+      is the manifestation of an abnormal anatomical structure.
+    #exact_mappings:
+    #  -
 
   disease or phenotypic feature outcome:
     is_a: disease or phenotypic feature
