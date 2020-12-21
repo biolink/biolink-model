@@ -1221,6 +1221,7 @@ slots:
       holds between two entities that are considered equivalent to each other
     in_subset:
       - translator_minimal
+    symmetric: true
     close_mappings:
       # identical class extension with identical sets of individuals
       - owl:equivalentClass
@@ -1243,6 +1244,7 @@ slots:
       holds between two entities that are considered a skos:closeMatch to one another
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
@@ -1263,6 +1265,7 @@ slots:
       holds between two entities that are identical to each other, with a high degree of confidence
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - skos:exactMatch
       - WIKIDATA:P2888
@@ -1373,6 +1376,7 @@ slots:
     range: molecular entity
     in_subset:
       - translator_minimal
+    symmetric: true
     related_mappings:
       - DGIdb:antibody
     exact_mappings:
@@ -1391,6 +1395,7 @@ slots:
     range: gene
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:0002435
 
@@ -2490,6 +2495,7 @@ slots:
       - typically used to describe homology relationships between genes or gene products
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:HOM0000001
       - SIO:010302
@@ -2503,6 +2509,7 @@ slots:
       a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:HOM0000011
 
@@ -2512,6 +2519,7 @@ slots:
       a homology relationship between entities (typically genes) that diverged after a speciation event.
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:HOM0000017
       - WIKIDATA_PROPERTY:P684
@@ -2522,6 +2530,7 @@ slots:
       a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:HOM0000018
 
@@ -2531,6 +2540,7 @@ slots:
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
       - SEMMEDDB:coexists_with
@@ -2719,6 +2729,7 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
+    symmetric: true
     related_mappings:
       # generally pertains to membership of a (subject) component - gene, metabolite, etc? - in an (object) metabolic pathway
       - SIO:010532
@@ -2731,6 +2742,7 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
+    symmetric: true
     related_mappings:
       # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
       - SIO:010497
@@ -2746,6 +2758,7 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
+    symmetric: true
 
   colocalizes with:
     description: >-
@@ -2753,6 +2766,7 @@ slots:
     is_a: coexists with
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:00002325
       - GO:colocalizes_with
@@ -3036,6 +3050,7 @@ slots:
     range: named thing
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:0002610
       - PATO:correlates_with
@@ -3063,6 +3078,7 @@ slots:
     range: named thing
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - CTD:positivecorrelation
 
@@ -3074,6 +3090,7 @@ slots:
     range: named thing
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - CTD:negativecorrelation
 
@@ -3084,6 +3101,7 @@ slots:
       generally expressed within a single defined experimental context.
     domain: gene or gene product
     range: gene or gene product
+    symmetric: true
 
   has biomarker:
     is_a: correlated with
@@ -3315,6 +3333,7 @@ slots:
       similar features of the studied entity.
     in_subset:
       - translator_minimal
+    symmetric: true
     narrow_mappings:
       - CHEBI:has_parent_hydride    #subproperty
       - CHEBI:has_functional_parent #subproperty
@@ -3354,6 +3373,7 @@ slots:
       holds between entities that overlap in their extents (materials or processes)
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:0002131
     narrow_mappings:
@@ -3772,6 +3792,7 @@ slots:
       holds between two entities with a temporal relationship
     domain: occurrent
     range: occurrent
+    symmetric: true
     exact_mappings:
       - SNOMED:temporally_related_to
     narrow_mappings:
@@ -3843,6 +3864,7 @@ slots:
     is_a: interacts with
     description: Holds between molecular entities that physically and directly interact
       with each other
+    symmetric: true
     related_mappings:
       - GAMMA:kd
       - GAMMA:kb
@@ -3891,6 +3913,7 @@ slots:
 
   related condition:
     is_a: related to
+    symmetric: true
     exact_mappings:
       - GENO:0000790
 
@@ -4074,6 +4097,7 @@ slots:
     is_a: related to
     description: holds between two sequence variants, the presence of which are correlated
       in a population
+    symmetric: true
     exact_mappings:
       - NCIT:C16798
 
