@@ -6542,10 +6542,11 @@ classes:
 
   pathological entity mixin:
     description: >-
-      A pathological structure or process.
+      A pathological (abnormal) structure or process.
     mixin: true
     exact_mappings:
       - MPATH:0
+      - HP:0000118
 
   pathological process:
     description: >-
