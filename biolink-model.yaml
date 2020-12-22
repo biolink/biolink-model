@@ -4637,6 +4637,9 @@ classes:
   ontology class:
     is_a: named thing
     description: "a concept or class in an ontology, vocabulary or thesaurus"
+    id_prefixes:
+      - MESH
+      - KEGG.BRITE ## br/ko number
 
   relationship type:
     is_a: ontology class
@@ -5415,7 +5418,9 @@ classes:
       - RHEA
       - MetaCyc
       - EC
-      - KEGG
+      - KEGG.REACTION  ## R number
+      - KEGG.RCLASS  ## RC number
+      - KEGG.ENZYME  ## EC number
 
   biological process:
     is_a: biological process or activity
@@ -5431,7 +5436,7 @@ classes:
       - GO
       - REACT
       - MetaCyc
-      - KEGG
+      - KEGG.MODULE ## M number
 
   pathway:
     is_a: biological process
@@ -5450,6 +5455,7 @@ classes:
       - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
       - FlyBase ## FlyBase:FBgg
+      - KEGG.PATHWAY  ## Map number
 
   physiological process:
     aliases: ['physiology']
@@ -5579,8 +5585,13 @@ classes:
       - HMDB
       - INCHI
       - INCHIKEY
+      - CAS
       - UNII
-      - KEGG
+      - KEGG.COMPOUND ## C number
+      - KEGG.GLYCAN ## G number
+      - KEGG.DRUG ## D number
+      - KEGG.DGROUP ## DG number
+      - KEGG.ENVIRON ## E number
       - gtpo
     in_subset:
       - model_organism_database
@@ -5836,6 +5847,7 @@ classes:
       - ICD10
       - ICD9
       - ICD0
+      - KEGG.DISEASE ## H number
       - HP
       - MP
     in_subset:
@@ -6103,6 +6115,7 @@ classes:
       - RGD
       - SGD
       - POMBASE
+      - KEGG.GENES ## org:gene
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -6179,6 +6192,9 @@ classes:
       - ENSEMBL
 
   RNA product:
+    aliases:
+      - ncRNA
+      - noncoding RNA
     is_a: gene product
     exact_mappings:
       - CHEBI:33697
@@ -6262,6 +6278,9 @@ classes:
       - has gene or gene product
 
   gene family:
+    aliases:
+      - orthogroup
+      - protein family
     is_a: molecular entity
     exact_mappings:
       - NCIT:C26004
@@ -6282,6 +6301,8 @@ classes:
       - HGNC.FAMILY
       - FlyBase ## FlyBase:FBgg
       - interpro # note: may be better to introduce a protein domain/family
+      - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
+      - EGGNOG
     in_subset:
       - model_organism_database
 
@@ -8091,6 +8112,7 @@ classes:
   anatomical entity to anatomical entity association:
     # schema: gocam
     is_a: association
+    abstract: true
     defining_slots:
       - subject
       - object
@@ -8142,3 +8164,60 @@ classes:
           the structure at an earlier time
       predicate:
          subproperty_of: develops from
+
+  organism taxon to organism taxon association:
+    is_a: association
+    abstract: true
+    description: >-
+      A relationship between two organism taxon nodes
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: organism taxon
+      object:
+        range: organism taxon
+
+  organism taxon to organism taxon specialization:
+    is_a: organism taxon to organism taxon association
+    description: >-
+      A child-parent relationship between two taxa.
+      For example: Homo sapiens subclass_of Homo
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: organism taxon
+        role: child taxon
+        description: >-
+          the more specific taxon
+      object:
+        range: organism taxon
+        role: parent taxon
+        description: >-
+          the more general taxon
+      predicate:
+         subproperty_of: subclass of
+
+  organism taxon to organism taxon interaction:
+    is_a: organism taxon to organism taxon association
+    description: >-
+      An interaction relationship between two taxa. This may be a symbiotic
+      relationship (encompassing mutualism and parasitism), or it may be non-symbiotic.
+      Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: organism taxon
+        role: interactor taxon
+        description: >-
+          the taxon that is the subject of the association
+      object:
+        range: organism taxon
+        role: interactee taxon
+        description: >-
+          the taxon that is the subject of the association
+      predicate:
+         subproperty_of: interacts with
