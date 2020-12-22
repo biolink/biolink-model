@@ -25,6 +25,8 @@ prefixes:
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  # Placeholder: just points to GMOD Chado wiki
+  CHADO: 'http://gmod.org/wiki/Chado/'
   # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
   chembio: 'http://translator.ncats.nih.gov/chembio_'
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
@@ -8152,7 +8154,7 @@ classes:
       object:
         range: genomic entity ## typically a chromosome
     exact_mappings:
-      - GMODChado:feature_relationship
+      - CHADO:feature_relationship
 
   transcript to gene relationship:
     is_a: sequence feature relationship
