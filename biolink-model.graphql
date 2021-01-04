@@ -1,3 +1,16 @@
+type Activity implements ActivityAndBehavior
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+  }
+
 interface ActivityAndBehavior
   {
   }
@@ -181,6 +194,39 @@ type Behavior
     enabledBy: [PhysicalEntity]
   }
 
+type BehavioralExposure implements ExposureEvent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+    timepoint: TimeType
+  }
+
+type BehavioralOutcome implements Outcome
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+  }
+
 interface BiologicalEntity
   {
     id: String!
@@ -234,6 +280,22 @@ type BiologicalSex
     hasQualitativeValue: NamedThing
     iri: IriType
     source: LabelType
+  }
+
+type BioticExposure implements ExposureEvent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasTaxonomicRank: TaxonomicRank
+    subclassOf: [OrganismTaxon]
+    timepoint: TimeType
   }
 
 type Book
@@ -431,7 +493,7 @@ type CellularComponent
     inTaxon: [OrganismTaxon]
   }
 
-type ChemicalExposure
+type ChemicalExposure implements ExposureEvent
   {
     id: String!
     iri: IriType
@@ -442,6 +504,8 @@ type ChemicalExposure
     providedBy: [Agent]
     hasAttribute: [Attribute]
     category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    timepoint: TimeType
   }
 
 type ChemicalSubstance
@@ -597,6 +661,20 @@ type ClinicalEntity
     category: [NamedThing]!
   }
 
+type ClinicalFinding
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [ClinicalAttribute]
+  }
+
 type ClinicalIntervention
   {
     id: String!
@@ -608,6 +686,16 @@ type ClinicalIntervention
     providedBy: [Agent]
     hasAttribute: [Attribute]
     category: [NamedThing]!
+  }
+
+type ClinicalMeasurement
+  {
+    name: LabelType
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: LabelType
+    hasAttributeType: OntologyClass!
   }
 
 type ClinicalModifier
@@ -646,6 +734,36 @@ type CodingSequence
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+  }
+
+type Cohort
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+    inTaxon: [OrganismTaxon]
+  }
+
+type ComplexChemicalExposure implements Mixture
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    timepoint: TimeType
+    hasConstituent: [ChemicalSubstance]
   }
 
 type ConfidenceLevel
@@ -760,6 +878,22 @@ type DataSetVersion
     distribution: DistributionLevel
   }
 
+type Death
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+  }
+
 type Device
   {
     id: String!
@@ -821,6 +955,35 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation implements Disea
     object: AnatomicalEntity!
   }
 
+type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    timepoint: TimeType
+  }
+
+type DiseaseOrPhenotypicFeatureOutcome implements Outcome
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+  }
+
 interface DiseaseOrPhenotypicFeatureToEntityAssociationMixin
   {
     subject: DiseaseOrPhenotypicFeature!
@@ -851,7 +1014,7 @@ interface DiseaseToEntityAssociationMixin
     subject: Disease!
   }
 
-type DiseaseToExposureAssociation implements DiseaseToEntityAssociationMixin
+type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixin, EntityToExposureEventAssociationMixin
   {
     id: String!
     iri: IriType
@@ -860,15 +1023,15 @@ type DiseaseToExposureAssociation implements DiseaseToEntityAssociationMixin
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
+    subject: NamedThing!
     predicate: PredicateType!
+    object: NamedThing!
     relation: Uriorcurie!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
     category: [Association]!
-    subject: Disease!
-    object: ExposureEvent!
   }
 
 type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, DiseaseToEntityAssociationMixin
@@ -933,7 +1096,7 @@ type Drug implements Mixture
     hasConstituent: [ChemicalSubstance]
   }
 
-type DrugExposure
+type DrugExposure implements ExposureEvent
   {
     id: String!
     iri: IriType
@@ -944,7 +1107,55 @@ type DrugExposure
     providedBy: [Agent]
     hasAttribute: [Attribute]
     category: [NamedThing]!
-    hasDrug: [ChemicalSubstance]!
+    inTaxon: [OrganismTaxon]
+    hasActiveIngredient: [ChemicalSubstance]
+    hasExcipient: [ChemicalSubstance]
+    hasConstituent: [ChemicalSubstance]
+    timepoint: TimeType
+  }
+
+interface DrugToEntityAssociationMixin
+  {
+    subject: Drug!
+  }
+
+type DrugToGeneAssociation implements DrugToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    subject: NamedThing!
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    object: GeneOrGeneProduct!
+  }
+
+type DrugToGeneInteractionExposure implements GeneGroupingMixin
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    hasActiveIngredient: [ChemicalSubstance]
+    hasExcipient: [ChemicalSubstance]
+    hasConstituent: [ChemicalSubstance]
+    timepoint: TimeType
+    hasGeneOrGeneProduct: [Gene]
   }
 
 interface Entity
@@ -973,11 +1184,21 @@ interface EntityToDiseaseOrPhenotypicFeatureAssociationMixin
     object: DiseaseOrPhenotypicFeature!
   }
 
+interface EntityToExposureEventAssociationMixin
+  {
+    object: ExposureEvent!
+  }
+
 interface EntityToFeatureOrDiseaseQualifiersMixin
   {
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+  }
+
+interface EntityToOutcomeAssociationMixin
+  {
+    object: Outcome!
   }
 
 interface EntityToPhenotypicFeatureAssociationMixin
@@ -988,6 +1209,20 @@ interface EntityToPhenotypicFeatureAssociationMixin
     sexQualifier: BiologicalSex
     description: NarrativeText
     object: PhenotypicFeature!
+  }
+
+type EnvironmentalExposure implements ExposureEvent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    timepoint: TimeType
   }
 
 type EnvironmentalFeature
@@ -1004,6 +1239,19 @@ type EnvironmentalFeature
   }
 
 type EnvironmentalProcess implements Occurrent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+  }
+
+type EpidemiologicalOutcome implements Outcome
   {
     id: String!
     iri: IriType
@@ -1068,17 +1316,36 @@ type ExonToTranscriptRelationship
     object: Transcript!
   }
 
-type ExposureEvent
+interface ExposureEvent
+  {
+    timepoint: TimeType
+  }
+
+interface ExposureEventToEntityAssociationMixin
+  {
+    subject: ExposureEvent!
+  }
+
+type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociationMixin, EntityToOutcomeAssociationMixin
   {
     id: String!
     iri: IriType
-    type: String
     name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    category: [NamedThing]!
+    subject: NamedThing!
+    predicate: PredicateType!
+    object: NamedThing!
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    hasPopulationContext: PopulationOfIndividualOrganisms
+    hasTemporalContext: TimeType
   }
 
 type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin
@@ -1213,7 +1480,7 @@ type GeneExpressionMixin
     phenotypicState: DiseaseOrPhenotypicFeature
   }
 
-type GeneFamily implements GeneGrouping
+type GeneFamily implements GeneGroupingMixin
   {
     id: String!
     iri: IriType
@@ -1225,10 +1492,12 @@ type GeneFamily implements GeneGrouping
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
+    hasGeneOrGeneProduct: [Gene]
   }
 
-interface GeneGrouping
+interface GeneGroupingMixin
   {
+    hasGeneOrGeneProduct: [Gene]
   }
 
 type GeneHasVariantThatContributesToDiseaseAssociation
@@ -1517,6 +1786,23 @@ type Genome
     hasBiologicalSequence: BiologicalSequence
   }
 
+type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    hasBiologicalSequence: BiologicalSequence
+    timepoint: TimeType
+    hasGeneOrGeneProduct: [Gene]
+  }
+
 type GenomicEntity
   {
     id: String!
@@ -1718,6 +2004,22 @@ type GenotypicSex
     source: LabelType
   }
 
+type GeographicExposure implements ExposureEvent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    latitude: Float
+    longitude: Float
+    timepoint: TimeType
+  }
+
 type GeographicLocation
   {
     id: String!
@@ -1776,6 +2078,32 @@ type Haplotype
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+  }
+
+type Hospitalization
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+  }
+
+type HospitalizationOutcome implements Outcome
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
   }
 
 type IndividualOrganism implements ThingWithTaxon
@@ -2053,6 +2381,27 @@ type MolecularEntity implements ThingWithTaxon, PhysicalEssence
     inTaxon: [OrganismTaxon]
   }
 
+interface MolecularEntityToEntityAssociationMixin
+  {
+    subject: MolecularEntity!
+  }
+
+type MortalityOutcome implements Outcome
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+  }
+
 type NamedThing
   {
     id: String!
@@ -2169,6 +2518,10 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+  }
+
+interface Outcome
+  {
   }
 
 type PairwiseGeneToGeneInteraction
@@ -2299,6 +2652,10 @@ type PhysicalEntity implements PhysicalEssence
   }
 
 interface PhysicalEssence
+  {
+  }
+
+interface PhysicalEssenceOrOccurrent
   {
   }
 
@@ -2671,6 +3028,49 @@ type Snv
     id: String!
   }
 
+type SocioeconomicAttribute
+  {
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: LabelType
+  }
+
+type SocioeconomicExposure implements ExposureEvent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+    hasAttribute: [SocioeconomicAttribute]!
+    timepoint: TimeType
+  }
+
+type SocioeconomicOutcome implements Outcome
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+  }
+
 type SourceFile
   {
     id: String!
@@ -2692,6 +3092,20 @@ type SourceFile
 
 interface SpecificityQuantifier
   {
+  }
+
+type StudyPopulation
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+    inTaxon: [OrganismTaxon]
   }
 
 interface SubjectOfInvestigation
@@ -2753,7 +3167,7 @@ type TranscriptToGeneRelationship
     object: Gene!
   }
 
-type Treatment
+type Treatment implements ExposureEvent
   {
     id: String!
     iri: IriType
@@ -2764,7 +3178,10 @@ type Treatment
     providedBy: [Agent]
     hasAttribute: [Attribute]
     category: [NamedThing]!
-    hasPart: [DrugExposure]!
+    hasDrug: [Drug]
+    hasDevice: [Device]
+    hasProcedure: [Procedure]
+    timepoint: TimeType
   }
 
 type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin

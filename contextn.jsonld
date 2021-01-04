@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2020-12-17 20:07\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-01-04 19:30\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -27,7 +27,7 @@
       "DrugCentral": "http://translator.ncats.nih.gov/DrugCentral_",
       "EC": "http://www.enzyme-database.org/query.php?ec=",
       "ECTO": "http://purl.obolibrary.org/obo/ECTO_",
-      "EDAM-DATA": "http://example.org/UNKNOWN/EDAM-DATA/",
+      "EDAM-DATA": "http://edamontology.org/data_",
       "EDAM-FORMAT": "http://edamontology.org/format_",
       "EDAM-OPERATION": "http://edamontology.org/operation_",
       "EDAM-TOPIC": "http://edamontology.org/topic_",
@@ -58,7 +58,6 @@
       "INCHIKEY": "http://identifiers.org/inchikey/",
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
-      "InterPro": "http://example.org/UNKNOWN/InterPro/",
       "KEGG": "http://identifiers.org/kegg/",
       "LOINC": "http://loinc.org/rdf/",
       "MEDDRA": "http://identifiers.org/meddra/",
@@ -83,6 +82,7 @@
       "ORPHA": "http://www.orpha.net/ORDO/Orphanet_",
       "ORPHANET": "http://identifiers.org/orphanet/",
       "PANTHER.FAMILY": "http://identifiers.org/panther.family/",
+      "PANTHER.PATHWAY": "http://identifiers.org/panther.pathway/",
       "PATO-PROPERTY": "http://purl.obolibrary.org/obo/pato#",
       "PDQ": "https://www.cancer.gov/publications/pdq#",
       "PHARMGKB.DRUG": "http://identifiers.org/pharmgkb.drug/",
@@ -147,11 +147,14 @@
       "gpi": "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
       "hetio": "http://translator.ncats.nih.gov/hetio_",
+      "interpro": "https://www.ebi.ac.uk/interpro/entry/",
       "isbn": "https://www.isbn-international.org/identifier/",
       "isni": "https://isni.org/isni/",
       "issn": "https://portal.issn.org/resource/ISSN/",
       "medgen": "https://www.ncbi.nlm.nih.gov/medgen/",
       "oboformat": "http://www.geneontology.org/formats/oboInOWL#",
+      "pav": "http://purl.org/pav/",
+      "prov": "http://www.w3.org/ns/prov#",
       "qud": "http://qudt.org/1.1/schema/qudt#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -160,6 +163,9 @@
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://w3id.org/biolink/vocab/",
       "actively_involved_in": {
+         "@type": "@id"
+      },
+      "affected_by": {
          "@type": "@id"
       },
       "affects": {
@@ -358,6 +364,9 @@
       "disease_has_basis_in": {
          "@type": "@id"
       },
+      "disrupted_by": {
+         "@type": "@id"
+      },
       "disrupts": {
          "@type": "@id"
       },
@@ -436,6 +445,9 @@
       "has_decreased_amount": {
          "@type": "@id"
       },
+      "has_device": {
+         "@type": "@id"
+      },
       "has_drug": {
          "@type": "@id"
       },
@@ -446,6 +458,9 @@
          "@type": "@id"
       },
       "has_gene": {
+         "@type": "@id"
+      },
+      "has_gene_or_gene_product": {
          "@type": "@id"
       },
       "has_gene_product": {
@@ -484,6 +499,12 @@
       "has_phenotype": {
          "@type": "@id"
       },
+      "has_population_context": {
+         "@type": "@id"
+      },
+      "has_procedure": {
+         "@type": "@id"
+      },
       "has_qualitative_value": {
          "@type": "@id"
       },
@@ -501,6 +522,9 @@
       },
       "has_taxonomic_rank": {
          "@type": "@id"
+      },
+      "has_temporal_context": {
+         "@type": "xsd:dateTime"
       },
       "has_topic": {
          "@type": "@id"
@@ -655,6 +679,18 @@
       "negatively_correlated_with": {
          "@type": "@id"
       },
+      "negatively_regulated_by": {
+         "@type": "@id"
+      },
+      "negatively_regulated_by_entity_to_entity": {
+         "@type": "@id"
+      },
+      "negatively_regulated_by_process_to_process": {
+         "@type": "@id"
+      },
+      "negatively_regulates": {
+         "@type": "@id"
+      },
       "negatively_regulates_entity_to_entity": {
          "@type": "@id"
       },
@@ -697,6 +733,18 @@
       "positively_correlated_with": {
          "@type": "@id"
       },
+      "positively_regulated_by": {
+         "@type": "@id"
+      },
+      "positively_regulated_by_entity_to_entity": {
+         "@type": "@id"
+      },
+      "positively_regulated_by_process_to_process": {
+         "@type": "@id"
+      },
+      "positively_regulates": {
+         "@type": "@id"
+      },
       "positively_regulates_entity_to_entity": {
          "@type": "@id"
       },
@@ -713,6 +761,9 @@
          "@type": "@id"
       },
       "predisposes": {
+         "@type": "@id"
+      },
+      "prevented_by": {
          "@type": "@id"
       },
       "prevents": {
@@ -743,6 +794,18 @@
          "@type": "@id"
       },
       "quantifier_qualifier": {
+         "@type": "@id"
+      },
+      "regulated_by": {
+         "@type": "@id"
+      },
+      "regulated_by_entity_to_entity": {
+         "@type": "@id"
+      },
+      "regulated_by_process_to_process": {
+         "@type": "@id"
+      },
+      "regulates": {
          "@type": "@id"
       },
       "regulates_entity_to_entity": {
