@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2020-12-19 19:33
+# Generation date: 2021-01-04 19:31
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -111,6 +111,7 @@ ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 ORPHA = CurieNamespace('ORPHA', 'http://www.orpha.net/ORDO/Orphanet_')
 ORPHANET = CurieNamespace('ORPHANET', 'http://identifiers.org/orphanet/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://identifiers.org/panther.family/')
+PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/panther.pathway/')
 PATO_PROPERTY = CurieNamespace('PATO-PROPERTY', 'http://purl.obolibrary.org/obo/pato#')
 PDQ = CurieNamespace('PDQ', 'https://www.cancer.gov/publications/pdq#')
 PHARMGKB_DRUG = CurieNamespace('PHARMGKB_DRUG', 'http://identifiers.org/pharmgkb.drug/')
@@ -183,6 +184,7 @@ ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOWL#')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
+PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
@@ -384,6 +386,10 @@ class ArticleId(PublicationId):
 
 
 class PhysicalEntityId(NamedThingId):
+    pass
+
+
+class ActivityId(NamedThingId):
     pass
 
 
@@ -1992,6 +1998,31 @@ class ActivityAndBehavior(Occurrent):
     class_class_curie: ClassVar[str] = "biolink:ActivityAndBehavior"
     class_name: ClassVar[str] = "activity and behavior"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ActivityAndBehavior
+
+
+@dataclass
+class Activity(NamedThing):
+    """
+    An activity is something that occurs over a period of time and acts upon or with entities; it may include
+    consuming, processing, transforming, modifying, relocating, using, or generating entities.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Activity
+    class_class_curie: ClassVar[str] = "biolink:Activity"
+    class_name: ClassVar[str] = "activity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Activity
+
+    id: Union[str, ActivityId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ActivityId):
+            self.id = ActivityId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass

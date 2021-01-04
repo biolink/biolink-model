@@ -80,6 +80,7 @@ prefixes:
   pav: 'http://purl.org/pav/'
   PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
+  prov: 'http://www.w3.org/ns/prov#'
   qud: 'http://qudt.org/1.1/schema/qudt#'
   REPODB: 'http://apps.chiragjpgroup.org/repoDB/'
   ResearchID: 'https://publons.com/researcher/'
@@ -1382,7 +1383,10 @@ slots:
   genetically interacts with:
     is_a: interacts with
     description: >-
-      holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
+      holds between two genes whose phenotypic effects are dependent on each
+      other in some way - such that their combined phenotypic effects are the
+      result of some interaction between the activity of their gene products.
+      Examples include epistasis and synthetic lethality.
     domain: gene locus mixin
     range: gene locus mixin
     in_subset:
@@ -5137,10 +5141,22 @@ classes:
     exact_mappings:
       # Activities & Behaviors
       - UMLSSG:ACTI
-    narrow_mappings:
+
+  activity:
+    is_a: named thing
+    mixins:
+      - activity and behavior
+    description: >-
+      An activity is something that occurs over a period of time and acts upon
+      or with entities; it may include consuming, processing, transforming,
+      modifying, relocating, using, or generating entities.
+    exact_mappings:
+      - prov:Activity
+      - NCIT:C43431
       # Activity
       - UMLSSC:T052
       - UMLSST:acty
+    narrow_mappings:
       # Daily or Recreational Activity
       - UMLSSC:T056
       - UMLSST:dora
@@ -5445,6 +5461,7 @@ classes:
       - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
       - FlyBase ## FlyBase:FBgg
+      - PANTHER.PATHWAY
 
   physiological process:
     aliases: ['physiology']
