@@ -30,6 +30,7 @@ URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
  * PHARMGKB.PATHWAYS
  * WIKIPATHWAYS
  * FlyBase
+ * PANTHER.PATHWAY
 
 ## Parents
 
