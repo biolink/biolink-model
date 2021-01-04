@@ -76,19 +76,20 @@ A class represents an entity or an association. A class can have one more more s
 In RDF sense, a class is basically `rdfs:Class`.
 
 Within the Biolink Model there are two hierarchies of classes:
-  - [Entities](#entities)
+  - [Named Things](#named-things)
   - [Associations](#associations)
 
-where Entities are disjoint from Associations.
+where Named Things are disjoint from Associations.
 
+But they do share a common ancestor class: `entity`
 
-##### Entities
+##### Named Things
 
-Entities are classes that represent real world entities such as genes, diseases, chemical substances, etc.
+Named Things are classes that represent real world entities such as genes, diseases, chemical substances, etc.
 
-In a graph formalism, entities are represented by nodes in a graph.
+In a graph formalism, 'Named Things' are represented by nodes in a graph.
 
-Each Entity class has one or more slots (properties).
+Each class in the `named thing` has one or more slots (properties).
 
 The root of all entities is the `named thing` class.
 
@@ -162,7 +163,8 @@ The root of all node properties is `node property` slot.
 
 In an OWL sense, node properties are similar to `owl:DataTypeProperty`.
 
-For example, `id` and `name` are children of the `node property` slot and they are assigned to the entity class `named thing`. So all instances of this class can have `id` and `name` as properties that further describes the instance.
+For example, `symbol`, `synonym`, and `xref` are children of the `node property` slot and they are assigned to the entity class `named thing`.
+So all instances of this class can have `symbol`, `synonym`, and `xref` as properties that further describes the instance. 
 
 
 > **Note:** In many cases you may see node properties without the `biolink` prefix. This is normal since we can assume that if there is a biolink typed node in a graph, with `id` and `name` as its properties, then they correspond to `biolink:id` and `biolink:name`. But to be sure of the semantics it is advised to use the full CURIE to represent property names in your graph.
