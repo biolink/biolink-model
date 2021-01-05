@@ -868,7 +868,7 @@ slots:
   has gene or gene product:
     is_a: node property
     description: >-
-      connects an entity with one or more gene products
+      connects an entity with one or more gene or gene products
     range: gene
     multivalued: true
 
@@ -1995,7 +1995,10 @@ slots:
 
   affects response to:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+      holds between two molecular entities where the action or effect
+      of one impacts the susceptibility of a biological entity or system
+      (e.g. an organism, cell, cellular component, macromolecular machine mixin,
+      biological or pathological process) to the other
     is_a: affects
     in_subset:
       - translator_minimal
@@ -2006,7 +2009,10 @@ slots:
 
   increases response to:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+      holds between two molecular entities where the action or effect of one
+      increases the susceptibility of a biological entity or system (e.g. an
+      organism, cell, cellular component, macromolecular machine mixin, biological
+      or pathological process) to the other
     is_a: affects response to
     in_subset:
       - translator_minimal
@@ -2017,7 +2023,10 @@ slots:
 
   decreases response to:
     description: >-
-      holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+      holds between two molecular entities where the action or effect of one
+      decreases the susceptibility of a biological entity or system (e.g. an
+      organism, cell, cellular component, macromolecular machine mixin, biological
+      or pathological process) to the other
     is_a: affects response to
     in_subset:
       - translator_minimal
@@ -2031,7 +2040,8 @@ slots:
 
   affects splicing of:
     description: >-
-      holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA
+      holds between a molecular entity and an mRNA where the action or effect
+      of the molecular entity impacts the splicing of the mRNA
     is_a: affects
     in_subset:
       - translator_minimal
@@ -2044,7 +2054,8 @@ slots:
 
   increases splicing of:
     description: >-
-      holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA
+      holds between a molecular entity and an mRNA where the action or effect
+      of the molecular entity increases the proper splicing of the mRNA
     is_a: affects splicing of
     in_subset:
       - translator_minimal
@@ -2468,7 +2479,7 @@ slots:
       holds between a gene and a transcribed and/or
       translated product generated from it
     domain: gene
-    range: gene product
+    range: gene product mixin
     in_subset:
       - translator_minimal
     close_mappings:
@@ -2715,20 +2726,22 @@ slots:
     description: >-
       holds between two genes or gene products that are part of in the same biological pathway
     is_a: coexists with
-    domain: gene or gene product
-    range: gene or gene product
+    domain: gene or gene product mixin
+    range: gene or gene product mixin
     in_subset:
       - translator_minimal
     related_mappings:
-      # generally pertains to membership of a (subject) component - gene, metabolite, etc? - in an (object) metabolic pathway
+      # generally pertains to membership of a (subject) component - gene,
+      # metabolite, etc? - in an (object) metabolic pathway
       - SIO:010532
 
   in complex with:
     description: >-
-      holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
+      holds between two genes or gene products that are part of (or code for
+      products that are part of) in the same macromolecular complex mixin
     is_a: coexists with
-    domain: gene or gene product
-    range: gene or gene product
+    domain: gene or gene product mixin
+    range: gene or gene product mixin
     in_subset:
       - translator_minimal
     related_mappings:
@@ -2742,8 +2755,8 @@ slots:
     description: >-
       holds between two genes or gene products that are expressed in the same cell type or population
     is_a: coexists with
-    domain: gene or gene product
-    range: gene or gene product
+    domain: gene or gene product mixin
+    range: gene or gene product mixin
     in_subset:
       - translator_minimal
 
@@ -3082,8 +3095,8 @@ slots:
     description: >-
       holds between any two genes or gene products, in which both are
       generally expressed within a single defined experimental context.
-    domain: gene or gene product
-    range: gene or gene product
+    domain: gene or gene product mixin
+    range: gene or gene product mixin
 
   has biomarker:
     is_a: correlated with
@@ -3133,7 +3146,7 @@ slots:
     is_a: related to
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
-    domain: gene or gene product
+    domain: gene or gene product mixin
     range: anatomical entity
     in_subset:
       - translator_minimal
@@ -3150,7 +3163,7 @@ slots:
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
-    range: gene or gene product
+    range: gene or gene product mixin
     in_subset:
       - translator_minimal
     inverse: expressed in
@@ -4334,7 +4347,7 @@ slots:
   catalyst qualifier:
     is_a: association slot
     multivalued: true
-    range: macromolecular machine
+    range: macromolecular machine mixin
     description: >-
       a qualifier that connects an association between two causally connected
       entities (for example, two chemical entities, or a chemical entity in
@@ -5367,15 +5380,12 @@ classes:
       - UMLSST:rcpt
 
   biological process or activity:
+    description: >-
+      Either an individual molecular activity, or a collection of
+      causally connected molecular activities in a biological system.
     is_a: biological entity
     mixins:
       - occurrent
-    description: >-
-      Either an individual molecular activity, or a collection
-      of causally connected molecular activities
-#    union_of:
-#      - molecular activity
-#      - biological process
     id_prefixes:
       - GO
       - REACT
@@ -5385,12 +5395,13 @@ classes:
       - enabled by
 
   molecular activity:
+    description: >-
+      An execution of a molecular function carried out by a
+      gene product or macromolecular complex.
     is_a: biological process or activity
     aliases: ['molecular function', 'molecular event', 'reaction']
     mixins:
       - occurrent
-    description: >-
-      An execution of a molecular function carried out by a gene product or macromolecular complex.
     slot_usage:
       has input:
         range: chemical substance
@@ -5401,7 +5412,7 @@ classes:
         description: >-
           A chemical entity that is the output for the reaction
       enabled by:
-        range: macromolecular machine
+        range: macromolecular machine mixin
         description: >-
           The gene product, gene, or complex that catalyzes the reaction
     exact_mappings:
@@ -5984,6 +5995,119 @@ classes:
       - PO
       - FAO
 
+  ## Genomic Entity Mixins
+
+  macromolecular machine mixin:
+    description: >-
+      A union of gene locus, gene product, and macromolecular complex mixin. These are
+      the basic units of function in a cell. They either carry out individual
+      biological activities, or they encode molecules which do this.
+    mixin: true
+    slots:
+      - name
+    slot_usage:
+      name:
+        range: symbol type
+        description: >-
+          genes are typically designated by a short symbol and a full name.
+          We map the symbol to the default display name
+          and use an additional slot for full name
+
+  gene or gene product mixin:
+    description: >-
+      A union of gene loci or gene products.
+      Frequently an identifier for one will be used as proxy for another
+    is_a: macromolecular machine mixin
+    mixin: true
+    id_prefixes:
+      - CHEMBL.TARGET
+      - IUPHAR.FAMILY
+
+  gene:
+    description: >-
+      A region (or regions) that includes all of the sequence elements
+      necessary to encode a functional transcript. A gene locus may include
+      regulatory regions, transcribed regions and/or other
+      functional sequence regions.
+    is_a: genomic entity
+    mixins:
+      - gene or gene product mixin
+    aliases: ['locus']
+    slots:
+      - symbol
+      - synonym
+      - xref
+    exact_mappings:
+      - SO:0000704
+      - SIO:010035
+      - WIKIDATA:Q7187
+    id_prefixes:
+      - NCBIGENE
+      - ENSEMBL
+      - HGNC
+      - UniProtKB
+      - MGI
+      - ZFIN
+      - dictyBase
+      - WB
+      - WormBase
+      - FlyBase
+      - FB
+      - RGD
+      - SGD
+      - POMBASE
+      # - IUPHAR
+    in_subset:
+      - model_organism_database
+
+  gene product mixin:
+    description: >-
+      The functional molecular product of a single gene locus.
+      Gene products are either proteins or functional RNA molecules.
+    is_a: gene or gene product mixin
+    mixin: true
+    slots:
+      - synonym
+      - xref
+    exact_mappings:
+      - WIKIDATA:Q424689
+      - GENO:0000907
+      - NCIT:C26548
+    id_prefixes:
+      - UniProtKB
+      - gtpo
+      - PR
+
+  gene product isoform mixin:
+    description: >-
+      This is an abstract class that can be mixed in with different kinds of
+      gene products to indicate that the gene product is intended to represent
+      a specific isoform rather than a canonical or reference or generic
+      product. The designation of canonical or reference may be arbitrary,
+      or it may represent the superclass of all isoforms.
+    is_a: gene product mixin
+    mixin: true
+
+  macromolecular complex mixin:
+    description: >-
+      A stable assembly of two or more macromolecules, i.e. proteins,
+      nucleic acids, carbohydrates or lipids, in which at least one
+      component is a protein and the constituent parts function together.
+    is_a: macromolecular machine mixin
+    mixin: true
+    exact_mappings:
+      - GO:0032991
+      - WIKIDATA:Q22325163
+    id_prefixes:
+      - INTACT
+      - GO
+      - PR
+      - REACT
+    in_subset:
+      - model_organism_database
+
+  ## Genomic Classes
+
   genomic entity:
     is_a: molecular entity
     aliases: ['sequence feature']
@@ -6018,10 +6142,20 @@ classes:
     in_subset:
       - model_organism_database
 
-  transcript:
-    is_a: gene product
+  exon:
+    is_a: genomic entity
     description: >-
-      An RNA synthesized on a DNA or RNA template by an RNA polymerase
+      A region of the transcript sequence within a gene which is not
+      removed from the primary RNA transcript by RNA splicing.
+    exact_mappings:
+      - SO:0000147
+      - SIO:010445
+      - WIKIDATA:Q373027
+
+  transcript:
+    is_a: genomic entity
+    description: >-
+      An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     exact_mappings:
       - SO:0000673
       - SIO:010450
@@ -6032,108 +6166,20 @@ classes:
     in_subset:
       - model_organism_database
 
-  exon:
-    is_a: genomic entity
-    description: >-
-      A region of the transcript sequence within a gene which is not
-      removed from the primary RNA transcript by RNA splicing
-    exact_mappings:
-      - SO:0000147
-      - SIO:010445
-      - WIKIDATA:Q373027
-
   coding sequence:
     is_a: genomic entity
     exact_mappings:
       - SO:0000316
       - SIO:001390
 
-  macromolecular machine:
-    is_a: genomic entity
-    union_of:
-      - gene
-      - gene product
-      - macromolecular complex
-    description: >-
-      A union of gene, gene product, and macromolecular complex.
-      These are the basic units of function in a cell. They either carry out individual
-      biological activities, or they encode molecules which do this.
-    slot_usage:
-      name:
-        range: symbol type
-        description: >-
-          genes are typically designated by a short symbol and a full name.
-          We map the symbol to the default display name
-          and use an additional slot for full name
-
-  gene or gene product:
-    is_a: macromolecular machine
-    union_of:
-      - gene
-      - gene product
-    description: >-
-      a union of genes or gene products.
-      Frequently an identifier for one will be used as proxy for another
-    id_prefixes:
-      - CHEMBL.TARGET
-      - IUPHAR.FAMILY
-
-  gene:
-    is_a: gene or gene product
-    aliases: ['locus']
-    slots:
-      - symbol
-      - synonym
-      - xref
-    exact_mappings:
-      - SO:0000704
-      - SIO:010035
-      - WIKIDATA:Q7187
-    id_prefixes:
-      - NCBIGENE
-      - ENSEMBL
-      - HGNC
-      - UniProtKB
-      - MGI
-      - ZFIN
-      - dictyBase
-      - WB
-      - WormBase
-      - FlyBase
-      - FB
-      - RGD
-      - SGD
-      - POMBASE
-      # - IUPHAR
-    in_subset:
-      - model_organism_database
-
-  gene product:
-    is_a: gene or gene product
-    description: >-
-      The functional molecular product of a single gene.
-      Gene products are either proteins or functional RNA molecules
-    union_of:
-      - protein
-      - RNA product
-    slots:
-      - synonym
-      - xref
-    exact_mappings:
-      - WIKIDATA:Q424689
-      - GENO:0000907
-      - NCIT:C26548
-    id_prefixes:
-      - UniProtKB
-      - gtpo
-      - PR
-
   protein:
-    is_a: gene product
-    aliases: ['polypeptide']
     description: >-
       A gene product that is composed of a chain of amino acid sequences
       and is produced by ribosome-mediated translation of mRNA
+    is_a: genomic entity
+    mixins:
+      - gene product mixin
+    aliases: ['polypeptide']
     broad_mappings:
       # Amino Acid, Peptide, or Protein
       - UMLSSC:T116
@@ -6154,18 +6200,6 @@ classes:
     in_subset:
         - model_organism_database
 
-  gene product isoform:
-    # biolink:GeneProductIsoform is most consistently used as a mixin thus it should
-    # be declared as such and cannot inherit from the non-mixin biolink:GeneProduct
-    #is_a: gene product
-    description: >-
-      This is an abstract class that can be mixed in with different kinds of
-      gene products to indicate that the gene product is intended to
-      represent a specific isoform rather than a canonical or reference or
-      generic product. The designation of canonical or reference may be arbitrary,
-      or it may represent the superclass of all isoforms.
-    mixin: true
-
   protein isoform:
     aliases: ['proteoform']
     is_a: protein
@@ -6173,14 +6207,16 @@ classes:
       Represents a protein that is a specific isoform of the canonical or
       reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     mixins:
-      - gene product isoform
+      - gene product isoform mixin
     id_prefixes:
       - UniProtKB ## UniProtKB:([A-Z0-9]+-\d+)
       - PR
       - ENSEMBL
 
   RNA product:
-    is_a: gene product
+    is_a: transcript
+    mixins:
+      - gene product mixin
     exact_mappings:
       - CHEBI:33697
       # This SIO term here also mapped to 'biolink:Transcript'; however,
@@ -6196,7 +6232,7 @@ classes:
     description: >-
       Represents a protein that is a specific isoform of the canonical or reference RNA
     mixins:
-      - gene product isoform
+      - gene product isoform mixin
     id_prefixes:
       - RNACENTRAL
 
@@ -6239,19 +6275,6 @@ classes:
       - MIR
       - HGNC
       - WormBase
-    in_subset:
-      - model_organism_database
-
-  macromolecular complex:
-    is_a: macromolecular machine
-    exact_mappings:
-      - GO:0032991
-      - WIKIDATA:Q22325163
-    id_prefixes:
-      - INTACT
-      - GO
-      - PR
-      - REACT
     in_subset:
       - model_organism_database
 
@@ -6890,13 +6913,13 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene or gene product
+        range: gene or gene product mixin
         description: >-
           the subject gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
           as a proxy for the gene or vice versa.
       object:
-        range: gene or gene product
+        range: gene or gene product mixin
         description: >-
           the object gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
@@ -6923,6 +6946,7 @@ classes:
     description: >-
       Observed gene expression intensity, context (site, stage) and
       associated phenotypic status within which the expression occurs.
+    mixin: true
     slots:
       - quantifier qualifier
       - expression site
@@ -7174,8 +7198,9 @@ classes:
       - chemical to entity association mixin
     slot_usage:
       object:
-        range: gene or gene product
-        description: "the gene or gene product that is affected by the chemical"
+        range: gene or gene product mixin
+        description: >-
+          the gene or gene product that is affected by the chemical.
 
   drug to gene association:
     description: >-
@@ -7190,7 +7215,7 @@ classes:
       - drug to entity association mixin
     slot_usage:
       object:
-        range: gene or gene product
+        range: gene or gene product mixin
         description: "the gene or gene product that is affected by the drug"
 
   material sample to entity association mixin:
@@ -7489,8 +7514,9 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: gene or gene product
-        description: "gene that is the subject of the association"
+        range: gene or gene product mixin
+        description: >-
+          gene that is the subject of the association
 
   variant to entity association mixin:
     local_names:
@@ -7521,7 +7547,7 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene or gene product
+        range: gene or gene product mixin
         description: "gene in which variation is correlated with the phenotypic feature"
         examples:
           - value: HGNC:2197
@@ -7541,7 +7567,7 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene or gene product
+        range: gene or gene product mixin
         description: >-
           gene in which variation is correlated with the disease,
           may be protective or causative or associative, or as a model
@@ -7718,12 +7744,12 @@ classes:
             description: hereditary breast cancer
 
   model to disease association mixin:
-    mixin: true
     description: >-
       This mixin is used for any association class for which the subject
       (source node) plays the role of a 'model', in that it recapitulates some
       features of the disease in a way that is useful for studying the disease
       outside a patient carrying the disease
+    mixin: true
     slot_usage:
       subject:
         description: >-
@@ -7746,7 +7772,7 @@ classes:
       - entity to disease association mixin
     slot_usage:
       subject:
-        range: gene or gene product
+        range: gene or gene product mixin
         description: >-
           A gene that has a role in modeling the disease. This may be a model
           organism ortholog of a known disease gene, or it may be a gene whose
@@ -7824,7 +7850,7 @@ classes:
       - sequence variant qualifier
     slot_usage:
       subject:
-        range: gene or gene product
+        range: gene or gene product mixin
         description: >-
           A gene that has a role in modeling the disease. This may be
           a model organism ortholog of a known disease gene, or it may be
@@ -7847,7 +7873,7 @@ classes:
       - quantifier qualifier
     slot_usage:
       subject:
-        range: gene or gene product
+        range: gene or gene product mixin
         description: "gene in which variation is correlated with the phenotypic feature"
       object:
         range: anatomical entity
@@ -7890,18 +7916,18 @@ classes:
   functional association:
     is_a: association
     description: >-
-      An association between a macromolecular machine (gene, gene product
-      or complex of gene products) and either a molecular activity, a
-      biological process or a cellular location in which a function is executed.
+      An association between a macromolecular machine mixin (gene, gene product or
+      complex of gene products) and either a molecular activity, a biological
+      process or a cellular location in which a function is executed.
     slot_usage:
       subject:
-        range: macromolecular machine
+        range: macromolecular machine mixin
 #          aliases:
 #            bioentity:
 #              schema: amigo
         description: >-
-          gene, product or macromolecular complex that has
-          the function associated with the GO term
+          gene, product or macromolecular complex mixin that
+          has the function associated with the GO term
         examples:
           - value: ZFIN:ZDB-GENE-050417-357
             description: twist1b
@@ -7921,35 +7947,49 @@ classes:
           - value: GO:0045211
             description: postsynaptic membrane
 
+  macromolecular machine to entity association mixin:
+    description: >-
+      an association which has a macromolecular machine mixin as a subject
+    mixin: true
+    slot_usage:
+      subject:
+        domain: macromolecular machine mixin
+
   macromolecular machine to molecular activity association:
-    is_a: functional association
     description: >-
       A functional association between a macromolecular machine (gene,
       gene product or complex) and a molecular activity (as represented
       in the GO molecular function branch), where the entity
-      carries out the activity, or contributes to its execution
+      carries out the activity, or contributes to its execution.
+    is_a: functional association
+    mixins:
+      - macromolecular machine to entity association mixin
     slot_usage:
       object:
         range: molecular activity
 
   macromolecular machine to biological process association:
-    is_a: functional association
     description: >-
       A functional association between a macromolecular machine (gene,
       gene product or complex) and a biological process or pathway
       (as represented in the GO biological process branch), where the entity
-      carries out some part of the process, regulates it, or acts upstream of it
+      carries out some part of the process, regulates it, or acts upstream of it.
+    is_a: functional association
+    mixins:
+      - macromolecular machine to entity association mixin
     slot_usage:
       object:
         range: biological process
 
   macromolecular machine to cellular component association:
-    is_a: functional association
     description: >-
       A functional association between a macromolecular machine (gene,
       gene product or complex) and a cellular component (as represented
       in the GO cellular component branch), where the entity
-      carries out its function in the cellular component
+      carries out its function in the cellular component.
+    is_a: functional association
+    mixins:
+      - macromolecular machine to entity association mixin
     slot_usage:
       object:
         range: cellular component
@@ -8056,7 +8096,7 @@ classes:
       subject:
         range: gene
       object:
-        range: gene product
+        range: gene product mixin
       predicate:
         subproperty_of: has gene product
 
@@ -8083,10 +8123,10 @@ classes:
         description: >-
           the direction is always from regulator to regulated
       subject:
-        range: gene or gene product
+        range: gene or gene product mixin
         role: regulatory gene
       object:
-        range: gene or gene product
+        range: gene or gene product mixin
         role: regulated gene
 
   anatomical entity to anatomical entity association:
