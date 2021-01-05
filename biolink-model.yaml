@@ -933,16 +933,6 @@ slots:
     range: procedure
     multivalued: true
 
-  has excipient:
-    is_a: node property
-    domain: drug
-    range: chemical substance
-    multivalued: true
-    description: >-
-      one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    exact_mappings:
-      - WIKIDATA:Q902638
-
   has nutrient:
     is_a: node property
     domain: food
@@ -3764,6 +3754,28 @@ slots:
     inverse: is active ingredient of
     mappings:
       - RO:0002248
+
+  is excipient of:
+    is_a: part of
+    description: >-
+      holds between two chemical substances in which the first one is a part of the the second one, 
+      and is a biologically inactive component
+    in_subset:
+      - translator_minimal
+    inverse: has excipient
+    mappings:
+      - WIKIDATA:Q902638
+
+  has excipient:
+    is_a: has part
+    description: >-
+      holds between two chemical substances in which the second one is a part of the the first one, 
+      and is a biologically inactive component
+    in_subset:
+      - translator_minimal
+    inverse: is excipient of
+    mappings:
+      - WIKIDATA:Q902638
 
   manifestation of:
     is_a: related to
