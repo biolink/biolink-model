@@ -898,7 +898,8 @@ slots:
 
   is metabolite:
     is_a: node property
-    range: chemical substance
+    range: boolean
+    domain: chemical substance
     description: >-
       indicates whether a chemical substance is a metabolite
     exact_mappings:
