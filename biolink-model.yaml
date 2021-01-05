@@ -1387,8 +1387,8 @@ slots:
       other in some way - such that their combined phenotypic effects are the
       result of some interaction between the activity of their gene products.
       Examples include epistasis and synthetic lethality.
-    domain: gene locus mixin
-    range: gene locus mixin
+    domain: gene
+    range: gene
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -2726,8 +2726,8 @@ slots:
     description: >-
       holds between two genes or gene products that are part of in the same biological pathway
     is_a: coexists with
-    domain: gene locus or gene product mixin
-    range: gene locus or gene product mixin
+    domain: gene or gene product mixin
+    range: gene or gene product mixin
     in_subset:
       - translator_minimal
     related_mappings:
@@ -2740,8 +2740,8 @@ slots:
       holds between two genes or gene products that are part of (or code for
       products that are part of) in the same macromolecular complex mixin
     is_a: coexists with
-    domain: gene locus or gene product mixin
-    range: gene locus or gene product mixin
+    domain: gene or gene product mixin
+    range: gene or gene product mixin
     in_subset:
       - translator_minimal
     related_mappings:
@@ -2755,8 +2755,8 @@ slots:
     description: >-
       holds between two genes or gene products that are expressed in the same cell type or population
     is_a: coexists with
-    domain: gene locus or gene product mixin
-    range: gene locus or gene product mixin
+    domain: gene or gene product mixin
+    range: gene or gene product mixin
     in_subset:
       - translator_minimal
 
@@ -2785,7 +2785,7 @@ slots:
     is_a: genetic association
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
-    domain: gene locus mixin
+    domain: gene
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -2807,7 +2807,7 @@ slots:
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
     domain: disease or phenotypic feature
-    range: gene locus mixin
+    range: gene
     in_subset:
       - translator_minimal
     inverse: gene associated with condition
@@ -3095,8 +3095,8 @@ slots:
     description: >-
       holds between any two genes or gene products, in which both are
       generally expressed within a single defined experimental context.
-    domain: gene locus or gene product mixin
-    range: gene locus or gene product mixin
+    domain: gene or gene product mixin
+    range: gene or gene product mixin
 
   has biomarker:
     is_a: correlated with
@@ -3146,7 +3146,7 @@ slots:
     is_a: related to
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
-    domain: gene locus or gene product mixin
+    domain: gene or gene product mixin
     range: anatomical entity
     in_subset:
       - translator_minimal
@@ -3163,7 +3163,7 @@ slots:
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
-    range: gene locus or gene product mixin
+    range: gene or gene product mixin
     in_subset:
       - translator_minimal
     inverse: expressed in
@@ -3925,7 +3925,7 @@ slots:
     description: holds between a gene  and a sequence variant, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
-    range: gene locus mixin
+    range: gene
     exact_mappings:
       - SO:0001583
       - SNPEFF:missense_variant
@@ -3938,7 +3938,7 @@ slots:
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
-    range: gene locus mixin
+    range: gene
     exact_mappings:
       - SO:0001819
       - SNPEFF:synonymous_variant
@@ -3951,7 +3951,7 @@ slots:
     description: holds between a sequence variant and a gene, such the sequence variant
       results in a premature stop codon
     domain: sequence variant
-    range: gene locus mixin
+    range: gene
     exact_mappings:
       - SNPEFF:stop_gained
     broad_mappings:
@@ -3965,7 +3965,7 @@ slots:
       causes a disruption of the translational reading frame, because the number of
       nucleotides inserted or deleted is not a multiple of three.
     domain: sequence variant
-    range: gene locus mixin
+    range: gene
     exact_mappings:
       - SO:0001589
       - SNPEFF:frameshift_variant
@@ -3979,7 +3979,7 @@ slots:
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
-    range: gene locus mixin
+    range: gene
     exact_mappings:
       - SO:0001629
     narrow_mappings:
@@ -3993,7 +3993,7 @@ slots:
     description: holds between a sequence variant and a gene sequence that the variant
       is genomically close to.
     domain: sequence variant
-    range: gene locus mixin
+    range: gene
     exact_mappings:
       - GAMMA:0000102
     narrow_mappings:
@@ -4006,7 +4006,7 @@ slots:
     description: holds between a sequence variant and a gene, where the variant does
       not affect the coding sequence
     domain: sequence variant
-    range: gene locus mixin
+    range: gene
     exact_mappings:
       - GAMMA:0000103
     narrow_mappings:
@@ -6013,7 +6013,7 @@ classes:
           We map the symbol to the default display name
           and use an additional slot for full name
 
-  gene locus or gene product mixin:
+  gene or gene product mixin:
     description: >-
       A union of gene loci or gene products.
       Frequently an identifier for one will be used as proxy for another
@@ -6023,15 +6023,16 @@ classes:
       - CHEMBL.TARGET
       - IUPHAR.FAMILY
 
-  gene locus mixin:
-    aliases: ['locus']
+  gene:
     description: >-
       A region (or regions) that includes all of the sequence elements
       necessary to encode a functional transcript. A gene locus may include
       regulatory regions, transcribed regions and/or other
       functional sequence regions.
-    is_a: gene locus or gene product mixin
-    mixin: true
+    is_a: genomic entity
+    mixins:
+      - gene or gene product mixin
+    aliases: ['locus']
     slots:
       - symbol
       - synonym
@@ -6063,7 +6064,7 @@ classes:
     description: >-
       The functional molecular product of a single gene locus.
       Gene products are either proteins or functional RNA molecules.
-    is_a: gene locus or gene product mixin
+    is_a: gene or gene product mixin
     mixin: true
     slots:
       - synonym
@@ -6150,11 +6151,6 @@ classes:
       - SO:0000147
       - SIO:010445
       - WIKIDATA:Q373027
-
-  gene:
-    is_a: genomic entity
-    mixins:
-      - gene locus mixin
 
   transcript:
     is_a: genomic entity
@@ -6880,7 +6876,7 @@ classes:
         description: >-
           parent genotype
       object:
-        range: gene locus mixin
+        range: gene
         description: >-
           gene implicated in genotype
 
@@ -6917,13 +6913,13 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: >-
           the subject gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
           as a proxy for the gene or vice versa.
       object:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: >-
           the object gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
@@ -7202,7 +7198,7 @@ classes:
       - chemical to entity association mixin
     slot_usage:
       object:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: >-
           the gene or gene product that is affected by the chemical.
 
@@ -7219,7 +7215,7 @@ classes:
       - drug to entity association mixin
     slot_usage:
       object:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: "the gene or gene product that is affected by the drug"
 
   material sample to entity association mixin:
@@ -7518,7 +7514,7 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: >-
           gene that is the subject of the association
 
@@ -7551,7 +7547,7 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: "gene in which variation is correlated with the phenotypic feature"
         examples:
           - value: HGNC:2197
@@ -7571,7 +7567,7 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: >-
           gene in which variation is correlated with the disease,
           may be protective or causative or associative, or as a model
@@ -7589,7 +7585,7 @@ classes:
       - variant to entity association mixin
     slot_usage:
       object:
-        range: gene locus mixin
+        range: gene
       predicate:
         subproperty_of: genetic association
 
@@ -7776,7 +7772,7 @@ classes:
       - entity to disease association mixin
     slot_usage:
       subject:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: >-
           A gene that has a role in modeling the disease. This may be a model
           organism ortholog of a known disease gene, or it may be a gene whose
@@ -7854,7 +7850,7 @@ classes:
       - sequence variant qualifier
     slot_usage:
       subject:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: >-
           A gene that has a role in modeling the disease. This may be
           a model organism ortholog of a known disease gene, or it may be
@@ -7877,7 +7873,7 @@ classes:
       - quantifier qualifier
     slot_usage:
       subject:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         description: "gene in which variation is correlated with the phenotypic feature"
       object:
         range: anatomical entity
@@ -8087,7 +8083,7 @@ classes:
       subject:
         range: transcript
       object:
-        range: gene locus mixin
+        range: gene
 
   gene to gene product relationship:
     is_a: sequence feature relationship
@@ -8098,7 +8094,7 @@ classes:
       A gene is transcribed and potentially translated to a gene product
     slot_usage:
       subject:
-        range: gene locus mixin
+        range: gene
       object:
         range: gene product mixin
       predicate:
@@ -8127,10 +8123,10 @@ classes:
         description: >-
           the direction is always from regulator to regulated
       subject:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         role: regulatory gene
       object:
-        range: gene locus or gene product mixin
+        range: gene or gene product mixin
         role: regulated gene
 
   anatomical entity to anatomical entity association:
