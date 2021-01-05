@@ -2726,8 +2726,8 @@ slots:
     description: >-
       holds between two genes or gene products that are part of in the same biological pathway
     is_a: coexists with
-    domain: gene or gene product mixin
-    range: gene or gene product mixin
+    domain: gene or gene product
+    range: gene or gene product
     in_subset:
       - translator_minimal
     related_mappings:
@@ -2740,8 +2740,8 @@ slots:
       holds between two genes or gene products that are part of (or code for
       products that are part of) in the same macromolecular complex mixin
     is_a: coexists with
-    domain: gene or gene product mixin
-    range: gene or gene product mixin
+    domain: gene or gene product
+    range: gene or gene product
     in_subset:
       - translator_minimal
     related_mappings:
@@ -2755,8 +2755,8 @@ slots:
     description: >-
       holds between two genes or gene products that are expressed in the same cell type or population
     is_a: coexists with
-    domain: gene or gene product mixin
-    range: gene or gene product mixin
+    domain: gene or gene product
+    range: gene or gene product
     in_subset:
       - translator_minimal
 
@@ -3095,8 +3095,8 @@ slots:
     description: >-
       holds between any two genes or gene products, in which both are
       generally expressed within a single defined experimental context.
-    domain: gene or gene product mixin
-    range: gene or gene product mixin
+    domain: gene or gene product
+    range: gene or gene product
 
   has biomarker:
     is_a: correlated with
@@ -3146,7 +3146,7 @@ slots:
     is_a: related to
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
-    domain: gene or gene product mixin
+    domain: gene or gene product
     range: anatomical entity
     in_subset:
       - translator_minimal
@@ -3163,7 +3163,7 @@ slots:
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
-    range: gene or gene product mixin
+    range: gene or gene product
     in_subset:
       - translator_minimal
     inverse: expressed in
@@ -6013,7 +6013,7 @@ classes:
           We map the symbol to the default display name
           and use an additional slot for full name
 
-  gene or gene product mixin:
+  gene or gene product:
     description: >-
       A union of gene loci or gene products.
       Frequently an identifier for one will be used as proxy for another
@@ -6031,7 +6031,7 @@ classes:
       functional sequence regions.
     is_a: genomic entity
     mixins:
-      - gene or gene product mixin
+      - gene or gene product
     aliases: ['locus']
     slots:
       - symbol
@@ -6064,7 +6064,7 @@ classes:
     description: >-
       The functional molecular product of a single gene locus.
       Gene products are either proteins or functional RNA molecules.
-    is_a: gene or gene product mixin
+    is_a: gene or gene product
     mixin: true
     slots:
       - synonym
@@ -6913,13 +6913,13 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: >-
           the subject gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
           as a proxy for the gene or vice versa.
       object:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: >-
           the object gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
@@ -7198,7 +7198,7 @@ classes:
       - chemical to entity association mixin
     slot_usage:
       object:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: >-
           the gene or gene product that is affected by the chemical.
 
@@ -7215,7 +7215,7 @@ classes:
       - drug to entity association mixin
     slot_usage:
       object:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: "the gene or gene product that is affected by the drug"
 
   material sample to entity association mixin:
@@ -7514,7 +7514,7 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: >-
           gene that is the subject of the association
 
@@ -7547,7 +7547,7 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
         examples:
           - value: HGNC:2197
@@ -7567,7 +7567,7 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: >-
           gene in which variation is correlated with the disease,
           may be protective or causative or associative, or as a model
@@ -7772,7 +7772,7 @@ classes:
       - entity to disease association mixin
     slot_usage:
       subject:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: >-
           A gene that has a role in modeling the disease. This may be a model
           organism ortholog of a known disease gene, or it may be a gene whose
@@ -7850,7 +7850,7 @@ classes:
       - sequence variant qualifier
     slot_usage:
       subject:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: >-
           A gene that has a role in modeling the disease. This may be
           a model organism ortholog of a known disease gene, or it may be
@@ -7873,7 +7873,7 @@ classes:
       - quantifier qualifier
     slot_usage:
       subject:
-        range: gene or gene product mixin
+        range: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
       object:
         range: anatomical entity
@@ -8123,10 +8123,10 @@ classes:
         description: >-
           the direction is always from regulator to regulated
       subject:
-        range: gene or gene product mixin
+        range: gene or gene product
         role: regulatory gene
       object:
-        range: gene or gene product mixin
+        range: gene or gene product
         role: regulated gene
 
   anatomical entity to anatomical entity association:
