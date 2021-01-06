@@ -5460,7 +5460,7 @@ classes:
       - MSigDB
       - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
-      - fb  # FlyBase FBgg*
+      - FB  # FlyBase FBgg*
       - PANTHER.PATHWAY
 
   physiological process:
@@ -6051,7 +6051,7 @@ classes:
       - dictyBase
       - WB
       - WormBase
-      - fb  # FlyBase FBgn*
+      - FB  # FlyBase FBgn*
       - FB
       - RGD
       - SGD
@@ -6162,7 +6162,7 @@ classes:
       - WIKIDATA:Q7243183
     id_prefixes:
       - ENSEMBL # ENSEMBL:ENST for human
-      - fb      # FlyBase:FBtr
+      - FB      # FlyBase:FBtr
     in_subset:
       - model_organism_database
 
@@ -6196,7 +6196,7 @@ classes:
       - UniProtKB
       - PR
       - ENSEMBL # ENSEMBL:ENSP*
-      - fb      # FlyBase FBpp*
+      - FB      # FlyBase FBpp*
     in_subset:
         - model_organism_database
 
@@ -6304,7 +6304,7 @@ classes:
     id_prefixes:
       - PANTHER.FAMILY
       - HGNC.FAMILY
-      - fb       # FlyBase FBgg*
+      - FB       # FlyBase FBgg*
       - interpro # note: may be better to introduce a protein domain/family
     in_subset:
       - model_organism_database
@@ -6329,7 +6329,7 @@ classes:
       - SIO:001079
     id_prefixes:
       - ZFIN
-      - fb   # FlyBase FBba*
+      - FB   # FlyBase FBba*
     in_subset:
       - model_organism_database
 
@@ -6379,8 +6379,7 @@ classes:
       # - HGVS needs IRI mapping
       - MGI
       - ZFIN # ZFIN:ZDB-ALT-*
-      - fb   # FlyBase FBa*
-      - FB
+      - FB   # FlyBase FBa*
       - WB
       - WormBase ## WormBase:WBVar*
     alt_descriptions:
