@@ -899,8 +899,8 @@ slots:
 
   is metabolite:
     is_a: node property
-    range: boolean
     domain: chemical substance
+    range: boolean
     description: >-
       indicates whether a chemical substance is a metabolite
     exact_mappings:
@@ -3794,6 +3794,8 @@ slots:
     is_a: derives from
     description: >-
       holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: has metabolite
@@ -3806,6 +3808,8 @@ slots:
     is_a: derives into
     description: >-
       holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: is metabolite of
@@ -3817,8 +3821,10 @@ slots:
   is active ingredient of:
     is_a: part of
     description: >-
-      holds between two chemical substances in which the first one is a part of the the second one, 
-      and is the biologically active component
+      holds between a chemical substance and a drug, in which the former
+      is a part of the latter, and is a biologically active component
+    domain: chemical substance
+    range: drug
     in_subset:
       - translator_minimal
     inverse: has active ingredient
@@ -3828,8 +3834,10 @@ slots:
   has active ingredient:
     is_a: has part
     description: >-
-      holds between two chemical substances in which the second one is a part of the the first one, 
-      and is the biologically active component
+      holds between a drug and a chemical substance in which the latter
+      is a part of the former, and is a biologically active component
+    domain: drug
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: is active ingredient of
@@ -3839,8 +3847,10 @@ slots:
   is excipient of:
     is_a: part of
     description: >-
-      holds between two chemical substances in which the first one is a part of the the second one, 
-      and is a biologically inactive component
+      holds between a chemical substance and a drug in which the former is
+      a part of the latter, and is a biologically inactive component
+    domain: chemical substance
+    range: drug
     in_subset:
       - translator_minimal
     inverse: has excipient
@@ -3850,8 +3860,10 @@ slots:
   has excipient:
     is_a: has part
     description: >-
-      holds between two chemical substances in which the second one is a part of the the first one, 
-      and is a biologically inactive component
+      holds between a drug and a chemical substances in which the latter
+      is a part of the former, and is a biologically inactive component
+    domain: drug
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: is excipient of
