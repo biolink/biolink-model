@@ -1,7 +1,7 @@
 id: treatment
 schema_generating: true
 description: A treatment is targeted at a disease or phenotype and may involve multiple
-  drug, device or procedural 'exposures'
+  drug 'exposures', medical devices and/or procedures
 display_name: treatment
 document_category: treatment
 weight: 20
@@ -39,6 +39,18 @@ fields:
 - id: category
   display_name: named thing_category
   cardinality: multi
-- id: has_part
-  display_name: treatment_has part
+- id: has_drug
+  description: connects an entity to one or more drugs
+  display_name: has drug
   cardinality: multi
+- id: has_device
+  description: connects an entity to one or more (medical) devices
+  display_name: has device
+  cardinality: multi
+- id: has_procedure
+  description: connects an entity to one or more (medical) procedures
+  display_name: has procedure
+  cardinality: multi
+- id: timepoint
+  description: a point in time
+  display_name: timepoint

@@ -1,0 +1,27 @@
+digraph {
+	graph [bb="0,0,469.09,123"];
+	node [label="\N"];
+	"drug to entity association mixin"	 [height=0.5,
+		label="drug to entity association mixin",
+		pos="274.09,105",
+		width=3.4303];
+	"molecular entity to entity association mixin"	 [height=0.5,
+		pos="165.09,18",
+		width=4.5857];
+	"drug to entity association mixin" -> "molecular entity to entity association mixin"	 [label=is_a,
+		lp="238.09,61.5",
+		pos="e,187.75,36.091 251.76,87.184 235.56,74.251 213.44,56.599 195.61,42.362"];
+	subject	 [height=0.5,
+		pos="384.09,18",
+		width=0.99297];
+	"drug to entity association mixin" -> subject	 [color=blue,
+		label=subject,
+		lp="355.59,61.5",
+		pos="e,364.54,33.462 296.61,87.184 313.94,73.475 337.98,54.464 356.47,39.838",
+		style=solid];
+	"drug to entity association mixin_subject"	 [color=blue,
+		height=0.5,
+		label=drug,
+		pos="442.09,105",
+		width=0.75];
+}
