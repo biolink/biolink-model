@@ -26,6 +26,7 @@ prefixes:
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
   # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
+  ChemBank: 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid='
   chembio: 'http://translator.ncats.nih.gov/chembio_'
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
@@ -52,6 +53,7 @@ prefixes:
   gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
   GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
+  GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
@@ -87,6 +89,7 @@ prefixes:
   RO: 'http://purl.obolibrary.org/obo/RO_'
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
   RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
+  RXCUI: 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm='
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
@@ -894,6 +897,15 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P274
 
+  is metabolite:
+    is_a: node property
+    domain: chemical substance
+    range: boolean
+    description: >-
+      indicates whether a chemical substance is a metabolite
+    exact_mappings:
+      - CHEBI:25212
+
   has constituent:
     description: >-
       one or more chemical substances within a mixture
@@ -921,26 +933,6 @@ slots:
       connects an entity to one or more (medical) procedures
     range: procedure
     multivalued: true
-
-  has active ingredient:
-    is_a: node property
-    domain: drug
-    range: chemical substance
-    multivalued: true
-    description: >-
-      one or more chemical substance which are the active ingredient(s) of a drug
-    exact_mappings:
-      - WIKIDATA:Q912807
-
-  has excipient:
-    is_a: node property
-    domain: drug
-    range: chemical substance
-    multivalued: true
-    description: >-
-      one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    exact_mappings:
-      - WIKIDATA:Q902638
 
   has nutrient:
     is_a: node property
@@ -3798,6 +3790,86 @@ slots:
       - CHEBI:has_functional_parent
       - SNOMED:has_specimen_source_topography
 
+  is metabolite of:
+    is_a: derives from
+    description: >-
+      holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
+    domain: chemical substance
+    range: chemical substance
+    in_subset:
+      - translator_minimal
+    inverse: has metabolite
+    comments:
+      - The CHEBI ID represents a role rather than a predicate
+    mappings:
+      - CHEBI:25212
+
+  has metabolite:
+    is_a: derives into
+    description: >-
+      holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
+    domain: chemical substance
+    range: chemical substance
+    in_subset:
+      - translator_minimal
+    inverse: is metabolite of
+    comments:
+      - The CHEBI ID represents a role rather than a predicate
+    mappings:
+      - CHEBI:25212
+
+  is active ingredient of:
+    is_a: part of
+    description: >-
+      holds between a chemical substance and a drug, in which the former
+      is a part of the latter, and is a biologically active component
+    domain: chemical substance
+    range: drug
+    in_subset:
+      - translator_minimal
+    inverse: has active ingredient
+    mappings:
+      - RO:0002249
+
+  has active ingredient:
+    is_a: has part
+    description: >-
+      holds between a drug and a chemical substance in which the latter
+      is a part of the former, and is a biologically active component
+    domain: drug
+    range: chemical substance
+    in_subset:
+      - translator_minimal
+    inverse: is active ingredient of
+    mappings:
+      - RO:0002248
+
+  is excipient of:
+    is_a: part of
+    description: >-
+      holds between a chemical substance and a drug in which the former is
+      a part of the latter, and is a biologically inactive component
+    domain: chemical substance
+    range: drug
+    in_subset:
+      - translator_minimal
+    inverse: has excipient
+    mappings:
+      - WIKIDATA:Q902638
+
+  has excipient:
+    is_a: has part
+    description: >-
+      holds between a drug and a chemical substances in which the latter
+      is a part of the former, and is a biologically inactive component
+    domain: drug
+    range: chemical substance
+    in_subset:
+      - translator_minimal
+    inverse: is excipient of
+    mappings:
+      - WIKIDATA:Q902638
+
   manifestation of:
     is_a: related to
     description: >-
@@ -5603,6 +5675,8 @@ classes:
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active
       ingredient, or a complex material with multiple chemical entities as part
+    slots:
+      - is metabolite
     broad_mappings:
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
@@ -5643,26 +5717,35 @@ classes:
       - UMLSSC:T197
       - UMLSST:inch
     id_prefixes:
-      - CHEBI
-      - CHEMBL.COMPOUND
-      - DRUGBANK
       - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
       - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
       - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      - CAS
-      - UNII
-      - KEGG.COMPOUND ## C number
+      - IUPAC
+      - SMILES
       - KEGG.GLYCAN ## G number
       - KEGG.DRUG ## D number
       - KEGG.DGROUP ## DG number
       - KEGG.ENVIRON ## E number
-      - gtpo
     in_subset:
       - model_organism_database
 
   carbohydrate:
+    deprecated: >-
+      This class will be removed from the Biolink model
     is_a: chemical substance
     exact_mappings:
       # UMLS Semantic Type "Carbohydrate Sequence"
@@ -5688,9 +5771,6 @@ classes:
     description: >-
       A substance intended for use in the diagnosis, cure,
       mitigation, treatment, or prevention of disease
-    slots:
-      - has active ingredient
-      - has excipient
     comments:
       - The CHEBI ID represents a role rather than a substance
     broad_mappings:
@@ -5709,6 +5789,8 @@ classes:
       - UMLSSC:T195
       - UMLSST:antb
     id_prefixes:
+      - RXCUI
+      - NDC
       - PHARMGKB.DRUG
 
   food:
@@ -5731,6 +5813,9 @@ classes:
       - UMLSST:vita
 
   metabolite:
+    deprecated: >-
+      Metabolite is replaced by a slot/role of chemical substance and will be removed 
+      from the Biolink model.
     is_a: chemical substance
     description: >-
       Any intermediate or product resulting from metabolism.
