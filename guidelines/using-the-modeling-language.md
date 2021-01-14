@@ -29,6 +29,7 @@ nav_order: 3
     - [range](#range)
     - [symmetric](#symmetric)
 - [Slots Relating Semantic Mappings and Anchoring to External Ontology](#slots-relating-semantic-mappings-and-anchoring-to-external-ontology)
+    - [symmetric](#symmetric)
     - [inverse](#inverse)
     - [exact_mappings](#exact_mappings)
     - [close_mappings](#close_mappings)
@@ -375,10 +376,42 @@ Here we define that the predicate slot `genetically interacts with` is symmetric
 
 ## Slots Relating Semantic Mappings and Anchoring to External Ontology
 
+### symmetric
+
+The `symmetric` slot can be used to specify whether a given predicate slot is symmetric.
+
+```yaml
+  interacts with:
+    domain: named thing
+    range: named thing
+    description: >-
+      holds between any two entities that directly or indirectly interact with each other
+    is_a: related to
+    in_subset:
+      - translator_minimal
+    symmetric: true
+``` 
+
+**Note:** The symmetric nature of the predicate is not inherited by descendants of the predicate.
+
 
 ### inverse
 
 The `inverse` slot can be used to specify the inverse predicate of a given predicate slot relationship.
+
+```yaml
+  affects:
+    is_a: related to
+    description: >-
+      describes an entity that has a direct affect on the state or quality
+      of another existing entity. Use of the 'affects' predicate implies that
+      the affected entity already exists, unlike predicates such as
+      'affects risk for' and 'prevents, where the outcome is something
+      that may or may not come to be.
+    inverse: affected by
+    in_subset:
+      - translator_minimal
+```
 
 
 ### exact_mappings
