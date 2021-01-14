@@ -26,6 +26,7 @@ prefixes:
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
   # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
+  ChemBank: 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid='
   chembio: 'http://translator.ncats.nih.gov/chembio_'
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
@@ -54,6 +55,7 @@ prefixes:
   gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
   GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
+  GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
@@ -89,6 +91,7 @@ prefixes:
   RO: 'http://purl.obolibrary.org/obo/RO_'
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
   RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
+  RXCUI: 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm='
   schema: 'http://schema.org/'
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
@@ -913,6 +916,15 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P274
 
+  is metabolite:
+    is_a: node property
+    domain: chemical substance
+    range: boolean
+    description: >-
+      indicates whether a chemical substance is a metabolite
+    exact_mappings:
+      - CHEBI:25212
+
   has constituent:
     description: >-
       one or more chemical substances within a mixture
@@ -940,26 +952,6 @@ slots:
       connects an entity to one or more (medical) procedures
     range: procedure
     multivalued: true
-
-  has active ingredient:
-    is_a: node property
-    domain: drug
-    range: chemical substance
-    multivalued: true
-    description: >-
-      one or more chemical substance which are the active ingredient(s) of a drug
-    exact_mappings:
-      - WIKIDATA:Q912807
-
-  has excipient:
-    is_a: node property
-    domain: drug
-    range: chemical substance
-    multivalued: true
-    description: >-
-      one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    exact_mappings:
-      - WIKIDATA:Q902638
 
   has nutrient:
     is_a: node property
@@ -1240,6 +1232,7 @@ slots:
       holds between two entities that are considered equivalent to each other
     in_subset:
       - translator_minimal
+    symmetric: true
     close_mappings:
       # identical class extension with identical sets of individuals
       - owl:equivalentClass
@@ -1262,6 +1255,7 @@ slots:
       holds between two entities that are considered a skos:closeMatch to one another
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
@@ -1282,6 +1276,7 @@ slots:
       holds between two entities that are identical to each other, with a high degree of confidence
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - skos:exactMatch
       - WIKIDATA:P2888
@@ -1392,6 +1387,7 @@ slots:
     range: molecular entity
     in_subset:
       - translator_minimal
+    symmetric: true
     related_mappings:
       - DGIdb:antibody
     exact_mappings:
@@ -1410,6 +1406,7 @@ slots:
     range: gene
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:0002435
 
@@ -2520,6 +2517,7 @@ slots:
       - typically used to describe homology relationships between genes or gene products
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:HOM0000001
       - SIO:010302
@@ -2533,6 +2531,7 @@ slots:
       a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:HOM0000011
 
@@ -2542,6 +2541,7 @@ slots:
       a homology relationship between entities (typically genes) that diverged after a speciation event.
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:HOM0000017
       - WIKIDATA_PROPERTY:P684
@@ -2552,6 +2552,7 @@ slots:
       a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:HOM0000018
 
@@ -2561,6 +2562,7 @@ slots:
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
       - SEMMEDDB:coexists_with
@@ -2749,6 +2751,7 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
+    symmetric: true
     related_mappings:
       # generally pertains to membership of a (subject) component - gene,
       # metabolite, etc? - in an (object) metabolic pathway
@@ -2763,6 +2766,7 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
+    symmetric: true
     related_mappings:
       # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
       - SIO:010497
@@ -2778,6 +2782,7 @@ slots:
     range: gene or gene product
     in_subset:
       - translator_minimal
+    symmetric: true
 
   colocalizes with:
     description: >-
@@ -2785,6 +2790,7 @@ slots:
     is_a: coexists with
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:00002325
       - GO:colocalizes_with
@@ -3018,8 +3024,8 @@ slots:
   treated by:
     is_a: related to
     description: >-
-      holds between a disease or phenotypic feature and a therapeutic process
-      or chemical substance that is used to treat the condition
+      holds between a disease or phenotypic feature and a therapeutic
+      process or chemical substance that is used to treat the condition
     domain: disease or phenotypic feature
     range: treatment
     in_subset:
@@ -3033,6 +3039,50 @@ slots:
       # "is treated by substance" constrains statements to
       # subset of the universe of all possible treatments
       - RO:0002302
+
+  approved to treat:
+    description: >-
+      holds between a therapeutic procedure or chemical substance
+      and a disease or phenotypic feature for which it is approved
+      for treatment to some level of clinical trial. Note that in
+      terms of REPODB narrow mappings, terms containing 'suspended',
+      'terminated' or 'withdrawn' should be mapped onto associations
+      using this term for which 'negated: true' is asserted.
+    is_a: treats
+    inverse: approved for treatment by
+    exact_mappings:
+      - NCIT:C172573
+    narrow_mappings:
+      - NCIT:R172
+      - NCIT:regimen_has_accepted_use_for_disease
+      # RTX mapped REPODB terms
+      - REPODB:clinically_tested_approved_unknown_phase
+      - REPODB:clinically_tested_suspended_phase_0
+      - REPODB:clinically_tested_suspended_phase_1
+      - REPODB:clinically_tested_suspended_phase_1_or_phase_2
+      - REPODB:clinically_tested_suspended_phase_2
+      - REPODB:clinically_tested_suspended_phase_2_or_phase_3
+      - REPODB:clinically_tested_suspended_phase_3
+      - REPODB:clinically_tested_terminated_phase_0
+      - REPODB:clinically_tested_terminated_phase_1
+      - REPODB:clinically_tested_terminated_phase_1_or_phase_2
+      - REPODB:clinically_tested_terminated_phase_2
+      - REPODB:clinically_tested_terminated_phase_2_or_phase_3
+      - REPODB:clinically_tested_terminated_phase_3
+      - REPODB:clinically_tested_withdrawn_phase_0
+      - REPODB:clinically_tested_withdrawn_phase_1
+      - REPODB:clinically_tested_withdrawn_phase_1_or_phase_2
+      - REPODB:clinically_tested_withdrawn_phase_2
+      - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
+      - REPODB:clinically_tested_withdrawn_phase_3
+
+  approved for treatment by:
+    description: >-
+      holds between a disease or phenotypic feature and a therapeutic process
+      or chemical substance that is approved for treatment of the condition
+      (or not, if negated) to some level of clinical trial
+    is_a: treated by
+    inverse: approved to treat
 
   prevents :
     is_a: affects risk for
@@ -3068,6 +3118,7 @@ slots:
     range: named thing
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:0002610
       - PATO:correlates_with
@@ -3095,6 +3146,7 @@ slots:
     range: named thing
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - CTD:positivecorrelation
 
@@ -3106,6 +3158,7 @@ slots:
     range: named thing
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - CTD:negativecorrelation
 
@@ -3116,6 +3169,7 @@ slots:
       generally expressed within a single defined experimental context.
     domain: gene or gene product
     range: gene or gene product
+    symmetric: true
 
   has biomarker:
     is_a: correlated with
@@ -3347,6 +3401,7 @@ slots:
       similar features of the studied entity.
     in_subset:
       - translator_minimal
+    symmetric: true
     narrow_mappings:
       - CHEBI:has_parent_hydride    #subproperty
       - CHEBI:has_functional_parent #subproperty
@@ -3386,6 +3441,7 @@ slots:
       holds between entities that overlap in their extents (materials or processes)
     in_subset:
       - translator_minimal
+    symmetric: true
     exact_mappings:
       - RO:0002131
     narrow_mappings:
@@ -3753,6 +3809,86 @@ slots:
       - CHEBI:has_functional_parent
       - SNOMED:has_specimen_source_topography
 
+  is metabolite of:
+    is_a: derives from
+    description: >-
+      holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
+    domain: chemical substance
+    range: chemical substance
+    in_subset:
+      - translator_minimal
+    inverse: has metabolite
+    comments:
+      - The CHEBI ID represents a role rather than a predicate
+    mappings:
+      - CHEBI:25212
+
+  has metabolite:
+    is_a: derives into
+    description: >-
+      holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
+    domain: chemical substance
+    range: chemical substance
+    in_subset:
+      - translator_minimal
+    inverse: is metabolite of
+    comments:
+      - The CHEBI ID represents a role rather than a predicate
+    mappings:
+      - CHEBI:25212
+
+  is active ingredient of:
+    is_a: part of
+    description: >-
+      holds between a chemical substance and a drug, in which the former
+      is a part of the latter, and is a biologically active component
+    domain: chemical substance
+    range: drug
+    in_subset:
+      - translator_minimal
+    inverse: has active ingredient
+    mappings:
+      - RO:0002249
+
+  has active ingredient:
+    is_a: has part
+    description: >-
+      holds between a drug and a chemical substance in which the latter
+      is a part of the former, and is a biologically active component
+    domain: drug
+    range: chemical substance
+    in_subset:
+      - translator_minimal
+    inverse: is active ingredient of
+    mappings:
+      - RO:0002248
+
+  is excipient of:
+    is_a: part of
+    description: >-
+      holds between a chemical substance and a drug in which the former is
+      a part of the latter, and is a biologically inactive component
+    domain: chemical substance
+    range: drug
+    in_subset:
+      - translator_minimal
+    inverse: has excipient
+    mappings:
+      - WIKIDATA:Q902638
+
+  has excipient:
+    is_a: has part
+    description: >-
+      holds between a drug and a chemical substances in which the latter
+      is a part of the former, and is a biologically inactive component
+    domain: drug
+    range: chemical substance
+    in_subset:
+      - translator_minimal
+    inverse: is excipient of
+    mappings:
+      - WIKIDATA:Q902638
+
   manifestation of:
     is_a: related to
     description: >-
@@ -3804,6 +3940,7 @@ slots:
       holds between two entities with a temporal relationship
     domain: occurrent
     range: occurrent
+    symmetric: true
     exact_mappings:
       - SNOMED:temporally_related_to
     narrow_mappings:
@@ -3875,6 +4012,7 @@ slots:
     is_a: interacts with
     description: Holds between molecular entities that physically and directly interact
       with each other
+    symmetric: true
     related_mappings:
       - GAMMA:kd
       - GAMMA:kb
@@ -3923,6 +4061,7 @@ slots:
 
   related condition:
     is_a: related to
+    symmetric: true
     exact_mappings:
       - GENO:0000790
 
@@ -4106,6 +4245,7 @@ slots:
     is_a: related to
     description: holds between two sequence variants, the presence of which are correlated
       in a population
+    symmetric: true
     exact_mappings:
       - NCIT:C16798
 
@@ -4669,6 +4809,9 @@ classes:
   ontology class:
     is_a: named thing
     description: "a concept or class in an ontology, vocabulary or thesaurus"
+    id_prefixes:
+      - MESH
+      - KEGG.BRITE ## br/ko number
 
   relationship type:
     is_a: ontology class
@@ -5439,7 +5582,9 @@ classes:
       - RHEA
       - MetaCyc
       - EC
-      - KEGG
+      - KEGG.REACTION  ## R number
+      - KEGG.RCLASS  ## RC number
+      - KEGG.ENZYME  ## EC number
 
   biological process:
     is_a: biological process or activity
@@ -5455,7 +5600,7 @@ classes:
       - GO
       - REACT
       - MetaCyc
-      - KEGG
+      - KEGG.MODULE ## M number
 
   pathway:
     is_a: biological process
@@ -5473,7 +5618,7 @@ classes:
       - MSigDB
       - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
-      - fb  # FlyBase FBgg*
+      - FB  # FlyBase FBgg*
       - PANTHER.PATHWAY
 
   physiological process:
@@ -5503,19 +5648,6 @@ classes:
     id_prefixes:
       - GO
       - REACT
-
-  pathological process:
-    description: >-
-      A biologic function or a process having an abnormal or deleterious
-      effect at the subcellular, cellular, multicellular, or organismal level.
-    is_a: biological process
-    exact_mappings:
-      - OBI:1110122
-      - NCIT:C16956
-    narrow_mappings:
-      # metastasis
-      - NCIT:C19151
-      - EFO:0009708
 
   behavior:
     is_a: biological process
@@ -5556,6 +5688,8 @@ classes:
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active
       ingredient, or a complex material with multiple chemical entities as part
+    slots:
+      - is metabolite
     broad_mappings:
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
@@ -5596,21 +5730,35 @@ classes:
       - UMLSSC:T197
       - UMLSST:inch
     id_prefixes:
-      - CHEBI
-      - CHEMBL.COMPOUND
-      - DRUGBANK
       - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
       - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
       - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
       - INCHI
       - INCHIKEY
-      - UNII
-      - KEGG
-      - gtpo
+      - IUPAC
+      - SMILES
+      - KEGG.GLYCAN ## G number
+      - KEGG.DRUG ## D number
+      - KEGG.DGROUP ## DG number
+      - KEGG.ENVIRON ## E number
     in_subset:
       - model_organism_database
 
   carbohydrate:
+    deprecated: >-
+      This class will be removed from the Biolink model
     is_a: chemical substance
     exact_mappings:
       # UMLS Semantic Type "Carbohydrate Sequence"
@@ -5636,9 +5784,6 @@ classes:
     description: >-
       A substance intended for use in the diagnosis, cure,
       mitigation, treatment, or prevention of disease
-    slots:
-      - has active ingredient
-      - has excipient
     comments:
       - The CHEBI ID represents a role rather than a substance
     broad_mappings:
@@ -5657,6 +5802,8 @@ classes:
       - UMLSSC:T195
       - UMLSST:antb
     id_prefixes:
+      - RXCUI
+      - NDC
       - PHARMGKB.DRUG
 
   food:
@@ -5679,6 +5826,9 @@ classes:
       - UMLSST:vita
 
   metabolite:
+    deprecated: >-
+      Metabolite is replaced by a slot/role of chemical substance and will be removed 
+      from the Biolink model.
     is_a: chemical substance
     description: >-
       Any intermediate or product resulting from metabolism.
@@ -5732,7 +5882,8 @@ classes:
       - thing with taxon
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
-    exact_mappings: UBERON:0000105
+    exact_mappings:
+      - UBERON:0000105
     in_subset:
       - model_organism_database
 
@@ -5861,6 +6012,7 @@ classes:
       - ICD10
       - ICD9
       - ICD0
+      - KEGG.DISEASE ## H number
       - HP
       - MP
     in_subset:
@@ -5880,8 +6032,6 @@ classes:
       - WIKIDATA:Q169872
       # presentation of a disease in clinical medicine
       - WIKIDATA:Q25203551
-      # Phenotypic abnormality
-      - HP:0000118
     id_prefixes:
       - HP
       - EFO
@@ -5907,7 +6057,6 @@ classes:
     description: >-
       A subcellular location, cell type or gross anatomical part
     exact_mappings:
-      - UBERON:0001062
       - UBERON:0001062
       - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
@@ -6064,11 +6213,12 @@ classes:
       - dictyBase
       - WB
       - WormBase
-      - fb  # FlyBase FBgn*
+      - FB  # FlyBase FBgn*
       - FB
       - RGD
       - SGD
       - POMBASE
+      - KEGG.GENES ## org:gene
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -6175,7 +6325,7 @@ classes:
       - WIKIDATA:Q7243183
     id_prefixes:
       - ENSEMBL # ENSEMBL:ENST for human
-      - fb      # FlyBase:FBtr
+      - FB      # FlyBase:FBtr
     in_subset:
       - model_organism_database
 
@@ -6209,7 +6359,7 @@ classes:
       - UniProtKB
       - PR
       - ENSEMBL # ENSEMBL:ENSP*
-      - fb      # FlyBase FBpp*
+      - FB      # FlyBase FBpp*
     in_subset:
         - model_organism_database
 
@@ -6299,6 +6449,9 @@ classes:
       - has gene or gene product
 
   gene family:
+    aliases:
+      - orthogroup
+      - protein family
     is_a: molecular entity
     exact_mappings:
       - NCIT:C26004
@@ -6317,8 +6470,10 @@ classes:
     id_prefixes:
       - PANTHER.FAMILY
       - HGNC.FAMILY
-      - fb       # FlyBase FBgg*
+      - FB       # FlyBase FBgg*
       - interpro # note: may be better to introduce a protein domain/family
+      - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
+      - EGGNOG
     in_subset:
       - model_organism_database
 
@@ -6342,7 +6497,7 @@ classes:
       - SIO:001079
     id_prefixes:
       - ZFIN
-      - fb   # FlyBase FBba*
+      - FB   # FlyBase FBba*
     in_subset:
       - model_organism_database
 
@@ -6365,10 +6520,10 @@ classes:
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
-    comments: >-
-      This class is for modeling the specific state at a locus.
-      A single DBSNP rs ID could correspond to more than one sequence variants
-      (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
+    comments:
+      - This class is for modeling the specific state at a locus.
+        A single DBSNP rs ID could correspond to more than one sequence variants
+        (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
     broad_mappings:
       # slightly broader semantics than SO:0001059 - 'sequence alteration'
       # describes a sequence feature that may have 1..* sequence alterations
@@ -6392,8 +6547,7 @@ classes:
       # - HGVS needs IRI mapping
       - MGI
       - ZFIN # ZFIN:ZDB-ALT-*
-      - fb   # FlyBase FBa*
-      - FB
+      - FB   # FlyBase FBa*
       - WB
       - WormBase ## WormBase:WBVar*
     alt_descriptions:
@@ -6607,15 +6761,72 @@ classes:
     #exact_mappings:
     #  -
 
+  pathological entity mixin:
+    description: >-
+      A pathological (abnormal) structure or process.
+    mixin: true
+    exact_mappings:
+      - MPATH:0
+    narrow_mappings:
+      - HP:0000118
+
+  pathological process:
+    description: >-
+      A biologic function or a process having an abnormal or deleterious
+      effect at the subcellular, cellular, multicellular, or organismal level.
+    is_a: biological process
+    mixins:
+      - pathological entity mixin
+    exact_mappings:
+      - OBI:1110122
+      - NCIT:C16956
+    narrow_mappings:
+      # metastasis
+      - NCIT:C19151
+      - EFO:0009708
+
+  pathological process exposure:
+    is_a: pathological process
+    mixins:
+      - exposure event
+    description: >-
+      A pathological process, when viewed as an exposure, representing
+      an precondition, leading to or influencing an outcome,
+      e.g. autoimmunity leading to disease.
+    #exact_mappings:
+    #  -
+
+  pathological anatomical structure:
+    description: >-
+      An anatomical structure with the potential of have an abnormal or deleterious
+      effect at the subcellular, cellular, multicellular, or organismal level.
+    is_a: anatomical entity
+    mixins:
+      - pathological entity mixin
+    #exact_mappings:
+    #  -
+
+  pathological anatomical exposure:
+    is_a: pathological anatomical structure
+    mixins:
+      - exposure event
+    description: >-
+      An abnormal anatomical structure, when viewed as an exposure,
+      representing an precondition, leading to or influencing an outcome,
+      e.g. thrombosis leading to an ischemic disease outcome.
+    #exact_mappings:
+    #  -
+
   disease or phenotypic feature exposure:
     is_a: disease or phenotypic feature
     mixins:
       - exposure event
+      - pathological entity mixin
     description: >-
-      A disease or phenotypic feature exposure is where a disease state is
-      manifested which represents an precondition, leading to or influencing
-      an outcome, e.g. hypertension leading to a related disease outcome such
-      as cardiovascular disease.
+      A disease or phenotypic feature state, when viewed as an exposure,
+      represents an precondition, leading to or influencing an outcome,
+      e.g. HIV predisposing an individual to infections; a relative deficiency
+      of skin pigmentation predisposing an individual to skin cancer.
     #exact_mappings:
     #  -
 
@@ -6624,7 +6835,8 @@ classes:
     mixins:
       - exposure event
     description: >-
-      A chemical exposure is an intake of a particular chemical substance, other than a drug.
+      A chemical exposure is an intake of a particular
+      chemical substance, other than a drug.
     exact_mappings:
       # this ECTO term is not visibly defined but
       # the 9000000-series identifiers seems to be the
@@ -6689,8 +6901,8 @@ classes:
     mixins:
       - exposure event
     description: >-
-      A biotic exposure is an intake of (sometimes pathological)
-      biological organisms (including viruses)
+      An external biotic exposure is an intake of (sometimes pathological)
+      biological organisms (including viruses).
     # exact_mappings:
     #  -
 
@@ -6709,8 +6921,9 @@ classes:
     mixins:
       - exposure event
     description: >-
-      A environmental exposure is a factor relating to abiotic processes in the environment
-      including atmospheric (heat, cold, general pollution) and water-born contaminants
+      A environmental exposure is a factor relating to abiotic processes
+      in the environment including sunlight (UV-B), atmospheric (heat,
+      cold, general pollution) and water-born contaminants.
     # exact_mappings:
     #  -
 
@@ -6745,6 +6958,26 @@ classes:
       An entity that has the role of being the consequence of an exposure event.
       This is an abstract mixin grouping of various categories of possible
       biological or non-biological (e.g. clinical) outcomes.
+
+  pathological process outcome:
+    is_a: pathological process
+    mixins:
+      - outcome
+    description: >-
+      An outcome resulting from an exposure event which
+      is the manifestation of a pathological process.
+    #exact_mappings:
+    #  -
+
+  pathological anatomical outcome:
+    is_a: pathological anatomical structure
+    mixins:
+      - outcome
+    description: >-
+      An outcome resulting from an exposure event which
+      is the manifestation of an abnormal anatomical structure.
+    #exact_mappings:
+    #  -
 
   disease or phenotypic feature outcome:
     is_a: disease or phenotypic feature
@@ -8145,6 +8378,7 @@ classes:
   anatomical entity to anatomical entity association:
     # schema: gocam
     is_a: association
+    abstract: true
     defining_slots:
       - subject
       - object
@@ -8196,3 +8430,60 @@ classes:
           the structure at an earlier time
       predicate:
          subproperty_of: develops from
+
+  organism taxon to organism taxon association:
+    is_a: association
+    abstract: true
+    description: >-
+      A relationship between two organism taxon nodes
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: organism taxon
+      object:
+        range: organism taxon
+
+  organism taxon to organism taxon specialization:
+    is_a: organism taxon to organism taxon association
+    description: >-
+      A child-parent relationship between two taxa.
+      For example: Homo sapiens subclass_of Homo
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: organism taxon
+        role: child taxon
+        description: >-
+          the more specific taxon
+      object:
+        range: organism taxon
+        role: parent taxon
+        description: >-
+          the more general taxon
+      predicate:
+         subproperty_of: subclass of
+
+  organism taxon to organism taxon interaction:
+    is_a: organism taxon to organism taxon association
+    description: >-
+      An interaction relationship between two taxa. This may be a symbiotic
+      relationship (encompassing mutualism and parasitism), or it may be non-symbiotic.
+      Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: organism taxon
+        role: interactor taxon
+        description: >-
+          the taxon that is the subject of the association
+      object:
+        range: organism taxon
+        role: interactee taxon
+        description: >-
+          the taxon that is the subject of the association
+      predicate:
+         subproperty_of: interacts with
