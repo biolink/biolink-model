@@ -34,6 +34,8 @@ prefixes:
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DGIdb: 'https://www.dgidb.org/interaction_types'
+  dcat: 'http://www.w3.org/ns/dcat#'
+  dct: 'http://purl.org/dc/terms/'
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
@@ -90,6 +92,7 @@ prefixes:
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
   RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
   RXCUI: 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm='
+  schema: 'http://schema.org/'
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
@@ -487,7 +490,7 @@ slots:
       - gff3:Name
       - gpi:DB_Object_Name
     narrow_mappings:
-      - dcterms:title
+      - dct:title
       - WIKIDATA_PROPERTY:P1476
 
   source:
@@ -578,7 +581,7 @@ slots:
       a human-readable description of an entity
     in_subset:
       - translator_minimal
-    slot_uri: dcterms:description
+    slot_uri: dct:description
     exact_mappings:
       - IAO:0000115
       - skos:definitions
@@ -643,7 +646,7 @@ slots:
     description: >-
       date on which an entity was created. This can be applied to nodes or edges
     exact_mappings:
-      - dcterms:createdOn
+      - dct:createdOn
       - WIKIDATA_PROPERTY:P577
 
   update date:
@@ -684,36 +687,40 @@ slots:
 
   ## Properties for Information Content Entity and Publication Nodes
 
-  source data file:
+  has dataset:
     is_a: node property
-    domain: data set version
-    range: data file
-    broad_mappings:
-      - dcterms:source
+    domain: dataset version
+    range: dataset
+    slot_uri: dct:source
 
   source web page:
     is_a: node property
-    domain: data set summary
+    domain: dataset summary
     broad_mappings:
-      - dcterms:source
+      - dct:source
+
+  source logo:
+    is_a: node property
+    domain: dataset summary
+    slot_uri: schema:logo
 
   retrieved on:
     is_a: node property
-    domain: source file
+    domain: dataset
     range: date
     exact_mappings:
       - pav:retrievedOn
 
   version of:
     is_a: node property
-    domain: data set version
-    range: data set
+    domain: dataset version
+    range: dataset summary
     exact_mappings:
-      - dcterms:isVersionOf
+      - dct:isVersionOf
 
-  source version:
+  version:
     is_a: node property
-    domain: source file
+    domain: dataset
     broad_mappings:
       - pav:version
       - owl:versionInfo
@@ -722,7 +729,7 @@ slots:
     is_a: node property
     domain: information content entity
     exact_mappings:
-      - dcterms:license
+      - dct:license
     narrow_mappings:
       - WIKIDATA_PROPERTY:P275
 
@@ -730,35 +737,47 @@ slots:
     is_a: node property
     domain: information content entity
     exact_mappings:
-      - dcterms:rights
+      - dct:rights
 
   format:
     is_a: node property
     domain: information content entity
     exact_mappings:
-      - dcterms:format
+      - dct:format
       - WIKIDATA_PROPERTY:P2701
 
   created_with:
     is_a: node property
-    domain: source file
+    domain: dataset
     exact_mappings:
       - pav:createdWith
 
   download url:
     is_a: node property
-    domain: distribution level
-    exact_mappings:
-      - dcterms:downloadURL
+    domain: information content entity
+    slot_uri: dcat:downloadURL
 
-  distribution:
-    aliases: ['dataset']
+  dataset download url:
     is_a: node property
-    domain: data set version
-    range: distribution level
+    domain: dataset
+    slot_uri: dcat:downloadURL
+
+  distribution download url:
+    is_a: node property
+    domain: dataset distribution
     exact_mappings:
-      - void:Dataset
-      - dctypes:Dataset
+      - dcat:downloadURL
+
+  ingest date:
+    is_a: node property
+    domain: dataset version
+    slot_uri: pav:version
+
+  has distribution:
+    is_a: node property
+    domain: dataset version
+    range: dataset distribution
+    slot_uri: dct:distribution
 
   published in:
     is_a: node property
@@ -840,7 +859,7 @@ slots:
       executive  summary of a publication
     domain: publication
     exact_mappings:
-      - dcterms:abstract
+      - dct:abstract
       - WIKIDATA:Q333291
 
   keywords:
@@ -1272,7 +1291,7 @@ slots:
       - This is a grouping for predicates relating entities to their associated contributors realizing them
     abstract: true
     exact_mappings:
-      - dcterms:contributor
+      - dct:contributor
 
   provider:
     is_a: contributor
@@ -1289,7 +1308,7 @@ slots:
       parent's publication node and the publisher agent of the encompassing publication
       (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
     exact_mappings:
-      - dcterms:publisher
+      - dct:publisher
       - WIKIDATA_PROPERTY:P123
 
   editor:
@@ -1310,7 +1329,7 @@ slots:
     description: >-
       an instance of one (co-)creator primarily responsible for a written work
     exact_mappings:
-      - dcterms:creator
+      - dct:creator
       - WIKIDATA_PROPERTY:P50
 
   ## end of Publication related predicates
@@ -4905,7 +4924,7 @@ classes:
       - address
     exact_mappings:
       - prov:Agent
-      - dcterms:Agent
+      - dct:Agent
     narrow_mappings:
       # Organization
       - UMLSSG:ORGA
@@ -5015,46 +5034,40 @@ classes:
       - UMLSSC:T185
       - UMLSST:clas
 
-  data file:
-    is_a: information content entity
-    exact_mappings:
-      - EFO:0004095
-
-  source file:
-    is_a: data file
-    slots:
-      - source version
-      - retrieved on
-
-#  data set descriptor:
-#    mixin: true
-
-  data set:
+  dataset:
+    description: >-
+      an item that refers to a collection of data from a data source.
     is_a: information content entity
     exact_mappings:
       - IAO:0000100
       - dctypes:Dataset
+      - schema:dataset
 
-  data set version:
-    is_a: data set
+  dataset distribution:
+    is_a: information content entity
+    description: >-
+      an item that holds distribution level information about a dataset.
     slots:
-      - source data file
-      - version of
-      - distribution
-
-  distribution level:
-    is_a: data set version
-    mixin: true
-    slots:
-      - download url
+      - distribution download url
     exact_mappings:
       - dcat:Distribution
 
-  data set summary:
-    is_a: data set version
-    mixin: true
+  dataset version:
+    description: >-
+      an item that holds version level information about a dataset.
+    is_a: information content entity
+    slots:
+      - has dataset
+      - ingest date
+      - has distribution
+
+  dataset summary:
+    description: >-
+      an item that holds summary level information about a dataset.
+    is_a: information content entity
     slots:
       - source web page
+      - source logo
 
   confidence level:
     is_a: information content entity
@@ -5117,7 +5130,7 @@ classes:
           property (inherited from NamedThing). The field name 'title' is now also
           tagged as an acceptable alias for the node property 'name' (just in case).
       type:
-        slot_uri: dcterms:type
+        slot_uri: dct:type
         required: true
         description: >-
           Ontology term for publication type may be drawn from
