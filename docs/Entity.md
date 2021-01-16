@@ -57,10 +57,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: An IRI for an entity. This is determined by the id using expansion rules.
     * range: [IriType](types/IriType.md)
     * in subsets: (translator_minimal,samples)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [provided by](provided_by.md)  <sub>0..*</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Agent](Agent.md)
@@ -70,6 +66,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Domain for slot:
 

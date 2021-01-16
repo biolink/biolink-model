@@ -15,7 +15,7 @@ URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ExposureEvent],[ComplexChemicalExposure],[ChemicalSubstance],[ChemicalExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[ChemicalExposure]%5E-[ComplexChemicalExposure],[ChemicalSubstance]%5E-[ChemicalExposure],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ExposureEvent],[ComplexChemicalExposure],[ChemicalSubstance],[ChemicalExposure%7Ctimepoint:time_type%20%3F;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[ChemicalExposure]%5E-[ComplexChemicalExposure],[ChemicalSubstance]%5E-[ChemicalExposure],[Attribute],[Agent])
 
 ---
 
@@ -38,6 +38,12 @@ URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 ## Attributes
 
 
+### Inherited from chemical substance:
+
+ * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+    * Description: indicates whether a chemical substance is a metabolite
+    * range: [Boolean](types/Boolean.md)
+
 ### Inherited from entity:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -58,10 +64,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -83,6 +85,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [timepoint](timepoint.md)  <sub>OPT</sub>
     * Description: a point in time
     * range: [TimeType](types/TimeType.md)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 

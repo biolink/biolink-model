@@ -1,5 +1,5 @@
 ---
-parent: Other Classes
+parent: Class Mixins
 title: biolink:GeneExpressionMixin
 grand_parent: Classes
 layout: default

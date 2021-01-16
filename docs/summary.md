@@ -36,6 +36,6 @@ URI: [biolink:summary](https://w3id.org/biolink/vocab/summary)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | abstract |
-| **Exact Mappings:** | | dcterms:abstract |
+| **Exact Mappings:** | | dct:abstract |
 |  | | WIKIDATA:Q333291 |
 

@@ -15,7 +15,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[Treatment],[Procedure],[PlanetaryEntity],[PhysicalEntity],[Phenomenon],[OntologyClass],[Occurrent],[NamedThing]%3Ccategory%201..%2A-%20[NamedThing%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenotypeToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[GenotypeToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20input%200..%2A%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20output%200..%2A%3E[NamedThing],[Attribute]-%20has%20qualitative%20value%200..1%3E[NamedThing],[MaterialSampleDerivationAssociation]-%20object%201..1%3E[NamedThing],[ModelToDiseaseAssociationMixin]-%20subject%201..1%3E[NamedThing],[Association]-%20object%201..1%3E[NamedThing],[Association]-%20subject%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[NamedThing]%5E-[Treatment],[NamedThing]%5E-[Procedure],[NamedThing]%5E-[PlanetaryEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing]%5E-[Phenomenon],[NamedThing]%5E-[OntologyClass],[NamedThing]%5E-[InformationContentEntity],[NamedThing]%5E-[Device],[NamedThing]%5E-[ClinicalEntity],[NamedThing]%5E-[BiologicalEntity],[NamedThing]%5E-[AdministrativeEntity],[NamedThing]%5E-[Activity],[Entity]%5E-[NamedThing],[ModelToDiseaseAssociationMixin],[MaterialSampleDerivationAssociation],[InformationContentEntity],[GenotypeToDiseaseAssociation],[Entity],[Device],[ClinicalEntity],[BiologicalProcessOrActivity],[BiologicalEntity],[Attribute],[Association],[Agent],[AdministrativeEntity],[Activity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[Treatment],[Procedure],[PlanetaryEntity],[PhysicalEntity],[Phenomenon],[OntologyClass],[Occurrent],[NamedThing]%3Ccategory%201..%2A-%20[NamedThing%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenotypeToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[GenotypeToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20input%200..%2A%3E[NamedThing],[BiologicalProcessOrActivity]-%20has%20output%200..%2A%3E[NamedThing],[Attribute]-%20has%20qualitative%20value%200..1%3E[NamedThing],[MacromolecularMachineToEntityAssociationMixin]-%20subject%201..1%3E[NamedThing],[MaterialSampleDerivationAssociation]-%20object%201..1%3E[NamedThing],[ModelToDiseaseAssociationMixin]-%20subject%201..1%3E[NamedThing],[Association]-%20object%201..1%3E[NamedThing],[Association]-%20subject%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[NamedThing]%5E-[Treatment],[NamedThing]%5E-[Procedure],[NamedThing]%5E-[PlanetaryEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing]%5E-[Phenomenon],[NamedThing]%5E-[OntologyClass],[NamedThing]%5E-[InformationContentEntity],[NamedThing]%5E-[Device],[NamedThing]%5E-[ClinicalEntity],[NamedThing]%5E-[BiologicalEntity],[NamedThing]%5E-[AdministrativeEntity],[NamedThing]%5E-[Activity],[Entity]%5E-[NamedThing],[ModelToDiseaseAssociationMixin],[MaterialSampleDerivationAssociation],[MacromolecularMachineToEntityAssociationMixin],[InformationContentEntity],[GenotypeToDiseaseAssociation],[Entity],[Device],[ClinicalEntity],[BiologicalProcessOrActivity],[BiologicalEntity],[Attribute],[Association],[Agent],[AdministrativeEntity],[Activity])
 
 ---
 
@@ -81,13 +81,12 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[lacks part](lacks_part.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[located in](located_in.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[location of](location_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[MacromolecularMachineToEntityAssociationMixin](MacromolecularMachineToEntityAssociationMixin.md)** *[macromolecular machine to entity association mixin➞subject](macromolecular_machine_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md)** *[material sample derivation association➞object](material_sample_derivation_association_object.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[model of](model_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[ModelToDiseaseAssociationMixin](ModelToDiseaseAssociationMixin.md)** *[model to disease association mixin➞subject](model_to_disease_association_mixin_subject.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[named thing➞category](named_thing_category.md)*  <sub>1..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[negatively correlated with](negatively_correlated_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[negatively regulated by, entity to entity](negatively_regulated_by_entity_to_entity.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[negatively regulated by, process to process](negatively_regulated_by_process_to_process.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Association](Association.md)** *[object](object.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[occurs in](occurs_in.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[orthologous to](orthologous_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
@@ -96,15 +95,11 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[part of](part_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[physically interacts with](physically_interacts_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[positively correlated with](positively_correlated_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[positively regulated by, entity to entity](positively_regulated_by_entity_to_entity.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[positively regulated by, process to process](positively_regulated_by_process_to_process.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[predisposes](predisposes.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[prevented by](prevented_by.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[prevents](prevents.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[produced by](produced_by.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[produces](produces.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[regulated by, entity to entity](regulated_by_entity_to_entity.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[regulated by, process to process](regulated_by_process_to_process.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[related condition](related_condition.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[related to](related_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[same as](same_as.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
@@ -142,10 +137,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -161,6 +152,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Domain for slot:
 

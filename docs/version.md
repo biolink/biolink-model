@@ -1,20 +1,20 @@
 ---
 parent: Node Properties
-title: biolink:source_version
+title: biolink:version
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: source_version
+# Slot: version
 
 
 
 
-URI: [biolink:source_version](https://w3id.org/biolink/vocab/source_version)
+URI: [biolink:version](https://w3id.org/biolink/vocab/version)
 
 ## Domain and Range
 
-[SourceFile](SourceFile.md) ->  <sub>OPT</sub> [String](types/String.md)
+[Dataset](Dataset.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,7 +25,6 @@ URI: [biolink:source_version](https://w3id.org/biolink/vocab/source_version)
 
 ## Used by
 
- * [SourceFile](SourceFile.md)
 
 ## Other properties
 

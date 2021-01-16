@@ -35,5 +35,5 @@ URI: [biolink:contributor](https://w3id.org/biolink/vocab/contributor)
 |  |  |  |
 | --- | --- | --- |
 | **Comments:** | | This is a grouping for predicates relating entities to their associated contributors realizing them |
-| **Exact Mappings:** | | dcterms:contributor |
+| **Exact Mappings:** | | dct:contributor |
 

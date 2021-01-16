@@ -15,7 +15,7 @@ URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAPr
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SiRNA],[OrganismTaxon],[NoncodingRNAProduct%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;name(i):symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SiRNA],[NoncodingRNAProduct]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[NamedThing],[MicroRNA],[Attribute],[Agent],[RNAProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SiRNA],[OrganismTaxon],[NoncodingRNAProduct%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SiRNA],[NoncodingRNAProduct]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[NamedThing],[MicroRNA],[Attribute],[Agent],[RNAProduct])
 
 ---
 
@@ -61,10 +61,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -87,9 +83,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects a genomic feature to its sequence
     * range: [BiologicalSequence](types/BiologicalSequence.md)
 
-### Inherited from macromolecular machine:
+### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine➞name](macromolecular_machine_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
 

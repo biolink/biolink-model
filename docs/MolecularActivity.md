@@ -15,7 +15,7 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[NamedThing],[MacromolecularMachine]%3Cenabled%20by%200..%2A-%20[MolecularActivity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance]%3Chas%20output%200..%2A-%20[MolecularActivity],[ChemicalSubstance]%3Chas%20input%200..%2A-%20[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachine],[ChemicalSubstance],[BiologicalProcessOrActivity],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[NamedThing],[MacromolecularMachineMixin]%3Cenabled%20by%200..%2A-++[MolecularActivity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance]%3Chas%20output%200..%2A-%20[MolecularActivity],[ChemicalSubstance]%3Chas%20input%200..%2A-%20[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineMixin],[ChemicalSubstance],[BiologicalProcessOrActivity],[Attribute],[Agent])
 
 ---
 
@@ -27,11 +27,13 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
  * RHEA
  * MetaCyc
  * EC
- * KEGG
+ * KEGG.REACTION
+ * KEGG.RCLASS
+ * KEGG.ENZYME
 
 ## Parents
 
- *  is_a: [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
+ *  is_a: [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
 
 ## Uses Mixins
 
@@ -48,7 +50,7 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
 
  * [molecular activity➞enabled by](molecular_activity_enabled_by.md)  <sub>0..*</sub>
     * Description: The gene product, gene, or complex that catalyzes the reaction
-    * range: [MacromolecularMachine](MacromolecularMachine.md)
+    * range: [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
  * [molecular activity➞has input](molecular_activity_has_input.md)  <sub>0..*</sub>
     * Description: A chemical entity that is the input for the reaction
     * range: [ChemicalSubstance](ChemicalSubstance.md)
@@ -76,10 +78,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -96,6 +94,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
@@ -105,7 +109,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [molecular activity➞enabled by](molecular_activity_enabled_by.md)  <sub>0..*</sub>
     * Description: The gene product, gene, or complex that catalyzes the reaction
-    * range: [MacromolecularMachine](MacromolecularMachine.md)
+    * range: [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
  * [molecular activity➞has input](molecular_activity_has_input.md)  <sub>0..*</sub>
     * Description: A chemical entity that is the input for the reaction
     * range: [ChemicalSubstance](ChemicalSubstance.md)

@@ -1,49 +1,42 @@
 ---
 parent: Entities
-title: biolink:DistributionLevel
+title: biolink:PathologicalProcessExposure
 grand_parent: Classes
 layout: default
 ---
 
-# Class: DistributionLevel
+# Class: PathologicalProcessExposure
 
 
+A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
 
-
-URI: [biolink:DistributionLevel](https://w3id.org/biolink/vocab/DistributionLevel)
+URI: [biolink:PathologicalProcessExposure](https://w3id.org/biolink/vocab/PathologicalProcessExposure)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[DataSetVersion]-%20distribution%200..1%3E[DistributionLevel%7Cdownload_url:string%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DataSetVersion]%5E-[DistributionLevel],[DataSetVersion],[DataSet],[DataFile],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[PathologicalProcessExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[PathologicalProcess]%5E-[PathologicalProcessExposure],[PathologicalProcess],[NamedThing],[ExposureEvent],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [DataSetVersion](DataSetVersion.md)
+ *  is_a: [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 
-## Referenced by class
+## Uses Mixins
 
- *  **[DataSetVersion](DataSetVersion.md)** *[distribution](distribution.md)*  <sub>OPT</sub>  **[DistributionLevel](DistributionLevel.md)**
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 
 ## Attributes
 
 
-### Own
+### Inherited from biological process or activity:
 
- * [download url](download_url.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
-
-### Inherited from data set version:
-
- * [source data file](source_data_file.md)  <sub>OPT</sub>
-    * range: [DataFile](DataFile.md)
- * [version of](version_of.md)  <sub>OPT</sub>
-    * range: [DataSet](DataSet.md)
- * [distribution](distribution.md)  <sub>OPT</sub>
-    * range: [DistributionLevel](DistributionLevel.md)
+ * [enabled by](enabled_by.md)  <sub>0..*</sub>
+    * Description: holds between a process and a physical entity, where the physical entity executes the process
+    * range: [PhysicalEntity](PhysicalEntity.md)
+    * in subsets: (translator_minimal)
 
 ### Inherited from entity:
 
@@ -65,10 +58,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -85,31 +74,19 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
-### Inherited from information content entity:
+### Inherited from exposure event:
 
- * [license](license.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [rights](rights.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [format](format.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [creation date](creation_date.md)  <sub>OPT</sub>
-    * Description: date on which an entity was created. This can be applied to nodes or edges
-    * range: [Date](types/Date.md)
+ * [timepoint](timepoint.md)  <sub>OPT</sub>
+    * Description: a point in time
+    * range: [TimeType](types/TimeType.md)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
-
-### Domain for slot:
-
- * [download url](download_url.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | dcat:Distribution |
-

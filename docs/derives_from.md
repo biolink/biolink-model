@@ -28,6 +28,7 @@ URI: [biolink:derives_from](https://w3id.org/biolink/vocab/derives_from)
 
 ## Children
 
+ *  [is metabolite of](is_metabolite_of.md)
 
 ## Used by
 

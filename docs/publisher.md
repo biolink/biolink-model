@@ -30,6 +30,6 @@ URI: [biolink:publisher](https://w3id.org/biolink/vocab/publisher)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | dcterms:publisher |
+| **Exact Mappings:** | | dct:publisher |
 |  | | WIKIDATA_PROPERTY:P123 |
 

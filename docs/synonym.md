@@ -31,13 +31,13 @@ URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
  * [Gene](Gene.md)
- * [GeneProduct](GeneProduct.md)
+ * [GeneProductIsoformMixin](GeneProductIsoformMixin.md)
+ * [GeneProductMixin](GeneProductMixin.md)
  * [MicroRNA](MicroRNA.md)
  * [NoncodingRNAProduct](NoncodingRNAProduct.md)
  * [Protein](Protein.md)
  * [ProteinIsoform](ProteinIsoform.md)
  * [SiRNA](SiRNA.md)
- * [Transcript](Transcript.md)
 
 ## Other properties
 

@@ -29,21 +29,19 @@ URI: [biolink:license](https://w3id.org/biolink/vocab/license)
  * [Book](Book.md)
  * [BookChapter](BookChapter.md)
  * [ConfidenceLevel](ConfidenceLevel.md)
- * [DataFile](DataFile.md)
- * [DataSet](DataSet.md)
- * [DataSetSummary](DataSetSummary.md)
- * [DataSetVersion](DataSetVersion.md)
- * [DistributionLevel](DistributionLevel.md)
+ * [Dataset](Dataset.md)
+ * [DatasetDistribution](DatasetDistribution.md)
+ * [DatasetSummary](DatasetSummary.md)
+ * [DatasetVersion](DatasetVersion.md)
  * [EvidenceType](EvidenceType.md)
  * [InformationContentEntity](InformationContentEntity.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
- * [SourceFile](SourceFile.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | dcterms:license |
+| **Exact Mappings:** | | dct:license |
 | **Narrow Mappings:** | | WIKIDATA_PROPERTY:P275 |
 

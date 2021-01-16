@@ -31,15 +31,6 @@ URI: [biolink:DrugToGeneInteractionExposure](https://w3id.org/biolink/vocab/Drug
 ## Attributes
 
 
-### Inherited from drug:
-
- * [has active ingredient](has_active_ingredient.md)  <sub>0..*</sub>
-    * Description: one or more chemical substance which are the active ingredient(s) of a drug
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
- * [has excipient](has_excipient.md)  <sub>0..*</sub>
-    * Description: one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
-
 ### Inherited from entity:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -60,10 +51,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -89,8 +76,14 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from gene grouping mixin:
 
  * [has gene or gene product](has_gene_or_gene_product.md)  <sub>0..*</sub>
-    * Description: connects an entity with one or more gene products
+    * Description: connects an entity with one or more gene or gene products
     * range: [Gene](Gene.md)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from mixture:
 

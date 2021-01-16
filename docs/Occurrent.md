@@ -31,7 +31,7 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 ## Mixin for
 
  * [BiologicalProcess](BiologicalProcess.md) (mixin)  - One or more causally connected executions of molecular functions
- * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) (mixin)  - Either an individual molecular activity, or a collection of causally connected molecular activities
+ * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) (mixin)  - Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
  * [EnvironmentalProcess](EnvironmentalProcess.md) (mixin) 
  * [MolecularActivity](MolecularActivity.md) (mixin)  - An execution of a molecular function carried out by a gene product or macromolecular complex.
  * [Phenomenon](Phenomenon.md) (mixin)  - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -40,11 +40,14 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 
  *  **[NamedThing](NamedThing.md)** *[actively involved in](actively_involved_in.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
  *  **[NamedThing](NamedThing.md)** *[capable of](capable_of.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[negatively regulated by, process to process](negatively_regulated_by_process_to_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[negatively regulates, process to process](negatively_regulates_process_to_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
  *  **[NamedThing](NamedThing.md)** *[participates in](participates_in.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[positively regulated by, process to process](positively_regulated_by_process_to_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[positively regulates, process to process](positively_regulates_process_to_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[preceded by](preceded_by.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[precedes](precedes.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[regulated by, process to process](regulated_by_process_to_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[regulates, process to process](regulates_process_to_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[temporally related to](temporally_related_to.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
 

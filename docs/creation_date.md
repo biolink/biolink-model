@@ -29,22 +29,20 @@ URI: [biolink:creation_date](https://w3id.org/biolink/vocab/creation_date)
  * [Book](Book.md)
  * [BookChapter](BookChapter.md)
  * [ConfidenceLevel](ConfidenceLevel.md)
- * [DataFile](DataFile.md)
- * [DataSet](DataSet.md)
- * [DataSetSummary](DataSetSummary.md)
- * [DataSetVersion](DataSetVersion.md)
- * [DistributionLevel](DistributionLevel.md)
+ * [Dataset](Dataset.md)
+ * [DatasetDistribution](DatasetDistribution.md)
+ * [DatasetSummary](DatasetSummary.md)
+ * [DatasetVersion](DatasetVersion.md)
  * [EvidenceType](EvidenceType.md)
  * [InformationContentEntity](InformationContentEntity.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
- * [SourceFile](SourceFile.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | publication date |
-| **Exact Mappings:** | | dcterms:createdOn |
+| **Exact Mappings:** | | dct:createdOn |
 |  | | WIKIDATA_PROPERTY:P577 |
 

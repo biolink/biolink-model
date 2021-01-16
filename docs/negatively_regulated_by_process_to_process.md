@@ -14,7 +14,7 @@ URI: [biolink:negatively_regulated_by_process_to_process](https://w3id.org/bioli
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[Occurrent](Occurrent.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
 
 ## Parents
 

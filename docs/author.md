@@ -30,6 +30,6 @@ URI: [biolink:author](https://w3id.org/biolink/vocab/author)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | dcterms:creator |
+| **Exact Mappings:** | | dct:creator |
 |  | | WIKIDATA_PROPERTY:P50 |
 

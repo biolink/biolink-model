@@ -81,10 +81,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -124,7 +120,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | group |
 | **Exact Mappings:** | | prov:Agent |
-|  | | dcterms:Agent |
+|  | | dct:Agent |
 | **Narrow Mappings:** | | UMLSSG:ORGA |
 |  | | UMLSSC:T092 |
 |  | | UMLSST:orgt |

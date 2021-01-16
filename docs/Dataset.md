@@ -1,21 +1,21 @@
 ---
 parent: Entities
-title: biolink:DataSet
+title: biolink:Dataset
 grand_parent: Classes
 layout: default
 ---
 
-# Class: DataSet
+# Class: Dataset
 
 
+an item that refers to a collection of data from a data source.
 
-
-URI: [biolink:DataSet](https://w3id.org/biolink/vocab/DataSet)
+URI: [biolink:Dataset](https://w3id.org/biolink/vocab/Dataset)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[InformationContentEntity],[DataSetVersion],[DataSetVersion]-%20version%20of%200..1%3E[DataSet%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DataSet]%5E-[DataSetVersion],[InformationContentEntity]%5E-[DataSet],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[InformationContentEntity],[DatasetVersion],[DatasetVersion]-%20has%20dataset%200..1%3E[Dataset%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[InformationContentEntity]%5E-[Dataset],[Attribute],[Agent])
 
 ---
 
@@ -24,13 +24,9 @@ URI: [biolink:DataSet](https://w3id.org/biolink/vocab/DataSet)
 
  *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
 
-## Children
-
- * [DataSetVersion](DataSetVersion.md)
-
 ## Referenced by class
 
- *  **[DataSetVersion](DataSetVersion.md)** *[version of](version_of.md)*  <sub>OPT</sub>  **[DataSet](DataSet.md)**
+ *  **[DatasetVersion](DatasetVersion.md)** *[has dataset](has_dataset.md)*  <sub>OPT</sub>  **[Dataset](Dataset.md)**
 
 ## Attributes
 
@@ -55,10 +51,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -87,6 +79,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: date on which an entity was created. This can be applied to nodes or edges
     * range: [Date](types/Date.md)
 
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
@@ -98,4 +96,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Exact Mappings:** | | IAO:0000100 |
 |  | | dctypes:Dataset |
+|  | | schema:dataset |
 

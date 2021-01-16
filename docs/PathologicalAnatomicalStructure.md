@@ -1,36 +1,40 @@
 ---
 parent: Entities
-title: biolink:DataFile
+title: biolink:PathologicalAnatomicalStructure
 grand_parent: Classes
 layout: default
 ---
 
-# Class: DataFile
+# Class: PathologicalAnatomicalStructure
 
 
+An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 
-
-URI: [biolink:DataFile](https://w3id.org/biolink/vocab/DataFile)
+URI: [biolink:PathologicalAnatomicalStructure](https://w3id.org/biolink/vocab/PathologicalAnatomicalStructure)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SourceFile],[NamedThing],[InformationContentEntity],[DataSetVersion],[DataSetVersion]-%20source%20data%20file%200..1%3E[DataFile%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DataFile]%5E-[SourceFile],[InformationContentEntity]%5E-[DataFile],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalEntityMixin],[PathologicalAnatomicalStructure%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalAnatomicalStructure]%5E-[PathologicalAnatomicalOutcome],[PathologicalAnatomicalStructure]%5E-[PathologicalAnatomicalExposure],[AnatomicalEntity]%5E-[PathologicalAnatomicalStructure],[PathologicalAnatomicalOutcome],[PathologicalAnatomicalExposure],[OrganismTaxon],[NamedThing],[Attribute],[AnatomicalEntity],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
+ *  is_a: [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
+
+## Uses Mixins
+
+ *  mixin: [PathologicalEntityMixin](PathologicalEntityMixin.md) - A pathological (abnormal) structure or process.
 
 ## Children
 
- * [SourceFile](SourceFile.md)
+ * [PathologicalAnatomicalExposure](PathologicalAnatomicalExposure.md) - An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
+ * [PathologicalAnatomicalOutcome](PathologicalAnatomicalOutcome.md) - An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
 
 ## Referenced by class
 
- *  **[DataSetVersion](DataSetVersion.md)** *[source data file](source_data_file.md)*  <sub>OPT</sub>  **[DataFile](DataFile.md)**
 
 ## Attributes
 
@@ -55,10 +59,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -75,26 +75,26 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
-### Inherited from information content entity:
+### Inherited from macromolecular machine mixin:
 
- * [license](license.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [rights](rights.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [format](format.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [creation date](creation_date.md)  <sub>OPT</sub>
-    * Description: date on which an entity was created. This can be applied to nodes or edges
-    * range: [Date](types/Date.md)
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
 
-## Other properties
+### Inherited from organismal entity:
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | EFO:0004095 |
+ * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
+    * Description: may often be an organism attribute
+    * range: [Attribute](Attribute.md)
 
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..*</sub>
+    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * in subsets: (translator_minimal)

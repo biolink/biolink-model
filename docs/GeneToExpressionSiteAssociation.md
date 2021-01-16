@@ -15,7 +15,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[LifeStage],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-%20[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[Attribute],[Association],[AnatomicalEntity],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[LifeStage],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[Attribute],[Association],[AnatomicalEntity],[Agent])
 
 ---
 
@@ -99,10 +99,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -118,6 +114,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Domain for slot:
 

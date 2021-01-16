@@ -1,48 +1,35 @@
 ---
 parent: Entities
-title: biolink:DataSetSummary
+title: biolink:PathologicalAnatomicalOutcome
 grand_parent: Classes
 layout: default
 ---
 
-# Class: DataSetSummary
+# Class: PathologicalAnatomicalOutcome
 
 
+An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
 
-
-URI: [biolink:DataSetSummary](https://w3id.org/biolink/vocab/DataSetSummary)
+URI: [biolink:PathologicalAnatomicalOutcome](https://w3id.org/biolink/vocab/PathologicalAnatomicalOutcome)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[DistributionLevel],[DataSetVersion],[DataSetVersion]%5E-[DataSetSummary%7Csource_web_page:string%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DataSet],[DataFile],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalAnatomicalStructure],[PathologicalAnatomicalOutcome%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Outcome],[PathologicalAnatomicalStructure]%5E-[PathologicalAnatomicalOutcome],[Outcome],[OrganismTaxon],[NamedThing],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [DataSetVersion](DataSetVersion.md)
+ *  is_a: [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 
-## Referenced by class
+## Uses Mixins
 
+ *  mixin: [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
 
 ## Attributes
 
-
-### Own
-
- * [source web page](source_web_page.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
-
-### Inherited from data set version:
-
- * [source data file](source_data_file.md)  <sub>OPT</sub>
-    * range: [DataFile](DataFile.md)
- * [version of](version_of.md)  <sub>OPT</sub>
-    * range: [DataSet](DataSet.md)
- * [distribution](distribution.md)  <sub>OPT</sub>
-    * range: [DistributionLevel](DistributionLevel.md)
 
 ### Inherited from entity:
 
@@ -64,10 +51,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -84,24 +67,26 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
-### Inherited from information content entity:
+### Inherited from macromolecular machine mixin:
 
- * [license](license.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [rights](rights.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [format](format.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
- * [creation date](creation_date.md)  <sub>OPT</sub>
-    * Description: date on which an entity was created. This can be applied to nodes or edges
-    * range: [Date](types/Date.md)
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
 
-### Domain for slot:
+### Inherited from organismal entity:
 
- * [source web page](source_web_page.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
+ * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
+    * Description: may often be an organism attribute
+    * range: [Attribute](Attribute.md)
+
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..*</sub>
+    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * in subsets: (translator_minimal)

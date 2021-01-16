@@ -25,6 +25,7 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 
 ## Children
 
+ *  [approved to treat](approved_to_treat.md)
 
 ## Used by
 

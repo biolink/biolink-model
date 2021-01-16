@@ -1,14 +1,17 @@
 ---
-parent: Node Properties
+parent: Predicates
 title: biolink:has_excipient
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: has_excipient
+# Relation: has_excipient
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
+holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
 
 URI: [biolink:has_excipient](https://w3id.org/biolink/vocab/has_excipient)
 
@@ -18,20 +21,18 @@ URI: [biolink:has_excipient](https://w3id.org/biolink/vocab/has_excipient)
 
 ## Parents
 
- *  is_a: [node property](node_property.md)
+ *  is_a: [has part](has_part.md)
 
 ## Children
 
 
 ## Used by
 
- * [Drug](Drug.md)
- * [DrugExposure](DrugExposure.md)
- * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA:Q902638 |
+| **Mappings:** | | WIKIDATA:Q902638 |
+| **In Subsets:** | | translator_minimal |
 

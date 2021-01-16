@@ -14,7 +14,7 @@ URI: [biolink:source_web_page](https://w3id.org/biolink/vocab/source_web_page)
 
 ## Domain and Range
 
-[DataSetSummary](DataSetSummary.md) ->  <sub>OPT</sub> [String](types/String.md)
+[DatasetSummary](DatasetSummary.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,11 +25,11 @@ URI: [biolink:source_web_page](https://w3id.org/biolink/vocab/source_web_page)
 
 ## Used by
 
- * [DataSetSummary](DataSetSummary.md)
+ * [DatasetSummary](DatasetSummary.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Broad Mappings:** | | dcterms:source |
+| **Broad Mappings:** | | dct:source |
 

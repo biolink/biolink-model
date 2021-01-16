@@ -8,14 +8,14 @@ layout: default
 # Class: FunctionalAssociation
 
 
-An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
+An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 
 URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachine],[GeneToGoTermAssociation],[GeneOntologyClass],[GeneOntologyClass]%3Cobject%201..1-%20[FunctionalAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MacromolecularMachine]%3Csubject%201..1-%20[FunctionalAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[Association]%5E-[FunctionalAssociation],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachineMixin],[GeneToGoTermAssociation],[GeneOntologyClass],[GeneOntologyClass]%3Cobject%201..1-%20[FunctionalAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MacromolecularMachineMixin]%3Csubject%201..1-++[FunctionalAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[Association]%5E-[FunctionalAssociation],[Attribute],[Association],[Agent])
 
 ---
 
@@ -27,9 +27,9 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
 ## Children
 
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
- * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
- * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
- * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+ * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
+ * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
+ * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
 
 ## Referenced by class
 
@@ -45,8 +45,8 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
     * Example:    
     * Example:    
  * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
-    * Description: gene, product or macromolecular complex that has the function associated with the GO term
-    * range: [MacromolecularMachine](MacromolecularMachine.md)
+    * Description: gene, product or macromolecular complex mixin that has the function associated with the GO term
+    * range: [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
     * Example:    
 
 ### Inherited from association:
@@ -98,10 +98,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -118,6 +114,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Domain for slot:
 
  * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
@@ -126,6 +128,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Example:    
     * Example:    
  * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
-    * Description: gene, product or macromolecular complex that has the function associated with the GO term
-    * range: [MacromolecularMachine](MacromolecularMachine.md)
+    * Description: gene, product or macromolecular complex mixin that has the function associated with the GO term
+    * range: [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
     * Example:    

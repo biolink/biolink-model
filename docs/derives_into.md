@@ -25,6 +25,7 @@ URI: [biolink:derives_into](https://w3id.org/biolink/vocab/derives_into)
 
 ## Children
 
+ *  [has metabolite](has_metabolite.md)
 
 ## Used by
 

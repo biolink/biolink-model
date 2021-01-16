@@ -8,14 +8,14 @@ layout: default
 # Class: DiseaseOrPhenotypicFeatureExposure
 
 
-A disease or phenotypic feature exposure is where a disease state is manifested which represents an precondition, leading to or influencing an outcome, e.g. hypertension leading to a related disease outcome such as cardiovascular disease.
+A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 
 URI: [biolink:DiseaseOrPhenotypicFeatureExposure](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ExposureEvent],[DiseaseOrPhenotypicFeatureExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[DiseaseOrPhenotypicFeature]%5E-[DiseaseOrPhenotypicFeatureExposure],[DiseaseOrPhenotypicFeature],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalEntityMixin],[OrganismTaxon],[NamedThing],[ExposureEvent],[DiseaseOrPhenotypicFeatureExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[DiseaseOrPhenotypicFeatureExposure]uses%20-.-%3E[PathologicalEntityMixin],[DiseaseOrPhenotypicFeature]%5E-[DiseaseOrPhenotypicFeatureExposure],[DiseaseOrPhenotypicFeature],[Attribute],[Agent])
 
 ---
 
@@ -27,6 +27,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureExposure](https://w3id.org/biolink/vocab
 ## Uses Mixins
 
  *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ *  mixin: [PathologicalEntityMixin](PathologicalEntityMixin.md) - A pathological (abnormal) structure or process.
 
 ## Attributes
 
@@ -51,10 +52,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -76,6 +73,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [timepoint](timepoint.md)  <sub>OPT</sub>
     * Description: a point in time
     * range: [TimeType](types/TimeType.md)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 

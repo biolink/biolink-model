@@ -1,40 +1,39 @@
 ---
 parent: Entities
-title: biolink:SourceFile
+title: biolink:DatasetDistribution
 grand_parent: Classes
 layout: default
 ---
 
-# Class: SourceFile
+# Class: DatasetDistribution
 
 
+an item that holds distribution level information about a dataset.
 
-
-URI: [biolink:SourceFile](https://w3id.org/biolink/vocab/SourceFile)
+URI: [biolink:DatasetDistribution](https://w3id.org/biolink/vocab/DatasetDistribution)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DataFile]%5E-[SourceFile%7Csource_version:string%20%3F;retrieved_on:date%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing],[DataFile],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[InformationContentEntity],[DatasetVersion],[DatasetVersion]-%20has%20distribution%200..1%3E[DatasetDistribution%7Cdistribution_download_url:string%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[InformationContentEntity]%5E-[DatasetDistribution],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [DataFile](DataFile.md)
+ *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
 
 ## Referenced by class
 
+ *  **[DatasetVersion](DatasetVersion.md)** *[has distribution](has_distribution.md)*  <sub>OPT</sub>  **[DatasetDistribution](DatasetDistribution.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [retrieved on](retrieved_on.md)  <sub>OPT</sub>
-    * range: [Date](types/Date.md)
- * [source version](source_version.md)  <sub>OPT</sub>
+ * [distribution download url](distribution_download_url.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
 
 ### Inherited from entity:
@@ -57,10 +56,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -89,6 +84,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: date on which an entity was created. This can be applied to nodes or edges
     * range: [Date](types/Date.md)
 
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
@@ -96,7 +97,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [retrieved on](retrieved_on.md)  <sub>OPT</sub>
-    * range: [Date](types/Date.md)
- * [source version](source_version.md)  <sub>OPT</sub>
+ * [distribution download url](distribution_download_url.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | dcat:Distribution |
+

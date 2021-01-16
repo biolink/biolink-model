@@ -1,48 +1,42 @@
 ---
 parent: Entities
-title: biolink:GeneProduct
+title: biolink:PathologicalProcessOutcome
 grand_parent: Classes
 layout: default
 ---
 
-# Class: GeneProduct
+# Class: PathologicalProcessOutcome
 
 
-The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
+An outcome resulting from an exposure event which is the manifestation of a pathological process.
 
-URI: [biolink:GeneProduct](https://w3id.org/biolink/vocab/GeneProduct)
+URI: [biolink:PathologicalProcessOutcome](https://w3id.org/biolink/vocab/PathologicalProcessOutcome)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[Protein],[OrganismTaxon],[NamedThing],[GeneToGeneProductRelationship],[GeneToGeneProductRelationship]-%20object%201..1%3E[GeneProduct%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;name(i):symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneProduct]%5E-[Transcript],[GeneProduct]%5E-[Protein],[GeneProduct]%5E-[RNAProduct],[GeneOrGeneProduct]%5E-[GeneProduct],[GeneOrGeneProduct],[Gene],[Attribute],[Agent],[RNAProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[PathologicalProcessOutcome%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Outcome],[PathologicalProcess]%5E-[PathologicalProcessOutcome],[PathologicalProcess],[Outcome],[NamedThing],[Attribute],[Agent])
 
 ---
 
-
-## Identifier prefixes
-
- * UniProtKB
- * gtpo
- * PR
 
 ## Parents
 
- *  is_a: [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+ *  is_a: [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 
-## Children
+## Uses Mixins
 
- * [RNAProduct](RNAProduct.md)
- * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
- * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
-
-## Referenced by class
-
- *  **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[gene to gene product relationship➞object](gene_to_gene_product_relationship_object.md)*  <sub>REQ</sub>  **[GeneProduct](GeneProduct.md)**
- *  **[Gene](Gene.md)** *[has gene product](has_gene_product.md)*  <sub>0..*</sub>  **[GeneProduct](GeneProduct.md)**
+ *  mixin: [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
 
 ## Attributes
 
+
+### Inherited from biological process or activity:
+
+ * [enabled by](enabled_by.md)  <sub>0..*</sub>
+    * Description: holds between a process and a physical entity, where the physical entity executes the process
+    * range: [PhysicalEntity](PhysicalEntity.md)
+    * in subsets: (translator_minimal)
 
 ### Inherited from entity:
 
@@ -64,10 +58,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -84,15 +74,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
-### Inherited from genomic entity:
+### Inherited from macromolecular machine mixin:
 
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-    * Description: connects a genomic feature to its sequence
-    * range: [BiologicalSequence](types/BiologicalSequence.md)
-
-### Inherited from macromolecular machine:
-
- * [macromolecular machine➞name](macromolecular_machine_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
 
@@ -100,19 +84,3 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-    * range: [OrganismTaxon](OrganismTaxon.md)
-    * in subsets: (translator_minimal)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA:Q424689 |
-|  | | GENO:0000907 |
-|  | | NCIT:C26548 |
-

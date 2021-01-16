@@ -1,35 +1,32 @@
 ---
 parent: Entities
-title: biolink:MacromolecularComplex
+title: biolink:PathologicalAnatomicalExposure
 grand_parent: Classes
 layout: default
 ---
 
-# Class: MacromolecularComplex
+# Class: PathologicalAnatomicalExposure
 
 
+An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 
-
-URI: [biolink:MacromolecularComplex](https://w3id.org/biolink/vocab/MacromolecularComplex)
+URI: [biolink:PathologicalAnatomicalExposure](https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MacromolecularMachine],[MacromolecularMachine]%5E-[MacromolecularComplex%7Cname(i):symbol_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalAnatomicalStructure],[PathologicalAnatomicalExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[PathologicalAnatomicalStructure]%5E-[PathologicalAnatomicalExposure],[OrganismTaxon],[NamedThing],[ExposureEvent],[Attribute],[Agent])
 
 ---
 
-
-## Identifier prefixes
-
- * INTACT
- * GO
- * PR
- * REACT
 
 ## Parents
 
- *  is_a: [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+ *  is_a: [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+
+## Uses Mixins
+
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 
 ## Attributes
 
@@ -54,10 +51,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -74,15 +67,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
-### Inherited from genomic entity:
+### Inherited from exposure event:
 
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-    * Description: connects a genomic feature to its sequence
-    * range: [BiologicalSequence](types/BiologicalSequence.md)
+ * [timepoint](timepoint.md)  <sub>OPT</sub>
+    * Description: a point in time
+    * range: [TimeType](types/TimeType.md)
 
-### Inherited from macromolecular machine:
+### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine➞name](macromolecular_machine_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
 
@@ -91,18 +84,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
 
+### Inherited from organismal entity:
+
+ * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
+    * Description: may often be an organism attribute
+    * range: [Attribute](Attribute.md)
+
 ### Inherited from thing with taxon:
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
     * range: [OrganismTaxon](OrganismTaxon.md)
     * in subsets: (translator_minimal)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | GO:0032991 |
-|  | | WIKIDATA:Q22325163 |
-

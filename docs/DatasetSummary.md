@@ -1,48 +1,42 @@
 ---
 parent: Entities
-title: biolink:DataSetVersion
+title: biolink:DatasetSummary
 grand_parent: Classes
 layout: default
 ---
 
-# Class: DataSetVersion
+# Class: DatasetSummary
 
 
+an item that holds summary level information about a dataset.
 
-
-URI: [biolink:DataSetVersion](https://w3id.org/biolink/vocab/DataSetVersion)
+URI: [biolink:DatasetSummary](https://w3id.org/biolink/vocab/DatasetSummary)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[DistributionLevel],[DistributionLevel]%3Cdistribution%200..1-%20[DataSetVersion%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DataSet]%3Cversion%20of%200..1-%20[DataSetVersion],[DataFile]%3Csource%20data%20file%200..1-%20[DataSetVersion],[DataSetVersion]%5E-[DistributionLevel],[DataSetVersion]%5E-[DataSetSummary],[DataSet]%5E-[DataSetVersion],[DataSetSummary],[DataSet],[DataFile],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[InformationContentEntity],[DatasetVersion],[InformationContentEntity]%5E-[DatasetSummary%7Csource_web_page:string%20%3F;source_logo:string%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [DataSet](DataSet.md)
-
-## Children
-
- * [DataSetSummary](DataSetSummary.md)
- * [DistributionLevel](DistributionLevel.md)
+ *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
 
 ## Referenced by class
 
+ *  **[DatasetVersion](DatasetVersion.md)** *[version of](version_of.md)*  <sub>OPT</sub>  **[DatasetSummary](DatasetSummary.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [distribution](distribution.md)  <sub>OPT</sub>
-    * range: [DistributionLevel](DistributionLevel.md)
- * [source data file](source_data_file.md)  <sub>OPT</sub>
-    * range: [DataFile](DataFile.md)
- * [version of](version_of.md)  <sub>OPT</sub>
-    * range: [DataSet](DataSet.md)
+ * [source logo](source_logo.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [source web page](source_web_page.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
 
 ### Inherited from entity:
 
@@ -64,10 +58,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -96,6 +86,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: date on which an entity was created. This can be applied to nodes or edges
     * range: [Date](types/Date.md)
 
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
@@ -103,9 +99,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [distribution](distribution.md)  <sub>OPT</sub>
-    * range: [DistributionLevel](DistributionLevel.md)
- * [source data file](source_data_file.md)  <sub>OPT</sub>
-    * range: [DataFile](DataFile.md)
- * [version of](version_of.md)  <sub>OPT</sub>
-    * range: [DataSet](DataSet.md)
+ * [source logo](source_logo.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)
+ * [source web page](source_web_page.md)  <sub>OPT</sub>
+    * range: [String](types/String.md)

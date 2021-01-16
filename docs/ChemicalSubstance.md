@@ -15,24 +15,34 @@ URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstanc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[OrganismTaxon],[NamedThing],[MolecularEntity],[MolecularActivity],[Metabolite],[Food],[Drug],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalSubstance],[Drug]-%20has%20active%20ingredient%200..%2A%3E[ChemicalSubstance],[Mixture]-%20has%20constituent%200..%2A%3E[ChemicalSubstance],[Drug]-%20has%20excipient%200..%2A%3E[ChemicalSubstance],[Food]-%20has%20nutrient%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20input%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20output%200..%2A%3E[ChemicalSubstance],[ChemicalSubstance]%5E-[ProcessedMaterial],[ChemicalSubstance]%5E-[Metabolite],[ChemicalSubstance]%5E-[ChemicalExposure],[ChemicalSubstance]%5E-[Carbohydrate],[MolecularEntity]%5E-[ChemicalSubstance],[Mixture],[ChemicalExposure],[Carbohydrate],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[OrganismTaxon],[NamedThing],[MolecularEntity],[MolecularActivity],[Metabolite],[Food],[Drug],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance%7Cis_metabolite:boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalSubstance],[Mixture]-%20has%20constituent%200..%2A%3E[ChemicalSubstance],[Food]-%20has%20nutrient%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20input%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20output%200..%2A%3E[ChemicalSubstance],[ChemicalSubstance]%5E-[ProcessedMaterial],[ChemicalSubstance]%5E-[Metabolite],[ChemicalSubstance]%5E-[ChemicalExposure],[ChemicalSubstance]%5E-[Carbohydrate],[MolecularEntity]%5E-[ChemicalSubstance],[Mixture],[ChemicalExposure],[Carbohydrate],[Attribute],[Agent])
 
 ---
 
 
 ## Identifier prefixes
 
- * CHEBI
- * CHEMBL.COMPOUND
- * DRUGBANK
  * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * DRUGBANK
  * MESH
+ * CAS
+ * DrugCentral
+ * GTOPDB
  * HMDB
+ * KEGG.COMPOUND
+ * ChemBank
+ * Aeolus
+ * PUBCHEM.SUBSTANCE
+ * SIDER.DRUG
  * INCHI
  * INCHIKEY
- * UNII
- * KEGG
- * gtpo
+ * KEGG.GLYCAN
+ * KEGG.DRUG
+ * KEGG.DGROUP
+ * KEGG.ENVIRON
 
 ## Parents
 
@@ -54,12 +64,20 @@ URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstanc
  *  **[Drug](Drug.md)** *[has active ingredient](has_active_ingredient.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[NamedThing](NamedThing.md)** *[has constituent](has_constituent.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[Drug](Drug.md)** *[has excipient](has_excipient.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  **[ChemicalSubstance](ChemicalSubstance.md)** *[has metabolite](has_metabolite.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[Food](Food.md)** *[has nutrient](has_nutrient.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  **[ChemicalSubstance](ChemicalSubstance.md)** *[is metabolite of](is_metabolite_of.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[molecular activity➞has input](molecular_activity_has_input.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[molecular activity➞has output](molecular_activity_has_output.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
 
 ## Attributes
 
+
+### Own
+
+ * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+    * Description: indicates whether a chemical substance is a metabolite
+    * range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 
@@ -81,10 +99,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -101,6 +115,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
@@ -112,6 +132,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
     * range: [OrganismTaxon](OrganismTaxon.md)
     * in subsets: (translator_minimal)
+
+### Domain for slot:
+
+ * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+    * Description: indicates whether a chemical substance is a metabolite
+    * range: [Boolean](types/Boolean.md)
 
 ## Other properties
 

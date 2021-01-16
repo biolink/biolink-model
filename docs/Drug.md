@@ -15,13 +15,15 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[DrugToEntityAssociationMixin],[DrugExposure],[ChemicalSubstance]%3Chas%20excipient%200..%2A-%20[Drug%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance]%3Chas%20active%20ingredient%200..%2A-%20[Drug],[DrugToEntityAssociationMixin]-%20subject%201..1%3E[Drug],[Treatment]-%20has%20drug%200..%2A%3E[Drug],[Drug]uses%20-.-%3E[Mixture],[Drug]%5E-[DrugExposure],[MolecularEntity]%5E-[Drug],[Treatment],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[DrugToEntityAssociationMixin],[DrugExposure],[DrugToEntityAssociationMixin]-%20subject%201..1%3E[Drug%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Treatment]-%20has%20drug%200..%2A%3E[Drug],[Drug]uses%20-.-%3E[Mixture],[Drug]%5E-[DrugExposure],[MolecularEntity]%5E-[Drug],[Treatment],[ChemicalSubstance],[Attribute],[Agent])
 
 ---
 
 
 ## Identifier prefixes
 
+ * RXCUI
+ * NDC
  * PHARMGKB.DRUG
 
 ## Parents
@@ -40,18 +42,11 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
  *  **[DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md)** *[drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[Drug](Drug.md)**
  *  **[NamedThing](NamedThing.md)** *[has drug](has_drug.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
+ *  **[ChemicalSubstance](ChemicalSubstance.md)** *[is active ingredient of](is_active_ingredient_of.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
+ *  **[ChemicalSubstance](ChemicalSubstance.md)** *[is excipient of](is_excipient_of.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
 
 ## Attributes
 
-
-### Own
-
- * [has active ingredient](has_active_ingredient.md)  <sub>0..*</sub>
-    * Description: one or more chemical substance which are the active ingredient(s) of a drug
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
- * [has excipient](has_excipient.md)  <sub>0..*</sub>
-    * Description: one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ### Inherited from entity:
 
@@ -73,10 +68,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -92,6 +83,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from mixture:
 
@@ -110,15 +107,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
     * range: [OrganismTaxon](OrganismTaxon.md)
     * in subsets: (translator_minimal)
-
-### Domain for slot:
-
- * [has active ingredient](has_active_ingredient.md)  <sub>0..*</sub>
-    * Description: one or more chemical substance which are the active ingredient(s) of a drug
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
- * [has excipient](has_excipient.md)  <sub>0..*</sub>
-    * Description: one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ## Other properties
 

@@ -15,7 +15,7 @@ URI: [biolink:PathologicalProcess](https://w3id.org/biolink/vocab/PathologicalPr
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[BiologicalProcess]%5E-[PathologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing],[BiologicalProcess],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[PathologicalProcessOutcome],[PathologicalProcessExposure],[PathologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalProcess]%5E-[PathologicalProcessOutcome],[PathologicalProcess]%5E-[PathologicalProcessExposure],[BiologicalProcess]%5E-[PathologicalProcess],[PathologicalEntityMixin],[NamedThing],[BiologicalProcess],[Attribute],[Agent])
 
 ---
 
@@ -23,6 +23,18 @@ URI: [biolink:PathologicalProcess](https://w3id.org/biolink/vocab/PathologicalPr
 ## Parents
 
  *  is_a: [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
+
+## Uses Mixins
+
+ *  mixin: [PathologicalEntityMixin](PathologicalEntityMixin.md) - A pathological (abnormal) structure or process.
+
+## Children
+
+ * [PathologicalProcessExposure](PathologicalProcessExposure.md) - A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+ * [PathologicalProcessOutcome](PathologicalProcessOutcome.md) - An outcome resulting from an exposure event which is the manifestation of a pathological process.
+
+## Referenced by class
+
 
 ## Attributes
 
@@ -54,10 +66,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -73,6 +81,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
+
+### Inherited from macromolecular machine mixin:
+
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 

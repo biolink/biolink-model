@@ -24,10 +24,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [CaseToEntityAssociationMixin](CaseToEntityAssociationMixin.md) - An abstract association for use where the case is the subject
  * [CellLineToEntityAssociationMixin](CellLineToEntityAssociationMixin.md) - An relationship between a cell line and another entity
  * [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
- * [DataSetSummary](DataSetSummary.md)
  * [DiseaseOrPhenotypicFeatureToEntityAssociationMixin](DiseaseOrPhenotypicFeatureToEntityAssociationMixin.md)
  * [DiseaseToEntityAssociationMixin](DiseaseToEntityAssociationMixin.md)
- * [DistributionLevel](DistributionLevel.md)
  * [DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md) - An interaction between a drug and another entity
  * [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
  * [EntityToDiseaseOrPhenotypicFeatureAssociationMixin](EntityToDiseaseOrPhenotypicFeatureAssociationMixin.md)
@@ -43,10 +41,20 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
        * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
  * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [GeneExpressionMixin](GeneExpressionMixin.md) - Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
  * [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
- * [GeneProductIsoform](GeneProductIsoform.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
+ * [GeneOrGeneProduct](GeneOrGeneProduct.md) - A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
+    * [GeneProductMixin](GeneProductMixin.md) - The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
+       * [GeneProductIsoformMixin](GeneProductIsoformMixin.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
  * [GeneToEntityAssociationMixin](GeneToEntityAssociationMixin.md)
  * [GenotypeToEntityAssociationMixin](GenotypeToEntityAssociationMixin.md)
+ * [MacromolecularComplexMixin](MacromolecularComplexMixin.md) - A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
+ * [MacromolecularMachineMixin](MacromolecularMachineMixin.md) - A union of gene locus, gene product, and macromolecular complex mixin. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+    * [GeneOrGeneProduct](GeneOrGeneProduct.md) - A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
+       * [GeneProductMixin](GeneProductMixin.md) - The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
+          * [GeneProductIsoformMixin](GeneProductIsoformMixin.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
+    * [MacromolecularComplexMixin](MacromolecularComplexMixin.md) - A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
+ * [MacromolecularMachineToEntityAssociationMixin](MacromolecularMachineToEntityAssociationMixin.md) - an association which has a macromolecular machine mixin as a subject
  * [MaterialSampleToEntityAssociationMixin](MaterialSampleToEntityAssociationMixin.md) - An association between a material sample and something.
  * [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
  * [ModelToDiseaseAssociationMixin](ModelToDiseaseAssociationMixin.md) - This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
@@ -57,6 +65,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
  * [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
  * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [PathologicalEntityMixin](PathologicalEntityMixin.md) - A pathological (abnormal) structure or process.
  * [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
  * [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) - Either a physical or processual entity.
     * [Occurrent](Occurrent.md) - A processual entity.
@@ -85,6 +94,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [Cell](Cell.md)
     * [CellularComponent](CellularComponent.md) - A location in or around a cell
     * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+    * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+       * [PathologicalAnatomicalExposure](PathologicalAnatomicalExposure.md) - An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
+       * [PathologicalAnatomicalOutcome](PathologicalAnatomicalOutcome.md) - An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
     * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
     * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
@@ -126,11 +138,11 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [DrugToGeneAssociation](DrugToGeneAssociation.md) - An interaction between a drug and a gene or gene product.
     * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) - An association between an exposure event and an outcome.
     * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
-    * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
+    * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
        * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
-       * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
-       * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
-       * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+       * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
+       * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
+       * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
     * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) - A regulatory relationship between two genes
     * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
        * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
@@ -150,6 +162,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
     * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) - An association between a material sample and the material entity from which it is derived.
     * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a material sample and a disease or phenotype.
+    * [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) - A relationship between two organism taxon nodes
+       * [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) - An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
+       * [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) - A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
     * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)
     * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
     * [SequenceAssociation](SequenceAssociation.md) - An association between a sequence feature and a genomic entity it is localized to.
@@ -171,7 +186,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [SocioeconomicExposure](SocioeconomicExposure.md) - A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
     * [SocioeconomicOutcome](SocioeconomicOutcome.md) - An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
  * [BiologicalEntity](BiologicalEntity.md)
-    * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
+    * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
        * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
           * [Behavior](Behavior.md)
              * [BehavioralExposure](BehavioralExposure.md) - A behavioral exposure is a factor relating to behavior impacting an individual.
@@ -181,12 +196,14 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [Death](Death.md)
              * [MortalityOutcome](MortalityOutcome.md) - An outcome of death from resulting from an exposure event.
           * [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+             * [PathologicalProcessExposure](PathologicalProcessExposure.md) - A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+             * [PathologicalProcessOutcome](PathologicalProcessOutcome.md) - An outcome resulting from an exposure event which is the manifestation of a pathological process.
           * [Pathway](Pathway.md)
           * [PhysiologicalProcess](PhysiologicalProcess.md)
        * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
     * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
        * [Disease](Disease.md)
-       * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature exposure is where a disease state is manifested which represents an precondition, leading to or influencing an outcome, e.g. hypertension leading to a related disease outcome such as cardiovascular disease.
+       * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
        * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
        * [PhenotypicFeature](PhenotypicFeature.md)
           * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
@@ -205,32 +222,31 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
        * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
           * [CodingSequence](CodingSequence.md)
-          * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+          * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
+          * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
           * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
           * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
           * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
           * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
-          * [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
-             * [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
-                * [Gene](Gene.md)
-                * [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
-                   * [RNAProduct](RNAProduct.md)
-                      * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
-                      * [NoncodingRNAProduct](NoncodingRNAProduct.md)
-                         * [MicroRNA](MicroRNA.md)
-                         * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
-                   * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
-                      * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
-                   * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
-             * [MacromolecularComplex](MacromolecularComplex.md)
+          * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+             * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
           * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
           * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
              * [Snv](Snv.md) - SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
+          * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase.
+             * [RNAProduct](RNAProduct.md)
+                * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
+                * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+                   * [MicroRNA](MicroRNA.md)
+                   * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
     * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
        * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
           * [Cell](Cell.md)
           * [CellularComponent](CellularComponent.md) - A location in or around a cell
           * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+          * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+             * [PathologicalAnatomicalExposure](PathologicalAnatomicalExposure.md) - An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
+             * [PathologicalAnatomicalOutcome](PathologicalAnatomicalOutcome.md) - An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
        * [CellLine](CellLine.md)
        * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
           * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
@@ -238,7 +254,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
           * [StudyPopulation](StudyPopulation.md) - A group of people banded together or treated as a group as participants in a research study.
              * [Cohort](Cohort.md) - A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
- * [BioticExposure](BioticExposure.md) - A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
+ * [BioticExposure](BioticExposure.md) - An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
  * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
  * [BookChapter](BookChapter.md)
  * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
@@ -247,12 +263,10 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [HospitalizationOutcome](HospitalizationOutcome.md) - An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
     * [ClinicalTrial](ClinicalTrial.md)
  * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
- * [DataFile](DataFile.md)
-    * [SourceFile](SourceFile.md)
- * [DataSet](DataSet.md)
-    * [DataSetVersion](DataSetVersion.md)
-       * [DataSetSummary](DataSetSummary.md)
-       * [DistributionLevel](DistributionLevel.md)
+ * [Dataset](Dataset.md) - an item that refers to a collection of data from a data source.
+ * [DatasetDistribution](DatasetDistribution.md) - an item that holds distribution level information about a dataset.
+ * [DatasetSummary](DatasetSummary.md) - an item that holds summary level information about a dataset.
+ * [DatasetVersion](DatasetVersion.md) - an item that holds version level information about a dataset.
  * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
  * [Entity](Entity.md) - Root Biolink Model class for all things and informational relationships, real or imagined.
     * [Association](Association.md) - A typed association between two entities, supported by evidence
@@ -275,11 +289,11 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [DrugToGeneAssociation](DrugToGeneAssociation.md) - An interaction between a drug and a gene or gene product.
        * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) - An association between an exposure event and an outcome.
        * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
-       * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
+       * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
           * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
-          * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
-          * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
-          * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+          * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
+          * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
+          * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
        * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) - A regulatory relationship between two genes
        * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
           * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
@@ -299,6 +313,9 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
        * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) - An association between a material sample and the material entity from which it is derived.
        * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a material sample and a disease or phenotype.
+       * [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) - A relationship between two organism taxon nodes
+          * [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) - An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
+          * [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) - A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
        * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)
        * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
        * [SequenceAssociation](SequenceAssociation.md) - An association between a sequence feature and a genomic entity it is localized to.
@@ -319,7 +336,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [AdministrativeEntity](AdministrativeEntity.md)
           * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
        * [BiologicalEntity](BiologicalEntity.md)
-          * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
+          * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
              * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
                 * [Behavior](Behavior.md)
                    * [BehavioralExposure](BehavioralExposure.md) - A behavioral exposure is a factor relating to behavior impacting an individual.
@@ -329,12 +346,14 @@ Entity and association taxonomy and datamodel for life-sciences data
                 * [Death](Death.md)
                    * [MortalityOutcome](MortalityOutcome.md) - An outcome of death from resulting from an exposure event.
                 * [PathologicalProcess](PathologicalProcess.md) - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+                   * [PathologicalProcessExposure](PathologicalProcessExposure.md) - A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+                   * [PathologicalProcessOutcome](PathologicalProcessOutcome.md) - An outcome resulting from an exposure event which is the manifestation of a pathological process.
                 * [Pathway](Pathway.md)
                 * [PhysiologicalProcess](PhysiologicalProcess.md)
              * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
           * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
              * [Disease](Disease.md)
-             * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature exposure is where a disease state is manifested which represents an precondition, leading to or influencing an outcome, e.g. hypertension leading to a related disease outcome such as cardiovascular disease.
+             * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
              * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
              * [PhenotypicFeature](PhenotypicFeature.md)
                 * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
@@ -353,32 +372,31 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
              * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
                 * [CodingSequence](CodingSequence.md)
-                * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+                * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
+                * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
                 * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
                 * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
                 * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
                 * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
-                * [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
-                   * [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
-                      * [Gene](Gene.md)
-                      * [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
-                         * [RNAProduct](RNAProduct.md)
-                            * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
-                            * [NoncodingRNAProduct](NoncodingRNAProduct.md)
-                               * [MicroRNA](MicroRNA.md)
-                               * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
-                         * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
-                            * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
-                         * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
-                   * [MacromolecularComplex](MacromolecularComplex.md)
+                * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+                   * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
                 * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
                 * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
                    * [Snv](Snv.md) - SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
+                * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase.
+                   * [RNAProduct](RNAProduct.md)
+                      * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
+                      * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+                         * [MicroRNA](MicroRNA.md)
+                         * [SiRNA](SiRNA.md) - A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
           * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
              * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
                 * [Cell](Cell.md)
                 * [CellularComponent](CellularComponent.md) - A location in or around a cell
                 * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+                * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+                   * [PathologicalAnatomicalExposure](PathologicalAnatomicalExposure.md) - An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
+                   * [PathologicalAnatomicalOutcome](PathologicalAnatomicalOutcome.md) - An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
              * [CellLine](CellLine.md)
              * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
                 * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
@@ -394,12 +412,10 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
        * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
           * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
-          * [DataFile](DataFile.md)
-             * [SourceFile](SourceFile.md)
-          * [DataSet](DataSet.md)
-             * [DataSetVersion](DataSetVersion.md)
-                * [DataSetSummary](DataSetSummary.md)
-                * [DistributionLevel](DistributionLevel.md)
+          * [Dataset](Dataset.md) - an item that refers to a collection of data from a data source.
+          * [DatasetDistribution](DatasetDistribution.md) - an item that holds distribution level information about a dataset.
+          * [DatasetSummary](DatasetSummary.md) - an item that holds summary level information about a dataset.
+          * [DatasetVersion](DatasetVersion.md) - an item that holds version level information about a dataset.
           * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
           * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
              * [Article](Article.md)
@@ -409,7 +425,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
           * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
           * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
-             * [BioticExposure](BioticExposure.md) - A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
+             * [BioticExposure](BioticExposure.md) - An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
           * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
           * [TaxonomicRank](TaxonomicRank.md) - A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
        * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -418,13 +434,12 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
           * [EnvironmentalFeature](EnvironmentalFeature.md)
           * [EnvironmentalProcess](EnvironmentalProcess.md)
-             * [EnvironmentalExposure](EnvironmentalExposure.md) - A environmental exposure is a factor relating to abiotic processes in the environment including atmospheric (heat, cold, general pollution) and water-born contaminants
+             * [EnvironmentalExposure](EnvironmentalExposure.md) - A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
           * [GeographicLocation](GeographicLocation.md) - a location that can be described in lat/long coordinates
              * [GeographicExposure](GeographicExposure.md) - A geographic exposure is a factor relating to geographic proximity to some impactful entity.
              * [GeographicLocationAtTime](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
        * [Procedure](Procedure.md) - A series of actions conducted in a certain order or manner
        * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
- * [GeneExpressionMixin](GeneExpressionMixin.md) - Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
 
 ## Slots
 
@@ -470,9 +485,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [affects mutation rate of](affects_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
        * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
        * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
-    * [affects response to](affects_response_to.md) - holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
-       * [decreases response to](decreases_response_to.md) - holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
-       * [increases response to](increases_response_to.md) - holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+    * [affects response to](affects_response_to.md) - holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+       * [decreases response to](decreases_response_to.md) - holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+       * [increases response to](increases_response_to.md) - holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
     * [affects secretion of](affects_secretion_of.md) - holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
        * [decreases secretion of](decreases_secretion_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
        * [increases secretion of](increases_secretion_of.md) - holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
@@ -493,6 +508,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [increases uptake of](increases_uptake_of.md) - holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
     * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
        * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+          * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
     * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
     * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
     * [regulates, entity to entity](regulates_entity_to_entity.md)
@@ -529,9 +545,9 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [affects mutation rate of](affects_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
     * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
     * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
- * [affects response to](affects_response_to.md) - holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
-    * [decreases response to](decreases_response_to.md) - holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
-    * [increases response to](increases_response_to.md) - holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+ * [affects response to](affects_response_to.md) - holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+    * [decreases response to](decreases_response_to.md) - holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+    * [increases response to](increases_response_to.md) - holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
  * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
     * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
     * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
@@ -555,6 +571,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [increases uptake of](increases_uptake_of.md) - holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
  * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
     * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+       * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
+ * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
+ * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
  * [biomarker for](biomarker_for.md) - holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
@@ -569,7 +588,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
     * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
-    * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
+    * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex mixin
     * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
  * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
  * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
@@ -599,7 +618,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other molecular entity
  * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
  * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
- * [decreases response to](decreases_response_to.md) - holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+ * [decreases response to](decreases_response_to.md) - holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
  * [decreases secretion of](decreases_secretion_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
  * [decreases splicing of](decreases_splicing_of.md) - holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA
  * [decreases stability of](decreases_stability_of.md) - holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest
@@ -607,7 +626,9 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [decreases transport of](decreases_transport_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
  * [decreases uptake of](decreases_uptake_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
  * [derives from](derives_from.md) - holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+    * [is metabolite of](is_metabolite_of.md) - holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
  * [derives into](derives_into.md) - holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+    * [has metabolite](has_metabolite.md) - holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
  * [develops from](develops_from.md)
  * [directly interacts with](directly_interacts_with.md) - Holds between molecular entities that physically and directly interact with each other
  * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
@@ -626,16 +647,21 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
     * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
  * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
+ * [has active ingredient](has_active_ingredient.md) - holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
  * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
  * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
  * [has decreased amount](has_decreased_amount.md)
+ * [has excipient](has_excipient.md) - holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
  * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
  * [has increased amount](has_increased_amount.md)
  * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
+ * [has metabolite](has_metabolite.md) - holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
  * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
  * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
  * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
  * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
+    * [has active ingredient](has_active_ingredient.md) - holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
+    * [has excipient](has_excipient.md) - holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
     * [has variant part](has_variant_part.md) - holds between a genomic entity and a genotypic entity that is a sub-component of it
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
     * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
@@ -649,7 +675,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
     * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
  * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
- * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
+ * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex mixin
  * [in linkage disequilibrium with](in_linkage_disequilibrium_with.md) - holds between two sequence variants, the presence of which are correlated in a population
  * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
  * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
@@ -663,7 +689,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other molecular entity
  * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
  * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
- * [increases response to](increases_response_to.md) - holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+ * [increases response to](increases_response_to.md) - holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
  * [increases secretion of](increases_secretion_of.md) - holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
  * [increases splicing of](increases_splicing_of.md) - holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA
  * [increases stability of](increases_stability_of.md) - holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest
@@ -677,7 +703,10 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [molecularly interacts with](molecularly_interacts_with.md)
           * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other molecular entity
           * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other molecular entity
+ * [is active ingredient of](is_active_ingredient_of.md) - holds between a chemical substance and a drug, in which the former is a part of the latter, and is a biologically active component
+ * [is excipient of](is_excipient_of.md) - holds between a chemical substance and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
+ * [is metabolite of](is_metabolite_of.md) - holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
  * [is missense variant of](is_missense_variant_of.md) - holds between a gene  and a sequence variant, such the sequence variant results in a different amino acid sequence but where the length is preserved.
  * [is nearby variant of](is_nearby_variant_of.md) - holds between a sequence variant and a gene sequence that the variant is genomically close to.
  * [is non coding variant of](is_non_coding_variant_of.md) - holds between a sequence variant and a gene, where the variant does not affect the coding sequence
@@ -709,10 +738,16 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
  * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
     * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
+       * [has active ingredient](has_active_ingredient.md) - holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
+       * [has excipient](has_excipient.md) - holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
        * [has variant part](has_variant_part.md) - holds between a genomic entity and a genotypic entity that is a sub-component of it
     * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
+       * [is active ingredient of](is_active_ingredient_of.md) - holds between a chemical substance and a drug, in which the former is a part of the latter, and is a biologically active component
+       * [is excipient of](is_excipient_of.md) - holds between a chemical substance and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
  * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
+    * [is active ingredient of](is_active_ingredient_of.md) - holds between a chemical substance and a drug, in which the former is a part of the latter, and is a biologically active component
+    * [is excipient of](is_excipient_of.md) - holds between a chemical substance and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
     * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
        * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
@@ -786,9 +821,9 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [affects mutation rate of](affects_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
           * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
           * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
-       * [affects response to](affects_response_to.md) - holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
-          * [decreases response to](decreases_response_to.md) - holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
-          * [increases response to](increases_response_to.md) - holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+       * [affects response to](affects_response_to.md) - holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+          * [decreases response to](decreases_response_to.md) - holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+          * [increases response to](increases_response_to.md) - holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
        * [affects secretion of](affects_secretion_of.md) - holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
           * [decreases secretion of](decreases_secretion_of.md) - holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
           * [increases secretion of](increases_secretion_of.md) - holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
@@ -809,6 +844,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [increases uptake of](increases_uptake_of.md) - holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
        * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
           * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+             * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
        * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
        * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
        * [regulates, entity to entity](regulates_entity_to_entity.md)
@@ -827,7 +863,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
        * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
        * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
-       * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
+       * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex mixin
        * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
     * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
     * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
@@ -845,7 +881,9 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
        * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
     * [derives from](derives_from.md) - holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+       * [is metabolite of](is_metabolite_of.md) - holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
     * [derives into](derives_into.md) - holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+       * [has metabolite](has_metabolite.md) - holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
     * [develops from](develops_from.md)
     * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
     * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
@@ -889,8 +927,12 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
     * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
        * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
+          * [has active ingredient](has_active_ingredient.md) - holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
+          * [has excipient](has_excipient.md) - holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
           * [has variant part](has_variant_part.md) - holds between a genomic entity and a genotypic entity that is a sub-component of it
        * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
+          * [is active ingredient of](is_active_ingredient_of.md) - holds between a chemical substance and a drug, in which the former is a part of the latter, and is a biologically active component
+          * [is excipient of](is_excipient_of.md) - holds between a chemical substance and a drug in which the former is a part of the latter, and is a biologically inactive component
     * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
        * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
           * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
@@ -912,6 +954,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
        * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
     * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
+       * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
  * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
     * [chemically similar to](chemically_similar_to.md) - holds between one chemical substances and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
@@ -926,7 +969,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
     * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
  * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
+    * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+    * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
 
 ### Node Properties
@@ -942,21 +987,22 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [chapter](chapter.md) - chapter of a book
  * [created_with](created_with.md)
  * [creation date](creation_date.md) - date on which an entity was created. This can be applied to nodes or edges
- * [distribution](distribution.md)
+ * [dataset download url](dataset_download_url.md)
+ * [distribution download url](distribution_download_url.md)
  * [download url](download_url.md)
  * [filler](filler.md) - The value in a property-value tuple
  * [format](format.md)
  * [full name](full_name.md) - a long-form human readable name for a thing
- * [has active ingredient](has_active_ingredient.md) - one or more chemical substance which are the active ingredient(s) of a drug
  * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
  * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
  * [has constituent](has_constituent.md) - one or more chemical substances within a mixture
  * [has count](has_count.md) - number of things with a particular property
+ * [has dataset](has_dataset.md)
  * [has device](has_device.md) - connects an entity to one or more (medical) devices
+ * [has distribution](has_distribution.md)
  * [has drug](has_drug.md) - connects an entity to one or more drugs
- * [has excipient](has_excipient.md) - one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
  * [has gene](has_gene.md) - connects an entity associated with one or more genes
- * [has gene or gene product](has_gene_or_gene_product.md) - connects an entity with one or more gene products
+ * [has gene or gene product](has_gene_or_gene_product.md) - connects an entity with one or more gene or gene products
     * [has gene](has_gene.md) - connects an entity associated with one or more genes
  * [has nutrient](has_nutrient.md) - one or more chemical substance which are growth factors for a living organism
  * [has percentage](has_percentage.md) - equivalent to has quotient multiplied by 100
@@ -968,6 +1014,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
  * [has total](has_total.md) - total number of things in a particular reference set
  * [has zygosity](has_zygosity.md)
+ * [ingest date](ingest_date.md)
+ * [is metabolite](is_metabolite.md) - indicates whether a chemical substance is a metabolite
  * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
  * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
  * [keywords](keywords.md) - keywords tagging a publication
@@ -987,19 +1035,20 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [chapter](chapter.md) - chapter of a book
     * [created_with](created_with.md)
     * [creation date](creation_date.md) - date on which an entity was created. This can be applied to nodes or edges
-    * [distribution](distribution.md)
+    * [dataset download url](dataset_download_url.md)
+    * [distribution download url](distribution_download_url.md)
     * [download url](download_url.md)
     * [filler](filler.md) - The value in a property-value tuple
     * [format](format.md)
     * [full name](full_name.md) - a long-form human readable name for a thing
-    * [has active ingredient](has_active_ingredient.md) - one or more chemical substance which are the active ingredient(s) of a drug
     * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
     * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
     * [has constituent](has_constituent.md) - one or more chemical substances within a mixture
+    * [has dataset](has_dataset.md)
     * [has device](has_device.md) - connects an entity to one or more (medical) devices
+    * [has distribution](has_distribution.md)
     * [has drug](has_drug.md) - connects an entity to one or more drugs
-    * [has excipient](has_excipient.md) - one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
-    * [has gene or gene product](has_gene_or_gene_product.md) - connects an entity with one or more gene products
+    * [has gene or gene product](has_gene_or_gene_product.md) - connects an entity with one or more gene or gene products
        * [has gene](has_gene.md) - connects an entity associated with one or more genes
     * [has nutrient](has_nutrient.md) - one or more chemical substance which are growth factors for a living organism
     * [has procedure](has_procedure.md) - connects an entity to one or more (medical) procedures
@@ -1008,6 +1057,8 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has stressor](has_stressor.md) - the process or entity that the receptor is being exposed to
     * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
     * [has zygosity](has_zygosity.md)
+    * [ingest date](ingest_date.md)
+    * [is metabolite](is_metabolite.md) - indicates whether a chemical substance is a metabolite
     * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
     * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
     * [keywords](keywords.md) - keywords tagging a publication
@@ -1019,8 +1070,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
     * [retrieved on](retrieved_on.md)
     * [rights](rights.md)
-    * [source data file](source_data_file.md)
-    * [source version](source_version.md)
+    * [source logo](source_logo.md)
     * [source web page](source_web_page.md)
     * [summary](summary.md) - executive  summary of a publication
     * [symbol](symbol.md) - Symbol for a particular thing
@@ -1028,6 +1078,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
     * [timepoint](timepoint.md) - a point in time
     * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
+    * [version](version.md)
     * [version of](version_of.md)
     * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
     * [xref](xref.md) - Alternate CURIEs for a thing
@@ -1035,8 +1086,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
  * [retrieved on](retrieved_on.md)
  * [rights](rights.md)
- * [source data file](source_data_file.md)
- * [source version](source_version.md)
+ * [source logo](source_logo.md)
  * [source web page](source_web_page.md)
  * [summary](summary.md) - executive  summary of a publication
  * [symbol](symbol.md) - Symbol for a particular thing
@@ -1044,6 +1094,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
  * [timepoint](timepoint.md) - a point in time
  * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
+ * [version](version.md)
  * [version of](version_of.md)
  * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
  * [xref](xref.md) - Alternate CURIEs for a thing
@@ -1163,6 +1214,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Built in
 
  * **Bool**
+ * **Decimal**
  * **ElementIdentifier**
  * **NCName**
  * **NodeIdentifier**
@@ -1183,6 +1235,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [ChemicalFormulaValue](types/ChemicalFormulaValue.md)  (**str**)  - A chemical formula
  * [Date](types/Date.md)  (**XSDDate**)  - a date (year, month and day) in an idealized calendar
  * [Datetime](types/Datetime.md)  (**XSDDateTime**)  - The combination of a date and time
+ * [Decimal](types/Decimal.md)  (**Decimal**)  - A real number with arbitrary precision that conforms to the xsd:decimal specification
  * [Double](types/Double.md)  (**float**)  - A real number that conforms to the xsd:double specification
  * [Float](types/Float.md)  (**float**)  - A real number that conforms to the xsd:float specification
  * [Frequency](types/Frequency.md)  ([String](types/String.md)) 
