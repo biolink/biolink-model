@@ -33,7 +33,7 @@ URI: [biolink:is_metabolite_of](https://w3id.org/biolink/vocab/is_metabolite_of)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CHEBI:25212 |
 | **Comments:** | | The CHEBI ID represents a role rather than a predicate |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CHEBI:25212 |
 

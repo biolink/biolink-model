@@ -33,7 +33,7 @@ URI: [biolink:has_metabolite](https://w3id.org/biolink/vocab/has_metabolite)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | CHEBI:25212 |
 | **Comments:** | | The CHEBI ID represents a role rather than a predicate |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CHEBI:25212 |
 
