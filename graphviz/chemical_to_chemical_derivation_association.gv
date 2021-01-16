@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2098.5,283"];
+	graph [bb="0,0,2145.5,283"];
 	node [label="\N"];
 	"chemical to chemical derivation association"	 [height=0.5,
 		label="chemical to chemical derivation association",
@@ -187,9 +187,9 @@ digraph {
 		width=1.3902];
 	"chemical to chemical derivation association_catalyst qualifier"	 [color=blue,
 		height=0.5,
-		label="macromolecular machine",
-		pos="1504,265",
-		width=2.8164];
+		label="macromolecular machine mixin",
+		pos="1528,265",
+		width=3.4664];
 	subject -> relation	 [pos="e,1690.3,36.239 1721.1,159.97 1716.6,146.12 1710.5,126.47 1706,109 1700.7,88.088 1695.7,64.188 1692.2,46.13",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -198,18 +198,18 @@ digraph {
 	"chemical to chemical derivation association_subject"	 [color=blue,
 		height=0.5,
 		label="chemical substance",
-		pos="1703,265",
+		pos="1750,265",
 		width=2.2026];
 	object -> relation	 [pos="e,1701.2,35.261 1733.4,74.435 1725.8,65.207 1716.2,53.528 1707.7,43.191",
 		style=dotted];
 	"chemical to chemical derivation association_object"	 [color=blue,
 		height=0.5,
 		label="chemical substance",
-		pos="1880,265",
+		pos="1927,265",
 		width=2.2026];
 	"chemical to chemical derivation association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2038,265",
+		pos="2085,265",
 		width=1.679];
 }

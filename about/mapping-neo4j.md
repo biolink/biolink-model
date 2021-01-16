@@ -26,7 +26,6 @@ The [NamedThing](../docs/NamedThing) class defines core properties for a node, p
 
 Core properties for a node:
  - [id](../docs/id)
- - [iri](../docs/iri)
  - [name](../docs/name)
  - [category](../docs/category)
 

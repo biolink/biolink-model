@@ -1,7 +1,7 @@
 id: functional_association
 schema_generating: true
-description: An association between a macromolecular machine (gene, gene product or
-  complex of gene products) and either a molecular activity, a biological process
+description: An association between a macromolecular machine mixin (gene, gene product
+  or complex of gene products) and either a molecular activity, a biological process
   or a cellular location in which a function is executed.
 display_name: functional association
 document_category: functional association
@@ -63,8 +63,8 @@ fields:
   display_name: association_category
   cardinality: multi
 - id: subject
-  description: gene, product or macromolecular complex that has the function associated
-    with the GO term
+  description: gene, product or macromolecular complex mixin that has the function
+    associated with the GO term
   display_name: functional association_subject
 - id: object
   description: class describing the activity, process or localization of the gene

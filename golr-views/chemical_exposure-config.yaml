@@ -44,6 +44,9 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: is_metabolite
+  description: indicates whether a chemical substance is a metabolite
+  display_name: is metabolite
 - id: timepoint
   description: a point in time
   display_name: timepoint

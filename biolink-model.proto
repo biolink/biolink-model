@@ -1,3 +1,16 @@
+// An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
+message Activity
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+ }
 // person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 message Agent
  {
@@ -26,25 +39,6 @@ message AnatomicalEntity
   repeated category NamedThing = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
- }
-message AnatomicalEntityToAnatomicalEntityAssociation
- {
-  id String = 1
-  optional iri IriType = 2
-  optional name LabelType = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  predicate PredicateType = 8
-  relation Uriorcurie = 9
-  optional negated Boolean = 10
-  repeated qualifiers OntologyClass = 11
-  repeated publications Publication = 12
-  optional type String = 13
-  repeated category Association = 14
-  subject AnatomicalEntity = 15
-  object AnatomicalEntity = 16
  }
 // A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
 message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
@@ -206,7 +200,7 @@ message BiologicalProcess
   repeated hasOutput NamedThing = 11
   repeated enabledBy PhysicalEntity = 12
  }
-// Either an individual molecular activity, or a collection of causally connected molecular activities
+// Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
 message BiologicalProcessOrActivity
  {
   id String = 1
@@ -231,7 +225,7 @@ message BiologicalSex
   optional iri IriType = 5
   optional source LabelType = 6
  }
-// A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
+// An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
  {
   id String = 1
@@ -307,6 +301,7 @@ message Carbohydrate
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
  }
 // An individual (human) organism that has a patient role in some clinical context.
 message Case
@@ -440,7 +435,8 @@ message ChemicalExposure
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  optional timepoint TimeType = 11
+  optional isMetabolite Boolean = 11
+  optional timepoint TimeType = 12
  }
 // May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
 message ChemicalSubstance
@@ -455,6 +451,7 @@ message ChemicalSubstance
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
@@ -499,7 +496,7 @@ message ChemicalToChemicalDerivationAssociation
   repeated publications Publication = 11
   optional type String = 12
   repeated category Association = 13
-  repeated catalystQualifier MacromolecularMachine = 14
+  repeated catalystQualifier MacromolecularMachineMixin = 14
   subject ChemicalSubstance = 15
   object ChemicalSubstance = 16
   predicate PredicateType = 17
@@ -696,8 +693,9 @@ message ComplexChemicalExposure
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  optional timepoint TimeType = 11
-  repeated hasConstituent ChemicalSubstance = 12
+  optional isMetabolite Boolean = 11
+  optional timepoint TimeType = 12
+  repeated hasConstituent ChemicalSubstance = 13
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -736,7 +734,8 @@ message ContributorAssociation
   object Agent = 15
   repeated qualifiers OntologyClass = 16
  }
-message DataFile
+// an item that refers to a collection of data from a data source.
+message Dataset
  {
   id String = 1
   optional iri IriType = 2
@@ -752,7 +751,8 @@ message DataFile
   optional format String = 12
   optional creationDate Date = 13
  }
-message DataSet
+// an item that holds distribution level information about a dataset.
+message DatasetDistribution
  {
   id String = 1
   optional iri IriType = 2
@@ -767,8 +767,10 @@ message DataSet
   optional rights String = 11
   optional format String = 12
   optional creationDate Date = 13
+  optional distributionDownloadUrl String = 14
  }
-message DataSetVersion
+// an item that holds summary level information about a dataset.
+message DatasetSummary
  {
   id String = 1
   optional iri IriType = 2
@@ -783,9 +785,28 @@ message DataSetVersion
   optional rights String = 11
   optional format String = 12
   optional creationDate Date = 13
-  optional sourceDataFile DataFile = 14
-  optional versionOf DataSet = 15
-  optional distribution DistributionLevel = 16
+  optional sourceWebPage String = 14
+  optional sourceLogo String = 15
+ }
+// an item that holds version level information about a dataset.
+message DatasetVersion
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  optional license String = 10
+  optional rights String = 11
+  optional format String = 12
+  optional creationDate Date = 13
+  optional hasDataset Dataset = 14
+  optional ingestDate String = 15
+  optional hasDistribution DatasetDistribution = 16
  }
 message Death
  {
@@ -861,7 +882,7 @@ message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
   repeated category Association = 15
   object AnatomicalEntity = 16
  }
-// A disease or phenotypic feature exposure is where a disease state is manifested which represents an precondition, leading to or influencing an outcome, e.g. hypertension leading to a related disease outcome such as cardiovascular disease.
+// A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
  {
   id String = 1
@@ -967,9 +988,7 @@ message Drug
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  repeated hasActiveIngredient ChemicalSubstance = 11
-  repeated hasExcipient ChemicalSubstance = 12
-  repeated hasConstituent ChemicalSubstance = 13
+  repeated hasConstituent ChemicalSubstance = 11
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -984,10 +1003,8 @@ message DrugExposure
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  repeated hasActiveIngredient ChemicalSubstance = 11
-  repeated hasExcipient ChemicalSubstance = 12
-  repeated hasConstituent ChemicalSubstance = 13
-  optional timepoint TimeType = 14
+  repeated hasConstituent ChemicalSubstance = 11
+  optional timepoint TimeType = 12
  }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
@@ -1022,13 +1039,11 @@ message DrugToGeneInteractionExposure
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  repeated hasActiveIngredient ChemicalSubstance = 11
-  repeated hasExcipient ChemicalSubstance = 12
-  repeated hasConstituent ChemicalSubstance = 13
-  optional timepoint TimeType = 14
-  repeated hasGeneOrGeneProduct Gene = 15
+  repeated hasConstituent ChemicalSubstance = 11
+  optional timepoint TimeType = 12
+  repeated hasGeneOrGeneProduct Gene = 13
  }
-// A environmental exposure is a factor relating to abiotic processes in the environment including atmospheric (heat, cold, general pollution) and water-born contaminants
+// A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 message EnvironmentalExposure
  {
   id String = 1
@@ -1096,7 +1111,7 @@ message EvidenceType
   optional format String = 12
   optional creationDate Date = 13
  }
-// A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+// A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
 message Exon
  {
   id String = 1
@@ -1203,7 +1218,7 @@ message FrequencyValue
   optional iri IriType = 5
   optional source LabelType = 6
  }
-// An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
+// An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
  {
   id String = 1
@@ -1220,22 +1235,23 @@ message FunctionalAssociation
   repeated publications Publication = 12
   optional type String = 13
   repeated category Association = 14
-  subject MacromolecularMachine = 15
+  subject MacromolecularMachineMixin = 15
   object GeneOntologyClass = 16
  }
+// A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
 message Gene
  {
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
   optional symbol String = 12
   repeated synonym LabelType = 13
   repeated xref IriType = 14
@@ -1261,14 +1277,6 @@ message GeneAsAModelOfDiseaseAssociation
   optional severityQualifier SeverityValue = 17
   optional onsetQualifier Onset = 18
   subject GeneOrGeneProduct = 19
- }
-// Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
-message GeneExpressionMixin
- {
-  optional quantifierQualifier OntologyClass = 1
-  optional expressionSite AnatomicalEntity = 2
-  optional stageQualifier LifeStage = 3
-  optional phenotypicState DiseaseOrPhenotypicFeature = 4
  }
 // any grouping of multiple genes or gene products related by common descent
 message GeneFamily
@@ -1320,38 +1328,6 @@ message GeneOntologyClass
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
- }
-// a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
-message GeneOrGeneProduct
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
- }
-// The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
-message GeneProduct
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
  }
 // A regulatory relationship between two genes
 message GeneRegulatoryRelationship
@@ -1478,7 +1454,7 @@ message GeneToGeneProductRelationship
   optional type String = 12
   repeated category Association = 13
   subject Gene = 14
-  object GeneProduct = 15
+  object GeneProductMixin = 15
   predicate PredicateType = 16
  }
 message GeneToGoTermAssociation
@@ -1887,36 +1863,7 @@ message LifeStage
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
-message MacromolecularComplex
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
- }
-// A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
-message MacromolecularMachine
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
- }
-// A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+// A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
 message MacromolecularMachineToBiologicalProcessAssociation
  {
   id String = 1
@@ -1933,10 +1880,10 @@ message MacromolecularMachineToBiologicalProcessAssociation
   repeated publications Publication = 12
   optional type String = 13
   repeated category Association = 14
-  subject MacromolecularMachine = 15
+  subject MacromolecularMachineMixin = 15
   object BiologicalProcess = 16
  }
-// A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+// A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
 message MacromolecularMachineToCellularComponentAssociation
  {
   id String = 1
@@ -1953,10 +1900,10 @@ message MacromolecularMachineToCellularComponentAssociation
   repeated publications Publication = 12
   optional type String = 13
   repeated category Association = 14
-  subject MacromolecularMachine = 15
+  subject MacromolecularMachineMixin = 15
   object CellularComponent = 16
  }
-// A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+// A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
 message MacromolecularMachineToMolecularActivityAssociation
  {
   id String = 1
@@ -1973,7 +1920,7 @@ message MacromolecularMachineToMolecularActivityAssociation
   repeated publications Publication = 12
   optional type String = 13
   repeated category Association = 14
-  subject MacromolecularMachine = 15
+  subject MacromolecularMachineMixin = 15
   object MolecularActivity = 16
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
@@ -2042,20 +1989,21 @@ message Metabolite
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
  }
 message MicroRNA
  {
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
   repeated synonym LabelType = 12
   repeated xref IriType = 13
  }
@@ -2073,7 +2021,7 @@ message MolecularActivity
   repeated category NamedThing = 9
   repeated hasInput ChemicalSubstance = 10
   repeated hasOutput ChemicalSubstance = 11
-  repeated enabledBy MacromolecularMachine = 12
+  repeated enabledBy MacromolecularMachineMixin = 12
  }
 // A gene, gene product, small molecule or macromolecule (including protein complex)"
 message MolecularEntity
@@ -2123,14 +2071,14 @@ message NoncodingRNAProduct
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
   repeated synonym LabelType = 12
   repeated xref IriType = 13
  }
@@ -2181,6 +2129,46 @@ message OrganismTaxon
   repeated category NamedThing = 9
   optional hasTaxonomicRank TaxonomicRank = 10
   repeated subclassOf OrganismTaxon = 11
+ }
+// An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
+message OrganismTaxonToOrganismTaxonInteraction
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  relation Uriorcurie = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  optional type String = 12
+  repeated category Association = 13
+  subject OrganismTaxon = 14
+  object OrganismTaxon = 15
+  predicate PredicateType = 16
+ }
+// A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
+message OrganismTaxonToOrganismTaxonSpecialization
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  relation Uriorcurie = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  optional type String = 12
+  repeated category Association = 13
+  subject OrganismTaxon = 14
+  object OrganismTaxon = 15
+  predicate PredicateType = 16
  }
 message OrganismalEntityAsAModelOfDiseaseAssociation
  {
@@ -2245,8 +2233,84 @@ message PairwiseMolecularInteraction
   relation Uriorcurie = 16
   object MolecularEntity = 17
  }
+// An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
+message PathologicalAnatomicalExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated category NamedThing = 8
+  repeated hasAttribute Attribute = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional timepoint TimeType = 11
+ }
+// An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
+message PathologicalAnatomicalOutcome
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated category NamedThing = 8
+  repeated hasAttribute Attribute = 9
+  repeated inTaxon OrganismTaxon = 10
+ }
+// An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+message PathologicalAnatomicalStructure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated category NamedThing = 8
+  repeated hasAttribute Attribute = 9
+  repeated inTaxon OrganismTaxon = 10
+ }
 // A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalProcess
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
+ }
+// A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+message PathologicalProcessExposure
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasInput NamedThing = 10
+  repeated hasOutput NamedThing = 11
+  repeated enabledBy PhysicalEntity = 12
+  optional timepoint TimeType = 13
+ }
+// An outcome resulting from an exposure event which is the manifestation of a pathological process.
+message PathologicalProcessOutcome
  {
   id String = 1
   optional iri IriType = 2
@@ -2413,7 +2477,8 @@ message ProcessedMaterial
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  repeated hasConstituent ChemicalSubstance = 11
+  optional isMetabolite Boolean = 11
+  repeated hasConstituent ChemicalSubstance = 12
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -2421,14 +2486,14 @@ message Protein
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
   repeated synonym LabelType = 12
   repeated xref IriType = 13
  }
@@ -2438,14 +2503,14 @@ message ProteinIsoform
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
   repeated synonym LabelType = 12
   repeated xref IriType = 13
  }
@@ -2511,14 +2576,14 @@ message RNAProduct
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
   repeated synonym LabelType = 12
   repeated xref IriType = 13
  }
@@ -2528,14 +2593,14 @@ message RNAProductIsoform
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
   repeated synonym LabelType = 12
   repeated xref IriType = 13
  }
@@ -2637,14 +2702,14 @@ message SiRNA
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
   repeated synonym LabelType = 12
   repeated xref IriType = 13
  }
@@ -2707,24 +2772,6 @@ message SocioeconomicOutcome
   repeated hasOutput NamedThing = 11
   repeated enabledBy PhysicalEntity = 12
  }
-message SourceFile
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional license String = 10
-  optional rights String = 11
-  optional format String = 12
-  optional creationDate Date = 13
-  optional sourceVersion String = 14
-  optional retrievedOn Date = 15
- }
 // A group of people banded together or treated as a group as participants in a research study.
 message StudyPopulation
  {
@@ -2752,22 +2799,20 @@ message TaxonomicRank
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
-// An RNA synthesized on a DNA or RNA template by an RNA polymerase
+// An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 message Transcript
  {
   id String = 1
   optional iri IriType = 2
   optional type String = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  optional name SymbolType = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
