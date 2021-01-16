@@ -3,7 +3,7 @@ schema_generating: true
 description: A functional association between a macromolecular machine (gene, gene
   product or complex) and a biological process or pathway (as represented in the GO
   biological process branch), where the entity carries out some part of the process,
-  regulates it, or acts upstream of it
+  regulates it, or acts upstream of it.
 display_name: macromolecular machine to biological process association
 document_category: macromolecular machine to biological process association
 weight: 20
@@ -64,8 +64,8 @@ fields:
   display_name: association_category
   cardinality: multi
 - id: subject
-  description: gene, product or macromolecular complex that has the function associated
-    with the GO term
+  description: gene, product or macromolecular complex mixin that has the function
+    associated with the GO term
   display_name: functional association_subject
 - id: object
   display_name: macromolecular machine to biological process association_object

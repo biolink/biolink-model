@@ -45,16 +45,6 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
-- id: has_active_ingredient
-  description: one or more chemical substance which are the active ingredient(s) of
-    a drug
-  display_name: has active ingredient
-  cardinality: multi
-- id: has_excipient
-  description: one or more (generally inert) chemical substances which are formulated
-    alongside the active ingredient of a drug
-  display_name: has excipient
-  cardinality: multi
 - id: has_constituent
   description: one or more chemical substances within a mixture
   display_name: has constituent
@@ -63,6 +53,6 @@ fields:
   description: a point in time
   display_name: timepoint
 - id: has_gene_or_gene_product
-  description: connects an entity with one or more gene products
+  description: connects an entity with one or more gene or gene products
   display_name: has gene or gene product
   cardinality: multi
