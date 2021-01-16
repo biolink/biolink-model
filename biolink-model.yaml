@@ -68,10 +68,10 @@ prefixes:
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
   KEGG.BRITE: 'http://www.kegg.jp/entry/'
-  KEGG.DEGROUP: 'http://www.kegg.jp/entry/'
+  KEGG.DGROUP: 'http://www.kegg.jp/entry/'
   KEGG.ENZYME: 'http://www.kegg.jp/entry/'
   KEGG.GENE: 'http://www.kegg.jp/entry/'
-  KEGG.RECLASS: 'http://www.kegg.jp/entry/'
+  KEGG.RCLASS: 'http://www.kegg.jp/entry/'
   LOINC: 'http://loinc.org/rdf/'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
@@ -2362,6 +2362,8 @@ slots:
 
   regulated by, process to process:
     is_a: affected by
+    domain: occurrent
+    range: occurrent
     inverse: regulates, process to process
 
   positively regulates, process to process:
@@ -2412,6 +2414,8 @@ slots:
 
   regulated by, entity to entity:
     is_a: affected by
+    domain: molecular entity
+    range: molecular entity
     inverse: regulates, entity to entity
 
   positively regulates, entity to entity:
