@@ -1,8 +1,8 @@
-id: food
+id: behavioral_feature
 schema_generating: true
-description: A substance consumed by a living organism as a source of nutrition
-display_name: food
-document_category: food
+description: A phenotypic feature which is behavioral in nature.
+display_name: behavioral feature
+document_category: behavioral feature
 weight: 20
 fields:
 - id: id
@@ -42,8 +42,4 @@ fields:
   description: connects an entity to its taxonomic classification. Only certain kinds
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
-  cardinality: multi
-- id: has_constituent
-  description: one or more chemical substances within a mixture
-  display_name: has constituent
   cardinality: multi

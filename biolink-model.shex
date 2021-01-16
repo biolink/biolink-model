@@ -191,9 +191,9 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <Association> ]
        )
-    } OR @<AnatomicalEntityToAnatomicalEntityAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR
-    @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToChemicalAssociation> OR
-    @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR @<ChemicalToPathwayAssociation> OR
+    } OR @<AnatomicalEntityToAnatomicalEntityAssociation> OR @<BehaviorToBehavioralFeatureAssociation> OR
+    @<CaseToPhenotypicFeatureAssociation> OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToChemicalAssociation>
+    OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR @<ChemicalToPathwayAssociation> OR
     @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureAssociationToLocationAssociation> OR
     @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR @<DiseaseToExposureEventAssociation> OR
     @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR @<ExposureEventToOutcomeAssociation> OR
@@ -235,6 +235,22 @@ metatype:Nodeidentifier NONLITERAL
     } OR @<BehavioralExposure> OR @<BehavioralOutcome> OR @<SocioeconomicExposure> OR @<SocioeconomicOutcome>
 )
 
+<BehaviorToBehavioralFeatureAssociation> CLOSED {
+    (  $<BehaviorToBehavioralFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
+          <subject> @<Behavior> ;
+          <object> @<BehavioralFeature> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <sex_qualifier> @<BiologicalSex> ?
+       ) ;
+       rdf:type [ <BehaviorToBehavioralFeatureAssociation> ]
+    )
+}
+
 <BehavioralExposure> CLOSED {
     (  $<BehavioralExposure_tes> (  &<Behavior_tes> ;
           rdf:type [ <Behavior> ] ? ;
@@ -243,6 +259,14 @@ metatype:Nodeidentifier NONLITERAL
           <timepoint> @<TimeType> ?
        ) ;
        rdf:type [ <BehavioralExposure> ]
+    )
+}
+
+<BehavioralFeature> CLOSED {
+    (  $<BehavioralFeature_tes> (  &<PhenotypicFeature_tes> ;
+          rdf:type [ <PhenotypicFeature> ] ?
+       ) ;
+       rdf:type [ <BehavioralFeature> ]
     )
 }
 
@@ -457,7 +481,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <ChemicalSubstance> ]
        )
-    } OR @<Carbohydrate> OR @<ChemicalExposure> OR @<Metabolite> OR @<ProcessedMaterial>
+    } OR @<Carbohydrate> OR @<ChemicalExposure> OR @<FoodComponent> OR @<Metabolite> OR @<ProcessedMaterial>
 )
 
 <ChemicalToChemicalAssociation>  (
@@ -958,6 +982,14 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<EnvironmentalFoodContaminant> CLOSED {
+    (  $<EnvironmentalFoodContaminant_tes> (  &<FoodComponent_tes> ;
+          rdf:type [ <FoodComponent> ] ?
+       ) ;
+       rdf:type [ <EnvironmentalFoodContaminant> ]
+    )
+}
+
 <EnvironmentalProcess>  (
     CLOSED {
        (  $<EnvironmentalProcess_tes> (  &<PlanetaryEntity_tes> ;
@@ -1052,12 +1084,29 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <MolecularEntity> ] ? ;
           &<Mixture_tes> ;
           rdf:type [ <Mixture> ] ? ;
-          <has_nutrient> @<ChemicalSubstance> * ;
           <has_constituent> @<ChemicalSubstance> *
        ) ;
        rdf:type [ <Food> ]
     )
 }
+
+<FoodAdditive> CLOSED {
+    (  $<FoodAdditive_tes> (  &<FoodComponent_tes> ;
+          rdf:type [ <FoodComponent> ] ?
+       ) ;
+       rdf:type [ <FoodAdditive> ]
+    )
+}
+
+<FoodComponent>  (
+    CLOSED {
+       (  $<FoodComponent_tes> (  &<ChemicalSubstance_tes> ;
+             rdf:type [ <ChemicalSubstance> ] ?
+          ) ;
+          rdf:type [ <FoodComponent> ]
+       )
+    } OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<Nutrient>
+)
 
 <FrequencyQualifierMixin>  (
     {
@@ -1656,6 +1705,14 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
+<Macronutrient> CLOSED {
+    (  $<Macronutrient_tes> (  &<Nutrient_tes> ;
+          rdf:type [ <Nutrient> ] ?
+       ) ;
+       rdf:type [ <Macronutrient> ]
+    )
+}
+
 <MaterialSample> CLOSED {
     (  $<MaterialSample_tes> (  &<PhysicalEntity_tes> ;
           rdf:type [ <PhysicalEntity> ] ? ;
@@ -1702,6 +1759,16 @@ metatype:Nodeidentifier NONLITERAL
        rdf:type [ <Metabolite> ]
     )
 }
+
+<Micronutrient>  (
+    CLOSED {
+       (  $<Micronutrient_tes> (  &<Nutrient_tes> ;
+             rdf:type [ <Nutrient> ] ?
+          ) ;
+          rdf:type [ <Micronutrient> ]
+       )
+    } OR @<Vitamin>
+)
 
 <MicroRNA> CLOSED {
     (  $<MicroRNA_tes> (  &<NoncodingRNAProduct_tes> ;
@@ -1796,6 +1863,16 @@ metatype:Nodeidentifier NONLITERAL
     } OR @<MicroRNA> OR @<SiRNA>
 )
 
+<Nutrient>  (
+    CLOSED {
+       (  $<Nutrient_tes> (  &<FoodComponent_tes> ;
+             rdf:type [ <FoodComponent> ] ?
+          ) ;
+          rdf:type [ <Nutrient> ]
+       )
+    } OR @<Macronutrient> OR @<Micronutrient>
+)
+
 <Occurrent>  (
     {
        (  $<Occurrent_tes> (  &<PhysicalEssenceOrOccurrent_tes> ;
@@ -1831,7 +1908,7 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <OrganismAttribute> ] ?
        )
-    } OR @<Inheritance>
+    } OR @<Inheritance> OR @<PhenotypicQuality>
 )
 
 <OrganismTaxon>  (
@@ -2047,8 +2124,16 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <PhenotypicFeature> ]
        )
-    } OR @<ClinicalFinding>
+    } OR @<BehavioralFeature> OR @<ClinicalFinding>
 )
+
+<PhenotypicQuality> CLOSED {
+    (  $<PhenotypicQuality_tes> (  &<OrganismAttribute_tes> ;
+          rdf:type [ <OrganismAttribute> ] ?
+       ) ;
+       rdf:type [ <PhenotypicQuality> ] ?
+    )
+}
 
 <PhenotypicSex> CLOSED {
     (  $<PhenotypicSex_tes> (  &<BiologicalSex_tes> ;
@@ -2548,6 +2633,14 @@ metatype:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ?
        ) ;
        rdf:type [ <VariantToPopulationAssociation> ]
+    )
+}
+
+<Vitamin> CLOSED {
+    (  $<Vitamin_tes> (  &<Micronutrient_tes> ;
+          rdf:type [ <Micronutrient> ] ?
+       ) ;
+       rdf:type [ <Vitamin> ]
     )
 }
 

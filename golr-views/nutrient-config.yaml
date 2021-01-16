@@ -1,8 +1,7 @@
-id: food
+id: nutrient
 schema_generating: true
-description: A substance consumed by a living organism as a source of nutrition
-display_name: food
-document_category: food
+display_name: nutrient
+document_category: nutrient
 weight: 20
 fields:
 - id: id
@@ -43,7 +42,6 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
-- id: has_constituent
-  description: one or more chemical substances within a mixture
-  display_name: has constituent
-  cardinality: multi
+- id: is_metabolite
+  description: indicates whether a chemical substance is a metabolite
+  display_name: is metabolite
