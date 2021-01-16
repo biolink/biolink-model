@@ -941,58 +941,7 @@ slots:
     range: chemical substance
     multivalued: true
 
-  has drug:
-    is_a: node property
-    description: >-
-      connects an entity to one or more drugs
-    range: drug
-    multivalued: true
-
-  has device:
-    is_a: node property
-    description: >-
-      connects an entity to one or more (medical) devices
-    range: device
-    multivalued: true
-
-  has procedure:
-    is_a: node property
-    description: >-
-      connects an entity to one or more (medical) procedures
-    range: procedure
-    multivalued: true
-
   ## Clinical exposures
-
-  has receptor:
-    is_a: node property
-    domain: exposure event
-    range: organismal entity
-    description: >-
-      the organism or organism part being exposed
-    exact_mappings:
-      - ExO:0000001
-
-  has stressor:
-    is_a: node property
-    domain: exposure event
-    aliases: ['has stimulus']
-    description: >-
-      the process or entity that the receptor is being exposed to
-    exact_mappings:
-      - ExO:0000000
-
-  has route:
-    is_a: node property
-    domain: exposure event
-    description: >-
-      the process that results in the stressor coming into direct contact with the receptor
-    exact_mappings:
-      - ExO:0000055
-    narrow_mappings:
-      - LOINC:has_pharmaceutical_route
-      - SNOMED:has_dose_form_intended_site
-      - SNOMED:has_route_of_administration
 
   has population context:
     description: >-
@@ -1008,7 +957,6 @@ slots:
     # this resolves to the 'time' datatype, but not sure
     # if this also represents an interval of time.
     range: time type
-
 
 ## --------------------
 ## PREDICATES/RELATIONS
@@ -3888,6 +3836,148 @@ slots:
     exact_mappings:
       - CHEBI:25212
 
+  ## Clinical Predicates
+
+  drug of:
+    description: >-
+      connects a drug to a subject entity
+    is_a: related to
+    domain: drug
+    in_subset:
+      - translator_minimal
+    inverse: has drug
+    #exact_mappings:
+    #  -
+
+  has drug:
+    description: >-
+      connects an entity to a drug
+    is_a: related to
+    range: drug
+    in_subset:
+      - translator_minimal
+    inverse: drug of
+    #exact_mappings:
+    #  -
+
+  device of:
+    description: >-
+      connects a (medical) device to a subject treatment
+    is_a: related to
+    domain: device
+    range: treatment
+    in_subset:
+      - translator_minimal
+    inverse: has device
+    #exact_mappings:
+    #  -
+
+  has device:
+    description: >-
+      connects an entity to a (medical) device
+    is_a: related to
+    range: device
+    in_subset:
+      - translator_minimal
+    inverse: device of
+    #exact_mappings:
+    #  -
+
+  procedure of:
+    description: >-
+      connects a (medical) procedure to a subject entity
+    is_a: related to
+    domain: procedure
+    in_subset:
+      - translator_minimal
+    inverse: has procedure
+    #exact_mappings:
+    #  -
+
+  has procedure:
+    description: >-
+      connects an entity to a (medical) procedure
+    is_a: related to
+    range: procedure
+    in_subset:
+      - translator_minimal
+    inverse: procedure of
+    #exact_mappings:
+    #  -
+
+  receptor of:
+    description: >-
+      the exposure event encountered by the subject organism or organism part
+    is_a: related to
+    domain: organismal entity
+    range: exposure event
+    inverse: has receptor
+    #exact_mappings:
+    #  -
+
+  has receptor:
+    description: >-
+      the organism or organism part being exposed
+    is_a: related to
+    domain: exposure event
+    range: organismal entity
+    inverse: receptor of
+    exact_mappings:
+      - ExO:0000001
+
+  stressor of:
+    description: >-
+      the exposure event which is the result of the interaction
+      of the receptor to the given subject process or entity
+    is_a: related to
+    range: exposure event
+    in_subset:
+      - translator_minimal
+    inverse: has stressor
+
+  has stressor:
+    aliases: ['has stimulus']
+    description: >-
+      the process or entity to which the receptor is being exposed
+    is_a: related to
+    domain: exposure event
+    in_subset:
+      - translator_minimal
+    inverse: stressor of
+    exact_mappings:
+      - ExO:0000000
+
+  route of:
+    description: >-
+      the exposure event which is the manifestation of
+      the given subject process that results from the stressor
+      coming into direct contact with the receptor
+    is_a: related to
+    range: exposure event
+    in_subset:
+      - translator_minimal
+    inverse: has route
+    #exact_mappings:
+    #  -
+
+  has route:
+    description: >-
+      the process that results in the stressor
+      coming into direct contact with the receptor
+    is_a: related to
+    domain: exposure event
+    in_subset:
+      - translator_minimal
+    inverse: route of
+    exact_mappings:
+      - ExO:0000055
+    narrow_mappings:
+      - LOINC:has_pharmaceutical_route
+      - SNOMED:has_dose_form_intended_site
+      - SNOMED:has_route_of_administration
+
+  ## Food, Drug, Chemical compositional predicates
+
   food component of:
     is_a: part of
     description: >-
@@ -3898,7 +3988,7 @@ slots:
     in_subset:
       - translator_minimal
     inverse: has food component
-    #mappings:
+    #exact_mappings:
     #  -
 
   has food component:
@@ -3911,7 +4001,7 @@ slots:
     in_subset:
       - translator_minimal
     inverse: food component of
-    #mappings:
+    #exact_mappings:
     #  -
 
   nutrient of:
@@ -5491,7 +5581,7 @@ classes:
       - UMLSST:eehu
 
   device:
-    is_a: named thing
+    is_a: physical entity
     description: >-
       A thing made or adapted for a particular purpose, especially
       a piece of mechanical or electronic equipment
@@ -7700,11 +7790,32 @@ classes:
 
   disease to exposure event association:
     description: >-
-      An association between an exposure event and a disease.
+      An association between a disease and an exposure event.
     is_a: association
     mixins:
       - disease to entity association mixin
       - entity to exposure event association mixin
+    defining_slots:
+      - subject
+      - object
+
+  entity to treatment association mixin:
+    description: >-
+      An association between an entity and a treatment regime.
+    mixin: true
+    defining_slots:
+      - object
+    slot_usage:
+      object:
+        range: treatment
+
+  disease to treatment association:
+    description: >-
+      An association between a disease and a treatment.
+    is_a: association
+    mixins:
+      - disease to entity association mixin
+      - entity to treatment association mixin
     defining_slots:
       - subject
       - object
@@ -7739,6 +7850,29 @@ classes:
     slots:
       - has population context
       - has temporal context
+    defining_slots:
+      - subject
+      - object
+
+  treatment to entity association mixin:
+    description: >-
+      An association between a treatment regime and entity.
+    mixin: true
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: treatment
+
+  treatment to outcome association:
+    description: >-
+      An association between a treatment and an outcome.
+    is_a: association
+    mixins:
+      - treatment to entity association mixin
+      - entity to outcome association mixin
+    #slots:
+    #  - has temporal context
     defining_slots:
       - subject
       - object
