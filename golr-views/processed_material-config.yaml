@@ -44,6 +44,9 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: is_metabolite
+  description: indicates whether a chemical substance is a metabolite
+  display_name: is metabolite
 - id: has_constituent
   description: one or more chemical substances within a mixture
   display_name: has constituent
