@@ -25,6 +25,8 @@ prefixes:
   biolink: 'https://w3id.org/biolink/vocab/'
   biolinkml: 'https://w3id.org/biolink/biolinkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
+  # Placeholder: just points to GMOD Chado wiki
+  CHADO: 'http://gmod.org/wiki/Chado/'
   # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
   ChemBank: 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid='
   chembio: 'http://translator.ncats.nih.gov/chembio_'
@@ -60,6 +62,7 @@ prefixes:
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
   hetio: 'http://translator.ncats.nih.gov/hetio_'
+  HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
   ICD0: 'http://translator.ncats.nih.gov/ICD0_'
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
@@ -243,13 +246,14 @@ types:
 
 slots:
 
-## --------------------
+## ---------------
 ## ATTRIBUTE SLOTS
-## --------------------
+## ---------------
 
   has attribute:
     description: >-
       connects any entity to an attribute
+    domain: entity
     range: attribute
     multivalued: true
     in_subset:
@@ -958,16 +962,6 @@ slots:
     range: procedure
     multivalued: true
 
-  has nutrient:
-    is_a: node property
-    domain: food
-    range: chemical substance
-    multivalued: true
-    description: >-
-      one or more chemical substance which are growth factors for a living organism
-    exact_mappings:
-      - WIKIDATA:Q181394
-
   ## Clinical exposures
 
   has receptor:
@@ -1257,7 +1251,11 @@ slots:
   close match:
     is_a: related to
     description: >-
-      holds between two entities that are considered a skos:closeMatch to one another
+      a list of terms from different schemas or terminology systems that have
+      a semantically similar but not strictly equivalent, broader, or narrower
+      meaning. Such terms often describe the same general concept from
+      different ontological perspectives (e.g. drug as a type of chemical
+      entity versus drug as a type of role borne by a chemical entity).
     in_subset:
       - translator_minimal
     symmetric: true
@@ -1278,13 +1276,41 @@ slots:
   exact match:
     is_a: close match
     description: >-
-      holds between two entities that are identical to each other, with a high degree of confidence
+      holds between two entities that have strictly equivalent
+      meanings, with a high degree of confidence
     in_subset:
       - translator_minimal
     symmetric: true
     exact_mappings:
       - skos:exactMatch
+      - WIKIDATA:Q39893449
       - WIKIDATA:P2888
+
+  broad match:
+    description: >-
+      a list of terms from different schemas or terminology systems
+      that have a broader, more general meaning. Broader terms are
+      typically shown as parents in a hierarchy or tree.
+    is_a: related to
+    inverse: narrow match
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - skos:broadMatch
+      - WIKIDATA:Q39894595
+
+  narrow match:
+    description: >-
+      a list of terms from different schemas or terminology systems
+      that have a narrower, more specific meaning. Narrower terms are
+      typically shown as children in a hierarchy or tree.
+    is_a: related to
+    inverse: broad match
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - skos:narrowMatch
+      - WIKIDATA:Q39893967
 
   ## Publication related predicates
 
@@ -1471,6 +1497,22 @@ slots:
       describes an entity of which the state or quality is affected by
       another existing entity.
     inverse: affects
+
+  ## role mixins for use in tagging corresponding role predicates
+
+  chemical role mixin:
+    description: >-
+      A role played by the molecular entity or part thereof within a chemical context.
+    mixin: true
+    exact_mappings:
+      - CHEBI:51086
+
+  biological role mixin:
+    description: >-
+      A role played by the molecular entity or part thereof within a biological context.
+    mixin: true
+    exact_mappings:
+      - CHEBI:24432
 
   affects abundance of:
     description: >-
@@ -3846,6 +3888,57 @@ slots:
     mappings:
       - CHEBI:25212
 
+  food component of:
+    is_a: part of
+    description: >-
+      holds between a one or more chemical substances present in food,
+      irrespective of nutritional value (i.e. could also be a contaminant or additive)
+    domain: food component
+    range: food
+    in_subset:
+      - translator_minimal
+    inverse: has food component
+    #mappings:
+    #  -
+
+  has food component:
+    is_a: has part
+    description: >-
+      holds between food and one or more chemical substances composing it,
+      irrespective of nutritional value (i.e. could also be a contaminant or additive)
+    domain: food
+    range: food component
+    in_subset:
+      - translator_minimal
+    inverse: food component of
+    #mappings:
+    #  -
+
+  nutrient of:
+    is_a: food component of
+    description: >-
+      holds between a one or more chemical substances present in food,
+      irrespective of nutritional value (i.e. could also be a contaminant or additive)
+    domain: food component
+    range: food
+    in_subset:
+      - translator_minimal
+    inverse: has nutrient
+    #exact_mappings:
+    #  -
+
+  has nutrient:
+    is_a: has food component
+    description: >-
+      one or more nutrients which are growth factors for a living organism
+    domain: food
+    range: nutrient
+    in_subset:
+      - translator_minimal
+    inverse: nutrient of
+    exact_mappings:
+      - WIKIDATA:Q181394
+
   is active ingredient of:
     is_a: part of
     description: >-
@@ -4715,9 +4808,6 @@ classes:
       - EDAM-TOPIC
     exact_mappings:
       - SIO:000614
-    narrow_mappings:
-      # Considered a 'narrow mapping' in that PATO mainly concerns itself with biological traits
-      - PATO:0000001
     in_subset:
       - samples
 
@@ -5520,6 +5610,8 @@ classes:
       A gene, gene product, small molecule or macromolecule (including protein complex)"
     #notes:
     #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
+    exact_mappings:
+      - CHEBI:24431
     narrow_mappings:
       - SIO:010341
       - WIKIDATA:Q43460564
@@ -5704,7 +5796,6 @@ classes:
       - UMLSSC:T167
       - UMLSST:sbst
     exact_mappings:
-      - CHEBI:24431
       - SIO:010004
       - WIKIDATA:Q79529
       # Chemical
@@ -5815,24 +5906,65 @@ classes:
       - NDC
       - PHARMGKB.DRUG
 
+  ## Food
+
+  food component:
+    is_a: chemical substance
+    related_mappings:
+      # substance role
+      - CHEBI:78295
+
+  environmental food contaminant:
+    is_a: food component
+    related_mappings:
+      # substance role
+      - CHEBI:78299
+
+  food additive:
+    is_a: food component
+    related_mappings:
+      # substance role
+      - CHEBI:64047
+
+  nutrient:
+    is_a: food component
+    related_mappings:
+      # substance role
+      - CHEBI:33284
+
+  macronutrient:
+    is_a: nutrient
+    related_mappings:
+      # substance role
+      - CHEBI:33937
+
+  micronutrient:
+    is_a: nutrient
+    related_mappings:
+      # substance role
+      - CHEBI:27027
+
+  vitamin:
+    is_a: micronutrient
+    related_mappings:
+      # substance role
+      - CHEBI:33229
+      # Vitamin
+      - UMLSSC:T127
+      - UMLSST:vita
+
   food:
     is_a: molecular entity
     mixins:
       - mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition
-    slots:
-      - has nutrient
     id_prefixes:
       - foodb.compound
     exact_mappings:
       # Food
       - UMLSSC:T168
       - UMLSST:food
-    narrow_mappings:
-      # Vitamin
-      - UMLSSC:T127
-      - UMLSST:vita
 
   metabolite:
     deprecated: >-
@@ -5849,6 +5981,8 @@ classes:
 
   ## Biology and Biomedical Sciences
 
+  ## Biological Attributes
+
   organism attribute:
     is_a: attribute
     description: >-
@@ -5857,6 +5991,14 @@ classes:
       # Organism Attribute
       - UMLSSC:T032
       - UMLSST:orga
+
+  phenotypic quality:
+    aliases: ['phenotypic properties']
+    is_a: organism attribute
+    description: >-
+      A property of a phenotype
+    mappings:
+      - PATO:0000001
 
   inheritance:
     is_a: organism attribute
@@ -5867,6 +6009,8 @@ classes:
       - HP:0000005
       - GENO:0000141
       - NCIT:C45827
+
+  ## Biological Entities
 
   organismal entity:
     description: >-
@@ -5890,9 +6034,13 @@ classes:
     mixins:
       - thing with taxon
     description: >-
-      A stage of development or growth of an organism, including post-natal adult stages
+      A stage of development or growth of an organism,
+      including post-natal adult stages
     exact_mappings:
       - UBERON:0000105
+    narrow_mappings:
+      # constrained to human life cycles
+      - HsapDv:0000000
     in_subset:
       - model_organism_database
 
@@ -5974,6 +6122,7 @@ classes:
     exact_mappings:
       - MONDO:0000001
       - DOID:4
+      - NCIT:C2991
       - WIKIDATA:Q12136
       - SIO:010299
       # UMLS Semantic Group "Disorders"
@@ -6057,6 +6206,13 @@ classes:
       - MESH
     in_subset:
       - model_organism_database
+
+  behavioral feature:
+    description: >-
+      A phenotypic feature which is behavioral in nature.
+    is_a: phenotypic feature
+    exact_mappings:
+      - NBO:0000243
 
   anatomical entity:
     is_a: organismal entity
@@ -7763,6 +7919,27 @@ classes:
       - entity to phenotypic feature association mixin
       - case to entity association mixin
 
+  behavior to behavioral feature association:
+    description: >-
+      An association between an aggregate behavior and
+      a behavioral feature manifested by
+      the individual exhibited or has exhibited the behavior.
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: behavior
+        description: >-
+          behavior that is the subject of the association
+      object:
+        range: behavioral feature
+        description: >-
+          behavioral feature that is the object of the association
+    mixins:
+      - entity to phenotypic feature association mixin
+
   gene to entity association mixin:
     mixin: true
     defining_slots:
@@ -8326,6 +8503,8 @@ classes:
         range: genomic entity  ## todo protein
       object:
         range: genomic entity ## typically a chromosome
+    exact_mappings:
+      - CHADO:feature_relationship
 
   transcript to gene relationship:
     is_a: sequence feature relationship
