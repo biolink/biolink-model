@@ -3871,7 +3871,7 @@ slots:
     inverse: has metabolite
     comments:
       - The CHEBI ID represents a role rather than a predicate
-    mappings:
+    exact_mappings:
       - CHEBI:25212
 
   has metabolite:
@@ -3885,7 +3885,7 @@ slots:
     inverse: is metabolite of
     comments:
       - The CHEBI ID represents a role rather than a predicate
-    mappings:
+    exact_mappings:
       - CHEBI:25212
 
   food component of:
