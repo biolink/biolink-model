@@ -151,6 +151,30 @@ message Behavior
   repeated hasOutput NamedThing = 11
   repeated enabledBy PhysicalEntity = 12
  }
+// An association between an aggregate behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
+message BehaviorToBehavioralFeatureAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  predicate PredicateType = 8
+  relation Uriorcurie = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  optional type String = 13
+  repeated category Association = 14
+  subject Behavior = 15
+  object BehavioralFeature = 16
+  optional frequencyQualifier FrequencyValue = 17
+  optional severityQualifier SeverityValue = 18
+  optional onsetQualifier Onset = 19
+  optional sexQualifier BiologicalSex = 20
+ }
 // A behavioral exposure is a factor relating to behavior impacting an individual.
 message BehavioralExposure
  {
@@ -167,6 +191,20 @@ message BehavioralExposure
   repeated hasOutput NamedThing = 11
   repeated enabledBy PhysicalEntity = 12
   optional timepoint TimeType = 13
+ }
+// A phenotypic feature which is behavioral in nature.
+message BehavioralFeature
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
  }
 // An outcome resulting from an exposure event which is the manifestation of human behavior.
 message BehavioralOutcome
@@ -1069,6 +1107,20 @@ message EnvironmentalFeature
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
+message EnvironmentalFoodContaminant
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
+ }
 message EnvironmentalProcess
  {
   id String = 1
@@ -1205,8 +1257,35 @@ message Food
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  repeated hasNutrient ChemicalSubstance = 11
-  repeated hasConstituent ChemicalSubstance = 12
+  repeated hasConstituent ChemicalSubstance = 11
+ }
+message FoodAdditive
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
+ }
+message FoodComponent
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
  }
 // describes the frequency of occurrence of an event or condition
 message FrequencyValue
@@ -1923,6 +2002,20 @@ message MacromolecularMachineToMolecularActivityAssociation
   subject MacromolecularMachineMixin = 15
   object MolecularActivity = 16
  }
+message Macronutrient
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
+ }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
  {
@@ -1978,6 +2071,20 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  }
 // Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
 message Metabolite
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
+ }
+message Micronutrient
  {
   id String = 1
   optional iri IriType = 2
@@ -2081,6 +2188,20 @@ message NoncodingRNAProduct
   optional hasBiologicalSequence BiologicalSequence = 11
   repeated synonym LabelType = 12
   repeated xref IriType = 13
+ }
+message Nutrient
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
  }
 // The age group in which (disease) symptom manifestations appear
 message Onset
@@ -2365,6 +2486,16 @@ message PhenotypicFeature
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
+ }
+// A property of a phenotype
+message PhenotypicQuality
+ {
+  optional name LabelType = 1
+  hasAttributeType OntologyClass = 2
+  repeated hasQuantitativeValue QuantityValue = 3
+  optional hasQualitativeValue NamedThing = 4
+  optional iri IriType = 5
+  optional source LabelType = 6
  }
 // An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 message PhenotypicSex
@@ -2986,6 +3117,20 @@ message VariantToPopulationAssociation
   optional hasTotal Integer = 19
   optional hasPercentage Double = 20
   optional frequencyQualifier FrequencyValue = 21
+ }
+message Vitamin
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 11
  }
 message Zygosity
  {

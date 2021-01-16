@@ -194,6 +194,30 @@ type Behavior
     enabledBy: [PhysicalEntity]
   }
 
+type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    subject: Behavior!
+    object: BehavioralFeature!
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+  }
+
 type BehavioralExposure implements ExposureEvent
   {
     id: String!
@@ -209,6 +233,20 @@ type BehavioralExposure implements ExposureEvent
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
     timepoint: TimeType
+  }
+
+type BehavioralFeature
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
   }
 
 type BehavioralOutcome implements Outcome
@@ -1214,6 +1252,21 @@ type EnvironmentalFeature
     category: [NamedThing]!
   }
 
+type EnvironmentalFoodContaminant
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
+  }
+
 type EnvironmentalProcess implements Occurrent
   {
     id: String!
@@ -1360,8 +1413,37 @@ type Food implements Mixture
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
-    hasNutrient: [ChemicalSubstance]
     hasConstituent: [ChemicalSubstance]
+  }
+
+type FoodAdditive
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
+  }
+
+type FoodComponent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
   }
 
 interface FrequencyQualifierMixin
@@ -2195,6 +2277,21 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     object: MolecularActivity!
   }
 
+type Macronutrient
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
+  }
+
 type MaterialSample implements SubjectOfInvestigation
   {
     id: String!
@@ -2254,6 +2351,21 @@ interface MaterialSampleToEntityAssociationMixin
   }
 
 type Metabolite
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
+  }
+
+type Micronutrient
   {
     id: String!
     iri: IriType
@@ -2375,6 +2487,21 @@ type NoncodingRNAProduct
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
     xref: [IriType]
+  }
+
+type Nutrient
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
   }
 
 interface Occurrent
@@ -2711,6 +2838,16 @@ type PhenotypicFeature
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
+  }
+
+type PhenotypicQuality
+  {
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: LabelType
   }
 
 type PhenotypicSex
@@ -3391,6 +3528,21 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     hasTotal: Integer
     hasPercentage: Double
     frequencyQualifier: FrequencyValue
+  }
+
+type Vitamin
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
   }
 
 type Zygosity
