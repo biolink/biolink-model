@@ -890,16 +890,6 @@ slots:
 
   ## Biology
 
-  has phenotypic feature:
-    is_a: node property
-    description: >-
-      Connects a phenotypic feature to a biological entity (may describe
-      an organism, a disease or qualify some specific class of phenotype,
-      molecular system or other biological entity).
-    domain: biological entity
-    range: phenotypic feature
-    multivalued: true
-
   has biological sequence:
     is_a: node property
     description: >-
@@ -5593,8 +5583,6 @@ classes:
   biological entity:
     is_a: named thing
     abstract: true
-    slots:
-      - has phenotypic feature
     narrow_mappings:
       - WIKIDATA:Q28845870
       # UMLS Semantic Type "Experimental Model of Disease"
@@ -5764,9 +5752,6 @@ classes:
 
   behavior:
     is_a: biological process
-    slot_usage:
-      has phenotypic feature:
-        range: behavioral phenotypic feature
     exact_mappings:
       - GO:0007610
       # Behavior
@@ -6222,7 +6207,7 @@ classes:
     in_subset:
       - model_organism_database
 
-  behavioral phenotypic feature:
+  behavioral feature:
     description: >-
       A phenotypic feature which is behavioral in nature.
     is_a: phenotypic feature
@@ -7933,6 +7918,27 @@ classes:
     mixins:
       - entity to phenotypic feature association mixin
       - case to entity association mixin
+
+  behavior to behavioral feature association:
+    description: >-
+      An association between an aggregate behavior and
+      a behavioral feature manifested by
+      the individual exhibited or has exhibited the behavior.
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: behavior
+        description: >-
+          behavior that is the subject of the association
+      object:
+        range: behavioral feature
+        description: >-
+          behavioral feature that is the object of the association
+    mixins:
+      - entity to phenotypic feature association mixin
 
   gene to entity association mixin:
     mixin: true
