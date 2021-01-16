@@ -6905,16 +6905,23 @@ classes:
       - HP:0003674
 
   clinical entity:
-    is_a: named thing
     description: >-
       Any entity or process that exists in the clinical domain and outside the
       biological realm. Diseases are placed under biological entities.
+    mixin: true
 
   clinical trial:
-    is_a: clinical entity
+    is_a: named thing
+    mixins:
+      - clinical entity
 
   clinical intervention:
+    description: >-
+      A clinical entity that directly targets an individual patient.
+    mixin: true
     is_a: clinical entity
+    exact_mappings:
+      - ERO:0000347
 
   clinical finding:
     is_a: phenotypic feature
@@ -6927,7 +6934,9 @@ classes:
         range: clinical attribute
 
   hospitalization:
-    is_a: clinical intervention
+    is_a: named thing
+    mixins:
+      - clinical intervention
     exact_mappings:
       - SNOMEDCT:32485007
       - WIKIDATA:Q3140971
@@ -7135,8 +7144,9 @@ classes:
 
   medical intervention:
     aliases: ['medical action', 'treatment']
-    is_a: clinical intervention
+    is_a: named thing
     mixins:
+      - clinical intervention
       - exposure event
     description: >-
       A medical intervention is targeted at a disease or phenotype and may involve
