@@ -1,5 +1,8 @@
 id: gene
 schema_generating: true
+description: A region (or regions) that includes all of the sequence elements necessary
+  to encode a functional transcript. A gene locus may include regulatory regions,
+  transcribed regions and/or other functional sequence regions.
 display_name: gene
 document_category: gene
 weight: 20
@@ -14,6 +17,9 @@ fields:
   display_name: iri
 - id: type
   display_name: type
+- id: name
+  description: A human-readable name for an attribute or entity.
+  display_name: name
 - id: description
   description: a human-readable description of an entity
   display_name: description
@@ -42,11 +48,6 @@ fields:
 - id: has_biological_sequence
   description: connects a genomic feature to its sequence
   display_name: has biological sequence
-- id: name
-  description: genes are typically designated by a short symbol and a full name. We
-    map the symbol to the default display name and use an additional slot for full
-    name
-  display_name: macromolecular machine_name
 - id: symbol
   description: Symbol for a particular thing
   display_name: symbol

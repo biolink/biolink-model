@@ -57,7 +57,7 @@ type AnatomicalEntity implements ThingWithTaxon, PhysicalEssence
     inTaxon: [OrganismTaxon]
   }
 
-type AnatomicalEntityToAnatomicalEntityAssociation
+interface AnatomicalEntityToAnatomicalEntityAssociation
   {
     id: String!
     iri: IriType
@@ -359,6 +359,7 @@ type Carbohydrate
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
   }
 
 type Case
@@ -505,6 +506,7 @@ type ChemicalExposure implements ExposureEvent
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
     timepoint: TimeType
   }
 
@@ -520,6 +522,7 @@ type ChemicalSubstance
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
   }
 
 type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
@@ -557,7 +560,7 @@ type ChemicalToChemicalDerivationAssociation
     publications: [Publication]
     type: String
     category: [Association]!
-    catalystQualifier: [MacromolecularMachine]
+    catalystQualifier: [MacromolecularMachineMixin]
     subject: ChemicalSubstance!
     object: ChemicalSubstance!
     predicate: PredicateType!
@@ -762,6 +765,7 @@ type ComplexChemicalExposure implements Mixture
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
     timepoint: TimeType
     hasConstituent: [ChemicalSubstance]
   }
@@ -803,7 +807,7 @@ type ContributorAssociation
     qualifiers: [OntologyClass]
   }
 
-type DataFile
+type Dataset
   {
     id: String!
     iri: IriType
@@ -820,7 +824,7 @@ type DataFile
     creationDate: Date
   }
 
-type DataSet
+type DatasetDistribution
   {
     id: String!
     iri: IriType
@@ -835,9 +839,10 @@ type DataSet
     rights: String
     format: String
     creationDate: Date
+    distributionDownloadUrl: String
   }
 
-interface DataSetSummary
+type DatasetSummary
   {
     id: String!
     iri: IriType
@@ -852,13 +857,11 @@ interface DataSetSummary
     rights: String
     format: String
     creationDate: Date
-    sourceDataFile: DataFile
-    versionOf: DataSet
-    distribution: DistributionLevel
     sourceWebPage: String
+    sourceLogo: String
   }
 
-type DataSetVersion
+type DatasetVersion
   {
     id: String!
     iri: IriType
@@ -873,9 +876,9 @@ type DataSetVersion
     rights: String
     format: String
     creationDate: Date
-    sourceDataFile: DataFile
-    versionOf: DataSet
-    distribution: DistributionLevel
+    hasDataset: Dataset
+    ingestDate: String
+    hasDistribution: DatasetDistribution
   }
 
 type Death
@@ -955,7 +958,7 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation implements Disea
     object: AnatomicalEntity!
   }
 
-type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent
+type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEntityMixin
   {
     id: String!
     iri: IriType
@@ -1058,27 +1061,6 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     sexQualifier: BiologicalSex
   }
 
-interface DistributionLevel
-  {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
-    sourceDataFile: DataFile
-    versionOf: DataSet
-    distribution: DistributionLevel
-    downloadUrl: String
-  }
-
 type Drug implements Mixture
   {
     id: String!
@@ -1091,8 +1073,6 @@ type Drug implements Mixture
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
-    hasActiveIngredient: [ChemicalSubstance]
-    hasExcipient: [ChemicalSubstance]
     hasConstituent: [ChemicalSubstance]
   }
 
@@ -1108,8 +1088,6 @@ type DrugExposure implements ExposureEvent
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
-    hasActiveIngredient: [ChemicalSubstance]
-    hasExcipient: [ChemicalSubstance]
     hasConstituent: [ChemicalSubstance]
     timepoint: TimeType
   }
@@ -1151,8 +1129,6 @@ type DrugToGeneInteractionExposure implements GeneGroupingMixin
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
-    hasActiveIngredient: [ChemicalSubstance]
-    hasExcipient: [ChemicalSubstance]
     hasConstituent: [ChemicalSubstance]
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
@@ -1427,15 +1403,16 @@ type FunctionalAssociation
     publications: [Publication]
     type: String
     category: [Association]!
-    subject: MacromolecularMachine!
+    subject: MacromolecularMachineMixin!
     object: GeneOntologyClass!
   }
 
-type Gene
+type Gene implements GeneOrGeneProduct
   {
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -1443,7 +1420,6 @@ type Gene
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
     symbol: String
     synonym: [LabelType]
     xref: [IriType]
@@ -1472,7 +1448,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     subject: GeneOrGeneProduct!
   }
 
-type GeneExpressionMixin
+interface GeneExpressionMixin
   {
     quantifierQualifier: OntologyClass
     expressionSite: AnatomicalEntity
@@ -1537,40 +1513,23 @@ type GeneOntologyClass
     category: [NamedThing]!
   }
 
-type GeneOrGeneProduct
+interface GeneOrGeneProduct
   {
-    id: String!
-    iri: IriType
-    type: String
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
-    inTaxon: [OrganismTaxon]
-    hasBiologicalSequence: BiologicalSequence
     name: SymbolType
   }
 
-type GeneProduct
+interface GeneProductIsoformMixin
   {
-    id: String!
-    iri: IriType
-    type: String
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
-    inTaxon: [OrganismTaxon]
-    hasBiologicalSequence: BiologicalSequence
     name: SymbolType
     synonym: [LabelType]
     xref: [IriType]
   }
 
-interface GeneProductIsoform
+interface GeneProductMixin
   {
+    name: SymbolType
+    synonym: [LabelType]
+    xref: [IriType]
   }
 
 type GeneRegulatoryRelationship
@@ -1723,7 +1682,7 @@ type GeneToGeneProductRelationship
     type: String
     category: [Association]!
     subject: Gene!
-    object: GeneProduct!
+    object: GeneProductMixin!
     predicate: PredicateType!
   }
 
@@ -2161,37 +2120,17 @@ type LifeStage implements ThingWithTaxon
     inTaxon: [OrganismTaxon]
   }
 
-type MacromolecularComplex
+interface MacromolecularComplexMixin
   {
-    id: String!
-    iri: IriType
-    type: String
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
-    inTaxon: [OrganismTaxon]
-    hasBiologicalSequence: BiologicalSequence
     name: SymbolType
   }
 
-type MacromolecularMachine
+interface MacromolecularMachineMixin
   {
-    id: String!
-    iri: IriType
-    type: String
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
-    inTaxon: [OrganismTaxon]
-    hasBiologicalSequence: BiologicalSequence
     name: SymbolType
   }
 
-type MacromolecularMachineToBiologicalProcessAssociation
+type MacromolecularMachineToBiologicalProcessAssociation implements MacromolecularMachineToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2207,11 +2146,11 @@ type MacromolecularMachineToBiologicalProcessAssociation
     publications: [Publication]
     type: String
     category: [Association]!
-    subject: MacromolecularMachine!
+    subject: MacromolecularMachineMixin!
     object: BiologicalProcess!
   }
 
-type MacromolecularMachineToCellularComponentAssociation
+type MacromolecularMachineToCellularComponentAssociation implements MacromolecularMachineToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2227,11 +2166,16 @@ type MacromolecularMachineToCellularComponentAssociation
     publications: [Publication]
     type: String
     category: [Association]!
-    subject: MacromolecularMachine!
+    subject: MacromolecularMachineMixin!
     object: CellularComponent!
   }
 
-type MacromolecularMachineToMolecularActivityAssociation
+interface MacromolecularMachineToEntityAssociationMixin
+  {
+    subject: NamedThing!
+  }
+
+type MacromolecularMachineToMolecularActivityAssociation implements MacromolecularMachineToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -2247,7 +2191,7 @@ type MacromolecularMachineToMolecularActivityAssociation
     publications: [Publication]
     type: String
     category: [Association]!
-    subject: MacromolecularMachine!
+    subject: MacromolecularMachineMixin!
     object: MolecularActivity!
   }
 
@@ -2321,6 +2265,7 @@ type Metabolite
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
   }
 
 type MicroRNA
@@ -2328,6 +2273,7 @@ type MicroRNA
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -2335,7 +2281,6 @@ type MicroRNA
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
     synonym: [LabelType]
     xref: [IriType]
   }
@@ -2364,7 +2309,7 @@ type MolecularActivity implements Occurrent
     category: [NamedThing]!
     hasInput: [ChemicalSubstance]
     hasOutput: [ChemicalSubstance]
-    enabledBy: [MacromolecularMachine]
+    enabledBy: [MacromolecularMachineMixin]
   }
 
 type MolecularEntity implements ThingWithTaxon, PhysicalEssence
@@ -2420,6 +2365,7 @@ type NoncodingRNAProduct
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -2427,7 +2373,6 @@ type NoncodingRNAProduct
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
     synonym: [LabelType]
     xref: [IriType]
   }
@@ -2482,6 +2427,66 @@ type OrganismTaxon
     category: [NamedThing]!
     hasTaxonomicRank: TaxonomicRank
     subclassOf: [OrganismTaxon]
+  }
+
+interface OrganismTaxonToOrganismTaxonAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    predicate: PredicateType!
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    subject: OrganismTaxon!
+    object: OrganismTaxon!
+  }
+
+type OrganismTaxonToOrganismTaxonInteraction
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    subject: OrganismTaxon!
+    object: OrganismTaxon!
+    predicate: PredicateType!
+  }
+
+type OrganismTaxonToOrganismTaxonSpecialization
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    subject: OrganismTaxon!
+    object: OrganismTaxon!
+    predicate: PredicateType!
   }
 
 interface OrganismalEntity
@@ -2569,7 +2574,87 @@ interface PathognomonicityQuantifier
   {
   }
 
-type PathologicalProcess
+type PathologicalAnatomicalExposure implements ExposureEvent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+    inTaxon: [OrganismTaxon]
+    timepoint: TimeType
+  }
+
+type PathologicalAnatomicalOutcome implements Outcome
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+    inTaxon: [OrganismTaxon]
+  }
+
+type PathologicalAnatomicalStructure implements PathologicalEntityMixin
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+    inTaxon: [OrganismTaxon]
+  }
+
+interface PathologicalEntityMixin
+  {
+  }
+
+type PathologicalProcess implements PathologicalEntityMixin
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+  }
+
+type PathologicalProcessExposure implements ExposureEvent
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [PhysicalEntity]
+    timepoint: TimeType
+  }
+
+type PathologicalProcessOutcome implements Outcome
   {
     id: String!
     iri: IriType
@@ -2747,14 +2832,16 @@ type ProcessedMaterial implements Mixture
     hasAttribute: [Attribute]
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
+    isMetabolite: Boolean
     hasConstituent: [ChemicalSubstance]
   }
 
-type Protein
+type Protein implements GeneProductMixin
   {
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -2762,16 +2849,16 @@ type Protein
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
     synonym: [LabelType]
     xref: [IriType]
   }
 
-type ProteinIsoform implements GeneProductIsoform
+type ProteinIsoform implements GeneProductIsoformMixin
   {
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -2779,7 +2866,6 @@ type ProteinIsoform implements GeneProductIsoform
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
     synonym: [LabelType]
     xref: [IriType]
   }
@@ -2845,11 +2931,12 @@ type RelationshipType
     category: [NamedThing]!
   }
 
-type RNAProduct
+type RNAProduct implements GeneProductMixin
   {
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -2857,16 +2944,16 @@ type RNAProduct
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
     synonym: [LabelType]
     xref: [IriType]
   }
 
-type RNAProductIsoform implements GeneProductIsoform
+type RNAProductIsoform implements GeneProductIsoformMixin
   {
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -2874,7 +2961,6 @@ type RNAProductIsoform implements GeneProductIsoform
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
     synonym: [LabelType]
     xref: [IriType]
   }
@@ -3000,6 +3086,7 @@ type SiRNA
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -3007,7 +3094,6 @@ type SiRNA
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
     synonym: [LabelType]
     xref: [IriType]
   }
@@ -3071,25 +3157,6 @@ type SocioeconomicOutcome implements Outcome
     enabledBy: [PhysicalEntity]
   }
 
-type SourceFile
-  {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
-    sourceVersion: String
-    retrievedOn: Date
-  }
-
 interface SpecificityQuantifier
   {
   }
@@ -3135,6 +3202,7 @@ type Transcript
     id: String!
     iri: IriType
     type: String
+    name: LabelType
     description: NarrativeText
     source: LabelType
     providedBy: [Agent]
@@ -3142,9 +3210,6 @@ type Transcript
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    name: SymbolType
-    synonym: [LabelType]
-    xref: [IriType]
   }
 
 type TranscriptToGeneRelationship
