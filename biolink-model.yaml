@@ -7168,6 +7168,11 @@ classes:
     # exact_mappings:
     #  -
 
+  treatment:
+    is_a: named thing
+    deprecated: >-
+      renamed to medical intervention; 'treatment' now listed as an 'alias'
+
   medical intervention:
     aliases: ['medical action', 'treatment']
     description: >-
