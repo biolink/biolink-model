@@ -3836,12 +3836,10 @@ slots:
     exact_mappings:
       - CHEBI:25212
 
-  ## Clinical Predicates
-
   drug of:
     description: >-
       connects a drug to a subject entity
-    is_a: related to
+    is_a: part of
     domain: drug
     in_subset:
       - translator_minimal
@@ -3852,7 +3850,7 @@ slots:
   has drug:
     description: >-
       connects an entity to a drug
-    is_a: related to
+    is_a: has part
     range: drug
     in_subset:
       - translator_minimal
@@ -3862,10 +3860,9 @@ slots:
 
   device of:
     description: >-
-      connects a (medical) device to a subject medical intervention
-    is_a: related to
+      connects an entity to a subject device
+    is_a: part of
     domain: device
-    range: medical intervention
     in_subset:
       - translator_minimal
     inverse: has device
@@ -3874,8 +3871,8 @@ slots:
 
   has device:
     description: >-
-      connects an entity to a (medical) device
-    is_a: related to
+      connects an device to a object entity
+    is_a: has part
     range: device
     in_subset:
       - translator_minimal
@@ -3885,8 +3882,8 @@ slots:
 
   procedure of:
     description: >-
-      connects a (medical) procedure to a subject entity
-    is_a: related to
+      connects a procedure to a subject entity
+    is_a: part of
     domain: procedure
     in_subset:
       - translator_minimal
@@ -3896,8 +3893,8 @@ slots:
 
   has procedure:
     description: >-
-      connects an entity to a (medical) procedure
-    is_a: related to
+      connects an entity to a subject procedure
+    is_a: has part
     range: procedure
     in_subset:
       - translator_minimal
@@ -5588,15 +5585,9 @@ classes:
     narrow_mappings:
       # Devices
       - UMLSSG:DEVI
-      # Medical Device
-      - UMLSSC:T074
-      - UMLSST:medd
       # Research Device
       - UMLSSC:T075
       - UMLSST:resd
-      # Drug Delivery Device
-      - UMLSSC:T203
-      - UMLSST:drdd
 
   ## Scientific Studies
 
@@ -6915,16 +6906,10 @@ classes:
     mixins:
       - clinical entity
 
-  clinical intervention:
-    description: >-
-      A clinical entity that directly targets an individual patient.
-    mixin: true
-    is_a: clinical entity
-    exact_mappings:
-      - ERO:0000347
-
   clinical finding:
     is_a: phenotypic feature
+    mixins:
+      - clinical entity
     description: >-
       this category is currently considered broad enough to tag clinical lab
       measurements and other biological attributes taken as 'clinical traits'
@@ -6933,6 +6918,14 @@ classes:
       has attribute:
         range: clinical attribute
 
+  clinical intervention:
+    description: >-
+      A clinical entity that directly targets an individual patient.
+    is_a: clinical entity
+    mixin: true
+    exact_mappings:
+      - ERO:0000347
+
   hospitalization:
     is_a: named thing
     mixins:
@@ -6940,6 +6933,39 @@ classes:
     exact_mappings:
       - SNOMEDCT:32485007
       - WIKIDATA:Q3140971
+
+  drug intervention:
+    description: >-
+      A drug applied as a medical intervention
+    is_a: drug
+    mixins:
+      - clinical intervention
+    exact_mappings:
+      - ERO:0000600
+
+  surgical procedure:
+    description: >-
+      A procedure conducted as a medical intervention
+    is_a: procedure
+    mixins:
+      - clinical intervention
+    exact_mappings:
+      - ERO:0000602
+
+  medical device:
+    description: >-
+      A device used specifically for a medical intervention
+    is_a: device
+    mixins:
+      - clinical intervention
+    exact_mappings:
+      # Medical Device
+      - UMLSSC:T074
+      - UMLSST:medd
+    narrow_mappings:
+      # Drug Delivery Device
+      - UMLSSC:T203
+      - UMLSST:drdd
 
   socioeconomic attribute:
     is_a: attribute
@@ -7144,14 +7170,14 @@ classes:
 
   medical intervention:
     aliases: ['medical action', 'treatment']
+    description: >-
+      A medical intervention is targeted at a disease or phenotype in a patient and
+      may involve patient 'exposures' to an aggregate regime of one or more drugs,
+      devices and/or procedures, documented by specific associations and predicates.
     is_a: named thing
     mixins:
       - clinical intervention
       - exposure event
-    description: >-
-      A medical intervention is targeted at a disease or phenotype and may involve
-      a battery of multiple drug, (medical) device and/or procedural 'exposures'
-      documented with the medical intervention by associated edges and specific predicates.
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
@@ -7805,23 +7831,23 @@ classes:
       - subject
       - object
 
-  entity to medical intervention association mixin:
+  entity to clinical intervention association mixin:
     description: >-
-      An association between an entity and a medical intervention.
+      An association between an entity and a clinical intervention.
     mixin: true
     defining_slots:
       - object
     slot_usage:
       object:
-        range: medical intervention
+        range: clinical intervention
 
-  disease to medical intervention association:
+  disease to clinical intervention association:
     description: >-
-      An association between a disease and a medical intervention.
+      An association between a disease and a clinical intervention.
     is_a: association
     mixins:
       - disease to entity association mixin
-      - entity to medical intervention association mixin
+      - entity to clinical intervention association mixin
     defining_slots:
       - subject
       - object
@@ -7860,25 +7886,46 @@ classes:
       - subject
       - object
 
-  medical intervention to entity association mixin:
+  clinical intervention to entity association mixin:
     description: >-
-      An association between a medical intervention and an entity.
+      An association between a clinical intervention and an entity.
     mixin: true
+    #slots:
+    #  - has temporal context
     defining_slots:
       - subject
     slot_usage:
       subject:
-        range: medical intervention
+        range: clinical intervention
 
-  medical intervention to outcome association:
+  medical intervention component association:
     description: >-
-      An association between a medical intervention and an outcome.
+      Association of a medical intervention to its component.
     is_a: association
     mixins:
-      - medical intervention to entity association mixin
+      - clinical intervention to entity association mixin
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: medical intervention
+      predicate:
+        description: >-
+          Generally one of 'has drug', 'has device' or 'has procedure'
+      object:
+        range: clinical intervention
+        description: >-
+          Generally one of 'drug intervention', 'medical device' or 'surgical procedure'
+
+  clinical intervention to outcome association:
+    description: >-
+      An association between a clinical intervention and an outcome.
+    is_a: association
+    mixins:
+      - clinical intervention to entity association mixin
       - entity to outcome association mixin
-    #slots:
-    #  - has temporal context
     defining_slots:
       - subject
       - object
