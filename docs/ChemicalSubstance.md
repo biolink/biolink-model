@@ -15,7 +15,7 @@ URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstanc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[OrganismTaxon],[NamedThing],[MolecularEntity],[MolecularActivity],[Metabolite],[Food],[Drug],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance%7Cis_metabolite:boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalSubstance],[Mixture]-%20has%20constituent%200..%2A%3E[ChemicalSubstance],[Food]-%20has%20nutrient%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20input%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20output%200..%2A%3E[ChemicalSubstance],[ChemicalSubstance]%5E-[ProcessedMaterial],[ChemicalSubstance]%5E-[Metabolite],[ChemicalSubstance]%5E-[ChemicalExposure],[ChemicalSubstance]%5E-[Carbohydrate],[MolecularEntity]%5E-[ChemicalSubstance],[Mixture],[ChemicalExposure],[Carbohydrate],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[OrganismTaxon],[NamedThing],[MolecularEntity],[MolecularActivity],[Metabolite],[FoodComponent],[Drug],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalSubstance%7Cis_metabolite:boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalSubstance],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalSubstance],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalSubstance],[Mixture]-%20has%20constituent%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20input%200..%2A%3E[ChemicalSubstance],[MolecularActivity]-%20has%20output%200..%2A%3E[ChemicalSubstance],[ChemicalSubstance]%5E-[ProcessedMaterial],[ChemicalSubstance]%5E-[Metabolite],[ChemicalSubstance]%5E-[FoodComponent],[ChemicalSubstance]%5E-[ChemicalExposure],[ChemicalSubstance]%5E-[Carbohydrate],[MolecularEntity]%5E-[ChemicalSubstance],[Mixture],[ChemicalExposure],[Carbohydrate],[Attribute],[Agent])
 
 ---
 
@@ -52,6 +52,7 @@ URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstanc
 
  * [Carbohydrate](Carbohydrate.md)
  * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance, other than a drug.
+ * [FoodComponent](FoodComponent.md)
  * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
  * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
 
@@ -65,7 +66,6 @@ URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstanc
  *  **[NamedThing](NamedThing.md)** *[has constituent](has_constituent.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[Drug](Drug.md)** *[has excipient](has_excipient.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[ChemicalSubstance](ChemicalSubstance.md)** *[has metabolite](has_metabolite.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
- *  **[Food](Food.md)** *[has nutrient](has_nutrient.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[ChemicalSubstance](ChemicalSubstance.md)** *[is metabolite of](is_metabolite_of.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[molecular activity➞has input](molecular_activity_has_input.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[molecular activity➞has output](molecular_activity_has_output.md)*  <sub>0..*</sub>  **[ChemicalSubstance](ChemicalSubstance.md)**
@@ -144,8 +144,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | CHEBI:24431 |
-|  | | SIO:010004 |
+| **Exact Mappings:** | | SIO:010004 |
 |  | | WIKIDATA:Q79529 |
 |  | | UMLSSC:T103 |
 |  | | UMLSST:chem |

@@ -155,6 +155,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | bioentity |
+| **Exact Mappings:** | | CHEBI:24431 |
 | **Narrow Mappings:** | | SIO:010341 |
 |  | | WIKIDATA:Q43460564 |
 |  | | UMLSSG:CHEM |

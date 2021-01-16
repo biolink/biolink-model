@@ -1,44 +1,52 @@
 ---
-parent: Entities
-title: biolink:Food
+parent: Other Classes
+title: biolink:PhenotypicQuality
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Food
+# Class: PhenotypicQuality
 
 
-A substance consumed by a living organism as a source of nutrition
+A property of a phenotype
 
-URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
+URI: [biolink:PhenotypicQuality](https://w3id.org/biolink/vocab/PhenotypicQuality)
+
+PATO:0000001
+{: .mapping-label }
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[FoodComponent],[Food%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Food],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OrganismAttribute]%5E-[PhenotypicQuality%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[OrganismAttribute],[OntologyClass],[NamedThing])
 
 ---
 
-
-## Identifier prefixes
-
- * foodb.compound
 
 ## Parents
 
- *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)"
-
-## Uses Mixins
-
- *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
-
-## Referenced by class
-
- *  **[FoodComponent](FoodComponent.md)** *[food component of](food_component_of.md)*  <sub>0..*</sub>  **[Food](Food.md)**
- *  **[FoodComponent](FoodComponent.md)** *[nutrient of](nutrient_of.md)*  <sub>0..*</sub>  **[Food](Food.md)**
+ *  is_a: [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
 
 ## Attributes
 
+
+### Inherited from attribute:
+
+ * [attribute➞name](attribute_name.md)  <sub>OPT</sub>
+    * Description: The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.
+    * range: [LabelType](types/LabelType.md)
+ * [has attribute type](has_attribute_type.md)  <sub>REQ</sub>
+    * Description: connects an attribute to a class that describes it
+    * range: [OntologyClass](OntologyClass.md)
+    * in subsets: (samples)
+ * [has quantitative value](has_quantitative_value.md)  <sub>0..*</sub>
+    * Description: connects an attribute to a value
+    * range: [QuantityValue](QuantityValue.md)
+    * in subsets: (samples)
+ * [has qualitative value](has_qualitative_value.md)  <sub>OPT</sub>
+    * Description: connects an attribute to a value
+    * range: [NamedThing](NamedThing.md)
+    * in subsets: (samples)
 
 ### Inherited from entity:
 
@@ -76,34 +84,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
-### Inherited from macromolecular machine mixin:
-
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
-    * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-    * range: [SymbolType](types/SymbolType.md)
-
-### Inherited from mixture:
-
- * [has constituent](has_constituent.md)  <sub>0..*</sub>
-    * Description: one or more chemical substances within a mixture
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
-
-### Inherited from named thing:
-
- * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
-    * range: [NamedThing](NamedThing.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-    * range: [OrganismTaxon](OrganismTaxon.md)
-    * in subsets: (translator_minimal)
-
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | UMLSSC:T168 |
-|  | | UMLSST:food |
+| **Aliases:** | | phenotypic properties |
+| **Mappings:** | | PATO:0000001 |
 

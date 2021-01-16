@@ -1,21 +1,21 @@
 ---
 parent: Associations
-title: biolink:SequenceFeatureRelationship
+title: biolink:BehaviorToBehavioralFeatureAssociation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: SequenceFeatureRelationship
+# Class: BehaviorToBehavioralFeatureAssociation
 
 
-For example, a particular exon is part of a particular transcript or gene
+An association between an aggregate behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 
-URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/SequenceFeatureRelationship)
+URI: [biolink:BehaviorToBehavioralFeatureAssociation](https://w3id.org/biolink/vocab/BehaviorToBehavioralFeatureAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[GenomicEntity]%3Cobject%201..1-%20[SequenceFeatureRelationship%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicEntity]%3Csubject%201..1-%20[SequenceFeatureRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Association]%5E-[SequenceFeatureRelationship],[Publication],[OntologyClass],[GenomicEntity],[GeneToGeneProductRelationship],[ExonToTranscriptRelationship],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[FrequencyValue],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[BehavioralFeature],[BehavioralFeature]%3Cobject%201..1-%20[BehaviorToBehavioralFeatureAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Behavior]%3Csubject%201..1-%20[BehaviorToBehavioralFeatureAssociation],[BehaviorToBehavioralFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[Association]%5E-[BehaviorToBehavioralFeatureAssociation],[Behavior],[Attribute],[Association],[Agent])
 
 ---
 
@@ -24,11 +24,9 @@ URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/Sequen
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
 
-## Children
+## Uses Mixins
 
- * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) - A transcript is formed from multiple exons
- * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) - A gene is transcribed and potentially translated to a gene product
- * [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) - A gene is a collection of transcripts
+ *  mixin: [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
 
 ## Referenced by class
 
@@ -38,10 +36,12 @@ URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/Sequen
 
 ### Own
 
- * [sequence feature relationship➞object](sequence_feature_relationship_object.md)  <sub>REQ</sub>
-    * range: [GenomicEntity](GenomicEntity.md)
- * [sequence feature relationship➞subject](sequence_feature_relationship_subject.md)  <sub>REQ</sub>
-    * range: [GenomicEntity](GenomicEntity.md)
+ * [behavior to behavioral feature association➞object](behavior_to_behavioral_feature_association_object.md)  <sub>REQ</sub>
+    * Description: behavioral feature that is the object of the association
+    * range: [BehavioralFeature](BehavioralFeature.md)
+ * [behavior to behavioral feature association➞subject](behavior_to_behavioral_feature_association_subject.md)  <sub>REQ</sub>
+    * Description: behavior that is the subject of the association
+    * range: [Behavior](Behavior.md)
 
 ### Inherited from association:
 
@@ -108,6 +108,36 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from entity to feature or disease qualifiers mixin:
+
+ * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+    * range: [SeverityValue](SeverityValue.md)
+ * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+    * range: [Onset](Onset.md)
+
+### Inherited from entity to phenotypic feature association mixin:
+
+ * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+    * range: [BiologicalSex](BiologicalSex.md)
+ * [entity to phenotypic feature association mixin➞description](entity_to_phenotypic_feature_association_mixin_description.md)  <sub>OPT</sub>
+    * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
+    * range: [NarrativeText](types/NarrativeText.md)
+ * [entity to phenotypic feature association mixin➞object](entity_to_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+    * Description: phenotypic class
+    * range: [PhenotypicFeature](PhenotypicFeature.md)
+    * Example:    
+    * Example:    
+    * Example:    
+
+### Inherited from frequency qualifier mixin:
+
+ * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+    * range: [FrequencyValue](FrequencyValue.md)
+
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
@@ -116,14 +146,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [sequence feature relationship➞object](sequence_feature_relationship_object.md)  <sub>REQ</sub>
-    * range: [GenomicEntity](GenomicEntity.md)
- * [sequence feature relationship➞subject](sequence_feature_relationship_subject.md)  <sub>REQ</sub>
-    * range: [GenomicEntity](GenomicEntity.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | CHADO:feature_relationship |
-
+ * [behavior to behavioral feature association➞object](behavior_to_behavioral_feature_association_object.md)  <sub>REQ</sub>
+    * Description: behavioral feature that is the object of the association
+    * range: [BehavioralFeature](BehavioralFeature.md)
+ * [behavior to behavioral feature association➞subject](behavior_to_behavioral_feature_association_subject.md)  <sub>REQ</sub>
+    * Description: behavior that is the subject of the association
+    * range: [Behavior](Behavior.md)

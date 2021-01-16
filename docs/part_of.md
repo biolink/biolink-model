@@ -25,6 +25,7 @@ URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
 
 ## Children
 
+ *  [food component of](food_component_of.md)
  *  [is active ingredient of](is_active_ingredient_of.md)
  *  [is excipient of](is_excipient_of.md)
 

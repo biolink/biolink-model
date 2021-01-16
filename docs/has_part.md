@@ -27,6 +27,7 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
 
  *  [has active ingredient](has_active_ingredient.md)
  *  [has excipient](has_excipient.md)
+ *  [has food component](has_food_component.md)
  *  [has variant part](has_variant_part.md)
 
 ## Used by

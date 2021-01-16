@@ -38,6 +38,7 @@ URI: [biolink:has_qualitative_value](https://w3id.org/biolink/vocab/has_qualitat
  * [Inheritance](Inheritance.md)
  * [Onset](Onset.md)
  * [OrganismAttribute](OrganismAttribute.md)
+ * [PhenotypicQuality](PhenotypicQuality.md)
  * [PhenotypicSex](PhenotypicSex.md)
  * [SeverityValue](SeverityValue.md)
  * [SocioeconomicAttribute](SocioeconomicAttribute.md)

@@ -25,6 +25,7 @@ URI: [biolink:onset_qualifier](https://w3id.org/biolink/vocab/onset_qualifier)
 
 ## Used by
 
+ * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
  * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)

@@ -83,3 +83,7 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
+ * [has attribute](has_attribute.md)  <sub>0..*</sub>
+    * Description: connects any entity to an attribute
+    * range: [Attribute](Attribute.md)
+    * in subsets: (samples)

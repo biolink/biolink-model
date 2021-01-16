@@ -25,6 +25,7 @@ URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qual
 
 ## Used by
 
+ * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
  * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)

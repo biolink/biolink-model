@@ -1,41 +1,32 @@
 ---
 parent: Entities
-title: biolink:Food
+title: biolink:BehavioralFeature
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Food
+# Class: BehavioralFeature
 
 
-A substance consumed by a living organism as a source of nutrition
+A phenotypic feature which is behavioral in nature.
 
-URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
+URI: [biolink:BehavioralFeature](https://w3id.org/biolink/vocab/BehavioralFeature)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[FoodComponent],[Food%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Food],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhenotypicFeature],[OrganismTaxon],[NamedThing],[BehaviorToBehavioralFeatureAssociation]-%20object%201..1%3E[BehavioralFeature%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[PhenotypicFeature]%5E-[BehavioralFeature],[BehaviorToBehavioralFeatureAssociation],[Attribute],[Agent])
 
 ---
 
-
-## Identifier prefixes
-
- * foodb.compound
 
 ## Parents
 
- *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)"
-
-## Uses Mixins
-
- *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
+ *  is_a: [PhenotypicFeature](PhenotypicFeature.md)
 
 ## Referenced by class
 
- *  **[FoodComponent](FoodComponent.md)** *[food component of](food_component_of.md)*  <sub>0..*</sub>  **[Food](Food.md)**
- *  **[FoodComponent](FoodComponent.md)** *[nutrient of](nutrient_of.md)*  <sub>0..*</sub>  **[Food](Food.md)**
+ *  **[BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)** *[behavior to behavioral feature association➞object](behavior_to_behavioral_feature_association_object.md)*  <sub>REQ</sub>  **[BehavioralFeature](BehavioralFeature.md)**
 
 ## Attributes
 
@@ -82,12 +73,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
 
-### Inherited from mixture:
-
- * [has constituent](has_constituent.md)  <sub>0..*</sub>
-    * Description: one or more chemical substances within a mixture
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
@@ -104,6 +89,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | UMLSSC:T168 |
-|  | | UMLSST:food |
+| **Exact Mappings:** | | NBO:0000243 |
 

@@ -15,7 +15,7 @@ URI: [biolink:OrganismAttribute](https://w3id.org/biolink/vocab/OrganismAttribut
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OrganismAttribute%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F]%5E-[Inheritance],[Attribute]%5E-[OrganismAttribute],[OntologyClass],[NamedThing],[Inheritance],[Attribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[PhenotypicQuality],[OrganismAttribute%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F]%5E-[PhenotypicQuality],[OrganismAttribute]%5E-[Inheritance],[Attribute]%5E-[OrganismAttribute],[OntologyClass],[NamedThing],[Inheritance],[Attribute])
 
 ---
 
@@ -27,6 +27,7 @@ URI: [biolink:OrganismAttribute](https://w3id.org/biolink/vocab/OrganismAttribut
 ## Children
 
  * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+ * [PhenotypicQuality](PhenotypicQuality.md) - A property of a phenotype
 
 ## Referenced by class
 

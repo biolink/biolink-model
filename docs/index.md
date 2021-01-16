@@ -113,6 +113,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
        * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
           * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+          * [PhenotypicQuality](PhenotypicQuality.md) - A property of a phenotype
        * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
        * [SocioeconomicAttribute](SocioeconomicAttribute.md) - Attributes relating to a socioeconomic manifestation
        * [Zygosity](Zygosity.md)
@@ -122,6 +123,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
        * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
        * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+    * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) - An association between an aggregate behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
     * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
     * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
        * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
@@ -185,6 +187,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [BehavioralOutcome](BehavioralOutcome.md) - An outcome resulting from an exposure event which is the manifestation of human behavior.
     * [SocioeconomicExposure](SocioeconomicExposure.md) - A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
     * [SocioeconomicOutcome](SocioeconomicOutcome.md) - An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+ * [BehavioralFeature](BehavioralFeature.md) - A phenotypic feature which is behavioral in nature.
  * [BiologicalEntity](BiologicalEntity.md)
     * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
        * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
@@ -206,6 +209,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
        * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
        * [PhenotypicFeature](PhenotypicFeature.md)
+          * [BehavioralFeature](BehavioralFeature.md) - A phenotypic feature which is behavioral in nature.
           * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
     * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
     * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)"
@@ -213,6 +217,13 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [Carbohydrate](Carbohydrate.md)
           * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance, other than a drug.
              * [ComplexChemicalExposure](ComplexChemicalExposure.md) - A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+          * [FoodComponent](FoodComponent.md)
+             * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
+             * [FoodAdditive](FoodAdditive.md)
+             * [Nutrient](Nutrient.md)
+                * [Macronutrient](Macronutrient.md)
+                * [Micronutrient](Micronutrient.md)
+                   * [Vitamin](Vitamin.md)
           * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
           * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
        * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
@@ -273,6 +284,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
           * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
           * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+       * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) - An association between an aggregate behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
        * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
        * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
           * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
@@ -356,6 +368,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
              * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
              * [PhenotypicFeature](PhenotypicFeature.md)
+                * [BehavioralFeature](BehavioralFeature.md) - A phenotypic feature which is behavioral in nature.
                 * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
           * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
           * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)"
@@ -363,6 +376,13 @@ Entity and association taxonomy and datamodel for life-sciences data
                 * [Carbohydrate](Carbohydrate.md)
                 * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance, other than a drug.
                    * [ComplexChemicalExposure](ComplexChemicalExposure.md) - A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+                * [FoodComponent](FoodComponent.md)
+                   * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
+                   * [FoodAdditive](FoodAdditive.md)
+                   * [Nutrient](Nutrient.md)
+                      * [Macronutrient](Macronutrient.md)
+                      * [Micronutrient](Micronutrient.md)
+                         * [Vitamin](Vitamin.md)
                 * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
                 * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
              * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
@@ -576,14 +596,15 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
  * [biomarker for](biomarker_for.md) - holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+ * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
  * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
     * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
  * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
  * [chemically similar to](chemically_similar_to.md) - holds between one chemical substances and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
- * [close match](close_match.md) - holds between two entities that are considered a skos:closeMatch to one another
-    * [exact match](exact_match.md) - holds between two entities that are identical to each other, with a high degree of confidence
+ * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+    * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
        * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
  * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
@@ -638,10 +659,12 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
  * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
  * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
- * [exact match](exact_match.md) - holds between two entities that are identical to each other, with a high degree of confidence
+ * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
     * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
  * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
  * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
+ * [food component of](food_component_of.md) - holds between a one or more chemical substances present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+    * [nutrient of](nutrient_of.md)
  * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
  * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
     * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
@@ -652,16 +675,21 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
  * [has decreased amount](has_decreased_amount.md)
  * [has excipient](has_excipient.md) - holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
+ * [has food component](has_food_component.md) - holds between food and one or more chemical substances composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+    * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
  * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
  * [has increased amount](has_increased_amount.md)
  * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
  * [has metabolite](has_metabolite.md) - holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
  * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
  * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
+ * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
  * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
  * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
     * [has active ingredient](has_active_ingredient.md) - holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
     * [has excipient](has_excipient.md) - holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
+    * [has food component](has_food_component.md) - holds between food and one or more chemical substances composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+       * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
     * [has variant part](has_variant_part.md) - holds between a genomic entity and a genotypic entity that is a sub-component of it
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
     * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
@@ -729,23 +757,31 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [molecularly interacts with](molecularly_interacts_with.md)
     * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other molecular entity
     * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other molecular entity
+ * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
  * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
  * [negatively regulated by, entity to entity](negatively_regulated_by_entity_to_entity.md)
  * [negatively regulated by, process to process](negatively_regulated_by_process_to_process.md)
  * [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)
  * [negatively regulates, process to process](negatively_regulates_process_to_process.md)
+ * [nutrient of](nutrient_of.md)
  * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
  * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
     * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
        * [has active ingredient](has_active_ingredient.md) - holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
        * [has excipient](has_excipient.md) - holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
+       * [has food component](has_food_component.md) - holds between food and one or more chemical substances composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+          * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
        * [has variant part](has_variant_part.md) - holds between a genomic entity and a genotypic entity that is a sub-component of it
     * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
+       * [food component of](food_component_of.md) - holds between a one or more chemical substances present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+          * [nutrient of](nutrient_of.md)
        * [is active ingredient of](is_active_ingredient_of.md) - holds between a chemical substance and a drug, in which the former is a part of the latter, and is a biologically active component
        * [is excipient of](is_excipient_of.md) - holds between a chemical substance and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
  * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
+    * [food component of](food_component_of.md) - holds between a one or more chemical substances present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+       * [nutrient of](nutrient_of.md)
     * [is active ingredient of](is_active_ingredient_of.md) - holds between a chemical substance and a drug, in which the former is a part of the latter, and is a biologically active component
     * [is excipient of](is_excipient_of.md) - holds between a chemical substance and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
@@ -856,9 +892,10 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
        * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
        * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
+    * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
     * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
-    * [close match](close_match.md) - holds between two entities that are considered a skos:closeMatch to one another
-       * [exact match](exact_match.md) - holds between two entities that are identical to each other, with a high degree of confidence
+    * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+       * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
           * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
     * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
        * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
@@ -924,13 +961,18 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
     * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
     * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
+    * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
     * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
     * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
        * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
           * [has active ingredient](has_active_ingredient.md) - holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
           * [has excipient](has_excipient.md) - holds between a drug and a chemical substances in which the latter is a part of the former, and is a biologically inactive component
+          * [has food component](has_food_component.md) - holds between food and one or more chemical substances composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+             * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
           * [has variant part](has_variant_part.md) - holds between a genomic entity and a genotypic entity that is a sub-component of it
        * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
+          * [food component of](food_component_of.md) - holds between a one or more chemical substances present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+             * [nutrient of](nutrient_of.md)
           * [is active ingredient of](is_active_ingredient_of.md) - holds between a chemical substance and a drug, in which the former is a part of the latter, and is a biologically active component
           * [is excipient of](is_excipient_of.md) - holds between a chemical substance and a drug in which the former is a part of the latter, and is a biologically inactive component
     * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
@@ -1004,7 +1046,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has gene](has_gene.md) - connects an entity associated with one or more genes
  * [has gene or gene product](has_gene_or_gene_product.md) - connects an entity with one or more gene or gene products
     * [has gene](has_gene.md) - connects an entity associated with one or more genes
- * [has nutrient](has_nutrient.md) - one or more chemical substance which are growth factors for a living organism
  * [has percentage](has_percentage.md) - equivalent to has quotient multiplied by 100
  * [has procedure](has_procedure.md) - connects an entity to one or more (medical) procedures
  * [has quotient](has_quotient.md)
@@ -1050,7 +1091,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has drug](has_drug.md) - connects an entity to one or more drugs
     * [has gene or gene product](has_gene_or_gene_product.md) - connects an entity with one or more gene or gene products
        * [has gene](has_gene.md) - connects an entity associated with one or more genes
-    * [has nutrient](has_nutrient.md) - one or more chemical substance which are growth factors for a living organism
     * [has procedure](has_procedure.md) - connects an entity to one or more (medical) procedures
     * [has receptor](has_receptor.md) - the organism or organism part being exposed
     * [has route](has_route.md) - the process that results in the stressor coming into direct contact with the receptor
@@ -1183,6 +1223,8 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Slot Mixins
 
+ * [biological role mixin](biological_role_mixin.md) - A role played by the molecular entity or part thereof within a biological context.
+ * [chemical role mixin](chemical_role_mixin.md) - A role played by the molecular entity or part thereof within a chemical context.
  * [negatively regulated by](negatively_regulated_by.md)
  * [negatively regulates](negatively_regulates.md)
  * [positively regulated by](positively_regulated_by.md)

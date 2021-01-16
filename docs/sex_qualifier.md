@@ -25,6 +25,7 @@ URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
 
 ## Used by
 
+ * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)

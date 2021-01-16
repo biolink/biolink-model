@@ -29,8 +29,15 @@ URI: [biolink:is_metabolite](https://w3id.org/biolink/vocab/is_metabolite)
  * [ChemicalExposure](ChemicalExposure.md)
  * [ChemicalSubstance](ChemicalSubstance.md)
  * [ComplexChemicalExposure](ComplexChemicalExposure.md)
+ * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
+ * [FoodAdditive](FoodAdditive.md)
+ * [FoodComponent](FoodComponent.md)
+ * [Macronutrient](Macronutrient.md)
  * [Metabolite](Metabolite.md)
+ * [Micronutrient](Micronutrient.md)
+ * [Nutrient](Nutrient.md)
  * [ProcessedMaterial](ProcessedMaterial.md)
+ * [Vitamin](Vitamin.md)
 
 ## Other properties
 

@@ -1,44 +1,37 @@
 ---
 parent: Entities
-title: biolink:Food
+title: biolink:Vitamin
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Food
+# Class: Vitamin
 
 
-A substance consumed by a living organism as a source of nutrition
 
-URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
+
+URI: [biolink:Vitamin](https://w3id.org/biolink/vocab/Vitamin)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[FoodComponent],[Food%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Food],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Micronutrient]%5E-[Vitamin%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon],[NamedThing],[Micronutrient],[Attribute],[Agent])
 
 ---
 
-
-## Identifier prefixes
-
- * foodb.compound
 
 ## Parents
 
- *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)"
-
-## Uses Mixins
-
- *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
-
-## Referenced by class
-
- *  **[FoodComponent](FoodComponent.md)** *[food component of](food_component_of.md)*  <sub>0..*</sub>  **[Food](Food.md)**
- *  **[FoodComponent](FoodComponent.md)** *[nutrient of](nutrient_of.md)*  <sub>0..*</sub>  **[Food](Food.md)**
+ *  is_a: [Micronutrient](Micronutrient.md)
 
 ## Attributes
 
+
+### Inherited from chemical substance:
+
+ * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+    * Description: indicates whether a chemical substance is a metabolite
+    * range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 
@@ -82,12 +75,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * range: [SymbolType](types/SymbolType.md)
 
-### Inherited from mixture:
-
- * [has constituent](has_constituent.md)  <sub>0..*</sub>
-    * Description: one or more chemical substances within a mixture
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
@@ -104,6 +91,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | UMLSSC:T168 |
-|  | | UMLSST:food |
+| **Related Mappings:** | | CHEBI:33229 |
+|  | | UMLSSC:T127 |
+|  | | UMLSST:vita |
 

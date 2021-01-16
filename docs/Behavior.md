@@ -15,7 +15,7 @@ URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicOutcome],[SocioeconomicExposure],[PhysicalEntity],[NamedThing],[BiologicalProcess],[BehavioralOutcome],[BehavioralExposure],[Behavior%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SocioeconomicOutcome],[Behavior]%5E-[SocioeconomicExposure],[Behavior]%5E-[BehavioralOutcome],[Behavior]%5E-[BehavioralExposure],[BiologicalProcess]%5E-[Behavior],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicOutcome],[SocioeconomicExposure],[PhysicalEntity],[NamedThing],[BiologicalProcess],[BehavioralOutcome],[BehavioralExposure],[BehaviorToBehavioralFeatureAssociation],[BehaviorToBehavioralFeatureAssociation]-%20subject%201..1%3E[Behavior%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Behavior]%5E-[SocioeconomicOutcome],[Behavior]%5E-[SocioeconomicExposure],[Behavior]%5E-[BehavioralOutcome],[Behavior]%5E-[BehavioralExposure],[BiologicalProcess]%5E-[Behavior],[Attribute],[Agent])
 
 ---
 
@@ -33,6 +33,7 @@ URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 
 ## Referenced by class
 
+ *  **[BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)** *[behavior to behavioral feature association➞subject](behavior_to_behavioral_feature_association_subject.md)*  <sub>REQ</sub>  **[Behavior](Behavior.md)**
 
 ## Attributes
 

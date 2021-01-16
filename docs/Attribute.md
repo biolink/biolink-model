@@ -15,7 +15,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SocioeconomicAttribute],[SeverityValue],[QuantityValue],[OrganismalEntity],[OrganismAttribute],[OntologyClass],[NamedThing],[FrequencyValue],[ClinicalAttribute],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[Entity]++-%20has%20attribute%200..%2A%3E[Attribute],[OrganismalEntity]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SocioeconomicAttribute],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[OrganismAttribute],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalAttribute],[Attribute]%5E-[BiologicalSex],[Annotation]%5E-[Attribute],[Entity],[Annotation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[SocioeconomicAttribute],[SeverityValue],[QuantityValue],[OrganismalEntity],[OrganismAttribute],[OntologyClass],[NamedThing],[FrequencyValue],[Entity],[ClinicalAttribute],[BiologicalSex],[NamedThing]%3Chas%20qualitative%20value%200..1-%20[Attribute%7Cname:label_type%20%3F;iri:iri_type%20%3F;source:label_type%20%3F],[QuantityValue]%3Chas%20quantitative%20value%200..%2A-++[Attribute],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[Attribute],[Entity]++-%20has%20attribute%200..%2A%3E[Attribute],[OrganismalEntity]++-%20has%20attribute%200..%2A%3E[Attribute],[Attribute]%5E-[Zygosity],[Attribute]%5E-[SocioeconomicAttribute],[Attribute]%5E-[SeverityValue],[Attribute]%5E-[OrganismAttribute],[Attribute]%5E-[FrequencyValue],[Attribute]%5E-[ClinicalAttribute],[Attribute]%5E-[BiologicalSex],[Annotation]%5E-[Attribute],[Annotation])
 
 ---
 
@@ -43,7 +43,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
 ## Referenced by class
 
- *  **None** *[has attribute](has_attribute.md)*  <sub>0..*</sub>  **[Attribute](Attribute.md)**
+ *  **[Entity](Entity.md)** *[has attribute](has_attribute.md)*  <sub>0..*</sub>  **[Attribute](Attribute.md)**
  *  **[OrganismalEntity](OrganismalEntity.md)** *[organismal entity➞has attribute](organismal_entity_has_attribute.md)*  <sub>0..*</sub>  **[Attribute](Attribute.md)**
 
 ## Attributes
@@ -127,5 +127,4 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **In Subsets:** | | samples |
 | **Exact Mappings:** | | SIO:000614 |
-| **Narrow Mappings:** | | PATO:0000001 |
 

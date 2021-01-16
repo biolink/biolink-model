@@ -45,6 +45,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[affects](affects.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[affects expression in](affects_expression_in.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[affects risk for](affects_risk_for.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[broad match](broad_match.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[caused by](caused_by.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[causes](causes.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[chemically similar to](chemically_similar_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
@@ -86,6 +87,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[model of](model_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[ModelToDiseaseAssociationMixin](ModelToDiseaseAssociationMixin.md)** *[model to disease association mixin➞subject](model_to_disease_association_mixin_subject.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[named thing➞category](named_thing_category.md)*  <sub>1..*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[narrow match](narrow_match.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[negatively correlated with](negatively_correlated_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Association](Association.md)** *[object](object.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[occurs in](occurs_in.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**

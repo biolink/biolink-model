@@ -27,6 +27,7 @@ URI: [biolink:predicate](https://w3id.org/biolink/vocab/predicate)
 
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
  * [Association](Association.md)
+ * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
  * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
  * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)
