@@ -2979,7 +2979,7 @@ slots:
     description: >-
       holds between a therapeutic procedure or chemical substance
       and a disease or phenotypic feature that it is used to treat
-    domain: treatment
+    domain: medical intervention
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -2994,7 +2994,7 @@ slots:
       - RO:0003307
     narrow_mappings:
       # "is substance that treats" constrains statements to
-      # a subset of the universe of all possible treatments
+      # a subset of the universe of all possible medical interventions
       - RO:0002606
       - NCIT:regimen_has_accepted_use_for_disease
       # RTX mapped REPODB terms
@@ -3026,7 +3026,7 @@ slots:
       holds between a disease or phenotypic feature and a therapeutic
       process or chemical substance that is used to treat the condition
     domain: disease or phenotypic feature
-    range: treatment
+    range: medical intervention
     in_subset:
       - translator_minimal
     inverse: treats
@@ -3036,14 +3036,14 @@ slots:
       - MONDO:disease_responds_to
     narrow_mappings:
       # "is treated by substance" constrains statements to
-      # subset of the universe of all possible treatments
+      # subset of the universe of all possible medical interventions
       - RO:0002302
 
   approved to treat:
     description: >-
       holds between a therapeutic procedure or chemical substance
       and a disease or phenotypic feature for which it is approved
-      for treatment to some level of clinical trial. Note that in
+      for medical intervention to some level of clinical trial. Note that in
       terms of REPODB narrow mappings, terms containing 'suspended',
       'terminated' or 'withdrawn' should be mapped onto associations
       using this term for which 'negated: true' is asserted.
@@ -3862,10 +3862,10 @@ slots:
 
   device of:
     description: >-
-      connects a (medical) device to a subject treatment
+      connects a (medical) device to a subject medical intervention
     is_a: related to
     domain: device
-    range: treatment
+    range: medical intervention
     in_subset:
       - translator_minimal
     inverse: has device
@@ -7133,15 +7133,16 @@ classes:
     # exact_mappings:
     #  -
 
-  treatment:
-    aliases: ['medical action', 'medical intervention']
-    # 'named thing' seems too generic here but not sure what applies better here
+  medical intervention:
+    aliases: ['medical action', 'treatment']
+    # 'named thing' seems too generic here but not sure what better applies better here
     is_a: named thing
     mixins:
       - exposure event
     description: >-
-      A treatment is targeted at a disease or phenotype and may involve
-      multiple drug 'exposures', medical devices and/or procedures
+      A medical intervention is targeted at a disease or phenotype and may involve
+      a battery of multiple drug, (medical) device and/or procedural 'exposures'
+      documented with the medical intervention by associated edges and specific predicates.
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
@@ -7795,23 +7796,23 @@ classes:
       - subject
       - object
 
-  entity to treatment association mixin:
+  entity to medical intervention association mixin:
     description: >-
-      An association between an entity and a treatment regime.
+      An association between an entity and a medical intervention.
     mixin: true
     defining_slots:
       - object
     slot_usage:
       object:
-        range: treatment
+        range: medical intervention
 
-  disease to treatment association:
+  disease to medical intervention association:
     description: >-
-      An association between a disease and a treatment.
+      An association between a disease and a medical intervention.
     is_a: association
     mixins:
       - disease to entity association mixin
-      - entity to treatment association mixin
+      - entity to medical intervention association mixin
     defining_slots:
       - subject
       - object
@@ -7850,22 +7851,22 @@ classes:
       - subject
       - object
 
-  treatment to entity association mixin:
+  medical intervention to entity association mixin:
     description: >-
-      An association between a treatment regime and entity.
+      An association between a medical intervention and an entity.
     mixin: true
     defining_slots:
       - subject
     slot_usage:
       subject:
-        range: treatment
+        range: medical intervention
 
-  treatment to outcome association:
+  medical intervention to outcome association:
     description: >-
-      An association between a treatment and an outcome.
+      An association between a medical intervention and an outcome.
     is_a: association
     mixins:
-      - treatment to entity association mixin
+      - medical intervention to entity association mixin
       - entity to outcome association mixin
     #slots:
     #  - has temporal context
@@ -8457,10 +8458,17 @@ classes:
           can be used to indicate magnitude, or also ranking
 
   sequence variant modulates treatment association:
+    deprecated: >-
+      This name of this association is deprecated in favor of
+      `sequence variant modulates medical intervention association`.
+    is_a: sequence variant modulates medical intervention association
+
+  sequence variant modulates medical intervention association:
     is_a: association
     description: >-
-      An association between a sequence variant and a treatment or health intervention.
-      The treatment object itself encompasses both the disease and the drug used.
+      An association between a sequence variant and a medical intervention.
+      Note that the medical intervention object should be linked
+      by an edge the targeted disease.
     comments:
       - An alternate way to model the same information could be via a qualifier
     defining_slots:
@@ -8470,10 +8478,12 @@ classes:
     slot_usage:
       subject:
         range: sequence variant
-        description: "variant that modulates the treatment of some disease"
+        description: >-
+          variant that modulates the medical intervention of some disease
       object:
-        range: treatment
-        description: "treatment whose efficacy is modulated by the subject variant"
+        range: medical intervention
+        description: >-
+          medical intervention whose efficacy is modulated by the subject variant
 
   functional association:
     is_a: association
