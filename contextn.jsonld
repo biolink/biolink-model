@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-01-16 04:07\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-01-16 18:53\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": "@type",
       "APO": "http://purl.obolibrary.org/obo/APO_",
@@ -9,6 +9,7 @@
       "BSPO": "http://purl.obolibrary.org/obo/BSPO_",
       "CAID": "http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=",
       "CAS": "http://identifiers.org/cas/",
+      "CHADO": "http://gmod.org/wiki/Chado/",
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
       "CHEMBL.COMPOUND": "http://identifiers.org/chembl.compound/",
       "CHEMBL.MECHANISM": "https://www.ebi.ac.uk/chembl/mechanism/inspect/",
@@ -54,6 +55,7 @@
       "HGNC.FAMILY": "http://identifiers.org/hgnc.family/",
       "HMDB": "http://identifiers.org/hmdb/",
       "HP": "http://purl.obolibrary.org/obo/HP_",
+      "HsapDv": "http://purl.obolibrary.org/obo/HsapDv_",
       "ICD0": "http://translator.ncats.nih.gov/ICD0_",
       "ICD10": "http://translator.ncats.nih.gov/ICD10_",
       "ICD9": "http://translator.ncats.nih.gov/ICD9_",
@@ -100,6 +102,7 @@
       "ORPHANET": "http://identifiers.org/orphanet/",
       "PANTHER.FAMILY": "http://identifiers.org/panther.family/",
       "PANTHER.PATHWAY": "http://identifiers.org/panther.pathway/",
+      "PATO": "http://purl.obolibrary.org/obo/PATO_",
       "PATO-PROPERTY": "http://purl.obolibrary.org/obo/pato#",
       "PDQ": "https://www.cancer.gov/publications/pdq#",
       "PHARMGKB.DRUG": "http://identifiers.org/pharmgkb.drug/",
@@ -268,6 +271,9 @@
       "biomarker_for": {
          "@type": "@id"
       },
+      "broad_match": {
+         "@type": "@id"
+      },
       "capable_of": {
          "@type": "@id"
       },
@@ -430,6 +436,9 @@
       "filler": {
          "@type": "@id"
       },
+      "food_component_of": {
+         "@type": "@id"
+      },
       "frequency_qualifier": {
          "@type": "@id"
       },
@@ -485,6 +494,9 @@
          "@type": "@id"
       },
       "has_excipient": {
+         "@type": "@id"
+      },
+      "has_food_component": {
          "@type": "@id"
       },
       "has_gene": {
@@ -718,6 +730,9 @@
       "molecularly_interacts_with": {
          "@type": "@id"
       },
+      "narrow_match": {
+         "@type": "@id"
+      },
       "negated": {
          "@type": "xsd:boolean"
       },
@@ -740,6 +755,9 @@
          "@type": "@id"
       },
       "negatively_regulates_process_to_process": {
+         "@type": "@id"
+      },
+      "nutrient_of": {
          "@type": "@id"
       },
       "object": {
