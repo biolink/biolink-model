@@ -23,6 +23,7 @@ URI: [biolink:ClinicalFinding](https://w3id.org/biolink/vocab/ClinicalFinding)
 ## Identifier prefixes
 
  * LOINC
+ * NCIT
  * EFO
 
 ## Parents
