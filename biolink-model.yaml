@@ -6835,6 +6835,9 @@ classes:
     slot_usage:
       has attribute:
         range: clinical attribute
+    id_prefixes:
+      - LOINC
+      - EFO
 
   hospitalization:
     is_a: clinical intervention
