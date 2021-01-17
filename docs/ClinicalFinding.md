@@ -20,6 +20,11 @@ URI: [biolink:ClinicalFinding](https://w3id.org/biolink/vocab/ClinicalFinding)
 ---
 
 
+## Identifier prefixes
+
+ * LOINC
+ * EFO
+
 ## Parents
 
  *  is_a: [PhenotypicFeature](PhenotypicFeature.md)
