@@ -25,7 +25,7 @@ Refer to the following resources for a quick introduction to the Biolink Model:
     - Slides: https://bit.ly/biolink-model-workshop-biocuration-2020
     - Video: https://www.youtube.com/watch?v=RE1hFm8lvJA
 
-See also [Biolink Model Guidelines](./guidelines/index.md) for understanding, curating, and working with the model.
+See also [Biolink Model Guidelines](guidelines/README.md) for understanding, curating, and working with the model.
 
 
 
