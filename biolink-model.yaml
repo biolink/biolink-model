@@ -480,7 +480,6 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
-    required: true
 
   name:
     aliases: [ 'label', 'display name', 'title' ]
@@ -4894,6 +4893,7 @@ classes:
     slot_usage:
       category:
         range: named thing
+        required: true
     exact_mappings:
       - BFO:0000001
       - WIKIDATA:Q35120
@@ -7221,6 +7221,7 @@ classes:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
       category:
         range: association
+        required: true
     exact_mappings:
       - OBAN:association
       - rdf:Statement
