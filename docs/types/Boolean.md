@@ -15,3 +15,4 @@ URI: [metatype:Boolean](https://biolink.github.io/biolinkml/docs/types/Boolean)
 |  |  |  |
 | --- | --- | --- |
 | Root (builtin) type | | **Bool** |
+| Representation | | bool |

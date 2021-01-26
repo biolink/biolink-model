@@ -15,7 +15,7 @@ URI: [biolink:Entity](https://w3id.org/biolink/vocab/Entity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Attribute]%3Chas%20attribute%200..%2A-++[Entity%7Cid:string;iri:iri_type%20%3F;category:category_type%20%2B;type:string%20%3F;name:label_type%20%3F;description:narrative_text%20%3F;source:label_type%20%3F],[Agent]%3Cprovided%20by%200..%2A-%20[Entity],[Entity]%5E-[NamedThing],[Entity]%5E-[Association],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Attribute]%3Chas%20attribute%200..%2A-++[Entity%7Cid:string;iri:iri_type%20%3F;category:category_type%20%2A;type:string%20%3F;name:label_type%20%3F;description:narrative_text%20%3F;source:label_type%20%3F],[Agent]%3Cprovided%20by%200..%2A-%20[Entity],[Entity]%5E-[NamedThing],[Entity]%5E-[Association],[Attribute],[Association],[Agent])
 
 ---
 
@@ -33,7 +33,7 @@ URI: [biolink:Entity](https://w3id.org/biolink/vocab/Entity)
 
 ### Own
 
- * [category](category.md)  <sub>1..*</sub>
+ * [category](category.md)  <sub>0..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -75,7 +75,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [category](category.md)  <sub>1..*</sub>
+ * [category](category.md)  <sub>0..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
