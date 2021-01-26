@@ -7221,7 +7221,7 @@ classes:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
       category:
         range: association
-        required: true
+        required: false
     exact_mappings:
       - OBAN:association
       - rdf:Statement
