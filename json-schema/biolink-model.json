@@ -270,7 +270,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -363,7 +362,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -585,8 +583,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "Association",
          "type": "object"
@@ -808,7 +805,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -1755,8 +1751,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "CaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -1978,7 +1973,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "CellLineAsAModelOfDiseaseAssociation",
@@ -2071,7 +2065,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
@@ -2363,7 +2356,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "ChemicalToChemicalAssociation",
@@ -2461,7 +2453,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -2557,7 +2548,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
@@ -2651,7 +2641,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "ChemicalToGeneAssociation",
@@ -2745,7 +2734,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "ChemicalToPathwayAssociation",
@@ -3487,7 +3475,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "predicate",
             "object"
@@ -4127,7 +4114,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
@@ -4349,7 +4335,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "DiseaseOrPhenotypicFeatureToLocationAssociation",
@@ -4443,8 +4428,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "DiseaseToExposureEventAssociation",
          "type": "object"
@@ -4553,8 +4537,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "DiseaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -4789,7 +4772,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "DrugToGeneAssociation",
@@ -5384,7 +5366,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -5487,8 +5468,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "ExposureEventToOutcomeAssociation",
          "type": "object"
@@ -5596,7 +5576,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "ExposureEventToPhenotypicFeatureAssociation",
@@ -5928,7 +5907,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -6119,7 +6097,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "GeneAsAModelOfDiseaseAssociation",
@@ -6298,7 +6275,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "GeneHasVariantThatContributesToDiseaseAssociation",
@@ -6443,7 +6419,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "subject",
             "object"
@@ -6551,7 +6526,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "GeneToDiseaseAssociation",
@@ -6651,7 +6625,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -6760,7 +6733,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -6854,7 +6826,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -6945,7 +6916,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -7040,7 +7010,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -7151,7 +7120,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "GeneToPhenotypicFeatureAssociation",
@@ -7469,7 +7437,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -7644,7 +7611,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "object",
             "subject"
@@ -7750,7 +7716,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "predicate",
             "object"
@@ -7844,7 +7809,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "subject",
             "object"
@@ -7937,7 +7901,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "subject",
             "object"
@@ -8047,7 +8010,6 @@
             "id",
             "object",
             "relation",
-            "category",
             "predicate",
             "subject"
          ],
@@ -8140,7 +8102,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "subject",
             "object"
@@ -8869,7 +8830,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -8962,7 +8922,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -9055,7 +9014,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -9269,7 +9227,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -9365,8 +9322,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
@@ -10279,7 +10235,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -10372,7 +10327,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -10480,7 +10434,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -10570,7 +10523,6 @@
          },
          "required": [
             "id",
-            "category",
             "subject",
             "object",
             "predicate",
@@ -10663,7 +10615,6 @@
             }
          },
          "required": [
-            "category",
             "subject",
             "id",
             "predicate",
@@ -11698,7 +11649,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -12489,8 +12439,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "SequenceAssociation",
          "type": "object"
@@ -12580,7 +12529,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -13432,7 +13380,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -13617,7 +13564,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "object",
             "subject"
@@ -13723,7 +13669,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "predicate",
             "object"
@@ -13816,7 +13761,6 @@
             "id",
             "subject",
             "relation",
-            "category",
             "object",
             "predicate"
          ],
@@ -13924,7 +13868,6 @@
             "id",
             "subject",
             "relation",
-            "category",
             "object",
             "predicate"
          ],
@@ -14035,7 +13978,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "VariantToPhenotypicFeatureAssociation",
@@ -14148,7 +14090,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],

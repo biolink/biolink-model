@@ -72,7 +72,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
   }
@@ -91,7 +91,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
     predicate: PredicateType!
@@ -111,7 +111,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
     predicate: PredicateType!
@@ -165,7 +165,7 @@ type Association
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
   }
 
 type Attribute
@@ -209,7 +209,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: Behavior!
     object: BehavioralFeature!
     frequencyQualifier: FrequencyValue
@@ -436,7 +436,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -486,7 +486,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: CellLine!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -509,7 +509,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: DiseaseOrPhenotypicFeature!
   }
 
@@ -579,7 +579,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: ChemicalSubstance!
   }
 
@@ -597,7 +597,7 @@ type ChemicalToChemicalDerivationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     catalystQualifier: [MacromolecularMachineMixin]
     subject: ChemicalSubstance!
     object: ChemicalSubstance!
@@ -620,7 +620,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: DiseaseOrPhenotypicFeature!
   }
 
@@ -645,7 +645,7 @@ type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: GeneOrGeneProduct!
   }
 
@@ -665,7 +665,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: Pathway!
   }
 
@@ -838,7 +838,7 @@ type ContributorAssociation
     negated: Boolean
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: InformationContentEntity!
     predicate: PredicateType!
     object: Agent!
@@ -992,7 +992,7 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation implements Disea
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: AnatomicalEntity!
   }
 
@@ -1046,7 +1046,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: AnatomicalEntity!
   }
 
@@ -1072,7 +1072,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
   }
 
 type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, DiseaseToEntityAssociationMixin
@@ -1092,7 +1092,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1151,7 +1151,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: GeneOrGeneProduct!
   }
 
@@ -1176,7 +1176,7 @@ interface Entity
   {
     id: String!
     iri: IriType
-    category: [CategoryType]!
+    category: [CategoryType]
     type: String
     name: LabelType
     description: NarrativeText
@@ -1340,7 +1340,7 @@ type ExonToTranscriptRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: Exon!
     object: Transcript!
   }
@@ -1372,7 +1372,7 @@ type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociati
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     hasPopulationContext: PopulationOfIndividualOrganisms
     hasTemporalContext: TimeType
   }
@@ -1393,7 +1393,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: ExposureEvent!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -1484,7 +1484,7 @@ type FunctionalAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: MacromolecularMachineMixin!
     object: GeneOntologyClass!
   }
@@ -1523,7 +1523,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1574,7 +1574,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1628,7 +1628,7 @@ type GeneRegulatoryRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     predicate: PredicateType!
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
@@ -1650,7 +1650,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: GeneOrGeneProduct!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -1676,7 +1676,7 @@ type GeneToExpressionSiteAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     stageQualifier: LifeStage
     quantifierQualifier: OntologyClass
     subject: GeneOrGeneProduct!
@@ -1699,7 +1699,7 @@ interface GeneToGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
   }
@@ -1718,7 +1718,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     predicate: PredicateType!
@@ -1742,7 +1742,7 @@ type GeneToGeneHomologyAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     predicate: PredicateType!
@@ -1762,7 +1762,7 @@ type GeneToGeneProductRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: Gene!
     object: GeneProductMixin!
     predicate: PredicateType!
@@ -1783,7 +1783,7 @@ type GeneToGoTermAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: MolecularEntity!
     object: GeneOntologyClass!
   }
@@ -1804,7 +1804,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: GeneOrGeneProduct!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -1873,7 +1873,7 @@ type GenomicSequenceLocalization
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     startInterbaseCoordinate: Integer
     endInterbaseCoordinate: Integer
     genomeBuild: String
@@ -1914,7 +1914,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     predicate: PredicateType!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
@@ -1937,7 +1937,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -1965,7 +1965,7 @@ type GenotypeToGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     predicate: PredicateType!
     subject: Genotype!
     object: Gene!
@@ -1985,7 +1985,7 @@ type GenotypeToGenotypePartAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     predicate: PredicateType!
     subject: Genotype!
     object: Genotype!
@@ -2006,7 +2006,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     predicate: PredicateType!
     subject: Genotype!
     frequencyQualifier: FrequencyValue
@@ -2029,7 +2029,7 @@ type GenotypeToVariantAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     predicate: PredicateType!
     subject: Genotype!
     object: SequenceVariant!
@@ -2227,7 +2227,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: MacromolecularMachineMixin!
     object: BiologicalProcess!
   }
@@ -2247,7 +2247,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: MacromolecularMachineMixin!
     object: CellularComponent!
   }
@@ -2272,7 +2272,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: MacromolecularMachineMixin!
     object: MolecularActivity!
   }
@@ -2319,7 +2319,7 @@ type MaterialSampleDerivationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: MaterialSample!
     object: NamedThing!
     predicate: PredicateType!
@@ -2342,7 +2342,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
   }
 
 interface MaterialSampleToEntityAssociationMixin
@@ -2571,7 +2571,7 @@ interface OrganismTaxonToOrganismTaxonAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: OrganismTaxon!
     object: OrganismTaxon!
   }
@@ -2590,7 +2590,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: OrganismTaxon!
     object: OrganismTaxon!
     predicate: PredicateType!
@@ -2610,7 +2610,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: OrganismTaxon!
     object: OrganismTaxon!
     predicate: PredicateType!
@@ -2645,7 +2645,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: OrganismalEntity!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -2669,7 +2669,7 @@ type PairwiseGeneToGeneInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     predicate: PredicateType!
@@ -2688,7 +2688,7 @@ type PairwiseMolecularInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     interactingMoleculesCategory: OntologyClass
     subject: MolecularEntity!
     id: String!
@@ -2938,7 +2938,7 @@ type PopulationToPopulationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: PopulationOfIndividualOrganisms!
     object: PopulationOfIndividualOrganisms!
     predicate: PredicateType!
@@ -3123,7 +3123,7 @@ type SequenceAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
   }
 
 type SequenceFeatureRelationship
@@ -3141,7 +3141,7 @@ type SequenceFeatureRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: GenomicEntity!
     object: GenomicEntity!
   }
@@ -3177,7 +3177,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: SequenceVariant!
     object: Treatment!
   }
@@ -3364,7 +3364,7 @@ type TranscriptToGeneRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: Transcript!
     object: Gene!
   }
@@ -3400,7 +3400,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     predicate: PredicateType!
     object: NamedThing!
     frequencyQualifier: FrequencyValue
@@ -3423,7 +3423,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
@@ -3452,7 +3452,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: Gene!
     predicate: PredicateType!
   }
@@ -3472,7 +3472,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     object: Gene!
     predicate: PredicateType!
     quantifierQualifier: OntologyClass
@@ -3497,7 +3497,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: SequenceVariant!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -3520,7 +3520,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     qualifiers: [OntologyClass]
     publications: [Publication]
     type: String
-    category: [Association]!
+    category: [Association]
     subject: SequenceVariant!
     object: PopulationOfIndividualOrganisms!
     hasQuotient: Double

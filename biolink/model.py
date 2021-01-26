@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-01-17 01:09
+# Generation date: 2021-01-26 21:25
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1279,8 +1279,8 @@ class Entity(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Entity
 
     id: Union[str, EntityId] = None
-    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     iri: Optional[Union[str, IriType]] = None
+    category: Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]] = empty_list()
     type: Optional[str] = None
     name: Optional[Union[str, LabelType]] = None
     description: Optional[Union[str, NarrativeText]] = None
@@ -1294,16 +1294,14 @@ class Entity(YAMLRoot):
         if not isinstance(self.id, EntityId):
             self.id = EntityId(self.id)
 
-        if self.category is None:
-            raise ValueError("category must be supplied")
-        elif not isinstance(self.category, list):
-            self.category = [self.category]
-        elif len(self.category) == 0:
-            raise ValueError(f"category must be a non-empty list")
-        self.category = [v if isinstance(v, CategoryType) else CategoryType(v) for v in self.category]
-
         if self.iri is not None and not isinstance(self.iri, IriType):
             self.iri = IriType(self.iri)
+
+        if self.category is None:
+            self.category = []
+        if not isinstance(self.category, list):
+            self.category = [self.category]
+        self.category = [v if isinstance(v, CategoryType) else CategoryType(v) for v in self.category]
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
@@ -2614,7 +2612,7 @@ class ChemicalSubstance(MolecularEntity):
 
     id: Union[str, ChemicalSubstanceId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    is_metabolite: Optional[Bool] = None
+    is_metabolite: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -4991,11 +4989,11 @@ class Association(Entity):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    negated: Optional[Bool] = None
+    negated: Optional[Union[bool, Bool]] = None
     qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
     type: Optional[str] = None
+    category: Optional[Union[Union[str, AssociationId], List[Union[str, AssociationId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -5023,14 +5021,6 @@ class Association(Entity):
         if not isinstance(self.relation, URIorCURIE):
             self.relation = URIorCURIE(self.relation)
 
-        if self.category is None:
-            raise ValueError("category must be supplied")
-        elif not isinstance(self.category, list):
-            self.category = [self.category]
-        elif len(self.category) == 0:
-            raise ValueError(f"category must be a non-empty list")
-        self.category = [v if isinstance(v, AssociationId) else AssociationId(v) for v in self.category]
-
         if self.negated is not None and not isinstance(self.negated, Bool):
             self.negated = Bool(self.negated)
 
@@ -5049,6 +5039,12 @@ class Association(Entity):
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
 
+        if self.category is None:
+            self.category = []
+        if not isinstance(self.category, list):
+            self.category = [self.category]
+        self.category = [v if isinstance(v, AssociationId) else AssociationId(v) for v in self.category]
+
         super().__post_init__(**kwargs)
 
 
@@ -5066,7 +5062,6 @@ class ContributorAssociation(Association):
 
     id: Union[str, ContributorAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, InformationContentEntityId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, AgentId] = None
@@ -5116,7 +5111,6 @@ class GenotypeToGenotypePartAssociation(Association):
 
     id: Union[str, GenotypeToGenotypePartAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, GenotypeId] = None
     object: Union[str, GenotypeId] = None
@@ -5160,7 +5154,6 @@ class GenotypeToGeneAssociation(Association):
 
     id: Union[str, GenotypeToGeneAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, GenotypeId] = None
     object: Union[str, GeneId] = None
@@ -5203,7 +5196,6 @@ class GenotypeToVariantAssociation(Association):
 
     id: Union[str, GenotypeToVariantAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, GenotypeId] = None
     object: Union[str, SequenceVariantId] = None
@@ -5248,7 +5240,6 @@ class GeneToGeneAssociation(Association):
     id: Union[str, GeneToGeneAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
@@ -5281,7 +5272,6 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
     id: Union[str, GeneToGeneHomologyAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
@@ -5348,7 +5338,6 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
 
     id: Union[str, GeneToGeneCoexpressionAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
@@ -5397,7 +5386,6 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PairwiseGeneToGeneInteraction
 
     id: Union[str, PairwiseGeneToGeneInteractionId] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
@@ -5435,7 +5423,6 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PairwiseMolecularInteraction
 
     id: Union[str, PairwiseMolecularInteractionId] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, MolecularEntityId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
@@ -5514,7 +5501,6 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, DiseaseOrPhenotypicFeatureId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -5640,7 +5626,6 @@ class ChemicalToChemicalAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[str, ChemicalSubstanceId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -5679,7 +5664,6 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
 
     id: Union[str, ChemicalToChemicalDerivationAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, ChemicalSubstanceId] = None
     object: Union[str, ChemicalSubstanceId] = None
     predicate: Union[str, PredicateType] = None
@@ -5732,7 +5716,6 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -5765,7 +5748,6 @@ class ChemicalToPathwayAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[str, PathwayId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -5798,7 +5780,6 @@ class ChemicalToGeneAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -5831,7 +5812,6 @@ class DrugToGeneAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -5885,7 +5865,6 @@ class MaterialSampleDerivationAssociation(Association):
 
     id: Union[str, MaterialSampleDerivationAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, MaterialSampleId] = None
     object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
@@ -5931,7 +5910,6 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -6002,7 +5980,6 @@ class DiseaseToExposureEventAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -6076,7 +6053,6 @@ class ExposureEventToOutcomeAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     has_population_context: Optional[Union[str, PopulationOfIndividualOrganismsId]] = None
     has_temporal_context: Optional[Union[str, TimeType]] = None
 
@@ -6225,7 +6201,6 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[str, AnatomicalEntityId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -6259,7 +6234,6 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[str, AnatomicalEntityId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -6332,7 +6306,6 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     id: Union[str, GenotypeToPhenotypicFeatureAssociationId] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[str, GenotypeId] = None
     sex_qualifier: Optional[Union[dict, BiologicalSex]] = None
@@ -6376,7 +6349,6 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, ExposureEvent] = None
     sex_qualifier: Optional[Union[dict, BiologicalSex]] = None
 
@@ -6415,7 +6387,6 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     sex_qualifier: Optional[Union[dict, BiologicalSex]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -6448,7 +6419,6 @@ class CaseToPhenotypicFeatureAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     sex_qualifier: Optional[Union[dict, BiologicalSex]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -6479,7 +6449,6 @@ class BehaviorToBehavioralFeatureAssociation(Association):
     id: Union[str, BehaviorToBehavioralFeatureAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, BehaviorId] = None
     object: Union[str, BehavioralFeatureId] = None
     sex_qualifier: Optional[Union[dict, BiologicalSex]] = None
@@ -6559,7 +6528,6 @@ class GeneToPhenotypicFeatureAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     sex_qualifier: Optional[Union[dict, BiologicalSex]] = None
 
@@ -6593,7 +6561,6 @@ class GeneToDiseaseAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -6626,7 +6593,6 @@ class VariantToGeneAssociation(Association):
     id: Union[str, VariantToGeneAssociationId] = None
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[str, GeneId] = None
     predicate: Union[str, PredicateType] = None
 
@@ -6664,7 +6630,6 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
     id: Union[str, VariantToGeneExpressionAssociationId] = None
     subject: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     object: Union[str, GeneId] = None
     predicate: Union[str, PredicateType] = None
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
@@ -6713,7 +6678,6 @@ class VariantToPopulationAssociation(Association):
     id: Union[str, VariantToPopulationAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, SequenceVariantId] = None
     object: Union[str, PopulationOfIndividualOrganismsId] = None
     has_quotient: Optional[float] = None
@@ -6770,7 +6734,6 @@ class PopulationToPopulationAssociation(Association):
 
     id: Union[str, PopulationToPopulationAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, PopulationOfIndividualOrganismsId] = None
     object: Union[str, PopulationOfIndividualOrganismsId] = None
     predicate: Union[str, PredicateType] = None
@@ -6812,7 +6775,6 @@ class VariantToPhenotypicFeatureAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, SequenceVariantId] = None
     sex_qualifier: Optional[Union[dict, BiologicalSex]] = None
 
@@ -6844,7 +6806,6 @@ class VariantToDiseaseAssociation(Association):
 
     id: Union[str, VariantToDiseaseAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
@@ -6884,7 +6845,6 @@ class GenotypeToDiseaseAssociation(Association):
 
     id: Union[str, GenotypeToDiseaseAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
@@ -6957,7 +6917,6 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -6985,7 +6944,6 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
 
     id: Union[str, VariantAsAModelOfDiseaseAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     subject: Union[str, SequenceVariantId] = None
@@ -7015,7 +6973,6 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
 
     id: Union[str, GenotypeAsAModelOfDiseaseAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     subject: Union[str, GenotypeId] = None
@@ -7047,7 +7004,6 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, CellLineId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -7077,7 +7033,6 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, OrganismalEntityId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -7107,7 +7062,6 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     sequence_variant_qualifier: Optional[Union[str, SequenceVariantId]] = None
 
@@ -7142,7 +7096,6 @@ class GeneToExpressionSiteAssociation(Association):
 
     id: Union[str, GeneToExpressionSiteAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
@@ -7195,7 +7148,6 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     id: Union[str, SequenceVariantModulatesTreatmentAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, SequenceVariantId] = None
     object: Union[str, TreatmentId] = None
 
@@ -7229,7 +7181,6 @@ class FunctionalAssociation(Association):
     id: Union[str, FunctionalAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, GeneOntologyClassId] = None
 
@@ -7292,7 +7243,6 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     id: Union[str, MacromolecularMachineToMolecularActivityAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, MolecularActivityId] = None
 
@@ -7327,7 +7277,6 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     id: Union[str, MacromolecularMachineToBiologicalProcessAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, BiologicalProcessId] = None
 
@@ -7362,7 +7311,6 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     id: Union[str, MacromolecularMachineToCellularComponentAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[dict, MacromolecularMachineMixin] = None
     object: Union[str, CellularComponentId] = None
 
@@ -7392,7 +7340,6 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     id: Union[str, GeneToGoTermAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, MolecularEntityId] = None
     object: Union[str, GeneOntologyClassId] = None
 
@@ -7432,7 +7379,6 @@ class SequenceAssociation(Association):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -7458,7 +7404,6 @@ class GenomicSequenceLocalization(SequenceAssociation):
 
     id: Union[str, GenomicSequenceLocalizationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, GenomicEntityId] = None
     object: Union[str, GenomicEntityId] = None
     predicate: Union[str, PredicateType] = None
@@ -7522,7 +7467,6 @@ class SequenceFeatureRelationship(Association):
     id: Union[str, SequenceFeatureRelationshipId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, GenomicEntityId] = None
     object: Union[str, GenomicEntityId] = None
 
@@ -7560,7 +7504,6 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     id: Union[str, TranscriptToGeneRelationshipId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, TranscriptId] = None
     object: Union[str, GeneId] = None
 
@@ -7597,7 +7540,6 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
 
     id: Union[str, GeneToGeneProductRelationshipId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, GeneId] = None
     object: Union[dict, GeneProductMixin] = None
     predicate: Union[str, PredicateType] = None
@@ -7641,7 +7583,6 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     id: Union[str, ExonToTranscriptRelationshipId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, ExonId] = None
     object: Union[str, TranscriptId] = None
 
@@ -7678,7 +7619,6 @@ class GeneRegulatoryRelationship(Association):
 
     id: Union[str, GeneRegulatoryRelationshipId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
@@ -7719,7 +7659,6 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     id: Union[str, AnatomicalEntityToAnatomicalEntityAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, AnatomicalEntityId] = None
     object: Union[str, AnatomicalEntityId] = None
 
@@ -7753,7 +7692,6 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
 
     id: Union[str, AnatomicalEntityToAnatomicalEntityPartOfAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, AnatomicalEntityId] = None
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
@@ -7798,7 +7736,6 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
 
     id: Union[str, AnatomicalEntityToAnatomicalEntityOntogenicAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, AnatomicalEntityId] = None
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
@@ -7842,7 +7779,6 @@ class OrganismTaxonToOrganismTaxonAssociation(Association):
     id: Union[str, OrganismTaxonToOrganismTaxonAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
 
@@ -7874,7 +7810,6 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
 
     id: Union[str, OrganismTaxonToOrganismTaxonSpecializationId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
     predicate: Union[str, PredicateType] = None
@@ -7919,7 +7854,6 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
 
     id: Union[str, OrganismTaxonToOrganismTaxonInteractionId] = None
     relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
     predicate: Union[str, PredicateType] = None
@@ -7986,7 +7920,7 @@ slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
                    model_uri=BIOLINK.type, domain=None, range=Optional[str])
 
 slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie('category'),
-                   model_uri=BIOLINK.category, domain=Entity, range=Union[Union[str, CategoryType], List[Union[str, CategoryType]]])
+                   model_uri=BIOLINK.category, domain=Entity, range=Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]])
 
 slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.name, domain=None, range=Optional[Union[str, LabelType]])
@@ -8145,7 +8079,7 @@ slots.has_chemical_formula = Slot(uri=BIOLINK.has_chemical_formula, name="has ch
                    model_uri=BIOLINK.has_chemical_formula, domain=NamedThing, range=Optional[str])
 
 slots.is_metabolite = Slot(uri=BIOLINK.is_metabolite, name="is metabolite", curie=BIOLINK.curie('is_metabolite'),
-                   model_uri=BIOLINK.is_metabolite, domain=ChemicalSubstance, range=Optional[Bool])
+                   model_uri=BIOLINK.is_metabolite, domain=ChemicalSubstance, range=Optional[Union[bool, Bool]])
 
 slots.has_constituent = Slot(uri=BIOLINK.has_constituent, name="has constituent", curie=BIOLINK.curie('has_constituent'),
                    model_uri=BIOLINK.has_constituent, domain=NamedThing, range=Optional[Union[Union[str, ChemicalSubstanceId], List[Union[str, ChemicalSubstanceId]]]])
@@ -8754,7 +8688,7 @@ slots.relation = Slot(uri=BIOLINK.relation, name="relation", curie=BIOLINK.curie
                    model_uri=BIOLINK.relation, domain=Association, range=Union[str, URIorCURIE])
 
 slots.negated = Slot(uri=BIOLINK.negated, name="negated", curie=BIOLINK.curie('negated'),
-                   model_uri=BIOLINK.negated, domain=Association, range=Optional[Bool])
+                   model_uri=BIOLINK.negated, domain=Association, range=Optional[Union[bool, Bool]])
 
 slots.has_confidence_level = Slot(uri=BIOLINK.has_confidence_level, name="has confidence level", curie=BIOLINK.curie('has_confidence_level'),
                    model_uri=BIOLINK.has_confidence_level, domain=Association, range=Optional[Union[str, ConfidenceLevelId]])
@@ -8928,7 +8862,7 @@ slots.association_type = Slot(uri=BIOLINK.type, name="association_type", curie=B
                    model_uri=BIOLINK.association_type, domain=Association, range=Optional[str])
 
 slots.association_category = Slot(uri=BIOLINK.category, name="association_category", curie=BIOLINK.curie('category'),
-                   model_uri=BIOLINK.association_category, domain=Association, range=Union[Union[str, AssociationId], List[Union[str, AssociationId]]])
+                   model_uri=BIOLINK.association_category, domain=Association, range=Optional[Union[Union[str, AssociationId], List[Union[str, AssociationId]]]])
 
 slots.contributor_association_subject = Slot(uri=BIOLINK.subject, name="contributor association_subject", curie=BIOLINK.curie('subject'),
                    model_uri=BIOLINK.contributor_association_subject, domain=ContributorAssociation, range=Union[str, InformationContentEntityId])

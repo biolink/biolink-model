@@ -187,7 +187,7 @@ metatype:Nodeidentifier NONLITERAL
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <type> @metatype:String ? ;
-             <category> @<Association> +
+             <category> @<Association> *
           ) ;
           rdf:type [ <Association> ]
        )
@@ -899,7 +899,7 @@ metatype:Nodeidentifier NONLITERAL
 
 <Entity_struct> {
     (  $<Entity_tes> (  <iri> @<IriType> ? ;
-          <category> @<CategoryType> + ;
+          <category> @<CategoryType> * ;
           rdf:type @metatype:String ? ;
           rdfs:label @<LabelType> ? ;
           dcterms:description @<NarrativeText> ? ;
