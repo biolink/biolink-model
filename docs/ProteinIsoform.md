@@ -23,6 +23,7 @@ URI: [biolink:ProteinIsoform](https://w3id.org/biolink/vocab/ProteinIsoform)
 ## Identifier prefixes
 
  * UniProtKB
+ * UNIPROT.ISOFORM
  * PR
  * ENSEMBL
 

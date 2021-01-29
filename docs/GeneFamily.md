@@ -26,6 +26,19 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
  * HGNC.FAMILY
  * FB
  * interpro
+ * CATH
+ * CDD
+ * HAMAP
+ * PFAM
+ * PIRSF
+ * PRINTS
+ * PRODOM
+ * PROSITE
+ * SMART
+ * SUPFAM
+ * TIGRFAM
+ * CATH.SUPERFAMILY
+ * RFAM
  * KEGG.ORTHOLOGY
  * EGGNOG
 

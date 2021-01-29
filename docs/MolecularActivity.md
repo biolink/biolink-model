@@ -27,6 +27,7 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
  * RHEA
  * MetaCyc
  * EC
+ * TCDB
  * KEGG.REACTION
  * KEGG.RCLASS
  * KEGG.ENZYME
