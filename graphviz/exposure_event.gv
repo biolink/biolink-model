@@ -1,18 +1,18 @@
 digraph {
-	graph [bb="0,0,127.39,123"];
+	graph [bb="0,0,163.79,123"];
 	node [label="\N"];
 	"exposure event"	 [height=0.5,
 		label="exposure event",
-		pos="63.694,105",
-		width=1.7693];
+		pos="81.893,105",
+		width=2.2748];
 	timepoint	 [color=blue,
 		height=0.5,
 		label="time type",
-		pos="63.694,18",
-		width=1.2277];
+		pos="81.893,18",
+		width=1.5346];
 	"exposure event" -> timepoint	 [color=blue,
 		label=timepoint,
-		lp="90.194,61.5",
-		pos="e,63.694,36.003 63.694,86.974 63.694,75.192 63.694,59.561 63.694,46.158",
+		lp="116.89,61.5",
+		pos="e,81.893,36.003 81.893,86.974 81.893,75.192 81.893,59.561 81.893,46.158",
 		style=solid];
 }
