@@ -5683,6 +5683,7 @@ classes:
       - RHEA
       - MetaCyc
       - EC
+      - TCDB
       - KEGG.REACTION  ## R number
       - KEGG.RCLASS    ## RC number
       - KEGG.ENZYME    ## EC number
@@ -6538,6 +6539,7 @@ classes:
       - gene product isoform mixin
     id_prefixes:
       - UniProtKB ## UniProtKB:([A-Z0-9]+-\d+)
+      - UNIPROT.ISOFORM 
       - PR
       - ENSEMBL
 
@@ -6637,6 +6639,19 @@ classes:
       - HGNC.FAMILY
       - FB       # FlyBase FBgg*
       - interpro # note: may be better to introduce a protein domain/family
+      - CATH
+      - CDD
+      - HAMAP
+      - PFAM
+      - PIRSF
+      - PRINTS
+      - PRODOM
+      - PROSITE
+      - SMART
+      - SUPFAM
+      - TIGRFAM
+      - CATH.SUPERFAMILY
+      - RFAM ## RNAs only
       - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
       - EGGNOG
     in_subset:
