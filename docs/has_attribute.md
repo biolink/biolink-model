@@ -233,8 +233,8 @@ URI: [biolink:has_attribute](https://w3id.org/biolink/vocab/has_attribute)
 |  | | NCIT:qualifier_applies_to |
 |  | | NCIT:role_has_domain |
 |  | | NCIT:role_has_range |
-|  | | OBO:INO_0000154 |
-|  | | OBO:hancestro_0308 |
+|  | | INO:0000154 |
+|  | | HANCESTRO:0308 |
 |  | | OMIM:has_inheritance_type |
 |  | | ORPHA:C016 |
 |  | | ORPHA:C017 |
