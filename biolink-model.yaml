@@ -5906,6 +5906,11 @@ classes:
       - NDC
       - PHARMGKB.DRUG
 
+  mechanism of action:
+    is_a: phenomenon
+    exact_mappings:
+      - NCIT:C54680
+
   ## Food
 
   food component:
@@ -7628,6 +7633,78 @@ classes:
       object:
         range: gene or gene product
         description: "the gene or gene product that is affected by the drug"
+
+  drug to mechanism of action association:
+    description: >-
+      An interaction between (the active ingredient of) a drug and a mechanism of action.
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - drug to entity association mixin
+    slot_usage:
+      object:
+        range: mechanism of action
+        description: >-
+          the mechanism of action of the drug
+
+  mechanism of action to entity association mixin:
+    description: >-
+      An interaction between a drug mechanism of action and another entity
+    mixin: true
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: mechanism of action
+        description: >-
+          the subject drug mechanism of action with a related entity
+
+  mechanism of action to biological process association:
+    description: >-
+      biological process targeted by a drug mechanism of action
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - mechanism of action to entity association mixin
+    slot_usage:
+      object:
+        range: biological process
+        description: >-
+          biological process target of a drug mechanism of action
+
+  mechanism of action to anatomical entity association:
+    description: >-
+      anatomical entity targeted by a drug mechanism of action
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - mechanism of action to entity association mixin
+    slot_usage:
+      object:
+        range: anatomical entity
+        description: >-
+          anatomical entity target of a drug mechanism of action
+
+  mechanism of action to molecular entity association:
+    description: >-
+      molecular entity (e.g. protein, etc.) targeted by a drug mechanism of action
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - mechanism of action to entity association mixin
+    slot_usage:
+      object:
+        range: molecular entity
+        description: >-
+          molecular entity target of a drug mechanism of action
 
   material sample to entity association mixin:
     description: >-
