@@ -4420,6 +4420,22 @@ slots:
     narrow_mappings:
       - NCIT:allele_has_activity
 
+  has mechanism of action:
+    description: >-
+      relationship between a drug (or treatment generally?) and a component
+      biological entity representing a characteristic of its mechanism of action.
+    is_a: related to
+    domain: drug
+    range: biological entity
+    exact_mappings:
+      - NCIT:C54680
+
+  has target of action:
+    description: >-
+      relationship between a drug (or treatment generally?) and its biological
+      target of action, including biological process, anatomical entity, gene, etc.
+    is_a: has mechanism of action
+
 
 ## --------------------
 ## ASSOCIATION SLOTS
@@ -5905,11 +5921,6 @@ classes:
       - RXCUI
       - NDC
       - PHARMGKB.DRUG
-
-  mechanism of action:
-    is_a: phenomenon
-    exact_mappings:
-      - NCIT:C54680
 
   ## Food
 
@@ -7634,9 +7645,12 @@ classes:
         range: gene or gene product
         description: "the gene or gene product that is affected by the drug"
 
-  drug to mechanism of action association:
+  drug to biological entity association:
     description: >-
-      An interaction between (the active ingredient of) a drug and a mechanism of action.
+      An interaction between (the active ingredient of) a drug and
+      a biological entity. The scope of possible target biological
+      entity is very broad: biological (GO) process, pathway, disease,
+      gene, organism, anatomical entity (cell, organ) etc.
     is_a: association
     defining_slots:
       - subject
@@ -7645,66 +7659,25 @@ classes:
       - drug to entity association mixin
     slot_usage:
       object:
-        range: mechanism of action
+        range: biological entity
         description: >-
-          the mechanism of action of the drug
+          a biological entity target of the drug
 
-  mechanism of action to entity association mixin:
+  drug to mechanism of action association:
     description: >-
-      An interaction between a drug mechanism of action and another entity
-    mixin: true
+      A scoping of drug's association with a biological entity which
+      allows for subgraph documentation of a drug's mechanism of action.
+    is_a: drug to biological entity association
     defining_slots:
       - subject
-    slot_usage:
-      subject:
-        range: mechanism of action
-        description: >-
-          the subject drug mechanism of action with a related entity
-
-  mechanism of action to biological process association:
-    description: >-
-      biological process targeted by a drug mechanism of action
-    is_a: association
-    defining_slots:
-      - subject
+      - predicate
       - object
-    mixins:
-      - mechanism of action to entity association mixin
     slot_usage:
-      object:
-        range: biological process
+      predicate:
+        subproperty_of: mechanism of action
         description: >-
-          biological process target of a drug mechanism of action
-
-  mechanism of action to anatomical entity association:
-    description: >-
-      anatomical entity targeted by a drug mechanism of action
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - mechanism of action to entity association mixin
-    slot_usage:
-      object:
-        range: anatomical entity
-        description: >-
-          anatomical entity target of a drug mechanism of action
-
-  mechanism of action to molecular entity association:
-    description: >-
-      molecular entity (e.g. protein, etc.) targeted by a drug mechanism of action
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - mechanism of action to entity association mixin
-    slot_usage:
-      object:
-        range: molecular entity
-        description: >-
-          molecular entity target of a drug mechanism of action
+          constrains interpretation of association object to
+          being a descriptor or context of mechanism of action.
 
   material sample to entity association mixin:
     description: >-
