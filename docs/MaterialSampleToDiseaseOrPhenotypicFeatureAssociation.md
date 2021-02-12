@@ -15,7 +15,7 @@ URI: [biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](https://w3i
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[Attribute],[Association],[Agent])
 
 ---
 
@@ -59,7 +59,7 @@ URI: [biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](https://w3i
     * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
     * range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..*</sub>
-    * range: [Association](Association.md)
+    * range: [CategoryType](types/CategoryType.md)
 
 ### Inherited from entity:
 

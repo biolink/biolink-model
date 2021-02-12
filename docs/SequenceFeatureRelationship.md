@@ -15,7 +15,7 @@ URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/Sequen
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[GenomicEntity]%3Cobject%201..1-%20[SequenceFeatureRelationship%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicEntity]%3Csubject%201..1-%20[SequenceFeatureRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Association]%5E-[SequenceFeatureRelationship],[Publication],[OntologyClass],[GenomicEntity],[GeneToGeneProductRelationship],[ExonToTranscriptRelationship],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[GenomicEntity]%3Cobject%201..1-%20[SequenceFeatureRelationship%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicEntity]%3Csubject%201..1-%20[SequenceFeatureRelationship],[SequenceFeatureRelationship]%5E-[TranscriptToGeneRelationship],[SequenceFeatureRelationship]%5E-[GeneToGeneProductRelationship],[SequenceFeatureRelationship]%5E-[ExonToTranscriptRelationship],[Association]%5E-[SequenceFeatureRelationship],[Publication],[OntologyClass],[GenomicEntity],[GeneToGeneProductRelationship],[ExonToTranscriptRelationship],[Attribute],[Association],[Agent])
 
 ---
 
@@ -70,7 +70,7 @@ URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/Sequen
     * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
     * range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..*</sub>
-    * range: [Association](Association.md)
+    * range: [CategoryType](types/CategoryType.md)
 
 ### Inherited from entity:
 

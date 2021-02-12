@@ -15,7 +15,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation],[Publication],[OntologyClass],[GenomicEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;genome_build:string%20%3F;strand:string%20%3F;phase:string%20%3F;predicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[SequenceAssociation]%5E-[GenomicSequenceLocalization],[GenomicEntity],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation],[Publication],[OntologyClass],[GenomicEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;genome_build:string%20%3F;strand:string%20%3F;phase:string%20%3F;predicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[SequenceAssociation]%5E-[GenomicSequenceLocalization],[GenomicEntity],[Attribute],[Agent])
 
 ---
 
@@ -78,7 +78,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
     * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
     * range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..*</sub>
-    * range: [Association](Association.md)
+    * range: [CategoryType](types/CategoryType.md)
 
 ### Inherited from entity:
 
