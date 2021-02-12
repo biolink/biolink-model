@@ -174,9 +174,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1547.5,265",
-		width=1.7512];
+		label="category type",
+		pos="1560.5,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,1834.3,36.006 1869.5,160.13 1863.7,146.37 1855.8,126.75 1850.5,109 1844.3,88.182 1839.4,64.102 1836.1,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -185,18 +185,18 @@ digraph {
 	"gene to gene product relationship_subject"	 [color=blue,
 		height=0.5,
 		label=gene,
-		pos="1661.5,265",
+		pos="1687.5,265",
 		width=0.92075];
 	object -> relation	 [pos="e,1847.6,35.346 1883.7,74.069 1875.1,64.805 1864.2,53.154 1854.7,42.876",
 		style=dotted];
 	"gene to gene product relationship_object"	 [color=blue,
 		height=0.5,
 		label="gene product mixin",
-		pos="1814.5,265",
+		pos="1840.5,265",
 		width=2.8164];
 	"gene to gene product relationship_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2012.5,265",
+		pos="2038.5,265",
 		width=2.1845];
 }

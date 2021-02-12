@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2355.9,283"];
+	graph [bb="0,0,2380.9,283"];
 	node [label="\N"];
 	"pairwise gene to gene interaction"	 [height=0.5,
 		label="pairwise gene to gene interaction",
@@ -173,9 +173,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1506.1,265",
-		width=1.7512];
+		label="category type",
+		pos="1519.1,265",
+		width=2.0943];
 	subject -> object	 [label=relation,
 		lp="1831.1,134.5",
 		pos="e,1828,104.3 1792.8,159.73 1793.9,149.39 1796.6,136.64 1803.1,127 1807.4,120.6 1813.2,115 1819.4,110.25"];
@@ -184,23 +184,23 @@ digraph {
 	"gene to gene association_subject"	 [color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="1698.1,265",
+		pos="1723.1,265",
 		width=3.0692];
 	object -> relation	 [pos="e,1855.1,36.09 1855.1,72.955 1855.1,64.883 1855.1,55.176 1855.1,46.182",
 		style=dotted];
 	"gene to gene association_object"	 [color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="1937.1,265",
+		pos="1962.1,265",
 		width=3.0692];
 	"pairwise gene to gene interaction_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2144.1,265",
+		pos="2169.1,265",
 		width=2.1845];
 	"pairwise gene to gene interaction_relation"	 [color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="2298.1,265",
+		pos="2323.1,265",
 		width=1.6068];
 }

@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-02-05 19:44
+# Generation date: 2021-02-12 22:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -5008,7 +5008,7 @@ class Association(Entity):
     qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
     type: Optional[str] = None
-    category: Optional[Union[Union[str, AssociationId], List[Union[str, AssociationId]]]] = empty_list()
+    category: Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -5058,7 +5058,7 @@ class Association(Entity):
             self.category = []
         if not isinstance(self.category, list):
             self.category = [self.category]
-        self.category = [v if isinstance(v, AssociationId) else AssociationId(v) for v in self.category]
+        self.category = [v if isinstance(v, CategoryType) else CategoryType(v) for v in self.category]
 
         super().__post_init__(**kwargs)
 
@@ -8877,7 +8877,7 @@ slots.association_type = Slot(uri=BIOLINK.type, name="association_type", curie=B
                    model_uri=BIOLINK.association_type, domain=Association, range=Optional[str])
 
 slots.association_category = Slot(uri=BIOLINK.category, name="association_category", curie=BIOLINK.curie('category'),
-                   model_uri=BIOLINK.association_category, domain=Association, range=Optional[Union[Union[str, AssociationId], List[Union[str, AssociationId]]]])
+                   model_uri=BIOLINK.association_category, domain=Association, range=Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]])
 
 slots.contributor_association_subject = Slot(uri=BIOLINK.subject, name="contributor association_subject", curie=BIOLINK.curie('subject'),
                    model_uri=BIOLINK.contributor_association_subject, domain=ContributorAssociation, range=Union[str, InformationContentEntityId])

@@ -225,9 +225,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="2066,265",
-		width=1.7512];
+		label="category type",
+		pos="2079,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,2306.9,36.006 2342.1,160.13 2336.2,146.37 2328.3,126.75 2323,109 2316.8,88.182 2311.9,64.102 2308.6,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -236,13 +236,13 @@ digraph {
 	"behavior to behavioral feature association_subject"	 [color=blue,
 		height=0.5,
 		label=behavior,
-		pos="2198,265",
+		pos="2224,265",
 		width=1.4263];
 	object -> relation	 [pos="e,2320.2,35.346 2356.3,74.069 2347.6,64.805 2336.8,53.154 2327.2,42.876",
 		style=dotted];
 	"behavior to behavioral feature association_object"	 [color=blue,
 		height=0.5,
 		label="behavioral feature",
-		pos="2364,265",
+		pos="2390,265",
 		width=2.672];
 }

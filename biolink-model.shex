@@ -187,7 +187,7 @@ metatype:Nodeidentifier NONLITERAL
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <type> @metatype:String ? ;
-             <category> @<Association> *
+             <category> @<CategoryType> *
           ) ;
           rdf:type [ <Association> ]
        )

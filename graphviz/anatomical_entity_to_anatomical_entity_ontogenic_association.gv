@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2503.4,283"];
+	graph [bb="0,0,2529.4,283"];
 	node [label="\N"];
 	"anatomical entity to anatomical entity ontogenic association"	 [height=0.5,
 		label="anatomical entity to anatomical entity ontogenic association",
@@ -172,9 +172,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1859.7,265",
-		width=1.7512];
+		label="category type",
+		pos="1872.7,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,2022.6,36.006 2057.8,160.13 2051.9,146.37 2044,126.75 2038.7,109 2032.5,88.182 2027.6,64.102 2024.3,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -183,18 +183,18 @@ digraph {
 	"anatomical entity to anatomical entity ontogenic association_subject"	 [color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="2032.7,265",
+		pos="2058.7,265",
 		width=2.5637];
 	object -> relation	 [pos="e,2035.9,35.346 2072,74.069 2063.3,64.805 2052.5,53.154 2042.9,42.876",
 		style=dotted];
 	"anatomical entity to anatomical entity ontogenic association_object"	 [color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="2235.7,265",
+		pos="2261.7,265",
 		width=2.5637];
 	"anatomical entity to anatomical entity ontogenic association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2424.7,265",
+		pos="2450.7,265",
 		width=2.1845];
 }

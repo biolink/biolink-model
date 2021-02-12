@@ -174,13 +174,13 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1394,265",
-		width=1.7512];
+		label="category type",
+		pos="1407,265",
+		width=2.0943];
 	"genotype to genotype part association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="1554,265",
+		pos="1579,265",
 		width=2.1845];
 	subject -> relation	 [pos="e,1788.9,36.006 1824.1,160.13 1818.2,146.37 1810.3,126.75 1805,109 1798.8,88.182 1793.9,64.102 1790.6,45.943",
 		style=dotted];
@@ -190,13 +190,13 @@ digraph {
 	"genotype to genotype part association_subject"	 [color=blue,
 		height=0.5,
 		label=genotype,
-		pos="1705,265",
+		pos="1730,265",
 		width=1.4985];
 	object -> relation	 [pos="e,1802.2,35.346 1838.3,74.069 1829.6,64.805 1818.8,53.154 1809.2,42.876",
 		style=dotted];
 	"genotype to genotype part association_object"	 [color=blue,
 		height=0.5,
 		label=genotype,
-		pos="1831,265",
+		pos="1856,265",
 		width=1.4985];
 }
