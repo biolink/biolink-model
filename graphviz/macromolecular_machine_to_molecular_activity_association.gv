@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2684.3,283"];
+	graph [bb="0,0,2710.3,283"];
 	node [label="\N"];
 	"macromolecular machine to molecular activity association"	 [height=0.5,
 		label="macromolecular machine to molecular activity association",
@@ -182,9 +182,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="2081.4,265",
-		width=1.7512];
+		label="category type",
+		pos="2094.4,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,2463.3,36.006 2498.5,160.13 2492.6,146.37 2484.7,126.75 2479.4,109 2473.2,88.182 2468.3,64.102 2465,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -193,13 +193,13 @@ digraph {
 	"functional association_subject"	 [color=blue,
 		height=0.5,
 		label="macromolecular machine mixin",
-		pos="2319.4,265",
+		pos="2345.4,265",
 		width=4.3691];
 	object -> relation	 [pos="e,2476.6,35.346 2512.7,74.069 2504,64.805 2493.2,53.154 2483.6,42.876",
 		style=dotted];
 	"macromolecular machine to molecular activity association_object"	 [color=blue,
 		height=0.5,
 		label="molecular activity",
-		pos="2589.4,265",
+		pos="2615.4,265",
 		width=2.6359];
 }

@@ -177,9 +177,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1572.5,265",
-		width=1.7512];
+		label="category type",
+		pos="1585.5,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,2010.3,36.006 2045.5,160.13 2039.7,146.37 2031.8,126.75 2026.5,109 2020.3,88.182 2015.4,64.102 2012.1,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -188,13 +188,13 @@ digraph {
 	"transcript to gene relationship_subject"	 [color=blue,
 		height=0.5,
 		label=transcript,
-		pos="1711.5,265",
+		pos="1736.5,265",
 		width=1.6068];
 	object -> relation	 [pos="e,2023.6,35.346 2059.7,74.069 2051.1,64.805 2040.2,53.154 2030.7,42.876",
 		style=dotted];
 	"transcript to gene relationship_object"	 [color=blue,
 		height=0.5,
 		label=gene,
-		pos="1820.5,265",
+		pos="1845.5,265",
 		width=0.92075];
 }

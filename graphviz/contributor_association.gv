@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2113.4,283"];
+	graph [bb="0,0,2138.4,283"];
 	node [label="\N"];
 	"contributor association"	 [height=0.5,
 		label="contributor association",
@@ -173,9 +173,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1324,265",
-		width=1.7512];
+		label="category type",
+		pos="1337,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,1509,36.223 1529.1,159.96 1524.6,132.23 1515.9,78.913 1510.6,46.098",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -184,23 +184,23 @@ digraph {
 	"contributor association_subject"	 [color=blue,
 		height=0.5,
 		label="information content entity",
-		pos="1539,265",
+		pos="1564,265",
 		width=3.7191];
 	"contributor association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="1770,265",
+		pos="1795,265",
 		width=2.1845];
 	object -> relation	 [pos="e,1522.2,35.346 1558.3,74.069 1549.6,64.805 1538.8,53.154 1529.2,42.876",
 		style=dotted];
 	"contributor association_object"	 [color=blue,
 		height=0.5,
 		label=agent,
-		pos="1904,265",
+		pos="1929,265",
 		width=1.0291];
 	"contributor association_qualifiers"	 [color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="2036,265",
+		pos="2061,265",
 		width=2.1484];
 }

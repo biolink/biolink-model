@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2345.7,283"];
+	graph [bb="0,0,2370.7,283"];
 	node [label="\N"];
 	"population to population association"	 [height=0.5,
 		label="population to population association",
@@ -174,9 +174,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1385,265",
-		width=1.7512];
+		label="category type",
+		pos="1398,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,1660.9,36.006 1696.1,160.13 1690.2,146.37 1682.3,126.75 1677,109 1670.8,88.182 1665.9,64.102 1662.6,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -185,18 +185,18 @@ digraph {
 	"population to population association_subject"	 [color=blue,
 		height=0.5,
 		label="population of individual organisms",
-		pos="1638,265",
+		pos="1663,265",
 		width=4.7662];
 	object -> relation	 [pos="e,1674.2,35.346 1710.3,74.069 1701.6,64.805 1690.8,53.154 1681.2,42.876",
 		style=dotted];
 	"population to population association_object"	 [color=blue,
 		height=0.5,
 		label="population of individual organisms",
-		pos="1999,265",
+		pos="2024,265",
 		width=4.7662];
 	"population to population association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2267,265",
+		pos="2292,265",
 		width=2.1845];
 }

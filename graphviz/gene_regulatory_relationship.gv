@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2065.5,283"];
+	graph [bb="0,0,2090.5,283"];
 	node [label="\N"];
 	"gene regulatory relationship"	 [height=0.5,
 		label="gene regulatory relationship",
@@ -175,13 +175,13 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1349,265",
-		width=1.7512];
+		label="category type",
+		pos="1362,265",
+		width=2.0943];
 	"gene regulatory relationship_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="1509,265",
+		pos="1534,265",
 		width=2.1845];
 	subject -> relation	 [pos="e,1788.9,36.006 1824.1,160.13 1818.2,146.37 1810.3,126.75 1805,109 1798.8,88.182 1793.9,64.102 1790.6,45.943",
 		style=dotted];
@@ -191,13 +191,13 @@ digraph {
 	"gene regulatory relationship_subject"	 [color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="1716,265",
+		pos="1741,265",
 		width=3.0692];
 	object -> relation	 [pos="e,1802.2,35.346 1838.3,74.069 1829.6,64.805 1818.8,53.154 1809.2,42.876",
 		style=dotted];
 	"gene regulatory relationship_object"	 [color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="1955,265",
+		pos="1980,265",
 		width=3.0692];
 }

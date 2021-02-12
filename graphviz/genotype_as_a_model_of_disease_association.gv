@@ -219,20 +219,20 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="2354.6,265",
-		width=1.7512];
+		label="category type",
+		pos="2367.6,265",
+		width=2.0943];
 	"genotype to disease association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2514.6,265",
+		pos="2539.6,265",
 		width=2.1845];
 	object -> relation	 [pos="e,2849.6,36.09 2849.6,72.955 2849.6,64.883 2849.6,55.176 2849.6,46.182",
 		style=dotted];
 	"genotype to disease association_object"	 [color=blue,
 		height=0.5,
 		label="named thing",
-		pos="2680.6,265",
+		pos="2705.6,265",
 		width=1.9318];
 	subject -> relation	 [pos="e,2888.1,31.529 3245.1,165.03 3219.5,154.54 3182.3,139.52 3149.6,127 3061.1,93.163 2957,55.902 2897.6,34.885",
 		style=dotted];
@@ -243,6 +243,6 @@ digraph {
 	"genotype as a model of disease association_subject"	 [color=blue,
 		height=0.5,
 		label=genotype,
-		pos="2821.6,265",
+		pos="2846.6,265",
 		width=1.4985];
 }

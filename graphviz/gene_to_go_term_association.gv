@@ -178,9 +178,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1484.4,265",
-		width=1.7512];
+		label="category type",
+		pos="1497.4,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,1936.3,36.006 1971.5,160.13 1965.6,146.37 1957.7,126.75 1952.4,109 1946.2,88.182 1941.3,64.102 1938,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -189,13 +189,13 @@ digraph {
 	"gene to go term association_subject"	 [color=blue,
 		height=0.5,
 		label="molecular entity",
-		pos="1652.4,265",
+		pos="1677.4,265",
 		width=2.4192];
 	object -> relation	 [pos="e,1949.6,35.346 1985.7,74.069 1977,64.805 1966.2,53.154 1956.6,42.876",
 		style=dotted];
 	"gene to go term association_object"	 [color=blue,
 		height=0.5,
 		label="gene ontology class",
-		pos="1860.4,265",
+		pos="1885.4,265",
 		width=2.8525];
 }

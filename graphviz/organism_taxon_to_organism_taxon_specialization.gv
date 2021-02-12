@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2375.2,283"];
+	graph [bb="0,0,2401.2,283"];
 	node [label="\N"];
 	"organism taxon to organism taxon specialization"	 [height=0.5,
 		label="organism taxon to organism taxon specialization",
@@ -173,9 +173,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1768.5,265",
-		width=1.7512];
+		label="category type",
+		pos="1781.5,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,1986.4,36.006 2021.6,160.13 2015.7,146.37 2007.8,126.75 2002.5,109 1996.3,88.182 1991.4,64.102 1988.1,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -184,18 +184,18 @@ digraph {
 	"organism taxon to organism taxon specialization_subject"	 [color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="1932.5,265",
+		pos="1958.5,265",
 		width=2.3109];
 	object -> relation	 [pos="e,1999.7,35.346 2035.8,74.069 2027.1,64.805 2016.3,53.154 2006.7,42.876",
 		style=dotted];
 	"organism taxon to organism taxon specialization_object"	 [color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="2116.5,265",
+		pos="2142.5,265",
 		width=2.3109];
 	"organism taxon to organism taxon specialization_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2296.5,265",
+		pos="2322.5,265",
 		width=2.1845];
 }

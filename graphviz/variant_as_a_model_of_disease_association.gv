@@ -219,20 +219,20 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="2325.8,265",
-		width=1.7512];
+		label="category type",
+		pos="2338.8,265",
+		width=2.0943];
 	"variant to disease association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2485.8,265",
+		pos="2510.8,265",
 		width=2.1845];
 	object -> relation	 [pos="e,2830.8,36.09 2830.8,72.955 2830.8,64.883 2830.8,55.176 2830.8,46.182",
 		style=dotted];
 	"variant to disease association_object"	 [color=blue,
 		height=0.5,
 		label="named thing",
-		pos="2651.8,265",
+		pos="2676.8,265",
 		width=1.9318];
 	subject -> relation	 [pos="e,2869.3,31.529 3226.4,165.03 3200.7,154.54 3163.6,139.52 3130.8,127 3042.3,93.163 2938.2,55.902 2878.8,34.885",
 		style=dotted];
@@ -243,6 +243,6 @@ digraph {
 	"variant as a model of disease association_subject"	 [color=blue,
 		height=0.5,
 		label="sequence variant",
-		pos="2830.8,265",
+		pos="2855.8,265",
 		width=2.5276];
 }

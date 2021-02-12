@@ -231,9 +231,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1685.8,265",
-		width=1.7512];
+		label="category type",
+		pos="1698.8,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,2317.7,36.006 2352.9,160.13 2347,146.37 2339.1,126.75 2333.8,109 2327.6,88.182 2322.7,64.102 2319.4,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -242,18 +242,18 @@ digraph {
 	"genomic sequence localization_subject"	 [color=blue,
 		height=0.5,
 		label="genomic entity",
-		pos="1847.8,265",
+		pos="1872.8,265",
 		width=2.2387];
 	object -> relation	 [pos="e,2331,35.346 2367.1,74.069 2358.4,64.805 2347.6,53.154 2338,42.876",
 		style=dotted];
 	"genomic sequence localization_object"	 [color=blue,
 		height=0.5,
 		label="genomic entity",
-		pos="2026.8,265",
+		pos="2051.8,265",
 		width=2.2387];
 	"genomic sequence localization_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2203.8,265",
+		pos="2228.8,265",
 		width=2.1845];
 }

@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2221.7,283"];
+	graph [bb="0,0,2246.7,283"];
 	node [label="\N"];
 	"gene to gene homology association"	 [height=0.5,
 		label="gene to gene homology association",
@@ -174,9 +174,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1505.1,265",
-		width=1.7512];
+		label="category type",
+		pos="1518.1,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,1786.9,36.006 1822.1,160.13 1816.3,146.37 1808.4,126.75 1803.1,109 1796.9,88.182 1792,64.102 1788.7,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -185,18 +185,18 @@ digraph {
 	"gene to gene association_subject"	 [color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="1697.1,265",
+		pos="1722.1,265",
 		width=3.0692];
 	object -> relation	 [pos="e,1800.2,35.346 1836.3,74.069 1827.7,64.805 1816.8,53.154 1807.3,42.876",
 		style=dotted];
 	"gene to gene association_object"	 [color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="1936.1,265",
+		pos="1961.1,265",
 		width=3.0692];
 	"gene to gene homology association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2143.1,265",
+		pos="2168.1,265",
 		width=2.1845];
 }

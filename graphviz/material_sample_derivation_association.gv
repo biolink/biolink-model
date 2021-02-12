@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1980.7,283"];
+	graph [bb="0,0,2005.7,283"];
 	node [label="\N"];
 	"material sample derivation association"	 [height=0.5,
 		label="material sample derivation association",
@@ -174,9 +174,9 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="1396,265",
-		width=1.7512];
+		label="category type",
+		pos="1409,265",
+		width=2.0943];
 	subject -> relation	 [pos="e,1660.9,36.006 1696.1,160.13 1690.2,146.37 1682.3,126.75 1677,109 1670.8,88.182 1665.9,64.102 1662.6,45.943",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -185,18 +185,18 @@ digraph {
 	"material sample derivation association_subject"	 [color=blue,
 		height=0.5,
 		label="material sample",
-		pos="1563,265",
+		pos="1588,265",
 		width=2.3831];
 	object -> relation	 [pos="e,1674.2,35.346 1710.3,74.069 1701.6,64.805 1690.8,53.154 1681.2,42.876",
 		style=dotted];
 	"material sample derivation association_object"	 [color=blue,
 		height=0.5,
 		label="named thing",
-		pos="1736,265",
+		pos="1761,265",
 		width=1.9318];
 	"material sample derivation association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="1902,265",
+		pos="1927,265",
 		width=2.1845];
 }

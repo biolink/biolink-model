@@ -234,13 +234,13 @@ digraph {
 		width=1.0652];
 	association_category	 [color=blue,
 		height=0.5,
-		label=association,
-		pos="2282,265",
-		width=1.7512];
+		label="category type",
+		pos="2295,265",
+		width=2.0943];
 	"genotype to phenotypic feature association_predicate"	 [color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2442,265",
+		pos="2467,265",
 		width=2.1845];
 	subject -> object	 [label=relation,
 		lp="2540,134.5",
@@ -251,6 +251,6 @@ digraph {
 	"genotype to phenotypic feature association_subject"	 [color=blue,
 		height=0.5,
 		label=genotype,
-		pos="2593,265",
+		pos="2618,265",
 		width=1.4985];
 }
