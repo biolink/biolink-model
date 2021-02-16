@@ -926,18 +926,18 @@ slots:
 
   is metabolite:
     is_a: node property
-    domain: chemical substance
+    domain: chemical entity
     range: boolean
     description: >-
-      indicates whether a chemical substance is a metabolite
+      indicates whether a chemical entity is a metabolite
     exact_mappings:
       - CHEBI:25212
 
   has constituent:
     description: >-
-      one or more chemical substances within a mixture
+      one or more chemical entitys within a mixture
     is_a: node property
-    range: chemical substance
+    range: chemical entity
     multivalued: true
 
   has drug:
@@ -3028,7 +3028,7 @@ slots:
     aliases: ['is substance that treats']
     is_a: ameliorates
     description: >-
-      holds between a therapeutic procedure or chemical substance
+      holds between a therapeutic procedure or chemical entity
       and a disease or phenotypic feature that it is used to treat
     domain: treatment
     range: disease or phenotypic feature
@@ -3075,7 +3075,7 @@ slots:
     is_a: related to
     description: >-
       holds between a disease or phenotypic feature and a therapeutic
-      process or chemical substance that is used to treat the condition
+      process or chemical entity that is used to treat the condition
     domain: disease or phenotypic feature
     range: treatment
     in_subset:
@@ -3092,7 +3092,7 @@ slots:
 
   approved to treat:
     description: >-
-      holds between a therapeutic procedure or chemical substance
+      holds between a therapeutic procedure or chemical entity
       and a disease or phenotypic feature for which it is approved
       for treatment to some level of clinical trial. Note that in
       terms of REPODB narrow mappings, terms containing 'suspended',
@@ -3129,7 +3129,7 @@ slots:
   approved for treatment by:
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process
-      or chemical substance that is approved for treatment of the condition
+      or chemical entity that is approved for treatment of the condition
       (or not, if negated) to some level of clinical trial
     is_a: treated by
     inverse: approved to treat
@@ -3139,7 +3139,7 @@ slots:
     description: >-
       holds between an entity whose application or use reduces
       the likelihood of a potential outcome. Typically used to associate
-      a chemical substance, exposure, activity, or medical intervention
+      a chemical entity, exposure, activity, or medical intervention
       that can prevent the onset a disease or phenotypic feature.
     inverse: prevented by
     in_subset:
@@ -3446,7 +3446,7 @@ slots:
   chemically similar to:
     is_a: similar to
     description: >-
-      holds between one chemical substances and another that it approximates
+      holds between one chemical entitys and another that it approximates
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     in_subset:
@@ -3862,9 +3862,9 @@ slots:
   is metabolite of:
     is_a: derives from
     description: >-
-      holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
-    domain: chemical substance
-    range: chemical substance
+      holds between two chemical entitys in which the first one is derived from the second one as a product of metabolism
+    domain: chemical entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: has metabolite
@@ -3876,9 +3876,9 @@ slots:
   has metabolite:
     is_a: derives into
     description: >-
-      holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
-    domain: chemical substance
-    range: chemical substance
+      holds between two chemical entitys in which the second one is derived from the first one as a product of metabolism
+    domain: chemical entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: is metabolite of
@@ -3890,7 +3890,7 @@ slots:
   food component of:
     is_a: part of
     description: >-
-      holds between a one or more chemical substances present in food,
+      holds between a one or more chemical entitys present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
     domain: food component
     range: food
@@ -3903,7 +3903,7 @@ slots:
   has food component:
     is_a: has part
     description: >-
-      holds between food and one or more chemical substances composing it,
+      holds between food and one or more chemical entitys composing it,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
     domain: food
     range: food component
@@ -3916,7 +3916,7 @@ slots:
   nutrient of:
     is_a: food component of
     description: >-
-      holds between a one or more chemical substances present in food,
+      holds between a one or more chemical entitys present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
     domain: food component
     range: food
@@ -3941,9 +3941,9 @@ slots:
   is active ingredient of:
     is_a: part of
     description: >-
-      holds between a chemical substance and a drug, in which the former
+      holds between a chemical entity and a drug, in which the former
       is a part of the latter, and is a biologically active component
-    domain: chemical substance
+    domain: chemical entity
     range: drug
     in_subset:
       - translator_minimal
@@ -3954,10 +3954,10 @@ slots:
   has active ingredient:
     is_a: has part
     description: >-
-      holds between a drug and a chemical substance in which the latter
+      holds between a drug and a chemical entity in which the latter
       is a part of the former, and is a biologically active component
     domain: drug
-    range: chemical substance
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: is active ingredient of
@@ -3967,9 +3967,9 @@ slots:
   is excipient of:
     is_a: part of
     description: >-
-      holds between a chemical substance and a drug in which the former is
+      holds between a chemical entity and a drug in which the former is
       a part of the latter, and is a biologically inactive component
-    domain: chemical substance
+    domain: chemical entity
     range: drug
     in_subset:
       - translator_minimal
@@ -3980,10 +3980,10 @@ slots:
   has excipient:
     is_a: has part
     description: >-
-      holds between a drug and a chemical substances in which the latter
+      holds between a drug and a chemical entitys in which the latter
       is a part of the former, and is a biologically inactive component
     domain: drug
-    range: chemical substance
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: is excipient of
@@ -5609,7 +5609,7 @@ classes:
     description: >-
       A gene, gene product, small molecule or macromolecule (including protein complex)"
     #notes:
-    #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
+    #  - "Check SIO mapping - also mapped to chemical entity.": Resolved by changing SIO:010004 to SIO:010341
     exact_mappings:
       - CHEBI:24431
     narrow_mappings:
@@ -5661,11 +5661,11 @@ classes:
       - occurrent
     slot_usage:
       has input:
-        range: chemical substance
+        range: chemical entity
         description: >-
           A chemical entity that is the input for the reaction
       has output:
-        range: chemical substance
+        range: chemical entity
         description: >-
           A chemical entity that is the output for the reaction
       enabled by:
@@ -5786,10 +5786,13 @@ classes:
       - has constituent
 
   chemical substance:
-    is_a: molecular entity
+    deprecated: >-
+      This slot is deprecated in favor of 'id' slot.
+
+  chemical entity:
+    ##is_a: molecular entity
     description: >-
-      May be a chemical entity or a formulation with a chemical entity as active
-      ingredient, or a complex material with multiple chemical entities as part
+      TODO
     slots:
       - is metabolite
     broad_mappings:
@@ -5857,10 +5860,19 @@ classes:
     in_subset:
       - model_organism_database
 
+  molecule:
+    is_a: chemical entity
+    exact_mappings:
+      - SIO:011125
+    
+  molecular complex:
+    is_a: chemical entity
+    exact_mappings:
+      - SIO:010506
+    
   carbohydrate:
     deprecated: >-
       This class will be removed from the Biolink model
-    is_a: chemical substance
     exact_mappings:
       # UMLS Semantic Type "Carbohydrate Sequence"
       - UMLSSC:T088
@@ -5869,17 +5881,16 @@ classes:
       - PUBCHEM.SUBSTANCE
 
   processed material:
-    is_a: chemical substance
     mixins:
       - mixture
     description: >-
-      A chemical substance (often a mixture) processed
+      A mixture processed
       for consumption for nutritional, medical or technical use.
     exact_mappings:
       - OBI:0000047
 
   drug:
-    is_a: molecular entity
+    is_a: processed material
     mixins:
       - mixture
     description: >-
@@ -5910,7 +5921,7 @@ classes:
   ## Food
 
   food component:
-    is_a: chemical substance
+    is_a: processed material
     related_mappings:
       # substance role
       - CHEBI:78295
@@ -5971,7 +5982,6 @@ classes:
     deprecated: >-
       Metabolite is replaced by a slot/role of chemical substance and will be removed 
       from the Biolink model.
-    is_a: chemical substance
     description: >-
       Any intermediate or product resulting from metabolism.
       Includes primary and secondary metabolites.
@@ -7015,7 +7025,6 @@ classes:
     #  -
 
   chemical exposure:
-    is_a: chemical substance
     mixins:
       - exposure event
     description: >-
@@ -7517,7 +7526,7 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: chemical substance
+        range: chemical entity
         description: "the chemical substance or entity that is an interactor"
 
   case to entity association mixin:
