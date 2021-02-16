@@ -1413,8 +1413,8 @@ slots:
 
   molecularly interacts with:
     is_a: physically interacts with
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     symmetric: true
@@ -1501,14 +1501,14 @@ slots:
 
   chemical role mixin:
     description: >-
-      A role played by the molecular entity or part thereof within a chemical context.
+      A role played by the chemical entity or part thereof within a chemical context.
     mixin: true
     exact_mappings:
       - CHEBI:51086
 
   biological role mixin:
     description: >-
-      A role played by the molecular entity or part thereof within a biological context.
+      A role played by the chemical entity or part thereof within a biological context.
     mixin: true
     exact_mappings:
       - CHEBI:24432
@@ -1519,8 +1519,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_abundance_of
 
@@ -1530,8 +1530,8 @@ slots:
     is_a: affects abundance of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       - UBERGRAPH:is_increase_of
     exact_mappings:
@@ -1543,8 +1543,8 @@ slots:
     is_a: affects abundance of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       - UBERGRAPH:is_decrease_of
     exact_mappings:
@@ -1556,8 +1556,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_activity_of
     narrow_mappings:
@@ -1573,8 +1573,8 @@ slots:
     is_a: affects activity of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
@@ -1607,8 +1607,8 @@ slots:
     is_a: affects activity of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       - GAMMA:ic50
       - GAMMA:ki
@@ -1651,7 +1651,7 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: genomic entity
     exact_mappings:
       - CTD:affects_expression_of
@@ -1662,7 +1662,7 @@ slots:
     is_a: affects expression of
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: genomic entity
     close_mappings:
       # Agent of the action or effect, not the relationship itelf
@@ -1676,7 +1676,7 @@ slots:
     is_a: affects expression of
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: genomic entity
     related_mappings:
       - DGIdb:antisense
@@ -1692,8 +1692,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_folding_of
 
@@ -1703,8 +1703,8 @@ slots:
     is_a: affects folding of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:increases_folding_of
 
@@ -1714,8 +1714,8 @@ slots:
     is_a: affects folding of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_folding_of
 
@@ -1725,8 +1725,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       - GAMMA:storage
     exact_mappings:
@@ -1739,8 +1739,8 @@ slots:
     is_a: affects localization of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:increases_localization_of
 
@@ -1750,8 +1750,8 @@ slots:
     is_a: affects localization of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_localization_of
 
@@ -1761,8 +1761,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       - GAMMA:catalytic_activity
     exact_mappings:
@@ -1774,8 +1774,8 @@ slots:
     is_a: affects metabolic processing of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:increases_metabolic_processing_of
     narrow_mappings:
@@ -1787,8 +1787,8 @@ slots:
     is_a: affects metabolic processing of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_metabolic_processing_of
 
@@ -1798,8 +1798,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_molecular_modification_of
     narrow_mappings:
@@ -1841,8 +1841,8 @@ slots:
     is_a: affects molecular modification of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:increases_molecular_modification_of
     narrow_mappings:
@@ -1886,8 +1886,8 @@ slots:
     is_a: affects molecular modification of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_molecular_modification_of
     narrow_mappings:
@@ -1930,8 +1930,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_synthesis_of
 
@@ -1941,8 +1941,8 @@ slots:
     is_a: affects synthesis of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:increases_synthesis_of
 
@@ -1952,8 +1952,8 @@ slots:
     is_a: affects synthesis of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_synthesis_of
       - GAMMA:inhibition_of_synthesis
@@ -1964,8 +1964,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_degradation_of
     narrow_mappings:
@@ -1978,8 +1978,8 @@ slots:
     is_a: affects degradation of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
@@ -2005,8 +2005,8 @@ slots:
     is_a: affects degradation of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_degradation_of
     narrow_mappings:
@@ -2015,11 +2015,11 @@ slots:
 
   affects mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
+      holds between a chemical entity and a genomic entity where the action or effect of the chemical entity impacts the rate of mutation of the genomic entity within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: genomic entity
     exact_mappings:
       - CTD:affects_mutation_rate_of
@@ -2029,11 +2029,11 @@ slots:
 
   increases mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
+      holds between a chemical entity and a genomic entity where the action or effect of the chemical entity increases the rate of mutation of the genomic entity within a system of interest
     is_a: affects mutation rate of
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: genomic entity
     exact_mappings:
       - CTD:increases_mutation_rate_of
@@ -2043,11 +2043,11 @@ slots:
 
   decreases mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
+      holds between a chemical entity and a genomic entity where the action or effect of the chemical entity decreases the rate of mutation of the genomic entity within a system of interest
     is_a: affects mutation rate of
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: genomic entity
     exact_mappings:
       - CTD:decreases_mutation_rate_of
@@ -2064,8 +2064,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_response_to
 
@@ -2078,8 +2078,8 @@ slots:
     is_a: affects response to
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:increases_response_to
 
@@ -2092,8 +2092,8 @@ slots:
     is_a: affects response to
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
@@ -2102,12 +2102,12 @@ slots:
 
   affects splicing of:
     description: >-
-      holds between a molecular entity and an mRNA where the action or effect
-      of the molecular entity impacts the splicing of the mRNA
+      holds between a chemical entity and an mRNA where the action or effect
+      of the chemical entity impacts the splicing of the mRNA
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: transcript
     exact_mappings:
       - CTD:affects_RNA_splicing
@@ -2116,12 +2116,12 @@ slots:
 
   increases splicing of:
     description: >-
-      holds between a molecular entity and an mRNA where the action or effect
-      of the molecular entity increases the proper splicing of the mRNA
+      holds between a chemical entity and an mRNA where the action or effect
+      of the chemical entity increases the proper splicing of the mRNA
     is_a: affects splicing of
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: transcript
     exact_mappings:
       - CTD:increases_RNA_splicing
@@ -2130,11 +2130,11 @@ slots:
 
   decreases splicing of:
     description: >-
-      holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA
+      holds between a chemical entity and an mRNA where the action or effect of the chemical entity decreases the proper splicing of the mRNA
     is_a: affects splicing of
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: transcript
     exact_mappings:
       - CTD:decreases_RNA_splicing
@@ -2147,8 +2147,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     close_mappings:
       - GAMMA:stabilization
     exact_mappings:
@@ -2160,8 +2160,8 @@ slots:
     is_a: affects stability of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     close_mappings:
       # agent of the action or effect, not the relationship
       - CHEMBL.MECHANISM:stabiliser
@@ -2174,8 +2174,8 @@ slots:
     is_a: affects stability of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_stability_of
 
@@ -2185,8 +2185,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_transport_of
     narrow_mappings:
@@ -2200,8 +2200,8 @@ slots:
     is_a: affects transport of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     close_mappings:
       - GAMMA:carrier
       - GAMMA:transporter
@@ -2214,8 +2214,8 @@ slots:
     is_a: affects transport of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_transport_of
 
@@ -2225,8 +2225,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_secretion_of
     broad_mappings:
@@ -2239,8 +2239,8 @@ slots:
     is_a: affects secretion of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:increases_secretion_of
     broad_mappings:
@@ -2253,8 +2253,8 @@ slots:
     is_a: affects secretion of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_secretion_of
     broad_mappings:
@@ -2267,8 +2267,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_uptake_of
     broad_mappings:
@@ -2281,8 +2281,8 @@ slots:
     is_a: affects uptake of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:increases_uptake_of
     broad_mappings:
@@ -2295,8 +2295,8 @@ slots:
     is_a: affects uptake of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:decreases_uptake_of
     broad_mappings:
@@ -2436,8 +2436,8 @@ slots:
     is_a: affects
     mixins:
       - regulates
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     inverse: regulated by, entity to entity
     local_names:
       translator: regulates
@@ -2455,8 +2455,8 @@ slots:
 
   regulated by, entity to entity:
     is_a: affected by
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     inverse: regulates, entity to entity
 
   positively regulates, entity to entity:
@@ -3225,10 +3225,10 @@ slots:
     is_a: correlated with
     description: >-
       holds between a disease or phenotypic feature and a measurable
-      molecular entity that is used as an indicator of the presence
+      chemical entity that is used as an indicator of the presence
       or state of the disease or feature.
     domain: disease or phenotypic feature
-    range: molecular entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: biomarker for
@@ -3241,10 +3241,10 @@ slots:
   biomarker for:
     is_a: correlated with
     description: >-
-      holds between a measurable molecular entity and a disease
+      holds between a measurable chemical entity and a disease
       or phenotypic feature, where the entity is used as an indicator
       of the presence or state of the disease or feature.
-    domain: molecular entity
+    domain: chemical entity
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -4331,14 +4331,14 @@ slots:
   decreases molecular interaction:
     is_a: molecularly interacts with
     description: indicates that the source decreases the molecular interaction between
-      the target and some other molecular entity
+      the target and some other chemical entity
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
 
   increases molecular interaction:
     is_a: molecularly interacts with
     description: indicates that the source increases the molecular interaction between
-      the target and some other molecular entity
+      the target and some other chemical entity
     exact_mappings:
       - CTD:increases_molecular_interaction_with
 
@@ -5601,40 +5601,9 @@ classes:
       - in taxon
 
   molecular entity:
-    is_a: biological entity
-    mixins:
-      - thing with taxon
-      - physical essence
-    aliases: ['bioentity']
-    description: >-
-      A gene, gene product, small molecule or macromolecule (including protein complex)"
-    #notes:
-    #  - "Check SIO mapping - also mapped to chemical entity.": Resolved by changing SIO:010004 to SIO:010341
-    exact_mappings:
-      - CHEBI:24431
-    narrow_mappings:
-      - SIO:010341
-      - WIKIDATA:Q43460564
-      # UMLS Semantic Group "Chemicals & Drugs"
-      - UMLSSG:CHEM
-      # Molecular Sequence
-      - UMLSSC:T085
-      - UMLSST:mosq
-      # Biologically Active Substance
-      - UMLSSC:T123
-      - UMLSST:bacs
-      # Hormone
-      - UMLSSC:T125
-      - UMLSST:horm
-      # Enzyme
-      - UMLSSC:T126
-      - UMLSST:enzy
-      # Immunologic Factor
-      - UMLSSC:T129
-      - UMLSST:imft
-      # Receptor
-      - UMLSSC:T192
-      - UMLSST:rcpt
+    deprecated: >-
+      Replaced by chemical entity
+    
 
   biological process or activity:
     description: >-
@@ -5787,10 +5756,17 @@ classes:
 
   chemical substance:
     deprecated: >-
-      This slot is deprecated in favor of 'id' slot.
+      This slot is deprecated in favor of chemical entity
 
   chemical entity:
-    ##is_a: molecular entity
+    aliases:
+      - bioentity
+      - molecular entity
+      - chemical substance
+    mixins:
+      - thing with taxon
+      - physical essence
+    ##is_a: chemical entity
     description: >-
       TODO
     slots:
@@ -5800,11 +5776,14 @@ classes:
       - UMLSSC:T167
       - UMLSST:sbst
     exact_mappings:
+      - CHEBI:24431
       - SIO:010004
-      - WIKIDATA:Q79529
+      - WIKIDATA:Q43460564
       # Chemical
       - UMLSSC:T103
       - UMLSST:chem
+    close_mappings:
+      - WIKIDATA:Q79529
     narrow_mappings:
       # Chemical Viewed Structurally
       - UMLSSC:T104
@@ -5833,6 +5812,26 @@ classes:
       # Inorganic Chemical
       - UMLSSC:T197
       - UMLSST:inch
+      # UMLS Semantic Group "Chemicals & Drugs"
+      - UMLSSG:CHEM
+      # Molecular Sequence
+      - UMLSSC:T085
+      - UMLSST:mosq
+      # Biologically Active Substance
+      - UMLSSC:T123
+      - UMLSST:bacs
+      # Hormone
+      - UMLSSC:T125
+      - UMLSST:horm
+      # Enzyme
+      - UMLSSC:T126
+      - UMLSST:enzy
+      # Immunologic Factor
+      - UMLSSC:T129
+      - UMLSST:imft
+      # Receptor
+      - UMLSSC:T192
+      - UMLSST:rcpt
     id_prefixes:
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
@@ -5869,6 +5868,11 @@ classes:
     is_a: chemical entity
     exact_mappings:
       - SIO:010506
+    
+  chemical complex of weakly interacting molecular entities:
+    is_a: chemical entity
+    exact_mappings:
+      - SIO:011126
     
   carbohydrate:
     deprecated: >-
@@ -5966,7 +5970,7 @@ classes:
       - UMLSST:vita
 
   food:
-    is_a: molecular entity
+    is_a: chemical entity
     mixins:
       - mixture
     description: >-
@@ -6448,7 +6452,7 @@ classes:
   ## Genomic Classes
 
   genomic entity:
-    is_a: molecular entity
+    is_a: chemical entity
     aliases: ['sequence feature']
     description: >-
       an entity that can either be directly located on a genome (gene,
@@ -6629,7 +6633,7 @@ classes:
     aliases:
       - orthogroup
       - protein family
-    is_a: molecular entity
+    is_a: chemical entity
     exact_mappings:
       - NCIT:C26004
       - WIKIDATA:Q2278983
@@ -7447,7 +7451,7 @@ classes:
       - object
     slot_usage:
       subject:
-        range: molecular entity
+        range: chemical entity
       id:
         description: >-
           identifier for the interaction. This may come from an interaction database such as IMEX.
@@ -7467,7 +7471,7 @@ classes:
           - value: RO:0002447
             description: the subject molecular phosphorylates the object molecule
       object:
-        range: molecular entity
+        range: chemical entity
 
   cell line to entity association mixin:
     description: >-
@@ -7494,21 +7498,21 @@ classes:
 #        - range: disease or phenotypic feature
         range: disease or phenotypic feature
 
-  molecular entity to entity association mixin:
+  chemical entity to entity association mixin:
     description: >-
-      An interaction between a molecular entity and another entity
+      An interaction between a chemical entity and another entity
     mixin: true
     defining_slots:
       - subject
     slot_usage:
       subject:
-        range: molecular entity
-        description: "the molecular entity that is an interactor"
+        range: chemical entity
+        description: "the chemical entity that is an interactor"
 
   drug to entity association mixin:
     description: >-
       An interaction between a drug and another entity
-    is_a: molecular entity to entity association mixin
+    is_a: chemical entity to entity association mixin
     mixin: true
     defining_slots:
       - subject
@@ -7520,7 +7524,7 @@ classes:
   chemical to entity association mixin:
     description: >-
       An interaction between a chemical entity and another entity
-    is_a: molecular entity to entity association mixin
+    is_a: chemical entity to entity association mixin
     mixin: true
     defining_slots:
       - subject
@@ -7587,7 +7591,7 @@ classes:
         subproperty_of: derives into
       catalyst qualifier:
         description: >-
-          this connects the derivation edge to the molecular entity that
+          this connects the derivation edge to the chemical entity that
           catalyzes the reaction that causes the subject chemical to
           transform into the object chemical.
 
@@ -8465,7 +8469,7 @@ classes:
       - object
     slot_usage:
       subject:
-        range: molecular entity
+        range: chemical entity
 #          aliases:
 #            bioentity:
 #              schema: amigo
