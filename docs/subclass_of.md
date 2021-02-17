@@ -33,7 +33,6 @@ URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | rdfs:subClassOf |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | rdfs:subClassOf |
 |  | | SEMMEDDB:IS_A |
