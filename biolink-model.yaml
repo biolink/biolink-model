@@ -2422,11 +2422,11 @@ slots:
     is_a: process regulates process
     mixins:
       - negatively regulates
-    inverse: negatively regulated by, process to process
+    inverse: process negatively regulated by process
     exact_mappings:
       - RO:0002212
 
-  process negatively regulated process:
+  process negatively regulated by process:
     is_a: process regulated by process
     inverse: process negatively regulates process
 
@@ -3930,7 +3930,7 @@ slots:
     description: >-
       one or more nutrients which are growth factors for a living organism
     domain: food
-    range: nutrient
+    range: food component
     in_subset:
       - translator_minimal
     inverse: nutrient of
