@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-02-18 14:19
+# Generation date: 2021-02-18 14:26
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8571,7 +8571,7 @@ slots.nutrient_of = Slot(uri=BIOLINK.nutrient_of, name="nutrient of", curie=BIOL
                    model_uri=BIOLINK.nutrient_of, domain=FoodComponent, range=Optional[Union[Union[str, FoodId], List[Union[str, FoodId]]]])
 
 slots.has_nutrient = Slot(uri=BIOLINK.has_nutrient, name="has nutrient", curie=BIOLINK.curie('has_nutrient'),
-                   model_uri=BIOLINK.has_nutrient, domain=Food, range=Optional[Union[Union[str, NutrientId], List[Union[str, NutrientId]]]])
+                   model_uri=BIOLINK.has_nutrient, domain=Food, range=Optional[Union[Union[str, FoodComponentId], List[Union[str, FoodComponentId]]]])
 
 slots.is_active_ingredient_of = Slot(uri=BIOLINK.is_active_ingredient_of, name="is active ingredient of", curie=BIOLINK.curie('is_active_ingredient_of'),
                    model_uri=BIOLINK.is_active_ingredient_of, domain=ChemicalSubstance, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]], mappings = [OBOREL["0002249"]])

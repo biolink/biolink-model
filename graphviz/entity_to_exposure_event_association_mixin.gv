@@ -1,21 +1,21 @@
 digraph {
-	graph [bb="0,0,597.87,123"];
+	graph [bb="0,0,466.23,123"];
 	node [label="\N"];
-	"entity to exposure event association mixin"	 [height=0.5,
+	"entity to exposure event association mixin"	[height=0.5,
 		label="entity to exposure event association mixin",
-		pos="207.98,105",
-		width=5.7773];
-	object	 [height=0.5,
-		pos="207.98,18",
-		width=1.1013];
-	"entity to exposure event association mixin" -> object	 [color=blue,
+		pos="160.54,105",
+		width=4.4593];
+	object	[height=0.5,
+		pos="160.54,18",
+		width=0.9027];
+	"entity to exposure event association mixin" -> object	[color=blue,
 		label=object,
-		lp="230.48,61.5",
-		pos="e,207.98,36.003 207.98,86.974 207.98,75.192 207.98,59.561 207.98,46.158",
+		lp="177.54,61.5",
+		pos="e,160.54,36.175 160.54,86.799 160.54,75.163 160.54,59.548 160.54,46.237",
 		style=solid];
-	"entity to exposure event association mixin_object"	 [color=blue,
+	"entity to exposure event association mixin_object"	[color=blue,
 		height=0.5,
 		label="exposure event",
-		pos="515.98,105",
-		width=2.2748];
+		pos="402.54,105",
+		width=1.7693];
 }

@@ -1,21 +1,21 @@
 digraph {
-	graph [bb="0,0,540.28,123"];
+	graph [bb="0,0,420.48,123"];
 	node [label="\N"];
-	"variant to entity association mixin"	 [height=0.5,
+	"variant to entity association mixin"	[height=0.5,
 		label="variant to entity association mixin",
-		pos="170.28,105",
-		width=4.7301];
-	subject	 [height=0.5,
-		pos="170.28,18",
-		width=1.2457];
-	"variant to entity association mixin" -> subject	 [color=blue,
+		pos="131.94,105",
+		width=3.665];
+	subject	[height=0.5,
+		pos="131.94,18",
+		width=0.99297];
+	"variant to entity association mixin" -> subject	[color=blue,
 		label=subject,
-		lp="196.78,61.5",
-		pos="e,170.28,36.003 170.28,86.974 170.28,75.192 170.28,59.561 170.28,46.158",
+		lp="151.44,61.5",
+		pos="e,131.94,36.175 131.94,86.799 131.94,75.163 131.94,59.548 131.94,46.237",
 		style=solid];
-	"variant to entity association mixin_subject"	 [color=blue,
+	"variant to entity association mixin_subject"	[color=blue,
 		height=0.5,
 		label="sequence variant",
-		pos="449.28,105",
-		width=2.5276];
+		pos="350.94,105",
+		width=1.9318];
 }
