@@ -2390,54 +2390,54 @@ slots:
     mixin: true
     inverse: negatively regulates
 
-  regulates, process to process:
+  process regulates process:
     is_a: affects
     mixins:
       - regulates
     domain: occurrent
     range: occurrent
-    inverse: regulated by, process to process
+    inverse: process regulated by process
     exact_mappings:
       - RO:0002211
 
-  regulated by, process to process:
+  process regulated by process:
     is_a: affected by
     domain: occurrent
     range: occurrent
-    inverse: regulates, process to process
+    inverse: process regulates process
 
-  positively regulates, process to process:
-    is_a: regulates, process to process
+  process positively regulates process:
+    is_a: process regulates process
     mixins:
       - positively regulates
-    inverse: positively regulated by, process to process
+    inverse: process positively regulated by process
     exact_mappings:
       - RO:0002213
 
-  positively regulated by, process to process:
-    is_a: regulated by, process to process
-    inverse: positively regulates, process to process
+  process positively regulated by process:
+    is_a: process regulated by process
+    inverse: process positively regulates process
 
-  negatively regulates, process to process:
-    is_a: regulates, process to process
+  process negatively regulates process:
+    is_a: process regulates process
     mixins:
       - negatively regulates
     inverse: negatively regulated by, process to process
     exact_mappings:
       - RO:0002212
 
-  negatively regulated by, process to process:
-    is_a: regulated by, process to process
-    inverse: negatively regulates, process to process
+  process negatively regulated process:
+    is_a: process regulated by process
+    inverse: process negatively regulates process
 
-  regulates, entity to entity:
+  entity regulates entity:
     aliases: ['activity directly regulates activity of']
     is_a: affects
     mixins:
       - regulates
     domain: molecular entity
     range: molecular entity
-    inverse: regulated by, entity to entity
+    inverse: entity regulated by entity
     local_names:
       translator: regulates
       ro: activity directly regulates activity of
@@ -2452,18 +2452,18 @@ slots:
       # may also be another class of chemical_substance?
       - WIKIDATA_PROPERTY:P128
 
-  regulated by, entity to entity:
+  entity regulated by entity:
     is_a: affected by
     domain: molecular entity
     range: molecular entity
-    inverse: regulates, entity to entity
+    inverse: entity regulates entity
 
-  positively regulates, entity to entity:
+  entity positively regulates entity:
     aliases: ['activity directly positively regulates activity of']
-    is_a: regulates, entity to entity
+    is_a: entity regulates entity
     mixins:
       - positively regulates
-    inverse: positively regulated by, entity to entity
+    inverse: entity positively regulated by entity
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
@@ -2484,16 +2484,16 @@ slots:
       # Positive regulation is defined more narrowly here, as "Disease upregulates Gene"
       - hetio:UPREGULATES_DuG
 
-  positively regulated by, entity to entity:
-    is_a: regulated by, entity to entity
-    inverse: positively regulates, entity to entity
+  entity positively regulated by entity:
+    is_a: entity regulated by entity
+    inverse: entity positively regulates entity
 
-  negatively regulates, entity to entity:
+  entity negatively regulates entity:
     aliases: ['activity directly negatively regulates activity of']
-    is_a: regulates, entity to entity
+    is_a: entity regulates entity
     mixins:
       - negatively regulates
-    inverse: negatively regulated by, entity to entity
+    inverse: entity negatively regulated by entity
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
@@ -2510,9 +2510,9 @@ slots:
       # Down regulation is defined more narrowly here, as "Disease downregulates Gene"
       - hetio:DOWNREGULATES_DdG
 
-  negatively regulated by, entity to entity:
-    is_a: regulated by, entity to entity
-    inverse: negatively regulates, entity to entity
+  entity negatively regulated by entity:
+    is_a: entity regulated by entity
+    inverse: entity negatively regulates entity
 
   disrupts:
     is_a: affects
