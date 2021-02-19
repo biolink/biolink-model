@@ -168,7 +168,7 @@ type Association
     category: [CategoryType]
   }
 
-type Attribute
+type Attribute implements OntologyClass
   {
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -178,7 +178,7 @@ type Attribute
     source: LabelType
   }
 
-type Behavior
+type Behavior implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -278,7 +278,7 @@ interface BiologicalEntity
     category: [NamedThing]!
   }
 
-type BiologicalProcess implements Occurrent
+type BiologicalProcess implements Occurrent, OntologyClass
   {
     id: String!
     iri: IriType
@@ -294,7 +294,7 @@ type BiologicalProcess implements Occurrent
     enabledBy: [PhysicalEntity]
   }
 
-type BiologicalProcessOrActivity implements Occurrent
+type BiologicalProcessOrActivity implements Occurrent, OntologyClass
   {
     id: String!
     iri: IriType
@@ -322,15 +322,6 @@ type BiologicalSex
 
 type BioticExposure implements ExposureEvent
   {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
     hasTaxonomicRank: TaxonomicRank
     subclassOf: [OrganismTaxon]
     timepoint: TimeType
@@ -548,7 +539,7 @@ type ChemicalExposure implements ExposureEvent
     timepoint: TimeType
   }
 
-type ChemicalSubstance
+type ChemicalSubstance implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -1099,7 +1090,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     sexQualifier: BiologicalSex
   }
 
-type Drug implements Mixture
+type Drug implements Mixture, OntologyClass
   {
     id: String!
     iri: IriType
@@ -1582,17 +1573,8 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     subject: GeneOrGeneProduct!
   }
 
-type GeneOntologyClass
+interface GeneOntologyClass
   {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
   }
 
 interface GeneOrGeneProduct
@@ -2408,7 +2390,7 @@ interface ModelToDiseaseAssociationMixin
     predicate: PredicateType!
   }
 
-type MolecularActivity implements Occurrent
+type MolecularActivity implements Occurrent, OntologyClass
   {
     id: String!
     iri: IriType
@@ -2424,7 +2406,7 @@ type MolecularActivity implements Occurrent
     enabledBy: [MacromolecularMachineMixin]
   }
 
-type MolecularEntity implements ThingWithTaxon, PhysicalEssence
+type MolecularEntity implements ThingWithTaxon, PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
@@ -2518,17 +2500,8 @@ type Onset
     source: LabelType
   }
 
-type OntologyClass
+interface OntologyClass
   {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
   }
 
 type OrganismAttribute
@@ -2543,15 +2516,6 @@ type OrganismAttribute
 
 type OrganismTaxon
   {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
     hasTaxonomicRank: TaxonomicRank
     subclassOf: [OrganismTaxon]
   }
@@ -2797,7 +2761,7 @@ type PathologicalProcessOutcome implements Outcome
     enabledBy: [PhysicalEntity]
   }
 
-type Pathway
+type Pathway implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -2881,7 +2845,7 @@ interface PhysicalEssenceOrOccurrent
   {
   }
 
-type PhysiologicalProcess
+type PhysiologicalProcess implements OntologyClass
   {
     id: String!
     iri: IriType
@@ -2957,7 +2921,7 @@ type Procedure implements ActivityAndBehavior
     category: [NamedThing]!
   }
 
-type ProcessedMaterial implements Mixture
+type ProcessedMaterial implements Mixture, OntologyClass
   {
     id: String!
     iri: IriType
@@ -3057,15 +3021,6 @@ interface RelationshipQuantifier
 
 type RelationshipType
   {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
   }
 
 type RNAProduct implements GeneProductMixin
@@ -3318,15 +3273,6 @@ interface SubjectOfInvestigation
 
 type TaxonomicRank
   {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    category: [NamedThing]!
   }
 
 interface ThingWithTaxon
@@ -3384,6 +3330,10 @@ type Treatment implements ExposureEvent
     hasDevice: [Device]
     hasProcedure: [Procedure]
     timepoint: TimeType
+  }
+
+interface UnclassifiedOntologyClass
+  {
   }
 
 type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin

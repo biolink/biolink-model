@@ -266,18 +266,9 @@ message BiologicalSex
 // An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional hasTaxonomicRank TaxonomicRank = 10
-  repeated subclassOf OrganismTaxon = 11
-  optional timepoint TimeType = 12
+  optional hasTaxonomicRank TaxonomicRank = 1
+  repeated subclassOf OrganismTaxon = 2
+  optional timepoint TimeType = 3
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -1395,19 +1386,6 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   optional sequenceVariantQualifier SequenceVariant = 19
   subject GeneOrGeneProduct = 20
  }
-// an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-message GeneOntologyClass
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
 // A regulatory relationship between two genes
 message GeneRegulatoryRelationship
  {
@@ -2213,19 +2191,6 @@ message Onset
   optional iri IriType = 5
   optional source LabelType = 6
  }
-// a concept or class in an ontology, vocabulary or thesaurus
-message OntologyClass
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
 // describes a characteristic of an organismal entity.
 message OrganismAttribute
  {
@@ -2239,17 +2204,8 @@ message OrganismAttribute
 // A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
 message OrganismTaxon
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional hasTaxonomicRank TaxonomicRank = 10
-  repeated subclassOf OrganismTaxon = 11
+  optional hasTaxonomicRank TaxonomicRank = 1
+  repeated subclassOf OrganismTaxon = 2
  }
 // An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
 message OrganismTaxonToOrganismTaxonInteraction
@@ -2689,19 +2645,6 @@ message ReagentTargetedGene
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
-// An OWL property used as an edge label
-message RelationshipType
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
 message RNAProduct
  {
   id String = 1
@@ -2916,19 +2859,6 @@ message StudyPopulation
   repeated category NamedThing = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
- }
-// A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
-message TaxonomicRank
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 message Transcript
