@@ -15,7 +15,7 @@ URI: [biolink:ClinicalMeasurement](https://w3id.org/biolink/vocab/ClinicalMeasur
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[OntologyClass]%3Chas%20attribute%20type%201..1-%20[ClinicalMeasurement%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[ClinicalAttribute]%5E-[ClinicalMeasurement],[ClinicalAttribute])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[OntologyClass],[NamedThing],[OntologyClass]%3Chas%20attribute%20type%201..1-++[ClinicalMeasurement%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[ClinicalAttribute]%5E-[ClinicalMeasurement],[ClinicalAttribute])
 
 ---
 

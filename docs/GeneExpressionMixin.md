@@ -15,7 +15,7 @@ URI: [biolink:GeneExpressionMixin](https://w3id.org/biolink/vocab/GeneExpression
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[LifeStage],[DiseaseOrPhenotypicFeature]%3Cphenotypic%20state%200..1-%20[GeneExpressionMixin],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneExpressionMixin],[AnatomicalEntity]%3Cexpression%20site%200..1-%20[GeneExpressionMixin],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneExpressionMixin],[VariantToGeneExpressionAssociation]uses%20-.-%3E[GeneExpressionMixin],[GeneToGeneCoexpressionAssociation]uses%20-.-%3E[GeneExpressionMixin],[VariantToGeneExpressionAssociation],[GeneToGeneCoexpressionAssociation],[DiseaseOrPhenotypicFeature],[AnatomicalEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[LifeStage],[DiseaseOrPhenotypicFeature]%3Cphenotypic%20state%200..1-%20[GeneExpressionMixin],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneExpressionMixin],[AnatomicalEntity]%3Cexpression%20site%200..1-%20[GeneExpressionMixin],[OntologyClass]%3Cquantifier%20qualifier%200..1-++[GeneExpressionMixin],[VariantToGeneExpressionAssociation]uses%20-.-%3E[GeneExpressionMixin],[GeneToGeneCoexpressionAssociation]uses%20-.-%3E[GeneExpressionMixin],[VariantToGeneExpressionAssociation],[GeneToGeneCoexpressionAssociation],[DiseaseOrPhenotypicFeature],[AnatomicalEntity])
 
 ---
 

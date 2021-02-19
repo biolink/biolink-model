@@ -15,7 +15,7 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;relation:uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-%20[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;relation:uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-++[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[Attribute],[Agent])
 
 ---
 
