@@ -23,7 +23,7 @@ PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
 
 <SymbolType> xsd:string
 
-<Frequency> UO:0000105
+<FrequencyValue> UO:0000105
 
 <PercentageFrequencyValue> UO:0000187
 
@@ -223,8 +223,8 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <Attribute> ] ?
        )
-    } OR @<BiologicalSex> OR @<ClinicalAttribute> OR @<FrequencyValue> OR @<OrganismAttribute> OR @<SeverityValue> OR
-    @<SocioeconomicAttribute> OR @<Zygosity>
+    } OR @<BiologicalSex> OR @<ClinicalAttribute> OR @<OrganismAttribute> OR @<SeverityValue> OR @<SocioeconomicAttribute> OR
+    @<Zygosity>
 )
 
 <Behavior>  (
@@ -1137,14 +1137,6 @@ metatype:Nodeidentifier NONLITERAL
           <has_percentage> @metatype:Double ?
        ) ;
        rdf:type [ <FrequencyQuantifier> ] ?
-    )
-}
-
-<FrequencyValue> CLOSED {
-    (  $<FrequencyValue_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ?
-       ) ;
-       rdf:type [ <FrequencyValue> ] ?
     )
 }
 
