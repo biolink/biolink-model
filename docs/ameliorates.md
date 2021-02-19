@@ -32,4 +32,5 @@ URI: [biolink:ameliorates](https://w3id.org/biolink/vocab/ameliorates)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | RO:0003307 |
+|  | | CTD:therapeutic |
 

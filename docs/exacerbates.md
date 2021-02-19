@@ -31,5 +31,4 @@ URI: [biolink:exacerbates](https://w3id.org/biolink/vocab/exacerbates)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | RO:0003309 |
-|  | | CTD:therapeutic |
 
