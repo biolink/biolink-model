@@ -92,11 +92,13 @@ To install the project,
 make install
 ```
 
-To regenerate artifacts from the Biolink Model YAML,
+To regenerate artifacts (please do not commit the outputs of this command to the repo itself, these artifacts will
+be regenerated automatically as changes to biolink-model.yaml are built remotely) from the Biolink Model YAML locally, run:
 
 ```sh
 make
 ```
+
 
 
 **Note:** the Makefile requires the following dependencies to be installed:

@@ -2390,54 +2390,54 @@ slots:
     mixin: true
     inverse: negatively regulates
 
-  regulates, process to process:
+  process regulates process:
     is_a: affects
     mixins:
       - regulates
     domain: occurrent
     range: occurrent
-    inverse: regulated by, process to process
+    inverse: process regulated by process
     exact_mappings:
       - RO:0002211
 
-  regulated by, process to process:
+  process regulated by process:
     is_a: affected by
     domain: occurrent
     range: occurrent
-    inverse: regulates, process to process
+    inverse: process regulates process
 
-  positively regulates, process to process:
-    is_a: regulates, process to process
+  process positively regulates process:
+    is_a: process regulates process
     mixins:
       - positively regulates
-    inverse: positively regulated by, process to process
+    inverse: process positively regulated by process
     exact_mappings:
       - RO:0002213
 
-  positively regulated by, process to process:
-    is_a: regulated by, process to process
-    inverse: positively regulates, process to process
+  process positively regulated by process:
+    is_a: process regulated by process
+    inverse: process positively regulates process
 
-  negatively regulates, process to process:
-    is_a: regulates, process to process
+  process negatively regulates process:
+    is_a: process regulates process
     mixins:
       - negatively regulates
-    inverse: negatively regulated by, process to process
+    inverse: process negatively regulated by process
     exact_mappings:
       - RO:0002212
 
-  negatively regulated by, process to process:
-    is_a: regulated by, process to process
-    inverse: negatively regulates, process to process
+  process negatively regulated by process:
+    is_a: process regulated by process
+    inverse: process negatively regulates process
 
-  regulates, entity to entity:
+  entity regulates entity:
     aliases: ['activity directly regulates activity of']
     is_a: affects
     mixins:
       - regulates
     domain: molecular entity
     range: molecular entity
-    inverse: regulated by, entity to entity
+    inverse: entity regulated by entity
     local_names:
       translator: regulates
       ro: activity directly regulates activity of
@@ -2452,18 +2452,18 @@ slots:
       # may also be another class of chemical_substance?
       - WIKIDATA_PROPERTY:P128
 
-  regulated by, entity to entity:
+  entity regulated by entity:
     is_a: affected by
     domain: molecular entity
     range: molecular entity
-    inverse: regulates, entity to entity
+    inverse: entity regulates entity
 
-  positively regulates, entity to entity:
+  entity positively regulates entity:
     aliases: ['activity directly positively regulates activity of']
-    is_a: regulates, entity to entity
+    is_a: entity regulates entity
     mixins:
       - positively regulates
-    inverse: positively regulated by, entity to entity
+    inverse: entity positively regulated by entity
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
@@ -2484,16 +2484,16 @@ slots:
       # Positive regulation is defined more narrowly here, as "Disease upregulates Gene"
       - hetio:UPREGULATES_DuG
 
-  positively regulated by, entity to entity:
-    is_a: regulated by, entity to entity
-    inverse: positively regulates, entity to entity
+  entity positively regulated by entity:
+    is_a: entity regulated by entity
+    inverse: entity positively regulates entity
 
-  negatively regulates, entity to entity:
+  entity negatively regulates entity:
     aliases: ['activity directly negatively regulates activity of']
-    is_a: regulates, entity to entity
+    is_a: entity regulates entity
     mixins:
       - negatively regulates
-    inverse: negatively regulated by, entity to entity
+    inverse: entity negatively regulated by entity
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
@@ -2510,9 +2510,9 @@ slots:
       # Down regulation is defined more narrowly here, as "Disease downregulates Gene"
       - hetio:DOWNREGULATES_DdG
 
-  negatively regulated by, entity to entity:
-    is_a: regulated by, entity to entity
-    inverse: negatively regulates, entity to entity
+  entity negatively regulated by entity:
+    is_a: entity regulated by entity
+    inverse: entity negatively regulates entity
 
   disrupts:
     is_a: affects
@@ -3930,7 +3930,7 @@ slots:
     description: >-
       one or more nutrients which are growth factors for a living organism
     domain: food
-    range: nutrient
+    range: food component
     in_subset:
       - translator_minimal
     inverse: nutrient of
@@ -4552,7 +4552,7 @@ slots:
 
   association type:
     is_a: association slot
-    range: category type
+    range: ontology class
     deprecated: >-
       This slot is deprecated in favor of 'category' slot.
     deprecated_element_has_exact_replacement: category
@@ -4753,37 +4753,6 @@ classes:
   ## ATTRIBUTES
   ## ----------
 
-  ## Ontology Classes
-
-  ontology class:
-    mixin: true
-    description: >-
-      a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both
-      instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly.
-      Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess
-      as the type.
-    exact_mappings:
-      - owl:Class
-      - schema:Class
-    comments:
-      - >-
-         This is modeled as a mixin. 'ontology class' should not be the primary type of a node in the KG. Instead you should use an
-         informative bioloink category, such as AnatomicalEntity (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
-      - >-
-         Note that formally this is a metaclass. Instances of this class are instances in the graph, but can be the object of 'type' edges.
-         For example, if we had a node in the graph representing a specific brain of a specific patient (e.g brain001), this could have 
-         a category of bl:Sample, and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
-    see_also:
-      - https://github.com/biolink/biolink-model/issues/486
-    examples:
-      - value: UBERON:0000955
-        description: >-
-          the class 'brain' from the Uberon anatomy ontology
-    id_prefixes:
-      - MESH
-      - UMLS
-      - KEGG.BRITE ## br/ko number
-  
   annotation:
     description: >-
       Biolink Model root class for entity annotations.
@@ -4811,8 +4780,6 @@ classes:
 
   attribute:
     is_a: annotation
-    mixins:
-      - ontology class
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
@@ -4935,23 +4902,23 @@ classes:
       - UMLSSC:T071
       - UMLSST:enty
 
+  ## Ontology Classes
+
+  ontology class:
+    is_a: named thing
+    description: "a concept or class in an ontology, vocabulary or thesaurus"
+    id_prefixes:
+      - MESH
+      - KEGG.BRITE ## br/ko number
+
   relationship type:
     is_a: ontology class
     description: >-
       An OWL property used as an edge label
 
   gene ontology class:
-    mixin: true
     description: >-
       an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    is_a: ontology class
-    in_subset:
-      - testing
-
-  unclassified ontology class:
-    mixin: true
-    description: >-
-      this is used for nodes that are taken from an ontology but are not typed using an existing biolink class
     is_a: ontology class
     in_subset:
       - testing
@@ -5637,7 +5604,6 @@ classes:
     mixins:
       - thing with taxon
       - physical essence
-      - ontology class
     aliases: ['bioentity']
     description: >-
       A gene, gene product, small molecule or macromolecule (including protein complex)"
@@ -5676,7 +5642,6 @@ classes:
     is_a: biological entity
     mixins:
       - occurrent
-      - ontology class
     id_prefixes:
       - GO
       - REACT
@@ -5693,7 +5658,6 @@ classes:
     aliases: ['molecular function', 'molecular event', 'reaction']
     mixins:
       - occurrent
-      - ontology class
     slot_usage:
       has input:
         range: chemical substance
@@ -5727,7 +5691,6 @@ classes:
     is_a: biological process or activity
     mixins:
       - occurrent
-      - ontology class
     description: >-
       One or more causally connected executions of molecular functions
     exact_mappings:
@@ -5742,8 +5705,6 @@ classes:
 
   pathway:
     is_a: biological process
-    mixins:
-      - ontology class
     exact_mappings:
       - PW:0000001
       - WIKIDATA:Q4915012
@@ -5764,8 +5725,6 @@ classes:
   physiological process:
     aliases: ['physiology']
     is_a: biological process
-    mixins:
-      - ontology class
     close_mappings:
       # Physiology
       - UMLSSG:PHYS
@@ -5793,8 +5752,6 @@ classes:
 
   behavior:
     is_a: biological process
-    mixins:
-      - ontology class
     exact_mappings:
       - GO:0007610
       # Behavior
@@ -5829,8 +5786,6 @@ classes:
 
   chemical substance:
     is_a: molecular entity
-    mixins:
-      - ontology class
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active
       ingredient, or a complex material with multiple chemical entities as part
@@ -5916,7 +5871,6 @@ classes:
     is_a: chemical substance
     mixins:
       - mixture
-      - ontology class
     description: >-
       A chemical substance (often a mixture) processed
       for consumption for nutritional, medical or technical use.
@@ -5927,7 +5881,6 @@ classes:
     is_a: molecular entity
     mixins:
       - mixture
-      - ontology class
     description: >-
       A substance intended for use in the diagnosis, cure,
       mitigation, treatment, or prevention of disease
