@@ -3008,6 +3008,7 @@ slots:
     range: disease or phenotypic feature
     exact_mappings:
       - RO:0003307
+      - CTD:therapeutic
 
   exacerbates:
     is_a: affects
@@ -3021,7 +3022,6 @@ slots:
     range: disease or phenotypic feature
     exact_mappings:
       - RO:0003309
-      - CTD:therapeutic
 
   treats:
     aliases: ['is substance that treats']
