@@ -1450,16 +1450,6 @@ interface FrequencyQuantifier
     hasPercentage: Double
   }
 
-type FrequencyValue
-  {
-    name: LabelType
-    hasAttributeType: OntologyClass!
-    hasQuantitativeValue: [QuantityValue]
-    hasQualitativeValue: NamedThing
-    iri: IriType
-    source: LabelType
-  }
-
 type FunctionalAssociation
   {
     id: String!

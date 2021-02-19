@@ -717,8 +717,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -1616,8 +1616,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -1842,8 +1842,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -4402,8 +4402,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -5442,8 +5442,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -5736,44 +5736,6 @@
          "title": "FoodComponent",
          "type": "object"
       },
-      "FrequencyValue": {
-         "additionalProperties": false,
-         "description": "describes the frequency of occurrence of an event or condition",
-         "properties": {
-            "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
-            },
-            "has_qualitative_value": {
-               "description": "connects an attribute to a value",
-               "type": "string"
-            },
-            "has_quantitative_value": {
-               "description": "connects an attribute to a value",
-               "items": {
-                  "$ref": "#/definitions/QuantityValue"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
-               "type": "string"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            }
-         },
-         "required": [
-            "has_attribute_type"
-         ],
-         "title": "FrequencyValue",
-         "type": "object"
-      },
       "FunctionalAssociation": {
          "additionalProperties": false,
          "description": "An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.",
@@ -5966,8 +5928,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -6140,8 +6102,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -6340,8 +6302,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -6930,8 +6892,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -7427,8 +7389,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -7532,8 +7494,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -7822,8 +7784,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -10147,8 +10109,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -13185,8 +13147,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -13290,8 +13252,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -13593,8 +13555,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -13702,8 +13664,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",

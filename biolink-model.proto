@@ -1278,16 +1278,6 @@ message FoodComponent
   repeated inTaxon OrganismTaxon = 10
   optional isMetabolite Boolean = 11
  }
-// describes the frequency of occurrence of an event or condition
-message FrequencyValue
- {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source LabelType = 6
- }
 // An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
  {

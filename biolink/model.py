@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-02-19 16:18
+# Generation date: 2021-02-19 20:10
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -291,11 +291,11 @@ class SymbolType(String):
     type_model_uri = BIOLINK.SymbolType
 
 
-class Frequency(String):
+class FrequencyValue(String):
     type_class_uri = UO["0000105"]
     type_class_curie = "UO:0000105"
-    type_name = "frequency"
-    type_model_uri = BIOLINK.Frequency
+    type_name = "frequency value"
+    type_model_uri = BIOLINK.FrequencyValue
 
 
 class PercentageFrequencyValue(Double):
@@ -1185,20 +1185,6 @@ class SeverityValue(Attribute):
     class_class_curie: ClassVar[str] = "biolink:SeverityValue"
     class_name: ClassVar[str] = "severity value"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
-
-    has_attribute_type: Union[dict, OntologyClass] = None
-
-@dataclass
-class FrequencyValue(Attribute):
-    """
-    describes the frequency of occurrence of an event or condition
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.FrequencyValue
-    class_class_curie: ClassVar[str] = "biolink:FrequencyValue"
-    class_name: ClassVar[str] = "frequency value"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.FrequencyValue
 
     has_attribute_type: Union[dict, OntologyClass] = None
 
@@ -6027,11 +6013,11 @@ class FrequencyQualifierMixin(YAMLRoot):
     class_name: ClassVar[str] = "frequency qualifier mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.FrequencyQualifierMixin
 
-    frequency_qualifier: Optional[Union[dict, FrequencyValue]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(**self.frequency_qualifier)
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -6628,7 +6614,7 @@ class VariantToPopulationAssociation(Association):
     has_count: Optional[int] = None
     has_total: Optional[int] = None
     has_percentage: Optional[float] = None
-    frequency_qualifier: Optional[Union[dict, FrequencyValue]] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -6659,7 +6645,7 @@ class VariantToPopulationAssociation(Association):
             self.has_percentage = float(self.has_percentage)
 
         if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(**self.frequency_qualifier)
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -8674,7 +8660,7 @@ slots.qualifiers = Slot(uri=BIOLINK.qualifiers, name="qualifiers", curie=BIOLINK
                    model_uri=BIOLINK.qualifiers, domain=Association, range=Optional[Union[Union[dict, OntologyClass], List[Union[dict, OntologyClass]]]])
 
 slots.frequency_qualifier = Slot(uri=BIOLINK.frequency_qualifier, name="frequency qualifier", curie=BIOLINK.curie('frequency_qualifier'),
-                   model_uri=BIOLINK.frequency_qualifier, domain=Association, range=Optional[Union[dict, FrequencyValue]])
+                   model_uri=BIOLINK.frequency_qualifier, domain=Association, range=Optional[Union[str, FrequencyValue]])
 
 slots.severity_qualifier = Slot(uri=BIOLINK.severity_qualifier, name="severity qualifier", curie=BIOLINK.curie('severity_qualifier'),
                    model_uri=BIOLINK.severity_qualifier, domain=Association, range=Optional[Union[dict, SeverityValue]])
