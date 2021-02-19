@@ -15,7 +15,7 @@ URI: [biolink:EntityToFeatureOrDiseaseQualifiersMixin](https://w3id.org/biolink/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Onset],[FrequencyValue],[FrequencyQualifierMixin],[EntityToPhenotypicFeatureAssociationMixin],[Onset]%3Conset%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin],[SeverityValue]%3Cseverity%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToPhenotypicFeatureAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToDiseaseAssociationMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToDiseaseAssociationMixin])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Onset],[FrequencyQualifierMixin],[EntityToPhenotypicFeatureAssociationMixin],[Onset]%3Conset%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin%7Cfrequency_qualifier(i):frequency_value%20%3F],[SeverityValue]%3Cseverity%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToPhenotypicFeatureAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToDiseaseAssociationMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToDiseaseAssociationMixin])
 
 ---
 
@@ -48,4 +48,4 @@ URI: [biolink:EntityToFeatureOrDiseaseQualifiersMixin](https://w3id.org/biolink/
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    * range: [FrequencyValue](FrequencyValue.md)
+    * range: [FrequencyValue](types/FrequencyValue.md)

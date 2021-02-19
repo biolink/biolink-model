@@ -33,7 +33,6 @@ URI: [biolink:has_quantitative_value](https://w3id.org/biolink/vocab/has_quantit
  * [ClinicalCourse](ClinicalCourse.md)
  * [ClinicalMeasurement](ClinicalMeasurement.md)
  * [ClinicalModifier](ClinicalModifier.md)
- * [FrequencyValue](FrequencyValue.md)
  * [GenotypicSex](GenotypicSex.md)
  * [Inheritance](Inheritance.md)
  * [Onset](Onset.md)

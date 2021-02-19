@@ -118,7 +118,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
           * [ClinicalMeasurement](ClinicalMeasurement.md) - A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
           * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
-       * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
        * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
           * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
           * [PhenotypicQuality](PhenotypicQuality.md) - A property of a phenotype
@@ -1281,7 +1280,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Decimal](types/Decimal.md)  (**Decimal**)  - A real number with arbitrary precision that conforms to the xsd:decimal specification
  * [Double](types/Double.md)  (**float**)  - A real number that conforms to the xsd:double specification
  * [Float](types/Float.md)  (**float**)  - A real number that conforms to the xsd:float specification
- * [Frequency](types/Frequency.md)  ([String](types/String.md)) 
+ * [FrequencyValue](types/FrequencyValue.md)  ([String](types/String.md)) 
  * [Integer](types/Integer.md)  (**int**)  - An integer
  * [IriType](types/IriType.md)  ([Uriorcurie](types/Uriorcurie.md))  - An IRI
  * [LabelType](types/LabelType.md)  ([String](types/String.md))  - A string that provides a human-readable name for an entity

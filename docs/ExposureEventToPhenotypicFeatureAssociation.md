@@ -15,7 +15,7 @@ URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biol
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[FrequencyValue],[ExposureEvent]%3Csubject%201..1-++[ExposureEventToPhenotypicFeatureAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[ExposureEvent],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[ExposureEvent]%3Csubject%201..1-++[ExposureEventToPhenotypicFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[ExposureEvent],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute],[Association],[Agent])
 
 ---
 
@@ -132,7 +132,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    * range: [FrequencyValue](FrequencyValue.md)
+    * range: [FrequencyValue](types/FrequencyValue.md)
 
 ### Inherited from macromolecular machine mixin:
 
