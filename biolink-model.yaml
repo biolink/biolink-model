@@ -257,16 +257,12 @@ enums:
     permissible_values:
       "+":
         description: Positive
-        meaning: faldo:ForwardStrandPosition
       "-":
         description: Negative
-        meaning: faldo:ReverseStrandPosition
       ".":
         description: Unstranded
-        meaning: faldo:BothStrandsPosition
       "?":
         description: Unknown
-        meaning: faldo:Position
 
   sequence_enum:
     description: type of sequence
@@ -4768,7 +4764,7 @@ slots:
       The position at which the subject genomic entity starts
       on the chromosome or other entity to which it is located on
       (ie: the start of the sequence being referenced is 0).
-    exact mapping:
+    exact_mappings:
       - faldo:begin
 
   end interbase coordinate:
@@ -4776,7 +4772,7 @@ slots:
     description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
-    exact mapping:
+    exact_mappings:
       - faldo:end
 
   start coordinate:
@@ -4786,7 +4782,7 @@ slots:
       The position at which the subject genomic entity starts
       on the chromosome or other entity to which it is located on.
       (ie: the start of the sequence being referenced is 1).
-    exact mapping:
+    exact_mappings:
       - faldo:begin
       - gff3:start
 
@@ -4796,7 +4792,7 @@ slots:
     description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
-    exact mapping:
+    exact_mappings:
       - faldo:end
       - gff3:end
 

@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-02-19 20:26
+# Generation date: 2021-02-22 16:24
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7340,8 +7340,8 @@ class GenomicSequenceLocalization(SequenceAssociation):
     start_interbase_coordinate: Optional[int] = None
     end_interbase_coordinate: Optional[int] = None
     genome_build: Optional[str] = None
-    strand: Optional[str] = None
-    phase: Optional[str] = None
+    strand: Optional[Union[str, "StrandEnum"]] = None
+    phase: Optional[Union[str, "PhaseEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -7373,11 +7373,11 @@ class GenomicSequenceLocalization(SequenceAssociation):
         if self.genome_build is not None and not isinstance(self.genome_build, str):
             self.genome_build = str(self.genome_build)
 
-        if self.strand is not None and not isinstance(self.strand, str):
-            self.strand = str(self.strand)
+        if self.strand is not None and not isinstance(self.strand, StrandEnum):
+            self.strand = StrandEnum(self.strand)
 
-        if self.phase is not None and not isinstance(self.phase, str):
-            self.phase = str(self.phase)
+        if self.phase is not None and not isinstance(self.phase, PhaseEnum):
+            self.phase = PhaseEnum(self.phase)
 
         super().__post_init__(**kwargs)
 
@@ -7813,7 +7813,64 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
 
 
 # Enumerations
+class PhaseEnum(EnumDefinitionImpl):
+    """
+    phase
+    """
+    _defn = EnumDefinition(
+        name="PhaseEnum",
+        description="phase",
+    )
 
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "0",
+                PermissibleValue(text="0",
+                                 description="0") )
+        setattr(cls, "1",
+                PermissibleValue(text="1",
+                                 description="1") )
+        setattr(cls, "2",
+                PermissibleValue(text="2",
+                                 description="2") )
+
+class StrandEnum(EnumDefinitionImpl):
+    """
+    strand
+    """
+    _defn = EnumDefinition(
+        name="StrandEnum",
+        description="strand",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "+",
+                PermissibleValue(text="+",
+                                 description="Positive") )
+        setattr(cls, "-",
+                PermissibleValue(text="-",
+                                 description="Negative") )
+        setattr(cls, ".",
+                PermissibleValue(text=".",
+                                 description="Unstranded") )
+        setattr(cls, "?",
+                PermissibleValue(text="?",
+                                 description="Unknown") )
+
+class SequenceEnum(EnumDefinitionImpl):
+    """
+    type of sequence
+    """
+    NA = PermissibleValue(text="NA",
+                           description="nucleic acid")
+    AA = PermissibleValue(text="AA",
+                           description="amino acid")
+
+    _defn = EnumDefinition(
+        name="SequenceEnum",
+        description="type of sequence",
+    )
 
 # Slots
 class slots:
@@ -8683,6 +8740,9 @@ slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=B
 slots.sequence_localization_attribute = Slot(uri=BIOLINK.sequence_localization_attribute, name="sequence localization attribute", curie=BIOLINK.curie('sequence_localization_attribute'),
                    model_uri=BIOLINK.sequence_localization_attribute, domain=GenomicSequenceLocalization, range=Optional[str])
 
+slots.base_coordinate = Slot(uri=BIOLINK.base_coordinate, name="base coordinate", curie=BIOLINK.curie('base_coordinate'),
+                   model_uri=BIOLINK.base_coordinate, domain=GenomicSequenceLocalization, range=Optional[int])
+
 slots.interbase_coordinate = Slot(uri=BIOLINK.interbase_coordinate, name="interbase coordinate", curie=BIOLINK.curie('interbase_coordinate'),
                    model_uri=BIOLINK.interbase_coordinate, domain=GenomicSequenceLocalization, range=Optional[int])
 
@@ -8692,14 +8752,20 @@ slots.start_interbase_coordinate = Slot(uri=BIOLINK.start_interbase_coordinate, 
 slots.end_interbase_coordinate = Slot(uri=BIOLINK.end_interbase_coordinate, name="end interbase coordinate", curie=BIOLINK.curie('end_interbase_coordinate'),
                    model_uri=BIOLINK.end_interbase_coordinate, domain=GenomicSequenceLocalization, range=Optional[int])
 
+slots.start_coordinate = Slot(uri=BIOLINK.start_coordinate, name="start coordinate", curie=BIOLINK.curie('start_coordinate'),
+                   model_uri=BIOLINK.start_coordinate, domain=GenomicSequenceLocalization, range=Optional[int])
+
+slots.end_coordinate = Slot(uri=BIOLINK.end_coordinate, name="end coordinate", curie=BIOLINK.curie('end_coordinate'),
+                   model_uri=BIOLINK.end_coordinate, domain=GenomicSequenceLocalization, range=Optional[int])
+
 slots.genome_build = Slot(uri=BIOLINK.genome_build, name="genome build", curie=BIOLINK.curie('genome_build'),
                    model_uri=BIOLINK.genome_build, domain=GenomicSequenceLocalization, range=Optional[str])
 
 slots.strand = Slot(uri=BIOLINK.strand, name="strand", curie=BIOLINK.curie('strand'),
-                   model_uri=BIOLINK.strand, domain=GenomicSequenceLocalization, range=Optional[str])
+                   model_uri=BIOLINK.strand, domain=GenomicSequenceLocalization, range=Optional[Union[str, "StrandEnum"]])
 
 slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase'),
-                   model_uri=BIOLINK.phase, domain=CodingSequence, range=Optional[str])
+                   model_uri=BIOLINK.phase, domain=CodingSequence, range=Optional[Union[str, "PhaseEnum"]])
 
 slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.has_taxonomic_rank, domain=None, range=Optional[Union[dict, TaxonomicRank]], mappings = [WIKIDATA.P105])
