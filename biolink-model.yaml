@@ -51,6 +51,7 @@ prefixes:
   foodb.compound: 'http://foodb.ca/compounds/'
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
+  apollo: 'https://github.com/GMOD/Apollo'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
   # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
   GOP: 'http://purl.obolibrary.org/obo/go#'
@@ -4764,7 +4765,7 @@ slots:
       The position at which the subject genomic entity starts
       on the chromosome or other entity to which it is located on
       (ie: the start of the sequence being referenced is 0).
-    exact_mappings:
+    close_mappings:
       - faldo:begin
 
   end interbase coordinate:
@@ -4772,7 +4773,7 @@ slots:
     description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
-    exact_mappings:
+    close_mappings:
       - faldo:end
 
   start coordinate:
@@ -4783,8 +4784,9 @@ slots:
       on the chromosome or other entity to which it is located on.
       (ie: the start of the sequence being referenced is 1).
     exact_mappings:
-      - faldo:begin
       - gff3:start
+    close_mappings:
+      - faldo:begin
 
   end coordinate:
     is_a: base coordinate
@@ -4793,8 +4795,9 @@ slots:
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
     exact_mappings:
-      - faldo:end
       - gff3:end
+    close_mappings:
+      - faldo:end
 
   genome build:
     is_a: sequence localization attribute
