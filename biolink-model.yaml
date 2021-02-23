@@ -240,6 +240,43 @@ types:
   biological sequence:
     typeof: string
 
+## -----------------
+## ENUMERATIONS
+## -----------------
+
+enums:
+  phase_enum:
+    description: phase
+    permissible_values:
+      0: 0
+      1: 1
+      2: 2
+
+  strand_enum:
+    description: strand
+    permissible_values:
+      "+":
+        description: Positive
+        meaning: faldo:ForwardStrandPosition
+      "-":
+        description: Negative
+        meaning: faldo:ReverseStrandPosition
+      ".":
+        description: Unstranded
+        meaning: faldo:BothStrandsPosition
+      "?":
+        description: Unknown
+        meaning: faldo:Position
+
+  sequence_enum:
+    description: type of sequence
+    permissible_values:
+      "NA":
+        description: nucleic acid
+      "AA":
+        description: amino acid
+
+
 ## ------------
 ## SLOTS
 ## ------------
@@ -4710,23 +4747,58 @@ slots:
       to ascribe specific positional information and other metadata to the localization. In pragmatic terms
       this can be thought of as columns in a GFF3 line.
 
+  base coordinate:
+    is_a: sequence localization attribute
+    aliases: ['one-based', 'fully-closed']
+    description: >-
+      A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
+    range: integer
+
   interbase coordinate:
     is_a: sequence localization attribute
+    aliases: ['zero-based', 'half-open', 'space-based']
     description: >-
-      A position in interbase coordinates. This is applied to a sequence localization edge.
+      A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1.
+      This is applied to a sequence localization edge.
     range: integer
 
   start interbase coordinate:
     is_a: interbase coordinate
     description: >-
       The position at which the subject genomic entity starts
-      on the chromosome or other entity to which it is located on.
+      on the chromosome or other entity to which it is located on
+      (ie: the start of the sequence being referenced is 0).
+    exact mapping:
+      - faldo:begin
 
   end interbase coordinate:
     is_a: interbase coordinate
     description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
+    exact mapping:
+      - faldo:end
+
+  start coordinate:
+    is_a: base coordinate
+    aliases: ['start']
+    description: >-
+      The position at which the subject genomic entity starts
+      on the chromosome or other entity to which it is located on.
+      (ie: the start of the sequence being referenced is 1).
+    exact mapping:
+      - faldo:begin
+      - gff3:start
+
+  end coordinate:
+    is_a: base coordinate
+    aliases: ['end']
+    description: >-
+      The position at which the subject genomic entity ends
+      on the chromosome or other entity to which it is located on.
+    exact mapping:
+      - faldo:end
+      - gff3:end
 
   genome build:
     is_a: sequence localization attribute
@@ -4739,13 +4811,19 @@ slots:
     description: >-
       The strand on which a feature is located. Has a value of '+'
       (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+    range: strand_enum
+    exact_mappings:
+      - gff3:strand
 
   phase:
     is_a: sequence localization attribute
     domain: coding sequence
+    range: phase_enum
     description: >-
       The phase for a coding sequence entity. For example, phase of a
       CDS as represented in a GFF3 with a value of 0, 1 or 2.
+    exact_mappings:
+      - gff3:phase
 
 classes:
 
