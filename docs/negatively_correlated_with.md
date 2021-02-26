@@ -34,5 +34,5 @@ URI: [biolink:negatively_correlated_with](https://w3id.org/biolink/vocab/negativ
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:negativecorrelation |
+| **Exact Mappings:** | | CTD:negative_correlation |
 
