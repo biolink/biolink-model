@@ -3891,8 +3891,8 @@ slots:
     description: >-
       holds between a one or more chemical substances present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: food component
-    range: food
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: has food component
@@ -3904,8 +3904,8 @@ slots:
     description: >-
       holds between food and one or more chemical substances composing it,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: food
-    range: food component
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: food component of
@@ -3917,8 +3917,8 @@ slots:
     description: >-
       holds between a one or more chemical substances present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: food component
-    range: food
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: has nutrient
@@ -3929,8 +3929,8 @@ slots:
     is_a: has food component
     description: >-
       one or more nutrients which are growth factors for a living organism
-    domain: food
-    range: food component
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: nutrient of
@@ -5951,25 +5951,28 @@ classes:
   ## Food
 
   food component:
+    deprecated: >-
+      Food component is replaced by a slot/role of chemical substance and will be removed
+      from the Biolink model.
     is_a: chemical substance
     related_mappings:
       # substance role
       - CHEBI:78295
 
   environmental food contaminant:
-    is_a: food component
+    is_a: chemical substance
     related_mappings:
       # substance role
       - CHEBI:78299
 
   food additive:
-    is_a: food component
+    is_a: chemical substance
     related_mappings:
       # substance role
       - CHEBI:64047
 
   nutrient:
-    is_a: food component
+    is_a: chemical substance
     related_mappings:
       # substance role
       - CHEBI:33284
