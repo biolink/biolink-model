@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-03-02 23:36
+# Generation date: 2021-03-04 13:38
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -68,7 +68,7 @@ EDAM_DATA = CurieNamespace('EDAM-DATA', 'http://edamontology.org/data_')
 EDAM_FORMAT = CurieNamespace('EDAM-FORMAT', 'http://edamontology.org/format_')
 EDAM_OPERATION = CurieNamespace('EDAM-OPERATION', 'http://edamontology.org/operation_')
 EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
-EFO = CurieNamespace('EFO', 'http://identifiers.org/efo/')
+EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/EFO_')
 EGGNOG = CurieNamespace('EGGNOG', 'http://identifiers.org/eggnog/')
 ENSEMBL = CurieNamespace('ENSEMBL', 'http://identifiers.org/ensembl/')
 EXO = CurieNamespace('ExO', 'http://purl.obolibrary.org/obo/ExO_')
