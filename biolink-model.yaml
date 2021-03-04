@@ -67,6 +67,7 @@ prefixes:
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   interpro: 'https://www.ebi.ac.uk/interpro/entry/'
+  INO: 'http://purl.obolibrary.org/obo/INO_'
   isbn: 'https://www.isbn-international.org/identifier/' # note: a resolvable base URI not available from isbn-international
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
@@ -3197,7 +3198,7 @@ slots:
       - translator_minimal
     symmetric: true
     exact_mappings:
-      - CTD:positivecorrelation
+      - CTD:positive_correlation
 
   negatively correlated with:
     is_a: correlated with
@@ -3209,7 +3210,7 @@ slots:
       - translator_minimal
     symmetric: true
     exact_mappings:
-      - CTD:negativecorrelation
+      - CTD:negative_correlation
 
   coexpressed with:
     is_a: correlated with

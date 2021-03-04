@@ -1,5 +1,6 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
 # Generation date: 2021-03-04 13:16
+
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -96,6 +97,7 @@ ICD10 = CurieNamespace('ICD10', 'http://translator.ncats.nih.gov/ICD10_')
 ICD9 = CurieNamespace('ICD9', 'http://translator.ncats.nih.gov/ICD9_')
 INCHI = CurieNamespace('INCHI', 'http://identifiers.org/inchi/')
 INCHIKEY = CurieNamespace('INCHIKEY', 'http://identifiers.org/inchikey/')
+INO = CurieNamespace('INO', 'http://purl.obolibrary.org/obo/INO_')
 INTACT = CurieNamespace('INTACT', 'http://identifiers.org/intact/')
 IUPHAR_FAMILY = CurieNamespace('IUPHAR_FAMILY', 'http://identifiers.org/iuphar.family/')
 KEGG = CurieNamespace('KEGG', 'http://identifiers.org/kegg/')
