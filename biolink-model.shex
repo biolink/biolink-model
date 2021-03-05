@@ -491,7 +491,8 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <ChemicalSubstance> ]
        )
-    } OR @<Carbohydrate> OR @<ChemicalExposure> OR @<FoodComponent> OR @<Metabolite> OR @<ProcessedMaterial>
+    } OR @<Carbohydrate> OR @<ChemicalExposure> OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<FoodComponent> OR
+    @<Metabolite> OR @<Nutrient> OR @<ProcessedMaterial>
 )
 
 <ChemicalToChemicalAssociation>  (
@@ -995,8 +996,8 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <EnvironmentalFoodContaminant> CLOSED {
-    (  $<EnvironmentalFoodContaminant_tes> (  &<FoodComponent_tes> ;
-          rdf:type [ <FoodComponent> ] ?
+    (  $<EnvironmentalFoodContaminant_tes> (  &<ChemicalSubstance_tes> ;
+          rdf:type [ <ChemicalSubstance> ] ?
        ) ;
        rdf:type [ <EnvironmentalFoodContaminant> ]
     )
@@ -1103,22 +1104,20 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <FoodAdditive> CLOSED {
-    (  $<FoodAdditive_tes> (  &<FoodComponent_tes> ;
-          rdf:type [ <FoodComponent> ] ?
+    (  $<FoodAdditive_tes> (  &<ChemicalSubstance_tes> ;
+          rdf:type [ <ChemicalSubstance> ] ?
        ) ;
        rdf:type [ <FoodAdditive> ]
     )
 }
 
-<FoodComponent>  (
-    CLOSED {
-       (  $<FoodComponent_tes> (  &<ChemicalSubstance_tes> ;
-             rdf:type [ <ChemicalSubstance> ] ?
-          ) ;
-          rdf:type [ <FoodComponent> ]
-       )
-    } OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<Nutrient>
-)
+<FoodComponent> CLOSED {
+    (  $<FoodComponent_tes> (  &<ChemicalSubstance_tes> ;
+          rdf:type [ <ChemicalSubstance> ] ?
+       ) ;
+       rdf:type [ <FoodComponent> ]
+    )
+}
 
 <FrequencyQualifierMixin>  (
     {
@@ -1872,8 +1871,8 @@ metatype:Nodeidentifier NONLITERAL
 
 <Nutrient>  (
     CLOSED {
-       (  $<Nutrient_tes> (  &<FoodComponent_tes> ;
-             rdf:type [ <FoodComponent> ] ?
+       (  $<Nutrient_tes> (  &<ChemicalSubstance_tes> ;
+             rdf:type [ <ChemicalSubstance> ] ?
           ) ;
           rdf:type [ <Nutrient> ]
        )
