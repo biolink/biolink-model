@@ -1,11 +1,11 @@
 ---
 parent: Predicates
-title: biolink:negatively_regulates_entity_to_entity
+title: biolink:entity_negatively_regulates_entity
 grand_parent: Slots
 layout: default
 ---
 
-# Relation: negatively_regulates_entity_to_entity
+# Relation: entity_negatively_regulates_entity
 
 translator_minimal
 {: .translator_minimal-subset-label }
@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:negatively_regulates_entity_to_entity](https://w3id.org/biolink/vocab/negatively_regulates_entity_to_entity)
+URI: [biolink:entity_negatively_regulates_entity](https://w3id.org/biolink/vocab/entity_negatively_regulates_entity)
 
 ## Domain and Range
 
@@ -21,7 +21,7 @@ URI: [biolink:negatively_regulates_entity_to_entity](https://w3id.org/biolink/vo
 
 ## Parents
 
- *  is_a: [regulates, entity to entity](regulates_entity_to_entity.md)
+ *  is_a: [entity regulates entity](entity_regulates_entity.md)
 
 ## Children
 

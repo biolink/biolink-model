@@ -5,7 +5,7 @@ grand_parent: Classes
 layout: default
 ---
 
-# Class: FoodComponent
+# Class: FoodComponent _(deprecated)_
 
 
 
@@ -15,7 +15,7 @@ URI: [biolink:FoodComponent](https://w3id.org/biolink/vocab/FoodComponent)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[Nutrient],[NamedThing],[FoodComponent%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[Nutrient],[FoodComponent]%5E-[FoodAdditive],[FoodComponent]%5E-[EnvironmentalFoodContaminant],[ChemicalSubstance]%5E-[FoodComponent],[FoodAdditive],[Food],[EnvironmentalFoodContaminant],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ChemicalSubstance]%5E-[FoodComponent%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance],[Attribute],[Agent])
 
 ---
 
@@ -23,16 +23,6 @@ URI: [biolink:FoodComponent](https://w3id.org/biolink/vocab/FoodComponent)
 ## Parents
 
  *  is_a: [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
-
-## Children
-
- * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
- * [FoodAdditive](FoodAdditive.md)
- * [Nutrient](Nutrient.md)
-
-## Referenced by class
-
- *  **[Food](Food.md)** *[has food component](has_food_component.md)*  <sub>0..*</sub>  **[FoodComponent](FoodComponent.md)**
 
 ## Attributes
 

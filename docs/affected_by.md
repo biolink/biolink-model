@@ -23,8 +23,8 @@ URI: [biolink:affected_by](https://w3id.org/biolink/vocab/affected_by)
 ## Children
 
  *  [disrupted by](disrupted_by.md)
- *  [regulated by, entity to entity](regulated_by_entity_to_entity.md)
- *  [regulated by, process to process](regulated_by_process_to_process.md)
+ *  [entity regulated by entity](entity_regulated_by_entity.md)
+ *  [process regulated by process](process_regulated_by_process.md)
 
 ## Used by
 

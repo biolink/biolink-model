@@ -224,14 +224,14 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [Carbohydrate](Carbohydrate.md)
           * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance, other than a drug.
              * [ComplexChemicalExposure](ComplexChemicalExposure.md) - A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+          * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
+          * [FoodAdditive](FoodAdditive.md)
           * [FoodComponent](FoodComponent.md)
-             * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
-             * [FoodAdditive](FoodAdditive.md)
-             * [Nutrient](Nutrient.md)
-                * [Macronutrient](Macronutrient.md)
-                * [Micronutrient](Micronutrient.md)
-                   * [Vitamin](Vitamin.md)
           * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+          * [Nutrient](Nutrient.md)
+             * [Macronutrient](Macronutrient.md)
+             * [Micronutrient](Micronutrient.md)
+                * [Vitamin](Vitamin.md)
           * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
        * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
           * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular drug.
@@ -382,14 +382,14 @@ Entity and association taxonomy and datamodel for life-sciences data
                 * [Carbohydrate](Carbohydrate.md)
                 * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance, other than a drug.
                    * [ComplexChemicalExposure](ComplexChemicalExposure.md) - A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+                * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
+                * [FoodAdditive](FoodAdditive.md)
                 * [FoodComponent](FoodComponent.md)
-                   * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
-                   * [FoodAdditive](FoodAdditive.md)
-                   * [Nutrient](Nutrient.md)
-                      * [Macronutrient](Macronutrient.md)
-                      * [Micronutrient](Micronutrient.md)
-                         * [Vitamin](Vitamin.md)
                 * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+                * [Nutrient](Nutrient.md)
+                   * [Macronutrient](Macronutrient.md)
+                   * [Micronutrient](Micronutrient.md)
+                      * [Vitamin](Vitamin.md)
                 * [ProcessedMaterial](ProcessedMaterial.md) - A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
              * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
                 * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular drug.
@@ -470,12 +470,12 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [affected by](affected_by.md) - describes an entity of which the state or quality is affected by another existing entity.
     * [disrupted by](disrupted_by.md) - describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
-    * [regulated by, entity to entity](regulated_by_entity_to_entity.md)
-       * [negatively regulated by, entity to entity](negatively_regulated_by_entity_to_entity.md)
-       * [positively regulated by, entity to entity](positively_regulated_by_entity_to_entity.md)
-    * [regulated by, process to process](regulated_by_process_to_process.md)
-       * [negatively regulated by, process to process](negatively_regulated_by_process_to_process.md)
-       * [positively regulated by, process to process](positively_regulated_by_process_to_process.md)
+    * [entity regulated by entity](entity_regulated_by_entity.md)
+       * [entity negatively regulated by entity](entity_negatively_regulated_by_entity.md)
+       * [entity positively regulated by entity](entity_positively_regulated_by_entity.md)
+    * [process regulated by process](process_regulated_by_process.md)
+       * [process negatively regulated by process](process_negatively_regulated_by_process.md)
+       * [process positively regulated by process](process_positively_regulated_by_process.md)
  * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
     * [affects abundance of](affects_abundance_of.md) - holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
        * [decreases abundance of](decreases_abundance_of.md) - holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
@@ -530,13 +530,13 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
           * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
     * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
+    * [entity regulates entity](entity_regulates_entity.md)
+       * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
+       * [entity positively regulates entity](entity_positively_regulates_entity.md)
     * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
-    * [regulates, entity to entity](regulates_entity_to_entity.md)
-       * [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)
-       * [positively regulates, entity to entity](positively_regulates_entity_to_entity.md)
-    * [regulates, process to process](regulates_process_to_process.md)
-       * [negatively regulates, process to process](negatively_regulates_process_to_process.md)
-       * [positively regulates, process to process](positively_regulates_process_to_process.md)
+    * [process regulates process](process_regulates_process.md)
+       * [process negatively regulates process](process_negatively_regulates_process.md)
+       * [process positively regulates process](process_positively_regulates_process.md)
  * [affects abundance of](affects_abundance_of.md) - holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
     * [decreases abundance of](decreases_abundance_of.md) - holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
     * [increases abundance of](increases_abundance_of.md) - holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
@@ -658,6 +658,16 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
  * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
  * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
+ * [entity negatively regulated by entity](entity_negatively_regulated_by_entity.md)
+ * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
+ * [entity positively regulated by entity](entity_positively_regulated_by_entity.md)
+ * [entity positively regulates entity](entity_positively_regulates_entity.md)
+ * [entity regulated by entity](entity_regulated_by_entity.md)
+    * [entity negatively regulated by entity](entity_negatively_regulated_by_entity.md)
+    * [entity positively regulated by entity](entity_positively_regulated_by_entity.md)
+ * [entity regulates entity](entity_regulates_entity.md)
+    * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
+    * [entity positively regulates entity](entity_positively_regulates_entity.md)
  * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
  * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
     * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
@@ -759,10 +769,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other molecular entity
  * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
  * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
- * [negatively regulated by, entity to entity](negatively_regulated_by_entity_to_entity.md)
- * [negatively regulated by, process to process](negatively_regulated_by_process_to_process.md)
- * [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)
- * [negatively regulates, process to process](negatively_regulates_process_to_process.md)
  * [nutrient of](nutrient_of.md)
  * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
@@ -793,41 +799,35 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other molecular entity
        * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other molecular entity
  * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
- * [positively regulated by, entity to entity](positively_regulated_by_entity_to_entity.md)
- * [positively regulated by, process to process](positively_regulated_by_process_to_process.md)
- * [positively regulates, entity to entity](positively_regulates_entity_to_entity.md)
- * [positively regulates, process to process](positively_regulates_process_to_process.md)
  * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
  * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
  * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
  * [prevented by](prevented_by.md) - holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
  * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
+ * [process negatively regulated by process](process_negatively_regulated_by_process.md)
+ * [process negatively regulates process](process_negatively_regulates_process.md)
+ * [process positively regulated by process](process_positively_regulated_by_process.md)
+ * [process positively regulates process](process_positively_regulates_process.md)
+ * [process regulated by process](process_regulated_by_process.md)
+    * [process negatively regulated by process](process_negatively_regulated_by_process.md)
+    * [process positively regulated by process](process_positively_regulated_by_process.md)
+ * [process regulates process](process_regulates_process.md)
+    * [process negatively regulates process](process_negatively_regulates_process.md)
+    * [process positively regulates process](process_positively_regulates_process.md)
  * [produced by](produced_by.md)
  * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
  * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
  * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
- * [regulated by, entity to entity](regulated_by_entity_to_entity.md)
-    * [negatively regulated by, entity to entity](negatively_regulated_by_entity_to_entity.md)
-    * [positively regulated by, entity to entity](positively_regulated_by_entity_to_entity.md)
- * [regulated by, process to process](regulated_by_process_to_process.md)
-    * [negatively regulated by, process to process](negatively_regulated_by_process_to_process.md)
-    * [positively regulated by, process to process](positively_regulated_by_process_to_process.md)
- * [regulates, entity to entity](regulates_entity_to_entity.md)
-    * [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)
-    * [positively regulates, entity to entity](positively_regulates_entity_to_entity.md)
- * [regulates, process to process](regulates_process_to_process.md)
-    * [negatively regulates, process to process](negatively_regulates_process_to_process.md)
-    * [positively regulates, process to process](positively_regulates_process_to_process.md)
  * [related condition](related_condition.md)
  * [related to](related_to.md) - A relationship that is asserted between two named things
     * [affected by](affected_by.md) - describes an entity of which the state or quality is affected by another existing entity.
        * [disrupted by](disrupted_by.md) - describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
-       * [regulated by, entity to entity](regulated_by_entity_to_entity.md)
-          * [negatively regulated by, entity to entity](negatively_regulated_by_entity_to_entity.md)
-          * [positively regulated by, entity to entity](positively_regulated_by_entity_to_entity.md)
-       * [regulated by, process to process](regulated_by_process_to_process.md)
-          * [negatively regulated by, process to process](negatively_regulated_by_process_to_process.md)
-          * [positively regulated by, process to process](positively_regulated_by_process_to_process.md)
+       * [entity regulated by entity](entity_regulated_by_entity.md)
+          * [entity negatively regulated by entity](entity_negatively_regulated_by_entity.md)
+          * [entity positively regulated by entity](entity_positively_regulated_by_entity.md)
+       * [process regulated by process](process_regulated_by_process.md)
+          * [process negatively regulated by process](process_negatively_regulated_by_process.md)
+          * [process positively regulated by process](process_positively_regulated_by_process.md)
     * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
        * [affects abundance of](affects_abundance_of.md) - holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
           * [decreases abundance of](decreases_abundance_of.md) - holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
@@ -882,13 +882,13 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
              * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
        * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
+       * [entity regulates entity](entity_regulates_entity.md)
+          * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
+          * [entity positively regulates entity](entity_positively_regulates_entity.md)
        * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
-       * [regulates, entity to entity](regulates_entity_to_entity.md)
-          * [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)
-          * [positively regulates, entity to entity](positively_regulates_entity_to_entity.md)
-       * [regulates, process to process](regulates_process_to_process.md)
-          * [negatively regulates, process to process](negatively_regulates_process_to_process.md)
-          * [positively regulates, process to process](positively_regulates_process_to_process.md)
+       * [process regulates process](process_regulates_process.md)
+          * [process negatively regulates process](process_negatively_regulates_process.md)
+          * [process positively regulates process](process_positively_regulates_process.md)
     * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
        * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
        * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.

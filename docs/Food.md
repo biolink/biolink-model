@@ -15,7 +15,7 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[FoodComponent],[Food%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Food],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[Food%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Food],[ChemicalSubstance],[Attribute],[Agent])
 
 ---
 
@@ -31,11 +31,6 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 ## Uses Mixins
 
  *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
-
-## Referenced by class
-
- *  **[FoodComponent](FoodComponent.md)** *[food component of](food_component_of.md)*  <sub>0..*</sub>  **[Food](Food.md)**
- *  **[FoodComponent](FoodComponent.md)** *[nutrient of](nutrient_of.md)*  <sub>0..*</sub>  **[Food](Food.md)**
 
 ## Attributes
 

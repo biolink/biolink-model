@@ -17,7 +17,7 @@ URI: [biolink:nutrient_of](https://w3id.org/biolink/vocab/nutrient_of)
 
 ## Domain and Range
 
-[FoodComponent](FoodComponent.md) ->  <sub>0..*</sub> [Food](Food.md)
+[ChemicalSubstance](ChemicalSubstance.md) ->  <sub>0..*</sub> [ChemicalSubstance](ChemicalSubstance.md)
 
 ## Parents
 

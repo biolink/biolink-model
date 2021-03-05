@@ -67,6 +67,12 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  *  **[MolecularEntity](MolecularEntity.md)** *[decreases synthesis of](decreases_synthesis_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[decreases transport of](decreases_transport_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[decreases uptake of](decreases_uptake_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[MolecularEntity](MolecularEntity.md)** *[entity negatively regulated by entity](entity_negatively_regulated_by_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[MolecularEntity](MolecularEntity.md)** *[entity negatively regulates entity](entity_negatively_regulates_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[MolecularEntity](MolecularEntity.md)** *[entity positively regulated by entity](entity_positively_regulated_by_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[MolecularEntity](MolecularEntity.md)** *[entity positively regulates entity](entity_positively_regulates_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[MolecularEntity](MolecularEntity.md)** *[entity regulated by entity](entity_regulated_by_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[MolecularEntity](MolecularEntity.md)** *[entity regulates entity](entity_regulates_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[gene to go term association➞subject](gene_to_go_term_association_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[has biomarker](has_biomarker.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[increases abundance of](increases_abundance_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
@@ -85,14 +91,8 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  *  **[MolecularEntity](MolecularEntity.md)** *[increases uptake of](increases_uptake_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntityToEntityAssociationMixin](MolecularEntityToEntityAssociationMixin.md)** *[molecular entity to entity association mixin➞subject](molecular_entity_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[molecularly interacts with](molecularly_interacts_with.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[negatively regulated by, entity to entity](negatively_regulated_by_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[positively regulated by, entity to entity](positively_regulated_by_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[positively regulates, entity to entity](positively_regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[regulated by, entity to entity](regulated_by_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[regulates, entity to entity](regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
 
 ## Attributes
 
