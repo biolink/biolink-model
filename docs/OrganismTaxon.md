@@ -50,18 +50,18 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 ### Own
 
  * [organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)  <sub>OPT</sub>
-    * range: [TaxonomicRank](TaxonomicRank.md)
+     * range: [TaxonomicRank](TaxonomicRank.md)
  * [organism taxon➞subclass of](organism_taxon_subclass_of.md)  <sub>0..*</sub>
-    * Description: subclass of holds between two taxa, e.g. human subclass of mammal
-    * range: [OrganismTaxon](OrganismTaxon.md)
+     * Description: subclass of holds between two taxa, e.g. human subclass of mammal
+     * range: [OrganismTaxon](OrganismTaxon.md)
 
 ### Domain for slot:
 
  * [organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)  <sub>OPT</sub>
-    * range: [TaxonomicRank](TaxonomicRank.md)
+     * range: [TaxonomicRank](TaxonomicRank.md)
  * [organism taxon➞subclass of](organism_taxon_subclass_of.md)  <sub>0..*</sub>
-    * Description: subclass of holds between two taxa, e.g. human subclass of mammal
-    * range: [OrganismTaxon](OrganismTaxon.md)
+     * Description: subclass of holds between two taxa, e.g. human subclass of mammal
+     * range: [OrganismTaxon](OrganismTaxon.md)
 
 ## Other properties
 

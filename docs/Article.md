@@ -37,100 +37,100 @@ URI: [biolink:Article](https://w3id.org/biolink/vocab/Article)
 ### Own
 
  * [article➞iso abbreviation](article_iso_abbreviation.md)  <sub>OPT</sub>
-    * Description: Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
-    * range: [String](types/String.md)
+     * Description: Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
+     * range: [String](types/String.md)
  * [article➞published in](article_published_in.md)  <sub>REQ</sub>
-    * Description: The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
-    * range: [Uriorcurie](types/Uriorcurie.md)
+     * Description: The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
+     * range: [Uriorcurie](types/Uriorcurie.md)
 
 ### Inherited from entity:
 
  * [id](id.md)  <sub>REQ</sub>
-    * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [String](types/String.md)
-    * in subsets: (translator_minimal)
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>OPT</sub>
-    * Description: An IRI for an entity. This is determined by the id using expansion rules.
-    * range: [IriType](types/IriType.md)
-    * in subsets: (translator_minimal,samples)
+     * Description: An IRI for an entity. This is determined by the id using expansion rules.
+     * range: [IriType](types/IriType.md)
+     * in subsets: (translator_minimal,samples)
  * [category](category.md)  <sub>0..*</sub>
-    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-    * range: [CategoryType](types/CategoryType.md)
-    * in subsets: (translator_minimal)
+     * range: [CategoryType](types/CategoryType.md)
+     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
+     * range: [String](types/String.md)
  * [description](description.md)  <sub>OPT</sub>
-    * Description: a human-readable description of an entity
-    * range: [NarrativeText](types/NarrativeText.md)
-    * in subsets: (translator_minimal)
+     * Description: a human-readable description of an entity
+     * range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
  * [source](source.md)  <sub>OPT</sub>
-    * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal)
+     * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+     * range: [LabelType](types/LabelType.md)
+     * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..*</sub>
-    * Description: connects an association to the agent (person, organization or group) that provided it
-    * range: [Agent](Agent.md)
+     * Description: connects an association to the agent (person, organization or group) that provided it
+     * range: [Agent](Agent.md)
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any entity to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
+     * Description: connects any entity to an attribute
+     * range: [Attribute](Attribute.md)
+     * in subsets: (samples)
 
 ### Inherited from information content entity:
 
  * [license](license.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
+     * range: [String](types/String.md)
  * [rights](rights.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
+     * range: [String](types/String.md)
  * [format](format.md)  <sub>OPT</sub>
-    * range: [String](types/String.md)
+     * range: [String](types/String.md)
  * [creation date](creation_date.md)  <sub>OPT</sub>
-    * Description: date on which an entity was created. This can be applied to nodes or edges
-    * range: [Date](types/Date.md)
+     * Description: date on which an entity was created. This can be applied to nodes or edges
+     * range: [Date](types/Date.md)
 
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
-    * range: [NamedThing](NamedThing.md)
+     * range: [NamedThing](NamedThing.md)
 
 ### Inherited from publication:
 
  * [authors](authors.md)  <sub>0..*</sub>
-    * Description: connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
-    * range: [String](types/String.md)
+     * Description: connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
+     * range: [String](types/String.md)
  * [publication➞pages](publication_pages.md)  <sub>0..*</sub>
-    * Description: When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
-    * range: [String](types/String.md)
+     * Description: When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
+     * range: [String](types/String.md)
  * [summary](summary.md)  <sub>OPT</sub>
-    * Description: executive  summary of a publication
-    * range: [String](types/String.md)
+     * Description: executive  summary of a publication
+     * range: [String](types/String.md)
  * [keywords](keywords.md)  <sub>0..*</sub>
-    * Description: keywords tagging a publication
-    * range: [String](types/String.md)
+     * Description: keywords tagging a publication
+     * range: [String](types/String.md)
  * [mesh terms](mesh_terms.md)  <sub>0..*</sub>
-    * Description: mesh terms tagging a publication
-    * range: [Uriorcurie](types/Uriorcurie.md)
+     * Description: mesh terms tagging a publication
+     * range: [Uriorcurie](types/Uriorcurie.md)
  * [publication➞id](publication_id.md)  <sub>REQ</sub>
-    * Description: Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
-    * range: [String](types/String.md)
+     * Description: Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
+     * range: [String](types/String.md)
  * [publication➞name](publication_name.md)  <sub>OPT</sub>
-    * Description: the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
-    * range: [LabelType](types/LabelType.md)
+     * Description: the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
+     * range: [LabelType](types/LabelType.md)
  * [publication➞type](publication_type.md)  <sub>REQ</sub>
-    * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
-    * range: [String](types/String.md)
+     * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
+     * range: [String](types/String.md)
 
 ### Domain for slot:
 
  * [article➞iso abbreviation](article_iso_abbreviation.md)  <sub>OPT</sub>
-    * Description: Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
-    * range: [String](types/String.md)
+     * Description: Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
+     * range: [String](types/String.md)
  * [article➞published in](article_published_in.md)  <sub>REQ</sub>
-    * Description: The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
-    * range: [Uriorcurie](types/Uriorcurie.md)
+     * Description: The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
+     * range: [Uriorcurie](types/Uriorcurie.md)
 
 ## Other properties
 

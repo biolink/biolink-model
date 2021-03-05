@@ -38,13 +38,13 @@ URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
 ### Own
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-    * range: [OrganismTaxon](OrganismTaxon.md)
-    * in subsets: (translator_minimal)
+     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+     * range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
 
 ### Domain for slot:
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-    * range: [OrganismTaxon](OrganismTaxon.md)
-    * in subsets: (translator_minimal)
+     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+     * range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)

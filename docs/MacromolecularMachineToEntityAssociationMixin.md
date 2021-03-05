@@ -35,9 +35,9 @@ URI: [biolink:MacromolecularMachineToEntityAssociationMixin](https://w3id.org/bi
 ### Own
 
  * [macromolecular machine to entity association mixin➞subject](macromolecular_machine_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-    * range: [NamedThing](NamedThing.md)
+     * range: [NamedThing](NamedThing.md)
 
 ### Domain for slot:
 
  * [macromolecular machine to entity association mixin➞subject](macromolecular_machine_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-    * range: [NamedThing](NamedThing.md)
+     * range: [NamedThing](NamedThing.md)

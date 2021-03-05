@@ -34,15 +34,15 @@ URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.o
 ### Own
 
  * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-    * Description: disease or phenotype
-    * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-    * Example:    
-    * Example:    
+     * Description: disease or phenotype
+     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+     * Example:    
+     * Example:    
 
 ### Domain for slot:
 
  * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-    * Description: disease or phenotype
-    * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-    * Example:    
-    * Example:    
+     * Description: disease or phenotype
+     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+     * Example:    
+     * Example:    

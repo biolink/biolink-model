@@ -34,11 +34,11 @@ URI: [biolink:GeneToEntityAssociationMixin](https://w3id.org/biolink/vocab/GeneT
 ### Own
 
  * [gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-    * Description: gene that is the subject of the association
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+     * Description: gene that is the subject of the association
+     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ### Domain for slot:
 
  * [gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-    * Description: gene that is the subject of the association
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+     * Description: gene that is the subject of the association
+     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
