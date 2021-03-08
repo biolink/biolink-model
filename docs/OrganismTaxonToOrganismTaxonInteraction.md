@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OrganismTaxon]%3Cobject%201..1-++[OrganismTaxonToOrganismTaxonInteraction%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-++[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation]%5E-[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxon],[OntologyClass],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OrganismTaxon]%3Cobject%201..1-++[OrganismTaxonToOrganismTaxonInteraction%7Cpredicate:predicate_type;associated_environmental_context:string%20%3F;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-++[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation]%5E-[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxon],[OntologyClass],[Attribute],[Agent])
 
 ---
 
@@ -32,6 +32,9 @@ URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/
 
 ### Own
 
+ * [organism taxon to organism taxon interaction➞associated environmental context](organism_taxon_to_organism_taxon_interaction_associated_environmental_context.md)  <sub>OPT</sub>
+     * Description: the environment in which the two taxa interact
+     * range: [String](types/String.md)
  * [organism taxon to organism taxon interaction➞object](organism_taxon_to_organism_taxon_interaction_object.md)  <sub>REQ</sub>
      * Description: the taxon that is the subject of the association
      * range: [OrganismTaxon](OrganismTaxon.md)
@@ -114,6 +117,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
+ * [organism taxon to organism taxon interaction➞associated environmental context](organism_taxon_to_organism_taxon_interaction_associated_environmental_context.md)  <sub>OPT</sub>
+     * Description: the environment in which the two taxa interact
+     * range: [String](types/String.md)
  * [organism taxon to organism taxon interaction➞object](organism_taxon_to_organism_taxon_interaction_object.md)  <sub>REQ</sub>
      * Description: the taxon that is the subject of the association
      * range: [OrganismTaxon](OrganismTaxon.md)

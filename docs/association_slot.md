@@ -21,6 +21,7 @@ URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
 
 ## Children
 
+ *  [associated environmental context](associated_environmental_context.md)
  *  [association type](association_type.md)
  *  [catalyst qualifier](catalyst_qualifier.md)
  *  [chi squared statistic](chi_squared_statistic.md)

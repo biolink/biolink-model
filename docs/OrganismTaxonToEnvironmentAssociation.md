@@ -1,21 +1,21 @@
 ---
 parent: Associations
-title: biolink:OrganismTaxonToOrganismTaxonAssociation
+title: biolink:OrganismTaxonToEnvironmentAssociation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: OrganismTaxonToOrganismTaxonAssociation
+# Class: OrganismTaxonToEnvironmentAssociation
 
 
-A relationship between two organism taxon nodes
 
-URI: [biolink:OrganismTaxonToOrganismTaxonAssociation](https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonAssociation)
+
+URI: [biolink:OrganismTaxonToEnvironmentAssociation](https://w3id.org/biolink/vocab/OrganismTaxonToEnvironmentAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxon]%3Cobject%201..1-++[OrganismTaxonToOrganismTaxonAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-++[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToOrganismTaxonAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[OrganismTaxonToOrganismTaxonAssociation]%5E-[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonAssociation]%5E-[OrganismTaxonToOrganismTaxonInteraction],[Association]%5E-[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEntityAssociation],[OrganismTaxon],[OntologyClass],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing]%3Cobject%201..1-%20[OrganismTaxonToEnvironmentAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-++[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEnvironmentAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[Association]%5E-[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[OrganismTaxon],[OntologyClass],[NamedThing],[Attribute],[Association],[Agent])
 
 ---
 
@@ -28,11 +28,6 @@ URI: [biolink:OrganismTaxonToOrganismTaxonAssociation](https://w3id.org/biolink/
 
  *  mixin: [OrganismTaxonToEntityAssociation](OrganismTaxonToEntityAssociation.md) - An association between an organism taxon and another entity
 
-## Children
-
- * [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) - An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
- * [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) - A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
-
 ## Referenced by class
 
 
@@ -41,9 +36,15 @@ URI: [biolink:OrganismTaxonToOrganismTaxonAssociation](https://w3id.org/biolink/
 
 ### Own
 
- * [organism taxon to organism taxon association➞object](organism_taxon_to_organism_taxon_association_object.md)  <sub>REQ</sub>
-     * range: [OrganismTaxon](OrganismTaxon.md)
- * [organism taxon to organism taxon association➞subject](organism_taxon_to_organism_taxon_association_subject.md)  <sub>REQ</sub>
+ * [organism taxon to environment association➞object](organism_taxon_to_environment_association_object.md)  <sub>REQ</sub>
+     * Description: the environment in which the organism occurs
+     * range: [NamedThing](NamedThing.md)
+ * [organism taxon to environment association➞predicate](organism_taxon_to_environment_association_predicate.md)  <sub>REQ</sub>
+     * Description: predicate describing the relationship between the taxon and the environment
+ 
+     * range: [PredicateType](types/PredicateType.md)
+ * [organism taxon to environment association➞subject](organism_taxon_to_environment_association_subject.md)  <sub>REQ</sub>
+     * Description: the taxon that is the subject of the association
      * range: [OrganismTaxon](OrganismTaxon.md)
 
 ### Inherited from association:
@@ -119,7 +120,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [organism taxon to organism taxon association➞object](organism_taxon_to_organism_taxon_association_object.md)  <sub>REQ</sub>
-     * range: [OrganismTaxon](OrganismTaxon.md)
- * [organism taxon to organism taxon association➞subject](organism_taxon_to_organism_taxon_association_subject.md)  <sub>REQ</sub>
+ * [organism taxon to environment association➞object](organism_taxon_to_environment_association_object.md)  <sub>REQ</sub>
+     * Description: the environment in which the organism occurs
+     * range: [NamedThing](NamedThing.md)
+ * [organism taxon to environment association➞predicate](organism_taxon_to_environment_association_predicate.md)  <sub>REQ</sub>
+     * Description: predicate describing the relationship between the taxon and the environment
+ 
+     * range: [PredicateType](types/PredicateType.md)
+ * [organism taxon to environment association➞subject](organism_taxon_to_environment_association_subject.md)  <sub>REQ</sub>
+     * Description: the taxon that is the subject of the association
      * range: [OrganismTaxon](OrganismTaxon.md)
