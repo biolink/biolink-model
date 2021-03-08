@@ -8749,6 +8749,8 @@ classes:
       Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
     defining_slots:
       - predicate
+    slots:
+      - associated environmental context
     slot_usage:
       subject:
         range: organism taxon
