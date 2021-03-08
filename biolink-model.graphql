@@ -2510,7 +2510,32 @@ type OrganismTaxon
     subclassOf: [OrganismTaxon]
   }
 
-interface OrganismTaxonToOrganismTaxonAssociation
+interface OrganismTaxonToEntityAssociation
+  {
+    subject: OrganismTaxon!
+  }
+
+type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    relation: Uriorcurie!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [CategoryType]
+    subject: OrganismTaxon!
+    object: NamedThing!
+    predicate: PredicateType!
+  }
+
+type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAssociation
   {
     id: String!
     iri: IriType
@@ -2548,6 +2573,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     subject: OrganismTaxon!
     object: OrganismTaxon!
     predicate: PredicateType!
+    associatedEnvironmentalContext: String
   }
 
 type OrganismTaxonToOrganismTaxonSpecialization

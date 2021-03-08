@@ -9914,6 +9914,10 @@
          "additionalProperties": false,
          "description": "An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens",
          "properties": {
+            "associated_environmental_context": {
+               "description": "the environment in which the two taxa interact",
+               "type": "string"
+            },
             "category": {
                "items": {
                   "type": "string"

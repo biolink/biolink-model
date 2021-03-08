@@ -2216,6 +2216,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   subject OrganismTaxon = 14
   object OrganismTaxon = 15
   predicate PredicateType = 16
+  optional associatedEnvironmentalContext String = 17
  }
 // A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
 message OrganismTaxonToOrganismTaxonSpecialization

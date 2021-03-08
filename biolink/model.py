@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-03-05 23:20
+# Generation date: 2021-03-08 20:30
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1032,6 +1032,10 @@ class OrganismTaxonToOrganismTaxonSpecializationId(OrganismTaxonToOrganismTaxonA
 
 
 class OrganismTaxonToOrganismTaxonInteractionId(OrganismTaxonToOrganismTaxonAssociationId):
+    pass
+
+
+class OrganismTaxonToEnvironmentAssociationId(AssociationId):
     pass
 
 
@@ -7696,6 +7700,29 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
 
 
 @dataclass
+class OrganismTaxonToEntityAssociation(YAMLRoot):
+    """
+    An association between an organism taxon and another entity
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEntityAssociation
+    class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToEntityAssociation"
+    class_name: ClassVar[str] = "organism taxon to entity association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEntityAssociation
+
+    subject: Union[dict, OrganismTaxon] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, OrganismTaxon):
+            self.subject = OrganismTaxon(**self.subject)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class OrganismTaxonToOrganismTaxonAssociation(Association):
     """
     A relationship between two organism taxon nodes
@@ -7788,6 +7815,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     subject: Union[dict, OrganismTaxon] = None
     object: Union[dict, OrganismTaxon] = None
     predicate: Union[str, PredicateType] = None
+    associated_environmental_context: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -7804,6 +7832,43 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
             raise ValueError("object must be supplied")
         if not isinstance(self.object, OrganismTaxon):
             self.object = OrganismTaxon(**self.object)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.associated_environmental_context is not None and not isinstance(self.associated_environmental_context, str):
+            self.associated_environmental_context = str(self.associated_environmental_context)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class OrganismTaxonToEnvironmentAssociation(Association):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEnvironmentAssociation
+    class_class_curie: ClassVar[str] = "biolink:OrganismTaxonToEnvironmentAssociation"
+    class_name: ClassVar[str] = "organism taxon to environment association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEnvironmentAssociation
+
+    id: Union[str, OrganismTaxonToEnvironmentAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    subject: Union[dict, OrganismTaxon] = None
+    object: Union[str, NamedThingId] = None
+    predicate: Union[str, PredicateType] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, OrganismTaxon):
+            self.subject = OrganismTaxon(**self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
@@ -8681,6 +8746,9 @@ slots.sequence_variant_qualifier = Slot(uri=BIOLINK.sequence_variant_qualifier, 
 slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=BIOLINK.curie('publications'),
                    model_uri=BIOLINK.publications, domain=Association, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
 
+slots.associated_environmental_context = Slot(uri=BIOLINK.associated_environmental_context, name="associated environmental context", curie=BIOLINK.curie('associated_environmental_context'),
+                   model_uri=BIOLINK.associated_environmental_context, domain=Association, range=Optional[str])
+
 slots.sequence_localization_attribute = Slot(uri=BIOLINK.sequence_localization_attribute, name="sequence localization attribute", curie=BIOLINK.curie('sequence_localization_attribute'),
                    model_uri=BIOLINK.sequence_localization_attribute, domain=GenomicSequenceLocalization, range=Optional[str])
 
@@ -9182,6 +9250,9 @@ slots.anatomical_entity_to_anatomical_entity_ontogenic_association_object = Slot
 slots.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate = Slot(uri=BIOLINK.predicate, name="anatomical entity to anatomical entity ontogenic association_predicate", curie=BIOLINK.curie('predicate'),
                    model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate, domain=AnatomicalEntityToAnatomicalEntityOntogenicAssociation, range=Union[str, PredicateType])
 
+slots.organism_taxon_to_entity_association_subject = Slot(uri=BIOLINK.subject, name="organism taxon to entity association_subject", curie=BIOLINK.curie('subject'),
+                   model_uri=BIOLINK.organism_taxon_to_entity_association_subject, domain=None, range=Union[dict, OrganismTaxon])
+
 slots.organism_taxon_to_organism_taxon_association_subject = Slot(uri=BIOLINK.subject, name="organism taxon to organism taxon association_subject", curie=BIOLINK.curie('subject'),
                    model_uri=BIOLINK.organism_taxon_to_organism_taxon_association_subject, domain=OrganismTaxonToOrganismTaxonAssociation, range=Union[dict, OrganismTaxon])
 
@@ -9205,3 +9276,15 @@ slots.organism_taxon_to_organism_taxon_interaction_object = Slot(uri=BIOLINK.obj
 
 slots.organism_taxon_to_organism_taxon_interaction_predicate = Slot(uri=BIOLINK.predicate, name="organism taxon to organism taxon interaction_predicate", curie=BIOLINK.curie('predicate'),
                    model_uri=BIOLINK.organism_taxon_to_organism_taxon_interaction_predicate, domain=OrganismTaxonToOrganismTaxonInteraction, range=Union[str, PredicateType])
+
+slots.organism_taxon_to_organism_taxon_interaction_associated_environmental_context = Slot(uri=BIOLINK.associated_environmental_context, name="organism taxon to organism taxon interaction_associated environmental context", curie=BIOLINK.curie('associated_environmental_context'),
+                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_interaction_associated_environmental_context, domain=OrganismTaxonToOrganismTaxonInteraction, range=Optional[str])
+
+slots.organism_taxon_to_environment_association_subject = Slot(uri=BIOLINK.subject, name="organism taxon to environment association_subject", curie=BIOLINK.curie('subject'),
+                   model_uri=BIOLINK.organism_taxon_to_environment_association_subject, domain=OrganismTaxonToEnvironmentAssociation, range=Union[dict, OrganismTaxon])
+
+slots.organism_taxon_to_environment_association_object = Slot(uri=BIOLINK.object, name="organism taxon to environment association_object", curie=BIOLINK.curie('object'),
+                   model_uri=BIOLINK.organism_taxon_to_environment_association_object, domain=OrganismTaxonToEnvironmentAssociation, range=Union[str, NamedThingId])
+
+slots.organism_taxon_to_environment_association_predicate = Slot(uri=BIOLINK.predicate, name="organism taxon to environment association_predicate", curie=BIOLINK.curie('predicate'),
+                   model_uri=BIOLINK.organism_taxon_to_environment_association_predicate, domain=OrganismTaxonToEnvironmentAssociation, range=Union[str, PredicateType])

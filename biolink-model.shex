@@ -202,10 +202,10 @@ metatype:Nodeidentifier NONLITERAL
     @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR
     @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToVariantAssociation> OR
     @<MaterialSampleDerivationAssociation> OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismalEntityAsAModelOfDiseaseAssociation> OR
-    @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR @<SequenceFeatureRelationship> OR
-    @<SequenceVariantModulatesTreatmentAssociation> OR @<VariantToDiseaseAssociation> OR @<VariantToGeneAssociation> OR
-    @<VariantToPhenotypicFeatureAssociation> OR @<VariantToPopulationAssociation>
+    @<OrganismTaxonToEnvironmentAssociation> OR @<OrganismTaxonToOrganismTaxonAssociation> OR
+    @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR
+    @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR @<VariantToDiseaseAssociation> OR
+    @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR @<VariantToPopulationAssociation>
 )
 
 <Attribute>  (
@@ -1929,6 +1929,25 @@ metatype:Nodeidentifier NONLITERAL
     } OR @<BioticExposure>
 )
 
+<OrganismTaxonToEntityAssociation> {
+    (  $<OrganismTaxonToEntityAssociation_tes> <subject> @<OrganismTaxon> ;
+       rdf:type [ <OrganismTaxonToEntityAssociation> ] ?
+    )
+}
+
+<OrganismTaxonToEnvironmentAssociation> {
+    (  $<OrganismTaxonToEnvironmentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<OrganismTaxonToEntityAssociation_tes> ;
+          rdf:type [ <OrganismTaxonToEntityAssociation> ] ? ;
+          <subject> @<OrganismTaxon> ;
+          <object> @<NamedThing> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <OrganismTaxonToEnvironmentAssociation> ]
+    )
+}
+
 <OrganismTaxonToOrganismTaxonAssociation>  (
     @<OrganismTaxonToOrganismTaxonInteraction> OR @<OrganismTaxonToOrganismTaxonSpecialization>
 )
@@ -1936,6 +1955,8 @@ metatype:Nodeidentifier NONLITERAL
 <OrganismTaxonToOrganismTaxonAssociation_struct> {
     (  $<OrganismTaxonToOrganismTaxonAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
+          &<OrganismTaxonToEntityAssociation_tes> ;
+          rdf:type [ <OrganismTaxonToEntityAssociation> ] ? ;
           <subject> @<OrganismTaxon> ;
           <object> @<OrganismTaxon>
        ) ;
@@ -1948,7 +1969,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <OrganismTaxonToOrganismTaxonAssociation> ] ? ;
           <subject> @<OrganismTaxon> ;
           <object> @<OrganismTaxon> ;
-          <predicate> @<PredicateType>
+          <predicate> @<PredicateType> ;
+          <associated_environmental_context> @metatype:String ?
        ) ;
        rdf:type [ <OrganismTaxonToOrganismTaxonInteraction> ]
     )
