@@ -1760,14 +1760,22 @@ slots:
     description: >-
       holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
     is_a: affects
+    inverse: metabolic processing affected by
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
     related_mappings:
       - GAMMA:catalytic_activity
+      - DRUGBANK:enzyme
     exact_mappings:
       - CTD:affects_metabolic_processing_of
+
+  metabolic processing affected by:
+    is_a: affected by
+    related_mappings:
+      - DRUGBANK:enzyme
+    inverse: affects metabolic processing of
 
   increases metabolic processing of:
     description: >-
@@ -2547,6 +2555,7 @@ slots:
       translated product generated from it
     domain: gene
     range: gene product mixin
+    inverse: gene product of
     in_subset:
       - translator_minimal
     close_mappings:
@@ -2558,6 +2567,12 @@ slots:
       - NCIT:gene_encodes_gene_product
     narrow_mappings:
       - NCIT:gene_mutant_encodes_gene_product_sequence_variation
+
+  gene product of:
+    is_a: related to
+    inverse: has gene product
+    exact_mappings:
+      - RO:0002204   # gene_product_of
 
   homologous to:
     is_a: similar to
@@ -3304,6 +3319,7 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
+    inverse: phenotype of
     notes:
       - check the range
     in_subset:
@@ -3324,6 +3340,10 @@ slots:
       - NCIT:disease_may_have_molecular_abnormality
       - OBO:doid#has_symptom
       - RO:0004022
+
+  phenotype of:
+    is_a: related to
+    inverse: has phenotype
 
   occurs in:
     is_a: related to
@@ -4307,9 +4327,18 @@ slots:
       with that disease should not be treated with the drug.
     domain: drug
     range: disease or phenotypic feature
+    inverse: is contraindication for
+    related_mappings:
+      - DRUGBANK:contraindication
     exact_mappings:
       - DrugCentral:0000001
       - RTXKG1:contraindicated_for
+
+  is contraindication for:
+    is_a: related to
+    related_mappings:
+      - DRUGBANK:contraindication
+    inverse: contraindicated for
 
   # The remaining new slots are here because we ran across them somewhere and
   # they didn't seem to map well to anything else.
