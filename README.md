@@ -1,4 +1,4 @@
-pipenv install biolinkml[![](https://img.shields.io/github/license/biolink/biolink-model)](https://img.shields.io/github/license/biolink/biolink-model)
+[![](https://img.shields.io/github/license/biolink/biolink-model)](https://img.shields.io/github/license/biolink/biolink-model)
 [![Biolink Model](https://img.shields.io/github/v/release/biolink/biolink-model?style=flat-square)](https://img.shields.io/github/v/release/biolink/biolink-model?style=flat-square)
 [![Python 3.7](https://upload.wikimedia.org/wikipedia/commons/f/fc/Blue_Python_3.7_Shield_Badge.svg)](https://www.python.org/downloads/release/python-370/)
 [![Build Status](https://travis-ci.com/biolink/biolink-model.svg?branch=master)](https://travis-ci.com/biolink/biolink-model)
@@ -25,7 +25,7 @@ Refer to the following resources for a quick introduction to the Biolink Model:
     - Slides: https://bit.ly/biolink-model-workshop-biocuration-2020
     - Video: https://www.youtube.com/watch?v=RE1hFm8lvJA
 
-See also [Biolink Model Guidelines](./guidelines/index.md) for understanding, curating, and working with the model.
+See also [Biolink Model Guidelines](guidelines/README.md) for understanding, curating, and working with the model.
 
 
 
@@ -92,8 +92,7 @@ To install the project,
 make install
 ```
 
-If you make changes to [biolink-model.yaml](biolink-model.yaml) then be sure to run the Makefile to generate
-up-to-date artifacts and documentation.
+To regenerate artifacts from the Biolink Model YAML,
 
 ```sh
 make

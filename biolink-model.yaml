@@ -4,7 +4,7 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-version: 1.4.0
+version: 1.6.0
 
 ## ------------
 ## PREFIXES
@@ -45,6 +45,7 @@ prefixes:
   EDAM-FORMAT: 'http://edamontology.org/format_'
   EDAM-OPERATION: 'http://edamontology.org/operation_'
   EDAM-TOPIC: 'http://edamontology.org/topic_'
+  EFO: 'http://www.ebi.ac.uk/efo/EFO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
@@ -67,6 +68,7 @@ prefixes:
   ICD10: 'http://translator.ncats.nih.gov/ICD10_'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   interpro: 'https://www.ebi.ac.uk/interpro/entry/'
+  INO: 'http://purl.obolibrary.org/obo/INO_'
   isbn: 'https://www.isbn-international.org/identifier/' # note: a resolvable base URI not available from isbn-international
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
@@ -213,7 +215,7 @@ types:
   symbol type:
     typeof: string
 
-  frequency:
+  frequency value:
     typeof: string
     uri: UO:0000105
 
@@ -301,8 +303,8 @@ slots:
       - NCIT:qualifier_applies_to
       - NCIT:role_has_domain
       - NCIT:role_has_range
-      - OBO:INO_0000154
-      - OBO:hancestro_0308
+      - INO:0000154
+      - HANCESTRO:0308
       - OMIM:has_inheritance_type
       - ORPHA:C016
       - ORPHA:C017
@@ -471,16 +473,15 @@ slots:
        * In a neo4j database this MAY correspond to the neo4j label tag.
        * In an RDF database it should be a biolink model class URI.
       This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have
-      category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
+      category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 
       In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class
       more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,
-      which is more specific than anything in biolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
+      which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
     is_class_field: true
     multivalued: true
     in_subset:
       - translator_minimal
-    required: true
 
   name:
     aliases: [ 'label', 'display name', 'title' ]
@@ -1186,7 +1187,6 @@ slots:
     in_subset:
       - translator_minimal
     inverse: superclass of
-    slot_uri: rdfs:subClassOf
     close_mappings:
       # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
       # and a an 'instance B' has class 'class A' (inverse term)
@@ -2392,54 +2392,54 @@ slots:
     mixin: true
     inverse: negatively regulates
 
-  regulates, process to process:
+  process regulates process:
     is_a: affects
     mixins:
       - regulates
     domain: occurrent
     range: occurrent
-    inverse: regulated by, process to process
+    inverse: process regulated by process
     exact_mappings:
       - RO:0002211
 
-  regulated by, process to process:
+  process regulated by process:
     is_a: affected by
     domain: occurrent
     range: occurrent
-    inverse: regulates, process to process
+    inverse: process regulates process
 
-  positively regulates, process to process:
-    is_a: regulates, process to process
+  process positively regulates process:
+    is_a: process regulates process
     mixins:
       - positively regulates
-    inverse: positively regulated by, process to process
+    inverse: process positively regulated by process
     exact_mappings:
       - RO:0002213
 
-  positively regulated by, process to process:
-    is_a: regulated by, process to process
-    inverse: positively regulates, process to process
+  process positively regulated by process:
+    is_a: process regulated by process
+    inverse: process positively regulates process
 
-  negatively regulates, process to process:
-    is_a: regulates, process to process
+  process negatively regulates process:
+    is_a: process regulates process
     mixins:
       - negatively regulates
-    inverse: negatively regulated by, process to process
+    inverse: process negatively regulated by process
     exact_mappings:
       - RO:0002212
 
-  negatively regulated by, process to process:
-    is_a: regulated by, process to process
-    inverse: negatively regulates, process to process
+  process negatively regulated by process:
+    is_a: process regulated by process
+    inverse: process negatively regulates process
 
-  regulates, entity to entity:
+  entity regulates entity:
     aliases: ['activity directly regulates activity of']
     is_a: affects
     mixins:
       - regulates
     domain: molecular entity
     range: molecular entity
-    inverse: regulated by, entity to entity
+    inverse: entity regulated by entity
     local_names:
       translator: regulates
       ro: activity directly regulates activity of
@@ -2454,18 +2454,18 @@ slots:
       # may also be another class of chemical_substance?
       - WIKIDATA_PROPERTY:P128
 
-  regulated by, entity to entity:
+  entity regulated by entity:
     is_a: affected by
     domain: molecular entity
     range: molecular entity
-    inverse: regulates, entity to entity
+    inverse: entity regulates entity
 
-  positively regulates, entity to entity:
+  entity positively regulates entity:
     aliases: ['activity directly positively regulates activity of']
-    is_a: regulates, entity to entity
+    is_a: entity regulates entity
     mixins:
       - positively regulates
-    inverse: positively regulated by, entity to entity
+    inverse: entity positively regulated by entity
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
@@ -2486,16 +2486,16 @@ slots:
       # Positive regulation is defined more narrowly here, as "Disease upregulates Gene"
       - hetio:UPREGULATES_DuG
 
-  positively regulated by, entity to entity:
-    is_a: regulated by, entity to entity
-    inverse: positively regulates, entity to entity
+  entity positively regulated by entity:
+    is_a: entity regulated by entity
+    inverse: entity positively regulates entity
 
-  negatively regulates, entity to entity:
+  entity negatively regulates entity:
     aliases: ['activity directly negatively regulates activity of']
-    is_a: regulates, entity to entity
+    is_a: entity regulates entity
     mixins:
       - negatively regulates
-    inverse: negatively regulated by, entity to entity
+    inverse: entity negatively regulated by entity
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
@@ -2512,9 +2512,9 @@ slots:
       # Down regulation is defined more narrowly here, as "Disease downregulates Gene"
       - hetio:DOWNREGULATES_DdG
 
-  negatively regulated by, entity to entity:
-    is_a: regulated by, entity to entity
-    inverse: negatively regulates, entity to entity
+  entity negatively regulated by entity:
+    is_a: entity regulated by entity
+    inverse: entity negatively regulates entity
 
   disrupts:
     is_a: affects
@@ -3010,6 +3010,7 @@ slots:
     range: disease or phenotypic feature
     exact_mappings:
       - RO:0003307
+      - CTD:therapeutic
 
   exacerbates:
     is_a: affects
@@ -3023,7 +3024,6 @@ slots:
     range: disease or phenotypic feature
     exact_mappings:
       - RO:0003309
-      - CTD:therapeutic
 
   treats:
     aliases: ['is substance that treats']
@@ -3199,7 +3199,7 @@ slots:
       - translator_minimal
     symmetric: true
     exact_mappings:
-      - CTD:positivecorrelation
+      - CTD:positive_correlation
 
   negatively correlated with:
     is_a: correlated with
@@ -3211,7 +3211,7 @@ slots:
       - translator_minimal
     symmetric: true
     exact_mappings:
-      - CTD:negativecorrelation
+      - CTD:negative_correlation
 
   coexpressed with:
     is_a: correlated with
@@ -3893,8 +3893,8 @@ slots:
     description: >-
       holds between a one or more chemical substances present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: food component
-    range: food
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: has food component
@@ -3906,8 +3906,8 @@ slots:
     description: >-
       holds between food and one or more chemical substances composing it,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: food
-    range: food component
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: food component of
@@ -3919,8 +3919,8 @@ slots:
     description: >-
       holds between a one or more chemical substances present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: food component
-    range: food
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: has nutrient
@@ -3931,8 +3931,8 @@ slots:
     is_a: has food component
     description: >-
       one or more nutrients which are growth factors for a living organism
-    domain: food
-    range: nutrient
+    domain: chemical substance
+    range: chemical substance
     in_subset:
       - translator_minimal
     inverse: nutrient of
@@ -4554,7 +4554,7 @@ slots:
 
   association type:
     is_a: association slot
-    range: ontology class
+    range: category type
     deprecated: >-
       This slot is deprecated in favor of 'category' slot.
     deprecated_element_has_exact_replacement: category
@@ -4703,6 +4703,13 @@ slots:
     multivalued: true
     range: publication
 
+  associated environmental context:
+    is_a: association slot
+    description: >-
+      An attribute that can be applied to an association where the association holds between two entities
+      located or occurring in a particular environment. For example, two microbial taxa may interact in the context of
+      a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
+      
   sequence localization attribute:
     is_a: association slot
     domain: genomic sequence localization
@@ -4755,6 +4762,37 @@ classes:
   ## ATTRIBUTES
   ## ----------
 
+  ## Ontology Classes
+
+  ontology class:
+    mixin: true
+    description: >-
+      a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both
+      instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly.
+      Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess
+      as the type.
+    exact_mappings:
+      - owl:Class
+      - schema:Class
+    comments:
+      - >-
+         This is modeled as a mixin. 'ontology class' should not be the primary type of a node in the KG. Instead you should use an
+         informative bioloink category, such as AnatomicalEntity (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
+      - >-
+         Note that formally this is a metaclass. Instances of this class are instances in the graph, but can be the object of 'type' edges.
+         For example, if we had a node in the graph representing a specific brain of a specific patient (e.g brain001), this could have 
+         a category of bl:Sample, and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
+    see_also:
+      - https://github.com/biolink/biolink-model/issues/486
+    examples:
+      - value: UBERON:0000955
+        description: >-
+          the class 'brain' from the Uberon anatomy ontology
+    id_prefixes:
+      - MESH
+      - UMLS
+      - KEGG.BRITE ## br/ko number
+  
   annotation:
     description: >-
       Biolink Model root class for entity annotations.
@@ -4782,6 +4820,8 @@ classes:
 
   attribute:
     is_a: annotation
+    mixins:
+      - ontology class
     description: >-
       A property or characteristic of an entity.
       For example, an apple may have properties such as color, shape, age, crispiness.
@@ -4837,11 +4877,6 @@ classes:
     description: >-
       describes the severity of a phenotypic feature or disease
 
-  frequency value:
-    is_a: attribute
-    description: >-
-      describes the frequency of occurrence of an event or condition
-
   relationship quantifier:
     mixin: true
 
@@ -4894,6 +4929,7 @@ classes:
     slot_usage:
       category:
         range: named thing
+        required: true
     exact_mappings:
       - BFO:0000001
       - WIKIDATA:Q35120
@@ -4903,23 +4939,23 @@ classes:
       - UMLSSC:T071
       - UMLSST:enty
 
-  ## Ontology Classes
-
-  ontology class:
-    is_a: named thing
-    description: "a concept or class in an ontology, vocabulary or thesaurus"
-    id_prefixes:
-      - MESH
-      - KEGG.BRITE ## br/ko number
-
   relationship type:
     is_a: ontology class
     description: >-
       An OWL property used as an edge label
 
   gene ontology class:
+    mixin: true
     description: >-
       an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+    is_a: ontology class
+    in_subset:
+      - testing
+
+  unclassified ontology class:
+    mixin: true
+    description: >-
+      this is used for nodes that are taken from an ontology but are not typed using an existing biolink class
     is_a: ontology class
     in_subset:
       - testing
@@ -5605,6 +5641,7 @@ classes:
     mixins:
       - thing with taxon
       - physical essence
+      - ontology class
     aliases: ['bioentity']
     description: >-
       A gene, gene product, small molecule or macromolecule (including protein complex)"
@@ -5643,6 +5680,7 @@ classes:
     is_a: biological entity
     mixins:
       - occurrent
+      - ontology class
     id_prefixes:
       - GO
       - REACT
@@ -5659,6 +5697,7 @@ classes:
     aliases: ['molecular function', 'molecular event', 'reaction']
     mixins:
       - occurrent
+      - ontology class
     slot_usage:
       has input:
         range: chemical substance
@@ -5683,6 +5722,7 @@ classes:
       - RHEA
       - MetaCyc
       - EC
+      - TCDB
       - KEGG.REACTION  ## R number
       - KEGG.RCLASS    ## RC number
       - KEGG.ENZYME    ## EC number
@@ -5691,6 +5731,7 @@ classes:
     is_a: biological process or activity
     mixins:
       - occurrent
+      - ontology class
     description: >-
       One or more causally connected executions of molecular functions
     exact_mappings:
@@ -5705,6 +5746,8 @@ classes:
 
   pathway:
     is_a: biological process
+    mixins:
+      - ontology class
     exact_mappings:
       - PW:0000001
       - WIKIDATA:Q4915012
@@ -5725,6 +5768,8 @@ classes:
   physiological process:
     aliases: ['physiology']
     is_a: biological process
+    mixins:
+      - ontology class
     close_mappings:
       # Physiology
       - UMLSSG:PHYS
@@ -5752,6 +5797,8 @@ classes:
 
   behavior:
     is_a: biological process
+    mixins:
+      - ontology class
     exact_mappings:
       - GO:0007610
       # Behavior
@@ -5786,6 +5833,8 @@ classes:
 
   chemical substance:
     is_a: molecular entity
+    mixins:
+      - ontology class
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active
       ingredient, or a complex material with multiple chemical entities as part
@@ -5871,6 +5920,7 @@ classes:
     is_a: chemical substance
     mixins:
       - mixture
+      - ontology class
     description: >-
       A chemical substance (often a mixture) processed
       for consumption for nutritional, medical or technical use.
@@ -5881,6 +5931,7 @@ classes:
     is_a: molecular entity
     mixins:
       - mixture
+      - ontology class
     description: >-
       A substance intended for use in the diagnosis, cure,
       mitigation, treatment, or prevention of disease
@@ -5909,25 +5960,28 @@ classes:
   ## Food
 
   food component:
+    deprecated: >-
+      Food component is replaced by a slot/role of chemical substance and will be removed
+      from the Biolink model.
     is_a: chemical substance
     related_mappings:
       # substance role
       - CHEBI:78295
 
   environmental food contaminant:
-    is_a: food component
+    is_a: chemical substance
     related_mappings:
       # substance role
       - CHEBI:78299
 
   food additive:
-    is_a: food component
+    is_a: chemical substance
     related_mappings:
       # substance role
       - CHEBI:64047
 
   nutrient:
-    is_a: food component
+    is_a: chemical substance
     related_mappings:
       # substance role
       - CHEBI:33284
@@ -6538,6 +6592,7 @@ classes:
       - gene product isoform mixin
     id_prefixes:
       - UniProtKB ## UniProtKB:([A-Z0-9]+-\d+)
+      - UNIPROT.ISOFORM 
       - PR
       - ENSEMBL
 
@@ -6637,6 +6692,19 @@ classes:
       - HGNC.FAMILY
       - FB       # FlyBase FBgg*
       - interpro # note: may be better to introduce a protein domain/family
+      - CATH
+      - CDD
+      - HAMAP
+      - PFAM
+      - PIRSF
+      - PRINTS
+      - PRODOM
+      - PROSITE
+      - SMART
+      - SUPFAM
+      - TIGRFAM
+      - CATH.SUPERFAMILY
+      - RFAM ## RNAs only
       - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
       - EGGNOG
     in_subset:
@@ -6835,6 +6903,10 @@ classes:
     slot_usage:
       has attribute:
         range: clinical attribute
+    id_prefixes:
+      - LOINC
+      - NCIT
+      - EFO
 
   hospitalization:
     is_a: clinical intervention
@@ -7216,7 +7288,8 @@ classes:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
       category:
-        range: association
+        range: category type
+        required: false
     exact_mappings:
       - OBAN:association
       - rdf:Statement
@@ -8619,9 +8692,23 @@ classes:
       predicate:
          subproperty_of: develops from
 
+  organism taxon to entity association:
+    mixin: true
+    description: >-
+      An association between an organism taxon and another entity
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: organism taxon
+        description: >-
+          organism taxon that is the subject of the association
+      
   organism taxon to organism taxon association:
     is_a: association
     abstract: true
+    mixins:
+      - organism taxon to entity association
     description: >-
       A relationship between two organism taxon nodes
     defining_slots:
@@ -8675,3 +8762,26 @@ classes:
           the taxon that is the subject of the association
       predicate:
          subproperty_of: interacts with
+      associated environmental context:
+         description: >-
+           the environment in which the two taxa interact
+
+  organism taxon to environment association:
+    is_a: association
+    abstract: true
+    mixins:
+      - organism taxon to entity association
+    slot_usage:
+      subject:
+        range: organism taxon
+        role: interactor taxon
+        description: >-
+          the taxon that is the subject of the association
+      object:
+        role: environmental context
+        description: >-
+          the environment in which the organism occurs
+      predicate:
+        description: >-
+          predicate describing the relationship between the taxon and the environment
+           

@@ -151,7 +151,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -246,7 +246,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -270,7 +270,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -339,7 +338,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -363,7 +362,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -559,7 +557,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -585,8 +583,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "Association",
          "type": "object"
@@ -596,8 +593,8 @@
          "description": "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -720,8 +717,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -775,7 +772,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -808,7 +805,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -923,7 +919,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -1190,8 +1186,8 @@
          "description": "",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -1227,68 +1223,22 @@
          "additionalProperties": false,
          "description": "An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
             "has_taxonomic_rank": {
-               "type": "string"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
+               "$ref": "#/definitions/TaxonomicRank"
             },
             "subclass_of": {
                "description": "subclass of holds between two taxa, e.g. human subclass of mammal",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "BioticExposure",
          "type": "object"
       },
@@ -1551,7 +1501,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -1617,7 +1567,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -1666,8 +1616,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -1721,7 +1671,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -1755,8 +1705,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "CaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -1789,7 +1738,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -1893,8 +1842,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -1948,7 +1897,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -1978,7 +1927,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "CellLineAsAModelOfDiseaseAssociation",
@@ -2046,7 +1994,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -2071,7 +2019,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
@@ -2105,7 +2052,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -2167,7 +2114,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -2237,7 +2184,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -2337,7 +2284,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -2363,7 +2310,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "ChemicalToChemicalAssociation",
@@ -2437,7 +2383,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -2461,7 +2407,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -2531,7 +2476,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -2557,7 +2502,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
@@ -2625,7 +2569,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -2651,7 +2595,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "ChemicalToGeneAssociation",
@@ -2719,7 +2662,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -2745,7 +2688,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "ChemicalToPathwayAssociation",
@@ -2756,8 +2698,8 @@
          "description": "Attributes relating to a clinical manifestation",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -2794,8 +2736,8 @@
          "description": "The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -2909,7 +2851,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -3003,7 +2945,7 @@
          "description": "A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.",
          "properties": {
             "has_attribute_type": {
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -3040,8 +2982,8 @@
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -3160,7 +3102,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -3222,7 +3164,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -3291,7 +3233,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -3463,7 +3405,7 @@
             "qualifiers": {
                "description": "this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -3487,7 +3429,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "predicate",
             "object"
@@ -3944,7 +3885,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -4006,7 +3947,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -4101,7 +4042,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -4127,7 +4068,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
@@ -4161,7 +4101,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -4227,7 +4167,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -4323,7 +4263,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -4349,7 +4289,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "DiseaseOrPhenotypicFeatureToLocationAssociation",
@@ -4417,7 +4356,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -4443,8 +4382,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "DiseaseToExposureEventAssociation",
          "type": "object"
@@ -4464,8 +4402,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -4519,7 +4457,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -4553,8 +4491,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "DiseaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -4594,7 +4531,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -4663,7 +4600,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -4763,7 +4700,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -4789,7 +4726,6 @@
             "subject",
             "predicate",
             "relation",
-            "category",
             "object"
          ],
          "title": "DrugToGeneAssociation",
@@ -4837,7 +4773,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -5017,7 +4953,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -5265,7 +5201,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -5360,7 +5296,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -5384,7 +5320,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -5461,7 +5396,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -5487,8 +5422,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "ExposureEventToOutcomeAssociation",
          "type": "object"
@@ -5508,8 +5442,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -5563,7 +5497,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -5596,7 +5530,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "ExposureEventToPhenotypicFeatureAssociation",
@@ -5637,7 +5570,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -5699,7 +5632,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -5765,7 +5698,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -5801,44 +5734,6 @@
             "category"
          ],
          "title": "FoodComponent",
-         "type": "object"
-      },
-      "FrequencyValue": {
-         "additionalProperties": false,
-         "description": "describes the frequency of occurrence of an event or condition",
-         "properties": {
-            "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
-            },
-            "has_qualitative_value": {
-               "description": "connects an attribute to a value",
-               "type": "string"
-            },
-            "has_quantitative_value": {
-               "description": "connects an attribute to a value",
-               "items": {
-                  "$ref": "#/definitions/QuantityValue"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
-               "type": "string"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            }
-         },
-         "required": [
-            "has_attribute_type"
-         ],
-         "title": "FrequencyValue",
          "type": "object"
       },
       "FunctionalAssociation": {
@@ -5879,8 +5774,8 @@
                "type": "boolean"
             },
             "object": {
-               "description": "class describing the activity, process or localization of the gene product",
-               "type": "string"
+               "$ref": "#/definitions/GeneOntologyClass",
+               "description": "class describing the activity, process or localization of the gene product"
             },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
@@ -5903,7 +5798,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -5928,7 +5823,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -5967,7 +5861,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -6034,8 +5928,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -6089,7 +5983,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -6119,7 +6013,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "GeneAsAModelOfDiseaseAssociation",
@@ -6160,7 +6053,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -6209,8 +6102,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -6264,7 +6157,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -6298,65 +6191,9 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "GeneHasVariantThatContributesToDiseaseAssociation",
-         "type": "object"
-      },
-      "GeneOntologyClass": {
-         "additionalProperties": false,
-         "description": "an ontology class that describes a functional aspect of a gene, gene prodoct or complex",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
-         "title": "GeneOntologyClass",
          "type": "object"
       },
       "GeneRegulatoryRelationship": {
@@ -6420,7 +6257,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -6443,7 +6280,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "subject",
             "object"
@@ -6466,8 +6302,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -6521,7 +6357,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -6551,7 +6387,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "GeneToDiseaseAssociation",
@@ -6619,13 +6454,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "description": "can be used to indicate magnitude, or also ranking",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "can be used to indicate magnitude, or also ranking"
             },
             "relation": {
                "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
@@ -6651,7 +6486,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -6728,13 +6562,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "description": "Optional quantitative value indicating degree of expression.",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "Optional quantitative value indicating degree of expression."
             },
             "relation": {
                "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
@@ -6760,7 +6594,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -6830,7 +6663,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -6854,7 +6687,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -6922,7 +6754,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -6945,7 +6777,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -6991,8 +6822,8 @@
                "type": "boolean"
             },
             "object": {
-               "description": "class describing the activity, process or localization of the gene product",
-               "type": "string"
+               "$ref": "#/definitions/GeneOntologyClass",
+               "description": "class describing the activity, process or localization of the gene product"
             },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
@@ -7015,7 +6846,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -7040,7 +6871,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -7062,8 +6892,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -7117,7 +6947,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -7151,7 +6981,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "GeneToPhenotypicFeatureAssociation",
@@ -7189,7 +7018,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -7262,7 +7091,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -7332,7 +7161,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -7438,7 +7267,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -7469,7 +7298,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -7512,7 +7340,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -7561,8 +7389,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -7616,7 +7444,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -7644,7 +7472,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "object",
             "subject"
@@ -7667,8 +7494,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -7722,7 +7549,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -7750,7 +7577,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "predicate",
             "object"
@@ -7820,7 +7646,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -7844,7 +7670,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "subject",
             "object"
@@ -7913,7 +7738,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -7937,7 +7762,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "subject",
             "object"
@@ -7960,8 +7784,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -8014,7 +7838,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -8047,7 +7871,6 @@
             "id",
             "object",
             "relation",
-            "category",
             "predicate",
             "subject"
          ],
@@ -8116,7 +7939,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -8140,7 +7963,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "subject",
             "object"
@@ -8153,8 +7975,8 @@
          "description": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -8411,7 +8233,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -8477,7 +8299,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -8649,7 +8471,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -8688,8 +8510,8 @@
          "description": "The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -8749,7 +8571,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -8844,7 +8666,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -8869,7 +8691,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -8937,7 +8758,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -8962,7 +8783,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -9030,7 +8850,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -9055,7 +8875,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -9090,7 +8909,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -9245,7 +9064,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -9269,7 +9088,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -9339,7 +9157,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -9365,8 +9183,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
@@ -9399,7 +9216,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -9469,7 +9286,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -9545,7 +9362,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -9687,7 +9504,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -9884,7 +9701,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -9960,7 +9777,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -10003,8 +9820,8 @@
          "description": "The age group in which (disease) symptom manifestations appear",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -10036,68 +9853,13 @@
          "title": "Onset",
          "type": "object"
       },
-      "OntologyClass": {
-         "additionalProperties": false,
-         "description": "a concept or class in an ontology, vocabulary or thesaurus",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
-         "title": "OntologyClass",
-         "type": "object"
-      },
       "OrganismAttribute": {
          "additionalProperties": false,
          "description": "describes a characteristic of an organismal entity.",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -10133,64 +9895,18 @@
          "additionalProperties": false,
          "description": "A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
             "has_taxonomic_rank": {
-               "type": "string"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
+               "$ref": "#/definitions/TaxonomicRank"
             },
             "subclass_of": {
                "description": "subclass of holds between two taxa, e.g. human subclass of mammal",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "OrganismTaxon",
          "type": "object"
       },
@@ -10198,6 +9914,10 @@
          "additionalProperties": false,
          "description": "An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens",
          "properties": {
+            "associated_environmental_context": {
+               "description": "the environment in which the two taxa interact",
+               "type": "string"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -10232,8 +9952,8 @@
                "type": "boolean"
             },
             "object": {
-               "description": "the taxon that is the subject of the association",
-               "type": "string"
+               "$ref": "#/definitions/OrganismTaxon",
+               "description": "the taxon that is the subject of the association"
             },
             "predicate": {
                "type": "string"
@@ -10255,7 +9975,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -10268,8 +9988,8 @@
                "type": "string"
             },
             "subject": {
-               "description": "the taxon that is the subject of the association",
-               "type": "string"
+               "$ref": "#/definitions/OrganismTaxon",
+               "description": "the taxon that is the subject of the association"
             },
             "type": {
                "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
@@ -10279,7 +9999,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -10325,8 +10044,8 @@
                "type": "boolean"
             },
             "object": {
-               "description": "the more general taxon",
-               "type": "string"
+               "$ref": "#/definitions/OrganismTaxon",
+               "description": "the more general taxon"
             },
             "predicate": {
                "type": "string"
@@ -10348,7 +10067,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -10361,8 +10080,8 @@
                "type": "string"
             },
             "subject": {
-               "description": "the more specific taxon",
-               "type": "string"
+               "$ref": "#/definitions/OrganismTaxon",
+               "description": "the more specific taxon"
             },
             "type": {
                "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
@@ -10372,7 +10091,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -10395,8 +10113,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -10450,7 +10168,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -10480,7 +10198,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -10547,7 +10264,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -10570,7 +10287,6 @@
          },
          "required": [
             "id",
-            "category",
             "subject",
             "object",
             "predicate",
@@ -10605,7 +10321,7 @@
                "type": "string"
             },
             "interacting_molecules_category": {
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -10642,7 +10358,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -10663,7 +10379,6 @@
             }
          },
          "required": [
-            "category",
             "subject",
             "id",
             "predicate",
@@ -10701,7 +10416,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -10767,7 +10482,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -10829,7 +10544,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -11254,7 +10969,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -11293,8 +11008,8 @@
          "description": "A property of a phenotype",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -11331,8 +11046,8 @@
          "description": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -11578,7 +11293,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -11674,7 +11389,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -11698,7 +11413,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "object",
             "predicate"
@@ -11796,7 +11510,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -11866,7 +11580,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -11946,7 +11660,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -12152,7 +11866,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -12232,7 +11946,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -12312,7 +12026,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -12349,55 +12063,8 @@
       "RelationshipType": {
          "additionalProperties": false,
          "description": "An OWL property used as an edge label",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "RelationshipType",
          "type": "object"
       },
@@ -12463,7 +12130,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -12489,8 +12156,7 @@
             "subject",
             "predicate",
             "object",
-            "relation",
-            "category"
+            "relation"
          ],
          "title": "SequenceAssociation",
          "type": "object"
@@ -12556,7 +12222,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -12580,7 +12246,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -12625,7 +12290,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -12785,8 +12450,8 @@
          "description": "describes the severity of a phenotypic feature or disease",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -12850,7 +12515,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -12936,7 +12601,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -12975,8 +12640,8 @@
          "description": "Attributes relating to a socioeconomic manifestation",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -13192,7 +12857,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -13229,55 +12894,8 @@
       "TaxonomicRank": {
          "additionalProperties": false,
          "description": "A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "TaxonomicRank",
          "type": "object"
       },
@@ -13313,7 +12931,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -13408,7 +13026,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -13432,7 +13050,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -13534,8 +13151,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -13589,7 +13206,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -13617,7 +13234,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "predicate",
             "object",
             "subject"
@@ -13640,8 +13256,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -13695,7 +13311,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -13723,7 +13339,6 @@
          "required": [
             "id",
             "relation",
-            "category",
             "subject",
             "predicate",
             "object"
@@ -13791,7 +13406,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -13816,7 +13431,6 @@
             "id",
             "subject",
             "relation",
-            "category",
             "object",
             "predicate"
          ],
@@ -13891,13 +13505,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "description": "Optional quantitative value indicating degree of expression.",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "Optional quantitative value indicating degree of expression."
             },
             "relation": {
                "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
@@ -13924,7 +13538,6 @@
             "id",
             "subject",
             "relation",
-            "category",
             "object",
             "predicate"
          ],
@@ -13946,8 +13559,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -14001,7 +13614,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -14035,7 +13648,6 @@
             "predicate",
             "object",
             "relation",
-            "category",
             "subject"
          ],
          "title": "VariantToPhenotypicFeatureAssociation",
@@ -14056,8 +13668,8 @@
                "type": "string"
             },
             "frequency_qualifier": {
-               "$ref": "#/definitions/FrequencyValue",
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -14123,7 +13735,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OntologyClass"
                },
                "type": "array"
             },
@@ -14148,7 +13760,6 @@
             "id",
             "predicate",
             "relation",
-            "category",
             "subject",
             "object"
          ],
@@ -14183,7 +13794,7 @@
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/OrganismTaxon"
                },
                "type": "array"
             },
@@ -14226,8 +13837,8 @@
          "description": "",
          "properties": {
             "has_attribute_type": {
-               "description": "connects an attribute to a class that describes it",
-               "type": "string"
+               "$ref": "#/definitions/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
