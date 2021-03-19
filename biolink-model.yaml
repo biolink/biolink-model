@@ -1775,6 +1775,8 @@ slots:
     is_a: affected by
     related_mappings:
       - DRUGBANK:enzyme
+    in_subset:
+      - translator_minimal
     inverse: affects metabolic processing of
 
   increases metabolic processing of:
@@ -2571,6 +2573,8 @@ slots:
   gene product of:
     is_a: related to
     inverse: has gene product
+    in_subset:
+      - translator_minimal
     exact_mappings:
       - RO:0002204   # gene_product_of
 
@@ -3344,6 +3348,8 @@ slots:
   phenotype of:
     is_a: related to
     inverse: has phenotype
+    in_subset:
+      - translator_minimal
 
   occurs in:
     is_a: related to
