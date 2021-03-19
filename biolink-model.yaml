@@ -3323,7 +3323,7 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
-    inverse: phenotype of
+    inverse: phenotype for
     notes:
       - check the range
     in_subset:
@@ -3345,7 +3345,7 @@ slots:
       - OBO:doid#has_symptom
       - RO:0004022
 
-  phenotype of:
+  phenotype for:
     is_a: related to
     inverse: has phenotype
     in_subset:
