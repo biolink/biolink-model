@@ -2653,10 +2653,6 @@ slots:
     domain: physical essence or occurrent
     range: physical essence or occurrent
     inverse: regulated by
-    close_mappings:
-      # This RTX contributed term is tagged as a inverse of this Biolink predicate
-      - GO:regulated_by
-      - RO:0002334
     exact_mappings:
       - GO:regulates
     narrow_mappings:
@@ -2675,6 +2671,10 @@ slots:
     range: physical essence or occurrent
     mixin: true
     inverse: regulates
+    exact_mappings:
+      # This RTX contributed term is tagged as a inverse of this Biolink predicate
+      - GO:regulated_by
+      - RO:0002334  ## regulated by
 
   positively regulates:
     comments:
@@ -2682,9 +2682,6 @@ slots:
     is_a: regulates
     inverse: positively regulated by
     mixin: true
-    close_mappings:
-      # This RTX contributed term is tagged as a inverse of this Biolink predicate
-      - GO:positively_regulated_by
     exact_mappings:
       - RO:0002213
       - GO:positively_regulates
@@ -2700,16 +2697,16 @@ slots:
     is_a: regulated by
     mixin: true
     inverse: positively regulates
-
+    exact_mappings:
+      # This RTX contributed term is tagged as a inverse of this Biolink predicate
+      - GO:positively_regulated_by
+      
   negatively regulates:
     comments:
       - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
     inverse: negatively regulated by
     mixin: true
-    close_mappings:
-      # This RTX contributed term is tagged as a inverse of this Biolink predicate
-      - GO:negatively_regulated_by
     exact_mappings:
       # Strict interpretation here is that entity A causally affects levels of B
       - RO:0004035
@@ -2730,6 +2727,9 @@ slots:
     is_a: regulated by
     mixin: true
     inverse: negatively regulates
+    exact_mappings:
+      # This RTX contributed term is tagged as a inverse of this Biolink predicate
+      - GO:negatively_regulated_by
 
   process regulates process:
     is_a: affects
@@ -2889,9 +2889,6 @@ slots:
     inverse: gene product of
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX term tagged as inverse mapping
-      - PR:has_gene_template
     exact_mappings:
       - RO:0002205
       - WIKIDATA_PROPERTY:P688
@@ -2906,7 +2903,9 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002204   # gene_product_of
-
+      # RTX term tagged as inverse mapping
+      - PR:has_gene_template
+      
   homologous to:
     is_a: similar to
     aliases: ['in homology relationship with']
@@ -3242,8 +3241,15 @@ slots:
 
   affects risk for:
     is_a: related to
+    inverse: risk affected by
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other
+    in_subset:
+      - translator_minimal
+
+  risk affected by:
+    is_a: related to
+    inverse: affects risk for
     in_subset:
       - translator_minimal
 
@@ -3257,15 +3263,20 @@ slots:
       - SEMMEDDB:PREDISPOSES
       - SEMMEDDB:predisposes
 
+  ## potentially change "predisposes" to "increases risk for"? Then this could be its inverse
+#   risk increased by:
+#     is_a: risk affected by
+#     inverse: predisposes
+#     in_subset:
+#       - translator_minimal
+
   contributes to:
     is_a: related to
     description: >-
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+    inverse: contributed to by
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX contributed mapping tagged as 'inverse' of this Biolink predicate
-      - IDO:0000664
     exact_mappings:
       - RO:0002326
       - GO:contributes_to
@@ -3276,6 +3287,15 @@ slots:
       - RO:0002255
       # RTX term 'contributes to condition' mapped to 'biolink:causes' seems more suitable here
       - RO:0003304
+
+  contributed to by:
+    is_a: related to
+    inverse: contributes to
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      # RTX contributed mapping tagged as 'inverse' of this Biolink predicate
+      - IDO:0000664
 
   causes:
     description: >-
@@ -3356,9 +3376,16 @@ slots:
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: biological entity
     range: disease or phenotypic feature
+    inverse: ameliorated by
     exact_mappings:
       - RO:0003307
       - CTD:therapeutic
+
+  ameliorated by:
+    is_a: affected by
+    inverse: ameliorates
+    in_subset:
+      - translator_minimal
 
   exacerbates:
     is_a: affects
@@ -3370,8 +3397,15 @@ slots:
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: biological entity
     range: disease or phenotypic feature
+    inverse: exacerbated by
     exact_mappings:
       - RO:0003309
+
+  exacerbated by:
+    is_a: affected by
+    inverse: exacerbates
+    in_subset:
+      - translator_minimal
 
   treats:
     aliases: ['is substance that treats']
@@ -3475,7 +3509,7 @@ slots:
       - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
       - REPODB:clinically_tested_withdrawn_phase_3
 
-  approved for treatment by:
+  approved for treatment with:
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process
       or chemical substance that is approved for treatment of the condition
@@ -3483,7 +3517,7 @@ slots:
     is_a: treated by
     inverse: approved to treat
 
-  prevents :
+  prevents:
     is_a: affects risk for
     description: >-
       holds between an entity whose application or use reduces
@@ -3652,14 +3686,11 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
-     inverse: phenotype of
+     inverse: phenotype for
     notes:
       - check the range
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX contributed term tagged as 'inverse'
-      - OMIM:phenotype_of
     exact_mappings:
       - RO:0002200
       - RTXKG1:has_phenotype
@@ -3674,23 +3705,22 @@ slots:
       - OBO:doid#has_symptom
       - RO:0004022
 
-  phenotype of:
+  phenotype for:
     is_a: related to
     inverse: has phenotype
     in_subset:
       - translator_minimal
+    exact_mappings:
+      # RTX contributed term tagged as 'inverse'
+      - OMIM:phenotype_of
 
   occurs in:
     is_a: related to
     description: >-
       holds between a process and a material entity or site within which the process occurs
+    inverse: has occurrence
     in_subset:
       - translator_minimal
-    close_mappings:
-      # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
-      - BFO:0000067
-      - SNOMED:has_occurrence
-      - UBERON:site_of
     exact_mappings:
       - BFO:0000066
       - GO:occurs_in
@@ -3712,6 +3742,17 @@ slots:
       - SNOMED:has_direct_procedure_site
       - SNOMED:has_direct_site
       - SNOMED:has_procedure_site
+
+  has occurrence:
+    is_a: related to
+    inverse: occurs in
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
+      - BFO:0000067  ## contains process
+      - SNOMED:has_occurrence
+      - UBERON:site_of
 
   located in:
     is_a: related to
@@ -3819,6 +3860,7 @@ slots:
 
   has sequence location:
     is_a: related to
+    inverse: sequence location of
     description: >-
       holds between two genomic entities when the subject can be localized
       in sequence coordinates on the object. For example, between
@@ -3828,8 +3870,13 @@ slots:
     exact_mappings:
       - faldo:location
 
+  sequence location of:
+    is_a: related to
+    inverse: has sequence location
+
   model of:
     is_a: similar to
+    inverse: has model
     description: >-
       holds between an entity and some other entity it approximates
       for purposes of scientific study, in virtue of its exhibiting
@@ -3840,6 +3887,12 @@ slots:
       - RO:0003301
     narrow_mappings:
       - FOODON:00001301
+
+  has model:
+    is_a: similar to
+    inverse: model of
+    in_subset:
+      - translator_minimal
 
   overlaps:
     is_a: related to
@@ -3990,11 +4043,9 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: occurrent
+    inverse: input of
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX inverse mapping to to 'biolink:has_input'
-      - RO:0002352
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
@@ -4014,18 +4065,23 @@ slots:
       - SNOMED:uses_energy
       - SNOMED:uses_substance
 
+  input of:
+    is_a: participates in
+    inverse: has input
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      # RTX inverse mapping to to 'biolink:has_input'
+      - RO:0002352  ## input of
+
   has output:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: occurrent
+    inverse: output of
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX inverse mapping to to 'biolink:has_output'
-      - RO:0002353
-      - RO:0002354
-      - RTXKG1:output_of
     exact_mappings:
       - RO:0002234
     narrow_mappings:
@@ -4038,6 +4094,17 @@ slots:
       - RO:0002299
       - RO:0002588
       - RO:0004008
+
+  output of:
+    is_a: participates in
+    inverse: has input
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      # RTX inverse mapping to to 'biolink:has_output'
+      - RO:0002353
+      - RO:0002354
+      - RTXKG1:output_of
 
   has participant:
     is_a: related to
@@ -4115,11 +4182,9 @@ slots:
       the continuant actively contributes to part or all of
       the process or function it realizes
     range: occurrent
+    inverse: actively involves
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX term tagged as inverse
-      - NCIT:biological_process_involves_chemical_or_drug
     broad_mappings:
       # could the involvement be either active or passive?
       - RTXKG1:involved_in
@@ -4135,8 +4200,18 @@ slots:
       - ORPHA:327767
       - PATO:towards
 
+  actively involves:
+    is_a: has participant
+    inverse: actively involved in
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      # RTX term tagged as inverse
+      - NCIT:biological_process_involves_chemical_or_drug
+
   capable of:
     is_a: actively involved in
+    inverse: has capability
     description: >-
       holds between a physical entity and process or function, where the
       continuant alone has the ability to carry out the process or function.
@@ -4150,6 +4225,12 @@ slots:
       - GO:has_occurrence
       - NCIT:gene_product_has_biochemical_function
       - RO:0002500
+
+  has capability:
+    is_a: actively involves
+    inverse: capable of
+    in_subset:
+      - translator_minimal
 
   enables:
     is_a: participates in
@@ -4354,6 +4435,7 @@ slots:
       process; used in SemMedDB for linking things like dysfunctions
       and processes to some disease or syndrome
     range: disease
+    inverse: has manifestation
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4365,6 +4447,12 @@ slots:
       - WIKIDATA_PROPERTY:P1557
     narrow_mappings:
       - SNOMED:has_definitional_manifestation
+
+  has manifestation:
+    is_a: related to
+    inverse: manifestation of
+    in_subset:
+      - translator_minimal
 
   produces:
     is_a: related to
@@ -4505,16 +4593,26 @@ slots:
 
   affects expression in:
     is_a: affects
+    inverse: has affected expression due to
     description: Holds between a variant and an anatomical entity where the expression of the variant
        is located in.
     exact_mappings:
       - GTEx:affects_expression_in
 
+  has affected expression due to:
+    is_a: affected by
+    inverse: affects expression in
+
   has variant part:
     is_a: has part
+    inverse: variant part of
     description: holds between a genomic entity and a genotypic entity that is a sub-component of it
     exact_mappings:
       - GENO:0000382
+
+  variant part of:
+    is_a: part of
+    inverse: has variant part
 
   related condition:
     is_a: related to
@@ -4526,6 +4624,7 @@ slots:
 
   is sequence variant of:
     is_a: related to
+    inverse: has sequence variant
     description: holds between a sequence variant and a genomic entity
     domain: sequence variant
     range: genomic entity
@@ -4535,8 +4634,13 @@ slots:
       - NCIT:gene_product_variant_of_gene_product
       - OMIM:allelic_variant_of
 
+  has sequence variant:
+    is_a: related to
+    inverse: is sequence variant of
+    
   is missense variant of:
     is_a: is sequence variant of
+    inverse: has missense variant
     description: holds between a gene  and a sequence variant, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
@@ -4548,8 +4652,13 @@ slots:
       - SNPEFF:initiator_codon_variant
       - SNPEFF:structural_interaction_variant
 
+  has missense variant:
+    is_a: has sequence variant
+    inverse: is missense variant of
+
   is synonymous variant of:
     is_a: is sequence variant of
+    inverse: has synonymous variant
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
@@ -4561,8 +4670,13 @@ slots:
       - SNPEFF:start_retained
       - SNPEFF:stop_retained_variant
 
+  has synonymous variant:
+    is_a: has sequence variant
+    inverse: is synonymous variant of
+
   is nonsense variant of:
     is_a: is sequence variant of
+    inverse: has nonsense variant
     description: holds between a sequence variant and a gene, such the sequence variant
       results in a premature stop codon
     domain: sequence variant
@@ -4574,8 +4688,13 @@ slots:
       # the gene product has diminished or abolished function.
       - SO:0002054
 
+  has nonsense variant:
+    is_a: has sequence variant
+    inverse: is nonsense variant of
+
   is frameshift variant of:
     is_a: is sequence variant of
+    inverse: has frameshift variant
     description: holds between a sequence variant and a gene, such the sequence variant
       causes a disruption of the translational reading frame, because the number of
       nucleotides inserted or deleted is not a multiple of three.
@@ -4589,8 +4708,13 @@ slots:
       - SNPEFF:start_lost
       - SNPEFF:stop_lost
 
+  has frameshift variant:
+    is_a: has sequence variant
+    inverse: is frameshift variant of
+
   is splice site variant of:
     is_a: is sequence variant of
+    inverse: has splice site variant
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
@@ -4603,8 +4727,13 @@ slots:
       - SNPEFF:splice_acceptor_variant
       - SNPEFF:splice_donor_variant
 
+  has splice site variant:
+    is_a: has sequence variant
+    inverse: is splice site variant of
+
   is nearby variant of:
     is_a: is sequence variant of
+    inverse: has nearby variant
     description: holds between a sequence variant and a gene sequence that the variant
       is genomically close to.
     domain: sequence variant
@@ -4616,8 +4745,13 @@ slots:
       - SNPEFF:downstream_gene_variant
       - SNPEFF:upstream_gene_variant
 
+  has nearby variant:
+    is_a: has sequence variant
+    inverse: is nearby variant of
+
   is non coding variant of:
     is_a: is sequence variant of
+    inverse: has non coding variant
     description: holds between a sequence variant and a gene, where the variant does
       not affect the coding sequence
     domain: sequence variant
@@ -4632,16 +4766,25 @@ slots:
       - SNPEFF:non_coding_transcript_exon_variant
       - SNPEFF:intron_variant
 
+  has non coding variant:
+    is_a: has sequence variant
+    inverse: is non coding variant of
+
   # relating disease to process
 
   disease has basis in:
     description: A relation that holds between a disease and an entity where the state
       of the entity has contribution to the disease.
     is_a: related to
+    inverse: basis of disease
     narrow_mappings:
       # These two MONDO terms seem more particular than the predicate
       - MONDO:disease_has_basis_in_development_of
       - MONDO:disease_has_basis_in_accumulation_of
+
+  basis of disease:
+    is_a: related to
+    inverse: disease has basis in
 
   # These may be pushable to causal relationships, but seem important for clarity
   # Also because causes adverse event tends to be very noisy and it's useful to be able
@@ -4649,12 +4792,17 @@ slots:
 
   causes adverse event:
     is_a: causes
+    inverse: adverse event caused by
     description: holds between a drug and a disease or phenotype that can be caused
       by the drug
     domain: drug
     range: disease or phenotypic feature
     exact_mappings:
       - Aeolus:0000001
+
+  adverse event caused by:
+    is_a: caused by
+    inverse: causes adverse event
 
   contraindicated for:
     is_a: related to
@@ -4680,32 +4828,52 @@ slots:
 
   has not completed:
     is_a: related to
+    inverse: not completed in
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
     exact_mappings:
       - CL:has_not_completed
 
+  not completed in:
+    is_a: related to
+    inverse: has not completed
+
   has completed:
     is_a: related to
+    inverse: completed in
     description: holds between an entity and a process that the entity is capable of
       and has completed
     exact_mappings:
       - CL:has_completed
       - RTXKG1:has_completed
 
+  completed in:
+    is_a: related to
+    inverse: has not completed
+
   decreases molecular interaction:
     is_a: molecularly interacts with
+    inverse: molecular interaction decreased by
     description: indicates that the source decreases the molecular interaction between
       the target and some other molecular entity
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
 
+  molecular interaction decreased by:
+    is_a: molecularly interacts with
+    inverse: decreases molecular interaction
+
   increases molecular interaction:
     is_a: molecularly interacts with
+    inverse: molecular interaction increased by
     description: indicates that the source increases the molecular interaction between
       the target and some other molecular entity
     exact_mappings:
       - CTD:increases_molecular_interaction_with
+
+  molecular interaction increased by:
+    is_a: molecularly interacts with
+    inverse: increases molecular interaction
 
   in linkage disequilibrium with:
     is_a: related to
@@ -4717,16 +4885,27 @@ slots:
 
   has increased amount:
     is_a: related to
+    inverse: increased amount in
     narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
+  increased amount in:
+    is_a: related to
+    inverse: has increased amount
+
   has decreased amount:
     is_a: related to
+    inverse: decreased amount in
     narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
+  decreased amount in:
+    is_a: related to
+    inverse: has decreased amount
+
   lacks part:
     is_a: related to
+    inverse: part lacking in
     exact_mappings:
       - CL:lacks_part
       - PR:lacks_part
@@ -4734,12 +4913,13 @@ slots:
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
 
+  part lacking in:
+    is_a: related to
+    inverse: lacks part
+
   develops from:
     is_a: related to
-    close_mappings:
-      # RTX mapping seems to be inverse of 'biolink:develops_from'
-      - RO:0002203
-      - FMA:develops_into
+    inverse: develops into
     exact_mappings:
       - BTO:develops_from
       - DDANAT:develops_from
@@ -4750,10 +4930,19 @@ slots:
       - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
+  develops into:
+    is_a: related to
+    inverse: develops from
+    exact_mappings:
+      # RTX mapping seems to be inverse of 'biolink:develops_from'
+      - RO:0002203
+      - FMA:develops_into
+
   in taxon:
     aliases:
       - instance of
     is_a: related to
+    inverse: taxon of
     domain: thing with taxon
     range: organism taxon
     description: >-
@@ -4764,10 +4953,6 @@ slots:
     related_mappings:
       # RO term 'never in taxon' is a negation of this biolink term
       - RO:0002162
-    close_mappings:
-      # RTX contributed term is an inverse mapping
-      - NCIT:is_organism_source_of_gene_product
-      - NCIT:organism_has_gene
     exact_mappings:
       - WIKIDATA_PROPERTY:P703
     narrow_mappings:
@@ -4775,8 +4960,17 @@ slots:
       - NCIT:gene_product_has_organism_source
       - RO:0002160
 
+  taxon of:
+    is_a: related to
+    inverse: in taxon
+    exact_mappings:
+      # RTX contributed term is an inverse mapping
+      - NCIT:is_organism_source_of_gene_product
+      - NCIT:organism_has_gene
+
   has molecular consequence:
     is_a: related to
+    inverse: molecular consequence of
     description: >-
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
@@ -4784,6 +4978,9 @@ slots:
     narrow_mappings:
       - NCIT:allele_has_activity
 
+  molecular consequence of:
+    is_a: related to
+    inverse: has molecular consequence
 
 ## --------------------
 ## ASSOCIATION SLOTS
