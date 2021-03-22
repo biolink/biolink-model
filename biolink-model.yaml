@@ -3039,6 +3039,7 @@ slots:
     related_mappings:
       - MONDO:disease_responds_to
     exact_mappings:
+      - DRUGBANK:treats
       - SEMMEDDB:TREATS
       - SEMMEDDB:treats
       - WIKIDATA_PROPERTY:P2175
@@ -4154,6 +4155,23 @@ slots:
        is located in.
     exact_mappings:
       - GTEx:affects_expression_in
+
+  increase expression in:
+    is_a: affects expression in
+    description: >-
+      Holds between entity A (a transcription factor) and nucleic acid B if and only
+      if A up-regulates the expression of B. The nucleic acid can be a gene or mRNA.
+    exact_mappings:
+      - RO:0003003
+
+  represses expression in:
+    is_a: affects expression in
+    description: >-
+      Holds between entity A (a transcription factor) and a nucleic
+      acid B if and only if A down-regulates the expression of B.
+      The nucleic acid can be a gene or an mRNA.
+    exact_mappings:
+      - RO:0003002
 
   has variant part:
     is_a: has part
