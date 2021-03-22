@@ -1287,16 +1287,6 @@ message FoodComponent
   repeated inTaxon OrganismTaxon = 10
   optional isMetabolite Boolean = 11
  }
-// describes the frequency of occurrence of an event or condition
-message FrequencyValue
- {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source LabelType = 6
- }
 // An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
  {
@@ -1394,19 +1384,6 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   optional onsetQualifier Onset = 18
   optional sequenceVariantQualifier SequenceVariant = 19
   subject GeneOrGeneProduct = 20
- }
-// an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-message GeneOntologyClass
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
  }
 // A regulatory relationship between two genes
 message GeneRegulatoryRelationship
@@ -2213,19 +2190,6 @@ message Onset
   optional iri IriType = 5
   optional source LabelType = 6
  }
-// a concept or class in an ontology, vocabulary or thesaurus
-message OntologyClass
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
 // describes a characteristic of an organismal entity.
 message OrganismAttribute
  {
@@ -2270,6 +2234,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   subject OrganismTaxon = 14
   object OrganismTaxon = 15
   predicate PredicateType = 16
+  optional associatedEnvironmentalContext String = 17
  }
 // A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
 message OrganismTaxonToOrganismTaxonSpecialization
@@ -2689,19 +2654,6 @@ message ReagentTargetedGene
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
-// An OWL property used as an edge label
-message RelationshipType
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
 message RNAProduct
  {
   id String = 1
@@ -2916,19 +2868,6 @@ message StudyPopulation
   repeated category NamedThing = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
- }
-// A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
-message TaxonomicRank
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 message Transcript

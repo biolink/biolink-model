@@ -92,8 +92,7 @@ To install the project,
 make install
 ```
 
-If you make changes to [biolink-model.yaml](biolink-model.yaml) then be sure to run the Makefile to generate
-up-to-date artifacts and documentation.
+To regenerate artifacts from the Biolink Model YAML,
 
 ```sh
 make

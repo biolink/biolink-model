@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-02-12 22:44\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-03-22 15:09\nSchema: Biolink-Model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"
@@ -39,7 +39,7 @@
       "EDAM-FORMAT": "http://edamontology.org/format_",
       "EDAM-OPERATION": "http://edamontology.org/operation_",
       "EDAM-TOPIC": "http://edamontology.org/topic_",
-      "EFO": "http://identifiers.org/efo/",
+      "EFO": "http://www.ebi.ac.uk/efo/EFO_",
       "EGGNOG": "http://identifiers.org/eggnog/",
       "ENSEMBL": "http://identifiers.org/ensembl/",
       "ExO": "http://purl.obolibrary.org/obo/ExO_",
@@ -67,6 +67,7 @@
       "ICD9": "http://translator.ncats.nih.gov/ICD9_",
       "INCHI": "http://identifiers.org/inchi/",
       "INCHIKEY": "http://identifiers.org/inchikey/",
+      "INO": "http://purl.obolibrary.org/obo/INO_",
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
       "KEGG": "http://identifiers.org/kegg/",
@@ -445,6 +446,24 @@
       "end_interbase_coordinate": {
          "@type": "xsd:integer"
       },
+      "entity_negatively_regulated_by_entity": {
+         "@type": "@id"
+      },
+      "entity_negatively_regulates_entity": {
+         "@type": "@id"
+      },
+      "entity_positively_regulated_by_entity": {
+         "@type": "@id"
+      },
+      "entity_positively_regulates_entity": {
+         "@type": "@id"
+      },
+      "entity_regulated_by_entity": {
+         "@type": "@id"
+      },
+      "entity_regulates_entity": {
+         "@type": "@id"
+      },
       "exacerbates": {
          "@type": "@id"
       },
@@ -467,7 +486,7 @@
          "@type": "@id"
       },
       "frequency_qualifier": {
-         "@type": "@id"
+         "@type": "UO:0000105"
       },
       "gene_associated_with_condition": {
          "@type": "@id"
@@ -777,19 +796,7 @@
       "negatively_regulated_by": {
          "@type": "@id"
       },
-      "negatively_regulated_by_entity_to_entity": {
-         "@type": "@id"
-      },
-      "negatively_regulated_by_process_to_process": {
-         "@type": "@id"
-      },
       "negatively_regulates": {
-         "@type": "@id"
-      },
-      "negatively_regulates_entity_to_entity": {
-         "@type": "@id"
-      },
-      "negatively_regulates_process_to_process": {
          "@type": "@id"
       },
       "nutrient_of": {
@@ -835,19 +842,7 @@
       "positively_regulated_by": {
          "@type": "@id"
       },
-      "positively_regulated_by_entity_to_entity": {
-         "@type": "@id"
-      },
-      "positively_regulated_by_process_to_process": {
-         "@type": "@id"
-      },
       "positively_regulates": {
-         "@type": "@id"
-      },
-      "positively_regulates_entity_to_entity": {
-         "@type": "@id"
-      },
-      "positively_regulates_process_to_process": {
          "@type": "@id"
       },
       "preceded_by": {
@@ -867,6 +862,24 @@
          "@type": "@id"
       },
       "prevents": {
+         "@type": "@id"
+      },
+      "process_negatively_regulated_by_process": {
+         "@type": "@id"
+      },
+      "process_negatively_regulates_process": {
+         "@type": "@id"
+      },
+      "process_positively_regulated_by_process": {
+         "@type": "@id"
+      },
+      "process_positively_regulates_process": {
+         "@type": "@id"
+      },
+      "process_regulated_by_process": {
+         "@type": "@id"
+      },
+      "process_regulates_process": {
          "@type": "@id"
       },
       "produced_by": {
@@ -899,19 +912,7 @@
       "regulated_by": {
          "@type": "@id"
       },
-      "regulated_by_entity_to_entity": {
-         "@type": "@id"
-      },
-      "regulated_by_process_to_process": {
-         "@type": "@id"
-      },
       "regulates": {
-         "@type": "@id"
-      },
-      "regulates_entity_to_entity": {
-         "@type": "@id"
-      },
-      "regulates_process_to_process": {
          "@type": "@id"
       },
       "related_condition": {
@@ -951,8 +952,7 @@
          "@type": "xsd:integer"
       },
       "subclass_of": {
-         "@type": "@id",
-         "@id": "rdfs:subClassOf"
+         "@type": "@id"
       },
       "subject": {
          "@type": "@id",
