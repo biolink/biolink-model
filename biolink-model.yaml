@@ -4,7 +4,7 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-version: 1.6.0
+version: 1.6.1
 
 ## ------------
 ## PREFIXES
@@ -4978,7 +4978,7 @@ classes:
       A classification of a set of organisms. Example instances:
       NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
       Can also be used to represent strains or subspecies.
-    is_a: ontology class
+    is_a: named thing
     slot_usage:
       has taxonomic rank:
         range: taxonomic rank
@@ -6423,7 +6423,7 @@ classes:
       - SIO:010035
       - WIKIDATA:Q7187
     id_prefixes:
-      - NCBIGENE
+      - NCBIGene
       - ENSEMBL
       - HGNC
       - UniProtKB
@@ -6623,7 +6623,7 @@ classes:
     is_a: RNA product
     id_prefixes:
       - RNACENTRAL
-      - NCBIGENE
+      - NCBIGene
       - ENSEMBL
     exact_mappings:
       - SO:0000655

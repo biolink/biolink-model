@@ -345,7 +345,7 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <ExposureEvent> ] ? ;
           <timepoint> @<TimeType> ?
        ) ;
-       rdf:type [ <BioticExposure> ] ?
+       rdf:type [ <BioticExposure> ]
     )
 }
 
@@ -1856,7 +1856,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ]
        )
     } OR @<Activity> OR @<AdministrativeEntity> OR @<BiologicalEntity> OR @<ClinicalEntity> OR @<Device> OR
-    @<InformationContentEntity> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR @<Treatment>
+    @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR
+    @<Treatment>
 )
 
 <NoncodingRNAProduct>  (
@@ -1898,7 +1899,7 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <OntologyClass>  (
-    @<GeneOntologyClass> OR @<OrganismTaxon> OR @<RelationshipType> OR @<TaxonomicRank> OR @<UnclassifiedOntologyClass>
+    @<GeneOntologyClass> OR @<RelationshipType> OR @<TaxonomicRank> OR @<UnclassifiedOntologyClass>
 )
 
 <OntologyClass_struct> {
@@ -1919,12 +1920,12 @@ metatype:Nodeidentifier NONLITERAL
 
 <OrganismTaxon>  (
     CLOSED {
-       (  $<OrganismTaxon_tes> (  &<OntologyClass_tes> ;
-             rdf:type [ <OntologyClass> ] ? ;
+       (  $<OrganismTaxon_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
              <has_taxonomic_rank> @<TaxonomicRank> ? ;
              <subclass_of> @<OrganismTaxon> *
           ) ;
-          rdf:type [ <OrganismTaxon> ] ?
+          rdf:type [ <OrganismTaxon> ]
        )
     } OR @<BioticExposure>
 )
