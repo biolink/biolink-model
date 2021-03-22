@@ -1,18 +1,18 @@
 digraph {
-	graph [bb="0,0,222.14,123"];
+	graph [bb="0,0,289.59,123"];
 	node [label="\N"];
-	"gene grouping mixin"	 [height=0.5,
+	"gene grouping mixin"	[height=0.5,
 		label="gene grouping mixin",
-		pos="85.142,105",
-		width=2.3651];
-	"has gene or gene product"	 [color=blue,
+		pos="106.59,105",
+		width=2.9608];
+	"has gene or gene product"	[color=blue,
 		height=0.5,
 		label=gene,
-		pos="85.142,18",
-		width=0.75827];
-	"gene grouping mixin" -> "has gene or gene product"	 [color=blue,
+		pos="106.59,18",
+		width=0.92075];
+	"gene grouping mixin" -> "has gene or gene product"	[color=blue,
 		label="has gene or gene product",
-		lp="153.64,61.5",
-		pos="e,85.142,36.003 85.142,86.974 85.142,75.192 85.142,59.561 85.142,46.158",
+		lp="198.09,61.5",
+		pos="e,106.59,36.175 106.59,86.799 106.59,75.163 106.59,59.548 106.59,46.237",
 		style=solid];
 }

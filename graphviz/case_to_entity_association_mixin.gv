@@ -1,21 +1,21 @@
 digraph {
-	graph [bb="0,0,316.19,123"];
+	graph [bb="0,0,394.48,123"];
 	node [label="\N"];
-	"case to entity association mixin"	 [height=0.5,
+	"case to entity association mixin"	[height=0.5,
 		label="case to entity association mixin",
-		pos="122.19,105",
-		width=3.3941];
-	subject	 [height=0.5,
-		pos="122.19,18",
-		width=0.99297];
-	"case to entity association mixin" -> subject	 [color=blue,
+		pos="157.29,105",
+		width=4.3691];
+	subject	[height=0.5,
+		pos="157.29,18",
+		width=1.2277];
+	"case to entity association mixin" -> subject	[color=blue,
 		label=subject,
-		lp="141.69,61.5",
-		pos="e,122.19,36.003 122.19,86.974 122.19,75.192 122.19,59.561 122.19,46.158",
+		lp="183.29,61.5",
+		pos="e,157.29,36.175 157.29,86.799 157.29,75.163 157.29,59.548 157.29,46.237",
 		style=solid];
-	"case to entity association mixin_subject"	 [color=blue,
+	"case to entity association mixin_subject"	[color=blue,
 		height=0.5,
 		label=case,
-		pos="289.19,105",
-		width=0.75];
+		pos="363.29,105",
+		width=0.86659];
 }

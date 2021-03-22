@@ -23,7 +23,7 @@ PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
 
 <SymbolType> xsd:string
 
-<Frequency> UO:0000105
+<FrequencyValue> UO:0000105
 
 <PercentageFrequencyValue> UO:0000187
 
@@ -187,7 +187,7 @@ metatype:Nodeidentifier NONLITERAL
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <type> @metatype:String ? ;
-             <category> @<Association> *
+             <category> @<CategoryType> *
           ) ;
           rdf:type [ <Association> ]
        )
@@ -202,16 +202,18 @@ metatype:Nodeidentifier NONLITERAL
     @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR
     @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToVariantAssociation> OR
     @<MaterialSampleDerivationAssociation> OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismalEntityAsAModelOfDiseaseAssociation> OR
-    @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR @<SequenceFeatureRelationship> OR
-    @<SequenceVariantModulatesTreatmentAssociation> OR @<VariantToDiseaseAssociation> OR @<VariantToGeneAssociation> OR
-    @<VariantToPhenotypicFeatureAssociation> OR @<VariantToPopulationAssociation>
+    @<OrganismTaxonToEnvironmentAssociation> OR @<OrganismTaxonToOrganismTaxonAssociation> OR
+    @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR
+    @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR @<VariantToDiseaseAssociation> OR
+    @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR @<VariantToPopulationAssociation>
 )
 
 <Attribute>  (
     CLOSED {
        (  $<Attribute_tes> (  &<Annotation_tes> ;
              rdf:type [ <Annotation> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
              <name> @<LabelType> ? ;
              <has_attribute_type> @<OntologyClass> ;
              <has_quantitative_value> @<QuantityValue> * ;
@@ -221,14 +223,16 @@ metatype:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <Attribute> ] ?
        )
-    } OR @<BiologicalSex> OR @<ClinicalAttribute> OR @<FrequencyValue> OR @<OrganismAttribute> OR @<SeverityValue> OR
-    @<SocioeconomicAttribute> OR @<Zygosity>
+    } OR @<BiologicalSex> OR @<ClinicalAttribute> OR @<OrganismAttribute> OR @<SeverityValue> OR @<SocioeconomicAttribute> OR
+    @<Zygosity>
 )
 
 <Behavior>  (
     CLOSED {
        (  $<Behavior_tes> (  &<BiologicalProcess_tes> ;
-             rdf:type [ <BiologicalProcess> ] ?
+             rdf:type [ <BiologicalProcess> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ?
           ) ;
           rdf:type [ <Behavior> ]
        )
@@ -298,7 +302,9 @@ metatype:Nodeidentifier NONLITERAL
        (  $<BiologicalProcess_tes> (  &<BiologicalProcessOrActivity_tes> ;
              rdf:type [ <BiologicalProcessOrActivity> ] ? ;
              &<Occurrent_tes> ;
-             rdf:type [ <Occurrent> ] ?
+             rdf:type [ <Occurrent> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ?
           ) ;
           rdf:type [ <BiologicalProcess> ]
        )
@@ -311,6 +317,8 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <BiologicalEntity> ] ? ;
              &<Occurrent_tes> ;
              rdf:type [ <Occurrent> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
              <has_input> @<NamedThing> * ;
              <has_output> @<NamedThing> * ;
              <enabled_by> @<PhysicalEntity> *
@@ -477,11 +485,14 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<ChemicalSubstance_tes> (  &<MolecularEntity_tes> ;
              rdf:type [ <MolecularEntity> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
              <is_metabolite> @metatype:Boolean ?
           ) ;
           rdf:type [ <ChemicalSubstance> ]
        )
-    } OR @<Carbohydrate> OR @<ChemicalExposure> OR @<FoodComponent> OR @<Metabolite> OR @<ProcessedMaterial>
+    } OR @<Carbohydrate> OR @<ChemicalExposure> OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<FoodComponent> OR
+    @<Metabolite> OR @<Nutrient> OR @<ProcessedMaterial>
 )
 
 <ChemicalToChemicalAssociation>  (
@@ -842,6 +853,8 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <MolecularEntity> ] ? ;
              &<Mixture_tes> ;
              rdf:type [ <Mixture> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
              <has_constituent> @<ChemicalSubstance> *
           ) ;
           rdf:type [ <Drug> ]
@@ -983,8 +996,8 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <EnvironmentalFoodContaminant> CLOSED {
-    (  $<EnvironmentalFoodContaminant_tes> (  &<FoodComponent_tes> ;
-          rdf:type [ <FoodComponent> ] ?
+    (  $<EnvironmentalFoodContaminant_tes> (  &<ChemicalSubstance_tes> ;
+          rdf:type [ <ChemicalSubstance> ] ?
        ) ;
        rdf:type [ <EnvironmentalFoodContaminant> ]
     )
@@ -1091,22 +1104,20 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <FoodAdditive> CLOSED {
-    (  $<FoodAdditive_tes> (  &<FoodComponent_tes> ;
-          rdf:type [ <FoodComponent> ] ?
+    (  $<FoodAdditive_tes> (  &<ChemicalSubstance_tes> ;
+          rdf:type [ <ChemicalSubstance> ] ?
        ) ;
        rdf:type [ <FoodAdditive> ]
     )
 }
 
-<FoodComponent>  (
-    CLOSED {
-       (  $<FoodComponent_tes> (  &<ChemicalSubstance_tes> ;
-             rdf:type [ <ChemicalSubstance> ] ?
-          ) ;
-          rdf:type [ <FoodComponent> ]
-       )
-    } OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<Nutrient>
-)
+<FoodComponent> CLOSED {
+    (  $<FoodComponent_tes> (  &<ChemicalSubstance_tes> ;
+          rdf:type [ <ChemicalSubstance> ] ?
+       ) ;
+       rdf:type [ <FoodComponent> ]
+    )
+}
 
 <FrequencyQualifierMixin>  (
     {
@@ -1125,14 +1136,6 @@ metatype:Nodeidentifier NONLITERAL
           <has_percentage> @metatype:Double ?
        ) ;
        rdf:type [ <FrequencyQuantifier> ] ?
-    )
-}
-
-<FrequencyValue> CLOSED {
-    (  $<FrequencyValue_tes> (  &<Attribute_tes> ;
-          rdf:type [ <Attribute> ] ?
-       ) ;
-       rdf:type [ <FrequencyValue> ] ?
     )
 }
 
@@ -1212,11 +1215,11 @@ metatype:Nodeidentifier NONLITERAL
     )
 }
 
-<GeneOntologyClass> CLOSED {
+<GeneOntologyClass> {
     (  $<GeneOntologyClass_tes> (  &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ?
        ) ;
-       rdf:type [ <GeneOntologyClass> ]
+       rdf:type [ <GeneOntologyClass> ] ?
     )
 }
 
@@ -1797,6 +1800,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <BiologicalProcessOrActivity> ] ? ;
           &<Occurrent_tes> ;
           rdf:type [ <Occurrent> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ? ;
           <has_input> @<ChemicalSubstance> * ;
           <has_output> @<ChemicalSubstance> * ;
           <enabled_by> @<MacromolecularMachineMixin> *
@@ -1813,6 +1818,8 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <ThingWithTaxon> ] ? ;
              &<PhysicalEssence_tes> ;
              rdf:type [ <PhysicalEssence> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
              <in_taxon> @<OrganismTaxon> *
           ) ;
           rdf:type [ <MolecularEntity> ]
@@ -1849,7 +1856,7 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ]
        )
     } OR @<Activity> OR @<AdministrativeEntity> OR @<BiologicalEntity> OR @<ClinicalEntity> OR @<Device> OR
-    @<InformationContentEntity> OR @<OntologyClass> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR
+    @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR
     @<Treatment>
 )
 
@@ -1865,8 +1872,8 @@ metatype:Nodeidentifier NONLITERAL
 
 <Nutrient>  (
     CLOSED {
-       (  $<Nutrient_tes> (  &<FoodComponent_tes> ;
-             rdf:type [ <FoodComponent> ] ?
+       (  $<Nutrient_tes> (  &<ChemicalSubstance_tes> ;
+             rdf:type [ <ChemicalSubstance> ] ?
           ) ;
           rdf:type [ <Nutrient> ]
        )
@@ -1892,14 +1899,14 @@ metatype:Nodeidentifier NONLITERAL
 }
 
 <OntologyClass>  (
-    CLOSED {
-       (  $<OntologyClass_tes> (  &<NamedThing_tes> ;
-             rdf:type [ <NamedThing> ] ?
-          ) ;
-          rdf:type [ <OntologyClass> ]
-       )
-    } OR @<GeneOntologyClass> OR @<OrganismTaxon> OR @<RelationshipType> OR @<TaxonomicRank>
+    @<GeneOntologyClass> OR @<RelationshipType> OR @<TaxonomicRank> OR @<UnclassifiedOntologyClass>
 )
+
+<OntologyClass_struct> {
+    (  $<OntologyClass_tes> rdf:type . * ;
+       rdf:type [ <OntologyClass> ] ?
+    )
+}
 
 <OrganismAttribute>  (
     CLOSED {
@@ -1913,8 +1920,8 @@ metatype:Nodeidentifier NONLITERAL
 
 <OrganismTaxon>  (
     CLOSED {
-       (  $<OrganismTaxon_tes> (  &<OntologyClass_tes> ;
-             rdf:type [ <OntologyClass> ] ? ;
+       (  $<OrganismTaxon_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
              <has_taxonomic_rank> @<TaxonomicRank> ? ;
              <subclass_of> @<OrganismTaxon> *
           ) ;
@@ -1923,6 +1930,25 @@ metatype:Nodeidentifier NONLITERAL
     } OR @<BioticExposure>
 )
 
+<OrganismTaxonToEntityAssociation> {
+    (  $<OrganismTaxonToEntityAssociation_tes> <subject> @<OrganismTaxon> ;
+       rdf:type [ <OrganismTaxonToEntityAssociation> ] ?
+    )
+}
+
+<OrganismTaxonToEnvironmentAssociation> {
+    (  $<OrganismTaxonToEnvironmentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<OrganismTaxonToEntityAssociation_tes> ;
+          rdf:type [ <OrganismTaxonToEntityAssociation> ] ? ;
+          <subject> @<OrganismTaxon> ;
+          <object> @<NamedThing> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <OrganismTaxonToEnvironmentAssociation> ]
+    )
+}
+
 <OrganismTaxonToOrganismTaxonAssociation>  (
     @<OrganismTaxonToOrganismTaxonInteraction> OR @<OrganismTaxonToOrganismTaxonSpecialization>
 )
@@ -1930,6 +1956,8 @@ metatype:Nodeidentifier NONLITERAL
 <OrganismTaxonToOrganismTaxonAssociation_struct> {
     (  $<OrganismTaxonToOrganismTaxonAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
+          &<OrganismTaxonToEntityAssociation_tes> ;
+          rdf:type [ <OrganismTaxonToEntityAssociation> ] ? ;
           <subject> @<OrganismTaxon> ;
           <object> @<OrganismTaxon>
        ) ;
@@ -1942,7 +1970,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <OrganismTaxonToOrganismTaxonAssociation> ] ? ;
           <subject> @<OrganismTaxon> ;
           <object> @<OrganismTaxon> ;
-          <predicate> @<PredicateType>
+          <predicate> @<PredicateType> ;
+          <associated_environmental_context> @metatype:String ?
        ) ;
        rdf:type [ <OrganismTaxonToOrganismTaxonInteraction> ]
     )
@@ -2101,7 +2130,9 @@ metatype:Nodeidentifier NONLITERAL
 
 <Pathway> CLOSED {
     (  $<Pathway_tes> (  &<BiologicalProcess_tes> ;
-          rdf:type [ <BiologicalProcess> ] ?
+          rdf:type [ <BiologicalProcess> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <Pathway> ]
     )
@@ -2175,7 +2206,9 @@ metatype:Nodeidentifier NONLITERAL
 
 <PhysiologicalProcess> CLOSED {
     (  $<PhysiologicalProcess_tes> (  &<BiologicalProcess_tes> ;
-          rdf:type [ <BiologicalProcess> ] ?
+          rdf:type [ <BiologicalProcess> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <PhysiologicalProcess> ]
     )
@@ -2230,6 +2263,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <ChemicalSubstance> ] ? ;
           &<Mixture_tes> ;
           rdf:type [ <Mixture> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ? ;
           <has_constituent> @<ChemicalSubstance> *
        ) ;
        rdf:type [ <ProcessedMaterial> ]
@@ -2310,7 +2345,7 @@ metatype:Nodeidentifier NONLITERAL
     (  $<RelationshipType_tes> (  &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ?
        ) ;
-       rdf:type [ <RelationshipType> ]
+       rdf:type [ <RelationshipType> ] ?
     )
 }
 
@@ -2486,7 +2521,7 @@ metatype:Nodeidentifier NONLITERAL
     (  $<TaxonomicRank_tes> (  &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ?
        ) ;
-       rdf:type [ <TaxonomicRank> ]
+       rdf:type [ <TaxonomicRank> ] ?
     )
 }
 
@@ -2527,6 +2562,14 @@ metatype:Nodeidentifier NONLITERAL
           <timepoint> @<TimeType> ?
        ) ;
        rdf:type [ <Treatment> ]
+    )
+}
+
+<UnclassifiedOntologyClass> {
+    (  $<UnclassifiedOntologyClass_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <UnclassifiedOntologyClass> ] ?
     )
 }
 

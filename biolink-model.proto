@@ -55,7 +55,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject AnatomicalEntity = 14
   object AnatomicalEntity = 15
   predicate PredicateType = 16
@@ -75,7 +75,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject AnatomicalEntity = 14
   object AnatomicalEntity = 15
   predicate PredicateType = 16
@@ -124,7 +124,7 @@ message Association
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
   optional type String = 15
-  repeated category Association = 16
+  repeated category CategoryType = 16
  }
 // A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 message Attribute
@@ -167,7 +167,7 @@ message BehaviorToBehavioralFeatureAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject Behavior = 15
   object BehavioralFeature = 16
   optional frequencyQualifier FrequencyValue = 17
@@ -373,7 +373,7 @@ message CaseToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
   optional type String = 15
-  repeated category Association = 16
+  repeated category CategoryType = 16
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
   optional onsetQualifier Onset = 19
@@ -420,7 +420,7 @@ message CellLineAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   subject CellLine = 16
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
@@ -443,7 +443,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   subject DiseaseOrPhenotypicFeature = 16
  }
 // A location in or around a cell
@@ -508,7 +508,7 @@ message ChemicalToChemicalAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   object ChemicalSubstance = 16
  }
 // A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
@@ -533,7 +533,7 @@ message ChemicalToChemicalDerivationAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   repeated catalystQualifier MacromolecularMachineMixin = 14
   subject ChemicalSubstance = 15
   object ChemicalSubstance = 16
@@ -556,7 +556,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   object DiseaseOrPhenotypicFeature = 16
  }
 // An interaction between a chemical entity and a gene or gene product.
@@ -576,7 +576,7 @@ message ChemicalToGeneAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   object GeneOrGeneProduct = 16
  }
 // An interaction between a chemical entity and a biological process or pathway.
@@ -596,7 +596,7 @@ message ChemicalToPathwayAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   object Pathway = 16
  }
 // Attributes relating to a clinical manifestation
@@ -766,7 +766,7 @@ message ContributorAssociation
   optional negated Boolean = 9
   repeated publications Publication = 10
   optional type String = 11
-  repeated category Association = 12
+  repeated category CategoryType = 12
   subject InformationContentEntity = 13
   predicate PredicateType = 14
   object Agent = 15
@@ -917,7 +917,7 @@ message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   object AnatomicalEntity = 16
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
@@ -966,7 +966,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   object AnatomicalEntity = 16
  }
 // An association between an exposure event and a disease.
@@ -987,7 +987,7 @@ message DiseaseToExposureEventAssociation
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
   optional type String = 15
-  repeated category Association = 16
+  repeated category CategoryType = 16
  }
 // An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
 message DiseaseToPhenotypicFeatureAssociation
@@ -1007,7 +1007,7 @@ message DiseaseToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
   optional type String = 15
-  repeated category Association = 16
+  repeated category CategoryType = 16
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
   optional onsetQualifier Onset = 19
@@ -1061,7 +1061,7 @@ message DrugToGeneAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   object GeneOrGeneProduct = 16
  }
 // drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
@@ -1194,7 +1194,7 @@ message ExonToTranscriptRelationship
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject Exon = 15
   object Transcript = 16
  }
@@ -1216,7 +1216,7 @@ message ExposureEventToOutcomeAssociation
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
   optional type String = 15
-  repeated category Association = 16
+  repeated category CategoryType = 16
   optional hasPopulationContext PopulationOfIndividualOrganisms = 17
   optional hasTemporalContext TimeType = 18
  }
@@ -1237,7 +1237,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   subject ExposureEvent = 16
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
@@ -1287,16 +1287,6 @@ message FoodComponent
   repeated inTaxon OrganismTaxon = 10
   optional isMetabolite Boolean = 11
  }
-// describes the frequency of occurrence of an event or condition
-message FrequencyValue
- {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source LabelType = 6
- }
 // An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
  {
@@ -1313,7 +1303,7 @@ message FunctionalAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject MacromolecularMachineMixin = 15
   object GeneOntologyClass = 16
  }
@@ -1351,7 +1341,7 @@ message GeneAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   optional frequencyQualifier FrequencyValue = 16
   optional severityQualifier SeverityValue = 17
   optional onsetQualifier Onset = 18
@@ -1388,25 +1378,12 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   optional frequencyQualifier FrequencyValue = 16
   optional severityQualifier SeverityValue = 17
   optional onsetQualifier Onset = 18
   optional sequenceVariantQualifier SequenceVariant = 19
   subject GeneOrGeneProduct = 20
- }
-// an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-message GeneOntologyClass
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
  }
 // A regulatory relationship between two genes
 message GeneRegulatoryRelationship
@@ -1423,7 +1400,7 @@ message GeneRegulatoryRelationship
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   predicate PredicateType = 14
   subject GeneOrGeneProduct = 15
   object GeneOrGeneProduct = 16
@@ -1444,7 +1421,7 @@ message GeneToDiseaseAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   subject GeneOrGeneProduct = 16
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
@@ -1465,7 +1442,7 @@ message GeneToExpressionSiteAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   optional stageQualifier LifeStage = 14
   optional quantifierQualifier OntologyClass = 15
   subject GeneOrGeneProduct = 16
@@ -1487,7 +1464,7 @@ message GeneToGeneCoexpressionAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject GeneOrGeneProduct = 14
   object GeneOrGeneProduct = 15
   predicate PredicateType = 16
@@ -1511,7 +1488,7 @@ message GeneToGeneHomologyAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject GeneOrGeneProduct = 14
   object GeneOrGeneProduct = 15
   predicate PredicateType = 16
@@ -1531,7 +1508,7 @@ message GeneToGeneProductRelationship
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject Gene = 14
   object GeneProductMixin = 15
   predicate PredicateType = 16
@@ -1551,7 +1528,7 @@ message GeneToGoTermAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject MolecularEntity = 15
   object GeneOntologyClass = 16
  }
@@ -1571,7 +1548,7 @@ message GeneToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   subject GeneOrGeneProduct = 16
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
@@ -1640,7 +1617,7 @@ message GenomicSequenceLocalization
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   optional startInterbaseCoordinate Integer = 14
   optional endInterbaseCoordinate Integer = 15
   optional genomeBuild String = 16
@@ -1680,7 +1657,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   predicate PredicateType = 14
   object NamedThing = 15
   optional frequencyQualifier FrequencyValue = 16
@@ -1702,7 +1679,7 @@ message GenotypeToDiseaseAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject NamedThing = 14
   predicate PredicateType = 15
   object NamedThing = 16
@@ -1725,7 +1702,7 @@ message GenotypeToGeneAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   predicate PredicateType = 14
   subject Genotype = 15
   object Gene = 16
@@ -1745,7 +1722,7 @@ message GenotypeToGenotypePartAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   predicate PredicateType = 14
   subject Genotype = 15
   object Genotype = 16
@@ -1766,7 +1743,7 @@ message GenotypeToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   predicate PredicateType = 15
   subject Genotype = 16
   optional frequencyQualifier FrequencyValue = 17
@@ -1789,7 +1766,7 @@ message GenotypeToVariantAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   predicate PredicateType = 14
   subject Genotype = 15
   object SequenceVariant = 16
@@ -1958,7 +1935,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject MacromolecularMachineMixin = 15
   object BiologicalProcess = 16
  }
@@ -1978,7 +1955,7 @@ message MacromolecularMachineToCellularComponentAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject MacromolecularMachineMixin = 15
   object CellularComponent = 16
  }
@@ -1998,7 +1975,7 @@ message MacromolecularMachineToMolecularActivityAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject MacromolecularMachineMixin = 15
   object MolecularActivity = 16
  }
@@ -2044,7 +2021,7 @@ message MaterialSampleDerivationAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject MaterialSample = 14
   object NamedThing = 15
   predicate PredicateType = 16
@@ -2067,7 +2044,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
   optional type String = 15
-  repeated category Association = 16
+  repeated category CategoryType = 16
  }
 // Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
 message Metabolite
@@ -2213,19 +2190,6 @@ message Onset
   optional iri IriType = 5
   optional source LabelType = 6
  }
-// a concept or class in an ontology, vocabulary or thesaurus
-message OntologyClass
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
 // describes a characteristic of an organismal entity.
 message OrganismAttribute
  {
@@ -2266,10 +2230,11 @@ message OrganismTaxonToOrganismTaxonInteraction
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject OrganismTaxon = 14
   object OrganismTaxon = 15
   predicate PredicateType = 16
+  optional associatedEnvironmentalContext String = 17
  }
 // A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
 message OrganismTaxonToOrganismTaxonSpecialization
@@ -2286,7 +2251,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject OrganismTaxon = 14
   object OrganismTaxon = 15
   predicate PredicateType = 16
@@ -2307,7 +2272,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   subject OrganismalEntity = 16
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
@@ -2327,7 +2292,7 @@ message PairwiseGeneToGeneInteraction
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   optional type String = 11
-  repeated category Association = 12
+  repeated category CategoryType = 12
   subject GeneOrGeneProduct = 13
   object GeneOrGeneProduct = 14
   predicate PredicateType = 15
@@ -2346,7 +2311,7 @@ message PairwiseMolecularInteraction
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   optional type String = 10
-  repeated category Association = 11
+  repeated category CategoryType = 11
   optional interactingMoleculesCategory OntologyClass = 12
   subject MolecularEntity = 13
   id String = 14
@@ -2577,7 +2542,7 @@ message PopulationToPopulationAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject PopulationOfIndividualOrganisms = 14
   object PopulationOfIndividualOrganisms = 15
   predicate PredicateType = 16
@@ -2689,19 +2654,6 @@ message ReagentTargetedGene
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
-// An OWL property used as an edge label
-message RelationshipType
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
 message RNAProduct
  {
   id String = 1
@@ -2753,7 +2705,7 @@ message SequenceAssociation
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
   optional type String = 15
-  repeated category Association = 16
+  repeated category CategoryType = 16
  }
 // For example, a particular exon is part of a particular transcript or gene
 message SequenceFeatureRelationship
@@ -2771,7 +2723,7 @@ message SequenceFeatureRelationship
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject GenomicEntity = 15
   object GenomicEntity = 16
  }
@@ -2917,19 +2869,6 @@ message StudyPopulation
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
-// A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
-message TaxonomicRank
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 message Transcript
  {
@@ -2961,7 +2900,7 @@ message TranscriptToGeneRelationship
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject Transcript = 15
   object Gene = 16
  }
@@ -2996,7 +2935,7 @@ message VariantAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   predicate PredicateType = 14
   object NamedThing = 15
   optional frequencyQualifier FrequencyValue = 16
@@ -3018,7 +2957,7 @@ message VariantToDiseaseAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   optional type String = 12
-  repeated category Association = 13
+  repeated category CategoryType = 13
   subject NamedThing = 14
   predicate PredicateType = 15
   object NamedThing = 16
@@ -3042,7 +2981,7 @@ message VariantToGeneAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   object Gene = 15
   predicate PredicateType = 16
  }
@@ -3062,7 +3001,7 @@ message VariantToGeneExpressionAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   object Gene = 15
   predicate PredicateType = 16
   optional quantifierQualifier OntologyClass = 17
@@ -3086,7 +3025,7 @@ message VariantToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
   optional type String = 14
-  repeated category Association = 15
+  repeated category CategoryType = 15
   subject SequenceVariant = 16
   optional frequencyQualifier FrequencyValue = 17
   optional severityQualifier SeverityValue = 18
@@ -3109,7 +3048,7 @@ message VariantToPopulationAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   optional type String = 13
-  repeated category Association = 14
+  repeated category CategoryType = 14
   subject SequenceVariant = 15
   object PopulationOfIndividualOrganisms = 16
   optional hasQuotient Double = 17

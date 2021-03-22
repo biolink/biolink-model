@@ -2,7 +2,7 @@
 name: Improvements or modifications to the Biolink Model
 about: Suggest improvements or modifications to the Biolink Model
 title: ''
-labels: translator
+labels: ''
 assignees: ''
 
 ---
