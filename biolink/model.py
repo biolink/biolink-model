@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-03-08 20:30
+# Generation date: 2021-03-22 15:10
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -123,7 +123,7 @@ MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
 METACYC = CurieNamespace('MetaCyc', 'http://translator.ncats.nih.gov/MetaCyc_')
-NCBIGENE = CurieNamespace('NCBIGENE', 'http://identifiers.org/ncbigene/')
+NCBIGENE = CurieNamespace('NCBIGene', 'http://identifiers.org/ncbigene/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 NDC = CurieNamespace('NDC', 'http://identifiers.org/ndc/')
@@ -340,6 +340,10 @@ class EntityId(extended_str):
 
 
 class NamedThingId(EntityId):
+    pass
+
+
+class OrganismTaxonId(NamedThingId):
     pass
 
 
@@ -732,6 +736,10 @@ class DrugToGeneInteractionExposureId(DrugExposureId):
 
 
 class TreatmentId(NamedThingId):
+    pass
+
+
+class BioticExposureId(OrganismTaxonId):
     pass
 
 
@@ -1408,7 +1416,7 @@ class TaxonomicRank(OntologyClass):
 
 
 @dataclass
-class OrganismTaxon(OntologyClass):
+class OrganismTaxon(NamedThing):
     """
     A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
     Can also be used to represent strains or subspecies.
@@ -1420,10 +1428,17 @@ class OrganismTaxon(OntologyClass):
     class_name: ClassVar[str] = "organism taxon"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
 
+    id: Union[str, OrganismTaxonId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     has_taxonomic_rank: Optional[Union[dict, TaxonomicRank]] = None
-    subclass_of: Optional[Union[Union[dict, "OrganismTaxon"], List[Union[dict, "OrganismTaxon"]]]] = empty_list()
+    subclass_of: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, OrganismTaxonId):
+            self.id = OrganismTaxonId(self.id)
+
         if self.has_taxonomic_rank is not None and not isinstance(self.has_taxonomic_rank, TaxonomicRank):
             self.has_taxonomic_rank = TaxonomicRank()
 
@@ -1431,7 +1446,7 @@ class OrganismTaxon(OntologyClass):
             self.subclass_of = []
         if not isinstance(self.subclass_of, list):
             self.subclass_of = [self.subclass_of]
-        self.subclass_of = [v if isinstance(v, OrganismTaxon) else OrganismTaxon(**v) for v in self.subclass_of]
+        self.subclass_of = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.subclass_of]
 
         super().__post_init__(**kwargs)
 
@@ -2272,14 +2287,14 @@ class ThingWithTaxon(YAMLRoot):
     class_name: ClassVar[str] = "thing with taxon"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ThingWithTaxon
 
-    in_taxon: Optional[Union[Union[dict, OrganismTaxon], List[Union[dict, OrganismTaxon]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.in_taxon is None:
             self.in_taxon = []
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, OrganismTaxon) else OrganismTaxon(**v) for v in self.in_taxon]
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -2298,7 +2313,7 @@ class MolecularEntity(BiologicalEntity):
 
     id: Union[str, MolecularEntityId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[dict, OrganismTaxon], List[Union[dict, OrganismTaxon]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2310,7 +2325,7 @@ class MolecularEntity(BiologicalEntity):
             self.in_taxon = []
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, OrganismTaxon) else OrganismTaxon(**v) for v in self.in_taxon]
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -2937,7 +2952,7 @@ class LifeStage(OrganismalEntity):
 
     id: Union[str, LifeStageId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[dict, OrganismTaxon], List[Union[dict, OrganismTaxon]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2949,7 +2964,7 @@ class LifeStage(OrganismalEntity):
             self.in_taxon = []
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, OrganismTaxon) else OrganismTaxon(**v) for v in self.in_taxon]
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -2969,7 +2984,7 @@ class IndividualOrganism(OrganismalEntity):
 
     id: Union[str, IndividualOrganismId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[dict, OrganismTaxon], List[Union[dict, OrganismTaxon]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -2981,7 +2996,7 @@ class IndividualOrganism(OrganismalEntity):
             self.in_taxon = []
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, OrganismTaxon) else OrganismTaxon(**v) for v in self.in_taxon]
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3002,7 +3017,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
 
     id: Union[str, PopulationOfIndividualOrganismsId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[dict, OrganismTaxon], List[Union[dict, OrganismTaxon]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -3014,7 +3029,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
             self.in_taxon = []
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, OrganismTaxon) else OrganismTaxon(**v) for v in self.in_taxon]
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3058,7 +3073,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
 
     id: Union[str, DiseaseOrPhenotypicFeatureId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[dict, OrganismTaxon], List[Union[dict, OrganismTaxon]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -3070,7 +3085,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
             self.in_taxon = []
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, OrganismTaxon) else OrganismTaxon(**v) for v in self.in_taxon]
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3155,7 +3170,7 @@ class AnatomicalEntity(OrganismalEntity):
 
     id: Union[str, AnatomicalEntityId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[dict, OrganismTaxon], List[Union[dict, OrganismTaxon]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -3167,7 +3182,7 @@ class AnatomicalEntity(OrganismalEntity):
             self.in_taxon = []
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, OrganismTaxon) else OrganismTaxon(**v) for v in self.in_taxon]
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -4567,9 +4582,16 @@ class BioticExposure(OrganismTaxon):
     class_name: ClassVar[str] = "biotic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BioticExposure
 
+    id: Union[str, BioticExposureId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, BioticExposureId):
+            self.id = BioticExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -7711,13 +7733,13 @@ class OrganismTaxonToEntityAssociation(YAMLRoot):
     class_name: ClassVar[str] = "organism taxon to entity association"
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxonToEntityAssociation
 
-    subject: Union[dict, OrganismTaxon] = None
+    subject: Union[str, OrganismTaxonId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, OrganismTaxon):
-            self.subject = OrganismTaxon(**self.subject)
+        if not isinstance(self.subject, OrganismTaxonId):
+            self.subject = OrganismTaxonId(self.subject)
 
         super().__post_init__(**kwargs)
 
@@ -7737,19 +7759,19 @@ class OrganismTaxonToOrganismTaxonAssociation(Association):
     id: Union[str, OrganismTaxonToOrganismTaxonAssociationId] = None
     predicate: Union[str, PredicateType] = None
     relation: Union[str, URIorCURIE] = None
-    subject: Union[dict, OrganismTaxon] = None
-    object: Union[dict, OrganismTaxon] = None
+    subject: Union[str, OrganismTaxonId] = None
+    object: Union[str, OrganismTaxonId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, OrganismTaxon):
-            self.subject = OrganismTaxon(**self.subject)
+        if not isinstance(self.subject, OrganismTaxonId):
+            self.subject = OrganismTaxonId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, OrganismTaxon):
-            self.object = OrganismTaxon(**self.object)
+        if not isinstance(self.object, OrganismTaxonId):
+            self.object = OrganismTaxonId(self.object)
 
         super().__post_init__(**kwargs)
 
@@ -7768,8 +7790,8 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
 
     id: Union[str, OrganismTaxonToOrganismTaxonSpecializationId] = None
     relation: Union[str, URIorCURIE] = None
-    subject: Union[dict, OrganismTaxon] = None
-    object: Union[dict, OrganismTaxon] = None
+    subject: Union[str, OrganismTaxonId] = None
+    object: Union[str, OrganismTaxonId] = None
     predicate: Union[str, PredicateType] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -7780,13 +7802,13 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
 
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, OrganismTaxon):
-            self.subject = OrganismTaxon(**self.subject)
+        if not isinstance(self.subject, OrganismTaxonId):
+            self.subject = OrganismTaxonId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, OrganismTaxon):
-            self.object = OrganismTaxon(**self.object)
+        if not isinstance(self.object, OrganismTaxonId):
+            self.object = OrganismTaxonId(self.object)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
@@ -7812,8 +7834,8 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
 
     id: Union[str, OrganismTaxonToOrganismTaxonInteractionId] = None
     relation: Union[str, URIorCURIE] = None
-    subject: Union[dict, OrganismTaxon] = None
-    object: Union[dict, OrganismTaxon] = None
+    subject: Union[str, OrganismTaxonId] = None
+    object: Union[str, OrganismTaxonId] = None
     predicate: Union[str, PredicateType] = None
     associated_environmental_context: Optional[str] = None
 
@@ -7825,13 +7847,13 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
 
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, OrganismTaxon):
-            self.subject = OrganismTaxon(**self.subject)
+        if not isinstance(self.subject, OrganismTaxonId):
+            self.subject = OrganismTaxonId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, OrganismTaxon):
-            self.object = OrganismTaxon(**self.object)
+        if not isinstance(self.object, OrganismTaxonId):
+            self.object = OrganismTaxonId(self.object)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
@@ -7855,15 +7877,15 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
     id: Union[str, OrganismTaxonToEnvironmentAssociationId] = None
     relation: Union[str, URIorCURIE] = None
-    subject: Union[dict, OrganismTaxon] = None
+    subject: Union[str, OrganismTaxonId] = None
     object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, OrganismTaxon):
-            self.subject = OrganismTaxon(**self.subject)
+        if not isinstance(self.subject, OrganismTaxonId):
+            self.subject = OrganismTaxonId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
@@ -8657,7 +8679,7 @@ slots.develops_from = Slot(uri=BIOLINK.develops_from, name="develops from", curi
                    model_uri=BIOLINK.develops_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
-                   model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[dict, OrganismTaxon], List[Union[dict, OrganismTaxon]]]])
+                   model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
 
 slots.has_molecular_consequence = Slot(uri=BIOLINK.has_molecular_consequence, name="has molecular consequence", curie=BIOLINK.curie('has_molecular_consequence'),
                    model_uri=BIOLINK.has_molecular_consequence, domain=NamedThing, range=Optional[Union[Union[dict, OntologyClass], List[Union[dict, OntologyClass]]]])
@@ -8783,7 +8805,7 @@ slots.organism_taxon_has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, n
                    model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[dict, TaxonomicRank]], mappings = [WIKIDATA.P105])
 
 slots.organism_taxon_subclass_of = Slot(uri=BIOLINK.subclass_of, name="organism taxon_subclass of", curie=BIOLINK.curie('subclass_of'),
-                   model_uri=BIOLINK.organism_taxon_subclass_of, domain=OrganismTaxon, range=Optional[Union[Union[dict, "OrganismTaxon"], List[Union[dict, "OrganismTaxon"]]]])
+                   model_uri=BIOLINK.organism_taxon_subclass_of, domain=OrganismTaxon, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
 
 slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])
@@ -9251,28 +9273,28 @@ slots.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate = S
                    model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate, domain=AnatomicalEntityToAnatomicalEntityOntogenicAssociation, range=Union[str, PredicateType])
 
 slots.organism_taxon_to_entity_association_subject = Slot(uri=BIOLINK.subject, name="organism taxon to entity association_subject", curie=BIOLINK.curie('subject'),
-                   model_uri=BIOLINK.organism_taxon_to_entity_association_subject, domain=None, range=Union[dict, OrganismTaxon])
+                   model_uri=BIOLINK.organism_taxon_to_entity_association_subject, domain=None, range=Union[str, OrganismTaxonId])
 
 slots.organism_taxon_to_organism_taxon_association_subject = Slot(uri=BIOLINK.subject, name="organism taxon to organism taxon association_subject", curie=BIOLINK.curie('subject'),
-                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_association_subject, domain=OrganismTaxonToOrganismTaxonAssociation, range=Union[dict, OrganismTaxon])
+                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_association_subject, domain=OrganismTaxonToOrganismTaxonAssociation, range=Union[str, OrganismTaxonId])
 
 slots.organism_taxon_to_organism_taxon_association_object = Slot(uri=BIOLINK.object, name="organism taxon to organism taxon association_object", curie=BIOLINK.curie('object'),
-                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_association_object, domain=OrganismTaxonToOrganismTaxonAssociation, range=Union[dict, OrganismTaxon])
+                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_association_object, domain=OrganismTaxonToOrganismTaxonAssociation, range=Union[str, OrganismTaxonId])
 
 slots.organism_taxon_to_organism_taxon_specialization_subject = Slot(uri=BIOLINK.subject, name="organism taxon to organism taxon specialization_subject", curie=BIOLINK.curie('subject'),
-                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_specialization_subject, domain=OrganismTaxonToOrganismTaxonSpecialization, range=Union[dict, OrganismTaxon])
+                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_specialization_subject, domain=OrganismTaxonToOrganismTaxonSpecialization, range=Union[str, OrganismTaxonId])
 
 slots.organism_taxon_to_organism_taxon_specialization_object = Slot(uri=BIOLINK.object, name="organism taxon to organism taxon specialization_object", curie=BIOLINK.curie('object'),
-                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_specialization_object, domain=OrganismTaxonToOrganismTaxonSpecialization, range=Union[dict, OrganismTaxon])
+                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_specialization_object, domain=OrganismTaxonToOrganismTaxonSpecialization, range=Union[str, OrganismTaxonId])
 
 slots.organism_taxon_to_organism_taxon_specialization_predicate = Slot(uri=BIOLINK.predicate, name="organism taxon to organism taxon specialization_predicate", curie=BIOLINK.curie('predicate'),
                    model_uri=BIOLINK.organism_taxon_to_organism_taxon_specialization_predicate, domain=OrganismTaxonToOrganismTaxonSpecialization, range=Union[str, PredicateType])
 
 slots.organism_taxon_to_organism_taxon_interaction_subject = Slot(uri=BIOLINK.subject, name="organism taxon to organism taxon interaction_subject", curie=BIOLINK.curie('subject'),
-                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_interaction_subject, domain=OrganismTaxonToOrganismTaxonInteraction, range=Union[dict, OrganismTaxon])
+                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_interaction_subject, domain=OrganismTaxonToOrganismTaxonInteraction, range=Union[str, OrganismTaxonId])
 
 slots.organism_taxon_to_organism_taxon_interaction_object = Slot(uri=BIOLINK.object, name="organism taxon to organism taxon interaction_object", curie=BIOLINK.curie('object'),
-                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_interaction_object, domain=OrganismTaxonToOrganismTaxonInteraction, range=Union[dict, OrganismTaxon])
+                   model_uri=BIOLINK.organism_taxon_to_organism_taxon_interaction_object, domain=OrganismTaxonToOrganismTaxonInteraction, range=Union[str, OrganismTaxonId])
 
 slots.organism_taxon_to_organism_taxon_interaction_predicate = Slot(uri=BIOLINK.predicate, name="organism taxon to organism taxon interaction_predicate", curie=BIOLINK.curie('predicate'),
                    model_uri=BIOLINK.organism_taxon_to_organism_taxon_interaction_predicate, domain=OrganismTaxonToOrganismTaxonInteraction, range=Union[str, PredicateType])
@@ -9281,7 +9303,7 @@ slots.organism_taxon_to_organism_taxon_interaction_associated_environmental_cont
                    model_uri=BIOLINK.organism_taxon_to_organism_taxon_interaction_associated_environmental_context, domain=OrganismTaxonToOrganismTaxonInteraction, range=Optional[str])
 
 slots.organism_taxon_to_environment_association_subject = Slot(uri=BIOLINK.subject, name="organism taxon to environment association_subject", curie=BIOLINK.curie('subject'),
-                   model_uri=BIOLINK.organism_taxon_to_environment_association_subject, domain=OrganismTaxonToEnvironmentAssociation, range=Union[dict, OrganismTaxon])
+                   model_uri=BIOLINK.organism_taxon_to_environment_association_subject, domain=OrganismTaxonToEnvironmentAssociation, range=Union[str, OrganismTaxonId])
 
 slots.organism_taxon_to_environment_association_object = Slot(uri=BIOLINK.object, name="organism taxon to environment association_object", curie=BIOLINK.curie('object'),
                    model_uri=BIOLINK.organism_taxon_to_environment_association_object, domain=OrganismTaxonToEnvironmentAssociation, range=Union[str, NamedThingId])
