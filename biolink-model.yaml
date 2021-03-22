@@ -2540,27 +2540,6 @@ slots:
       of one entity is degraded or interfered with by another.
     inverse: disrupts
 
-  has gene product:
-    is_a: related to
-    description: >-
-      holds between a gene and a transcribed and/or
-      translated product generated from it
-    domain: gene
-    range: gene product mixin
-    in_subset:
-      - translator_minimal
-    inverse:
-      - gene product of
-    close_mappings:
-      # RTX term tagged as inverse mapping
-      - PR:has_gene_template
-    exact_mappings:
-      - RO:0002205
-      - WIKIDATA_PROPERTY:P688
-      - NCIT:gene_encodes_gene_product
-    narrow_mappings:
-      - NCIT:gene_mutant_encodes_gene_product_sequence_variation
-
   gene product of:
     is_a: related to
     description: >-
@@ -2571,11 +2550,29 @@ slots:
       - RO:0002204
     domain: gene product mixin
     range: gene
-    inverse:
-      - has gene product
+    inverse: has gene product
     in_subset:
       - translator_minimal
 
+  has gene product:
+    is_a: related to
+    description: >-
+      holds between a gene and a transcribed and/or
+      translated product generated from it
+    domain: gene
+    range: gene product mixin
+    in_subset:
+      - translator_minimal
+    inverse: gene product of
+    close_mappings:
+      # RTX term tagged as inverse mapping
+      - PR:has_gene_template
+    exact_mappings:
+      - RO:0002205
+      - WIKIDATA_PROPERTY:P688
+      - NCIT:gene_encodes_gene_product
+    narrow_mappings:
+      - NCIT:gene_mutant_encodes_gene_product_sequence_variation
   transcribed to:
     is_a: related to
     domain: gene
