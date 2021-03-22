@@ -937,7 +937,7 @@ slots:
 
   has constituent:
     description: >-
-      one or more chemical entitys within a mixture
+      one or more chemical entities within a mixture
     is_a: node property
     range: chemical entity
     multivalued: true
@@ -3448,7 +3448,7 @@ slots:
   chemically similar to:
     is_a: similar to
     description: >-
-      holds between one chemical entitys and another that it approximates
+      holds between one chemical entities and another that it approximates
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     in_subset:
@@ -3864,7 +3864,7 @@ slots:
   is metabolite of:
     is_a: derives from
     description: >-
-      holds between two chemical entitys in which the first one is derived from the second one as a product of metabolism
+      holds between two chemical entities in which the first one is derived from the second one as a product of metabolism
     domain: chemical entity
     range: chemical entity
     in_subset:
@@ -3878,7 +3878,7 @@ slots:
   has metabolite:
     is_a: derives into
     description: >-
-      holds between two chemical entitys in which the second one is derived from the first one as a product of metabolism
+      holds between two chemical entities in which the second one is derived from the first one as a product of metabolism
     domain: chemical entity
     range: chemical entity
     in_subset:
@@ -3892,7 +3892,7 @@ slots:
   food component of:
     is_a: part of
     description: >-
-      holds between a one or more chemical entitys present in food,
+      holds between a one or more chemical entities present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
     domain: chemical substance
     range: chemical substance
@@ -3905,7 +3905,7 @@ slots:
   has food component:
     is_a: has part
     description: >-
-      holds between food and one or more chemical entitys composing it,
+      holds between food and one or more chemical entities composing it,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
     domain: chemical substance
     range: chemical substance
@@ -3918,7 +3918,7 @@ slots:
   nutrient of:
     is_a: food component of
     description: >-
-      holds between a one or more chemical entitys present in food,
+      holds between a one or more chemical entities present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
     domain: chemical substance
     range: chemical substance
@@ -3982,7 +3982,7 @@ slots:
   has excipient:
     is_a: has part
     description: >-
-      holds between a drug and a chemical entitys in which the latter
+      holds between a drug and a chemical entities in which the latter
       is a part of the former, and is a biologically inactive component
     domain: drug
     range: chemical entity
