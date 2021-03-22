@@ -22,7 +22,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
 ## Identifier prefixes
 
- * NCBIGENE
+ * NCBIGene
  * ENSEMBL
  * HGNC
  * UniProtKB

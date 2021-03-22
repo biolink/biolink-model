@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxonToEnvironmentAssociation](https://w3id.org/biolink/vo
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing]%3Cobject%201..1-%20[OrganismTaxonToEnvironmentAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-++[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEnvironmentAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[Association]%5E-[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[OrganismTaxon],[OntologyClass],[NamedThing],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing]%3Cobject%201..1-%20[OrganismTaxonToEnvironmentAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEnvironmentAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[Association]%5E-[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[OrganismTaxon],[OntologyClass],[NamedThing],[Attribute],[Association],[Agent])
 
 ---
 
