@@ -4868,6 +4868,10 @@ classes:
       - has quotient
       - has percentage
 
+  chemical or drug or treatement:
+    mixin: true
+
+
   ## ------
   ## THINGS
   ## ------
@@ -5881,6 +5885,7 @@ classes:
     is_a: molecular entity
     mixins:
       - mixture
+      - chemical or drug or treatement
     description: >-
       A substance intended for use in the diagnosis, cure,
       mitigation, treatment, or prevention of disease
@@ -7053,6 +7058,7 @@ classes:
     is_a: named thing
     mixins:
       - exposure event
+      - chemical or drug or treatement
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
       multiple drug 'exposures', medical devices and/or procedures
