@@ -1968,10 +1968,10 @@ metatype:Nodeidentifier NONLITERAL
 <OrganismTaxonToOrganismTaxonInteraction> CLOSED {
     (  $<OrganismTaxonToOrganismTaxonInteraction_tes> (  &<OrganismTaxonToOrganismTaxonAssociation_tes> ;
           rdf:type [ <OrganismTaxonToOrganismTaxonAssociation> ] ? ;
+          <associated_environmental_context> @metatype:String ? ;
           <subject> @<OrganismTaxon> ;
           <object> @<OrganismTaxon> ;
-          <predicate> @<PredicateType> ;
-          <associated_environmental_context> @metatype:String ?
+          <predicate> @<PredicateType>
        ) ;
        rdf:type [ <OrganismTaxonToOrganismTaxonInteraction> ]
     )

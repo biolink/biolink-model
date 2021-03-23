@@ -2231,10 +2231,10 @@ message OrganismTaxonToOrganismTaxonInteraction
   repeated publications Publication = 11
   optional type String = 12
   repeated category CategoryType = 13
-  subject OrganismTaxon = 14
-  object OrganismTaxon = 15
-  predicate PredicateType = 16
-  optional associatedEnvironmentalContext String = 17
+  optional associatedEnvironmentalContext String = 14
+  subject OrganismTaxon = 15
+  object OrganismTaxon = 16
+  predicate PredicateType = 17
  }
 // A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
 message OrganismTaxonToOrganismTaxonSpecialization
