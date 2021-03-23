@@ -1,18 +1,18 @@
 digraph {
-	graph [bb="0,0,214.69,123"];
+	graph [bb="0,0,212.39,123"];
 	node [label="\N"];
-	mixture	 [height=0.5,
+	mixture	[height=0.5,
 		label=mixture,
-		pos="102.69,105",
+		pos="101.39,105",
 		width=1.3179];
-	"has constituent"	 [color=blue,
+	"has constituent"	[color=blue,
 		height=0.5,
 		label="chemical substance",
-		pos="102.69,18",
-		width=2.8525];
-	mixture -> "has constituent"	 [color=blue,
+		pos="101.39,18",
+		width=2.8164];
+	mixture -> "has constituent"	[color=blue,
 		label="has constituent",
-		lp="158.69,61.5",
-		pos="e,102.69,36.003 102.69,86.974 102.69,75.192 102.69,59.561 102.69,46.158",
+		lp="156.89,61.5",
+		pos="e,101.39,36.175 101.39,86.799 101.39,75.163 101.39,59.548 101.39,46.237",
 		style=solid];
 }
