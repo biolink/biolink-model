@@ -775,6 +775,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
  * [nutrient of](nutrient_of.md)
  * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
+ * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
  * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
      * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
@@ -967,6 +968,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
      * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
      * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
+     * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
      * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
          * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
              * [has active ingredient](has_active_ingredient.md) - holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
