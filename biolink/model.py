@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-03-23 18:35
+# Generation date: 2021-03-23 19:02
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8396,8 +8396,23 @@ slots.disrupts = Slot(uri=BIOLINK.disrupts, name="disrupts", curie=BIOLINK.curie
 slots.disrupted_by = Slot(uri=BIOLINK.disrupted_by, name="disrupted by", curie=BIOLINK.curie('disrupted_by'),
                    model_uri=BIOLINK.disrupted_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.gene_product_of = Slot(uri=BIOLINK.gene_product_of, name="gene product of", curie=BIOLINK.curie('gene_product_of'),
+                   model_uri=BIOLINK.gene_product_of, domain=None, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+
 slots.has_gene_product = Slot(uri=BIOLINK.has_gene_product, name="has gene product", curie=BIOLINK.curie('has_gene_product'),
                    model_uri=BIOLINK.has_gene_product, domain=Gene, range=Optional[Union[Union[dict, "GeneProductMixin"], List[Union[dict, "GeneProductMixin"]]]])
+
+slots.transcribed_to = Slot(uri=BIOLINK.transcribed_to, name="transcribed to", curie=BIOLINK.curie('transcribed_to'),
+                   model_uri=BIOLINK.transcribed_to, domain=Gene, range=Optional[Union[Union[str, TranscriptId], List[Union[str, TranscriptId]]]])
+
+slots.transcribed_from = Slot(uri=BIOLINK.transcribed_from, name="transcribed from", curie=BIOLINK.curie('transcribed_from'),
+                   model_uri=BIOLINK.transcribed_from, domain=Transcript, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+
+slots.translates_to = Slot(uri=BIOLINK.translates_to, name="translates to", curie=BIOLINK.curie('translates_to'),
+                   model_uri=BIOLINK.translates_to, domain=Transcript, range=Optional[Union[Union[str, ProteinId], List[Union[str, ProteinId]]]])
+
+slots.translation_of = Slot(uri=BIOLINK.translation_of, name="translation of", curie=BIOLINK.curie('translation_of'),
+                   model_uri=BIOLINK.translation_of, domain=Protein, range=Optional[Union[Union[str, TranscriptId], List[Union[str, TranscriptId]]]])
 
 slots.homologous_to = Slot(uri=BIOLINK.homologous_to, name="homologous to", curie=BIOLINK.curie('homologous_to'),
                    model_uri=BIOLINK.homologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -8500,6 +8515,9 @@ slots.expresses = Slot(uri=BIOLINK.expresses, name="expresses", curie=BIOLINK.cu
 
 slots.has_phenotype = Slot(uri=BIOLINK.has_phenotype, name="has phenotype", curie=BIOLINK.curie('has_phenotype'),
                    model_uri=BIOLINK.has_phenotype, domain=BiologicalEntity, range=Optional[Union[Union[str, PhenotypicFeatureId], List[Union[str, PhenotypicFeatureId]]]])
+
+slots.phenotype_of = Slot(uri=BIOLINK.phenotype_of, name="phenotype of", curie=BIOLINK.curie('phenotype_of'),
+                   model_uri=BIOLINK.phenotype_of, domain=PhenotypicFeature, range=Optional[Union[Union[str, BiologicalEntityId], List[Union[str, BiologicalEntityId]]]])
 
 slots.occurs_in = Slot(uri=BIOLINK.occurs_in, name="occurs in", curie=BIOLINK.curie('occurs_in'),
                    model_uri=BIOLINK.occurs_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
