@@ -1684,11 +1684,10 @@ slots:
       - DGIdb:antisense
       - DGIdb:antisense_oligonucleotide
     exact_mappings:
+      - RO:0003002
       - CTD:decreases_expression_of
     narrow_mappings:
       - CHEMBL.MECHANISM:antisense_inhibitor
-    close_mappings:
-      - RO:0003002
 
   affects folding of:
     description: >-
