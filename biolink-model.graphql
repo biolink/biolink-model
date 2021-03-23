@@ -2588,10 +2588,10 @@ type OrganismTaxonToOrganismTaxonInteraction
     publications: [Publication]
     type: String
     category: [CategoryType]
+    associatedEnvironmentalContext: String
     subject: OrganismTaxon!
     object: OrganismTaxon!
     predicate: PredicateType!
-    associatedEnvironmentalContext: String
   }
 
 type OrganismTaxonToOrganismTaxonSpecialization
