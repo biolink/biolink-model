@@ -2553,6 +2553,20 @@ slots:
       of one entity is degraded or interfered with by another.
     inverse: disrupts
 
+  gene product of:
+    is_a: related to
+    description: >-
+      definition x has gene product of y if and only if y is a gene (SO:0000704)
+      that participates in some gene expression process (GO:0010467) where the output of that
+      process is either y or something that is ribosomally translated from x
+    exact_mappings:
+      - RO:0002204
+    domain: gene product mixin
+    range: gene
+    inverse: has gene product
+    in_subset:
+      - translator_minimal
+
   has gene product:
     is_a: related to
     description: >-
@@ -2562,6 +2576,7 @@ slots:
     range: gene product mixin
     in_subset:
       - translator_minimal
+    inverse: gene product of
     close_mappings:
       # RTX term tagged as inverse mapping
       - PR:has_gene_template
@@ -2571,6 +2586,51 @@ slots:
       - NCIT:gene_encodes_gene_product
     narrow_mappings:
       - NCIT:gene_mutant_encodes_gene_product_sequence_variation
+  transcribed to:
+    is_a: related to
+    domain: gene
+    range: transcript
+    description: >-
+      inverse of transcribed from
+    inverse: transcribed from
+    exact_mappings:
+      - RO:0002511
+      - SIO:010080
+
+  transcribed from:
+    is_a: related to
+    domain: transcript
+    range: gene
+    inverse: transcribed to
+    description: >-
+      x is transcribed from y if and only if x is synthesized from template y
+    exact_mappings:
+      - RO:0002510
+      - SIO:010081
+
+  translates to:
+    is_a: related to
+    domain: transcript
+    range: protein
+    description: >-
+      x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
+      reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
+      and produces x (amino acid chain/polypeptide)
+    inverse: translation of
+    close_mappings:
+      - RO:0002513
+      - SIO:010082
+
+  translation of:
+    is_a: related to
+    domain: protein
+    range: transcript
+    description: >-
+      inverse of translates to
+    inverse: translates to
+    close_mappings:
+      - RO:0002512
+      - SIO:010083
 
   homologous to:
     is_a: similar to
@@ -3317,6 +3377,7 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
+    inverse: phenotype of
     notes:
       - check the range
     in_subset:
@@ -3337,6 +3398,21 @@ slots:
       - NCIT:disease_may_have_molecular_abnormality
       - OBO:doid#has_symptom
       - RO:0004022
+
+  phenotype of:
+    is_a: related to
+    description: >-
+      holds between a phenotype and a biological entity, where a phenotype
+      is construed broadly as any kind of quality of an organism part,
+      a collection of these qualities, or a change in quality or qualities
+      (e.g. abnormally increased temperature).
+    domain: phenotypic feature
+    range: biological entity
+    inverse: has phenotype
+    notes:
+      - check the domain
+    in_subset:
+      - translator_minimal
 
   occurs in:
     is_a: related to
