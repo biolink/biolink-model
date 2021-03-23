@@ -680,6 +680,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [food component of](food_component_of.md) - holds between a one or more chemical substances present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
      * [nutrient of](nutrient_of.md)
  * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
+ * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of that process is either y or something that is ribosomally translated from x
  * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
      * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
      * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
@@ -799,6 +800,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
          * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
      * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
+ * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
  * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
      * [molecularly interacts with](molecularly_interacts_with.md)
          * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other molecular entity
@@ -930,6 +932,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
      * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
      * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
+     * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of that process is either y or something that is ribosomally translated from x
      * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
          * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
          * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
@@ -985,6 +988,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
              * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
          * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
+     * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
      * [prevented by](prevented_by.md) - holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
      * [produced by](produced_by.md)
      * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
@@ -1001,6 +1005,10 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
          * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
          * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
+     * [transcribed from](transcribed_from.md) - x is transcribed from y if and only if x is synthesized from template y
+     * [transcribed to](transcribed_to.md) - inverse of transcribed from
+     * [translates to](translates_to.md) - x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)
+     * [translation of](translation_of.md) - inverse of translates to
      * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
          * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
@@ -1016,6 +1024,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
      * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
      * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
+ * [transcribed from](transcribed_from.md) - x is transcribed from y if and only if x is synthesized from template y
+ * [transcribed to](transcribed_to.md) - inverse of transcribed from
+ * [translates to](translates_to.md) - x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)
+ * [translation of](translation_of.md) - inverse of translates to
  * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
      * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [treats](treats.md) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat

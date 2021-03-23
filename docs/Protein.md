@@ -15,7 +15,7 @@ URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform],[Protein%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductMixin],[Protein]%5E-[ProteinIsoform],[GenomicEntity]%5E-[Protein],[OrganismTaxon],[NamedThing],[GenomicEntity],[GeneProductMixin],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ProteinIsoform],[Protein%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductMixin],[Protein]%5E-[ProteinIsoform],[GenomicEntity]%5E-[Protein],[OrganismTaxon],[NamedThing],[GenomicEntity],[GeneProductMixin],[Attribute],[Agent])
 
 ---
 
@@ -41,6 +41,7 @@ URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
 ## Referenced by class
 
+ *  **[Transcript](Transcript.md)** *[translates to](translates_to.md)*  <sub>0..*</sub>  **[Protein](Protein.md)**
 
 ## Attributes
 
