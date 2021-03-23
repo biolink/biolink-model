@@ -481,7 +481,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     ref = type_curie.split('/')[-1]
                     type_uri = f"https://biolink.github.io/biolinkml/docs/types/{ref}"
                     type_curie = f"metatype:{ref}"
-                if type_uri.startswith('https://w3id.org/biolink/vocab/'):
+                elif type_uri.startswith('https://w3id.org/biolink/vocab/'):
                     ref = type_curie.split('/')[-1]
                     type_uri = f"https://w3id.org/biolink/vocab/types/{ref}"
                 if typ.imported_from and 'biolinkml:types' in typ.imported_from:
