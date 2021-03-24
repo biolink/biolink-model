@@ -322,6 +322,15 @@ type BiologicalSex
 
 type BioticExposure implements ExposureEvent
   {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
     hasTaxonomicRank: TaxonomicRank
     subclassOf: [OrganismTaxon]
     timepoint: TimeType
@@ -2506,6 +2515,15 @@ type OrganismAttribute
 
 type OrganismTaxon
   {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
     hasTaxonomicRank: TaxonomicRank
     subclassOf: [OrganismTaxon]
   }
@@ -2570,10 +2588,10 @@ type OrganismTaxonToOrganismTaxonInteraction
     publications: [Publication]
     type: String
     category: [CategoryType]
+    associatedEnvironmentalContext: String
     subject: OrganismTaxon!
     object: OrganismTaxon!
     predicate: PredicateType!
-    associatedEnvironmentalContext: String
   }
 
 type OrganismTaxonToOrganismTaxonSpecialization

@@ -4,7 +4,7 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-version: 1.6.0
+version: 1.6.1
 
 ## ------------
 ## PREFIXES
@@ -1312,6 +1312,19 @@ slots:
       - skos:narrowMatch
       - WIKIDATA:Q39893967
 
+  opposite of:
+    description: >-
+      x is the opposite of y if there exists some distance metric M, and there exists
+      no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
+    is_a: related to
+    symmetric: true
+    exact_mappings:
+      - RO:0002604
+    see_also:
+      - https://doi.org/10.1101/108977
+      - https://github.com/biolink/biolink-model/issues/657
+
+  
   ## Publication related predicates
 
   contributor:
@@ -2550,6 +2563,20 @@ slots:
       of one entity is degraded or interfered with by another.
     inverse: disrupts
 
+  gene product of:
+    is_a: related to
+    description: >-
+      definition x has gene product of y if and only if y is a gene (SO:0000704)
+      that participates in some gene expression process (GO:0010467) where the output of that
+      process is either y or something that is ribosomally translated from x
+    exact_mappings:
+      - RO:0002204
+    domain: gene product mixin
+    range: gene
+    inverse: has gene product
+    in_subset:
+      - translator_minimal
+
   has gene product:
     is_a: related to
     description: >-
@@ -2560,6 +2587,7 @@ slots:
     inverse: gene product of
     in_subset:
       - translator_minimal
+    inverse: gene product of
     close_mappings:
       # RTX term tagged as inverse mapping
       - PR:has_gene_template
@@ -2569,6 +2597,51 @@ slots:
       - NCIT:gene_encodes_gene_product
     narrow_mappings:
       - NCIT:gene_mutant_encodes_gene_product_sequence_variation
+  transcribed to:
+    is_a: related to
+    domain: gene
+    range: transcript
+    description: >-
+      inverse of transcribed from
+    inverse: transcribed from
+    exact_mappings:
+      - RO:0002511
+      - SIO:010080
+
+  transcribed from:
+    is_a: related to
+    domain: transcript
+    range: gene
+    inverse: transcribed to
+    description: >-
+      x is transcribed from y if and only if x is synthesized from template y
+    exact_mappings:
+      - RO:0002510
+      - SIO:010081
+
+  translates to:
+    is_a: related to
+    domain: transcript
+    range: protein
+    description: >-
+      x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
+      reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
+      and produces x (amino acid chain/polypeptide)
+    inverse: translation of
+    close_mappings:
+      - RO:0002513
+      - SIO:010082
+
+  translation of:
+    is_a: related to
+    domain: protein
+    range: transcript
+    description: >-
+      inverse of translates to
+    inverse: translates to
+    close_mappings:
+      - RO:0002512
+      - SIO:010083
 
   gene product of:
     is_a: related to
@@ -3323,7 +3396,7 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
-    inverse: phenotype for
+    inverse: phenotype of
     notes:
       - check the range
     in_subset:
@@ -3345,9 +3418,18 @@ slots:
       - OBO:doid#has_symptom
       - RO:0004022
 
-  phenotype for:
+  phenotype of:
     is_a: related to
+    description: >-
+      holds between a phenotype and a biological entity, where a phenotype
+      is construed broadly as any kind of quality of an organism part,
+      a collection of these qualities, or a change in quality or qualities
+      (e.g. abnormally increased temperature).
+    domain: phenotypic feature
+    range: biological entity
     inverse: has phenotype
+    notes:
+      - check the domain
     in_subset:
       - translator_minimal
 
@@ -5013,7 +5095,7 @@ classes:
       A classification of a set of organisms. Example instances:
       NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
       Can also be used to represent strains or subspecies.
-    is_a: ontology class
+    is_a: named thing
     slot_usage:
       has taxonomic rank:
         range: taxonomic rank
@@ -6458,7 +6540,7 @@ classes:
       - SIO:010035
       - WIKIDATA:Q7187
     id_prefixes:
-      - NCBIGENE
+      - NCBIGene
       - ENSEMBL
       - HGNC
       - UniProtKB
@@ -6658,7 +6740,7 @@ classes:
     is_a: RNA product
     id_prefixes:
       - RNACENTRAL
-      - NCBIGENE
+      - NCBIGene
       - ENSEMBL
     exact_mappings:
       - SO:0000655
@@ -8784,6 +8866,8 @@ classes:
       Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
     defining_slots:
       - predicate
+    slots:
+      - associated environmental context
     slot_usage:
       subject:
         range: organism taxon
