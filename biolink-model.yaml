@@ -1324,8 +1324,63 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
-  
-  ## Publication related predicates
+  active in:
+    is_a: related to
+    domain: gene or gene product
+    range: cellular component
+    exact_mappings:
+      - RO:0002432
+      - GO:is_active_in
+
+  acts upstream of:
+    is_a: related to
+    domain: gene or gene product
+    range: biological process
+    exact_mappings:
+      - RO:0002263
+      - GO:acts_upstream_of
+
+  acts upstream of positive effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    exact_mappings:
+      - RO:0004034
+      - GO:acts_upstream_of_positive_effect
+
+  acts upstream of negative effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    exact_mappings:
+      - RO:0004035
+      - GO:acts_upstream_of_negative_effect
+
+  acts upstream of or within:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    exact_mappings:
+      - RO:0004032
+      - GO:acts_upstream_of_or_within
+
+  acts upstream of or within positive effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    exact_mappings:
+      - RO:0002264
+      - GO:acts_upstream_of_or_within_positive_effect
+
+  acts upstream of or within negative effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    exact_mappings:
+      - RO:0004033
+      - GO:acts_upstream_of_or_within_negative_effect
+
+    ## Publication related predicates
 
   contributor:
     is_a: related to
@@ -3889,7 +3944,7 @@ slots:
     is_a: participates in
     description: >-
       holds between a physical entity and a process, where the physical entity executes the process
-    domain: physical entity
+    domain: gene or gene product
     range: biological process or activity
     in_subset:
       - translator_minimal
