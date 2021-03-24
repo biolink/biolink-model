@@ -1330,7 +1330,6 @@ slots:
     range: cellular component
     exact_mappings:
       - RO:0002432
-      - GO:is_active_in
 
   acts upstream of:
     is_a: related to
@@ -1338,7 +1337,6 @@ slots:
     range: biological process
     exact_mappings:
       - RO:0002263
-      - GO:acts_upstream_of
 
   acts upstream of positive effect:
     is_a: acts upstream of
@@ -1346,7 +1344,6 @@ slots:
     range: biological process
     exact_mappings:
       - RO:0004034
-      - GO:acts_upstream_of_positive_effect
 
   acts upstream of negative effect:
     is_a: acts upstream of
@@ -1354,7 +1351,6 @@ slots:
     range: biological process
     exact_mappings:
       - RO:0004035
-      - GO:acts_upstream_of_negative_effect
 
   acts upstream of or within:
     is_a: acts upstream of
@@ -1362,7 +1358,6 @@ slots:
     range: biological process
     exact_mappings:
       - RO:0004032
-      - GO:acts_upstream_of_or_within
 
   acts upstream of or within positive effect:
     is_a: acts upstream of
@@ -1370,7 +1365,6 @@ slots:
     range: biological process
     exact_mappings:
       - RO:0002264
-      - GO:acts_upstream_of_or_within_positive_effect
 
   acts upstream of or within negative effect:
     is_a: acts upstream of
@@ -1378,7 +1372,6 @@ slots:
     range: biological process
     exact_mappings:
       - RO:0004033
-      - GO:acts_upstream_of_or_within_negative_effect
 
     ## Publication related predicates
 
