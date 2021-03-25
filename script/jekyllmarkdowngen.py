@@ -476,11 +476,14 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 full_path = sfx(self.namespaces._base) + (sfx(typ.imported_from) if typ.imported_from else '')
                 type_curie = self.namespaces.uri_or_curie_for(full_path, camelcase(typ.name))
                 type_uri = self.namespaces.uri_for(type_curie)
+
                 if type_curie.startswith('https://w3id.org/biolink/vocab/biolinkml:types/'):
                     ref = type_curie.split('/')[-1]
                     type_uri = f"https://biolink.github.io/biolinkml/docs/types/{ref}"
                     type_curie = f"metatype:{ref}"
-
+                elif type_uri.startswith('https://w3id.org/biolink/vocab/'):
+                    ref = type_curie.split('/')[-1]
+                    type_uri = f"https://w3id.org/biolink/vocab/types/{ref}"
                 if typ.imported_from and 'biolinkml:types' in typ.imported_from:
                     parent = 'Built-in Types'
                 else:
