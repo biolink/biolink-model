@@ -10,7 +10,7 @@ layout: default
 
 A chemical formula
 
-URI: [biolink:ChemicalFormulaValue](https://w3id.org/biolink/vocab/ChemicalFormulaValue)
+URI: [biolink:ChemicalFormulaValue](https://w3id.org/biolink/vocab/types/biolink:ChemicalFormulaValue)
 
 |  |  |  |
 | --- | --- | --- |

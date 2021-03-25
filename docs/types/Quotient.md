@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:Quotient](https://w3id.org/biolink/vocab/Quotient)
+URI: [biolink:Quotient](https://w3id.org/biolink/vocab/types/biolink:Quotient)
 
 |  |  |  |
 | --- | --- | --- |

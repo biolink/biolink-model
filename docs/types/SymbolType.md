@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:SymbolType](https://w3id.org/biolink/vocab/SymbolType)
+URI: [biolink:SymbolType](https://w3id.org/biolink/vocab/types/biolink:SymbolType)
 
 |  |  |  |
 | --- | --- | --- |

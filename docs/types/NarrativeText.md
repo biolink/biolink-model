@@ -10,7 +10,7 @@ layout: default
 
 A string that provides a human-readable description of something
 
-URI: [biolink:NarrativeText](https://w3id.org/biolink/vocab/NarrativeText)
+URI: [biolink:NarrativeText](https://w3id.org/biolink/vocab/types/biolink:NarrativeText)
 
 |  |  |  |
 | --- | --- | --- |
