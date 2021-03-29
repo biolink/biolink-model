@@ -23,6 +23,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
  * [CaseToEntityAssociationMixin](CaseToEntityAssociationMixin.md) - An abstract association for use where the case is the subject
  * [CellLineToEntityAssociationMixin](CellLineToEntityAssociationMixin.md) - An relationship between a cell line and another entity
+ * [ChemicalOrDrugOrTreatement](ChemicalOrDrugOrTreatement.md)
  * [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
  * [DiseaseOrPhenotypicFeatureToEntityAssociationMixin](DiseaseOrPhenotypicFeatureToEntityAssociationMixin.md)
  * [DiseaseToEntityAssociationMixin](DiseaseToEntityAssociationMixin.md)
@@ -1174,6 +1175,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has population context](has_population_context.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
      * [has temporal context](has_temporal_context.md) - a constraint of time placed upon the truth value of an association.
      * [interacting molecules category](interacting_molecules_category.md)
+     * [logical interpretation](logical_interpretation.md)
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
      * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
@@ -1214,6 +1216,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [interbase coordinate](interbase_coordinate.md) - A position in interbase coordinates. This is applied to a sequence localization edge.
      * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
      * [start interbase coordinate](start_interbase_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
+ * [logical interpretation](logical_interpretation.md)
  * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
  * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
  * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject

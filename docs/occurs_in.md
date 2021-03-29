@@ -35,7 +35,6 @@ URI: [biolink:occurs_in](https://w3id.org/biolink/vocab/occurs_in)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | BFO:0000066 |
-|  | | GO:occurs_in |
 |  | | PathWhiz:has_location |
 |  | | SNOMED:occurs_in |
 | **Close Mappings:** | | BFO:0000067 |

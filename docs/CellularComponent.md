@@ -110,4 +110,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | WIKIDATA:Q5058355 |
 |  | | UMLSSC:T026 |
 |  | | UMLSST:celc |
+| **Broad Mappings:** | | WIKIDATA:P681 |
 
