@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-03-25 20:46
+# Generation date: 2021-03-29 14:01
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -224,6 +224,7 @@ ISNI = CurieNamespace('isni', 'https://isni.org/isni/')
 ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOWL#')
+OS = CurieNamespace('os', 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
@@ -1269,6 +1270,15 @@ class FrequencyQuantifier(RelationshipQuantifier):
             self.has_percentage = float(self.has_percentage)
 
         super().__post_init__(**kwargs)
+
+
+class ChemicalOrDrugOrTreatement(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatement
+    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatement"
+    class_name: ClassVar[str] = "chemical or drug or treatement"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatement
 
 
 @dataclass
@@ -7901,7 +7911,19 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class LogicalInterpretationEnum(EnumDefinitionImpl):
 
+    SomeSome = PermissibleValue(text="SomeSome",
+                                       description="A modifier on a triple that causes the triple to be interpreted as a some-some statement",
+                                       meaning=OS.SomeSomeInterpretation)
+    AllSome = PermissibleValue(text="AllSome",
+                                     description="A modifier on a triple that causes the triple to be interpreted as an all-some statement.",
+                                     meaning=OS.AllSomeInterpretation)
+    InverseAllSome = PermissibleValue(text="InverseAllSome")
+
+    _defn = EnumDefinition(
+        name="LogicalInterpretationEnum",
+    )
 
 # Slots
 class slots:
@@ -8472,13 +8494,13 @@ slots.exacerbates = Slot(uri=BIOLINK.exacerbates, name="exacerbates", curie=BIOL
                    model_uri=BIOLINK.exacerbates, domain=BiologicalEntity, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('treats'),
-                   model_uri=BIOLINK.treats, domain=Treatment, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK.curie('treated_by'),
                    model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, TreatmentId], List[Union[str, TreatmentId]]]])
 
 slots.approved_to_treat = Slot(uri=BIOLINK.approved_to_treat, name="approved to treat", curie=BIOLINK.curie('approved_to_treat'),
-                   model_uri=BIOLINK.approved_to_treat, domain=Treatment, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.approved_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.approved_for_treatment_by = Slot(uri=BIOLINK.approved_for_treatment_by, name="approved for treatment by", curie=BIOLINK.curie('approved_for_treatment_by'),
                    model_uri=BIOLINK.approved_for_treatment_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, TreatmentId], List[Union[str, TreatmentId]]]])
@@ -8722,6 +8744,9 @@ slots.predicate = Slot(uri=RDF.predicate, name="predicate", curie=RDF.curie('pre
 
 slots.edge_label = Slot(uri=RDF.predicate, name="edge label", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.edge_label, domain=Association, range=Union[str, PredicateType])
+
+slots.logical_interpretation = Slot(uri=BIOLINK.logical_interpretation, name="logical interpretation", curie=BIOLINK.curie('logical_interpretation'),
+                   model_uri=BIOLINK.logical_interpretation, domain=Association, range=Optional[Union[str, "LogicalInterpretationEnum"]])
 
 slots.relation = Slot(uri=BIOLINK.relation, name="relation", curie=BIOLINK.curie('relation'),
                    model_uri=BIOLINK.relation, domain=Association, range=Union[str, URIorCURIE])
