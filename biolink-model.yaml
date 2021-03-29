@@ -1695,6 +1695,7 @@ slots:
       # Agent of the action or effect, not the relationship itelf
       - CHEMBL.MECHANISM:releasing_agent
     exact_mappings:
+      - RO:0003003
       - CTD:increases_expression_of
 
   decreases expression of:
@@ -1709,6 +1710,7 @@ slots:
       - DGIdb:antisense
       - DGIdb:antisense_oligonucleotide
     exact_mappings:
+      - RO:0003002
       - CTD:decreases_expression_of
     narrow_mappings:
       - CHEMBL.MECHANISM:antisense_inhibitor
@@ -3125,6 +3127,7 @@ slots:
     related_mappings:
       - MONDO:disease_responds_to
     exact_mappings:
+      - DRUGBANK:treats
       - SEMMEDDB:TREATS
       - SEMMEDDB:treats
       - WIKIDATA_PROPERTY:P2175
