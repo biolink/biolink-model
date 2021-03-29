@@ -481,6 +481,12 @@ metatype:Nodeidentifier NONLITERAL
     } OR @<ComplexChemicalExposure>
 )
 
+<ChemicalOrDrugOrTreatement> {
+    (  $<ChemicalOrDrugOrTreatement_tes> rdf:type . * ;
+       rdf:type [ <ChemicalOrDrugOrTreatement> ] ?
+    )
+}
+
 <ChemicalSubstance>  (
     CLOSED {
        (  $<ChemicalSubstance_tes> (  &<MolecularEntity_tes> ;
@@ -853,6 +859,8 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <MolecularEntity> ] ? ;
              &<Mixture_tes> ;
              rdf:type [ <Mixture> ] ? ;
+             &<ChemicalOrDrugOrTreatement_tes> ;
+             rdf:type [ <ChemicalOrDrugOrTreatement> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
              <has_constituent> @<ChemicalSubstance> *
@@ -2556,6 +2564,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ] ? ;
           &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
+          &<ChemicalOrDrugOrTreatement_tes> ;
+          rdf:type [ <ChemicalOrDrugOrTreatement> ] ? ;
           <has_drug> @<Drug> * ;
           <has_device> @<Device> * ;
           <has_procedure> @<Procedure> * ;
