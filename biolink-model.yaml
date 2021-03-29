@@ -89,6 +89,7 @@ prefixes:
   OBOREL: 'http://purl.obolibrary.org/obo/RO_'
   ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
+  os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   PATO-PROPERTY: 'http://purl.obolibrary.org/obo/pato#'  # Phenotypic Quality Ontology properties, not core terms
   pav: 'http://purl.org/pav/'
@@ -147,6 +148,18 @@ emit_prefixes:
 ## ------------
 ## SUBSETS
 ## ------------
+enums:
+  logical_interpretation_enum:
+    permissible_values:
+      SomeSome:
+        description: >-
+          A modifier on a triple that causes the triple to be interpreted as a some-some statement
+        meaning: os:SomeSomeInterpretation
+      AllSome:
+        description: >-
+          A modifier on a triple that causes the triple to be interpreted as an all-some statement.
+        meaning: os:AllSomeInterpretation
+      InverseAllSome:
 
 subsets:
 
@@ -4599,6 +4612,14 @@ slots:
       ga4gh: annotation predicate
       translator: predicate
     slot_uri: rdf:predicate
+
+  logical interpretation:
+    is_a: association slot
+    required: false
+    domain: association
+    range: logical_interpretation_enum
+    exact_mappings:
+      - os:LogicalInterpretation
 
   relation:
     is_a: association slot
