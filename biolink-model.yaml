@@ -3104,7 +3104,7 @@ slots:
     description: >-
       holds between a therapeutic procedure or chemical substance
       and a disease or phenotypic feature that it is used to treat
-    domain: treatment
+    domain: chemical or drug or treatement
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -4995,6 +4995,10 @@ classes:
       - has quotient
       - has percentage
 
+  chemical or drug or treatement:
+    mixin: true
+
+
   ## ------
   ## THINGS
   ## ------
@@ -6022,6 +6026,7 @@ classes:
     is_a: molecular entity
     mixins:
       - mixture
+      - chemical or drug or treatement
       - ontology class
     description: >-
       A substance intended for use in the diagnosis, cure,
@@ -7212,6 +7217,7 @@ classes:
     is_a: named thing
     mixins:
       - exposure event
+      - chemical or drug or treatement
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
       multiple drug 'exposures', medical devices and/or procedures
