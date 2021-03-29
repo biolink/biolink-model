@@ -1064,9 +1064,9 @@ slots:
       - FMA:continuous_with
       - FMA:homonym_of
       - FMA:related_developmental_entity_of
-      - GO:ends_during
-      - GO:happens_during
-      - GO:inverse_ends_during
+      - RO:0002093
+      - RO:0002092
+      - RO:0002084
       - GOREL:0002005
       - GOREL:0012006
       - HCPCS:mapped_to
@@ -1092,12 +1092,12 @@ slots:
       - OBO:envo#has_increased_levels_of
       - OBO:has_role
       - OBO:nbo#is_about
-      - OBOREL:0000053 # bearer_of
-      - PATO:decreased_in_magnitude_relative_to
-      - PATO:has_cross_section
-      - PATO:has_relative_magnitude
-      - PATO:increased_in_magnitude_relative_to
-      - PATO:reciprocal_of
+      - RO:0000053 # bearer_of
+      - PATO-PROPERTY:decreased_in_magnitude_relative_to
+      - PATO-PROPERTY:has_cross_section
+      - PATO-PROPERTY:has_relative_magnitude
+      - PATO-PROPERTY:increased_in_magnitude_relative_to
+      - PATO-PROPERTY:reciprocal_of
       - RO:0000052
       - RO:0002001
       - RO:0002002
@@ -1223,12 +1223,12 @@ slots:
       - LOINC:is_presence_guidance_for
       - NCIT:gene_product_has_chemical_classification
       # RTX mapped terms classes for biomarkers
-      - NCIT:gene_is_biomarker_type
-      - NCIT:gene_product_is_biomarker_type
-      - NCIT:has_inc_parent
-      - NCIT:has_nichd_parent
-      - NCIT:neoplasm_has_special_category
-      - NCIT:role_has_parent
+      - NCIT:R36
+      - NCIT:R42
+      - NCIT:A16
+      - NCIT:A11
+      - NCIT:A14
+      - NCIT:A3
       - NDDF:has_dose_form
       - OBO:intersection_of
       - RXNORM:has_dose_form
@@ -1435,7 +1435,7 @@ slots:
       - SEMMEDDB:interacts_with
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
-      - NCIT:has_target
+      - NCIT:A7
       - PR:non-covalently_bound_to
 
   molecularly interacts with:
@@ -1492,24 +1492,24 @@ slots:
       - GOREL:0001006
       - CTD:inferred
       - UPHENO:0000001
-      - GO:acts_upstream_of
-      - GO:acts_upstream_of_or_within
-      - NCIT:allele_plays_altered_role_in_process
-      - NCIT:allele_plays_role_in_metabolism_of_chemical_or_drug
-      - NCIT:biological_process_has_associated_location
-      - NCIT:chemical_or_drug_affects_abnormal_cell
-      - NCIT:chemical_or_drug_affects_cell_type_or_tissue
-      - NCIT:chemical_or_drug_affects_gene_product
-      - NCIT:chemical_or_drug_has_mechanism_of_action
-      - NCIT:cytogenetic_abnormality_involves_chromosome
-      - NCIT:disease_has_associated_anatomic_site
-      - NCIT:disease_has_metastatic_anatomic_site
-      - NCIT:disease_has_primary_anatomic_site
-      - NCIT:disease_may_have_abnormal_cell
-      - NCIT:eo_disease_has_associated_cell_type
-      - NCIT:eo_disease_has_associated_eo_anatomy
+      - RO:0002263
+      - RO:0002264
+      - NCIT:R158
+      - NCIT:R160
+      - NCIT:R30
+      - NCIT:R150
+      - NCIT:R72
+      - NCIT:R146
+      - NCIT:R124
+      - NCIT:R173
+      - NCIT:R100
+      - NCIT:R102
+      - NCIT:R101
+      - NCIT:R113
+      - NCIT:R23
+      - NCIT:R25
       - NCIT:gene_mapped_to_disease
-      - NCIT:gene_product_has_abnormality
+      - NCIT:R133
       - RO:0002343
       - RO:0002355
       - RO:0002591
@@ -2343,11 +2343,9 @@ slots:
     range: physical essence or occurrent
     inverse: regulated by
     close_mappings:
-      # This RTX contributed term is tagged as a inverse of this Biolink predicate
-      - GO:regulated_by
       - RO:0002334
     exact_mappings:
-      - GO:regulates
+      - RO:0002211
     narrow_mappings:
       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
       - WIKIDATA_PROPERTY:P128
@@ -2373,15 +2371,14 @@ slots:
     mixin: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
-      - GO:positively_regulated_by
+      - RO:0002336
     exact_mappings:
       - RO:0002213
-      - GO:positively_regulates
     narrow_mappings:
       - CHEMBL.MECHANISM:activator
       - DGIdb:activator
-      - GO:acts_upstream_of_or_within_positive_effect
-      - GO:acts_upstream_of_positive_effect
+      - RO:0004032
+      - RO:0004034
       - RO:0002629
       - SEMMEDDB:augments
 
@@ -2398,11 +2395,11 @@ slots:
     mixin: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
-      - GO:negatively_regulated_by
+      - RO:0002335
     exact_mappings:
       # Strict interpretation here is that entity A causally affects levels of B
       - RO:0004035
-      - GO:negatively_regulates
+      - RO:0002212
     broad_mappings:
       # This term is slightly broader in that it includes that A acts within B as well
       - RO:0004033
@@ -2411,8 +2408,6 @@ slots:
       - CHEMBL.MECHANISM:inhibitor
       - CHEMBL.MECHANISM:negative_allosteric_modulator
       - CHEMBL.MECHANISM:negative_modulator
-      - GO:acts_upstream_of_negative_effect
-      - GO:acts_upstream_of_or_within_negative_effect
       - RO:0002630
   
   negatively regulated by:
@@ -2600,7 +2595,7 @@ slots:
       - WIKIDATA_PROPERTY:P688
       - NCIT:gene_encodes_gene_product
     narrow_mappings:
-      - NCIT:gene_mutant_encodes_gene_product_sequence_variation
+      - NCIT:R178
   transcribed to:
     is_a: related to
     domain: gene
@@ -2932,7 +2927,6 @@ slots:
     symmetric: true
     exact_mappings:
       - RO:00002325
-      - GO:colocalizes_with
 
   # Despite the name, note that this particular entity is
   # NOT a biolink:Association but rather, a biolink:predicate
@@ -2962,9 +2956,9 @@ slots:
       - GENO:0000841
     narrow_mappings:
       # narrower: just diseases, not phenotypic features as well
-      - NCIT:gene_associated_with_disease
-      - NCIT:gene_involved_in_pathogenesis_of_disease
-      - NCIT:gene_product_malfunction_associated_with_disease
+      - NCIT:R38
+      - NCIT:R175
+      - NCIT:R48
 
   condition associated with gene:
     is_a: genetic association
@@ -3008,7 +3002,6 @@ slots:
       - IDO:0000664
     exact_mappings:
       - RO:0002326
-      - GO:contributes_to
     narrow_mappings:
       - CTD:marker_mechanism
       - MONDO:predisposes_towards
@@ -3340,12 +3333,12 @@ slots:
       - translator_minimal
     inverse: has biomarker
     exact_mappings:
-      - NCIT:gene_is_biomarker_of
+      - NCIT:R39
     broad_mappings:
       # Generic marker definition not specific to biomarkers per say
       - RO:0002607
     narrow_mappings:
-      - NCIT:gene_product_is_biomarker_of
+      - NCIT:R47
       # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
@@ -3367,8 +3360,8 @@ slots:
     exact_mappings:
       - RO:0002206
     narrow_mappings:
-      - NCIT:gene_product_expressed_in_tissue
-      - NCIT:gene_product_has_associated_anatomy
+      - NCIT:R49
+      - NCIT:R46
       - RTXKG1:expressed_in
 
   expresses:
@@ -3408,10 +3401,10 @@ slots:
     broad_mappings:
       # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
       - hetio:PRESENTS_DpS
-      - NCIT:disease_may_have_finding
+      - NCIT:R115
       - OMIM:has_phenotype
     narrow_mappings:
-      - NCIT:disease_may_have_molecular_abnormality
+      - NCIT:R89
       - OBO:doid#has_symptom
       - RO:0004022
 
@@ -3443,7 +3436,6 @@ slots:
       - UBERON:site_of
     exact_mappings:
       - BFO:0000066
-      - GO:occurs_in
       - PathWhiz:has_location
       - SNOMED:occurs_in
     narrow_mappings:
@@ -3501,18 +3493,18 @@ slots:
       - HMDB:at_tissue
       - HMDB:in_biospecimen
       - LOINC:has_imaging_focus
-      - NCIT:allele_absent_from_wild-type_chromosomal_location
-      - NCIT:allele_in_chromosomal_location
-      - NCIT:gene_has_physical_location
-      - NCIT:gene_in_chromosomal_location
+      - NCIT:R156
+      - NCIT:R155
+      - NCIT:R145
+      - NCIT:R40
       - NCIT:is_location_of_anatomic_structure
-      - NCIT:procedure_has_completely_excised_anatomy
-      - NCIT:procedure_has_excised_anatomy
-      - NCIT:procedure_has_imaged_anatomy
-      - NCIT:procedure_has_partially_excised_anatomy
-      - NCIT:procedure_may_have_completely_excised_anatomy
-      - NCIT:procedure_may_have_excised_anatomy
-      - NCIT:procedure_may_have_partially_excised_anatomy
+      - NCIT:R171
+      - NCIT:R167
+      - NCIT:R165
+      - NCIT:R169
+      - NCIT:R170
+      - NCIT:R166
+      - NCIT:R168
       - RO:0002303
       - RTXKG1:disease_has_location
       - SNOMED:has_finding_site
@@ -3619,7 +3611,6 @@ slots:
       # term name seems to be 'realizes' but RTX maps this term here
       - BFO:0000055
       - WIKIDATA_PROPERTY:P527
-      - GO:has_part
       - RO:0001019
       - RTXKG1:has_part
       - RXNORM:consists_of
@@ -3646,7 +3637,7 @@ slots:
       - NDDF:has_ingredient
       - PathWhiz:has_element_in_bound
       # This RTX contributed term was tagged as 'biolink:has_gene_product' but seems more compositional in nature
-      - NCIT:gene_product_has_structural_domain_or_motif
+      - NCIT:R50
       - PDQ:has_component
       - PathWhiz:has_protein_in_complex
       - RO:0002104
@@ -3675,7 +3666,6 @@ slots:
       - SEMMEDDB:part_of
       - WIKIDATA_PROPERTY:P361
       - FMA:part_of
-      - GO:part_of
       - RXNORM:constitutes
       - RXNORM:part_of
     broad_mappings:
@@ -3705,8 +3695,8 @@ slots:
       - LOINC:multipart_of
       - MEDDRA:member_of
       - MONDO:part_of_progression_of_disease
-      - NCIT:anatomic_structure_is_physical_part_of
-      - NCIT:conceptual_part_of
+      - NCIT:R82
+      - NCIT:R27
       - NCIT:is_component_of_chemotherapy_regimen
       - NDDF:ingredient_of
       - PDQ:component_of
@@ -3779,7 +3769,7 @@ slots:
     exact_mappings:
       - RO:0002234
     narrow_mappings:
-      - NCIT:biological_process_has_result_anatomy
+      - NCIT:R31
       - OBI:0000299
       - PathWhiz:has_right_element
       - RO:0002296
@@ -3840,18 +3830,16 @@ slots:
     exact_mappings:
       - RO:0000056
       - BFO:0000056
-      - GO:involved_in
-      - RO:participates_in
       - RTXKG1:participates_in
     narrow_mappings:
       - DRUGBANK:pathway
       - HMDB:in_pathway
       - LOINC:is_given_pharmaceutical_substance_for
-      - NCIT:gene_is_element_in_pathway
-      - NCIT:gene_plays_role_in_process
-      - NCIT:gene_product_is_element_in_pathway
-      - NCIT:gene_product_is_physical_part_of
-      - NCIT:gene_product_plays_role_in_biological_process
+      - NCIT:R130
+      - NCIT:R37
+      - NCIT:R131
+      - NCIT:R51
+      - NCIT:R53
       - OBI:0000295
       - RO:0002216
       - RO:0002505
@@ -3875,7 +3863,7 @@ slots:
       - RTXKG1:involved_in
     exact_mappings:
       - RO:0002331
-      - GO:is_active_in
+      - RO:0002432
     narrow_mappings:
       # RTX contribute mapping, may belong somewhere else?
       - NCIT:gene_involved_in_molecular_abnormality
@@ -3883,7 +3871,7 @@ slots:
       - ORPHA:317348
       - ORPHA:317349
       - ORPHA:327767
-      - PATO:towards
+      - RO:0002503
 
   capable of:
     is_a: actively involved in
@@ -3897,8 +3885,7 @@ slots:
       - RO:0002215
       - RTXKG1:capable_of
     narrow_mappings:
-      - GO:has_occurrence
-      - NCIT:gene_product_has_biochemical_function
+      - NCIT:R52
       - RO:0002500
 
   enables:
@@ -3912,7 +3899,6 @@ slots:
     inverse: enabled by
     exact_mappings:
       - RO:0002327
-      - GO:enables
 
   enabled by:
     is_a: has participant
@@ -3960,7 +3946,6 @@ slots:
       - RO:0001000
       - FMA:derives_from
       - OBO:doid#derives_from
-      - RO:derives_from
     narrow_mappings:
       - CHEBI:has_functional_parent
       - SNOMED:has_specimen_source_topography
@@ -4131,7 +4116,7 @@ slots:
       - SEMMEDDB:PRODUCES
       - SEMMEDDB:produces
     narrow_mappings:
-      - NCIT:biological_process_has_result_chemical_or_drug
+      - NCIT:R29
       - SNOMED:has_process_output
       - SNOMED:specimen_procedure_of
 
