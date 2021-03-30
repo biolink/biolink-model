@@ -1579,7 +1579,8 @@ slots:
 
   affects activity of:
     description: >-
-      holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest
+      holds between two molecular entities where the action or effect of one changes the
+      activity of the other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
@@ -1594,6 +1595,20 @@ slots:
       - DGIdb:modulator
       - DGIdb:allosteric_modulator
 
+  activity affected by:
+    description: >-
+      holds between two molecular entities where the action or effect of one is changed by the
+      activity of the other within a system of interest
+    is_a: affects
+    domain: molecular entity
+    range: molecular entity
+    inverse: activity affects
+
+  activity affects:
+    is_a: affects
+    domain: molecular entity
+    range: molecular entity
+
   increases activity of:
     description: >-
       holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
@@ -1602,6 +1617,7 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: activity increased by
     related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
@@ -1628,6 +1644,14 @@ slots:
       - DGIdb:positive_allosteric_modulator
       - DGIdb:stimulator
 
+  activity increased by:
+    is_a: affects activity of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases activity of
+
   decreases activity of:
     description: >-
       holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest
@@ -1636,6 +1660,7 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: activity decreased by
     related_mappings:
       - GAMMA:ic50
       - GAMMA:ki
@@ -1672,40 +1697,71 @@ slots:
       - DGIdb:inhibitory_allosteric_modulator
       - DGIdb:inverse_agonist
 
+  activity decreased by:
+    is_a: affects activity of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases activity of
+
+
   affects expression of:
     description: >-
-      holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest
+      holds between a molecular and genetic entity where the action or effect of the
+      molecular entity changes the level of expression of the genomic entity within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    inverse: expression affected by
     exact_mappings:
       - CTD:affects_expression_of
 
+  expression affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: affects expression of
+
   increases expression of:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest
+      holds between two molecular entities where the action or effect of one increases the level
+      of expression of the other within a system of interest
     is_a: affects expression of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    inverse: expression increased by
     close_mappings:
-      # Agent of the action or effect, not the relationship itelf
+      # Agent of the action or effect, not the relationship itself
       - CHEMBL.MECHANISM:releasing_agent
     exact_mappings:
       - RO:0003003
       - CTD:increases_expression_of
 
+  expression increased by:
+    is_a: affects expression of
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: increases expression of
+
   decreases expression of:
     description: >-
-      holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest
+      holds between two molecular entities where the action or effect of one decreases the
+      level of expression of the other within a system of interest
     is_a: affects expression of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    inverse: expression decreased by
     related_mappings:
       - DGIdb:antisense
       - DGIdb:antisense_oligonucleotide
@@ -1714,6 +1770,14 @@ slots:
       - CTD:decreases_expression_of
     narrow_mappings:
       - CHEMBL.MECHANISM:antisense_inhibitor
+
+  expression decreased by:
+    is_a: affects expression of
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: decreases expression of
 
   affects folding of:
     description: >-
@@ -1739,7 +1803,8 @@ slots:
 
   decreases folding of:
     description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other
+      holds between two molecular entities where the action or effect of one decreases
+      the rate or quality of folding of the other
     is_a: affects folding of
     in_subset:
       - translator_minimal
@@ -1750,52 +1815,92 @@ slots:
 
   affects localization of:
     description: >-
-      holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest
+      holds between two molecular entities where the action or effect of one changes the
+      localization of the other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: localization affected by
     related_mappings:
       - GAMMA:storage
     exact_mappings:
       - CTD:affects_localization_of
       - GOREL:0002003
 
-  increases localization of:
-    description: >-
-      holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest
-    is_a: affects localization of
-    in_subset:
-      - translator_minimal
-    domain: molecular entity
-    range: molecular entity
-    exact_mappings:
-      - CTD:increases_localization_of
-
-  decreases localization of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest
-    is_a: affects localization of
-    in_subset:
-      - translator_minimal
-    domain: molecular entity
-    range: molecular entity
-    exact_mappings:
-      - CTD:decreases_localization_of
-
-  affects metabolic processing of:
-    description: >-
-      holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
+  localization affected by:
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects localization of
+
+  increases localization of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases
+      the proper localization of the other within a system of interest
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: localization increased by
+    exact_mappings:
+      - CTD:increases_localization_of
+
+  localization increased by:
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases localization of
+
+  decreases localization of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the
+      proper localization of the other within a system of interest
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: localization decreased by
+    exact_mappings:
+      - CTD:decreases_localization_of
+
+  localization decreased by:
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases localization of
+
+  affects metabolic processing of:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts
+      the metabolic processing of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: metabolic processing affected by
     related_mappings:
       - GAMMA:catalytic_activity
     exact_mappings:
       - CTD:affects_metabolic_processing_of
+
+  metabolic processing affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects metabolic processing of
 
   increases metabolic processing of:
     description: >-
@@ -1805,10 +1910,19 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: metabolic processing increased by
     exact_mappings:
       - CTD:increases_metabolic_processing_of
     narrow_mappings:
       - NCIT:enzyme_metabolizes_chemical_or_drug
+
+  metabolic processing increased by:
+    is_a: affects metabolic processing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases metabolic processing of
 
   decreases metabolic processing of:
     description: >-
@@ -1818,17 +1932,30 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: metabolic processing decreased by
     exact_mappings:
       - CTD:decreases_metabolic_processing_of
 
+  metabolic processing decreased by:
+    is_a: affects metabolic processing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases metabolic processing of
+
   affects molecular modification of:
     description: >-
-      holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+      holds between two molecular entities where the action or effect of one leads
+      changes in the molecular modification(s) of the other (e.g. via post-translational
+      modifications of proteins such as the addition of phosphoryl group, or via redox
+      reaction that adds or subtracts electrons)
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: molecular modification affected by
     exact_mappings:
       - CTD:affects_molecular_modification_of
     narrow_mappings:
@@ -1864,14 +1991,26 @@ slots:
       - CTD:affects_reduction
       - CTD:affects_carboxylation
 
+  molecular modification affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects molecular modification of
+
   increases molecular modification of:
     description: >-
-      holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+      holds between two molecular entities where the action or effect of one leads
+      to increased molecular modification(s) of the other (e.g. via post-translational
+      modifications of proteins such as the addition of phosphoryl group, or via redox
+      reaction that adds or subtracts electrons)
     is_a: affects molecular modification of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: molecular modification increased by
     exact_mappings:
       - CTD:increases_molecular_modification_of
     narrow_mappings:
@@ -1909,6 +2048,14 @@ slots:
       - GAMMA:acetylation
       - GAMMA:oxidizer
 
+  molecular modification increased by:
+    is_a: affects molecular modification of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases molecular modification of
+
   decreases molecular modification of:
     description: >-
       holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
@@ -1917,6 +2064,7 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: molecular modification decreased by
     exact_mappings:
       - CTD:decreases_molecular_modification_of
     narrow_mappings:
@@ -1953,16 +2101,34 @@ slots:
       - CTD:decreases_carboxylation
       - GAMMA:deoxidizer
 
+  molecular modification decreased by:
+    is_a: affects molecular modification of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases molecular modification of
+
   affects synthesis of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other
+      holds between two molecular entities where the action or effect of one impacts the
+      rate of chemical synthesis of the other
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: sythesis affected by
     exact_mappings:
       - CTD:affects_synthesis_of
+
+  sythesis affected by:
+    is_a: affects
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects synthesis of
+    in_subset:
+      - translator_minimal
 
   increases synthesis of:
     description: >-
@@ -1972,34 +2138,65 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: synthesis increased by
     exact_mappings:
       - CTD:increases_synthesis_of
 
-  decreases synthesis of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other
+  synthesis increased by:
     is_a: affects synthesis of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases synthesis of
+
+  decreases synthesis of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases
+      the rate of chemical synthesis of the other
+    is_a: affects synthesis of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: synthesis decreased by
     exact_mappings:
       - CTD:decreases_synthesis_of
       - GAMMA:inhibition_of_synthesis
 
+  synthesis decreased by:
+    is_a: affects synthesis of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases synthesis of
+
   affects degradation of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
+      holds between two molecular entities where the action or effect of one impacts
+      the rate of degradation of the other within a system of interest, where chemical
+      degradation is defined act or process of simplifying or breaking down a molecule into smaller parts,
+      either naturally or artificially (Oxford English Dictionary, UK, 1995)
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: degradation affected by
     exact_mappings:
       - CTD:affects_degradation_of
     narrow_mappings:
       - CTD:affects_cleavage
       - CTD:affects_hydrolysis
+
+  degradation affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects degradation of
 
   increases degradation of:
     description: >-
@@ -2009,6 +2206,7 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: degradation increased by
     related_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
@@ -2028,6 +2226,14 @@ slots:
       - CTD:increases_hydrolysis
       - GOREL:0002004
 
+  degradation increased by:
+    is_a: affects degradation of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases degradation of
+
   decreases degradation of:
     description: >-
       holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
@@ -2036,25 +2242,45 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: degradation decreased by
     exact_mappings:
       - CTD:decreases_degradation_of
     narrow_mappings:
       - CTD:decreases_cleavage
       - CTD:decreases_hydrolysis
 
+  degradation decreased by:
+    is_a: affects degradation of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases degradation of
+
   affects mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
+      holds between a molecular entity and a genomic entity where the action or effect
+      of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    inverse: mutation rate affected by
     exact_mappings:
       - CTD:affects_mutation_rate_of
     broad_mappings:
-      # Term 'mutagenesis' generally speaks generally of the process of 'production of genetic mutations':  this term says it is affected but not specifically how
+      # Term 'mutagenesis' generally speaks generally of the process of 'production of genetic mutations':
+      # this term says it is affected but not specifically how
       - CTD:affects_mutagenesis
+
+  mutation rate affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: affects mutation rate of
 
   increases mutation rate of:
     description: >-
@@ -2064,11 +2290,19 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    inverse: mutation rate increased by
     exact_mappings:
       - CTD:increases_mutation_rate_of
     broad_mappings:
       # See 'affects mutation rate of' above
       - CTD:increases_mutagenesis
+
+  mutation rate increased by:
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: increases mutation rate of
 
   decreases mutation rate of:
     description: >-
@@ -2078,11 +2312,20 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
+    inverse: mutation rate decreased by
     exact_mappings:
       - CTD:decreases_mutation_rate_of
     broad_mappings:
       # See 'affects mutation rate of' above
       - CTD:decreases_mutagenesis
+
+  mutation rate decreased by:
+    is_a: affects mutation rate of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: genomic entity
+    inverse: decreases mutation rate of
 
   affects response to:
     description: >-
@@ -2095,8 +2338,17 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: response affected by
     exact_mappings:
       - CTD:affects_response_to
+
+  response affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects response to
 
   increases response to:
     description: >-
@@ -2109,8 +2361,17 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: response increased by
     exact_mappings:
       - CTD:increases_response_to
+
+  response increased by:
+    is_a: affects response to
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases response to
 
   decreases response to:
     description: >-
@@ -2123,11 +2384,20 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: response decreased by
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
       - CTD:decreases_response_to_substance
       - GAMMA:desensitize_the_target
+
+  response decreased by:
+    is_a: affects response to
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases response to
 
   affects splicing of:
     description: >-
@@ -2138,10 +2408,19 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
+    inverse: splicing affected by
     exact_mappings:
       - CTD:affects_RNA_splicing
     broad_mappings:
       - CTD:affects_splicing_of
+
+  splicing affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: transcript
+    range: molecular entity
+    inverse: affects splicing of
 
   increases splicing of:
     description: >-
@@ -2152,10 +2431,19 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
+    inverse: splicing increased by
     exact_mappings:
       - CTD:increases_RNA_splicing
     broad_mappings:
       - CTD:increases_splicing_of
+
+  splicing increased by:
+    is_a: affects splicing of
+    in_subset:
+      - translator_minimal
+    domain: transcript
+    range: molecular entity
+    inverse: increases splicing of
 
   decreases splicing of:
     description: >-
@@ -2172,45 +2460,76 @@ slots:
 
   affects stability of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest
+      holds between two molecular entities where the action or effect of one impacts the stability
+      of the other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: stability affected by
     close_mappings:
       - GAMMA:stabilization
     exact_mappings:
       - CTD:affects_stability_of
 
+  stability affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects stability of
+
   increases stability of:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest
+      holds between two molecular entities where the action or effect of one
+      increases the stability of the other within a system of interest
     is_a: affects stability of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: stability increased by
     close_mappings:
       # agent of the action or effect, not the relationship
       - CHEMBL.MECHANISM:stabiliser
     exact_mappings:
       - CTD:increases_stability_of
 
-  decreases stability of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest
+  stability increased by:
     is_a: affects stability of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases stability of
+
+  decreases stability of:
+    description: >-
+      holds between two molecular entities where the action or effect of one
+      decreases the stability of the other within a system of interest
+    is_a: affects stability of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: stability decreased by
     exact_mappings:
       - CTD:decreases_stability_of
 
+  stability decreased by:
+    is_a: affects stability of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases stability of
+
   affects transport of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+      holds between two molecular entities where the action or effect of
+      one impacts the rate of transport of the other across some boundary in a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
@@ -2225,42 +2544,72 @@ slots:
 
   increases transport of:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
+      holds between two molecular entities where the action or effect of one
+      increases the rate of transport of the other across some boundary in a system of interest
     is_a: affects transport of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: transport increased by
     close_mappings:
       - GAMMA:carrier
       - GAMMA:transporter
     exact_mappings:
       - CTD:increases_transport_of
 
-  decreases transport of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+  transport increased by:
     is_a: affects transport of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases transport of
+
+  decreases transport of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the rate of
+      transport of the other across some boundary in a system of interest
+    is_a: affects transport of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: transport decreased by
     exact_mappings:
       - CTD:decreases_transport_of
 
+  transport decreased by:
+    is_a: affects transport of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases transport of
+
   affects secretion of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
+      holds between two molecular entities where the action or effect of one impacts the rate of
+      secretion of the other out of a cell, gland, or organ
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: secretion affected by
     exact_mappings:
       - CTD:affects_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:affects_export
+
+  secretion affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects secretion of
 
   increases secretion of:
     description: >-
@@ -2270,39 +2619,68 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: secretion increased by
     exact_mappings:
       - CTD:increases_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:increases_export
 
-  decreases secretion of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
+  secretion increased by:
     is_a: affects secretion of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases secretion of
+
+  decreases secretion of:
+    description: >-
+      holds between two molecular entities where the action or effect of one
+      decreases the rate of secretion of the other out of a cell, gland, or organ
+    is_a: affects secretion of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: secretion decreased by
     exact_mappings:
       - CTD:decreases_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:decreases_export
 
+  secretion decreased by:
+    is_a: affects secretion of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases secretion of
+
   affects uptake of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
+      holds between two molecular entities where the action or effect of one
+      impacts the rate of uptake of the other into of a cell, gland, or organ
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: uptake affected by
     exact_mappings:
       - CTD:affects_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:affects_import
+
+  uptake affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects uptake of
 
   increases uptake of:
     description: >-
@@ -2312,11 +2690,21 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse:
+      uptake increased by
     exact_mappings:
       - CTD:increases_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:increases_import
+
+  uptake increased by:
+    is_a: affects uptake of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases uptake of
 
   decreases uptake of:
     description: >-
@@ -2326,11 +2714,20 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: uptake decreased by
     exact_mappings:
       - CTD:decreases_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:decreases_import
+
+  uptake decreased by:
+    is_a: affects uptake of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases uptake of
 
   regulates:
     # direct is_a inheritance from a non-mixin class is not allowed
@@ -2596,6 +2993,7 @@ slots:
       - NCIT:gene_encodes_gene_product
     narrow_mappings:
       - NCIT:R178
+
   transcribed to:
     is_a: related to
     domain: gene
@@ -3010,9 +3408,16 @@ slots:
       # RTX term 'contributes to condition' mapped to 'biolink:causes' seems more suitable here
       - RO:0003304
 
+  contribution from:
+    is_a: related to
+    in_subset:
+      - translator_minimal
+    inverse: contributes to
+
   causes:
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
+      holds between two entities where the occurrence, existence, or activity of one causes the occurrence
+      or generation of the other
     is_a: contributes to
     in_subset:
       - translator_minimal
@@ -3114,6 +3519,7 @@ slots:
       and a disease or phenotypic feature that it is used to treat
     domain: chemical or drug or treatement
     range: disease or phenotypic feature
+
     in_subset:
       - translator_minimal
     inverse: treated by
@@ -3567,11 +3973,19 @@ slots:
       an exon and a chromosome/contig.
     domain: genomic entity
     range: genomic entity
+    inverse: sequence location of
     exact_mappings:
       - faldo:location
 
+  sequence location of:
+    is_a: related to
+    domain: genomic entity
+    range: genomic entity
+    inverse: has sequence location
+
   model of:
-    is_a: similar to
+    is_a: related to
+    inverse: models
     description: >-
       holds between an entity and some other entity it approximates
       for purposes of scientific study, in virtue of its exhibiting
@@ -3582,6 +3996,10 @@ slots:
       - RO:0003301
     narrow_mappings:
       - FOODON:00001301
+
+  models:
+    is_a: related to
+    inverse: model of
 
   overlaps:
     is_a: related to
@@ -3730,6 +4148,7 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: occurrent
+    inverse: is input of
     in_subset:
       - translator_minimal
     close_mappings:
@@ -3754,11 +4173,19 @@ slots:
       - SNOMED:uses_energy
       - SNOMED:uses_substance
 
+  is input of:
+    is_a: has participant
+    range: occurrent
+    inverse: has input
+    in_subset:
+      - translator_minimal
+
   has output:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: occurrent
+    inverse: is output of
     in_subset:
       - translator_minimal
     close_mappings:
@@ -3778,6 +4205,13 @@ slots:
       - RO:0002299
       - RO:0002588
       - RO:0004008
+
+  is output of:
+    is_a: has participant
+    range: occurrent
+    inverse: has output
+    in_subset:
+      - translator_minimal
 
   has participant:
     is_a: related to
@@ -3852,7 +4286,9 @@ slots:
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
       the process or function it realizes
+    domain: molecular activity
     range: occurrent
+    inverse: actively involves
     in_subset:
       - translator_minimal
     close_mappings:
@@ -3872,6 +4308,16 @@ slots:
       - ORPHA:317349
       - ORPHA:327767
       - RO:0002503
+
+  actively involves:
+    is_a: participates in
+    domain: occurrent
+    range: molecular activity
+    inverse: actively involved in
+    exact_mappings:
+      - RO:0002331
+    in_subset:
+      - translator_minimal
 
   capable of:
     is_a: actively involved in
@@ -4089,6 +4535,7 @@ slots:
       process; used in SemMedDB for linking things like dysfunctions
       and processes to some disease or syndrome
     range: disease
+    inverse: has manifestation
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4100,6 +4547,11 @@ slots:
       - WIKIDATA_PROPERTY:P1557
     narrow_mappings:
       - SNOMED:has_definitional_manifestation
+
+  has manifestation:
+    is_a: related to
+    domain: disease
+    inverse: manifestation of
 
   produces:
     is_a: related to
@@ -4249,9 +4701,14 @@ slots:
 
   has variant part:
     is_a: has part
+    inverse: variant part of
     description: holds between a genomic entity and a genotypic entity that is a sub-component of it
     exact_mappings:
       - GENO:0000382
+
+  variant part of:
+    is_a: part of
+    inverse: has variant part
 
   related condition:
     is_a: related to
@@ -4279,6 +4736,7 @@ slots:
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
     range: gene
+    inverse: has missense variant
     exact_mappings:
       - SO:0001583
       - SNPEFF:missense_variant
@@ -4286,12 +4744,19 @@ slots:
       - SNPEFF:initiator_codon_variant
       - SNPEFF:structural_interaction_variant
 
+  has missense variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is missense variant of
+
   is synonymous variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
     range: gene
+    inverse: has synonymous variant
     exact_mappings:
       - SO:0001819
       - SNPEFF:synonymous_variant
@@ -4299,18 +4764,31 @@ slots:
       - SNPEFF:start_retained
       - SNPEFF:stop_retained_variant
 
+  has synonymous variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is synonymous variant of
+
   is nonsense variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene, such the sequence variant
       results in a premature stop codon
     domain: sequence variant
     range: gene
+    inverse: has nonsense variant
     exact_mappings:
       - SNPEFF:stop_gained
     broad_mappings:
       # Term definition broader than nonsense codon: A sequence variant whereby
       # the gene product has diminished or abolished function.
       - SO:0002054
+
+  has nonsense variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is nonsense variant of
 
   is frameshift variant of:
     is_a: is sequence variant of
@@ -4333,6 +4811,7 @@ slots:
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
     range: gene
+    inverse: has splice site variant
     exact_mappings:
       - SO:0001629
     narrow_mappings:
@@ -4341,12 +4820,19 @@ slots:
       - SNPEFF:splice_acceptor_variant
       - SNPEFF:splice_donor_variant
 
+  has splice site variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is splice site variant of
+
   is nearby variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene sequence that the variant
       is genomically close to.
     domain: sequence variant
     range: gene
+    inverse: has nearby variant
     exact_mappings:
       - GAMMA:0000102
     narrow_mappings:
@@ -4354,12 +4840,19 @@ slots:
       - SNPEFF:downstream_gene_variant
       - SNPEFF:upstream_gene_variant
 
+  has nearby variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is nearby variant of
+
   is non coding variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene, where the variant does
       not affect the coding sequence
     domain: sequence variant
     range: gene
+    inverse: has non coding variant
     exact_mappings:
       - GAMMA:0000103
     narrow_mappings:
@@ -4369,6 +4862,12 @@ slots:
       - SNPEFF:5_prime_UTR_premature_start_codon_gain_variant
       - SNPEFF:non_coding_transcript_exon_variant
       - SNPEFF:intron_variant
+
+  has non coding variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is non coding variant of
 
   # relating disease to process
 
@@ -4391,8 +4890,15 @@ slots:
       by the drug
     domain: drug
     range: disease or phenotypic feature
+    inverse: adverse event caused by
     exact_mappings:
       - Aeolus:0000001
+
+  adverse event caused by:
+    is_a: causes
+    domain: disease or phenotypic feature
+    range: drug
+    inverse: causes adverse event
 
   contraindicated for:
     is_a: related to
@@ -4403,6 +4909,12 @@ slots:
     exact_mappings:
       - DrugCentral:0000001
       - RTXKG1:contraindicated_for
+
+  has contraindication:
+    is_a: related to
+    domain: disease or phenotypic feature
+    range: drug
+    inverse: contraindicated for
 
   # The remaining new slots are here because we ran across them somewhere and
   # they didn't seem to map well to anything else.
@@ -4424,17 +4936,27 @@ slots:
 
   decreases molecular interaction:
     is_a: molecularly interacts with
+    inverse: molecular interaction decreased by
     description: indicates that the source decreases the molecular interaction between
       the target and some other molecular entity
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
 
+  molecular interaction decreased by:
+    is_a: molecularly interacts with
+    inverse: decreases molecular interaction
+
   increases molecular interaction:
     is_a: molecularly interacts with
+    inverse: molecular interaction increased by
     description: indicates that the source increases the molecular interaction between
       the target and some other molecular entity
     exact_mappings:
       - CTD:increases_molecular_interaction_with
+
+  molecular interaction increased by:
+    is_a: molecularly interacts with
+    inverse: increases molecular interaction
 
   in linkage disequilibrium with:
     is_a: related to
@@ -4446,16 +4968,27 @@ slots:
 
   has increased amount:
     is_a: related to
+    inverse: increased amount of
     narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
+  increased amount of:
+    is_a: related to
+    inverse: has increased amount
+
   has decreased amount:
     is_a: related to
+    inverse: decreased amount in
     narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
+  decreased amount in:
+    is_a: related to
+    inverse: has decreased amount
+
   lacks part:
     is_a: related to
+    inverse: missing from
     exact_mappings:
       - CL:lacks_part
       - PR:lacks_part
@@ -4463,8 +4996,13 @@ slots:
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
 
+  missing from:
+    is_a: related to
+    inverse: lacks part
+
   develops from:
     is_a: related to
+    inverse: develops into
     close_mappings:
       # RTX mapping seems to be inverse of 'biolink:develops_from'
       - RO:0002203
@@ -4478,6 +5016,10 @@ slots:
       - RO:0002207
       - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
+
+  develops into:
+     is_a: related to
+     inverse: develops from
 
   in taxon:
     aliases:
@@ -4510,9 +5052,14 @@ slots:
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
     range: ontology class
+    inverse: is molecular consequence of
     narrow_mappings:
       - NCIT:allele_has_activity
 
+  is molecular consequence of:
+    is_a: related to
+    domain: ontology class
+    inverse: has molecular consequence
 
 ## --------------------
 ## ASSOCIATION SLOTS
