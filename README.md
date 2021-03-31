@@ -38,7 +38,7 @@ their properties, relationships, and enumerate ways in which they can be associa
 The representation is independent of storage technology or metamodel (Solr documents, neo4j/property graphs,
 RDF/OWL, JSON, CSVs, etc). Different mappings to each of these are provided.
 
-The specification of the Biolink Model is a [single YAML file](biolink-model.yaml) built using [biolinkml](https://github.com/biolink/biolinkml).
+The specification of the Biolink Model is a [single YAML file](biolink-model.yaml) built using [linkml](https://github.com/linkml).
 The basic elements of the YAML are:
 
  - Class Definitions: definitions of upper level *classes* representing both 'named thing' and 'association'

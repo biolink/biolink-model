@@ -2,7 +2,7 @@
 
 The Biolink Model is defined as a YAML. Any changes or edits are to be made to this YAML.
 
-We make use of [BiolinkML](https://github.com/biolink/biolinkml) library to generate various artifacts from the YAML.
+We make use of [linkML](https://github.com/linkml) library to generate various artifacts from the YAML.
 
 
 ## Installation
