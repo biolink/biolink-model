@@ -1199,7 +1199,6 @@ slots:
     multivalued: True
     in_subset:
       - translator_minimal
-    inverse: superclass of
     close_mappings:
       # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
       # and a an 'instance B' has class 'class A' (inverse term)
@@ -1305,7 +1304,6 @@ slots:
       that have a broader, more general meaning. Broader terms are
       typically shown as parents in a hierarchy or tree.
     is_a: related to
-    inverse: narrow match
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -1475,7 +1473,6 @@ slots:
       the affected entity already exists, unlike predicates such as
       'affects risk for' and 'prevents, where the outcome is something
       that may or may not come to be.
-    inverse: affected by
     in_subset:
       - translator_minimal
     related_mappings:
@@ -1602,12 +1599,12 @@ slots:
     is_a: affects
     domain: molecular entity
     range: molecular entity
-    inverse: activity affects
 
   activity affects:
     is_a: affects
     domain: molecular entity
     range: molecular entity
+    inverse: activity affected by
 
   increases activity of:
     description: >-
@@ -1617,7 +1614,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: activity increased by
     related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
@@ -1660,7 +1656,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: activity decreased by
     related_mappings:
       - GAMMA:ic50
       - GAMMA:ki
@@ -1715,7 +1710,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    inverse: expression affected by
     exact_mappings:
       - CTD:affects_expression_of
 
@@ -1736,7 +1730,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    inverse: expression increased by
     close_mappings:
       # Agent of the action or effect, not the relationship itself
       - CHEMBL.MECHANISM:releasing_agent
@@ -1761,7 +1754,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    inverse: expression decreased by
     related_mappings:
       - DGIdb:antisense
       - DGIdb:antisense_oligonucleotide
@@ -1822,7 +1814,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: localization affected by
     related_mappings:
       - GAMMA:storage
     exact_mappings:
@@ -1846,7 +1837,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: localization increased by
     exact_mappings:
       - CTD:increases_localization_of
 
@@ -1867,7 +1857,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: localization decreased by
     exact_mappings:
       - CTD:decreases_localization_of
 
@@ -1888,7 +1877,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: metabolic processing affected by
     related_mappings:
       - GAMMA:catalytic_activity
     exact_mappings:
@@ -1910,7 +1898,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: metabolic processing increased by
     exact_mappings:
       - CTD:increases_metabolic_processing_of
     narrow_mappings:
@@ -1932,7 +1919,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: metabolic processing decreased by
     exact_mappings:
       - CTD:decreases_metabolic_processing_of
 
@@ -1955,7 +1941,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: molecular modification affected by
     exact_mappings:
       - CTD:affects_molecular_modification_of
     narrow_mappings:
@@ -2010,7 +1995,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: molecular modification increased by
     exact_mappings:
       - CTD:increases_molecular_modification_of
     narrow_mappings:
@@ -2064,7 +2048,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: molecular modification decreased by
     exact_mappings:
       - CTD:decreases_molecular_modification_of
     narrow_mappings:
@@ -2118,7 +2101,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: sythesis affected by
     exact_mappings:
       - CTD:affects_synthesis_of
 
@@ -2138,7 +2120,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: synthesis increased by
     exact_mappings:
       - CTD:increases_synthesis_of
 
@@ -2159,7 +2140,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: synthesis decreased by
     exact_mappings:
       - CTD:decreases_synthesis_of
       - GAMMA:inhibition_of_synthesis
@@ -2183,7 +2163,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: degradation affected by
     exact_mappings:
       - CTD:affects_degradation_of
     narrow_mappings:
@@ -2206,7 +2185,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: degradation increased by
     related_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
@@ -2242,7 +2220,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: degradation decreased by
     exact_mappings:
       - CTD:decreases_degradation_of
     narrow_mappings:
@@ -2266,7 +2243,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    inverse: mutation rate affected by
     exact_mappings:
       - CTD:affects_mutation_rate_of
     broad_mappings:
@@ -2290,7 +2266,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    inverse: mutation rate increased by
     exact_mappings:
       - CTD:increases_mutation_rate_of
     broad_mappings:
@@ -2312,7 +2287,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: genomic entity
-    inverse: mutation rate decreased by
     exact_mappings:
       - CTD:decreases_mutation_rate_of
     broad_mappings:
@@ -2338,7 +2312,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: response affected by
     exact_mappings:
       - CTD:affects_response_to
 
@@ -2361,7 +2334,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: response increased by
     exact_mappings:
       - CTD:increases_response_to
 
@@ -2384,7 +2356,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: response decreased by
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
@@ -2408,7 +2379,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
-    inverse: splicing affected by
     exact_mappings:
       - CTD:affects_RNA_splicing
     broad_mappings:
@@ -2431,7 +2401,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: transcript
-    inverse: splicing increased by
     exact_mappings:
       - CTD:increases_RNA_splicing
     broad_mappings:
@@ -2458,6 +2427,14 @@ slots:
     broad_mappings:
       - CTD:decreases_splicing_of
 
+  splicing decreased by:
+    is_a: affects splicing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: transcript
+    inverse: decreases splicing of
+
   affects stability of:
     description: >-
       holds between two molecular entities where the action or effect of one impacts the stability
@@ -2467,7 +2444,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: stability affected by
     close_mappings:
       - GAMMA:stabilization
     exact_mappings:
@@ -2490,7 +2466,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: stability increased by
     close_mappings:
       # agent of the action or effect, not the relationship
       - CHEMBL.MECHANISM:stabiliser
@@ -2514,7 +2489,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: stability decreased by
     exact_mappings:
       - CTD:decreases_stability_of
 
@@ -2542,6 +2516,14 @@ slots:
       - RO:0002340
       - RO:0002345
 
+  transport affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects transport of
+
   increases transport of:
     description: >-
       holds between two molecular entities where the action or effect of one
@@ -2551,7 +2533,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: transport increased by
     close_mappings:
       - GAMMA:carrier
       - GAMMA:transporter
@@ -2575,7 +2556,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: transport decreased by
     exact_mappings:
       - CTD:decreases_transport_of
 
@@ -2596,7 +2576,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: secretion affected by
     exact_mappings:
       - CTD:affects_secretion_of
     broad_mappings:
@@ -2619,7 +2598,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: secretion increased by
     exact_mappings:
       - CTD:increases_secretion_of
     broad_mappings:
@@ -2643,7 +2621,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: secretion decreased by
     exact_mappings:
       - CTD:decreases_secretion_of
     broad_mappings:
@@ -2667,7 +2644,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: uptake affected by
     exact_mappings:
       - CTD:affects_uptake_of
     broad_mappings:
@@ -2690,8 +2666,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse:
-      uptake increased by
     exact_mappings:
       - CTD:increases_uptake_of
     broad_mappings:
@@ -2714,7 +2688,6 @@ slots:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
-    inverse: uptake decreased by
     exact_mappings:
       - CTD:decreases_uptake_of
     broad_mappings:
@@ -2738,7 +2711,6 @@ slots:
     mixin: true
     domain: physical essence or occurrent
     range: physical essence or occurrent
-    inverse: regulated by
     close_mappings:
       - RO:0002334
     exact_mappings:
@@ -2764,7 +2736,6 @@ slots:
     comments:
       - This is a grouping for positive process-process and entity-entity regulation.
     is_a: regulates
-    inverse: positively regulated by
     mixin: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
@@ -2788,7 +2759,6 @@ slots:
     comments:
       - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
-    inverse: negatively regulated by
     mixin: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
@@ -2818,7 +2788,6 @@ slots:
       - regulates
     domain: occurrent
     range: occurrent
-    inverse: process regulated by process
     exact_mappings:
       - RO:0002211
 
@@ -2832,7 +2801,6 @@ slots:
     is_a: process regulates process
     mixins:
       - positively regulates
-    inverse: process positively regulated by process
     exact_mappings:
       - RO:0002213
 
@@ -2844,7 +2812,6 @@ slots:
     is_a: process regulates process
     mixins:
       - negatively regulates
-    inverse: process negatively regulated by process
     exact_mappings:
       - RO:0002212
 
@@ -2859,7 +2826,6 @@ slots:
       - regulates
     domain: molecular entity
     range: molecular entity
-    inverse: entity regulated by entity
     local_names:
       translator: regulates
       ro: activity directly regulates activity of
@@ -2885,7 +2851,6 @@ slots:
     is_a: entity regulates entity
     mixins:
       - positively regulates
-    inverse: entity positively regulated by entity
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
@@ -2915,7 +2880,6 @@ slots:
     is_a: entity regulates entity
     mixins:
       - negatively regulates
-    inverse: entity negatively regulated by entity
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
@@ -2943,7 +2907,6 @@ slots:
       with the structure, function, or occurrence of another.
     in_subset:
       - translator_minimal
-    inverse: disrupted by
     exact_mappings:
       - SEMMEDDB:DISRUPTS
       - SEMMEDDB:disrupts
@@ -2983,7 +2946,6 @@ slots:
     range: gene product mixin
     in_subset:
       - translator_minimal
-    inverse: gene product of
     close_mappings:
       # RTX term tagged as inverse mapping
       - PR:has_gene_template
@@ -3009,7 +2971,6 @@ slots:
     is_a: related to
     domain: transcript
     range: gene
-    inverse: transcribed to
     description: >-
       x is transcribed from y if and only if x is synthesized from template y
     exact_mappings:
@@ -3024,7 +2985,6 @@ slots:
       x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
       reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
       and produces x (amino acid chain/polypeptide)
-    inverse: translation of
     close_mappings:
       - RO:0002513
       - SIO:010082
@@ -3345,7 +3305,6 @@ slots:
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
-    inverse: condition associated with gene
     exact_mappings:
       - RTXKG1:gene_associated_with_condition
     broad_mappings:
@@ -3421,7 +3380,6 @@ slots:
     is_a: contributes to
     in_subset:
       - translator_minimal
-    inverse: caused by
     exact_mappings:
       - RO:0002506
       - SEMMEDDB:CAUSES
@@ -3519,10 +3477,8 @@ slots:
       and a disease or phenotypic feature that it is used to treat
     domain: chemical or drug or treatement
     range: disease or phenotypic feature
-
     in_subset:
       - translator_minimal
-    inverse: treated by
     related_mappings:
       - MONDO:disease_responds_to
     exact_mappings:
@@ -3588,7 +3544,6 @@ slots:
       'terminated' or 'withdrawn' should be mapped onto associations
       using this term for which 'negated: true' is asserted.
     is_a: treats
-    inverse: approved for treatment by
     exact_mappings:
       - NCIT:C172573
     narrow_mappings:
@@ -3630,7 +3585,6 @@ slots:
       the likelihood of a potential outcome. Typically used to associate
       a chemical substance, exposure, activity, or medical intervention
       that can prevent the onset a disease or phenotypic feature.
-    inverse: prevented by
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -3737,7 +3691,6 @@ slots:
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
-    inverse: has biomarker
     exact_mappings:
       - NCIT:R39
     broad_mappings:
@@ -3762,7 +3715,6 @@ slots:
     range: anatomical entity
     in_subset:
       - translator_minimal
-    inverse: expresses
     exact_mappings:
       - RO:0002206
     narrow_mappings:
@@ -3792,7 +3744,6 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
-    inverse: phenotype of
     notes:
       - check the range
     in_subset:
@@ -3868,7 +3819,6 @@ slots:
       within which it is located (but of which it is not considered a part)
     in_subset:
       - translator_minimal
-    inverse: location of
     exact_mappings:
       - RO:0001025
       - FMA:has_location
@@ -3973,7 +3923,6 @@ slots:
       an exon and a chromosome/contig.
     domain: genomic entity
     range: genomic entity
-    inverse: sequence location of
     exact_mappings:
       - faldo:location
 
@@ -3985,7 +3934,6 @@ slots:
 
   model of:
     is_a: related to
-    inverse: models
     description: >-
       holds between an entity and some other entity it approximates
       for purposes of scientific study, in virtue of its exhibiting
@@ -4023,7 +3971,6 @@ slots:
       holds between wholes and their parts (material entities or processes)
     in_subset:
       - translator_minimal
-    inverse: part of
     exact_mappings:
       - BFO:0000051
       # term name seems to be 'realizes' but RTX maps this term here
@@ -4148,7 +4095,6 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: occurrent
-    inverse: is input of
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4185,7 +4131,6 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: occurrent
-    inverse: is output of
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4260,7 +4205,6 @@ slots:
     range: occurrent
     in_subset:
       - translator_minimal
-    inverse: has participant
     exact_mappings:
       - RO:0000056
       - BFO:0000056
@@ -4288,7 +4232,6 @@ slots:
       the process or function it realizes
     domain: molecular activity
     range: occurrent
-    inverse: actively involves
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4418,7 +4361,6 @@ slots:
     range: chemical substance
     in_subset:
       - translator_minimal
-    inverse: is metabolite of
     comments:
       - The CHEBI ID represents a role rather than a predicate
     exact_mappings:
@@ -4446,9 +4388,6 @@ slots:
     range: chemical substance
     in_subset:
       - translator_minimal
-    inverse: food component of
-    #mappings:
-    #  -
 
   nutrient of:
     is_a: food component of
@@ -4471,7 +4410,6 @@ slots:
     range: chemical substance
     in_subset:
       - translator_minimal
-    inverse: nutrient of
     exact_mappings:
       - WIKIDATA:Q181394
 
@@ -4523,7 +4461,6 @@ slots:
     range: chemical substance
     in_subset:
       - translator_minimal
-    inverse: is excipient of
     mappings:
       - WIKIDATA:Q902638
 
@@ -4535,7 +4472,6 @@ slots:
       process; used in SemMedDB for linking things like dysfunctions
       and processes to some disease or syndrome
     range: disease
-    inverse: has manifestation
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4610,7 +4546,6 @@ slots:
       holds between two processes, where one completes before the other begins
     domain: occurrent
     range: occurrent
-    inverse: preceded by
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4701,7 +4636,6 @@ slots:
 
   has variant part:
     is_a: has part
-    inverse: variant part of
     description: holds between a genomic entity and a genotypic entity that is a sub-component of it
     exact_mappings:
       - GENO:0000382
@@ -4736,7 +4670,6 @@ slots:
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
     range: gene
-    inverse: has missense variant
     exact_mappings:
       - SO:0001583
       - SNPEFF:missense_variant
@@ -4756,7 +4689,6 @@ slots:
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
     range: gene
-    inverse: has synonymous variant
     exact_mappings:
       - SO:0001819
       - SNPEFF:synonymous_variant
@@ -4776,7 +4708,6 @@ slots:
       results in a premature stop codon
     domain: sequence variant
     range: gene
-    inverse: has nonsense variant
     exact_mappings:
       - SNPEFF:stop_gained
     broad_mappings:
@@ -4811,7 +4742,6 @@ slots:
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
     range: gene
-    inverse: has splice site variant
     exact_mappings:
       - SO:0001629
     narrow_mappings:
@@ -4832,7 +4762,6 @@ slots:
       is genomically close to.
     domain: sequence variant
     range: gene
-    inverse: has nearby variant
     exact_mappings:
       - GAMMA:0000102
     narrow_mappings:
@@ -4852,7 +4781,6 @@ slots:
       not affect the coding sequence
     domain: sequence variant
     range: gene
-    inverse: has non coding variant
     exact_mappings:
       - GAMMA:0000103
     narrow_mappings:
@@ -4890,7 +4818,6 @@ slots:
       by the drug
     domain: drug
     range: disease or phenotypic feature
-    inverse: adverse event caused by
     exact_mappings:
       - Aeolus:0000001
 
@@ -4936,7 +4863,6 @@ slots:
 
   decreases molecular interaction:
     is_a: molecularly interacts with
-    inverse: molecular interaction decreased by
     description: indicates that the source decreases the molecular interaction between
       the target and some other molecular entity
     exact_mappings:
@@ -4948,7 +4874,6 @@ slots:
 
   increases molecular interaction:
     is_a: molecularly interacts with
-    inverse: molecular interaction increased by
     description: indicates that the source increases the molecular interaction between
       the target and some other molecular entity
     exact_mappings:
@@ -4968,7 +4893,6 @@ slots:
 
   has increased amount:
     is_a: related to
-    inverse: increased amount of
     narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
@@ -4978,7 +4902,6 @@ slots:
 
   has decreased amount:
     is_a: related to
-    inverse: decreased amount in
     narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
@@ -4988,7 +4911,6 @@ slots:
 
   lacks part:
     is_a: related to
-    inverse: missing from
     exact_mappings:
       - CL:lacks_part
       - PR:lacks_part
@@ -5002,7 +4924,6 @@ slots:
 
   develops from:
     is_a: related to
-    inverse: develops into
     close_mappings:
       # RTX mapping seems to be inverse of 'biolink:develops_from'
       - RO:0002203
@@ -5052,7 +4973,6 @@ slots:
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
     range: ontology class
-    inverse: is molecular consequence of
     narrow_mappings:
       - NCIT:allele_has_activity
 
