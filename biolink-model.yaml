@@ -2297,8 +2297,8 @@ slots:
     is_a: affects mutation rate of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: genomic entity
+    domain: genomic entity
+    range: molecular entity
     inverse: decreases mutation rate of
 
   affects response to:
@@ -2431,8 +2431,8 @@ slots:
     is_a: affects splicing of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: transcript
+    domain: transcript
+    range: molecular entity
     inverse: decreases splicing of
 
   affects stability of:
@@ -3522,7 +3522,7 @@ slots:
       holds between a disease or phenotypic feature and a therapeutic
       process or chemical substance that is used to treat the condition
     domain: disease or phenotypic feature
-    range: treatment
+    range: chemical or drug or treatement
     in_subset:
       - translator_minimal
     inverse: treats
