@@ -41,11 +41,11 @@ nav_order: 3
 
 # Overview
 
-The BiolinkML provides a variety of slots to define the semantics of your Biolink Model class and slots.
+The linkML provides a variety of slots to define the semantics of your Biolink Model class and slots.
 
 This document tries to address on how to use most of these slots in Biolink Model.
 
-Please refer to [BiolinkML documentation](https://biolink.github.io/biolinkml/docs/) for an exhaustive list of slots provided by the modeling language.
+Please refer to [linkML documentation](https://linkml.github.io/linkml-model/docs/) for an exhaustive list of slots provided by the modeling language.
 
 ## Inheritance Related Slots
 
