@@ -14,7 +14,7 @@ version: 1.7.0
 # CURIE namespaces (prefixes/base URI's) mappings of prefixes used in the body of the Biolink Model specification
 # are resolved using a specific precedence order, for use in the generation of the Biolink Model context.jsonld
 # mappings to namespaces. Any prefixes encountered in the Biolink Model but not resolved by the following
-# precedence sources, are anonymously declared by biolinkml as http://example.org/UNKNOWN/ rooted base URI's
+# precedence sources, are anonymously declared by linkml as http://example.org/UNKNOWN/ rooted base URI's
 # which should ideally be repaired in one of the precedence lists.
 #
 # 1. The following 'prefixes:' delimited list has first precedence in resolution.
@@ -23,7 +23,7 @@ prefixes:
   Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   alliancegenome: 'https://www.alliancegenome.org/'
   biolink: 'https://w3id.org/biolink/vocab/'
-  biolinkml: 'https://w3id.org/biolink/biolinkml/'
+  linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
   # Placeholder: just points to GMOD Chado wiki
   CHADO: 'http://gmod.org/wiki/Chado/'
@@ -185,7 +185,7 @@ subsets:
 ## ------------
 
 imports:
-  - biolinkml:types
+  - linkml:types
 
 types:
 
@@ -505,7 +505,7 @@ slots:
       - translator_minimal
       - samples
     #
-    # BiolinkML doesn't like this name slot to be "required: true".
+    # linkML doesn't like this name slot to be "required: true".
     # Besides, some entity nodes/attributes may not have names?
     # required: true
     slot_uri: rdfs:label
@@ -875,7 +875,7 @@ slots:
 
   summary:
     is_a: node property
-    # since 'abstract' is a BiolinkML keyword denoting a non-instantiable class or slot,
+    # since 'abstract' is a linkML keyword denoting a non-instantiable class or slot,
     # it is generally recommended that knowledge graphs use 'summary' instead to tag a Publication 'abstract'
     aliases: ['abstract']
     description: >-

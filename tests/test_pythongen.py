@@ -1,7 +1,7 @@
 import unittest
 from types import ModuleType
 
-from biolinkml.generators.pythongen import PythonGenerator
+from linkml.generators.pythongen import PythonGenerator
 
 from biolink import BIOLINK_MODEL_YAML
 
