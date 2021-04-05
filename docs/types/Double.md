@@ -10,7 +10,7 @@ layout: default
 
 A real number that conforms to the xsd:double specification
 
-URI: [metatype:Double](https://biolink.github.io/biolinkml/docs/types/Double)
+URI: [metatype:Double](https://linkml.github.io/linkml-model/docs/types/Double)
 
 |  |  |  |
 | --- | --- | --- |

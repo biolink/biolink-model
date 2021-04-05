@@ -10,7 +10,7 @@ layout: default
 
 A character string
 
-URI: [metatype:String](https://biolink.github.io/biolinkml/docs/types/String)
+URI: [metatype:String](https://linkml.github.io/linkml-model/docs/types/String)
 
 |  |  |  |
 | --- | --- | --- |

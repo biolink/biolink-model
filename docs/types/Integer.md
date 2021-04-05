@@ -10,7 +10,7 @@ layout: default
 
 An integer
 
-URI: [metatype:Integer](https://biolink.github.io/biolinkml/docs/types/Integer)
+URI: [metatype:Integer](https://linkml.github.io/linkml-model/docs/types/Integer)
 
 |  |  |  |
 | --- | --- | --- |

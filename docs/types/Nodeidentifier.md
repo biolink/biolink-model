@@ -10,7 +10,7 @@ layout: default
 
 A URI, CURIE or BNODE that represents a node in a model.
 
-URI: [metatype:Nodeidentifier](https://biolink.github.io/biolinkml/docs/types/Nodeidentifier)
+URI: [metatype:Nodeidentifier](https://linkml.github.io/linkml-model/docs/types/Nodeidentifier)
 
 |  |  |  |
 | --- | --- | --- |

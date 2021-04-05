@@ -10,7 +10,7 @@ layout: default
 
 a URI or a CURIE
 
-URI: [metatype:Uriorcurie](https://biolink.github.io/biolinkml/docs/types/Uriorcurie)
+URI: [metatype:Uriorcurie](https://linkml.github.io/linkml-model/docs/types/Uriorcurie)
 
 |  |  |  |
 | --- | --- | --- |

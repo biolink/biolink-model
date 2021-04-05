@@ -10,7 +10,7 @@ layout: default
 
 a date (year, month and day) in an idealized calendar
 
-URI: [metatype:Date](https://biolink.github.io/biolinkml/docs/types/Date)
+URI: [metatype:Date](https://linkml.github.io/linkml-model/docs/types/Date)
 
 |  |  |  |
 | --- | --- | --- |

@@ -10,7 +10,7 @@ layout: default
 
 The combination of a date and time
 
-URI: [metatype:Datetime](https://biolink.github.io/biolinkml/docs/types/Datetime)
+URI: [metatype:Datetime](https://linkml.github.io/linkml-model/docs/types/Datetime)
 
 |  |  |  |
 | --- | --- | --- |

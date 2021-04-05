@@ -10,7 +10,7 @@ layout: default
 
 Prefix part of CURIE
 
-URI: [metatype:Ncname](https://biolink.github.io/biolinkml/docs/types/Ncname)
+URI: [metatype:Ncname](https://linkml.github.io/linkml-model/docs/types/Ncname)
 
 |  |  |  |
 | --- | --- | --- |

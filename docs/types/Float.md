@@ -10,7 +10,7 @@ layout: default
 
 A real number that conforms to the xsd:float specification
 
-URI: [metatype:Float](https://biolink.github.io/biolinkml/docs/types/Float)
+URI: [metatype:Float](https://linkml.github.io/linkml-model/docs/types/Float)
 
 |  |  |  |
 | --- | --- | --- |

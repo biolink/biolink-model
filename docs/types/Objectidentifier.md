@@ -10,7 +10,7 @@ layout: default
 
 A URI or CURIE that represents an object in the model.
 
-URI: [metatype:Objectidentifier](https://biolink.github.io/biolinkml/docs/types/Objectidentifier)
+URI: [metatype:Objectidentifier](https://linkml.github.io/linkml-model/docs/types/Objectidentifier)
 
 |  |  |  |
 | --- | --- | --- |

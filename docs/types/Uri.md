@@ -10,7 +10,7 @@ layout: default
 
 a complete URI
 
-URI: [metatype:Uri](https://biolink.github.io/biolinkml/docs/types/Uri)
+URI: [metatype:Uri](https://linkml.github.io/linkml-model/docs/types/Uri)
 
 |  |  |  |
 | --- | --- | --- |

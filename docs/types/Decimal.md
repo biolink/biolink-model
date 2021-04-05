@@ -10,7 +10,7 @@ layout: default
 
 A real number with arbitrary precision that conforms to the xsd:decimal specification
 
-URI: [metatype:Decimal](https://biolink.github.io/biolinkml/docs/types/Decimal)
+URI: [metatype:Decimal](https://linkml.github.io/linkml-model/docs/types/Decimal)
 
 |  |  |  |
 | --- | --- | --- |
