@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-04-05 18:38
+# Generation date: 2021-04-12 17:09
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1269,13 +1269,13 @@ class FrequencyQuantifier(RelationshipQuantifier):
         super().__post_init__(**kwargs)
 
 
-class ChemicalOrDrugOrTreatement(YAMLRoot):
+class ChemicalOrDrugOrTreatment(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatement
-    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatement"
-    class_name: ClassVar[str] = "chemical or drug or treatement"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatement
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
+    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatment"
+    class_name: ClassVar[str] = "chemical or drug or treatment"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
 
 
 @dataclass
