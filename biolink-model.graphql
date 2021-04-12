@@ -548,7 +548,7 @@ type ChemicalExposure implements ExposureEvent
     timepoint: TimeType
   }
 
-interface ChemicalOrDrugOrTreatement
+interface ChemicalOrDrugOrTreatment
   {
   }
 
@@ -1103,7 +1103,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     sexQualifier: BiologicalSex
   }
 
-type Drug implements Mixture, ChemicalOrDrugOrTreatement, OntologyClass
+type Drug implements Mixture, ChemicalOrDrugOrTreatment, OntologyClass
   {
     id: String!
     iri: IriType
@@ -3353,7 +3353,7 @@ type TranscriptToGeneRelationship
     object: Gene!
   }
 
-type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatement
+type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
   {
     id: String!
     iri: IriType

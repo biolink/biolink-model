@@ -481,9 +481,9 @@ linkml:Nodeidentifier NONLITERAL
     } OR @<ComplexChemicalExposure>
 )
 
-<ChemicalOrDrugOrTreatement> {
-    (  $<ChemicalOrDrugOrTreatement_tes> rdf:type . * ;
-       rdf:type [ <ChemicalOrDrugOrTreatement> ] ?
+<ChemicalOrDrugOrTreatment> {
+    (  $<ChemicalOrDrugOrTreatment_tes> rdf:type . * ;
+       rdf:type [ <ChemicalOrDrugOrTreatment> ] ?
     )
 }
 
@@ -859,8 +859,8 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <MolecularEntity> ] ? ;
              &<Mixture_tes> ;
              rdf:type [ <Mixture> ] ? ;
-             &<ChemicalOrDrugOrTreatement_tes> ;
-             rdf:type [ <ChemicalOrDrugOrTreatement> ] ? ;
+             &<ChemicalOrDrugOrTreatment_tes> ;
+             rdf:type [ <ChemicalOrDrugOrTreatment> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
              <has_constituent> @<ChemicalSubstance> *
@@ -2564,8 +2564,8 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ] ? ;
           &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
-          &<ChemicalOrDrugOrTreatement_tes> ;
-          rdf:type [ <ChemicalOrDrugOrTreatement> ] ? ;
+          &<ChemicalOrDrugOrTreatment_tes> ;
+          rdf:type [ <ChemicalOrDrugOrTreatment> ] ? ;
           <has_drug> @<Drug> * ;
           <has_device> @<Device> * ;
           <has_procedure> @<Procedure> * ;
