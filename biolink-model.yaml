@@ -1035,7 +1035,7 @@ slots:
     range: named thing
     multivalued: true
     inherited: true
-    symmetric: true
+    symmetric: trueo
     exact_mappings:
       - skos:relatedMatch
       - SEMMEDDB:ASSOCIATED_WITH
@@ -2567,7 +2567,7 @@ slots:
     is_a: related to
     description: >-
       definition x has gene product of y if and only if y is a gene (SO:0000704)
-      that participates in some gene expression process (GO:0010467) where the output of that
+      that participates in some gene expression process (GO:0010467) where the output of thatf
       process is either y or something that is ribosomally translated from x
     exact_mappings:
       - RO:0002204
@@ -3573,7 +3573,7 @@ slots:
   model of:
     is_a: similar to
     description: >-
-      holds between an entity and some other entity it approximates
+      holds between a thing and some other thing it approximates
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     in_subset:
@@ -5007,7 +5007,6 @@ classes:
 
   chemical or drug or treatement:
     mixin: true
-
 
   ## ------
   ## THINGS
@@ -6536,7 +6535,6 @@ classes:
       - NCBIGene
       - ENSEMBL
       - HGNC
-      - UniProtKB
       - MGI
       - ZFIN
       - dictyBase
