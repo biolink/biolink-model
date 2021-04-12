@@ -23,7 +23,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
  * [CaseToEntityAssociationMixin](CaseToEntityAssociationMixin.md) - An abstract association for use where the case is the subject
  * [CellLineToEntityAssociationMixin](CellLineToEntityAssociationMixin.md) - An relationship between a cell line and another entity
- * [ChemicalOrDrugOrTreatement](ChemicalOrDrugOrTreatement.md)
+ * [ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)
  * [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
  * [DiseaseOrPhenotypicFeatureToEntityAssociationMixin](DiseaseOrPhenotypicFeatureToEntityAssociationMixin.md)
  * [DiseaseToEntityAssociationMixin](DiseaseToEntityAssociationMixin.md)

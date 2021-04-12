@@ -1,21 +1,21 @@
 ---
 parent: Class Mixins
-title: biolink:ChemicalOrDrugOrTreatement
+title: biolink:ChemicalOrDrugOrTreatment
 grand_parent: Classes
 layout: default
 ---
 
-# Class: ChemicalOrDrugOrTreatement
+# Class: ChemicalOrDrugOrTreatment
 
 
 
 
-URI: [biolink:ChemicalOrDrugOrTreatement](https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatement)
+URI: [biolink:ChemicalOrDrugOrTreatment](https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatment)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment]uses%20-.-%3E[ChemicalOrDrugOrTreatement],[Drug]uses%20-.-%3E[ChemicalOrDrugOrTreatement],[Treatment],[Drug])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Treatment]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Drug]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Treatment],[Drug])
 
 ---
 
