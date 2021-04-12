@@ -25,7 +25,6 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
  * NCBIGene
  * ENSEMBL
  * HGNC
- * UniProtKB
  * MGI
  * ZFIN
  * dictyBase

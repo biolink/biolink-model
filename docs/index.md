@@ -681,7 +681,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [food component of](food_component_of.md) - holds between a one or more chemical substances present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
      * [nutrient of](nutrient_of.md)
  * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
- * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of that process is either y or something that is ribosomally translated from x
+ * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
  * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
      * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
      * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
@@ -769,7 +769,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
  * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
  * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
- * [model of](model_of.md) - holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
+ * [model of](model_of.md) - holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
  * [molecularly interacts with](molecularly_interacts_with.md)
      * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other molecular entity
      * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other molecular entity
@@ -933,7 +933,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
      * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
      * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
-     * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of that process is either y or something that is ribosomally translated from x
+     * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
      * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
          * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
          * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
@@ -1000,7 +1000,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
              * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
              * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
-         * [model of](model_of.md) - holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
+         * [model of](model_of.md) - holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
      * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
      * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
      * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
@@ -1019,7 +1019,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
          * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
          * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
-     * [model of](model_of.md) - holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
+     * [model of](model_of.md) - holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
  * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
  * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
  * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
