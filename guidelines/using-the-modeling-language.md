@@ -84,7 +84,17 @@ Here we define that the association class `cell line to thing association` is an
 
 ### mixin
 
-The `mixin` slot can be used to define whether a Biolink Model class (or slot) is a mixin. While mixins can be used by other classes (or slots), there the mixin tagged class (or slot) itself cannot be directly instantiated (or used as a slot) but may perhaps be processed in knowledge graph queries as a proxy for its instantiated child classes (or slots).
+The `mixin:true` demarkation is used to extend the properties (or slots) of a class, without changing its
+position in the class hierarchy.  Mixins can be extremely helpful in a number of ways: 1) to generalize a set
+of attributes that can apply to classes in different parts of the class hierarchy, 2) reduce duplication of
+shared attributes between classes that do not inherit from one another and 3) to prevent the sometimes confusing nature
+of multiple inheritance noted in the '[diamond problem]'(https://tinyurl.com/4zdw9tsb).
+
+In general, while mixin slots and classes should not be directly instantiated, or used directly as a slot in a class,
+KGs can use them as a substitute for multiple inheritance. For example, a KG might wish to determine what are the parents
+of a certain class.  In this case, the KG should navigate a mixin used in a domain or range of a class or slot, as it 
+would the "is_a" demarkation.  
+
 
 ```yaml
   thing with taxon:
@@ -94,8 +104,23 @@ The `mixin` slot can be used to define whether a Biolink Model class (or slot) i
     slots:
       - in taxon
 ```
+Here we define the class `thing with taxon` as a mixin class with a slot `in taxon`.   
 
-Here we define the class `thing with taxon` as a mixin class with a slot `in taxon`. This class can be used as a mixin by other classes. 
+```yaml
+  molecular entity:
+    is_a: biological entity
+    mixins:
+      - thing with taxon
+      - physical essence
+      - ontology class
+    aliases: ['bioentity']
+```
+
+In the class `molecular entity`, we use the `thing with taxon` mixin in order to add the 'in taxon' attribute (slot)
+to the molecular entity class.  The other way to do this would be to duplicate the 'in taxon' attribute in every class
+manually (duplicative), or have hierarchy/parent that had the `in taxon` slot (but this parent would be a sister-class to 
+'named thing' as not all named-things are taxon based).  Mixins simplify modeling and should be used when necessary.
+
 
 ```yaml
   regulates:
@@ -107,16 +132,18 @@ Here we define the class `thing with taxon` as a mixin class with a slot `in tax
 
 Here we define the slot `regulates` as a mixin slot. This slot can be used as a `mixin` by other slots. 
 
-Mixins provide the means of reusing semantics, generally by the inclusion of specific property slots or other semantic 
-constraint, in different classes or slots, without the need to tie slots to the hierarchy of the class itself.
+Mixins provide the means of reusing semantics, generally by the inclusion of specific property slots or 
+other semantic constraint, in different classes or slots, without the need to tie slots to the 
+hierarchy of the class itself.
 
 
 ###  mixins
 
-The `mixins` slot can be used to specify a list of mixins that a class (or slot) can use to include the added 
-semantics of the mixins.
+The `mixins` slot can be used to specify a list of mixins that a class (or slot) can use to 
+include the added semantics of the mixins.
 
-The `mixins` are separate from the `is_a` hierarchy and the mixin classes do not contribute to a classes inheritance hierarchy.
+The `mixins` are separate from the `is_a` hierarchy and the mixin classes do not contribute to a 
+classes inheritance hierarchy.
 
 ```yaml
   individual organism:
@@ -125,7 +152,9 @@ The `mixins` are separate from the `is_a` hierarchy and the mixin classes do not
       - thing with taxon
 ```
 
-Here we define an entity class `individual organism` that uses the mixin class `thing with taxon`. By virtue of the mixin, the class `individual organism` will have an `in taxon` slot in addition to all its own slots, its parent slots, and its ancestor slots.
+Here we define an entity class `individual organism` that uses the mixin class `thing with taxon`. 
+By virtue of the mixin, the class `individual organism` will have an `in taxon` slot in addition to 
+all its own slots, its parent slots, and its ancestor slots.
 
 
 ## Identification, Descriptive and Indexing Related Slots
