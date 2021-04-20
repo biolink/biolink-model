@@ -132,9 +132,49 @@ manually (duplicative), or have hierarchy/parent that had the `in taxon` slot (b
 
 Here we define the slot `regulates` as a mixin slot. This slot can be used as a `mixin` by other slots. 
 
+Mixins can also be hierarchical.  For example:
+```yaml
+  frequency qualifier mixin:
+    mixin: true
+    description: >-
+      Qualifier for frequency type associations
+    slots:
+      - frequency qualifier
+
+```
+
+Here we define the mixin `frequency qualifier mixin` to hold the parent slots, `frequency qualifier.`  
+The slot, `frequence qualifier` is then inherited by every class in the subsequent `is_a` hierarchy of 
+`entity to feature or disease qualifiers mixin.`  The `frequency quantifier` mixin was created with similar 
+intentions (favoring consistency in modeling similar domains), though its reuse is not as evident in the model yet. 
+
 Mixins provide the means of reusing semantics, generally by the inclusion of specific property slots or 
 other semantic constraint, in different classes or slots, without the need to tie slots to the 
 hierarchy of the class itself.
+
+```yaml
+positively regulates:
+    comments:
+      - This is a grouping for positive process-process and entity-entity regulation.
+    is_a: regulates
+    inverse: positively regulated by
+    mixin: true
+    close_mappings:
+      # This RTX contributed term is tagged as a inverse of this Biolink predicate
+      - RO:0002336
+    exact_mappings:
+      - RO:0002213
+    narrow_mappings:
+      - CHEMBL.MECHANISM:activator
+      - DGIdb:activator
+      - RO:0004032
+      - RO:0004034
+      - RO:0002629
+      - SEMMEDDB:augments
+```
+`positively regulates` is another example of a mixin.  In this case, a mixin is used to store meta data about a 
+predicate or relationship between two entities at a general level.  Its subsequent children, inherit these definitions
+and attributes, whether or not the parent mixin class has any slots.
 
 
 ###  mixins
