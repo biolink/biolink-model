@@ -143,8 +143,8 @@ Mixins can also be hierarchical.  For example:
 
 ```
 
-Here we define the mixin `frequency qualifier mixin` to hold the parent slots, `frequency qualifier.`  
-The slot, `frequence qualifier` is then inherited by every class in the subsequent `is_a` hierarchy of 
+Here we define the mixin `frequency qualifier mixin` to hold the parent slot, `frequency qualifier.`  
+The slot, `frequency qualifier` is then inherited by every class in the subsequent `is_a` hierarchy of 
 `entity to feature or disease qualifiers mixin.`  The `frequency quantifier` mixin was created with similar 
 intentions (favoring consistency in modeling similar domains), though its reuse is not as evident in the model yet. 
 
