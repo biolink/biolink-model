@@ -6546,6 +6546,7 @@ classes:
       - SGD
       - POMBASE
       - KEGG.GENE ## org:gene
+      - UMLS
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -6687,6 +6688,7 @@ classes:
       - PR
       - ENSEMBL # ENSEMBL:ENSP*
       - FB      # FlyBase FBpp*
+      - UMLS
     in_subset:
         - model_organism_database
 
