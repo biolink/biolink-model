@@ -23,6 +23,9 @@ URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/vocab/GrossAnat
 ## Identifier prefixes
 
  * UBERON
+ * UMLS
+ * MESH
+ * NCIT
  * PO
  * FAO
 
