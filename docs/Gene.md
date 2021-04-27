@@ -35,7 +35,9 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
  * RGD
  * SGD
  * POMBASE
+ * OMIM
  * KEGG.GENE
+ * UMLS
 
 ## Parents
 

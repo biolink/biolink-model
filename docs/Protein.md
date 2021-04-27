@@ -26,6 +26,7 @@ URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
  * PR
  * ENSEMBL
  * FB
+ * UMLS
 
 ## Parents
 
