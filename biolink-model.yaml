@@ -4,7 +4,7 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-version: 1.8.1
+version: 1.8.2
 
 ## ------------
 ## PREFIXES
@@ -5957,6 +5957,7 @@ classes:
       - UMLSSC:T103
       - UMLSST:chem
     narrow_mappings:
+      - CHEBI:24431
       # Chemical Viewed Structurally
       - UMLSSC:T104
       - UMLSST:chvs
@@ -6549,7 +6550,9 @@ classes:
       - RGD
       - SGD
       - POMBASE
+      - OMIM
       - KEGG.GENE ## org:gene
+      - UMLS
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -6691,6 +6694,7 @@ classes:
       - PR
       - ENSEMBL # ENSEMBL:ENSP*
       - FB      # FlyBase FBpp*
+      - UMLS
     in_subset:
         - model_organism_database
 
