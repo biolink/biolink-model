@@ -161,6 +161,19 @@ enums:
         meaning: os:AllSomeInterpretation
       InverseAllSome:
 
+  reaction_direction_enum:
+    permissible_values:
+      left_to_right:
+      right_to_left:
+      bidirectional:
+      neutral:
+
+  reaction_side_enum:
+    permissible_values:
+      left:
+      right:
+
+
 subsets:
 
   model_organism_database:
@@ -529,6 +542,31 @@ slots:
     range: named thing
     description: >-
       The value in a property-value tuple
+
+  stoichiometry:
+    description: >-
+      the relationship between the relative quantities of substances taking part in a reaction or
+      forming a compound, typically a ratio of whole integers.
+    is_a: association slot
+    range: integer
+
+  reaction direction:
+    description: >-
+      the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+    is_a: association slot
+    range: reaction_direction_enum
+    narrow_mappings:
+      - NCIT:C42677
+
+  reaction balanced:
+    is_a: association slot
+    range: boolean
+
+  reaction side:
+    description: >-
+      the side of a reaction being modeled (ie: left or right)
+    is_a: association slot
+    range: reaction_side_enum
 
   symbol:
     is_a: node property
@@ -3818,6 +3856,12 @@ slots:
       - SNOMED:has_indirect_device
       - SNOMED:has_procedure_device
       - SNOMED:has_recipient_category
+
+  catalyzes:
+    is_a: has participant
+
+  has substrate:
+    is_a: has participant
 
   participates in:
     is_a: related to
@@ -7721,15 +7765,22 @@ classes:
     is_a: chemical to chemical association
     slots:
       - stoichiometry
-      - direction
-      - side
+      - reaction direction
+      - reaction side
     slot_usage:
       subject:
-        domain: molecular entity
+        range: molecular entity
     defining_slots:
       - subject
       - predicate
       - object
+
+  reaction to catalyst association:
+    description:
+    is_a: reaction to participant association
+    slot_usage:
+      object:
+        range: gene or gene product
 
   chemical to chemical derivation association:
     description: >-
