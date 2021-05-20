@@ -7716,6 +7716,21 @@ classes:
         range: chemical substance
         description: "the chemical element that is the target of the statement"
 
+  reaction to participant association:
+    description:
+    is_a: chemical to chemical association
+    slots:
+      - stoichiometry
+      - direction
+      - side
+    slot_usage:
+      subject:
+        domain: molecular entity
+    defining_slots:
+      - subject
+      - predicate
+      - object
+
   chemical to chemical derivation association:
     description: >-
       A causal relationship between two chemical entities, where the subject
