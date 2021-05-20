@@ -5741,7 +5741,7 @@ classes:
       - in taxon
 
   molecular entity:
-    is_a: biological entity
+    is_a: chemical entity
     mixins:
       - thing with taxon
       - physical essence
@@ -5937,8 +5937,131 @@ classes:
     slots:
       - has constituent
 
+  chemical entity:
+     is_a: named thing
+     description: >-
+       A chemical entity is a physical entity that pertains to chemistry or
+       biochemistry.
+
+  chemical mixture:
+    is_a: chemical entity
+    description: >-
+      A chemical mixture is a chemical entity composed of two or more
+      molecular entities.
+
+  small molecule:
+    aliases: ['chemical substance']
+    is_a: molecular entity
+    description: >-
+       A small molecule is a molecular entity characterized by availability
+       in small-molecule databases of SMILES, InChI, IUPAC, or other
+       unambiguous representation of its precise chemical structure; for
+       convenience of representation, any valid chemical representation is
+       included, even if it is not strictly molecular (e.g., sodium ion).
+    mixins:
+      - ontology class
+    slots:
+      - is metabolite
+    broad_mappings:
+      # UMLS Semantic Type "Substance"
+      - UMLSSC:T167
+      - UMLSST:sbst
+     exact_mappings:
+      - SIO:010004
+      - WIKIDATA:Q79529
+      # Chemical
+      - UMLSSC:T103
+      - UMLSST:chem
+    narrow_mappings:
+      - CHEBI:24431
+      # Chemical Viewed Structurally
+      - UMLSSC:T104
+      - UMLSST:chvs
+      # Organic Chemical
+      - UMLSSC:T109
+      - UMLSST:orch
+      # Nucleic Acid, Nucleoside, or Nucleotide
+      - UMLSSC:T114
+      - UMLSST:nnon
+      # Chemical Viewed Functionally
+      - UMLSSC:T120
+      - UMLSST:chvf
+      # Biomedical or Dental Material
+      - UMLSSC:T122
+      - UMLSST:bodm
+      # Indicator, Reagent, or Diagnostic Aid
+      - UMLSSC:T130
+      - UMLSST:irda
+      # Hazardous or Poisonous Substance
+      - UMLSSC:T131
+      - UMLSST:hops
+      # Element, Ion, or Isotope
+      - UMLSSC:T196
+      - UMLSST:elii
+      # Inorganic Chemical
+      - UMLSSC:T197
+      - UMLSST:inch
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
+    in_subset:
+      - model_organism_database
+
+  nucleic acid entity:
+    is_a: molecular entity
+    description: >-
+       A nucleic acid entity is a molecular entity characterized by
+       availability in gene databases of nucleotide-based sequence
+       representations of its precise sequence; for convenience of
+       representation, partial sequences of various kinds are included,
+       even if they do not represent a physical molecule.
+
+  polypeptide:
+    aliases: ['amino acid entity']
+    is_a: molecular entity
+    description: >-
+       A polypeptide is a molecular entity characterized by availability
+       in protein databases of amino-acid-based sequence representations
+       of its precise primary structure; for convenience of representation,
+       partial sequences of various kinds are included, even if they do not
+       represent a physical molecule.
+
+  molecular mixture:
+    is_a: chemical mixture
+    description: >-
+       A molecular mixture is a chemical mixture composed of two or more
+       molecular entities with known concentration and stoichiometry.
+
+  complex molecular mixture:
+    is_a: chemical mixture
+    description: >-
+       A complex molecular mixture is a chemical mixture composed of two or
+       more molecular entities with unknown concentration and stoichiometry.
+
   chemical substance:
     is_a: molecular entity
+    deprecated: >-
     mixins:
       - ontology class
     description: >-
