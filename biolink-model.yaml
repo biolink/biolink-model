@@ -4,7 +4,7 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-version: 1.7.0
+version: 1.8.2
 
 ## ------------
 ## PREFIXES
@@ -1035,7 +1035,7 @@ slots:
     range: named thing
     multivalued: true
     inherited: true
-    symmetric: true
+    symmetric: trueo
     exact_mappings:
       - skos:relatedMatch
       - SEMMEDDB:ASSOCIATED_WITH
@@ -2928,7 +2928,7 @@ slots:
     is_a: related to
     description: >-
       definition x has gene product of y if and only if y is a gene (SO:0000704)
-      that participates in some gene expression process (GO:0010467) where the output of that
+      that participates in some gene expression process (GO:0010467) where the output of thatf
       process is either y or something that is ribosomally translated from x
     exact_mappings:
       - RO:0002204
@@ -3476,7 +3476,7 @@ slots:
     description: >-
       holds between a therapeutic procedure or chemical substance
       and a disease or phenotypic feature that it is used to treat
-    domain: chemical or drug or treatement
+    domain: chemical or drug or treatment
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -3936,7 +3936,7 @@ slots:
   model of:
     is_a: related to
     description: >-
-      holds between an entity and some other entity it approximates
+      holds between a thing and some other thing it approximates
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     in_subset:
@@ -5473,9 +5473,8 @@ classes:
       - has quotient
       - has percentage
 
-  chemical or drug or treatement:
+  chemical or drug or treatment:
     mixin: true
-
 
   ## ------
   ## THINGS
@@ -6426,6 +6425,7 @@ classes:
       - UMLSSC:T103
       - UMLSST:chem
     narrow_mappings:
+      - CHEBI:24431
       # Chemical Viewed Structurally
       - UMLSSC:T104
       - UMLSST:chvs
@@ -6506,7 +6506,7 @@ classes:
     is_a: molecular entity
     mixins:
       - mixture
-      - chemical or drug or treatement
+      - chemical or drug or treatment
       - ontology class
     description: >-
       A substance intended for use in the diagnosis, cure,
@@ -6951,8 +6951,12 @@ classes:
       - UMLSST:emst
     id_prefixes:
       - UBERON
+      - UMLS
+      - MESH
+      - NCIT
       - PO
       - FAO
+      
 
   ## Genomic Entity Mixins
 
@@ -7004,7 +7008,6 @@ classes:
       - NCBIGene
       - ENSEMBL
       - HGNC
-      - UniProtKB
       - MGI
       - ZFIN
       - dictyBase
@@ -7015,7 +7018,9 @@ classes:
       - RGD
       - SGD
       - POMBASE
+      - OMIM
       - KEGG.GENE ## org:gene
+      - UMLS
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -7157,6 +7162,7 @@ classes:
       - PR
       - ENSEMBL # ENSEMBL:ENSP*
       - FB      # FlyBase FBpp*
+      - UMLS
     in_subset:
         - model_organism_database
 
@@ -7699,7 +7705,7 @@ classes:
     is_a: named thing
     mixins:
       - exposure event
-      - chemical or drug or treatement
+      - chemical or drug or treatment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
       multiple drug 'exposures', medical devices and/or procedures
