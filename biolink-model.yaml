@@ -4646,6 +4646,11 @@ slots:
 
   provided by:
     is_a: association slot
+    deprecated: >-
+      This slot is deprecated and replaced by a set or more precise slots for describing
+      the soruce retrieval provnance of an Association.  These include 'knowledge source',
+      'primary knowledge source', 'original knowledge source', and 'aggregator knowledge
+      source'.
     description: >-
       connects an association to the agent (person, organization or group) that provided it
     range: agent
@@ -4653,6 +4658,52 @@ slots:
     exact_mappings:
       - pav:providedBy
 
+  knowledge source:
+    is_a: association slot
+    description: >-
+      An Information Resource from which the knowledge expressed in an Association was 
+      retreived, directly or indirectly. This can be any resource through which the 
+      knowledge passed on its way to its currently serialized form. In practice, 
+      implementers should use one of the more specific subtypes of this generic property.
+    range: information resource
+    multivalued: true
+
+  primary knowledge source:
+    is_a: knowledge source
+    description: >-
+    The most upstream source of the knowledge expressed in an Association that an
+    implementer can identify (may or may not be the 'original' source).
+    range: information resource
+    multivalued: false
+
+  original knowledge source:
+    is_a: primary knowledge source
+    description: >-
+    The Information Resource that created the original record of the knowledge expressed 
+    in an Association (e.g. via curation of the knowledge from the literature, or 
+    generation of the knowledge de novo through computation, reasoning, inference over 
+    data).
+    range: information resource
+    multivalued: false
+    
+   aggregator knowledge source:
+    is_a: knowledge source
+    description: >-
+    An intermediate aggregator from which knowledge expressed in an Association was
+    retrieved downstream of the original source, on its path to its current serialized
+    form.
+    range: information resource
+    multivalued: true
+ 
+    supporting data source:
+    is_a: association slot
+    description: >-
+    An Information Resource from which data was retrieved and subsequently used as 
+    evidence to generate the knowledge expressed in an Association (e.g. through 
+    computation on, reasoning or inference over the retrieved data).
+    range: information resource
+    multivalued: true
+ 
   association type:
     is_a: association slot
     range: category type
@@ -5331,6 +5382,23 @@ classes:
       - eco
     exact_mappings:
       - ECO:0000000
+
+  information resource:
+    is_a: information content entity
+    aliases: ['knowledgebase']
+    description: >-
+      A database or knowledgebase and its supporting ecosystem of interfaces 
+      and services that deliver content to consumers (e.g. web portals, APIs, 
+      query endpoints, streaming services, data downloads, etc.).
+    comment: >-
+      A single Information Resource by this definition may span many different 
+      datasets or databases, and include many access endpoints and user 
+      interfaces. Information Resources include project-specific resources 
+      such as a Translator Knowledge Provider, and community knowledgebases 
+      like ChemBL, OMIM, or DGIdb.
+    in_subset:
+        - translator_minimal      
+
 
   ## Publications
 
