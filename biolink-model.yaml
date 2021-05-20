@@ -941,18 +941,18 @@ slots:
 
   is metabolite:
     is_a: node property
-    domain: chemical substance
+    domain: small molecule
     range: boolean
     description: >-
-      indicates whether a chemical substance is a metabolite
+      indicates whether a small molecule is a metabolite
     exact_mappings:
       - CHEBI:25212
 
   has constituent:
     description: >-
-      one or more chemical substances within a mixture
+      one or more small molecules within a mixture
     is_a: node property
-    range: chemical substance
+    range: small molecule
     multivalued: true
 
   has drug:
@@ -3110,7 +3110,7 @@ slots:
     aliases: ['is substance that treats']
     is_a: ameliorates
     description: >-
-      holds between a therapeutic procedure or chemical substance
+      holds between a therapeutic procedure or small molecule
       and a disease or phenotypic feature that it is used to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
@@ -3158,7 +3158,7 @@ slots:
     is_a: related to
     description: >-
       holds between a disease or phenotypic feature and a therapeutic
-      process or chemical substance that is used to treat the condition
+      process or small molecule that is used to treat the condition
     domain: disease or phenotypic feature
     range: treatment
     in_subset:
@@ -3175,7 +3175,7 @@ slots:
 
   approved to treat:
     description: >-
-      holds between a therapeutic procedure or chemical substance
+      holds between a therapeutic procedure or small molecule
       and a disease or phenotypic feature for which it is approved
       for treatment to some level of clinical trial. Note that in
       terms of REPODB narrow mappings, terms containing 'suspended',
@@ -3212,7 +3212,7 @@ slots:
   approved for treatment by:
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process
-      or chemical substance that is approved for treatment of the condition
+      or small molecule that is approved for treatment of the condition
       (or not, if negated) to some level of clinical trial
     is_a: treated by
     inverse: approved to treat
@@ -3222,7 +3222,7 @@ slots:
     description: >-
       holds between an entity whose application or use reduces
       the likelihood of a potential outcome. Typically used to associate
-      a chemical substance, exposure, activity, or medical intervention
+      a small molecule, exposure, activity, or medical intervention
       that can prevent the onset a disease or phenotypic feature.
     inverse: prevented by
     in_subset:
@@ -3544,7 +3544,7 @@ slots:
   chemically similar to:
     is_a: similar to
     description: >-
-      holds between one chemical substances and another that it approximates
+      holds between one small molecules and another that it approximates
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     in_subset:
@@ -3953,9 +3953,9 @@ slots:
   is metabolite of:
     is_a: derives from
     description: >-
-      holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
-    domain: chemical substance
-    range: chemical substance
+      holds between two small molecules in which the first one is derived from the second one as a product of metabolism
+    domain: small molecule
+    range: small molecule
     in_subset:
       - translator_minimal
     inverse: has metabolite
@@ -3967,9 +3967,9 @@ slots:
   has metabolite:
     is_a: derives into
     description: >-
-      holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
-    domain: chemical substance
-    range: chemical substance
+      holds between two small molecules in which the second one is derived from the first one as a product of metabolism
+    domain: small molecule
+    range: small molecule
     in_subset:
       - translator_minimal
     inverse: is metabolite of
@@ -3981,10 +3981,10 @@ slots:
   food component of:
     is_a: part of
     description: >-
-      holds between a one or more chemical substances present in food,
+      holds between a one or more small molecules present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: chemical substance
-    range: chemical substance
+    domain: small molecule
+    range: small molecule
     in_subset:
       - translator_minimal
     inverse: has food component
@@ -3994,10 +3994,10 @@ slots:
   has food component:
     is_a: has part
     description: >-
-      holds between food and one or more chemical substances composing it,
+      holds between food and one or more small molecules composing it,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: chemical substance
-    range: chemical substance
+    domain: small molecule
+    range: small molecule
     in_subset:
       - translator_minimal
     inverse: food component of
@@ -4007,10 +4007,10 @@ slots:
   nutrient of:
     is_a: food component of
     description: >-
-      holds between a one or more chemical substances present in food,
+      holds between a one or more small molecules present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: chemical substance
-    range: chemical substance
+    domain: small molecule
+    range: small molecule
     in_subset:
       - translator_minimal
     inverse: has nutrient
@@ -4021,8 +4021,8 @@ slots:
     is_a: has food component
     description: >-
       one or more nutrients which are growth factors for a living organism
-    domain: chemical substance
-    range: chemical substance
+    domain: small molecule
+    range: small molecule
     in_subset:
       - translator_minimal
     inverse: nutrient of
@@ -4032,9 +4032,9 @@ slots:
   is active ingredient of:
     is_a: part of
     description: >-
-      holds between a chemical substance and a drug, in which the former
+      holds between a small molecule and a drug, in which the former
       is a part of the latter, and is a biologically active component
-    domain: chemical substance
+    domain: small molecule
     range: drug
     in_subset:
       - translator_minimal
@@ -4045,10 +4045,10 @@ slots:
   has active ingredient:
     is_a: has part
     description: >-
-      holds between a drug and a chemical substance in which the latter
+      holds between a drug and a small molecule in which the latter
       is a part of the former, and is a biologically active component
     domain: drug
-    range: chemical substance
+    range: small molecule
     in_subset:
       - translator_minimal
     inverse: is active ingredient of
@@ -4058,9 +4058,9 @@ slots:
   is excipient of:
     is_a: part of
     description: >-
-      holds between a chemical substance and a drug in which the former is
+      holds between a small molecule and a drug in which the former is
       a part of the latter, and is a biologically inactive component
-    domain: chemical substance
+    domain: small molecule
     range: drug
     in_subset:
       - translator_minimal
@@ -4071,10 +4071,10 @@ slots:
   has excipient:
     is_a: has part
     description: >-
-      holds between a drug and a chemical substances in which the latter
+      holds between a drug and a small molecules in which the latter
       is a part of the former, and is a biologically inactive component
     domain: drug
-    range: chemical substance
+    range: small molecule
     in_subset:
       - translator_minimal
     inverse: is excipient of
@@ -5750,7 +5750,7 @@ classes:
     description: >-
       A gene, gene product, small molecule or macromolecule (including protein complex)"
     #notes:
-    #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
+    #  - "Check SIO mapping - also mapped to small molecule.": Resolved by changing SIO:010004 to SIO:010341
     exact_mappings:
       - CHEBI:24431
     narrow_mappings:
@@ -5804,11 +5804,11 @@ classes:
       - ontology class
     slot_usage:
       has input:
-        range: chemical substance
+        range: small molecule
         description: >-
           A chemical entity that is the input for the reaction
       has output:
-        range: chemical substance
+        range: small molecule
         description: >-
           A chemical entity that is the output for the reaction
       enabled by:
@@ -6137,7 +6137,7 @@ classes:
   carbohydrate:
     deprecated: >-
       This class will be removed from the Biolink model
-    is_a: chemical substance
+    is_a: small molecule
     exact_mappings:
       # UMLS Semantic Type "Carbohydrate Sequence"
       - UMLSSC:T088
@@ -6146,12 +6146,12 @@ classes:
       - PUBCHEM.SUBSTANCE
 
   processed material:
-    is_a: chemical substance
+    is_a: small molecule
     mixins:
       - mixture
       - ontology class
     description: >-
-      A chemical substance (often a mixture) processed
+      A small molecule (often a mixture) processed
       for consumption for nutritional, medical or technical use.
     exact_mappings:
       - OBI:0000047
@@ -6191,27 +6191,27 @@ classes:
 
   food component:
     deprecated: >-
-      Food component is replaced by a slot/role of chemical substance and will be removed
+      Food component is replaced by a slot/role of small molecule and will be removed
       from the Biolink model.
-    is_a: chemical substance
+    is_a: small molecule
     related_mappings:
       # substance role
       - CHEBI:78295
 
   environmental food contaminant:
-    is_a: chemical substance
+    is_a: small molecule
     related_mappings:
       # substance role
       - CHEBI:78299
 
   food additive:
-    is_a: chemical substance
+    is_a: small molecule
     related_mappings:
       # substance role
       - CHEBI:64047
 
   nutrient:
-    is_a: chemical substance
+    is_a: small molecule
     related_mappings:
       # substance role
       - CHEBI:33284
@@ -6252,9 +6252,9 @@ classes:
 
   metabolite:
     deprecated: >-
-      Metabolite is replaced by a slot/role of chemical substance and will be removed 
+      Metabolite is replaced by a slot/role of small molecule and will be removed
       from the Biolink model.
-    is_a: chemical substance
+    is_a: small molecule
     description: >-
       Any intermediate or product resulting from metabolism.
       Includes primary and secondary metabolites.
@@ -7306,12 +7306,12 @@ classes:
     #  -
 
   chemical exposure:
-    is_a: chemical substance
+    is_a: small molecule
     mixins:
       - exposure event
     description: >-
       A chemical exposure is an intake of a particular
-      chemical substance, other than a drug.
+      small molecule, other than a drug.
     exact_mappings:
       # this ECTO term is not visibly defined but
       # the 9000000-series identifiers seems to be the
@@ -7809,8 +7809,8 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: chemical substance
-        description: "the chemical substance or entity that is an interactor"
+        range: small molecule
+        description: "the small molecule or entity that is an interactor"
 
   case to entity association mixin:
     description: >-
@@ -7835,7 +7835,7 @@ classes:
       - chemical to entity association mixin
     slot_usage:
       object:
-        range: chemical substance
+        range: small molecule
         description: "the chemical element that is the target of the statement"
 
   chemical to chemical derivation association:
@@ -7859,11 +7859,11 @@ classes:
       - catalyst qualifier
     slot_usage:
       subject:
-        range: chemical substance
+        range: small molecule
         description: >-
           the upstream chemical entity
       object:
-        range: chemical substance
+        range: small molecule
         description: >-
           the downstream chemical entity
       predicate:
