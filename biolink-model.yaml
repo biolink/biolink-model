@@ -5950,7 +5950,6 @@ classes:
       molecular entities.
 
   small molecule:
-    aliases: ['chemical substance']
     is_a: molecular entity
     description: >-
        A small molecule is a molecular entity characterized by availability
@@ -5966,7 +5965,7 @@ classes:
       # UMLS Semantic Type "Substance"
       - UMLSSC:T167
       - UMLSST:sbst
-     exact_mappings:
+    exact_mappings:
       - SIO:010004
       - WIKIDATA:Q79529
       # Chemical
