@@ -2497,7 +2497,6 @@ slots:
     inverse: entity regulated by entity
     local_names:
       translator: regulates
-      # TODO: sierra disambiguate ro meaning here
       ro: activity directly regulates activity of
     in_subset:
       - translator_minimal
@@ -4235,7 +4234,6 @@ slots:
       - RO:0002285
 
   directly interacts with:
-    # TODO write description that this change broadens the definition of directly interacts with
     is_a: interacts with
     description: Holds between chemical entities that physically and directly interact
       with each other
@@ -5783,6 +5781,10 @@ classes:
       # TODO: some of the links in chemical entity need to be moved here.
     slots:
       - is metabolite
+    narrow_mappings:
+      # Molecular Sequence
+      - UMLSSC:T085
+      - UMLSST:mosq
 
   chemical mixture:
     is_a: chemical entity
@@ -5791,51 +5793,38 @@ classes:
       molecular entities.
 
   nucleic acid entity:
-    # TODO: need DNA, RNA (alias to genomic entity), check if these are already there, but don't need to add if not.
     is_a: molecular entity
     description: >-
       A nucleic acid entity is a molecular entity characterized by
       availability in gene databases of nucleotide-based sequence
       representations of its precise sequence; for convenience of
       representation, partial sequences of various kinds are included,
-      even if they do not represent a physical molecule.
-
-  # TODO: merge genomic entity and nucleic acid entity.
-  genomic entity:
-    is_a: chemical entity
-    aliases: ['sequence feature']
-    description: >-
-      an entity that can either be directly located on a genome (gene,
-      transcript, exon, regulatory region) or is encoded in a genome (protein)
+      even if they do not represent a physical molecule.  An entity that can
+      either be directly located on a genome (gene, transcript, exon,
+      regulatory region) or is encoded in a genome (protein)
+    aliases: [ 'sequence feature' ]
     slots:
       - has biological sequence
     exact_mappings:
-      # UMLS Semantic Group "Genes & Molecular Sequences"
-      - UMLSSG:GENE
       - SO:0000110
-      - GENO:0000897
     narrow_mappings:
-      # Gene or Genome
-      - UMLSSC:T028
-      - UMLSST:gngm
-      # Nucleotide Sequence
-      - UMLSSC:T086
-      - UMLSST:nusq
+      - UMLSSC:T028   # Gene or Genome
+      - GENO:0000897  # Genomic Entity
+      - UMLSSC:T086   # Nucleotide Sequence
     in_subset:
       - model_organism_database
 
-    molecular mixture:
-      is_a: chemical mixture
-      description: >-
-        A molecular mixture is a chemical mixture composed of two or more
-        molecular entities with known concentration and stoichiometry.
+  molecular mixture:
+    is_a: chemical mixture
+    description: >-
+      A molecular mixture is a chemical mixture composed of two or more
+      molecular entities with known concentration and stoichiometry.
 
-    complex molecular mixture:
-      is_a: chemical mixture
-      description: >-
-        A complex molecular mixture is a chemical mixture composed of two or
-        more molecular entities with unknown concentration and stoichiometry.
-
+  complex molecular mixture:
+    is_a: chemical mixture
+    description: >-
+      A complex molecular mixture is a chemical mixture composed of two or
+      more molecular entities with unknown concentration and stoichiometry.
 
   chemical entity:
     is_a: named thing
@@ -5845,33 +5834,23 @@ classes:
     description: >-
       A chemical entity is a physical entity that pertains to chemistry or
       biochemistry.
-    #notes:
-    #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
     exact_mappings:
       - CHEBI:24431
     narrow_mappings:
-      # TODO: take this to molecular entity - SIO:010341
       - WIKIDATA:Q43460564
-      # UMLS Semantic Group "Chemicals & Drugs"
-      - UMLSSG:CHEM
-      # Molecular Sequence
-      - UMLSSC:T085
-      - UMLSST:mosq
-      # Biologically Active Substance
-      - UMLSSC:T123
-      - UMLSST:bacs
-      # Hormone
-      - UMLSSC:T125
-      - UMLSST:horm
-      # Enzyme
-      - UMLSSC:T126
-      - UMLSST:enzy
-      # Immunologic Factor
-      - UMLSSC:T129
-      - UMLSST:imft
-      # Receptor
-      - UMLSSC:T192
-      - UMLSST:rcpt
+      - UMLSSG:T103 # Chemical
+      - UMLSSG:T120 # Chemical Viewed Functionally
+      - UMLSSG:T104 # Chemical Viewed Structurally
+      - UMLSSG:T197 # Inorganic Chemical
+      - UMLSSG:T109 # Organic Chemical
+      - UMLSSG:T121 # Pharmacological Substance
+      - UMLSSG:T192 # Receptor
+      - UMLSSG:T127 # Vitamin
+      - UMLSSG:T125 # Hormone
+      - UMLSSG:T200 # Clinical Drug
+      - UMLSSG:T195 # Antibiotic
+      - UMLSSC:T123 # Biologically Active Substance
+      - UMLSSC:T129 # Immunologic Factor
 
   biological process or activity:
     description: >-
@@ -5973,8 +5952,6 @@ classes:
     mixins:
       - ontology class
     close_mappings:
-      # Physiology
-      - UMLSSG:PHYS
     exact_mappings:
       # Physiologic Function
       - UMLSSC:T039
@@ -6715,7 +6692,7 @@ classes:
       - model_organism_database
 
   exon:
-    is_a: genomic entity
+    is_a: nucleic acid entity
     description: >-
       A region of the transcript sequence within a gene which is not
       removed from the primary RNA transcript by RNA splicing.
@@ -6725,7 +6702,7 @@ classes:
       - WIKIDATA:Q373027
 
   transcript:
-    is_a: genomic entity
+    is_a: nucleic acid entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     exact_mappings:
@@ -6739,7 +6716,7 @@ classes:
       - model_organism_database
 
   coding sequence:
-    is_a: genomic entity
+    is_a: nucleic acid entity
     exact_mappings:
       - SO:0000316
       - SIO:001390
@@ -6753,6 +6730,19 @@ classes:
       of its precise primary structure; for convenience of representation,
       partial sequences of various kinds are included, even if they do not
       represent a physical molecule.
+    id_prefixes:
+      - UniProtKB
+      - PR
+      - ENSEMBL # ENSEMBL:ENSP*
+      - FB      # FlyBase FBpp*
+      - UMLS
+    in_subset:
+      - model_organism_database
+    narrow_mappings:
+      - SO:0000104 # polypeptide definde in SO conflates protein and polypeptide
+      - UMLSSC:T126 # Enzyme
+      - UMLSSC:T116 # Amino Acid, Peptide, or Protein
+      - UMLSSC:T087 # UMLS Semantic Type: "Amino Acid Sequence"
 
   protein:
     description: >-
@@ -6761,29 +6751,12 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
-    aliases: ['polypeptide']
-    # TODO: make sure the mappings in protein don't actually belong to polypeptide, might need some new
-    # mappings to polypeptide directly.
-    broad_mappings:
-      # Amino Acid, Peptide, or Protein
-      - UMLSSC:T116
-      - UMLSST:aapp
     exact_mappings:
-      - PR:000000001
-      - SIO:010043
-      - WIKIDATA:Q8054
-      - SO:0000104
-      # UMLS Semantic Type: "Amino Acid Sequence"
-      - UMLSSC:T087
-      - UMLSST:amas
-    id_prefixes:
-      - UniProtKB
-      - PR
-      - ENSEMBL # ENSEMBL:ENSP*
-      - FB      # FlyBase FBpp*
-      - UMLS
-    in_subset:
-        - model_organism_database
+      - PR:000000001 # protein
+      - SIO:010043 # protein
+      - WIKIDATA:Q8054 # protein
+    narrow_mappings:
+      - UMLSSC:T116 # Amino Acid, Peptide, or Protein
 
   protein isoform:
     aliases: ['proteoform']
@@ -6872,10 +6845,8 @@ classes:
       - has gene or gene product
 
   gene family:
-    aliases:
-      - orthogroup
-      - protein family
-    is_a: chemical entity
+    aliases: ['orthogroup','protein family']
+    is_a: genomic entity
     exact_mappings:
       - NCIT:C26004
       - WIKIDATA:Q2278983
