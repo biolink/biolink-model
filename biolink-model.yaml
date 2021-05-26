@@ -6078,11 +6078,11 @@ classes:
       - has constituent
 
   processed material:
-    #TODO: check exact mappings
-    is_a: complex chemical mixture
+    is_a: chemical mixture
     description: >-
       A chemical entity (often a mixture) processed
       for consumption for nutritional, medical or technical use.
+      Is a material entity that is created or changed during material processing.
     exact_mappings:
       - OBI:0000047
 
