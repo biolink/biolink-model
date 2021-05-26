@@ -5813,6 +5813,7 @@ classes:
     is_a: named thing
     mixins:
       - physical essence
+      - chemical or drug or treatment # issue 701
     description: >-
       A chemical entity is a physical entity that pertains to chemistry or
       biochemistry.
@@ -5890,10 +5891,8 @@ classes:
       availability in gene databases of nucleotide-based sequence
       representations of its precise sequence; for convenience of
       representation, partial sequences of various kinds are included,
-      even if they do not represent a physical molecule.  An entity that can
-      either be directly located on a genome (gene, transcript, exon,
-      regulatory region) or is encoded in a genome (protein)
-    aliases: [ 'sequence feature' ]
+      even if they do not represent a physical molecule.
+    aliases: [ 'sequence feature', 'genomic entity' ]
     slots:
       - has biological sequence
     exact_mappings:
@@ -6632,7 +6631,7 @@ classes:
   ## Genomic Classes
 
   genome:
-    is_a: nucleic acid entity
+    is_a: biological entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
     exact_mappings:
@@ -6841,7 +6840,10 @@ classes:
       - GENO:0000133
 
   genotype:
-    is_a: nucleic acid entity
+    is_a: biological entity
+    mixins:
+      - thing with taxon
+      - physical essence
     description: >-
       An information content entity that describes a genome by specifying the
       total variation in genomic sequence and/or gene expression, relative to
@@ -6860,7 +6862,10 @@ classes:
       - model_organism_database
 
   haplotype:
-    is_a: nucleic acid entity
+    is_a: biological entity
+    mixins:
+      - thing with taxon
+      - physical essence
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
@@ -6942,6 +6947,7 @@ classes:
       - SO:0001483
 
   reagent targeted gene:
+    aliases: ['sequence targeting reagent']
     is_a: nucleic acid entity
     description: >-
       A gene altered in its expression level in the context of some
@@ -6949,6 +6955,8 @@ classes:
       reagent(s) such as a morpholino or RNAi.
     exact_mappings:
       - GENO:0000504
+    in_subset:
+      - model_organism_database
 
   ## --------------------
   ## Clinical
@@ -7112,10 +7120,12 @@ classes:
       - model_organism_database
 
   genomic background exposure:
-    is_a: nucleic acid entity
+    is_a: biological entity
     mixins:
       - exposure event
       - gene grouping mixin
+      - thing with taxon
+      - physical essence
     description: >-
       A genomic background exposure is where an individual's specific genomic background
       of genes, sequence variants or other pre-existing genomic conditions constitute
