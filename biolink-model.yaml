@@ -6118,15 +6118,6 @@ classes:
 
   ## Food
 
-  food component:
-    deprecated: >-
-      Food component is replaced by a slot/role of chemical substance and will be removed
-      from the Biolink model.
-    is_a: chemical substance
-    related_mappings:
-      # substance role
-      - CHEBI:78295
-
   environmental food contaminant:
     is_a: chemical entity
     related_mappings:
@@ -6167,7 +6158,7 @@ classes:
       - UMLSST:vita
 
   food:
-    is_a: complex chemical mixture
+    is_a: chemical mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
@@ -6176,19 +6167,6 @@ classes:
       # Food
       - UMLSSC:T168
       - UMLSST:food
-
-  metabolite:
-    deprecated: >-
-      Metabolite is replaced by a slot/role of chemical substance and will be removed 
-      from the Biolink model.
-    is_a: chemical substance
-    description: >-
-      Any intermediate or product resulting from metabolism.
-      Includes primary and secondary metabolites.
-    comments:
-      - The CHEBI ID represents a role rather than a substance
-    exact_mappings:
-      - CHEBI:25212
 
   ## Biology and Biomedical Sciences
 
