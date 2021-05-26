@@ -5839,6 +5839,20 @@ classes:
       # - UMLSSC:T130 # Indicator, Reagent, or Diagnostic Aid
     broad_mappings:
       - UMLSSC:T167 # Substance
+
+  small molecule:
+    is_a: molecular entity
+    aliases: [ 'chemical substance' ]
+    description: >-
+        A small molecule is a molecular entity characterized by availability
+        in small-molecule databases of SMILES, InChI, IUPAC, or other
+        unambiguous representation of its precise chemical structure; for
+        convenience of representation, any valid chemical representation is
+        included, even if it is not strictly molecular (e.g., sodium ion).
+    in_subset:
+      - model_organism_database
+    narrow_mappings:
+      - UMLSSC:T196 # Element, Ion, or Isotope
     id_prefixes:
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
@@ -5863,20 +5877,6 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
-
-  small molecule:
-    is_a: molecular entity
-    aliases: [ 'chemical substance' ]
-    description: >-
-        A small molecule is a molecular entity characterized by availability
-        in small-molecule databases of SMILES, InChI, IUPAC, or other
-        unambiguous representation of its precise chemical structure; for
-        convenience of representation, any valid chemical representation is
-        included, even if it is not strictly molecular (e.g., sodium ion).
-    in_subset:
-      - model_organism_database
-    narrow_mappings:
-      - UMLSSC:T196 # Element, Ion, or Isotope
 
   chemical mixture:
     is_a: chemical entity
