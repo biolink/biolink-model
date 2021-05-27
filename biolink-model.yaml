@@ -1035,7 +1035,10 @@ slots:
     range: named thing
     multivalued: true
     inherited: true
-    symmetric: trueo
+    symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - skos:relatedMatch
       - SEMMEDDB:ASSOCIATED_WITH
@@ -1199,6 +1202,9 @@ slots:
     multivalued: True
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
       # and a an 'instance B' has class 'class A' (inverse term)
@@ -1244,6 +1250,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # identical class extension with identical sets of individuals
       - owl:equivalentClass
@@ -1271,6 +1280,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
@@ -1293,6 +1305,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - skos:exactMatch
       - WIKIDATA:Q39893449
@@ -1306,6 +1321,9 @@ slots:
     is_a: related to
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - skos:broadMatch
       - WIKIDATA:Q39894595
@@ -1329,6 +1347,9 @@ slots:
       no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
     is_a: related to
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002604
     see_also:
@@ -1398,6 +1419,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002434
     narrow_mappings:
@@ -1414,6 +1438,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - WIKIDATA_PROPERTY:P129
       - RTXKG1:physically_interacts_with
@@ -1443,6 +1470,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - DGIdb:antibody
     exact_mappings:
@@ -1475,6 +1505,9 @@ slots:
       that may or may not come to be.
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       # Contributed by RTX. Seems possible that a new predicate "biolink:in_pathway" could be justified?
       - DRUGBANK:pathway
@@ -4521,6 +4554,9 @@ slots:
     domain: occurrent
     range: occurrent
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SNOMED:temporally_related_to
     narrow_mappings:
@@ -4546,6 +4582,9 @@ slots:
       holds between two processes, where one completes before the other begins
     domain: occurrent
     range: occurrent
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4594,6 +4633,9 @@ slots:
     domain: molecular entity
     range: molecular entity
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - GAMMA:kd
       - GAMMA:kb
@@ -4637,6 +4679,9 @@ slots:
   has variant part:
     is_a: has part
     description: holds between a genomic entity and a genotypic entity that is a sub-component of it
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - GENO:0000382
 
@@ -4647,6 +4692,9 @@ slots:
   related condition:
     is_a: related to
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - GENO:0000790
 
@@ -4657,6 +4705,9 @@ slots:
     description: holds between a sequence variant and a genomic entity
     domain: sequence variant
     range: genomic entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       # RTX contributed term mappings tagged elsewhere but mapped better here
       - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
@@ -4664,12 +4715,19 @@ slots:
       - OMIM:allelic_variant_of
       - WIKIDATA:P3433
 
+  has sequence variant:
+    is_a: related to
+    inverse: is sequence variant of
+
   is missense variant of:
     is_a: is sequence variant of
     description: holds between a gene  and a sequence variant, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SO:0001583
       - SNPEFF:missense_variant
@@ -4689,6 +4747,9 @@ slots:
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SO:0001819
       - SNPEFF:synonymous_variant
@@ -4708,6 +4769,9 @@ slots:
       results in a premature stop codon
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SNPEFF:stop_gained
     broad_mappings:
@@ -4728,6 +4792,9 @@ slots:
       nucleotides inserted or deleted is not a multiple of three.
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SO:0001589
       - SNPEFF:frameshift_variant
@@ -4736,12 +4803,19 @@ slots:
       - SNPEFF:start_lost
       - SNPEFF:stop_lost
 
+  has frameshift variant:
+    is_a: is sequence variant of
+    inverse: is frameshift variant of
+
   is splice site variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SO:0001629
     narrow_mappings:
@@ -4762,6 +4836,9 @@ slots:
       is genomically close to.
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - GAMMA:0000102
     narrow_mappings:
@@ -4781,6 +4858,9 @@ slots:
       not affect the coding sequence
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - GAMMA:0000103
     narrow_mappings:
@@ -4803,10 +4883,14 @@ slots:
     description: A relation that holds between a disease and an entity where the state
       of the entity has contribution to the disease.
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       # These two MONDO terms seem more particular than the predicate
       - MONDO:disease_has_basis_in_development_of
       - MONDO:disease_has_basis_in_accumulation_of
+
 
   # These may be pushable to causal relationships, but seem important for clarity
   # Also because causes adverse event tends to be very noisy and it's useful to be able
@@ -4818,6 +4902,9 @@ slots:
       by the drug
     domain: drug
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - Aeolus:0000001
 
@@ -4833,6 +4920,9 @@ slots:
       with that disease should not be treated with the drug.
     domain: drug
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - DrugCentral:0000001
       - RTXKG1:contraindicated_for
@@ -4850,6 +4940,7 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
+    inverse: has completed
     exact_mappings:
       - CL:has_not_completed
 
@@ -4857,6 +4948,9 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of
       and has completed
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CL:has_completed
       - RTXKG1:has_completed
@@ -4865,6 +4959,9 @@ slots:
     is_a: molecularly interacts with
     description: indicates that the source decreases the molecular interaction between
       the target and some other molecular entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
 
@@ -4876,6 +4973,9 @@ slots:
     is_a: molecularly interacts with
     description: indicates that the source increases the molecular interaction between
       the target and some other molecular entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_molecular_interaction_with
 
@@ -4893,6 +4993,9 @@ slots:
 
   has increased amount:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
@@ -4902,6 +5005,9 @@ slots:
 
   has decreased amount:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
@@ -4911,6 +5017,9 @@ slots:
 
   lacks part:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CL:lacks_part
       - PR:lacks_part
@@ -4924,6 +5033,9 @@ slots:
 
   develops from:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # RTX mapping seems to be inverse of 'biolink:develops_from'
       - RO:0002203
@@ -4953,6 +5065,9 @@ slots:
       of entities can be taxonomically classified; see 'thing with taxon'
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       # RO term 'never in taxon' is a negation of this biolink term
       - RO:0002162
@@ -4973,6 +5088,9 @@ slots:
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
     range: ontology class
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       - NCIT:allele_has_activity
 
