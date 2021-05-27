@@ -4647,10 +4647,10 @@ slots:
   provided by:
     is_a: association slot
     deprecated: >-
-      This slot is deprecated and replaced by a set or more precise slots for describing
-      the soruce retrieval provnance of an Association.  These include 'knowledge source',
-      'primary knowledge source', 'original knowledge source', and 'aggregator knowledge
-      source'.
+      This slot is deprecated and replaced by a set of more precise slots for describing
+      the source retrieval provenance of an Association.  These include 'knowledge source' 
+      and its descendants 'primary knowledge source', 'original knowledge source', and
+      'aggregator knowledge source'.
     description: >-
       connects an association to the agent (person, organization or group) that provided it
     range: agent
@@ -4662,11 +4662,13 @@ slots:
     is_a: association slot
     description: >-
       An Information Resource from which the knowledge expressed in an Association was 
-      retreived, directly or indirectly. This can be any resource through which the 
+      retrieved, directly or indirectly. This can be any resource through which the 
       knowledge passed on its way to its currently serialized form. In practice, 
       implementers should use one of the more specific subtypes of this generic property.
     range: information resource
     multivalued: true
+    close_mappings:
+      - pav:providedBy
 
   primary knowledge source:
     is_a: knowledge source
@@ -4689,7 +4691,7 @@ slots:
    aggregator knowledge source:
     is_a: knowledge source
     description: >-
-    An intermediate aggregator from which knowledge expressed in an Association was
+    An intermediate aggregator resource from which knowledge expressed in an Association was
     retrieved downstream of the original source, on its path to its current serialized
     form.
     range: information resource
