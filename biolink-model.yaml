@@ -5799,6 +5799,10 @@ classes:
     slots:
       - in taxon
 
+  genomic entity:
+    mixin: true
+    is_a: thing with taxon
+
   molecular entity:
     is_a: chemical entity
     description: >-
@@ -5896,6 +5900,8 @@ classes:
       representation, partial sequences of various kinds are included,
       even if they do not represent a physical molecule.
     aliases: [ 'sequence feature', 'genomic entity' ]
+    mixins:
+      - genomic entity
     slots:
       - has biological sequence
     exact_mappings:
@@ -6546,6 +6552,7 @@ classes:
     is_a: nucleic acid entity
     mixins:
       - gene or gene product
+      - thing with taxon
     aliases: ['locus']
     slots:
       - symbol
@@ -6625,6 +6632,8 @@ classes:
 
   genome:
     is_a: biological entity
+    mixins:
+      - genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
     exact_mappings:
@@ -6835,8 +6844,8 @@ classes:
   genotype:
     is_a: biological entity
     mixins:
-      - thing with taxon
       - physical essence
+      - genomic entity
     description: >-
       An information content entity that describes a genome by specifying the
       total variation in genomic sequence and/or gene expression, relative to
@@ -6857,7 +6866,7 @@ classes:
   haplotype:
     is_a: biological entity
     mixins:
-      - thing with taxon
+      - genomic entity
       - physical essence
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
@@ -7117,8 +7126,8 @@ classes:
     mixins:
       - exposure event
       - gene grouping mixin
-      - thing with taxon
       - physical essence
+      - genomic entity
     description: >-
       A genomic background exposure is where an individual's specific genomic background
       of genes, sequence variants or other pre-existing genomic conditions constitute
