@@ -6069,16 +6069,6 @@ classes:
 
   ## (Bio)chemistry
 
-  mixture:
-    deprecated: >-
-    mixin: true
-    description: >-
-      The physical combination of two or more chemical entities in which
-      the identities are retained and are mixed in the form of solutions,
-      suspensions and colloids.
-    slots:
-      - has constituent
-
   processed material:
     is_a: chemical mixture
     description: >-
@@ -7222,11 +7212,7 @@ classes:
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
     is_a: chemical exposure
-    #TODO: review with clinical wg: Matt B.  We want to deprecate mixture.
-    #mixins:
-    #  - mixture
-    # exact_mappings:
-    #  -
+
 
   drug exposure:
     aliases: ['drug intake', 'drug dose', 'medication intake']
