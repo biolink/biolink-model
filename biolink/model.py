@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-05-27 08:16
+# Generation date: 2021-05-27 08:27
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8758,6 +8758,12 @@ slots.produces = Slot(uri=BIOLINK.produces, name="produces", curie=BIOLINK.curie
 
 slots.produced_by = Slot(uri=BIOLINK.produced_by, name="produced by", curie=BIOLINK.curie('produced_by'),
                    model_uri=BIOLINK.produced_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.consumes = Slot(uri=BIOLINK.consumes, name="consumes", curie=BIOLINK.curie('consumes'),
+                   model_uri=BIOLINK.consumes, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.consumed_by = Slot(uri=BIOLINK.consumed_by, name="consumed by", curie=BIOLINK.curie('consumed_by'),
+                   model_uri=BIOLINK.consumed_by, domain=NamedThing, range=Optional[Union[dict, Occurrent]])
 
 slots.temporally_related_to = Slot(uri=BIOLINK.temporally_related_to, name="temporally related to", curie=BIOLINK.curie('temporally_related_to'),
                    model_uri=BIOLINK.temporally_related_to, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])

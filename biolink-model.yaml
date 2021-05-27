@@ -4188,6 +4188,17 @@ slots:
     exact_mappings:
       - RO:0003001
 
+  consumes:
+    is_a: has input
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    narrow_mappings:
+      - RO:0004009
+
+  consumed by:
+    inverse: consumes
+
   temporally related to:
     is_a: related to
     description: >-
