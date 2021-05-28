@@ -3600,7 +3600,7 @@ slots:
   chemically similar to:
     is_a: similar to
     description: >-
-      holds between one small molecule and another that it approximates
+      holds between one small molecular entity and another that it approximates
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     in_subset:
@@ -5802,6 +5802,8 @@ classes:
   genomic entity:
     mixin: true
     is_a: thing with taxon
+    in_subset:
+      - translator_minimal
 
   molecular entity:
     is_a: chemical entity
@@ -5814,6 +5816,8 @@ classes:
       - UMLSSC:T088 # Carbohydrate
       - UMLSSC:T085 # Molecular Sequence
       - UMLSSG:T127 # Vitamin
+    in_subset:
+      - translator_minimal
 
   chemical entity:
     is_a: named thing
@@ -5846,18 +5850,22 @@ classes:
       # - UMLSSC:T130 # Indicator, Reagent, or Diagnostic Aid
     broad_mappings:
       - UMLSSC:T167 # Substance
+    in_subset:
+      - translator_minimal
 
-  small molecule:
+  chemical substance:
+    deprecated: >-
+      This class is deprecated in favor of 'small molecular entity.'
+
+  small molecular entity:
     is_a: molecular entity
-    aliases: [ 'chemical substance' ]
+    aliases: [ 'chemical substance', 'small molecule' ]
     description: >-
-        A small molecule is a molecular entity characterized by availability
+        A small molecular entity is a molecular entity characterized by availability
         in small-molecule databases of SMILES, InChI, IUPAC, or other
         unambiguous representation of its precise chemical structure; for
         convenience of representation, any valid chemical representation is
         included, even if it is not strictly molecular (e.g., sodium ion).
-    in_subset:
-      - model_organism_database
     narrow_mappings:
       - UMLSSC:T196 # Element, Ion, or Isotope
     id_prefixes:
@@ -5884,12 +5892,22 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+    slot_usage:
+      id:
+        examples:
+          - value: CHEBI:29101
+            description: sodium ion
+    in_subset:
+      - model_organism_database
+      - translator_minimal
 
   chemical mixture:
     is_a: chemical entity
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
+    in_subset:
+      - translator_minimal
 
   nucleic acid entity:
     is_a: molecular entity
@@ -5913,18 +5931,23 @@ classes:
       - UMLSSC:T114   # Nucleic Acid, Nucleoside, or Nucleotide
     in_subset:
       - model_organism_database
+      - translator_minimal
 
   molecular mixture:
     is_a: chemical mixture
     description: >-
       A molecular mixture is a chemical mixture composed of two or more
       molecular entities with known concentration and stoichiometry.
+    in_subset:
+      - translator_minimal
 
   complex molecular mixture:
     is_a: chemical mixture
     description: >-
       A complex molecular mixture is a chemical mixture composed of two or
       more molecular entities with unknown concentration and stoichiometry.
+    in_subset:
+      - translator_minimal
 
   biological process or activity:
     description: >-
