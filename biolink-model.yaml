@@ -3600,7 +3600,7 @@ slots:
   chemically similar to:
     is_a: similar to
     description: >-
-      holds between one small molecular entity and another that it approximates
+      holds between one small molecule entity and another that it approximates
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     in_subset:
@@ -5855,13 +5855,13 @@ classes:
 
   chemical substance:
     deprecated: >-
-      This class is deprecated in favor of 'small molecular entity.'
+      This class is deprecated in favor of 'small molecule.'
 
-  small molecular entity:
+  small molecule:
     is_a: molecular entity
-    aliases: [ 'chemical substance', 'small molecule' ]
+    aliases: [ 'chemical substance']
     description: >-
-        A small molecular entity is a molecular entity characterized by availability
+        A small molecule entity is a molecular entity characterized by availability
         in small-molecule databases of SMILES, InChI, IUPAC, or other
         unambiguous representation of its precise chemical structure; for
         convenience of representation, any valid chemical representation is
