@@ -2,8 +2,6 @@
 layout: default
 ---
 
-[![Build Status](https://travis-ci.org/biolink/biolink-model.svg?branch=master)](https://travis-ci.org/biolink/biolink-model)
-
 # Biolink Model 2.0 Migration Guide
 
 ### Summary of chemical changes in Biolink-Model 2.0.0
