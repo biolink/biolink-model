@@ -10,8 +10,8 @@ layout: default
 
  * Refactor of the 'Molecular Entity' and 'Chemical Substance' classes and hierarchy.
  * 'Genomic Entity' is now a 'mixin' rather than a class.
- * 'Chemical Substance' class is deprecated in favor of 'Small Molecular Entity' (child of 'Molecular Entity').
- * New classes: 'Chemical Entity', 'Chemical Aggregate', 'Complex Chemical Aggregat'e, 'Small Molecular Entity', 'Polypeptide', 'Nucleic Acid Entity'.
+ * 'Chemical Substance' class is deprecated in favor of 'Small Molecule' (child of 'Molecular Entity').
+ * New classes: 'Chemical Entity', 'Chemical Aggregate', 'Complex Chemical Aggregat'e, 'Small Molecule Entity', 'Polypeptide', 'Nucleic Acid Entity'.
  * 'Gene' now is a child of 'Nucleic Acid Entity'.
  * 'Nucleic Acid Entity' now groups DNA, RNA, etc.
  * 'Protein' is a child of 'Polypeptide'.
