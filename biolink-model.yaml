@@ -950,7 +950,7 @@ slots:
 
   has constituent:
     description: >-
-      one or more molecular entities within a chemical aggregate
+      one or more molecular entities within a chemical mixture
     is_a: node property
     range: molecular entity
     multivalued: true
@@ -5901,10 +5901,10 @@ classes:
       - model_organism_database
       - translator_minimal
 
-  chemical aggregate:
+  chemical mixture:
     is_a: chemical entity
     description: >-
-      A chemical aggregate is a chemical entity composed of two or more
+      A chemical mixture is a chemical entity composed of two or more
       molecular entities.
     in_subset:
       - translator_minimal
@@ -5933,18 +5933,18 @@ classes:
       - model_organism_database
       - translator_minimal
 
-  molecular aggregate:
-    is_a: chemical aggregate
+  molecular mixture:
+    is_a: chemical mixture
     description: >-
-      A molecular aggregate is a chemical aggregate composed of two or more
+      A molecular mixture is a chemical mixture composed of two or more
       molecular entities with known concentration and stoichiometry.
     in_subset:
       - translator_minimal
 
-  complex molecular aggregate:
-    is_a: chemical aggregate
+  complex molecular mixture:
+    is_a: chemical mixture
     description: >-
-      A complex molecular aggregate is a chemical aggregate composed of two or
+      A complex molecular mixture is a chemical mixture composed of two or
       more molecular entities with unknown concentration and stoichiometry.
     in_subset:
       - translator_minimal
@@ -6099,16 +6099,16 @@ classes:
   ## (Bio)chemistry
 
   processed material:
-    is_a: chemical aggregate
+    is_a: chemical mixture
     description: >-
-      A chemical entity (often a aggregate) processed
+      A chemical entity (often a mixture) processed
       for consumption for nutritional, medical or technical use.
       Is a material entity that is created or changed during material processing.
     exact_mappings:
       - OBI:0000047
 
   drug:
-    is_a: molecular aggregate
+    is_a: molecular mixture
     mixins:
       - chemical or drug or treatment
       - ontology class
@@ -6179,7 +6179,7 @@ classes:
       - UMLSST:vita
 
   food:
-    is_a: chemical aggregate
+    is_a: chemical mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
@@ -7242,7 +7242,7 @@ classes:
   complex chemical exposure:
     description: >-
       A complex chemical exposure is an intake of a chemical
-      aggregate (e.g. gasoline), other than a drug.
+      mixture (e.g. gasoline), other than a drug.
     is_a: chemical exposure
 
 
@@ -8150,7 +8150,7 @@ classes:
 
   behavior to behavioral feature association:
     description: >-
-      An association between an aggregate behavior and
+      An association between an mixture behavior and
       a behavioral feature manifested by
       the individual exhibited or has exhibited the behavior.
     is_a: association
