@@ -1587,6 +1587,8 @@ slots:
   abundance affected by:
     is_a: affects
     inverse: affects abundance of
+    domain: molecular entity
+    range: molecular entity
 
   increases abundance of:
     description: >-
@@ -1607,6 +1609,8 @@ slots:
   abundance increased by:
     is_a: affects abundance of
     inverse: increases abundance of
+    domain: molecular entity
+    range: molecular entity
 
   decreases abundance of:
     description: >-
@@ -1627,6 +1631,8 @@ slots:
   abundance decreased by:
     is_a: affects abundance of
     inverse: decreases abundance of
+    domain: molecular entity
+    range: molecular entity
 
   affects activity of:
     description: >-
@@ -1842,6 +1848,8 @@ slots:
   folding affected by:
     is_a: affects
     inverse: affects folding of
+    domain: molecular entity
+    range: molecular entity
 
   increases folding of:
     description: >-
@@ -1860,6 +1868,8 @@ slots:
   folding increased by:
     is_a: affects folding of
     inverse: increases folding of
+    domain: molecular entity
+    range: molecular entity
 
   decreases folding of:
     description: >-
@@ -1879,6 +1889,8 @@ slots:
   folding decreased by:
     is_a: affects folding of
     inverse: decreases folding of
+    domain: molecular entity
+    range: molecular entity
 
   affects localization of:
     description: >-
@@ -3655,13 +3667,13 @@ slots:
       tag: biolink:canonical_predicate
       value: true
     exact_mappings:
-      - RO:0002506
       - SEMMEDDB:CAUSES
       - SEMMEDDB:causes
       - WIKIDATA_PROPERTY:P1542
       - SNOMED:cause_of
     broad_mappings:
       - RO:0002410
+      - RO:0002506
     narrow_mappings:
       - MONDO:disease_triggers
       - GOREL:0000040
@@ -3770,8 +3782,6 @@ slots:
       - SEMMEDDB:TREATS
       - SEMMEDDB:treats
       - WIKIDATA_PROPERTY:P2175
-    broad_mappings:
-      - RO:0003307
     narrow_mappings:
       # "is substance that treats" constrains statements to
       # a subset of the universe of all possible treatments
@@ -3806,7 +3816,8 @@ slots:
       holds between a disease or phenotypic feature and a therapeutic
       process or chemical substance that is used to treat the condition
     domain: disease or phenotypic feature
-    range: chemical or drug or treatement
+    range: chemical or drug or treatment
+    # range: chemical or drug or treatement
     in_subset:
       - translator_minimal
     inverse: treats
@@ -3828,6 +3839,7 @@ slots:
       'terminated' or 'withdrawn' should be mapped onto associations
       using this term for which 'negated: true' is asserted.
     is_a: treats
+    domain: chemical or drug or treatment
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3863,6 +3875,7 @@ slots:
       or chemical substance that is approved for treatment of the condition
       (or not, if negated) to some level of clinical trial
     is_a: treated by
+    range: chemical or drug or treatment
     inverse: approved to treat
 
   prevents :
@@ -4431,6 +4444,7 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: occurrent
+    range: biological process or activity
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -4460,6 +4474,7 @@ slots:
 
   is input of:
     is_a: has participant
+    domain: biological process or activity
     range: occurrent
     inverse: has input
     in_subset:
@@ -4470,6 +4485,7 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: occurrent
+    range: biological process or activity
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -4496,6 +4512,7 @@ slots:
   is output of:
     is_a: has participant
     range: occurrent
+    domain: biological process or activity
     inverse: has output
     in_subset:
       - translator_minimal
@@ -5067,6 +5084,8 @@ slots:
   has sequence variant:
     is_a: related to
     inverse: is sequence variant of
+    domain: genomic entity
+    range: sequence variant
 
   is missense variant of:
     is_a: is sequence variant of
@@ -5155,6 +5174,8 @@ slots:
   has frameshift variant:
     is_a: is sequence variant of
     inverse: is frameshift variant of
+    domain: gene
+    range: sequence variant
 
   is splice site variant of:
     is_a: is sequence variant of
