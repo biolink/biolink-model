@@ -1,5 +1,39 @@
 CHANGES
 =======
+1.8.2
+-----
+
+Added documentation and examples for mixins
+Added id_prefixes to gene, protein
+Added id_prefixes to gross anatomical structure
+
+
+1.8.1
+-----
+Fixed typo in 'treatement' -> 'treatment'
+Removed UniProtKB from Gene class ID prefix list
+Changed contact email from Deepak->Sierra
+
+1.8.0
+-----
+
+BiolinkML->LinkML name change support
+
+
+1.7.0
+-----
+
+Updated identifiers to canonical forms
+Added predicates for increase/decrease expression predicates, opposite of predicate, generalized
+domain for treats and transcription/translation predicates
+Domain/range changes for 'interacts with' predicate
+Add owlstart enumerations for logical interpretations
+Fixed part of the documentation bug for 'types' (linkml changes in progress), added environmental context 
+as another doc fix
+Bump urllib to 1.26.3
+Added last broad mappings from wikidata to the model
+
+
 1.6.1
 -----
 

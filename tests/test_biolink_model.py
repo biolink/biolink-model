@@ -1,6 +1,6 @@
 import unittest
 
-from biolinkml.utils.schemaloader import SchemaLoader
+from linkml.utils.schemaloader import SchemaLoader
 
 from biolink import BIOLINK_MODEL_YAML
 

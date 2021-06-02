@@ -4,17 +4,17 @@ from contextlib import redirect_stdout
 from io import StringIO
 from typing import Union, TextIO, Optional, Set, List, Any, Callable, Dict
 
-from biolinkml.generators.markdowngen import MarkdownGenerator
-from biolinkml.generators.yumlgen import YumlGenerator
-from biolinkml.meta import SchemaDefinition, ClassDefinition, SlotDefinition, Element, ClassDefinitionName, \
+from linkml.generators.markdowngen import MarkdownGenerator
+from linkml.generators.yumlgen import YumlGenerator
+from linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, Element, ClassDefinitionName, \
     TypeDefinition
-from biolinkml.utils.formatutils import camelcase, be, underscore, sfx
+from linkml.utils.formatutils import camelcase, be, underscore, sfx
 import argparse
 
 
 class JekyllMarkdownGenerator(MarkdownGenerator):
     """
-    Extends biolinkml.generators.markdowngen.MarkdownGenerator to add new styles
+    Extends linkml.generators.markdowngen.MarkdownGenerator to add new styles
     and override certain existing styles.
     """
     generatorname = os.path.basename(__file__)
@@ -221,7 +221,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        cls: biolinkml.meta.ClassDefinition
+        cls: linkml_model.meta.ClassDefinition
             A ClassDefinition
 
         Returns
@@ -346,7 +346,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        cls: biolinkml.meta.SlotDefinition
+        cls: linkml_model.meta.SlotDefinition
             A SlotDefinition
 
         """
@@ -423,7 +423,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        cls: biolinkml.meta.ClassDefinition
+        cls: linkml_model.meta.ClassDefinition
             A ClassDefinition
         level: int
             Markdown level corresponding to H1, H2, H3, etc.
@@ -441,7 +441,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        slot: biolinkml.meta.SlotDefinition
+        slot: linkml_model.meta.SlotDefinition
             A SlotDefinition
         level: int
             Markdown level corresponding to H1, H2, H3, etc.
@@ -467,7 +467,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        typ: biolinkml.meta.TypeDefinition
+        typ: linkml_model.meta.TypeDefinition
             A TypeDefinition
 
         """
@@ -477,14 +477,14 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 type_curie = self.namespaces.uri_or_curie_for(full_path, camelcase(typ.name))
                 type_uri = self.namespaces.uri_for(type_curie)
 
-                if type_curie.startswith('https://w3id.org/biolink/vocab/biolinkml:types/'):
+                if type_curie.startswith('https://w3id.org/biolink/vocab/linkml:types/'):
                     ref = type_curie.split('/')[-1]
-                    type_uri = f"https://biolink.github.io/biolinkml/docs/types/{ref}"
+                    type_uri = f"https://linkml.github.io/linkml-model/docs/types/{ref}"
                     type_curie = f"metatype:{ref}"
                 elif type_uri.startswith('https://w3id.org/biolink/vocab/'):
                     ref = type_curie.split('/')[-1]
                     type_uri = f"https://w3id.org/biolink/vocab/types/{ref}"
-                if typ.imported_from and 'biolinkml:types' in typ.imported_from:
+                if typ.imported_from and 'linkml:types' in typ.imported_from:
                     parent = 'Built-in Types'
                 else:
                     parent = 'Defined Types'
@@ -520,7 +520,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        obj: biolinkml.meta.Element
+        obj: linkml_model.meta.Element
             An element
         name: str
             The name of the element
@@ -531,9 +531,9 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         """
         if curie.startswith('http'):
-            if curie.startswith('https://w3id.org/biolink/vocab/biolinkml:types/'):
+            if curie.startswith('https://w3id.org/biolink/vocab/linkml:types/'):
                 simple_name = curie.split('/')[-1]
-                uri = f"https://biolink.github.io/biolinkml/docs/types/{simple_name}"
+                uri = f"https://linkml.github.io/linkml-model/docs/types/{simple_name}"
                 simple_name = f"metatype:{simple_name}"
             else:
                 simple_name = curie

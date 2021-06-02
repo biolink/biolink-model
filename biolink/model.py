@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-03-23 19:02
+# Generation date: 2021-05-27 08:27
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -11,21 +11,18 @@ import sys
 import re
 from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
-from biolinkml.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
+from linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
 
-from biolinkml.utils.slot import Slot
-from biolinkml.utils.metamodelcore import empty_list, empty_dict, bnode
-from biolinkml.utils.yamlutils import YAMLRoot, extended_str, extended_float, extended_int
-if sys.version_info < (3, 7, 6):
-    from biolinkml.utils.dataclass_extensions_375 import dataclasses_init_fn_with_kwargs
-else:
-    from biolinkml.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
-from biolinkml.utils.formatutils import camelcase, underscore, sfx
-from biolinkml.utils.enumerations import EnumDefinitionImpl
+from linkml.utils.slot import Slot
+from linkml.utils.metamodelcore import empty_list, empty_dict, bnode
+from linkml.utils.yamlutils import YAMLRoot, extended_str, extended_float, extended_int
+from linkml.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
+from linkml.utils.formatutils import camelcase, underscore, sfx
+from linkml.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
-from biolinkml.utils.curienamespace import CurieNamespace
-from biolinkml.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
-from includes.types import Boolean, Date, Double, Float, Integer, String, Time, Uriorcurie
+from linkml.utils.curienamespace import CurieNamespace
+from linkml.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
+from linkml_model.types import Boolean, Date, Double, Float, Integer, String, Time, Uriorcurie
 
 metamodel_version = "1.7.0"
 
@@ -205,7 +202,6 @@ ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
 ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
 ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.org/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
-BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
 CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
 DCT = CurieNamespace('dct', 'http://purl.org/dc/terms/')
@@ -222,8 +218,10 @@ INTERPRO = CurieNamespace('interpro', 'https://www.ebi.ac.uk/interpro/entry/')
 ISBN = CurieNamespace('isbn', 'https://www.isbn-international.org/identifier/')
 ISNI = CurieNamespace('isni', 'https://isni.org/isni/')
 ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
+LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOWL#')
+OS = CurieNamespace('os', 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
@@ -839,6 +837,14 @@ class ChemicalToChemicalAssociationId(AssociationId):
     pass
 
 
+class ReactionToParticipantAssociationId(ChemicalToChemicalAssociationId):
+    pass
+
+
+class ReactionToCatalystAssociationId(ReactionToParticipantAssociationId):
+    pass
+
+
 class ChemicalToChemicalDerivationAssociationId(ChemicalToChemicalAssociationId):
     pass
 
@@ -1269,6 +1275,15 @@ class FrequencyQuantifier(RelationshipQuantifier):
             self.has_percentage = float(self.has_percentage)
 
         super().__post_init__(**kwargs)
+
+
+class ChemicalOrDrugOrTreatment(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
+    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatment"
+    class_name: ClassVar[str] = "chemical or drug or treatment"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
 
 
 @dataclass
@@ -5600,6 +5615,76 @@ class ChemicalToChemicalAssociation(Association):
 
 
 @dataclass
+class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ReactionToParticipantAssociation
+    class_class_curie: ClassVar[str] = "biolink:ReactionToParticipantAssociation"
+    class_name: ClassVar[str] = "reaction to participant association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ReactionToParticipantAssociation
+
+    id: Union[str, ReactionToParticipantAssociationId] = None
+    predicate: Union[str, PredicateType] = None
+    relation: Union[str, URIorCURIE] = None
+    object: Union[str, ChemicalSubstanceId] = None
+    subject: Union[str, MolecularEntityId] = None
+    stoichiometry: Optional[int] = None
+    reaction_direction: Optional[Union[str, "ReactionDirectionEnum"]] = None
+    reaction_side: Optional[Union[str, "ReactionSideEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ReactionToParticipantAssociationId):
+            self.id = ReactionToParticipantAssociationId(self.id)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, MolecularEntityId):
+            self.subject = MolecularEntityId(self.subject)
+
+        if self.stoichiometry is not None and not isinstance(self.stoichiometry, int):
+            self.stoichiometry = int(self.stoichiometry)
+
+        if self.reaction_direction is not None and not isinstance(self.reaction_direction, ReactionDirectionEnum):
+            self.reaction_direction = ReactionDirectionEnum(self.reaction_direction)
+
+        if self.reaction_side is not None and not isinstance(self.reaction_side, ReactionSideEnum):
+            self.reaction_side = ReactionSideEnum(self.reaction_side)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ReactionToCatalystAssociation
+    class_class_curie: ClassVar[str] = "biolink:ReactionToCatalystAssociation"
+    class_name: ClassVar[str] = "reaction to catalyst association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ReactionToCatalystAssociation
+
+    id: Union[str, ReactionToCatalystAssociationId] = None
+    predicate: Union[str, PredicateType] = None
+    relation: Union[str, URIorCURIE] = None
+    subject: Union[str, MolecularEntityId] = None
+    object: Union[dict, GeneOrGeneProduct] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ReactionToCatalystAssociationId):
+            self.id = ReactionToCatalystAssociationId(self.id)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, GeneOrGeneProduct):
+            self.object = GeneOrGeneProduct(**self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
     A causal relationship between two chemical entities, where the subject represents the upstream entity and the
@@ -7901,7 +7986,39 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class LogicalInterpretationEnum(EnumDefinitionImpl):
 
+    SomeSome = PermissibleValue(text="SomeSome",
+                                       description="A modifier on a triple that causes the triple to be interpreted as a some-some statement",
+                                       meaning=OS.SomeSomeInterpretation)
+    AllSome = PermissibleValue(text="AllSome",
+                                     description="A modifier on a triple that causes the triple to be interpreted as an all-some statement.",
+                                     meaning=OS.AllSomeInterpretation)
+    InverseAllSome = PermissibleValue(text="InverseAllSome")
+
+    _defn = EnumDefinition(
+        name="LogicalInterpretationEnum",
+    )
+
+class ReactionDirectionEnum(EnumDefinitionImpl):
+
+    left_to_right = PermissibleValue(text="left_to_right")
+    right_to_left = PermissibleValue(text="right_to_left")
+    bidirectional = PermissibleValue(text="bidirectional")
+    neutral = PermissibleValue(text="neutral")
+
+    _defn = EnumDefinition(
+        name="ReactionDirectionEnum",
+    )
+
+class ReactionSideEnum(EnumDefinitionImpl):
+
+    left = PermissibleValue(text="left")
+    right = PermissibleValue(text="right")
+
+    _defn = EnumDefinition(
+        name="ReactionSideEnum",
+    )
 
 # Slots
 class slots:
@@ -7948,6 +8065,18 @@ slots.source = Slot(uri=BIOLINK.source, name="source", curie=BIOLINK.curie('sour
 
 slots.filler = Slot(uri=BIOLINK.filler, name="filler", curie=BIOLINK.curie('filler'),
                    model_uri=BIOLINK.filler, domain=NamedThing, range=Optional[Union[str, NamedThingId]])
+
+slots.stoichiometry = Slot(uri=BIOLINK.stoichiometry, name="stoichiometry", curie=BIOLINK.curie('stoichiometry'),
+                   model_uri=BIOLINK.stoichiometry, domain=Association, range=Optional[int])
+
+slots.reaction_direction = Slot(uri=BIOLINK.reaction_direction, name="reaction direction", curie=BIOLINK.curie('reaction_direction'),
+                   model_uri=BIOLINK.reaction_direction, domain=Association, range=Optional[Union[str, "ReactionDirectionEnum"]])
+
+slots.reaction_balanced = Slot(uri=BIOLINK.reaction_balanced, name="reaction balanced", curie=BIOLINK.curie('reaction_balanced'),
+                   model_uri=BIOLINK.reaction_balanced, domain=Association, range=Optional[Union[bool, Bool]])
+
+slots.reaction_side = Slot(uri=BIOLINK.reaction_side, name="reaction side", curie=BIOLINK.curie('reaction_side'),
+                   model_uri=BIOLINK.reaction_side, domain=Association, range=Optional[Union[str, "ReactionSideEnum"]])
 
 slots.symbol = Slot(uri=BIOLINK.symbol, name="symbol", curie=BIOLINK.curie('symbol'),
                    model_uri=BIOLINK.symbol, domain=NamedThing, range=Optional[str])
@@ -8472,13 +8601,13 @@ slots.exacerbates = Slot(uri=BIOLINK.exacerbates, name="exacerbates", curie=BIOL
                    model_uri=BIOLINK.exacerbates, domain=BiologicalEntity, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('treats'),
-                   model_uri=BIOLINK.treats, domain=Treatment, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.treats, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK.curie('treated_by'),
                    model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, TreatmentId], List[Union[str, TreatmentId]]]])
 
 slots.approved_to_treat = Slot(uri=BIOLINK.approved_to_treat, name="approved to treat", curie=BIOLINK.curie('approved_to_treat'),
-                   model_uri=BIOLINK.approved_to_treat, domain=Treatment, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.approved_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.approved_for_treatment_by = Slot(uri=BIOLINK.approved_for_treatment_by, name="approved for treatment by", curie=BIOLINK.curie('approved_for_treatment_by'),
                    model_uri=BIOLINK.approved_for_treatment_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, TreatmentId], List[Union[str, TreatmentId]]]])
@@ -8558,6 +8687,18 @@ slots.has_output = Slot(uri=BIOLINK.has_output, name="has output", curie=BIOLINK
 slots.has_participant = Slot(uri=BIOLINK.has_participant, name="has participant", curie=BIOLINK.curie('has_participant'),
                    model_uri=BIOLINK.has_participant, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.catalyzes = Slot(uri=BIOLINK.catalyzes, name="catalyzes", curie=BIOLINK.curie('catalyzes'),
+                   model_uri=BIOLINK.catalyzes, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.is_catalyst_of = Slot(uri=BIOLINK.is_catalyst_of, name="is catalyst of", curie=BIOLINK.curie('is_catalyst_of'),
+                   model_uri=BIOLINK.is_catalyst_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+
+slots.has_substrate = Slot(uri=BIOLINK.has_substrate, name="has substrate", curie=BIOLINK.curie('has_substrate'),
+                   model_uri=BIOLINK.has_substrate, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.is_substrate_of = Slot(uri=BIOLINK.is_substrate_of, name="is substrate of", curie=BIOLINK.curie('is_substrate_of'),
+                   model_uri=BIOLINK.is_substrate_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+
 slots.participates_in = Slot(uri=BIOLINK.participates_in, name="participates in", curie=BIOLINK.curie('participates_in'),
                    model_uri=BIOLINK.participates_in, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
@@ -8618,6 +8759,12 @@ slots.produces = Slot(uri=BIOLINK.produces, name="produces", curie=BIOLINK.curie
 slots.produced_by = Slot(uri=BIOLINK.produced_by, name="produced by", curie=BIOLINK.curie('produced_by'),
                    model_uri=BIOLINK.produced_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.consumes = Slot(uri=BIOLINK.consumes, name="consumes", curie=BIOLINK.curie('consumes'),
+                   model_uri=BIOLINK.consumes, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.consumed_by = Slot(uri=BIOLINK.consumed_by, name="consumed by", curie=BIOLINK.curie('consumed_by'),
+                   model_uri=BIOLINK.consumed_by, domain=NamedThing, range=Optional[Union[dict, Occurrent]])
+
 slots.temporally_related_to = Slot(uri=BIOLINK.temporally_related_to, name="temporally related to", curie=BIOLINK.curie('temporally_related_to'),
                    model_uri=BIOLINK.temporally_related_to, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
@@ -8628,7 +8775,7 @@ slots.preceded_by = Slot(uri=BIOLINK.preceded_by, name="preceded by", curie=BIOL
                    model_uri=BIOLINK.preceded_by, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
 slots.directly_interacts_with = Slot(uri=BIOLINK.directly_interacts_with, name="directly interacts with", curie=BIOLINK.curie('directly_interacts_with'),
-                   model_uri=BIOLINK.directly_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.directly_interacts_with, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
 
 slots.affects_expression_in = Slot(uri=BIOLINK.affects_expression_in, name="affects expression in", curie=BIOLINK.curie('affects_expression_in'),
                    model_uri=BIOLINK.affects_expression_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -8722,6 +8869,9 @@ slots.predicate = Slot(uri=RDF.predicate, name="predicate", curie=RDF.curie('pre
 
 slots.edge_label = Slot(uri=RDF.predicate, name="edge label", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.edge_label, domain=Association, range=Union[str, PredicateType])
+
+slots.logical_interpretation = Slot(uri=BIOLINK.logical_interpretation, name="logical interpretation", curie=BIOLINK.curie('logical_interpretation'),
+                   model_uri=BIOLINK.logical_interpretation, domain=Association, range=Optional[Union[str, "LogicalInterpretationEnum"]])
 
 slots.relation = Slot(uri=BIOLINK.relation, name="relation", curie=BIOLINK.curie('relation'),
                    model_uri=BIOLINK.relation, domain=Association, range=Union[str, URIorCURIE])
@@ -9001,6 +9151,12 @@ slots.case_to_entity_association_mixin_subject = Slot(uri=BIOLINK.subject, name=
 
 slots.chemical_to_chemical_association_object = Slot(uri=BIOLINK.object, name="chemical to chemical association_object", curie=BIOLINK.curie('object'),
                    model_uri=BIOLINK.chemical_to_chemical_association_object, domain=ChemicalToChemicalAssociation, range=Union[str, ChemicalSubstanceId])
+
+slots.reaction_to_participant_association_subject = Slot(uri=BIOLINK.subject, name="reaction to participant association_subject", curie=BIOLINK.curie('subject'),
+                   model_uri=BIOLINK.reaction_to_participant_association_subject, domain=ReactionToParticipantAssociation, range=Union[str, MolecularEntityId])
+
+slots.reaction_to_catalyst_association_object = Slot(uri=BIOLINK.object, name="reaction to catalyst association_object", curie=BIOLINK.curie('object'),
+                   model_uri=BIOLINK.reaction_to_catalyst_association_object, domain=ReactionToCatalystAssociation, range=Union[dict, GeneOrGeneProduct])
 
 slots.chemical_to_chemical_derivation_association_subject = Slot(uri=BIOLINK.subject, name="chemical to chemical derivation association_subject", curie=BIOLINK.curie('subject'),
                    model_uri=BIOLINK.chemical_to_chemical_derivation_association_subject, domain=ChemicalToChemicalDerivationAssociation, range=Union[str, ChemicalSubstanceId])

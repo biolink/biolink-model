@@ -16,13 +16,13 @@ Biolink Model was built with the following aims:
 - Extensible, self-documenting, and unambiguous
 - Maps to external ontologies, thesauri, controlled vocabularies, and taxonomies
 
-To that end, Biolink Model makes use of [BiolinkML](https://github.com/biolink/biolinkml) (Biolink Modeling Language) for defining the various semantics of the model.
+To that end, Biolink Model makes use of [linkML](https://github.com/linkml) (Biolink Modeling Language) for defining the various semantics of the model.
 
 ## Understanding the Biolink Modeling Language
 
-BiolinkML is a general purpose modeling language that follows object-oriented and ontological principles. The modeling language inherits features from the Web Ontology Language (OWL) and thus is capable of representing semantics in addition to the standard object-oriented hierarchy of a data model.
+linkML is a general purpose modeling language that follows object-oriented and ontological principles. The modeling language inherits features from the Web Ontology Language (OWL) and thus is capable of representing semantics in addition to the standard object-oriented hierarchy of a data model.
 
-Models are authored in YAML;  using BiolinkML one can generate a variety of artifacts including JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and Markdown.
+Models are authored in YAML;  using linkML one can generate a variety of artifacts including JSON-Schema, OWL, RDF, Python data classes, Shape Expressions, and Markdown.
 
 The modeling language provides the following idioms,
 - **Class definition**
@@ -34,16 +34,16 @@ The modeling language provides the following idioms,
 - **Schema definition**
   - Used to define properties of the model itself
 
-Refer to [BiolinkML on GitHub](https://github.com/biolink/biolinkml) for a more detailed guide on BiolinkML.
+Refer to [linkML on GitHub](https://github.com/linkml) for a more detailed guide on linkML.
 
-> **Note:** Biolink Model is authored using BiolinkML. While Biolink Model and BiolinkML share a "Biolink" in its name, that is where the similarities end. One can use BiolinkML to author any schema for any domain.
+> **Note:** Biolink Model is authored using linkML. While Biolink Model and linkML share a "Biolink" in its name, that is where the similarities end. One can use linkML to author any schema for any domain.
 
 
 ## Structure of the Model
 
 Biolink Model is a high-level data model where entities, associations, and predicates are arranged in a hierarchy. The model also defines node properties, edge properties, and types.
 
-The model itself is organized using BiolinkML Class definition (class), Slot definition (slot), Type definition (type) and Schema definition.
+The model itself is organized using linkML Class definition (class), Slot definition (slot), Type definition (type) and Schema definition.
 
 > **Conventions**
 > 
@@ -93,7 +93,7 @@ Each class in the `named thing` has one or more slots (properties).
 
 The root of all entities is the `named thing` class.
 
-> **Note:** While we say `named thing` when defining the model using BiolinkML, the actual CURIE for this class is `biolink:NamedThing`
+> **Note:** While we say `named thing` when defining the model using linkML, the actual CURIE for this class is `biolink:NamedThing`
 
 
 ##### Associations
@@ -108,7 +108,7 @@ Each class has one or more slots (or properties).
 
 The root of all associations is the `association` class.
 
-> **Note:** While we say `association` when defining the model using BiolinkML, the acutal CURIE for this class is `biolink:Association`
+> **Note:** While we say `association` when defining the model using linkML, the acutal CURIE for this class is `biolink:Association`
 
 
 ##### Mixins
@@ -185,7 +185,7 @@ For example, `subject`, `predicate`, and `object` are children of the `associati
 
 ### Types
 
-BiolinkML provides a handful of inbuilt data types. But you can also define custom data types using the modeling language.
+linkML provides a handful of inbuilt data types. But you can also define custom data types using the modeling language.
 
 In Biolink Model we have several data types.
 
@@ -193,4 +193,4 @@ Data types do not have any inheritance and thus are not arranged in any hierarch
 
 For example, `iri type` is a type defined in the Biolink Model where the value space is constrained to `uriorcurie`.
 
-> **Note**: `uriorcurie` is an inbuilt data type provided by BiolinkML where the value space is constrained to either a URI or a CURIE representation.
+> **Note**: `uriorcurie` is an inbuilt data type provided by linkML where the value space is constrained to either a URI or a CURIE representation.

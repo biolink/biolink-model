@@ -2,11 +2,11 @@ BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX schema: <http://schema.org/>
 PREFIX UO: <http://purl.obolibrary.org/obo/UO_>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
 
 
 <ChemicalFormulaValue> xsd:string
@@ -35,33 +35,33 @@ PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
 
 <BiologicalSequence> xsd:string
 
-metatype:String xsd:string
+linkml:String xsd:string
 
-metatype:Integer xsd:integer
+linkml:Integer xsd:integer
 
-metatype:Boolean xsd:boolean
+linkml:Boolean xsd:boolean
 
-metatype:Float xsd:float
+linkml:Float xsd:float
 
-metatype:Double xsd:double
+linkml:Double xsd:double
 
-metatype:Decimal xsd:decimal
+linkml:Decimal xsd:decimal
 
-metatype:Time xsd:dateTime
+linkml:Time xsd:dateTime
 
-metatype:Date xsd:date
+linkml:Date xsd:date
 
-metatype:Datetime xsd:dateTime
+linkml:Datetime xsd:dateTime
 
-metatype:Uriorcurie IRI
+linkml:Uriorcurie IRI
 
-metatype:Uri IRI
+linkml:Uri IRI
 
-metatype:Ncname xsd:string
+linkml:Ncname xsd:string
 
-metatype:Objectidentifier IRI
+linkml:Objectidentifier IRI
 
-metatype:Nodeidentifier NONLITERAL
+linkml:Nodeidentifier NONLITERAL
 
 <Activity> CLOSED {
     (  $<Activity_tes> (  &<NamedThing_tes> ;
@@ -94,8 +94,8 @@ metatype:Nodeidentifier NONLITERAL
 <Agent> CLOSED {
     (  $<Agent_tes> (  &<AdministrativeEntity_tes> ;
           rdf:type [ <AdministrativeEntity> ] ? ;
-          <affiliation> @metatype:Uriorcurie * ;
-          <address> @metatype:String ? ;
+          <affiliation> @linkml:Uriorcurie * ;
+          <address> @linkml:String ? ;
           <name> @<LabelType> ?
        ) ;
        rdf:type [ <Agent> ]
@@ -166,10 +166,10 @@ metatype:Nodeidentifier NONLITERAL
 <Article> CLOSED {
     (  $<Article_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          <published_in> @metatype:Uriorcurie ;
-          <iso_abbreviation> @metatype:String ? ;
-          <volume> @metatype:String ? ;
-          <issue> @metatype:String ?
+          <published_in> @linkml:Uriorcurie ;
+          <iso_abbreviation> @linkml:String ? ;
+          <volume> @linkml:String ? ;
+          <issue> @linkml:String ?
        ) ;
        rdf:type [ <Article> ]
     )
@@ -182,11 +182,11 @@ metatype:Nodeidentifier NONLITERAL
              rdf:subject @<NamedThing> ;
              rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
-             <relation> @metatype:Uriorcurie ;
-             <negated> @metatype:Boolean ? ;
+             <relation> @linkml:Uriorcurie ;
+             <negated> @linkml:Boolean ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
-             <type> @metatype:String ? ;
+             <type> @linkml:String ? ;
              <category> @<CategoryType> *
           ) ;
           rdf:type [ <Association> ]
@@ -352,7 +352,7 @@ metatype:Nodeidentifier NONLITERAL
 <Book> CLOSED {
     (  $<Book_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          <type> @metatype:String
+          <type> @linkml:String
        ) ;
        rdf:type [ <Book> ]
     )
@@ -361,9 +361,9 @@ metatype:Nodeidentifier NONLITERAL
 <BookChapter> CLOSED {
     (  $<BookChapter_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          <published_in> @metatype:Uriorcurie ;
-          <volume> @metatype:String ? ;
-          <chapter> @metatype:String ?
+          <published_in> @linkml:Uriorcurie ;
+          <volume> @linkml:String ? ;
+          <chapter> @linkml:String ?
        ) ;
        rdf:type [ <BookChapter> ]
     )
@@ -481,13 +481,19 @@ metatype:Nodeidentifier NONLITERAL
     } OR @<ComplexChemicalExposure>
 )
 
+<ChemicalOrDrugOrTreatment> {
+    (  $<ChemicalOrDrugOrTreatment_tes> rdf:type . * ;
+       rdf:type [ <ChemicalOrDrugOrTreatment> ] ?
+    )
+}
+
 <ChemicalSubstance>  (
     CLOSED {
        (  $<ChemicalSubstance_tes> (  &<MolecularEntity_tes> ;
              rdf:type [ <MolecularEntity> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
-             <is_metabolite> @metatype:Boolean ?
+             <is_metabolite> @linkml:Boolean ?
           ) ;
           rdf:type [ <ChemicalSubstance> ]
        )
@@ -696,7 +702,7 @@ metatype:Nodeidentifier NONLITERAL
 <DatasetDistribution> CLOSED {
     (  $<DatasetDistribution_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ? ;
-          <distribution_download_url> @metatype:String ?
+          <distribution_download_url> @linkml:String ?
        ) ;
        rdf:type [ <DatasetDistribution> ]
     )
@@ -705,8 +711,8 @@ metatype:Nodeidentifier NONLITERAL
 <DatasetSummary> CLOSED {
     (  $<DatasetSummary_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ? ;
-          <source_web_page> @metatype:String ? ;
-          schema:logo @metatype:String ?
+          <source_web_page> @linkml:String ? ;
+          schema:logo @linkml:String ?
        ) ;
        rdf:type [ <DatasetSummary> ]
     )
@@ -716,7 +722,7 @@ metatype:Nodeidentifier NONLITERAL
     (  $<DatasetVersion_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ? ;
           dcterms:source @<Dataset> ? ;
-          pav:version @metatype:String ? ;
+          pav:version @linkml:String ? ;
           dcterms:distribution @<DatasetDistribution> ?
        ) ;
        rdf:type [ <DatasetVersion> ]
@@ -853,6 +859,8 @@ metatype:Nodeidentifier NONLITERAL
              rdf:type [ <MolecularEntity> ] ? ;
              &<Mixture_tes> ;
              rdf:type [ <Mixture> ] ? ;
+             &<ChemicalOrDrugOrTreatment_tes> ;
+             rdf:type [ <ChemicalOrDrugOrTreatment> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
              <has_constituent> @<ChemicalSubstance> *
@@ -913,7 +921,7 @@ metatype:Nodeidentifier NONLITERAL
 <Entity_struct> {
     (  $<Entity_tes> (  <iri> @<IriType> ? ;
           <category> @<CategoryType> * ;
-          rdf:type @metatype:String ? ;
+          rdf:type @linkml:String ? ;
           rdfs:label @<LabelType> ? ;
           dcterms:description @<NarrativeText> ? ;
           <source> @<LabelType> ? ;
@@ -1130,10 +1138,10 @@ metatype:Nodeidentifier NONLITERAL
 <FrequencyQuantifier> {
     (  $<FrequencyQuantifier_tes> (  &<RelationshipQuantifier_tes> ;
           rdf:type [ <RelationshipQuantifier> ] ? ;
-          <has_count> @metatype:Integer ? ;
-          <has_total> @metatype:Integer ? ;
-          <has_quotient> @metatype:Double ? ;
-          <has_percentage> @metatype:Double ?
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <FrequencyQuantifier> ] ?
     )
@@ -1157,7 +1165,7 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <GenomicEntity> ] ? ;
           &<GeneOrGeneProduct_tes> ;
           rdf:type [ <GeneOrGeneProduct> ] ? ;
-          <symbol> @metatype:String ? ;
+          <symbol> @linkml:String ? ;
           <synonym> @<LabelType> * ;
           <xref> @<IriType> *
        ) ;
@@ -1414,11 +1422,11 @@ metatype:Nodeidentifier NONLITERAL
 <GenomicSequenceLocalization> CLOSED {
     (  $<GenomicSequenceLocalization_tes> (  &<SequenceAssociation_tes> ;
           rdf:type [ <SequenceAssociation> ] ? ;
-          <start_interbase_coordinate> @metatype:Integer ? ;
-          <end_interbase_coordinate> @metatype:Integer ? ;
-          <genome_build> @metatype:String ? ;
-          <strand> @metatype:String ? ;
-          <phase> @metatype:String ? ;
+          <start_interbase_coordinate> @linkml:Integer ? ;
+          <end_interbase_coordinate> @linkml:Integer ? ;
+          <genome_build> @linkml:String ? ;
+          <strand> @linkml:String ? ;
+          <phase> @linkml:String ? ;
           <subject> @<GenomicEntity> ;
           <object> @<GenomicEntity> ;
           <predicate> @<PredicateType>
@@ -1549,8 +1557,8 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<GeographicLocation_tes> (  &<PlanetaryEntity_tes> ;
              rdf:type [ <PlanetaryEntity> ] ? ;
-             <latitude> @metatype:Float ? ;
-             <longitude> @metatype:Float ?
+             <latitude> @linkml:Float ? ;
+             <longitude> @linkml:Float ?
           ) ;
           rdf:type [ <GeographicLocation> ]
        )
@@ -1623,10 +1631,10 @@ metatype:Nodeidentifier NONLITERAL
 <InformationContentEntity_struct> {
     (  $<InformationContentEntity_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <license> @metatype:String ? ;
-          <rights> @metatype:String ? ;
-          <format> @metatype:String ? ;
-          <creation_date> @metatype:Date ?
+          <license> @linkml:String ? ;
+          <rights> @linkml:String ? ;
+          <format> @linkml:String ? ;
+          <creation_date> @linkml:Date ?
        ) ;
        rdf:type [ <InformationContentEntity> ]
     )
@@ -1968,7 +1976,7 @@ metatype:Nodeidentifier NONLITERAL
 <OrganismTaxonToOrganismTaxonInteraction> CLOSED {
     (  $<OrganismTaxonToOrganismTaxonInteraction_tes> (  &<OrganismTaxonToOrganismTaxonAssociation_tes> ;
           rdf:type [ <OrganismTaxonToOrganismTaxonAssociation> ] ? ;
-          <associated_environmental_context> @metatype:String ? ;
+          <associated_environmental_context> @linkml:String ? ;
           <subject> @<OrganismTaxon> ;
           <object> @<OrganismTaxon> ;
           <predicate> @<PredicateType>
@@ -2028,7 +2036,7 @@ metatype:Nodeidentifier NONLITERAL
        (  $<PairwiseGeneToGeneInteraction_tes> (  &<GeneToGeneAssociation_tes> ;
              rdf:type [ <GeneToGeneAssociation> ] ? ;
              <predicate> @<PredicateType> ;
-             <relation> @metatype:Uriorcurie
+             <relation> @linkml:Uriorcurie
           ) ;
           rdf:type [ <PairwiseGeneToGeneInteraction> ]
        )
@@ -2041,7 +2049,7 @@ metatype:Nodeidentifier NONLITERAL
           <interacting_molecules_category> @<OntologyClass> ? ;
           <subject> @<MolecularEntity> ;
           <predicate> @<PredicateType> ;
-          <relation> @metatype:Uriorcurie ;
+          <relation> @linkml:Uriorcurie ;
           <object> @<MolecularEntity>
        ) ;
        rdf:type [ <PairwiseMolecularInteraction> ]
@@ -2299,14 +2307,14 @@ metatype:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
              rdf:type [ <InformationContentEntity> ] ? ;
-             <authors> @metatype:String * ;
-             <pages> @metatype:String * ;
-             <summary> @metatype:String ? ;
-             <keywords> @metatype:String * ;
-             <mesh_terms> @metatype:Uriorcurie * ;
+             <authors> @linkml:String * ;
+             <pages> @linkml:String * ;
+             <summary> @linkml:String ? ;
+             <keywords> @linkml:String * ;
+             <mesh_terms> @linkml:Uriorcurie * ;
              <xref> @<IriType> * ;
              <name> @<LabelType> ? ;
-             dcterms:type @metatype:String
+             dcterms:type @linkml:String
           ) ;
           rdf:type [ <Publication> ]
        )
@@ -2317,7 +2325,7 @@ metatype:Nodeidentifier NONLITERAL
     (  $<QuantityValue_tes> (  &<Annotation_tes> ;
           rdf:type [ <Annotation> ] ? ;
           <has_unit> @<Unit> ? ;
-          <has_numeric_value> @metatype:Double ?
+          <has_numeric_value> @linkml:Double ?
        ) ;
        rdf:type [ <QuantityValue> ] ?
     )
@@ -2428,10 +2436,10 @@ metatype:Nodeidentifier NONLITERAL
 <Serial> CLOSED {
     (  $<Serial_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          <iso_abbreviation> @metatype:String ? ;
-          <volume> @metatype:String ? ;
-          <issue> @metatype:String ? ;
-          <type> @metatype:String
+          <iso_abbreviation> @linkml:String ? ;
+          <volume> @linkml:String ? ;
+          <issue> @linkml:String ? ;
+          <type> @linkml:String
        ) ;
        rdf:type [ <Serial> ]
     )
@@ -2556,6 +2564,8 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ] ? ;
           &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
+          &<ChemicalOrDrugOrTreatment_tes> ;
+          rdf:type [ <ChemicalOrDrugOrTreatment> ] ? ;
           <has_drug> @<Drug> * ;
           <has_device> @<Device> * ;
           <has_procedure> @<Procedure> * ;
@@ -2669,10 +2679,10 @@ metatype:Nodeidentifier NONLITERAL
           rdf:type [ <FrequencyQualifierMixin> ] ? ;
           <subject> @<SequenceVariant> ;
           <object> @<PopulationOfIndividualOrganisms> ;
-          <has_quotient> @metatype:Double ? ;
-          <has_count> @metatype:Integer ? ;
-          <has_total> @metatype:Integer ? ;
-          <has_percentage> @metatype:Double ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_percentage> @linkml:Double ? ;
           <frequency_qualifier> @<FrequencyValue> ?
        ) ;
        rdf:type [ <VariantToPopulationAssociation> ]
