@@ -22,6 +22,7 @@ version: 1.8.2
 prefixes:
   Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   alliancegenome: 'https://www.alliancegenome.org/'
+  apollo: 'https://github.com/GMOD/Apollo'
   biolink: 'https://w3id.org/biolink/vocab/'
   linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
@@ -160,6 +161,33 @@ enums:
           A modifier on a triple that causes the triple to be interpreted as an all-some statement.
         meaning: os:AllSomeInterpretation
       InverseAllSome:
+
+  phase_enum:
+    description: phase
+    permissible_values:
+      0:
+      1:
+      2:
+
+  strand_enum:
+    description: strand
+    permissible_values:
+      "+":
+        description: Positive
+      "-":
+        description: Negative
+      ".":
+        description: Unstranded
+      "?":
+        description: Unknown
+
+  sequence_enum:
+    description: type of sequence
+    permissible_values:
+      "NA":
+        description: nucleic acid
+      "AA":
+        description: amino acid
 
 subsets:
 
@@ -437,6 +465,12 @@ slots:
     in_subset:
       - samples
 
+  base coordinate:
+    is_a: sequence localization attribute
+    aliases: [ 'one-based', 'fully-closed' ]
+    description: >-
+      A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
+    range: integer
 
 ## --------------------
 ## NODE PROPERTY SLOTS
@@ -3793,9 +3827,6 @@ slots:
       - RO:0000057
       - RO:has_participant
     narrow_mappings:
-      # Not sure about the definitions of these two GOREL terms... may be deprecated?
-      #- GOREL:0001007
-      #- GOREL:0002008
       - BFO:0000167
       # Several of the following RTX terms tagged as inverse to 'biolink:participates_in'
       - LOINC:has_subject
@@ -4525,19 +4556,6 @@ slots:
     description: >-
       any slot that relates an association to another entity
 
-  association_id:
-    is_a: association slot
-    identifier: true
-    deprecated: >-
-      This slot is deprecated in favor of 'id' slot.
-    deprecated_element_has_exact_replacement: id
-    description: >-
-        A unique identifier for an association
-    in_subset:
-        - translator_minimal
-    domain: association
-    alias: id
-
   subject:
     is_a: association slot
     local_names:
@@ -4588,19 +4606,6 @@ slots:
     exact_mappings:
       - owl:annotatedProperty
       - OBAN:association_has_predicate
-
-  edge label:
-    deprecated: >-
-      This slot is deprecated in favor of 'predicate' slot.
-    deprecated_element_has_exact_replacement: predicate
-    is_a: association slot
-    domain: association
-    range: predicate type
-    required: true
-    local_names:
-      ga4gh: annotation predicate
-      translator: predicate
-    slot_uri: rdf:predicate
 
   logical interpretation:
     is_a: association slot
@@ -4876,33 +4881,69 @@ slots:
 
   interbase coordinate:
     is_a: sequence localization attribute
+    aliases: ['zero-based', 'half-open', 'space-based']
     description: >-
-      A position in interbase coordinates. This is applied to a sequence localization edge.
+      A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1.
+      This is applied to a sequence localization edge.
     range: integer
 
   start interbase coordinate:
     is_a: interbase coordinate
     description: >-
       The position at which the subject genomic entity starts
-      on the chromosome or other entity to which it is located on.
+      on the chromosome or other entity to which it is located on
+      (ie: the start of the sequence being referenced is 0).
+    close_mappings:
+      - faldo:begin
 
   end interbase coordinate:
     is_a: interbase coordinate
     description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
+    close_mappings:
+      - faldo:end
+
+  start coordinate:
+    is_a: base coordinate
+    aliases: ['start']
+    description: >-
+      The position at which the subject genomic entity starts
+      on the chromosome or other entity to which it is located on.
+      (ie: the start of the sequence being referenced is 1).
+    exact_mappings:
+      - gff3:start
+    close_mappings:
+      - faldo:begin
+
+  end coordinate:
+    is_a: base coordinate
+    aliases: ['end']
+    description: >-
+      The position at which the subject genomic entity ends
+      on the chromosome or other entity to which it is located on.
+    exact_mappings:
+      - gff3:end
+    close_mappings:
+      - faldo:end
 
   genome build:
     is_a: sequence localization attribute
     description: >-
       The version of the genome on which a feature is located.
       For example, GRCh38 for Homo sapiens.
+    range: strand_enum
+    exact_mappings:
+      - gff3:strand
 
   strand:
     is_a: sequence localization attribute
     description: >-
       The strand on which a feature is located. Has a value of '+'
       (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+    range: strand_enum
+    exact_mappings:
+      - gff3:strand
 
   phase:
     is_a: sequence localization attribute
@@ -4910,6 +4951,9 @@ slots:
     description: >-
       The phase for a coding sequence entity. For example, phase of a
       CDS as represented in a GFF3 with a value of 0, 1 or 2.
+    range: phase_enum
+    exact_mappings:
+      - gff3:phase
 
 classes:
 
@@ -8072,17 +8116,6 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
           - value: MP:0013229
             description: "abnormal brain ventricle size"
-
-  disease or phenotypic feature association to location association:
-    deprecated: >-
-      This association class name is deprecated in favor of the
-      'disease or phenotypic feature to location association' class.
-    is_a: association
-    mixins:
-      - disease or phenotypic feature to entity association mixin
-    slot_usage:
-      object:
-        range: anatomical entity
 
   disease or phenotypic feature to location association:
     description: >-
