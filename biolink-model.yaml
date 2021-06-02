@@ -22,6 +22,7 @@ version: 1.8.2
 prefixes:
   Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   alliancegenome: 'https://www.alliancegenome.org/'
+  apollo: 'https://github.com/GMOD/Apollo'
   biolink: 'https://w3id.org/biolink/vocab/'
   linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
@@ -124,6 +125,7 @@ prefixes:
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  XPO: 'http://purl.obolibrary.org/obo/XPO_'  # Xenopus Phenotype Ontology
 
 default_prefix: biolink
 default_range: string
@@ -161,6 +163,45 @@ enums:
         meaning: os:AllSomeInterpretation
       InverseAllSome:
 
+  reaction_direction_enum:
+    permissible_values:
+      left_to_right:
+      right_to_left:
+      bidirectional:
+      neutral:
+
+  reaction_side_enum:
+    permissible_values:
+      left:
+      right:
+
+  phase_enum:
+    description: phase
+    permissible_values:
+      0:
+      1:
+      2:
+
+  strand_enum:
+    description: strand
+    permissible_values:
+      "+":
+        description: Positive
+      "-":
+        description: Negative
+      ".":
+        description: Unstranded
+      "?":
+        description: Unknown
+
+  sequence_enum:
+    description: type of sequence
+    permissible_values:
+      "NA":
+        description: nucleic acid
+      "AA":
+        description: amino acid
+        
 subsets:
 
   model_organism_database:
@@ -437,6 +478,12 @@ slots:
     in_subset:
       - samples
 
+  base coordinate:
+    is_a: sequence localization attribute
+    aliases: [ 'one-based', 'fully-closed' ]
+    description: >-
+      A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
+    range: integer
 
 ## --------------------
 ## NODE PROPERTY SLOTS
@@ -529,6 +576,31 @@ slots:
     range: named thing
     description: >-
       The value in a property-value tuple
+
+  stoichiometry:
+    description: >-
+      the relationship between the relative quantities of substances taking part in a reaction or
+      forming a compound, typically a ratio of whole integers.
+    is_a: association slot
+    range: integer
+
+  reaction direction:
+    description: >-
+      the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+    is_a: association slot
+    range: reaction_direction_enum
+    narrow_mappings:
+      - NCIT:C42677
+
+  reaction balanced:
+    is_a: association slot
+    range: boolean
+
+  reaction side:
+    description: >-
+      the side of a reaction being modeled (ie: left or right)
+    is_a: association slot
+    range: reaction_side_enum
 
   symbol:
     is_a: node property
@@ -1356,7 +1428,111 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
-  
+  active in:
+    is_a: related to
+    domain: gene or gene product
+    range: cellular component
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002432
+
+  acts upstream of:
+    is_a: related to
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002263
+
+  has upstream actor:
+    is_a: related to
+    inverse: acts upstream of
+
+  acts upstream of positive effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004034
+
+  has positive upstream actor:
+    is_a: has upstream actor
+    inverse: acts upstream of positive effect
+
+  acts upstream of negative effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004035
+
+  has negative upstream actor:
+    is_a: has upstream actor
+    inverse: acts upstream of negative effect
+
+  acts upstream of or within:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004032
+
+  has upstream or within actor:
+    is_a: has upstream actor
+    inverse: acts upstream of or within
+
+  acts upstream of or within positive effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002264
+
+  has positive upstream or within actor:
+    is_a: has upstream or within actor
+    inverse: acts upstream of or within positive effect
+
+  acts upstream of or within negative effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004033
+
+  has negative upstream or within actor:
+    is_a: has upstream or within actor
+    inverse: acts upstream of or within negative effect
+
+    ## Publication related predicates
+  mentions:
+    description: >-
+      refers to is a relation between one information content entity and the named thing
+      that it makes reference to.
+    is_a: related to
+    exact_mappings:
+      - IAO:0000142
+    narrow_mappings:
+      - SIO:000628
+
   ## Publication related predicates
 
   contributor:
@@ -4534,9 +4710,6 @@ slots:
       - RO:0000057
       - RO:has_participant
     narrow_mappings:
-      # Not sure about the definitions of these two GOREL terms... may be deprecated?
-      #- GOREL:0001007
-      #- GOREL:0002008
       - BFO:0000167
       # Several of the following RTX terms tagged as inverse to 'biolink:participates_in'
       - LOINC:has_subject
@@ -4559,6 +4732,30 @@ slots:
       - SNOMED:has_indirect_device
       - SNOMED:has_procedure_device
       - SNOMED:has_recipient_category
+
+  catalyzes:
+    is_a: has participant
+    # domain: nucleic acid entity
+    # range: molecular activity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  is catalyst of:
+    is_a: participates in
+    inverse: catalyzes
+
+  has substrate:
+    is_a: has participant
+    # domain: molecular activity
+    # range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  is substrate of:
+    is_a: participates in
+    inverse: has substrate
 
   participates in:
     is_a: related to
@@ -4909,6 +5106,17 @@ slots:
     inverse: produces
     exact_mappings:
       - RO:0003001
+
+  consumes:
+    is_a: has input
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    narrow_mappings:
+      - RO:0004009
+
+  consumed by:
+    inverse: consumes
 
   temporally related to:
     is_a: related to
@@ -5483,19 +5691,6 @@ slots:
     description: >-
       any slot that relates an association to another entity
 
-  association_id:
-    is_a: association slot
-    identifier: true
-    deprecated: >-
-      This slot is deprecated in favor of 'id' slot.
-    deprecated_element_has_exact_replacement: id
-    description: >-
-        A unique identifier for an association
-    in_subset:
-        - translator_minimal
-    domain: association
-    alias: id
-
   subject:
     is_a: association slot
     local_names:
@@ -5547,19 +5742,6 @@ slots:
       - owl:annotatedProperty
       - OBAN:association_has_predicate
 
-  edge label:
-    deprecated: >-
-      This slot is deprecated in favor of 'predicate' slot.
-    deprecated_element_has_exact_replacement: predicate
-    is_a: association slot
-    domain: association
-    range: predicate type
-    required: true
-    local_names:
-      ga4gh: annotation predicate
-      translator: predicate
-    slot_uri: rdf:predicate
-
   logical interpretation:
     is_a: association slot
     required: false
@@ -5604,6 +5786,12 @@ slots:
 
   provided by:
     is_a: association slot
+    deprecated: >-
+      This slot is deprecated and replaced by a set of more precise slots for describing
+      the source retrieval provenance of an Association.  These include 'knowledge source' 
+      and its descendants 'primary knowledge source', 'original knowledge source', and
+      'aggregator knowledge source'.
+    deprecated_element_has_exact_replacement: knowledge source
     description: >-
       connects an association to the agent (person, organization or group) that provided it
     range: agent
@@ -5611,6 +5799,54 @@ slots:
     exact_mappings:
       - pav:providedBy
 
+  knowledge source:
+    is_a: association slot
+    description: >-
+      An Information Resource from which the knowledge expressed in an Association was 
+      retrieved, directly or indirectly. This can be any resource through which the 
+      knowledge passed on its way to its currently serialized form. In practice, 
+      implementers should use one of the more specific subtypes of this generic property.
+    range: information resource
+    multivalued: true
+    close_mappings:
+      - pav:providedBy
+
+  primary knowledge source:
+    is_a: knowledge source
+    description: >-
+    The most upstream source of the knowledge expressed in an Association that an
+    implementer can identify (may or may not be the 'original' source).
+    range: information resource
+    multivalued: false
+
+  original knowledge source:
+    is_a: primary knowledge source
+    description: >-
+    The Information Resource that created the original record of the knowledge expressed 
+    in an Association (e.g. via curation of the knowledge from the literature, or 
+    generation of the knowledge de novo through computation, reasoning, inference over 
+    data).
+    range: information resource
+    multivalued: false
+    
+   aggregator knowledge source:
+    is_a: knowledge source
+    description: >-
+    An intermediate aggregator resource from which knowledge expressed in an Association was
+    retrieved downstream of the original source, on its path to its current serialized
+    form.
+    range: information resource
+    multivalued: true
+ 
+    supporting data source:
+    is_a: association slot
+    description: >-
+    An Information Resource from which data was retrieved and subsequently used as 
+    evidence to generate the knowledge expressed in an Association (e.g. through 
+    computation on, reasoning or inference over the retrieved data).
+    range: information resource
+    multivalued: true
+ 
   association type:
     is_a: association slot
     range: category type
@@ -5780,33 +6016,69 @@ slots:
 
   interbase coordinate:
     is_a: sequence localization attribute
+    aliases: ['zero-based', 'half-open', 'space-based']
     description: >-
-      A position in interbase coordinates. This is applied to a sequence localization edge.
+      A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1.
+      This is applied to a sequence localization edge.
     range: integer
 
   start interbase coordinate:
     is_a: interbase coordinate
     description: >-
       The position at which the subject genomic entity starts
-      on the chromosome or other entity to which it is located on.
+      on the chromosome or other entity to which it is located on
+      (ie: the start of the sequence being referenced is 0).
+    close_mappings:
+      - faldo:begin
 
   end interbase coordinate:
     is_a: interbase coordinate
     description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
+    close_mappings:
+      - faldo:end
+
+  start coordinate:
+    is_a: base coordinate
+    aliases: ['start']
+    description: >-
+      The position at which the subject genomic entity starts
+      on the chromosome or other entity to which it is located on.
+      (ie: the start of the sequence being referenced is 1).
+    exact_mappings:
+      - gff3:start
+    close_mappings:
+      - faldo:begin
+
+  end coordinate:
+    is_a: base coordinate
+    aliases: ['end']
+    description: >-
+      The position at which the subject genomic entity ends
+      on the chromosome or other entity to which it is located on.
+    exact_mappings:
+      - gff3:end
+    close_mappings:
+      - faldo:end
 
   genome build:
     is_a: sequence localization attribute
     description: >-
       The version of the genome on which a feature is located.
       For example, GRCh38 for Homo sapiens.
+    range: strand_enum
+    exact_mappings:
+      - gff3:strand
 
   strand:
     is_a: sequence localization attribute
     description: >-
       The strand on which a feature is located. Has a value of '+'
       (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+    range: strand_enum
+    exact_mappings:
+      - gff3:strand
 
   phase:
     is_a: sequence localization attribute
@@ -5814,6 +6086,9 @@ slots:
     description: >-
       The phase for a coding sequence entity. For example, phase of a
       CDS as represented in a GFF3 with a value of 0, 1 or 2.
+    range: phase_enum
+    exact_mappings:
+      - gff3:phase
 
 classes:
 
@@ -6289,6 +6564,23 @@ classes:
       - eco
     exact_mappings:
       - ECO:0000000
+
+  information resource:
+    is_a: information content entity
+    aliases: ['knowledgebase']
+    description: >-
+      A database or knowledgebase and its supporting ecosystem of interfaces 
+      and services that deliver content to consumers (e.g. web portals, APIs, 
+      query endpoints, streaming services, data downloads, etc.).
+    comment: >-
+      A single Information Resource by this definition may span many different 
+      datasets or databases, and include many access endpoints and user 
+      interfaces. Information Resources include project-specific resources 
+      such as a Translator Knowledge Provider, and community knowledgebases 
+      like ChemBL, OMIM, or DGIdb.
+    in_subset:
+        - translator_minimal      
+
 
   ## Publications
 
@@ -7324,6 +7616,7 @@ classes:
       - WBPhenotype
       - SNOMEDCT
       - MESH
+      - XPO
     in_subset:
       - model_organism_database
 
@@ -7502,15 +7795,16 @@ classes:
       - ZFIN
       - dictyBase
       - WB
-      - WormBase
+      - WormBase # we have two prefixes here as worbase supports WormBase:WBGene00000898
+                 # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
       - FB  # FlyBase FBgn*
-      - FB
       - RGD
       - SGD
       - POMBASE
       - OMIM
       - KEGG.GENE ## org:gene
       - UMLS
+      - Xenbase
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -8674,6 +8968,28 @@ classes:
         range: chemical substance
         description: "the chemical element that is the target of the statement"
 
+  reaction to participant association:
+    description:
+    is_a: chemical to chemical association
+    slots:
+      - stoichiometry
+      - reaction direction
+      - reaction side
+    slot_usage:
+      subject:
+        range: molecular entity
+    defining_slots:
+      - subject
+      - predicate
+      - object
+
+  reaction to catalyst association:
+    description:
+    is_a: reaction to participant association
+    slot_usage:
+      object:
+        range: gene or gene product
+
   chemical to chemical derivation association:
     description: >-
       A causal relationship between two chemical entities, where the subject
@@ -8931,6 +9247,29 @@ classes:
     slots:
       - sex qualifier
 
+  named thing to information content entity association:
+    description: >-
+      association between a named thing and a information content entity where the specific context
+      of the relationship between that named thing and the publication is unknown. For
+      example, model organisms databases often capture the knowledge that a gene is found in a
+      journal article, but not specifically the context in which that gene was documented in the article.
+      In these cases, this association with the accompanying predicate 'mentions' could be used.
+      Conversely, for more specific associations (like 'gene to disease association', the publication should
+      be captured as an edge property).
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        domain: named thing
+      object:
+        range: publication
+      predicate:
+        subproperty_of: mentions
+    in_subset:
+      - model_organism_database
+
   entity to disease association mixin:
     description: >-
       mixin class for any association whose object (target node) is a disease
@@ -8959,17 +9298,6 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
           - value: MP:0013229
             description: "abnormal brain ventricle size"
-
-  disease or phenotypic feature association to location association:
-    deprecated: >-
-      This association class name is deprecated in favor of the
-      'disease or phenotypic feature to location association' class.
-    is_a: association
-    mixins:
-      - disease or phenotypic feature to entity association mixin
-    slot_usage:
-      object:
-        range: anatomical entity
 
   disease or phenotypic feature to location association:
     description: >-
@@ -9419,6 +9747,40 @@ classes:
         description: >-
           A organismal entity (strain, breed) with a predisposition to a disease, or bred/created
           specifically to model a disease.
+
+  organism to organism association:
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: individual organism
+      relation:
+        values_from:
+          - ro
+      object:
+        range: individual organism
+        description: >-
+          An association between two individual organisms.
+
+  taxon to taxon association:
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: organism taxon
+      relation:
+        values_from:
+          - ro
+      object:
+        range: organism taxon
+        description: >-
+          An association between individuals of different taxa.
 
   gene has variant that contributes to disease association:
     is_a: gene to disease association
