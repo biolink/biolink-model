@@ -162,6 +162,18 @@ enums:
         meaning: os:AllSomeInterpretation
       InverseAllSome:
 
+  reaction_direction_enum:
+    permissible_values:
+      left_to_right:
+      right_to_left:
+      bidirectional:
+      neutral:
+
+  reaction_side_enum:
+    permissible_values:
+      left:
+      right:
+
   phase_enum:
     description: phase
     permissible_values:
@@ -188,7 +200,7 @@ enums:
         description: nucleic acid
       "AA":
         description: amino acid
-
+        
 subsets:
 
   model_organism_database:
@@ -563,6 +575,31 @@ slots:
     range: named thing
     description: >-
       The value in a property-value tuple
+
+  stoichiometry:
+    description: >-
+      the relationship between the relative quantities of substances taking part in a reaction or
+      forming a compound, typically a ratio of whole integers.
+    is_a: association slot
+    range: integer
+
+  reaction direction:
+    description: >-
+      the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+    is_a: association slot
+    range: reaction_direction_enum
+    narrow_mappings:
+      - NCIT:C42677
+
+  reaction balanced:
+    is_a: association slot
+    range: boolean
+
+  reaction side:
+    description: >-
+      the side of a reaction being modeled (ie: left or right)
+    is_a: association slot
+    range: reaction_side_enum
 
   symbol:
     is_a: node property
@@ -3850,6 +3887,30 @@ slots:
       - SNOMED:has_procedure_device
       - SNOMED:has_recipient_category
 
+  catalyzes:
+    is_a: has participant
+    # domain: nucleic acid entity
+    # range: molecular activity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  is catalyst of:
+    is_a: participates in
+    inverse: catalyzes
+
+  has substrate:
+    is_a: has participant
+    # domain: molecular activity
+    # range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  is substrate of:
+    is_a: participates in
+    inverse: has substrate
+
   participates in:
     is_a: related to
     description: >-
@@ -4156,6 +4217,17 @@ slots:
     inverse: produces
     exact_mappings:
       - RO:0003001
+
+  consumes:
+    is_a: has input
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    narrow_mappings:
+      - RO:0004009
+
+  consumed by:
+    inverse: consumes
 
   temporally related to:
     is_a: related to
@@ -7830,6 +7902,28 @@ classes:
       object:
         range: chemical substance
         description: "the chemical element that is the target of the statement"
+
+  reaction to participant association:
+    description:
+    is_a: chemical to chemical association
+    slots:
+      - stoichiometry
+      - reaction direction
+      - reaction side
+    slot_usage:
+      subject:
+        range: molecular entity
+    defining_slots:
+      - subject
+      - predicate
+      - object
+
+  reaction to catalyst association:
+    description:
+    is_a: reaction to participant association
+    slot_usage:
+      object:
+        range: gene or gene product
 
   chemical to chemical derivation association:
     description: >-
