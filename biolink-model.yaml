@@ -1409,6 +1409,101 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
+  active in:
+    is_a: related to
+    domain: gene or gene product
+    range: cellular component
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002432
+
+  acts upstream of:
+    is_a: related to
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002263
+
+  has upstream actor:
+    is_a: related to
+    inverse: acts upstream of
+
+  acts upstream of positive effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004034
+
+  has positive upstream actor:
+    is_a: has upstream actor
+    inverse: acts upstream of positive effect
+
+  acts upstream of negative effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004035
+
+  has negative upstream actor:
+    is_a: has upstream actor
+    inverse: acts upstream of negative effect
+
+  acts upstream of or within:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004032
+
+  has upstream or within actor:
+    is_a: has upstream actor
+    inverse: acts upstream of or within
+
+  acts upstream of or within positive effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002264
+
+  has positive upstream or within actor:
+    is_a: has upstream or within actor
+    inverse: acts upstream of or within positive effect
+
+  acts upstream of or within negative effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004033
+
+  has negative upstream or within actor:
+    is_a: has upstream or within actor
+    inverse: acts upstream of or within negative effect
+
+    ## Publication related predicates
   mentions:
     description: >-
       refers to is a relation between one information content entity and the named thing
