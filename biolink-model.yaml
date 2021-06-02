@@ -8694,6 +8694,40 @@ classes:
           A organismal entity (strain, breed) with a predisposition to a disease, or bred/created
           specifically to model a disease.
 
+  organism to organism association:
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: individual organism
+      relation:
+        values_from:
+          - ro
+      object:
+        range: individual organism
+        description: >-
+          An association between two individual organisms.
+
+  taxon to taxon association:
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: organism taxon
+      relation:
+        values_from:
+          - ro
+      object:
+        range: organism taxon
+        description: >-
+          An association between individuals of different taxa.
+
   gene has variant that contributes to disease association:
     is_a: gene to disease association
     defining_slots:
