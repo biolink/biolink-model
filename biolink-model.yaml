@@ -6742,7 +6742,8 @@ classes:
       - ZFIN
       - dictyBase
       - WB
-      - WormBase
+      - WormBase # we have two prefixes here as worbase supports WormBase:WBGene00000898
+                 # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
       - FB  # FlyBase FBgn*
       - RGD
       - SGD
