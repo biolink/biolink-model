@@ -15,7 +15,7 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MolecularEntity],[Mixture],[Food%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[MolecularEntity]%5E-[Food],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ChemicalMixture]%5E-[Food%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalMixture],[Attribute],[Agent])
 
 ---
 
@@ -26,11 +26,7 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 
 ## Parents
 
- *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)"
-
-## Uses Mixins
-
- *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
+ *  is_a: [ChemicalMixture](ChemicalMixture.md) - A chemical mixture is a chemical entity composed of two or more molecular entities.
 
 ## Attributes
 
@@ -77,23 +73,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * range: [SymbolType](types/SymbolType.md)
 
-### Inherited from mixture:
-
- * [has constituent](has_constituent.md)  <sub>0..*</sub>
-     * Description: one or more chemical substances within a mixture
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ## Other properties
 

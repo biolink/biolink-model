@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
+holds between two chemical entities where the action or effect of one changes the amount of the  other within a system of interest
 
 URI: [biolink:affects_abundance_of](https://w3id.org/biolink/vocab/affects_abundance_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 
@@ -25,6 +25,8 @@ URI: [biolink:affects_abundance_of](https://w3id.org/biolink/vocab/affects_abund
 
 ## Children
 
+ *  [abundance decreased by](abundance_decreased_by.md)
+ *  [abundance increased by](abundance_increased_by.md)
  *  [decreases abundance of](decreases_abundance_of.md)
  *  [increases abundance of](increases_abundance_of.md)
 

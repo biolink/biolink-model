@@ -15,23 +15,17 @@ URI: [biolink:FoodAdditive](https://w3id.org/biolink/vocab/FoodAdditive)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ChemicalSubstance]%5E-[FoodAdditive%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ChemicalEntity]%5E-[FoodAdditive%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+ *  is_a: [ChemicalEntity](ChemicalEntity.md) - A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 
 ## Attributes
 
-
-### Inherited from chemical substance:
-
- * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
-     * Description: indicates whether a chemical substance is a metabolite
-     * range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 
@@ -79,13 +73,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ## Other properties
 

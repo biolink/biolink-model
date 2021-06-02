@@ -8,35 +8,24 @@ layout: default
 # Class: ProcessedMaterial
 
 
-A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.
 
 URI: [biolink:ProcessedMaterial](https://w3id.org/biolink/vocab/ProcessedMaterial)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[ProcessedMaterial]uses%20-.-%3E[OntologyClass],[ChemicalSubstance]%5E-[ProcessedMaterial],[OrganismTaxon],[OntologyClass],[NamedThing],[Mixture],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalMixture]%5E-[ProcessedMaterial%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing],[ChemicalMixture],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
-
-## Uses Mixins
-
- *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
- *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
+ *  is_a: [ChemicalMixture](ChemicalMixture.md) - A chemical mixture is a chemical entity composed of two or more molecular entities.
 
 ## Attributes
 
-
-### Inherited from chemical substance:
-
- * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
-     * Description: indicates whether a chemical substance is a metabolite
-     * range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 
@@ -80,23 +69,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * range: [SymbolType](types/SymbolType.md)
 
-### Inherited from mixture:
-
- * [has constituent](has_constituent.md)  <sub>0..*</sub>
-     * Description: one or more chemical substances within a mixture
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ## Other properties
 

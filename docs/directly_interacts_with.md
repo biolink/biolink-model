@@ -8,13 +8,13 @@ layout: default
 # Relation: directly_interacts_with
 
 
-Holds between molecular entities that physically and directly interact with each other
+Holds between chemical entities that physically and directly interact with each other
 
 URI: [biolink:directly_interacts_with](https://w3id.org/biolink/vocab/directly_interacts_with)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

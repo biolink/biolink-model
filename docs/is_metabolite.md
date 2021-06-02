@@ -8,13 +8,13 @@ layout: default
 # Slot: is_metabolite
 
 
-indicates whether a chemical substance is a metabolite
+indicates whether a molecular entity is a metabolite
 
 URI: [biolink:is_metabolite](https://w3id.org/biolink/vocab/is_metabolite)
 
 ## Domain and Range
 
-[ChemicalSubstance](ChemicalSubstance.md) ->  <sub>OPT</sub> [Boolean](types/Boolean.md)
+[MolecularEntity](MolecularEntity.md) ->  <sub>OPT</sub> [Boolean](types/Boolean.md)
 
 ## Parents
 
@@ -25,19 +25,25 @@ URI: [biolink:is_metabolite](https://w3id.org/biolink/vocab/is_metabolite)
 
 ## Used by
 
- * [Carbohydrate](Carbohydrate.md)
- * [ChemicalExposure](ChemicalExposure.md)
- * [ChemicalSubstance](ChemicalSubstance.md)
- * [ComplexChemicalExposure](ComplexChemicalExposure.md)
- * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
- * [FoodAdditive](FoodAdditive.md)
- * [FoodComponent](FoodComponent.md)
- * [Macronutrient](Macronutrient.md)
- * [Metabolite](Metabolite.md)
- * [Micronutrient](Micronutrient.md)
- * [Nutrient](Nutrient.md)
- * [ProcessedMaterial](ProcessedMaterial.md)
- * [Vitamin](Vitamin.md)
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [CodingSequence](CodingSequence.md)
+ * [Exon](Exon.md)
+ * [Gene](Gene.md)
+ * [GeneFamily](GeneFamily.md)
+ * [MicroRNA](MicroRNA.md)
+ * [MolecularEntity](MolecularEntity.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [NucleicAcidEntity](NucleicAcidEntity.md)
+ * [Polypeptide](Polypeptide.md)
+ * [Protein](Protein.md)
+ * [ProteinIsoform](ProteinIsoform.md)
+ * [ReagentTargetedGene](ReagentTargetedGene.md)
+ * [SequenceVariant](SequenceVariant.md)
+ * [SiRNA](SiRNA.md)
+ * [SmallMolecule](SmallMolecule.md)
+ * [Snv](Snv.md)
+ * [Transcript](Transcript.md)
 
 ## Other properties
 

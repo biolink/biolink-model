@@ -15,7 +15,7 @@ URI: [biolink:PhysiologicalProcess](https://w3id.org/biolink/vocab/Physiological
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[OntologyClass],[BiologicalProcess]%5E-[PhysiologicalProcess],[PhysicalEntity],[OntologyClass],[NamedThing],[BiologicalProcess],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[OntologyClass],[BiologicalProcess]%5E-[PhysiologicalProcess],[PhysicalEntity],[OntologyClass],[NamedThing],[BiologicalProcessOrActivity],[BiologicalProcess],[Attribute],[Agent])
 
 ---
 
@@ -98,7 +98,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | UMLSSC:T039 |
 |  | | UMLSST:phsf |
 |  | | WIKIDATA:Q30892994 |
-| **Close Mappings:** | | UMLSSG:PHYS |
 | **Narrow Mappings:** | | UMLSSC:T040 |
 |  | | UMLSST:orgf |
 |  | | UMLSSC:T042 |

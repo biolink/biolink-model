@@ -35,6 +35,7 @@ URI: [biolink:format](https://w3id.org/biolink/vocab/format)
  * [DatasetVersion](DatasetVersion.md)
  * [EvidenceType](EvidenceType.md)
  * [InformationContentEntity](InformationContentEntity.md)
+ * [InformationResource](InformationResource.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
 

@@ -26,7 +26,10 @@ URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
 ## Children
 
  *  [actively involved in](actively_involved_in.md)
+ *  [actively involves](actively_involves.md)
  *  [enables](enables.md)
+ *  [is catalyst of](is_catalyst_of.md)
+ *  [is substrate of](is_substrate_of.md)
 
 ## Used by
 

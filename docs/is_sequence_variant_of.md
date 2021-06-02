@@ -8,13 +8,13 @@ layout: default
 # Relation: is_sequence_variant_of
 
 
-holds between a sequence variant and a genomic entity
+holds between a sequence variant and a nucleic acid entity
 
 URI: [biolink:is_sequence_variant_of](https://w3id.org/biolink/vocab/is_sequence_variant_of)
 
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [GenomicEntity](GenomicEntity.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 
@@ -22,6 +22,13 @@ URI: [biolink:is_sequence_variant_of](https://w3id.org/biolink/vocab/is_sequence
 
 ## Children
 
+ *  [has frameshift variant](has_frameshift_variant.md)
+ *  [has missense variant](has_missense_variant.md)
+ *  [has nearby variant](has_nearby_variant.md)
+ *  [has non coding variant](has_non_coding_variant.md)
+ *  [has nonsense variant](has_nonsense_variant.md)
+ *  [has splice site variant](has_splice_site_variant.md)
+ *  [has synonymous variant](has_synonymous_variant.md)
  *  [is frameshift variant of](is_frameshift_variant_of.md)
  *  [is missense variant of](is_missense_variant_of.md)
  *  [is nearby variant of](is_nearby_variant_of.md)

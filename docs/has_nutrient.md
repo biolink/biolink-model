@@ -17,7 +17,7 @@ URI: [biolink:has_nutrient](https://w3id.org/biolink/vocab/has_nutrient)
 
 ## Domain and Range
 
-[ChemicalSubstance](ChemicalSubstance.md) ->  <sub>0..*</sub> [ChemicalSubstance](ChemicalSubstance.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

@@ -15,7 +15,7 @@ URI: [biolink:CellularComponent](https://w3id.org/biolink/vocab/CellularComponen
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1%3E[CellularComponent%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[AnatomicalEntity]%5E-[CellularComponent],[Attribute],[AnatomicalEntity],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[MacromolecularMachineToCellularComponentAssociation],[GeneOrGeneProduct],[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1%3E[CellularComponent%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[AnatomicalEntity]%5E-[CellularComponent],[Attribute],[AnatomicalEntity],[Agent])
 
 ---
 
@@ -36,6 +36,7 @@ URI: [biolink:CellularComponent](https://w3id.org/biolink/vocab/CellularComponen
 
 ## Referenced by class
 
+ *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[active in](active_in.md)*  <sub>0..*</sub>  **[CellularComponent](CellularComponent.md)**
  *  **[MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)** *[macromolecular machine to cellular component association➞object](macromolecular_machine_to_cellular_component_association_object.md)*  <sub>REQ</sub>  **[CellularComponent](CellularComponent.md)**
 
 ## Attributes

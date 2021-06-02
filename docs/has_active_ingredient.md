@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a drug and a chemical substance in which the latter is a part of the former, and is a biologically active component
+holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component
 
 URI: [biolink:has_active_ingredient](https://w3id.org/biolink/vocab/has_active_ingredient)
 
 ## Domain and Range
 
-[Drug](Drug.md) ->  <sub>0..*</sub> [ChemicalSubstance](ChemicalSubstance.md)
+[Drug](Drug.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
 
 ## Parents
 

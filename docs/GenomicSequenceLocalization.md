@@ -8,21 +8,21 @@ layout: default
 # Class: GenomicSequenceLocalization
 
 
-A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
+A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 
 URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/GenomicSequenceLocalization)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation],[Publication],[OntologyClass],[GenomicEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;genome_build:string%20%3F;strand:string%20%3F;phase:string%20%3F;predicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[SequenceAssociation]%5E-[GenomicSequenceLocalization],[GenomicEntity],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation],[Publication],[OntologyClass],[NucleicAcidEntity],[NucleicAcidEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;genome_build:strand_enum%20%3F;strand:strand_enum%20%3F;phase:phase_enum%20%3F;predicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NucleicAcidEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[SequenceAssociation]%5E-[GenomicSequenceLocalization],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [SequenceAssociation](SequenceAssociation.md) - An association between a sequence feature and a genomic entity it is localized to.
+ *  is_a: [SequenceAssociation](SequenceAssociation.md) - An association between a sequence feature and a nucleic acid entity it is localized to.
 
 ## Referenced by class
 
@@ -33,23 +33,23 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
 ### Own
 
  * [end interbase coordinate](end_interbase_coordinate.md)  <sub>OPT</sub>
-     * Description: The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
+     * Description: The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.
      * range: [Integer](types/Integer.md)
  * [genome build](genome_build.md)  <sub>OPT</sub>
      * Description: The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
-     * range: [String](types/String.md)
+     * range: 
  * [genomic sequence localization➞object](genomic_sequence_localization_object.md)  <sub>REQ</sub>
-     * range: [GenomicEntity](GenomicEntity.md)
+     * range: [NucleicAcidEntity](NucleicAcidEntity.md)
  * [genomic sequence localization➞predicate](genomic_sequence_localization_predicate.md)  <sub>REQ</sub>
      * range: [PredicateType](types/PredicateType.md)
  * [genomic sequence localization➞subject](genomic_sequence_localization_subject.md)  <sub>REQ</sub>
-     * range: [GenomicEntity](GenomicEntity.md)
+     * range: [NucleicAcidEntity](NucleicAcidEntity.md)
  * [start interbase coordinate](start_interbase_coordinate.md)  <sub>OPT</sub>
-     * Description: The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
+     * Description: The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).
      * range: [Integer](types/Integer.md)
  * [strand](strand.md)  <sub>OPT</sub>
      * Description: The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
-     * range: [String](types/String.md)
+     * range: 
 
 ### Inherited from association:
 
@@ -125,20 +125,20 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Domain for slot:
 
  * [end interbase coordinate](end_interbase_coordinate.md)  <sub>OPT</sub>
-     * Description: The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
+     * Description: The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.
      * range: [Integer](types/Integer.md)
  * [genome build](genome_build.md)  <sub>OPT</sub>
      * Description: The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
-     * range: [String](types/String.md)
+     * range: 
  * [genomic sequence localization➞object](genomic_sequence_localization_object.md)  <sub>REQ</sub>
-     * range: [GenomicEntity](GenomicEntity.md)
+     * range: [NucleicAcidEntity](NucleicAcidEntity.md)
  * [genomic sequence localization➞predicate](genomic_sequence_localization_predicate.md)  <sub>REQ</sub>
      * range: [PredicateType](types/PredicateType.md)
  * [genomic sequence localization➞subject](genomic_sequence_localization_subject.md)  <sub>REQ</sub>
-     * range: [GenomicEntity](GenomicEntity.md)
+     * range: [NucleicAcidEntity](NucleicAcidEntity.md)
  * [start interbase coordinate](start_interbase_coordinate.md)  <sub>OPT</sub>
-     * Description: The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.
+     * Description: The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).
      * range: [Integer](types/Integer.md)
  * [strand](strand.md)  <sub>OPT</sub>
      * Description: The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
-     * range: [String](types/String.md)
+     * range: 

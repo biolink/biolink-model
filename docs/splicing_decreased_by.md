@@ -1,0 +1,37 @@
+---
+parent: Predicates
+title: biolink:splicing_decreased_by
+grand_parent: Slots
+layout: default
+---
+
+# Relation: splicing_decreased_by
+
+translator_minimal
+{: .translator_minimal-subset-label }
+
+
+
+
+URI: [biolink:splicing_decreased_by](https://w3id.org/biolink/vocab/splicing_decreased_by)
+
+## Domain and Range
+
+[Transcript](Transcript.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
+
+## Parents
+
+ *  is_a: [affects splicing of](affects_splicing_of.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

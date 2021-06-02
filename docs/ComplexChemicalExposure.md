@@ -15,27 +15,17 @@ URI: [biolink:ComplexChemicalExposure](https://w3id.org/biolink/vocab/ComplexChe
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[Mixture],[ComplexChemicalExposure%7Ctimepoint(i):time_type%20%3F;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Mixture],[ChemicalExposure]%5E-[ComplexChemicalExposure],[ChemicalSubstance],[ChemicalExposure],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ChemicalExposure]%5E-[ComplexChemicalExposure%7Ctimepoint(i):time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalExposure],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical substance, other than a drug.
-
-## Uses Mixins
-
- *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
+ *  is_a: [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical entity, other than a drug.
 
 ## Attributes
 
-
-### Inherited from chemical substance:
-
- * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
-     * Description: indicates whether a chemical substance is a metabolite
-     * range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 
@@ -85,20 +75,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * range: [SymbolType](types/SymbolType.md)
 
-### Inherited from mixture:
-
- * [has constituent](has_constituent.md)  <sub>0..*</sub>
-     * Description: one or more chemical substances within a mixture
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)

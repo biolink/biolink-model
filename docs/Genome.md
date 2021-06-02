@@ -15,14 +15,18 @@ URI: [biolink:Genome](https://w3id.org/biolink/vocab/Genome)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[GenomicEntity],[GenomicEntity]%5E-[Genome%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[GenomicEntity],[Genome%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GenomicEntity],[BiologicalEntity]%5E-[Genome],[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+ *  is_a: [BiologicalEntity](BiologicalEntity.md)
+
+## Uses Mixins
+
+ *  mixin: [GenomicEntity](GenomicEntity.md)
 
 ## Attributes
 
@@ -62,12 +66,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * range: [Attribute](Attribute.md)
      * in subsets: (samples)
-
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-     * Description: connects a genomic feature to its sequence
-     * range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from macromolecular machine mixin:
 

@@ -15,7 +15,7 @@ URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrgan
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismTaxon],[NamedThing],[IndividualOrganism%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]%5E-[Case],[OrganismalEntity]%5E-[IndividualOrganism],[Case],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismToOrganismAssociation],[OrganismTaxon],[NamedThing],[OrganismToOrganismAssociation]-%20object%201..1%3E[IndividualOrganism%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismToOrganismAssociation]-%20subject%201..1%3E[IndividualOrganism],[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]%5E-[Case],[OrganismalEntity]%5E-[IndividualOrganism],[Case],[Attribute],[Agent])
 
 ---
 
@@ -26,7 +26,7 @@ URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrgan
 
 ## Parents
 
- *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+ *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
 
 ## Uses Mixins
 
@@ -38,6 +38,8 @@ URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrgan
 
 ## Referenced by class
 
+ *  **[OrganismToOrganismAssociation](OrganismToOrganismAssociation.md)** *[organism to organism association➞object](organism_to_organism_association_object.md)*  <sub>REQ</sub>  **[IndividualOrganism](IndividualOrganism.md)**
+ *  **[OrganismToOrganismAssociation](OrganismToOrganismAssociation.md)** *[organism to organism association➞subject](organism_to_organism_association_subject.md)*  <sub>REQ</sub>  **[IndividualOrganism](IndividualOrganism.md)**
 
 ## Attributes
 

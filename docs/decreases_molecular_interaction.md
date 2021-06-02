@@ -8,7 +8,7 @@ layout: default
 # Relation: decreases_molecular_interaction
 
 
-indicates that the source decreases the molecular interaction between the target and some other molecular entity
+indicates that the source decreases the molecular interaction between the target and some other chemical entity
 
 URI: [biolink:decreases_molecular_interaction](https://w3id.org/biolink/vocab/decreases_molecular_interaction)
 

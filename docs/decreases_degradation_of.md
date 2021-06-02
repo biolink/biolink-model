@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
+holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
 
 URI: [biolink:decreases_degradation_of](https://w3id.org/biolink/vocab/decreases_degradation_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

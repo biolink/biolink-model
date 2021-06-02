@@ -8,7 +8,7 @@ layout: default
 # Relation: approved_to_treat
 
 
-holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
+holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
 
 URI: [biolink:approved_to_treat](https://w3id.org/biolink/vocab/approved_to_treat)
 

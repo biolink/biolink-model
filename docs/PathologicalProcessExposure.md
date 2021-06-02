@@ -15,7 +15,7 @@ URI: [biolink:PathologicalProcessExposure](https://w3id.org/biolink/vocab/Pathol
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[PathologicalProcessExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[PathologicalProcess]%5E-[PathologicalProcessExposure],[PathologicalProcess],[NamedThing],[ExposureEvent],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[PathologicalProcessExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[PathologicalProcess]%5E-[PathologicalProcessExposure],[PathologicalProcess],[NamedThing],[ExposureEvent],[BiologicalProcessOrActivity],[Attribute],[Agent])
 
 ---
 

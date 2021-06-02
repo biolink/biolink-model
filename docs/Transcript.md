@@ -15,7 +15,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[GenomicEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NamedThing],[MolecularEntity],[GenomicEntity],[Gene],[ExonToTranscriptRelationship],[Attribute],[Agent],[RNAProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[NamedThing],[Gene],[ExonToTranscriptRelationship],[ChemicalEntity],[Attribute],[Agent],[RNAProduct])
 
 ---
 
@@ -27,7 +27,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ## Parents
 
- *  is_a: [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+ *  is_a: [NucleicAcidEntity](NucleicAcidEntity.md) - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
 
 ## Children
 
@@ -35,10 +35,10 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ## Referenced by class
 
- *  **[MolecularEntity](MolecularEntity.md)** *[affects splicing of](affects_splicing_of.md)*  <sub>0..*</sub>  **[Transcript](Transcript.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[decreases splicing of](decreases_splicing_of.md)*  <sub>0..*</sub>  **[Transcript](Transcript.md)**
+ *  **[ChemicalEntity](ChemicalEntity.md)** *[affects splicing of](affects_splicing_of.md)*  <sub>0..*</sub>  **[Transcript](Transcript.md)**
+ *  **[ChemicalEntity](ChemicalEntity.md)** *[decreases splicing of](decreases_splicing_of.md)*  <sub>0..*</sub>  **[Transcript](Transcript.md)**
  *  **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[exon to transcript relationship➞object](exon_to_transcript_relationship_object.md)*  <sub>REQ</sub>  **[Transcript](Transcript.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[increases splicing of](increases_splicing_of.md)*  <sub>0..*</sub>  **[Transcript](Transcript.md)**
+ *  **[ChemicalEntity](ChemicalEntity.md)** *[increases splicing of](increases_splicing_of.md)*  <sub>0..*</sub>  **[Transcript](Transcript.md)**
  *  **[Gene](Gene.md)** *[transcribed to](transcribed_to.md)*  <sub>0..*</sub>  **[Transcript](Transcript.md)**
  *  **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[transcript to gene relationship➞subject](transcript_to_gene_relationship_subject.md)*  <sub>REQ</sub>  **[Transcript](Transcript.md)**
  *  **[Protein](Protein.md)** *[translation of](translation_of.md)*  <sub>0..*</sub>  **[Transcript](Transcript.md)**
@@ -82,22 +82,28 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-     * Description: connects a genomic feature to its sequence
-     * range: [BiologicalSequence](types/BiologicalSequence.md)
-
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * range: [SymbolType](types/SymbolType.md)
 
+### Inherited from molecular entity:
+
+ * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+     * Description: indicates whether a molecular entity is a metabolite
+     * range: [Boolean](types/Boolean.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
+
+### Inherited from nucleic acid entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
+     * Description: connects a genomic feature to its sequence
+     * range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from thing with taxon:
 

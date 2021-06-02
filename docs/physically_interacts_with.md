@@ -25,6 +25,7 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 
 ## Children
 
+ *  [chemically interacts with](chemically_interacts_with.md)
  *  [molecularly interacts with](molecularly_interacts_with.md)
 
 ## Used by

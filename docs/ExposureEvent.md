@@ -24,7 +24,7 @@ URI: [biolink:ExposureEvent](https://w3id.org/biolink/vocab/ExposureEvent)
 
  * [BehavioralExposure](BehavioralExposure.md) (mixin)  - A behavioral exposure is a factor relating to behavior impacting an individual.
  * [BioticExposure](BioticExposure.md) (mixin)  - An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
- * [ChemicalExposure](ChemicalExposure.md) (mixin)  - A chemical exposure is an intake of a particular chemical substance, other than a drug.
+ * [ChemicalExposure](ChemicalExposure.md) (mixin)  - A chemical exposure is an intake of a particular chemical entity, other than a drug.
  * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) (mixin)  - A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
  * [DrugExposure](DrugExposure.md) (mixin)  - A drug exposure is an intake of a particular drug.
  * [EnvironmentalExposure](EnvironmentalExposure.md) (mixin)  - A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.

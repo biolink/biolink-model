@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
+holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
 
 URI: [biolink:treated_by](https://w3id.org/biolink/vocab/treated_by)
 
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..*</sub> [Treatment](Treatment.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..*</sub> [ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)
 
 ## Parents
 

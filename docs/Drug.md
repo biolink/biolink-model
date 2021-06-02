@@ -15,7 +15,7 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[OntologyClass],[NamedThing],[MolecularEntity],[Mixture],[DrugToEntityAssociationMixin],[DrugExposure],[DrugToEntityAssociationMixin]-%20subject%201..1%3E[Drug%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Treatment]-%20has%20drug%200..%2A%3E[Drug],[Drug]uses%20-.-%3E[Mixture],[Drug]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Drug]uses%20-.-%3E[OntologyClass],[Drug]%5E-[DrugExposure],[MolecularEntity]%5E-[Drug],[Treatment],[ChemicalSubstance],[ChemicalOrDrugOrTreatment],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[NamedThing],[MolecularMixture],[MolecularEntity],[DrugToEntityAssociationMixin],[DrugExposure],[DrugToEntityAssociationMixin]-%20subject%201..1%3E[Drug%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Treatment]-%20has%20drug%200..%2A%3E[Drug],[Drug]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Drug]uses%20-.-%3E[OntologyClass],[Drug]%5E-[DrugExposure],[MolecularMixture]%5E-[Drug],[Treatment],[DiseaseOrPhenotypicFeature],[ChemicalOrDrugOrTreatment],[Attribute],[Agent])
 
 ---
 
@@ -28,11 +28,10 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ## Parents
 
- *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)"
+ *  is_a: [MolecularMixture](MolecularMixture.md) - A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
 
 ## Uses Mixins
 
- *  mixin: [Mixture](Mixture.md) - The physical combination of two or more molecular entities in which the identities are retained and are mixed in the form of solutions, suspensions and colloids.
  *  mixin: [ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)
  *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
 
@@ -42,10 +41,12 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ## Referenced by class
 
+ *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[adverse event caused by](adverse_event_caused_by.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
  *  **[DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md)** *[drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[Drug](Drug.md)**
+ *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[has contraindication](has_contraindication.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
  *  **[NamedThing](NamedThing.md)** *[has drug](has_drug.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
- *  **[ChemicalSubstance](ChemicalSubstance.md)** *[is active ingredient of](is_active_ingredient_of.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
- *  **[ChemicalSubstance](ChemicalSubstance.md)** *[is excipient of](is_excipient_of.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
+ *  **[MolecularEntity](MolecularEntity.md)** *[is active ingredient of](is_active_ingredient_of.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
+ *  **[MolecularEntity](MolecularEntity.md)** *[is excipient of](is_excipient_of.md)*  <sub>0..*</sub>  **[Drug](Drug.md)**
 
 ## Attributes
 
@@ -92,23 +93,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * range: [SymbolType](types/SymbolType.md)
 
-### Inherited from mixture:
-
- * [has constituent](has_constituent.md)  <sub>0..*</sub>
-     * Description: one or more chemical substances within a mixture
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ## Other properties
 

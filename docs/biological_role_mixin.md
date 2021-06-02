@@ -8,7 +8,7 @@ layout: default
 # Slot: biological_role_mixin
 
 
-A role played by the molecular entity or part thereof within a biological context.
+A role played by the chemical entity or part thereof within a biological context.
 
 URI: [biolink:biological_role_mixin](https://w3id.org/biolink/vocab/biological_role_mixin)
 
@@ -29,5 +29,5 @@ None ->  <sub>OPT</sub> [String](types/String.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | CHEBI:24432 |
+| **Narrow Mappings:** | | CHEBI:24432 |
 

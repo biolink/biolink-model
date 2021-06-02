@@ -15,7 +15,7 @@ URI: [biolink:SocioeconomicOutcome](https://w3id.org/biolink/vocab/Socioeconomic
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicOutcome%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Outcome],[Behavior]%5E-[SocioeconomicOutcome],[PhysicalEntity],[Outcome],[NamedThing],[Behavior],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicOutcome%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Outcome],[Behavior]%5E-[SocioeconomicOutcome],[PhysicalEntity],[Outcome],[NamedThing],[BiologicalProcessOrActivity],[Behavior],[Attribute],[Agent])
 
 ---
 

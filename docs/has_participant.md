@@ -25,9 +25,13 @@ URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 
 ## Children
 
+ *  [catalyzes](catalyzes.md)
  *  [enabled by](enabled_by.md)
  *  [has input](has_input.md)
  *  [has output](has_output.md)
+ *  [has substrate](has_substrate.md)
+ *  [is input of](is_input_of.md)
+ *  [is output of](is_output_of.md)
 
 ## Used by
 

@@ -8,7 +8,7 @@ layout: default
 # Slot: interbase_coordinate
 
 
-A position in interbase coordinates. This is applied to a sequence localization edge.
+A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1. This is applied to a sequence localization edge.
 
 URI: [biolink:interbase_coordinate](https://w3id.org/biolink/vocab/interbase_coordinate)
 
@@ -26,4 +26,13 @@ URI: [biolink:interbase_coordinate](https://w3id.org/biolink/vocab/interbase_coo
  *  [start interbase coordinate](start_interbase_coordinate.md)
 
 ## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | zero-based |
+|  | | half-open |
+|  | | space-based |
 

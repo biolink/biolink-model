@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
 
 URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 
@@ -63,6 +63,5 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 |  | | REPODB:clinically_tested_withdrawn_phase_3 |
 |  | | RTXKG1:indicated_for |
 |  | | SNOMED:plays_role |
-| **Broad Mappings:** | | RO:0003307 |
 | **Related Mappings:** | | MONDO:disease_responds_to |
 

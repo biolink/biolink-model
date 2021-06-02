@@ -1,41 +1,64 @@
 ---
 parent: Entities
-title: biolink:Carbohydrate
+title: biolink:SmallMolecule
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Carbohydrate _(deprecated)_
+# Class: SmallMolecule
 
 
+A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
 
-
-URI: [biolink:Carbohydrate](https://w3id.org/biolink/vocab/Carbohydrate)
+URI: [biolink:SmallMolecule](https://w3id.org/biolink/vocab/SmallMolecule)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ChemicalSubstance],[ChemicalSubstance]%5E-[Carbohydrate%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]%5E-[SmallMolecule%7Cid:string;is_metabolite(i):boolean%20%3F;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing],[MolecularEntity],[Attribute],[Agent])
 
 ---
 
 
 ## Identifier prefixes
 
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * DRUGBANK
+ * MESH
+ * CAS
+ * DrugCentral
+ * GTOPDB
+ * HMDB
+ * KEGG.COMPOUND
+ * ChemBank
+ * Aeolus
  * PUBCHEM.SUBSTANCE
+ * SIDER.DRUG
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.DRUG
+ * KEGG.DGROUP
+ * KEGG.ENVIRON
 
 ## Parents
 
- *  is_a: [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+ *  is_a: [MolecularEntity](MolecularEntity.md) - A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
+
+## Referenced by class
+
 
 ## Attributes
 
 
-### Inherited from chemical substance:
+### Own
 
- * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
-     * Description: indicates whether a chemical substance is a metabolite
-     * range: [Boolean](types/Boolean.md)
+ * [small molecule➞id](small_molecule_id.md)  <sub>REQ</sub>
+     * range: [String](types/String.md)
+     * Example:    
 
 ### Inherited from entity:
 
@@ -79,22 +102,29 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * range: [SymbolType](types/SymbolType.md)
 
+### Inherited from molecular entity:
+
+ * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+     * Description: indicates whether a molecular entity is a metabolite
+     * range: [Boolean](types/Boolean.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
 
-### Inherited from thing with taxon:
+### Domain for slot:
 
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
+ * [small molecule➞id](small_molecule_id.md)  <sub>REQ</sub>
+     * range: [String](types/String.md)
+     * Example:    
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | UMLSSC:T088 |
-|  | | UMLSST:crbs |
+| **Aliases:** | | chemical substance |
+| **In Subsets:** | | model_organism_database |
+|  | | translator_minimal |
+| **Narrow Mappings:** | | UMLSSC:T196 |
 

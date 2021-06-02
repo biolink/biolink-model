@@ -1,32 +1,32 @@
 ---
 parent: Associations
-title: biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
+title: biolink:ReactionToParticipantAssociation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: DiseaseOrPhenotypicFeatureAssociationToLocationAssociation _(deprecated)_
+# Class: ReactionToParticipantAssociation
 
 
 
 
-URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
+URI: [biolink:ReactionToParticipantAssociation](https://w3id.org/biolink/vocab/ReactionToParticipantAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[AnatomicalEntity]%3Cobject%201..1-%20[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[Association]%5E-[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],[Attribute],[Association],[AnatomicalEntity],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]%3Csubject%201..1-%20[ReactionToParticipantAssociation%7Cstoichiometry:integer%20%3F;reaction_direction:reaction_direction_enum%20%3F;reaction_side:reaction_side_enum%20%3F;predicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ReactionToParticipantAssociation]%5E-[ReactionToCatalystAssociation],[ChemicalToChemicalAssociation]%5E-[ReactionToParticipantAssociation],[ReactionToCatalystAssociation],[Publication],[OntologyClass],[MolecularEntity],[ChemicalToChemicalAssociation],[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+ *  is_a: [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 
-## Uses Mixins
+## Children
 
- *  mixin: [DiseaseOrPhenotypicFeatureToEntityAssociationMixin](DiseaseOrPhenotypicFeatureToEntityAssociationMixin.md)
+ * [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md)
 
 ## Referenced by class
 
@@ -36,8 +36,17 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https:
 
 ### Own
 
- * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md)  <sub>REQ</sub>
-     * range: [AnatomicalEntity](AnatomicalEntity.md)
+ * [reaction direction](reaction_direction.md)  <sub>OPT</sub>
+     * Description: the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+     * range: 
+ * [reaction side](reaction_side.md)  <sub>OPT</sub>
+     * Description: the side of a reaction being modeled (ie: left or right)
+     * range: 
+ * [reaction to participant association➞subject](reaction_to_participant_association_subject.md)  <sub>REQ</sub>
+     * range: [MolecularEntity](MolecularEntity.md)
+ * [stoichiometry](stoichiometry.md)  <sub>OPT</sub>
+     * Description: the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
+     * range: [Integer](types/Integer.md)
 
 ### Inherited from association:
 
@@ -67,6 +76,12 @@ URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https:
      * range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..*</sub>
      * range: [CategoryType](types/CategoryType.md)
+
+### Inherited from chemical to chemical association:
+
+ * [chemical to chemical association➞object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
+     * Description: the chemical element that is the target of the statement
+     * range: [ChemicalEntity](ChemicalEntity.md)
 
 ### Inherited from entity:
 
@@ -112,5 +127,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [disease or phenotypic feature association to location association➞object](disease_or_phenotypic_feature_association_to_location_association_object.md)  <sub>REQ</sub>
-     * range: [AnatomicalEntity](AnatomicalEntity.md)
+ * [reaction to participant association➞subject](reaction_to_participant_association_subject.md)  <sub>REQ</sub>
+     * range: [MolecularEntity](MolecularEntity.md)

@@ -15,7 +15,7 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[Occurrent],[NamedThing],[MacromolecularMachineMixin]%3Cenabled%20by%200..%2A-++[MolecularActivity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance]%3Chas%20output%200..%2A-%20[MolecularActivity],[ChemicalSubstance]%3Chas%20input%200..%2A-%20[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivity]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineMixin],[ChemicalSubstance],[BiologicalProcessOrActivity],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[Occurrent],[NamedThing],[MolecularEntity],[MacromolecularMachineMixin]%3Cenabled%20by%200..%2A-++[MolecularActivity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Chas%20output%200..%2A-%20[MolecularActivity],[MolecularEntity]%3Chas%20input%200..%2A-%20[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivity]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineMixin],[BiologicalProcessOrActivity],[Attribute],[Agent])
 
 ---
 
@@ -43,6 +43,7 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
 
 ## Referenced by class
 
+ *  **[Occurrent](Occurrent.md)** *[actively involves](actively_involves.md)*  <sub>0..*</sub>  **[MolecularActivity](MolecularActivity.md)**
  *  **[MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)** *[macromolecular machine to molecular activity association➞object](macromolecular_machine_to_molecular_activity_association_object.md)*  <sub>REQ</sub>  **[MolecularActivity](MolecularActivity.md)**
 
 ## Attributes
@@ -55,10 +56,10 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
      * range: [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
  * [molecular activity➞has input](molecular_activity_has_input.md)  <sub>0..*</sub>
      * Description: A chemical entity that is the input for the reaction
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
+     * range: [MolecularEntity](MolecularEntity.md)
  * [molecular activity➞has output](molecular_activity_has_output.md)  <sub>0..*</sub>
      * Description: A chemical entity that is the output for the reaction
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
+     * range: [MolecularEntity](MolecularEntity.md)
 
 ### Inherited from entity:
 
@@ -114,10 +115,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * range: [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
  * [molecular activity➞has input](molecular_activity_has_input.md)  <sub>0..*</sub>
      * Description: A chemical entity that is the input for the reaction
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
+     * range: [MolecularEntity](MolecularEntity.md)
  * [molecular activity➞has output](molecular_activity_has_output.md)  <sub>0..*</sub>
      * Description: A chemical entity that is the output for the reaction
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
+     * range: [MolecularEntity](MolecularEntity.md)
 
 ## Other properties
 

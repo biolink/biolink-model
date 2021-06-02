@@ -15,7 +15,7 @@ URI: [biolink:ProteinIsoform](https://w3id.org/biolink/vocab/ProteinIsoform)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductIsoformMixin],[Protein]%5E-[ProteinIsoform],[Protein],[OrganismTaxon],[NamedThing],[GeneProductIsoformMixin],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductIsoformMixin],[Protein]%5E-[ProteinIsoform],[Protein],[NamedThing],[GeneProductIsoformMixin],[Attribute],[Agent])
 
 ---
 
@@ -74,29 +74,22 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-     * Description: connects a genomic feature to its sequence
-     * range: [BiologicalSequence](types/BiologicalSequence.md)
-
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * range: [SymbolType](types/SymbolType.md)
 
+### Inherited from molecular entity:
+
+ * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+     * Description: indicates whether a molecular entity is a metabolite
+     * range: [Boolean](types/Boolean.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ## Other properties
 

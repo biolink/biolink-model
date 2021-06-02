@@ -26,7 +26,7 @@ URI: [biolink:CellLine](https://w3id.org/biolink/vocab/CellLine)
 
 ## Parents
 
- *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+ *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
 
 ## Referenced by class
 

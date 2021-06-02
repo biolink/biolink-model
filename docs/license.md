@@ -35,6 +35,7 @@ URI: [biolink:license](https://w3id.org/biolink/vocab/license)
  * [DatasetVersion](DatasetVersion.md)
  * [EvidenceType](EvidenceType.md)
  * [InformationContentEntity](InformationContentEntity.md)
+ * [InformationResource](InformationResource.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
 

@@ -25,6 +25,7 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 
 ## Children
 
+ *  [adverse event caused by](adverse_event_caused_by.md)
  *  [causes adverse event](causes_adverse_event.md)
 
 ## Used by
@@ -35,8 +36,7 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:0002506 |
-|  | | SEMMEDDB:CAUSES |
+| **Exact Mappings:** | | SEMMEDDB:CAUSES |
 |  | | SEMMEDDB:causes |
 |  | | WIKIDATA_PROPERTY:P1542 |
 |  | | SNOMED:cause_of |
@@ -67,4 +67,5 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 |  | | SNOMED:has_realization |
 |  | | UMLS:has_physiologic_effect |
 | **Broad Mappings:** | | RO:0002410 |
+|  | | RO:0002506 |
 

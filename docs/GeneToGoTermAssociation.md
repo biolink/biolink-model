@@ -15,7 +15,7 @@ URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTe
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MolecularEntity],[GeneOntologyClass]%3Cobject%201..1-++[GeneToGoTermAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Csubject%201..1-%20[GeneToGoTermAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[GeneOntologyClass],[FunctionalAssociation],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[GeneOntologyClass]%3Cobject%201..1-++[GeneToGoTermAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Gene]%3Csubject%201..1-%20[GeneToGoTermAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[GeneOntologyClass],[Gene],[FunctionalAssociation],[Attribute],[Agent])
 
 ---
 
@@ -38,7 +38,7 @@ URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTe
      * Example:    
  * [gene to go term association➞subject](gene_to_go_term_association_subject.md)  <sub>REQ</sub>
      * Description: gene, product or macromolecular complex that has the function associated with the GO term
-     * range: [MolecularEntity](MolecularEntity.md)
+     * range: [Gene](Gene.md)
      * Example:    
 
 ### Inherited from association:
@@ -120,7 +120,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Example:    
  * [gene to go term association➞subject](gene_to_go_term_association_subject.md)  <sub>REQ</sub>
      * Description: gene, product or macromolecular complex that has the function associated with the GO term
-     * range: [MolecularEntity](MolecularEntity.md)
+     * range: [Gene](Gene.md)
      * Example:    
 
 ## Other properties

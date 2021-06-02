@@ -1,37 +1,46 @@
 ---
 parent: Entities
-title: biolink:Metabolite
+title: biolink:Polypeptide
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Metabolite _(deprecated)_
+# Class: Polypeptide
 
 
-Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
 
-URI: [biolink:Metabolite](https://w3id.org/biolink/vocab/Metabolite)
+URI: [biolink:Polypeptide](https://w3id.org/biolink/vocab/Polypeptide)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ChemicalSubstance]%5E-[Metabolite%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Protein],[Polypeptide%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[Protein],[MolecularEntity]%5E-[Polypeptide],[NamedThing],[MolecularEntity],[Attribute],[Agent])
 
 ---
 
+
+## Identifier prefixes
+
+ * UniProtKB
+ * PR
+ * ENSEMBL
+ * FB
+ * UMLS
 
 ## Parents
 
- *  is_a: [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+ *  is_a: [MolecularEntity](MolecularEntity.md) - A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
+
+## Children
+
+ * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+
+## Referenced by class
+
 
 ## Attributes
 
-
-### Inherited from chemical substance:
-
- * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
-     * Description: indicates whether a chemical substance is a metabolite
-     * range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 
@@ -75,22 +84,25 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * range: [SymbolType](types/SymbolType.md)
 
+### Inherited from molecular entity:
+
+ * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+     * Description: indicates whether a molecular entity is a metabolite
+     * range: [Boolean](types/Boolean.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
 
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
-
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Comments:** | | The CHEBI ID represents a role rather than a substance |
-| **Exact Mappings:** | | CHEBI:25212 |
+| **Aliases:** | | amino acid entity |
+| **In Subsets:** | | model_organism_database |
+| **Narrow Mappings:** | | SO:0000104 |
+|  | | UMLSSC:T126 |
+|  | | UMLSSC:T116 |
+|  | | UMLSSC:T087 |
 

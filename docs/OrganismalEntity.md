@@ -8,7 +8,7 @@ layout: default
 # Class: OrganismalEntity
 
 
-A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
 
 URI: [biolink:OrganismalEntity](https://w3id.org/biolink/vocab/OrganismalEntity)
 

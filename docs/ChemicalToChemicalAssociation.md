@@ -15,7 +15,7 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalSubstance]%3Cobject%201..1-%20[ChemicalToChemicalAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[ChemicalSubstance],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ReactionToParticipantAssociation],[Publication],[OntologyClass],[NamedThing],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalEntity]%3Cobject%201..1-%20[ChemicalToChemicalAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToChemicalAssociation]%5E-[ReactionToParticipantAssociation],[ChemicalToChemicalAssociation]%5E-[ChemicalToChemicalDerivationAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[ChemicalEntity],[Attribute],[Association],[Agent])
 
 ---
 
@@ -26,11 +26,12 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
 ## Uses Mixins
 
- *  mixin: [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
+ *  mixin: [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md)
 
 ## Children
 
  * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) - A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
+ * [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)
 
 ## Referenced by class
 
@@ -42,7 +43,7 @@ URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/Chem
 
  * [chemical to chemical association➞object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
      * Description: the chemical element that is the target of the statement
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
+     * range: [ChemicalEntity](ChemicalEntity.md)
 
 ### Inherited from association:
 
@@ -119,4 +120,4 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [chemical to chemical association➞object](chemical_to_chemical_association_object.md)  <sub>REQ</sub>
      * Description: the chemical element that is the target of the statement
-     * range: [ChemicalSubstance](ChemicalSubstance.md)
+     * range: [ChemicalEntity](ChemicalEntity.md)

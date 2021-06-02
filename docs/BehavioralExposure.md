@@ -15,7 +15,7 @@ URI: [biolink:BehavioralExposure](https://w3id.org/biolink/vocab/BehavioralExpos
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[NamedThing],[ExposureEvent],[BehavioralExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[Behavior]%5E-[BehavioralExposure],[Behavior],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[NamedThing],[ExposureEvent],[BiologicalProcessOrActivity],[BehavioralExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[Behavior]%5E-[BehavioralExposure],[Behavior],[Attribute],[Agent])
 
 ---
 

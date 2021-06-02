@@ -8,13 +8,13 @@ layout: default
 # Relation: has_sequence_location
 
 
-holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
+holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
 
 URI: [biolink:has_sequence_location](https://w3id.org/biolink/vocab/has_sequence_location)
 
 ## Domain and Range
 
-[GenomicEntity](GenomicEntity.md) ->  <sub>0..*</sub> [GenomicEntity](GenomicEntity.md)
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

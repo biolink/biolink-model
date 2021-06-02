@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other
+holds between two chemical entities where the action or effect  of one impacts the rate of chemical synthesis of the other
 
 URI: [biolink:affects_synthesis_of](https://w3id.org/biolink/vocab/affects_synthesis_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 
@@ -27,6 +27,8 @@ URI: [biolink:affects_synthesis_of](https://w3id.org/biolink/vocab/affects_synth
 
  *  [decreases synthesis of](decreases_synthesis_of.md)
  *  [increases synthesis of](increases_synthesis_of.md)
+ *  [synthesis decreased by](synthesis_decreased_by.md)
+ *  [synthesis increased by](synthesis_increased_by.md)
 
 ## Used by
 

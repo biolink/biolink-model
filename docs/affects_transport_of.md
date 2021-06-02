@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+holds between two chemical entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
 
 URI: [biolink:affects_transport_of](https://w3id.org/biolink/vocab/affects_transport_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 
@@ -27,6 +27,8 @@ URI: [biolink:affects_transport_of](https://w3id.org/biolink/vocab/affects_trans
 
  *  [decreases transport of](decreases_transport_of.md)
  *  [increases transport of](increases_transport_of.md)
+ *  [transport decreased by](transport_decreased_by.md)
+ *  [transport increased by](transport_increased_by.md)
 
 ## Used by
 

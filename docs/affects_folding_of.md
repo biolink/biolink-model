@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other
+holds between two chemical entities where the action or effect of one changes the rate or quality of folding of the other
 
 URI: [biolink:affects_folding_of](https://w3id.org/biolink/vocab/affects_folding_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 
@@ -26,6 +26,8 @@ URI: [biolink:affects_folding_of](https://w3id.org/biolink/vocab/affects_folding
 ## Children
 
  *  [decreases folding of](decreases_folding_of.md)
+ *  [folding decreased by](folding_decreased_by.md)
+ *  [folding increased by](folding_increased_by.md)
  *  [increases folding of](increases_folding_of.md)
 
 ## Used by

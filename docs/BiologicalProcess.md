@@ -15,7 +15,7 @@ URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProces
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[PhysicalEntity],[Pathway],[PathologicalProcess],[OntologyClass],[Occurrent],[NamedThing],[MacromolecularMachineToBiologicalProcessAssociation],[Death],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[OntologyClass],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcess]%5E-[PathologicalProcess],[BiologicalProcess]%5E-[Death],[BiologicalProcess]%5E-[Behavior],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[Behavior],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[PhysicalEntity],[Pathway],[PathologicalProcess],[OntologyClass],[Occurrent],[NamedThing],[MacromolecularMachineToBiologicalProcessAssociation],[GeneOrGeneProduct],[Death],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[OntologyClass],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcess]%5E-[PathologicalProcess],[BiologicalProcess]%5E-[Death],[BiologicalProcess]%5E-[Behavior],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[Behavior],[Attribute],[Agent])
 
 ---
 
@@ -46,6 +46,12 @@ URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProces
 
 ## Referenced by class
 
+ *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[acts upstream of](acts_upstream_of.md)*  <sub>0..*</sub>  **[BiologicalProcess](BiologicalProcess.md)**
+ *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[acts upstream of negative effect](acts_upstream_of_negative_effect.md)*  <sub>0..*</sub>  **[BiologicalProcess](BiologicalProcess.md)**
+ *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[acts upstream of or within](acts_upstream_of_or_within.md)*  <sub>0..*</sub>  **[BiologicalProcess](BiologicalProcess.md)**
+ *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)*  <sub>0..*</sub>  **[BiologicalProcess](BiologicalProcess.md)**
+ *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)*  <sub>0..*</sub>  **[BiologicalProcess](BiologicalProcess.md)**
+ *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[acts upstream of positive effect](acts_upstream_of_positive_effect.md)*  <sub>0..*</sub>  **[BiologicalProcess](BiologicalProcess.md)**
  *  **[MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)** *[macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)*  <sub>REQ</sub>  **[BiologicalProcess](BiologicalProcess.md)**
 
 ## Attributes

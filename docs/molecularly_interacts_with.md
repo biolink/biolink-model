@@ -27,6 +27,8 @@ URI: [biolink:molecularly_interacts_with](https://w3id.org/biolink/vocab/molecul
 
  *  [decreases molecular interaction](decreases_molecular_interaction.md)
  *  [increases molecular interaction](increases_molecular_interaction.md)
+ *  [molecular interaction decreased by](molecular_interaction_decreased_by.md)
+ *  [molecular interaction increased by](molecular_interaction_increased_by.md)
 
 ## Used by
 

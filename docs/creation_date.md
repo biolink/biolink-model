@@ -35,6 +35,7 @@ URI: [biolink:creation_date](https://w3id.org/biolink/vocab/creation_date)
  * [DatasetVersion](DatasetVersion.md)
  * [EvidenceType](EvidenceType.md)
  * [InformationContentEntity](InformationContentEntity.md)
+ * [InformationResource](InformationResource.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
 

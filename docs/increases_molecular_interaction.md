@@ -8,7 +8,7 @@ layout: default
 # Relation: increases_molecular_interaction
 
 
-indicates that the source increases the molecular interaction between the target and some other molecular entity
+indicates that the source increases the molecular interaction between the target and some other chemical entity
 
 URI: [biolink:increases_molecular_interaction](https://w3id.org/biolink/vocab/increases_molecular_interaction)
 

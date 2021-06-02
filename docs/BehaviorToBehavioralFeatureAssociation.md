@@ -8,7 +8,7 @@ layout: default
 # Class: BehaviorToBehavioralFeatureAssociation
 
 
-An association between an aggregate behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
+An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 
 URI: [biolink:BehaviorToBehavioralFeatureAssociation](https://w3id.org/biolink/vocab/BehaviorToBehavioralFeatureAssociation)
 

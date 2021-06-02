@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA
+holds between a chemical entity and an mRNA where the action or effect of the chemical entity impacts the splicing of the mRNA
 
 URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splicing_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [Transcript](Transcript.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [Transcript](Transcript.md)
 
 ## Parents
 
@@ -27,6 +27,8 @@ URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splici
 
  *  [decreases splicing of](decreases_splicing_of.md)
  *  [increases splicing of](increases_splicing_of.md)
+ *  [splicing decreased by](splicing_decreased_by.md)
+ *  [splicing increased by](splicing_increased_by.md)
 
 ## Used by
 

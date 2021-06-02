@@ -15,19 +15,21 @@ URI: [biolink:GenomicBackgroundExposure](https://w3id.org/biolink/vocab/GenomicB
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[GenomicEntity],[GenomicBackgroundExposure%7Ctimepoint:time_type%20%3F;has_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[GenomicBackgroundExposure]uses%20-.-%3E[GeneGroupingMixin],[GenomicEntity]%5E-[GenomicBackgroundExposure],[GeneGroupingMixin],[Gene],[ExposureEvent],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[OrganismTaxon],[NamedThing],[GenomicEntity],[GenomicBackgroundExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[GenomicBackgroundExposure]uses%20-.-%3E[GeneGroupingMixin],[GenomicBackgroundExposure]uses%20-.-%3E[PhysicalEssence],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[BiologicalEntity]%5E-[GenomicBackgroundExposure],[GeneGroupingMixin],[Gene],[ExposureEvent],[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+ *  is_a: [BiologicalEntity](BiologicalEntity.md)
 
 ## Uses Mixins
 
  *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
  *  mixin: [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
+ *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
+ *  mixin: [GenomicEntity](GenomicEntity.md)
 
 ## Attributes
 
@@ -79,12 +81,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [has gene or gene product](has_gene_or_gene_product.md)  <sub>0..*</sub>
      * Description: connects an entity with one or more gene or gene products
      * range: [Gene](Gene.md)
-
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-     * Description: connects a genomic feature to its sequence
-     * range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from macromolecular machine mixin:
 

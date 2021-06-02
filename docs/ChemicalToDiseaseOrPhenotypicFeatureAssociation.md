@@ -26,7 +26,7 @@ URI: [biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/
 
 ## Uses Mixins
 
- *  mixin: [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
+ *  mixin: [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md)
  *  mixin: [EntityToDiseaseOrPhenotypicFeatureAssociationMixin](EntityToDiseaseOrPhenotypicFeatureAssociationMixin.md)
 
 ## Referenced by class

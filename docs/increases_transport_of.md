@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
+holds between two chemical entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
 
 URI: [biolink:increases_transport_of](https://w3id.org/biolink/vocab/increases_transport_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

@@ -35,6 +35,7 @@ URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeatur
  * WBPhenotype
  * SNOMEDCT
  * MESH
+ * XPO
 
 ## Parents
 

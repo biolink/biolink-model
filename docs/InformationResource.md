@@ -1,37 +1,39 @@
 ---
 parent: Entities
-title: biolink:FoodComponent
+title: biolink:InformationResource
 grand_parent: Classes
 layout: default
 ---
 
-# Class: FoodComponent _(deprecated)_
+# Class: InformationResource
 
 
+A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
 
-
-URI: [biolink:FoodComponent](https://w3id.org/biolink/vocab/FoodComponent)
+URI: [biolink:InformationResource](https://w3id.org/biolink/vocab/InformationResource)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[ChemicalSubstance]%5E-[FoodComponent%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalSubstance],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[InformationContentEntity]%5E-[InformationResource%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[InformationContentEntity],[Attribute],[Association],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+ *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
+
+## Referenced by class
+
+ *  **[Association](Association.md)** *[aggregator knowledge source](aggregator_knowledge_source.md)*  <sub>0..*</sub>  **[InformationResource](InformationResource.md)**
+ *  **[Association](Association.md)** *[knowledge source](knowledge_source.md)*  <sub>0..*</sub>  **[InformationResource](InformationResource.md)**
+ *  **[Association](Association.md)** *[original knowledge source](original_knowledge_source.md)*  <sub>OPT</sub>  **[InformationResource](InformationResource.md)**
+ *  **[Association](Association.md)** *[primary knowledge source](primary_knowledge_source.md)*  <sub>OPT</sub>  **[InformationResource](InformationResource.md)**
+ *  **[Association](Association.md)** *[supporting data source](supporting_data_source.md)*  <sub>0..*</sub>  **[InformationResource](InformationResource.md)**
 
 ## Attributes
 
-
-### Inherited from chemical substance:
-
- * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
-     * Description: indicates whether a chemical substance is a metabolite
-     * range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 
@@ -69,6 +71,18 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
+### Inherited from information content entity:
+
+ * [license](license.md)  <sub>OPT</sub>
+     * range: [String](types/String.md)
+ * [rights](rights.md)  <sub>OPT</sub>
+     * range: [String](types/String.md)
+ * [format](format.md)  <sub>OPT</sub>
+     * range: [String](types/String.md)
+ * [creation date](creation_date.md)  <sub>OPT</sub>
+     * Description: date on which an entity was created. This can be applied to nodes or edges
+     * range: [Date](types/Date.md)
+
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
@@ -80,16 +94,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
      * range: [NamedThing](NamedThing.md)
 
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
-
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Related Mappings:** | | CHEBI:78295 |
+| **Aliases:** | | knowledgebase |
+| **In Subsets:** | | translator_minimal |
 

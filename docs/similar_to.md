@@ -27,7 +27,6 @@ URI: [biolink:similar_to](https://w3id.org/biolink/vocab/similar_to)
 
  *  [chemically similar to](chemically_similar_to.md)
  *  [homologous to](homologous_to.md)
- *  [model of](model_of.md)
 
 ## Used by
 

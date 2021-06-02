@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
+holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
 
 URI: [biolink:affects_mutation_rate_of](https://w3id.org/biolink/vocab/affects_mutation_rate_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [GenomicEntity](GenomicEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 
@@ -27,6 +27,7 @@ URI: [biolink:affects_mutation_rate_of](https://w3id.org/biolink/vocab/affects_m
 
  *  [decreases mutation rate of](decreases_mutation_rate_of.md)
  *  [increases mutation rate of](increases_mutation_rate_of.md)
+ *  [mutation rate decreased by](mutation_rate_decreased_by.md)
 
 ## Used by
 
@@ -37,5 +38,4 @@ URI: [biolink:affects_mutation_rate_of](https://w3id.org/biolink/vocab/affects_m
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | CTD:affects_mutation_rate_of |
-| **Broad Mappings:** | | CTD:affects_mutagenesis |
 

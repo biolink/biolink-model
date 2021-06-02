@@ -26,7 +26,7 @@ URI: [biolink:ChemicalToGeneAssociation](https://w3id.org/biolink/vocab/Chemical
 
 ## Uses Mixins
 
- *  mixin: [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
+ *  mixin: [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md)
 
 ## Referenced by class
 

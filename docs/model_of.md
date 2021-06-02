@@ -21,7 +21,7 @@ URI: [biolink:model_of](https://w3id.org/biolink/vocab/model_of)
 
 ## Parents
 
- *  is_a: [similar to](similar_to.md)
+ *  is_a: [related to](related_to.md)
 
 ## Children
 

@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+holds between two chemical entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
 
 URI: [biolink:decreases_uptake_of](https://w3id.org/biolink/vocab/decreases_uptake_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

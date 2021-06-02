@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
+holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
 
 URI: [biolink:has_metabolite](https://w3id.org/biolink/vocab/has_metabolite)
 
 ## Domain and Range
 
-[ChemicalSubstance](ChemicalSubstance.md) ->  <sub>0..*</sub> [ChemicalSubstance](ChemicalSubstance.md)
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
 
 ## Parents
 
