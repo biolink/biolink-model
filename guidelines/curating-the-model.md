@@ -179,6 +179,9 @@ To add a predicate to Biolink Model you need to determine the following,
   - What are the mapping(s) for this slot?
     - Mappings are a way of rooting this new association in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
     - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
+    # TODO: add the predicate discussion about inverse of cannon to this document.
+  - Determine the inverse of the predicate, and add it (specifying the inverse property on each of the two predicates)
+    - In general, the canonical direction of the predicate should contain the descriptive information about the predicate while its inverse can be minimally defined.
 
 
 As an example, let's consider the definition of slot `interacts with`:

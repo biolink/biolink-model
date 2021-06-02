@@ -22,6 +22,7 @@ version: 1.8.2
 prefixes:
   Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   alliancegenome: 'https://www.alliancegenome.org/'
+  apollo: 'https://github.com/GMOD/Apollo'
   biolink: 'https://w3id.org/biolink/vocab/'
   linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
@@ -124,6 +125,7 @@ prefixes:
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
+  XPO: 'http://purl.obolibrary.org/obo/XPO_'  # Xenopus Phenotype Ontology
 
 default_prefix: biolink
 default_range: string
@@ -161,6 +163,45 @@ enums:
         meaning: os:AllSomeInterpretation
       InverseAllSome:
 
+  reaction_direction_enum:
+    permissible_values:
+      left_to_right:
+      right_to_left:
+      bidirectional:
+      neutral:
+
+  reaction_side_enum:
+    permissible_values:
+      left:
+      right:
+
+  phase_enum:
+    description: phase
+    permissible_values:
+      0:
+      1:
+      2:
+
+  strand_enum:
+    description: strand
+    permissible_values:
+      "+":
+        description: Positive
+      "-":
+        description: Negative
+      ".":
+        description: Unstranded
+      "?":
+        description: Unknown
+
+  sequence_enum:
+    description: type of sequence
+    permissible_values:
+      "NA":
+        description: nucleic acid
+      "AA":
+        description: amino acid
+        
 subsets:
 
   model_organism_database:
@@ -437,6 +478,12 @@ slots:
     in_subset:
       - samples
 
+  base coordinate:
+    is_a: sequence localization attribute
+    aliases: [ 'one-based', 'fully-closed' ]
+    description: >-
+      A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
+    range: integer
 
 ## --------------------
 ## NODE PROPERTY SLOTS
@@ -529,6 +576,31 @@ slots:
     range: named thing
     description: >-
       The value in a property-value tuple
+
+  stoichiometry:
+    description: >-
+      the relationship between the relative quantities of substances taking part in a reaction or
+      forming a compound, typically a ratio of whole integers.
+    is_a: association slot
+    range: integer
+
+  reaction direction:
+    description: >-
+      the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+    is_a: association slot
+    range: reaction_direction_enum
+    narrow_mappings:
+      - NCIT:C42677
+
+  reaction balanced:
+    is_a: association slot
+    range: boolean
+
+  reaction side:
+    description: >-
+      the side of a reaction being modeled (ie: left or right)
+    is_a: association slot
+    range: reaction_side_enum
 
   symbol:
     is_a: node property
@@ -926,7 +998,7 @@ slots:
 
   has zygosity:
     is_a: node property
-    domain: genomic entity
+    domain: nucleic acid entity
     range: zygosity
 
   ## Chemistry, drugs and food
@@ -941,18 +1013,18 @@ slots:
 
   is metabolite:
     is_a: node property
-    domain: chemical substance
+    domain: molecular entity
     range: boolean
     description: >-
-      indicates whether a chemical substance is a metabolite
+      indicates whether a molecular entity is a metabolite
     exact_mappings:
       - CHEBI:25212
 
   has constituent:
     description: >-
-      one or more chemical substances within a mixture
+      one or more molecular entities within a chemical mixture
     is_a: node property
-    range: chemical substance
+    range: molecular entity
     multivalued: true
 
   has drug:
@@ -1035,7 +1107,10 @@ slots:
     range: named thing
     multivalued: true
     inherited: true
-    symmetric: trueo
+    symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - skos:relatedMatch
       - SEMMEDDB:ASSOCIATED_WITH
@@ -1199,7 +1274,9 @@ slots:
     multivalued: True
     in_subset:
       - translator_minimal
-    inverse: superclass of
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
       # and a an 'instance B' has class 'class A' (inverse term)
@@ -1245,6 +1322,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # identical class extension with identical sets of individuals
       - owl:equivalentClass
@@ -1272,6 +1352,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
@@ -1294,6 +1377,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - skos:exactMatch
       - WIKIDATA:Q39893449
@@ -1305,9 +1391,11 @@ slots:
       that have a broader, more general meaning. Broader terms are
       typically shown as parents in a hierarchy or tree.
     is_a: related to
-    inverse: narrow match
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - skos:broadMatch
       - WIKIDATA:Q39894595
@@ -1331,13 +1419,120 @@ slots:
       no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
     is_a: related to
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002604
     see_also:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
-  
+  active in:
+    is_a: related to
+    domain: gene or gene product
+    range: cellular component
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002432
+
+  acts upstream of:
+    is_a: related to
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002263
+
+  has upstream actor:
+    is_a: related to
+    inverse: acts upstream of
+
+  acts upstream of positive effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004034
+
+  has positive upstream actor:
+    is_a: has upstream actor
+    inverse: acts upstream of positive effect
+
+  acts upstream of negative effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004035
+
+  has negative upstream actor:
+    is_a: has upstream actor
+    inverse: acts upstream of negative effect
+
+  acts upstream of or within:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004032
+
+  has upstream or within actor:
+    is_a: has upstream actor
+    inverse: acts upstream of or within
+
+  acts upstream of or within positive effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0002264
+
+  has positive upstream or within actor:
+    is_a: has upstream or within actor
+    inverse: acts upstream of or within positive effect
+
+  acts upstream of or within negative effect:
+    is_a: acts upstream of
+    domain: gene or gene product
+    range: biological process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - RO:0004033
+
+  has negative upstream or within actor:
+    is_a: has upstream or within actor
+    inverse: acts upstream of or within negative effect
+
+    ## Publication related predicates
+  mentions:
+    description: >-
+      refers to is a relation between one information content entity and the named thing
+      that it makes reference to.
+    is_a: related to
+    exact_mappings:
+      - IAO:0000142
+    narrow_mappings:
+      - SIO:000628
+
   ## Publication related predicates
 
   contributor:
@@ -1400,6 +1595,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002434
     narrow_mappings:
@@ -1416,6 +1614,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - WIKIDATA_PROPERTY:P129
       - RTXKG1:physically_interacts_with
@@ -1438,6 +1639,15 @@ slots:
       - NCIT:A7
       - PR:non-covalently_bound_to
 
+  chemically interacts with:
+    is_a: physically interacts with
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    symmetric: true
+
+
   molecularly interacts with:
     is_a: physically interacts with
     domain: molecular entity
@@ -1445,6 +1655,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - DGIdb:antibody
     exact_mappings:
@@ -1475,9 +1688,11 @@ slots:
       the affected entity already exists, unlike predicates such as
       'affects risk for' and 'prevents, where the outcome is something
       that may or may not come to be.
-    inverse: affected by
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       # Contributed by RTX. Seems possible that a new predicate "biolink:in_pathway" could be justified?
       - DRUGBANK:pathway
@@ -1528,63 +1743,93 @@ slots:
 
   chemical role mixin:
     description: >-
-      A role played by the molecular entity or part thereof within a chemical context.
+      A role played by the chemical entity or part thereof within a chemical context.
     mixin: true
     exact_mappings:
       - CHEBI:51086
 
   biological role mixin:
     description: >-
-      A role played by the molecular entity or part thereof within a biological context.
+      A role played by the chemical entity or part thereof within a biological context.
     mixin: true
-    exact_mappings:
+    narrow_mappings:
       - CHEBI:24432
 
   affects abundance of:
     description: >-
-      holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
+      holds between two chemical entities where the action or effect of one changes the amount of the 
+      other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_abundance_of
 
+  abundance affected by:
+    is_a: affects
+    inverse: affects abundance of
+    domain: molecular entity
+    range: molecular entity
+
   increases abundance of:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
+      holds between two chemical entities where the action or effect of one increases the amount of the other within a system of interest
     is_a: affects abundance of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - UBERGRAPH:is_increase_of
     exact_mappings:
       - CTD:increases_abundance_of
 
+  abundance increased by:
+    is_a: affects abundance of
+    inverse: increases abundance of
+    domain: molecular entity
+    range: molecular entity
+
   decreases abundance of:
     description: >-
-      holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
+      holds between two chemical entities where the action or effect of one decreases the amount of the other within a system of interest
     is_a: affects abundance of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - UBERGRAPH:is_decrease_of
     exact_mappings:
       - CTD:decreases_abundance_of
 
+  abundance decreased by:
+    is_a: affects abundance of
+    inverse: decreases abundance of
+    domain: molecular entity
+    range: molecular entity
+
   affects activity of:
     description: >-
-      holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest
+      holds between two chemical entities where the action or effect of one changes the activity of the 
+      other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     exact_mappings:
       - CTD:affects_activity_of
     narrow_mappings:
@@ -1594,14 +1839,28 @@ slots:
       - DGIdb:modulator
       - DGIdb:allosteric_modulator
 
+  activity affected by:
+    description: >-
+      holds between two molecular entities where the action or effect of one is changed by the
+      activity of the other within a system of interest
+    is_a: affects
+    domain: molecular entity
+    range: molecular entity
+
+  activity affects:
+    is_a: affects
+    domain: molecular entity
+    range: molecular entity
+    inverse: activity affected by
+
   increases activity of:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
+      holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
     is_a: affects activity of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
@@ -1628,14 +1887,23 @@ slots:
       - DGIdb:positive_allosteric_modulator
       - DGIdb:stimulator
 
-  decreases activity of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest
+  activity increased by:
     is_a: affects activity of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases activity of
+
+  decreases activity of:
+    description: >-
+      holds between two chemical entities where the action or effect of one decreases the 
+      activity of the other within a system of interest
+    is_a: affects activity of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
     related_mappings:
       - GAMMA:ic50
       - GAMMA:ki
@@ -1672,40 +1940,68 @@ slots:
       - DGIdb:inhibitory_allosteric_modulator
       - DGIdb:inverse_agonist
 
+  activity decreased by:
+    is_a: affects activity of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases activity of
+
+
   affects expression of:
     description: >-
-      holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest
+      holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the
+      level of expression of the other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: genomic entity
+    domain: chemical entity
+    range: nucleic acid entity
     exact_mappings:
       - CTD:affects_expression_of
 
+  expression affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: affects expression of
+
   increases expression of:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest
+      holds between two chemical entities where the action or effect of one increases the level of expression of the
+      other within a system of interest
     is_a: affects expression of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: genomic entity
+    domain: chemical entity
+    range: nucleic acid entity
     close_mappings:
-      # Agent of the action or effect, not the relationship itelf
+      # Agent of the action or effect, not the relationship itself
       - CHEMBL.MECHANISM:releasing_agent
     exact_mappings:
       - RO:0003003
       - CTD:increases_expression_of
 
-  decreases expression of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest
+  expression increased by:
     is_a: affects expression of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: genomic entity
+    domain: genomic entity
+    range: molecular entity
+    inverse: increases expression of
+
+  decreases expression of:
+    description: >-
+      holds between two chemical entities where the action or effect of one decreases the level of expression of the
+      other within a system of interest
+    is_a: affects expression of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: nucleic acid entity
     related_mappings:
       - DGIdb:antisense
       - DGIdb:antisense_oligonucleotide
@@ -1715,120 +2011,246 @@ slots:
     narrow_mappings:
       - CHEMBL.MECHANISM:antisense_inhibitor
 
+  expression decreased by:
+    is_a: affects expression of
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: decreases expression of
+
   affects folding of:
     description: >-
-      holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other
+      holds between two chemical entities where the action or effect of one changes the rate
+      or quality of folding of the other
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: nucleic acid entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_folding_of
 
+  folding affected by:
+    is_a: affects
+    inverse: affects folding of
+    domain: molecular entity
+    range: molecular entity
+
   increases folding of:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other
+      holds between two chemical entities where the action or effect of one 
+      increases the rate or quality of folding of the other
     is_a: affects folding of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: nucleic acid entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_folding_of
 
+  folding increased by:
+    is_a: affects folding of
+    inverse: increases folding of
+    domain: molecular entity
+    range: molecular entity
+
   decreases folding of:
     description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other
+      holds between two chemical entities where the action or effect of one 
+      decreases the rate or quality of folding of the other
     is_a: affects folding of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: nucleic acid entity
+      holds between two molecular entities where the action or effect of one decreases
+      the rate or quality of folding of the other
+    is_a: affects folding of
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_folding_of
 
+  folding decreased by:
+    is_a: affects folding of
+    inverse: decreases folding of
+    domain: molecular entity
+    range: molecular entity
+
   affects localization of:
     description: >-
-      holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest
+      holds between two chemical entities where the action or effect of one changes the
+      localization of the other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - GAMMA:storage
     exact_mappings:
       - CTD:affects_localization_of
       - GOREL:0002003
 
-  increases localization of:
-    description: >-
-      holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest
-    is_a: affects localization of
-    in_subset:
-      - translator_minimal
-    domain: molecular entity
-    range: molecular entity
-    exact_mappings:
-      - CTD:increases_localization_of
-
-  decreases localization of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest
-    is_a: affects localization of
-    in_subset:
-      - translator_minimal
-    domain: molecular entity
-    range: molecular entity
-    exact_mappings:
-      - CTD:decreases_localization_of
-
-  affects metabolic processing of:
-    description: >-
-      holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
+  localization affected by:
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects localization of
+
+  increases localization of:
+    description: >-
+      holds between two chemical entities where the action or effect of one increases the proper
+      localization of the other within a system of interest
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - CTD:increases_localization_of
+
+  localization increased by:
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases localization of
+
+  decreases localization of:
+    description: >-
+      holds between two chemical entities where the action or effect of one decreases the proper localization of the other within a system of interest
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - CTD:decreases_localization_of
+
+  localization decreased by:
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases localization of
+
+  affects metabolic processing of:
+    description: >-
+      holds between two chemical entities where the action or effect of one impacts the
+      metabolic processing of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - GAMMA:catalytic_activity
     exact_mappings:
       - CTD:affects_metabolic_processing_of
 
-  increases metabolic processing of:
-    description: >-
-      holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
-    is_a: affects metabolic processing of
-    in_subset:
-      - translator_minimal
-    domain: molecular entity
-    range: molecular entity
-    exact_mappings:
-      - CTD:increases_metabolic_processing_of
-    narrow_mappings:
-      - NCIT:enzyme_metabolizes_chemical_or_drug
-
-  decreases metabolic processing of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
-    is_a: affects metabolic processing of
-    in_subset:
-      - translator_minimal
-    domain: molecular entity
-    range: molecular entity
-    exact_mappings:
-      - CTD:decreases_metabolic_processing_of
-
-  affects molecular modification of:
-    description: >-
-      holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+  metabolic processing affected by:
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects metabolic processing of
+
+  increases metabolic processing of:
+    description: >-
+      holds between two chemical entities where the action or effect of one increases the rate of
+      metabolic processing of the other within a system of interest
+    is_a: affects metabolic processing of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - CTD:increases_metabolic_processing_of
+    narrow_mappings:
+      - NCIT:enzyme_metabolizes_chemical_or_drug
+
+  metabolic processing increased by:
+    is_a: affects metabolic processing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases metabolic processing of
+
+  decreases metabolic processing of:
+    description: >-
+      holds between two chemical entities where the action or effect of one decreases the rate of
+      metabolic processing of the other within a system of interest
+    is_a: affects metabolic processing of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - CTD:decreases_metabolic_processing_of
+
+  metabolic processing decreased by:
+    is_a: affects metabolic processing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases metabolic processing of
+
+  affects molecular modification of:
+    description: >-
+      holds between two chemical entities where the action or effect of one leads changes in the molecular
+      modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_molecular_modification_of
     narrow_mappings:
@@ -1864,14 +2286,29 @@ slots:
       - CTD:affects_reduction
       - CTD:affects_carboxylation
 
-  increases molecular modification of:
-    description: >-
-      holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
-    is_a: affects molecular modification of
+  molecular modification affected by:
+    is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects molecular modification of
+
+  increases molecular modification of:
+    description: >-
+      holds between two chemical entities where the action or effect of one leads to
+      increased molecular modification(s) of the other (e.g. via post-translational modifications of
+      proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+    is_a: affects molecular modification of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_molecular_modification_of
     narrow_mappings:
@@ -1909,14 +2346,27 @@ slots:
       - GAMMA:acetylation
       - GAMMA:oxidizer
 
-  decreases molecular modification of:
-    description: >-
-      holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+  molecular modification increased by:
     is_a: affects molecular modification of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases molecular modification of
+
+  decreases molecular modification of:
+    description: >-
+      holds between two chemical entities where the action or effect of one leads to
+      decreased molecular modification(s) of the other (e.g. via post-translational modifications of
+      proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+    is_a: affects molecular modification of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_molecular_modification_of
     narrow_mappings:
@@ -1953,62 +2403,131 @@ slots:
       - CTD:decreases_carboxylation
       - GAMMA:deoxidizer
 
+  molecular modification decreased by:
+    is_a: affects molecular modification of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases molecular modification of
+
   affects synthesis of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other
+      holds between two chemical entities where the action or effect 
+      of one impacts the rate of chemical synthesis of the other
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_synthesis_of
 
+  sythesis affected by:
+    is_a: affects
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects synthesis of
+    in_subset:
+      - translator_minimal
+
   increases synthesis of:
     description: >-
-      holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other
+      holds between two chemical entities where the action or effect
+      of one increases the rate of chemical synthesis of the other
     is_a: affects synthesis of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_synthesis_of
 
-  decreases synthesis of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other
+  synthesis increased by:
     is_a: affects synthesis of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases synthesis of
+
+  decreases synthesis of:
+    description: >-
+      holds between two chemical entities where the action or effect
+      of one decreases the rate of chemical synthesis of the other
+    is_a: affects synthesis of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_synthesis_of
       - GAMMA:inhibition_of_synthesis
 
-  affects degradation of:
-    description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
-    is_a: affects
+  synthesis decreased by:
+    is_a: affects synthesis of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: decreases synthesis of
+
+  affects degradation of:
+    description: >-
+      holds between two chemical entities where the action or effect of one
+      impacts the rate of degradation of the other within a system of interest,
+      where chemical degradation is defined act or process of simplifying or breaking
+      down a molecule into smaller parts, either naturally or artificially
+      (Oxford English Dictionary, UK, 1995)
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_degradation_of
     narrow_mappings:
       - CTD:affects_cleavage
       - CTD:affects_hydrolysis
 
-  increases degradation of:
-    description: >-
-      holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest
-    is_a: affects degradation of
+  degradation affected by:
+    is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects degradation of
+
+  increases degradation of:
+    description: >-
+      holds between two chemical entities where the action or effect of one
+      increases the rate of degradation of the other within a system of interest
+    is_a: affects degradation of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
@@ -2028,194 +2547,361 @@ slots:
       - CTD:increases_hydrolysis
       - GOREL:0002004
 
-  decreases degradation of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
+  degradation increased by:
     is_a: affects degradation of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases degradation of
+
+  decreases degradation of:
+    description: >-
+      holds between two chemical entities where the action or effect of one
+      decreases the rate of degradation of the other within a system of interest
+    is_a: affects degradation of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_degradation_of
     narrow_mappings:
       - CTD:decreases_cleavage
       - CTD:decreases_hydrolysis
 
+  degradation decreased by:
+    is_a: affects degradation of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases degradation of
+
   affects mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
+      holds between a chemical entity and a nucleic acid entity where the action or effect of the
+      chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: genomic entity
+    domain: chemical entity
+    range: nucleic acid entity
     exact_mappings:
       - CTD:affects_mutation_rate_of
     broad_mappings:
-      # Term 'mutagenesis' generally speaks generally of the process of 'production of genetic mutations':  this term says it is affected but not specifically how
-      - CTD:affects_mutagenesis
+      # Term 'mutagenesis' generally speaks generally of the process of
+      # 'production of genetic mutations':  this term says it is affected
+      # but not specifically how
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - CTD:affects_mutation_rate_of
+
+  mutation rate affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: affects mutation rate of
 
   increases mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
+      holds between a chemical entity and a nucleic acid entity where the action or effect of the
+      chemical entity increases the rate of mutation of the nucleic acid entity within a system of interest
     is_a: affects mutation rate of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: genomic entity
+    domain: chemical entity
+    range: nucleic acid entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_mutation_rate_of
     broad_mappings:
       # See 'affects mutation rate of' above
       - CTD:increases_mutagenesis
 
+  mutation rate increased by:
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: increases mutation rate of
+
   decreases mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
+      holds between a chemical entity and a nucleic acid entity where the action or effect of the
+      chemical entity decreases the rate of mutation of the nucleic acid entity within a system of interest
     is_a: affects mutation rate of
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: genomic entity
+    domain: chemical entity
+    range: nucleic acid entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_mutation_rate_of
     broad_mappings:
       # See 'affects mutation rate of' above
       - CTD:decreases_mutagenesis
 
+  mutation rate decreased by:
+    is_a: affects mutation rate of
+    in_subset:
+      - translator_minimal
+    domain: genomic entity
+    range: molecular entity
+    inverse: decreases mutation rate of
+
   affects response to:
     description: >-
-      holds between two molecular entities where the action or effect
+      holds between two chemical entities where the action or effect
       of one impacts the susceptibility of a biological entity or system
       (e.g. an organism, cell, cellular component, macromolecular machine mixin,
       biological or pathological process) to the other
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_response_to
 
+  response affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: affects response to
+
   increases response to:
     description: >-
-      holds between two molecular entities where the action or effect of one
+      holds between two chemical entities where the action or effect of one
       increases the susceptibility of a biological entity or system (e.g. an
       organism, cell, cellular component, macromolecular machine mixin, biological
       or pathological process) to the other
     is_a: affects response to
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_response_to
 
+  response increased by:
+    is_a: affects response to
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: increases response to
+
   decreases response to:
     description: >-
-      holds between two molecular entities where the action or effect of one
+      holds between two chemical entities where the action or effect of one
       decreases the susceptibility of a biological entity or system (e.g. an
       organism, cell, cellular component, macromolecular machine mixin, biological
       or pathological process) to the other
     is_a: affects response to
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
       - CTD:decreases_response_to_substance
       - GAMMA:desensitize_the_target
 
-  affects splicing of:
-    description: >-
-      holds between a molecular entity and an mRNA where the action or effect
-      of the molecular entity impacts the splicing of the mRNA
-    is_a: affects
+  response decreased by:
+    is_a: affects response to
     in_subset:
       - translator_minimal
     domain: molecular entity
+    range: molecular entity
+    inverse: decreases response to
+
+  affects splicing of:
+    description: >-
+      holds between a chemical entity and an mRNA where the action or effect
+      of the chemical entity impacts the splicing of the mRNA
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
     range: transcript
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_RNA_splicing
     broad_mappings:
       - CTD:affects_splicing_of
 
+  splicing affected by:
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: transcript
+    range: molecular entity
+    inverse: affects splicing of
+
   increases splicing of:
     description: >-
-      holds between a molecular entity and an mRNA where the action or effect
-      of the molecular entity increases the proper splicing of the mRNA
+      holds between a chemical entity and an mRNA where the action or effect
+      of the chemical entity increases the proper splicing of the mRNA
     is_a: affects splicing of
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: chemical entity
     range: transcript
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_RNA_splicing
     broad_mappings:
       - CTD:increases_splicing_of
 
-  decreases splicing of:
-    description: >-
-      holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA
+  splicing increased by:
     is_a: affects splicing of
     in_subset:
       - translator_minimal
-    domain: molecular entity
+    domain: transcript
+    range: molecular entity
+    inverse: increases splicing of
+
+  decreases splicing of:
+    description: >-
+      holds between a chemical entity and an mRNA where the action or
+      effect of the chemical entity decreases the proper splicing of the mRNA
+    is_a: affects splicing of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
     range: transcript
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_RNA_splicing
     broad_mappings:
       - CTD:decreases_splicing_of
 
+  splicing decreased by:
+    is_a: affects splicing of
+    in_subset:
+      - translator_minimal
+    domain: transcript
+    range: molecular entity
+    inverse: decreases splicing of
+
   affects stability of:
     description: >-
-      holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest
+      holds between two chemical entities where the action or effect of one impacts
+      the stability of the other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       - GAMMA:stabilization
     exact_mappings:
       - CTD:affects_stability_of
 
-  increases stability of:
-    description: >-
-      holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest
-    is_a: affects stability of
+  stability affected by:
+    is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects stability of
+
+  increases stability of:
+    description: >-
+      holds between two chemical entities where the action or effect of one
+      increases the stability of the other within a system of interest
+    is_a: affects stability of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # agent of the action or effect, not the relationship
       - CHEMBL.MECHANISM:stabiliser
     exact_mappings:
       - CTD:increases_stability_of
 
-  decreases stability of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest
+  stability increased by:
     is_a: affects stability of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases stability of
+
+  decreases stability of:
+    description: >-
+      holds between two chemical entities where the action or effect of one decreases
+      the stability of the other within a system of interest
+    is_a: affects stability of
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_stability_of
 
-  affects transport of:
-    description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
-    is_a: affects
+  stability decreased by:
+    is_a: affects stability of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: decreases stability of
+
+  affects transport of:
+    description: >-
+      holds between two chemical entities where the action or effect of one impacts
+      the rate of transport of the other across some boundary in a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_transport_of
     narrow_mappings:
@@ -2223,114 +2909,218 @@ slots:
       - RO:0002340
       - RO:0002345
 
-  increases transport of:
-    description: >-
-      holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
-    is_a: affects transport of
+  transport affected by:
+    is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects transport of
+
+  increases transport of:
+    description: >-
+      holds between two chemical entities where the action or effect of one
+      increases the rate of transport of the other across some boundary in a system of interest
+    is_a: affects transport of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       - GAMMA:carrier
       - GAMMA:transporter
     exact_mappings:
       - CTD:increases_transport_of
 
-  decreases transport of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+  transport increased by:
     is_a: affects transport of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases transport of
+
+  decreases transport of:
+    description: >-
+      holds between two chemical entities where the action or effect of one
+      decreases the rate of transport of the other across some boundary in a system of interest
+    is_a: affects transport of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_transport_of
 
-  affects secretion of:
-    description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
-    is_a: affects
+  transport decreased by:
+    is_a: affects transport of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: decreases transport of
+
+  affects secretion of:
+    description: >-
+      holds between two chemical entities where the action or effect of one impacts the
+      rate of secretion of the other out of a cell, gland, or organ
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:affects_export
 
-  increases secretion of:
-    description: >-
-      holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
-    is_a: affects secretion of
+  secretion affected by:
+    is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects secretion of
+
+  increases secretion of:
+    description: >-
+      holds between two chemical entities where the action or effect of one increases the
+      rate of secretion of the other out of a cell, gland, or organ
+    is_a: affects secretion of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:increases_export
 
-  decreases secretion of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
+  secretion increased by:
     is_a: affects secretion of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases secretion of
+
+  decreases secretion of:
+    description: >-
+      holds between two chemical entities where the action or effect of one decreases the
+      rate of secretion of the other out of a cell, gland, or organ
+    is_a: affects secretion of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:decreases_export
 
-  affects uptake of:
-    description: >-
-      holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
-    is_a: affects
+  secretion decreased by:
+    is_a: affects secretion of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: decreases secretion of
+
+  affects uptake of:
+    description: >-
+      holds between two chemical entities where the action or effect of one impacts the rate of
+      uptake of the other into of a cell, gland, or organ
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:affects_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:affects_import
 
-  increases uptake of:
-    description: >-
-      holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
-    is_a: affects uptake of
+  uptake affected by:
+    is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: affects uptake of
+
+  increases uptake of:
+    description: >-
+      holds between two chemical entities where the action or effect of one increases the rate of
+      uptake of the other into of a cell, gland, or organ
+    is_a: affects uptake of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:increases_import
 
-  decreases uptake of:
-    description: >-
-      holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+  uptake increased by:
     is_a: affects uptake of
     in_subset:
       - translator_minimal
     domain: molecular entity
     range: molecular entity
+    inverse: increases uptake of
+
+  decreases uptake of:
+    description: >-
+      holds between two chemical entities where the action or effect
+      of one decreases the rate of uptake of the other into of a cell, gland, or organ
+    is_a: affects uptake of
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:decreases_import
+
+  uptake decreased by:
+    is_a: affects uptake of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    inverse: decreases uptake of
 
   regulates:
     # direct is_a inheritance from a non-mixin class is not allowed
@@ -2341,7 +3131,9 @@ slots:
     mixin: true
     domain: physical essence or occurrent
     range: physical essence or occurrent
-    inverse: regulated by
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       - RO:0002334
     exact_mappings:
@@ -2367,8 +3159,10 @@ slots:
     comments:
       - This is a grouping for positive process-process and entity-entity regulation.
     is_a: regulates
-    inverse: positively regulated by
     mixin: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - RO:0002336
@@ -2391,8 +3185,10 @@ slots:
     comments:
       - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
-    inverse: negatively regulated by
     mixin: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - RO:0002335
@@ -2421,7 +3217,9 @@ slots:
       - regulates
     domain: occurrent
     range: occurrent
-    inverse: process regulated by process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002211
 
@@ -2435,7 +3233,9 @@ slots:
     is_a: process regulates process
     mixins:
       - positively regulates
-    inverse: process positively regulated by process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002213
 
@@ -2447,7 +3247,9 @@ slots:
     is_a: process regulates process
     mixins:
       - negatively regulates
-    inverse: process negatively regulated by process
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002212
 
@@ -2460,9 +3262,12 @@ slots:
     is_a: affects
     mixins:
       - regulates
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     inverse: entity regulated by entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     local_names:
       translator: regulates
       ro: activity directly regulates activity of
@@ -2479,8 +3284,8 @@ slots:
 
   entity regulated by entity:
     is_a: affected by
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     inverse: entity regulates entity
 
   entity positively regulates entity:
@@ -2488,7 +3293,9 @@ slots:
     is_a: entity regulates entity
     mixins:
       - positively regulates
-    inverse: entity positively regulated by entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
@@ -2518,7 +3325,9 @@ slots:
     is_a: entity regulates entity
     mixins:
       - negatively regulates
-    inverse: entity negatively regulated by entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
@@ -2546,7 +3355,9 @@ slots:
       with the structure, function, or occurrence of another.
     in_subset:
       - translator_minimal
-    inverse: disrupted by
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SEMMEDDB:DISRUPTS
       - SEMMEDDB:disrupts
@@ -2573,6 +3384,9 @@ slots:
       - RO:0002204
     domain: gene product mixin
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     inverse: has gene product
     in_subset:
       - translator_minimal
@@ -2584,9 +3398,9 @@ slots:
       translated product generated from it
     domain: gene
     range: gene product mixin
+    inverse: gene product of
     in_subset:
       - translator_minimal
-    inverse: gene product of
     close_mappings:
       # RTX term tagged as inverse mapping
       - PR:has_gene_template
@@ -2596,6 +3410,7 @@ slots:
       - NCIT:gene_encodes_gene_product
     narrow_mappings:
       - NCIT:R178
+
   transcribed to:
     is_a: related to
     domain: gene
@@ -2611,7 +3426,9 @@ slots:
     is_a: related to
     domain: transcript
     range: gene
-    inverse: transcribed to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     description: >-
       x is transcribed from y if and only if x is synthesized from template y
     exact_mappings:
@@ -2622,11 +3439,13 @@ slots:
     is_a: related to
     domain: transcript
     range: protein
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     description: >-
       x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
       reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
       and produces x (amino acid chain/polypeptide)
-    inverse: translation of
     close_mappings:
       - RO:0002513
       - SIO:010082
@@ -2652,6 +3471,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:HOM0000001
       - SIO:010302
@@ -2666,6 +3488,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:HOM0000011
 
@@ -2676,6 +3501,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:HOM0000017
       - WIKIDATA_PROPERTY:P684
@@ -2687,6 +3515,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:HOM0000018
 
@@ -2697,6 +3528,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
       - SEMMEDDB:coexists_with
@@ -2886,6 +3720,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       # generally pertains to membership of a (subject) component - gene,
       # metabolite, etc? - in an (object) metabolic pathway
@@ -2901,6 +3738,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
       - SIO:010497
@@ -2917,6 +3757,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
 
   colocalizes with:
     description: >-
@@ -2925,6 +3768,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:00002325
 
@@ -2933,6 +3779,9 @@ slots:
   genetic association:
     is_a: related to
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     description: >-
       Co-occurrence of a certain allele of a genetic marker and the phenotype
       of interest in the same individuals at above-chance level
@@ -2945,9 +3794,11 @@ slots:
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
     domain: gene
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
-    inverse: condition associated with gene
     exact_mappings:
       - RTXKG1:gene_associated_with_condition
     broad_mappings:
@@ -2978,8 +3829,15 @@ slots:
     is_a: related to
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
+
+  risk affected by:
+    is_a: related to
+    inverse: affects risk for
 
   predisposes:
     is_a: affects risk for
@@ -2987,9 +3845,14 @@ slots:
       holds between two entities where exposure to one entity increases the chance of developing the other
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SEMMEDDB:PREDISPOSES
       - SEMMEDDB:predisposes
+
+  # TODO: inverse of predisposes
 
   contributes to:
     is_a: related to
@@ -2997,6 +3860,9 @@ slots:
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # RTX contributed mapping tagged as 'inverse' of this Biolink predicate
       - IDO:0000664
@@ -3010,21 +3876,30 @@ slots:
       # RTX term 'contributes to condition' mapped to 'biolink:causes' seems more suitable here
       - RO:0003304
 
+  contribution from:
+    is_a: related to
+    in_subset:
+      - translator_minimal
+    inverse: contributes to
+
   causes:
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
+      holds between two entities where the occurrence, existence, or activity of one causes the occurrence
+      or generation of the other
     is_a: contributes to
     in_subset:
       - translator_minimal
-    inverse: caused by
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
-      - RO:0002506
       - SEMMEDDB:CAUSES
       - SEMMEDDB:causes
       - WIKIDATA_PROPERTY:P1542
       - SNOMED:cause_of
     broad_mappings:
       - RO:0002410
+      - RO:0002506
     narrow_mappings:
       - MONDO:disease_triggers
       - GOREL:0000040
@@ -3078,6 +3953,7 @@ slots:
       - RTXKG1:realized_in_response_to
       - RTXKG1:realized_in_response_to_stimulus
 
+  # TODO: ameliorates and exacerbates inverses.
   ameliorates:
     is_a: affects
     description: >-
@@ -3089,6 +3965,9 @@ slots:
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: biological entity
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0003307
       - CTD:therapeutic
@@ -3103,6 +3982,9 @@ slots:
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: biological entity
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0003309
 
@@ -3110,13 +3992,15 @@ slots:
     aliases: ['is substance that treats']
     is_a: ameliorates
     description: >-
-      holds between a therapeutic procedure or chemical substance
+      holds between a therapeutic procedure or chemical entity
       and a disease or phenotypic feature that it is used to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
-    inverse: treated by
     related_mappings:
       - MONDO:disease_responds_to
     exact_mappings:
@@ -3124,8 +4008,6 @@ slots:
       - SEMMEDDB:TREATS
       - SEMMEDDB:treats
       - WIKIDATA_PROPERTY:P2175
-    broad_mappings:
-      - RO:0003307
     narrow_mappings:
       # "is substance that treats" constrains statements to
       # a subset of the universe of all possible treatments
@@ -3158,9 +4040,10 @@ slots:
     is_a: related to
     description: >-
       holds between a disease or phenotypic feature and a therapeutic
-      process or chemical substance that is used to treat the condition
+      process or chemical entity that is used to treat the condition
     domain: disease or phenotypic feature
-    range: treatment
+    range: chemical or drug or treatment
+    # range: chemical or drug or treatement
     in_subset:
       - translator_minimal
     inverse: treats
@@ -3175,14 +4058,17 @@ slots:
 
   approved to treat:
     description: >-
-      holds between a therapeutic procedure or chemical substance
+      holds between a therapeutic procedure or chemical entity
       and a disease or phenotypic feature for which it is approved
       for treatment to some level of clinical trial. Note that in
       terms of REPODB narrow mappings, terms containing 'suspended',
       'terminated' or 'withdrawn' should be mapped onto associations
       using this term for which 'negated: true' is asserted.
     is_a: treats
-    inverse: approved for treatment by
+    domain: chemical or drug or treatment
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - NCIT:C172573
     narrow_mappings:
@@ -3212,9 +4098,10 @@ slots:
   approved for treatment by:
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process
-      or chemical substance that is approved for treatment of the condition
+      or chemical entity that is approved for treatment of the condition
       (or not, if negated) to some level of clinical trial
     is_a: treated by
+    range: chemical or drug or treatment
     inverse: approved to treat
 
   prevents :
@@ -3222,9 +4109,11 @@ slots:
     description: >-
       holds between an entity whose application or use reduces
       the likelihood of a potential outcome. Typically used to associate
-      a chemical substance, exposure, activity, or medical intervention
+      a chemical entity, exposure, activity, or medical intervention
       that can prevent the onset a disease or phenotypic feature.
-    inverse: prevented by
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -3252,6 +4141,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002610
       - PATO:correlates_with
@@ -3280,6 +4172,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:positive_correlation
 
@@ -3292,6 +4187,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:negative_correlation
 
@@ -3303,15 +4201,19 @@ slots:
     domain: gene or gene product
     range: gene or gene product
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
 
   has biomarker:
     is_a: correlated with
     description: >-
       holds between a disease or phenotypic feature and a measurable
-      molecular entity that is used as an indicator of the presence
+      chemical entity that is used as an indicator of the presence
       or state of the disease or feature.
+      # metabolite
     domain: disease or phenotypic feature
-    range: molecular entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: biomarker for
@@ -3324,14 +4226,16 @@ slots:
   biomarker for:
     is_a: correlated with
     description: >-
-      holds between a measurable molecular entity and a disease
+      holds between a measurable chemical entity and a disease
       or phenotypic feature, where the entity is used as an indicator
       of the presence or state of the disease or feature.
-    domain: molecular entity
+    domain: chemical entity
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
-    inverse: has biomarker
     exact_mappings:
       - NCIT:R39
     broad_mappings:
@@ -3354,9 +4258,11 @@ slots:
       holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
     range: anatomical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
-    inverse: expresses
     exact_mappings:
       - RO:0002206
     narrow_mappings:
@@ -3386,7 +4292,9 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
-    inverse: phenotype of
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     notes:
       - check the range
     in_subset:
@@ -3423,12 +4331,16 @@ slots:
     in_subset:
       - translator_minimal
 
+  # TODO: predicate inverse for occurs in
   occurs in:
     is_a: related to
     description: >-
       holds between a process and a material entity or site within which the process occurs
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
       - BFO:0000067
@@ -3462,7 +4374,9 @@ slots:
       within which it is located (but of which it is not considered a part)
     in_subset:
       - translator_minimal
-    inverse: location of
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0001025
       - FMA:has_location
@@ -3537,6 +4451,9 @@ slots:
       in_subset:
         - translator_minimal
       symmetric: true
+      annotations:
+        tag: biolink:canonical_predicate
+        value: true
       exact_mappings:
         - RO:HOM0000000               #I don't understand this identifier, but I think it's equivalent
         - SO:similar_to               #equivalent
@@ -3544,12 +4461,15 @@ slots:
   chemically similar to:
     is_a: similar to
     description: >-
-      holds between one chemical substances and another that it approximates
+      holds between one small molecule entity and another that it approximates
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       - CHEBI:has_parent_hydride    #subproperty
       - CHEBI:has_functional_parent #subproperty
@@ -3562,16 +4482,28 @@ slots:
   has sequence location:
     is_a: related to
     description: >-
-      holds between two genomic entities when the subject can be localized
+      holds between two nucleic acid entities when the subject can be localized
       in sequence coordinates on the object. For example, between
       an exon and a chromosome/contig.
-    domain: genomic entity
-    range: genomic entity
+    domain: nucleic acid entity
+    range: nucleic acid entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - faldo:location
 
+  sequence location of:
+    is_a: related to
+    domain: genomic entity
+    range: genomic entity
+    inverse: has sequence location
+
   model of:
-    is_a: similar to
+    is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     description: >-
       holds between a thing and some other thing it approximates
       for purposes of scientific study, in virtue of its exhibiting
@@ -3583,6 +4515,10 @@ slots:
     narrow_mappings:
       - FOODON:00001301
 
+  models:
+    is_a: related to
+    inverse: model of
+
   overlaps:
     is_a: related to
     description: >-
@@ -3590,6 +4526,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - RO:0002131
     narrow_mappings:
@@ -3601,11 +4540,13 @@ slots:
 
   has part:
     is_a: overlaps
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     description: >-
       holds between wholes and their parts (material entities or processes)
     in_subset:
       - translator_minimal
-    inverse: part of
     exact_mappings:
       - BFO:0000051
       # term name seems to be 'realizes' but RTX maps this term here
@@ -3730,6 +4671,10 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: occurrent
+    range: biological process or activity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     close_mappings:
@@ -3754,11 +4699,23 @@ slots:
       - SNOMED:uses_energy
       - SNOMED:uses_substance
 
+  is input of:
+    is_a: has participant
+    domain: biological process or activity
+    range: occurrent
+    inverse: has input
+    in_subset:
+      - translator_minimal
+
   has output:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: occurrent
+    range: biological process or activity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     close_mappings:
@@ -3779,11 +4736,22 @@ slots:
       - RO:0002588
       - RO:0004008
 
+  is output of:
+    is_a: has participant
+    range: occurrent
+    domain: biological process or activity
+    inverse: has output
+    in_subset:
+      - translator_minimal
+
   has participant:
     is_a: related to
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: occurrent
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     inverse: participates in
@@ -3793,9 +4761,6 @@ slots:
       - RO:0000057
       - RO:has_participant
     narrow_mappings:
-      # Not sure about the definitions of these two GOREL terms... may be deprecated?
-      #- GOREL:0001007
-      #- GOREL:0002008
       - BFO:0000167
       # Several of the following RTX terms tagged as inverse to 'biolink:participates_in'
       - LOINC:has_subject
@@ -3819,14 +4784,38 @@ slots:
       - SNOMED:has_procedure_device
       - SNOMED:has_recipient_category
 
+  catalyzes:
+    is_a: has participant
+    # domain: nucleic acid entity
+    # range: molecular activity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  is catalyst of:
+    is_a: participates in
+    inverse: catalyzes
+
+  has substrate:
+    is_a: has participant
+    # domain: molecular activity
+    # range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  is substrate of:
+    is_a: participates in
+    inverse: has substrate
+
   participates in:
     is_a: related to
     description: >-
       holds between a continuant and a process, where the continuant is somehow involved in the process
     range: occurrent
+    inverse: has participant
     in_subset:
       - translator_minimal
-    inverse: has participant
     exact_mappings:
       - RO:0000056
       - BFO:0000056
@@ -3852,7 +4841,11 @@ slots:
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
       the process or function it realizes
+    domain: molecular activity
     range: occurrent
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     close_mappings:
@@ -3873,12 +4866,25 @@ slots:
       - ORPHA:327767
       - RO:0002503
 
+  actively involves:
+    is_a: participates in
+    domain: occurrent
+    range: molecular activity
+    inverse: actively involved in
+    exact_mappings:
+      - RO:0002331
+    in_subset:
+      - translator_minimal
+
   capable of:
     is_a: actively involved in
     description: >-
       holds between a physical entity and process or function, where the
       continuant alone has the ability to carry out the process or function.
     range: occurrent
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -3894,6 +4900,9 @@ slots:
       holds between a physical entity and a process, where the physical entity executes the process
     domain: physical entity
     range: biological process or activity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     inverse: enabled by
@@ -3933,6 +4942,9 @@ slots:
 
   derives from:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     description: >-
       holds between two distinct material entities, the new entity
       and the old entity, in which the new entity begins to exist
@@ -3953,9 +4965,10 @@ slots:
   is metabolite of:
     is_a: derives from
     description: >-
-      holds between two chemical substances in which the first one is derived from the second one as a product of metabolism
-    domain: chemical substance
-    range: chemical substance
+      holds between two molecular entities in which the first one is derived
+      from the second one as a product of metabolism
+    domain: molecular entity
+    range: molecular entity
     in_subset:
       - translator_minimal
     inverse: has metabolite
@@ -3967,12 +4980,15 @@ slots:
   has metabolite:
     is_a: derives into
     description: >-
-      holds between two chemical substances in which the second one is derived from the first one as a product of metabolism
-    domain: chemical substance
-    range: chemical substance
+      holds between two molecular entities in which the second one is derived from the first
+      one as a product of metabolism
+    domain: molecular entity
+    range: molecular entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
-    inverse: is metabolite of
     comments:
       - The CHEBI ID represents a role rather than a predicate
     exact_mappings:
@@ -3981,10 +4997,10 @@ slots:
   food component of:
     is_a: part of
     description: >-
-      holds between a one or more chemical substances present in food,
+      holds between a one or more chemical entities present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: chemical substance
-    range: chemical substance
+    domain: chemical entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: has food component
@@ -3994,23 +5010,23 @@ slots:
   has food component:
     is_a: has part
     description: >-
-      holds between food and one or more chemical substances composing it,
+      holds between food and one or more chemical entities composing it,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: chemical substance
-    range: chemical substance
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
-    inverse: food component of
-    #mappings:
-    #  -
 
   nutrient of:
     is_a: food component of
     description: >-
-      holds between a one or more chemical substances present in food,
+      holds between a one or more chemical entities present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
-    domain: chemical substance
-    range: chemical substance
+    domain: chemical entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: has nutrient
@@ -4021,20 +5037,22 @@ slots:
     is_a: has food component
     description: >-
       one or more nutrients which are growth factors for a living organism
-    domain: chemical substance
-    range: chemical substance
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
-    inverse: nutrient of
     exact_mappings:
       - WIKIDATA:Q181394
 
   is active ingredient of:
     is_a: part of
     description: >-
-      holds between a chemical substance and a drug, in which the former
+      holds between a molecular entity and a drug, in which the former
       is a part of the latter, and is a biologically active component
-    domain: chemical substance
+    domain: molecular entity
     range: drug
     in_subset:
       - translator_minimal
@@ -4045,10 +5063,13 @@ slots:
   has active ingredient:
     is_a: has part
     description: >-
-      holds between a drug and a chemical substance in which the latter
+      holds between a drug and a molecular entity in which the latter
       is a part of the former, and is a biologically active component
     domain: drug
-    range: chemical substance
+    range: molecular entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     inverse: is active ingredient of
@@ -4058,9 +5079,9 @@ slots:
   is excipient of:
     is_a: part of
     description: >-
-      holds between a chemical substance and a drug in which the former is
+      holds between a molecular entity and a drug in which the former is
       a part of the latter, and is a biologically inactive component
-    domain: chemical substance
+    domain: molecular entity
     range: drug
     in_subset:
       - translator_minimal
@@ -4071,13 +5092,15 @@ slots:
   has excipient:
     is_a: has part
     description: >-
-      holds between a drug and a chemical substances in which the latter
+      holds between a drug and a molecular entities in which the latter
       is a part of the former, and is a biologically inactive component
     domain: drug
-    range: chemical substance
+    range: molecular entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
-    inverse: is excipient of
     mappings:
       - WIKIDATA:Q902638
 
@@ -4089,6 +5112,9 @@ slots:
       process; used in SemMedDB for linking things like dysfunctions
       and processes to some disease or syndrome
     range: disease
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4101,6 +5127,11 @@ slots:
     narrow_mappings:
       - SNOMED:has_definitional_manifestation
 
+  has manifestation:
+    is_a: related to
+    domain: disease
+    inverse: manifestation of
+
   produces:
     is_a: related to
     description: >-
@@ -4108,6 +5139,9 @@ slots:
       through the intentional actions or functioning of the material entity
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - GOREL:0001010
     exact_mappings:
@@ -4126,6 +5160,17 @@ slots:
     exact_mappings:
       - RO:0003001
 
+  consumes:
+    is_a: has input
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    narrow_mappings:
+      - RO:0004009
+
+  consumed by:
+    inverse: consumes
+
   temporally related to:
     is_a: related to
     description: >-
@@ -4133,6 +5178,9 @@ slots:
     domain: occurrent
     range: occurrent
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SNOMED:temporally_related_to
     narrow_mappings:
@@ -4158,7 +5206,9 @@ slots:
       holds between two processes, where one completes before the other begins
     domain: occurrent
     range: occurrent
-    inverse: preceded by
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4202,11 +5252,14 @@ slots:
 
   directly interacts with:
     is_a: interacts with
-    description: Holds between molecular entities that physically and directly interact
+    description: Holds between chemical entities that physically and directly interact
       with each other
-    domain: molecular entity
-    range: molecular entity
+    domain: chemical entity
+    range: chemical entity
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     related_mappings:
       - GAMMA:kd
       - GAMMA:kb
@@ -4242,6 +5295,9 @@ slots:
 
   affects expression in:
     is_a: affects
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     description: Holds between a variant and an anatomical entity where the expression of the variant
        is located in.
     exact_mappings:
@@ -4249,13 +5305,23 @@ slots:
 
   has variant part:
     is_a: has part
-    description: holds between a genomic entity and a genotypic entity that is a sub-component of it
+    description: holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - GENO:0000382
+
+  variant part of:
+    is_a: part of
+    inverse: has variant part
 
   related condition:
     is_a: related to
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - GENO:0000790
 
@@ -4263,9 +5329,12 @@ slots:
 
   is sequence variant of:
     is_a: related to
-    description: holds between a sequence variant and a genomic entity
+    description: holds between a sequence variant and a nucleic acid entity
     domain: sequence variant
-    range: genomic entity
+    range: nucleic acid entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       # RTX contributed term mappings tagged elsewhere but mapped better here
       - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
@@ -4273,12 +5342,21 @@ slots:
       - OMIM:allelic_variant_of
       - WIKIDATA:P3433
 
+  has sequence variant:
+    is_a: related to
+    inverse: is sequence variant of
+    domain: genomic entity
+    range: sequence variant
+
   is missense variant of:
     is_a: is sequence variant of
     description: holds between a gene  and a sequence variant, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SO:0001583
       - SNPEFF:missense_variant
@@ -4286,12 +5364,21 @@ slots:
       - SNPEFF:initiator_codon_variant
       - SNPEFF:structural_interaction_variant
 
+  has missense variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is missense variant of
+
   is synonymous variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SO:0001819
       - SNPEFF:synonymous_variant
@@ -4299,18 +5386,33 @@ slots:
       - SNPEFF:start_retained
       - SNPEFF:stop_retained_variant
 
+  has synonymous variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is synonymous variant of
+
   is nonsense variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene, such the sequence variant
       results in a premature stop codon
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SNPEFF:stop_gained
     broad_mappings:
       # Term definition broader than nonsense codon: A sequence variant whereby
       # the gene product has diminished or abolished function.
       - SO:0002054
+
+  has nonsense variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is nonsense variant of
 
   is frameshift variant of:
     is_a: is sequence variant of
@@ -4319,6 +5421,9 @@ slots:
       nucleotides inserted or deleted is not a multiple of three.
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SO:0001589
       - SNPEFF:frameshift_variant
@@ -4327,12 +5432,21 @@ slots:
       - SNPEFF:start_lost
       - SNPEFF:stop_lost
 
+  has frameshift variant:
+    is_a: is sequence variant of
+    inverse: is frameshift variant of
+    domain: gene
+    range: sequence variant
+
   is splice site variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - SO:0001629
     narrow_mappings:
@@ -4341,12 +5455,21 @@ slots:
       - SNPEFF:splice_acceptor_variant
       - SNPEFF:splice_donor_variant
 
+  has splice site variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is splice site variant of
+
   is nearby variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene sequence that the variant
       is genomically close to.
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - GAMMA:0000102
     narrow_mappings:
@@ -4354,12 +5477,21 @@ slots:
       - SNPEFF:downstream_gene_variant
       - SNPEFF:upstream_gene_variant
 
+  has nearby variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is nearby variant of
+
   is non coding variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a gene, where the variant does
       not affect the coding sequence
     domain: sequence variant
     range: gene
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - GAMMA:0000103
     narrow_mappings:
@@ -4370,16 +5502,26 @@ slots:
       - SNPEFF:non_coding_transcript_exon_variant
       - SNPEFF:intron_variant
 
+  has non coding variant:
+    is_a: is sequence variant of
+    domain: gene
+    range: sequence variant
+    inverse: is non coding variant of
+
   # relating disease to process
 
   disease has basis in:
     description: A relation that holds between a disease and an entity where the state
       of the entity has contribution to the disease.
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       # These two MONDO terms seem more particular than the predicate
       - MONDO:disease_has_basis_in_development_of
       - MONDO:disease_has_basis_in_accumulation_of
+
 
   # These may be pushable to causal relationships, but seem important for clarity
   # Also because causes adverse event tends to be very noisy and it's useful to be able
@@ -4391,8 +5533,17 @@ slots:
       by the drug
     domain: drug
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - Aeolus:0000001
+
+  adverse event caused by:
+    is_a: causes
+    domain: disease or phenotypic feature
+    range: drug
+    inverse: causes adverse event
 
   contraindicated for:
     is_a: related to
@@ -4400,9 +5551,18 @@ slots:
       with that disease should not be treated with the drug.
     domain: drug
     range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - DrugCentral:0000001
       - RTXKG1:contraindicated_for
+
+  has contraindication:
+    is_a: related to
+    domain: disease or phenotypic feature
+    range: drug
+    inverse: contraindicated for
 
   # The remaining new slots are here because we ran across them somewhere and
   # they didn't seem to map well to anything else.
@@ -4411,6 +5571,7 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
+    inverse: has completed
     exact_mappings:
       - CL:has_not_completed
 
@@ -4418,6 +5579,9 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of
       and has completed
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CL:has_completed
       - RTXKG1:has_completed
@@ -4425,37 +5589,71 @@ slots:
   decreases molecular interaction:
     is_a: molecularly interacts with
     description: indicates that the source decreases the molecular interaction between
-      the target and some other molecular entity
+      the target and some other chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
+
+  molecular interaction decreased by:
+    is_a: molecularly interacts with
+    inverse: decreases molecular interaction
 
   increases molecular interaction:
     is_a: molecularly interacts with
     description: indicates that the source increases the molecular interaction between
-      the target and some other molecular entity
+      the target and some other chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CTD:increases_molecular_interaction_with
+
+  molecular interaction increased by:
+    is_a: molecularly interacts with
+    inverse: increases molecular interaction
 
   in linkage disequilibrium with:
     is_a: related to
     description: holds between two sequence variants, the presence of which are correlated
       in a population
     symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - NCIT:C16798
 
   has increased amount:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
+  increased amount of:
+    is_a: related to
+    inverse: has increased amount
+
   has decreased amount:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
+  decreased amount in:
+    is_a: related to
+    inverse: has decreased amount
+
   lacks part:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     exact_mappings:
       - CL:lacks_part
       - PR:lacks_part
@@ -4463,8 +5661,15 @@ slots:
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
 
+  missing from:
+    is_a: related to
+    inverse: lacks part
+
   develops from:
     is_a: related to
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     close_mappings:
       # RTX mapping seems to be inverse of 'biolink:develops_from'
       - RO:0002203
@@ -4479,12 +5684,19 @@ slots:
       - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
+  develops into:
+     is_a: related to
+     inverse: develops from
+
   in taxon:
     aliases:
       - instance of
     is_a: related to
     domain: thing with taxon
     range: organism taxon
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     description: >-
       connects an entity to its taxonomic classification. Only certain kinds
       of entities can be taxonomically classified; see 'thing with taxon'
@@ -4510,9 +5722,16 @@ slots:
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
     range: ontology class
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     narrow_mappings:
       - NCIT:allele_has_activity
 
+  is molecular consequence of:
+    is_a: related to
+    domain: ontology class
+    inverse: has molecular consequence
 
 ## --------------------
 ## ASSOCIATION SLOTS
@@ -4524,19 +5743,6 @@ slots:
     aliases: ['edge property', 'statement property']
     description: >-
       any slot that relates an association to another entity
-
-  association_id:
-    is_a: association slot
-    identifier: true
-    deprecated: >-
-      This slot is deprecated in favor of 'id' slot.
-    deprecated_element_has_exact_replacement: id
-    description: >-
-        A unique identifier for an association
-    in_subset:
-        - translator_minimal
-    domain: association
-    alias: id
 
   subject:
     is_a: association slot
@@ -4589,19 +5795,6 @@ slots:
       - owl:annotatedProperty
       - OBAN:association_has_predicate
 
-  edge label:
-    deprecated: >-
-      This slot is deprecated in favor of 'predicate' slot.
-    deprecated_element_has_exact_replacement: predicate
-    is_a: association slot
-    domain: association
-    range: predicate type
-    required: true
-    local_names:
-      ga4gh: annotation predicate
-      translator: predicate
-    slot_uri: rdf:predicate
-
   logical interpretation:
     is_a: association slot
     required: false
@@ -4646,6 +5839,12 @@ slots:
 
   provided by:
     is_a: association slot
+    deprecated: >-
+      This slot is deprecated and replaced by a set of more precise slots for describing
+      the source retrieval provenance of an Association.  These include 'knowledge source' 
+      and its descendants 'primary knowledge source', 'original knowledge source', and
+      'aggregator knowledge source'.
+    deprecated_element_has_exact_replacement: knowledge source
     description: >-
       connects an association to the agent (person, organization or group) that provided it
     range: agent
@@ -4653,6 +5852,54 @@ slots:
     exact_mappings:
       - pav:providedBy
 
+  knowledge source:
+    is_a: association slot
+    description: >-
+      An Information Resource from which the knowledge expressed in an Association was 
+      retrieved, directly or indirectly. This can be any resource through which the 
+      knowledge passed on its way to its currently serialized form. In practice, 
+      implementers should use one of the more specific subtypes of this generic property.
+    range: information resource
+    multivalued: true
+    close_mappings:
+      - pav:providedBy
+
+  primary knowledge source:
+    is_a: knowledge source
+    description: >-
+    The most upstream source of the knowledge expressed in an Association that an
+    implementer can identify (may or may not be the 'original' source).
+    range: information resource
+    multivalued: false
+
+  original knowledge source:
+    is_a: primary knowledge source
+    description: >-
+    The Information Resource that created the original record of the knowledge expressed 
+    in an Association (e.g. via curation of the knowledge from the literature, or 
+    generation of the knowledge de novo through computation, reasoning, inference over 
+    data).
+    range: information resource
+    multivalued: false
+    
+   aggregator knowledge source:
+    is_a: knowledge source
+    description: >-
+    An intermediate aggregator resource from which knowledge expressed in an Association was
+    retrieved downstream of the original source, on its path to its current serialized
+    form.
+    range: information resource
+    multivalued: true
+ 
+    supporting data source:
+    is_a: association slot
+    description: >-
+    An Information Resource from which data was retrieved and subsequently used as 
+    evidence to generate the knowledge expressed in an Association (e.g. through 
+    computation on, reasoning or inference over the retrieved data).
+    range: information resource
+    multivalued: true
+ 
   association type:
     is_a: association slot
     range: category type
@@ -4816,39 +6063,75 @@ slots:
     domain: genomic sequence localization
     description: >-
       An attribute that can be applied to a genome sequence localization edge. These edges
-      connect a genomic entity such as an exon to an entity such as a chromosome. Edge properties are used
+      connect a nucleic acid entity such as an exon to an entity such as a chromosome. Edge properties are used
       to ascribe specific positional information and other metadata to the localization. In pragmatic terms
       this can be thought of as columns in a GFF3 line.
 
   interbase coordinate:
     is_a: sequence localization attribute
+    aliases: ['zero-based', 'half-open', 'space-based']
     description: >-
-      A position in interbase coordinates. This is applied to a sequence localization edge.
+      A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1.
+      This is applied to a sequence localization edge.
     range: integer
 
   start interbase coordinate:
     is_a: interbase coordinate
     description: >-
-      The position at which the subject genomic entity starts
+      The position at which the subject nucleic acid entity starts
       on the chromosome or other entity to which it is located on.
+      (ie: the start of the sequence being referenced is 0).
+    close_mappings:
+      - faldo:begin
 
   end interbase coordinate:
     is_a: interbase coordinate
     description: >-
+      The position at which the subject nucleic acid entity ends
+      on the chromosome or other entity to which it is located on.
+    close_mappings:
+      - faldo:end
+
+  start coordinate:
+    is_a: base coordinate
+    aliases: ['start']
+    description: >-
+      The position at which the subject genomic entity starts
+      on the chromosome or other entity to which it is located on.
+      (ie: the start of the sequence being referenced is 1).
+    exact_mappings:
+      - gff3:start
+    close_mappings:
+      - faldo:begin
+
+  end coordinate:
+    is_a: base coordinate
+    aliases: ['end']
+    description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
+    exact_mappings:
+      - gff3:end
+    close_mappings:
+      - faldo:end
 
   genome build:
     is_a: sequence localization attribute
     description: >-
       The version of the genome on which a feature is located.
       For example, GRCh38 for Homo sapiens.
+    range: strand_enum
+    exact_mappings:
+      - gff3:strand
 
   strand:
     is_a: sequence localization attribute
     description: >-
       The strand on which a feature is located. Has a value of '+'
       (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+    range: strand_enum
+    exact_mappings:
+      - gff3:strand
 
   phase:
     is_a: sequence localization attribute
@@ -4856,6 +6139,9 @@ slots:
     description: >-
       The phase for a coding sequence entity. For example, phase of a
       CDS as represented in a GFF3 with a value of 0, 1 or 2.
+    range: phase_enum
+    exact_mappings:
+      - gff3:phase
 
 classes:
 
@@ -5332,6 +6618,23 @@ classes:
     exact_mappings:
       - ECO:0000000
 
+  information resource:
+    is_a: information content entity
+    aliases: ['knowledgebase']
+    description: >-
+      A database or knowledgebase and its supporting ecosystem of interfaces 
+      and services that deliver content to consumers (e.g. web portals, APIs, 
+      query endpoints, streaming services, data downloads, etc.).
+    comment: >-
+      A single Information Resource by this definition may span many different 
+      datasets or databases, and include many access endpoints and user 
+      interfaces. Information Resources include project-specific resources 
+      such as a Translator Knowledge Provider, and community knowledgebases 
+      like ChemBL, OMIM, or DGIdb.
+    in_subset:
+        - translator_minimal      
+
+
   ## Publications
 
   # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
@@ -5722,6 +7025,7 @@ classes:
 
   biological entity:
     is_a: named thing
+    aliases: ['bioentity']
     abstract: true
     narrow_mappings:
       - WIKIDATA:Q28845870
@@ -5740,42 +7044,155 @@ classes:
     slots:
       - in taxon
 
+  genomic entity:
+    mixin: true
+    is_a: thing with taxon
+    in_subset:
+      - translator_minimal
+
   molecular entity:
-    is_a: biological entity
-    mixins:
-      - thing with taxon
-      - physical essence
-      - ontology class
-    aliases: ['bioentity']
+    is_a: chemical entity
     description: >-
-      A gene, gene product, small molecule or macromolecule (including protein complex)"
-    #notes:
-    #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
+      A molecular entity is a chemical entity composed of individual or
+      covalently bonded atoms.
+    slots:
+      - is metabolite
+    narrow_mappings:
+      - UMLSSC:T088 # Carbohydrate
+      - UMLSSC:T085 # Molecular Sequence
+      - UMLSSG:T127 # Vitamin
+    in_subset:
+      - translator_minimal
+
+  chemical entity:
+    is_a: named thing
+    abstract: true
+    mixins:
+      - physical essence
+      - chemical or drug or treatment # issue 701
+    description: >-
+      A chemical entity is a physical entity that pertains to chemistry or
+      biochemistry.
     exact_mappings:
       - CHEBI:24431
+      - SIO:010004 # Chemical entity
+      - WIKIDATA:Q79529 # Chemical substance
     narrow_mappings:
-      - SIO:010341
       - WIKIDATA:Q43460564
-      # UMLS Semantic Group "Chemicals & Drugs"
-      - UMLSSG:CHEM
-      # Molecular Sequence
-      - UMLSSC:T085
-      - UMLSST:mosq
-      # Biologically Active Substance
-      - UMLSSC:T123
-      - UMLSST:bacs
-      # Hormone
-      - UMLSSC:T125
-      - UMLSST:horm
-      # Enzyme
-      - UMLSSC:T126
-      - UMLSST:enzy
-      # Immunologic Factor
-      - UMLSSC:T129
-      - UMLSST:imft
-      # Receptor
-      - UMLSSC:T192
-      - UMLSST:rcpt
+      - UMLSSG:T103 # Chemical
+      - UMLSSG:T120 # Chemical Viewed Functionally
+      - UMLSSG:T104 # Chemical Viewed Structurally
+      - UMLSSG:T197 # Inorganic Chemical
+      - UMLSSG:T109 # Organic Chemical
+      - UMLSSG:T121 # Pharmacological Substance
+      - UMLSSG:T125 # Hormone
+      - UMLSSG:T200 # Clinical Drug
+      - UMLSSG:T195 # Antibiotic
+      - UMLSSC:T123 # Biologically Active Substance
+      - UMLSSC:T129 # Immunologic Factor
+      - UMLSSC:T131 # Hazardous or Poisonous Substance
+      # - UMLSSC:T122 # Biomedical or Dental Material
+      # - UMLSSC:T130 # Indicator, Reagent, or Diagnostic Aid
+    broad_mappings:
+      - UMLSSC:T167 # Substance
+    in_subset:
+      - translator_minimal
+
+  chemical substance:
+    deprecated: >-
+      This class is deprecated in favor of 'small molecule.'
+
+  small molecule:
+    is_a: molecular entity
+    aliases: [ 'chemical substance']
+    description: >-
+        A small molecule entity is a molecular entity characterized by availability
+        in small-molecule databases of SMILES, InChI, IUPAC, or other
+        unambiguous representation of its precise chemical structure; for
+        convenience of representation, any valid chemical representation is
+        included, even if it is not strictly molecular (e.g., sodium ion).
+    narrow_mappings:
+      - UMLSSC:T196 # Element, Ion, or Isotope
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
+    slot_usage:
+      id:
+        examples:
+          - value: CHEBI:29101
+            description: sodium ion
+    in_subset:
+      - model_organism_database
+      - translator_minimal
+
+  chemical mixture:
+    is_a: chemical entity
+    description: >-
+      A chemical mixture is a chemical entity composed of two or more
+      molecular entities.
+    in_subset:
+      - translator_minimal
+
+  nucleic acid entity:
+    is_a: molecular entity
+    description: >-
+      A nucleic acid entity is a molecular entity characterized by
+      availability in gene databases of nucleotide-based sequence
+      representations of its precise sequence; for convenience of
+      representation, partial sequences of various kinds are included,
+      even if they do not represent a physical molecule.
+    aliases: [ 'sequence feature', 'genomic entity' ]
+    mixins:
+      - genomic entity
+    slots:
+      - has biological sequence
+    exact_mappings:
+      - SO:0000110
+    narrow_mappings:
+      - UMLSSC:T028   # Gene or Genome
+      - GENO:0000897  # Genomic Entity
+      - UMLSSC:T086   # Nucleotide Sequence
+      - UMLSSC:T114   # Nucleic Acid, Nucleoside, or Nucleotide
+    in_subset:
+      - model_organism_database
+      - translator_minimal
+
+  molecular mixture:
+    is_a: chemical mixture
+    description: >-
+      A molecular mixture is a chemical mixture composed of two or more
+      molecular entities with known concentration and stoichiometry.
+    in_subset:
+      - translator_minimal
+
+  complex molecular mixture:
+    is_a: chemical mixture
+    description: >-
+      A complex molecular mixture is a chemical mixture composed of two or
+      more molecular entities with unknown concentration and stoichiometry.
+    in_subset:
+      - translator_minimal
 
   biological process or activity:
     description: >-
@@ -5804,11 +7221,11 @@ classes:
       - ontology class
     slot_usage:
       has input:
-        range: chemical substance
+        range: molecular entity
         description: >-
           A chemical entity that is the input for the reaction
       has output:
-        range: chemical substance
+        range: molecular entity
         description: >-
           A chemical entity that is the output for the reaction
       enabled by:
@@ -5877,8 +7294,6 @@ classes:
     mixins:
       - ontology class
     close_mappings:
-      # Physiology
-      - UMLSSG:PHYS
     exact_mappings:
       # Physiologic Function
       - UMLSSC:T039
@@ -5928,116 +7343,18 @@ classes:
 
   ## (Bio)chemistry
 
-  mixture:
-    mixin: true
-    description: >-
-      The physical combination of two or more molecular entities in which
-      the identities are retained and are mixed in the form of solutions,
-      suspensions and colloids.
-    slots:
-      - has constituent
-
-  chemical substance:
-    is_a: molecular entity
-    mixins:
-      - ontology class
-    description: >-
-      May be a chemical entity or a formulation with a chemical entity as active
-      ingredient, or a complex material with multiple chemical entities as part
-    slots:
-      - is metabolite
-    broad_mappings:
-      # UMLS Semantic Type "Substance"
-      - UMLSSC:T167
-      - UMLSST:sbst
-    exact_mappings:
-      - SIO:010004
-      - WIKIDATA:Q79529
-      # Chemical
-      - UMLSSC:T103
-      - UMLSST:chem
-    narrow_mappings:
-      - CHEBI:24431
-      # Chemical Viewed Structurally
-      - UMLSSC:T104
-      - UMLSST:chvs
-      # Organic Chemical
-      - UMLSSC:T109
-      - UMLSST:orch
-      # Nucleic Acid, Nucleoside, or Nucleotide
-      - UMLSSC:T114
-      - UMLSST:nnon
-      # Chemical Viewed Functionally
-      - UMLSSC:T120
-      - UMLSST:chvf
-      # Biomedical or Dental Material
-      - UMLSSC:T122
-      - UMLSST:bodm
-      # Indicator, Reagent, or Diagnostic Aid
-      - UMLSSC:T130
-      - UMLSST:irda
-      # Hazardous or Poisonous Substance
-      - UMLSSC:T131
-      - UMLSST:hops
-      # Element, Ion, or Isotope
-      - UMLSSC:T196
-      - UMLSST:elii
-      # Inorganic Chemical
-      - UMLSSC:T197
-      - UMLSST:inch
-    id_prefixes:
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - DRUGBANK
-      - MESH
-      - CAS
-      - DrugCentral
-      - GTOPDB
-      - HMDB
-      - KEGG.COMPOUND
-      - ChemBank
-      - Aeolus
-      - PUBCHEM.SUBSTANCE
-      - SIDER.DRUG
-      - INCHI
-      - INCHIKEY
-      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN  ## G number
-      - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
-      - KEGG.ENVIRON ## E number
-    in_subset:
-      - model_organism_database
-
-  carbohydrate:
-    deprecated: >-
-      This class will be removed from the Biolink model
-    is_a: chemical substance
-    exact_mappings:
-      # UMLS Semantic Type "Carbohydrate Sequence"
-      - UMLSSC:T088
-      - UMLSST:crbs
-    id_prefixes:
-      - PUBCHEM.SUBSTANCE
-
   processed material:
-    is_a: chemical substance
-    mixins:
-      - mixture
-      - ontology class
+    is_a: chemical mixture
     description: >-
-      A chemical substance (often a mixture) processed
+      A chemical entity (often a mixture) processed
       for consumption for nutritional, medical or technical use.
+      Is a material entity that is created or changed during material processing.
     exact_mappings:
       - OBI:0000047
 
   drug:
-    is_a: molecular entity
+    is_a: molecular mixture
     mixins:
-      - mixture
       - chemical or drug or treatment
       - ontology class
     description: >-
@@ -6067,29 +7384,20 @@ classes:
 
   ## Food
 
-  food component:
-    deprecated: >-
-      Food component is replaced by a slot/role of chemical substance and will be removed
-      from the Biolink model.
-    is_a: chemical substance
-    related_mappings:
-      # substance role
-      - CHEBI:78295
-
   environmental food contaminant:
-    is_a: chemical substance
+    is_a: chemical entity
     related_mappings:
       # substance role
       - CHEBI:78299
 
   food additive:
-    is_a: chemical substance
+    is_a: chemical entity
     related_mappings:
       # substance role
       - CHEBI:64047
 
   nutrient:
-    is_a: chemical substance
+    is_a: chemical entity
     related_mappings:
       # substance role
       - CHEBI:33284
@@ -6116,9 +7424,7 @@ classes:
       - UMLSST:vita
 
   food:
-    is_a: molecular entity
-    mixins:
-      - mixture
+    is_a: chemical mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
@@ -6127,19 +7433,6 @@ classes:
       # Food
       - UMLSSC:T168
       - UMLSST:food
-
-  metabolite:
-    deprecated: >-
-      Metabolite is replaced by a slot/role of chemical substance and will be removed 
-      from the Biolink model.
-    is_a: chemical substance
-    description: >-
-      Any intermediate or product resulting from metabolism.
-      Includes primary and secondary metabolites.
-    comments:
-      - The CHEBI ID represents a role rather than a substance
-    exact_mappings:
-      - CHEBI:25212
 
   ## Biology and Biomedical Sciences
 
@@ -6177,7 +7470,7 @@ classes:
   organismal entity:
     description: >-
       A named entity that is either a part of an organism, a whole organism,
-      population or clade of organisms, excluding molecular entities
+      population or clade of organisms, excluding chemical entities
     abstract: true
     is_a: biological entity
     slot_usage:
@@ -6366,6 +7659,7 @@ classes:
       - WBPhenotype
       - SNOMEDCT
       - MESH
+      - XPO
     in_subset:
       - model_organism_database
 
@@ -6490,7 +7784,7 @@ classes:
       - FAO
       
 
-  ## Genomic Entity Mixins
+  ## nucleic acid entity mixins
 
   macromolecular machine mixin:
     description: >-
@@ -6524,9 +7818,10 @@ classes:
       necessary to encode a functional transcript. A gene locus may include
       regulatory regions, transcribed regions and/or other
       functional sequence regions.
-    is_a: genomic entity
+    is_a: nucleic acid entity
     mixins:
       - gene or gene product
+      - thing with taxon
     aliases: ['locus']
     slots:
       - symbol
@@ -6544,15 +7839,16 @@ classes:
       - ZFIN
       - dictyBase
       - WB
-      - WormBase
+      - WormBase # we have two prefixes here as worbase supports WormBase:WBGene00000898
+                 # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
       - FB  # FlyBase FBgn*
-      - FB
       - RGD
       - SGD
       - POMBASE
       - OMIM
       - KEGG.GENE ## org:gene
       - UMLS
+      - Xenbase
       # - IUPHAR
     in_subset:
       - model_organism_database
@@ -6605,31 +7901,10 @@ classes:
 
   ## Genomic Classes
 
-  genomic entity:
-    is_a: molecular entity
-    aliases: ['sequence feature']
-    description: >-
-      an entity that can either be directly located on a genome (gene,
-      transcript, exon, regulatory region) or is encoded in a genome (protein)
-    slots:
-      - has biological sequence
-    exact_mappings:
-      # UMLS Semantic Group "Genes & Molecular Sequences"
-      - UMLSSG:GENE
-      - SO:0000110
-      - GENO:0000897
-    narrow_mappings:
-      # Gene or Genome
-      - UMLSSC:T028
-      - UMLSST:gngm
-      # Nucleotide Sequence
-      - UMLSSC:T086
-      - UMLSST:nusq
-    in_subset:
-      - model_organism_database
-
   genome:
-    is_a: genomic entity
+    is_a: biological entity
+    mixins:
+      - genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
     exact_mappings:
@@ -6640,7 +7915,7 @@ classes:
       - model_organism_database
 
   exon:
-    is_a: genomic entity
+    is_a: nucleic acid entity
     description: >-
       A region of the transcript sequence within a gene which is not
       removed from the primary RNA transcript by RNA splicing.
@@ -6650,7 +7925,7 @@ classes:
       - WIKIDATA:Q373027
 
   transcript:
-    is_a: genomic entity
+    is_a: nucleic acid entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     exact_mappings:
@@ -6664,31 +7939,20 @@ classes:
       - model_organism_database
 
   coding sequence:
-    is_a: genomic entity
+    is_a: nucleic acid entity
     exact_mappings:
       - SO:0000316
       - SIO:001390
 
-  protein:
+  polypeptide:
+    aliases: [ 'amino acid entity' ]
+    is_a: molecular entity
     description: >-
-      A gene product that is composed of a chain of amino acid sequences
-      and is produced by ribosome-mediated translation of mRNA
-    is_a: genomic entity
-    mixins:
-      - gene product mixin
-    aliases: ['polypeptide']
-    broad_mappings:
-      # Amino Acid, Peptide, or Protein
-      - UMLSSC:T116
-      - UMLSST:aapp
-    exact_mappings:
-      - PR:000000001
-      - SIO:010043
-      - WIKIDATA:Q8054
-      - SO:0000104
-      # UMLS Semantic Type: "Amino Acid Sequence"
-      - UMLSSC:T087
-      - UMLSST:amas
+      A polypeptide is a molecular entity characterized by availability
+      in protein databases of amino-acid-based sequence representations
+      of its precise primary structure; for convenience of representation,
+      partial sequences of various kinds are included, even if they do not
+      represent a physical molecule.
     id_prefixes:
       - UniProtKB
       - PR
@@ -6696,7 +7960,26 @@ classes:
       - FB      # FlyBase FBpp*
       - UMLS
     in_subset:
-        - model_organism_database
+      - model_organism_database
+    narrow_mappings:
+      - SO:0000104 # polypeptide definde in SO conflates protein and polypeptide
+      - UMLSSC:T126 # Enzyme
+      - UMLSSC:T116 # Amino Acid, Peptide, or Protein
+      - UMLSSC:T087 # UMLS Semantic Type: "Amino Acid Sequence"
+
+  protein:
+    description: >-
+      A gene product that is composed of a chain of amino acid sequences
+      and is produced by ribosome-mediated translation of mRNA
+    is_a: polypeptide
+    mixins:
+      - gene product mixin
+    exact_mappings:
+      - PR:000000001 # protein
+      - SIO:010043 # protein
+      - WIKIDATA:Q8054 # protein
+    narrow_mappings:
+      - UMLSSC:T116 # Amino Acid, Peptide, or Protein
 
   protein isoform:
     aliases: ['proteoform']
@@ -6785,10 +8068,8 @@ classes:
       - has gene or gene product
 
   gene family:
-    aliases:
-      - orthogroup
-      - protein family
-    is_a: molecular entity
+    aliases: ['orthogroup','protein family']
+    is_a: nucleic acid entity
     exact_mappings:
       - NCIT:C26004
       - WIKIDATA:Q2278983
@@ -6832,7 +8113,10 @@ classes:
       - GENO:0000133
 
   genotype:
-    is_a: genomic entity
+    is_a: biological entity
+    mixins:
+      - physical essence
+      - genomic entity
     description: >-
       An information content entity that describes a genome by specifying the
       total variation in genomic sequence and/or gene expression, relative to
@@ -6851,7 +8135,10 @@ classes:
       - model_organism_database
 
   haplotype:
-    is_a: genomic entity
+    is_a: biological entity
+    mixins:
+      - genomic entity
+      - physical essence
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
@@ -6865,7 +8152,7 @@ classes:
     aliases: ['allele']
     local_names:
       agr: allele
-    is_a: genomic entity
+    is_a: nucleic acid entity
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
@@ -6933,13 +8220,16 @@ classes:
       - SO:0001483
 
   reagent targeted gene:
-    is_a: genomic entity
+    aliases: ['sequence targeting reagent']
+    is_a: nucleic acid entity
     description: >-
       A gene altered in its expression level in the context of some
       experiment as a result of being targeted by gene-knockdown
       reagent(s) such as a morpholino or RNAi.
     exact_mappings:
       - GENO:0000504
+    in_subset:
+      - model_organism_database
 
   ## --------------------
   ## Clinical
@@ -7103,16 +8393,16 @@ classes:
       - model_organism_database
 
   genomic background exposure:
-    is_a: genomic entity
+    is_a: biological entity
     mixins:
       - exposure event
       - gene grouping mixin
+      - physical essence
+      - genomic entity
     description: >-
       A genomic background exposure is where an individual's specific genomic background
       of genes, sequence variants or other pre-existing genomic conditions constitute
       a kind of 'exposure' to the organism, leading to or influencing an outcome.
-    #exact_mappings:
-    #  -
 
   pathological entity mixin:
     description: >-
@@ -7184,12 +8474,12 @@ classes:
     #  -
 
   chemical exposure:
-    is_a: chemical substance
+    is_a: chemical entity
     mixins:
       - exposure event
     description: >-
       A chemical exposure is an intake of a particular
-      chemical substance, other than a drug.
+      chemical entity, other than a drug.
     exact_mappings:
       # this ECTO term is not visibly defined but
       # the 9000000-series identifiers seems to be the
@@ -7202,10 +8492,7 @@ classes:
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
     is_a: chemical exposure
-    mixins:
-      - mixture
-    # exact_mappings:
-    #  -
+
 
   drug exposure:
     aliases: ['drug intake', 'drug dose', 'medication intake']
@@ -7655,21 +8942,21 @@ classes:
 #        - range: disease or phenotypic feature
         range: disease or phenotypic feature
 
-  molecular entity to entity association mixin:
+  chemical entity to entity association mixin:
     description: >-
-      An interaction between a molecular entity and another entity
+      An interaction between a chemical entity and another entity
     mixin: true
     defining_slots:
       - subject
     slot_usage:
       subject:
-        range: molecular entity
-        description: "the molecular entity that is an interactor"
+        range: chemical entity
+        description: "the chemical entity that is an interactor"
 
   drug to entity association mixin:
     description: >-
       An interaction between a drug and another entity
-    is_a: molecular entity to entity association mixin
+    is_a: chemical entity to entity association mixin
     mixin: true
     defining_slots:
       - subject
@@ -7681,14 +8968,14 @@ classes:
   chemical to entity association mixin:
     description: >-
       An interaction between a chemical entity and another entity
-    is_a: molecular entity to entity association mixin
+    is_a: chemical entity to entity association mixin
     mixin: true
     defining_slots:
       - subject
     slot_usage:
       subject:
-        range: chemical substance
-        description: "the chemical substance or entity that is an interactor"
+        range: chemical entity
+        description: "the chemical entity or entity that is an interactor"
 
   case to entity association mixin:
     description: >-
@@ -7713,8 +9000,30 @@ classes:
       - chemical to entity association mixin
     slot_usage:
       object:
-        range: chemical substance
+        range: chemical entity
         description: "the chemical element that is the target of the statement"
+
+  reaction to participant association:
+    description:
+    is_a: chemical to chemical association
+    slots:
+      - stoichiometry
+      - reaction direction
+      - reaction side
+    slot_usage:
+      subject:
+        range: molecular entity
+    defining_slots:
+      - subject
+      - predicate
+      - object
+
+  reaction to catalyst association:
+    description:
+    is_a: reaction to participant association
+    slot_usage:
+      object:
+        range: gene or gene product
 
   chemical to chemical derivation association:
     description: >-
@@ -7737,18 +9046,18 @@ classes:
       - catalyst qualifier
     slot_usage:
       subject:
-        range: chemical substance
+        range: chemical entity
         description: >-
           the upstream chemical entity
       object:
-        range: chemical substance
+        range: chemical entity
         description: >-
           the downstream chemical entity
       predicate:
         subproperty_of: derives into
       catalyst qualifier:
         description: >-
-          this connects the derivation edge to the molecular entity that
+          this connects the derivation edge to the chemical entity that
           catalyzes the reaction that causes the subject chemical to
           transform into the object chemical.
 
@@ -7973,6 +9282,29 @@ classes:
     slots:
       - sex qualifier
 
+  named thing to information content entity association:
+    description: >-
+      association between a named thing and a information content entity where the specific context
+      of the relationship between that named thing and the publication is unknown. For
+      example, model organisms databases often capture the knowledge that a gene is found in a
+      journal article, but not specifically the context in which that gene was documented in the article.
+      In these cases, this association with the accompanying predicate 'mentions' could be used.
+      Conversely, for more specific associations (like 'gene to disease association', the publication should
+      be captured as an edge property).
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        domain: named thing
+      object:
+        range: publication
+      predicate:
+        subproperty_of: mentions
+    in_subset:
+      - model_organism_database
+
   entity to disease association mixin:
     description: >-
       mixin class for any association whose object (target node) is a disease
@@ -8001,17 +9333,6 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
           - value: MP:0013229
             description: "abnormal brain ventricle size"
-
-  disease or phenotypic feature association to location association:
-    deprecated: >-
-      This association class name is deprecated in favor of the
-      'disease or phenotypic feature to location association' class.
-    is_a: association
-    mixins:
-      - disease or phenotypic feature to entity association mixin
-    slot_usage:
-      object:
-        range: anatomical entity
 
   disease or phenotypic feature to location association:
     description: >-
@@ -8111,7 +9432,7 @@ classes:
 
   behavior to behavioral feature association:
     description: >-
-      An association between an aggregate behavior and
+      An association between an mixture behavior and
       a behavioral feature manifested by
       the individual exhibited or has exhibited the behavior.
     is_a: association
@@ -8462,6 +9783,40 @@ classes:
           A organismal entity (strain, breed) with a predisposition to a disease, or bred/created
           specifically to model a disease.
 
+  organism to organism association:
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: individual organism
+      relation:
+        values_from:
+          - ro
+      object:
+        range: individual organism
+        description: >-
+          An association between two individual organisms.
+
+  taxon to taxon association:
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: organism taxon
+      relation:
+        values_from:
+          - ro
+      object:
+        range: organism taxon
+        description: >-
+          An association between individuals of different taxa.
+
   gene has variant that contributes to disease association:
     is_a: gene to disease association
     defining_slots:
@@ -8626,7 +9981,7 @@ classes:
       - object
     slot_usage:
       subject:
-        range: molecular entity
+        range: gene
 #          aliases:
 #            bioentity:
 #              schema: amigo
@@ -8657,21 +10012,21 @@ classes:
   sequence association:
     is_a: association
     description: >-
-      An association between a sequence feature and a genomic entity it is localized to.
+      An association between a sequence feature and a nucleic acid entity it is localized to.
 
   genomic sequence localization:
     is_a: sequence association
     description: >-
-      A relationship between a sequence feature and a genomic entity
+      A relationship between a sequence feature and a nucleic acid entity
       it is localized to. The reference entity may be a chromosome,
       chromosome region or information entity such as a contig.
     slot_usage:
       subject:
         aliases: ['sequence feature']
-        range: genomic entity  ## todo protein
+        range: nucleic acid entity
       object:
         aliases: ['reference']
-        range: genomic entity ## typically a chromosome use monochrom
+        range: nucleic acid entity # typically a chromosome use monochrom
       predicate:
         subproperty_of: has sequence location
     slots:
@@ -8690,9 +10045,9 @@ classes:
       For example, a particular exon is part of a particular transcript or gene
     slot_usage:
       subject:
-        range: genomic entity  ## todo protein
+        range: nucleic acid entity
       object:
-        range: genomic entity ## typically a chromosome
+        range: nucleic acid entity # typically a chromosome
     exact_mappings:
       - CHADO:feature_relationship
 
