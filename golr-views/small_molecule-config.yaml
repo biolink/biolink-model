@@ -1,0 +1,45 @@
+id: small_molecule
+schema_generating: true
+description: A small molecule entity is a molecular entity characterized by availability
+  in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation
+  of its precise chemical structure; for convenience of representation, any valid
+  chemical representation is included, even if it is not strictly molecular (e.g.,
+  sodium ion).
+display_name: small molecule
+document_category: small molecule
+weight: 20
+fields:
+- id: iri
+  description: An IRI for an entity. This is determined by the id using expansion
+    rules.
+  display_name: iri
+- id: type
+  display_name: type
+- id: name
+  description: A human-readable name for an attribute or entity.
+  display_name: name
+- id: description
+  description: a human-readable description of an entity
+  display_name: description
+- id: source
+  description: a lightweight analog to the association class 'has provider' slot,
+    which is the string name, or the authoritative (i.e. database) namespace, designating
+    the origin of the entity to which the slot belongs.
+  display_name: source
+- id: provided_by
+  description: connects an association to the agent (person, organization or group)
+    that provided it
+  display_name: provided by
+  cardinality: multi
+- id: has_attribute
+  description: connects any entity to an attribute
+  display_name: has attribute
+  cardinality: multi
+- id: category
+  display_name: named thing_category
+  cardinality: multi
+- id: is_metabolite
+  description: indicates whether a molecular entity is a metabolite
+  display_name: is metabolite
+- id: id
+  display_name: small molecule_id

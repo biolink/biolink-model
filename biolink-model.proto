@@ -147,11 +147,11 @@ message Behavior
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
-// An association between an aggregate behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
+// An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 message BehaviorToBehavioralFeatureAssociation
  {
   id String = 1
@@ -187,8 +187,8 @@ message BehavioralExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
   optional timepoint TimeType = 13
  }
@@ -218,8 +218,8 @@ message BehavioralOutcome
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 // One or more causally connected executions of molecular functions
@@ -234,8 +234,8 @@ message BiologicalProcess
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
@@ -250,8 +250,8 @@ message BiologicalProcessOrActivity
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 message BiologicalSex
@@ -326,20 +326,6 @@ message BookChapter
   publishedIn Uriorcurie = 20
   optional volume String = 21
   optional chapter String = 22
- }
-message Carbohydrate
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
  }
 // An individual (human) organism that has a patient role in some clinical context.
 message Case
@@ -460,7 +446,7 @@ message CellularComponent
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
-// A chemical exposure is an intake of a particular chemical substance, other than a drug.
+// A chemical exposure is an intake of a particular chemical entity, other than a drug.
 message ChemicalExposure
  {
   id String = 1
@@ -472,12 +458,10 @@ message ChemicalExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
-  optional timepoint TimeType = 12
+  optional timepoint TimeType = 10
  }
-// May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
-message ChemicalSubstance
+// A chemical mixture is a chemical entity composed of two or more molecular entities.
+message ChemicalMixture
  {
   id String = 1
   optional iri IriType = 2
@@ -488,8 +472,6 @@ message ChemicalSubstance
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
@@ -509,7 +491,7 @@ message ChemicalToChemicalAssociation
   repeated publications Publication = 13
   optional type String = 14
   repeated category CategoryType = 15
-  object ChemicalSubstance = 16
+  object ChemicalEntity = 16
  }
 // A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
 //   IF
@@ -535,8 +517,8 @@ message ChemicalToChemicalDerivationAssociation
   optional type String = 12
   repeated category CategoryType = 13
   repeated catalystQualifier MacromolecularMachineMixin = 14
-  subject ChemicalSubstance = 15
-  object ChemicalSubstance = 16
+  subject ChemicalEntity = 15
+  object ChemicalEntity = 16
   predicate PredicateType = 17
  }
 // An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
@@ -701,8 +683,9 @@ message CodingSequence
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
+  repeated inTaxon OrganismTaxon = 12
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -730,10 +713,20 @@ message ComplexChemicalExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
-  optional timepoint TimeType = 12
-  repeated hasConstituent ChemicalSubstance = 13
+  optional timepoint TimeType = 10
+ }
+// A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
+message ComplexMolecularMixture
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -857,8 +850,8 @@ message Death
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 // A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
@@ -900,25 +893,6 @@ message DiseaseOrPhenotypicFeature
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
- }
-message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
- {
-  id String = 1
-  optional iri IriType = 2
-  optional name LabelType = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  subject NamedThing = 8
-  predicate PredicateType = 9
-  relation Uriorcurie = 10
-  optional negated Boolean = 11
-  repeated qualifiers OntologyClass = 12
-  repeated publications Publication = 13
-  optional type String = 14
-  repeated category CategoryType = 15
-  object AnatomicalEntity = 16
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
@@ -1025,8 +999,6 @@ message Drug
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated hasConstituent ChemicalSubstance = 11
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -1040,9 +1012,7 @@ message DrugExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated hasConstituent ChemicalSubstance = 11
-  optional timepoint TimeType = 12
+  optional timepoint TimeType = 10
  }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
@@ -1076,10 +1046,8 @@ message DrugToGeneInteractionExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated hasConstituent ChemicalSubstance = 11
-  optional timepoint TimeType = 12
-  repeated hasGeneOrGeneProduct Gene = 13
+  optional timepoint TimeType = 10
+  repeated hasGeneOrGeneProduct Gene = 11
  }
 // A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 message EnvironmentalExposure
@@ -1118,8 +1086,6 @@ message EnvironmentalFoodContaminant
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
  }
 message EnvironmentalProcess
  {
@@ -1175,8 +1141,9 @@ message Exon
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
+  repeated inTaxon OrganismTaxon = 12
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -1256,8 +1223,6 @@ message Food
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated hasConstituent ChemicalSubstance = 11
  }
 message FoodAdditive
  {
@@ -1270,22 +1235,6 @@ message FoodAdditive
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
- }
-message FoodComponent
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
  }
 // An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
@@ -1319,11 +1268,12 @@ message Gene
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
-  optional symbol String = 12
-  repeated synonym LabelType = 13
-  repeated xref IriType = 14
+  repeated inTaxon OrganismTaxon = 12
+  optional symbol String = 13
+  repeated synonym LabelType = 14
+  repeated xref IriType = 15
  }
 message GeneAsAModelOfDiseaseAssociation
  {
@@ -1359,8 +1309,10 @@ message GeneFamily
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated hasGeneOrGeneProduct Gene = 11
+  optional isMetabolite Boolean = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
+  repeated inTaxon OrganismTaxon = 12
+  repeated hasGeneOrGeneProduct Gene = 13
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
@@ -1529,7 +1481,7 @@ message GeneToGoTermAssociation
   repeated publications Publication = 12
   optional type String = 13
   repeated category CategoryType = 14
-  subject MolecularEntity = 15
+  subject Gene = 15
   object GeneOntologyClass = 16
  }
 message GeneToPhenotypicFeatureAssociation
@@ -1568,7 +1520,6 @@ message Genome
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
  }
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
 message GenomicBackgroundExposure
@@ -1582,27 +1533,11 @@ message GenomicBackgroundExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  optional timepoint TimeType = 12
-  repeated hasGeneOrGeneProduct Gene = 13
+  optional timepoint TimeType = 10
+  repeated hasGeneOrGeneProduct Gene = 11
+  repeated inTaxon OrganismTaxon = 12
  }
-// an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
-message GenomicEntity
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
- }
-// A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
+// A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
  {
   id String = 1
@@ -1620,11 +1555,11 @@ message GenomicSequenceLocalization
   repeated category CategoryType = 13
   optional startInterbaseCoordinate Integer = 14
   optional endInterbaseCoordinate Integer = 15
-  optional genomeBuild String = 16
-  optional strand String = 17
-  optional phase String = 18
-  subject GenomicEntity = 19
-  object GenomicEntity = 20
+  optional genomeBuild StrandEnum = 16
+  optional strand StrandEnum = 17
+  optional phase PhaseEnum = 18
+  subject NucleicAcidEntity = 19
+  object NucleicAcidEntity = 20
   predicate PredicateType = 21
  }
 // An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
@@ -1639,9 +1574,8 @@ message Genotype
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  optional hasZygosity Zygosity = 12
+  optional hasZygosity Zygosity = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 message GenotypeAsAModelOfDiseaseAssociation
  {
@@ -1854,7 +1788,6 @@ message Haplotype
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
  }
 message Hospitalization
  {
@@ -1894,6 +1827,23 @@ message IndividualOrganism
   repeated category NamedThing = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
+ }
+// A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
+message InformationResource
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  optional license String = 10
+  optional rights String = 11
+  optional format String = 12
+  optional creationDate Date = 13
  }
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message Inheritance
@@ -1990,8 +1940,6 @@ message Macronutrient
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
@@ -2046,21 +1994,6 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   optional type String = 15
   repeated category CategoryType = 16
  }
-// Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
-message Metabolite
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
- }
 message Micronutrient
  {
   id String = 1
@@ -2072,8 +2005,6 @@ message Micronutrient
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
  }
 message MicroRNA
  {
@@ -2086,10 +2017,11 @@ message MicroRNA
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
+  repeated inTaxon OrganismTaxon = 12
+  repeated synonym LabelType = 13
+  repeated xref IriType = 14
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
 message MolecularActivity
@@ -2103,11 +2035,11 @@ message MolecularActivity
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput ChemicalSubstance = 10
-  repeated hasOutput ChemicalSubstance = 11
+  repeated hasInput MolecularEntity = 10
+  repeated hasOutput MolecularEntity = 11
   repeated enabledBy MacromolecularMachineMixin = 12
  }
-// A gene, gene product, small molecule or macromolecule (including protein complex)"
+// A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
 message MolecularEntity
  {
   id String = 1
@@ -2119,7 +2051,20 @@ message MolecularEntity
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
+ }
+// A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
+message MolecularMixture
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
  }
 // An outcome of death from resulting from an exposure event.
 message MortalityOutcome
@@ -2133,8 +2078,8 @@ message MortalityOutcome
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 // a databased entity or concept/class
@@ -2150,6 +2095,26 @@ message NamedThing
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
+// association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
+message NamedThingToInformationContentEntityAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  relation Uriorcurie = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  optional type String = 12
+  repeated category CategoryType = 13
+  subject NamedThing = 14
+  object Publication = 15
+  predicate PredicateType = 16
+ }
 message NoncodingRNAProduct
  {
   id String = 1
@@ -2161,10 +2126,27 @@ message NoncodingRNAProduct
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
+  repeated inTaxon OrganismTaxon = 12
+  repeated synonym LabelType = 13
+  repeated xref IriType = 14
+ }
+// A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+message NucleicAcidEntity
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  optional isMetabolite Boolean = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
+  repeated inTaxon OrganismTaxon = 12
  }
 message Nutrient
  {
@@ -2177,8 +2159,6 @@ message Nutrient
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
  }
 // The age group in which (disease) symptom manifestations appear
 message Onset
@@ -2255,6 +2235,25 @@ message OrganismTaxonToOrganismTaxonSpecialization
   subject OrganismTaxon = 14
   object OrganismTaxon = 15
   predicate PredicateType = 16
+ }
+message OrganismToOrganismAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  predicate PredicateType = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  optional type String = 12
+  repeated category CategoryType = 13
+  subject IndividualOrganism = 14
+  relation Uriorcurie = 15
+  object IndividualOrganism = 16
  }
 message OrganismalEntityAsAModelOfDiseaseAssociation
  {
@@ -2374,8 +2373,8 @@ message PathologicalProcess
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 // A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
@@ -2390,8 +2389,8 @@ message PathologicalProcessExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
   optional timepoint TimeType = 13
  }
@@ -2407,8 +2406,8 @@ message PathologicalProcessOutcome
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 message Pathway
@@ -2422,8 +2421,8 @@ message Pathway
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -2496,8 +2495,8 @@ message PhysiologicalProcess
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 // Any entity or process that exists at the level of the whole planet
@@ -2512,6 +2511,20 @@ message PlanetaryEntity
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+ }
+// A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+message Polypeptide
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  optional isMetabolite Boolean = 10
  }
 // A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
 message PopulationOfIndividualOrganisms
@@ -2560,7 +2573,7 @@ message Procedure
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
-// A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.
+// A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.
 message ProcessedMaterial
  {
   id String = 1
@@ -2572,9 +2585,6 @@ message ProcessedMaterial
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
-  repeated hasConstituent ChemicalSubstance = 12
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -2588,10 +2598,9 @@ message Protein
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
+  optional isMetabolite Boolean = 10
+  repeated synonym LabelType = 11
+  repeated xref IriType = 12
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
@@ -2605,10 +2614,9 @@ message ProteinIsoform
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
+  optional isMetabolite Boolean = 10
+  repeated synonym LabelType = 11
+  repeated xref IriType = 12
  }
 // Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
 message Publication
@@ -2639,6 +2647,50 @@ message QuantityValue
   optional hasUnit Unit = 1
   optional hasNumericValue Double = 2
  }
+message ReactionToCatalystAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  predicate PredicateType = 8
+  relation Uriorcurie = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  optional type String = 13
+  repeated category CategoryType = 14
+  optional stoichiometry Integer = 15
+  optional reactionDirection ReactionDirectionEnum = 16
+  optional reactionSide ReactionSideEnum = 17
+  subject MolecularEntity = 18
+  object GeneOrGeneProduct = 19
+ }
+message ReactionToParticipantAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  predicate PredicateType = 8
+  relation Uriorcurie = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  optional type String = 13
+  repeated category CategoryType = 14
+  object ChemicalEntity = 15
+  optional stoichiometry Integer = 16
+  optional reactionDirection ReactionDirectionEnum = 17
+  optional reactionSide ReactionSideEnum = 18
+  subject MolecularEntity = 19
+ }
 // A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
 message ReagentTargetedGene
  {
@@ -2651,8 +2703,9 @@ message ReagentTargetedGene
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
+  repeated inTaxon OrganismTaxon = 12
  }
 message RNAProduct
  {
@@ -2665,10 +2718,11 @@ message RNAProduct
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
+  repeated inTaxon OrganismTaxon = 12
+  repeated synonym LabelType = 13
+  repeated xref IriType = 14
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
 message RNAProductIsoform
@@ -2682,12 +2736,13 @@ message RNAProductIsoform
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
+  repeated inTaxon OrganismTaxon = 12
+  repeated synonym LabelType = 13
+  repeated xref IriType = 14
  }
-// An association between a sequence feature and a genomic entity it is localized to.
+// An association between a sequence feature and a nucleic acid entity it is localized to.
 message SequenceAssociation
  {
   id String = 1
@@ -2724,8 +2779,8 @@ message SequenceFeatureRelationship
   repeated publications Publication = 12
   optional type String = 13
   repeated category CategoryType = 14
-  subject GenomicEntity = 15
-  object GenomicEntity = 16
+  subject NucleicAcidEntity = 15
+  object NucleicAcidEntity = 16
  }
 // An allele that varies in its sequence from what is considered the reference allele at that locus.
 message SequenceVariant
@@ -2738,10 +2793,11 @@ message SequenceVariant
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  repeated hasGene Gene = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  id String = 12
+  optional isMetabolite Boolean = 9
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasGene Gene = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
+  id String = 13
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Serial
@@ -2791,10 +2847,25 @@ message SiRNA
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
-  repeated synonym LabelType = 12
-  repeated xref IriType = 13
+  repeated inTaxon OrganismTaxon = 12
+  repeated synonym LabelType = 13
+  repeated xref IriType = 14
+ }
+// A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
+message SmallMolecule
+ {
+  optional iri IriType = 1
+  optional type String = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  repeated category NamedThing = 8
+  optional isMetabolite Boolean = 9
+  id String = 10
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
@@ -2807,10 +2878,11 @@ message Snv
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   repeated category NamedThing = 8
-  repeated inTaxon OrganismTaxon = 9
-  repeated hasGene Gene = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  id String = 12
+  optional isMetabolite Boolean = 9
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasGene Gene = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
+  id String = 13
  }
 // Attributes relating to a socioeconomic manifestation
 message SocioeconomicAttribute
@@ -2833,8 +2905,8 @@ message SocioeconomicExposure
   optional source LabelType = 6
   repeated providedBy Agent = 7
   repeated category NamedThing = 8
-  repeated hasInput NamedThing = 9
-  repeated hasOutput NamedThing = 10
+  repeated hasInput BiologicalProcessOrActivity = 9
+  repeated hasOutput BiologicalProcessOrActivity = 10
   repeated enabledBy PhysicalEntity = 11
   repeated hasAttribute SocioeconomicAttribute = 12
   optional timepoint TimeType = 13
@@ -2851,8 +2923,8 @@ message SocioeconomicOutcome
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated hasInput NamedThing = 10
-  repeated hasOutput NamedThing = 11
+  repeated hasInput BiologicalProcessOrActivity = 10
+  repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
 // A group of people banded together or treated as a group as participants in a research study.
@@ -2869,6 +2941,25 @@ message StudyPopulation
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
+message TaxonToTaxonAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  predicate PredicateType = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  optional type String = 12
+  repeated category CategoryType = 13
+  subject OrganismTaxon = 14
+  relation Uriorcurie = 15
+  object OrganismTaxon = 16
+ }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 message Transcript
  {
@@ -2881,8 +2972,9 @@ message Transcript
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional isMetabolite Boolean = 10
   optional hasBiologicalSequence BiologicalSequence = 11
+  repeated inTaxon OrganismTaxon = 12
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
@@ -3068,8 +3160,6 @@ message Vitamin
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional isMetabolite Boolean = 11
  }
 message Zygosity
  {

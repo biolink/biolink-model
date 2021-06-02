@@ -1,8 +1,8 @@
 id: genomic_sequence_localization
 schema_generating: true
-description: A relationship between a sequence feature and a genomic entity it is
-  localized to. The reference entity may be a chromosome, chromosome region or information
-  entity such as a contig.
+description: A relationship between a sequence feature and a nucleic acid entity it
+  is localized to. The reference entity may be a chromosome, chromosome region or
+  information entity such as a contig.
 display_name: genomic sequence localization
 document_category: genomic sequence localization
 weight: 20
@@ -59,11 +59,12 @@ fields:
   display_name: association_category
   cardinality: multi
 - id: start_interbase_coordinate
-  description: The position at which the subject genomic entity starts on the chromosome
-    or other entity to which it is located on.
+  description: 'The position at which the subject nucleic acid entity starts on the
+    chromosome or other entity to which it is located on. (ie: the start of the sequence
+    being referenced is 0).'
   display_name: start interbase coordinate
 - id: end_interbase_coordinate
-  description: The position at which the subject genomic entity ends on the chromosome
+  description: The position at which the subject nucleic acid entity ends on the chromosome
     or other entity to which it is located on.
   display_name: end interbase coordinate
 - id: genome_build

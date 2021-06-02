@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2025.4,123"];
+	graph [bb="0,0,2321.4,123"];
 	node [label="\N"];
 	"biological process or activity"	[height=0.5,
 		label="biological process or activity",
@@ -117,36 +117,36 @@ digraph {
 		style=solid];
 	"has input"	[color=blue,
 		height=0.5,
-		label="named thing",
-		pos="1622.1,18",
-		width=1.9318];
+		label="biological process or activity",
+		pos="1696.1,18",
+		width=3.9899];
 	"biological process or activity" -> "has input"	[color=blue,
 		label="has input",
-		lp="1581.6,61.5",
-		pos="e,1593.5,34.498 1092.8,91.969 1110.2,90.118 1128.2,88.371 1145.1,87 1224.8,80.558 1426.3,86.856 1504.1,69 1532,62.603 1561.7,50.012 \
-1584.3,39.066",
+		lp="1607.6,61.5",
+		pos="e,1646.2,35.012 1092.8,91.969 1110.2,90.118 1128.2,88.371 1145.1,87 1304.4,74.116 1346.2,93.257 1504.1,69 1549.1,62.086 1598.9,48.981 \
+1636.4,37.922",
 		style=solid];
 	"has output"	[color=blue,
 		height=0.5,
-		label="named thing",
-		pos="1779.1,18",
-		width=1.9318];
+		label="biological process or activity",
+		pos="2001.1,18",
+		width=3.9899];
 	"biological process or activity" -> "has output"	[color=blue,
 		label="has output",
-		lp="1716.6,61.5",
-		pos="e,1742.6,33.455 1092,91.882 1109.7,90.017 1127.9,88.288 1145.1,87 1355.4,71.273 1411.4,104.75 1619.1,69 1658.5,62.223 1701.7,48.334 \
-1733.2,36.91",
+		lp="1811.6,61.5",
+		pos="e,1919.8,32.877 1092,91.853 1109.7,89.992 1127.9,88.271 1145.1,87 1366.9,70.63 1423.6,88.49 1645.1,69 1735.5,61.046 1838.1,45.996 \
+1909.8,34.477",
 		style=solid];
 	"enabled by"	[color=blue,
 		height=0.5,
 		label="physical entity",
-		pos="1946.1,18",
+		pos="2242.1,18",
 		width=2.2026];
 	"biological process or activity" -> "enabled by"	[color=blue,
 		label="enabled by",
-		lp="1871.6,61.5",
-		pos="e,1904,33.272 1091.6,91.8 1109.4,89.932 1127.8,88.222 1145.1,87 1281.3,77.406 1624.1,88.763 1759.1,69 1805.7,62.189 1857.2,47.875 \
-1894.4,36.301",
+		lp="2064.6,61.5",
+		pos="e,2185.5,30.653 1091.1,91.786 1109.1,89.907 1127.7,88.197 1145.1,87 1459.6,65.462 1539.6,90.252 1854.1,69 1988,59.956 2021.5,56.071 \
+2154.1,36 2161,34.968 2168.1,33.783 2175.1,32.529",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
