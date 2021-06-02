@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2672.5,283"];
+	graph [bb="0,0,2595.5,283"];
 	node [label="\N"];
 	"chemical to chemical derivation association"	[height=0.5,
 		label="chemical to chemical derivation association",
@@ -197,19 +197,19 @@ digraph {
 		pos="e,2110.7,108.98 2098.5,159.77 2100.2,150.09 2102.7,137.8 2105.5,127 2106.2,124.32 2106.9,121.53 2107.8,118.76"];
 	"chemical to chemical derivation association_subject"	[color=blue,
 		height=0.5,
-		label="chemical substance",
-		pos="2176.5,265",
-		width=2.8164];
+		label="chemical entity",
+		pos="2157.5,265",
+		width=2.2748];
 	object -> relation	[pos="e,2065.2,35.702 2101.6,74.243 2093,65.127 2082,53.465 2072.3,43.208",
 		style=dotted];
 	"chemical to chemical derivation association_object"	[color=blue,
 		height=0.5,
-		label="chemical substance",
-		pos="2397.5,265",
-		width=2.8164];
+		label="chemical entity",
+		pos="2339.5,265",
+		width=2.2748];
 	"chemical to chemical derivation association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2594.5,265",
+		pos="2517.5,265",
 		width=2.1665];
 }

@@ -1,7 +1,8 @@
 id: processed_material
 schema_generating: true
-description: A chemical substance (often a mixture) processed for consumption for
-  nutritional, medical or technical use.
+description: A chemical entity (often a mixture) processed for consumption for nutritional,
+  medical or technical use. Is a material entity that is created or changed during
+  material processing.
 display_name: processed material
 document_category: processed material
 weight: 20
@@ -38,16 +39,4 @@ fields:
   cardinality: multi
 - id: category
   display_name: named thing_category
-  cardinality: multi
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
-  cardinality: multi
-- id: is_metabolite
-  description: indicates whether a chemical substance is a metabolite
-  display_name: is metabolite
-- id: has_constituent
-  description: one or more chemical substances within a mixture
-  display_name: has constituent
   cardinality: multi

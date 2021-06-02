@@ -704,7 +704,7 @@
       },
       "BehaviorToBehavioralFeatureAssociation": {
          "additionalProperties": false,
-         "description": "An association between an aggregate behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.",
+         "description": "An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.",
          "properties": {
             "category": {
                "items": {
@@ -1519,72 +1519,6 @@
          "title": "BookChapter",
          "type": "object"
       },
-      "Carbohydrate": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
-         "title": "Carbohydrate",
-         "type": "object"
-      },
       "Case": {
          "additionalProperties": false,
          "description": "An individual (human) organism that has a patient role in some clinical context.",
@@ -2134,7 +2068,7 @@
       },
       "ChemicalExposure": {
          "additionalProperties": false,
-         "description": "A chemical exposure is an intake of a particular chemical substance, other than a drug.",
+         "description": "A chemical exposure is an intake of a particular chemical entity, other than a drug.",
          "properties": {
             "category": {
                "items": {
@@ -2157,20 +2091,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -2202,9 +2125,9 @@
          "title": "ChemicalExposure",
          "type": "object"
       },
-      "ChemicalSubstance": {
+      "ChemicalMixture": {
          "additionalProperties": false,
-         "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
+         "description": "A chemical mixture is a chemical entity composed of two or more molecular entities.",
          "properties": {
             "category": {
                "items": {
@@ -2227,20 +2150,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -2265,6 +2177,14 @@
             "id",
             "category"
          ],
+         "title": "ChemicalMixture",
+         "type": "object"
+      },
+      "ChemicalSubstance": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
          "title": "ChemicalSubstance",
          "type": "object"
       },
@@ -2366,7 +2286,7 @@
          "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:\n  IF\n  R has-input C1 AND\n  R has-output C2 AND\n  R enabled-by P AND\n  R type Reaction\n  THEN\n  C1 derives-into C2 <<catalyst qualifier P>>",
          "properties": {
             "catalyst_qualifier": {
-               "description": "this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical.",
+               "description": "this connects the derivation edge to the chemical entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical.",
                "items": {
                   "$ref": "#/definitions/MacromolecularMachineMixin"
                },
@@ -3156,6 +3076,10 @@
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
             },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
                "type": "string"
@@ -3265,31 +3189,13 @@
                },
                "type": "array"
             },
-            "has_constituent": {
-               "description": "one or more chemical substances within a mixture",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -3319,6 +3225,61 @@
             "category"
          ],
          "title": "ComplexChemicalExposure",
+         "type": "object"
+      },
+      "ComplexMolecularMixture": {
+         "additionalProperties": false,
+         "description": "A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ComplexMolecularMixture",
          "type": "object"
       },
       "ConfidenceLevel": {
@@ -4027,98 +3988,6 @@
          "title": "DiseaseOrPhenotypicFeature",
          "type": "object"
       },
-      "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "negated": {
-               "description": "if set to true, then the association is negated i.e. is not true",
-               "type": "boolean"
-            },
-            "object": {
-               "type": "string"
-            },
-            "predicate": {
-               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "publications": {
-               "description": "connects an association to publications supporting the association",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "qualifiers": {
-               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-               "items": {
-                  "$ref": "#/definitions/OntologyClass"
-               },
-               "type": "array"
-            },
-            "relation": {
-               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
-               "type": "string"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-               "type": "string"
-            },
-            "type": {
-               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "subject",
-            "predicate",
-            "relation",
-            "object"
-         ],
-         "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
-         "type": "object"
-      },
       "DiseaseOrPhenotypicFeatureExposure": {
          "additionalProperties": false,
          "description": "A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.",
@@ -4563,23 +4432,9 @@
                },
                "type": "array"
             },
-            "has_constituent": {
-               "description": "one or more chemical substances within a mixture",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -4632,23 +4487,9 @@
                },
                "type": "array"
             },
-            "has_constituent": {
-               "description": "one or more chemical substances within a mixture",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -4798,13 +4639,6 @@
                },
                "type": "array"
             },
-            "has_constituent": {
-               "description": "one or more chemical substances within a mixture",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_gene_or_gene_product": {
                "description": "connects an entity with one or more gene or gene products",
                "items": {
@@ -4815,13 +4649,6 @@
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -4996,20 +4823,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5254,6 +5070,10 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5602,23 +5422,9 @@
                },
                "type": "array"
             },
-            "has_constituent": {
-               "description": "one or more chemical substances within a mixture",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -5675,20 +5481,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5714,72 +5509,6 @@
             "category"
          ],
          "title": "FoodAdditive",
-         "type": "object"
-      },
-      "FoodComponent": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
-         "title": "FoodComponent",
          "type": "object"
       },
       "FunctionalAssociation": {
@@ -5914,6 +5643,10 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -6085,6 +5818,10 @@
                },
                "type": "array"
             },
+            "has_biological_sequence": {
+               "description": "connects a genomic feature to its sequence",
+               "type": "string"
+            },
             "has_gene_or_gene_product": {
                "description": "connects an entity with one or more gene or gene products",
                "items": {
@@ -6106,6 +5843,10 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -7053,10 +6794,6 @@
                },
                "type": "array"
             },
-            "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
-               "type": "string"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -7119,10 +6856,6 @@
                },
                "type": "array"
             },
-            "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
-               "type": "string"
-            },
             "has_gene_or_gene_product": {
                "description": "connects an entity with one or more gene or gene products",
                "items": {
@@ -7175,75 +6908,9 @@
          "title": "GenomicBackgroundExposure",
          "type": "object"
       },
-      "GenomicEntity": {
-         "additionalProperties": false,
-         "description": "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
-               "type": "string"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
-         "title": "GenomicEntity",
-         "type": "object"
-      },
       "GenomicSequenceLocalization": {
          "additionalProperties": false,
-         "description": "A relationship between a sequence feature and a genomic entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.",
+         "description": "A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.",
          "properties": {
             "category": {
                "items": {
@@ -7256,7 +6923,7 @@
                "type": "string"
             },
             "end_interbase_coordinate": {
-               "description": "The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.",
+               "description": "The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.",
                "type": "integer"
             },
             "genome_build": {
@@ -7326,7 +6993,7 @@
                "type": "string"
             },
             "start_interbase_coordinate": {
-               "description": "The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on.",
+               "description": "The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).",
                "type": "integer"
             },
             "strand": {
@@ -7371,10 +7038,6 @@
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
-            },
-            "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
-               "type": "string"
             },
             "has_zygosity": {
                "$ref": "#/definitions/Zygosity"
@@ -8334,10 +7997,6 @@
                },
                "type": "array"
             },
-            "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
-               "type": "string"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -8549,6 +8208,74 @@
             "category"
          ],
          "title": "IndividualOrganism",
+         "type": "object"
+      },
+      "InformationResource": {
+         "additionalProperties": false,
+         "description": "A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "InformationResource",
          "type": "object"
       },
       "Inheritance": {
@@ -8952,20 +8679,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9234,72 +8950,6 @@
          "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
       },
-      "Metabolite": {
-         "additionalProperties": false,
-         "description": "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
-         "title": "Metabolite",
-         "type": "object"
-      },
       "MicroRNA": {
          "additionalProperties": false,
          "description": "",
@@ -9339,6 +8989,10 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9405,20 +9059,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9524,7 +9167,7 @@
       },
       "MolecularEntity": {
          "additionalProperties": false,
-         "description": "A gene, gene product, small molecule or macromolecule (including protein complex)\"",
+         "description": "A molecular entity is a chemical entity composed of individual or covalently bonded atoms.",
          "properties": {
             "category": {
                "items": {
@@ -9547,12 +9190,64 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
                   "type": "string"
                },
                "type": "array"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "MolecularEntity",
+         "type": "object"
+      },
+      "MolecularMixture": {
+         "additionalProperties": false,
+         "description": "A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -9581,7 +9276,7 @@
             "id",
             "category"
          ],
-         "title": "MolecularEntity",
+         "title": "MolecularMixture",
          "type": "object"
       },
       "MortalityOutcome": {
@@ -9715,6 +9410,96 @@
          "title": "NamedThing",
          "type": "object"
       },
+      "NamedThingToInformationContentEntityAssociation": {
+         "additionalProperties": false,
+         "description": "association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "$ref": "#/definitions/OntologyClass"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "subject",
+            "object",
+            "predicate"
+         ],
+         "title": "NamedThingToInformationContentEntityAssociation",
+         "type": "object"
+      },
       "NoncodingRNAProduct": {
          "additionalProperties": false,
          "description": "",
@@ -9754,6 +9539,10 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9795,6 +9584,76 @@
          "title": "NoncodingRNAProduct",
          "type": "object"
       },
+      "NucleicAcidEntity": {
+         "additionalProperties": false,
+         "description": "A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "has_biological_sequence": {
+               "description": "connects a genomic feature to its sequence",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "NucleicAcidEntity",
+         "type": "object"
+      },
       "Nutrient": {
          "additionalProperties": false,
          "description": "",
@@ -9820,20 +9679,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -10188,6 +10036,97 @@
             "predicate"
          ],
          "title": "OrganismTaxonToOrganismTaxonSpecialization",
+         "type": "object"
+      },
+      "OrganismToOrganismAssociation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "An association between two individual organisms.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "$ref": "#/definitions/OntologyClass"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "predicate",
+            "subject",
+            "relation",
+            "object"
+         ],
+         "title": "OrganismToOrganismAssociation",
          "type": "object"
       },
       "OrganismalEntityAsAModelOfDiseaseAssociation": {
@@ -11357,6 +11296,65 @@
          "title": "PlanetaryEntity",
          "type": "object"
       },
+      "Polypeptide": {
+         "additionalProperties": false,
+         "description": "A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Polypeptide",
+         "type": "object"
+      },
       "PopulationOfIndividualOrganisms": {
          "additionalProperties": false,
          "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]",
@@ -11569,7 +11567,7 @@
       },
       "ProcessedMaterial": {
          "additionalProperties": false,
-         "description": "A chemical substance (often a mixture) processed for consumption for nutritional, medical or technical use.",
+         "description": "A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.",
          "properties": {
             "category": {
                "items": {
@@ -11588,31 +11586,13 @@
                },
                "type": "array"
             },
-            "has_constituent": {
-               "description": "one or more chemical substances within a mixture",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11661,24 +11641,17 @@
                },
                "type": "array"
             },
-            "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
-               "type": "string"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11741,24 +11714,17 @@
                },
                "type": "array"
             },
-            "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
-               "type": "string"
-            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11966,6 +11932,10 @@
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
             },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
                "type": "string"
@@ -12045,6 +12015,10 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12333,6 +12307,10 @@
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
             },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
                "type": "string"
@@ -12369,7 +12347,7 @@
       },
       "SequenceAssociation": {
          "additionalProperties": false,
-         "description": "An association between a sequence feature and a genomic entity it is localized to.",
+         "description": "An association between a sequence feature and a nucleic acid entity it is localized to.",
          "properties": {
             "category": {
                "items": {
@@ -12597,6 +12575,10 @@
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
             },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
                "type": "string"
@@ -12822,6 +12804,10 @@
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
             },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
                "type": "string"
@@ -12860,6 +12846,64 @@
             "category"
          ],
          "title": "SiRNA",
+         "type": "object"
+      },
+      "SmallMolecule": {
+         "additionalProperties": false,
+         "description": "A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "category",
+            "id"
+         ],
+         "title": "SmallMolecule",
          "type": "object"
       },
       "Snv": {
@@ -12907,6 +12951,10 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -13190,6 +13238,97 @@
          "title": "StudyPopulation",
          "type": "object"
       },
+      "TaxonToTaxonAssociation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "An association between individuals of different taxa.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "$ref": "#/definitions/OntologyClass"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "predicate",
+            "subject",
+            "relation",
+            "object"
+         ],
+         "title": "TaxonToTaxonAssociation",
+         "type": "object"
+      },
       "TaxonomicRank": {
          "additionalProperties": false,
          "description": "A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)",
@@ -13237,6 +13376,10 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
+            },
+            "is_metabolite": {
+               "description": "indicates whether a molecular entity is a metabolite",
+               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -14090,20 +14233,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a chemical substance is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",

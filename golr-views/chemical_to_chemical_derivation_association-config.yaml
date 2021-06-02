@@ -61,7 +61,7 @@ fields:
   display_name: association_category
   cardinality: multi
 - id: catalyst_qualifier
-  description: this connects the derivation edge to the molecular entity that catalyzes
+  description: this connects the derivation edge to the chemical entity that catalyzes
     the reaction that causes the subject chemical to transform into the object chemical.
   display_name: chemical to chemical derivation association_catalyst qualifier
   cardinality: multi
