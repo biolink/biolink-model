@@ -203,15 +203,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | SIO:010004 |
 |  | | WIKIDATA:Q79529 |
 | **Narrow Mappings:** | | WIKIDATA:Q43460564 |
-|  | | UMLSSG:T103 |
-|  | | UMLSSG:T120 |
-|  | | UMLSSG:T104 |
-|  | | UMLSSG:T197 |
-|  | | UMLSSG:T109 |
-|  | | UMLSSG:T121 |
-|  | | UMLSSG:T125 |
-|  | | UMLSSG:T200 |
-|  | | UMLSSG:T195 |
+|  | | UMLSSC:T103 |
+|  | | UMLSSC:T120 |
+|  | | UMLSSC:T104 |
+|  | | UMLSSC:T197 |
+|  | | UMLSSC:T109 |
+|  | | UMLSSC:T121 |
+|  | | UMLSSC:T125 |
+|  | | UMLSSC:T200 |
+|  | | UMLSSC:T195 |
 |  | | UMLSSC:T123 |
 |  | | UMLSSC:T129 |
 |  | | UMLSSC:T131 |
