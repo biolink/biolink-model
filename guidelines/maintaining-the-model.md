@@ -34,7 +34,7 @@ Any modification that leads to breaking changes must be followed by a new major 
 
 ## Deprecating classes and slots
 
-BiolinkML provides slots that can be used to signify a class (or slot) as being deprecated.
+linkML provides slots that can be used to signify a class (or slot) as being deprecated.
 
 Example:
 ```yaml
@@ -57,7 +57,7 @@ It's recommended that deprecated classes and slots remain in the model until the
 
 ## Artifacts
 
-BiolinkML consumes the Biolink Model YAML and generates several artifacts.
+linkML consumes the Biolink Model YAML and generates several artifacts.
 
 This step is automated as part of [GitHub Actions](https://github.com/biolink/biolink-model/actions). 
 
@@ -66,7 +66,7 @@ That means no pull request to the Biolink Model repo should include updates to t
 
 ## Documentation
 
-BiolinkML consumes the Biolink Model YAML and also generates Markdown for all the classes and slots defined in the model.
+linkML consumes the Biolink Model YAML and also generates Markdown for all the classes and slots defined in the model.
 
 This step is automated as part of [GitHub Actions](https://github.com/biolink/biolink-model/actions) where changes in Markdown content are pushed to the `gh-pages` branch. 
 

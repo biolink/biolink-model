@@ -34,3 +34,11 @@ Commit the changes to `master` branch.
 Go to [GitHub Releases](https://github.com/biolink/biolink-model/releases) and draft a new release.
 
 Be sure to add the changes from the ChangeLog to the description of the release.
+
+
+## Keep the latest branch up to date with the release branch
+
+Checkout master
+Pull any updates
+merge master into 'latest' branch
+Push latest branch

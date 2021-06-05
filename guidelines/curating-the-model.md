@@ -7,7 +7,7 @@ nav_order: 2
 
 # Curating the Biolink Model
 
-Before curating the Biolink Model, we recommend that you familiarize yourself with the basics of [BiolinkML](https://github.com/biolink/biolinkml).
+Before curating the Biolink Model, we recommend that you familiarize yourself with the basics of [LinkML](https://github.com/linkml).
 
 In Biolink Model all the curation should happen in one place: [biolink-model.yaml](../biolink-model.yaml)
 This is the one source of truth for the model.
@@ -75,9 +75,9 @@ As an example, let's consider the definition of the entity class `gene`:
       - PomBase
 ```
 
-In the above YAML snippet, `is_a`, `aliases`, `slots`, `exact_mappings`, and `id_prefixes` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the class definition.
+In the above YAML snippet, `is_a`, `aliases`, `slots`, `exact_mappings`, and `id_prefixes` are slots from linkML where each slot has a specific meaning and they add semantics to the class definition.
 
-In addition to the aforementioned slots, BiolinkML provides ways to leverage mixin classes to reuse certain slots across different classes.
+In addition to the aforementioned slots, linkML provides ways to leverage mixin classes to reuse certain slots across different classes.
 
 Say you want to use the mixin class `thing with taxon` that defines an `in taxon` slot.
 
@@ -94,7 +94,7 @@ You can achieve that as follows:
 
 In the above YAML snippet, we are explicitly defining the entity class `gene` to have `in taxon` as a slot in addition to all its slots, its parent slots, and all of its ancestor slots.
 
-There are [other BiolinkML slots](https://biolink.github.io/biolinkml/docs/ClassDefinition#Attributes) that can be used to define your class and further capture the semantics of your class.
+There are [other linkML slots](https://linkml.github.io/linkml-model/docs/ClassDefinition#Attributes) that can be used to define your class and further capture the semantics of your class.
 
 For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
 
@@ -158,9 +158,9 @@ As an example, let's consider the definition of class  `variant to disease assoc
             description: hereditary breast cancer
 ```
 
-In the above YAML snippet, `is_a`, `defining_slots`, `mixins`, and `slot_usage` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the class definition.
+In the above YAML snippet, `is_a`, `defining_slots`, `mixins`, and `slot_usage` are slots from linkML where each slot has a specific meaning and they add semantics to the class definition.
 
-There are [other BiolinkML slots](https://biolink.github.io/biolinkml/docs/ClassDefinition#Attributes) that can be used to define your class and represent the semantics of your class.
+There are [other linkML slots](https://linkml.github.io/linkml-model/docs/ClassDefinition#Attributes) that can be used to define your class and represent the semantics of your class.
 
 For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
 
@@ -179,6 +179,9 @@ To add a predicate to Biolink Model you need to determine the following,
   - What are the mapping(s) for this slot?
     - Mappings are a way of rooting this new association in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
     - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
+    # TODO: add the predicate discussion about inverse of cannon to this document.
+  - Determine the inverse of the predicate, and add it (specifying the inverse property on each of the two predicates)
+    - In general, the canonical direction of the predicate should contain the descriptive information about the predicate while its inverse can be minimally defined.
 
 
 As an example, let's consider the definition of slot `interacts with`:
@@ -202,7 +205,7 @@ As an example, let's consider the definition of slot `interacts with`:
       - SEMMEDDB:complicates
 ```
 
-In the above YAML snippet, `domain`, `range`, `description`, `is_a`, `in_subset`, `symmetric`, `exact_mappings` and `narrow_mappings` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the slot definition.
+In the above YAML snippet, `domain`, `range`, `description`, `is_a`, `in_subset`, `symmetric`, `exact_mappings` and `narrow_mappings` are slots from linkML where each slot has a specific meaning and they add semantics to the slot definition.
 
 For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
 
@@ -263,9 +266,9 @@ As another example, let's consider the slot `relation` which is an edge property
     required: true
 ```
 
-In the above YAML snippets, `is_a`, `aliases`, `domain`, `range`, `description`, `in_subset`, `required`, `slot_uri`, `exact_mappings` are slots from BiolinkML where each slot has a specific meaning and they add semantics to the slot definition.
+In the above YAML snippets, `is_a`, `aliases`, `domain`, `range`, `description`, `in_subset`, `required`, `slot_uri`, `exact_mappings` are slots from linkML where each slot has a specific meaning and they add semantics to the slot definition.
 
-There are [other BiolinkML slots](https://biolink.github.io/biolinkml/docs/ClassDefinition#Attributes) that can be used to define your class and represent the semantics of your class.
+There are [other linkML slots](https://linkml.github.io/linkml-model/docs/ClassDefinition#Attributes) that can be used to define your class and represent the semantics of your class.
 
 For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
 

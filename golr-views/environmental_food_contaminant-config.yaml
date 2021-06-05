@@ -37,11 +37,3 @@ fields:
 - id: category
   display_name: named thing_category
   cardinality: multi
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
-  cardinality: multi
-- id: is_metabolite
-  description: indicates whether a chemical substance is a metabolite
-  display_name: is metabolite

@@ -125,7 +125,7 @@ biolink-model.proto: biolink-model.yaml env.lock
 # RDF
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.ttl: biolink-model.yaml env.lock
-	pipenv run gen-rdf -f ttl --context https://w3id.org/biolink/biolinkml/context.jsonld $<  > $@
+	pipenv run gen-rdf -f ttl --context https://w3id.org/linkml/context.jsonld $<  > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
