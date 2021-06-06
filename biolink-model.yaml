@@ -7943,9 +7943,12 @@ classes:
       - model_organism_database
     narrow_mappings:
       - SO:0000104 # polypeptide definde in SO conflates protein and polypeptide
-      - UMLSSC:T126 # Enzyme
-      - UMLSSC:T116 # Amino Acid, Peptide, or Protein
-      - UMLSSC:T087 # UMLS Semantic Type: "Amino Acid Sequence"
+      # Amino Acid, Peptide, or Protein
+      - UMLSSC:T116
+      - UMLSST:aapp
+      # Amino Acid Sequence
+      - UMLSSC:T087
+      - UMLSST:amas
 
   protein:
     description: >-
@@ -7955,9 +7958,16 @@ classes:
     mixins:
       - gene product mixin
     exact_mappings:
-      - PR:000000001 # protein
-      - SIO:010043 # protein
-      - WIKIDATA:Q8054 # protein
+      - PR:000000001
+      - SIO:010043
+      - WIKIDATA:Q8054
+    narrow_mappings:
+      # Enzyme
+      - UMLSSC:T126
+      - UMLSST:enzy
+      # Receptor
+      - UMLSSC:T192
+      - UMLSST:rcpt      
 
   protein isoform:
     aliases: ['proteoform']
