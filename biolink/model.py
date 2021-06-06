@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-06-06 01:13
+# Generation date: 2021-06-06 02:32
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -345,6 +345,10 @@ class NamedThingId(EntityId):
 
 
 class OrganismTaxonId(NamedThingId):
+    pass
+
+
+class EventId(NamedThingId):
     pass
 
 
@@ -1485,6 +1489,30 @@ class OrganismTaxon(NamedThing):
         if not isinstance(self.subclass_of, list):
             self.subclass_of = [self.subclass_of]
         self.subclass_of = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.subclass_of]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Event(NamedThing):
+    """
+    Something that happens at a given place and time.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Event
+    class_class_curie: ClassVar[str] = "biolink:Event"
+    class_name: ClassVar[str] = "event"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Event
+
+    id: Union[str, EventId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, EventId):
+            self.id = EventId(self.id)
 
         super().__post_init__(**kwargs)
 

@@ -6416,6 +6416,18 @@ classes:
       - MESH
     in_subset:
       - model_organism_database
+  
+  ## Temporal Entities
+  
+  event:
+    is_a: named thing
+    description: >-
+      Something that happens at a given place and time.
+    exact_mappings:
+      - NCIT:C25499
+      # UMLS "Event"
+      - UMLSSC:T051
+      - UMLSST:evnt
 
   ## Administrative Entities
 
@@ -6452,9 +6464,6 @@ classes:
       # Group
       - UMLSSC:T096
       - UMLSST:grup
-      # Professional or Occupational Group
-      - UMLSSC:T097
-      - UMLSST:prog
     slot_usage:
       id:
         required: true
@@ -6933,6 +6942,9 @@ classes:
       # Drug Delivery Device
       - UMLSSC:T203
       - UMLSST:drdd
+      # Biomedical or Dental Material
+      - UMLSSC:T122
+      - UMLSST:bodm
 
   ## Scientific Studies
 
@@ -7070,7 +7082,6 @@ classes:
       - UMLSSC:T123 # Biologically Active Substance
       - UMLSSC:T129 # Immunologic Factor
       - UMLSSC:T131 # Hazardous or Poisonous Substance
-      # - UMLSSC:T122 # Biomedical or Dental Material
       # - UMLSSC:T130 # Indicator, Reagent, or Diagnostic Aid
     broad_mappings:
       - UMLSSC:T167 # Substance
@@ -7518,16 +7529,6 @@ classes:
       - UMLSSC:T098
       - UMLSST:popg
       - OBI:0000181
-    narrow_mappings:
-      # Family Group
-      - UMLSSC:T099
-      - UMLSST:famg
-      # Age Group
-      - UMLSSC:T100
-      - UMLSST:aggp
-      # Patient or Disabled Group
-      - UMLSSC:T101
-      - UMLSST:podg
     id_prefixes:
       - HANCESTRO
     in_subset:
@@ -8360,10 +8361,6 @@ classes:
     description: >-
       A (possibly time bounded) incidence of a feature of the environment of an organism that
       influences one or more phenotypic features of that organism, potentially mediated by genes
-    broad_mappings:
-      # Event
-      - UMLSSC:T051
-      - UMLSST:evnt
     exact_mappings:
       - XCO:0000000
     in_subset:

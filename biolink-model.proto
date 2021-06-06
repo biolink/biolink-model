@@ -1112,6 +1112,19 @@ message EpidemiologicalOutcome
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
+// Something that happens at a given place and time.
+message Event
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+ }
 // Class of evidence that supports an association
 message EvidenceType
  {

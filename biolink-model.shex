@@ -1046,6 +1046,14 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<Event> CLOSED {
+    (  $<Event_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ?
+       ) ;
+       rdf:type [ <Event> ]
+    )
+}
+
 <EvidenceType> CLOSED {
     (  $<EvidenceType_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ?
@@ -1870,8 +1878,8 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ]
        )
     } OR @<Activity> OR @<AdministrativeEntity> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR @<Device> OR
-    @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR
-    @<Treatment>
+    @<Event> OR @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR
+    @<Procedure> OR @<Treatment>
 )
 
 <NamedThingToInformationContentEntityAssociation> CLOSED {
