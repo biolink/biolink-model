@@ -1283,6 +1283,19 @@ type EpidemiologicalOutcome implements Outcome
     category: [NamedThing]!
   }
 
+type Event
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+  }
+
 type EvidenceType
   {
     id: String!
