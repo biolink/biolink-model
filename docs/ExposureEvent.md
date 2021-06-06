@@ -58,6 +58,4 @@ URI: [biolink:ExposureEvent](https://w3id.org/biolink/vocab/ExposureEvent)
 |  | | experimental condition |
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | XCO:0000000 |
-| **Broad Mappings:** | | UMLSSC:T051 |
-|  | | UMLSST:evnt |
 

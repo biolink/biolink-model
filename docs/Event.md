@@ -1,21 +1,21 @@
 ---
 parent: Entities
-title: biolink:Device
+title: biolink:Event
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Device
+# Class: Event
 
 
-A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+Something that happens at a given place and time.
 
-URI: [biolink:Device](https://w3id.org/biolink/vocab/Device)
+URI: [biolink:Event](https://w3id.org/biolink/vocab/Event)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Treatment]-%20has%20device%200..%2A%3E[Device%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing]%5E-[Device],[Treatment],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]%5E-[Event%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
 
 ---
 
@@ -23,10 +23,6 @@ URI: [biolink:Device](https://w3id.org/biolink/vocab/Device)
 ## Parents
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
-
-## Referenced by class
-
- *  **[NamedThing](NamedThing.md)** *[has device](has_device.md)*  <sub>0..*</sub>  **[Device](Device.md)**
 
 ## Attributes
 
@@ -82,13 +78,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Narrow Mappings:** | | UMLSSG:DEVI |
-|  | | UMLSSC:T074 |
-|  | | UMLSST:medd |
-|  | | UMLSSC:T075 |
-|  | | UMLSST:resd |
-|  | | UMLSSC:T203 |
-|  | | UMLSST:drdd |
-|  | | UMLSSC:T122 |
-|  | | UMLSST:bodm |
+| **Exact Mappings:** | | NCIT:C25499 |
+|  | | UMLSSC:T051 |
+|  | | UMLSST:evnt |
 

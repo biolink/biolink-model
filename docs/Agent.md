@@ -132,6 +132,4 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | UMLSST:shro |
 |  | | UMLSSC:T096 |
 |  | | UMLSST:grup |
-|  | | UMLSSC:T097 |
-|  | | UMLSST:prog |
 

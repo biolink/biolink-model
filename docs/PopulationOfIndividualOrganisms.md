@@ -118,10 +118,4 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | UMLSSC:T098 |
 |  | | UMLSST:popg |
 |  | | OBI:0000181 |
-| **Narrow Mappings:** | | UMLSSC:T099 |
-|  | | UMLSST:famg |
-|  | | UMLSSC:T100 |
-|  | | UMLSST:aggp |
-|  | | UMLSSC:T101 |
-|  | | UMLSST:podg |
 

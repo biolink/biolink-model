@@ -451,6 +451,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                      * [HospitalizationOutcome](HospitalizationOutcome.md) - An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
              * [ClinicalTrial](ClinicalTrial.md)
          * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+         * [Event](Event.md) - Something that happens at a given place and time.
          * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
              * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
              * [Dataset](Dataset.md) - an item that refers to a collection of data from a data source.
