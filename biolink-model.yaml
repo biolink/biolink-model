@@ -6942,6 +6942,9 @@ classes:
       # Drug Delivery Device
       - UMLSSC:T203
       - UMLSST:drdd
+      # Biomedical or Dental Material
+      - UMLSSC:T122
+      - UMLSST:bodm
 
   ## Scientific Studies
 
@@ -7079,7 +7082,6 @@ classes:
       - UMLSSC:T123 # Biologically Active Substance
       - UMLSSC:T129 # Immunologic Factor
       - UMLSSC:T131 # Hazardous or Poisonous Substance
-      # - UMLSSC:T122 # Biomedical or Dental Material
       # - UMLSSC:T130 # Indicator, Reagent, or Diagnostic Aid
     broad_mappings:
       - UMLSSC:T167 # Substance
