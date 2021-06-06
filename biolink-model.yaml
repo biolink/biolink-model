@@ -1086,7 +1086,7 @@ slots:
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: association slot
-    range: population of individual organisms
+    range: f individual organisms
 
   has temporal context:
     description: >-
@@ -7518,16 +7518,6 @@ classes:
       - UMLSSC:T098
       - UMLSST:popg
       - OBI:0000181
-    narrow_mappings:
-      # Family Group
-      - UMLSSC:T099
-      - UMLSST:famg
-      # Age Group
-      - UMLSSC:T100
-      - UMLSST:aggp
-      # Patient or Disabled Group
-      - UMLSSC:T101
-      - UMLSST:podg
     id_prefixes:
       - HANCESTRO
     in_subset:
