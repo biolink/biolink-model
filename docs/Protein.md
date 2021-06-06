@@ -99,4 +99,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | PR:000000001 |
 |  | | SIO:010043 |
 |  | | WIKIDATA:Q8054 |
+| **Narrow Mappings:** | | UMLSSC:T126 |
+|  | | UMLSST:enzy |
+|  | | UMLSSC:T192 |
+|  | | UMLSST:rcpt |
 

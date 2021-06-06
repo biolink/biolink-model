@@ -102,7 +102,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Aliases:** | | amino acid entity |
 | **In Subsets:** | | model_organism_database |
 | **Narrow Mappings:** | | SO:0000104 |
-|  | | UMLSSC:T126 |
 |  | | UMLSSC:T116 |
+|  | | UMLSST:aapp |
 |  | | UMLSSC:T087 |
+|  | | UMLSST:amas |
 
