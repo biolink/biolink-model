@@ -208,10 +208,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | UMLSSC:T104 |
 |  | | UMLSSC:T197 |
 |  | | UMLSSC:T109 |
-|  | | UMLSSC:T121 |
 |  | | UMLSSC:T125 |
-|  | | UMLSSC:T200 |
-|  | | UMLSSC:T195 |
 |  | | UMLSSC:T123 |
 |  | | UMLSSC:T129 |
 |  | | UMLSSC:T131 |
