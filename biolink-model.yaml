@@ -718,6 +718,9 @@ slots:
       latitude
     exact_mappings:
       - wgs:lat
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:longitude
 
   longitude:
     is_a: node property
@@ -726,6 +729,9 @@ slots:
       longitude
     exact_mappings:
       - wgs:long
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:lattitude
 
   ## Time
 
@@ -1263,6 +1269,9 @@ slots:
       - OMIM:has_manifestation
       - SNOMED:has_basic_dose_form
       - UMLS:RB
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:subclass of
 
   subclass of:
     is_a: related to
@@ -1274,8 +1283,10 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:superclass of
     close_mappings:
       # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
       # and a an 'instance B' has class 'class A' (inverse term)
@@ -1393,8 +1404,10 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:narrow match
     exact_mappings:
       - skos:broadMatch
       - WIKIDATA:Q39894595
@@ -1411,6 +1424,9 @@ slots:
     exact_mappings:
       - skos:narrowMatch
       - WIKIDATA:Q39893967
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:broad match
 
   opposite of:
     description: >-
@@ -1419,13 +1435,34 @@ slots:
     is_a: related to
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0002604
     see_also:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
+
+  positional or directional opposite of:
+    description: >-
+    is_a: opposite of
+    annotations:
+      - tag: biolink:canonical_predicate
+        value: true
+    examples:
+      - value: start/end
+
+  abstract directional opposite of:
+    is_a: opposite of
+    description: >-
+    examples:
+      - value: forward/backward
+
+  negation opposite of:
+    is_a: opposite of
+    description: >-
+    examples:
+      - value: related to/not related to
 
   active in:
     is_a: related to
@@ -1797,8 +1834,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases abundance of
     related_mappings:
       - UBERGRAPH:is_increase_of
     exact_mappings:
@@ -1819,8 +1858,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases abundance of
     related_mappings:
       - UBERGRAPH:is_decrease_of
     exact_mappings:
@@ -2061,8 +2102,10 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases folding of
     exact_mappings:
       - CTD:increases_folding_of
 
@@ -2082,8 +2125,10 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases folding of
     exact_mappings:
       - CTD:decreases_folding_of
 
@@ -2129,8 +2174,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases localization of
     exact_mappings:
       - CTD:increases_localization_of
 
@@ -2151,8 +2198,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases localization of
     exact_mappings:
       - CTD:decreases_localization_of
 
@@ -2199,8 +2248,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases metabolic processing of
     exact_mappings:
       - CTD:increases_metabolic_processing_of
     narrow_mappings:
@@ -2224,8 +2275,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases metabolic processing of
     exact_mappings:
       - CTD:decreases_metabolic_processing_of
 
@@ -2303,8 +2356,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases molecular modification of
     exact_mappings:
       - CTD:increases_molecular_modification_of
     narrow_mappings:
@@ -2361,8 +2416,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases molecular modification of
     exact_mappings:
       - CTD:decreases_molecular_modification_of
     narrow_mappings:
@@ -2440,8 +2497,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases synthesis of
     exact_mappings:
       - CTD:increases_synthesis_of
 
@@ -2463,8 +2522,10 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases synthesis of
     exact_mappings:
       - CTD:decreases_synthesis_of
       - GAMMA:inhibition_of_synthesis
@@ -2516,8 +2577,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite_of
+        value: decreases degredation of
     related_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
@@ -2555,8 +2618,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite_of
+        value: increases degredation of
     exact_mappings:
       - CTD:decreases_degradation_of
     narrow_mappings:
@@ -2608,8 +2673,10 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases mutation rate of
     exact_mappings:
       - CTD:increases_mutation_rate_of
     broad_mappings:
@@ -2633,8 +2700,10 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases mutation rate of
     exact_mappings:
       - CTD:decreases_mutation_rate_of
     broad_mappings:
@@ -2686,8 +2755,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases response to
     exact_mappings:
       - CTD:increases_response_to
 
@@ -2711,8 +2782,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases response to
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
@@ -2762,8 +2835,10 @@ slots:
     domain: chemical entity
     range: transcript
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases splicing of
     exact_mappings:
       - CTD:increases_RNA_splicing
     broad_mappings:
@@ -2787,8 +2862,10 @@ slots:
     domain: chemical entity
     range: transcript
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases splicing of
     exact_mappings:
       - CTD:decreases_RNA_splicing
     broad_mappings:
@@ -2837,8 +2914,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite_of
+        value: decreases stability of
     close_mappings:
       # agent of the action or effect, not the relationship
       - CHEMBL.MECHANISM:stabiliser
@@ -2863,8 +2942,10 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite_of
+        value: increases stability of
     exact_mappings:
       - CTD:decreases_stability_of
 
@@ -2913,8 +2994,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases transport of
     close_mappings:
       - GAMMA:carrier
       - GAMMA:transporter
@@ -2939,8 +3022,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases transport of
     exact_mappings:
       - CTD:decreases_transport_of
 
@@ -2988,8 +3073,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases secretion of
     exact_mappings:
       - CTD:increases_secretion_of
     broad_mappings:
@@ -3014,8 +3101,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases secretion of
     exact_mappings:
       - CTD:decreases_secretion_of
     broad_mappings:
@@ -3040,8 +3129,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_uptake_of
     broad_mappings:
@@ -3066,8 +3155,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases uptake of
     exact_mappings:
       - CTD:increases_uptake_of
     broad_mappings:
@@ -3092,8 +3183,10 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases uptake of
     exact_mappings:
       - CTD:decreases_uptake_of
     broad_mappings:
@@ -3147,8 +3240,10 @@ slots:
     is_a: regulates
     mixin: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:negatively regulates
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - RO:0002336
@@ -3220,8 +3315,10 @@ slots:
     mixins:
       - positively regulates
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:process negatively regulates process
     exact_mappings:
       - RO:0002213
 
@@ -3234,8 +3331,10 @@ slots:
     mixins:
       - negatively regulates
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:process positively regulates process
     exact_mappings:
       - RO:0002212
 
@@ -3280,8 +3379,10 @@ slots:
     mixins:
       - positively regulates
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:entity negatively regulates entity
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
@@ -3312,8 +3413,10 @@ slots:
     mixins:
       - negatively regulates
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:entity positively regulates entity
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
@@ -3404,6 +3507,9 @@ slots:
     description: >-
       inverse of transcribed from
     inverse: transcribed from
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:transcribed from
     exact_mappings:
       - RO:0002511
       - SIO:010080
@@ -3413,8 +3519,10 @@ slots:
     domain: transcript
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:transcribed to
     description: >-
       x is transcribed from y if and only if x is synthesized from template y
     exact_mappings:
@@ -3426,8 +3534,10 @@ slots:
     domain: transcript
     range: protein
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:translation of
     description: >-
       x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
       reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
@@ -3446,6 +3556,9 @@ slots:
     close_mappings:
       - RO:0002512
       - SIO:010083
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:translates to
 
   homologous to:
     is_a: similar to
@@ -3876,8 +3989,10 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:prevents
     exact_mappings:
       - SEMMEDDB:CAUSES
       - SEMMEDDB:causes
@@ -3952,8 +4067,10 @@ slots:
     domain: biological entity
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite_of
+        value: biolink:exacerbates
     exact_mappings:
       - RO:0003307
       - CTD:therapeutic
@@ -4115,6 +4232,9 @@ slots:
       holds between a potential outcome of which the likelihood
       was reduced by the application or use of an entity.
     inverse: prevents
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:enabled by
 
   correlated with:
     is_a: related to
@@ -4159,8 +4279,10 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:negatively correlated with
     exact_mappings:
       - CTD:positive_correlation
 
@@ -4174,8 +4296,10 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:positively correlated with
     exact_mappings:
       - CTD:negative_correlation
 
@@ -4659,8 +4783,10 @@ slots:
     domain: occurrent
     range: biological process or activity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:has output
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4700,8 +4826,10 @@ slots:
     domain: occurrent
     range: biological process or activity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:has input
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4887,8 +5015,10 @@ slots:
     domain: physical entity
     range: biological process or activity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:prevents
     in_subset:
       - translator_minimal
     inverse: enabled by
@@ -4906,6 +5036,9 @@ slots:
     inverse: enables
     exact_mappings:
       - RO:0002333
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:prevented by
 
   derives into:
     is_a: related to
@@ -5054,8 +5187,10 @@ slots:
     domain: drug
     range: molecular entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:is excipient of
     in_subset:
       - translator_minimal
     inverse: is active ingredient of
@@ -5193,8 +5328,10 @@ slots:
     domain: occurrent
     range: occurrent
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:preceded by
     in_subset:
       - translator_minimal
     close_mappings:
@@ -5577,8 +5714,10 @@ slots:
     description: indicates that the source decreases the molecular interaction between
       the target and some other chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases molecular interaction
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
 
@@ -5591,8 +5730,10 @@ slots:
     description: indicates that the source increases the molecular interaction between
       the target and some other chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:decreases molecular interaction
     exact_mappings:
       - CTD:increases_molecular_interaction_with
 
@@ -6068,6 +6209,9 @@ slots:
       (ie: the start of the sequence being referenced is 0).
     close_mappings:
       - faldo:begin
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:end interbase coordinate
 
   end interbase coordinate:
     is_a: interbase coordinate
@@ -6076,6 +6220,9 @@ slots:
       on the chromosome or other entity to which it is located on.
     close_mappings:
       - faldo:end
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:start interbase coordinate
 
   start coordinate:
     is_a: base coordinate
