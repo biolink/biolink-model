@@ -1938,6 +1938,9 @@ slots:
       - DGIdb:inducer
       - DGIdb:positive_allosteric_modulator
       - DGIdb:stimulator
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:decreases activity of
 
   activity increased by:
     is_a: affects activity of
@@ -1991,6 +1994,9 @@ slots:
       - DGIdb:negative_modulator
       - DGIdb:inhibitory_allosteric_modulator
       - DGIdb:inverse_agonist
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:increases activity of
 
   activity decreased by:
     is_a: affects activity of
@@ -3445,8 +3451,10 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:enables
     exact_mappings:
       - SEMMEDDB:DISRUPTS
       - SEMMEDDB:disrupts
@@ -3945,8 +3953,10 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:prevents
     exact_mappings:
       - SEMMEDDB:PREDISPOSES
       - SEMMEDDB:predisposes
@@ -3993,6 +4003,8 @@ slots:
         value: true
       - tag: biolink:opposite of
         value: biolink:prevents
+      - tag: biolink:opposite of
+        value: biolink:treats
     exact_mappings:
       - SEMMEDDB:CAUSES
       - SEMMEDDB:causes
@@ -4100,8 +4112,10 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:contraindicated for
     in_subset:
       - translator_minimal
     related_mappings:
@@ -4207,7 +4221,7 @@ slots:
     range: chemical or drug or treatment
     inverse: approved to treat
 
-  prevents :
+  prevents:
     is_a: affects risk for
     description: >-
       holds between an entity whose application or use reduces
@@ -4215,8 +4229,14 @@ slots:
       a chemical entity, exposure, activity, or medical intervention
       that can prevent the onset a disease or phenotypic feature.
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:predisposes
+      - tag: biolink:opposite of
+        value: biolink:contraindicated for
+      - tag: biolink:opposite of
+        value: biolink:causes
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4651,8 +4671,10 @@ slots:
   has part:
     is_a: overlaps
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:lacks part
     description: >-
       holds between wholes and their parts (material entities or processes)
     in_subset:
@@ -5019,6 +5041,8 @@ slots:
         value: true
       - tag: biolink:opposite of
         value: biolink:prevents
+      - tag: biolink:opposite of
+        value: biolink:disrupts
     in_subset:
       - translator_minimal
     inverse: enabled by
@@ -5050,6 +5074,9 @@ slots:
     in_subset:
       - translator_minimal
     inverse: derives from
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:subclass of
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
@@ -5675,8 +5702,10 @@ slots:
     domain: drug
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:treats
     exact_mappings:
       - DrugCentral:0000001
       - RTXKG1:contraindicated_for
@@ -5697,14 +5726,19 @@ slots:
     inverse: has completed
     exact_mappings:
       - CL:has_not_completed
+    annotations:
+      - tag: biolink:opposite of
+        value: biolink:has completed
 
   has completed:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of
       and has completed
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:has not completed
     exact_mappings:
       - CL:has_completed
       - RTXKG1:has_completed
@@ -5755,8 +5789,10 @@ slots:
   has increased amount:
     is_a: related to
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:has decreased amount
     narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
@@ -5767,8 +5803,10 @@ slots:
   has decreased amount:
     is_a: related to
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:has increased amount
     narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
@@ -5779,8 +5817,10 @@ slots:
   lacks part:
     is_a: related to
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:has part
     exact_mappings:
       - CL:lacks_part
       - PR:lacks_part
