@@ -1216,6 +1216,11 @@ slots:
     multivalued: true
     range: disease or phenotypic feature
 
+  highest FDA approval status:
+    description: >-
+      Should be the highest level of FDA approval this chemical entity or device has, regardless of which
+      disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
+      approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
 
 ## --------------------
 ## PREDICATES/RELATIONS
@@ -7270,6 +7275,7 @@ classes:
       molecular entities.
     slots:
       - is supplement
+      - highest FDA approval status
     in_subset:
       - translator_minimal
 
