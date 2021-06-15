@@ -203,7 +203,7 @@ enums:
       "AA":
         description: amino acid
 
-  chemical_available_from_enum:
+  drug_availability_enum:
     description: >-
     permissible_values:
       "over the counter":
@@ -1208,7 +1208,7 @@ slots:
     description: >-
     is_a: node property
     multivalued: true
-    range: chemical_available_from_enum
+    range: drug_availability_enum
 
   animal model available from:
     description: >-
