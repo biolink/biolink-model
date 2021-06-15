@@ -1997,7 +1997,7 @@ slots:
       - CTD:increases_expression_of
 
   expression increased by:
-    is_a: affects expression of
+    is_a: expression affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2023,7 +2023,7 @@ slots:
       - CHEMBL.MECHANISM:antisense_inhibitor
 
   expression decreased by:
-    is_a: affects expression of
+    is_a: expression affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
