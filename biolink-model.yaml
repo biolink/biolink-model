@@ -1443,27 +1443,6 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
-  positional or directional opposite of:
-    description: >-
-    is_a: opposite of
-    annotations:
-      - tag: biolink:canonical_predicate
-        value: true
-    examples:
-      - value: start/end
-
-  abstract directional opposite of:
-    is_a: opposite of
-    description: >-
-    examples:
-      - value: forward/backward
-
-  negation opposite of:
-    is_a: opposite of
-    description: >-
-    examples:
-      - value: related to/not related to
-
   active in:
     is_a: related to
     domain: gene or gene product
@@ -5074,6 +5053,7 @@ slots:
     in_subset:
       - translator_minimal
     inverse: derives from
+    # TODO: fix this according to WG notes. Example of both opposite and inverse
     annotations:
       - tag: biolink:opposite of
         value: biolink:subclass of
