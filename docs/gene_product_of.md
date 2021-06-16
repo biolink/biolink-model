@@ -17,7 +17,7 @@ URI: [biolink:gene_product_of](https://w3id.org/biolink/vocab/gene_product_of)
 
 ## Domain and Range
 
-[GeneProductMixin](GeneProductMixin.md) ->  <sub>0..*</sub> [Gene](Gene.md)
+[GeneProductMixin](GeneProductMixin.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
 
 ## Parents
 

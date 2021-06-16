@@ -35,10 +35,10 @@ URI: [biolink:ChemicalEntityToEntityAssociationMixin](https://w3id.org/biolink/v
 
  * [chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
      * Description: the chemical entity that is an interactor
-     * range: [ChemicalEntity](ChemicalEntity.md)
+     * Range: [ChemicalEntity](ChemicalEntity.md)
 
 ### Domain for slot:
 
  * [chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
      * Description: the chemical entity that is an interactor
-     * range: [ChemicalEntity](ChemicalEntity.md)
+     * Range: [ChemicalEntity](ChemicalEntity.md)

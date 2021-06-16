@@ -14,7 +14,7 @@ URI: [biolink:adverse_event_caused_by](https://w3id.org/biolink/vocab/adverse_ev
 
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..*</sub> [Drug](Drug.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [Drug](Drug.md)
 
 ## Parents
 

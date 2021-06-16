@@ -17,7 +17,7 @@ URI: [biolink:decreases_splicing_of](https://w3id.org/biolink/vocab/decreases_sp
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [Transcript](Transcript.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
 
 ## Parents
 

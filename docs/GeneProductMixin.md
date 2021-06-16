@@ -42,7 +42,7 @@ URI: [biolink:GeneProductMixin](https://w3id.org/biolink/vocab/GeneProductMixin)
 ## Referenced by class
 
  *  **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[gene to gene product relationship➞object](gene_to_gene_product_relationship_object.md)*  <sub>REQ</sub>  **[GeneProductMixin](GeneProductMixin.md)**
- *  **[Gene](Gene.md)** *[has gene product](has_gene_product.md)*  <sub>0..*</sub>  **[GeneProductMixin](GeneProductMixin.md)**
+ *  **[Gene](Gene.md)** *[has gene product](has_gene_product.md)*  <sub>0..\*</sub>  **[GeneProductMixin](GeneProductMixin.md)**
 
 ## Attributes
 
@@ -51,7 +51,7 @@ URI: [biolink:GeneProductMixin](https://w3id.org/biolink/vocab/GeneProductMixin)
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * range: [SymbolType](types/SymbolType.md)
+     * Range: [SymbolType](types/SymbolType.md)
 
 ## Other properties
 

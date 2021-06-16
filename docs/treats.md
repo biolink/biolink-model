@@ -17,7 +17,7 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 
 ## Domain and Range
 
-[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ## Parents
 

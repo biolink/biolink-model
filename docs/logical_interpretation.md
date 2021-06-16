@@ -14,7 +14,7 @@ URI: [biolink:logical_interpretation](https://w3id.org/biolink/vocab/logical_int
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> 
+[Association](Association.md) ->  <sub>OPT</sub> [logical_interpretation_enum](logical_interpretation_enum.md)
 
 ## Parents
 

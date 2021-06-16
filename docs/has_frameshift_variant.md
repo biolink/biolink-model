@@ -14,7 +14,7 @@ URI: [biolink:has_frameshift_variant](https://w3id.org/biolink/vocab/has_framesh
 
 ## Domain and Range
 
-[Gene](Gene.md) ->  <sub>0..*</sub> [SequenceVariant](SequenceVariant.md)
+[Gene](Gene.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
 
 ## Parents
 

@@ -17,7 +17,7 @@ URI: [biolink:nutrient_of](https://w3id.org/biolink/vocab/nutrient_of)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

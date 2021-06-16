@@ -14,7 +14,7 @@ URI: [biolink:has_manifestation](https://w3id.org/biolink/vocab/has_manifestatio
 
 ## Domain and Range
 
-[Disease](Disease.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[Disease](Disease.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 

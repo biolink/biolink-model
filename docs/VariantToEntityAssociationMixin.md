@@ -37,17 +37,17 @@ URI: [biolink:VariantToEntityAssociationMixin](https://w3id.org/biolink/vocab/Va
 
  * [variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
      * Description: a sequence variant in which the allele state is associated with some other entity
-     * range: [SequenceVariant](SequenceVariant.md)
-     * Example:    
-     * Example:    
+     * Range: [SequenceVariant](SequenceVariant.md)
+     * Example: ClinVar:38077 ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)
+     * Example: ClinGen:CA024716 chr13:g.32921033G>C (hg19) in ClinGen
 
 ### Domain for slot:
 
  * [variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
      * Description: a sequence variant in which the allele state is associated with some other entity
-     * range: [SequenceVariant](SequenceVariant.md)
-     * Example:    
-     * Example:    
+     * Range: [SequenceVariant](SequenceVariant.md)
+     * Example: ClinVar:38077 ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)
+     * Example: ClinGen:CA024716 chr13:g.32921033G>C (hg19) in ClinGen
 
 ## Other properties
 

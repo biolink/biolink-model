@@ -33,9 +33,9 @@ URI: [biolink:ExposureEventToEntityAssociationMixin](https://w3id.org/biolink/vo
 ### Own
 
  * [exposure event to entity association mixin➞subject](exposure_event_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-     * range: [ExposureEvent](ExposureEvent.md)
+     * Range: [ExposureEvent](ExposureEvent.md)
 
 ### Domain for slot:
 
  * [exposure event to entity association mixin➞subject](exposure_event_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-     * range: [ExposureEvent](ExposureEvent.md)
+     * Range: [ExposureEvent](ExposureEvent.md)

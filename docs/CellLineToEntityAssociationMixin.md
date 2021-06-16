@@ -33,9 +33,9 @@ URI: [biolink:CellLineToEntityAssociationMixin](https://w3id.org/biolink/vocab/C
 ### Own
 
  * [cell line to entity association mixin➞subject](cell_line_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-     * range: [CellLine](CellLine.md)
+     * Range: [CellLine](CellLine.md)
 
 ### Domain for slot:
 
  * [cell line to entity association mixin➞subject](cell_line_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
-     * range: [CellLine](CellLine.md)
+     * Range: [CellLine](CellLine.md)

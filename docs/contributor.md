@@ -14,7 +14,7 @@ URI: [biolink:contributor](https://w3id.org/biolink/vocab/contributor)
 
 ## Domain and Range
 
-[InformationContentEntity](InformationContentEntity.md) ->  <sub>0..*</sub> [Agent](Agent.md)
+[InformationContentEntity](InformationContentEntity.md) ->  <sub>0..\*</sub> [Agent](Agent.md)
 
 ## Parents
 

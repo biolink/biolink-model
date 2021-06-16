@@ -17,7 +17,7 @@ URI: [biolink:increases_mutation_rate_of](https://w3id.org/biolink/vocab/increas
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

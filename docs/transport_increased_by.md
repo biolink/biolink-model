@@ -17,7 +17,7 @@ URI: [biolink:transport_increased_by](https://w3id.org/biolink/vocab/transport_i
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

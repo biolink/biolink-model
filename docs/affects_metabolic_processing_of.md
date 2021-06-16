@@ -17,7 +17,7 @@ URI: [biolink:affects_metabolic_processing_of](https://w3id.org/biolink/vocab/af
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

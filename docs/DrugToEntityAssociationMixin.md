@@ -38,10 +38,10 @@ URI: [biolink:DrugToEntityAssociationMixin](https://w3id.org/biolink/vocab/DrugT
 
  * [drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
      * Description: the drug that is an interactor
-     * range: [Drug](Drug.md)
+     * Range: [Drug](Drug.md)
 
 ### Domain for slot:
 
  * [drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
      * Description: the drug that is an interactor
-     * range: [Drug](Drug.md)
+     * Range: [Drug](Drug.md)

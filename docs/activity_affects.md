@@ -14,7 +14,7 @@ URI: [biolink:activity_affects](https://w3id.org/biolink/vocab/activity_affects)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

@@ -14,7 +14,7 @@ URI: [biolink:has_constituent](https://w3id.org/biolink/vocab/has_constituent)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [MolecularEntity](MolecularEntity.md)
 
 ## Parents
 

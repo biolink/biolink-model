@@ -14,7 +14,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 
@@ -30,6 +30,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
  *  [caused by](caused_by.md)
  *  [close match](close_match.md)
  *  [coexists with](coexists_with.md)
+ *  [completed by](completed_by.md)
  *  [contraindicated for](contraindicated_for.md)
  *  [contributes to](contributes_to.md)
  *  [contribution from](contribution_from.md)
@@ -73,6 +74,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
  *  [model of](model_of.md)
  *  [models](models.md)
  *  [narrow match](narrow_match.md)
+ *  [not completed by](not_completed_by.md)
  *  [occurs in](occurs_in.md)
  *  [opposite of](opposite_of.md)
  *  [overlaps](overlaps.md)

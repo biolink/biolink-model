@@ -14,7 +14,7 @@ URI: [biolink:has_nonsense_variant](https://w3id.org/biolink/vocab/has_nonsense_
 
 ## Domain and Range
 
-[Gene](Gene.md) ->  <sub>0..*</sub> [SequenceVariant](SequenceVariant.md)
+[Gene](Gene.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
 
 ## Parents
 

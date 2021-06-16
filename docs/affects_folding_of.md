@@ -17,7 +17,7 @@ URI: [biolink:affects_folding_of](https://w3id.org/biolink/vocab/affects_folding
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

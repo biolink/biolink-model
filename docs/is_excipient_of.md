@@ -17,7 +17,7 @@ URI: [biolink:is_excipient_of](https://w3id.org/biolink/vocab/is_excipient_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [Drug](Drug.md)
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..\*</sub> [Drug](Drug.md)
 
 ## Parents
 

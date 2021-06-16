@@ -38,23 +38,23 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 
 ## Referenced by class
 
- *  **[MolecularActivity](MolecularActivity.md)** *[actively involved in](actively_involved_in.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[MolecularActivity](MolecularActivity.md)** *[capable of](capable_of.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[MolecularActivity](MolecularActivity.md)** *[actively involved in](actively_involved_in.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[MolecularActivity](MolecularActivity.md)** *[capable of](capable_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[consumed by](consumed_by.md)*  <sub>OPT</sub>  **[Occurrent](Occurrent.md)**
- *  **[NamedThing](NamedThing.md)** *[is catalyst of](is_catalyst_of.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[is input of](is_input_of.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[is output of](is_output_of.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[NamedThing](NamedThing.md)** *[is substrate of](is_substrate_of.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[NamedThing](NamedThing.md)** *[participates in](participates_in.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[preceded by](preceded_by.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[precedes](precedes.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[process negatively regulated by process](process_negatively_regulated_by_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[process negatively regulates process](process_negatively_regulates_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[process positively regulated by process](process_positively_regulated_by_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[process positively regulates process](process_positively_regulates_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[process regulated by process](process_regulated_by_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[process regulates process](process_regulates_process.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[temporally related to](temporally_related_to.md)*  <sub>0..*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[NamedThing](NamedThing.md)** *[is catalyst of](is_catalyst_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[is input of](is_input_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[is output of](is_output_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[NamedThing](NamedThing.md)** *[is substrate of](is_substrate_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[NamedThing](NamedThing.md)** *[participates in](participates_in.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[preceded by](preceded_by.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[precedes](precedes.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[process negatively regulated by process](process_negatively_regulated_by_process.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[process negatively regulates process](process_negatively_regulates_process.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[process positively regulated by process](process_positively_regulated_by_process.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[process positively regulates process](process_positively_regulates_process.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[process regulated by process](process_regulated_by_process.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[process regulates process](process_regulates_process.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[temporally related to](temporally_related_to.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
 
 ## Attributes
 

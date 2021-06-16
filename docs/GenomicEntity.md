@@ -40,9 +40,9 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
 ### Inherited from thing with taxon:
 
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
+ * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * range: [OrganismTaxon](OrganismTaxon.md)
+     * Range: [OrganismTaxon](OrganismTaxon.md)
      * in subsets: (translator_minimal)
 
 ## Other properties

@@ -17,7 +17,7 @@ URI: [biolink:biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ## Parents
 

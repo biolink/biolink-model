@@ -14,7 +14,7 @@ URI: [biolink:has_negative_upstream_actor](https://w3id.org/biolink/vocab/has_ne
 
 ## Domain and Range
 
-[BiologicalProcess](BiologicalProcess.md) ->  <sub>0..*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+[BiologicalProcess](BiologicalProcess.md) ->  <sub>0..\*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ## Parents
 

@@ -17,7 +17,7 @@ URI: [biolink:decreases_expression_of](https://w3id.org/biolink/vocab/decreases_
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

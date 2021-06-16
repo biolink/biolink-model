@@ -17,7 +17,7 @@ URI: [biolink:contribution_from](https://w3id.org/biolink/vocab/contribution_fro
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 

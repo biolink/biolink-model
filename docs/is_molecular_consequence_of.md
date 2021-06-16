@@ -14,7 +14,7 @@ URI: [biolink:is_molecular_consequence_of](https://w3id.org/biolink/vocab/is_mol
 
 ## Domain and Range
 
-[OntologyClass](OntologyClass.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[OntologyClass](OntologyClass.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 

@@ -14,7 +14,7 @@ URI: [biolink:active_in](https://w3id.org/biolink/vocab/active_in)
 
 ## Domain and Range
 
-[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..*</sub> [CellularComponent](CellularComponent.md)
+[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..\*</sub> [CellularComponent](CellularComponent.md)
 
 ## Parents
 

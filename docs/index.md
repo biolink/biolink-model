@@ -538,8 +538,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
      * [affects expression of](affects_expression_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
          * [decreases expression of](decreases_expression_of.md) - holds between two chemical entities where the action or effect of one decreases the level of expression of the other within a system of interest
-         * [expression decreased by](expression_decreased_by.md)
-         * [expression increased by](expression_increased_by.md)
          * [increases expression of](increases_expression_of.md) - holds between two chemical entities where the action or effect of one increases the level of expression of the other within a system of interest
      * [affects folding of](affects_folding_of.md) - holds between two chemical entities where the action or effect of one changes the rate or quality of folding of the other
          * [decreases folding of](decreases_folding_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
@@ -610,6 +608,8 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [entity positively regulates entity](entity_positively_regulates_entity.md)
      * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
      * [expression affected by](expression_affected_by.md)
+         * [expression decreased by](expression_decreased_by.md)
+         * [expression increased by](expression_increased_by.md)
      * [folding affected by](folding_affected_by.md)
      * [localization affected by](localization_affected_by.md)
      * [metabolic processing affected by](metabolic_processing_affected_by.md)
@@ -643,8 +643,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
  * [affects expression of](affects_expression_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
      * [decreases expression of](decreases_expression_of.md) - holds between two chemical entities where the action or effect of one decreases the level of expression of the other within a system of interest
-     * [expression decreased by](expression_decreased_by.md)
-     * [expression increased by](expression_increased_by.md)
      * [increases expression of](increases_expression_of.md) - holds between two chemical entities where the action or effect of one increases the level of expression of the other within a system of interest
  * [affects folding of](affects_folding_of.md) - holds between two chemical entities where the action or effect of one changes the rate or quality of folding of the other
      * [decreases folding of](decreases_folding_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
@@ -735,6 +733,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
  * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
  * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
+ * [completed by](completed_by.md)
  * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
  * [consumes](consumes.md)
  * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
@@ -804,6 +803,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
  * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
  * [expression affected by](expression_affected_by.md)
+     * [expression decreased by](expression_decreased_by.md)
+     * [expression increased by](expression_increased_by.md)
  * [expression decreased by](expression_decreased_by.md)
  * [expression increased by](expression_increased_by.md)
  * [folding affected by](folding_affected_by.md)
@@ -970,6 +971,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [mutation rate decreased by](mutation_rate_decreased_by.md)
  * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
  * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
+ * [not completed by](not_completed_by.md)
  * [nutrient of](nutrient_of.md)
  * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
  * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
@@ -1068,8 +1070,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
          * [affects expression of](affects_expression_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
              * [decreases expression of](decreases_expression_of.md) - holds between two chemical entities where the action or effect of one decreases the level of expression of the other within a system of interest
-             * [expression decreased by](expression_decreased_by.md)
-             * [expression increased by](expression_increased_by.md)
              * [increases expression of](increases_expression_of.md) - holds between two chemical entities where the action or effect of one increases the level of expression of the other within a system of interest
          * [affects folding of](affects_folding_of.md) - holds between two chemical entities where the action or effect of one changes the rate or quality of folding of the other
              * [decreases folding of](decreases_folding_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
@@ -1140,6 +1140,8 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [entity positively regulates entity](entity_positively_regulates_entity.md)
          * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
          * [expression affected by](expression_affected_by.md)
+             * [expression decreased by](expression_decreased_by.md)
+             * [expression increased by](expression_increased_by.md)
          * [folding affected by](folding_affected_by.md)
          * [localization affected by](localization_affected_by.md)
          * [metabolic processing affected by](metabolic_processing_affected_by.md)
@@ -1168,6 +1170,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
          * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex mixin
          * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
+     * [completed by](completed_by.md)
      * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
      * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
          * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
@@ -1263,6 +1266,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [model of](model_of.md) - holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
      * [models](models.md)
      * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+     * [not completed by](not_completed_by.md)
      * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
      * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
      * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)

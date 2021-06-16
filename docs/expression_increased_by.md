@@ -17,11 +17,11 @@ URI: [biolink:expression_increased_by](https://w3id.org/biolink/vocab/expression
 
 ## Domain and Range
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 
- *  is_a: [affects expression of](affects_expression_of.md)
+ *  is_a: [expression affected by](expression_affected_by.md)
 
 ## Children
 

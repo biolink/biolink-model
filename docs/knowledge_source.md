@@ -14,7 +14,7 @@ URI: [biolink:knowledge_source](https://w3id.org/biolink/vocab/knowledge_source)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..*</sub> [InformationResource](InformationResource.md)
+[Association](Association.md) ->  <sub>0..\*</sub> [InformationResource](InformationResource.md)
 
 ## Parents
 

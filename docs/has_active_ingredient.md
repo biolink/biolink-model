@@ -17,7 +17,7 @@ URI: [biolink:has_active_ingredient](https://w3id.org/biolink/vocab/has_active_i
 
 ## Domain and Range
 
-[Drug](Drug.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[Drug](Drug.md) ->  <sub>0..\*</sub> [MolecularEntity](MolecularEntity.md)
 
 ## Parents
 

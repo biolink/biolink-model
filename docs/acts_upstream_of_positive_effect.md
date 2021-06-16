@@ -14,7 +14,7 @@ URI: [biolink:acts_upstream_of_positive_effect](https://w3id.org/biolink/vocab/a
 
 ## Domain and Range
 
-[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..*</sub> [BiologicalProcess](BiologicalProcess.md)
+[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..\*</sub> [BiologicalProcess](BiologicalProcess.md)
 
 ## Parents
 

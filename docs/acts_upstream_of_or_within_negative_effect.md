@@ -14,7 +14,7 @@ URI: [biolink:acts_upstream_of_or_within_negative_effect](https://w3id.org/bioli
 
 ## Domain and Range
 
-[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..*</sub> [BiologicalProcess](BiologicalProcess.md)
+[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..\*</sub> [BiologicalProcess](BiologicalProcess.md)
 
 ## Parents
 

@@ -14,7 +14,7 @@ URI: [biolink:approved_to_treat](https://w3id.org/biolink/vocab/approved_to_trea
 
 ## Domain and Range
 
-[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ## Parents
 

@@ -17,7 +17,7 @@ URI: [biolink:expression_affected_by](https://w3id.org/biolink/vocab/expression_
 
 ## Domain and Range
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..*</sub> [ChemicalEntity](ChemicalEntity.md)
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 
@@ -25,6 +25,8 @@ URI: [biolink:expression_affected_by](https://w3id.org/biolink/vocab/expression_
 
 ## Children
 
+ *  [expression decreased by](expression_decreased_by.md)
+ *  [expression increased by](expression_increased_by.md)
 
 ## Used by
 

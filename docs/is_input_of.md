@@ -17,7 +17,7 @@ URI: [biolink:is_input_of](https://w3id.org/biolink/vocab/is_input_of)
 
 ## Domain and Range
 
-[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
+[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
 
 ## Parents
 

@@ -14,7 +14,7 @@ URI: [biolink:genome_build](https://w3id.org/biolink/vocab/genome_build)
 
 ## Domain and Range
 
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>OPT</sub> 
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>OPT</sub> [strand_enum](strand_enum.md)
 
 ## Parents
 

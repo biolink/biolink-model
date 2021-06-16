@@ -14,7 +14,7 @@ URI: [biolink:phase](https://w3id.org/biolink/vocab/phase)
 
 ## Domain and Range
 
-[CodingSequence](CodingSequence.md) ->  <sub>OPT</sub> 
+[CodingSequence](CodingSequence.md) ->  <sub>OPT</sub> [phase_enum](phase_enum.md)
 
 ## Parents
 

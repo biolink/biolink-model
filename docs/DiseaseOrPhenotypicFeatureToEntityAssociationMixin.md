@@ -34,14 +34,14 @@ URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.o
 
  * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
      * Description: disease or phenotype
-     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-     * Example:    
-     * Example:    
+     * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+     * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
+     * Example: MP:0013229 abnormal brain ventricle size
 
 ### Domain for slot:
 
  * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
      * Description: disease or phenotype
-     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-     * Example:    
-     * Example:    
+     * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+     * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
+     * Example: MP:0013229 abnormal brain ventricle size

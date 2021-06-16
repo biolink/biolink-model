@@ -14,7 +14,7 @@ URI: [biolink:is_sequence_variant_of](https://w3id.org/biolink/vocab/is_sequence
 
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

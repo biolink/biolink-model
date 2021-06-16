@@ -17,7 +17,7 @@ URI: [biolink:has_metabolite](https://w3id.org/biolink/vocab/has_metabolite)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..\*</sub> [MolecularEntity](MolecularEntity.md)
 
 ## Parents
 

@@ -17,7 +17,7 @@ URI: [biolink:has_excipient](https://w3id.org/biolink/vocab/has_excipient)
 
 ## Domain and Range
 
-[Drug](Drug.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[Drug](Drug.md) ->  <sub>0..\*</sub> [MolecularEntity](MolecularEntity.md)
 
 ## Parents
 
