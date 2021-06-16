@@ -8,7 +8,7 @@ from sys import stdout
 from typing import Union, TextIO
 import argparse
 
-#from linkml_model.meta import SchemaDefinition
+# from linkml_runtime.linkml_model.meta import SchemaDefinition
 
 
 class PredicateInventory():
