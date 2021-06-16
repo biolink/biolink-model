@@ -8,7 +8,7 @@ from linkml.generators.markdowngen import MarkdownGenerator
 from linkml.generators.yumlgen import YumlGenerator
 from linkml_runtime.linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, Element, ClassDefinitionName, \
     TypeDefinition
-from linkml.utils.formatutils import camelcase, be, underscore, sfx
+from linkml_runtime.utils.formatutils import camelcase, be, underscore, sfx
 import argparse
 
 
