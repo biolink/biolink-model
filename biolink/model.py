@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-06-06 02:55
+# Generation date: 2021-06-15 23:56
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9323,8 +9323,14 @@ slots.has_contraindication = Slot(uri=BIOLINK.has_contraindication, name="has co
 slots.has_not_completed = Slot(uri=BIOLINK.has_not_completed, name="has not completed", curie=BIOLINK.curie('has_not_completed'),
                    model_uri=BIOLINK.has_not_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.not_completed_by = Slot(uri=BIOLINK.not_completed_by, name="not completed by", curie=BIOLINK.curie('not_completed_by'),
+                   model_uri=BIOLINK.not_completed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.has_completed = Slot(uri=BIOLINK.has_completed, name="has completed", curie=BIOLINK.curie('has_completed'),
                    model_uri=BIOLINK.has_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.completed_by = Slot(uri=BIOLINK.completed_by, name="completed by", curie=BIOLINK.curie('completed_by'),
+                   model_uri=BIOLINK.completed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.decreases_molecular_interaction = Slot(uri=BIOLINK.decreases_molecular_interaction, name="decreases molecular interaction", curie=BIOLINK.curie('decreases_molecular_interaction'),
                    model_uri=BIOLINK.decreases_molecular_interaction, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])
