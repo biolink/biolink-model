@@ -2240,7 +2240,8 @@ slots:
   affects molecular modification of:
     description: >-
       holds between two chemical entities where the action or effect of one leads changes in the molecular
-      modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+      modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of
+      phosphoryl group, or via redox reaction that adds or subtracts electrons)
     is_a: affects
     in_subset:
       - translator_minimal
@@ -6148,21 +6149,24 @@ classes:
   ontology class:
     mixin: true
     description: >-
-      a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both
-      instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly.
-      Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess
-      as the type.
+      a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in
+      a biolink compatible KG can be considered both instances of biolink classes, and
+      OWL classes in their own right. In general you should not need to use this class directly.
+      Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897),
+      use bl:BiologicalProcess as the type.
     exact_mappings:
       - owl:Class
       - schema:Class
     comments:
       - >-
-         This is modeled as a mixin. 'ontology class' should not be the primary type of a node in the KG. Instead you should use an
-         informative bioloink category, such as AnatomicalEntity (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
+         This is modeled as a mixin. 'ontology class' should not be the primary type of a
+         node in the KG. Instead you should use an informative bioloink category, such as AnatomicalEntity
+        (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
       - >-
-         Note that formally this is a metaclass. Instances of this class are instances in the graph, but can be the object of 'type' edges.
-         For example, if we had a node in the graph representing a specific brain of a specific patient (e.g brain001), this could have 
-         a category of bl:Sample, and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
+         Note that formally this is a metaclass. Instances of this class are instances in the graph,
+         but can be the object of 'type' edges. For example, if we had a node in the graph representing
+         a specific brain of a specific patient (e.g brain001), this could have a category of bl:Sample,
+         and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
     see_also:
       - https://github.com/biolink/biolink-model/issues/486
     examples:
@@ -7073,6 +7077,7 @@ classes:
     mixins:
       - physical essence
       - chemical or drug or treatment # issue 701
+      - chemical or gene or gene product
     description: >-
       A chemical entity is a physical entity that pertains to chemistry or
       biochemistry.
@@ -7773,7 +7778,14 @@ classes:
       - FAO
       
 
-  ## nucleic acid entity mixins
+  ## genetic entity mixins
+
+  chemical or gene or gene product:
+    description: >-
+      A union of chemical mixture, small molecule and gene or gene product.
+      This mixin is helpful to use when searching across
+      chemical entities that must include genes and their children as chemical entities.
+    mixin: true
 
   macromolecular machine mixin:
     description: >-
@@ -7807,10 +7819,12 @@ classes:
       necessary to encode a functional transcript. A gene locus may include
       regulatory regions, transcribed regions and/or other
       functional sequence regions.
-    is_a: nucleic acid entity
+    is_a: biological entity
     mixins:
       - gene or gene product
       - thing with taxon
+      - genetic entity
+      - chemical or gene or gene product
     aliases: ['locus']
     slots:
       - symbol
@@ -7966,6 +7980,7 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
+      - chemical or gene or gene product
     exact_mappings:
       - PR:000000001
       - SIO:010043
