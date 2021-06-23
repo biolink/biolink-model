@@ -6161,7 +6161,7 @@ classes:
       - >-
          This is modeled as a mixin. 'ontology class' should not be the primary type of a
          node in the KG. Instead you should use an informative bioloink category, such as AnatomicalEntity
-        (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
+         (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
       - >-
          Note that formally this is a metaclass. Instances of this class are instances in the graph,
          but can be the object of 'type' edges. For example, if we had a node in the graph representing
@@ -7823,7 +7823,7 @@ classes:
     mixins:
       - gene or gene product
       - thing with taxon
-      - genetic entity
+      - genomic entity
       - chemical or gene or gene product
     aliases: ['locus']
     slots:
