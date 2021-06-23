@@ -7150,6 +7150,8 @@ classes:
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
+    mixins:
+      - chemical entity without genes mixin
     in_subset:
       - translator_minimal
 
@@ -7385,36 +7387,48 @@ classes:
 
   environmental food contaminant:
     is_a: chemical entity
+    mixins:
+      - chemical entity without genes mixin
     related_mappings:
       # substance role
       - CHEBI:78299
 
   food additive:
     is_a: chemical entity
+    mixins:
+      - chemical entity without genes mixin
     related_mappings:
       # substance role
       - CHEBI:64047
 
   nutrient:
     is_a: chemical entity
+    mixins:
+      - chemical entity without genes mixin
     related_mappings:
       # substance role
       - CHEBI:33284
 
   macronutrient:
     is_a: nutrient
+    mixins:
+      - chemical entity without genes mixin
     related_mappings:
       # substance role
       - CHEBI:33937
 
   micronutrient:
     is_a: nutrient
+    mixins:
+      - chemical entity without genes mixin
     related_mappings:
       # substance role
       - CHEBI:27027
 
   vitamin:
     is_a: micronutrient
+    mixins:
+      - chemical entity without genes mixin
     related_mappings:
       # substance role
       - CHEBI:33229
@@ -7773,7 +7787,12 @@ classes:
       - FAO
       
 
-  ## nucleic acid entity mixins
+  ## genomic entity mixins
+
+  chemical entity without genes mixin:
+    description: >-
+      A helper mixin to allow searches for chemical entities without including genes.
+    mixin: true
 
   macromolecular machine mixin:
     description: >-
@@ -7966,6 +7985,7 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
+      - chemical entity without genes mixin
     exact_mappings:
       - PR:000000001
       - SIO:010043
@@ -8470,6 +8490,7 @@ classes:
     is_a: chemical entity
     mixins:
       - exposure event
+      - chemical entity without genes mixin
     description: >-
       A chemical exposure is an intake of a particular
       chemical entity, other than a drug.
