@@ -8081,7 +8081,7 @@ classes:
 
   gene family:
     aliases: ['orthogroup','protein family']
-    is_a: nucleic acid entity
+    is_a: biological entity
     exact_mappings:
       - NCIT:C26004
       - WIKIDATA:Q2278983
@@ -8094,6 +8094,7 @@ classes:
       - WIKIDATA:Q417841
     mixins:
       - gene grouping mixin
+      - chemical or gene or gene product
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
@@ -8164,7 +8165,9 @@ classes:
     aliases: ['allele']
     local_names:
       agr: allele
-    is_a: nucleic acid entity
+    is_a: biological entity
+    mixins:
+      - chemical or gene or gene product
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
@@ -8233,11 +8236,13 @@ classes:
 
   reagent targeted gene:
     aliases: ['sequence targeting reagent']
-    is_a: nucleic acid entity
+    is_a: biological entity
     description: >-
       A gene altered in its expression level in the context of some
       experiment as a result of being targeted by gene-knockdown
       reagent(s) such as a morpholino or RNAi.
+    mixins:
+      - chemical or gene or gene product
     exact_mappings:
       - GENO:0000504
     in_subset:
