@@ -15,7 +15,7 @@ URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ProteinIsoform],[Protein%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductMixin],[Protein]%5E-[ProteinIsoform],[Polypeptide]%5E-[Protein],[Polypeptide],[NamedThing],[GeneProductMixin],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ThingWithTaxon],[ProteinIsoform],[Protein%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductMixin],[Protein]uses%20-.-%3E[ThingWithTaxon],[Protein]%5E-[ProteinIsoform],[Polypeptide]%5E-[Protein],[Polypeptide],[OrganismTaxon],[NamedThing],[GeneProductMixin],[Attribute],[Agent])
 
 ---
 
@@ -27,6 +27,7 @@ URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 ## Uses Mixins
 
  *  mixin: [GeneProductMixin](GeneProductMixin.md) - The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
+ *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
 
 ## Children
 
@@ -91,6 +92,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
      * Range: [NamedThing](NamedThing.md)
+
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..\*</sub>
+     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+     * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
 
 ## Other properties
 

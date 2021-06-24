@@ -15,7 +15,7 @@ URI: [biolink:ProteinIsoform](https://w3id.org/biolink/vocab/ProteinIsoform)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductIsoformMixin],[Protein]%5E-[ProteinIsoform],[Protein],[NamedThing],[GeneProductIsoformMixin],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductIsoformMixin],[Protein]%5E-[ProteinIsoform],[Protein],[OrganismTaxon],[NamedThing],[GeneProductIsoformMixin],[Attribute],[Agent])
 
 ---
 
@@ -90,6 +90,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
      * Range: [NamedThing](NamedThing.md)
+
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..\*</sub>
+     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+     * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
 
 ## Other properties
 
