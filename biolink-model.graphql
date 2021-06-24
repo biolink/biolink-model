@@ -3013,7 +3013,7 @@ type ProcessedMaterial
     category: [NamedThing]!
   }
 
-type Protein implements GeneProductMixin
+type Protein implements GeneProductMixin, ThingWithTaxon
   {
     id: String!
     iri: IriType
@@ -3027,6 +3027,7 @@ type Protein implements GeneProductMixin
     isMetabolite: Boolean
     synonym: [LabelType]
     xref: [IriType]
+    inTaxon: [OrganismTaxon]
   }
 
 type ProteinIsoform implements GeneProductIsoformMixin
@@ -3043,6 +3044,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     isMetabolite: Boolean
     synonym: [LabelType]
     xref: [IriType]
+    inTaxon: [OrganismTaxon]
   }
 
 type Publication
