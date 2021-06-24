@@ -7064,7 +7064,7 @@ classes:
   molecular entity:
     is_a: chemical entity
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       A molecular entity is a chemical entity composed of individual or
       covalently bonded atoms.
@@ -7082,7 +7082,7 @@ classes:
     mixins:
       - physical essence
       - chemical or drug or treatment # issue 701
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       A chemical entity is a physical entity that pertains to chemistry or
       biochemistry.
@@ -7115,7 +7115,7 @@ classes:
     is_a: molecular entity
     aliases: [ 'chemical substance']
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
         A small molecule entity is a molecular entity characterized by availability
         in small-molecule databases of SMILES, InChI, IUPAC, or other
@@ -7160,7 +7160,7 @@ classes:
   chemical mixture:
     is_a: chemical entity
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
@@ -7177,7 +7177,7 @@ classes:
     aliases: [ 'sequence feature', 'genomic entity' ]
     mixins:
       - genomic entity
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     slots:
       - has biological sequence
     exact_mappings:
@@ -7192,7 +7192,7 @@ classes:
   molecular mixture:
     is_a: chemical mixture
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       A molecular mixture is a chemical mixture composed of two or more
       molecular entities with known concentration and stoichiometry.
@@ -7202,7 +7202,7 @@ classes:
   complex molecular mixture:
     is_a: chemical mixture
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       A complex molecular mixture is a chemical mixture composed of two or
       more molecular entities with unknown concentration and stoichiometry.
@@ -7361,7 +7361,7 @@ classes:
   processed material:
     is_a: chemical mixture
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       A chemical entity (often a mixture) processed
       for consumption for nutritional, medical or technical use.
@@ -7404,7 +7404,7 @@ classes:
   environmental food contaminant:
     is_a: chemical entity
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:78299
@@ -7412,7 +7412,7 @@ classes:
   food additive:
     is_a: chemical entity
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:64047
@@ -7420,7 +7420,7 @@ classes:
   nutrient:
     is_a: chemical entity
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:33284
@@ -7428,7 +7428,7 @@ classes:
   macronutrient:
     is_a: nutrient
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:33937
@@ -7436,7 +7436,7 @@ classes:
   micronutrient:
     is_a: nutrient
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:27027
@@ -7444,7 +7444,7 @@ classes:
   vitamin:
     is_a: micronutrient
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:33229
@@ -7455,7 +7455,7 @@ classes:
   food:
     is_a: chemical mixture
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
@@ -7807,7 +7807,7 @@ classes:
 
   ## genetic entity mixins
 
-  chemical or gene or gene product:
+  chemical entity or gene or gene product:
     description: >-
       A union of chemical mixture, small molecule and gene or gene product.
       This mixin is helpful to use when searching across
@@ -7851,7 +7851,7 @@ classes:
       - gene or gene product
       - thing with taxon
       - genomic entity
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     aliases: ['locus']
     slots:
       - symbol
@@ -7984,7 +7984,7 @@ classes:
       partial sequences of various kinds are included, even if they do not
       represent a physical molecule.
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     id_prefixes:
       - UniProtKB
       - PR
@@ -8009,7 +8009,7 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     exact_mappings:
       - PR:000000001
       - SIO:010043
@@ -8123,7 +8123,7 @@ classes:
       - WIKIDATA:Q417841
     mixins:
       - gene grouping mixin
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
@@ -8196,7 +8196,7 @@ classes:
       agr: allele
     is_a: biological entity
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
@@ -8271,7 +8271,7 @@ classes:
       experiment as a result of being targeted by gene-knockdown
       reagent(s) such as a morpholino or RNAi.
     mixins:
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     exact_mappings:
       - GENO:0000504
     in_subset:
@@ -8519,7 +8519,7 @@ classes:
     is_a: chemical entity
     mixins:
       - exposure event
-      - chemical or gene or gene product
+      - chemical entity or gene or gene product
     description: >-
       A chemical exposure is an intake of a particular
       chemical entity, other than a drug.
