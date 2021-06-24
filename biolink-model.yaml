@@ -7057,9 +7057,14 @@ classes:
     is_a: thing with taxon
     in_subset:
       - translator_minimal
+    narrow_mappings:
+      - UMLSSC:T028   # Gene or Genome
+      - GENO:0000897  # Genomic Entity
 
   molecular entity:
     is_a: chemical entity
+    mixins:
+      - chemical or gene or gene product
     description: >-
       A molecular entity is a chemical entity composed of individual or
       covalently bonded atoms.
@@ -7109,6 +7114,8 @@ classes:
   small molecule:
     is_a: molecular entity
     aliases: [ 'chemical substance']
+    mixins:
+      - chemical or gene or gene product
     description: >-
         A small molecule entity is a molecular entity characterized by availability
         in small-molecule databases of SMILES, InChI, IUPAC, or other
@@ -7152,6 +7159,8 @@ classes:
 
   chemical mixture:
     is_a: chemical entity
+    mixins:
+      - chemical or gene or gene product
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
@@ -7164,18 +7173,16 @@ classes:
       A nucleic acid entity is a molecular entity characterized by
       availability in gene databases of nucleotide-based sequence
       representations of its precise sequence; for convenience of
-      representation, partial sequences of various kinds are included,
-      even if they do not represent a physical molecule.
+      representation, partial sequences of various kinds are included.
     aliases: [ 'sequence feature', 'genomic entity' ]
     mixins:
       - genomic entity
+      - chemical or gene or gene product
     slots:
       - has biological sequence
     exact_mappings:
       - SO:0000110
     narrow_mappings:
-      - UMLSSC:T028   # Gene or Genome
-      - GENO:0000897  # Genomic Entity
       - UMLSSC:T086   # Nucleotide Sequence
       - UMLSSC:T114   # Nucleic Acid, Nucleoside, or Nucleotide
     in_subset:
@@ -7184,6 +7191,8 @@ classes:
 
   molecular mixture:
     is_a: chemical mixture
+    mixins:
+      - chemical or gene or gene product
     description: >-
       A molecular mixture is a chemical mixture composed of two or more
       molecular entities with known concentration and stoichiometry.
@@ -7192,6 +7201,8 @@ classes:
 
   complex molecular mixture:
     is_a: chemical mixture
+    mixins:
+      - chemical or gene or gene product
     description: >-
       A complex molecular mixture is a chemical mixture composed of two or
       more molecular entities with unknown concentration and stoichiometry.
@@ -7349,6 +7360,8 @@ classes:
 
   processed material:
     is_a: chemical mixture
+    mixins:
+      - chemical or gene or gene product
     description: >-
       A chemical entity (often a mixture) processed
       for consumption for nutritional, medical or technical use.
@@ -7390,36 +7403,48 @@ classes:
 
   environmental food contaminant:
     is_a: chemical entity
+    mixins:
+      - chemical or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:78299
 
   food additive:
     is_a: chemical entity
+      mixins:
+        - chemical or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:64047
 
   nutrient:
     is_a: chemical entity
+      mixins:
+        - chemical or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:33284
 
   macronutrient:
     is_a: nutrient
+    mixins:
+      - chemical or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:33937
 
   micronutrient:
     is_a: nutrient
+    mixins:
+      - chemical or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:27027
 
   vitamin:
     is_a: micronutrient
+    mixins:
+      - chemical or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:33229
@@ -7429,6 +7454,8 @@ classes:
 
   food:
     is_a: chemical mixture
+    mixins:
+      - chemical or gene or gene product
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
@@ -7956,6 +7983,8 @@ classes:
       of its precise primary structure; for convenience of representation,
       partial sequences of various kinds are included, even if they do not
       represent a physical molecule.
+    mixins:
+      - chemical or gene or gene product
     id_prefixes:
       - UniProtKB
       - PR
@@ -8490,6 +8519,7 @@ classes:
     is_a: chemical entity
     mixins:
       - exposure event
+      - chemical or gene or gene product
     description: >-
       A chemical exposure is an intake of a particular
       chemical entity, other than a drug.
