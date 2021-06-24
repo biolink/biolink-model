@@ -7411,16 +7411,16 @@ classes:
 
   food additive:
     is_a: chemical entity
-      mixins:
-        - chemical or gene or gene product
+    mixins:
+      - chemical or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:64047
 
   nutrient:
     is_a: chemical entity
-      mixins:
-        - chemical or gene or gene product
+    mixins:
+      - chemical or gene or gene product
     related_mappings:
       # substance role
       - CHEBI:33284
