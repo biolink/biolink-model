@@ -4167,6 +4167,8 @@ slots:
       entity that is used as an indicator of the presence or state of the disease or feature.
     domain: named thing
     range: named thing
+    mixin:
+      - statistical correlation
     in_subset:
       - translator_minimal
     symmetric: true
@@ -4191,6 +4193,10 @@ slots:
       - SNOMED:has_associated_finding
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
+
+  not correlated with:
+    is_a:
+
 
   positively correlated with:
     is_a: correlated with
