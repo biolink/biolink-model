@@ -4195,8 +4195,10 @@ slots:
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
   not correlated with:
-    is_a:
-
+    is_a: correlated with # ?
+    annotations:
+      - tag: biolink:opposite_of
+        value: correlated with
 
   positively correlated with:
     is_a: correlated with
