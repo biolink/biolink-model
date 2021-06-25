@@ -3865,6 +3865,8 @@ slots:
   risk affected by:
     is_a: related to
     inverse: affects risk for
+    mixins:
+      - statistical correlation
 
   predisposes:
     is_a: affects risk for
@@ -4143,6 +4145,8 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
+    mixins:
+      - statistical correlation
     in_subset:
       - translator_minimal
     exact_mappings:
