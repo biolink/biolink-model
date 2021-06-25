@@ -3818,6 +3818,8 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
+    mixins:
+      - statistical correlation
     in_subset:
       - translator_minimal
 
@@ -3831,9 +3833,18 @@ slots:
     in_subset:
       - translator_minimal
 
+  statistical correlation:
+    mixin: true
+    description: >-
+
   has associated risk:
     is_a: related to
     inverse: associated with risk for
+
+  regressor:
+    is_a: association slot
+    description: >-
+      a regressor is the name given to any variable in a regression model that is used to predict a response variable
 
   associated with decreased risk for:
     is_a: associated with risk for
@@ -3861,6 +3872,8 @@ slots:
       holds between two entities where exposure to one entity increases the chance of developing the other
     in_subset:
       - translator_minimal
+    mixins:
+      - statistical correlation
     annotations:
       tag: biolink:canonical_predicate
       value: true
