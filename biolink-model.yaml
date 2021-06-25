@@ -3821,6 +3821,36 @@ slots:
     in_subset:
       - translator_minimal
 
+  associated with risk for:
+    description: >-
+      risks that are not causal.
+    is_a: related to
+    annotations:
+      - tag: biolink:canonical_predicate
+        value: true
+    in_subset:
+      - translator_minimal
+
+  has associated risk:
+    is_a: related to
+    inverse: associated with risk for
+
+  associated with decreased risk for:
+    is_a: associated with risk for
+    description: >-
+
+  decreased risk associated with:
+    is_a: associated with risk for
+    inverse: associated with decreased risk for
+
+  associated with increased risk for:
+    is_a: associated with risk for
+    description: >-
+
+  increased risk associated with:
+    is_a: associated with risk for
+    inverse: associated with increased risk for
+
   risk affected by:
     is_a: related to
     inverse: affects risk for
