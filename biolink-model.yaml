@@ -7967,6 +7967,12 @@ classes:
     mixins:
       - gene product mixin
       - thing with taxon
+    id_prefixes:
+      - UniProtKB
+      - PR
+      - ENSEMBL # ENSEMBL:ENSP*
+      - FB      # FlyBase FBpp*
+      - UMLS
     exact_mappings:
       - PR:000000001
       - SIO:010043
