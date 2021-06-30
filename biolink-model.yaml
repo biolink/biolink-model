@@ -8516,17 +8516,14 @@ classes:
     description: >-
       An external biotic exposure is an intake of (sometimes pathological)
       biological organisms (including viruses).
-    # exact_mappings:
-    #  -
 
   geographic exposure:
+    is_a: environmental exposure
     mixins:
       - exposure event
     description: >-
       A geographic exposure is a factor relating to geographic
       proximity to some impactful entity.
-    # exact_mappings:
-    #  -
 
   environmental exposure:
     mixins:
@@ -8535,16 +8532,12 @@ classes:
       A environmental exposure is a factor relating to abiotic processes
       in the environment including sunlight (UV-B), atmospheric (heat,
       cold, general pollution) and water-born contaminants.
-    # exact_mappings:
-    #  -
 
   behavioral exposure:
     mixins:
       - exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
-    # exact_mappings:
-    #  -
 
   socioeconomic exposure:
     mixins:
@@ -8556,8 +8549,6 @@ classes:
       has attribute:
         range: socioeconomic attribute
         required: true
-    # exact_mappings:
-    #  -
 
   ## Outcomes
 
@@ -8574,8 +8565,6 @@ classes:
     description: >-
       An outcome resulting from an exposure event which
       is the manifestation of a pathological process.
-    #exact_mappings:
-    #  -
 
   pathological anatomical outcome:
     mixins:
@@ -8583,8 +8572,6 @@ classes:
     description: >-
       An outcome resulting from an exposure event which
       is the manifestation of an abnormal anatomical structure.
-    #exact_mappings:
-    #  -
 
   disease or phenotypic feature outcome:
     mixins:
