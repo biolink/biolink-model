@@ -7269,10 +7269,10 @@ classes:
       - INCHIKEY
       # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN  ## G number
-      - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
-      - KEGG.ENVIRON ## E number
+      - KEGG.GLYCAN  # G number
+      - KEGG.DRUG    # D number
+      - KEGG.DGROUP  # DG number
+      - KEGG.ENVIRON # E number
 
   molecular mixture:
     is_a: chemical mixture
