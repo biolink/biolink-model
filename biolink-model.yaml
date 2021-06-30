@@ -6051,6 +6051,7 @@ slots:
       An attribute that can be applied to an association where the association holds between two entities
       located or occurring in a particular environment. For example, two microbial taxa may interact in the context of
       a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
+  # TODO: add examples of values for this property.
       
   sequence localization attribute:
     is_a: association slot
@@ -8386,8 +8387,8 @@ classes:
     in_subset:
       - model_organism_database
 
+  # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
-    is_a: biological entity
     mixins:
       - exposure event
       - gene grouping mixin
@@ -8423,15 +8424,12 @@ classes:
       - EFO:0009708
 
   pathological process exposure:
-    is_a: pathological process
     mixins:
       - exposure event
     description: >-
       A pathological process, when viewed as an exposure, representing
-      an precondition, leading to or influencing an outcome,
+      a precondition, leading to or influencing an outcome,
       e.g. autoimmunity leading to disease.
-    #exact_mappings:
-    #  -
 
   pathological anatomical structure:
     description: >-
@@ -8440,22 +8438,16 @@ classes:
     is_a: anatomical entity
     mixins:
       - pathological entity mixin
-    #exact_mappings:
-    #  -
 
   pathological anatomical exposure:
-    is_a: pathological anatomical structure
     mixins:
       - exposure event
     description: >-
       An abnormal anatomical structure, when viewed as an exposure,
       representing an precondition, leading to or influencing an outcome,
       e.g. thrombosis leading to an ischemic disease outcome.
-    #exact_mappings:
-    #  -
 
   disease or phenotypic feature exposure:
-    is_a: disease or phenotypic feature
     mixins:
       - exposure event
       - pathological entity mixin
@@ -8464,16 +8456,13 @@ classes:
       represents an precondition, leading to or influencing an outcome,
       e.g. HIV predisposing an individual to infections; a relative deficiency
       of skin pigmentation predisposing an individual to skin cancer.
-    #exact_mappings:
-    #  -
 
   chemical exposure:
-    is_a: chemical entity
     mixins:
       - exposure event
     description: >-
       A chemical exposure is an intake of a particular
-      chemical entity, other than a drug.
+      chemical entity.
     exact_mappings:
       # this ECTO term is not visibly defined but
       # the 9000000-series identifiers seems to be the
@@ -8485,14 +8474,12 @@ classes:
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
-    is_a: chemical exposure
-
 
   drug exposure:
+    is_a: chemical exposure
     aliases: ['drug intake', 'drug dose', 'medication intake']
     description: >-
       A drug exposure is an intake of a particular drug.
-    is_a: drug
     mixins:
       - exposure event
     broad_mappings:
@@ -8502,15 +8489,7 @@ classes:
       - ECTO:0000509
 
   drug to gene interaction exposure:
-    description: >-
-      drug to gene interaction exposure is a drug exposure is where the
-      interactions of the drug with specific genes are known to constitute
-      an 'exposure' to the organism, leading to or influencing an outcome.
-    is_a: drug exposure
-    mixins:
-      - gene grouping mixin
-    # exact_mappings:
-    #  -
+    deprecated: true
 
   treatment:
     aliases: ['medical action', 'medical intervention']
@@ -8532,7 +8511,6 @@ classes:
 
   biotic exposure:
     aliases: ['viral exposure','bacterial exposure']
-    is_a: organism taxon
     mixins:
       - exposure event
     description: >-
@@ -8542,7 +8520,6 @@ classes:
     #  -
 
   geographic exposure:
-    is_a: geographic location
     mixins:
       - exposure event
     description: >-
@@ -8552,7 +8529,6 @@ classes:
     #  -
 
   environmental exposure:
-    is_a: environmental process
     mixins:
       - exposure event
     description: >-
@@ -8563,7 +8539,6 @@ classes:
     #  -
 
   behavioral exposure:
-    is_a: behavior
     mixins:
       - exposure event
     description: >-
@@ -8572,7 +8547,6 @@ classes:
     #  -
 
   socioeconomic exposure:
-    is_a: behavior
     mixins:
       - exposure event
     description: >-
@@ -8595,7 +8569,6 @@ classes:
       biological or non-biological (e.g. clinical) outcomes.
 
   pathological process outcome:
-    is_a: pathological process
     mixins:
       - outcome
     description: >-
@@ -8605,7 +8578,6 @@ classes:
     #  -
 
   pathological anatomical outcome:
-    is_a: pathological anatomical structure
     mixins:
       - outcome
     description: >-
@@ -8615,7 +8587,6 @@ classes:
     #  -
 
   disease or phenotypic feature outcome:
-    is_a: disease or phenotypic feature
     mixins:
       - outcome
     description: >-
@@ -8623,7 +8594,6 @@ classes:
       is the manifestation of a disease or other characteristic phenotype.
 
   behavioral outcome:
-    is_a: behavior
     mixins:
       - outcome
     description: >-
@@ -8631,7 +8601,6 @@ classes:
       the manifestation of human behavior.
 
   hospitalization outcome:
-    is_a: hospitalization
     mixins:
       - outcome
     description: >-
@@ -8640,14 +8609,12 @@ classes:
       room visit) or chronic (inpatient) hospitalization.
 
   mortality outcome:
-    is_a: death
     mixins:
       - outcome
     description: >-
       An outcome of death from resulting from an exposure event.
 
   epidemiological outcome:
-    is_a: biological entity
     mixins:
       - outcome
     description: >-
@@ -8657,7 +8624,6 @@ classes:
       - NCIT:C19291
 
   socioeconomic outcome:
-    is_a: behavior
     mixins:
       - outcome
     description: >-
@@ -9203,14 +9169,7 @@ classes:
       - object
 
   exposure event to entity association mixin:
-    description: >-
-      An association between some exposure event and some entity.
-    mixin: true
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: exposure event
+    deprecated: true
 
   entity to outcome association mixin:
     description: >-
@@ -9386,6 +9345,7 @@ classes:
         description: >-
           genotype that is associated with the phenotypic feature
 
+  # ie: smoke exposure to coughing phenotype? is this a denormalization?
   exposure event to phenotypic feature association:
     is_a: association
     defining_slots:
