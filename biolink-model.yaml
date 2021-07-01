@@ -216,18 +216,18 @@ enums:
   FDA_approval_status_enum:
     description: >-
     permissible_values:
-      "FDA Approval Phase 1":
+      "Discovery & Development Phase":
         description: >-
           Discovery & Development Phase. Discovery involves researchers finding new possibilities
           for medication through testing molecular compounds, noting unexpected effects from existing treatments,
           or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
           Drug development occurs after researchers identify potential compounds for experiments.
-      "FDA Approval Phase 2":
+      "Preclinical Research Phase":
         description: >-
           Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
           they must do preliminary research to determine its potential for harm (toxicity).
           This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
-      "FDA Approval Phase 3":
+      "FDA Clinical Research Phase":
         description: >-
           Clinical Research Phase. Clinical research involves trials of the drug on people,
           and it is one of the most involved stages in the drug development and approval process.
@@ -245,23 +245,23 @@ enums:
           everything involved in its creation and marketing is in compliance with regulations.
       "FDA Clinical Research Phase 1":
         description: >-
-          In FDA Approval Phase 3, the Clinical Research Phase 1 involves 20 – 100 study participants and
+          In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
           lasts several months. This phase is used to determine the safety and dosage of the drug,
           and about 70% of these drugs move on to the next clinical research phase.
       "FDA Clinical Research Phase 2":
         description: >-
-          In FDA Approval Phase 3, the Clinical Research Phase 2 involves up to several hundred people,
+          In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
           who must have the disease or condition the drug supposes to treat. This phase can last
           from a few months to two years, and its purpose is to monitor the efficacy of the drug,
           as well as note side effects that may occur.
       "FDA Clinical Research Phase 3":
         description: >-
-          In FDA Approval Phase 3, the Clinical Research Phase 3 involves 300 – 3000 volunteers
+          In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
           and can last up to four years. It is used to continue monitoring the efficacy of
           the drug, as well as exploring any longer-term adverse reactions.
       "FDA Clinical Research Phase 4":
         description: >-
-          In FDA Approval Phase 3, the Clinical Research Phase 4 involves several thousands of
+          In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
           volunteers who have the disease or condition and continues to monitor safety and efficacy.
           If a drug passes this phase, it goes on to FDA review.
       "FDA Fast Track":
