@@ -119,7 +119,12 @@ If you are on a Mac, it can be installed using `brew`:
 ```sh
 brew install jsonschema2pojo
 ```
-For other OS environments, download the latest release then extract it into your execution path.
+For other OS environments, download the latest release then extract it into your execution path. eg
+```sh
+wget https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.0.2/jsonschema2pojo-1.0.2.tar.gz
+tar -xvzf jsonschema2pojo-1.0.2.tar.gz
+export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
+```
 
 ### GraphViz
 
