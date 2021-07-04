@@ -15,7 +15,7 @@ URI: [biolink:GeneGroupingMixin](https://w3id.org/biolink/vocab/GeneGroupingMixi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Gene]%3Chas%20gene%20or%20gene%20product%200..%2A-%20[GeneGroupingMixin],[GenomicBackgroundExposure]uses%20-.-%3E[GeneGroupingMixin],[GeneFamily]uses%20-.-%3E[GeneGroupingMixin],[DrugToGeneInteractionExposure]uses%20-.-%3E[GeneGroupingMixin],[GenomicBackgroundExposure],[GeneFamily],[Gene],[DrugToGeneInteractionExposure])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Gene]%3Chas%20gene%20or%20gene%20product%200..%2A-%20[GeneGroupingMixin],[GenomicBackgroundExposure]uses%20-.-%3E[GeneGroupingMixin],[GeneFamily]uses%20-.-%3E[GeneGroupingMixin],[DrugToGeneInteractionExposure]uses%20-.-%3E[GeneGroupingMixin],[GenomicBackgroundExposure],[GeneFamily],[Gene],[DrugToGeneInteractionExposure])
 
 ---
 

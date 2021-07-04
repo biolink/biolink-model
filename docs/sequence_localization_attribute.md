@@ -14,7 +14,7 @@ URI: [biolink:sequence_localization_attribute](https://w3id.org/biolink/vocab/se
 
 ## Domain and Range
 
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 

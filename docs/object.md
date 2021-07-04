@@ -14,7 +14,7 @@ URI: [biolink:object](https://w3id.org/biolink/vocab/object)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>REQ</sub> [NamedThing](NamedThing.md)
+[Association](Association.md) ->  <sub>1..1</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 

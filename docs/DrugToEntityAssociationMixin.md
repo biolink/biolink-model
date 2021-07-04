@@ -15,7 +15,7 @@ URI: [biolink:DrugToEntityAssociationMixin](https://w3id.org/biolink/vocab/DrugT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Drug]%3Csubject%201..1-%20[DrugToEntityAssociationMixin],[DrugToGeneAssociation]uses%20-.-%3E[DrugToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[DrugToEntityAssociationMixin],[DrugToGeneAssociation],[Drug],[ChemicalEntityToEntityAssociationMixin])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Drug]%3Csubject%201..1-%20[DrugToEntityAssociationMixin],[DrugToGeneAssociation]uses%20-.-%3E[DrugToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[DrugToEntityAssociationMixin],[DrugToGeneAssociation],[Drug],[ChemicalEntityToEntityAssociationMixin])
 
 ---
 
@@ -36,12 +36,12 @@ URI: [biolink:DrugToEntityAssociationMixin](https://w3id.org/biolink/vocab/DrugT
 
 ### Own
 
- * [drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the drug that is an interactor
      * Range: [Drug](Drug.md)
 
 ### Domain for slot:
 
- * [drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the drug that is an interactor
      * Range: [Drug](Drug.md)

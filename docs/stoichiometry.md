@@ -14,7 +14,7 @@ URI: [biolink:stoichiometry](https://w3id.org/biolink/vocab/stoichiometry)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
+[Association](Association.md) ->  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Parents
 

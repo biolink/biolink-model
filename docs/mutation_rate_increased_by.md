@@ -17,7 +17,7 @@ URI: [biolink:mutation_rate_increased_by](https://w3id.org/biolink/vocab/mutatio
 
 ## Domain and Range
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>OPT</sub> [ChemicalEntity](ChemicalEntity.md)
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..1</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 

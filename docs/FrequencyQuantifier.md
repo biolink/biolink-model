@@ -15,7 +15,7 @@ URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuant
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipQuantifier],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQuantifier%7Chas_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],[RelationshipQuantifier]%5E-[FrequencyQuantifier],[VariantToPopulationAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipQuantifier],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQuantifier%7Chas_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],[RelationshipQuantifier]%5E-[FrequencyQuantifier],[VariantToPopulationAssociation])
 
 ---
 
@@ -36,14 +36,14 @@ URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuant
 
 ### Own
 
- * [has count](has_count.md)  <sub>OPT</sub>
+ * [has count](has_count.md)  <sub>0..1</sub>
      * Description: number of things with a particular property
      * Range: [Integer](types/Integer.md)
- * [has percentage](has_percentage.md)  <sub>OPT</sub>
+ * [has percentage](has_percentage.md)  <sub>0..1</sub>
      * Description: equivalent to has quotient multiplied by 100
      * Range: [Double](types/Double.md)
- * [has quotient](has_quotient.md)  <sub>OPT</sub>
+ * [has quotient](has_quotient.md)  <sub>0..1</sub>
      * Range: [Double](types/Double.md)
- * [has total](has_total.md)  <sub>OPT</sub>
+ * [has total](has_total.md)  <sub>0..1</sub>
      * Description: total number of things in a particular reference set
      * Range: [Integer](types/Integer.md)

@@ -15,7 +15,7 @@ URI: [biolink:Article](https://w3id.org/biolink/vocab/Article)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[Attribute],[Publication]%5E-[Article%7Cpublished_in:uriorcurie;iso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;xref(i):iri_type%20%2A;id(i):string;name(i):label_type%20%3F;type(i):string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[Attribute],[Publication]%5E-[Article%7Cpublished_in:uriorcurie;iso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;xref(i):iri_type%20%2A;id(i):string;name(i):label_type%20%3F;type(i):string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Agent])
 
 ---
 
@@ -36,20 +36,20 @@ URI: [biolink:Article](https://w3id.org/biolink/vocab/Article)
 
 ### Own
 
- * [article➞iso abbreviation](article_iso_abbreviation.md)  <sub>OPT</sub>
+ * [article➞iso abbreviation](article_iso_abbreviation.md)  <sub>0..1</sub>
      * Description: Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
      * Range: [String](types/String.md)
- * [article➞published in](article_published_in.md)  <sub>REQ</sub>
+ * [article➞published in](article_published_in.md)  <sub>1..1</sub>
      * Description: The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
      * Range: [Uriorcurie](types/Uriorcurie.md)
 
 ### Inherited from entity:
 
- * [id](id.md)  <sub>REQ</sub>
+ * [id](id.md)  <sub>1..1</sub>
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>OPT</sub>
+ * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
      * in subsets: (translator_minimal,samples)
@@ -61,13 +61,13 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>OPT</sub>
+ * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [description](description.md)  <sub>OPT</sub>
+ * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>OPT</sub>
+ * [source](source.md)  <sub>0..1</sub>
      * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
@@ -81,13 +81,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from information content entity:
 
- * [license](license.md)  <sub>OPT</sub>
+ * [license](license.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [rights](rights.md)  <sub>OPT</sub>
+ * [rights](rights.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [format](format.md)  <sub>OPT</sub>
+ * [format](format.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [creation date](creation_date.md)  <sub>OPT</sub>
+ * [creation date](creation_date.md)  <sub>0..1</sub>
      * Description: date on which an entity was created. This can be applied to nodes or edges
      * Range: [Date](types/Date.md)
 
@@ -104,7 +104,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [publication➞pages](publication_pages.md)  <sub>0..\*</sub>
      * Description: When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
      * Range: [String](types/String.md)
- * [summary](summary.md)  <sub>OPT</sub>
+ * [summary](summary.md)  <sub>0..1</sub>
      * Description: executive  summary of a publication
      * Range: [String](types/String.md)
  * [keywords](keywords.md)  <sub>0..\*</sub>
@@ -113,22 +113,22 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [mesh terms](mesh_terms.md)  <sub>0..\*</sub>
      * Description: mesh terms tagging a publication
      * Range: [Uriorcurie](types/Uriorcurie.md)
- * [publication➞id](publication_id.md)  <sub>REQ</sub>
+ * [publication➞id](publication_id.md)  <sub>1..1</sub>
      * Description: Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
      * Range: [String](types/String.md)
- * [publication➞name](publication_name.md)  <sub>OPT</sub>
+ * [publication➞name](publication_name.md)  <sub>0..1</sub>
      * Description: the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
      * Range: [LabelType](types/LabelType.md)
- * [publication➞type](publication_type.md)  <sub>REQ</sub>
+ * [publication➞type](publication_type.md)  <sub>1..1</sub>
      * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
      * Range: [String](types/String.md)
 
 ### Domain for slot:
 
- * [article➞iso abbreviation](article_iso_abbreviation.md)  <sub>OPT</sub>
+ * [article➞iso abbreviation](article_iso_abbreviation.md)  <sub>0..1</sub>
      * Description: Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.
      * Range: [String](types/String.md)
- * [article➞published in](article_published_in.md)  <sub>REQ</sub>
+ * [article➞published in](article_published_in.md)  <sub>1..1</sub>
      * Description: The enclosing parent serial containing the article should have industry-standard identifier from ISSN.
      * Range: [Uriorcurie](types/Uriorcurie.md)
 

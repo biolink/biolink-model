@@ -14,7 +14,7 @@ URI: [biolink:has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
 
 ## Domain and Range
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>OPT</sub> [Zygosity](Zygosity.md)
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..1</sub> [Zygosity](Zygosity.md)
 
 ## Parents
 

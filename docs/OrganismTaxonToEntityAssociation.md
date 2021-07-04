@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxonToEntityAssociation](https://w3id.org/biolink/vocab/O
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Csubject%201..1-%20[OrganismTaxonToEntityAssociation],[OrganismTaxonToOrganismTaxonAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[OrganismTaxonToEnvironmentAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxon])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Csubject%201..1-%20[OrganismTaxonToEntityAssociation],[OrganismTaxonToOrganismTaxonAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[OrganismTaxonToEnvironmentAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxon])
 
 ---
 
@@ -33,12 +33,12 @@ URI: [biolink:OrganismTaxonToEntityAssociation](https://w3id.org/biolink/vocab/O
 
 ### Own
 
- * [organism taxon to entity association➞subject](organism_taxon_to_entity_association_subject.md)  <sub>REQ</sub>
+ * [organism taxon to entity association➞subject](organism_taxon_to_entity_association_subject.md)  <sub>1..1</sub>
      * Description: organism taxon that is the subject of the association
      * Range: [OrganismTaxon](OrganismTaxon.md)
 
 ### Domain for slot:
 
- * [organism taxon to entity association➞subject](organism_taxon_to_entity_association_subject.md)  <sub>REQ</sub>
+ * [organism taxon to entity association➞subject](organism_taxon_to_entity_association_subject.md)  <sub>1..1</sub>
      * Description: organism taxon that is the subject of the association
      * Range: [OrganismTaxon](OrganismTaxon.md)

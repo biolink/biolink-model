@@ -14,7 +14,7 @@ URI: [biolink:license](https://w3id.org/biolink/vocab/license)
 
 ## Domain and Range
 
-[InformationContentEntity](InformationContentEntity.md) ->  <sub>OPT</sub> [String](types/String.md)
+[InformationContentEntity](InformationContentEntity.md) ->  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 

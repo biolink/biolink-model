@@ -14,7 +14,7 @@ URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>REQ</sub> [Uriorcurie](types/Uriorcurie.md)
+[Association](Association.md) ->  <sub>1..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 

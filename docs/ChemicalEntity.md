@@ -15,7 +15,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[FoodAdditive],[EnvironmentalFoodContaminant],[DiseaseOrPhenotypicFeature],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalExposure],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity]%5E-[ChemicalExposure],[NamedThing]%5E-[ChemicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[FoodAdditive],[EnvironmentalFoodContaminant],[DiseaseOrPhenotypicFeature],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalExposure],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity]%5E-[ChemicalExposure],[NamedThing]%5E-[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -59,11 +59,11 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  *  **[ChemicalEntity](ChemicalEntity.md)** *[affects synthesis of](affects_synthesis_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[affects transport of](affects_transport_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[affects uptake of](affects_uptake_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[ChemicalEntityToEntityAssociationMixin](ChemicalEntityToEntityAssociationMixin.md)** *[chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)** *[chemical to chemical association➞object](chemical_to_chemical_association_object.md)*  <sub>REQ</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞object](chemical_to_chemical_derivation_association_object.md)*  <sub>REQ</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)*  <sub>REQ</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md)** *[chemical to entity association mixin➞subject](chemical_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[ChemicalEntityToEntityAssociationMixin](ChemicalEntityToEntityAssociationMixin.md)** *[chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)** *[chemical to chemical association➞object](chemical_to_chemical_association_object.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞object](chemical_to_chemical_derivation_association_object.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md)** *[chemical to entity association mixin➞subject](chemical_to_entity_association_mixin_subject.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[chemically interacts with](chemically_interacts_with.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[decreases abundance of](decreases_abundance_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[decreases activity of](decreases_activity_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
@@ -120,7 +120,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  *  **[ChemicalEntity](ChemicalEntity.md)** *[molecular modification increased by](molecular_modification_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate affected by](mutation_rate_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate decreased by](mutation_rate_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate increased by](mutation_rate_increased_by.md)*  <sub>OPT</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate increased by](mutation_rate_increased_by.md)*  <sub>0..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[nutrient of](nutrient_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[response affected by](response_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[response decreased by](response_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
@@ -149,11 +149,11 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
 ### Inherited from entity:
 
- * [id](id.md)  <sub>REQ</sub>
+ * [id](id.md)  <sub>1..1</sub>
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>OPT</sub>
+ * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
      * in subsets: (translator_minimal,samples)
@@ -165,13 +165,13 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>OPT</sub>
+ * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [description](description.md)  <sub>OPT</sub>
+ * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>OPT</sub>
+ * [source](source.md)  <sub>0..1</sub>
      * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
@@ -185,7 +185,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
 

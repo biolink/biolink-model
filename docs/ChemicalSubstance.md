@@ -15,7 +15,7 @@ URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstanc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalSubstance])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalSubstance])
 
 ---
 

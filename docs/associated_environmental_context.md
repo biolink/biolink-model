@@ -14,7 +14,7 @@ URI: [biolink:associated_environmental_context](https://w3id.org/biolink/vocab/a
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [String](types/String.md)
+[Association](Association.md) ->  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 

@@ -18,7 +18,7 @@ WIKIDATA:Q427626
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]++-%20has%20taxonomic%20rank%200..1%3E[TaxonomicRank],[OntologyClass]%5E-[TaxonomicRank],[OrganismTaxon],[OntologyClass])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]++-%20has%20taxonomic%20rank%200..1%3E[TaxonomicRank],[OntologyClass]%5E-[TaxonomicRank],[OrganismTaxon],[OntologyClass])
 
 ---
 
@@ -33,8 +33,8 @@ WIKIDATA:Q427626
 
 ## Referenced by class
 
- *  **None** *[has taxonomic rank](has_taxonomic_rank.md)*  <sub>OPT</sub>  **[TaxonomicRank](TaxonomicRank.md)**
- *  **[OrganismTaxon](OrganismTaxon.md)** *[organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)*  <sub>OPT</sub>  **[TaxonomicRank](TaxonomicRank.md)**
+ *  **None** *[has taxonomic rank](has_taxonomic_rank.md)*  <sub>0..1</sub>  **[TaxonomicRank](TaxonomicRank.md)**
+ *  **[OrganismTaxon](OrganismTaxon.md)** *[organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)*  <sub>0..1</sub>  **[TaxonomicRank](TaxonomicRank.md)**
 
 ## Attributes
 

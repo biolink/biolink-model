@@ -15,7 +15,7 @@ URI: [biolink:GeneProductIsoformMixin](https://w3id.org/biolink/vocab/GeneProduc
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GeneProductMixin],[ProteinIsoform]uses%20-.-%3E[GeneProductIsoformMixin%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;name(i):symbol_type%20%3F],[RNAProductIsoform]uses%20-.-%3E[GeneProductIsoformMixin],[GeneProductMixin]%5E-[GeneProductIsoformMixin],[ProteinIsoform],[RNAProductIsoform])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneProductMixin],[ProteinIsoform]uses%20-.-%3E[GeneProductIsoformMixin%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;name(i):symbol_type%20%3F],[RNAProductIsoform]uses%20-.-%3E[GeneProductIsoformMixin],[GeneProductMixin]%5E-[GeneProductIsoformMixin],[ProteinIsoform],[RNAProductIsoform])
 
 ---
 
@@ -37,6 +37,6 @@ URI: [biolink:GeneProductIsoformMixin](https://w3id.org/biolink/vocab/GeneProduc
 
 ### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)

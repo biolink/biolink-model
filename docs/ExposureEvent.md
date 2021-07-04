@@ -15,7 +15,7 @@ URI: [biolink:ExposureEvent](https://w3id.org/biolink/vocab/ExposureEvent)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEventToPhenotypicFeatureAssociation],[ExposureEventToEntityAssociationMixin],[EntityToExposureEventAssociationMixin]++-%20object%201..1%3E[ExposureEvent%7Ctimepoint:time_type%20%3F],[ExposureEventToEntityAssociationMixin]++-%20subject%201..1%3E[ExposureEvent],[ExposureEventToPhenotypicFeatureAssociation]++-%20subject%201..1%3E[ExposureEvent],[Treatment]uses%20-.-%3E[ExposureEvent],[SocioeconomicExposure]uses%20-.-%3E[ExposureEvent],[PathologicalProcessExposure]uses%20-.-%3E[ExposureEvent],[PathologicalAnatomicalExposure]uses%20-.-%3E[ExposureEvent],[GeographicExposure]uses%20-.-%3E[ExposureEvent],[GenomicBackgroundExposure]uses%20-.-%3E[ExposureEvent],[EnvironmentalExposure]uses%20-.-%3E[ExposureEvent],[DrugExposure]uses%20-.-%3E[ExposureEvent],[DiseaseOrPhenotypicFeatureExposure]uses%20-.-%3E[ExposureEvent],[ChemicalExposure]uses%20-.-%3E[ExposureEvent],[BioticExposure]uses%20-.-%3E[ExposureEvent],[BehavioralExposure]uses%20-.-%3E[ExposureEvent],[Treatment],[SocioeconomicExposure],[PathologicalProcessExposure],[PathologicalAnatomicalExposure],[GeographicExposure],[GenomicBackgroundExposure],[EnvironmentalExposure],[EntityToExposureEventAssociationMixin],[DrugExposure],[DiseaseOrPhenotypicFeatureExposure],[ChemicalExposure],[BioticExposure],[BehavioralExposure])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEventToPhenotypicFeatureAssociation],[ExposureEventToEntityAssociationMixin],[EntityToExposureEventAssociationMixin]++-%20object%201..1%3E[ExposureEvent%7Ctimepoint:time_type%20%3F],[ExposureEventToEntityAssociationMixin]++-%20subject%201..1%3E[ExposureEvent],[ExposureEventToPhenotypicFeatureAssociation]++-%20subject%201..1%3E[ExposureEvent],[Treatment]uses%20-.-%3E[ExposureEvent],[SocioeconomicExposure]uses%20-.-%3E[ExposureEvent],[PathologicalProcessExposure]uses%20-.-%3E[ExposureEvent],[PathologicalAnatomicalExposure]uses%20-.-%3E[ExposureEvent],[GeographicExposure]uses%20-.-%3E[ExposureEvent],[GenomicBackgroundExposure]uses%20-.-%3E[ExposureEvent],[EnvironmentalExposure]uses%20-.-%3E[ExposureEvent],[DrugExposure]uses%20-.-%3E[ExposureEvent],[DiseaseOrPhenotypicFeatureExposure]uses%20-.-%3E[ExposureEvent],[ChemicalExposure]uses%20-.-%3E[ExposureEvent],[BioticExposure]uses%20-.-%3E[ExposureEvent],[BehavioralExposure]uses%20-.-%3E[ExposureEvent],[Treatment],[SocioeconomicExposure],[PathologicalProcessExposure],[PathologicalAnatomicalExposure],[GeographicExposure],[GenomicBackgroundExposure],[EnvironmentalExposure],[EntityToExposureEventAssociationMixin],[DrugExposure],[DiseaseOrPhenotypicFeatureExposure],[ChemicalExposure],[BioticExposure],[BehavioralExposure])
 
 ---
 
@@ -37,16 +37,16 @@ URI: [biolink:ExposureEvent](https://w3id.org/biolink/vocab/ExposureEvent)
 
 ## Referenced by class
 
- *  **[EntityToExposureEventAssociationMixin](EntityToExposureEventAssociationMixin.md)** *[entity to exposure event association mixin➞object](entity_to_exposure_event_association_mixin_object.md)*  <sub>REQ</sub>  **[ExposureEvent](ExposureEvent.md)**
- *  **[ExposureEventToEntityAssociationMixin](ExposureEventToEntityAssociationMixin.md)** *[exposure event to entity association mixin➞subject](exposure_event_to_entity_association_mixin_subject.md)*  <sub>REQ</sub>  **[ExposureEvent](ExposureEvent.md)**
- *  **[ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)** *[exposure event to phenotypic feature association➞subject](exposure_event_to_phenotypic_feature_association_subject.md)*  <sub>REQ</sub>  **[ExposureEvent](ExposureEvent.md)**
+ *  **[EntityToExposureEventAssociationMixin](EntityToExposureEventAssociationMixin.md)** *[entity to exposure event association mixin➞object](entity_to_exposure_event_association_mixin_object.md)*  <sub>1..1</sub>  **[ExposureEvent](ExposureEvent.md)**
+ *  **[ExposureEventToEntityAssociationMixin](ExposureEventToEntityAssociationMixin.md)** *[exposure event to entity association mixin➞subject](exposure_event_to_entity_association_mixin_subject.md)*  <sub>1..1</sub>  **[ExposureEvent](ExposureEvent.md)**
+ *  **[ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)** *[exposure event to phenotypic feature association➞subject](exposure_event_to_phenotypic_feature_association_subject.md)*  <sub>1..1</sub>  **[ExposureEvent](ExposureEvent.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [timepoint](timepoint.md)  <sub>OPT</sub>
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
      * Description: a point in time
      * Range: [TimeType](types/TimeType.md)
 

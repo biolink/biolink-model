@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToEntityAssociationMixin],[BiologicalProcess]%3Cobject%201..1-%20[MacromolecularMachineToBiologicalProcessAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MacromolecularMachineToBiologicalProcessAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachineMixin],[FunctionalAssociation],[BiologicalProcess],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToEntityAssociationMixin],[BiologicalProcess]%3Cobject%201..1-%20[MacromolecularMachineToBiologicalProcessAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MacromolecularMachineToBiologicalProcessAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachineMixin],[FunctionalAssociation],[BiologicalProcess],[Attribute],[Agent])
 
 ---
 
@@ -36,24 +36,24 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
 
 ### Own
 
- * [macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>
+ * [macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)  <sub>1..1</sub>
      * Range: [BiologicalProcess](BiologicalProcess.md)
 
 ### Inherited from association:
 
- * [subject](subject.md)  <sub>REQ</sub>
+ * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [predicate](predicate.md)  <sub>REQ</sub>
+ * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
- * [object](object.md)  <sub>REQ</sub>
+ * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>REQ</sub>
+ * [relation](relation.md)  <sub>1..1</sub>
      * Description: The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * Range: [Uriorcurie](types/Uriorcurie.md)
- * [negated](negated.md)  <sub>OPT</sub>
+ * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
  * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
@@ -62,7 +62,7 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: connects an association to publications supporting the association
      * Range: [Publication](Publication.md)
- * [association➞type](association_type.md)  <sub>OPT</sub>
+ * [association➞type](association_type.md)  <sub>0..1</sub>
      * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
      * Range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..\*</sub>
@@ -70,11 +70,11 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
 
 ### Inherited from entity:
 
- * [id](id.md)  <sub>REQ</sub>
+ * [id](id.md)  <sub>1..1</sub>
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>OPT</sub>
+ * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
      * in subsets: (translator_minimal,samples)
@@ -86,13 +86,13 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>OPT</sub>
+ * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [description](description.md)  <sub>OPT</sub>
+ * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>OPT</sub>
+ * [source](source.md)  <sub>0..1</sub>
      * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
@@ -106,11 +106,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from functional association:
 
- * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
+ * [functional association➞subject](functional_association_subject.md)  <sub>1..1</sub>
      * Description: gene, product or macromolecular complex mixin that has the function associated with the GO term
      * Range: [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
      * Example: ZFIN:ZDB-GENE-050417-357 twist1b
- * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
+ * [functional association➞object](functional_association_object.md)  <sub>1..1</sub>
      * Description: class describing the activity, process or localization of the gene product
      * Range: [GeneOntologyClass](GeneOntologyClass.md)
      * Example: GO:0016301 kinase activity
@@ -118,11 +118,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
 
 ### Domain for slot:
 
- * [macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>
+ * [macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)  <sub>1..1</sub>
      * Range: [BiologicalProcess](BiologicalProcess.md)

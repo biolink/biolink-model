@@ -14,7 +14,7 @@ URI: [biolink:association_type](https://w3id.org/biolink/vocab/association_type)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [CategoryType](types/CategoryType.md)
+[Association](Association.md) ->  <sub>0..1</sub> [CategoryType](types/CategoryType.md)
 
 ## Parents
 

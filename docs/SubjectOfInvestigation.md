@@ -15,7 +15,7 @@ URI: [biolink:SubjectOfInvestigation](https://w3id.org/biolink/vocab/SubjectOfIn
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[MaterialSample])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[MaterialSample])
 
 ---
 

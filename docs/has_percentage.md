@@ -14,7 +14,7 @@ URI: [biolink:has_percentage](https://w3id.org/biolink/vocab/has_percentage)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Double](types/Double.md)
+[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [Double](types/Double.md)
 
 ## Parents
 

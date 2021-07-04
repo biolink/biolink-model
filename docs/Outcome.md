@@ -15,7 +15,7 @@ URI: [biolink:Outcome](https://w3id.org/biolink/vocab/Outcome)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[EntityToOutcomeAssociationMixin]++-%20object%201..1%3E[Outcome],[SocioeconomicOutcome]uses%20-.-%3E[Outcome],[PathologicalProcessOutcome]uses%20-.-%3E[Outcome],[PathologicalAnatomicalOutcome]uses%20-.-%3E[Outcome],[MortalityOutcome]uses%20-.-%3E[Outcome],[HospitalizationOutcome]uses%20-.-%3E[Outcome],[EpidemiologicalOutcome]uses%20-.-%3E[Outcome],[DiseaseOrPhenotypicFeatureOutcome]uses%20-.-%3E[Outcome],[BehavioralOutcome]uses%20-.-%3E[Outcome],[SocioeconomicOutcome],[PathologicalProcessOutcome],[PathologicalAnatomicalOutcome],[MortalityOutcome],[HospitalizationOutcome],[EpidemiologicalOutcome],[EntityToOutcomeAssociationMixin],[DiseaseOrPhenotypicFeatureOutcome],[BehavioralOutcome])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[EntityToOutcomeAssociationMixin]++-%20object%201..1%3E[Outcome],[SocioeconomicOutcome]uses%20-.-%3E[Outcome],[PathologicalProcessOutcome]uses%20-.-%3E[Outcome],[PathologicalAnatomicalOutcome]uses%20-.-%3E[Outcome],[MortalityOutcome]uses%20-.-%3E[Outcome],[HospitalizationOutcome]uses%20-.-%3E[Outcome],[EpidemiologicalOutcome]uses%20-.-%3E[Outcome],[DiseaseOrPhenotypicFeatureOutcome]uses%20-.-%3E[Outcome],[BehavioralOutcome]uses%20-.-%3E[Outcome],[SocioeconomicOutcome],[PathologicalProcessOutcome],[PathologicalAnatomicalOutcome],[MortalityOutcome],[HospitalizationOutcome],[EpidemiologicalOutcome],[EntityToOutcomeAssociationMixin],[DiseaseOrPhenotypicFeatureOutcome],[BehavioralOutcome])
 
 ---
 
@@ -33,7 +33,7 @@ URI: [biolink:Outcome](https://w3id.org/biolink/vocab/Outcome)
 
 ## Referenced by class
 
- *  **[EntityToOutcomeAssociationMixin](EntityToOutcomeAssociationMixin.md)** *[entity to outcome association mixin➞object](entity_to_outcome_association_mixin_object.md)*  <sub>REQ</sub>  **[Outcome](Outcome.md)**
+ *  **[EntityToOutcomeAssociationMixin](EntityToOutcomeAssociationMixin.md)** *[entity to outcome association mixin➞object](entity_to_outcome_association_mixin_object.md)*  <sub>1..1</sub>  **[Outcome](Outcome.md)**
 
 ## Attributes
 

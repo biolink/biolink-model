@@ -15,7 +15,7 @@ URI: [biolink:CaseToEntityAssociationMixin](https://w3id.org/biolink/vocab/CaseT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Case]%3Csubject%201..1-%20[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation],[Case])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Case]%3Csubject%201..1-%20[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation],[Case])
 
 ---
 
@@ -32,12 +32,12 @@ URI: [biolink:CaseToEntityAssociationMixin](https://w3id.org/biolink/vocab/CaseT
 
 ### Own
 
- * [case to entity association mixin➞subject](case_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [case to entity association mixin➞subject](case_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the case (e.g. patient) that has the property
      * Range: [Case](Case.md)
 
 ### Domain for slot:
 
- * [case to entity association mixin➞subject](case_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [case to entity association mixin➞subject](case_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the case (e.g. patient) that has the property
      * Range: [Case](Case.md)

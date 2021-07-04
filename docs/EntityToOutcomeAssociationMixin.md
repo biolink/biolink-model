@@ -15,7 +15,7 @@ URI: [biolink:EntityToOutcomeAssociationMixin](https://w3id.org/biolink/vocab/En
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Outcome],[Outcome]%3Cobject%201..1-++[EntityToOutcomeAssociationMixin],[ExposureEventToOutcomeAssociation]uses%20-.-%3E[EntityToOutcomeAssociationMixin],[ExposureEventToOutcomeAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Outcome],[Outcome]%3Cobject%201..1-++[EntityToOutcomeAssociationMixin],[ExposureEventToOutcomeAssociation]uses%20-.-%3E[EntityToOutcomeAssociationMixin],[ExposureEventToOutcomeAssociation])
 
 ---
 
@@ -32,10 +32,10 @@ URI: [biolink:EntityToOutcomeAssociationMixin](https://w3id.org/biolink/vocab/En
 
 ### Own
 
- * [entity to outcome association mixin➞object](entity_to_outcome_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to outcome association mixin➞object](entity_to_outcome_association_mixin_object.md)  <sub>1..1</sub>
      * Range: [Outcome](Outcome.md)
 
 ### Domain for slot:
 
- * [entity to outcome association mixin➞object](entity_to_outcome_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to outcome association mixin➞object](entity_to_outcome_association_mixin_object.md)  <sub>1..1</sub>
      * Range: [Outcome](Outcome.md)

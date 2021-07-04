@@ -14,7 +14,7 @@ URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [BiologicalSex](BiologicalSex.md)
+[Association](Association.md) ->  <sub>0..1</sub> [BiologicalSex](BiologicalSex.md)
 
 ## Parents
 

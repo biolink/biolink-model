@@ -14,7 +14,7 @@ URI: [biolink:primary_knowledge_source](https://w3id.org/biolink/vocab/primary_k
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [InformationResource](InformationResource.md)
+[Association](Association.md) ->  <sub>0..1</sub> [InformationResource](InformationResource.md)
 
 ## Parents
 

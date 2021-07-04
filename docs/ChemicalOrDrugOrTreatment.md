@@ -15,7 +15,7 @@ URI: [biolink:ChemicalOrDrugOrTreatment](https://w3id.org/biolink/vocab/Chemical
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature],[Treatment]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Drug]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Treatment],[Drug],[ChemicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature],[Treatment]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Drug]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Treatment],[Drug],[ChemicalEntity])
 
 ---
 

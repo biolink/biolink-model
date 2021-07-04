@@ -15,7 +15,7 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SmallMolecule],[ReactionToParticipantAssociation],[Polypeptide],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThing],[MolecularActivity]-%20has%20input%200..%2A%3E[MolecularEntity%7Cis_metabolite:boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularActivity]-%20has%20output%200..%2A%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20object%201..1%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20subject%201..1%3E[MolecularEntity],[ReactionToParticipantAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]%5E-[SmallMolecule],[MolecularEntity]%5E-[Polypeptide],[MolecularEntity]%5E-[NucleicAcidEntity],[ChemicalEntity]%5E-[MolecularEntity],[MolecularActivity],[Drug],[ChemicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SmallMolecule],[ReactionToParticipantAssociation],[Polypeptide],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThing],[MolecularActivity]-%20has%20input%200..%2A%3E[MolecularEntity%7Cis_metabolite:boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularActivity]-%20has%20output%200..%2A%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20object%201..1%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20subject%201..1%3E[MolecularEntity],[ReactionToParticipantAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]%5E-[SmallMolecule],[MolecularEntity]%5E-[Polypeptide],[MolecularEntity]%5E-[NucleicAcidEntity],[ChemicalEntity]%5E-[MolecularEntity],[MolecularActivity],[Drug],[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -44,26 +44,26 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  *  **[MolecularEntity](MolecularEntity.md)** *[molecular interaction decreased by](molecular_interaction_decreased_by.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[molecular interaction increased by](molecular_interaction_increased_by.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[molecularly interacts with](molecularly_interacts_with.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)** *[reaction to participant association➞subject](reaction_to_participant_association_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)*  <sub>1..1</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)*  <sub>1..1</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)** *[reaction to participant association➞subject](reaction_to_participant_association_subject.md)*  <sub>1..1</sub>  **[MolecularEntity](MolecularEntity.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+ * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
      * Description: indicates whether a molecular entity is a metabolite
      * Range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 
- * [id](id.md)  <sub>REQ</sub>
+ * [id](id.md)  <sub>1..1</sub>
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>OPT</sub>
+ * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
      * in subsets: (translator_minimal,samples)
@@ -75,13 +75,13 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>OPT</sub>
+ * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [description](description.md)  <sub>OPT</sub>
+ * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>OPT</sub>
+ * [source](source.md)  <sub>0..1</sub>
      * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
@@ -95,7 +95,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
 
@@ -106,7 +106,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [is metabolite](is_metabolite.md)  <sub>OPT</sub>
+ * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
      * Description: indicates whether a molecular entity is a metabolite
      * Range: [Boolean](types/Boolean.md)
 

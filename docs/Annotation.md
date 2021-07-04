@@ -15,7 +15,7 @@ URI: [biolink:Annotation](https://w3id.org/biolink/vocab/Annotation)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[Attribute],[Annotation]%5E-[QuantityValue],[Annotation]%5E-[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[Attribute],[Annotation]%5E-[QuantityValue],[Annotation]%5E-[Attribute])
 
 ---
 

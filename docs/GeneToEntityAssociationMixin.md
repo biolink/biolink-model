@@ -15,7 +15,7 @@ URI: [biolink:GeneToEntityAssociationMixin](https://w3id.org/biolink/vocab/GeneT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation],[GeneToDiseaseAssociation],[GeneOrGeneProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation],[GeneToDiseaseAssociation],[GeneOrGeneProduct])
 
 ---
 
@@ -33,12 +33,12 @@ URI: [biolink:GeneToEntityAssociationMixin](https://w3id.org/biolink/vocab/GeneT
 
 ### Own
 
- * [gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: gene that is the subject of the association
      * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ### Domain for slot:
 
- * [gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: gene that is the subject of the association
      * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)

@@ -15,7 +15,7 @@ URI: [biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin](https://w3id.o
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Cobject%201..1-%20[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Cobject%201..1-%20[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation])
 
 ---
 
@@ -34,7 +34,7 @@ URI: [biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin](https://w3id.o
 
 ### Own
 
- * [entity to disease or phenotypic feature association mixin➞object](entity_to_disease_or_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to disease or phenotypic feature association mixin➞object](entity_to_disease_or_phenotypic_feature_association_mixin_object.md)  <sub>1..1</sub>
      * Description: disease or phenotype
      * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
      * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
@@ -42,7 +42,7 @@ URI: [biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin](https://w3id.o
 
 ### Domain for slot:
 
- * [entity to disease or phenotypic feature association mixin➞object](entity_to_disease_or_phenotypic_feature_association_mixin_object.md)  <sub>REQ</sub>
+ * [entity to disease or phenotypic feature association mixin➞object](entity_to_disease_or_phenotypic_feature_association_mixin_object.md)  <sub>1..1</sub>
      * Description: disease or phenotype
      * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
      * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type

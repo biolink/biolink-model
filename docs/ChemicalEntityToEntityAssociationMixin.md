@@ -15,7 +15,7 @@ URI: [biolink:ChemicalEntityToEntityAssociationMixin](https://w3id.org/biolink/v
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DrugToEntityAssociationMixin],[ChemicalToEntityAssociationMixin],[ChemicalEntity]%3Csubject%201..1-%20[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[DrugToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[ChemicalToEntityAssociationMixin],[ChemicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DrugToEntityAssociationMixin],[ChemicalToEntityAssociationMixin],[ChemicalEntity]%3Csubject%201..1-%20[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[DrugToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[ChemicalToEntityAssociationMixin],[ChemicalEntity])
 
 ---
 
@@ -33,12 +33,12 @@ URI: [biolink:ChemicalEntityToEntityAssociationMixin](https://w3id.org/biolink/v
 
 ### Own
 
- * [chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the chemical entity that is an interactor
      * Range: [ChemicalEntity](ChemicalEntity.md)
 
 ### Domain for slot:
 
- * [chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the chemical entity that is an interactor
      * Range: [ChemicalEntity](ChemicalEntity.md)

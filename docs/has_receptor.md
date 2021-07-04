@@ -14,7 +14,7 @@ URI: [biolink:has_receptor](https://w3id.org/biolink/vocab/has_receptor)
 
 ## Domain and Range
 
-[ExposureEvent](ExposureEvent.md) ->  <sub>OPT</sub> [OrganismalEntity](OrganismalEntity.md)
+[ExposureEvent](ExposureEvent.md) ->  <sub>0..1</sub> [OrganismalEntity](OrganismalEntity.md)
 
 ## Parents
 

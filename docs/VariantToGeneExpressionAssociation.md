@@ -15,7 +15,7 @@ URI: [biolink:VariantToGeneExpressionAssociation](https://w3id.org/biolink/vocab
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneExpressionAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneExpressionMixin],[VariantToGeneAssociation]%5E-[VariantToGeneExpressionAssociation],[VariantToGeneAssociation],[Publication],[OntologyClass],[NamedThing],[LifeStage],[GeneExpressionMixin],[Gene],[DiseaseOrPhenotypicFeature],[Attribute],[AnatomicalEntity],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneExpressionAssociation%7Cpredicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneExpressionMixin],[VariantToGeneAssociation]%5E-[VariantToGeneExpressionAssociation],[VariantToGeneAssociation],[Publication],[OntologyClass],[NamedThing],[LifeStage],[GeneExpressionMixin],[Gene],[DiseaseOrPhenotypicFeature],[Attribute],[AnatomicalEntity],[Agent])
 
 ---
 
@@ -36,24 +36,24 @@ URI: [biolink:VariantToGeneExpressionAssociation](https://w3id.org/biolink/vocab
 
 ### Own
 
- * [variant to gene expression association➞predicate](variant_to_gene_expression_association_predicate.md)  <sub>REQ</sub>
+ * [variant to gene expression association➞predicate](variant_to_gene_expression_association_predicate.md)  <sub>1..1</sub>
      * Range: [PredicateType](types/PredicateType.md)
 
 ### Inherited from association:
 
- * [subject](subject.md)  <sub>REQ</sub>
+ * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [predicate](predicate.md)  <sub>REQ</sub>
+ * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
- * [object](object.md)  <sub>REQ</sub>
+ * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>REQ</sub>
+ * [relation](relation.md)  <sub>1..1</sub>
      * Description: The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * Range: [Uriorcurie](types/Uriorcurie.md)
- * [negated](negated.md)  <sub>OPT</sub>
+ * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
  * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
@@ -62,7 +62,7 @@ URI: [biolink:VariantToGeneExpressionAssociation](https://w3id.org/biolink/vocab
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: connects an association to publications supporting the association
      * Range: [Publication](Publication.md)
- * [association➞type](association_type.md)  <sub>OPT</sub>
+ * [association➞type](association_type.md)  <sub>0..1</sub>
      * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
      * Range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..\*</sub>
@@ -70,11 +70,11 @@ URI: [biolink:VariantToGeneExpressionAssociation](https://w3id.org/biolink/vocab
 
 ### Inherited from entity:
 
- * [id](id.md)  <sub>REQ</sub>
+ * [id](id.md)  <sub>1..1</sub>
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>OPT</sub>
+ * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
      * in subsets: (translator_minimal,samples)
@@ -86,13 +86,13 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>OPT</sub>
+ * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [description](description.md)  <sub>OPT</sub>
+ * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>OPT</sub>
+ * [source](source.md)  <sub>0..1</sub>
      * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
@@ -106,51 +106,51 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from gene expression mixin:
 
- * [gene expression mixin➞quantifier qualifier](gene_expression_mixin_quantifier_qualifier.md)  <sub>OPT</sub>
+ * [gene expression mixin➞quantifier qualifier](gene_expression_mixin_quantifier_qualifier.md)  <sub>0..1</sub>
      * Description: Optional quantitative value indicating degree of expression.
      * Range: [OntologyClass](OntologyClass.md)
- * [expression site](expression_site.md)  <sub>OPT</sub>
+ * [expression site](expression_site.md)  <sub>0..1</sub>
      * Description: location in which gene or protein expression takes place. May be cell, tissue, or organ.
      * Range: [AnatomicalEntity](AnatomicalEntity.md)
      * Example: UBERON:0002037 cerebellum
- * [phenotypic state](phenotypic_state.md)  <sub>OPT</sub>
+ * [phenotypic state](phenotypic_state.md)  <sub>0..1</sub>
      * Description: in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
      * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ### Inherited from gene to expression site association:
 
- * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
+ * [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>0..1</sub>
      * Description: stage at which the gene is expressed in the site
      * Range: [LifeStage](LifeStage.md)
      * Example: UBERON:0000069 larval stage
- * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
+ * [gene to expression site association➞quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>0..1</sub>
      * Description: can be used to indicate magnitude, or also ranking
      * Range: [OntologyClass](OntologyClass.md)
- * [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
+ * [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)  <sub>1..1</sub>
      * Description: gene in which variation is correlated with the phenotypic feature
      * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [gene to expression site association➞object](gene_to_expression_site_association_object.md)  <sub>REQ</sub>
+ * [gene to expression site association➞object](gene_to_expression_site_association_object.md)  <sub>1..1</sub>
      * Description: location in which the gene is expressed
      * Range: [AnatomicalEntity](AnatomicalEntity.md)
      * Example: UBERON:0002037 cerebellum
- * [gene to expression site association➞predicate](gene_to_expression_site_association_predicate.md)  <sub>REQ</sub>
+ * [gene to expression site association➞predicate](gene_to_expression_site_association_predicate.md)  <sub>1..1</sub>
      * Description: expression relationship
      * Range: [PredicateType](types/PredicateType.md)
 
 ### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from variant to gene association:
 
- * [variant to gene association➞object](variant_to_gene_association_object.md)  <sub>REQ</sub>
+ * [variant to gene association➞object](variant_to_gene_association_object.md)  <sub>1..1</sub>
      * Range: [Gene](Gene.md)
- * [variant to gene association➞predicate](variant_to_gene_association_predicate.md)  <sub>REQ</sub>
+ * [variant to gene association➞predicate](variant_to_gene_association_predicate.md)  <sub>1..1</sub>
      * Range: [PredicateType](types/PredicateType.md)
 
 ### Domain for slot:
 
- * [variant to gene expression association➞predicate](variant_to_gene_expression_association_predicate.md)  <sub>REQ</sub>
+ * [variant to gene expression association➞predicate](variant_to_gene_expression_association_predicate.md)  <sub>1..1</sub>
      * Range: [PredicateType](types/PredicateType.md)

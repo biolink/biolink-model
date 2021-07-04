@@ -15,7 +15,7 @@ URI: [biolink:EntityToFeatureOrDiseaseQualifiersMixin](https://w3id.org/biolink/
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Onset],[FrequencyQualifierMixin],[EntityToPhenotypicFeatureAssociationMixin],[Onset]%3Conset%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin%7Cfrequency_qualifier(i):frequency_value%20%3F],[SeverityValue]%3Cseverity%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToPhenotypicFeatureAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToDiseaseAssociationMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToDiseaseAssociationMixin])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Onset],[FrequencyQualifierMixin],[EntityToPhenotypicFeatureAssociationMixin],[Onset]%3Conset%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin%7Cfrequency_qualifier(i):frequency_value%20%3F],[SeverityValue]%3Cseverity%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToPhenotypicFeatureAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToDiseaseAssociationMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToDiseaseAssociationMixin])
 
 ---
 
@@ -37,15 +37,15 @@ URI: [biolink:EntityToFeatureOrDiseaseQualifiersMixin](https://w3id.org/biolink/
 
 ### Own
 
- * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
+ * [onset qualifier](onset_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
      * Range: [Onset](Onset.md)
- * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
+ * [severity qualifier](severity_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
      * Range: [SeverityValue](SeverityValue.md)
 
 ### Inherited from frequency qualifier mixin:
 
- * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
+ * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * Range: [FrequencyValue](types/FrequencyValue.md)

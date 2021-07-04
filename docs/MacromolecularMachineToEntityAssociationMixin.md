@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToEntityAssociationMixin](https://w3id.org/bi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]%3Csubject%201..1-%20[MacromolecularMachineToEntityAssociationMixin],[MacromolecularMachineToMolecularActivityAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[MacromolecularMachineToCellularComponentAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[MacromolecularMachineToBiologicalProcessAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]%3Csubject%201..1-%20[MacromolecularMachineToEntityAssociationMixin],[MacromolecularMachineToMolecularActivityAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[MacromolecularMachineToCellularComponentAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[MacromolecularMachineToBiologicalProcessAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation])
 
 ---
 
@@ -34,10 +34,10 @@ URI: [biolink:MacromolecularMachineToEntityAssociationMixin](https://w3id.org/bi
 
 ### Own
 
- * [macromolecular machine to entity association mixin➞subject](macromolecular_machine_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [macromolecular machine to entity association mixin➞subject](macromolecular_machine_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Range: [NamedThing](NamedThing.md)
 
 ### Domain for slot:
 
- * [macromolecular machine to entity association mixin➞subject](macromolecular_machine_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [macromolecular machine to entity association mixin➞subject](macromolecular_machine_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Range: [NamedThing](NamedThing.md)

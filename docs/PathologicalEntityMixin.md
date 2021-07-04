@@ -15,7 +15,7 @@ URI: [biolink:PathologicalEntityMixin](https://w3id.org/biolink/vocab/Pathologic
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalProcess]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalAnatomicalStructure]uses%20-.-%3E[PathologicalEntityMixin],[DiseaseOrPhenotypicFeatureExposure]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalProcess],[PathologicalAnatomicalStructure],[DiseaseOrPhenotypicFeatureExposure])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalProcess]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalAnatomicalStructure]uses%20-.-%3E[PathologicalEntityMixin],[DiseaseOrPhenotypicFeatureExposure]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalProcess],[PathologicalAnatomicalStructure],[DiseaseOrPhenotypicFeatureExposure])
 
 ---
 

@@ -14,7 +14,7 @@ URI: [biolink:reaction_direction](https://w3id.org/biolink/vocab/reaction_direct
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [reaction_direction_enum](reaction_direction_enum.md)
+[Association](Association.md) ->  <sub>0..1</sub> [reaction_direction_enum](reaction_direction_enum.md)
 
 ## Parents
 

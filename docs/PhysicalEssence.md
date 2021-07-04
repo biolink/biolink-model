@@ -15,7 +15,7 @@ URI: [biolink:PhysicalEssence](https://w3id.org/biolink/vocab/PhysicalEssence)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssenceOrOccurrent],[PhysicalEntity]uses%20-.-%3E[PhysicalEssence],[Haplotype]uses%20-.-%3E[PhysicalEssence],[Genotype]uses%20-.-%3E[PhysicalEssence],[GenomicBackgroundExposure]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[AnatomicalEntity]uses%20-.-%3E[PhysicalEssence],[PhysicalEssenceOrOccurrent]%5E-[PhysicalEssence],[PhysicalEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[ChemicalEntity],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssenceOrOccurrent],[PhysicalEntity]uses%20-.-%3E[PhysicalEssence],[Haplotype]uses%20-.-%3E[PhysicalEssence],[Genotype]uses%20-.-%3E[PhysicalEssence],[GenomicBackgroundExposure]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[AnatomicalEntity]uses%20-.-%3E[PhysicalEssence],[PhysicalEssenceOrOccurrent]%5E-[PhysicalEssence],[PhysicalEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[ChemicalEntity],[AnatomicalEntity])
 
 ---
 

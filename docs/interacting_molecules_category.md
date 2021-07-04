@@ -14,7 +14,7 @@ URI: [biolink:interacting_molecules_category](https://w3id.org/biolink/vocab/int
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)
+[Association](Association.md) ->  <sub>0..1</sub> [OntologyClass](OntologyClass.md)
 
 ## Parents
 

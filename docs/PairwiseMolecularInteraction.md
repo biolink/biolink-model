@@ -15,7 +15,7 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;relation:uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-++[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;relation:uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-++[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[Attribute],[Agent])
 
 ---
 
@@ -32,39 +32,39 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
 
 ### Own
 
- * [interacting molecules category](interacting_molecules_category.md)  <sub>OPT</sub>
+ * [interacting molecules category](interacting_molecules_category.md)  <sub>0..1</sub>
      * Range: [OntologyClass](OntologyClass.md)
      * Example: MI:1048 smallmolecule-protein
- * [pairwise molecular interaction➞id](pairwise_molecular_interaction_id.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞id](pairwise_molecular_interaction_id.md)  <sub>1..1</sub>
      * Description: identifier for the interaction. This may come from an interaction database such as IMEX.
      * Range: [String](types/String.md)
      * Example: WB:WBInteraction000538741 None
- * [pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)  <sub>1..1</sub>
      * Range: [MolecularEntity](MolecularEntity.md)
- * [pairwise molecular interaction➞predicate](pairwise_molecular_interaction_predicate.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞predicate](pairwise_molecular_interaction_predicate.md)  <sub>1..1</sub>
      * Range: [PredicateType](types/PredicateType.md)
- * [pairwise molecular interaction➞relation](pairwise_molecular_interaction_relation.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞relation](pairwise_molecular_interaction_relation.md)  <sub>1..1</sub>
      * Description: interaction relationship type
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * Example: RO:0002447 the subject molecular phosphorylates the object molecule
- * [pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)  <sub>1..1</sub>
      * Range: [MolecularEntity](MolecularEntity.md)
 
 ### Inherited from association:
 
- * [subject](subject.md)  <sub>REQ</sub>
+ * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [predicate](predicate.md)  <sub>REQ</sub>
+ * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
- * [object](object.md)  <sub>REQ</sub>
+ * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>REQ</sub>
+ * [relation](relation.md)  <sub>1..1</sub>
      * Description: The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * Range: [Uriorcurie](types/Uriorcurie.md)
- * [negated](negated.md)  <sub>OPT</sub>
+ * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
  * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
@@ -73,7 +73,7 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: connects an association to publications supporting the association
      * Range: [Publication](Publication.md)
- * [association➞type](association_type.md)  <sub>OPT</sub>
+ * [association➞type](association_type.md)  <sub>0..1</sub>
      * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
      * Range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..\*</sub>
@@ -81,11 +81,11 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
 
 ### Inherited from entity:
 
- * [id](id.md)  <sub>REQ</sub>
+ * [id](id.md)  <sub>1..1</sub>
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>OPT</sub>
+ * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
      * in subsets: (translator_minimal,samples)
@@ -97,13 +97,13 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>OPT</sub>
+ * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [description](description.md)  <sub>OPT</sub>
+ * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>OPT</sub>
+ * [source](source.md)  <sub>0..1</sub>
      * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
@@ -117,23 +117,23 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>OPT</sub>
+ * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
 
 ### Domain for slot:
 
- * [pairwise molecular interaction➞id](pairwise_molecular_interaction_id.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞id](pairwise_molecular_interaction_id.md)  <sub>1..1</sub>
      * Description: identifier for the interaction. This may come from an interaction database such as IMEX.
      * Range: [String](types/String.md)
      * Example: WB:WBInteraction000538741 None
- * [pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)  <sub>1..1</sub>
      * Range: [MolecularEntity](MolecularEntity.md)
- * [pairwise molecular interaction➞predicate](pairwise_molecular_interaction_predicate.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞predicate](pairwise_molecular_interaction_predicate.md)  <sub>1..1</sub>
      * Range: [PredicateType](types/PredicateType.md)
- * [pairwise molecular interaction➞relation](pairwise_molecular_interaction_relation.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞relation](pairwise_molecular_interaction_relation.md)  <sub>1..1</sub>
      * Description: interaction relationship type
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * Example: RO:0002447 the subject molecular phosphorylates the object molecule
- * [pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)  <sub>REQ</sub>
+ * [pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)  <sub>1..1</sub>
      * Range: [MolecularEntity](MolecularEntity.md)

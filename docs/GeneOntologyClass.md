@@ -15,7 +15,7 @@ URI: [biolink:GeneOntologyClass](https://w3id.org/biolink/vocab/GeneOntologyClas
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[GeneToGoTermAssociation],[FunctionalAssociation]++-%20object%201..1%3E[GeneOntologyClass],[GeneToGoTermAssociation]++-%20object%201..1%3E[GeneOntologyClass],[OntologyClass]%5E-[GeneOntologyClass],[FunctionalAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[GeneToGoTermAssociation],[FunctionalAssociation]++-%20object%201..1%3E[GeneOntologyClass],[GeneToGoTermAssociation]++-%20object%201..1%3E[GeneOntologyClass],[OntologyClass]%5E-[GeneOntologyClass],[FunctionalAssociation])
 
 ---
 
@@ -26,8 +26,8 @@ URI: [biolink:GeneOntologyClass](https://w3id.org/biolink/vocab/GeneOntologyClas
 
 ## Referenced by class
 
- *  **[FunctionalAssociation](FunctionalAssociation.md)** *[functional association➞object](functional_association_object.md)*  <sub>REQ</sub>  **[GeneOntologyClass](GeneOntologyClass.md)**
- *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[gene to go term association➞object](gene_to_go_term_association_object.md)*  <sub>REQ</sub>  **[GeneOntologyClass](GeneOntologyClass.md)**
+ *  **[FunctionalAssociation](FunctionalAssociation.md)** *[functional association➞object](functional_association_object.md)*  <sub>1..1</sub>  **[GeneOntologyClass](GeneOntologyClass.md)**
+ *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[gene to go term association➞object](gene_to_go_term_association_object.md)*  <sub>1..1</sub>  **[GeneOntologyClass](GeneOntologyClass.md)**
 
 ## Attributes
 

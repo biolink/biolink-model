@@ -15,7 +15,7 @@ URI: [biolink:VariantToEntityAssociationMixin](https://w3id.org/biolink/vocab/Va
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToEntityAssociationMixin],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToGeneAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToGeneAssociation],[VariantToDiseaseAssociation],[SequenceVariant])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToEntityAssociationMixin],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToGeneAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToGeneAssociation],[VariantToDiseaseAssociation],[SequenceVariant])
 
 ---
 
@@ -35,7 +35,7 @@ URI: [biolink:VariantToEntityAssociationMixin](https://w3id.org/biolink/vocab/Va
 
 ### Own
 
- * [variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: a sequence variant in which the allele state is associated with some other entity
      * Range: [SequenceVariant](SequenceVariant.md)
      * Example: ClinVar:38077 ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)
@@ -43,7 +43,7 @@ URI: [biolink:VariantToEntityAssociationMixin](https://w3id.org/biolink/vocab/Va
 
 ### Domain for slot:
 
- * [variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: a sequence variant in which the allele state is associated with some other entity
      * Range: [SequenceVariant](SequenceVariant.md)
      * Example: ClinVar:38077 ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)

@@ -15,7 +15,7 @@ URI: [biolink:CellLineToEntityAssociationMixin](https://w3id.org/biolink/vocab/C
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[CellLine]%3Csubject%201..1-%20[CellLineToEntityAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToEntityAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[CellLine]%3Csubject%201..1-%20[CellLineToEntityAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[CellLineToEntityAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine])
 
 ---
 
@@ -32,10 +32,10 @@ URI: [biolink:CellLineToEntityAssociationMixin](https://w3id.org/biolink/vocab/C
 
 ### Own
 
- * [cell line to entity association mixin➞subject](cell_line_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [cell line to entity association mixin➞subject](cell_line_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Range: [CellLine](CellLine.md)
 
 ### Domain for slot:
 
- * [cell line to entity association mixin➞subject](cell_line_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [cell line to entity association mixin➞subject](cell_line_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Range: [CellLine](CellLine.md)

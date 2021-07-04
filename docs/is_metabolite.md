@@ -14,7 +14,7 @@ URI: [biolink:is_metabolite](https://w3id.org/biolink/vocab/is_metabolite)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>OPT</sub> [Boolean](types/Boolean.md)
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..1</sub> [Boolean](types/Boolean.md)
 
 ## Parents
 

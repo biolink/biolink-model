@@ -15,7 +15,7 @@ URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..%2A-%20[ThingWithTaxon],[Protein]uses%20-.-%3E[ThingWithTaxon],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[LifeStage]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],[Gene]uses%20-.-%3E[ThingWithTaxon],[DiseaseOrPhenotypicFeature]uses%20-.-%3E[ThingWithTaxon],[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon],[ThingWithTaxon]%5E-[GenomicEntity],[Protein],[PopulationOfIndividualOrganisms],[OrganismTaxon],[LifeStage],[IndividualOrganism],[GenomicEntity],[Gene],[DiseaseOrPhenotypicFeature],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..%2A-%20[ThingWithTaxon],[Protein]uses%20-.-%3E[ThingWithTaxon],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[LifeStage]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],[Gene]uses%20-.-%3E[ThingWithTaxon],[DiseaseOrPhenotypicFeature]uses%20-.-%3E[ThingWithTaxon],[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon],[ThingWithTaxon]%5E-[GenomicEntity],[Protein],[PopulationOfIndividualOrganisms],[OrganismTaxon],[LifeStage],[IndividualOrganism],[GenomicEntity],[Gene],[DiseaseOrPhenotypicFeature],[AnatomicalEntity])
 
 ---
 

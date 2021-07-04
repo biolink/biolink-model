@@ -14,7 +14,7 @@ URI: [biolink:full_name](https://w3id.org/biolink/vocab/full_name)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [LabelType](types/LabelType.md)
+[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [LabelType](types/LabelType.md)
 
 ## Parents
 

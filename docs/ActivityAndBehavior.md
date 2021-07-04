@@ -15,7 +15,7 @@ URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBeh
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[Procedure]uses%20-.-%3E[ActivityAndBehavior],[Activity]uses%20-.-%3E[ActivityAndBehavior],[Occurrent]%5E-[ActivityAndBehavior],[Procedure],[Activity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[Procedure]uses%20-.-%3E[ActivityAndBehavior],[Activity]uses%20-.-%3E[ActivityAndBehavior],[Occurrent]%5E-[ActivityAndBehavior],[Procedure],[Activity])
 
 ---
 

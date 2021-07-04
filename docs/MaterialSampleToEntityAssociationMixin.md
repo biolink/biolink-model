@@ -15,7 +15,7 @@ URI: [biolink:MaterialSampleToEntityAssociationMixin](https://w3id.org/biolink/v
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MaterialSample]%3Csubject%201..1-%20[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSample])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MaterialSample]%3Csubject%201..1-%20[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSample])
 
 ---
 
@@ -32,12 +32,12 @@ URI: [biolink:MaterialSampleToEntityAssociationMixin](https://w3id.org/biolink/v
 
 ### Own
 
- * [material sample to entity association mixin➞subject](material_sample_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [material sample to entity association mixin➞subject](material_sample_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the material sample being described
      * Range: [MaterialSample](MaterialSample.md)
 
 ### Domain for slot:
 
- * [material sample to entity association mixin➞subject](material_sample_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [material sample to entity association mixin➞subject](material_sample_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the material sample being described
      * Range: [MaterialSample](MaterialSample.md)

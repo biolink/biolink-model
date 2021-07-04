@@ -15,7 +15,7 @@ URI: [biolink:UnclassifiedOntologyClass](https://w3id.org/biolink/vocab/Unclassi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass]%5E-[UnclassifiedOntologyClass],[OntologyClass])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass]%5E-[UnclassifiedOntologyClass],[OntologyClass])
 
 ---
 

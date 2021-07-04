@@ -15,7 +15,7 @@ URI: [biolink:ExposureEventToEntityAssociationMixin](https://w3id.org/biolink/vo
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent]%3Csubject%201..1-++[ExposureEventToEntityAssociationMixin],[ExposureEventToOutcomeAssociation]uses%20-.-%3E[ExposureEventToEntityAssociationMixin],[ExposureEventToOutcomeAssociation],[ExposureEvent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent]%3Csubject%201..1-++[ExposureEventToEntityAssociationMixin],[ExposureEventToOutcomeAssociation]uses%20-.-%3E[ExposureEventToEntityAssociationMixin],[ExposureEventToOutcomeAssociation],[ExposureEvent])
 
 ---
 
@@ -32,10 +32,10 @@ URI: [biolink:ExposureEventToEntityAssociationMixin](https://w3id.org/biolink/vo
 
 ### Own
 
- * [exposure event to entity association mixin➞subject](exposure_event_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [exposure event to entity association mixin➞subject](exposure_event_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Range: [ExposureEvent](ExposureEvent.md)
 
 ### Domain for slot:
 
- * [exposure event to entity association mixin➞subject](exposure_event_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [exposure event to entity association mixin➞subject](exposure_event_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Range: [ExposureEvent](ExposureEvent.md)

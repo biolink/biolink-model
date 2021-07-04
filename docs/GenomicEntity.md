@@ -15,7 +15,7 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismTaxon],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[GenomicEntity],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[Genome]uses%20-.-%3E[GenomicEntity],[ThingWithTaxon]%5E-[GenomicEntity],[NucleicAcidEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismTaxon],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[GenomicEntity],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[Genome]uses%20-.-%3E[GenomicEntity],[ThingWithTaxon]%5E-[GenomicEntity],[NucleicAcidEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome])
 
 ---
 

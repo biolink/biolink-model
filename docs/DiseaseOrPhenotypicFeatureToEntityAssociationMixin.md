@@ -15,7 +15,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.o
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation],[DiseaseOrPhenotypicFeature])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation],[DiseaseOrPhenotypicFeature])
 
 ---
 
@@ -32,7 +32,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.o
 
 ### Own
 
- * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: disease or phenotype
      * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
      * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
@@ -40,7 +40,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.o
 
 ### Domain for slot:
 
- * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>REQ</sub>
+ * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: disease or phenotype
      * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
      * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type

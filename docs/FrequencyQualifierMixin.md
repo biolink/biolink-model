@@ -15,7 +15,7 @@ URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/vocab/FrequencyQ
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin%7Cfrequency_qualifier:frequency_value%20%3F],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[VariantToPopulationAssociation],[EntityToFeatureOrDiseaseQualifiersMixin])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin%7Cfrequency_qualifier:frequency_value%20%3F],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[VariantToPopulationAssociation],[EntityToFeatureOrDiseaseQualifiersMixin])
 
 ---
 
@@ -36,6 +36,6 @@ URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/vocab/FrequencyQ
 
 ### Own
 
- * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
+ * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * Range: [FrequencyValue](types/FrequencyValue.md)
