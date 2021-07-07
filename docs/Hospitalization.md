@@ -15,7 +15,7 @@ URI: [biolink:Hospitalization](https://w3id.org/biolink/vocab/Hospitalization)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[HospitalizationOutcome],[Hospitalization%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[HospitalizationOutcome],[ClinicalIntervention]%5E-[Hospitalization],[ClinicalIntervention],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ClinicalIntervention]%5E-[Hospitalization%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ClinicalIntervention],[Attribute],[Agent])
 
 ---
 
@@ -23,13 +23,6 @@ URI: [biolink:Hospitalization](https://w3id.org/biolink/vocab/Hospitalization)
 ## Parents
 
  *  is_a: [ClinicalIntervention](ClinicalIntervention.md)
-
-## Children
-
- * [HospitalizationOutcome](HospitalizationOutcome.md) - An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
-
-## Referenced by class
-
 
 ## Attributes
 

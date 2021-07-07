@@ -15,7 +15,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[FoodAdditive],[EnvironmentalFoodContaminant],[DiseaseOrPhenotypicFeature],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalExposure],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity]%5E-[ChemicalExposure],[NamedThing]%5E-[ChemicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[FoodAdditive],[EnvironmentalFoodContaminant],[DiseaseOrPhenotypicFeature],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]%3Ctrade%20name%200..1-%20[ChemicalEntity%7Cavailable_from:drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalEntityToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[NamedThing]%5E-[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -28,10 +28,11 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
  *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
  *  mixin: [ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)
+ *  mixin: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) - A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
+ *  mixin: [ChemicalEntityOrProteinOrPolypeptide](ChemicalEntityOrProteinOrPolypeptide.md) - A union of chemical entities and children, and protein and polypeptide. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
 
 ## Children
 
- * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical entity, other than a drug.
  * [ChemicalMixture](ChemicalMixture.md) - A chemical mixture is a chemical entity composed of two or more molecular entities.
  * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
  * [FoodAdditive](FoodAdditive.md)
@@ -137,6 +138,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  *  **[ChemicalEntity](ChemicalEntity.md)** *[synthesis decreased by](synthesis_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[synthesis increased by](synthesis_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[sythesis affected by](sythesis_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[NamedThing](NamedThing.md)** *[trade name](trade_name.md)*  <sub>0..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[transport affected by](transport_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[transport decreased by](transport_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[transport increased by](transport_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
@@ -146,6 +148,13 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
 ## Attributes
 
+
+### Own
+
+ * [available from](available_from.md)  <sub>0..\*</sub>
+     * Range: [drug_availability_enum](drug_availability_enum.md)
+ * [trade name](trade_name.md)  <sub>0..1</sub>
+     * Range: [ChemicalEntity](ChemicalEntity.md)
 
 ### Inherited from entity:
 

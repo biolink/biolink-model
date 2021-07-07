@@ -15,7 +15,7 @@ URI: [biolink:Haplotype](https://w3id.org/biolink/vocab/Haplotype)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[OrganismTaxon],[NamedThing],[Haplotype%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[PhysicalEssence],[BiologicalEntity]%5E-[Haplotype],[GenomicEntity],[BiologicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[Haplotype%7Chas_biological_sequence:biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[PhysicalEssence],[Haplotype]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Haplotype],[GenomicEntity],[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -28,6 +28,7 @@ URI: [biolink:Haplotype](https://w3id.org/biolink/vocab/Haplotype)
 
  *  mixin: [GenomicEntity](GenomicEntity.md)
  *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
+ *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
 
 ## Attributes
 
@@ -67,6 +68,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
+
+### Inherited from genomic entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
+     * Description: connects a genomic feature to its sequence
+     * Range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from macromolecular machine mixin:
 

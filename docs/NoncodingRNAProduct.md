@@ -15,7 +15,7 @@ URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAPr
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SiRNA],[OrganismTaxon],[NoncodingRNAProduct%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;has_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SiRNA],[NoncodingRNAProduct]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[NamedThing],[MicroRNA],[Attribute],[Agent],[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SiRNA],[OrganismTaxon],[NoncodingRNAProduct%7Csynonym(i):label_type%20%2A;xref(i):iri_type%20%2A;has_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SiRNA],[NoncodingRNAProduct]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[NamedThing],[MicroRNA],[ChemicalEntity],[Attribute],[Agent],[RNAProduct])
 
 ---
 
@@ -40,6 +40,13 @@ URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAPr
 
 ## Attributes
 
+
+### Inherited from chemical entity:
+
+ * [trade name](trade_name.md)  <sub>0..1</sub>
+     * Range: [ChemicalEntity](ChemicalEntity.md)
+ * [available from](available_from.md)  <sub>0..\*</sub>
+     * Range: [drug_availability_enum](drug_availability_enum.md)
 
 ### Inherited from entity:
 
@@ -77,6 +84,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
+### Inherited from genomic entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
+     * Description: connects a genomic feature to its sequence
+     * Range: [BiologicalSequence](types/BiologicalSequence.md)
+
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
@@ -93,12 +106,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
      * Range: [NamedThing](NamedThing.md)
-
-### Inherited from nucleic acid entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: connects a genomic feature to its sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from thing with taxon:
 

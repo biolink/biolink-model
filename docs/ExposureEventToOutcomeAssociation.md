@@ -26,7 +26,7 @@ URI: [biolink:ExposureEventToOutcomeAssociation](https://w3id.org/biolink/vocab/
 
 ## Uses Mixins
 
- *  mixin: [ExposureEventToEntityAssociationMixin](ExposureEventToEntityAssociationMixin.md) - An association between some exposure event and some entity.
+ *  mixin: [ExposureEventToEntityAssociationMixin](ExposureEventToEntityAssociationMixin.md)
  *  mixin: [EntityToOutcomeAssociationMixin](EntityToOutcomeAssociationMixin.md) - An association between some entity and an outcome
 
 ## Attributes

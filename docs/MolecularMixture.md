@@ -15,7 +15,7 @@ URI: [biolink:MolecularMixture](https://w3id.org/biolink/vocab/MolecularMixture)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[MolecularMixture%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[Drug],[ChemicalMixture]%5E-[MolecularMixture],[Drug],[ChemicalMixture],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[MolecularMixture%7Chighest_FDA_approval_status(i):string%20%3F;available_from(i):drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[Drug],[ChemicalMixture]%5E-[MolecularMixture],[Drug],[ChemicalMixture],[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -33,6 +33,21 @@ URI: [biolink:MolecularMixture](https://w3id.org/biolink/vocab/MolecularMixture)
 
 ## Attributes
 
+
+### Inherited from chemical entity:
+
+ * [trade name](trade_name.md)  <sub>0..1</sub>
+     * Range: [ChemicalEntity](ChemicalEntity.md)
+ * [available from](available_from.md)  <sub>0..\*</sub>
+     * Range: [drug_availability_enum](drug_availability_enum.md)
+
+### Inherited from chemical mixture:
+
+ * [is supplement](is_supplement.md)  <sub>0..1</sub>
+     * Range: [ChemicalMixture](ChemicalMixture.md)
+ * [highest FDA approval status](highest_FDA_approval_status.md)  <sub>0..1</sub>
+     * Description: Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
+     * Range: [String](types/String.md)
 
 ### Inherited from entity:
 

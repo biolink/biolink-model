@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[TaxonToTaxonAssociation],[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[OrganismTaxon]%3Csubclass%20of%200..%2A-%20[OrganismTaxon%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-++[OrganismTaxon],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OrganismTaxonToEntityAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToEnvironmentAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20subject%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxon]%5E-[BioticExposure],[NamedThing]%5E-[OrganismTaxon],[NamedThing],[BioticExposure],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[TaxonToTaxonAssociation],[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[OrganismTaxon]%3Csubclass%20of%200..%2A-%20[OrganismTaxon%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-++[OrganismTaxon],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OrganismTaxonToEntityAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToEnvironmentAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20subject%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[NamedThing]%5E-[OrganismTaxon],[NamedThing],[Attribute],[Agent])
 
 ---
 
@@ -28,10 +28,6 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 ## Parents
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
-
-## Children
-
- * [BioticExposure](BioticExposure.md) - An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 
 ## Referenced by class
 

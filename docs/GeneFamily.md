@@ -15,7 +15,7 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NucleicAcidEntity],[NamedThing],[GeneGroupingMixin],[GeneFamily%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneGroupingMixin],[NucleicAcidEntity]%5E-[GeneFamily],[Gene],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[GeneGroupingMixin],[GeneFamily%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneGroupingMixin],[GeneFamily]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity]%5E-[GeneFamily],[Gene],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -44,11 +44,12 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
 ## Parents
 
- *  is_a: [NucleicAcidEntity](NucleicAcidEntity.md) - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+ *  is_a: [BiologicalEntity](BiologicalEntity.md)
 
 ## Uses Mixins
 
  *  mixin: [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
+ *  mixin: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) - A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
 
 ## Attributes
 
@@ -101,29 +102,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
 
-### Inherited from molecular entity:
-
- * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
-     * Description: indicates whether a molecular entity is a metabolite
-     * Range: [Boolean](types/Boolean.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
      * Range: [NamedThing](NamedThing.md)
-
-### Inherited from nucleic acid entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: connects a genomic feature to its sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..\*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * Range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ## Other properties
 

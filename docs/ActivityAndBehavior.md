@@ -15,7 +15,7 @@ URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBeh
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[Procedure]uses%20-.-%3E[ActivityAndBehavior],[Activity]uses%20-.-%3E[ActivityAndBehavior],[Occurrent]%5E-[ActivityAndBehavior],[Procedure],[Activity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[Procedure]uses%20-.-%3E[ActivityAndBehavior],[Behavior]uses%20-.-%3E[ActivityAndBehavior],[Activity]uses%20-.-%3E[ActivityAndBehavior],[Occurrent]%5E-[ActivityAndBehavior],[Procedure],[Behavior],[Activity])
 
 ---
 
@@ -27,6 +27,7 @@ URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBeh
 ## Mixin for
 
  * [Activity](Activity.md) (mixin)  - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
+ * [Behavior](Behavior.md) (mixin) 
  * [Procedure](Procedure.md) (mixin)  - A series of actions conducted in a certain order or manner
 
 ## Referenced by class

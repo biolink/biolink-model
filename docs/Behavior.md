@@ -15,7 +15,7 @@ URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicOutcome],[SocioeconomicExposure],[PhysicalEntity],[OntologyClass],[NamedThing],[BiologicalProcessOrActivity],[BiologicalProcess],[BehavioralOutcome],[BehavioralExposure],[BehaviorToBehavioralFeatureAssociation],[BehaviorToBehavioralFeatureAssociation]-%20subject%201..1%3E[Behavior%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Behavior]uses%20-.-%3E[OntologyClass],[Behavior]%5E-[SocioeconomicOutcome],[Behavior]%5E-[SocioeconomicExposure],[Behavior]%5E-[BehavioralOutcome],[Behavior]%5E-[BehavioralExposure],[BiologicalProcess]%5E-[Behavior],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[OntologyClass],[NamedThing],[BiologicalProcessOrActivity],[BiologicalProcess],[BehaviorToBehavioralFeatureAssociation],[BehaviorToBehavioralFeatureAssociation]-%20subject%201..1%3E[Behavior%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Behavior]uses%20-.-%3E[OntologyClass],[Behavior]uses%20-.-%3E[ActivityAndBehavior],[BiologicalProcess]%5E-[Behavior],[Attribute],[Agent],[ActivityAndBehavior])
 
 ---
 
@@ -27,13 +27,7 @@ URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 ## Uses Mixins
 
  *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
-
-## Children
-
- * [BehavioralExposure](BehavioralExposure.md) - A behavioral exposure is a factor relating to behavior impacting an individual.
- * [BehavioralOutcome](BehavioralOutcome.md) - An outcome resulting from an exposure event which is the manifestation of human behavior.
- * [SocioeconomicExposure](SocioeconomicExposure.md) - A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
- * [SocioeconomicOutcome](SocioeconomicOutcome.md) - An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+ *  mixin: [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
 ## Referenced by class
 

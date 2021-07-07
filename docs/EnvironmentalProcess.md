@@ -15,7 +15,7 @@ URI: [biolink:EnvironmentalProcess](https://w3id.org/biolink/vocab/Environmental
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[Occurrent],[NamedThing],[EnvironmentalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Occurrent],[EnvironmentalProcess]%5E-[EnvironmentalExposure],[PlanetaryEntity]%5E-[EnvironmentalProcess],[EnvironmentalExposure],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[Occurrent],[NamedThing],[EnvironmentalProcess%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[Occurrent],[PlanetaryEntity]%5E-[EnvironmentalProcess],[Attribute],[Agent])
 
 ---
 
@@ -27,13 +27,6 @@ URI: [biolink:EnvironmentalProcess](https://w3id.org/biolink/vocab/Environmental
 ## Uses Mixins
 
  *  mixin: [Occurrent](Occurrent.md) - A processual entity.
-
-## Children
-
- * [EnvironmentalExposure](EnvironmentalExposure.md) - A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
-
-## Referenced by class
-
 
 ## Attributes
 

@@ -15,7 +15,7 @@ URI: [biolink:PathologicalAnatomicalStructure](https://w3id.org/biolink/vocab/Pa
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalEntityMixin],[PathologicalAnatomicalStructure%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalAnatomicalStructure]%5E-[PathologicalAnatomicalOutcome],[PathologicalAnatomicalStructure]%5E-[PathologicalAnatomicalExposure],[AnatomicalEntity]%5E-[PathologicalAnatomicalStructure],[PathologicalAnatomicalOutcome],[PathologicalAnatomicalExposure],[OrganismTaxon],[NamedThing],[Attribute],[AnatomicalEntity],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalEntityMixin],[PathologicalAnatomicalStructure%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[PathologicalEntityMixin],[AnatomicalEntity]%5E-[PathologicalAnatomicalStructure],[OrganismTaxon],[NamedThing],[Attribute],[AnatomicalEntity],[Agent])
 
 ---
 
@@ -27,14 +27,6 @@ URI: [biolink:PathologicalAnatomicalStructure](https://w3id.org/biolink/vocab/Pa
 ## Uses Mixins
 
  *  mixin: [PathologicalEntityMixin](PathologicalEntityMixin.md) - A pathological (abnormal) structure or process.
-
-## Children
-
- * [PathologicalAnatomicalExposure](PathologicalAnatomicalExposure.md) - An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
- * [PathologicalAnatomicalOutcome](PathologicalAnatomicalOutcome.md) - An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
-
-## Referenced by class
-
 
 ## Attributes
 

@@ -15,7 +15,7 @@ URI: [biolink:Macronutrient](https://w3id.org/biolink/vocab/Macronutrient)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Nutrient],[NamedThing],[Nutrient]%5E-[Macronutrient%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Nutrient],[NamedThing],[Nutrient]%5E-[Macronutrient%7Cavailable_from(i):drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -26,6 +26,13 @@ URI: [biolink:Macronutrient](https://w3id.org/biolink/vocab/Macronutrient)
 
 ## Attributes
 
+
+### Inherited from chemical entity:
+
+ * [trade name](trade_name.md)  <sub>0..1</sub>
+     * Range: [ChemicalEntity](ChemicalEntity.md)
+ * [available from](available_from.md)  <sub>0..\*</sub>
+     * Range: [drug_availability_enum](drug_availability_enum.md)
 
 ### Inherited from entity:
 

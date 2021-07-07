@@ -8,14 +8,14 @@ layout: default
 # Class: NucleicAcidEntity
 
 
-A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
 
 URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntity)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[SequenceVariant],[SequenceFeatureRelationship],[ReagentTargetedGene],[OrganismTaxon],[GenomicSequenceLocalization]-%20object%201..1%3E[NucleicAcidEntity%7Chas_biological_sequence:biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicSequenceLocalization]-%20subject%201..1%3E[NucleicAcidEntity],[SequenceFeatureRelationship]-%20object%201..1%3E[NucleicAcidEntity],[SequenceFeatureRelationship]-%20subject%201..1%3E[NucleicAcidEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]%5E-[Transcript],[NucleicAcidEntity]%5E-[SequenceVariant],[NucleicAcidEntity]%5E-[ReagentTargetedGene],[NucleicAcidEntity]%5E-[GeneFamily],[NucleicAcidEntity]%5E-[Gene],[NucleicAcidEntity]%5E-[Exon],[NucleicAcidEntity]%5E-[CodingSequence],[MolecularEntity]%5E-[NucleicAcidEntity],[NamedThing],[MolecularEntity],[GenomicSequenceLocalization],[GenomicEntity],[GeneFamily],[Gene],[Exon],[CodingSequence],[ChemicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[SequenceVariant],[SequenceFeatureRelationship],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenomicSequenceLocalization]-%20object%201..1%3E[NucleicAcidEntity%7Chas_biological_sequence:biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenomicSequenceLocalization]-%20subject%201..1%3E[NucleicAcidEntity],[SequenceFeatureRelationship]-%20object%201..1%3E[NucleicAcidEntity],[SequenceFeatureRelationship]-%20subject%201..1%3E[NucleicAcidEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[PhysicalEssence],[NucleicAcidEntity]uses%20-.-%3E[OntologyClass],[NucleicAcidEntity]%5E-[Transcript],[NucleicAcidEntity]%5E-[Exon],[NucleicAcidEntity]%5E-[CodingSequence],[MolecularEntity]%5E-[NucleicAcidEntity],[NamedThing],[MolecularEntity],[GenomicSequenceLocalization],[GenomicEntity],[Exon],[CodingSequence],[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -27,15 +27,13 @@ URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntit
 ## Uses Mixins
 
  *  mixin: [GenomicEntity](GenomicEntity.md)
+ *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
+ *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
 
 ## Children
 
  * [CodingSequence](CodingSequence.md)
  * [Exon](Exon.md) - A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
- * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
- * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
- * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
- * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
  * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 
 ## Referenced by class
@@ -60,11 +58,12 @@ URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntit
 ## Attributes
 
 
-### Own
+### Inherited from chemical entity:
 
- * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: connects a genomic feature to its sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
+ * [trade name](trade_name.md)  <sub>0..1</sub>
+     * Range: [ChemicalEntity](ChemicalEntity.md)
+ * [available from](available_from.md)  <sub>0..\*</sub>
+     * Range: [drug_availability_enum](drug_availability_enum.md)
 
 ### Inherited from entity:
 
@@ -102,6 +101,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
+### Inherited from genomic entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
+     * Description: connects a genomic feature to its sequence
+     * Range: [BiologicalSequence](types/BiologicalSequence.md)
+
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
@@ -135,8 +140,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **In Subsets:** | | model_organism_database |
 |  | | translator_minimal |
 | **Exact Mappings:** | | SO:0000110 |
-| **Narrow Mappings:** | | UMLSSC:T028 |
-|  | | GENO:0000897 |
-|  | | UMLSSC:T086 |
+| **Narrow Mappings:** | | UMLSSC:T086 |
 |  | | UMLSSC:T114 |
 

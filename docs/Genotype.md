@@ -15,7 +15,7 @@ URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[PhysicalEssence],[OrganismTaxon],[NamedThing],[GenotypeToVariantAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeToEntityAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation],[Zygosity]%3Chas%20zygosity%200..1-++[Genotype%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenotypeAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToEntityAssociationMixin]-%20subject%201..1%3E[Genotype],[GenotypeToGeneAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20object%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToVariantAssociation]-%20subject%201..1%3E[Genotype],[Genotype]uses%20-.-%3E[PhysicalEssence],[Genotype]uses%20-.-%3E[GenomicEntity],[BiologicalEntity]%5E-[Genotype],[GenomicEntity],[BiologicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[GenotypeToVariantAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeToEntityAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation],[Zygosity]%3Chas%20zygosity%200..1-++[Genotype%7Chas_biological_sequence:biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenotypeAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToEntityAssociationMixin]-%20subject%201..1%3E[Genotype],[GenotypeToGeneAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20object%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToVariantAssociation]-%20subject%201..1%3E[Genotype],[Genotype]uses%20-.-%3E[PhysicalEssence],[Genotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[PhysicalEssence],[Genotype]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Genotype],[GenomicEntity],[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -33,6 +33,8 @@ URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 
  *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
  *  mixin: [GenomicEntity](GenomicEntity.md)
+ *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
+ *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
 
 ## Referenced by class
 
@@ -82,6 +84,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
+
+### Inherited from genomic entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
+     * Description: connects a genomic feature to its sequence
+     * Range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from macromolecular machine mixin:
 

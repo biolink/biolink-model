@@ -15,7 +15,7 @@ URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocat
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[NamedThing],[GeographicLocationAtTime],[GeographicLocation%7Clatitude:float%20%3F;longitude:float%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[GeographicLocationAtTime],[GeographicLocation]%5E-[GeographicExposure],[PlanetaryEntity]%5E-[GeographicLocation],[GeographicExposure],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity],[NamedThing],[GeographicLocationAtTime],[GeographicLocation%7Clatitude:float%20%3F;longitude:float%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[GeographicLocationAtTime],[PlanetaryEntity]%5E-[GeographicLocation],[Attribute],[Agent])
 
 ---
 
@@ -26,7 +26,6 @@ URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocat
 
 ## Children
 
- * [GeographicExposure](GeographicExposure.md) - A geographic exposure is a factor relating to geographic proximity to some impactful entity.
  * [GeographicLocationAtTime](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
 
 ## Referenced by class

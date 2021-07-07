@@ -15,7 +15,7 @@ URI: [biolink:Death](https://w3id.org/biolink/vocab/Death)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[NamedThing],[MortalityOutcome],[Death%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[MortalityOutcome],[BiologicalProcess]%5E-[Death],[BiologicalProcessOrActivity],[BiologicalProcess],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[NamedThing],[BiologicalProcess]%5E-[Death%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[BiologicalProcessOrActivity],[BiologicalProcess],[Attribute],[Agent])
 
 ---
 
@@ -23,13 +23,6 @@ URI: [biolink:Death](https://w3id.org/biolink/vocab/Death)
 ## Parents
 
  *  is_a: [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
-
-## Children
-
- * [MortalityOutcome](MortalityOutcome.md) - An outcome of death from resulting from an exposure event.
-
-## Referenced by class
-
 
 ## Attributes
 

@@ -15,7 +15,7 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SmallMolecule],[ReactionToParticipantAssociation],[Polypeptide],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThing],[MolecularActivity]-%20has%20input%200..%2A%3E[MolecularEntity%7Cis_metabolite:boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularActivity]-%20has%20output%200..%2A%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20object%201..1%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20subject%201..1%3E[MolecularEntity],[ReactionToParticipantAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]%5E-[SmallMolecule],[MolecularEntity]%5E-[Polypeptide],[MolecularEntity]%5E-[NucleicAcidEntity],[ChemicalEntity]%5E-[MolecularEntity],[MolecularActivity],[Drug],[ChemicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SmallMolecule],[ReactionToParticipantAssociation],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThing],[MolecularActivity]-%20has%20input%200..%2A%3E[MolecularEntity%7Cis_metabolite:boolean%20%3F;available_from(i):drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularActivity]-%20has%20output%200..%2A%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20object%201..1%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20subject%201..1%3E[MolecularEntity],[ReactionToParticipantAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]%5E-[SmallMolecule],[MolecularEntity]%5E-[NucleicAcidEntity],[ChemicalEntity]%5E-[MolecularEntity],[MolecularActivity],[Drug],[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -26,8 +26,7 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
 ## Children
 
- * [NucleicAcidEntity](NucleicAcidEntity.md) - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
- * [Polypeptide](Polypeptide.md) - A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+ * [NucleicAcidEntity](NucleicAcidEntity.md) - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
  * [SmallMolecule](SmallMolecule.md) - A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
 
 ## Referenced by class
@@ -56,6 +55,13 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
      * Description: indicates whether a molecular entity is a metabolite
      * Range: [Boolean](types/Boolean.md)
+
+### Inherited from chemical entity:
+
+ * [trade name](trade_name.md)  <sub>0..1</sub>
+     * Range: [ChemicalEntity](ChemicalEntity.md)
+ * [available from](available_from.md)  <sub>0..\*</sub>
+     * Range: [drug_availability_enum](drug_availability_enum.md)
 
 ### Inherited from entity:
 

@@ -15,7 +15,7 @@ URI: [biolink:Snv](https://w3id.org/biolink/vocab/Snv)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%5E-[Snv%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;is_metabolite(i):boolean%20%3F;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[SequenceVariant],[OrganismTaxon],[NamedThing],[Gene],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%5E-[Snv%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[SequenceVariant],[OrganismTaxon],[NamedThing],[Gene],[Attribute],[Agent])
 
 ---
 
@@ -68,12 +68,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
-
-### Inherited from molecular entity:
-
- * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
-     * Description: indicates whether a molecular entity is a metabolite
-     * Range: [Boolean](types/Boolean.md)
 
 ### Inherited from named thing:
 

@@ -15,14 +15,20 @@ URI: [biolink:ReagentTargetedGene](https://w3id.org/biolink/vocab/ReagentTargete
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NucleicAcidEntity]%5E-[ReagentTargetedGene%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon],[NucleicAcidEntity],[NamedThing],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ReagentTargetedGene%7Chas_biological_sequence:biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GenomicEntity],[ReagentTargetedGene]uses%20-.-%3E[PhysicalEssence],[ReagentTargetedGene]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[ReagentTargetedGene],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[GenomicEntity],[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [NucleicAcidEntity](NucleicAcidEntity.md) - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+ *  is_a: [BiologicalEntity](BiologicalEntity.md)
+
+## Uses Mixins
+
+ *  mixin: [GenomicEntity](GenomicEntity.md)
+ *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
+ *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
 
 ## Attributes
 
@@ -63,28 +69,22 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
+### Inherited from genomic entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
+     * Description: connects a genomic feature to its sequence
+     * Range: [BiologicalSequence](types/BiologicalSequence.md)
+
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
 
-### Inherited from molecular entity:
-
- * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
-     * Description: indicates whether a molecular entity is a metabolite
-     * Range: [Boolean](types/Boolean.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
      * Range: [NamedThing](NamedThing.md)
-
-### Inherited from nucleic acid entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: connects a genomic feature to its sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from thing with taxon:
 

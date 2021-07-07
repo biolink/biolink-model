@@ -15,10 +15,18 @@ URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ThingWithTaxon],[ProteinIsoform],[Protein%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductMixin],[Protein]uses%20-.-%3E[ThingWithTaxon],[Protein]%5E-[ProteinIsoform],[Polypeptide]%5E-[Protein],[Polypeptide],[OrganismTaxon],[NamedThing],[GeneProductMixin],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ThingWithTaxon],[ProteinIsoform],[Protein%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductMixin],[Protein]uses%20-.-%3E[ThingWithTaxon],[Protein]%5E-[ProteinIsoform],[Polypeptide]%5E-[Protein],[Polypeptide],[OrganismTaxon],[NamedThing],[GeneProductMixin],[Attribute],[Agent])
 
 ---
 
+
+## Identifier prefixes
+
+ * UniProtKB
+ * PR
+ * ENSEMBL
+ * FB
+ * UMLS
 
 ## Parents
 
@@ -81,12 +89,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
-
-### Inherited from molecular entity:
-
- * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
-     * Description: indicates whether a molecular entity is a metabolite
-     * Range: [Boolean](types/Boolean.md)
 
 ### Inherited from named thing:
 

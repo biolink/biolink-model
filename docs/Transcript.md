@@ -15,7 +15,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[NamedThing],[Gene],[ExonToTranscriptRelationship],[ChemicalEntity],[Attribute],[Agent],[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[NamedThing],[Gene],[ExonToTranscriptRelationship],[ChemicalEntity],[Attribute],[Agent],[RNAProduct])
 
 ---
 
@@ -27,7 +27,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ## Parents
 
- *  is_a: [NucleicAcidEntity](NucleicAcidEntity.md) - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+ *  is_a: [NucleicAcidEntity](NucleicAcidEntity.md) - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
 
 ## Children
 
@@ -45,6 +45,13 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ## Attributes
 
+
+### Inherited from chemical entity:
+
+ * [trade name](trade_name.md)  <sub>0..1</sub>
+     * Range: [ChemicalEntity](ChemicalEntity.md)
+ * [available from](available_from.md)  <sub>0..\*</sub>
+     * Range: [drug_availability_enum](drug_availability_enum.md)
 
 ### Inherited from entity:
 
@@ -82,6 +89,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
+### Inherited from genomic entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
+     * Description: connects a genomic feature to its sequence
+     * Range: [BiologicalSequence](types/BiologicalSequence.md)
+
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
@@ -98,12 +111,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
      * Range: [NamedThing](NamedThing.md)
-
-### Inherited from nucleic acid entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: connects a genomic feature to its sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from thing with taxon:
 

@@ -15,7 +15,7 @@ URI: [biolink:Polypeptide](https://w3id.org/biolink/vocab/Polypeptide)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Protein],[Polypeptide%7Cis_metabolite(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[Protein],[MolecularEntity]%5E-[Polypeptide],[NamedThing],[MolecularEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[Protein],[Polypeptide%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ThingWithTaxon],[Polypeptide]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[Polypeptide]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[Polypeptide]%5E-[Protein],[BiologicalEntity]%5E-[Polypeptide],[OrganismTaxon],[NamedThing],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -30,7 +30,13 @@ URI: [biolink:Polypeptide](https://w3id.org/biolink/vocab/Polypeptide)
 
 ## Parents
 
- *  is_a: [MolecularEntity](MolecularEntity.md) - A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
+ *  is_a: [BiologicalEntity](BiologicalEntity.md)
+
+## Uses Mixins
+
+ *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
+ *  mixin: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) - A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
+ *  mixin: [ChemicalEntityOrProteinOrPolypeptide](ChemicalEntityOrProteinOrPolypeptide.md) - A union of chemical entities and children, and protein and polypeptide. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
 
 ## Children
 
@@ -84,16 +90,17 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
 
-### Inherited from molecular entity:
-
- * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
-     * Description: indicates whether a molecular entity is a metabolite
-     * Range: [Boolean](types/Boolean.md)
-
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
      * Range: [NamedThing](NamedThing.md)
+
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..\*</sub>
+     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+     * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
 
 ## Other properties
 
