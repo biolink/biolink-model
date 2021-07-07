@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-06-24 16:52
+# Generation date: 2021-07-07 01:36
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -609,7 +609,7 @@ class GrossAnatomicalStructureId(AnatomicalEntityId):
     pass
 
 
-class GeneId(NucleicAcidEntityId):
+class GeneId(BiologicalEntityId):
     pass
 
 
@@ -629,7 +629,7 @@ class CodingSequenceId(NucleicAcidEntityId):
     pass
 
 
-class PolypeptideId(MolecularEntityId):
+class PolypeptideId(BiologicalEntityId):
     pass
 
 
@@ -661,7 +661,7 @@ class SiRNAId(NoncodingRNAProductId):
     pass
 
 
-class GeneFamilyId(NucleicAcidEntityId):
+class GeneFamilyId(BiologicalEntityId):
     pass
 
 
@@ -673,7 +673,7 @@ class HaplotypeId(BiologicalEntityId):
     pass
 
 
-class SequenceVariantId(NucleicAcidEntityId):
+class SequenceVariantId(BiologicalEntityId):
     pass
 
 
@@ -681,7 +681,7 @@ class SnvId(SequenceVariantId):
     pass
 
 
-class ReagentTargetedGeneId(NucleicAcidEntityId):
+class ReagentTargetedGeneId(BiologicalEntityId):
     pass
 
 
@@ -713,15 +713,7 @@ class CohortId(StudyPopulationId):
     pass
 
 
-class GenomicBackgroundExposureId(BiologicalEntityId):
-    pass
-
-
 class PathologicalProcessId(BiologicalProcessId):
-    pass
-
-
-class PathologicalProcessExposureId(PathologicalProcessId):
     pass
 
 
@@ -729,83 +721,7 @@ class PathologicalAnatomicalStructureId(AnatomicalEntityId):
     pass
 
 
-class PathologicalAnatomicalExposureId(PathologicalAnatomicalStructureId):
-    pass
-
-
-class DiseaseOrPhenotypicFeatureExposureId(DiseaseOrPhenotypicFeatureId):
-    pass
-
-
-class ChemicalExposureId(ChemicalEntityId):
-    pass
-
-
-class ComplexChemicalExposureId(ChemicalExposureId):
-    pass
-
-
-class DrugExposureId(DrugId):
-    pass
-
-
-class DrugToGeneInteractionExposureId(DrugExposureId):
-    pass
-
-
 class TreatmentId(NamedThingId):
-    pass
-
-
-class BioticExposureId(OrganismTaxonId):
-    pass
-
-
-class GeographicExposureId(GeographicLocationId):
-    pass
-
-
-class EnvironmentalExposureId(EnvironmentalProcessId):
-    pass
-
-
-class BehavioralExposureId(BehaviorId):
-    pass
-
-
-class SocioeconomicExposureId(BehaviorId):
-    pass
-
-
-class PathologicalProcessOutcomeId(PathologicalProcessId):
-    pass
-
-
-class PathologicalAnatomicalOutcomeId(PathologicalAnatomicalStructureId):
-    pass
-
-
-class DiseaseOrPhenotypicFeatureOutcomeId(DiseaseOrPhenotypicFeatureId):
-    pass
-
-
-class BehavioralOutcomeId(BehaviorId):
-    pass
-
-
-class HospitalizationOutcomeId(HospitalizationId):
-    pass
-
-
-class MortalityOutcomeId(DeathId):
-    pass
-
-
-class EpidemiologicalOutcomeId(BiologicalEntityId):
-    pass
-
-
-class SocioeconomicOutcomeId(BehaviorId):
     pass
 
 
@@ -1022,6 +938,14 @@ class MacromolecularMachineToCellularComponentAssociationId(FunctionalAssociatio
 
 
 class GeneToGoTermAssociationId(FunctionalAssociationId):
+    pass
+
+
+class EntityToDiseaseAssociationId(AssociationId):
+    pass
+
+
+class EntityToPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
@@ -2366,6 +2290,7 @@ class ThingWithTaxon(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+@dataclass
 class GenomicEntity(ThingWithTaxon):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -2373,6 +2298,14 @@ class GenomicEntity(ThingWithTaxon):
     class_class_curie: ClassVar[str] = "biolink:GenomicEntity"
     class_name: ClassVar[str] = "genomic entity"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicEntity
+
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass
@@ -2389,6 +2322,19 @@ class ChemicalEntity(NamedThing):
 
     id: Union[str, ChemicalEntityId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    trade_name: Optional[Union[str, ChemicalEntityId]] = None
+    available_from: Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.trade_name is not None and not isinstance(self.trade_name, ChemicalEntityId):
+            self.trade_name = ChemicalEntityId(self.trade_name)
+
+        if not isinstance(self.available_from, list):
+            self.available_from = [self.available_from] if self.available_from is not None else []
+        self.available_from = [v if isinstance(v, DrugAvailabilityEnum) else DrugAvailabilityEnum(v) for v in self.available_from]
+
+        super().__post_init__(**kwargs)
+
 
 @dataclass
 class MolecularEntity(ChemicalEntity):
@@ -2468,12 +2414,20 @@ class ChemicalMixture(ChemicalEntity):
 
     id: Union[str, ChemicalMixtureId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    is_supplement: Optional[Union[str, ChemicalMixtureId]] = None
+    highest_FDA_approval_status: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChemicalMixtureId):
             self.id = ChemicalMixtureId(self.id)
+
+        if self.is_supplement is not None and not isinstance(self.is_supplement, ChemicalMixtureId):
+            self.is_supplement = ChemicalMixtureId(self.is_supplement)
+
+        if self.highest_FDA_approval_status is not None and not isinstance(self.highest_FDA_approval_status, str):
+            self.highest_FDA_approval_status = str(self.highest_FDA_approval_status)
 
         super().__post_init__(**kwargs)
 
@@ -2483,7 +2437,7 @@ class NucleicAcidEntity(MolecularEntity):
     """
     A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based
     sequence representations of its precise sequence; for convenience of representation, partial sequences of various
-    kinds are included, even if they do not represent a physical molecule.
+    kinds are included.
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -3336,6 +3290,32 @@ class GrossAnatomicalStructure(AnatomicalEntity):
         super().__post_init__(**kwargs)
 
 
+class ChemicalEntityOrGeneOrGeneProduct(YAMLRoot):
+    """
+    A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching
+    across chemical entities that must include genes and their children as chemical entities.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrGeneOrGeneProduct
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrGeneOrGeneProduct"
+    class_name: ClassVar[str] = "chemical entity or gene or gene product"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrGeneOrGeneProduct
+
+
+class ChemicalEntityOrProteinOrPolypeptide(YAMLRoot):
+    """
+    A union of chemical entities and children, and protein and polypeptide. This mixin is helpful to use when
+    searching across chemical entities that must include genes and their children as chemical entities.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrProteinOrPolypeptide
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    class_name: ClassVar[str] = "chemical entity or protein or polypeptide"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityOrProteinOrPolypeptide
+
+
 @dataclass
 class MacromolecularMachineMixin(YAMLRoot):
     """
@@ -3371,7 +3351,7 @@ class GeneOrGeneProduct(MacromolecularMachineMixin):
 
 
 @dataclass
-class Gene(NucleicAcidEntity):
+class Gene(BiologicalEntity):
     """
     A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A
     gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
@@ -3385,20 +3365,16 @@ class Gene(NucleicAcidEntity):
 
     id: Union[str, GeneId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
     symbol: Optional[str] = None
     synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
     xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneId):
             self.id = GeneId(self.id)
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         if self.symbol is not None and not isinstance(self.symbol, str):
             self.symbol = str(self.symbol)
@@ -3410,6 +3386,9 @@ class Gene(NucleicAcidEntity):
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -3483,12 +3462,16 @@ class Genome(BiologicalEntity):
 
     id: Union[str, GenomeId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenomeId):
             self.id = GenomeId(self.id)
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -3564,13 +3547,13 @@ class CodingSequence(NucleicAcidEntity):
 
 
 @dataclass
-class Polypeptide(MolecularEntity):
+class Polypeptide(BiologicalEntity):
     """
     A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based
     sequence representations of its precise primary structure; for convenience of representation, partial sequences of
     various kinds are included, even if they do not represent a physical molecule.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Polypeptide
     class_class_curie: ClassVar[str] = "biolink:Polypeptide"
@@ -3579,12 +3562,17 @@ class Polypeptide(MolecularEntity):
 
     id: Union[str, PolypeptideId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PolypeptideId):
             self.id = PolypeptideId(self.id)
+
+        if not isinstance(self.in_taxon, list):
+            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3604,15 +3592,19 @@ class Protein(Polypeptide):
 
     id: Union[str, ProteinId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
     synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
     xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProteinId):
             self.id = ProteinId(self.id)
+
+        if not isinstance(self.in_taxon, list):
+            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         if not isinstance(self.synonym, list):
             self.synonym = [self.synonym] if self.synonym is not None else []
@@ -3621,10 +3613,6 @@ class Protein(Polypeptide):
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3800,11 +3788,11 @@ class GeneGroupingMixin(YAMLRoot):
 
 
 @dataclass
-class GeneFamily(NucleicAcidEntity):
+class GeneFamily(BiologicalEntity):
     """
     any grouping of multiple genes or gene products related by common descent
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GeneFamily
     class_class_curie: ClassVar[str] = "biolink:GeneFamily"
@@ -3855,6 +3843,7 @@ class Genotype(BiologicalEntity):
     id: Union[str, GenotypeId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     has_zygosity: Optional[Union[dict, Zygosity]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -3864,6 +3853,9 @@ class Genotype(BiologicalEntity):
 
         if self.has_zygosity is not None and not isinstance(self.has_zygosity, Zygosity):
             self.has_zygosity = Zygosity(**self.has_zygosity)
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -3882,6 +3874,7 @@ class Haplotype(BiologicalEntity):
 
     id: Union[str, HaplotypeId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -3889,11 +3882,14 @@ class Haplotype(BiologicalEntity):
         if not isinstance(self.id, HaplotypeId):
             self.id = HaplotypeId(self.id)
 
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class SequenceVariant(NucleicAcidEntity):
+class SequenceVariant(BiologicalEntity):
     """
     An allele that varies in its sequence from what is considered the reference allele at that locus.
     """
@@ -3950,7 +3946,7 @@ class Snv(SequenceVariant):
 
 
 @dataclass
-class ReagentTargetedGene(NucleicAcidEntity):
+class ReagentTargetedGene(BiologicalEntity):
     """
     A gene altered in its expression level in the context of some experiment as a result of being targeted by
     gene-knockdown reagent(s) such as a morpholino or RNAi.
@@ -3964,12 +3960,16 @@ class ReagentTargetedGene(NucleicAcidEntity):
 
     id: Union[str, ReagentTargetedGeneId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ReagentTargetedGeneId):
             self.id = ReagentTargetedGeneId(self.id)
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -4258,7 +4258,7 @@ class ExposureEvent(YAMLRoot):
 
 
 @dataclass
-class GenomicBackgroundExposure(BiologicalEntity):
+class GenomicBackgroundExposure(YAMLRoot):
     """
     A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or
     other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing
@@ -4271,23 +4271,20 @@ class GenomicBackgroundExposure(BiologicalEntity):
     class_name: ClassVar[str] = "genomic background exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicBackgroundExposure
 
-    id: Union[str, GenomicBackgroundExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, GenomicBackgroundExposureId):
-            self.id = GenomicBackgroundExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
         if not isinstance(self.has_gene_or_gene_product, list):
             self.has_gene_or_gene_product = [self.has_gene_or_gene_product] if self.has_gene_or_gene_product is not None else []
         self.has_gene_or_gene_product = [v if isinstance(v, GeneId) else GeneId(v) for v in self.has_gene_or_gene_product]
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -4330,28 +4327,21 @@ class PathologicalProcess(BiologicalProcess):
 
 
 @dataclass
-class PathologicalProcessExposure(PathologicalProcess):
+class PathologicalProcessExposure(YAMLRoot):
     """
-    A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an
+    A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an
     outcome, e.g. autoimmunity leading to disease.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessExposure
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcessExposure"
     class_name: ClassVar[str] = "pathological process exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessExposure
 
-    id: Union[str, PathologicalProcessExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, PathologicalProcessExposureId):
-            self.id = PathologicalProcessExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4384,28 +4374,21 @@ class PathologicalAnatomicalStructure(AnatomicalEntity):
 
 
 @dataclass
-class PathologicalAnatomicalExposure(PathologicalAnatomicalStructure):
+class PathologicalAnatomicalExposure(YAMLRoot):
     """
     An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or
     influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalExposure
     class_class_curie: ClassVar[str] = "biolink:PathologicalAnatomicalExposure"
     class_name: ClassVar[str] = "pathological anatomical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalExposure
 
-    id: Union[str, PathologicalAnatomicalExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, PathologicalAnatomicalExposureId):
-            self.id = PathologicalAnatomicalExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4413,29 +4396,22 @@ class PathologicalAnatomicalExposure(PathologicalAnatomicalStructure):
 
 
 @dataclass
-class DiseaseOrPhenotypicFeatureExposure(DiseaseOrPhenotypicFeature):
+class DiseaseOrPhenotypicFeatureExposure(YAMLRoot):
     """
     A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or
     influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin
     pigmentation predisposing an individual to skin cancer.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureExposure
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureExposure"
     class_name: ClassVar[str] = "disease or phenotypic feature exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureExposure
 
-    id: Union[str, DiseaseOrPhenotypicFeatureExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DiseaseOrPhenotypicFeatureExposureId):
-            self.id = DiseaseOrPhenotypicFeatureExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4443,9 +4419,9 @@ class DiseaseOrPhenotypicFeatureExposure(DiseaseOrPhenotypicFeature):
 
 
 @dataclass
-class ChemicalExposure(ChemicalEntity):
+class ChemicalExposure(YAMLRoot):
     """
-    A chemical exposure is an intake of a particular chemical entity, other than a drug.
+    A chemical exposure is an intake of a particular chemical entity.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -4454,24 +4430,16 @@ class ChemicalExposure(ChemicalEntity):
     class_name: ClassVar[str] = "chemical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalExposure
 
-    id: Union[str, ChemicalExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalExposureId):
-            self.id = ChemicalExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
         super().__post_init__(**kwargs)
 
 
-@dataclass
-class ComplexChemicalExposure(ChemicalExposure):
+class ComplexChemicalExposure(YAMLRoot):
     """
     A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
     """
@@ -4482,20 +4450,9 @@ class ComplexChemicalExposure(ChemicalExposure):
     class_name: ClassVar[str] = "complex chemical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ComplexChemicalExposure
 
-    id: Union[str, ComplexChemicalExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ComplexChemicalExposureId):
-            self.id = ComplexChemicalExposureId(self.id)
-
-        super().__post_init__(**kwargs)
-
 
 @dataclass
-class DrugExposure(Drug):
+class DrugExposure(ChemicalExposure):
     """
     A drug exposure is an intake of a particular drug.
     """
@@ -4506,16 +4463,9 @@ class DrugExposure(Drug):
     class_name: ClassVar[str] = "drug exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugExposure
 
-    id: Union[str, DrugExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DrugExposureId):
-            self.id = DrugExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4535,16 +4485,9 @@ class DrugToGeneInteractionExposure(DrugExposure):
     class_name: ClassVar[str] = "drug to gene interaction exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugToGeneInteractionExposure
 
-    id: Union[str, DrugToGeneInteractionExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DrugToGeneInteractionExposureId):
-            self.id = DrugToGeneInteractionExposureId(self.id)
-
         if not isinstance(self.has_gene_or_gene_product, list):
             self.has_gene_or_gene_product = [self.has_gene_or_gene_product] if self.has_gene_or_gene_product is not None else []
         self.has_gene_or_gene_product = [v if isinstance(v, GeneId) else GeneId(v) for v in self.has_gene_or_gene_product]
@@ -4597,27 +4540,20 @@ class Treatment(NamedThing):
 
 
 @dataclass
-class BioticExposure(OrganismTaxon):
+class BioticExposure(YAMLRoot):
     """
     An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
     """
-    _inherited_slots: ClassVar[List[str]] = ["subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.BioticExposure
     class_class_curie: ClassVar[str] = "biolink:BioticExposure"
     class_name: ClassVar[str] = "biotic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BioticExposure
 
-    id: Union[str, BioticExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, BioticExposureId):
-            self.id = BioticExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4625,35 +4561,7 @@ class BioticExposure(OrganismTaxon):
 
 
 @dataclass
-class GeographicExposure(GeographicLocation):
-    """
-    A geographic exposure is a factor relating to geographic proximity to some impactful entity.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicExposure
-    class_class_curie: ClassVar[str] = "biolink:GeographicExposure"
-    class_name: ClassVar[str] = "geographic exposure"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicExposure
-
-    id: Union[str, GeographicExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, GeographicExposureId):
-            self.id = GeographicExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EnvironmentalExposure(EnvironmentalProcess):
+class EnvironmentalExposure(YAMLRoot):
     """
     A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B),
     atmospheric (heat, cold, general pollution) and water-born contaminants.
@@ -4665,16 +4573,9 @@ class EnvironmentalExposure(EnvironmentalProcess):
     class_name: ClassVar[str] = "environmental exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalExposure
 
-    id: Union[str, EnvironmentalExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, EnvironmentalExposureId):
-            self.id = EnvironmentalExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4682,27 +4583,41 @@ class EnvironmentalExposure(EnvironmentalProcess):
 
 
 @dataclass
-class BehavioralExposure(Behavior):
+class GeographicExposure(EnvironmentalExposure):
+    """
+    A geographic exposure is a factor relating to geographic proximity to some impactful entity.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeographicExposure
+    class_class_curie: ClassVar[str] = "biolink:GeographicExposure"
+    class_name: ClassVar[str] = "geographic exposure"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicExposure
+
+    timepoint: Optional[Union[str, TimeType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
+            self.timepoint = TimeType(self.timepoint)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BehavioralExposure(YAMLRoot):
     """
     A behavioral exposure is a factor relating to behavior impacting an individual.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.BehavioralExposure
     class_class_curie: ClassVar[str] = "biolink:BehavioralExposure"
     class_name: ClassVar[str] = "behavioral exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehavioralExposure
 
-    id: Union[str, BehavioralExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, BehavioralExposureId):
-            self.id = BehavioralExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4710,29 +4625,22 @@ class BehavioralExposure(Behavior):
 
 
 @dataclass
-class SocioeconomicExposure(Behavior):
+class SocioeconomicExposure(YAMLRoot):
     """
     A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g.
     poverty).
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicExposure
     class_class_curie: ClassVar[str] = "biolink:SocioeconomicExposure"
     class_name: ClassVar[str] = "socioeconomic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicExposure
 
-    id: Union[str, SocioeconomicExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     has_attribute: Union[Union[dict, SocioeconomicAttribute], List[Union[dict, SocioeconomicAttribute]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, SocioeconomicExposureId):
-            self.id = SocioeconomicExposureId(self.id)
-
         if self._is_empty(self.has_attribute):
             self.MissingRequiredField("has_attribute")
         self._normalize_inlined_as_dict(slot_name="has_attribute", slot_type=SocioeconomicAttribute, key_name="has attribute type", keyed=False)
@@ -4756,105 +4664,56 @@ class Outcome(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Outcome
 
 
-@dataclass
-class PathologicalProcessOutcome(PathologicalProcess):
+class PathologicalProcessOutcome(YAMLRoot):
     """
     An outcome resulting from an exposure event which is the manifestation of a pathological process.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessOutcome
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcessOutcome"
     class_name: ClassVar[str] = "pathological process outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessOutcome
 
-    id: Union[str, PathologicalProcessOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, PathologicalProcessOutcomeId):
-            self.id = PathologicalProcessOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PathologicalAnatomicalOutcome(PathologicalAnatomicalStructure):
+class PathologicalAnatomicalOutcome(YAMLRoot):
     """
     An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalOutcome
     class_class_curie: ClassVar[str] = "biolink:PathologicalAnatomicalOutcome"
     class_name: ClassVar[str] = "pathological anatomical outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalOutcome
 
-    id: Union[str, PathologicalAnatomicalOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, PathologicalAnatomicalOutcomeId):
-            self.id = PathologicalAnatomicalOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class DiseaseOrPhenotypicFeatureOutcome(DiseaseOrPhenotypicFeature):
+class DiseaseOrPhenotypicFeatureOutcome(YAMLRoot):
     """
     Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other
     characteristic phenotype.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureOutcome
     class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureOutcome"
     class_name: ClassVar[str] = "disease or phenotypic feature outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureOutcome
 
-    id: Union[str, DiseaseOrPhenotypicFeatureOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DiseaseOrPhenotypicFeatureOutcomeId):
-            self.id = DiseaseOrPhenotypicFeatureOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BehavioralOutcome(Behavior):
+class BehavioralOutcome(YAMLRoot):
     """
     An outcome resulting from an exposure event which is the manifestation of human behavior.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.BehavioralOutcome
     class_class_curie: ClassVar[str] = "biolink:BehavioralOutcome"
     class_name: ClassVar[str] = "behavioral outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehavioralOutcome
 
-    id: Union[str, BehavioralOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, BehavioralOutcomeId):
-            self.id = BehavioralOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class HospitalizationOutcome(Hospitalization):
+class HospitalizationOutcome(YAMLRoot):
     """
     An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room
     visit) or chronic (inpatient) hospitalization.
@@ -4866,44 +4725,20 @@ class HospitalizationOutcome(Hospitalization):
     class_name: ClassVar[str] = "hospitalization outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.HospitalizationOutcome
 
-    id: Union[str, HospitalizationOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, HospitalizationOutcomeId):
-            self.id = HospitalizationOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MortalityOutcome(Death):
+class MortalityOutcome(YAMLRoot):
     """
     An outcome of death from resulting from an exposure event.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.MortalityOutcome
     class_class_curie: ClassVar[str] = "biolink:MortalityOutcome"
     class_name: ClassVar[str] = "mortality outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.MortalityOutcome
 
-    id: Union[str, MortalityOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, MortalityOutcomeId):
-            self.id = MortalityOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EpidemiologicalOutcome(BiologicalEntity):
+class EpidemiologicalOutcome(YAMLRoot):
     """
     An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
     """
@@ -4914,41 +4749,18 @@ class EpidemiologicalOutcome(BiologicalEntity):
     class_name: ClassVar[str] = "epidemiological outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EpidemiologicalOutcome
 
-    id: Union[str, EpidemiologicalOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, EpidemiologicalOutcomeId):
-            self.id = EpidemiologicalOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SocioeconomicOutcome(Behavior):
+class SocioeconomicOutcome(YAMLRoot):
     """
     An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure
     event
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicOutcome
     class_class_curie: ClassVar[str] = "biolink:SocioeconomicOutcome"
     class_name: ClassVar[str] = "socioeconomic outcome"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicOutcome
-
-    id: Union[str, SocioeconomicOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, SocioeconomicOutcomeId):
-            self.id = SocioeconomicOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
 
 
 @dataclass
@@ -6029,27 +5841,13 @@ class DiseaseToExposureEventAssociation(Association):
         super().__post_init__(**kwargs)
 
 
-@dataclass
 class ExposureEventToEntityAssociationMixin(YAMLRoot):
-    """
-    An association between some exposure event and some entity.
-    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.ExposureEventToEntityAssociationMixin
     class_class_curie: ClassVar[str] = "biolink:ExposureEventToEntityAssociationMixin"
     class_name: ClassVar[str] = "exposure event to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEventToEntityAssociationMixin
-
-    subject: Union[dict, ExposureEvent] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, ExposureEvent):
-            self.subject = ExposureEvent(**self.subject)
-
-        super().__post_init__(**kwargs)
 
 
 @dataclass
@@ -7498,6 +7296,62 @@ class GeneToGoTermAssociation(FunctionalAssociation):
 
 
 @dataclass
+class EntityToDiseaseAssociation(Association):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociation
+    class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseAssociation"
+    class_name: ClassVar[str] = "entity to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociation
+
+    id: Union[str, EntityToDiseaseAssociationId] = None
+    subject: Union[str, NamedThingId] = None
+    predicate: Union[str, PredicateType] = None
+    object: Union[str, NamedThingId] = None
+    relation: Union[str, URIorCURIE] = None
+    FDA_approval_status: Optional[Union[str, "FDAApprovalStatusEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, EntityToDiseaseAssociationId):
+            self.id = EntityToDiseaseAssociationId(self.id)
+
+        if self.FDA_approval_status is not None and not isinstance(self.FDA_approval_status, FDAApprovalStatusEnum):
+            self.FDA_approval_status = FDAApprovalStatusEnum(self.FDA_approval_status)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class EntityToPhenotypicFeatureAssociation(Association):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociation
+    class_class_curie: ClassVar[str] = "biolink:EntityToPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "entity to phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociation
+
+    id: Union[str, EntityToPhenotypicFeatureAssociationId] = None
+    subject: Union[str, NamedThingId] = None
+    predicate: Union[str, PredicateType] = None
+    object: Union[str, NamedThingId] = None
+    relation: Union[str, URIorCURIE] = None
+    FDA_approval_status: Optional[Union[str, "FDAApprovalStatusEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, EntityToPhenotypicFeatureAssociationId):
+            self.id = EntityToPhenotypicFeatureAssociationId(self.id)
+
+        if self.FDA_approval_status is not None and not isinstance(self.FDA_approval_status, FDAApprovalStatusEnum):
+            self.FDA_approval_status = FDAApprovalStatusEnum(self.FDA_approval_status)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class SequenceAssociation(Association):
     """
     An association between a sequence feature and a nucleic acid entity it is localized to.
@@ -8169,6 +8023,73 @@ class SequenceEnum(EnumDefinitionImpl):
         description="type of sequence",
     )
 
+class DrugAvailabilityEnum(EnumDefinitionImpl):
+
+    prescription = PermissibleValue(text="prescription",
+                                               description="chemical entity is available by prescription.")
+
+    _defn = EnumDefinition(
+        name="DrugAvailabilityEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "over the counter",
+                PermissibleValue(text="over the counter",
+                                 description="chemical entity is available over the counter without a prescription.") )
+
+class FDAApprovalStatusEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="FDAApprovalStatusEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Discovery & Development Phase",
+                PermissibleValue(text="Discovery & Development Phase",
+                                 description="Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.") )
+        setattr(cls, "Preclinical Research Phase",
+                PermissibleValue(text="Preclinical Research Phase",
+                                 description="Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.") )
+        setattr(cls, "FDA Clinical Research Phase",
+                PermissibleValue(text="FDA Clinical Research Phase",
+                                 description="Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.") )
+        setattr(cls, "FDA Review Phase 4",
+                PermissibleValue(text="FDA Review Phase 4",
+                                 description="FDA Review") )
+        setattr(cls, "FDA Post-Market Safety Monitoring",
+                PermissibleValue(text="FDA Post-Market Safety Monitoring",
+                                 description="FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.") )
+        setattr(cls, "FDA Clinical Research Phase 1",
+                PermissibleValue(text="FDA Clinical Research Phase 1",
+                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.") )
+        setattr(cls, "FDA Clinical Research Phase 2",
+                PermissibleValue(text="FDA Clinical Research Phase 2",
+                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.") )
+        setattr(cls, "FDA Clinical Research Phase 3",
+                PermissibleValue(text="FDA Clinical Research Phase 3",
+                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.") )
+        setattr(cls, "FDA Clinical Research Phase 4",
+                PermissibleValue(text="FDA Clinical Research Phase 4",
+                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.") )
+        setattr(cls, "FDA Fast Track",
+                PermissibleValue(text="FDA Fast Track",
+                                 description="Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track") )
+        setattr(cls, "FDA Breakthrough Therapy",
+                PermissibleValue(text="FDA Breakthrough Therapy",
+                                 description="Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy") )
+        setattr(cls, "FDA Accelerated Approval",
+                PermissibleValue(text="FDA Accelerated Approval",
+                                 description="When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval") )
+        setattr(cls, "FDA Priority Review",
+                PermissibleValue(text="FDA Priority Review",
+                                 description="Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review") )
+        setattr(cls, "regular approval",
+                PermissibleValue(text="regular approval") )
+        setattr(cls, "post-approval withdrawal",
+                PermissibleValue(text="post-approval withdrawal") )
+
 # Slots
 class slots:
     pass
@@ -8406,6 +8327,21 @@ slots.has_population_context = Slot(uri=BIOLINK.has_population_context, name="ha
 
 slots.has_temporal_context = Slot(uri=BIOLINK.has_temporal_context, name="has temporal context", curie=BIOLINK.curie('has_temporal_context'),
                    model_uri=BIOLINK.has_temporal_context, domain=Association, range=Optional[Union[str, TimeType]])
+
+slots.is_supplement = Slot(uri=BIOLINK.is_supplement, name="is supplement", curie=BIOLINK.curie('is_supplement'),
+                   model_uri=BIOLINK.is_supplement, domain=NamedThing, range=Optional[Union[str, ChemicalMixtureId]])
+
+slots.trade_name = Slot(uri=BIOLINK.trade_name, name="trade name", curie=BIOLINK.curie('trade_name'),
+                   model_uri=BIOLINK.trade_name, domain=NamedThing, range=Optional[Union[str, ChemicalEntityId]])
+
+slots.available_from = Slot(uri=BIOLINK.available_from, name="available from", curie=BIOLINK.curie('available_from'),
+                   model_uri=BIOLINK.available_from, domain=NamedThing, range=Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]])
+
+slots.animal_model_available_from = Slot(uri=BIOLINK.animal_model_available_from, name="animal model available from", curie=BIOLINK.curie('animal_model_available_from'),
+                   model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+
+slots.highest_FDA_approval_status = Slot(uri=BIOLINK.highest_FDA_approval_status, name="highest FDA approval status", curie=BIOLINK.curie('highest_FDA_approval_status'),
+                   model_uri=BIOLINK.highest_FDA_approval_status, domain=None, range=Optional[str])
 
 slots.related_to = Slot(uri=BIOLINK.related_to, name="related to", curie=BIOLINK.curie('related_to'),
                    model_uri=BIOLINK.related_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -9406,6 +9342,9 @@ slots.strand = Slot(uri=BIOLINK.strand, name="strand", curie=BIOLINK.curie('stra
 slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase'),
                    model_uri=BIOLINK.phase, domain=CodingSequence, range=Optional[Union[str, "PhaseEnum"]])
 
+slots.FDA_approval_status = Slot(uri=BIOLINK.FDA_approval_status, name="FDA approval status", curie=BIOLINK.curie('FDA_approval_status'),
+                   model_uri=BIOLINK.FDA_approval_status, domain=Association, range=Optional[Union[str, "FDAApprovalStatusEnum"]])
+
 slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.has_taxonomic_rank, domain=None, range=Optional[Union[dict, TaxonomicRank]], mappings = [WIKIDATA.P105])
 
@@ -9645,9 +9584,6 @@ slots.disease_to_entity_association_mixin_subject = Slot(uri=BIOLINK.subject, na
 
 slots.entity_to_exposure_event_association_mixin_object = Slot(uri=BIOLINK.object, name="entity to exposure event association mixin_object", curie=BIOLINK.curie('object'),
                    model_uri=BIOLINK.entity_to_exposure_event_association_mixin_object, domain=None, range=Union[dict, ExposureEvent])
-
-slots.exposure_event_to_entity_association_mixin_subject = Slot(uri=BIOLINK.subject, name="exposure event to entity association mixin_subject", curie=BIOLINK.curie('subject'),
-                   model_uri=BIOLINK.exposure_event_to_entity_association_mixin_subject, domain=None, range=Union[dict, ExposureEvent])
 
 slots.entity_to_outcome_association_mixin_object = Slot(uri=BIOLINK.object, name="entity to outcome association mixin_object", curie=BIOLINK.curie('object'),
                    model_uri=BIOLINK.entity_to_outcome_association_mixin_object, domain=None, range=Union[dict, Outcome])

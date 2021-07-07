@@ -2,8 +2,7 @@ id: nucleic_acid_entity
 schema_generating: true
 description: A nucleic acid entity is a molecular entity characterized by availability
   in gene databases of nucleotide-based sequence representations of its precise sequence;
-  for convenience of representation, partial sequences of various kinds are included,
-  even if they do not represent a physical molecule.
+  for convenience of representation, partial sequences of various kinds are included.
 display_name: nucleic acid entity
 document_category: nucleic acid entity
 weight: 20
@@ -41,14 +40,21 @@ fields:
 - id: category
   display_name: named thing_category
   cardinality: multi
+- id: trade_name
+  description: ''
+  display_name: trade name
+- id: available_from
+  description: ''
+  display_name: available from
+  cardinality: multi
 - id: is_metabolite
   description: indicates whether a molecular entity is a metabolite
   display_name: is metabolite
-- id: has_biological_sequence
-  description: connects a genomic feature to its sequence
-  display_name: has biological sequence
 - id: in_taxon
   description: connects an entity to its taxonomic classification. Only certain kinds
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: has_biological_sequence
+  description: connects a genomic feature to its sequence
+  display_name: has biological sequence

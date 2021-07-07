@@ -815,79 +815,12 @@
          "additionalProperties": false,
          "description": "A behavioral exposure is a factor relating to behavior impacting an individual.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "has_input": {
-               "description": "holds between a process and a continuant, where the continuant is an input into the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "holds between a process and a continuant, where the continuant is an output of the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "BehavioralExposure",
          "type": "object"
       },
@@ -956,76 +889,8 @@
       "BehavioralOutcome": {
          "additionalProperties": false,
          "description": "An outcome resulting from an exposure event which is the manifestation of human behavior.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "has_input": {
-               "description": "holds between a process and a continuant, where the continuant is an input into the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "holds between a process and a continuant, where the continuant is an output of the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "BehavioralOutcome",
          "type": "object"
       },
@@ -1223,68 +1088,12 @@
          "additionalProperties": false,
          "description": "An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "has_taxonomic_rank": {
-               "$ref": "#/definitions/TaxonomicRank"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "subclass_of": {
-               "description": "subclass of holds between two taxa, e.g. human subclass of mammal",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "BioticExposure",
          "type": "object"
       },
@@ -2068,60 +1877,14 @@
       },
       "ChemicalExposure": {
          "additionalProperties": false,
-         "description": "A chemical exposure is an intake of a particular chemical entity, other than a drug.",
+         "description": "A chemical exposure is an intake of a particular chemical entity.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "ChemicalExposure",
          "type": "object"
       },
@@ -2129,6 +1892,12 @@
          "additionalProperties": false,
          "description": "A chemical mixture is a chemical entity composed of two or more molecular entities.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -2146,12 +1915,19 @@
                },
                "type": "array"
             },
+            "highest_FDA_approval_status": {
+               "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_supplement": {
                "type": "string"
             },
             "name": {
@@ -2167,6 +1943,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -3040,6 +2819,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -3093,6 +2878,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -3171,59 +2959,8 @@
       "ComplexChemicalExposure": {
          "additionalProperties": false,
          "description": "A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "timepoint": {
-               "description": "a point in time",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "ComplexChemicalExposure",
          "type": "object"
       },
@@ -3231,6 +2968,12 @@
          "additionalProperties": false,
          "description": "A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -3248,12 +2991,19 @@
                },
                "type": "array"
             },
+            "highest_FDA_approval_status": {
+               "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_supplement": {
                "type": "string"
             },
             "name": {
@@ -3269,6 +3019,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -3992,127 +3745,20 @@
          "additionalProperties": false,
          "description": "A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "DiseaseOrPhenotypicFeatureExposure",
          "type": "object"
       },
       "DiseaseOrPhenotypicFeatureOutcome": {
          "additionalProperties": false,
          "description": "Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "DiseaseOrPhenotypicFeatureOutcome",
          "type": "object"
       },
@@ -4415,6 +4061,12 @@
          "additionalProperties": false,
          "description": "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -4432,12 +4084,19 @@
                },
                "type": "array"
             },
+            "highest_FDA_approval_status": {
+               "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_supplement": {
                "type": "string"
             },
             "name": {
@@ -4453,6 +4112,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -4470,58 +4132,12 @@
          "additionalProperties": false,
          "description": "A drug exposure is an intake of a particular drug.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "DrugExposure",
          "type": "object"
       },
@@ -4622,23 +4238,6 @@
          "additionalProperties": false,
          "description": "drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
             "has_gene_or_gene_product": {
                "description": "connects an entity with one or more gene or gene products",
                "items": {
@@ -4646,48 +4245,22 @@
                },
                "type": "array"
             },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "DrugToGeneInteractionExposure",
          "type": "object"
       },
-      "EnvironmentalExposure": {
+      "EntityToDiseaseAssociation": {
          "additionalProperties": false,
-         "description": "A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.",
+         "description": "",
          "properties": {
+            "FDA_approval_status": {
+               "type": "string"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -4717,6 +4290,18 @@
                "description": "A human-readable name for an attribute or entity.",
                "type": "string"
             },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "items": {
@@ -4724,22 +4309,153 @@
                },
                "type": "array"
             },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "$ref": "#/definitions/OntologyClass"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
-            "timepoint": {
-               "description": "a point in time",
+            "subject": {
+               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
             "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "category"
+            "subject",
+            "predicate",
+            "object",
+            "relation"
          ],
+         "title": "EntityToDiseaseAssociation",
+         "type": "object"
+      },
+      "EntityToPhenotypicFeatureAssociation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "FDA_approval_status": {
+               "type": "string"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "connects an association to the agent (person, organization or group) that provided it",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "$ref": "#/definitions/OntologyClass"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "subject",
+            "predicate",
+            "object",
+            "relation"
+         ],
+         "title": "EntityToPhenotypicFeatureAssociation",
+         "type": "object"
+      },
+      "EnvironmentalExposure": {
+         "additionalProperties": false,
+         "description": "A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.",
+         "properties": {
+            "timepoint": {
+               "description": "a point in time",
+               "type": "string"
+            }
+         },
+         "required": [],
          "title": "EnvironmentalExposure",
          "type": "object"
       },
@@ -4802,6 +4518,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -4840,6 +4562,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -4911,55 +4636,8 @@
       "EpidemiologicalOutcome": {
          "additionalProperties": false,
          "description": "An epidemiological outcome, such as societal disease burden, resulting from an exposure event.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "EpidemiologicalOutcome",
          "type": "object"
       },
@@ -5090,6 +4768,12 @@
          "additionalProperties": false,
          "description": "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -5143,6 +4827,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -5245,6 +4932,14 @@
             "object"
          ],
          "title": "ExonToTranscriptRelationship",
+         "type": "object"
+      },
+      "ExposureEventToEntityAssociationMixin": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ExposureEventToEntityAssociationMixin",
          "type": "object"
       },
       "ExposureEventToOutcomeAssociation": {
@@ -5460,6 +5155,12 @@
          "additionalProperties": false,
          "description": "A substance consumed by a living organism as a source of nutrition",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -5477,12 +5178,19 @@
                },
                "type": "array"
             },
+            "highest_FDA_approval_status": {
+               "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_supplement": {
                "type": "string"
             },
             "name": {
@@ -5498,6 +5206,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -5515,6 +5226,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -5553,6 +5270,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -5698,10 +5418,6 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a molecular entity is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5873,10 +5589,6 @@
                },
                "type": "array"
             },
-            "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
-               "type": "string"
-            },
             "has_gene_or_gene_product": {
                "description": "connects an entity with one or more gene or gene products",
                "items": {
@@ -5888,20 +5600,9 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a molecular entity is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -6849,6 +6550,10 @@
                },
                "type": "array"
             },
+            "has_biological_sequence": {
+               "description": "connects a genomic feature to its sequence",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -6894,22 +6599,9 @@
          "additionalProperties": false,
          "description": "A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
+            "has_biological_sequence": {
+               "description": "connects a genomic feature to its sequence",
                "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
             },
             "has_gene_or_gene_product": {
                "description": "connects an entity with one or more gene or gene products",
@@ -6918,10 +6610,6 @@
                },
                "type": "array"
             },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
@@ -6929,37 +6617,12 @@
                },
                "type": "array"
             },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "GenomicBackgroundExposure",
          "type": "object"
       },
@@ -7093,6 +6756,10 @@
                   "$ref": "#/definitions/Attribute"
                },
                "type": "array"
+            },
+            "has_biological_sequence": {
+               "description": "connects a genomic feature to its sequence",
+               "type": "string"
             },
             "has_zygosity": {
                "$ref": "#/definitions/Zygosity"
@@ -7776,66 +7443,12 @@
          "additionalProperties": false,
          "description": "A geographic exposure is a factor relating to geographic proximity to some impactful entity.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "latitude": {
-               "description": "latitude",
-               "type": "number"
-            },
-            "longitude": {
-               "description": "longitude",
-               "type": "number"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "GeographicExposure",
          "type": "object"
       },
@@ -8052,6 +7665,10 @@
                },
                "type": "array"
             },
+            "has_biological_sequence": {
+               "description": "connects a genomic feature to its sequence",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -8151,55 +7768,8 @@
       "HospitalizationOutcome": {
          "additionalProperties": false,
          "description": "An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "HospitalizationOutcome",
          "type": "object"
       },
@@ -8713,6 +8283,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -8751,6 +8327,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -9009,6 +8588,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -9071,6 +8656,9 @@
                },
                "type": "array"
             },
+            "trade_name": {
+               "type": "string"
+            },
             "type": {
                "type": "string"
             },
@@ -9093,6 +8681,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -9131,6 +8725,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -9224,6 +8821,12 @@
          "additionalProperties": false,
          "description": "A molecular entity is a chemical entity composed of individual or covalently bonded atoms.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -9268,6 +8871,9 @@
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
+            "trade_name": {
+               "type": "string"
+            },
             "type": {
                "type": "string"
             }
@@ -9283,6 +8889,12 @@
          "additionalProperties": false,
          "description": "A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -9300,12 +8912,19 @@
                },
                "type": "array"
             },
+            "highest_FDA_approval_status": {
+               "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_supplement": {
                "type": "string"
             },
             "name": {
@@ -9321,6 +8940,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -9337,76 +8959,8 @@
       "MortalityOutcome": {
          "additionalProperties": false,
          "description": "An outcome of death from resulting from an exposure event.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "has_input": {
-               "description": "holds between a process and a continuant, where the continuant is an input into the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "holds between a process and a continuant, where the continuant is an output of the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "MortalityOutcome",
          "type": "object"
       },
@@ -9559,6 +9113,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -9621,6 +9181,9 @@
                },
                "type": "array"
             },
+            "trade_name": {
+               "type": "string"
+            },
             "type": {
                "type": "string"
             },
@@ -9641,8 +9204,14 @@
       },
       "NucleicAcidEntity": {
          "additionalProperties": false,
-         "description": "A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.",
+         "description": "A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -9698,6 +9267,9 @@
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
                "type": "string"
             },
+            "trade_name": {
+               "type": "string"
+            },
             "type": {
                "type": "string"
             }
@@ -9713,6 +9285,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -9751,6 +9329,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -10478,127 +10059,20 @@
          "additionalProperties": false,
          "description": "An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "may often be an organism attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "PathologicalAnatomicalExposure",
          "type": "object"
       },
       "PathologicalAnatomicalOutcome": {
          "additionalProperties": false,
          "description": "An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "has_attribute": {
-               "description": "may often be an organism attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "in_taxon": {
-               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "PathologicalAnatomicalOutcome",
          "type": "object"
       },
@@ -10742,157 +10216,22 @@
       },
       "PathologicalProcessExposure": {
          "additionalProperties": false,
-         "description": "A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.",
+         "description": "A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "has_input": {
-               "description": "holds between a process and a continuant, where the continuant is an input into the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "holds between a process and a continuant, where the continuant is an output of the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
                "type": "string"
-            },
-            "type": {
-               "type": "string"
             }
          },
-         "required": [
-            "id",
-            "category"
-         ],
+         "required": [],
          "title": "PathologicalProcessExposure",
          "type": "object"
       },
       "PathologicalProcessOutcome": {
          "additionalProperties": false,
          "description": "An outcome resulting from an exposure event which is the manifestation of a pathological process.",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "has_input": {
-               "description": "holds between a process and a continuant, where the continuant is an input into the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "holds between a process and a continuant, where the continuant is an output of the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "PathologicalProcessOutcome",
          "type": "object"
       },
@@ -11376,13 +10715,16 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a molecular entity is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11624,6 +10966,12 @@
          "additionalProperties": false,
          "description": "A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -11641,12 +10989,19 @@
                },
                "type": "array"
             },
+            "highest_FDA_approval_status": {
+               "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_supplement": {
                "type": "string"
             },
             "name": {
@@ -11662,6 +11017,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -11710,10 +11068,6 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a molecular entity is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11790,10 +11144,6 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a molecular entity is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11965,6 +11315,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -12026,6 +11382,9 @@
                   "type": "string"
                },
                "type": "array"
+            },
+            "trade_name": {
+               "type": "string"
             },
             "type": {
                "type": "string"
@@ -12049,6 +11408,12 @@
          "additionalProperties": false,
          "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -12110,6 +11475,9 @@
                   "type": "string"
                },
                "type": "array"
+            },
+            "trade_name": {
+               "type": "string"
             },
             "type": {
                "type": "string"
@@ -12376,10 +11744,6 @@
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
             },
-            "is_metabolite": {
-               "description": "indicates whether a molecular entity is a metabolite",
-               "type": "boolean"
-            },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
                "type": "string"
@@ -12644,10 +12008,6 @@
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
             },
-            "is_metabolite": {
-               "description": "indicates whether a molecular entity is a metabolite",
-               "type": "boolean"
-            },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
                "type": "string"
@@ -12837,6 +12197,12 @@
          "additionalProperties": false,
          "description": "A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -12899,6 +12265,9 @@
                },
                "type": "array"
             },
+            "trade_name": {
+               "type": "string"
+            },
             "type": {
                "type": "string"
             },
@@ -12921,6 +12290,12 @@
          "additionalProperties": false,
          "description": "A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -12962,6 +12337,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -13020,10 +12398,6 @@
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
-            },
-            "is_metabolite": {
-               "description": "indicates whether a molecular entity is a metabolite",
-               "type": "boolean"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -13093,77 +12467,18 @@
          "additionalProperties": false,
          "description": "A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).",
          "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
             "has_attribute": {
                "items": {
                   "$ref": "#/definitions/SocioeconomicAttribute"
                },
                "type": "array"
             },
-            "has_input": {
-               "description": "holds between a process and a continuant, where the continuant is an input into the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "holds between a process and a continuant, where the continuant is an output of the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
             "timepoint": {
                "description": "a point in time",
-               "type": "string"
-            },
-            "type": {
                "type": "string"
             }
          },
          "required": [
-            "id",
-            "category",
             "has_attribute"
          ],
          "title": "SocioeconomicExposure",
@@ -13172,76 +12487,8 @@
       "SocioeconomicOutcome": {
          "additionalProperties": false,
          "description": "An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event",
-         "properties": {
-            "category": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "description": {
-               "description": "a human-readable description of an entity",
-               "type": "string"
-            },
-            "enabled_by": {
-               "description": "holds between a process and a physical entity, where the physical entity executes the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_attribute": {
-               "description": "connects any entity to an attribute",
-               "items": {
-                  "$ref": "#/definitions/Attribute"
-               },
-               "type": "array"
-            },
-            "has_input": {
-               "description": "holds between a process and a continuant, where the continuant is an input into the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "has_output": {
-               "description": "holds between a process and a continuant, where the continuant is an output of the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "id": {
-               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-               "type": "string"
-            },
-            "iri": {
-               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-               "type": "string"
-            },
-            "name": {
-               "description": "A human-readable name for an attribute or entity.",
-               "type": "string"
-            },
-            "provided_by": {
-               "description": "connects an association to the agent (person, organization or group) that provided it",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "source": {
-               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
-               "type": "string"
-            },
-            "type": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "category"
-         ],
+         "properties": {},
+         "required": [],
          "title": "SocioeconomicOutcome",
          "type": "object"
       },
@@ -13410,6 +12657,12 @@
          "additionalProperties": false,
          "description": "An RNA synthesized on a DNA or RNA template by an RNA polymerase.",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -13463,6 +12716,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
@@ -14281,6 +13537,12 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "available_from": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "items": {
                   "type": "string"
@@ -14319,6 +13581,9 @@
             },
             "source": {
                "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            },
+            "trade_name": {
                "type": "string"
             },
             "type": {
