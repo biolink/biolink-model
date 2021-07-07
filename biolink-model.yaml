@@ -8101,6 +8101,12 @@ classes:
     mixins:
       - gene product mixin
       - thing with taxon
+    id_prefixes:
+      - UniProtKB
+      - PR
+      - ENSEMBL # ENSEMBL:ENSP*
+      - FB      # FlyBase FBpp*
+      - UMLS
     exact_mappings:
       - PR:000000001
       - SIO:010043
@@ -8122,7 +8128,7 @@ classes:
     mixins:
       - gene product isoform mixin
     id_prefixes:
-      - UniProtKB ## UniProtKB:([A-Z0-9]+-\d+)
+      - UniProtKB # UniProtKB:([A-Z0-9]+-\d+)
       - UNIPROT.ISOFORM 
       - PR
       - ENSEMBL
