@@ -7055,6 +7055,8 @@ classes:
   genomic entity:
     mixin: true
     is_a: thing with taxon
+    slots:
+      - has biological sequence
     in_subset:
       - translator_minimal
     narrow_mappings:
@@ -7172,8 +7174,8 @@ classes:
     aliases: [ 'sequence feature', 'genomic entity' ]
     mixins:
       - genomic entity
-    slots:
-      - has biological sequence
+      - physical essence
+      - ontology class
     exact_mappings:
       - SO:0000110
     narrow_mappings:
@@ -7838,9 +7840,10 @@ classes:
     is_a: biological entity
     mixins:
       - gene or gene product
-      - thing with taxon
       - genomic entity
       - chemical entity or gene or gene product
+      - physical essence
+      - ontology class
     aliases: ['locus']
     slots:
       - symbol
@@ -7924,6 +7927,8 @@ classes:
     is_a: biological entity
     mixins:
       - genomic entity
+      - physical essence
+      - ontology class
     description: >-
       A genome is the sum of genetic material within a cell or virion.
     exact_mappings:
@@ -8114,6 +8119,9 @@ classes:
     mixins:
       - gene grouping mixin
       - chemical entity or gene or gene product
+      - thing with taxon
+      - physical essence
+      - ontology class
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
@@ -8149,6 +8157,8 @@ classes:
     mixins:
       - physical essence
       - genomic entity
+      - physical essence
+      - ontology class
     description: >-
       An information content entity that describes a genome by specifying the
       total variation in genomic sequence and/or gene expression, relative to
@@ -8171,6 +8181,7 @@ classes:
     mixins:
       - genomic entity
       - physical essence
+      - ontology class
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
@@ -8185,6 +8196,10 @@ classes:
     local_names:
       agr: allele
     is_a: biological entity
+    mixins:
+      - genomic entity
+      - physical essence
+      - ontology class
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
@@ -8427,6 +8442,7 @@ classes:
       - gene grouping mixin
       - physical essence
       - genomic entity
+      - ontology class
     description: >-
       A genomic background exposure is where an individual's specific genomic background
       of genes, sequence variants or other pre-existing genomic conditions constitute
