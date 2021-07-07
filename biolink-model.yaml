@@ -7063,9 +7063,6 @@ classes:
 
   molecular entity:
     is_a: chemical entity
-    mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     description: >-
       A molecular entity is a chemical entity composed of individual or
       covalently bonded atoms.
@@ -7116,9 +7113,6 @@ classes:
   small molecule:
     is_a: molecular entity
     aliases: [ 'chemical substance']
-    mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     description: >-
         A small molecule entity is a molecular entity characterized by availability
         in small-molecule databases of SMILES, InChI, IUPAC, or other
@@ -7162,9 +7156,6 @@ classes:
 
   chemical mixture:
     is_a: chemical entity
-    mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
@@ -7181,8 +7172,6 @@ classes:
     aliases: [ 'sequence feature', 'genomic entity' ]
     mixins:
       - genomic entity
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     slots:
       - has biological sequence
     exact_mappings:
@@ -7197,8 +7186,6 @@ classes:
   molecular mixture:
     is_a: chemical mixture
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     description: >-
       A molecular mixture is a chemical mixture composed of two or more
       molecular entities with known concentration and stoichiometry.
@@ -7208,8 +7195,6 @@ classes:
   complex molecular mixture:
     is_a: chemical mixture
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     description: >-
       A complex molecular mixture is a chemical mixture composed of two or
       more molecular entities with unknown concentration and stoichiometry.
@@ -7368,8 +7353,6 @@ classes:
   processed material:
     is_a: chemical mixture
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     description: >-
       A chemical entity (often a mixture) processed
       for consumption for nutritional, medical or technical use.
@@ -7412,8 +7395,6 @@ classes:
   environmental food contaminant:
     is_a: chemical entity
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:78299
@@ -7421,8 +7402,6 @@ classes:
   food additive:
     is_a: chemical entity
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:64047
@@ -7430,8 +7409,6 @@ classes:
   nutrient:
     is_a: chemical entity
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:33284
@@ -7439,8 +7416,6 @@ classes:
   macronutrient:
     is_a: nutrient
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:33937
@@ -7448,8 +7423,6 @@ classes:
   micronutrient:
     is_a: nutrient
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:27027
@@ -7457,8 +7430,6 @@ classes:
   vitamin:
     is_a: micronutrient
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:33229
@@ -7469,8 +7440,6 @@ classes:
   food:
     is_a: chemical mixture
     mixins:
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
@@ -8032,8 +8001,6 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
       - thing with taxon
     exact_mappings:
       - PR:000000001
