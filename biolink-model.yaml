@@ -7185,7 +7185,6 @@ classes:
 
   molecular mixture:
     is_a: chemical mixture
-    mixins:
     description: >-
       A molecular mixture is a chemical mixture composed of two or more
       molecular entities with known concentration and stoichiometry.
@@ -7194,7 +7193,6 @@ classes:
 
   complex molecular mixture:
     is_a: chemical mixture
-    mixins:
     description: >-
       A complex molecular mixture is a chemical mixture composed of two or
       more molecular entities with unknown concentration and stoichiometry.
