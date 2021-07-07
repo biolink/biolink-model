@@ -2340,8 +2340,11 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <Polypeptide> ] ? ;
              &<GeneProductMixin_tes> ;
              rdf:type [ <GeneProductMixin> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ? ;
              <synonym> @<LabelType> * ;
-             <xref> @<IriType> *
+             <xref> @<IriType> * ;
+             <in_taxon> @<OrganismTaxon> *
           ) ;
           rdf:type [ <Protein> ]
        )
