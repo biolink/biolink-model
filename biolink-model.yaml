@@ -2362,7 +2362,8 @@ slots:
   affects molecular modification of:
     description: >-
       holds between two chemical entities where the action or effect of one leads changes in the molecular
-      modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+      modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of
+      phosphoryl group, or via redox reaction that adds or subtracts electrons)
     is_a: affects
     in_subset:
       - translator_minimal
@@ -6276,21 +6277,24 @@ classes:
   ontology class:
     mixin: true
     description: >-
-      a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both
-      instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly.
-      Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess
-      as the type.
+      a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in
+      a biolink compatible KG can be considered both instances of biolink classes, and
+      OWL classes in their own right. In general you should not need to use this class directly.
+      Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897),
+      use bl:BiologicalProcess as the type.
     exact_mappings:
       - owl:Class
       - schema:Class
     comments:
       - >-
-         This is modeled as a mixin. 'ontology class' should not be the primary type of a node in the KG. Instead you should use an
-         informative bioloink category, such as AnatomicalEntity (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
+         This is modeled as a mixin. 'ontology class' should not be the primary type of a
+         node in the KG. Instead you should use an informative bioloink category, such as AnatomicalEntity
+         (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
       - >-
-         Note that formally this is a metaclass. Instances of this class are instances in the graph, but can be the object of 'type' edges.
-         For example, if we had a node in the graph representing a specific brain of a specific patient (e.g brain001), this could have 
-         a category of bl:Sample, and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
+         Note that formally this is a metaclass. Instances of this class are instances in the graph,
+         but can be the object of 'type' edges. For example, if we had a node in the graph representing
+         a specific brain of a specific patient (e.g brain001), this could have a category of bl:Sample,
+         and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
     see_also:
       - https://github.com/biolink/biolink-model/issues/486
     examples:
@@ -7179,8 +7183,13 @@ classes:
   genomic entity:
     mixin: true
     is_a: thing with taxon
+    slots:
+      - has biological sequence
     in_subset:
       - translator_minimal
+    narrow_mappings:
+      - UMLSSC:T028   # Gene or Genome
+      - GENO:0000897  # Genomic Entity
 
   molecular entity:
     is_a: chemical entity
@@ -7201,6 +7210,8 @@ classes:
     mixins:
       - physical essence
       - chemical or drug or treatment # issue 701
+      - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
       A chemical entity is a physical entity that pertains to chemistry or
       biochemistry.
@@ -7293,18 +7304,15 @@ classes:
       A nucleic acid entity is a molecular entity characterized by
       availability in gene databases of nucleotide-based sequence
       representations of its precise sequence; for convenience of
-      representation, partial sequences of various kinds are included,
-      even if they do not represent a physical molecule.
+      representation, partial sequences of various kinds are included.
     aliases: [ 'sequence feature', 'genomic entity' ]
     mixins:
       - genomic entity
-    slots:
-      - has biological sequence
+      - physical essence
+      - ontology class
     exact_mappings:
       - SO:0000110
     narrow_mappings:
-      - UMLSSC:T028   # Gene or Genome
-      - GENO:0000897  # Genomic Entity
       - UMLSSC:T086   # Nucleotide Sequence
       - UMLSSC:T114   # Nucleic Acid, Nucleoside, or Nucleotide
     in_subset:
@@ -7908,7 +7916,21 @@ classes:
       - FAO
       
 
-  ## nucleic acid entity mixins
+  ## genetic entity mixins
+
+  chemical entity or gene or gene product:
+    description: >-
+      A union of chemical entities and children, and gene or gene product.
+      This mixin is helpful to use when searching across
+      chemical entities that must include genes and their children as chemical entities.
+    mixin: true
+
+  chemical entity or protein or polypeptide:
+    description: >-
+      A union of chemical entities and children, and protein and polypeptide.
+      This mixin is helpful to use when searching across
+      chemical entities that must include genes and their children as chemical entities.
+    mixin: true
 
   macromolecular machine mixin:
     description: >-
@@ -7942,10 +7964,13 @@ classes:
       necessary to encode a functional transcript. A gene locus may include
       regulatory regions, transcribed regions and/or other
       functional sequence regions.
-    is_a: nucleic acid entity
+    is_a: biological entity
     mixins:
       - gene or gene product
-      - thing with taxon
+      - genomic entity
+      - chemical entity or gene or gene product
+      - physical essence
+      - ontology class
     aliases: ['locus']
     slots:
       - symbol
@@ -8029,6 +8054,8 @@ classes:
     is_a: biological entity
     mixins:
       - genomic entity
+      - physical essence
+      - ontology class
     description: >-
       A genome is the sum of genetic material within a cell or virion.
     exact_mappings:
@@ -8070,13 +8097,17 @@ classes:
 
   polypeptide:
     aliases: [ 'amino acid entity' ]
-    is_a: molecular entity
+    is_a: biological entity
     description: >-
       A polypeptide is a molecular entity characterized by availability
       in protein databases of amino-acid-based sequence representations
       of its precise primary structure; for convenience of representation,
       partial sequences of various kinds are included, even if they do not
       represent a physical molecule.
+    mixins:
+      - thing with taxon
+      - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     id_prefixes:
       - UniProtKB
       - PR
@@ -8208,7 +8239,7 @@ classes:
 
   gene family:
     aliases: ['orthogroup','protein family']
-    is_a: nucleic acid entity
+    is_a: biological entity
     exact_mappings:
       - NCIT:C26004
       - WIKIDATA:Q2278983
@@ -8221,6 +8252,7 @@ classes:
       - WIKIDATA:Q417841
     mixins:
       - gene grouping mixin
+      - chemical entity or gene or gene product
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
@@ -8256,6 +8288,8 @@ classes:
     mixins:
       - physical essence
       - genomic entity
+      - physical essence
+      - ontology class
     description: >-
       An information content entity that describes a genome by specifying the
       total variation in genomic sequence and/or gene expression, relative to
@@ -8278,6 +8312,7 @@ classes:
     mixins:
       - genomic entity
       - physical essence
+      - ontology class
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
@@ -8291,7 +8326,11 @@ classes:
     aliases: ['allele']
     local_names:
       agr: allele
-    is_a: nucleic acid entity
+    is_a: biological entity
+    mixins:
+      - genomic entity
+      - physical essence
+      - ontology class
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
@@ -8360,11 +8399,15 @@ classes:
 
   reagent targeted gene:
     aliases: ['sequence targeting reagent']
-    is_a: nucleic acid entity
+    is_a: biological entity
     description: >-
       A gene altered in its expression level in the context of some
       experiment as a result of being targeted by gene-knockdown
       reagent(s) such as a morpholino or RNAi.
+    mixins:
+      - genomic entity
+      - physical essence
+      - ontology class
     exact_mappings:
       - GENO:0000504
     in_subset:
@@ -8534,6 +8577,7 @@ classes:
       - gene grouping mixin
       - physical essence
       - genomic entity
+      - ontology class
     description: >-
       A genomic background exposure is where an individual's specific genomic background
       of genes, sequence variants or other pre-existing genomic conditions constitute
