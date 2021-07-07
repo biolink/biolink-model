@@ -12170,6 +12170,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -12251,6 +12258,13 @@
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",

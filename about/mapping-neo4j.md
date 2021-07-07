@@ -8,7 +8,7 @@ layout: default
 
 This section describes how a Neo4j database is mapped to the Biolink Model. 
 
-Although specific to Neo4j, these recommendations should hold for any Property Graph (PG) model, 
+Although specific to Neo4j, these recommendations should hold for any Labeled Property Graph (LPG) model, 
 e.g a Python networkx graph (specifically a [MultiDiGraph](https://networkx.github.io/documentation/stable/reference/classes/multidigraph.html)).
 
 For mapping to RDF graphs refer to [Mapping to RDF](mapping-rdf).

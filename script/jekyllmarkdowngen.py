@@ -6,9 +6,9 @@ from typing import Union, TextIO, Optional, Set, List, Any, Callable, Dict
 
 from linkml.generators.markdowngen import MarkdownGenerator
 from linkml.generators.yumlgen import YumlGenerator
-from linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, Element, ClassDefinitionName, \
+from linkml_runtime.linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, Element, ClassDefinitionName, \
     TypeDefinition
-from linkml.utils.formatutils import camelcase, be, underscore, sfx
+from linkml_runtime.utils.formatutils import camelcase, be, underscore, sfx
 import argparse
 
 
@@ -221,7 +221,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        cls: linkml_model.meta.ClassDefinition
+        cls: linkml_runtime.linkml_model.meta.ClassDefinition
             A ClassDefinition
 
         Returns
@@ -346,7 +346,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        cls: linkml_model.meta.SlotDefinition
+        cls: linkml_runtime.linkml_model.meta.SlotDefinition
             A SlotDefinition
 
         """
@@ -423,7 +423,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        cls: linkml_model.meta.ClassDefinition
+        cls: linkml_runtime.linkml_model.meta.ClassDefinition
             A ClassDefinition
         level: int
             Markdown level corresponding to H1, H2, H3, etc.
@@ -441,7 +441,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        slot: linkml_model.meta.SlotDefinition
+        slot: linkml_runtime.linkml_model.meta.SlotDefinition
             A SlotDefinition
         level: int
             Markdown level corresponding to H1, H2, H3, etc.
@@ -467,7 +467,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        typ: linkml_model.meta.TypeDefinition
+        typ: linkml_runtime.linkml_model.meta.TypeDefinition
             A TypeDefinition
 
         """
@@ -520,7 +520,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         Parameters
         ----------
-        obj: linkml_model.meta.Element
+        obj: linkml_runtime.linkml_model.meta.Element
             An element
         name: str
             The name of the element
