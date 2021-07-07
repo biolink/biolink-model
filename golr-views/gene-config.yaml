@@ -40,17 +40,6 @@ fields:
 - id: category
   display_name: named thing_category
   cardinality: multi
-- id: is_metabolite
-  description: indicates whether a molecular entity is a metabolite
-  display_name: is metabolite
-- id: has_biological_sequence
-  description: connects a genomic feature to its sequence
-  display_name: has biological sequence
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
-  cardinality: multi
 - id: symbol
   description: Symbol for a particular thing
   display_name: symbol
@@ -62,3 +51,11 @@ fields:
   description: Alternate CURIEs for a thing
   display_name: xref
   cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
+  cardinality: multi
+- id: has_biological_sequence
+  description: connects a genomic feature to its sequence
+  display_name: has biological sequence
