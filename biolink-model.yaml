@@ -7352,7 +7352,6 @@ classes:
 
   processed material:
     is_a: chemical mixture
-    mixins:
     description: >-
       A chemical entity (often a mixture) processed
       for consumption for nutritional, medical or technical use.
@@ -7394,42 +7393,36 @@ classes:
 
   environmental food contaminant:
     is_a: chemical entity
-    mixins:
     related_mappings:
       # substance role
       - CHEBI:78299
 
   food additive:
     is_a: chemical entity
-    mixins:
     related_mappings:
       # substance role
       - CHEBI:64047
 
   nutrient:
     is_a: chemical entity
-    mixins:
     related_mappings:
       # substance role
       - CHEBI:33284
 
   macronutrient:
     is_a: nutrient
-    mixins:
     related_mappings:
       # substance role
       - CHEBI:33937
 
   micronutrient:
     is_a: nutrient
-    mixins:
     related_mappings:
       # substance role
       - CHEBI:27027
 
   vitamin:
     is_a: micronutrient
-    mixins:
     related_mappings:
       # substance role
       - CHEBI:33229
@@ -7439,7 +7432,6 @@ classes:
 
   food:
     is_a: chemical mixture
-    mixins:
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
