@@ -7793,14 +7793,14 @@ classes:
 
   chemical entity or gene or gene product:
     description: >-
-      A union of chemical mixture, small molecule and gene or gene product.
+      A union of chemical entities and children, and gene or gene product.
       This mixin is helpful to use when searching across
       chemical entities that must include genes and their children as chemical entities.
     mixin: true
 
   chemical entity or protein or polypeptide:
     description: >-
-      A union of chemical mixture, small molecule, protein and polypeptide.
+      A union of chemical entities and children, and protein and polypeptide.
       This mixin is helpful to use when searching across
       chemical entities that must include genes and their children as chemical entities.
     mixin: true
@@ -8187,8 +8187,6 @@ classes:
     local_names:
       agr: allele
     is_a: biological entity
-    mixins:
-      - chemical entity or gene or gene product
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
@@ -8262,8 +8260,6 @@ classes:
       A gene altered in its expression level in the context of some
       experiment as a result of being targeted by gene-knockdown
       reagent(s) such as a morpholino or RNAi.
-    mixins:
-      - chemical entity or gene or gene product
     exact_mappings:
       - GENO:0000504
     in_subset:
