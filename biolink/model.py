@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-07-01 08:50
+# Generation date: 2021-06-24 16:52
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -3624,7 +3624,7 @@ class Protein(Polypeptide):
     A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated
     translation of mRNA
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Protein
     class_class_curie: ClassVar[str] = "biolink:Protein"
@@ -3635,6 +3635,7 @@ class Protein(Polypeptide):
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
     xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -3650,6 +3651,10 @@ class Protein(Polypeptide):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
 
+        if not isinstance(self.in_taxon, list):
+            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
         super().__post_init__(**kwargs)
 
 
@@ -3659,7 +3664,7 @@ class ProteinIsoform(Protein):
     Represents a protein that is a specific isoform of the canonical or reference protein. See
     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.ProteinIsoform
     class_class_curie: ClassVar[str] = "biolink:ProteinIsoform"
@@ -9381,8 +9386,14 @@ slots.has_contraindication = Slot(uri=BIOLINK.has_contraindication, name="has co
 slots.has_not_completed = Slot(uri=BIOLINK.has_not_completed, name="has not completed", curie=BIOLINK.curie('has_not_completed'),
                    model_uri=BIOLINK.has_not_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.not_completed_by = Slot(uri=BIOLINK.not_completed_by, name="not completed by", curie=BIOLINK.curie('not_completed_by'),
+                   model_uri=BIOLINK.not_completed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.has_completed = Slot(uri=BIOLINK.has_completed, name="has completed", curie=BIOLINK.curie('has_completed'),
                    model_uri=BIOLINK.has_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.completed_by = Slot(uri=BIOLINK.completed_by, name="completed by", curie=BIOLINK.curie('completed_by'),
+                   model_uri=BIOLINK.completed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.decreases_molecular_interaction = Slot(uri=BIOLINK.decreases_molecular_interaction, name="decreases molecular interaction", curie=BIOLINK.curie('decreases_molecular_interaction'),
                    model_uri=BIOLINK.decreases_molecular_interaction, domain=MolecularEntity, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]])

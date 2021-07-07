@@ -4,7 +4,7 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-version: 2.0.1
+version: 2.0.2
 
 ## ------------
 ## PREFIXES
@@ -2117,7 +2117,7 @@ slots:
       - CTD:increases_expression_of
 
   expression increased by:
-    is_a: affects expression of
+    is_a: expression affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2143,7 +2143,7 @@ slots:
       - CHEMBL.MECHANISM:antisense_inhibitor
 
   expression decreased by:
-    is_a: affects expression of
+    is_a: expression affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -4860,7 +4860,6 @@ slots:
       value: true
     in_subset:
       - translator_minimal
-    inverse: participates in
     close_mappings:
       - WIKIDATA_PROPERTY:P2283
     exact_mappings:
@@ -5677,9 +5676,15 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
-    inverse: has completed
     exact_mappings:
       - CL:has_not_completed
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  not completed by:
+    is_a: related to
+    inverse: has not completed
 
   has completed:
     is_a: related to
@@ -5691,6 +5696,10 @@ slots:
     exact_mappings:
       - CL:has_completed
       - RTXKG1:has_completed
+
+  completed by:
+    is_a: related to
+    inverse: has completed
 
   decreases molecular interaction:
     is_a: molecularly interacts with
@@ -8088,6 +8097,7 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
+      - thing with taxon
     exact_mappings:
       - PR:000000001
       - SIO:010043
