@@ -1795,7 +1795,7 @@ slots:
     in_subset:
       - translator_minimal
     mixins:
-      - increases
+      - increases amount or activity of
     domain: chemical entity
     range: chemical entity
     annotations:
@@ -1821,7 +1821,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       - tag: biolink:canonical_predicate
         value: true
@@ -1877,7 +1877,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
@@ -1922,7 +1922,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     related_mappings:
       - GAMMA:ic50
       - GAMMA:ki
@@ -1998,7 +1998,7 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     mixins:
-      - increases
+      - increases amount or activity of
     close_mappings:
       # Agent of the action or effect, not the relationship itself
       - CHEMBL.MECHANISM:releasing_agent
@@ -2024,7 +2024,7 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     related_mappings:
       - DGIdb:antisense
       - DGIdb:antisense_oligonucleotide
@@ -2073,7 +2073,7 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2096,7 +2096,7 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2145,7 +2145,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2169,7 +2169,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2219,7 +2219,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2246,7 +2246,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2327,7 +2327,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2387,7 +2387,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2468,7 +2468,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2491,7 +2491,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     in_subset:
       - translator_minimal
     annotations:
@@ -2548,7 +2548,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2589,7 +2589,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2644,7 +2644,7 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2671,7 +2671,7 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2726,7 +2726,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2753,7 +2753,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2806,7 +2806,7 @@ slots:
     domain: chemical entity
     range: transcript
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2833,7 +2833,7 @@ slots:
     domain: chemical entity
     range: transcript
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2885,7 +2885,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2911,7 +2911,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     in_subset:
       - translator_minimal
     annotations:
@@ -2965,7 +2965,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2993,7 +2993,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3044,7 +3044,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3072,7 +3072,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3126,7 +3126,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - increases
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3154,7 +3154,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     mixins:
-      - decreases
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5644,7 +5644,7 @@ slots:
       tag: biolink:canonical_predicate
       value: true
     mixins:
-      - decreases
+      - decreases amount or activity of
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
 
@@ -5660,7 +5660,7 @@ slots:
       tag: biolink:canonical_predicate
       value: true
     mixins:
-      - increases
+      - increases amount or activity of
     exact_mappings:
       - CTD:increases_molecular_interaction_with
 
@@ -6348,12 +6348,12 @@ classes:
     mixin: true
 
 
-  increases:
+  increases amount or activity of:
     is_a: related to
     mixin: true
     description: >-
 
-  decreases:
+  decreases amount or activity of:
     is_a: related to
     mixin: true
     description: >-
