@@ -7065,6 +7065,7 @@ classes:
     is_a: chemical entity
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
       A molecular entity is a chemical entity composed of individual or
       covalently bonded atoms.
@@ -7083,6 +7084,7 @@ classes:
       - physical essence
       - chemical or drug or treatment # issue 701
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
       A chemical entity is a physical entity that pertains to chemistry or
       biochemistry.
@@ -7116,6 +7118,7 @@ classes:
     aliases: [ 'chemical substance']
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
         A small molecule entity is a molecular entity characterized by availability
         in small-molecule databases of SMILES, InChI, IUPAC, or other
@@ -7161,6 +7164,7 @@ classes:
     is_a: chemical entity
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
@@ -7178,6 +7182,7 @@ classes:
     mixins:
       - genomic entity
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     slots:
       - has biological sequence
     exact_mappings:
@@ -7193,6 +7198,7 @@ classes:
     is_a: chemical mixture
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
       A molecular mixture is a chemical mixture composed of two or more
       molecular entities with known concentration and stoichiometry.
@@ -7203,6 +7209,7 @@ classes:
     is_a: chemical mixture
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
       A complex molecular mixture is a chemical mixture composed of two or
       more molecular entities with unknown concentration and stoichiometry.
@@ -7362,6 +7369,7 @@ classes:
     is_a: chemical mixture
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
       A chemical entity (often a mixture) processed
       for consumption for nutritional, medical or technical use.
@@ -7405,6 +7413,7 @@ classes:
     is_a: chemical entity
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:78299
@@ -7413,6 +7422,7 @@ classes:
     is_a: chemical entity
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:64047
@@ -7421,6 +7431,7 @@ classes:
     is_a: chemical entity
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:33284
@@ -7429,6 +7440,7 @@ classes:
     is_a: nutrient
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:33937
@@ -7437,6 +7449,7 @@ classes:
     is_a: nutrient
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:27027
@@ -7445,6 +7458,7 @@ classes:
     is_a: micronutrient
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     related_mappings:
       # substance role
       - CHEBI:33229
@@ -7456,6 +7470,7 @@ classes:
     is_a: chemical mixture
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
@@ -7992,6 +8007,7 @@ classes:
       represent a physical molecule.
     mixins:
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
     id_prefixes:
       - UniProtKB
       - PR
@@ -8017,6 +8033,7 @@ classes:
     mixins:
       - gene product mixin
       - chemical entity or gene or gene product
+      - chemical entity or protein or polypeptide
       - thing with taxon
     exact_mappings:
       - PR:000000001
@@ -8527,7 +8544,6 @@ classes:
     is_a: chemical entity
     mixins:
       - exposure event
-      - chemical entity or gene or gene product
     description: >-
       A chemical exposure is an intake of a particular
       chemical entity, other than a drug.
