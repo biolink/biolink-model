@@ -20,6 +20,30 @@ URI: [biolink:ComplexMolecularMixture](https://w3id.org/biolink/vocab/ComplexMol
 ---
 
 
+## Identifier prefixes
+
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * DRUGBANK
+ * MESH
+ * CAS
+ * DrugCentral
+ * GTOPDB
+ * HMDB
+ * KEGG.COMPOUND
+ * ChemBank
+ * Aeolus
+ * PUBCHEM.SUBSTANCE
+ * SIDER.DRUG
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.DRUG
+ * KEGG.DGROUP
+ * KEGG.ENVIRON
+
 ## Parents
 
  *  is_a: [ChemicalMixture](ChemicalMixture.md) - A chemical mixture is a chemical entity composed of two or more molecular entities.

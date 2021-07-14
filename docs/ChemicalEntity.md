@@ -20,6 +20,12 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 ---
 
 
+## Identifier prefixes
+
+ * UNII
+ * MESH
+ * CAS
+
 ## Parents
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class

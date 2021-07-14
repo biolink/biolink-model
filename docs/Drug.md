@@ -25,6 +25,11 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
  * RXCUI
  * NDC
  * PHARMGKB.DRUG
+ * DRUGBANK
+ * DrugCentral
+ * KEGG.DRUG
+ * KEGG.DGROUP
+ * SIDER.DRUG
 
 ## Parents
 

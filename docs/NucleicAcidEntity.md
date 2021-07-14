@@ -20,6 +20,30 @@ URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntit
 ---
 
 
+## Identifier prefixes
+
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * DRUGBANK
+ * MESH
+ * CAS
+ * DrugCentral
+ * GTOPDB
+ * HMDB
+ * KEGG.COMPOUND
+ * ChemBank
+ * Aeolus
+ * PUBCHEM.SUBSTANCE
+ * SIDER.DRUG
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.DRUG
+ * KEGG.DGROUP
+ * KEGG.ENVIRON
+
 ## Parents
 
  *  is_a: [MolecularEntity](MolecularEntity.md) - A molecular entity is a chemical entity composed of individual or covalently bonded atoms.

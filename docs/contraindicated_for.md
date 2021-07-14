@@ -30,6 +30,6 @@ URI: [biolink:contraindicated_for](https://w3id.org/biolink/vocab/contraindicate
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | DrugCentral:0000001 |
+| **Exact Mappings:** | | NCIT:C37933 |
 |  | | RTXKG1:contraindicated_for |
 

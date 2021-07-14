@@ -20,6 +20,30 @@ URI: [biolink:ChemicalMixture](https://w3id.org/biolink/vocab/ChemicalMixture)
 ---
 
 
+## Identifier prefixes
+
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * DRUGBANK
+ * MESH
+ * CAS
+ * DrugCentral
+ * GTOPDB
+ * HMDB
+ * KEGG.COMPOUND
+ * ChemBank
+ * Aeolus
+ * PUBCHEM.SUBSTANCE
+ * SIDER.DRUG
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.DRUG
+ * KEGG.DGROUP
+ * KEGG.ENVIRON
+
 ## Parents
 
  *  is_a: [ChemicalEntity](ChemicalEntity.md) - A chemical entity is a physical entity that pertains to chemistry or biochemistry.
