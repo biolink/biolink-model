@@ -101,13 +101,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=string,
+		label=uriorcurie,
 		pos="1478.8,18",
-		width=1.0652];
+		width=1.5887];
 	"variant to gene expression association" -> relation	[color=blue,
 		label=relation,
 		lp="1435.8,134.5",
-		pos="e,1464.1,34.731 1489.1,248.38 1460.5,238.4 1430.8,222.2 1413.8,196 1381.6,146.11 1427.7,78.022 1457.3,42.595",
+		pos="e,1463.4,35.479 1489.1,248.38 1460.5,238.4 1430.8,222.2 1413.8,196 1381.8,146.5 1427,79.063 1456.6,43.415",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -232,7 +232,7 @@ digraph {
 		label="category type",
 		pos="1940.8,265",
 		width=2.0762];
-	object -> relation	[pos="e,1493.7,34.713 1531,74.243 1522,64.775 1510.5,52.56 1500.6,42.024",
+	object -> relation	[pos="e,1494.6,35.702 1531,74.243 1522.4,65.127 1511.4,53.465 1501.7,43.208",
 		style=dotted];
 	"variant to gene association_object"	[color=blue,
 		height=0.5,

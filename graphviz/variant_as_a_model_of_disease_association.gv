@@ -98,13 +98,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=string,
+		label=uriorcurie,
 		pos="2823.2,18",
-		width=1.0652];
+		width=1.5887];
 	"variant as a model of disease association" -> relation	[color=blue,
 		label=relation,
 		lp="1982.2,134.5",
-		pos="e,2784.8,18.661 1930.9,246.91 1914,224.53 1890.6,185.17 1912.2,160 2025.4,27.968 2602.8,18.49 2774.8,18.641",
+		pos="e,2765.7,18.642 1930.9,246.91 1914,224.53 1890.6,185.17 1912.2,160 2021.4,32.552 2563.3,19.296 2755.5,18.665",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -234,7 +234,7 @@ digraph {
 		label="named thing",
 		pos="2670.2,265",
 		width=1.9318];
-	subject -> relation	[pos="e,2853,29.451 3219,164.84 3193.3,154.56 3155.4,139.55 3122.2,127 3029.6,92.073 2920.1,53.112 2862.7,32.887",
+	subject -> relation	[pos="e,2860.1,31.965 3219,164.84 3193.3,154.56 3155.4,139.55 3122.2,127 3033.3,93.474 2928.9,56.232 2869.9,35.41",
 		style=dotted];
 	subject -> object	[label=relation,
 		lp="3094.2,134.5",

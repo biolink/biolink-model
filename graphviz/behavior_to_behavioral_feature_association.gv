@@ -102,13 +102,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=string,
+		label=uriorcurie,
 		pos="2295.4,18",
-		width=1.0652];
+		width=1.5887];
 	"behavior to behavioral feature association" -> relation	[color=blue,
 		label=relation,
 		lp="1728.4,134.5",
-		pos="e,2257.6,21.405 1668.1,246.87 1656.1,224.43 1640.3,185.01 1660.4,160 1734.4,67.715 2112.7,32.038 2247.6,22.128",
+		pos="e,2240,22.691 1668.1,246.87 1656.1,224.43 1640.3,185.01 1660.4,160 1731.4,71.509 2082.1,35.067 2229.7,23.483",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -238,7 +238,7 @@ digraph {
 		label=behavior,
 		pos="2215.4,265",
 		width=1.4263];
-	object -> relation	[pos="e,2310.2,34.713 2347.5,74.243 2338.6,64.775 2327.1,52.56 2317.1,42.024",
+	object -> relation	[pos="e,2311.2,35.702 2347.5,74.243 2338.9,65.127 2327.9,53.465 2318.2,43.208",
 		style=dotted];
 	"behavior to behavioral feature association_object"	[color=blue,
 		height=0.5,

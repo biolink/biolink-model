@@ -85,13 +85,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=string,
+		label=uriorcurie,
 		pos="2040.4,18",
-		width=1.0652];
+		width=1.5887];
 	"gene to expression site association" -> relation	[color=blue,
 		label=relation,
 		lp="1118.4,134.5",
-		pos="e,2002.6,21.326 1054.6,247.1 1030.2,225.28 995.95,186.9 1019.4,160 1084.4,85.403 1799.2,34.455 1992.5,21.976",
+		pos="e,1984.9,22.469 1054.6,247.1 1030.2,225.28 995.95,186.9 1019.4,160 1082.5,87.536 1758.9,37.388 1974.6,23.14",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -215,7 +215,7 @@ digraph {
 		label="gene or gene product",
 		pos="1936.4,265",
 		width=3.0692];
-	object -> relation	[pos="e,2055.2,34.713 2092.5,74.243 2083.6,64.775 2072.1,52.56 2062.1,42.024",
+	object -> relation	[pos="e,2056.2,35.702 2092.5,74.243 2083.9,65.127 2072.9,53.465 2063.2,43.208",
 		style=dotted];
 	"gene to expression site association_object"	[color=blue,
 		height=0.5,

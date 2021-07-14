@@ -50,7 +50,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -70,7 +70,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -119,7 +119,7 @@ message Association
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -162,7 +162,7 @@ message BehaviorToBehavioralFeatureAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -315,7 +315,7 @@ message CaseToPhenotypicFeatureAssociation
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -362,7 +362,7 @@ message CellLineAsAModelOfDiseaseAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -385,7 +385,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -456,7 +456,7 @@ message ChemicalToChemicalAssociation
   repeated hasAttribute Attribute = 7
   subject NamedThing = 8
   predicate PredicateType = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -481,7 +481,7 @@ message ChemicalToChemicalDerivationAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -504,7 +504,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   repeated hasAttribute Attribute = 7
   subject NamedThing = 8
   predicate PredicateType = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -524,7 +524,7 @@ message ChemicalToGeneAssociation
   repeated hasAttribute Attribute = 7
   subject NamedThing = 8
   predicate PredicateType = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -544,7 +544,7 @@ message ChemicalToPathwayAssociation
   repeated hasAttribute Attribute = 7
   subject NamedThing = 8
   predicate PredicateType = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -718,7 +718,7 @@ message ContributorAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated publications Publication = 10
   optional type String = 11
@@ -874,7 +874,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   repeated hasAttribute Attribute = 7
   subject NamedThing = 8
   predicate PredicateType = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -895,7 +895,7 @@ message DiseaseToExposureEventAssociation
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -915,7 +915,7 @@ message DiseaseToPhenotypicFeatureAssociation
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -960,7 +960,7 @@ message DrugToGeneAssociation
   repeated hasAttribute Attribute = 7
   subject NamedThing = 8
   predicate PredicateType = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -986,7 +986,7 @@ message EntityToDiseaseAssociation
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -1006,7 +1006,7 @@ message EntityToPhenotypicFeatureAssociation
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -1116,7 +1116,7 @@ message ExonToTranscriptRelationship
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -1138,7 +1138,7 @@ message ExposureEventToOutcomeAssociation
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -1159,7 +1159,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -1213,7 +1213,7 @@ message FunctionalAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -1251,7 +1251,7 @@ message GeneAsAModelOfDiseaseAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -1287,7 +1287,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -1309,7 +1309,7 @@ message GeneRegulatoryRelationship
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1330,7 +1330,7 @@ message GeneToDiseaseAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -1351,7 +1351,7 @@ message GeneToExpressionSiteAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1373,7 +1373,7 @@ message GeneToGeneCoexpressionAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1397,7 +1397,7 @@ message GeneToGeneHomologyAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1417,7 +1417,7 @@ message GeneToGeneProductRelationship
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1437,7 +1437,7 @@ message GeneToGoTermAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -1457,7 +1457,7 @@ message GeneToPhenotypicFeatureAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -1502,7 +1502,7 @@ message GenomicSequenceLocalization
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1542,7 +1542,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1564,7 +1564,7 @@ message GenotypeToDiseaseAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1587,7 +1587,7 @@ message GenotypeToGeneAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1607,7 +1607,7 @@ message GenotypeToGenotypePartAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1628,7 +1628,7 @@ message GenotypeToPhenotypicFeatureAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   object NamedThing = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -1651,7 +1651,7 @@ message GenotypeToVariantAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1813,7 +1813,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -1833,7 +1833,7 @@ message MacromolecularMachineToCellularComponentAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -1853,7 +1853,7 @@ message MacromolecularMachineToMolecularActivityAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -1899,7 +1899,7 @@ message MaterialSampleDerivationAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -1922,7 +1922,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -2034,7 +2034,7 @@ message NamedThingToInformationContentEntityAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -2140,7 +2140,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -2161,7 +2161,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -2187,7 +2187,7 @@ message OrganismToOrganismAssociation
   optional type String = 12
   repeated category CategoryType = 13
   subject IndividualOrganism = 14
-  optional relation String = 15
+  relation Uriorcurie = 15
   object IndividualOrganism = 16
  }
 message OrganismalEntityAsAModelOfDiseaseAssociation
@@ -2201,7 +2201,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -2230,7 +2230,7 @@ message PairwiseGeneToGeneInteraction
   subject GeneOrGeneProduct = 13
   object GeneOrGeneProduct = 14
   predicate PredicateType = 15
-  optional relation String = 16
+  relation Uriorcurie = 16
  }
 // An interaction at the molecular level between two physical entities
 message PairwiseMolecularInteraction
@@ -2250,7 +2250,7 @@ message PairwiseMolecularInteraction
   subject MolecularEntity = 13
   id String = 14
   predicate PredicateType = 15
-  optional relation String = 16
+  relation Uriorcurie = 16
   object MolecularEntity = 17
  }
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
@@ -2433,7 +2433,7 @@ message PopulationToPopulationAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -2544,7 +2544,7 @@ message ReactionToCatalystAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -2566,7 +2566,7 @@ message ReactionToParticipantAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -2645,7 +2645,7 @@ message SequenceAssociation
   subject NamedThing = 8
   predicate PredicateType = 9
   object NamedThing = 10
-  optional relation String = 11
+  relation Uriorcurie = 11
   optional negated Boolean = 12
   repeated qualifiers OntologyClass = 13
   repeated publications Publication = 14
@@ -2663,7 +2663,7 @@ message SequenceFeatureRelationship
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -2822,7 +2822,7 @@ message TaxonToTaxonAssociation
   optional type String = 12
   repeated category CategoryType = 13
   subject OrganismTaxon = 14
-  optional relation String = 15
+  relation Uriorcurie = 15
   object OrganismTaxon = 16
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.
@@ -2854,7 +2854,7 @@ message TranscriptToGeneRelationship
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -2889,7 +2889,7 @@ message VariantAsAModelOfDiseaseAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -2911,7 +2911,7 @@ message VariantToDiseaseAssociation
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional relation String = 8
+  relation Uriorcurie = 8
   optional negated Boolean = 9
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
@@ -2935,7 +2935,7 @@ message VariantToGeneAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   subject NamedThing = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -2955,7 +2955,7 @@ message VariantToGeneExpressionAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   subject NamedThing = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
@@ -2979,7 +2979,7 @@ message VariantToPhenotypicFeatureAssociation
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
   object NamedThing = 9
-  optional relation String = 10
+  relation Uriorcurie = 10
   optional negated Boolean = 11
   repeated qualifiers OntologyClass = 12
   repeated publications Publication = 13
@@ -3002,7 +3002,7 @@ message VariantToPopulationAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional relation String = 9
+  relation Uriorcurie = 9
   optional negated Boolean = 10
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12

@@ -182,7 +182,7 @@ linkml:Nodeidentifier NONLITERAL
              rdf:subject @<NamedThing> ;
              rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
-             <relation> @linkml:String ? ;
+             <relation> @linkml:Uriorcurie ;
              <negated> @linkml:Boolean ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
@@ -2072,7 +2072,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<OrganismToOrganismAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           <subject> @<IndividualOrganism> ;
-          <relation> @linkml:String ? ;
+          <relation> @linkml:Uriorcurie ;
           <object> @<IndividualOrganism>
        ) ;
        rdf:type [ <OrganismToOrganismAssociation> ]
@@ -2119,7 +2119,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<PairwiseGeneToGeneInteraction_tes> (  &<GeneToGeneAssociation_tes> ;
              rdf:type [ <GeneToGeneAssociation> ] ? ;
              <predicate> @<PredicateType> ;
-             <relation> @linkml:String ?
+             <relation> @linkml:Uriorcurie
           ) ;
           rdf:type [ <PairwiseGeneToGeneInteraction> ]
        )
@@ -2132,7 +2132,7 @@ linkml:Nodeidentifier NONLITERAL
           <interacting_molecules_category> @<OntologyClass> ? ;
           <subject> @<MolecularEntity> ;
           <predicate> @<PredicateType> ;
-          <relation> @linkml:String ? ;
+          <relation> @linkml:Uriorcurie ;
           <object> @<MolecularEntity>
        ) ;
        rdf:type [ <PairwiseMolecularInteraction> ]
@@ -2656,7 +2656,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<TaxonToTaxonAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           <subject> @<OrganismTaxon> ;
-          <relation> @linkml:String ? ;
+          <relation> @linkml:Uriorcurie ;
           <object> @<OrganismTaxon>
        ) ;
        rdf:type [ <TaxonToTaxonAssociation> ]
