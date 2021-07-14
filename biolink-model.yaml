@@ -7219,10 +7219,33 @@ classes:
       - UMLSSC:T085 # Molecular Sequence
     in_subset:
       - translator_minimal
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   chemical entity:
     is_a: named thing
-    abstract: true
     mixins:
       - physical essence
       - chemical or drug or treatment # issue 701
@@ -7254,6 +7277,10 @@ classes:
       - UMLSSC:T167 # Substance
     in_subset:
       - translator_minimal
+    id_prefixes:
+      - UNII
+      - MESH
+      - CAS #CAS numbers are given for things like plant extracts as well.
 
   chemical substance:
     deprecated: >-
@@ -7313,6 +7340,30 @@ classes:
       - highest FDA approval status
     in_subset:
       - translator_minimal
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   nucleic acid entity:
     is_a: molecular entity
@@ -7334,6 +7385,30 @@ classes:
     in_subset:
       - model_organism_database
       - translator_minimal
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  # G number
+      - KEGG.DRUG    # D number
+      - KEGG.DGROUP  # DG number
+      - KEGG.ENVIRON # E number
 
   molecular mixture:
     is_a: chemical mixture
@@ -7342,6 +7417,30 @@ classes:
       molecular entities with known concentration and stoichiometry.
     in_subset:
       - translator_minimal
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   complex molecular mixture:
     is_a: chemical mixture
@@ -7350,6 +7449,30 @@ classes:
       more molecular entities with unknown concentration and stoichiometry.
     in_subset:
       - translator_minimal
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   biological process or activity:
     description: >-
@@ -7539,6 +7662,11 @@ classes:
       - RXCUI
       - NDC
       - PHARMGKB.DRUG
+      - DRUGBANK
+      - DrugCentral
+      - KEGG.DRUG    # D number
+      - KEGG.DGROUP  # DG number
+      - SIDER.DRUG
 
   ## Food
 
