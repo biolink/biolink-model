@@ -182,7 +182,7 @@ linkml:Nodeidentifier NONLITERAL
              rdf:subject @<NamedThing> ;
              rdf:predicate @<PredicateType> ;
              rdf:object @<NamedThing> ;
-             <relation> @linkml:Uriorcurie ;
+             <relation> @linkml:String ? ;
              <negated> @linkml:Boolean ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
@@ -457,26 +457,24 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <ChemicalEntity>  (
-    @<ChemicalMixture> OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<MolecularEntity> OR @<Nutrient>
+    CLOSED {
+       (  $<ChemicalEntity_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
+             &<PhysicalEssence_tes> ;
+             rdf:type [ <PhysicalEssence> ] ? ;
+             &<ChemicalOrDrugOrTreatment_tes> ;
+             rdf:type [ <ChemicalOrDrugOrTreatment> ] ? ;
+             &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
+             rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
+             &<ChemicalEntityOrProteinOrPolypeptide_tes> ;
+             rdf:type [ <ChemicalEntityOrProteinOrPolypeptide> ] ? ;
+             <trade_name> @<ChemicalEntity> ? ;
+             <available_from> @<DrugAvailabilityEnum> *
+          ) ;
+          rdf:type [ <ChemicalEntity> ]
+       )
+    } OR @<ChemicalMixture> OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<MolecularEntity> OR @<Nutrient>
 )
-
-<ChemicalEntity_struct> {
-    (  $<ChemicalEntity_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
-          &<PhysicalEssence_tes> ;
-          rdf:type [ <PhysicalEssence> ] ? ;
-          &<ChemicalOrDrugOrTreatment_tes> ;
-          rdf:type [ <ChemicalOrDrugOrTreatment> ] ? ;
-          &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
-          rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
-          &<ChemicalEntityOrProteinOrPolypeptide_tes> ;
-          rdf:type [ <ChemicalEntityOrProteinOrPolypeptide> ] ? ;
-          <trade_name> @<ChemicalEntity> ? ;
-          <available_from> @<DrugAvailabilityEnum> *
-       ) ;
-       rdf:type [ <ChemicalEntity> ]
-    )
-}
 
 <ChemicalEntityOrGeneOrGeneProduct> {
     (  $<ChemicalEntityOrGeneOrGeneProduct_tes> rdf:type . * ;
@@ -2074,7 +2072,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<OrganismToOrganismAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           <subject> @<IndividualOrganism> ;
-          <relation> @linkml:Uriorcurie ;
+          <relation> @linkml:String ? ;
           <object> @<IndividualOrganism>
        ) ;
        rdf:type [ <OrganismToOrganismAssociation> ]
@@ -2121,7 +2119,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<PairwiseGeneToGeneInteraction_tes> (  &<GeneToGeneAssociation_tes> ;
              rdf:type [ <GeneToGeneAssociation> ] ? ;
              <predicate> @<PredicateType> ;
-             <relation> @linkml:Uriorcurie
+             <relation> @linkml:String ?
           ) ;
           rdf:type [ <PairwiseGeneToGeneInteraction> ]
        )
@@ -2134,7 +2132,7 @@ linkml:Nodeidentifier NONLITERAL
           <interacting_molecules_category> @<OntologyClass> ? ;
           <subject> @<MolecularEntity> ;
           <predicate> @<PredicateType> ;
-          <relation> @linkml:Uriorcurie ;
+          <relation> @linkml:String ? ;
           <object> @<MolecularEntity>
        ) ;
        rdf:type [ <PairwiseMolecularInteraction> ]
@@ -2658,7 +2656,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<TaxonToTaxonAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           <subject> @<OrganismTaxon> ;
-          <relation> @linkml:Uriorcurie ;
+          <relation> @linkml:String ? ;
           <object> @<OrganismTaxon>
        ) ;
        rdf:type [ <TaxonToTaxonAssociation> ]

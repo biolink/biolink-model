@@ -67,7 +67,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -86,7 +86,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -106,7 +106,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -160,7 +160,7 @@ type Association
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -204,7 +204,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -381,7 +381,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -431,7 +431,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -454,7 +454,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -551,7 +551,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -569,7 +569,7 @@ type ChemicalToChemicalDerivationAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -592,7 +592,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -617,7 +617,7 @@ type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -637,7 +637,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -818,7 +818,7 @@ type ContributorAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     publications: [Publication]
     type: String
@@ -985,7 +985,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1011,7 +1011,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1031,7 +1031,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1081,7 +1081,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1121,7 +1121,7 @@ type EntityToDiseaseAssociation
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1172,7 +1172,7 @@ type EntityToPhenotypicFeatureAssociation
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1299,7 +1299,7 @@ type ExonToTranscriptRelationship
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1330,7 +1330,7 @@ type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociati
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1351,7 +1351,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1419,7 +1419,7 @@ type FunctionalAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1458,7 +1458,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1508,7 +1508,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1553,7 +1553,7 @@ type GeneRegulatoryRelationship
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1575,7 +1575,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1601,7 +1601,7 @@ type GeneToExpressionSiteAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1624,7 +1624,7 @@ interface GeneToGeneAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1643,7 +1643,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1667,7 +1667,7 @@ type GeneToGeneHomologyAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1687,7 +1687,7 @@ type GeneToGeneProductRelationship
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1708,7 +1708,7 @@ type GeneToGoTermAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1729,7 +1729,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1780,7 +1780,7 @@ type GenomicSequenceLocalization
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1821,7 +1821,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1844,7 +1844,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1872,7 +1872,7 @@ type GenotypeToGeneAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1892,7 +1892,7 @@ type GenotypeToGenotypePartAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1913,7 +1913,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     providedBy: [Agent]
     hasAttribute: [Attribute]
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1936,7 +1936,7 @@ type GenotypeToVariantAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2131,7 +2131,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2151,7 +2151,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2176,7 +2176,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2223,7 +2223,7 @@ type MaterialSampleDerivationAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2246,7 +2246,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2375,7 +2375,7 @@ type NamedThingToInformationContentEntityAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2496,7 +2496,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2517,7 +2517,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2536,7 +2536,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2557,7 +2557,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2584,7 +2584,7 @@ type OrganismToOrganismAssociation
     type: String
     category: [CategoryType]
     subject: IndividualOrganism!
-    relation: Uriorcurie!
+    relation: String
     object: IndividualOrganism!
   }
 
@@ -2612,7 +2612,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2645,7 +2645,7 @@ type PairwiseGeneToGeneInteraction
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
   }
 
 type PairwiseMolecularInteraction
@@ -2665,7 +2665,7 @@ type PairwiseMolecularInteraction
     subject: MolecularEntity!
     id: String!
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     object: MolecularEntity!
   }
 
@@ -2875,7 +2875,7 @@ type PopulationToPopulationAssociation
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2987,7 +2987,7 @@ type ReactionToCatalystAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3010,7 +3010,7 @@ type ReactionToParticipantAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3102,7 +3102,7 @@ type SequenceAssociation
     subject: NamedThing!
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3120,7 +3120,7 @@ type SequenceFeatureRelationship
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3156,7 +3156,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3312,7 +3312,7 @@ type TaxonToTaxonAssociation
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
-    relation: Uriorcurie!
+    relation: String
     object: OrganismTaxon!
   }
 
@@ -3353,7 +3353,7 @@ type TranscriptToGeneRelationship
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3393,7 +3393,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3416,7 +3416,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3445,7 +3445,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     providedBy: [Agent]
     hasAttribute: [Attribute]
     subject: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3465,7 +3465,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     providedBy: [Agent]
     hasAttribute: [Attribute]
     subject: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3490,7 +3490,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -3513,7 +3513,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    relation: Uriorcurie!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
