@@ -1511,6 +1511,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [reaction balanced](reaction_balanced.md)
      * [reaction direction](reaction_direction.md) - the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
      * [reaction side](reaction_side.md) - the side of a reaction being modeled (ie: left or right)
+     * [relation](relation.md) - The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
      * [sequence localization attribute](sequence_localization_attribute.md) - An attribute that can be applied to a genome sequence localization edge. These edges connect a nucleic acid entity such as an exon to an entity such as a chromosome. Edge properties are used to ascribe specific positional information and other metadata to the localization. In pragmatic terms this can be thought of as columns in a GFF3 line.
          * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
              * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
@@ -1573,6 +1574,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [reaction balanced](reaction_balanced.md)
  * [reaction direction](reaction_direction.md) - the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
  * [reaction side](reaction_side.md) - the side of a reaction being modeled (ie: left or right)
+ * [relation](relation.md) - The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
  * [sequence localization attribute](sequence_localization_attribute.md) - An attribute that can be applied to a genome sequence localization edge. These edges connect a nucleic acid entity such as an exon to an entity such as a chromosome. Edge properties are used to ascribe specific positional information and other metadata to the localization. In pragmatic terms this can be thought of as columns in a GFF3 line.
      * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
          * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
@@ -1622,7 +1624,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
  * [mutation rate increased by](mutation_rate_increased_by.md)
  * [name](name.md) - A human-readable name for an attribute or entity.
- * [relation](relation.md)
  * [source](source.md) - a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
  * [type](type.md)
      * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.

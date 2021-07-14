@@ -1,23 +1,24 @@
 ---
-parent: Other Slots
+parent: Edge Properties
 title: biolink:relation
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: relation _(deprecated)_
+# Slot: relation
 
 
-
+The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
 
 URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
 
 ## Domain and Range
 
-None ->  <sub>0..1</sub> [String](types/String.md)
+[Association](Association.md) ->  <sub>1..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 
+ *  is_a: [association slot](association_slot.md)
 
 ## Children
 
