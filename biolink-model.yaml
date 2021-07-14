@@ -7632,6 +7632,30 @@ classes:
       Is a material entity that is created or changed during material processing.
     exact_mappings:
       - OBI:0000047
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   drug:
     is_a: molecular mixture
@@ -7667,6 +7691,29 @@ classes:
       - KEGG.DRUG    # D number
       - KEGG.DGROUP  # DG number
       - SIDER.DRUG
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   ## Food
 
@@ -7675,30 +7722,150 @@ classes:
     related_mappings:
       # substance role
       - CHEBI:78299
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   food additive:
     is_a: chemical entity
     related_mappings:
       # substance role
       - CHEBI:64047
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   nutrient:
     is_a: chemical entity
     related_mappings:
       # substance role
       - CHEBI:33284
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   macronutrient:
     is_a: nutrient
     related_mappings:
       # substance role
       - CHEBI:33937
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   micronutrient:
     is_a: nutrient
     related_mappings:
       # substance role
       - CHEBI:27027
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   vitamin:
     is_a: micronutrient
@@ -7708,6 +7875,30 @@ classes:
       # Vitamin
       - UMLSSC:T127
       - UMLSST:vita
+    id_prefixes:
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
 
   food:
     is_a: chemical mixture
@@ -7715,6 +7906,29 @@ classes:
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
       - foodb.compound
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - DRUGBANK
+      - MESH
+      - CAS
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - Aeolus
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN  ## G number
+      - KEGG.DRUG    ## D number
+      - KEGG.DGROUP  ## DG number
+      - KEGG.ENVIRON ## E number
     exact_mappings:
       # Food
       - UMLSSC:T168
