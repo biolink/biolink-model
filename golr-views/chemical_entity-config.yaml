@@ -1,8 +1,9 @@
-id: gene_regulatory_relationship
+id: chemical_entity
 schema_generating: true
-description: A regulatory relationship between two genes
-display_name: gene regulatory relationship
-document_category: gene regulatory relationship
+description: A chemical entity is a physical entity that pertains to chemistry or
+  biochemistry.
+display_name: chemical entity
+document_category: chemical entity
 weight: 20
 fields:
 - id: id
@@ -13,6 +14,8 @@ fields:
   description: An IRI for an entity. This is determined by the id using expansion
     rules.
   display_name: iri
+- id: type
+  display_name: type
 - id: name
   description: A human-readable name for an attribute or entity.
   display_name: name
@@ -33,30 +36,13 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
-- id: relation
-  display_name: relation
-- id: negated
-  description: if set to true, then the association is negated i.e. is not true
-  display_name: negated
-- id: qualifiers
-  description: connects an association to qualifiers that modify or qualify the meaning
-    of that association
-  display_name: qualifiers
-  cardinality: multi
-- id: publications
-  description: connects an association to publications supporting the association
-  display_name: publications
-  cardinality: multi
-- id: type
-  description: rdf:type of biolink:Association should be fixed at rdf:Statement
-  display_name: association_type
 - id: category
-  display_name: association_category
+  display_name: named thing_category
   cardinality: multi
-- id: predicate
-  description: the direction is always from regulator to regulated
-  display_name: gene regulatory relationship_predicate
-- id: subject
-  display_name: gene regulatory relationship_subject
-- id: object
-  display_name: gene regulatory relationship_object
+- id: trade_name
+  description: ''
+  display_name: trade name
+- id: available_from
+  description: ''
+  display_name: available from
+  cardinality: multi

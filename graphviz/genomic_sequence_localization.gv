@@ -85,13 +85,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=uriorcurie,
+		label=string,
 		pos="2435.5,18",
-		width=1.5887];
+		width=1.0652];
 	"genomic sequence localization" -> relation	[color=blue,
 		label=relation,
 		lp="1208.5,134.5",
-		pos="e,2378.7,20.674 1247.2,252.68 1161.1,239.66 1064,212.85 1111.5,160 1196.4,65.586 2110.8,29.376 2368.4,21.006",
+		pos="e,2397.4,20.09 1247.2,252.68 1161.1,239.66 1064,212.85 1111.5,160 1198.6,63.129 2158.9,27.53 2387.1,20.408",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -243,7 +243,7 @@ digraph {
 		label="nucleic acid entity",
 		pos="1885.5,265",
 		width=2.6539];
-	object -> relation	[pos="e,2451.3,35.702 2487.7,74.243 2479.1,65.127 2468.1,53.465 2458.4,43.208",
+	object -> relation	[pos="e,2450.4,34.713 2487.7,74.243 2478.7,64.775 2467.2,52.56 2457.3,42.024",
 		style=dotted];
 	"genomic sequence localization_object"	[color=blue,
 		height=0.5,
