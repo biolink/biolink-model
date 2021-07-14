@@ -95,13 +95,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=string,
+		label=uriorcurie,
 		pos="2639.6,18",
-		width=1.0652];
+		width=1.5887];
 	"reaction to catalyst association" -> relation	[color=blue,
 		label=relation,
 		lp="1499.6,134.5",
-		pos="e,2601.6,20.405 1415.2,246.93 1402.7,224.2 1386.2,184.07 1407.6,160 1488,69.904 2373.5,29.438 2591.4,20.804",
+		pos="e,2583.3,21.129 1415.2,246.93 1402.7,224.2 1386.2,184.07 1407.6,160 1485.9,72.25 2328,31.578 2573.1,21.543",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -221,7 +221,7 @@ digraph {
 		label="molecular entity",
 		pos="1948.6,265",
 		width=2.4192];
-	object -> relation	[pos="e,2654.5,34.713 2691.8,74.243 2682.8,64.775 2671.3,52.56 2661.4,42.024",
+	object -> relation	[pos="e,2655.4,35.702 2691.8,74.243 2683.2,65.127 2672.2,53.465 2662.5,43.208",
 		style=dotted];
 	"reaction to catalyst association_object"	[color=blue,
 		height=0.5,

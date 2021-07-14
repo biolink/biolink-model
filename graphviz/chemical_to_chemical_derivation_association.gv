@@ -85,13 +85,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=string,
+		label=uriorcurie,
 		pos="2049.5,18",
-		width=1.0652];
+		width=1.5887];
 	"chemical to chemical derivation association" -> relation	[color=blue,
 		label=relation,
 		lp="1285.5,134.5",
-		pos="e,2011,19.293 1238.2,246.96 1221.4,224.63 1198.1,185.33 1219.5,160 1321,39.8 1838.7,22.05 2000.9,19.444",
+		pos="e,1992.3,19.59 1238.2,246.96 1221.4,224.63 1198.1,185.33 1219.5,160 1317.4,44.088 1802.3,23.446 1982.2,19.784",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -200,7 +200,7 @@ digraph {
 		label="chemical entity",
 		pos="2157.5,265",
 		width=2.2748];
-	object -> relation	[pos="e,2064.3,34.713 2101.6,74.243 2092.7,64.775 2081.2,52.56 2071.2,42.024",
+	object -> relation	[pos="e,2065.2,35.702 2101.6,74.243 2093,65.127 2082,53.465 2072.3,43.208",
 		style=dotted];
 	"chemical to chemical derivation association_object"	[color=blue,
 		height=0.5,

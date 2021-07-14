@@ -251,6 +251,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -268,6 +269,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -341,6 +343,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -358,6 +361,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -558,6 +562,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -577,7 +582,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "Association",
          "type": "object"
@@ -771,6 +777,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -797,6 +804,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -1457,6 +1465,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -1484,7 +1493,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "CaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -1681,6 +1691,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -1704,6 +1715,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "CellLineAsAModelOfDiseaseAssociation",
@@ -1776,6 +1788,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -1794,6 +1807,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
@@ -2084,6 +2098,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -2103,6 +2118,7 @@
             "id",
             "subject",
             "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToChemicalAssociation",
@@ -2181,6 +2197,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -2198,6 +2215,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -2272,6 +2290,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -2291,6 +2310,7 @@
             "id",
             "subject",
             "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
@@ -2363,6 +2383,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -2382,6 +2403,7 @@
             "id",
             "subject",
             "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToGeneAssociation",
@@ -2454,6 +2476,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -2473,6 +2496,7 @@
             "id",
             "subject",
             "predicate",
+            "relation",
             "object"
          ],
          "title": "ChemicalToPathwayAssociation",
@@ -3210,6 +3234,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -3227,6 +3252,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "predicate",
             "object"
@@ -3867,6 +3893,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -3886,6 +3913,7 @@
             "id",
             "subject",
             "predicate",
+            "relation",
             "object"
          ],
          "title": "DiseaseOrPhenotypicFeatureToLocationAssociation",
@@ -3958,6 +3986,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -3977,7 +4006,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "DiseaseToExposureEventAssociation",
          "type": "object"
@@ -4057,6 +4087,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -4084,7 +4115,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "DiseaseToPhenotypicFeatureAssociation",
          "type": "object"
@@ -4240,6 +4272,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -4259,6 +4292,7 @@
             "id",
             "subject",
             "predicate",
+            "relation",
             "object"
          ],
          "title": "DrugToGeneAssociation",
@@ -4354,6 +4388,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -4373,7 +4408,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "EntityToDiseaseAssociation",
          "type": "object"
@@ -4448,6 +4484,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -4467,7 +4504,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "EntityToPhenotypicFeatureAssociation",
          "type": "object"
@@ -4935,6 +4973,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -4952,6 +4991,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -5041,6 +5081,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -5060,7 +5101,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "ExposureEventToOutcomeAssociation",
          "type": "object"
@@ -5140,6 +5182,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -5166,6 +5209,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "ExposureEventToPhenotypicFeatureAssociation",
@@ -5373,6 +5417,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -5391,6 +5436,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -5556,6 +5602,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -5579,6 +5626,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "GeneAsAModelOfDiseaseAssociation",
@@ -5721,6 +5769,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "sequence_variant_qualifier": {
@@ -5748,6 +5797,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "GeneHasVariantThatContributesToDiseaseAssociation",
@@ -5819,6 +5869,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -5835,6 +5886,7 @@
          },
          "required": [
             "id",
+            "relation",
             "predicate",
             "subject",
             "object"
@@ -5917,6 +5969,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -5940,6 +5993,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "GeneToDiseaseAssociation",
@@ -6016,6 +6070,7 @@
                "description": "can be used to indicate magnitude, or also ranking"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -6037,6 +6092,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -6122,6 +6178,7 @@
                "description": "Optional quantitative value indicating degree of expression."
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -6143,6 +6200,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -6217,6 +6275,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -6234,6 +6293,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -6306,6 +6366,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -6322,6 +6383,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -6396,6 +6458,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -6414,6 +6477,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -6495,6 +6559,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -6522,6 +6587,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "GeneToPhenotypicFeatureAssociation",
@@ -6701,6 +6767,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -6725,6 +6792,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -6876,6 +6944,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -6897,6 +6966,7 @@
          },
          "required": [
             "id",
+            "relation",
             "predicate",
             "object",
             "subject"
@@ -6979,6 +7049,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -7000,6 +7071,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "predicate",
             "object"
@@ -7074,6 +7146,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -7091,6 +7164,7 @@
          },
          "required": [
             "id",
+            "relation",
             "predicate",
             "subject",
             "object"
@@ -7164,6 +7238,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -7181,6 +7256,7 @@
          },
          "required": [
             "id",
+            "relation",
             "predicate",
             "subject",
             "object"
@@ -7262,6 +7338,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -7288,6 +7365,7 @@
          "required": [
             "id",
             "object",
+            "relation",
             "predicate",
             "subject"
          ],
@@ -7361,6 +7439,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -7378,6 +7457,7 @@
          },
          "required": [
             "id",
+            "relation",
             "predicate",
             "subject",
             "object"
@@ -8053,6 +8133,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -8071,6 +8152,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -8143,6 +8225,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -8161,6 +8244,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -8233,6 +8317,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -8251,6 +8336,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -8443,6 +8529,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -8460,6 +8547,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -8534,6 +8622,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -8553,7 +8642,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
@@ -9058,6 +9148,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -9074,6 +9165,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -9528,6 +9620,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -9545,6 +9638,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -9618,6 +9712,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -9635,6 +9730,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -9727,6 +9823,7 @@
             "id",
             "predicate",
             "subject",
+            "relation",
             "object"
          ],
          "title": "OrganismToOrganismAssociation",
@@ -9807,6 +9904,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -9830,6 +9928,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -9921,7 +10020,8 @@
             "id",
             "subject",
             "object",
-            "predicate"
+            "predicate",
+            "relation"
          ],
          "title": "PairwiseGeneToGeneInteraction",
          "type": "object"
@@ -10013,6 +10113,7 @@
             "subject",
             "id",
             "predicate",
+            "relation",
             "object"
          ],
          "title": "PairwiseMolecularInteraction",
@@ -10844,6 +10945,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -10861,6 +10963,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "object",
             "predicate"
@@ -11532,6 +11635,7 @@
                "type": "string"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -11553,6 +11657,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -11634,6 +11739,7 @@
                "type": "string"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -11655,6 +11761,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "object",
             "subject"
          ],
@@ -11802,6 +11909,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -11821,7 +11929,8 @@
             "id",
             "subject",
             "predicate",
-            "object"
+            "object",
+            "relation"
          ],
          "title": "SequenceAssociation",
          "type": "object"
@@ -11892,6 +12001,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -11909,6 +12019,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -12592,6 +12703,7 @@
             "id",
             "predicate",
             "subject",
+            "relation",
             "object"
          ],
          "title": "TaxonToTaxonAssociation",
@@ -12750,6 +12862,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -12767,6 +12880,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
@@ -12928,6 +13042,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -12949,6 +13064,7 @@
          },
          "required": [
             "id",
+            "relation",
             "predicate",
             "object",
             "subject"
@@ -13031,6 +13147,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -13052,6 +13169,7 @@
          },
          "required": [
             "id",
+            "relation",
             "subject",
             "predicate",
             "object"
@@ -13124,6 +13242,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -13142,6 +13261,7 @@
          "required": [
             "id",
             "subject",
+            "relation",
             "object",
             "predicate"
          ],
@@ -13225,6 +13345,7 @@
                "description": "Optional quantitative value indicating degree of expression."
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -13247,6 +13368,7 @@
          "required": [
             "id",
             "subject",
+            "relation",
             "object",
             "predicate"
          ],
@@ -13328,6 +13450,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "severity_qualifier": {
@@ -13355,6 +13478,7 @@
             "id",
             "predicate",
             "object",
+            "relation",
             "subject"
          ],
          "title": "VariantToPhenotypicFeatureAssociation",
@@ -13447,6 +13571,7 @@
                "type": "array"
             },
             "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
                "type": "string"
             },
             "source": {
@@ -13465,6 +13590,7 @@
          "required": [
             "id",
             "predicate",
+            "relation",
             "subject",
             "object"
          ],
