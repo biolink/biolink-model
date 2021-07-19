@@ -4002,6 +4002,7 @@ slots:
       - SEMMEDDB:causes
       - WIKIDATA_PROPERTY:P1542
       - SNOMED:cause_of
+      - RO:0003303
     broad_mappings:
       - RO:0002410
       - RO:0002506
@@ -7622,11 +7623,6 @@ classes:
       # Individual Behavior
       - UMLSSC:T055
       - UMLSST:inbe
-
-  death:
-    is_a: biological process
-    exact_mappings:
-      - GO:0016265
 
   ## (Bio)chemistry
 
