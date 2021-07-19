@@ -116,7 +116,7 @@ prefixes:
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
   # The UMLS Semantic types and groups namespaces don't have a directly
   # resolvable Base URI, but we point to a pair of sensible web documents
-  UMLSSC: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#'
+  UMLSSC: 'http://purl.bioontology.org/ontology/STY/'
   UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
   UMLSST: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
@@ -5817,14 +5817,12 @@ slots:
       of entities can be taxonomically classified; see 'thing with taxon'
     in_subset:
       - translator_minimal
-    related_mappings:
-      # RO term 'never in taxon' is a negation of this biolink term
-      - RO:0002162
     close_mappings:
       # RTX contributed term is an inverse mapping
       - NCIT:is_organism_source_of_gene_product
       - NCIT:organism_has_gene
     exact_mappings:
+      - RO:0002162
       - WIKIDATA_PROPERTY:P703
     narrow_mappings:
       - NCIT:gene_found_in_organism
