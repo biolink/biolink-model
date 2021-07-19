@@ -81,6 +81,7 @@ prefixes:
   KEGG.GENE: 'http://www.kegg.jp/entry/'
   KEGG.RCLASS: 'http://www.kegg.jp/entry/'
   LOINC: 'http://loinc.org/rdf/'
+  MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   MI: 'http://purl.obolibrary.org/obo/MI_'
@@ -8845,6 +8846,8 @@ classes:
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
+    broad_mappings:
+      - MAXO:0000058
 
   biotic exposure:
     aliases: ['viral exposure','bacterial exposure']
