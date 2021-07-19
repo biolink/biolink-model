@@ -35,6 +35,7 @@ prefixes:
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
   COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
+  COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DGIdb: 'https://www.dgidb.org/interaction_types'
@@ -667,12 +668,6 @@ slots:
     range: label type
     in_subset:
       - translator_minimal
-
-  filler:
-    is_a: node property
-    range: named thing
-    description: >-
-      The value in a property-value tuple
 
   stoichiometry:
     description: >-
@@ -8430,6 +8425,7 @@ classes:
       - RFAM ## RNAs only
       - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
       - EGGNOG
+      - COG
     in_subset:
       - model_organism_database
 
