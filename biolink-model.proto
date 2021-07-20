@@ -178,19 +178,7 @@ message BehaviorToBehavioralFeatureAssociation
 // A behavioral exposure is a factor relating to behavior impacting an individual.
 message BehavioralExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
-  optional timepoint TimeType = 13
+  optional timepoint TimeType = 1
  }
 // A phenotypic feature which is behavioral in nature.
 message BehavioralFeature
@@ -205,22 +193,6 @@ message BehavioralFeature
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
- }
-// An outcome resulting from an exposure event which is the manifestation of human behavior.
-message BehavioralOutcome
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -266,18 +238,7 @@ message BiologicalSex
 // An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional hasTaxonomicRank TaxonomicRank = 10
-  repeated subclassOf OrganismTaxon = 11
-  optional timepoint TimeType = 12
+  optional timepoint TimeType = 1
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -446,8 +407,8 @@ message CellularComponent
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
-// A chemical exposure is an intake of a particular chemical entity, other than a drug.
-message ChemicalExposure
+// A chemical entity is a physical entity that pertains to chemistry or biochemistry.
+message ChemicalEntity
  {
   id String = 1
   optional iri IriType = 2
@@ -458,7 +419,13 @@ message ChemicalExposure
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional timepoint TimeType = 10
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+ }
+// A chemical exposure is an intake of a particular chemical entity.
+message ChemicalExposure
+ {
+  optional timepoint TimeType = 1
  }
 // A chemical mixture is a chemical entity composed of two or more molecular entities.
 message ChemicalMixture
@@ -472,6 +439,10 @@ message ChemicalMixture
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isSupplement ChemicalMixture = 12
+  optional highestFDAApprovalStatus String = 13
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
@@ -683,9 +654,11 @@ message CodingSequence
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -701,20 +674,6 @@ message Cohort
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
-// A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
-message ComplexChemicalExposure
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional timepoint TimeType = 10
- }
 // A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
 message ComplexMolecularMixture
  {
@@ -727,6 +686,10 @@ message ComplexMolecularMixture
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isSupplement ChemicalMixture = 12
+  optional highestFDAApprovalStatus String = 13
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -897,31 +860,7 @@ message DiseaseOrPhenotypicFeature
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional timepoint TimeType = 11
- }
-// Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
-message DiseaseOrPhenotypicFeatureOutcome
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional timepoint TimeType = 1
  }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 message DiseaseOrPhenotypicFeatureToLocationAssociation
@@ -999,20 +938,15 @@ message Drug
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isSupplement ChemicalMixture = 12
+  optional highestFDAApprovalStatus String = 13
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional timepoint TimeType = 10
+  optional timepoint TimeType = 1
  }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
@@ -1037,31 +971,53 @@ message DrugToGeneAssociation
 // drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 message DrugToGeneInteractionExposure
  {
+  optional timepoint TimeType = 1
+  repeated hasGeneOrGeneProduct Gene = 2
+ }
+message EntityToDiseaseAssociation
+ {
   id String = 1
   optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional timepoint TimeType = 10
-  repeated hasGeneOrGeneProduct Gene = 11
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  subject NamedThing = 8
+  predicate PredicateType = 9
+  object NamedThing = 10
+  relation Uriorcurie = 11
+  optional negated Boolean = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional type String = 15
+  repeated category CategoryType = 16
+  optional fDAApprovalStatus FDAApprovalStatusEnum = 17
+ }
+message EntityToPhenotypicFeatureAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  subject NamedThing = 8
+  predicate PredicateType = 9
+  object NamedThing = 10
+  relation Uriorcurie = 11
+  optional negated Boolean = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional type String = 15
+  repeated category CategoryType = 16
+  optional fDAApprovalStatus FDAApprovalStatusEnum = 17
  }
 // A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 message EnvironmentalExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional timepoint TimeType = 10
+  optional timepoint TimeType = 1
  }
 message EnvironmentalFeature
  {
@@ -1086,21 +1042,10 @@ message EnvironmentalFoodContaminant
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
  }
 message EnvironmentalProcess
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
-// An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
-message EpidemiologicalOutcome
  {
   id String = 1
   optional iri IriType = 2
@@ -1154,9 +1099,11 @@ message Exon
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -1236,6 +1183,10 @@ message Food
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isSupplement ChemicalMixture = 12
+  optional highestFDAApprovalStatus String = 13
  }
 message FoodAdditive
  {
@@ -1248,6 +1199,8 @@ message FoodAdditive
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
  }
 // An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
@@ -1281,12 +1234,11 @@ message Gene
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
-  optional symbol String = 13
-  repeated synonym LabelType = 14
-  repeated xref IriType = 15
+  optional symbol String = 10
+  repeated synonym LabelType = 11
+  repeated xref IriType = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
  }
 message GeneAsAModelOfDiseaseAssociation
  {
@@ -1322,10 +1274,7 @@ message GeneFamily
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
-  repeated hasGeneOrGeneProduct Gene = 13
+  repeated hasGeneOrGeneProduct Gene = 10
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
@@ -1533,22 +1482,15 @@ message Genome
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
  }
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
 message GenomicBackgroundExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional timepoint TimeType = 10
-  repeated hasGeneOrGeneProduct Gene = 11
-  repeated inTaxon OrganismTaxon = 12
+  optional timepoint TimeType = 1
+  repeated hasGeneOrGeneProduct Gene = 2
+  repeated inTaxon OrganismTaxon = 3
+  optional hasBiologicalSequence BiologicalSequence = 4
  }
 // A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
@@ -1589,6 +1531,7 @@ message Genotype
   repeated category NamedThing = 9
   optional hasZygosity Zygosity = 10
   repeated inTaxon OrganismTaxon = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
  }
 message GenotypeAsAModelOfDiseaseAssociation
  {
@@ -1731,18 +1674,7 @@ message GenotypicSex
 // A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 message GeographicExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  optional latitude Float = 10
-  optional longitude Float = 11
-  optional timepoint TimeType = 12
+  optional timepoint TimeType = 1
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
@@ -1801,21 +1733,9 @@ message Haplotype
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
  }
 message Hospitalization
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
- }
-// An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
-message HospitalizationOutcome
  {
   id String = 1
   optional iri IriType = 2
@@ -1953,6 +1873,8 @@ message Macronutrient
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
@@ -2018,6 +1940,8 @@ message Micronutrient
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
  }
 message MicroRNA
  {
@@ -2030,11 +1954,13 @@ message MicroRNA
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
-  repeated synonym LabelType = 13
-  repeated xref IriType = 14
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
+  repeated synonym LabelType = 15
+  repeated xref IriType = 16
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
 message MolecularActivity
@@ -2064,7 +1990,9 @@ message MolecularEntity
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
  }
 // A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
 message MolecularMixture
@@ -2078,22 +2006,10 @@ message MolecularMixture
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
- }
-// An outcome of death from resulting from an exposure event.
-message MortalityOutcome
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isSupplement ChemicalMixture = 12
+  optional highestFDAApprovalStatus String = 13
  }
 // a databased entity or concept/class
 message NamedThing
@@ -2139,13 +2055,15 @@ message NoncodingRNAProduct
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
-  repeated synonym LabelType = 13
-  repeated xref IriType = 14
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
+  repeated synonym LabelType = 15
+  repeated xref IriType = 16
  }
-// A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+// A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
 message NucleicAcidEntity
  {
   id String = 1
@@ -2157,9 +2075,11 @@ message NucleicAcidEntity
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
  }
 message Nutrient
  {
@@ -2172,6 +2092,8 @@ message Nutrient
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
  }
 // The age group in which (disease) symptom manifestations appear
 message Onset
@@ -2334,31 +2256,7 @@ message PairwiseMolecularInteraction
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated category NamedThing = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional timepoint TimeType = 11
- }
-// An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
-message PathologicalAnatomicalOutcome
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated category NamedThing = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  optional timepoint TimeType = 1
  }
 // An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalAnatomicalStructure
@@ -2390,38 +2288,10 @@ message PathologicalProcess
   repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
  }
-// A pathological process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+// A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
 message PathologicalProcessExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
-  optional timepoint TimeType = 13
- }
-// An outcome resulting from an exposure event which is the manifestation of a pathological process.
-message PathologicalProcessOutcome
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  optional timepoint TimeType = 1
  }
 message Pathway
  {
@@ -2537,7 +2407,7 @@ message Polypeptide
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
+  repeated inTaxon OrganismTaxon = 10
  }
 // A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
 message PopulationOfIndividualOrganisms
@@ -2598,6 +2468,10 @@ message ProcessedMaterial
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isSupplement ChemicalMixture = 12
+  optional highestFDAApprovalStatus String = 13
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -2611,10 +2485,9 @@ message Protein
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
+  repeated inTaxon OrganismTaxon = 10
   repeated synonym LabelType = 11
   repeated xref IriType = 12
-  repeated inTaxon OrganismTaxon = 13
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
@@ -2628,10 +2501,9 @@ message ProteinIsoform
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
+  repeated inTaxon OrganismTaxon = 10
   repeated synonym LabelType = 11
   repeated xref IriType = 12
-  repeated inTaxon OrganismTaxon = 13
  }
 // Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
 message Publication
@@ -2718,9 +2590,8 @@ message ReagentTargetedGene
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
+  repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
  }
 message RNAProduct
  {
@@ -2733,11 +2604,13 @@ message RNAProduct
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
-  repeated synonym LabelType = 13
-  repeated xref IriType = 14
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
+  repeated synonym LabelType = 15
+  repeated xref IriType = 16
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
 message RNAProductIsoform
@@ -2751,11 +2624,13 @@ message RNAProductIsoform
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
-  repeated synonym LabelType = 13
-  repeated xref IriType = 14
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
+  repeated synonym LabelType = 15
+  repeated xref IriType = 16
  }
 // An association between a sequence feature and a nucleic acid entity it is localized to.
 message SequenceAssociation
@@ -2808,11 +2683,10 @@ message SequenceVariant
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   repeated category NamedThing = 8
-  optional isMetabolite Boolean = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated hasGene Gene = 11
-  optional hasBiologicalSequence BiologicalSequence = 12
-  id String = 13
+  repeated hasGene Gene = 9
+  optional hasBiologicalSequence BiologicalSequence = 10
+  id String = 11
+  repeated inTaxon OrganismTaxon = 12
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Serial
@@ -2862,11 +2736,13 @@ message SiRNA
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
-  repeated synonym LabelType = 13
-  repeated xref IriType = 14
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
+  repeated synonym LabelType = 15
+  repeated xref IriType = 16
  }
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
 message SmallMolecule
@@ -2879,8 +2755,10 @@ message SmallMolecule
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   repeated category NamedThing = 8
-  optional isMetabolite Boolean = 9
-  id String = 10
+  optional tradeName ChemicalEntity = 9
+  repeated availableFrom DrugAvailabilityEnum = 10
+  optional isMetabolite Boolean = 11
+  id String = 12
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
@@ -2893,11 +2771,10 @@ message Snv
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   repeated category NamedThing = 8
-  optional isMetabolite Boolean = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated hasGene Gene = 11
-  optional hasBiologicalSequence BiologicalSequence = 12
-  id String = 13
+  repeated hasGene Gene = 9
+  optional hasBiologicalSequence BiologicalSequence = 10
+  id String = 11
+  repeated inTaxon OrganismTaxon = 12
  }
 // Attributes relating to a socioeconomic manifestation
 message SocioeconomicAttribute
@@ -2912,35 +2789,8 @@ message SocioeconomicAttribute
 // A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
 message SocioeconomicExposure
  {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated category NamedThing = 8
-  repeated hasInput BiologicalProcessOrActivity = 9
-  repeated hasOutput BiologicalProcessOrActivity = 10
-  repeated enabledBy PhysicalEntity = 11
-  repeated hasAttribute SocioeconomicAttribute = 12
-  optional timepoint TimeType = 13
- }
-// An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
-message SocioeconomicOutcome
- {
-  id String = 1
-  optional iri IriType = 2
-  optional type String = 3
-  optional name LabelType = 4
-  optional description NarrativeText = 5
-  optional source LabelType = 6
-  repeated providedBy Agent = 7
-  repeated hasAttribute Attribute = 8
-  repeated category NamedThing = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  repeated hasAttribute SocioeconomicAttribute = 1
+  optional timepoint TimeType = 2
  }
 // A group of people banded together or treated as a group as participants in a research study.
 message StudyPopulation
@@ -2987,9 +2837,11 @@ message Transcript
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
-  optional isMetabolite Boolean = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  repeated inTaxon OrganismTaxon = 12
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional isMetabolite Boolean = 12
+  repeated inTaxon OrganismTaxon = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
@@ -3175,6 +3027,8 @@ message Vitamin
   repeated providedBy Agent = 7
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
  }
 message Zygosity
  {

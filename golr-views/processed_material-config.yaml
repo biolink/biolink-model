@@ -40,3 +40,19 @@ fields:
 - id: category
   display_name: named thing_category
   cardinality: multi
+- id: trade_name
+  description: ''
+  display_name: trade name
+- id: available_from
+  description: ''
+  display_name: available from
+  cardinality: multi
+- id: is_supplement
+  description: ''
+  display_name: is supplement
+- id: highest_FDA_approval_status
+  description: Should be the highest level of FDA approval this chemical entity or
+    device has, regardless of which disease, condition or phenotype it is currently
+    being reviewed to treat.  For specific levels of FDA approval for a specific condition,
+    disease, phenotype, etc., see the association slot, 'FDA approval status.'
+  display_name: highest FDA approval status
