@@ -1116,8 +1116,8 @@ slots:
     inherited: true
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - skos:relatedMatch
       - SEMMEDDB:ASSOCIATED_WITH
@@ -1333,8 +1333,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       # identical class extension with identical sets of individuals
       - owl:equivalentClass
@@ -1363,8 +1363,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
@@ -1388,8 +1388,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - skos:exactMatch
       - WIKIDATA:Q39893449
@@ -1448,8 +1448,8 @@ slots:
     domain: gene or gene product
     range: cellular component
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0002432
 
@@ -1458,8 +1458,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0002263
 
@@ -1474,8 +1474,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0004034
 
@@ -1490,8 +1490,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0004035
 
@@ -1506,8 +1506,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0004032
 
@@ -1522,8 +1522,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0002264
 
@@ -1538,8 +1538,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0004033
 
@@ -1623,8 +1623,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0002434
     narrow_mappings:
@@ -1642,8 +1642,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - WIKIDATA_PROPERTY:P129
       - RTXKG1:physically_interacts_with
@@ -1683,8 +1683,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     related_mappings:
       - DGIdb:antibody
     exact_mappings:
@@ -1718,8 +1718,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     related_mappings:
       # Contributed by RTX. Seems possible that a new predicate "biolink:in_pathway" could be justified?
       - DRUGBANK:pathway
@@ -1791,10 +1791,9 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
-
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_abundance_of
 
@@ -2066,8 +2065,8 @@ slots:
     domain: chemical entity
     range: nucleic acid entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_folding_of
 
@@ -2133,8 +2132,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     related_mappings:
       - GAMMA:storage
     exact_mappings:
@@ -2208,8 +2207,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     related_mappings:
       - GAMMA:catalytic_activity
     exact_mappings:
@@ -2285,8 +2284,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_molecular_modification_of
     narrow_mappings:
@@ -2459,8 +2458,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_synthesis_of
 
@@ -2536,8 +2535,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_degradation_of
     narrow_mappings:
@@ -2635,8 +2634,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_mutation_rate_of
 
@@ -2715,8 +2714,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_response_to
 
@@ -2795,8 +2794,8 @@ slots:
     domain: chemical entity
     range: transcript
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_RNA_splicing
     broad_mappings:
@@ -2874,8 +2873,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       - GAMMA:stabilization
     exact_mappings:
@@ -2952,8 +2951,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_transport_of
     narrow_mappings:
@@ -3032,8 +3031,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - CTD:affects_secretion_of
     broad_mappings:
@@ -3196,8 +3195,8 @@ slots:
     domain: physical essence or occurrent
     range: physical essence or occurrent
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       - RO:0002334
     exact_mappings:
@@ -3253,8 +3252,8 @@ slots:
     is_a: regulates
     mixin: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - RO:0002335
@@ -3284,8 +3283,8 @@ slots:
     domain: occurrent
     range: occurrent
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0002211
 
@@ -3336,8 +3335,8 @@ slots:
     range: chemical entity
     inverse: entity regulated by entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     local_names:
       translator: regulates
       ro: activity directly regulates activity of
@@ -3461,8 +3460,8 @@ slots:
     domain: gene product mixin
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     inverse: has gene product
     in_subset:
       - translator_minimal
@@ -3558,8 +3557,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:HOM0000001
       - SIO:010302
@@ -3575,8 +3574,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:HOM0000011
 
@@ -3588,8 +3587,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:HOM0000017
       - WIKIDATA_PROPERTY:P684
@@ -3602,8 +3601,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:HOM0000018
 
@@ -3615,8 +3614,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
       - SEMMEDDB:coexists_with
@@ -3807,8 +3806,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     related_mappings:
       # generally pertains to membership of a (subject) component - gene,
       # metabolite, etc? - in an (object) metabolic pathway
@@ -3825,8 +3824,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     related_mappings:
       # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
       - SIO:010497
@@ -3844,8 +3843,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   colocalizes with:
     description: >-
@@ -3855,8 +3854,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:00002325
 
@@ -3866,8 +3865,8 @@ slots:
     is_a: related to
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     description: >-
       Co-occurrence of a certain allele of a genetic marker and the phenotype
       of interest in the same individuals at above-chance level
@@ -3881,8 +3880,8 @@ slots:
     domain: gene
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -3916,8 +3915,8 @@ slots:
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
 
@@ -3949,8 +3948,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       # RTX contributed mapping tagged as 'inverse' of this Biolink predicate
       - IDO:0000664
@@ -4077,8 +4076,8 @@ slots:
     domain: biological entity
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0003309
 
@@ -4163,8 +4162,8 @@ slots:
     is_a: treats
     domain: chemical or drug or treatment
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - NCIT:C172573
     narrow_mappings:
@@ -4247,8 +4246,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0002610
       - PATO:correlates_with
@@ -4311,8 +4310,8 @@ slots:
     range: gene or gene product
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   has biomarker:
     is_a: correlated with
@@ -4341,8 +4340,8 @@ slots:
     domain: chemical entity
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4368,8 +4367,8 @@ slots:
     domain: gene or gene product
     range: anatomical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4402,8 +4401,8 @@ slots:
     domain: biological entity
     range: phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     notes:
       - check the range
     in_subset:
@@ -4448,8 +4447,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
       - BFO:0000067
@@ -4484,8 +4483,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0001025
       - FMA:has_location
@@ -4561,8 +4560,8 @@ slots:
         - translator_minimal
       symmetric: true
       annotations:
-        tag: biolink:canonical_predicate
-        value: true
+        - tag: biolink:canonical_predicate
+          value: true
       exact_mappings:
         - RO:HOM0000000               #I don't understand this identifier, but I think it's equivalent
         - SO:similar_to               #equivalent
@@ -4577,8 +4576,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     narrow_mappings:
       - CHEBI:has_parent_hydride    #subproperty
       - CHEBI:has_functional_parent #subproperty
@@ -4597,8 +4596,8 @@ slots:
     domain: nucleic acid entity
     range: nucleic acid entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - faldo:location
 
@@ -4615,8 +4614,8 @@ slots:
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4636,8 +4635,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - RO:0002131
     narrow_mappings:
@@ -4865,8 +4864,8 @@ slots:
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: occurrent
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4903,8 +4902,8 @@ slots:
     # domain: nucleic acid entity
     # range: molecular activity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   is catalyst of:
     is_a: participates in
@@ -4915,8 +4914,8 @@ slots:
     # domain: molecular activity
     # range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   is substrate of:
     is_a: participates in
@@ -4958,8 +4957,8 @@ slots:
     domain: molecular activity
     range: occurrent
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     close_mappings:
@@ -4997,8 +4996,8 @@ slots:
       continuant alone has the ability to carry out the process or function.
     range: occurrent
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5068,8 +5067,8 @@ slots:
   derives from:
     is_a: related to
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     description: >-
       holds between two distinct material entities, the new entity
       and the old entity, in which the new entity begins to exist
@@ -5110,8 +5109,8 @@ slots:
     domain: molecular entity
     range: molecular entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     comments:
@@ -5140,8 +5139,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
 
@@ -5165,8 +5164,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5224,8 +5223,8 @@ slots:
     domain: drug
     range: molecular entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     mappings:
@@ -5240,8 +5239,8 @@ slots:
       and processes to some disease or syndrome
     range: disease
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5267,8 +5266,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     related_mappings:
       - GOREL:0001010
     exact_mappings:
@@ -5290,8 +5289,8 @@ slots:
   consumes:
     is_a: has input
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     narrow_mappings:
       - RO:0004009
 
@@ -5306,8 +5305,8 @@ slots:
     range: occurrent
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - SNOMED:temporally_related_to
     narrow_mappings:
@@ -5387,8 +5386,8 @@ slots:
     range: chemical entity
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     related_mappings:
       - GAMMA:kd
       - GAMMA:kb
@@ -5425,8 +5424,8 @@ slots:
   affects expression in:
     is_a: affects
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     description: Holds between a variant and an anatomical entity where the expression of the variant
        is located in.
     exact_mappings:
@@ -5436,8 +5435,8 @@ slots:
     is_a: has part
     description: holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - GENO:0000382
 
@@ -5449,8 +5448,8 @@ slots:
     is_a: related to
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - GENO:0000790
 
@@ -5462,8 +5461,8 @@ slots:
     domain: sequence variant
     range: nucleic acid entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     narrow_mappings:
       # RTX contributed term mappings tagged elsewhere but mapped better here
       - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
@@ -5484,8 +5483,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - SO:0001583
       - SNPEFF:missense_variant
@@ -5506,8 +5505,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - SO:0001819
       - SNPEFF:synonymous_variant
@@ -5528,8 +5527,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - SNPEFF:stop_gained
     broad_mappings:
@@ -5551,8 +5550,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - SO:0001589
       - SNPEFF:frameshift_variant
@@ -5574,8 +5573,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - SO:0001629
     narrow_mappings:
@@ -5597,8 +5596,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - GAMMA:0000102
     narrow_mappings:
@@ -5619,8 +5618,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - GAMMA:0000103
     narrow_mappings:
@@ -5644,8 +5643,8 @@ slots:
       of the entity has contribution to the disease.
     is_a: related to
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     narrow_mappings:
       # These two MONDO terms seem more particular than the predicate
       - MONDO:disease_has_basis_in_development_of
@@ -5663,8 +5662,8 @@ slots:
     domain: drug
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - Aeolus:0000001
 
@@ -5769,8 +5768,8 @@ slots:
       in a population
     symmetric: true
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     exact_mappings:
       - NCIT:C16798
 
@@ -5823,8 +5822,8 @@ slots:
   develops from:
     is_a: related to
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       # RTX mapping seems to be inverse of 'biolink:develops_from'
       - RO:0002203
@@ -5850,8 +5849,8 @@ slots:
     domain: thing with taxon
     range: organism taxon
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     description: >-
       connects an entity to its taxonomic classification. Only certain kinds
       of entities can be taxonomically classified; see 'thing with taxon'
@@ -5878,8 +5877,8 @@ slots:
       consequence. E.g.  SO:0001583
     range: ontology class
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     narrow_mappings:
       - NCIT:allele_has_activity
 
