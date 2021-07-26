@@ -7329,6 +7329,7 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - BIGG.METABOLITES
     slot_usage:
       id:
         examples:
@@ -7535,6 +7536,7 @@ classes:
       - KEGG.REACTION  ## R number
       - KEGG.RCLASS    ## RC number
       - KEGG.ENZYME    ## EC number
+      - BIGG.REACTION
 
   biological process:
     is_a: biological process or activity
@@ -8241,6 +8243,7 @@ classes:
     exact_mappings:
       - SO:0000316
       - SIO:001390
+      -
 
   polypeptide:
     aliases: [ 'amino acid entity' ]
