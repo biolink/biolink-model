@@ -132,7 +132,7 @@ prefixes:
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   XPO: 'http://purl.obolibrary.org/obo/XPO_'  # Xenopus Phenotype Ontology
-  XENBASE:
+  Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
 
 default_prefix: biolink
 default_range: string
@@ -1554,11 +1554,14 @@ slots:
     description: >-
       this suggests the person has the disease in combination with other
       triples that use this predicate
-    subsets:
+    in_subset:
       - translator_minimal
-    domain: chemical entity
-    range:
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
 
+  associated with real world evidence:
+    inverse: has real world evidence of association with
 
   active in:
     is_a: related to
@@ -7341,7 +7344,7 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
-      - BIGG.METABOLITES
+      - BIGG.METABOLITE
     slot_usage:
       id:
         examples:
