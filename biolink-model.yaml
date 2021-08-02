@@ -6101,18 +6101,6 @@ slots:
       - SEMMEDDB:measures
       - UMLS:measures
 
-  predicate qualifier:
-    is_a: association slot
-    multivalued: true
-    range: predicate_qualifier_enum
-    description: >-
-      One or more of a list of qualifiers that can qualify the definition of a predicate.
-    examples:
-      - value: associated with
-        description: chemical entity associated with increased risk of cancer
-      - value: predicts
-        description: smoke predicts increased risk for disease outcome
-
   catalyst qualifier:
     is_a: association slot
     multivalued: true
