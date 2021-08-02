@@ -109,4 +109,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | medical intervention |
 | **Exact Mappings:** | | OGMS:0000090 |
 |  | | SIO:001398 |
+| **Broad Mappings:** | | MAXO:0000058 |
 

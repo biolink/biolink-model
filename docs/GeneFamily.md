@@ -41,6 +41,7 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
  * RFAM
  * KEGG.ORTHOLOGY
  * EGGNOG
+ * COG
 
 ## Parents
 

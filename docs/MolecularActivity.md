@@ -31,6 +31,8 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
  * KEGG.REACTION
  * KEGG.RCLASS
  * KEGG.ENZYME
+ * UMLS
+ * BIGG.REACTION
 
 ## Parents
 

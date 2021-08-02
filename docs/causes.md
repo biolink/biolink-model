@@ -40,6 +40,7 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 |  | | SEMMEDDB:causes |
 |  | | WIKIDATA_PROPERTY:P1542 |
 |  | | SNOMED:cause_of |
+|  | | RO:0003303 |
 | **Narrow Mappings:** | | MONDO:disease_triggers |
 |  | | GOREL:0000040 |
 |  | | MONDO:disease_causes_feature |

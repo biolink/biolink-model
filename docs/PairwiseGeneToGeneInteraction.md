@@ -15,7 +15,7 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction%7Cpredicate:predicate_type;relation:uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[PairwiseMolecularInteraction],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneAssociation],[GeneOrGeneProduct],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction%7Cpredicate:predicate_type;relation:string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[PairwiseMolecularInteraction],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneAssociation],[GeneOrGeneProduct],[Attribute],[Agent])
 
 ---
 
@@ -38,9 +38,9 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
 
  * [pairwise gene to gene interaction➞predicate](pairwise_gene_to_gene_interaction_predicate.md)  <sub>1..1</sub>
      * Range: [PredicateType](types/PredicateType.md)
- * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>1..1</sub>
+ * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>0..1</sub>
      * Description: interaction relationship type
-     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * Range: [String](types/String.md)
 
 ### Inherited from association:
 
@@ -53,9 +53,8 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>1..1</sub>
-     * Description: The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
-     * Range: [Uriorcurie](types/Uriorcurie.md)
+ * [relation](relation.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
@@ -126,6 +125,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [pairwise gene to gene interaction➞predicate](pairwise_gene_to_gene_interaction_predicate.md)  <sub>1..1</sub>
      * Range: [PredicateType](types/PredicateType.md)
- * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>1..1</sub>
+ * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>0..1</sub>
      * Description: interaction relationship type
-     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * Range: [String](types/String.md)

@@ -47,6 +47,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[affects](affects.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[affects expression in](affects_expression_in.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[affects risk for](affects_risk_for.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[associated with real world evidence](associated_with_real_world_evidence.md)*  <sub>0..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[broad match](broad_match.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Occurrent](Occurrent.md)** *[catalyzes](catalyzes.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[caused by](caused_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
@@ -68,7 +69,6 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[disrupted by](disrupted_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[disrupts](disrupts.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[exact match](exact_match.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[filler](filler.md)*  <sub>0..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[genetic association](genetic_association.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)** *[genotype to disease association➞object](genotype_to_disease_association_object.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)** *[genotype to disease association➞subject](genotype_to_disease_association_subject.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
@@ -80,6 +80,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[has part](has_part.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Occurrent](Occurrent.md)** *[has participant](has_participant.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Attribute](Attribute.md)** *[has qualitative value](has_qualitative_value.md)*  <sub>0..1</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[has real world evidence of association with](has_real_world_evidence_of_association_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Occurrent](Occurrent.md)** *[has substrate](has_substrate.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[has variant part](has_variant_part.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[homologous to](homologous_to.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
