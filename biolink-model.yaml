@@ -35,6 +35,7 @@ prefixes:
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
   COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
+  COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DGIdb: 'https://www.dgidb.org/interaction_types'
@@ -80,9 +81,11 @@ prefixes:
   KEGG.GENE: 'http://www.kegg.jp/entry/'
   KEGG.RCLASS: 'http://www.kegg.jp/entry/'
   LOINC: 'http://loinc.org/rdf/'
+  MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   MI: 'http://purl.obolibrary.org/obo/MI_'
+  mirbase: 'http://identifiers.org/mirbase'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NCBIGene: 'http://identifiers.org/ncbigene/'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
@@ -93,6 +96,7 @@ prefixes:
   ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
+  PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   PATO-PROPERTY: 'http://purl.obolibrary.org/obo/pato#'  # Phenotypic Quality Ontology properties, not core terms
   pav: 'http://purl.org/pav/'
@@ -115,7 +119,7 @@ prefixes:
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
   # The UMLS Semantic types and groups namespaces don't have a directly
   # resolvable Base URI, but we point to a pair of sensible web documents
-  UMLSSC: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#'
+  UMLSSC: 'http://purl.bioontology.org/ontology/STY/'
   UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
   UMLSST: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
@@ -128,6 +132,7 @@ prefixes:
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   XPO: 'http://purl.obolibrary.org/obo/XPO_'  # Xenopus Phenotype Ontology
+  Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
 
 default_prefix: biolink
 default_range: string
@@ -682,12 +687,6 @@ slots:
     range: label type
     in_subset:
       - translator_minimal
-
-  filler:
-    is_a: node property
-    range: named thing
-    description: >-
-      The value in a property-value tuple
 
   stoichiometry:
     description: >-
@@ -1564,6 +1563,20 @@ slots:
     see_also:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
+
+  has real world evidence of association with:
+    is_a: related to
+    description: >-
+      this suggests the person has the disease in combination with other
+      triples that use this predicate
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  associated with real world evidence:
+    inverse: has real world evidence of association with
 
   active in:
     is_a: related to
@@ -4023,6 +4036,7 @@ slots:
       - SEMMEDDB:causes
       - WIKIDATA_PROPERTY:P1542
       - SNOMED:cause_of
+      - RO:0003303
     broad_mappings:
       - RO:0002410
       - RO:0002506
@@ -5837,14 +5851,12 @@ slots:
       of entities can be taxonomically classified; see 'thing with taxon'
     in_subset:
       - translator_minimal
-    related_mappings:
-      # RO term 'never in taxon' is a negation of this biolink term
-      - RO:0002162
     close_mappings:
       # RTX contributed term is an inverse mapping
       - NCIT:is_organism_source_of_gene_product
       - NCIT:organism_has_gene
     exact_mappings:
+      - RO:0002162
       - WIKIDATA_PROPERTY:P703
     narrow_mappings:
       - NCIT:gene_found_in_organism
@@ -7337,6 +7349,7 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - BIGG.METABOLITE
     slot_usage:
       id:
         examples:
@@ -7543,6 +7556,7 @@ classes:
       - KEGG.REACTION  ## R number
       - KEGG.RCLASS    ## RC number
       - KEGG.ENZYME    ## EC number
+      - BIGG.REACTION
 
   biological process:
     is_a: biological process or activity
@@ -7632,11 +7646,6 @@ classes:
       # Individual Behavior
       - UMLSSC:T055
       - UMLSST:inbe
-
-  death:
-    is_a: biological process
-    exact_mappings:
-      - GO:0016265
 
   ## (Bio)chemistry
 
@@ -8435,6 +8444,7 @@ classes:
       - RFAM ## RNAs only
       - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
       - EGGNOG
+      - COG
     in_subset:
       - model_organism_database
 
@@ -8859,6 +8869,8 @@ classes:
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
+    broad_mappings:
+      - MAXO:0000058
 
   biotic exposure:
     aliases: ['viral exposure','bacterial exposure']
