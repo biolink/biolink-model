@@ -1549,6 +1549,17 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
+  has real world evidence of association with:
+    is_a: related to
+    description: >-
+      this suggests the person has the disease in combination with other
+      triples that use this predicate
+    subsets:
+      - translator_minimal
+    domain: chemical entity
+    range:
+
+
   active in:
     is_a: related to
     domain: gene or gene product
@@ -8244,7 +8255,6 @@ classes:
     exact_mappings:
       - SO:0000316
       - SIO:001390
-      -
 
   polypeptide:
     aliases: [ 'amino acid entity' ]
