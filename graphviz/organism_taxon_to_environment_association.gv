@@ -92,14 +92,14 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=uriorcurie,
+		label=string,
 		pos="2031.4,18",
-		width=1.5887];
+		width=1.0652];
 	"organism taxon to environment association" -> relation	[color=blue,
 		label=relation,
 		lp="1469.4,134.5",
-		pos="e,1976.3,22.939 1377.7,247 1383.5,241.93 1389,235.87 1392.4,229 1406.1,201.49 1376.5,183.39 1396.4,160 1469.9,73.601 1819.2,35.967 \
-1966.1,23.773",
+		pos="e,1993.8,21.577 1377.7,247 1383.5,241.93 1389,235.87 1392.4,229 1406.1,201.49 1376.5,183.39 1396.4,160 1473.1,69.897 1849.7,32.83 \
+1983.8,22.343",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -195,7 +195,7 @@ digraph {
 		label="organism taxon",
 		pos="1926.4,265",
 		width=2.3109];
-	object -> relation	[pos="e,2047.2,35.702 2083.5,74.243 2074.9,65.127 2063.9,53.465 2054.2,43.208",
+	object -> relation	[pos="e,2046.2,34.713 2083.5,74.243 2074.6,64.775 2063.1,52.56 2053.1,42.024",
 		style=dotted];
 	"organism taxon to environment association_object"	[color=blue,
 		height=0.5,

@@ -35,6 +35,7 @@ prefixes:
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
   COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
+  COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DGIdb: 'https://www.dgidb.org/interaction_types'
@@ -80,9 +81,11 @@ prefixes:
   KEGG.GENE: 'http://www.kegg.jp/entry/'
   KEGG.RCLASS: 'http://www.kegg.jp/entry/'
   LOINC: 'http://loinc.org/rdf/'
+  MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   MI: 'http://purl.obolibrary.org/obo/MI_'
+  mirbase: 'http://identifiers.org/mirbase'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NCBIGene: 'http://identifiers.org/ncbigene/'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
@@ -93,6 +96,7 @@ prefixes:
   ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
+  PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   PATO-PROPERTY: 'http://purl.obolibrary.org/obo/pato#'  # Phenotypic Quality Ontology properties, not core terms
   pav: 'http://purl.org/pav/'
@@ -115,7 +119,7 @@ prefixes:
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
   # The UMLS Semantic types and groups namespaces don't have a directly
   # resolvable Base URI, but we point to a pair of sensible web documents
-  UMLSSC: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#'
+  UMLSSC: 'http://purl.bioontology.org/ontology/STY/'
   UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
   UMLSST: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
@@ -128,6 +132,7 @@ prefixes:
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   XPO: 'http://purl.obolibrary.org/obo/XPO_'  # Xenopus Phenotype Ontology
+  Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
 
 default_prefix: biolink
 default_range: string
@@ -203,6 +208,18 @@ enums:
         description: nucleic acid
       "AA":
         description: amino acid
+
+  predicate_qualifier_enum:
+    description: >-
+      constrained list of qualifying terms that soften or expand the definition of the predicate used.
+      can be used to constrain or qualify any predicate (any child of related_to).
+    permissible_values:
+      "predicted":
+      "possibly":
+      "hypothesized":
+      "validated":
+      "supported by real-world evidence":
+      "supported by clinical evidence":
 
   drug_availability_enum:
     description: >-
@@ -298,7 +315,7 @@ enums:
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
       "regular approval":
       "post-approval withdrawal":
-        
+
 subsets:
 
   model_organism_database:
@@ -626,15 +643,18 @@ slots:
     domain: entity
     range: category type
     description: >-
-      Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+      Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the
+      biolink entity type class.
        * In a neo4j database this MAY correspond to the neo4j label tag.
        * In an RDF database it should be a biolink model class URI.
-      This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have
-      category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+      This field is multi-valued. It should include values for ancestors of the biolink class; for example,
+      a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 
-      In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class
-      more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,
-      which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
+      In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink
+      class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f`
+      may have a rdf:type assertion to a SO class such as TF_binding_site,
+      which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity,
+      biolink:MolecularEntity, biolink:NamedThing}
     is_class_field: true
     multivalued: true
     in_subset:
@@ -667,12 +687,6 @@ slots:
     range: label type
     in_subset:
       - translator_minimal
-
-  filler:
-    is_a: node property
-    range: named thing
-    description: >-
-      The value in a property-value tuple
 
   stoichiometry:
     description: >-
@@ -1549,6 +1563,20 @@ slots:
     see_also:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
+
+  has real world evidence of association with:
+    is_a: related to
+    description: >-
+      this suggests the person has the disease in combination with other
+      triples that use this predicate
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  associated with real world evidence:
+    inverse: has real world evidence of association with
 
   active in:
     is_a: related to
@@ -3901,7 +3929,8 @@ slots:
   gene associated with condition:
     is_a: genetic association
     description: >-
-      holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
+      holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence,
+      contribute to, or correlate with
     domain: gene
     range: disease or phenotypic feature
     annotations:
@@ -4007,6 +4036,7 @@ slots:
       - SEMMEDDB:causes
       - WIKIDATA_PROPERTY:P1542
       - SNOMED:cause_of
+      - RO:0003303
     broad_mappings:
       - RO:0002410
       - RO:0002506
@@ -5821,14 +5851,12 @@ slots:
       of entities can be taxonomically classified; see 'thing with taxon'
     in_subset:
       - translator_minimal
-    related_mappings:
-      # RO term 'never in taxon' is a negation of this biolink term
-      - RO:0002162
     close_mappings:
       # RTX contributed term is an inverse mapping
       - NCIT:is_organism_source_of_gene_product
       - NCIT:organism_has_gene
     exact_mappings:
+      - RO:0002162
       - WIKIDATA_PROPERTY:P703
     narrow_mappings:
       - NCIT:gene_found_in_organism
@@ -5948,18 +5976,7 @@ slots:
       - os:LogicalInterpretation
 
   relation:
-    is_a: association slot
-    description: >-
-      The relation which describes an association between a subject and
-      an object in a more granular manner. Usually this is a term from
-      Relation Ontology, but it can be any edge CURIE.
-    domain: association
-    range: uriorcurie
-    required: true
-    id_prefixes:
-      - RO
-      - BSPO
-      - SIO
+    deprecated: true
 
   negated:
     is_a: association slot
@@ -7332,6 +7349,7 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - BIGG.METABOLITE
     slot_usage:
       id:
         examples:
@@ -7538,6 +7556,8 @@ classes:
       - KEGG.REACTION  ## R number
       - KEGG.RCLASS    ## RC number
       - KEGG.ENZYME    ## EC number
+      - UMLS
+      - BIGG.REACTION
 
   biological process:
     is_a: biological process or activity
@@ -7627,11 +7647,6 @@ classes:
       # Individual Behavior
       - UMLSSC:T055
       - UMLSST:inbe
-
-  death:
-    is_a: biological process
-    exact_mappings:
-      - GO:0016265
 
   ## (Bio)chemistry
 
@@ -8430,6 +8445,7 @@ classes:
       - RFAM ## RNAs only
       - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
       - EGGNOG
+      - COG
     in_subset:
       - model_organism_database
 
@@ -8854,6 +8870,8 @@ classes:
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
+    broad_mappings:
+      - MAXO:0000058
 
   biotic exposure:
     aliases: ['viral exposure','bacterial exposure']

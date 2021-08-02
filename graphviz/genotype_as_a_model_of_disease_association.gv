@@ -98,13 +98,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=uriorcurie,
+		label=string,
 		pos="2842.9,18",
-		width=1.5887];
+		width=1.0652];
 	"genotype as a model of disease association" -> relation	[color=blue,
 		label=relation,
 		lp="2001.9,134.5",
-		pos="e,2785.5,18.642 1950.6,246.91 1933.7,224.53 1910.4,185.17 1931.9,160 2041.2,32.552 2583,19.296 2775.2,18.665",
+		pos="e,2804.6,18.661 1950.6,246.91 1933.7,224.53 1910.4,185.17 1931.9,160 2045.1,27.968 2622.6,18.49 2794.6,18.641",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -234,7 +234,7 @@ digraph {
 		label="named thing",
 		pos="2698.9,265",
 		width=1.9318];
-	subject -> relation	[pos="e,2879.9,31.965 3238.8,164.84 3213.1,154.56 3175.2,139.55 3141.9,127 3053.1,93.474 2948.6,56.232 2889.7,35.41",
+	subject -> relation	[pos="e,2872.7,29.451 3238.8,164.84 3213.1,154.56 3175.2,139.55 3141.9,127 3049.4,92.073 2939.9,53.112 2882.5,32.887",
 		style=dotted];
 	subject -> object	[label=relation,
 		lp="3113.9,134.5",
