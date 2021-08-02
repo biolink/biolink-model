@@ -95,13 +95,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=uriorcurie,
+		label=string,
 		pos="2213.5,18",
-		width=1.5887];
+		width=1.0652];
 	"reaction to participant association" -> relation	[color=blue,
 		label=relation,
 		lp="1463.5,134.5",
-		pos="e,2156.4,19.718 1401,246.72 1388.8,224.12 1372.8,184.52 1393.5,160 1490,45.483 1968.1,23.973 2146.4,19.934",
+		pos="e,2175.2,19.376 1401,246.72 1388.8,224.12 1372.8,184.52 1393.5,160 1493.6,41.174 2004.6,22.486 2165.2,19.548",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -218,8 +218,8 @@ digraph {
 		label="chemical entity",
 		pos="1943.5,265",
 		width=2.2748];
-	subject -> relation	[pos="e,2254.4,30.731 2716.9,166.1 2710.4,164.05 2703.8,161.94 2697.5,160 2648.3,144.81 2635.9,141.49 2586.5,127 2471.3,93.191 2335.8,\
-54.144 2264,33.517",
+	subject -> relation	[pos="e,2245.4,28.169 2716.9,166.1 2710.4,164.05 2703.8,161.94 2697.5,160 2648.3,144.81 2635.9,141.49 2586.5,127 2466.3,91.722 2324,50.742 \
+2255.1,30.935",
 		style=dotted];
 	subject -> object	[label=relation,
 		lp="2558.5,134.5",

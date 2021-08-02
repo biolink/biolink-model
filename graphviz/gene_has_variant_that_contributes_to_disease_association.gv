@@ -105,13 +105,13 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=uriorcurie,
+		label=string,
 		pos="2037.8,18",
-		width=1.5887];
+		width=1.0652];
 	"gene has variant that contributes to disease association" -> relation	[color=blue,
 		label=relation,
 		lp="1395.8,134.5",
-		pos="e,1981,20.329 1363.3,246.56 1352,217.02 1335,157.37 1367.8,127 1454.8,46.5 1819.1,25.823 1970.9,20.661",
+		pos="e,1999.3,19.794 1363.3,246.56 1352,217.02 1335,157.37 1367.8,127 1458.5,43.087 1850.5,24.177 1989,20.084",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -228,7 +228,7 @@ digraph {
 		lp="2401.8,134.5",
 		pos="e,2093.5,101.9 2719.9,165.5 2712.7,163.33 2705,161.32 2697.8,160 2555.9,134.15 2517.3,156.63 2373.8,142 2279.5,132.38 2171.1,115.13 \
 2103.6,103.62"];
-	subject -> relation	[pos="e,2086.2,27.715 2718.5,165.98 2711.7,163.88 2704.5,161.78 2697.8,160 2477.8,102.02 2211.9,50.889 2096.2,29.564",
+	subject -> relation	[pos="e,2073.1,25.33 2718.5,165.98 2711.7,163.88 2704.5,161.78 2697.8,160 2468.9,99.677 2190.3,46.768 2083,27.126",
 		style=dotted];
 	"gene has variant that contributes to disease association_subject"	[color=blue,
 		height=0.5,

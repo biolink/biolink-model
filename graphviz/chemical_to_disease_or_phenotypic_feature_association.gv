@@ -118,14 +118,14 @@ digraph {
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=uriorcurie,
+		label=string,
 		pos="2187.4,18",
-		width=1.5887];
+		width=1.0652];
 	"chemical to disease or phenotypic feature association" -> relation	[color=blue,
 		label=relation,
 		lp="2017.4,134.5",
-		pos="e,2150.6,31.825 1914.6,247.52 1924.2,242.81 1933.3,236.76 1940.4,229 1961.9,205.58 1940.3,185.46 1959.4,160 2006.1,97.577 2089.4,\
-56.461 2141.3,35.505",
+		pos="e,2157.2,29.32 1914.6,247.52 1924.2,242.81 1933.3,236.76 1940.4,229 1961.9,205.58 1940.3,185.46 1959.4,160 2008.1,94.907 2096.6,\
+52.983 2147.8,32.926",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -201,7 +201,7 @@ digraph {
 		label="category type",
 		pos="2292.4,265",
 		width=2.0762];
-	object -> relation	[pos="e,2203.2,35.702 2239.5,74.243 2230.9,65.127 2219.9,53.465 2210.2,43.208",
+	object -> relation	[pos="e,2202.2,34.713 2239.5,74.243 2230.6,64.775 2219.1,52.56 2209.1,42.024",
 		style=dotted];
 	"chemical to disease or phenotypic feature association_object"	[color=blue,
 		height=0.5,
