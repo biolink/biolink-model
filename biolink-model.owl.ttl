@@ -11,11 +11,11 @@
     rdfs:label "Biolink-Model" ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     skos:definition "Entity and association taxonomy and datamodel for life-sciences data" ;
-    linkml:generation_date "2021-08-02 17:28" ;
+    linkml:generation_date "2021-08-04 17:31" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "biolink-model.yaml" ;
-    linkml:source_file_date "Mon Aug  2 17:26:25 2021" ;
-    linkml:source_file_size 315210 .
+    linkml:source_file_date "Wed Aug  4 17:29:39 2021" ;
+    linkml:source_file_size 315217 .
 
 <https://w3id.org/biolink/vocab/Activity> a owl:Class,
         linkml:ClassDefinition ;
@@ -75,16 +75,16 @@
     rdfs:label "case to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
             owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSex> ;
             owl:onProperty <https://w3id.org/biolink/vocab/sex_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
@@ -170,10 +170,6 @@
     rdfs:label "disease to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSex> ;
             owl:onProperty <https://w3id.org/biolink/vocab/sex_qualifier> ],
         [ a owl:Restriction ;
@@ -184,6 +180,10 @@
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/DiseaseToEntityAssociationMixin>,
         <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin> ;
@@ -257,12 +257,12 @@
     rdfs:label "exposure event to outcome association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/TimeType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_temporal_context> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_population_context> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/TimeType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_temporal_context> ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToOutcomeAssociationMixin>,
         <https://w3id.org/biolink/vocab/ExposureEventToEntityAssociationMixin> ;
@@ -323,15 +323,15 @@
         linkml:ClassDefinition ;
     rdfs:label "genomic background exposure" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/Gene> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_gene_or_gene_product> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/TimeType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/timepoint> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
             owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/Gene> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_gene_or_gene_product> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSequence> ;
@@ -610,12 +610,12 @@
         linkml:ClassDefinition ;
     rdfs:label "reagent targeted gene" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSequence> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_biological_sequence> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
         <https://w3id.org/biolink/vocab/BiologicalEntity>,
         <https://w3id.org/biolink/vocab/GenomicEntity>,
         <https://w3id.org/biolink/vocab/OntologyClass>,
@@ -2532,9 +2532,9 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "cell line as a model of disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
+            owl:onClass <https://w3id.org/biolink/vocab/CellLine> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
@@ -2544,9 +2544,9 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
             owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/CellLine> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         <https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation>,
         <https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin>,
         <https://w3id.org/biolink/vocab/ModelToDiseaseAssociationMixin> .
@@ -2727,16 +2727,16 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
     rdfs:label "exposure event to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
+            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
+            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/ExposureEvent> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
@@ -2755,7 +2755,7 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Double ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_quotient> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/has_percentage> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
@@ -2763,7 +2763,7 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Double ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_percentage> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/has_quotient> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
@@ -2804,20 +2804,20 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/biolink/vocab/phenotypic_state> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/OntologyClass> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/quantifier_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/expression_site> ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/LifeStage> ;
             owl:onProperty <https://w3id.org/biolink/vocab/stage_qualifier> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/OntologyClass> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/quantifier_qualifier> ],
+            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/GeneExpressionMixin>,
         <https://w3id.org/biolink/vocab/GeneToGeneAssociation> ;
     skos:definition "Indicates that two genes are co-expressed, generally under the same conditions." .
@@ -2836,25 +2836,25 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "gene to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/BiologicalSex> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/sex_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/BiologicalSex> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/sex_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin>,
         <https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin> ;
@@ -2938,20 +2938,20 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
     rdfs:label "organismal entity as a model of disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/OrganismalEntity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin>,
         <https://w3id.org/biolink/vocab/ModelToDiseaseAssociationMixin> .
@@ -3052,16 +3052,16 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
     rdfs:label "variant to gene expression association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/phenotypic_state> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/LifeStage> ;
             owl:onProperty <https://w3id.org/biolink/vocab/stage_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/OntologyClass> ;
             owl:onProperty <https://w3id.org/biolink/vocab/quantifier_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/phenotypic_state> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
@@ -3078,9 +3078,9 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "variant to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/SequenceVariant> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
@@ -3091,12 +3091,12 @@ linkml:variant_to_population_association_subject a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSex> ;
             owl:onProperty <https://w3id.org/biolink/vocab/sex_qualifier> ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/SequenceVariant> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin>,
         <https://w3id.org/biolink/vocab/VariantToEntityAssociationMixin> .
@@ -5259,7 +5259,11 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/volume> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/issue> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/iso_abbreviation> ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/biolink/vocab/published_in> ;
@@ -5267,11 +5271,7 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/iso_abbreviation> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/issue> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/volume> ],
         <https://w3id.org/biolink/vocab/Publication> .
 
 <https://w3id.org/biolink/vocab/Behavior> a owl:Class,
@@ -5294,29 +5294,29 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "behavior to behavioral feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/Behavior> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/BehavioralFeature> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
+            owl:onClass <https://w3id.org/biolink/vocab/BiologicalSex> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/sex_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/Behavior> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/BiologicalSex> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/sex_qualifier> ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin> ;
     skos:definition "An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior." .
@@ -5333,11 +5333,11 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
     rdfs:label "book" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/id> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/type> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/type> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/id> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Publication> ;
     skos:definition "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility." .
@@ -5348,15 +5348,15 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/chapter> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/volume> ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/biolink/vocab/published_in> ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/chapter> ],
         <https://w3id.org/biolink/vocab/Publication> .
 
 <https://w3id.org/biolink/vocab/Case> a owl:Class,
@@ -5461,12 +5461,12 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
     rdfs:label "entity to feature or disease qualifiers mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         <https://w3id.org/biolink/vocab/FrequencyQualifierMixin>,
         linkml:mixin ;
     skos:definition "Qualifiers for entity to disease or phenotype associations." .
@@ -5494,12 +5494,12 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "exon to transcript relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/Transcript> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/Exon> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/Transcript> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/SequenceFeatureRelationship> ;
     skos:definition "A transcript is formed from multiple exons" .
@@ -5533,12 +5533,12 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "gene to go term association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/Gene> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/GeneOntologyClass> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/Gene> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/FunctionalAssociation> ;
     skos:altLabel "functional association" ;
@@ -5548,29 +5548,29 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "genotype to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/Genotype> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSex> ;
             owl:onProperty <https://w3id.org/biolink/vocab/sex_qualifier> ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/Genotype> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
             owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin>,
         <https://w3id.org/biolink/vocab/GenotypeToEntityAssociationMixin> ;
@@ -5637,11 +5637,11 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "RNA product" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/synonym> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/IriType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/xref> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/LabelType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/synonym> ],
         <https://w3id.org/biolink/vocab/GeneProductMixin>,
         <https://w3id.org/biolink/vocab/Transcript> ;
     skos:exactMatch <http://purl.obolibrary.org/obo/CHEBI_33697>,
@@ -5652,16 +5652,16 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
     rdfs:label "reaction to participant association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://UNKNOWN.org/reaction_direction_enum> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/reaction_direction> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/biolink/vocab/stoichiometry> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/MolecularEntity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <http://UNKNOWN.org/reaction_direction_enum> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/reaction_direction> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <http://UNKNOWN.org/reaction_side_enum> ;
@@ -5687,9 +5687,9 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "serial" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/type> ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty <https://w3id.org/biolink/vocab/issue> ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/id> ;
@@ -5697,15 +5697,15 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/issue> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/volume> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/iso_abbreviation> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/volume> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/type> ;
+            owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Publication> ;
     skos:altLabel "journal" ;
     skos:definition "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility." .
@@ -5719,12 +5719,12 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "transcript to gene relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/Gene> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/Transcript> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/Gene> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/SequenceFeatureRelationship> ;
     skos:definition "A gene is a collection of transcripts" .
@@ -5733,18 +5733,18 @@ linkml:variant_to_gene_association_predicate a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "treatment" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/Device> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_device> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/Drug> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_drug> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/TimeType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/timepoint> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/Procedure> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_procedure> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/Device> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_device> ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/TimeType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/timepoint> ],
         <https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatment>,
         <https://w3id.org/biolink/vocab/ExposureEvent>,
         <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -6053,7 +6053,7 @@ linkml:publication_type a owl:ObjectProperty,
     rdfs:label "anatomical entity to anatomical entity ontogenic association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
@@ -6061,7 +6061,7 @@ linkml:publication_type a owl:ObjectProperty,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation> ;
     skos:definition "A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship." .
@@ -6075,11 +6075,11 @@ linkml:publication_type a owl:ObjectProperty,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation> ;
     skos:definition "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms" .
@@ -6156,16 +6156,16 @@ linkml:publication_type a owl:ObjectProperty,
     rdfs:label "gene expression mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/LifeStage> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/stage_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
             owl:onProperty <https://w3id.org/biolink/vocab/phenotypic_state> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/OntologyClass> ;
             owl:onProperty <https://w3id.org/biolink/vocab/quantifier_qualifier> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/LifeStage> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/stage_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
@@ -6205,20 +6205,20 @@ linkml:publication_type a owl:ObjectProperty,
     rdfs:label "gene to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
+            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
+            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
+            owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin>,
         <https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin> ;
@@ -6238,12 +6238,12 @@ linkml:publication_type a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "gene to gene product relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/GeneProductMixin> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/Gene> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/GeneProductMixin> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
@@ -6265,16 +6265,16 @@ linkml:publication_type a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "genotype to gene association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/Gene> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/Genotype> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association> ;
     skos:definition "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality" .
@@ -6319,16 +6319,16 @@ linkml:publication_type a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "material sample derivation association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/MaterialSample> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association> ;
     skos:definition "An association between a material sample and the material entity from which it is derived." .
@@ -6337,16 +6337,16 @@ linkml:publication_type a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "named thing to information content entity association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/Publication> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association> ;
     skos:definition "association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property)." .
@@ -6365,12 +6365,12 @@ linkml:publication_type a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "organism taxon to environment association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/OrganismTaxon> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
@@ -6384,15 +6384,15 @@ linkml:publication_type a owl:ObjectProperty,
     rdfs:label "organism taxon to organism taxon specialization" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/OrganismTaxon> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonAssociation> ;
     skos:definition "A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo" .
@@ -6401,13 +6401,13 @@ linkml:publication_type a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "organism to organism association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/relation> ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/IndividualOrganism> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/relation> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/IndividualOrganism> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
@@ -6418,13 +6418,13 @@ linkml:publication_type a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "pairwise gene to gene interaction" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/relation> ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/relation> ],
         <https://w3id.org/biolink/vocab/GeneToGeneAssociation> ;
     skos:definition "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" .
 
@@ -6447,15 +6447,15 @@ linkml:publication_type a owl:ObjectProperty,
     rdfs:label "population to population association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association> ;
     skos:definition "An association between a two populations" .
@@ -6781,19 +6781,19 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "chemical to chemical derivation association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/ChemicalEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/ChemicalEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/MacromolecularMachineMixin> ;
             owl:onProperty <https://w3id.org/biolink/vocab/catalyst_qualifier> ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:onClass <https://w3id.org/biolink/vocab/ChemicalEntity> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/ChemicalEntity> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation> ;
     skos:definition """A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
@@ -6809,8 +6809,8 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "contributor association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/Agent> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:onClass <https://w3id.org/biolink/vocab/InformationContentEntity> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
@@ -6820,8 +6820,8 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
             owl:allValuesFrom <https://w3id.org/biolink/vocab/OntologyClass> ;
             owl:onProperty <https://w3id.org/biolink/vocab/qualifiers> ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/InformationContentEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:onClass <https://w3id.org/biolink/vocab/Agent> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association> ;
     skos:definition "Any association between an entity (such as a publication) and various agents that contribute to its realisation" .
@@ -6831,16 +6831,16 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
     rdfs:label "dataset version" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/ingest_date> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/Dataset> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_dataset> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/DatasetDistribution> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_distribution> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/ingest_date> ],
         <https://w3id.org/biolink/vocab/InformationContentEntity> ;
     skos:definition "an item that holds version level information about a dataset." .
 
@@ -6852,16 +6852,19 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/biolink/vocab/provided_by> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/type> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/NarrativeText> ;
             owl:onProperty <https://w3id.org/biolink/vocab/description> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/LabelType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/source> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/type> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/CategoryType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/category> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/LabelType> ;
@@ -6871,15 +6874,12 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/biolink/vocab/id> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/CategoryType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/category> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/Attribute> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_attribute> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/IriType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/iri> ] ;
+            owl:onProperty <https://w3id.org/biolink/vocab/iri> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/Attribute> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_attribute> ] ;
     skos:definition "Root Biolink Model class for all things and informational relationships, real or imagined." .
 
 <https://w3id.org/biolink/vocab/EntityToDiseaseOrPhenotypicFeatureAssociationMixin> a owl:Class,
@@ -6902,28 +6902,28 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "genotype to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
             owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin>,
@@ -6983,11 +6983,11 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/biolink/vocab/associated_environmental_context> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
@@ -7025,14 +7025,6 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
         linkml:ClassDefinition ;
     rdfs:label "variant to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/Onset> ;
             owl:onProperty <https://w3id.org/biolink/vocab/onset_qualifier> ],
@@ -7041,12 +7033,20 @@ linkml:sequence_feature_relationship_subject a owl:ObjectProperty,
             owl:onClass <https://w3id.org/biolink/vocab/SeverityValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/severity_qualifier> ],
         [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
             owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin>,
@@ -7211,6 +7211,10 @@ linkml:functional_association_object a owl:ObjectProperty,
             owl:onClass <https://w3id.org/biolink/vocab/OntologyClass> ;
             owl:onProperty <https://w3id.org/biolink/vocab/quantifier_qualifier> ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/LifeStage> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/stage_qualifier> ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
@@ -7218,10 +7222,6 @@ linkml:functional_association_object a owl:ObjectProperty,
             owl:onClass <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/LifeStage> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/stage_qualifier> ],
         <https://w3id.org/biolink/vocab/Association> ;
     skos:definition "An association between a gene and an expression site, possibly qualified by stage/timing info." ;
     skos:editorialNote "TBD: introduce subclasses for distinction between wild-type and experimental conditions?" .
@@ -7269,28 +7269,28 @@ linkml:functional_association_object a owl:ObjectProperty,
     rdfs:label "pairwise molecular interaction" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/MolecularEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/MolecularEntity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/relation> ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/id> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/OntologyClass> ;
             owl:onProperty <https://w3id.org/biolink/vocab/interacting_molecules_category> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/MolecularEntity> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/relation> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/id> ;
+            owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
     skos:definition "An interaction at the molecular level between two physical entities" .
 
@@ -7299,11 +7299,11 @@ linkml:functional_association_object a owl:ObjectProperty,
     rdfs:label "sequence feature relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/NucleicAcidEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/NucleicAcidEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Association> ;
     skos:definition "For example, a particular exon is part of a particular transcript or gene" ;
@@ -7323,12 +7323,24 @@ linkml:functional_association_object a owl:ObjectProperty,
     rdfs:label "variant to population association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_total> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Double ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_quotient> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Double ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_percentage> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/SequenceVariant> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
@@ -7337,18 +7349,6 @@ linkml:functional_association_object a owl:ObjectProperty,
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_count> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/FrequencyValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/frequency_qualifier> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_total> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Double ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_percentage> ],
         <https://w3id.org/biolink/vocab/Association>,
         <https://w3id.org/biolink/vocab/FrequencyQualifierMixin>,
         <https://w3id.org/biolink/vocab/FrequencyQuantifier>,
@@ -7711,11 +7711,11 @@ linkml:Float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "gene product mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/IriType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/xref> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/LabelType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/synonym> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/IriType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/xref> ],
         <https://w3id.org/biolink/vocab/GeneOrGeneProduct>,
         linkml:mixin ;
     skos:definition "The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules." ;
@@ -7727,12 +7727,12 @@ linkml:Float a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "model to disease association mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         linkml:mixin ;
     skos:definition "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease" .
@@ -7754,10 +7754,10 @@ linkml:Float a owl:Class,
     rdfs:label "molecular activity" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/MolecularEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_input> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/has_output> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/MolecularEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_output> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/has_input> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/MacromolecularMachineMixin> ;
             owl:onProperty <https://w3id.org/biolink/vocab/enabled_by> ],
@@ -7941,16 +7941,16 @@ linkml:Double a owl:Class,
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/address> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/name> ],
-        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/id> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/biolink/vocab/affiliation> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/LabelType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/name> ],
         <https://w3id.org/biolink/vocab/AdministrativeEntity> ;
     skos:altLabel "group" ;
     skos:definition "person, group, organization or project that provides a piece of information (i.e. a knowledge association)" ;
@@ -7972,14 +7972,14 @@ linkml:Double a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "biological process or activity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/PhysicalEntity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/enabled_by> ],
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/BiologicalProcessOrActivity> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_input> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/BiologicalProcessOrActivity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_output> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/BiologicalProcessOrActivity> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_input> ],
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/PhysicalEntity> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/enabled_by> ],
         <https://w3id.org/biolink/vocab/BiologicalEntity>,
         <https://w3id.org/biolink/vocab/Occurrent>,
         <https://w3id.org/biolink/vocab/OntologyClass> ;
@@ -8006,37 +8006,37 @@ linkml:Double a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "genomic sequence localization" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/biolink/vocab/end_interbase_coordinate> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://UNKNOWN.org/strand_enum> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/strand> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/NucleicAcidEntity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <http://UNKNOWN.org/strand_enum> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/strand> ],
+            owl:onClass <http://UNKNOWN.org/phase_enum> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/phase> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <http://UNKNOWN.org/strand_enum> ;
             owl:onProperty <https://w3id.org/biolink/vocab/genome_build> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <http://UNKNOWN.org/phase_enum> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/phase> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/biolink/vocab/start_interbase_coordinate> ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/NucleicAcidEntity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/biolink/vocab/end_interbase_coordinate> ],
         <https://w3id.org/biolink/vocab/SequenceAssociation> ;
     skos:definition "A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig." .
 
@@ -8083,28 +8083,28 @@ linkml:Uriorcurie a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "attribute" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/OntologyClass> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_attribute_type> ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/vocab/IriType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/iri> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/name> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/source> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/QuantityValue> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_quantitative_value> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_qualitative_value> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/vocab/IriType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/iri> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/QuantityValue> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_quantitative_value> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/source> ],
+            owl:onProperty <https://w3id.org/biolink/vocab/name> ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/OntologyClass> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_attribute_type> ;
+            owl:qualifiedCardinality 1 ],
         <https://w3id.org/biolink/vocab/Annotation>,
         <https://w3id.org/biolink/vocab/OntologyClass> ;
     skos:definition "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material." ;
@@ -8118,12 +8118,12 @@ linkml:Uriorcurie a owl:Class,
             owl:onClass <https://w3id.org/biolink/vocab/Zygosity> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_zygosity> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSequence> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_biological_sequence> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
         <https://w3id.org/biolink/vocab/BiologicalEntity>,
         <https://w3id.org/biolink/vocab/GenomicEntity>,
         <https://w3id.org/biolink/vocab/OntologyClass>,
@@ -8218,16 +8218,16 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:onProperty <https://w3id.org/biolink/vocab/format> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/license> ],
+            owl:onClass linkml:Date ;
+            owl:onProperty <https://w3id.org/biolink/vocab/creation_date> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/rights> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Date ;
-            owl:onProperty <https://w3id.org/biolink/vocab/creation_date> ],
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/license> ],
         <https://w3id.org/biolink/vocab/NamedThing> ;
     skos:altLabel "information",
         "information artefact",
@@ -8305,33 +8305,33 @@ linkml:Integer a owl:Class,
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/keywords> ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/id> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/summary> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/pages> ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/type> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/biolink/vocab/mesh_terms> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/LabelType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/name> ],
         [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/id> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/authors> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty <https://w3id.org/biolink/vocab/mesh_terms> ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/biolink/vocab/summary> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/IriType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/xref> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/biolink/vocab/pages> ],
         <https://w3id.org/biolink/vocab/InformationContentEntity> ;
     skos:definition "Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses." ;
     skos:exactMatch IAO:0000311 ;
@@ -8402,11 +8402,11 @@ linkml:TypeDefinition a owl:Class ;
             owl:onProperty <https://w3id.org/biolink/vocab/id> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/Gene> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/has_gene> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
             owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/Gene> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/has_gene> ],
         <https://w3id.org/biolink/vocab/BiologicalEntity>,
         <https://w3id.org/biolink/vocab/GenomicEntity>,
         <https://w3id.org/biolink/vocab/OntologyClass>,
@@ -8425,12 +8425,12 @@ linkml:TypeDefinition a owl:Class ;
         linkml:ClassDefinition ;
     rdfs:label "nucleic acid entity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSequence> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_biological_sequence> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
         <https://w3id.org/biolink/vocab/GenomicEntity>,
         <https://w3id.org/biolink/vocab/MolecularEntity>,
         <https://w3id.org/biolink/vocab/OntologyClass>,
@@ -8461,22 +8461,22 @@ linkml:TypeDefinition a owl:Class ;
         linkml:ClassDefinition ;
     rdfs:label "gene" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/synonym> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/IriType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/xref> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/symbol> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/LabelType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/synonym> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/BiologicalSequence> ;
             owl:onProperty <https://w3id.org/biolink/vocab/has_biological_sequence> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/IriType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/xref> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/in_taxon> ],
         <https://w3id.org/biolink/vocab/BiologicalEntity>,
         <https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProduct>,
         <https://w3id.org/biolink/vocab/GeneOrGeneProduct>,
@@ -8493,12 +8493,12 @@ linkml:TypeDefinition a owl:Class ;
         linkml:ClassDefinition ;
     rdfs:label "organism taxon" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subclass_of> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/vocab/TaxonomicRank> ;
             owl:onProperty linkml:has_taxonomic_rank ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subclass_of> ],
         <https://w3id.org/biolink/vocab/NamedThing> ;
     skos:altLabel "taxon",
         "taxonomic classification" ;
@@ -8603,38 +8603,38 @@ linkml:TypeDefinition a owl:Class ;
         linkml:ClassDefinition ;
     rdfs:label "association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/OntologyClass> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/qualifiers> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/CategoryType> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/category> ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/biolink/vocab/negated> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/relation> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/vocab/Publication> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/publications> ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/biolink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/CategoryType> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/category> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/Publication> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/publications> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/biolink/vocab/type> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/biolink/vocab/negated> ],
+            owl:allValuesFrom <https://w3id.org/biolink/vocab/OntologyClass> ;
+            owl:onProperty <https://w3id.org/biolink/vocab/qualifiers> ],
         <https://w3id.org/biolink/vocab/Entity> ;
     skos:definition "A typed association between two entities, supported by evidence" ;
     skos:exactMatch <http://purl.org/oban/association>,
