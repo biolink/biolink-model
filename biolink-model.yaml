@@ -119,7 +119,7 @@ prefixes:
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
   # The UMLS Semantic types and groups namespaces don't have a directly
   # resolvable Base URI, but we point to a pair of sensible web documents
-  UMLSSC: 'http://purl.bioontology.org/ontology/STY/'
+  STY: 'http://purl.bioontology.org/ontology/STY/'
   UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
@@ -6495,7 +6495,7 @@ classes:
       # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
       # Entity
-      - UMLSSC:T071
+      - STY:T071
 
   relationship type:
     is_a: ontology class
@@ -6553,33 +6553,33 @@ classes:
       - WIKIDATA:Q16521
     narrow_mappings:
       # Virus
-      - UMLSSC:T005
+      - STY:T005
       # Bacterium
-      - UMLSSC:T007
+      - STY:T007
       # Archaeon
-      - UMLSSC:T194
+      - STY:T194
       # Eukaryote
-      - UMLSSC:T204
+      - STY:T204
       # Plant
-      - UMLSSC:T002
+      - STY:T002
       # Fungus
-      - UMLSSC:T004
+      - STY:T004
       # Animal
-      - UMLSSC:T008
+      - STY:T008
       # Vertebrate
-      - UMLSSC:T010
+      - STY:T010
       # Amphibian
-      - UMLSSC:T011
+      - STY:T011
       # Bird
-      - UMLSSC:T012
+      - STY:T012
       # Fish
-      - UMLSSC:T013
+      - STY:T013
       # Reptile
-      - UMLSSC:T014
+      - STY:T014
       # Mammal
-      - UMLSSC:T015
+      - STY:T015
       # Human
-      - UMLSSC:T016
+      - STY:T016
     id_prefixes:
       - NCBITaxon
       - MESH
@@ -6595,7 +6595,7 @@ classes:
     exact_mappings:
       - NCIT:C25499
       # UMLS "Event"
-      - UMLSSC:T051
+      - STY:T051
 
   ## Administrative Entities
 
@@ -6618,15 +6618,15 @@ classes:
     narrow_mappings:
       # Organization
       - UMLSSG:ORGA
-      - UMLSSC:T092
+      - STY:T092
       # Health Care Related Organization
-      - UMLSSC:T093
+      - STY:T093
       # Professional Society
-      - UMLSSC:T094
+      - STY:T094
       # Self-help or Relief Organization
-      - UMLSSC:T095
+      - STY:T095
       # Group
-      - UMLSSC:T096
+      - STY:T096
     slot_usage:
       id:
         required: true
@@ -6683,27 +6683,27 @@ classes:
       # UMLS Semantic Group "Concepts & Ideas"
       - UMLSSG:CONC
       # Conceptual Entity
-      - UMLSSC:T077
+      - STY:T077
       # Idea or Concept
-      - UMLSSC:T078
+      - STY:T078
       # Temporal Concept
-      - UMLSSC:T079
+      - STY:T079
       # Qualitative Concept
-      - UMLSSC:T080
+      - STY:T080
       # Quantitative Concept
-      - UMLSSC:T081
+      - STY:T081
       # Spatial Concept
-      - UMLSSC:T082
+      - STY:T082
       # Regulation or Law
-      - UMLSSC:T089
+      - STY:T089
       # Group Attribute
-      - UMLSSC:T102
+      - STY:T102
       # Functional Concept
-      - UMLSSC:T169
+      - STY:T169
       # Language
-      - UMLSSC:T171
+      - STY:T171
       # Classification
-      - UMLSSC:T185
+      - STY:T185
 
   dataset:
     description: >-
@@ -6846,7 +6846,7 @@ classes:
     narrow_mappings:
       - IAO:0000013
       # UMLS Semantic Type "Intellectual Product"
-      - UMLSSC:T170
+      - STY:T170
     id_prefixes:
       - NLMID
     in_subset:
@@ -6956,10 +6956,10 @@ classes:
       An entity that has material reality (a.k.a. physical essence).
     exact_mappings:
       # Physical Object
-      - UMLSSC:T072
+      - STY:T072
     narrow_mappings:
       # Manufactured Object
-      - UMLSSC:T073
+      - STY:T073
 
   occurrent:
     description: >-
@@ -6993,22 +6993,22 @@ classes:
       - prov:Activity
       - NCIT:C43431
       # Activity
-      - UMLSSC:T052
+      - STY:T052
     narrow_mappings:
       # Daily or Recreational Activity
-      - UMLSSC:T056
+      - STY:T056
       # Occupational Activity
-      - UMLSSC:T057
+      - STY:T057
       # Governmental or Regulatory Activity
-      - UMLSSC:T064
+      - STY:T064
       # Machine Activity
-      - UMLSSC:T066
+      - STY:T066
       # Research Activity
-      - UMLSSC:T062
+      - STY:T062
       # Educational Activity
-      - UMLSSC:T065
+      - STY:T065
       # Health Care Activity
-      - UMLSSC:T058
+      - STY:T058
 
   procedure:
     is_a: named thing
@@ -7021,13 +7021,13 @@ classes:
       - UMLSSG:PROC
     narrow_mappings:
       # Laboratory Procedure
-      - UMLSSC:T059
+      - STY:T059
       # Diagnostic Procedure
-      - UMLSSC:T060
+      - STY:T060
       # Therapeutic or Preventive Procedure
-      - UMLSSC:T061
+      - STY:T061
       # Molecular Biology Research Technique
-      - UMLSSC:T063
+      - STY:T063
 
   phenomenon:
     is_a: named thing
@@ -7040,21 +7040,21 @@ classes:
       # the inclusion of 'process' in the definition of these
       # terms broadens them, relative to 'phenomenon'
       # Phenomenon or Process
-      - UMLSSC:T067
+      - STY:T067
       # Human-caused Phenomenon or Process
-      - UMLSSC:T068
+      - STY:T068
       # Natural Phenomenon or Process
-      - UMLSSC:T070
+      - STY:T070
     exact_mappings:
       # Phenomena
       - UMLSSG:PHEN
     narrow_mappings:
       # Laboratory or Test Result
-      - UMLSSC:T034
+      - STY:T034
       # Biologic Function
-      - UMLSSC:T038
+      - STY:T038
       # Environmental Effect of Humans
-      - UMLSSC:T069
+      - STY:T069
 
   device:
     is_a: named thing
@@ -7065,13 +7065,13 @@ classes:
       # Devices
       - UMLSSG:DEVI
       # Medical Device
-      - UMLSSC:T074
+      - STY:T074
       # Research Device
-      - UMLSSC:T075
+      - STY:T075
       # Drug Delivery Device
-      - UMLSSC:T203
+      - STY:T203
       # Biomedical or Dental Material
-      - UMLSSC:T122
+      - STY:T122
 
   ## Scientific Studies
 
@@ -7133,7 +7133,7 @@ classes:
       # Geographic Areas
       - UMLSSG:GEOG
       # Geographic Area
-      - UMLSSC:T083
+      - STY:T083
 
   geographic location at time:
     is_a: geographic location
@@ -7151,7 +7151,7 @@ classes:
     narrow_mappings:
       - WIKIDATA:Q28845870
       # UMLS Semantic Type "Experimental Model of Disease"
-      - UMLSSC:T050
+      - STY:T050
       # SIO term is 'biological entity' but less inclusive than the Biolink scope
       - SIO:010046
 
@@ -7172,7 +7172,7 @@ classes:
     in_subset:
       - translator_minimal
     narrow_mappings:
-      - UMLSSC:T028   # Gene or Genome
+      - STY:T028   # Gene or Genome
       - GENO:0000897  # Genomic Entity
 
   molecular entity:
@@ -7183,8 +7183,8 @@ classes:
     slots:
       - is metabolite
     narrow_mappings:
-      - UMLSSC:T088 # Carbohydrate
-      - UMLSSC:T085 # Molecular Sequence
+      - STY:T088 # Carbohydrate
+      - STY:T085 # Molecular Sequence
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -7231,18 +7231,18 @@ classes:
       - WIKIDATA:Q79529 # Chemical substance
     narrow_mappings:
       - WIKIDATA:Q43460564
-      - UMLSSC:T103 # Chemical
-      - UMLSSC:T120 # Chemical Viewed Functionally
-      - UMLSSC:T104 # Chemical Viewed Structurally
-      - UMLSSC:T197 # Inorganic Chemical
-      - UMLSSC:T109 # Organic Chemical
-      - UMLSSC:T125 # Hormone
-      - UMLSSC:T123 # Biologically Active Substance
-      - UMLSSC:T129 # Immunologic Factor
-      - UMLSSC:T131 # Hazardous or Poisonous Substance
-      # - UMLSSC:T130 # Indicator, Reagent, or Diagnostic Aid
+      - STY:T103 # Chemical
+      - STY:T120 # Chemical Viewed Functionally
+      - STY:T104 # Chemical Viewed Structurally
+      - STY:T197 # Inorganic Chemical
+      - STY:T109 # Organic Chemical
+      - STY:T125 # Hormone
+      - STY:T123 # Biologically Active Substance
+      - STY:T129 # Immunologic Factor
+      - STY:T131 # Hazardous or Poisonous Substance
+      # - STY:T130 # Indicator, Reagent, or Diagnostic Aid
     broad_mappings:
-      - UMLSSC:T167 # Substance
+      - STY:T167 # Substance
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -7264,7 +7264,7 @@ classes:
         convenience of representation, any valid chemical representation is
         included, even if it is not strictly molecular (e.g., sodium ion).
     narrow_mappings:
-      - UMLSSC:T196 # Element, Ion, or Isotope
+      - STY:T196 # Element, Ion, or Isotope
     id_prefixes:
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
@@ -7349,8 +7349,8 @@ classes:
     exact_mappings:
       - SO:0000110
     narrow_mappings:
-      - UMLSSC:T086   # Nucleotide Sequence
-      - UMLSSC:T114   # Nucleic Acid, Nucleoside, or Nucleotide
+      - STY:T086   # Nucleotide Sequence
+      - STY:T114   # Nucleic Acid, Nucleoside, or Nucleotide
     in_subset:
       - model_organism_database
       - translator_minimal
@@ -7484,7 +7484,7 @@ classes:
     exact_mappings:
       - GO:0003674
       # UMLS Semantic Type "Molecular Function"
-      - UMLSSC:T044
+      - STY:T044
     id_prefixes:
       - GO
       - REACT
@@ -7546,17 +7546,17 @@ classes:
     close_mappings:
     exact_mappings:
       # Physiologic Function
-      - UMLSSC:T039
+      - STY:T039
       - WIKIDATA:Q30892994
     narrow_mappings:
       # Organism Function
-      - UMLSSC:T040
+      - STY:T040
       # Organ or Tissue Function
-      - UMLSSC:T042
+      - STY:T042
       # Cell Function
-      - UMLSSC:T043
+      - STY:T043
       # Genetic Function
-      - UMLSSC:T045
+      - STY:T045
     id_prefixes:
       - GO
       - REACT
@@ -7569,14 +7569,14 @@ classes:
     exact_mappings:
       - GO:0007610
       # Behavior
-      - UMLSSC:T053
+      - STY:T053
     narrow_mappings:
       # Mental Process
-      - UMLSSC:T041
+      - STY:T041
       # Social Behavior
-      - UMLSSC:T054
+      - STY:T054
       # Individual Behavior
-      - UMLSSC:T055
+      - STY:T055
 
   ## (Bio)chemistry
 
@@ -7602,15 +7602,15 @@ classes:
     broad_mappings:
       # Pharmacologic Substance: Any natural, endogenously-derived,
       # synthetic or semi-synthetic compound with pharmacologic activity.
-      - UMLSSC:T121
+      - STY:T121
     exact_mappings:
       - WIKIDATA:Q12140
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
-      - UMLSSC:T200
+      - STY:T200
     narrow_mappings:
       # Antibiotic
-      - UMLSSC:T195
+      - STY:T195
     id_prefixes:
       - RXCUI
       - NDC
@@ -7659,7 +7659,7 @@ classes:
       # substance role
       - CHEBI:33229
       # Vitamin
-      - UMLSSC:T127
+      - STY:T127
 
   food:
     is_a: chemical mixture
@@ -7669,7 +7669,7 @@ classes:
       - foodb.compound
     exact_mappings:
       # Food
-      - UMLSSC:T168
+      - STY:T168
 
   ## Biology and Biomedical Sciences
 
@@ -7681,7 +7681,7 @@ classes:
       describes a characteristic of an organismal entity.
     exact_mappings:
       # Organism Attribute
-      - UMLSSC:T032
+      - STY:T032
 
   phenotypic quality:
     aliases: ['phenotypic properties']
@@ -7747,7 +7747,7 @@ classes:
     exact_mappings:
       - SIO:010000
       # Organism
-      - UMLSSC:T001
+      - STY:T001
     narrow_mappings:
       # Wikidata considers its definition of 'individual' to be constrained to human persons?
       - WIKIDATA:Q795052
@@ -7771,7 +7771,7 @@ classes:
       - PCO:0000001
       - SIO:001061
       # UMLS Semantic Type "Population Group"
-      - UMLSSC:T098
+      - STY:T098
       - OBI:0000181
     id_prefixes:
       - HANCESTRO
@@ -7792,7 +7792,7 @@ classes:
       - phenotypic feature
     narrow_mappings:
       # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
-      - UMLSSC:T033
+      - STY:T033
 
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
@@ -7806,24 +7806,24 @@ classes:
       # UMLS Semantic Group "Disorders"
       - UMLSSG:DISO
       # Disease or Syndrome
-      - UMLSSC:T047
+      - STY:T047
     narrow_mappings:
       # Congenital Abnormality
-      - UMLSSC:T019
+      - STY:T019
       # Acquired Abnormality
-      - UMLSSC:T020
+      - STY:T020
       # Injury or Poisoning
-      - UMLSSC:T037
+      - STY:T037
       # Pathologic Function
-      - UMLSSC:T046
+      - STY:T046
       # Mental or Behavioral Dysfunction
-      - UMLSSC:T048
+      - STY:T048
       # Cell or Molecular Dysfunction
-      - UMLSSC:T049
+      - STY:T049
       # Anatomical Abnormality
-      - UMLSSC:T190
+      - STY:T190
       # Neoplastic Process
-      - UMLSSC:T191
+      - STY:T191
     id_prefixes:
       - MONDO
       - DOID
@@ -7854,7 +7854,7 @@ classes:
       - WIKIDATA:Q104053
     narrow_mappings:
       # Sign or Symptom
-      - UMLSSC:T184
+      - STY:T184
       - WIKIDATA:Q169872
       # presentation of a disease in clinical medicine
       - WIKIDATA:Q25203551
@@ -7897,13 +7897,13 @@ classes:
       - UMLSSG:ANAT
     narrow_mappings:
       # Body System
-      - UMLSSC:T022
+      - STY:T022
       # Body Location or Region
-      - UMLSSC:T029
+      - STY:T029
       # Body Space or Junction
-      - UMLSSC:T030
+      - STY:T030
       # Body Substance
-      - UMLSSC:T031
+      - STY:T031
     id_prefixes:
       - UBERON
       - GO
@@ -7923,7 +7923,7 @@ classes:
       - SIO:001400
       - WIKIDATA:Q5058355
       # Cell Component
-      - UMLSSC:T026
+      - STY:T026
     broad_mappings:
       - WIKIDATA:P681
     id_prefixes:
@@ -7943,7 +7943,7 @@ classes:
       - SIO:010001
       - WIKIDATA:Q7868
       # UMLS Semantic Type "Cell"
-      - UMLSSC:T025
+      - STY:T025
     id_prefixes:
       - CL
       - PO
@@ -7967,16 +7967,16 @@ classes:
       - UBERON:0010000
       - WIKIDATA:Q4936952
       # UMLS Semantic Type "Anatomical Structure"
-      - UMLSSC:T017
+      - STY:T017
       # UMLS Semantic Type "Fully Formed Anatomical Structure"
-      - UMLSSC:T021
+      - STY:T021
     narrow_mappings:
       # UMLS Semantic Type "Body Part, Organ, or Organ Component"
-      - UMLSSC:T023
+      - STY:T023
       # UMLS Semantic Type "Tissue"
-      - UMLSSC:T024
+      - STY:T024
       # Embryonic Structure
-      - UMLSSC:T018
+      - STY:T018
     id_prefixes:
       - UBERON
       - UMLS
@@ -8189,9 +8189,9 @@ classes:
     narrow_mappings:
       - SO:0000104 # polypeptide definde in SO conflates protein and polypeptide
       # Amino Acid, Peptide, or Protein
-      - UMLSSC:T116
+      - STY:T116
       # Amino Acid Sequence
-      - UMLSSC:T087
+      - STY:T087
 
   protein:
     description: >-
@@ -8213,9 +8213,9 @@ classes:
       - WIKIDATA:Q8054
     narrow_mappings:
       # Enzyme
-      - UMLSSC:T126
+      - STY:T126
       # Receptor
-      - UMLSSC:T192
+      - STY:T192
 
   protein isoform:
     aliases: ['proteoform']
@@ -8494,7 +8494,7 @@ classes:
       Attributes relating to a clinical manifestation
     exact_mappings:
       # Clinical Attribute
-      - UMLSSC:T201
+      - STY:T201
 
   clinical measurement:
     is_a: clinical attribute
@@ -8609,13 +8609,13 @@ classes:
       - WIKIDATA:Q1303415
     narrow_mappings:
       # Professional or Occupational Group
-      - UMLSSC:T097
+      - STY:T097
       # Family Group
-      - UMLSSC:T099
+      - STY:T099
       # Age Group
-      - UMLSSC:T100
+      - STY:T100
       # Patient or Disabled Group
-      - UMLSSC:T101
+      - STY:T101
 
   ## Exposures
 
