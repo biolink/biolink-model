@@ -7867,15 +7867,8 @@ classes:
       - WIKIDATA:Q4936952
       # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
-    narrow_mappings:
-      # Body System
-      - STY:T022
-      # Body Location or Region
-      - STY:T029
-      # Body Space or Junction
-      - STY:T030
-      # Body Substance
-      - STY:T031
+      # UMLS Semantic Type "Anatomical Structure"
+      - STY:T017
     id_prefixes:
       - UBERON
       - GO
@@ -7887,6 +7880,9 @@ classes:
       - model_organism_database
 
   cellular component:
+    aliases:
+      - cell component
+      - cell part
     is_a: anatomical entity
     description: >-
       A location in or around a cell
@@ -7938,10 +7934,6 @@ classes:
     exact_mappings:
       - UBERON:0010000
       - WIKIDATA:Q4936952
-      # UMLS Semantic Type "Anatomical Structure"
-      - STY:T017
-      # UMLS Semantic Type "Fully Formed Anatomical Structure"
-      - STY:T021
     narrow_mappings:
       # UMLS Semantic Type "Body Part, Organ, or Organ Component"
       - STY:T023
