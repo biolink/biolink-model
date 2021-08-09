@@ -1,14 +1,14 @@
 digraph {
-	graph [bb="0,0,223.58,123"];
+	graph [bb="0,0,284.67,123"];
 	node [label="\N"];
-	"pathognomonicity quantifier"	 [height=0.5,
+	"pathognomonicity quantifier"	[height=0.5,
 		label="pathognomonicity quantifier",
-		pos="111.79,105",
-		width=3.1053];
-	"specificity quantifier"	 [height=0.5,
-		pos="111.79,18",
-		width=2.329];
-	"pathognomonicity quantifier" -> "specificity quantifier"	 [label=is_a,
-		lp="122.79,61.5",
-		pos="e,111.79,36.003 111.79,86.974 111.79,75.192 111.79,59.561 111.79,46.158"];
+		pos="142.34,105",
+		width=3.9538];
+	"specificity quantifier"	[height=0.5,
+		pos="142.34,18",
+		width=2.9428];
+	"pathognomonicity quantifier" -> "specificity quantifier"	[label=is_a,
+		lp="156.34,61.5",
+		pos="e,142.34,36.175 142.34,86.799 142.34,75.163 142.34,59.548 142.34,46.237"];
 }

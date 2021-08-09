@@ -1,12 +1,14 @@
 ---
+title: "Mapping Biolink Model to a Neo4j property graph"
 parent: "Mapping to a graph store"
+layout: default
 ---
 
 # Mapping Biolink Model to a Neo4j property graph
 
 This section describes how a Neo4j database is mapped to the Biolink Model. 
 
-Although specific to Neo4j, these recommendations should hold for any Property Graph (PG) model, 
+Although specific to Neo4j, these recommendations should hold for any Labeled Property Graph (LPG) model, 
 e.g a Python networkx graph (specifically a [MultiDiGraph](https://networkx.github.io/documentation/stable/reference/classes/multidigraph.html)).
 
 For mapping to RDF graphs refer to [Mapping to RDF](mapping-rdf).
@@ -24,7 +26,6 @@ The [NamedThing](../docs/NamedThing) class defines core properties for a node, p
 
 Core properties for a node:
  - [id](../docs/id)
- - [iri](../docs/iri)
  - [name](../docs/name)
  - [category](../docs/category)
 

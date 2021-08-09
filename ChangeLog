@@ -1,8 +1,161 @@
 CHANGES
 =======
+2.2.1
+-----
+bug fixes: handling one-off prefix requests
+added epistemic qualifier enumeration
 
-v.1.3.0
--------
+
+2.2.0
+-----
+add original_subject and original_object edge properties
+refactor id prefixes in chemical hierarchy
+remove spurious mapping
+
+
+2.1.0
+-----
+remove gene and polypeptide (and children) from chemical entity is_a hierarchy
+add chemical entity and gene or gene product mixin
+add chemical entity and polypeptide and protein mixin
+add fda approval status enumeration and definitions
+remove is_a parents from exposure classes
+add prefixes back to protein
+
+2.0.2
+-----
+
+First pass at property chain specification
+2.0.0 bug fixes and documentation updates
+Upgrade to linkml-1.0.0
+
+2.0.1
+-----
+
+Add NCBIGene prefix (with correct capitalization) to accommodate jsonld context requirements
+
+2.0.0
+-----
+
+Refactor of the 'Molecular Entity' and 'Chemical Substance' classes and hierarchy
+New 'Information Resource' class and EPC slots
+New 'reactions' associations and slots
+Added inverses for the majority of biolink predicates
+
+
+1.8.2
+-----
+
+Added documentation and examples for mixins
+Added id_prefixes to gene, protein
+Added id_prefixes to gross anatomical structure
+
+
+1.8.1
+-----
+Fixed typo in 'treatement' -> 'treatment'
+Removed UniProtKB from Gene class ID prefix list
+Changed contact email from Deepak->Sierra
+
+1.8.0
+-----
+
+BiolinkML->LinkML name change support
+
+
+1.7.0
+-----
+
+Updated identifiers to canonical forms
+Added predicates for increase/decrease expression predicates, opposite of predicate, generalized
+domain for treats and transcription/translation predicates
+Domain/range changes for 'interacts with' predicate
+Add owlstart enumerations for logical interpretations
+Fixed part of the documentation bug for 'types' (linkml changes in progress), added environmental context 
+as another doc fix
+Bump urllib to 1.26.3
+Added last broad mappings from wikidata to the model
+
+
+1.6.1
+-----
+
+Corrected NCBIGene prefix (from NCBIGENE)
+Reverted ontology taxon parent to named thing
+
+
+1.6.0
+-----
+
+Corrected the exact mappings for CTD positive and negative correlation predicates
+Refined the modeling of ontology class as a mixin
+Removed slot_uri for 'subclass of' predicate
+Moved CTD:therapeutic from 'exacerbates' to 'ameliorates'
+Fixed range for category slot in the 'association' class
+Cleaned up prefixes for INO and HANCESTRO
+Removed commas in class and predicate names
+
+
+1.5.0
+-----
+
+Fixed mapping for CTD
+Added catalyst qualifier slot
+Updated guidelines with examples
+Extended the model to represent spatiotemporal exposures, outcomes, and cohorts
+Added 'pathological process' class
+Predicates that are symmetric are defined explicitly
+Added a new 'activity' class
+Fixed mixin hierarchy of transcript and RNA products
+Extended the model to represent entities from MODs
+Reorganized the chemical substance hierarchy
+Added a class to represent siRNA
+Improved the organization of 'pathological process'
+Added more prefixes for various classes
+Changed category slot required for 'named thing' and optional for 'association'
+
+
+1.4.0
+-----
+
+Added an enhanced Publication model
+Replaced biolink-model.owl with biolink-model.owl.ttl
+Differentiated mappings for classes into related, broad, narrow, close, and exact mappings
+Differentiated mappings for slots into related, broad, narrow, close, and exact mappings
+Fixed typos in class and slot definitions
+Fixed inconsistent domain and range constraints
+Added classes to represent food
+Fixed parent for relation enables
+Deprecate edge_label in favor of predicate
+Added missing prefixes
+Added guidelines to the documentation
+Tidied the representation and use of mixins
+Differentiated the mixin hierarchy from the class hierarchy
+Rearranged properties like id, name, type, description to a generic grouping entity class
+
+
+1.3.9
+-----
+
+Added genomic entities and common properties for these entities
+Added mappings to GPI 2.0 specification
+Fixed prefixes for mappings in the model
+Fixed definition of interacts_with relation to be symmetric
+Added missing predicates referenced in associations
+Added entities and properties for representing sequence locations
+Added mappings from Monarch Initiative
+Added an inverse property of subclass_of
+Fixed description for edge_label and relation slots
+Added more mappings for different entities and relations
+Added chi_squared_statistic and p_value association slots
+Expanded the scope of correlated_with relation
+Added clarification to RDF mappings
+Fixed provided_by property to be multivalued
+Added enables relation
+
+
+1.3.0
+-----
 
 * association_id property should be an association property
 * Added or updated id_prefixes for many types
@@ -25,9 +178,9 @@ v.1.3.0
 * changed relation type to uriorcurie vs. straight uri
 * moved association_id in the association class so the creation order is subject, relation, object instead of association_id, subject, relation, object
 
-	
-v1.2.5
-------
+
+1.2.5
+-----
 
 * fixed ID type
 * adding support for samples and generic attributes
@@ -46,16 +199,16 @@ v1.2.5
 * SIO:010004 duplication resolved
 * Needed double quotes around string..
 
-v1.2.1
-------
+1.2.1
+-----
 
 * Bump version to 1.2.1
 * Fix typo
 * Add ChangeLog
 * Switched to png for UML images
 
-v1.2.0
-------
+1.2.0
+-----
 
 * Update .gitignore
 * Update setup.cfg
@@ -203,8 +356,8 @@ v1.2.0
 * Proposed dataclasses representation of metamodel
 * test for shex etc
 
-v1.1.1
-------
+1.1.1
+-----
 
 * added generated docs for new elements
 * Additional association paths
@@ -244,8 +397,8 @@ v1.1.1
 * JSON-LD context generation
 * link to kgx
 
-v1.1.0
-------
+1.1.0
+-----
 
 * docs
 * regen
@@ -298,8 +451,8 @@ v1.1.0
 * license
 * adding license
 
-v1.0.0
-------
+1.0.0
+-----
 
 * regenerated derived artefacts
 * fixing typo

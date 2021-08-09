@@ -1,0 +1,37 @@
+digraph {
+	graph [bb="0,0,638.08,123"];
+	node [label="\N"];
+	"socioeconomic exposure"	[height=0.5,
+		label="socioeconomic exposure",
+		pos="252.89,105",
+		width=3.4122];
+	"exposure event"	[height=0.5,
+		pos="81.893,18",
+		width=2.2748];
+	"socioeconomic exposure" -> "exposure event"	[label=uses,
+		lp="194.39,61.5",
+		pos="e,113.61,34.764 219.92,87.611 192.25,73.855 152.59,54.141 122.88,39.372"];
+	"has attribute"	[height=0.5,
+		pos="252.89,18",
+		width=1.9859];
+	"socioeconomic exposure" -> "has attribute"	[color=blue,
+		label="has attribute",
+		lp="299.89,61.5",
+		pos="e,252.89,36.175 252.89,86.799 252.89,75.163 252.89,59.548 252.89,46.237",
+		style=solid];
+	timepoint	[color=blue,
+		height=0.5,
+		label="time type",
+		pos="397.89,18",
+		width=1.5346];
+	"socioeconomic exposure" -> timepoint	[color=blue,
+		label=timepoint,
+		lp="402.89,61.5",
+		pos="e,385.53,35.809 309.22,88.997 323.46,83.859 338.27,77.263 350.89,69 361.38,62.136 371.18,52.471 379.09,43.466",
+		style=solid];
+	"socioeconomic exposure_has attribute"	[color=blue,
+		height=0.5,
+		label="socioeconomic attribute",
+		pos="515.89,105",
+		width=3.3941];
+}

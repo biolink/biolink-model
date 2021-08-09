@@ -1,5 +1,7 @@
 ---
+title: "Mapping Biolink Model to a RDF and RDF*"
 parent: "Mapping to a graph store"
+layout: default
 ---
 
 # Mapping Biolink Model to a RDF and RDF*
@@ -100,6 +102,6 @@ to see a list of generic properties that are associated with an edge.
 
 The mapping is similar to [Mapping to Neo4j](mapping-neo4j). Differences include:
 
- * Neo4j uses a Property Graph (PG) model. In RDF reification is used. RDF* provides a PG later
+ * Neo4j uses a Property Graph (LPG) model. In RDF reification is used. RDF* is a developing convention that outputs a LPG.
  * In the Neo4J mapping, ids are represented as CURIEs. In RDF URIs are first class entities.
  * There is a built-in concept of category in Neo4j, called labels. In RDF this is modeled as another node property (rdf:type)

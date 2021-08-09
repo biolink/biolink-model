@@ -47,18 +47,18 @@ jobs:
     - name: Generate Biolink Model artifacts
       run: |
         export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
-        make
+        make -B install build
         if [ $? -eq 0 ]; then
           git config --global user.name "$GITHUB_NAME"
           git config --global user.email "$GITHUB_EMAIL"
           git add biolink-model.*
           git add biolink-modeln.*
           git add context*
-          git add biolink
-          git add java
-          git add graphviz
-          git add golr-views
-          git add json-schema
+          git add biolink/model.py
+          git add java/BiolinkModel.java
+          git add graphviz/*
+          git add golr-views/*
+          git add json-schema/biolink-model.json
           git commit -m "Regenerate artifacts from biolink-model.yaml"
           git push
         else

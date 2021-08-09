@@ -2,7 +2,7 @@
 name: Additions or modifications to mappings in Biolink Model
 about: Suggest additions or modifications to mappings in Biolink Model
 title: ''
-labels: translator
+labels: ''
 assignees: ''
 
 ---
