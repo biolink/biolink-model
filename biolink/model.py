@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-08-16 16:49
+# Generation date: 2021-08-16 20:48
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8527,8 +8527,8 @@ slots.molecular_modification_decreased_by = Slot(uri=BIOLINK.molecular_modificat
 slots.affects_synthesis_of = Slot(uri=BIOLINK.affects_synthesis_of, name="affects synthesis of", curie=BIOLINK.curie('affects_synthesis_of'),
                    model_uri=BIOLINK.affects_synthesis_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
 
-slots.sythesis_affected_by = Slot(uri=BIOLINK.sythesis_affected_by, name="sythesis affected by", curie=BIOLINK.curie('sythesis_affected_by'),
-                   model_uri=BIOLINK.sythesis_affected_by, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+slots.synthesis_affected_by = Slot(uri=BIOLINK.synthesis_affected_by, name="synthesis affected by", curie=BIOLINK.curie('synthesis_affected_by'),
+                   model_uri=BIOLINK.synthesis_affected_by, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
 
 slots.increases_synthesis_of = Slot(uri=BIOLINK.increases_synthesis_of, name="increases synthesis of", curie=BIOLINK.curie('increases_synthesis_of'),
                    model_uri=BIOLINK.increases_synthesis_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
@@ -8570,7 +8570,7 @@ slots.increases_mutation_rate_of = Slot(uri=BIOLINK.increases_mutation_rate_of, 
                    model_uri=BIOLINK.increases_mutation_rate_of, domain=ChemicalEntity, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
 
 slots.mutation_rate_increased_by = Slot(uri=BIOLINK.mutation_rate_increased_by, name="mutation rate increased by", curie=BIOLINK.curie('mutation_rate_increased_by'),
-                   model_uri=BIOLINK.mutation_rate_increased_by, domain=NucleicAcidEntity, range=Optional[Union[str, ChemicalEntityId]])
+                   model_uri=BIOLINK.mutation_rate_increased_by, domain=NucleicAcidEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
 
 slots.decreases_mutation_rate_of = Slot(uri=BIOLINK.decreases_mutation_rate_of, name="decreases mutation rate of", curie=BIOLINK.curie('decreases_mutation_rate_of'),
                    model_uri=BIOLINK.decreases_mutation_rate_of, domain=ChemicalEntity, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
