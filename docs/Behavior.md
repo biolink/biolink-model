@@ -95,12 +95,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | GO:0007610 |
-|  | | UMLSSC:T053 |
-|  | | UMLSST:bhvr |
-| **Narrow Mappings:** | | UMLSSC:T041 |
-|  | | UMLSST:menp |
-|  | | UMLSSC:T054 |
-|  | | UMLSST:socb |
-|  | | UMLSSC:T055 |
-|  | | UMLSST:inbe |
+|  | | STY:T053 |
+| **Narrow Mappings:** | | STY:T041 |
+|  | | STY:T054 |
+|  | | STY:T055 |
 

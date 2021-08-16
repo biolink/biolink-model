@@ -121,8 +121,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |
 |  | | WIKIDATA:Q104053 |
-| **Narrow Mappings:** | | UMLSSC:T184 |
-|  | | UMLSST:sosy |
+| **Narrow Mappings:** | | STY:T184 |
 |  | | WIKIDATA:Q169872 |
 |  | | WIKIDATA:Q25203551 |
 

@@ -84,20 +84,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Exact Mappings:** | | prov:Activity |
 |  | | NCIT:C43431 |
-|  | | UMLSSC:T052 |
-|  | | UMLSST:acty |
-| **Narrow Mappings:** | | UMLSSC:T056 |
-|  | | UMLSST:dora |
-|  | | UMLSSC:T057 |
-|  | | UMLSST:ocac |
-|  | | UMLSSC:T064 |
-|  | | UMLSST:gora |
-|  | | UMLSSC:T066 |
-|  | | UMLSST:mcha |
-|  | | UMLSSC:T062 |
-|  | | UMLSST:resa |
-|  | | UMLSSC:T065 |
-|  | | UMLSST:edac |
-|  | | UMLSSC:T058 |
-|  | | UMLSST:hlca |
+|  | | STY:T052 |
+| **Narrow Mappings:** | | STY:T056 |
+|  | | STY:T057 |
+|  | | STY:T064 |
+|  | | STY:T066 |
+|  | | STY:T062 |
+|  | | STY:T065 |
+|  | | STY:T058 |
 

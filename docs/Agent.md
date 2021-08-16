@@ -122,14 +122,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | prov:Agent |
 |  | | dct:Agent |
 | **Narrow Mappings:** | | UMLSSG:ORGA |
-|  | | UMLSSC:T092 |
-|  | | UMLSST:orgt |
-|  | | UMLSSC:T093 |
-|  | | UMLSST:hcro |
-|  | | UMLSSC:T094 |
-|  | | UMLSST:pros |
-|  | | UMLSSC:T095 |
-|  | | UMLSST:shro |
-|  | | UMLSSC:T096 |
-|  | | UMLSST:grup |
+|  | | STY:T092 |
+|  | | STY:T093 |
+|  | | STY:T094 |
+|  | | STY:T095 |
+|  | | STY:T096 |
 

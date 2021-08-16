@@ -98,7 +98,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | bioentity |
 | **Narrow Mappings:** | | WIKIDATA:Q28845870 |
-|  | | UMLSSC:T050 |
-|  | | UMLSST:emod |
+|  | | STY:T050 |
 |  | | SIO:010046 |
 

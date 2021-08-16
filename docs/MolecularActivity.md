@@ -130,6 +130,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | molecular event |
 |  | | reaction |
 | **Exact Mappings:** | | GO:0003674 |
-|  | | UMLSSC:T044 |
-|  | | UMLSST:moft |
+|  | | STY:T044 |
 

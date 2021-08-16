@@ -86,6 +86,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Related Mappings:** | | CHEBI:33229 |
-|  | | UMLSSC:T127 |
-|  | | UMLSST:vita |
+|  | | STY:T127 |
 

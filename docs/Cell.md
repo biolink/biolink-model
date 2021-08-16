@@ -105,6 +105,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | CL:0000000 |
 |  | | SIO:010001 |
 |  | | WIKIDATA:Q7868 |
-|  | | UMLSSC:T025 |
-|  | | UMLSST:cell |
+|  | | STY:T025 |
 

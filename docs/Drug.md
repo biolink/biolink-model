@@ -121,10 +121,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Comments:** | | The CHEBI ID represents a role rather than a substance |
 | **Exact Mappings:** | | WIKIDATA:Q12140 |
 |  | | CHEBI:23888 |
-|  | | UMLSSC:T200 |
-|  | | UMLSST:clnd |
-| **Narrow Mappings:** | | UMLSSC:T195 |
-|  | | UMLSST:antb |
-| **Broad Mappings:** | | UMLSSC:T121 |
-|  | | UMLSST:phsu |
+|  | | STY:T200 |
+| **Narrow Mappings:** | | STY:T195 |
+| **Broad Mappings:** | | STY:T121 |
 

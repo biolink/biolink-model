@@ -79,6 +79,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | NCIT:C25499 |
-|  | | UMLSSC:T051 |
-|  | | UMLSST:evnt |
+|  | | STY:T051 |
 

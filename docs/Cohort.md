@@ -92,12 +92,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | WIKIDATA:Q1303415 |
-| **Narrow Mappings:** | | UMLSSC:T097 |
-|  | | UMLSST:prog |
-|  | | UMLSSC:T099 |
-|  | | UMLSST:famg |
-|  | | UMLSSC:T100 |
-|  | | UMLSST:aggp |
-|  | | UMLSSC:T101 |
-|  | | UMLSST:podg |
+| **Narrow Mappings:** | | STY:T097 |
+|  | | STY:T099 |
+|  | | STY:T100 |
+|  | | STY:T101 |
 

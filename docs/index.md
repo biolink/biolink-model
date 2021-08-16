@@ -1596,6 +1596,8 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [biological role mixin](biological_role_mixin.md) - A role played by the chemical entity or part thereof within a biological context.
  * [chemical role mixin](chemical_role_mixin.md) - A role played by the chemical entity or part thereof within a chemical context.
+ * [decreases amount or activity of](decreases_amount_or_activity_of.md) - A grouping mixin to help with searching for all the predicates that decrease the amount or activity of the object.
+ * [increases amount or activity of](increases_amount_or_activity_of.md) - A grouping mixin to help with searching for all the predicates that increase the amount or activity of the object.
  * [negatively regulated by](negatively_regulated_by.md)
  * [negatively regulates](negatively_regulates.md)
  * [positively regulated by](positively_regulated_by.md)

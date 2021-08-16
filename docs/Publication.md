@@ -157,6 +157,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | IAO:0000311 |
 | **Narrow Mappings:** | | IAO:0000013 |
-|  | | UMLSSC:T170 |
-|  | | UMLSST:inpr |
+|  | | STY:T170 |
 

@@ -87,12 +87,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | UMLSSG:PROC |
-| **Narrow Mappings:** | | UMLSSC:T059 |
-|  | | UMLSST:lbpr |
-|  | | UMLSSC:T060 |
-|  | | UMLSST:diap |
-|  | | UMLSSC:T061 |
-|  | | UMLSST:topp |
-|  | | UMLSSC:T063 |
-|  | | UMLSST:mbrt |
+| **Narrow Mappings:** | | STY:T059 |
+|  | | STY:T060 |
+|  | | STY:T061 |
+|  | | STY:T063 |
 

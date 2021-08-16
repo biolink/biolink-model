@@ -90,8 +90,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | UMLSSC:T072 |
-|  | | UMLSST:phob |
-| **Narrow Mappings:** | | UMLSSC:T073 |
-|  | | UMLSST:mnob |
+| **Exact Mappings:** | | STY:T072 |
+| **Narrow Mappings:** | | STY:T073 |
 

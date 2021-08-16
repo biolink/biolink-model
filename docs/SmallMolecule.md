@@ -134,5 +134,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Aliases:** | | chemical substance |
 | **In Subsets:** | | model_organism_database |
 |  | | translator_minimal |
-| **Narrow Mappings:** | | UMLSSC:T196 |
+| **Narrow Mappings:** | | STY:T196 |
 

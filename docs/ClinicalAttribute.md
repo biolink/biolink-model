@@ -95,6 +95,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | UMLSSC:T201 |
-|  | | UMLSST:clna |
+| **Exact Mappings:** | | STY:T201 |
 

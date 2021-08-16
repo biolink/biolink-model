@@ -145,6 +145,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Narrow Mappings:** | | UMLSSC:T088 |
-|  | | UMLSSC:T085 |
+| **Narrow Mappings:** | | STY:T088 |
+|  | | STY:T085 |
 

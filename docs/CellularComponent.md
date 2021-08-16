@@ -106,10 +106,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | cell component |
+|  | | cell part |
 | **Exact Mappings:** | | GO:0005575 |
 |  | | SIO:001400 |
 |  | | WIKIDATA:Q5058355 |
-|  | | UMLSSC:T026 |
-|  | | UMLSST:celc |
+|  | | STY:T026 |
 | **Broad Mappings:** | | WIKIDATA:P681 |
 

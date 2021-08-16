@@ -83,12 +83,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Narrow Mappings:** | | UMLSSG:DEVI |
-|  | | UMLSSC:T074 |
-|  | | UMLSST:medd |
-|  | | UMLSSC:T075 |
-|  | | UMLSST:resd |
-|  | | UMLSSC:T203 |
-|  | | UMLSST:drdd |
-|  | | UMLSSC:T122 |
-|  | | UMLSST:bodm |
+|  | | STY:T074 |
+|  | | STY:T075 |
+|  | | STY:T203 |
+|  | | STY:T122 |
 

@@ -115,7 +115,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | PCO:0000001 |
 |  | | SIO:001061 |
-|  | | UMLSSC:T098 |
-|  | | UMLSST:popg |
+|  | | STY:T098 |
 |  | | OBI:0000181 |
 

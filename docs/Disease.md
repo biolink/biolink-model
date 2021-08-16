@@ -121,22 +121,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | WIKIDATA:Q12136 |
 |  | | SIO:010299 |
 |  | | UMLSSG:DISO |
-|  | | UMLSSC:T047 |
-|  | | UMLSST:dsyn |
-| **Narrow Mappings:** | | UMLSSC:T019 |
-|  | | UMLSST:cgab |
-|  | | UMLSSC:T020 |
-|  | | UMLSST:acab |
-|  | | UMLSSC:T037 |
-|  | | UMLSST:inpo |
-|  | | UMLSSC:T046 |
-|  | | UMLSST:patf |
-|  | | UMLSSC:T048 |
-|  | | UMLSST:mobd |
-|  | | UMLSSC:T049 |
-|  | | UMLSST:comd |
-|  | | UMLSSC:T190 |
-|  | | UMLSST:anab |
-|  | | UMLSSC:T191 |
-|  | | UMLSST:neop |
+|  | | STY:T047 |
+| **Narrow Mappings:** | | STY:T019 |
+|  | | STY:T020 |
+|  | | STY:T037 |
+|  | | STY:T046 |
+|  | | STY:T048 |
+|  | | STY:T049 |
+|  | | STY:T190 |
+|  | | STY:T191 |
 

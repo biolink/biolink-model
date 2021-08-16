@@ -123,26 +123,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | information entity |
 | **Exact Mappings:** | | IAO:0000030 |
 | **Narrow Mappings:** | | UMLSSG:CONC |
-|  | | UMLSSC:T077 |
-|  | | UMLSST:cnce |
-|  | | UMLSSC:T078 |
-|  | | UMLSST:idcn |
-|  | | UMLSSC:T079 |
-|  | | UMLSST:tmco |
-|  | | UMLSSC:T080 |
-|  | | UMLSST:qlco |
-|  | | UMLSSC:T081 |
-|  | | UMLSST:qnco |
-|  | | UMLSSC:T082 |
-|  | | UMLSST:spco |
-|  | | UMLSSC:T089 |
-|  | | UMLSST:rnlw |
-|  | | UMLSSC:T102 |
-|  | | UMLSST:grpa |
-|  | | UMLSSC:T169 |
-|  | | UMLSST:ftcn |
-|  | | UMLSSC:T171 |
-|  | | UMLSST:lang |
-|  | | UMLSSC:T185 |
-|  | | UMLSST:clas |
+|  | | STY:T077 |
+|  | | STY:T078 |
+|  | | STY:T079 |
+|  | | STY:T080 |
+|  | | STY:T081 |
+|  | | STY:T082 |
+|  | | STY:T089 |
+|  | | STY:T102 |
+|  | | STY:T169 |
+|  | | STY:T171 |
+|  | | STY:T185 |
 

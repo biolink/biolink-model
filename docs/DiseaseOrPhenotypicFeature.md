@@ -112,6 +112,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | phenome |
-| **Narrow Mappings:** | | UMLSSC:T033 |
-|  | | UMLSST:fndg |
+| **Narrow Mappings:** | | STY:T033 |
 

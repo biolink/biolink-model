@@ -118,32 +118,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | taxonomic classification |
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | WIKIDATA:Q16521 |
-| **Narrow Mappings:** | | UMLSSC:T005 |
-|  | | UMLSST:virs |
-|  | | UMLSSC:T007 |
-|  | | UMLSST:bact |
-|  | | UMLSSC:T194 |
-|  | | UMLSST:arch |
-|  | | UMLSSC:T204 |
-|  | | UMLSST:euka |
-|  | | UMLSSC:T002 |
-|  | | UMLSST:plnt |
-|  | | UMLSSC:T004 |
-|  | | UMLSST:fngs |
-|  | | UMLSSC:T008 |
-|  | | UMLSST:anim |
-|  | | UMLSSC:T010 |
-|  | | UMLSST:vtbt |
-|  | | UMLSSC:T011 |
-|  | | UMLSST:amph |
-|  | | UMLSSC:T012 |
-|  | | UMLSST:bird |
-|  | | UMLSSC:T013 |
-|  | | UMLSST:fish |
-|  | | UMLSSC:T014 |
-|  | | UMLSST:rept |
-|  | | UMLSSC:T015 |
-|  | | UMLSST:mamm |
-|  | | UMLSSC:T016 |
-|  | | UMLSST:humn |
+|  | | STY:T001 |
 

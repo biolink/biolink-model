@@ -110,8 +110,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | organism |
 | **Exact Mappings:** | | SIO:010000 |
-|  | | UMLSSC:T001 |
-|  | | UMLSST:orgm |
+|  | | STY:T001 |
 | **Narrow Mappings:** | | WIKIDATA:Q795052 |
 |  | | foaf:Person |
 

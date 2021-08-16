@@ -59,6 +59,6 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Narrow Mappings:** | | UMLSSC:T028 |
+| **Narrow Mappings:** | | STY:T028 |
 |  | | GENO:0000897 |
 

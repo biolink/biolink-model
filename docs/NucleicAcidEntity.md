@@ -164,6 +164,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **In Subsets:** | | model_organism_database |
 |  | | translator_minimal |
 | **Exact Mappings:** | | SO:0000110 |
-| **Narrow Mappings:** | | UMLSSC:T086 |
-|  | | UMLSSC:T114 |
+| **Narrow Mappings:** | | STY:T086 |
+|  | | STY:T114 |
 

@@ -95,15 +95,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | physiology |
-| **Exact Mappings:** | | UMLSSC:T039 |
-|  | | UMLSST:phsf |
+| **Exact Mappings:** | | STY:T039 |
 |  | | WIKIDATA:Q30892994 |
-| **Narrow Mappings:** | | UMLSSC:T040 |
-|  | | UMLSST:orgf |
-|  | | UMLSSC:T042 |
-|  | | UMLSST:ortf |
-|  | | UMLSSC:T043 |
-|  | | UMLSST:celf |
-|  | | UMLSSC:T045 |
-|  | | UMLSST:genf |
+| **Narrow Mappings:** | | STY:T040 |
+|  | | STY:T042 |
+|  | | STY:T043 |
+|  | | STY:T045 |
 

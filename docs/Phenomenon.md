@@ -83,16 +83,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | UMLSSG:PHEN |
-| **Narrow Mappings:** | | UMLSSC:T034 |
-|  | | UMLSST:lbtr |
-|  | | UMLSSC:T038 |
-|  | | UMLSST:biof |
-|  | | UMLSSC:T069 |
-|  | | UMLSST:eehu |
-| **Broad Mappings:** | | UMLSSC:T067 |
-|  | | UMLSST:phpr |
-|  | | UMLSSC:T068 |
-|  | | UMLSST:hcpp |
-|  | | UMLSSC:T070 |
-|  | | UMLSST:npop |
+| **Narrow Mappings:** | | STY:T034 |
+|  | | STY:T038 |
+|  | | STY:T069 |
+| **Broad Mappings:** | | STY:T067 |
+|  | | STY:T068 |
+|  | | STY:T070 |
 

@@ -129,12 +129,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | UBERON:0001062 |
 |  | | WIKIDATA:Q4936952 |
 |  | | UMLSSG:ANAT |
-| **Narrow Mappings:** | | UMLSSC:T022 |
-|  | | UMLSST:bdsy |
-|  | | UMLSSC:T029 |
-|  | | UMLSST:blor |
-|  | | UMLSSC:T030 |
-|  | | UMLSST:bsoj |
-|  | | UMLSSC:T031 |
-|  | | UMLSST:bdsu |
+|  | | STY:T017 |
 

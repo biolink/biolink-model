@@ -217,15 +217,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | CHEBI:24431 |
 |  | | SIO:010004 |
 |  | | WIKIDATA:Q79529 |
+|  | | STY:T103 |
 | **Narrow Mappings:** | | WIKIDATA:Q43460564 |
-|  | | UMLSSC:T103 |
-|  | | UMLSSC:T120 |
-|  | | UMLSSC:T104 |
-|  | | UMLSSC:T197 |
-|  | | UMLSSC:T109 |
-|  | | UMLSSC:T125 |
-|  | | UMLSSC:T123 |
-|  | | UMLSSC:T129 |
-|  | | UMLSSC:T131 |
-| **Broad Mappings:** | | UMLSSC:T167 |
 

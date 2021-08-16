@@ -104,14 +104,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | organ |
 | **Exact Mappings:** | | UBERON:0010000 |
 |  | | WIKIDATA:Q4936952 |
-|  | | UMLSSC:T017 |
-|  | | UMLSST:anst |
-|  | | UMLSSC:T021 |
-|  | | UMLSST:ffas |
-| **Narrow Mappings:** | | UMLSSC:T023 |
-|  | | UMLSST:bpoc |
-|  | | UMLSSC:T024 |
-|  | | UMLSST:tisu |
-|  | | UMLSSC:T018 |
-|  | | UMLSST:emst |
+| **Narrow Mappings:** | | STY:T023 |
+|  | | STY:T024 |
+|  | | STY:T018 |
 
