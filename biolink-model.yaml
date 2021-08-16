@@ -1576,6 +1576,7 @@ slots:
       value: true
 
   associated with real world evidence:
+    is_a: related to
     inverse: has real world evidence of association with
 
   active in:
@@ -1621,7 +1622,7 @@ slots:
     range: gene or gene product
 
   acts upstream of negative effect:
-    is_a: acts upstream of
+    is_a: has upstream actor
     domain: gene or gene product
     range: biological process
     annotations:
@@ -1808,7 +1809,6 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
-
 
   molecularly interacts with:
     is_a: physically interacts with
@@ -4341,7 +4341,7 @@ slots:
       - RO:0002599
   
   prevented by:
-    is_a: related to
+    is_a: risk affected by
     description: >-
       holds between a potential outcome of which the likelihood
       was reduced by the application or use of an entity.
@@ -5031,7 +5031,8 @@ slots:
   participates in:
     is_a: related to
     description: >-
-      holds between a continuant and a process, where the continuant is somehow involved in the process
+      holds between a continuant and a process, where the continuant is somehow involved
+      in the process
     range: occurrent
     inverse: has participant
     in_subset:
@@ -5589,7 +5590,7 @@ slots:
       - SNPEFF:structural_interaction_variant
 
   has missense variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is missense variant of
@@ -5611,7 +5612,7 @@ slots:
       - SNPEFF:stop_retained_variant
 
   has synonymous variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is synonymous variant of
@@ -5633,7 +5634,7 @@ slots:
       - SO:0002054
 
   has nonsense variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is nonsense variant of
@@ -5657,7 +5658,7 @@ slots:
       - SNPEFF:stop_lost
 
   has frameshift variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     inverse: is frameshift variant of
     domain: gene
     range: sequence variant
@@ -5680,7 +5681,7 @@ slots:
       - SNPEFF:splice_donor_variant
 
   has splice site variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is splice site variant of
@@ -5702,7 +5703,7 @@ slots:
       - SNPEFF:upstream_gene_variant
 
   has nearby variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is nearby variant of
@@ -5727,7 +5728,7 @@ slots:
       - SNPEFF:intron_variant
 
   has non coding variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is non coding variant of
@@ -5951,6 +5952,10 @@ slots:
       - NCIT:gene_found_in_organism
       - NCIT:gene_product_has_organism_source
       - RO:0002160
+
+  taxon of:
+    is_a: related to
+    inverse: in taxon
 
   has molecular consequence:
     is_a: related to
