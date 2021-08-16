@@ -127,7 +127,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  *  **[ChemicalEntity](ChemicalEntity.md)** *[molecular modification increased by](molecular_modification_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate affected by](mutation_rate_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate decreased by](mutation_rate_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate increased by](mutation_rate_increased_by.md)*  <sub>0..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate increased by](mutation_rate_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[nutrient of](nutrient_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[response affected by](response_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[response decreased by](response_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
@@ -141,9 +141,9 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  *  **[ChemicalEntity](ChemicalEntity.md)** *[stability affected by](stability_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[stability decreased by](stability_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[stability increased by](stability_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[ChemicalEntity](ChemicalEntity.md)** *[synthesis affected by](synthesis_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[synthesis decreased by](synthesis_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[synthesis increased by](synthesis_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[ChemicalEntity](ChemicalEntity.md)** *[sythesis affected by](sythesis_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[NamedThing](NamedThing.md)** *[trade name](trade_name.md)*  <sub>0..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[transport affected by](transport_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[transport decreased by](transport_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**

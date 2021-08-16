@@ -18,10 +18,12 @@ URI: [biolink:activity_affected_by](https://w3id.org/biolink/vocab/activity_affe
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [activity decreased by](activity_decreased_by.md)
+ *  [activity increased by](activity_increased_by.md)
 
 ## Used by
 

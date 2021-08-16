@@ -21,7 +21,7 @@ URI: [biolink:mutation_rate_decreased_by](https://w3id.org/biolink/vocab/mutatio
 
 ## Parents
 
- *  is_a: [affects mutation rate of](affects_mutation_rate_of.md)
+ *  is_a: [mutation rate affected by](mutation_rate_affected_by.md)
 
 ## Children
 

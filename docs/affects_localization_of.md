@@ -27,8 +27,6 @@ URI: [biolink:affects_localization_of](https://w3id.org/biolink/vocab/affects_lo
 
  *  [decreases localization of](decreases_localization_of.md)
  *  [increases localization of](increases_localization_of.md)
- *  [localization decreased by](localization_decreased_by.md)
- *  [localization increased by](localization_increased_by.md)
 
 ## Used by
 

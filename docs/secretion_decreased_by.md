@@ -21,7 +21,7 @@ URI: [biolink:secretion_decreased_by](https://w3id.org/biolink/vocab/secretion_d
 
 ## Parents
 
- *  is_a: [affects secretion of](affects_secretion_of.md)
+ *  is_a: [secretion affected by](secretion_affected_by.md)
 
 ## Children
 

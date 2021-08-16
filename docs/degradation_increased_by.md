@@ -21,7 +21,7 @@ URI: [biolink:degradation_increased_by](https://w3id.org/biolink/vocab/degradati
 
 ## Parents
 
- *  is_a: [affects degradation of](affects_degradation_of.md)
+ *  is_a: [degradation affected by](degradation_affected_by.md)
 
 ## Children
 

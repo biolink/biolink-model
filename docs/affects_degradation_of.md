@@ -26,8 +26,6 @@ URI: [biolink:affects_degradation_of](https://w3id.org/biolink/vocab/affects_deg
 ## Children
 
  *  [decreases degradation of](decreases_degradation_of.md)
- *  [degradation decreased by](degradation_decreased_by.md)
- *  [degradation increased by](degradation_increased_by.md)
  *  [increases degradation of](increases_degradation_of.md)
 
 ## Used by

@@ -21,10 +21,12 @@ URI: [biolink:response_affected_by](https://w3id.org/biolink/vocab/response_affe
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [response decreased by](response_decreased_by.md)
+ *  [response increased by](response_increased_by.md)
 
 ## Used by
 

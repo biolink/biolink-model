@@ -27,8 +27,6 @@ URI: [biolink:affects_stability_of](https://w3id.org/biolink/vocab/affects_stabi
 
  *  [decreases stability of](decreases_stability_of.md)
  *  [increases stability of](increases_stability_of.md)
- *  [stability decreased by](stability_decreased_by.md)
- *  [stability increased by](stability_increased_by.md)
 
 ## Used by
 

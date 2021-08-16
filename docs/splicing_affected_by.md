@@ -21,10 +21,12 @@ URI: [biolink:splicing_affected_by](https://w3id.org/biolink/vocab/splicing_affe
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [splicing decreased by](splicing_decreased_by.md)
+ *  [splicing increased by](splicing_increased_by.md)
 
 ## Used by
 

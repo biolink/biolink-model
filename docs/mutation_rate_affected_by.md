@@ -21,10 +21,12 @@ URI: [biolink:mutation_rate_affected_by](https://w3id.org/biolink/vocab/mutation
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [mutation rate decreased by](mutation_rate_decreased_by.md)
+ *  [mutation rate increased by](mutation_rate_increased_by.md)
 
 ## Used by
 

@@ -27,8 +27,6 @@ URI: [biolink:affects_metabolic_processing_of](https://w3id.org/biolink/vocab/af
 
  *  [decreases metabolic processing of](decreases_metabolic_processing_of.md)
  *  [increases metabolic processing of](increases_metabolic_processing_of.md)
- *  [metabolic processing decreased by](metabolic_processing_decreased_by.md)
- *  [metabolic processing increased by](metabolic_processing_increased_by.md)
 
 ## Used by
 

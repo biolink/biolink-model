@@ -21,10 +21,12 @@ URI: [biolink:stability_affected_by](https://w3id.org/biolink/vocab/stability_af
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [stability decreased by](stability_decreased_by.md)
+ *  [stability increased by](stability_increased_by.md)
 
 ## Used by
 

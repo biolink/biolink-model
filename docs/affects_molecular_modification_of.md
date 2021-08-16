@@ -27,8 +27,6 @@ URI: [biolink:affects_molecular_modification_of](https://w3id.org/biolink/vocab/
 
  *  [decreases molecular modification of](decreases_molecular_modification_of.md)
  *  [increases molecular modification of](increases_molecular_modification_of.md)
- *  [molecular modification decreased by](molecular_modification_decreased_by.md)
- *  [molecular modification increased by](molecular_modification_increased_by.md)
 
 ## Used by
 

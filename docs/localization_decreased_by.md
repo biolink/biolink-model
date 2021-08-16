@@ -21,7 +21,7 @@ URI: [biolink:localization_decreased_by](https://w3id.org/biolink/vocab/localiza
 
 ## Parents
 
- *  is_a: [affects localization of](affects_localization_of.md)
+ *  is_a: [localization affected by](localization_affected_by.md)
 
 ## Children
 

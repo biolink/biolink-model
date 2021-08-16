@@ -21,10 +21,12 @@ URI: [biolink:metabolic_processing_affected_by](https://w3id.org/biolink/vocab/m
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [metabolic processing decreased by](metabolic_processing_decreased_by.md)
+ *  [metabolic processing increased by](metabolic_processing_increased_by.md)
 
 ## Used by
 

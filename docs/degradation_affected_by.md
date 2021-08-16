@@ -21,10 +21,12 @@ URI: [biolink:degradation_affected_by](https://w3id.org/biolink/vocab/degradatio
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [degradation decreased by](degradation_decreased_by.md)
+ *  [degradation increased by](degradation_increased_by.md)
 
 ## Used by
 

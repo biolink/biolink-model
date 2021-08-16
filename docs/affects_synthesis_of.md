@@ -27,8 +27,6 @@ URI: [biolink:affects_synthesis_of](https://w3id.org/biolink/vocab/affects_synth
 
  *  [decreases synthesis of](decreases_synthesis_of.md)
  *  [increases synthesis of](increases_synthesis_of.md)
- *  [synthesis decreased by](synthesis_decreased_by.md)
- *  [synthesis increased by](synthesis_increased_by.md)
 
 ## Used by
 

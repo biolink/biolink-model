@@ -27,7 +27,6 @@ URI: [biolink:affects_mutation_rate_of](https://w3id.org/biolink/vocab/affects_m
 
  *  [decreases mutation rate of](decreases_mutation_rate_of.md)
  *  [increases mutation rate of](increases_mutation_rate_of.md)
- *  [mutation rate decreased by](mutation_rate_decreased_by.md)
 
 ## Used by
 

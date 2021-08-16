@@ -21,7 +21,7 @@ URI: [biolink:metabolic_processing_decreased_by](https://w3id.org/biolink/vocab/
 
 ## Parents
 
- *  is_a: [affects metabolic processing of](affects_metabolic_processing_of.md)
+ *  is_a: [metabolic processing affected by](metabolic_processing_affected_by.md)
 
 ## Children
 

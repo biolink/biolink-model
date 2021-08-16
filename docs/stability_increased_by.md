@@ -21,7 +21,7 @@ URI: [biolink:stability_increased_by](https://w3id.org/biolink/vocab/stability_i
 
 ## Parents
 
- *  is_a: [affects stability of](affects_stability_of.md)
+ *  is_a: [stability affected by](stability_affected_by.md)
 
 ## Children
 

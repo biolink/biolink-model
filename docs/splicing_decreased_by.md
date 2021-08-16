@@ -21,7 +21,7 @@ URI: [biolink:splicing_decreased_by](https://w3id.org/biolink/vocab/splicing_dec
 
 ## Parents
 
- *  is_a: [affects splicing of](affects_splicing_of.md)
+ *  is_a: [splicing affected by](splicing_affected_by.md)
 
 ## Children
 

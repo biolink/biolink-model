@@ -27,8 +27,6 @@ URI: [biolink:affects_transport_of](https://w3id.org/biolink/vocab/affects_trans
 
  *  [decreases transport of](decreases_transport_of.md)
  *  [increases transport of](increases_transport_of.md)
- *  [transport decreased by](transport_decreased_by.md)
- *  [transport increased by](transport_increased_by.md)
 
 ## Used by
 

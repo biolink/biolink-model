@@ -21,10 +21,12 @@ URI: [biolink:transport_affected_by](https://w3id.org/biolink/vocab/transport_af
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [transport decreased by](transport_decreased_by.md)
+ *  [transport increased by](transport_increased_by.md)
 
 ## Used by
 

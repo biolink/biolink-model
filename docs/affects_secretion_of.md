@@ -27,8 +27,6 @@ URI: [biolink:affects_secretion_of](https://w3id.org/biolink/vocab/affects_secre
 
  *  [decreases secretion of](decreases_secretion_of.md)
  *  [increases secretion of](increases_secretion_of.md)
- *  [secretion decreased by](secretion_decreased_by.md)
- *  [secretion increased by](secretion_increased_by.md)
 
 ## Used by
 

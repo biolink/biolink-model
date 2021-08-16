@@ -27,8 +27,6 @@ URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splici
 
  *  [decreases splicing of](decreases_splicing_of.md)
  *  [increases splicing of](increases_splicing_of.md)
- *  [splicing decreased by](splicing_decreased_by.md)
- *  [splicing increased by](splicing_increased_by.md)
 
 ## Used by
 

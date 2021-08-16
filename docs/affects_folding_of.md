@@ -26,8 +26,6 @@ URI: [biolink:affects_folding_of](https://w3id.org/biolink/vocab/affects_folding
 ## Children
 
  *  [decreases folding of](decreases_folding_of.md)
- *  [folding decreased by](folding_decreased_by.md)
- *  [folding increased by](folding_increased_by.md)
  *  [increases folding of](increases_folding_of.md)
 
 ## Used by

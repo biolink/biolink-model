@@ -21,7 +21,7 @@ URI: [biolink:transport_decreased_by](https://w3id.org/biolink/vocab/transport_d
 
 ## Parents
 
- *  is_a: [affects transport of](affects_transport_of.md)
+ *  is_a: [transport affected by](transport_affected_by.md)
 
 ## Children
 

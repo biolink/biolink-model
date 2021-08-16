@@ -1,11 +1,11 @@
 ---
-parent: Other Slots
+parent: Predicates
 title: biolink:mutation_rate_increased_by
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: mutation_rate_increased_by
+# Relation: mutation_rate_increased_by
 
 translator_minimal
 {: .translator_minimal-subset-label }
@@ -17,10 +17,11 @@ URI: [biolink:mutation_rate_increased_by](https://w3id.org/biolink/vocab/mutatio
 
 ## Domain and Range
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..1</sub> [ChemicalEntity](ChemicalEntity.md)
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
 
 ## Parents
 
+ *  is_a: [mutation rate affected by](mutation_rate_affected_by.md)
 
 ## Children
 

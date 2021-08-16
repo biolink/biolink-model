@@ -27,8 +27,6 @@ URI: [biolink:affects_response_to](https://w3id.org/biolink/vocab/affects_respon
 
  *  [decreases response to](decreases_response_to.md)
  *  [increases response to](increases_response_to.md)
- *  [response decreased by](response_decreased_by.md)
- *  [response increased by](response_increased_by.md)
 
 ## Used by
 

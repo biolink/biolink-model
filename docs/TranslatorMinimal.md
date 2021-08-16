@@ -194,9 +194,9 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
  * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
  * [synonym](synonym.md) - Alternate human-readable names for a thing
+ * [synthesis affected by](synthesis_affected_by.md)
  * [synthesis decreased by](synthesis_decreased_by.md)
  * [synthesis increased by](synthesis_increased_by.md)
- * [sythesis affected by](sythesis_affected_by.md)
  * [transport affected by](transport_affected_by.md)
  * [transport decreased by](transport_decreased_by.md)
  * [transport increased by](transport_increased_by.md)

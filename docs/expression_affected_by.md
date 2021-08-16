@@ -21,7 +21,7 @@ URI: [biolink:expression_affected_by](https://w3id.org/biolink/vocab/expression_
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 

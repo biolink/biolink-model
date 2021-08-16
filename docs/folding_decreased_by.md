@@ -18,7 +18,7 @@ URI: [biolink:folding_decreased_by](https://w3id.org/biolink/vocab/folding_decre
 
 ## Parents
 
- *  is_a: [affects folding of](affects_folding_of.md)
+ *  is_a: [folding affected by](folding_affected_by.md)
 
 ## Children
 

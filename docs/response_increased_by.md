@@ -21,7 +21,7 @@ URI: [biolink:response_increased_by](https://w3id.org/biolink/vocab/response_inc
 
 ## Parents
 
- *  is_a: [affects response to](affects_response_to.md)
+ *  is_a: [response affected by](response_affected_by.md)
 
 ## Children
 

@@ -27,8 +27,6 @@ URI: [biolink:affects_uptake_of](https://w3id.org/biolink/vocab/affects_uptake_o
 
  *  [decreases uptake of](decreases_uptake_of.md)
  *  [increases uptake of](increases_uptake_of.md)
- *  [uptake decreased by](uptake_decreased_by.md)
- *  [uptake increased by](uptake_increased_by.md)
 
 ## Used by
 

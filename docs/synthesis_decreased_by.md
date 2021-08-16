@@ -21,7 +21,7 @@ URI: [biolink:synthesis_decreased_by](https://w3id.org/biolink/vocab/synthesis_d
 
 ## Parents
 
- *  is_a: [affects synthesis of](affects_synthesis_of.md)
+ *  is_a: [synthesis affected by](synthesis_affected_by.md)
 
 ## Children
 

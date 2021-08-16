@@ -21,7 +21,7 @@ URI: [biolink:uptake_increased_by](https://w3id.org/biolink/vocab/uptake_increas
 
 ## Parents
 
- *  is_a: [affects uptake of](affects_uptake_of.md)
+ *  is_a: [uptake affected by](uptake_affected_by.md)
 
 ## Children
 

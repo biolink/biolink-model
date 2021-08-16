@@ -18,10 +18,12 @@ URI: [biolink:abundance_affected_by](https://w3id.org/biolink/vocab/abundance_af
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [abundance decreased by](abundance_decreased_by.md)
+ *  [abundance increased by](abundance_increased_by.md)
 
 ## Used by
 

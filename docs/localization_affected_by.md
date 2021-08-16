@@ -21,10 +21,12 @@ URI: [biolink:localization_affected_by](https://w3id.org/biolink/vocab/localizat
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [localization decreased by](localization_decreased_by.md)
+ *  [localization increased by](localization_increased_by.md)
 
 ## Used by
 

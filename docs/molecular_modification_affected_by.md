@@ -21,10 +21,12 @@ URI: [biolink:molecular_modification_affected_by](https://w3id.org/biolink/vocab
 
 ## Parents
 
- *  is_a: [affects](affects.md)
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
+ *  [molecular modification decreased by](molecular_modification_decreased_by.md)
+ *  [molecular modification increased by](molecular_modification_increased_by.md)
 
 ## Used by
 

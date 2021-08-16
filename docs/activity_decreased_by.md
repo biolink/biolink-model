@@ -21,7 +21,7 @@ URI: [biolink:activity_decreased_by](https://w3id.org/biolink/vocab/activity_dec
 
 ## Parents
 
- *  is_a: [affects activity of](affects_activity_of.md)
+ *  is_a: [activity affected by](activity_affected_by.md)
 
 ## Children
 

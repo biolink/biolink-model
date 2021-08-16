@@ -25,8 +25,6 @@ URI: [biolink:affects_abundance_of](https://w3id.org/biolink/vocab/affects_abund
 
 ## Children
 
- *  [abundance decreased by](abundance_decreased_by.md)
- *  [abundance increased by](abundance_increased_by.md)
  *  [decreases abundance of](decreases_abundance_of.md)
  *  [increases abundance of](increases_abundance_of.md)
 

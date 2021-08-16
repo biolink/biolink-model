@@ -21,7 +21,7 @@ URI: [biolink:molecular_modification_increased_by](https://w3id.org/biolink/voca
 
 ## Parents
 
- *  is_a: [affects molecular modification of](affects_molecular_modification_of.md)
+ *  is_a: [molecular modification affected by](molecular_modification_affected_by.md)
 
 ## Children
 
