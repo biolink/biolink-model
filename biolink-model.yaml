@@ -2041,13 +2041,13 @@ slots:
       holds between two chemical entities where the action or effect of one changes the activity of the
       other within a system of interest
     is_a: affects
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     in_subset:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
-    annotations:
-      tag:
-      value:
     exact_mappings:
       - CTD:affects_activity_of
     narrow_mappings:
