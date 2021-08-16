@@ -1902,6 +1902,20 @@ slots:
       another existing entity.
     inverse: affects
 
+  increases amount or activity of:
+    is_a: related to
+    mixin: true
+    description: >-
+      A grouping mixin to help with searching for all the predicates that increase the amount
+      or activity of the object.
+
+  decreases amount or activity of:
+    is_a: related to
+    mixin: true
+    description: >-
+      A grouping mixin to help with searching for all the predicates that decrease the amount
+      or activity of the object.
+
   ## role mixins for use in tagging corresponding role predicates
 
   chemical role mixin:
@@ -1946,6 +1960,8 @@ slots:
     is_a: affects abundance of
     in_subset:
       - translator_minimal
+    mixins:
+      - increases amount or activity of
     domain: chemical entity
     range: chemical entity
     annotations:
@@ -1970,6 +1986,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       - tag: biolink:canonical_predicate
         value: true
@@ -2024,6 +2042,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
@@ -2067,6 +2087,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     related_mappings:
       - GAMMA:ic50
       - GAMMA:ki
@@ -2141,6 +2163,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: nucleic acid entity
+    mixins:
+      - increases amount or activity of
     close_mappings:
       # Agent of the action or effect, not the relationship itself
       - CHEMBL.MECHANISM:releasing_agent
@@ -2165,6 +2189,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: nucleic acid entity
+    mixins:
+      - decreases amount or activity of
     related_mappings:
       - DGIdb:antisense
       - DGIdb:antisense_oligonucleotide
@@ -2212,6 +2238,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: nucleic acid entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2233,6 +2261,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: nucleic acid entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2280,6 +2310,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2302,6 +2334,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2350,6 +2384,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2375,6 +2411,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2455,6 +2493,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2513,6 +2553,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2592,6 +2634,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2613,6 +2657,8 @@ slots:
     is_a: affects synthesis of
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     in_subset:
       - translator_minimal
     annotations:
@@ -2668,6 +2714,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2707,6 +2755,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2760,6 +2810,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: nucleic acid entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2785,6 +2837,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: nucleic acid entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2838,6 +2892,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2863,6 +2919,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2914,6 +2972,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: transcript
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2939,6 +2999,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: transcript
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2989,6 +3051,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3013,6 +3077,8 @@ slots:
     is_a: affects stability of
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     in_subset:
       - translator_minimal
     annotations:
@@ -3065,6 +3131,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3091,6 +3159,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3140,6 +3210,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3166,6 +3238,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3218,6 +3292,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3244,6 +3320,8 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5743,6 +5821,8 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
+    mixins:
+      - decreases amount or activity of
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
 
@@ -5757,6 +5837,8 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
+    mixins:
+      - increases amount or activity of
     exact_mappings:
       - CTD:increases_molecular_interaction_with
 
@@ -6463,7 +6545,6 @@ classes:
 
   chemical or drug or treatment:
     mixin: true
-
 
   ## ------
   ## THINGS
