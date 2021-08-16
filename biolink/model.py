@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-08-04 17:31
+# Generation date: 2021-08-16 16:49
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -178,6 +178,7 @@ SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
 SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://identifiers.org/snomedct/')
 SNPEFF = CurieNamespace('SNPEFF', 'http://translator.ncats.nih.gov/SNPEFF_')
 SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
+STY = CurieNamespace('STY', 'http://purl.bioontology.org/ontology/STY/')
 SUPFAM = CurieNamespace('SUPFAM', 'http://identifiers.org/supfam/')
 SCOPUSID = CurieNamespace('ScopusID', 'https://www.scopus.com/authid/detail.uri?authorId=')
 TAXRANK = CurieNamespace('TAXRANK', 'http://purl.obolibrary.org/obo/TAXRANK_')
@@ -187,9 +188,7 @@ UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-a
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
 UMLS = CurieNamespace('UMLS', 'http://identifiers.org/umls/')
-UMLSSC = CurieNamespace('UMLSSC', 'http://purl.bioontology.org/ontology/STY/')
 UMLSSG = CurieNamespace('UMLSSG', 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#')
-UMLSST = CurieNamespace('UMLSST', 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#')
 UNII = CurieNamespace('UNII', 'http://identifiers.org/unii/')
 UNIPROT_ISOFORM = CurieNamespace('UNIPROT_ISOFORM', 'http://identifiers.org/uniprot.isoform/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
@@ -8383,6 +8382,12 @@ slots.affects = Slot(uri=BIOLINK.affects, name="affects", curie=BIOLINK.curie('a
 
 slots.affected_by = Slot(uri=BIOLINK.affected_by, name="affected by", curie=BIOLINK.curie('affected_by'),
                    model_uri=BIOLINK.affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.increases_amount_or_activity_of = Slot(uri=BIOLINK.increases_amount_or_activity_of, name="increases amount or activity of", curie=BIOLINK.curie('increases_amount_or_activity_of'),
+                   model_uri=BIOLINK.increases_amount_or_activity_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.decreases_amount_or_activity_of = Slot(uri=BIOLINK.decreases_amount_or_activity_of, name="decreases amount or activity of", curie=BIOLINK.curie('decreases_amount_or_activity_of'),
+                   model_uri=BIOLINK.decreases_amount_or_activity_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.chemical_role_mixin = Slot(uri=BIOLINK.chemical_role_mixin, name="chemical role mixin", curie=BIOLINK.curie('chemical_role_mixin'),
                    model_uri=BIOLINK.chemical_role_mixin, domain=None, range=Optional[str])

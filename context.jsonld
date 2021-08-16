@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-08-04 17:31\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-08-16 16:48\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -401,6 +401,7 @@
          "@id": "http://purl.obolibrary.org/obo/STATO_",
          "@prefix": true
       },
+      "STY": "http://purl.bioontology.org/ontology/STY/",
       "SUPFAM": "http://identifiers.org/supfam/",
       "ScopusID": {
          "@id": "https://www.scopus.com/authid/detail.uri?authorId=",
@@ -419,9 +420,7 @@
       },
       "UBERON_CORE": "http://purl.obolibrary.org/obo/uberon/core#",
       "UMLS": "http://identifiers.org/umls/",
-      "UMLSSC": "http://purl.bioontology.org/ontology/STY/",
       "UMLSSG": "https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#",
-      "UMLSST": "https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#",
       "UNII": "http://identifiers.org/unii/",
       "UNIPROT.ISOFORM": "http://identifiers.org/uniprot.isoform/",
       "UPHENO": {
@@ -761,6 +760,9 @@
          "@type": "@id"
       },
       "decreases_activity_of": {
+         "@type": "@id"
+      },
+      "decreases_amount_or_activity_of": {
          "@type": "@id"
       },
       "decreases_degradation_of": {
@@ -1163,6 +1165,9 @@
          "@type": "@id"
       },
       "increases_activity_of": {
+         "@type": "@id"
+      },
+      "increases_amount_or_activity_of": {
          "@type": "@id"
       },
       "increases_degradation_of": {
