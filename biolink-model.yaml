@@ -2000,38 +2000,6 @@ slots:
     domain: chemical entity
     range: chemical entity
 
-  affects activity of:
-    description: >-
-      holds between two chemical entities where the action or effect of one changes the activity of the 
-      other within a system of interest
-    is_a: affects
-    in_subset:
-      - translator_minimal
-    domain: chemical entity
-    range: chemical entity
-    exact_mappings:
-      - CTD:affects_activity_of
-    narrow_mappings:
-      - GAMMA:allosteric_modulator
-      - GAMMA:modulator
-      - GAMMA:regulator
-      - DGIdb:modulator
-      - DGIdb:allosteric_modulator
-
-  activity affected by:
-    description: >-
-      holds between two chemical entities where the action or effect of one is changed by the
-      activity of the other within a system of interest
-    is_a: affected by
-    domain: chemical entity
-    range: chemical entity
-
-  activity affects:
-    is_a: affects
-    domain: chemical entity
-    range: chemical entity
-    inverse: activity affected by
-
   increases activity of:
     description: >-
       holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
@@ -2067,6 +2035,36 @@ slots:
       - DGIdb:inducer
       - DGIdb:positive_allosteric_modulator
       - DGIdb:stimulator
+
+  affects activity of:
+    description: >-
+      holds between two chemical entities where the action or effect of one changes the activity of the
+      other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    annotations:
+      tag:
+      value:
+    exact_mappings:
+      - CTD:affects_activity_of
+    narrow_mappings:
+      - GAMMA:allosteric_modulator
+      - GAMMA:modulator
+      - GAMMA:regulator
+      - DGIdb:modulator
+      - DGIdb:allosteric_modulator
+
+  activity affected by:
+    description: >-
+      holds between two chemical entities where the action or effect of one is changed by the
+      activity of the other within a system of interest
+    is_a: affected by
+    domain: chemical entity
+    range: chemical entity
+    inverse: affects activity of
 
   activity increased by:
     is_a: activity affected by
@@ -4074,7 +4072,8 @@ slots:
   contributes to:
     is_a: related to
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+      holds between two entities where the occurrence, existence, or activity of one causes or contributes to the
+      occurrence or generation of the other
     in_subset:
       - translator_minimal
     annotations:
@@ -4585,6 +4584,10 @@ slots:
       - SNOMED:has_direct_site
       - SNOMED:has_procedure_site
 
+  contains process:
+    is_a: related to
+    inverse: occurs in
+
   located in:
     is_a: related to
     description: >-
@@ -4918,7 +4921,7 @@ slots:
       - SNOMED:uses_substance
 
   is input of:
-    is_a: has participant
+    is_a: participates in
     domain: biological process or activity
     range: occurrent
     inverse: has input
@@ -4955,7 +4958,7 @@ slots:
       - RO:0004008
 
   is output of:
-    is_a: has participant
+    is_a: participates in
     range: occurrent
     domain: biological process or activity
     inverse: has output
@@ -5002,15 +5005,15 @@ slots:
       - SNOMED:has_recipient_category
 
   catalyzes:
-    is_a: has participant
+    is_a: participates in
     # domain: nucleic acid entity
     # range: molecular activity
     annotations:
       tag: biolink:canonical_predicate
       value: true
 
-  is catalyst of:
-    is_a: participates in
+  has catalyst:
+    is_a: has participant
     inverse: catalyzes
 
   has substrate:
@@ -5084,7 +5087,7 @@ slots:
       - RO:0002503
 
   actively involves:
-    is_a: participates in
+    is_a: has participant
     domain: occurrent
     range: molecular activity
     inverse: actively involved in
@@ -5110,6 +5113,10 @@ slots:
     narrow_mappings:
       - NCIT:R52
       - RO:0002500
+
+  capability of:
+    is_a: actively involves
+    inverse: capable of
 
   enables:
     is_a: participates in
