@@ -4,8 +4,7 @@ description: Entity and association taxonomy and datamodel for life-sciences dat
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
-
-version: 2.2.1
+version: 2.0.1
 
 ## ------------
 ## PREFIXES
@@ -35,7 +34,6 @@ prefixes:
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
   COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
-  COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD: 'http://translator.ncats.nih.gov/CTD_'
   DGIdb: 'https://www.dgidb.org/interaction_types'
@@ -81,11 +79,9 @@ prefixes:
   KEGG.GENE: 'http://www.kegg.jp/entry/'
   KEGG.RCLASS: 'http://www.kegg.jp/entry/'
   LOINC: 'http://loinc.org/rdf/'
-  MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
   MI: 'http://purl.obolibrary.org/obo/MI_'
-  mirbase: 'http://identifiers.org/mirbase'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NCBIGene: 'http://identifiers.org/ncbigene/'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
@@ -96,7 +92,6 @@ prefixes:
   ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
   os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
-  PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   PATO-PROPERTY: 'http://purl.obolibrary.org/obo/pato#'  # Phenotypic Quality Ontology properties, not core terms
   pav: 'http://purl.org/pav/'
@@ -119,7 +114,7 @@ prefixes:
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
   # The UMLS Semantic types and groups namespaces don't have a directly
   # resolvable Base URI, but we point to a pair of sensible web documents
-  UMLSSC: 'http://purl.bioontology.org/ontology/STY/'
+  UMLSSC: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#'
   UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
   UMLSST: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
@@ -132,7 +127,6 @@ prefixes:
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   XPO: 'http://purl.obolibrary.org/obo/XPO_'  # Xenopus Phenotype Ontology
-  Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
 
 default_prefix: biolink
 default_range: string
@@ -153,7 +147,6 @@ emit_prefixes:
   - skos
   - OIO
   - BIOGRID
-  - SO
 
 ## ------------
 ## SUBSETS
@@ -209,114 +202,7 @@ enums:
         description: nucleic acid
       "AA":
         description: amino acid
-
-  predicate_qualifier_enum:
-    description: >-
-      constrained list of qualifying terms that soften or expand the definition of the predicate used.
-      can be used to constrain or qualify any predicate (any child of related_to).
-    permissible_values:
-      "predicted":
-      "possibly":
-      "hypothesized":
-      "validated":
-      "supported by real-world evidence":
-      "supported by clinical evidence":
-
-  drug_availability_enum:
-    description: >-
-    permissible_values:
-      "over the counter":
-        description: >-
-          chemical entity is available over the counter without a prescription.
-      "prescription":
-        description:
-          chemical entity is available by prescription.
-
-  FDA_approval_status_enum:
-    description: >-
-    permissible_values:
-      "Discovery & Development Phase":
-        description: >-
-          Discovery & Development Phase. Discovery involves researchers finding new possibilities
-          for medication through testing molecular compounds, noting unexpected effects from existing treatments,
-          or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
-          Drug development occurs after researchers identify potential compounds for experiments.
-      "Preclinical Research Phase":
-        description: >-
-          Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
-          they must do preliminary research to determine its potential for harm (toxicity).
-          This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
-      "FDA Clinical Research Phase":
-        description: >-
-          Clinical Research Phase. Clinical research involves trials of the drug on people,
-          and it is one of the most involved stages in the drug development and approval process.
-          Clinical trials must answer specific questions and follow a protocol determined by
-          the drug researcher or manufacturer.
-      "FDA Review Phase 4":
-        description: >-
-          FDA Review
-      "FDA Post-Market Safety Monitoring":
-        description: >-
-          FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one
-          while the drug is on the marketplace. If a developer wants to change anything about the
-          drug formulation or approve it for a new use, they must apply with the FDA. The FDA also
-          frequently reviews the drug’s advertising and its manufacturing facility to make sure
-          everything involved in its creation and marketing is in compliance with regulations.
-      "FDA Clinical Research Phase 1":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
-          lasts several months. This phase is used to determine the safety and dosage of the drug,
-          and about 70% of these drugs move on to the next clinical research phase.
-      "FDA Clinical Research Phase 2":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
-          who must have the disease or condition the drug supposes to treat. This phase can last
-          from a few months to two years, and its purpose is to monitor the efficacy of the drug,
-          as well as note side effects that may occur.
-      "FDA Clinical Research Phase 3":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
-          and can last up to four years. It is used to continue monitoring the efficacy of
-          the drug, as well as exploring any longer-term adverse reactions.
-      "FDA Clinical Research Phase 4":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
-          volunteers who have the disease or condition and continues to monitor safety and efficacy.
-          If a drug passes this phase, it goes on to FDA review.
-      "FDA Fast Track":
-        description: >-
-          Fast track is a process designed to facilitate the development, and expedite the
-          review of drugs to treat serious conditions and fill an unmet medical need.
-          The purpose is to get important new drugs to the patient earlier. Fast Track
-          addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
-      "FDA Breakthrough Therapy":
-        description: >-
-          Breakthrough Therapy designation is a process designed to expedite the
-          development and review of drugs that are intended to treat a serious
-          condition and preliminary clinical evidence indicates that the drug may
-          demonstrate substantial improvement over available therapy on a clinically significant endpoint(s).
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
-      "FDA Accelerated Approval":
-        description: >-
-          When studying a new drug, it can sometimes take many years to learn whether a drug actually
-          provides a real effect on how a patient survives, feels, or functions. A positive therapeutic
-          effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”.
-          Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical
-          benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs
-          for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint.
-          Using a surrogate endpoint enabled the FDA to approve these drugs faster.
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
-      "FDA Priority Review":
-        description: >-
-          Prior to approval, each drug marketed in the United States must go through a detailed FDA review process.
-          In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving
-          the drug review time and created a two-tiered system of review times – Standard Review and Priority
-          Review. A Priority Review designation means FDA’s goal is to take action on an application
-          within 6 months (compared to 10 months under standard review).
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
-      "regular approval":
-      "post-approval withdrawal":
-
+        
 subsets:
 
   model_organism_database:
@@ -644,18 +530,15 @@ slots:
     domain: entity
     range: category type
     description: >-
-      Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the
-      biolink entity type class.
+      Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
        * In a neo4j database this MAY correspond to the neo4j label tag.
        * In an RDF database it should be a biolink model class URI.
-      This field is multi-valued. It should include values for ancestors of the biolink class; for example,
-      a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+      This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have
+      category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 
-      In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink
-      class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f`
-      may have a rdf:type assertion to a SO class such as TF_binding_site,
-      which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity,
-      biolink:MolecularEntity, biolink:NamedThing}
+      In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class
+      more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,
+      which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
     is_class_field: true
     multivalued: true
     in_subset:
@@ -688,6 +571,12 @@ slots:
     range: label type
     in_subset:
       - translator_minimal
+
+  filler:
+    is_a: node property
+    range: named thing
+    description: >-
+      The value in a property-value tuple
 
   stoichiometry:
     description: >-
@@ -1207,33 +1096,6 @@ slots:
     # if this also represents an interval of time.
     range: time type
 
-  is supplement:
-    description: >-
-    is_a: node property
-    range: chemical mixture
-
-  trade name:
-    description: >-
-    is_a: node property
-    range: chemical entity
-
-  available from:
-    description: >-
-    is_a: node property
-    multivalued: true
-    range: drug_availability_enum
-
-  animal model available from:
-    description: >-
-    is_a: node property
-    multivalued: true
-    range: disease or phenotypic feature
-
-  highest FDA approval status:
-    description: >-
-      Should be the highest level of FDA approval this chemical entity or device has, regardless of which
-      disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
-      approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
 
 ## --------------------
 ## PREDICATES/RELATIONS
@@ -1564,20 +1426,6 @@ slots:
     see_also:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
-
-  has real world evidence of association with:
-    is_a: related to
-    description: >-
-      this suggests the person has the disease in combination with other
-      triples that use this predicate
-    in_subset:
-      - translator_minimal
-    annotations:
-      tag: biolink:canonical_predicate
-      value: true
-
-  associated with real world evidence:
-    inverse: has real world evidence of association with
 
   active in:
     is_a: related to
@@ -2149,7 +1997,7 @@ slots:
       - CTD:increases_expression_of
 
   expression increased by:
-    is_a: expression affected by
+    is_a: affects expression of
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2175,7 +2023,7 @@ slots:
       - CHEMBL.MECHANISM:antisense_inhibitor
 
   expression decreased by:
-    is_a: expression affected by
+    is_a: affects expression of
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2392,8 +2240,7 @@ slots:
   affects molecular modification of:
     description: >-
       holds between two chemical entities where the action or effect of one leads changes in the molecular
-      modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of
-      phosphoryl group, or via redox reaction that adds or subtracts electrons)
+      modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
     is_a: affects
     in_subset:
       - translator_minimal
@@ -3930,8 +3777,7 @@ slots:
   gene associated with condition:
     is_a: genetic association
     description: >-
-      holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence,
-      contribute to, or correlate with
+      holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
     domain: gene
     range: disease or phenotypic feature
     annotations:
@@ -4037,7 +3883,6 @@ slots:
       - SEMMEDDB:causes
       - WIKIDATA_PROPERTY:P1542
       - SNOMED:cause_of
-      - RO:0003303
     broad_mappings:
       - RO:0002410
       - RO:0002506
@@ -4895,6 +4740,7 @@ slots:
       value: true
     in_subset:
       - translator_minimal
+    inverse: participates in
     close_mappings:
       - WIKIDATA_PROPERTY:P2283
     exact_mappings:
@@ -5695,7 +5541,7 @@ slots:
       tag: biolink:canonical_predicate
       value: true
     exact_mappings:
-      - NCIT:C37933
+      - DrugCentral:0000001
       - RTXKG1:contraindicated_for
 
   has contraindication:
@@ -5711,15 +5557,9 @@ slots:
     is_a: related to
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
+    inverse: has completed
     exact_mappings:
       - CL:has_not_completed
-    annotations:
-      tag: biolink:canonical_predicate
-      value: true
-
-  not completed by:
-    is_a: related to
-    inverse: has not completed
 
   has completed:
     is_a: related to
@@ -5731,10 +5571,6 @@ slots:
     exact_mappings:
       - CL:has_completed
       - RTXKG1:has_completed
-
-  completed by:
-    is_a: related to
-    inverse: has completed
 
   decreases molecular interaction:
     is_a: molecularly interacts with
@@ -5852,12 +5688,14 @@ slots:
       of entities can be taxonomically classified; see 'thing with taxon'
     in_subset:
       - translator_minimal
+    related_mappings:
+      # RO term 'never in taxon' is a negation of this biolink term
+      - RO:0002162
     close_mappings:
       # RTX contributed term is an inverse mapping
       - NCIT:is_organism_source_of_gene_product
       - NCIT:organism_has_gene
     exact_mappings:
-      - RO:0002162
       - WIKIDATA_PROPERTY:P703
     narrow_mappings:
       - NCIT:gene_found_in_organism
@@ -5891,31 +5729,6 @@ slots:
     aliases: ['edge property', 'statement property']
     description: >-
       any slot that relates an association to another entity
-
-  original_subject:
-    is_a: association slot
-    description: >-
-      used to hold the original subject of a relation (or predicate) that an external knowledge
-      source uses before transformation to match the biolink-model specification.
-
-  original_object:
-    is_a: association slot
-    description: >-
-      used to hold the original object of a relation (or predicate) that an external knowledge
-      source uses before transformation to match the biolink-model specification.
-
-  original_predicate:
-    aliases: ['original relation', 'relation']
-    is_a: association slot
-    description: >-
-      used to hold the original relation/predicate that an external knowledge
-      source uses before transformation to match the biolink-model specification.
-    id_prefixes:
-      - RO
-      - BSPO
-      - SIO
-    domain: association
-    range: uriorcurie
 
   subject:
     is_a: association slot
@@ -5977,7 +5790,18 @@ slots:
       - os:LogicalInterpretation
 
   relation:
-    deprecated: true
+    is_a: association slot
+    description: >-
+      The relation which describes an association between a subject and
+      an object in a more granular manner. Usually this is a term from
+      Relation Ontology, but it can be any edge CURIE.
+    domain: association
+    range: uriorcurie
+    required: true
+    id_prefixes:
+      - RO
+      - BSPO
+      - SIO
 
   negated:
     is_a: association slot
@@ -6218,7 +6042,6 @@ slots:
       An attribute that can be applied to an association where the association holds between two entities
       located or occurring in a particular environment. For example, two microbial taxa may interact in the context of
       a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
-  # TODO: add examples of values for this property.
       
   sequence localization attribute:
     is_a: association slot
@@ -6305,11 +6128,6 @@ slots:
     exact_mappings:
       - gff3:phase
 
-  FDA approval status:
-    is_a: association slot
-    description: >-
-    range: FDA_approval_status_enum
-
 classes:
 
   ## ----------
@@ -6321,24 +6139,21 @@ classes:
   ontology class:
     mixin: true
     description: >-
-      a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in
-      a biolink compatible KG can be considered both instances of biolink classes, and
-      OWL classes in their own right. In general you should not need to use this class directly.
-      Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897),
-      use bl:BiologicalProcess as the type.
+      a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both
+      instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly.
+      Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess
+      as the type.
     exact_mappings:
       - owl:Class
       - schema:Class
     comments:
       - >-
-         This is modeled as a mixin. 'ontology class' should not be the primary type of a
-         node in the KG. Instead you should use an informative bioloink category, such as AnatomicalEntity
-         (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
+         This is modeled as a mixin. 'ontology class' should not be the primary type of a node in the KG. Instead you should use an
+         informative bioloink category, such as AnatomicalEntity (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
       - >-
-         Note that formally this is a metaclass. Instances of this class are instances in the graph,
-         but can be the object of 'type' edges. For example, if we had a node in the graph representing
-         a specific brain of a specific patient (e.g brain001), this could have a category of bl:Sample,
-         and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
+         Note that formally this is a metaclass. Instances of this class are instances in the graph, but can be the object of 'type' edges.
+         For example, if we had a node in the graph representing a specific brain of a specific patient (e.g brain001), this could have 
+         a category of bl:Sample, and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
     see_also:
       - https://github.com/biolink/biolink-model/issues/486
     examples:
@@ -7228,13 +7043,8 @@ classes:
   genomic entity:
     mixin: true
     is_a: thing with taxon
-    slots:
-      - has biological sequence
     in_subset:
       - translator_minimal
-    narrow_mappings:
-      - UMLSSC:T028   # Gene or Genome
-      - GENO:0000897  # Genomic Entity
 
   molecular entity:
     is_a: chemical entity
@@ -7248,44 +7058,16 @@ classes:
       - UMLSSC:T085 # Molecular Sequence
     in_subset:
       - translator_minimal
-    id_prefixes:
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - DRUGBANK
-      - MESH
-      - CAS
-      - DrugCentral
-      - GTOPDB
-      - HMDB
-      - KEGG.COMPOUND
-      - ChemBank
-      - Aeolus
-      - PUBCHEM.SUBSTANCE
-      - SIDER.DRUG
-      - INCHI
-      - INCHIKEY
-      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN  ## G number
-      - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
-      - KEGG.ENVIRON ## E number
 
   chemical entity:
     is_a: named thing
+    abstract: true
     mixins:
       - physical essence
       - chemical or drug or treatment # issue 701
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     description: >-
       A chemical entity is a physical entity that pertains to chemistry or
       biochemistry.
-    slots:
-      - trade name
-      - available from
     exact_mappings:
       - CHEBI:24431
       - SIO:010004 # Chemical entity
@@ -7306,10 +7088,6 @@ classes:
       - UMLSSC:T167 # Substance
     in_subset:
       - translator_minimal
-    id_prefixes:
-      - UNII
-      - MESH
-      - CAS #CAS numbers are given for things like plant extracts as well.
 
   chemical substance:
     deprecated: >-
@@ -7350,7 +7128,6 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
-      - BIGG.METABOLITE
     slot_usage:
       id:
         examples:
@@ -7365,35 +7142,8 @@ classes:
     description: >-
       A chemical mixture is a chemical entity composed of two or more
       molecular entities.
-    slots:
-      - is supplement
-      - highest FDA approval status
     in_subset:
       - translator_minimal
-    id_prefixes:
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - DRUGBANK
-      - MESH
-      - CAS
-      - DrugCentral
-      - GTOPDB
-      - HMDB
-      - KEGG.COMPOUND
-      - ChemBank
-      - Aeolus
-      - PUBCHEM.SUBSTANCE
-      - SIDER.DRUG
-      - INCHI
-      - INCHIKEY
-      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN  ## G number
-      - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
-      - KEGG.ENVIRON ## E number
 
   nucleic acid entity:
     is_a: molecular entity
@@ -7401,44 +7151,23 @@ classes:
       A nucleic acid entity is a molecular entity characterized by
       availability in gene databases of nucleotide-based sequence
       representations of its precise sequence; for convenience of
-      representation, partial sequences of various kinds are included.
+      representation, partial sequences of various kinds are included,
+      even if they do not represent a physical molecule.
     aliases: [ 'sequence feature', 'genomic entity' ]
     mixins:
       - genomic entity
-      - physical essence
-      - ontology class
+    slots:
+      - has biological sequence
     exact_mappings:
       - SO:0000110
     narrow_mappings:
+      - UMLSSC:T028   # Gene or Genome
+      - GENO:0000897  # Genomic Entity
       - UMLSSC:T086   # Nucleotide Sequence
       - UMLSSC:T114   # Nucleic Acid, Nucleoside, or Nucleotide
     in_subset:
       - model_organism_database
       - translator_minimal
-    id_prefixes:
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - DRUGBANK
-      - MESH
-      - CAS
-      - DrugCentral
-      - GTOPDB
-      - HMDB
-      - KEGG.COMPOUND
-      - ChemBank
-      - Aeolus
-      - PUBCHEM.SUBSTANCE
-      - SIDER.DRUG
-      - INCHI
-      - INCHIKEY
-      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN  # G number
-      - KEGG.DRUG    # D number
-      - KEGG.DGROUP  # DG number
-      - KEGG.ENVIRON # E number
 
   molecular mixture:
     is_a: chemical mixture
@@ -7447,30 +7176,6 @@ classes:
       molecular entities with known concentration and stoichiometry.
     in_subset:
       - translator_minimal
-    id_prefixes:
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - DRUGBANK
-      - MESH
-      - CAS
-      - DrugCentral
-      - GTOPDB
-      - HMDB
-      - KEGG.COMPOUND
-      - ChemBank
-      - Aeolus
-      - PUBCHEM.SUBSTANCE
-      - SIDER.DRUG
-      - INCHI
-      - INCHIKEY
-      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN  ## G number
-      - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
-      - KEGG.ENVIRON ## E number
 
   complex molecular mixture:
     is_a: chemical mixture
@@ -7479,30 +7184,6 @@ classes:
       more molecular entities with unknown concentration and stoichiometry.
     in_subset:
       - translator_minimal
-    id_prefixes:
-      - PUBCHEM.COMPOUND
-      - CHEMBL.COMPOUND
-      - UNII
-      - CHEBI
-      - DRUGBANK
-      - MESH
-      - CAS
-      - DrugCentral
-      - GTOPDB
-      - HMDB
-      - KEGG.COMPOUND
-      - ChemBank
-      - Aeolus
-      - PUBCHEM.SUBSTANCE
-      - SIDER.DRUG
-      - INCHI
-      - INCHIKEY
-      # - iupac # is not actually a CURIE namespace but only a naming convention for chemistry
-      # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN  ## G number
-      - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
-      - KEGG.ENVIRON ## E number
 
   biological process or activity:
     description: >-
@@ -7557,8 +7238,6 @@ classes:
       - KEGG.REACTION  ## R number
       - KEGG.RCLASS    ## RC number
       - KEGG.ENZYME    ## EC number
-      - UMLS
-      - BIGG.REACTION
 
   biological process:
     is_a: biological process or activity
@@ -7632,7 +7311,6 @@ classes:
     is_a: biological process
     mixins:
       - ontology class
-      - activity and behavior
     exact_mappings:
       - GO:0007610
       # Behavior
@@ -7648,6 +7326,11 @@ classes:
       # Individual Behavior
       - UMLSSC:T055
       - UMLSST:inbe
+
+  death:
+    is_a: biological process
+    exact_mappings:
+      - GO:0016265
 
   ## (Bio)chemistry
 
@@ -7689,11 +7372,6 @@ classes:
       - RXCUI
       - NDC
       - PHARMGKB.DRUG
-      - DRUGBANK
-      - DrugCentral
-      - KEGG.DRUG    # D number
-      - KEGG.DGROUP  # DG number
-      - SIDER.DRUG
 
   ## Food
 
@@ -8087,21 +7765,7 @@ classes:
       - FAO
       
 
-  ## genetic entity mixins
-
-  chemical entity or gene or gene product:
-    description: >-
-      A union of chemical entities and children, and gene or gene product.
-      This mixin is helpful to use when searching across
-      chemical entities that must include genes and their children as chemical entities.
-    mixin: true
-
-  chemical entity or protein or polypeptide:
-    description: >-
-      A union of chemical entities and children, and protein and polypeptide.
-      This mixin is helpful to use when searching across
-      chemical entities that must include genes and their children as chemical entities.
-    mixin: true
+  ## nucleic acid entity mixins
 
   macromolecular machine mixin:
     description: >-
@@ -8135,13 +7799,10 @@ classes:
       necessary to encode a functional transcript. A gene locus may include
       regulatory regions, transcribed regions and/or other
       functional sequence regions.
-    is_a: biological entity
+    is_a: nucleic acid entity
     mixins:
       - gene or gene product
-      - genomic entity
-      - chemical entity or gene or gene product
-      - physical essence
-      - ontology class
+      - thing with taxon
     aliases: ['locus']
     slots:
       - symbol
@@ -8225,8 +7886,6 @@ classes:
     is_a: biological entity
     mixins:
       - genomic entity
-      - physical essence
-      - ontology class
     description: >-
       A genome is the sum of genetic material within a cell or virion.
     exact_mappings:
@@ -8268,17 +7927,13 @@ classes:
 
   polypeptide:
     aliases: [ 'amino acid entity' ]
-    is_a: biological entity
+    is_a: molecular entity
     description: >-
       A polypeptide is a molecular entity characterized by availability
       in protein databases of amino-acid-based sequence representations
       of its precise primary structure; for convenience of representation,
       partial sequences of various kinds are included, even if they do not
       represent a physical molecule.
-    mixins:
-      - thing with taxon
-      - chemical entity or gene or gene product
-      - chemical entity or protein or polypeptide
     id_prefixes:
       - UniProtKB
       - PR
@@ -8303,13 +7958,6 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
-      - thing with taxon
-    id_prefixes:
-      - UniProtKB
-      - PR
-      - ENSEMBL # ENSEMBL:ENSP*
-      - FB      # FlyBase FBpp*
-      - UMLS
     exact_mappings:
       - PR:000000001
       - SIO:010043
@@ -8331,7 +7979,7 @@ classes:
     mixins:
       - gene product isoform mixin
     id_prefixes:
-      - UniProtKB # UniProtKB:([A-Z0-9]+-\d+)
+      - UniProtKB ## UniProtKB:([A-Z0-9]+-\d+)
       - UNIPROT.ISOFORM 
       - PR
       - ENSEMBL
@@ -8410,7 +8058,7 @@ classes:
 
   gene family:
     aliases: ['orthogroup','protein family']
-    is_a: biological entity
+    is_a: nucleic acid entity
     exact_mappings:
       - NCIT:C26004
       - WIKIDATA:Q2278983
@@ -8423,7 +8071,6 @@ classes:
       - WIKIDATA:Q417841
     mixins:
       - gene grouping mixin
-      - chemical entity or gene or gene product
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
@@ -8446,7 +8093,6 @@ classes:
       - RFAM ## RNAs only
       - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
       - EGGNOG
-      - COG
     in_subset:
       - model_organism_database
 
@@ -8460,8 +8106,6 @@ classes:
     mixins:
       - physical essence
       - genomic entity
-      - physical essence
-      - ontology class
     description: >-
       An information content entity that describes a genome by specifying the
       total variation in genomic sequence and/or gene expression, relative to
@@ -8484,7 +8128,6 @@ classes:
     mixins:
       - genomic entity
       - physical essence
-      - ontology class
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
@@ -8498,11 +8141,7 @@ classes:
     aliases: ['allele']
     local_names:
       agr: allele
-    is_a: biological entity
-    mixins:
-      - genomic entity
-      - physical essence
-      - ontology class
+    is_a: nucleic acid entity
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
@@ -8571,15 +8210,11 @@ classes:
 
   reagent targeted gene:
     aliases: ['sequence targeting reagent']
-    is_a: biological entity
+    is_a: nucleic acid entity
     description: >-
       A gene altered in its expression level in the context of some
       experiment as a result of being targeted by gene-knockdown
       reagent(s) such as a morpholino or RNAi.
-    mixins:
-      - genomic entity
-      - physical essence
-      - ontology class
     exact_mappings:
       - GENO:0000504
     in_subset:
@@ -8742,14 +8377,13 @@ classes:
     in_subset:
       - model_organism_database
 
-  # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
+    is_a: biological entity
     mixins:
       - exposure event
       - gene grouping mixin
       - physical essence
       - genomic entity
-      - ontology class
     description: >-
       A genomic background exposure is where an individual's specific genomic background
       of genes, sequence variants or other pre-existing genomic conditions constitute
@@ -8780,12 +8414,15 @@ classes:
       - EFO:0009708
 
   pathological process exposure:
+    is_a: pathological process
     mixins:
       - exposure event
     description: >-
       A pathological process, when viewed as an exposure, representing
-      a precondition, leading to or influencing an outcome,
+      an precondition, leading to or influencing an outcome,
       e.g. autoimmunity leading to disease.
+    #exact_mappings:
+    #  -
 
   pathological anatomical structure:
     description: >-
@@ -8794,16 +8431,22 @@ classes:
     is_a: anatomical entity
     mixins:
       - pathological entity mixin
+    #exact_mappings:
+    #  -
 
   pathological anatomical exposure:
+    is_a: pathological anatomical structure
     mixins:
       - exposure event
     description: >-
       An abnormal anatomical structure, when viewed as an exposure,
       representing an precondition, leading to or influencing an outcome,
       e.g. thrombosis leading to an ischemic disease outcome.
+    #exact_mappings:
+    #  -
 
   disease or phenotypic feature exposure:
+    is_a: disease or phenotypic feature
     mixins:
       - exposure event
       - pathological entity mixin
@@ -8812,13 +8455,16 @@ classes:
       represents an precondition, leading to or influencing an outcome,
       e.g. HIV predisposing an individual to infections; a relative deficiency
       of skin pigmentation predisposing an individual to skin cancer.
+    #exact_mappings:
+    #  -
 
   chemical exposure:
+    is_a: chemical entity
     mixins:
       - exposure event
     description: >-
       A chemical exposure is an intake of a particular
-      chemical entity.
+      chemical entity, other than a drug.
     exact_mappings:
       # this ECTO term is not visibly defined but
       # the 9000000-series identifiers seems to be the
@@ -8830,12 +8476,14 @@ classes:
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
+    is_a: chemical exposure
+
 
   drug exposure:
-    is_a: chemical exposure
     aliases: ['drug intake', 'drug dose', 'medication intake']
     description: >-
       A drug exposure is an intake of a particular drug.
+    is_a: drug
     mixins:
       - exposure event
     broad_mappings:
@@ -8844,7 +8492,6 @@ classes:
     exact_mappings:
       - ECTO:0000509
 
-  # TODO: deprecate?
   drug to gene interaction exposure:
     description: >-
       drug to gene interaction exposure is a drug exposure is where the
@@ -8853,6 +8500,8 @@ classes:
     is_a: drug exposure
     mixins:
       - gene grouping mixin
+    # exact_mappings:
+    #  -
 
   treatment:
     aliases: ['medical action', 'medical intervention']
@@ -8871,40 +8520,50 @@ classes:
     exact_mappings:
       - OGMS:0000090
       - SIO:001398
-    broad_mappings:
-      - MAXO:0000058
 
   biotic exposure:
     aliases: ['viral exposure','bacterial exposure']
+    is_a: organism taxon
     mixins:
       - exposure event
     description: >-
       An external biotic exposure is an intake of (sometimes pathological)
       biological organisms (including viruses).
+    # exact_mappings:
+    #  -
 
   geographic exposure:
-    is_a: environmental exposure
+    is_a: geographic location
     mixins:
       - exposure event
     description: >-
       A geographic exposure is a factor relating to geographic
       proximity to some impactful entity.
+    # exact_mappings:
+    #  -
 
   environmental exposure:
+    is_a: environmental process
     mixins:
       - exposure event
     description: >-
       A environmental exposure is a factor relating to abiotic processes
       in the environment including sunlight (UV-B), atmospheric (heat,
       cold, general pollution) and water-born contaminants.
+    # exact_mappings:
+    #  -
 
   behavioral exposure:
+    is_a: behavior
     mixins:
       - exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
+    # exact_mappings:
+    #  -
 
   socioeconomic exposure:
+    is_a: behavior
     mixins:
       - exposure event
     description: >-
@@ -8914,6 +8573,8 @@ classes:
       has attribute:
         range: socioeconomic attribute
         required: true
+    # exact_mappings:
+    #  -
 
   ## Outcomes
 
@@ -8925,20 +8586,27 @@ classes:
       biological or non-biological (e.g. clinical) outcomes.
 
   pathological process outcome:
+    is_a: pathological process
     mixins:
       - outcome
     description: >-
       An outcome resulting from an exposure event which
       is the manifestation of a pathological process.
+    #exact_mappings:
+    #  -
 
   pathological anatomical outcome:
+    is_a: pathological anatomical structure
     mixins:
       - outcome
     description: >-
       An outcome resulting from an exposure event which
       is the manifestation of an abnormal anatomical structure.
+    #exact_mappings:
+    #  -
 
   disease or phenotypic feature outcome:
+    is_a: disease or phenotypic feature
     mixins:
       - outcome
     description: >-
@@ -8946,6 +8614,7 @@ classes:
       is the manifestation of a disease or other characteristic phenotype.
 
   behavioral outcome:
+    is_a: behavior
     mixins:
       - outcome
     description: >-
@@ -8953,6 +8622,7 @@ classes:
       the manifestation of human behavior.
 
   hospitalization outcome:
+    is_a: hospitalization
     mixins:
       - outcome
     description: >-
@@ -8961,12 +8631,14 @@ classes:
       room visit) or chronic (inpatient) hospitalization.
 
   mortality outcome:
+    is_a: death
     mixins:
       - outcome
     description: >-
       An outcome of death from resulting from an exposure event.
 
   epidemiological outcome:
+    is_a: biological entity
     mixins:
       - outcome
     description: >-
@@ -8976,6 +8648,7 @@ classes:
       - NCIT:C19291
 
   socioeconomic outcome:
+    is_a: behavior
     mixins:
       - outcome
     description: >-
@@ -9521,7 +9194,14 @@ classes:
       - object
 
   exposure event to entity association mixin:
-    deprecated: true
+    description: >-
+      An association between some exposure event and some entity.
+    mixin: true
+    defining_slots:
+      - subject
+    slot_usage:
+      subject:
+        range: exposure event
 
   entity to outcome association mixin:
     description: >-
@@ -9697,7 +9377,6 @@ classes:
         description: >-
           genotype that is associated with the phenotypic feature
 
-  # ie: smoke exposure to coughing phenotype? is this a denormalization?
   exposure event to phenotypic feature association:
     is_a: association
     defining_slots:
@@ -10310,24 +9989,6 @@ classes:
         examples:
           - value: GO:0016301
             description: kinase activity
-
-  entity to disease association:
-    is_a: association
-    exact_mappings:
-    slots:
-      - FDA approval status
-    defining_slots:
-      - subject
-      - object
-
-  entity to phenotypic feature association:
-    is_a: association
-    exact_mappings:
-    slots:
-      - FDA approval status
-    defining_slots:
-      - subject
-      - object
 
   ## -----------------
   ## SEQUENCE FEATURES
