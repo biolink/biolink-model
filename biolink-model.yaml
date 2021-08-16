@@ -1940,7 +1940,6 @@ slots:
       - translator_minimal
     domain: chemical entity
     range: chemical entity
-
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -1948,7 +1947,7 @@ slots:
       - CTD:affects_abundance_of
 
   abundance affected by:
-    is_a: affects
+    is_a: affected by
     inverse: affects abundance of
     domain: chemical entity
     range: chemical entity
@@ -2023,7 +2022,7 @@ slots:
     description: >-
       holds between two chemical entities where the action or effect of one is changed by the
       activity of the other within a system of interest
-    is_a: affects
+    is_a: affected by
     domain: chemical entity
     range: chemical entity
 
@@ -2146,7 +2145,7 @@ slots:
       - CTD:affects_expression_of
 
   expression affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2223,7 +2222,7 @@ slots:
       - CTD:affects_folding_of
 
   folding affected by:
-    is_a: affects
+    is_a: affected by
     inverse: affects folding of
     domain: nucleic acid entity
     range: chemical entity
@@ -2293,7 +2292,7 @@ slots:
       - GOREL:0002003
 
   localization affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2367,7 +2366,7 @@ slots:
       - CTD:affects_metabolic_processing_of
 
   metabolic processing affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2475,7 +2474,7 @@ slots:
       - CTD:affects_carboxylation
 
   molecular modification affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2617,7 +2616,7 @@ slots:
       - CTD:affects_synthesis_of
 
   sythesis affected by:
-    is_a: affects
+    is_a: affected by
     domain: chemical entity
     range: chemical entity
     inverse: affects synthesis of
@@ -2697,7 +2696,7 @@ slots:
       - CTD:affects_hydrolysis
 
   degradation affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2793,7 +2792,7 @@ slots:
       - CTD:affects_mutation_rate_of
 
   mutation rate affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2873,7 +2872,7 @@ slots:
       - CTD:affects_response_to
 
   response affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2955,7 +2954,7 @@ slots:
       - CTD:affects_splicing_of
 
   splicing affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: transcript
@@ -3034,7 +3033,7 @@ slots:
       - CTD:affects_stability_of
 
   stability affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3114,7 +3113,7 @@ slots:
       - RO:0002345
 
   transport affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3193,7 +3192,7 @@ slots:
       - CTD:affects_export
 
   secretion affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3275,7 +3274,7 @@ slots:
       - CTD:affects_import
 
   uptake affected by:
-    is_a: affects
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
