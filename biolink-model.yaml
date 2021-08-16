@@ -1971,7 +1971,7 @@ slots:
       - CTD:increases_abundance_of
 
   abundance increased by:
-    is_a: affects abundance of
+    is_a: abundance affected by
     inverse: increases abundance of
     domain: chemical entity
     range: chemical entity
@@ -1995,7 +1995,7 @@ slots:
       - CTD:decreases_abundance_of
 
   abundance decreased by:
-    is_a: affects abundance of
+    is_a: abundance affected by
     inverse: decreases abundance of
     domain: chemical entity
     range: chemical entity
@@ -2069,7 +2069,7 @@ slots:
       - DGIdb:stimulator
 
   activity increased by:
-    is_a: affects activity of
+    is_a: activity affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2124,7 +2124,7 @@ slots:
       - DGIdb:inverse_agonist
 
   activity decreased by:
-    is_a: affects activity of
+    is_a: activity affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2245,7 +2245,7 @@ slots:
       - CTD:increases_folding_of
 
   folding increased by:
-    is_a: affects folding of
+    is_a: folding affected by
     inverse: increases folding of
     domain: nucleic acid entity
     range: chemical entity
@@ -2268,7 +2268,7 @@ slots:
       - CTD:decreases_folding_of
 
   folding decreased by:
-    is_a: affects folding of
+    is_a: folding affected by
     inverse: decreases folding of
     domain: nucleic acid entity
     range: chemical entity
@@ -2317,7 +2317,7 @@ slots:
       - CTD:increases_localization_of
 
   localization increased by:
-    is_a: affects localization of
+    is_a: localization affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2341,7 +2341,7 @@ slots:
       - CTD:decreases_localization_of
 
   localization decreased by:
-    is_a: affects localization of
+    is_a: localization affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2393,7 +2393,7 @@ slots:
       - NCIT:enzyme_metabolizes_chemical_or_drug
 
   metabolic processing increased by:
-    is_a: affects metabolic processing of
+    is_a: metabolic processing affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2418,7 +2418,7 @@ slots:
       - CTD:decreases_metabolic_processing_of
 
   metabolic processing decreased by:
-    is_a: affects metabolic processing of
+    is_a: metabolic processing affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2534,7 +2534,7 @@ slots:
       - GAMMA:oxidizer
 
   molecular modification increased by:
-    is_a: affects molecular modification of
+    is_a: molecular modification affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2593,7 +2593,7 @@ slots:
       - GAMMA:deoxidizer
 
   molecular modification decreased by:
-    is_a: affects molecular modification of
+    is_a: molecular modification affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2641,7 +2641,7 @@ slots:
       - CTD:increases_synthesis_of
 
   synthesis increased by:
-    is_a: affects synthesis of
+    is_a: synthesis affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2667,7 +2667,7 @@ slots:
       - GAMMA:inhibition_of_synthesis
 
   synthesis decreased by:
-    is_a: affects synthesis of
+    is_a: synthesis affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2737,7 +2737,7 @@ slots:
       - GOREL:0002004
 
   degradation increased by:
-    is_a: affects degradation of
+    is_a: degredation affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2765,7 +2765,7 @@ slots:
       - CTD:decreases_hydrolysis
 
   degradation decreased by:
-    is_a: affects degradation of
+    is_a: degradation affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2820,6 +2820,7 @@ slots:
       - CTD:increases_mutagenesis
 
   mutation rate increased by:
+    is_a: mutation rate affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2847,7 +2848,7 @@ slots:
       - CTD:decreases_mutagenesis
 
   mutation rate decreased by:
-    is_a: affects mutation rate of
+    is_a: mutation rated affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2899,7 +2900,7 @@ slots:
       - CTD:increases_response_to
 
   response increased by:
-    is_a: affects response to
+    is_a: response affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2929,7 +2930,7 @@ slots:
       - GAMMA:desensitize_the_target
 
   response decreased by:
-    is_a: affects response to
+    is_a: response affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2981,7 +2982,7 @@ slots:
       - CTD:increases_splicing_of
 
   splicing increased by:
-    is_a: affects splicing of
+    is_a: splicing affected by
     in_subset:
       - translator_minimal
     domain: transcript
@@ -3008,7 +3009,7 @@ slots:
       - CTD:decreases_splicing_of
 
   splicing decreased by:
-    is_a: affects splicing of
+    is_a: splicing affected by
     in_subset:
       - translator_minimal
     domain: transcript
@@ -3061,7 +3062,7 @@ slots:
       - CTD:increases_stability_of
 
   stability increased by:
-    is_a: affects stability of
+    is_a: stability affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3086,7 +3087,7 @@ slots:
       - CTD:decreases_stability_of
 
   stability decreased by:
-    is_a: affects stability of
+    is_a: stability affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3141,7 +3142,7 @@ slots:
       - CTD:increases_transport_of
 
   transport increased by:
-    is_a: affects transport of
+    is_a: transport affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3166,7 +3167,7 @@ slots:
       - CTD:decreases_transport_of
 
   transport decreased by:
-    is_a: affects transport of
+    is_a: transport affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3220,7 +3221,7 @@ slots:
       - CTD:increases_export
 
   secretion increased by:
-    is_a: affects secretion of
+    is_a: secretion affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3248,7 +3249,7 @@ slots:
       - CTD:decreases_export
 
   secretion decreased by:
-    is_a: affects secretion of
+    is_a: secretion affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3302,7 +3303,7 @@ slots:
       - CTD:increases_import
 
   uptake increased by:
-    is_a: affects uptake of
+    is_a: updake affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3330,7 +3331,7 @@ slots:
       - CTD:decreases_import
 
   uptake decreased by:
-    is_a: affects uptake of
+    is_a: updake affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
