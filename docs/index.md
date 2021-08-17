@@ -473,10 +473,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
      * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [actively involves](actively_involves.md)
+     * [capability of](capability_of.md)
  * [activity affected by](activity_affected_by.md) - holds between two chemical entities where the action or effect of one is changed by the activity of the other within a system of interest
      * [activity decreased by](activity_decreased_by.md)
      * [activity increased by](activity_increased_by.md)
- * [activity affects](activity_affects.md)
  * [activity decreased by](activity_decreased_by.md)
  * [activity increased by](activity_increased_by.md)
  * [acts upstream of](acts_upstream_of.md)
@@ -548,11 +548,10 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [uptake decreased by](uptake_decreased_by.md)
          * [uptake increased by](uptake_increased_by.md)
  * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-     * [activity affects](activity_affects.md)
      * [affects abundance of](affects_abundance_of.md) - holds between two chemical entities where the action or effect of one changes the amount of the  other within a system of interest
          * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical entities where the action or effect of one decreases the amount of the other within a system of interest
          * [increases abundance of](increases_abundance_of.md) - holds between two chemical entities where the action or effect of one increases the amount of the other within a system of interest
-     * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the  other within a system of interest
+     * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the other within a system of interest
          * [decreases activity of](decreases_activity_of.md) - holds between two chemical entities where the action or effect of one decreases the  activity of the other within a system of interest
          * [increases activity of](increases_activity_of.md) - holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
      * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
@@ -612,7 +611,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [affects abundance of](affects_abundance_of.md) - holds between two chemical entities where the action or effect of one changes the amount of the  other within a system of interest
      * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical entities where the action or effect of one decreases the amount of the other within a system of interest
      * [increases abundance of](increases_abundance_of.md) - holds between two chemical entities where the action or effect of one increases the amount of the other within a system of interest
- * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the  other within a system of interest
+ * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the other within a system of interest
      * [decreases activity of](decreases_activity_of.md) - holds between two chemical entities where the action or effect of one decreases the  activity of the other within a system of interest
      * [increases activity of](increases_activity_of.md) - holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
  * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
@@ -666,9 +665,11 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
+ * [associated with real world evidence](associated_with_real_world_evidence.md)
  * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
  * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
  * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+ * [capability of](capability_of.md)
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [catalyzes](catalyzes.md)
  * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
@@ -691,6 +692,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [completed by](completed_by.md)
  * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
  * [consumes](consumes.md)
+ * [contains process](contains_process.md)
  * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
  * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
      * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
@@ -779,6 +781,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
  * [has active ingredient](has_active_ingredient.md) - holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component
  * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
+ * [has catalyst](has_catalyst.md)
  * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
  * [has contraindication](has_contraindication.md)
  * [has decreased amount](has_decreased_amount.md)
@@ -809,20 +812,27 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
      * [has variant part](has_variant_part.md) - holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
-     * [catalyzes](catalyzes.md)
+     * [actively involves](actively_involves.md)
+         * [capability of](capability_of.md)
      * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
+     * [has catalyst](has_catalyst.md)
      * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
          * [consumes](consumes.md)
      * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
      * [has substrate](has_substrate.md)
-     * [is input of](is_input_of.md)
-     * [is output of](is_output_of.md)
  * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
  * [has positive upstream actor](has_positive_upstream_actor.md)
  * [has positive upstream or within actor](has_positive_upstream_or_within_actor.md)
- * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this suggests the person has the disease in combination with other triples that use this predicate
+ * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
  * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
  * [has sequence variant](has_sequence_variant.md)
+     * [has frameshift variant](has_frameshift_variant.md)
+     * [has missense variant](has_missense_variant.md)
+     * [has nearby variant](has_nearby_variant.md)
+     * [has non coding variant](has_non_coding_variant.md)
+     * [has nonsense variant](has_nonsense_variant.md)
+     * [has splice site variant](has_splice_site_variant.md)
+     * [has synonymous variant](has_synonymous_variant.md)
  * [has splice site variant](has_splice_site_variant.md)
  * [has substrate](has_substrate.md)
  * [has synonymous variant](has_synonymous_variant.md)
@@ -874,7 +884,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [molecular interaction decreased by](molecular_interaction_decreased_by.md)
              * [molecular interaction increased by](molecular_interaction_increased_by.md)
  * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
- * [is catalyst of](is_catalyst_of.md)
  * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
  * [is input of](is_input_of.md)
@@ -886,13 +895,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [is nonsense variant of](is_nonsense_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
  * [is output of](is_output_of.md)
  * [is sequence variant of](is_sequence_variant_of.md) - holds between a sequence variant and a nucleic acid entity
-     * [has frameshift variant](has_frameshift_variant.md)
-     * [has missense variant](has_missense_variant.md)
-     * [has nearby variant](has_nearby_variant.md)
-     * [has non coding variant](has_non_coding_variant.md)
-     * [has nonsense variant](has_nonsense_variant.md)
-     * [has splice site variant](has_splice_site_variant.md)
-     * [has synonymous variant](has_synonymous_variant.md)
      * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
      * [is missense variant of](is_missense_variant_of.md) - holds between a gene  and a sequence variant, such the sequence variant results in a different amino acid sequence but where the length is preserved.
      * [is nearby variant of](is_nearby_variant_of.md) - holds between a sequence variant and a gene sequence that the variant is genomically close to.
@@ -968,9 +970,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
      * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
          * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
-     * [actively involves](actively_involves.md)
+     * [catalyzes](catalyzes.md)
      * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
-     * [is catalyst of](is_catalyst_of.md)
+     * [is input of](is_input_of.md)
+     * [is output of](is_output_of.md)
      * [is substrate of](is_substrate_of.md)
  * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
  * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
@@ -1066,11 +1069,10 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [uptake decreased by](uptake_decreased_by.md)
              * [uptake increased by](uptake_increased_by.md)
      * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-         * [activity affects](activity_affects.md)
          * [affects abundance of](affects_abundance_of.md) - holds between two chemical entities where the action or effect of one changes the amount of the  other within a system of interest
              * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical entities where the action or effect of one decreases the amount of the other within a system of interest
              * [increases abundance of](increases_abundance_of.md) - holds between two chemical entities where the action or effect of one increases the amount of the other within a system of interest
-         * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the  other within a system of interest
+         * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the other within a system of interest
              * [decreases activity of](decreases_activity_of.md) - holds between two chemical entities where the action or effect of one decreases the  activity of the other within a system of interest
              * [increases activity of](increases_activity_of.md) - holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
          * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
@@ -1130,6 +1132,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
          * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
          * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
+     * [associated with real world evidence](associated_with_real_world_evidence.md)
      * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
      * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
      * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
@@ -1141,6 +1144,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex mixin
          * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
      * [completed by](completed_by.md)
+     * [contains process](contains_process.md)
      * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
      * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
          * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
@@ -1181,18 +1185,25 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
      * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
      * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
-         * [catalyzes](catalyzes.md)
+         * [actively involves](actively_involves.md)
+             * [capability of](capability_of.md)
          * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
+         * [has catalyst](has_catalyst.md)
          * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
              * [consumes](consumes.md)
          * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
          * [has substrate](has_substrate.md)
-         * [is input of](is_input_of.md)
-         * [is output of](is_output_of.md)
      * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
-     * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this suggests the person has the disease in combination with other triples that use this predicate
+     * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
      * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
      * [has sequence variant](has_sequence_variant.md)
+         * [has frameshift variant](has_frameshift_variant.md)
+         * [has missense variant](has_missense_variant.md)
+         * [has nearby variant](has_nearby_variant.md)
+         * [has non coding variant](has_non_coding_variant.md)
+         * [has nonsense variant](has_nonsense_variant.md)
+         * [has splice site variant](has_splice_site_variant.md)
+         * [has synonymous variant](has_synonymous_variant.md)
      * [has upstream actor](has_upstream_actor.md)
          * [has negative upstream actor](has_negative_upstream_actor.md)
          * [has positive upstream actor](has_positive_upstream_actor.md)
@@ -1214,13 +1225,6 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [molecular interaction increased by](molecular_interaction_increased_by.md)
      * [is molecular consequence of](is_molecular_consequence_of.md)
      * [is sequence variant of](is_sequence_variant_of.md) - holds between a sequence variant and a nucleic acid entity
-         * [has frameshift variant](has_frameshift_variant.md)
-         * [has missense variant](has_missense_variant.md)
-         * [has nearby variant](has_nearby_variant.md)
-         * [has non coding variant](has_non_coding_variant.md)
-         * [has nonsense variant](has_nonsense_variant.md)
-         * [has splice site variant](has_splice_site_variant.md)
-         * [has synonymous variant](has_synonymous_variant.md)
          * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
          * [is missense variant of](is_missense_variant_of.md) - holds between a gene  and a sequence variant, such the sequence variant results in a different amino acid sequence but where the length is preserved.
          * [is nearby variant of](is_nearby_variant_of.md) - holds between a sequence variant and a gene sequence that the variant is genomically close to.
@@ -1256,16 +1260,17 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
          * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
              * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
-         * [actively involves](actively_involves.md)
+         * [catalyzes](catalyzes.md)
          * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
-         * [is catalyst of](is_catalyst_of.md)
+         * [is input of](is_input_of.md)
+         * [is output of](is_output_of.md)
          * [is substrate of](is_substrate_of.md)
      * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
-     * [prevented by](prevented_by.md) - holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
      * [produced by](produced_by.md)
      * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
      * [related condition](related_condition.md)
      * [risk affected by](risk_affected_by.md)
+         * [prevented by](prevented_by.md) - holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
      * [sequence location of](sequence_location_of.md)
      * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
          * [chemically similar to](chemically_similar_to.md) - holds between one small molecule entity and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
@@ -1275,6 +1280,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
      * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
      * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
+     * [taxon of](taxon_of.md)
      * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
          * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
          * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
@@ -1290,6 +1296,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [response decreased by](response_decreased_by.md)
  * [response increased by](response_increased_by.md)
  * [risk affected by](risk_affected_by.md)
+     * [prevented by](prevented_by.md) - holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
  * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
  * [secretion affected by](secretion_affected_by.md)
      * [secretion decreased by](secretion_decreased_by.md)
@@ -1320,6 +1327,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [synthesis increased by](synthesis_increased_by.md)
  * [synthesis decreased by](synthesis_decreased_by.md)
  * [synthesis increased by](synthesis_increased_by.md)
+ * [taxon of](taxon_of.md)
  * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
      * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
      * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
@@ -1611,7 +1619,6 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Other Slots
 
- * [associated with real world evidence](associated_with_real_world_evidence.md)
  * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * [consumed by](consumed_by.md)
  * [description](description.md) - a human-readable description of an entity

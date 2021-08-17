@@ -14,11 +14,11 @@ URI: [biolink:catalyzes](https://w3id.org/biolink/vocab/catalyzes)
 
 ## Domain and Range
 
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
 
 ## Parents
 
- *  is_a: [has participant](has_participant.md)
+ *  is_a: [participates in](participates_in.md)
 
 ## Children
 

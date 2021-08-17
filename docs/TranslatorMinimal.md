@@ -30,7 +30,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [activity increased by](activity_increased_by.md)
  * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
  * [affects abundance of](affects_abundance_of.md) - holds between two chemical entities where the action or effect of one changes the amount of the  other within a system of interest
- * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the  other within a system of interest
+ * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the other within a system of interest
  * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
  * [affects expression of](affects_expression_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
  * [affects folding of](affects_folding_of.md) - holds between two chemical entities where the action or effect of one changes the rate or quality of folding of the other
@@ -111,7 +111,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
  * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
- * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this suggests the person has the disease in combination with other triples that use this predicate
+ * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
  * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
  * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
  * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population

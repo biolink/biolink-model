@@ -18,7 +18,7 @@ URI: [biolink:has_frameshift_variant](https://w3id.org/biolink/vocab/has_framesh
 
 ## Parents
 
- *  is_a: [is sequence variant of](is_sequence_variant_of.md)
+ *  is_a: [has sequence variant](has_sequence_variant.md)
 
 ## Children
 

@@ -21,10 +21,11 @@ URI: [biolink:actively_involves](https://w3id.org/biolink/vocab/actively_involve
 
 ## Parents
 
- *  is_a: [participates in](participates_in.md)
+ *  is_a: [has participant](has_participant.md)
 
 ## Children
 
+ *  [capability of](capability_of.md)
 
 ## Used by
 

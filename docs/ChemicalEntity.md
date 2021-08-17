@@ -51,7 +51,6 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  *  **[ChemicalEntity](ChemicalEntity.md)** *[abundance decreased by](abundance_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[abundance increased by](abundance_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[activity affected by](activity_affected_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[ChemicalEntity](ChemicalEntity.md)** *[activity affects](activity_affects.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[activity decreased by](activity_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[activity increased by](activity_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[affects abundance of](affects_abundance_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**

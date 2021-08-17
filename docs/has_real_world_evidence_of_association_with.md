@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-this suggests the person has the disease in combination with other triples that use this predicate
+this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
 
 URI: [biolink:has_real_world_evidence_of_association_with](https://w3id.org/biolink/vocab/has_real_world_evidence_of_association_with)
 

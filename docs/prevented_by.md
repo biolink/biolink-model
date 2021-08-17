@@ -18,7 +18,7 @@ URI: [biolink:prevented_by](https://w3id.org/biolink/vocab/prevented_by)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [risk affected by](risk_affected_by.md)
 
 ## Children
 

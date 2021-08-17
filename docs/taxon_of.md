@@ -1,16 +1,16 @@
 ---
 parent: Predicates
-title: biolink:risk_affected_by
+title: biolink:taxon_of
 grand_parent: Slots
 layout: default
 ---
 
-# Relation: risk_affected_by
+# Relation: taxon_of
 
 
 
 
-URI: [biolink:risk_affected_by](https://w3id.org/biolink/vocab/risk_affected_by)
+URI: [biolink:taxon_of](https://w3id.org/biolink/vocab/taxon_of)
 
 ## Domain and Range
 
@@ -22,7 +22,6 @@ URI: [biolink:risk_affected_by](https://w3id.org/biolink/vocab/risk_affected_by)
 
 ## Children
 
- *  [prevented by](prevented_by.md)
 
 ## Used by
 

@@ -25,7 +25,6 @@ URI: [biolink:affects](https://w3id.org/biolink/vocab/affects)
 
 ## Children
 
- *  [activity affects](activity_affects.md)
  *  [affects abundance of](affects_abundance_of.md)
  *  [affects activity of](affects_activity_of.md)
  *  [affects degradation of](affects_degradation_of.md)

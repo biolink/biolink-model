@@ -46,6 +46,7 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
 ## Referenced by class
 
  *  **[Occurrent](Occurrent.md)** *[actively involves](actively_involves.md)*  <sub>0..\*</sub>  **[MolecularActivity](MolecularActivity.md)**
+ *  **[Occurrent](Occurrent.md)** *[capability of](capability_of.md)*  <sub>0..\*</sub>  **[MolecularActivity](MolecularActivity.md)**
  *  **[MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)** *[macromolecular machine to molecular activity association➞object](macromolecular_machine_to_molecular_activity_association_object.md)*  <sub>1..1</sub>  **[MolecularActivity](MolecularActivity.md)**
 
 ## Attributes
