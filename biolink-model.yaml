@@ -1567,8 +1567,8 @@ slots:
   has real world evidence of association with:
     is_a: related to
     description: >-
-      this suggests the person has the disease in combination with other
-      triples that use this predicate
+      this means that the assertion was derived by applying statistical and machine learning models to
+      clinical data such as EHR data, survey data, etc
     in_subset:
       - translator_minimal
     annotations:
@@ -1576,6 +1576,7 @@ slots:
       value: true
 
   associated with real world evidence:
+    is_a: related to
     inverse: has real world evidence of association with
 
   active in:
@@ -1809,7 +1810,6 @@ slots:
       - translator_minimal
     symmetric: true
 
-
   molecularly interacts with:
     is_a: physically interacts with
     domain: molecular entity
@@ -2000,38 +2000,6 @@ slots:
     domain: chemical entity
     range: chemical entity
 
-  affects activity of:
-    description: >-
-      holds between two chemical entities where the action or effect of one changes the activity of the 
-      other within a system of interest
-    is_a: affects
-    in_subset:
-      - translator_minimal
-    domain: chemical entity
-    range: chemical entity
-    exact_mappings:
-      - CTD:affects_activity_of
-    narrow_mappings:
-      - GAMMA:allosteric_modulator
-      - GAMMA:modulator
-      - GAMMA:regulator
-      - DGIdb:modulator
-      - DGIdb:allosteric_modulator
-
-  activity affected by:
-    description: >-
-      holds between two chemical entities where the action or effect of one is changed by the
-      activity of the other within a system of interest
-    is_a: affected by
-    domain: chemical entity
-    range: chemical entity
-
-  activity affects:
-    is_a: affects
-    domain: chemical entity
-    range: chemical entity
-    inverse: activity affected by
-
   increases activity of:
     description: >-
       holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
@@ -2067,6 +2035,36 @@ slots:
       - DGIdb:inducer
       - DGIdb:positive_allosteric_modulator
       - DGIdb:stimulator
+
+  affects activity of:
+    description: >-
+      holds between two chemical entities where the action or effect of one changes the activity of the
+      other within a system of interest
+    is_a: affects
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    exact_mappings:
+      - CTD:affects_activity_of
+    narrow_mappings:
+      - GAMMA:allosteric_modulator
+      - GAMMA:modulator
+      - GAMMA:regulator
+      - DGIdb:modulator
+      - DGIdb:allosteric_modulator
+
+  activity affected by:
+    description: >-
+      holds between two chemical entities where the action or effect of one is changed by the
+      activity of the other within a system of interest
+    is_a: affected by
+    domain: chemical entity
+    range: chemical entity
+    inverse: affects activity of
 
   activity increased by:
     is_a: activity affected by
@@ -4074,7 +4072,8 @@ slots:
   contributes to:
     is_a: related to
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+      holds between two entities where the occurrence, existence, or activity of one causes or contributes to the
+      occurrence or generation of the other
     in_subset:
       - translator_minimal
     annotations:
@@ -4342,7 +4341,7 @@ slots:
       - RO:0002599
   
   prevented by:
-    is_a: related to
+    is_a: risk affected by
     description: >-
       holds between a potential outcome of which the likelihood
       was reduced by the application or use of an entity.
@@ -4584,6 +4583,10 @@ slots:
       - SNOMED:has_direct_procedure_site
       - SNOMED:has_direct_site
       - SNOMED:has_procedure_site
+
+  contains process:
+    is_a: related to
+    inverse: occurs in
 
   located in:
     is_a: related to
@@ -4918,7 +4921,7 @@ slots:
       - SNOMED:uses_substance
 
   is input of:
-    is_a: has participant
+    is_a: participates in
     domain: biological process or activity
     range: occurrent
     inverse: has input
@@ -4955,7 +4958,7 @@ slots:
       - RO:0004008
 
   is output of:
-    is_a: has participant
+    is_a: participates in
     range: occurrent
     domain: biological process or activity
     inverse: has output
@@ -5002,15 +5005,15 @@ slots:
       - SNOMED:has_recipient_category
 
   catalyzes:
-    is_a: has participant
+    is_a: participates in
     # domain: nucleic acid entity
     # range: molecular activity
     annotations:
       tag: biolink:canonical_predicate
       value: true
 
-  is catalyst of:
-    is_a: participates in
+  has catalyst:
+    is_a: has participant
     inverse: catalyzes
 
   has substrate:
@@ -5028,7 +5031,8 @@ slots:
   participates in:
     is_a: related to
     description: >-
-      holds between a continuant and a process, where the continuant is somehow involved in the process
+      holds between a continuant and a process, where the continuant is somehow involved
+      in the process
     range: occurrent
     inverse: has participant
     in_subset:
@@ -5084,7 +5088,7 @@ slots:
       - RO:0002503
 
   actively involves:
-    is_a: participates in
+    is_a: has participant
     domain: occurrent
     range: molecular activity
     inverse: actively involved in
@@ -5110,6 +5114,10 @@ slots:
     narrow_mappings:
       - NCIT:R52
       - RO:0002500
+
+  capability of:
+    is_a: actively involves
+    inverse: capable of
 
   enables:
     is_a: participates in
@@ -5582,7 +5590,7 @@ slots:
       - SNPEFF:structural_interaction_variant
 
   has missense variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is missense variant of
@@ -5604,7 +5612,7 @@ slots:
       - SNPEFF:stop_retained_variant
 
   has synonymous variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is synonymous variant of
@@ -5626,7 +5634,7 @@ slots:
       - SO:0002054
 
   has nonsense variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is nonsense variant of
@@ -5650,7 +5658,7 @@ slots:
       - SNPEFF:stop_lost
 
   has frameshift variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     inverse: is frameshift variant of
     domain: gene
     range: sequence variant
@@ -5673,7 +5681,7 @@ slots:
       - SNPEFF:splice_donor_variant
 
   has splice site variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is splice site variant of
@@ -5695,7 +5703,7 @@ slots:
       - SNPEFF:upstream_gene_variant
 
   has nearby variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is nearby variant of
@@ -5720,7 +5728,7 @@ slots:
       - SNPEFF:intron_variant
 
   has non coding variant:
-    is_a: is sequence variant of
+    is_a: has sequence variant
     domain: gene
     range: sequence variant
     inverse: is non coding variant of
@@ -5944,6 +5952,10 @@ slots:
       - NCIT:gene_found_in_organism
       - NCIT:gene_product_has_organism_source
       - RO:0002160
+
+  taxon of:
+    is_a: related to
+    inverse: in taxon
 
   has molecular consequence:
     is_a: related to

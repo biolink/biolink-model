@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-08-16 20:48
+# Generation date: 2021-08-17 00:01
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8303,7 +8303,7 @@ slots.has_real_world_evidence_of_association_with = Slot(uri=BIOLINK.has_real_wo
                    model_uri=BIOLINK.has_real_world_evidence_of_association_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.associated_with_real_world_evidence = Slot(uri=BIOLINK.associated_with_real_world_evidence, name="associated with real world evidence", curie=BIOLINK.curie('associated_with_real_world_evidence'),
-                   model_uri=BIOLINK.associated_with_real_world_evidence, domain=NamedThing, range=Optional[Union[str, NamedThingId]])
+                   model_uri=BIOLINK.associated_with_real_world_evidence, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.active_in = Slot(uri=BIOLINK.active_in, name="active in", curie=BIOLINK.curie('active_in'),
                    model_uri=BIOLINK.active_in, domain=None, range=Optional[Union[Union[str, CellularComponentId], List[Union[str, CellularComponentId]]]])
@@ -8413,17 +8413,14 @@ slots.decreases_abundance_of = Slot(uri=BIOLINK.decreases_abundance_of, name="de
 slots.abundance_decreased_by = Slot(uri=BIOLINK.abundance_decreased_by, name="abundance decreased by", curie=BIOLINK.curie('abundance_decreased_by'),
                    model_uri=BIOLINK.abundance_decreased_by, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
 
+slots.increases_activity_of = Slot(uri=BIOLINK.increases_activity_of, name="increases activity of", curie=BIOLINK.curie('increases_activity_of'),
+                   model_uri=BIOLINK.increases_activity_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+
 slots.affects_activity_of = Slot(uri=BIOLINK.affects_activity_of, name="affects activity of", curie=BIOLINK.curie('affects_activity_of'),
                    model_uri=BIOLINK.affects_activity_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
 
 slots.activity_affected_by = Slot(uri=BIOLINK.activity_affected_by, name="activity affected by", curie=BIOLINK.curie('activity_affected_by'),
                    model_uri=BIOLINK.activity_affected_by, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
-
-slots.activity_affects = Slot(uri=BIOLINK.activity_affects, name="activity affects", curie=BIOLINK.curie('activity_affects'),
-                   model_uri=BIOLINK.activity_affects, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
-
-slots.increases_activity_of = Slot(uri=BIOLINK.increases_activity_of, name="increases activity of", curie=BIOLINK.curie('increases_activity_of'),
-                   model_uri=BIOLINK.increases_activity_of, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
 
 slots.activity_increased_by = Slot(uri=BIOLINK.activity_increased_by, name="activity increased by", curie=BIOLINK.curie('activity_increased_by'),
                    model_uri=BIOLINK.activity_increased_by, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
@@ -8878,6 +8875,9 @@ slots.phenotype_of = Slot(uri=BIOLINK.phenotype_of, name="phenotype of", curie=B
 slots.occurs_in = Slot(uri=BIOLINK.occurs_in, name="occurs in", curie=BIOLINK.curie('occurs_in'),
                    model_uri=BIOLINK.occurs_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.contains_process = Slot(uri=BIOLINK.contains_process, name="contains process", curie=BIOLINK.curie('contains_process'),
+                   model_uri=BIOLINK.contains_process, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.located_in = Slot(uri=BIOLINK.located_in, name="located in", curie=BIOLINK.curie('located_in'),
                    model_uri=BIOLINK.located_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
@@ -8927,10 +8927,10 @@ slots.has_participant = Slot(uri=BIOLINK.has_participant, name="has participant"
                    model_uri=BIOLINK.has_participant, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.catalyzes = Slot(uri=BIOLINK.catalyzes, name="catalyzes", curie=BIOLINK.curie('catalyzes'),
-                   model_uri=BIOLINK.catalyzes, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.catalyzes, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
-slots.is_catalyst_of = Slot(uri=BIOLINK.is_catalyst_of, name="is catalyst of", curie=BIOLINK.curie('is_catalyst_of'),
-                   model_uri=BIOLINK.is_catalyst_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+slots.has_catalyst = Slot(uri=BIOLINK.has_catalyst, name="has catalyst", curie=BIOLINK.curie('has_catalyst'),
+                   model_uri=BIOLINK.has_catalyst, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.has_substrate = Slot(uri=BIOLINK.has_substrate, name="has substrate", curie=BIOLINK.curie('has_substrate'),
                    model_uri=BIOLINK.has_substrate, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -8949,6 +8949,9 @@ slots.actively_involves = Slot(uri=BIOLINK.actively_involves, name="actively inv
 
 slots.capable_of = Slot(uri=BIOLINK.capable_of, name="capable of", curie=BIOLINK.curie('capable_of'),
                    model_uri=BIOLINK.capable_of, domain=MolecularActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+
+slots.capability_of = Slot(uri=BIOLINK.capability_of, name="capability of", curie=BIOLINK.curie('capability_of'),
+                   model_uri=BIOLINK.capability_of, domain=None, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
 
 slots.enables = Slot(uri=BIOLINK.enables, name="enables", curie=BIOLINK.curie('enables'),
                    model_uri=BIOLINK.enables, domain=PhysicalEntity, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
@@ -9150,6 +9153,9 @@ slots.develops_into = Slot(uri=BIOLINK.develops_into, name="develops into", curi
 
 slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
                    model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
+
+slots.taxon_of = Slot(uri=BIOLINK.taxon_of, name="taxon of", curie=BIOLINK.curie('taxon_of'),
+                   model_uri=BIOLINK.taxon_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.has_molecular_consequence = Slot(uri=BIOLINK.has_molecular_consequence, name="has molecular consequence", curie=BIOLINK.curie('has_molecular_consequence'),
                    model_uri=BIOLINK.has_molecular_consequence, domain=NamedThing, range=Optional[Union[Union[dict, OntologyClass], List[Union[dict, OntologyClass]]]])

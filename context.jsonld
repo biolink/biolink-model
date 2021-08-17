@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-08-16 20:47\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-08-17 00:00\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -540,9 +540,6 @@
       "activity_affected_by": {
          "@type": "@id"
       },
-      "activity_affects": {
-         "@type": "@id"
-      },
       "activity_decreased_by": {
          "@type": "@id"
       },
@@ -675,6 +672,9 @@
       "broad_match": {
          "@type": "@id"
       },
+      "capability_of": {
+         "@type": "@id"
+      },
       "capable_of": {
          "@type": "@id"
       },
@@ -730,6 +730,9 @@
          "@type": "@id"
       },
       "consumes": {
+         "@type": "@id"
+      },
+      "contains_process": {
          "@type": "@id"
       },
       "contraindicated_for": {
@@ -959,6 +962,9 @@
          "@type": "@id"
       },
       "has_biomarker": {
+         "@type": "@id"
+      },
+      "has_catalyst": {
          "@type": "@id"
       },
       "has_completed": {
@@ -1231,9 +1237,6 @@
          "@type": "@id"
       },
       "is_active_ingredient_of": {
-         "@type": "@id"
-      },
-      "is_catalyst_of": {
          "@type": "@id"
       },
       "is_excipient_of": {
@@ -1665,6 +1668,9 @@
       },
       "systematic_synonym": {
          "@id": "GOP:systematic_synonym"
+      },
+      "taxon_of": {
+         "@type": "@id"
       },
       "temporally_related_to": {
          "@type": "@id"
