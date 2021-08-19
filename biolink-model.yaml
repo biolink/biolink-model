@@ -1996,6 +1996,8 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
+    mixins:
+      - increases amount or activity of
     in_subset:
       - translator_minimal
     close_mappings:
@@ -2101,6 +2103,8 @@ slots:
   inhibits:
     description: >-
     is_a: decreases activity of
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2117,6 +2121,8 @@ slots:
     description: >-
       RNA interference, also called RNA inactivation, a system that regulates the activity of genes.
     is_a: decreases activity of
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2134,6 +2140,8 @@ slots:
     description: >-
       The act of rendering something ineffective or inactive.
     is_a: decreases activity of
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2152,6 +2160,8 @@ slots:
       Binds to a receptor at an allosteric site and prevents activation by a positive
       allosteric modulator at that site.
     is_a: inhibits
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2167,6 +2177,8 @@ slots:
       Negatively effects the normal functioning of an ion channel e.g., prevents or
       reduces transport of ions through the channel.
     is_a: inhibits
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2185,6 +2197,8 @@ slots:
   antibody inhibitor of:
     description: >-
     is_a: inhibits
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2199,6 +2213,8 @@ slots:
     description: >-
       Binds to and inactivates a receptor.
     is_a: inhibits
+    mixins:
+      - decreases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2216,6 +2232,8 @@ slots:
       Binds to and activates a receptor, often mimicking the effect of the endogenous ligand.
     in_subset:
       - translator_minimal
+    mixins:
+      - increases amount or activity of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2251,6 +2269,8 @@ slots:
     description: >-
       Enhances the action of the endogenous ligand of a receptor through binding to a
       site distinct from that ligand.
+    mixins:
+      - increases amount or activity of
     in_subset:
       - translator_minimal
     annotations:
