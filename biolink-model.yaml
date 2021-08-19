@@ -1771,61 +1771,13 @@ slots:
       - SEMMEDDB:complicates
 
   physically interacts with:
-    is_a: interacts with
-    description: >-
-      holds between two entities that make physical contact as part of some interaction
-    in_subset:
-      - translator_minimal
-    symmetric: true
-    annotations:
-      tag: biolink:canonical_predicate
-      value: true
-    exact_mappings:
-      - WIKIDATA_PROPERTY:P129
-      - RTXKG1:physically_interacts_with
-    close_mappings:
-      # Agents of some interaction but not the relationship of interaction
-      # These RTX mapped terms may need to be reclassified to more meaningful terms (perhaps not yet created)
-      - CHEMBL.MECHANISM:binding_agent
-      - CHEMBL.MECHANISM:chelating_agent
-      - CHEMBL.MECHANISM:cross-linking_agent
-      - CHEMBL.MECHANISM:oxidative_enzyme
-      - CHEMBL.MECHANISM:sequestering_agent
-      - CHEMBL.MECHANISM:substrate
-      - DRUGBANK:target
-    narrow_mappings:
-      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
-      - SEMMEDDB:INTERACTS_WITH
-      - SEMMEDDB:interacts_with
-      - DRUGBANK:drug-interaction
-      - FMA:adheres_to
-      - NCIT:A7
-      - PR:non-covalently_bound_to
+    deprecated: true
 
   chemically interacts with:
-    is_a: physically interacts with
-    domain: chemical entity
-    range: chemical entity
-    in_subset:
-      - translator_minimal
-    symmetric: true
+    deprecated: true
 
   molecularly interacts with:
-    is_a: physically interacts with
-    domain: molecular entity
-    range: molecular entity
-    in_subset:
-      - translator_minimal
-    symmetric: true
-    annotations:
-      tag: biolink:canonical_predicate
-      value: true
-    related_mappings:
-      - DGIdb:antibody
-    exact_mappings:
-      - RO:0002436
-      - CTD:molecularly_interacts_with
-      - RTXKG1:targets
+    deprecated: true
 
   genetically interacts with:
     is_a: interacts with
@@ -2036,6 +1988,23 @@ slots:
       - DGIdb:positive_allosteric_modulator
       - DGIdb:stimulator
 
+  potentiates:
+    is_a: increases activity of
+    description: >-
+      In clinical pharmacology, a potentiator is a drug, herb, or chemical that intensifies
+      the effects of a given drug.
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - DRUGBANK:potentiator
+
+  potentiated by:
+    is_a: activity increased by
+    inverse: increases activity of
+
   affects activity of:
     description: >-
       holds between two chemical entities where the action or effect of one changes the activity of the
@@ -2129,12 +2098,190 @@ slots:
     range: chemical entity
     inverse: decreases activity of
 
+  inhibits:
+    description: >-
+    is_a: decreases activity of
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - GtoPdb:gating_inhibitor
+
+  inhibited by:
+    is_a: activity decreased by
+    inverse: inhibits
+
+  inactivates:
+    description: >-
+      RNA interference, also called RNA inactivation, a system that regulates the activity of genes.
+    is_a: decreases activity of
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - CHEMBL.MECHANISM:inactivation
+      - DRUGBANK:inactivator
+
+  inactivated by:
+    is_a: activity decreased by
+    inverse: inactivates
+
+  neutralizes:
+    description: >-
+      The act of rendering something ineffective or inactive.
+    is_a: decreases activity of
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - DRUGBANK:neutralizer
+      - DGIdb:neutralizer
+
+  neutralized by:
+    is_a: activity decreased by
+    inverse: neutralizes
+
+  antagonist of:
+    description: >-
+      Binds to a receptor at an allosteric site and prevents activation by a positive
+      allosteric modulator at that site.
+    is_a: inhibits
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - CHEMBL.MECHANISM:allosteric_antagonist
+
+ # TODO: inverse of antagonist of
+
+  blocks molecular channel:
+    description: >-
+      Negatively effects the normal functioning of an ion channel e.g., prevents or
+      reduces transport of ions through the channel.
+    is_a: inhibits
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - CHEMBL.MECHANISM:blocker
+      - DRUGBANK:blocker
+      - GtoPdb:blocker
+
+  molecular channel blocked by:
+    is_a: inhibited by
+    inverse: inhibits
+
+# TODO: description and mappings for antibody inhibitor of
+  antibody inhibitor of:
+    description: >-
+    is_a: inhibits
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+
+  antibody inhibited by:
+    is_a: inhibited by
+    inverse: inhibits
+
+  inverse agonist of:
+    description: >-
+      Binds to and inactivates a receptor.
+    is_a: inhibits
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - CHEMBL.MECHANISM:inverse_agonist
+      - Inxight:inverse_agonist
+
+  # TODO inverse of inverse agonoist of
+
+  agonist of:
+    is_a: increases activity of
+    description: >-
+      Binds to and activates a receptor, often mimicking the effect of the endogenous ligand.
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    exact_mappings:
+      - CHEBI:48705
+    close_mappings:
+      - CHEMBL.MECHANISM:agonist
+      - DRUGBANK:agonist
+      - GtoPdb:agonist
+      - Inxight:agonist
+
+  # TODO inverse for agonist of
+
+  opens molecular channel:
+    is_a: increases activity of
+    description: >-
+      Positively effects the normal functioning of an ion channel e.g., facilitates transport of ions
+      through the channel.
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    close_mappings:
+      - CHEMBL.MECHANISM:opener
+
+  molecular channel opened by:
+    is_a: activity increased by
+    inverse: opens molecular channel
+
+  positive allosteric modulator of:
+    is_a: increases activity of
+    description: >-
+      Enhances the action of the endogenous ligand of a receptor through binding to a
+      site distinct from that ligand.
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    close_mappings:
+      - CHEMBL.MECHANISM:positive_allosteric_modulator
+      - DRUGBANK:positive_allosteric_modulator
+
+  negative allosteric modulator of:
+    is_a: inhibits
+    description: >-
+      Negatively effects the normal functioning of a protein e.g., receptor antagonist, inverse agonist
+      or negative allosteric modulator.
+    in_subset:
+      - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    close_mappings:
+      - CHEMBL.MECHANISM:negative_allosteric_modulator
+      - DRUGBANK:negative_allosteric_modulator
+
+  # TODO: inverse of positive/negative allosteric modulator of
+
 
   affects expression of:
     description: >-
       holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the
       level of expression of the other within a system of interest
-    is_a: affects
+    is_a: affects abundance of
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2143,7 +2290,7 @@ slots:
       - CTD:affects_expression_of
 
   expression affected by:
-    is_a: affected by
+    is_a: abundance affected by
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
@@ -2428,7 +2575,7 @@ slots:
       holds between two chemical entities where the action or effect of one leads changes in the molecular
       modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of
       phosphoryl group, or via redox reaction that adds or subtracts electrons)
-    is_a: affects
+    is_a: affects abundance of
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2602,7 +2749,7 @@ slots:
     description: >-
       holds between two chemical entities where the action or effect 
       of one impacts the rate of chemical synthesis of the other
-    is_a: affects
+    is_a: affects abundance of
     domain: chemical entity
     range: chemical entity
     in_subset:
@@ -2617,7 +2764,7 @@ slots:
     is_a: affected by
     domain: chemical entity
     range: chemical entity
-    inverse: affects synthesis of
+    inverse: abundance affected by
     in_subset:
       - translator_minimal
 
@@ -2679,7 +2826,7 @@ slots:
       where chemical degradation is defined act or process of simplifying or breaking
       down a molecule into smaller parts, either naturally or artificially
       (Oxford English Dictionary, UK, 1995)
-    is_a: affects
+    is_a: affects abundance of
     domain: chemical entity
     range: chemical entity
     in_subset:
@@ -2694,7 +2841,7 @@ slots:
       - CTD:affects_hydrolysis
 
   degradation affected by:
-    is_a: affected by
+    is_a: abundance affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3018,7 +3165,7 @@ slots:
     description: >-
       holds between two chemical entities where the action or effect of one impacts
       the stability of the other within a system of interest
-    is_a: affects
+    is_a: affects abundance of
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3032,7 +3179,7 @@ slots:
       - CTD:affects_stability_of
 
   stability affected by:
-    is_a: affected by
+    is_a: abundance affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3176,7 +3323,7 @@ slots:
     description: >-
       holds between two chemical entities where the action or effect of one impacts the
       rate of secretion of the other out of a cell, gland, or organ
-    is_a: affects
+    is_a: affects transport of
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3191,7 +3338,7 @@ slots:
       - CTD:affects_export
 
   secretion affected by:
-    is_a: affected by
+    is_a: transport affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3258,7 +3405,7 @@ slots:
     description: >-
       holds between two chemical entities where the action or effect of one impacts the rate of
       uptake of the other into of a cell, gland, or organ
-    is_a: affects
+    is_a: affects transport of
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -3273,7 +3420,7 @@ slots:
       - CTD:affects_import
 
   uptake affected by:
-    is_a: affected by
+    is_a: transport affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -5017,16 +5164,35 @@ slots:
     inverse: catalyzes
 
   has substrate:
-    is_a: has participant
+    description: >-
+      Carried by a transporter, possibly competing with the natural substrate for transport.
+    is_a: molecular modification decreased by
     # domain: molecular activity
     # range: chemical entity
     annotations:
       tag: biolink:canonical_predicate
       value: true
+    exact_mappings:
+      - NCIT:C120264
+    close_mappings:
+      - CHEMBL.MECHANISM:substrate
+      - DRUGBANK:substrate
+      - Inxight:substrate∂
+      - CTD:substrate
+      - GNBR:substrate
 
   is substrate of:
-    is_a: participates in
+    is_a: decreases molecular modification of
     inverse: has substrate
+
+  has product:
+    description: >-
+      The end result of a manufacturing process; anything that is produced.
+    is_a: decreases molecular modification of
+
+  is product of:
+    is_a: molecular modification decreased by
+    inverse: has product
 
   participates in:
     is_a: related to
@@ -5493,30 +5659,119 @@ slots:
       - chembio:interacts
       - CTD:interacts_with
       - GAMMA:interacts_with
+      - WIKIDATA_PROPERTY:P129
+      - RTXKG1:physically_interacts_with
     broad_mappings:
       # Definition of this term is more generic than direct physical molecular interactions:
       # A is connected to B iff there exists a fiat, material or temporal path between A and B.
       - SIO:000203
     narrow_mappings:
       - PHAROS:drug_targets
-      - DRUGBANK:chelator
+      # TODO: antibody_binding moves to 'antibody against or binds?'
       - GAMMA:antibody_binding
       - GAMMA:pharmacological_chaperone
       - GAMMA:releasing_agent
       - GAMMA:pharmacological_chaperone
       - GAMMA:releasing_agent
-      - GAMMA:binder
-      - GAMMA:binding
       - GAMMA:ligand
       - GAMMA:cofactor
       - GAMMA:multitarget
       - GAMMA:chaperone
       - GAMMA:component
-      - GAMMA:adduct
-      - GAMMA:antibody
+      # TODO: is affects binding different than binds?
       - CTD:affects_binding
-      - DGIdb:binder
       - DGIdb:cofactor
+      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
+      - SEMMEDDB:INTERACTS_WITH
+      - SEMMEDDB:interacts_with
+      - DRUGBANK:drug-interaction
+      - FMA:adheres_to
+      - NCIT:A7
+      - PR:non-covalently_bound_to
+    close_mappings:
+      # Agents of some interaction but not the relationship of interaction
+      - CHEMBL.MECHANISM:cross-linking_agent
+      - CHEMBL.MECHANISM:oxidative_enzyme
+      - CHEMBL.MECHANISM:substrate
+      - DRUGBANK:target
+      # TODO: confirm these are close mappings?  These were moved when molecularly interacts with was deprecated.
+      - RO:0002436
+      - CTD:molecularly_interacts_with
+      - RTXKG1:targets
+
+  binds:
+    is_a: directly interacts with
+    description: >-
+      An adduct interaction is when a drug-protein adduct forms by the
+      covalent binding of electrophilic drugs or their reactive metabolite(s) to a target protein.
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    symmetric: true
+    close_mappings:
+      - DRUGBANK:adduct
+      - DGIdb:adduct
+      - GAMMA:binder
+      - GAMMA:binding
+      - GAMMA:adduct
+      - CHEMBL.MECHANISM:binding_agent
+      - DGIdb:binder
+    exact_mappings:
+      - NCIT:C82888
+
+  sequesters:
+    is_a: binds
+    description: >-
+      Binds to a substance such as a drug, toxin or metabolite reducing its availability for further interactions.
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - CHEMBL.MECHANISM:sequestering_agent
+
+  sequestered by:
+    is_a: binds
+    inverse: sequesters
+
+  antibody_against:
+    is_a: binds
+    description: >-
+      An antibody interaction occurs when an antibody drug specifically binds the target molecule.
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    narrow_mappings:
+      - DGIdb:antibody
+      - DRUGBANK:antibody
+      - GtoPdb:antibody
+      - Inxight:target_antigen
+      - GAMMA:antibody
+
+  # TODO: what is the inverse of antibody against?
+
+  chelates:
+    is_a: sequesters
+    description: >-
+      Binds to a metal, reducing its availability for further interactions.
+      Chembl calls this an action; chelating agent.
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+    close_mappings:
+      - DRUGBANK:chelator
+      - CHEMBL.MECHANISM:chelating_agent
+
+  chelated by:
+    is_a: sequestered by
+    inverse: chelates
 
   affects expression in:
     is_a: affects
@@ -5821,8 +6076,52 @@ slots:
     is_a: related to
     inverse: has completed
 
+  affects aggregation of:
+    is_a: affects interaction of
+    description: >-
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  aggregation affected by:
+    is_a: affected by
+    inverse: affects aggregation of
+
+  increases aggregation of:
+    is_a: affects aggregation of
+    description: >-
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  aggregation increased by:
+    is_a: aggregation affected by
+    inverse: increases aggregation of
+
+  decreases aggregation of:
+    is_a: affects aggregation of
+    description: >-
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  aggregation decreased by:
+    is_a: aggregation affected by
+    inverse: decreases aggregation of
+
+  affects interaction of:
+    is_a: affects
+    description: >-
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  interaction affected by:
+    is_a: affected by
+    inverse: affects interaction of
+
   decreases molecular interaction:
-    is_a: molecularly interacts with
+    is_a: affects interaction of
     description: indicates that the source decreases the molecular interaction between
       the target and some other chemical entity
     annotations:
@@ -5834,11 +6133,11 @@ slots:
       - CTD:decreases_molecular_interaction_with
 
   molecular interaction decreased by:
-    is_a: molecularly interacts with
+    is_a: interaction affected by
     inverse: decreases molecular interaction
 
   increases molecular interaction:
-    is_a: molecularly interacts with
+    is_a: affects interaction of
     description: indicates that the source increases the molecular interaction between
       the target and some other chemical entity
     annotations:
@@ -5850,7 +6149,7 @@ slots:
       - CTD:increases_molecular_interaction_with
 
   molecular interaction increased by:
-    is_a: molecularly interacts with
+    is_a: interaction affected by
     inverse: increases molecular interaction
 
   in linkage disequilibrium with:
@@ -5865,7 +6164,7 @@ slots:
       - NCIT:C16798
 
   has increased amount:
-    is_a: related to
+    is_a: affects abundance of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5873,11 +6172,11 @@ slots:
       - CL:has_high_plasma_membrane_amount
 
   increased amount of:
-    is_a: related to
+    is_a: abundance affected by
     inverse: has increased amount
 
   has decreased amount:
-    is_a: related to
+    is_a: affects abundance of
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5885,7 +6184,7 @@ slots:
       - CL:has_low_plasma_membrane_amount
 
   decreased amount in:
-    is_a: related to
+    is_a: abundance affected by
     inverse: has decreased amount
 
   lacks part:
