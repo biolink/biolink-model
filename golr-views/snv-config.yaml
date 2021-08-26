@@ -35,14 +35,6 @@ fields:
 - id: category
   display_name: named thing_category
   cardinality: multi
-- id: is_metabolite
-  description: indicates whether a molecular entity is a metabolite
-  display_name: is metabolite
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
-  cardinality: multi
 - id: has_gene
   description: Each allele can be associated with any number of genes
   display_name: sequence variant_has gene
@@ -52,3 +44,8 @@ fields:
   display_name: sequence variant_has biological sequence
 - id: id
   display_name: sequence variant_id
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
+  cardinality: multi
