@@ -27,7 +27,6 @@ URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
  * ClinVarVariant
  * WIKIDATA
  * DBSNP
- * DBSNP
  * MGI
  * ZFIN
  * FB
