@@ -34,6 +34,7 @@ prefixes:
   chembio: 'http://translator.ncats.nih.gov/chembio_'
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
+  CLINVAR: 'http://identifiers.org/clinvar'
   COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
   COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
@@ -84,6 +85,7 @@ prefixes:
   MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
@@ -1572,13 +1574,10 @@ slots:
       clinical data such as EHR data, survey data, etc
     in_subset:
       - translator_minimal
+    symmetric: true
     annotations:
       tag: biolink:canonical_predicate
       value: true
-
-  associated with real world evidence:
-    is_a: related to
-    inverse: has real world evidence of association with
 
   active in:
     is_a: related to
@@ -8468,7 +8467,6 @@ classes:
       - ClinVarVariant
       - WIKIDATA
       # - CIViC needs IRI mapping
-      - DBSNP
       - DBSNP
       # - MYVARIANT_HG19 needs IRI mapping
       # - MYVARIANT_HG38 needs IRI mapping
