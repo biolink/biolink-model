@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-08-17 00:01
+# Generation date: 2021-09-02 16:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9,7 +9,7 @@
 import dataclasses
 import sys
 import re
-from jsonasobj2 import JsonObj
+from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
 from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
@@ -33,11 +33,13 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 APO = CurieNamespace('APO', 'http://purl.obolibrary.org/obo/APO_')
 AEOLUS = CurieNamespace('Aeolus', 'http://translator.ncats.nih.gov/Aeolus_')
+BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 BIGG_METABOLITE = CurieNamespace('BIGG_METABOLITE', 'http://identifiers.org/bigg.metabolite/')
 BIGG_REACTION = CurieNamespace('BIGG_REACTION', 'http://identifiers.org/bigg.reaction/')
 BIOGRID = CurieNamespace('BIOGRID', 'http://identifiers.org/biogrid/')
 BIOSAMPLE = CurieNamespace('BIOSAMPLE', 'http://identifiers.org/biosample/')
 BSPO = CurieNamespace('BSPO', 'http://purl.obolibrary.org/obo/BSPO_')
+BTO = CurieNamespace('BTO', 'http://purl.obolibrary.org/obo/BTO_')
 CAID = CurieNamespace('CAID', 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=')
 CAS = CurieNamespace('CAS', 'http://identifiers.org/cas/')
 CATH = CurieNamespace('CATH', 'http://identifiers.org/cath/')
@@ -49,8 +51,9 @@ CHEMBL_COMPOUND = CurieNamespace('CHEMBL_COMPOUND', 'http://identifiers.org/chem
 CHEMBL_MECHANISM = CurieNamespace('CHEMBL_MECHANISM', 'https://www.ebi.ac.uk/chembl/mechanism/inspect/')
 CHEMBL_TARGET = CurieNamespace('CHEMBL_TARGET', 'http://identifiers.org/chembl.target/')
 CID = CurieNamespace('CID', 'http://pubchem.ncbi.nlm.nih.gov/compound/')
+CIO = CurieNamespace('CIO', 'http://purl.obolibrary.org/obo/CIO_')
 CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
-CLINVAR = CurieNamespace('CLINVAR', 'http://identifiers.org/clinvar/')
+CLINVAR = CurieNamespace('CLINVAR', 'http://identifiers.org/clinvar')
 CLO = CurieNamespace('CLO', 'http://purl.obolibrary.org/obo/CLO_')
 COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://purl.org/coar/resource_type/')
 COG = CurieNamespace('COG', 'https://www.ncbi.nlm.nih.gov/research/cog-project/')
@@ -59,11 +62,13 @@ CTD = CurieNamespace('CTD', 'http://translator.ncats.nih.gov/CTD_')
 CHEMBANK = CurieNamespace('ChemBank', 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=')
 CLINVARVARIANT = CurieNamespace('ClinVarVariant', 'http://www.ncbi.nlm.nih.gov/clinvar/variation/')
 DBSNP = CurieNamespace('DBSNP', 'http://identifiers.org/dbsnp/')
+DDANAT = CurieNamespace('DDANAT', 'http://purl.obolibrary.org/obo/DDANAT_')
 DGIDB = CurieNamespace('DGIdb', 'https://www.dgidb.org/interaction_types')
 DOID = CurieNamespace('DOID', 'http://purl.obolibrary.org/obo/DOID_')
 DRUGBANK = CurieNamespace('DRUGBANK', 'http://identifiers.org/drugbank/')
 DRUGCENTRAL = CurieNamespace('DrugCentral', 'http://translator.ncats.nih.gov/DrugCentral_')
 EC = CurieNamespace('EC', 'http://www.enzyme-database.org/query.php?ec=')
+ECO = CurieNamespace('ECO', 'http://purl.obolibrary.org/obo/ECO_')
 ECTO = CurieNamespace('ECTO', 'http://purl.obolibrary.org/obo/ECTO_')
 EDAM_DATA = CurieNamespace('EDAM-DATA', 'http://edamontology.org/data_')
 EDAM_FORMAT = CurieNamespace('EDAM-FORMAT', 'http://edamontology.org/format_')
@@ -72,11 +77,16 @@ EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
 EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/EFO_')
 EGGNOG = CurieNamespace('EGGNOG', 'http://identifiers.org/eggnog/')
 ENSEMBL = CurieNamespace('ENSEMBL', 'http://identifiers.org/ensembl/')
+ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
 EXO = CurieNamespace('ExO', 'http://purl.obolibrary.org/obo/ExO_')
 FAO = CurieNamespace('FAO', 'http://purl.obolibrary.org/obo/FAO_')
 FB = CurieNamespace('FB', 'http://identifiers.org/fb/')
 FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
+FMA = CurieNamespace('FMA', 'http://purl.obolibrary.org/obo/FMA_')
+FOODON = CurieNamespace('FOODON', 'http://purl.obolibrary.org/obo/FOODON_')
 GAMMA = CurieNamespace('GAMMA', 'http://translator.renci.org/GAMMA_')
+GENEPIO = CurieNamespace('GENEPIO', 'http://purl.obolibrary.org/obo/GENEPIO_')
+GENO = CurieNamespace('GENO', 'http://purl.obolibrary.org/obo/GENO_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 GOLD_META = CurieNamespace('GOLD_META', 'http://identifiers.org/gold.meta/')
 GOP = CurieNamespace('GOP', 'http://purl.obolibrary.org/obo/go#')
@@ -92,9 +102,11 @@ HGNC_FAMILY = CurieNamespace('HGNC_FAMILY', 'http://identifiers.org/hgnc.family/
 HMDB = CurieNamespace('HMDB', 'http://identifiers.org/hmdb/')
 HP = CurieNamespace('HP', 'http://purl.obolibrary.org/obo/HP_')
 HSAPDV = CurieNamespace('HsapDv', 'http://purl.obolibrary.org/obo/HsapDv_')
+IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 ICD0 = CurieNamespace('ICD0', 'http://translator.ncats.nih.gov/ICD0_')
 ICD10 = CurieNamespace('ICD10', 'http://translator.ncats.nih.gov/ICD10_')
 ICD9 = CurieNamespace('ICD9', 'http://translator.ncats.nih.gov/ICD9_')
+IDO = CurieNamespace('IDO', 'http://purl.obolibrary.org/obo/IDO_')
 INCHI = CurieNamespace('INCHI', 'http://identifiers.org/inchi/')
 INCHIKEY = CurieNamespace('INCHIKEY', 'http://identifiers.org/inchikey/')
 INO = CurieNamespace('INO', 'http://purl.obolibrary.org/obo/INO_')
@@ -117,14 +129,16 @@ KEGG_REACTION = CurieNamespace('KEGG_REACTION', 'http://identifiers.org/kegg.rea
 LOINC = CurieNamespace('LOINC', 'http://loinc.org/rdf/')
 MAXO = CurieNamespace('MAXO', 'http://purl.obolibrary.org/obo/MAXO_')
 MEDDRA = CurieNamespace('MEDDRA', 'http://identifiers.org/meddra/')
-MESH = CurieNamespace('MESH', 'http://identifiers.org/mesh/')
+MESH = CurieNamespace('MESH', 'http://id.nlm.nih.gov/mesh/')
 MGI = CurieNamespace('MGI', 'http://identifiers.org/mgi/')
 MI = CurieNamespace('MI', 'http://purl.obolibrary.org/obo/MI_')
 MIR = CurieNamespace('MIR', 'http://identifiers.org/mir/')
 MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
+MPATH = CurieNamespace('MPATH', 'http://purl.obolibrary.org/obo/MPATH_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
 METACYC = CurieNamespace('MetaCyc', 'http://translator.ncats.nih.gov/MetaCyc_')
+NBO = CurieNamespace('NBO', 'http://purl.obolibrary.org/obo/NBO_')
 NCBIGENE = CurieNamespace('NCBIGene', 'http://identifiers.org/ncbigene/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
@@ -132,7 +146,10 @@ NDC = CurieNamespace('NDC', 'http://identifiers.org/ndc/')
 NDDF = CurieNamespace('NDDF', 'http://purl.bioontology.org/ontology/NDDF/')
 NLMID = CurieNamespace('NLMID', 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=')
 OBAN = CurieNamespace('OBAN', 'http://purl.org/oban/')
+OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
+OBO = CurieNamespace('OBO', 'http://purl.obolibrary.org/obo/')
 OBOREL = CurieNamespace('OBOREL', 'http://purl.obolibrary.org/obo/RO_')
+OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
 OIO = CurieNamespace('OIO', 'http://www.geneontology.org/formats/oboInOwl#')
 OMIM = CurieNamespace('OMIM', 'http://purl.obolibrary.org/obo/OMIM_')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
@@ -142,6 +159,7 @@ PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://www.pantherdb.org/pant
 PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/panther.pathway/')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 PATO_PROPERTY = CurieNamespace('PATO-PROPERTY', 'http://purl.obolibrary.org/obo/pato#')
+PCO = CurieNamespace('PCO', 'http://purl.obolibrary.org/obo/PCO_')
 PDQ = CurieNamespace('PDQ', 'https://www.cancer.gov/publications/pdq#')
 PFAM = CurieNamespace('PFAM', 'http://identifiers.org/pfam/')
 PHARMGKB_DRUG = CurieNamespace('PHARMGKB_DRUG', 'http://identifiers.org/pharmgkb.drug/')
@@ -157,6 +175,7 @@ PRODOM = CurieNamespace('PRODOM', 'http://identifiers.org/prodom/')
 PROSITE = CurieNamespace('PROSITE', 'http://identifiers.org/prosite/')
 PUBCHEM_COMPOUND = CurieNamespace('PUBCHEM_COMPOUND', 'http://identifiers.org/pubchem.compound/')
 PUBCHEM_SUBSTANCE = CurieNamespace('PUBCHEM_SUBSTANCE', 'http://identifiers.org/pubchem.substance/')
+PW = CurieNamespace('PW', 'http://purl.obolibrary.org/obo/PW_')
 PATHWHIZ = CurieNamespace('PathWhiz', 'http://smpdb.ca/pathways/#')
 REACT = CurieNamespace('REACT', 'http://www.reactome.org/PathwayBrowser/#/')
 REPODB = CurieNamespace('REPODB', 'http://apps.chiragjpgroup.org/repoDB/')
@@ -170,14 +189,17 @@ RXCUI = CurieNamespace('RXCUI', 'https://mor.nlm.nih.gov/RxNav/search?searchBy=R
 RXNORM = CurieNamespace('RXNORM', 'http://purl.bioontology.org/ontology/RXNORM/')
 RESEARCHID = CurieNamespace('ResearchID', 'https://publons.com/researcher/')
 SEMMEDDB = CurieNamespace('SEMMEDDB', 'https://skr3.nlm.nih.gov/SemMedDB')
+SEPIO = CurieNamespace('SEPIO', 'http://purl.obolibrary.org/obo/SEPIO_')
 SGD = CurieNamespace('SGD', 'http://identifiers.org/sgd/')
 SIDER_DRUG = CurieNamespace('SIDER_DRUG', 'http://identifiers.org/sider.drug/')
 SIO = CurieNamespace('SIO', 'http://semanticscience.org/resource/SIO_')
 SMART = CurieNamespace('SMART', 'http://identifiers.org/smart/')
 SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
+SNOMED = CurieNamespace('SNOMED', 'http://purl.obolibrary.org/obo/SNOMED_')
 SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://identifiers.org/snomedct/')
 SNPEFF = CurieNamespace('SNPEFF', 'http://translator.ncats.nih.gov/SNPEFF_')
 SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
+STATO = CurieNamespace('STATO', 'http://purl.obolibrary.org/obo/STATO_')
 STY = CurieNamespace('STY', 'http://purl.bioontology.org/ontology/STY/')
 SUPFAM = CurieNamespace('SUPFAM', 'http://identifiers.org/supfam/')
 SCOPUSID = CurieNamespace('ScopusID', 'https://www.scopus.com/authid/detail.uri?authorId=')
@@ -203,6 +225,7 @@ WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
 WORMBASE = CurieNamespace('WormBase', 'https://www.wormbase.org/get?name=')
+XCO = CurieNamespace('XCO', 'http://purl.obolibrary.org/obo/XCO_')
 XPO = CurieNamespace('XPO', 'http://purl.obolibrary.org/obo/XPO_')
 XENBASE = CurieNamespace('Xenbase', 'http://www.xenbase.org/gene/showgene.do?method=display&geneId=')
 ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
@@ -213,9 +236,11 @@ BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
 DCT = CurieNamespace('dct', 'http://purl.org/dc/terms/')
+DCTYPES = CurieNamespace('dctypes', 'http://purl.org/dc/dcmitype/')
 DICTYBASE = CurieNamespace('dictyBase', 'http://dictybase.org/gene/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
 FABIO = CurieNamespace('fabio', 'http://purl.org/spar/fabio/')
+FALDO = CurieNamespace('faldo', 'http://biohackathon.org/resource/faldo#')
 FOAF = CurieNamespace('foaf', 'http://xmlns.com/foaf/0.1/')
 FOODB_COMPOUND = CurieNamespace('foodb_compound', 'http://foodb.ca/compounds/')
 GFF3 = CurieNamespace('gff3', 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#')
@@ -229,8 +254,10 @@ ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 MIRBASE = CurieNamespace('mirbase', 'http://identifiers.org/mirbase')
+OBOINOWL = CurieNamespace('oboInOwl', 'http://www.geneontology.org/formats/oboInOwl#')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOWL#')
 OS = CurieNamespace('os', 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl')
+OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
@@ -1090,7 +1117,7 @@ class Attribute(Annotation):
 
         if not isinstance(self.has_quantitative_value, list):
             self.has_quantitative_value = [self.has_quantitative_value] if self.has_quantitative_value is not None else []
-        self.has_quantitative_value = [v if isinstance(v, QuantityValue) else QuantityValue(**v) for v in self.has_quantitative_value]
+        self.has_quantitative_value = [v if isinstance(v, QuantityValue) else QuantityValue(**as_dict(v)) for v in self.has_quantitative_value]
 
         if self.has_qualitative_value is not None and not isinstance(self.has_qualitative_value, NamedThingId):
             self.has_qualitative_value = NamedThingId(self.has_qualitative_value)
@@ -2592,7 +2619,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
 
         if not isinstance(self.enabled_by, list):
             self.enabled_by = [self.enabled_by] if self.enabled_by is not None else []
-        self.enabled_by = [v if isinstance(v, MacromolecularMachineMixin) else MacromolecularMachineMixin(**v) for v in self.enabled_by]
+        self.enabled_by = [v if isinstance(v, MacromolecularMachineMixin) else MacromolecularMachineMixin(**as_dict(v)) for v in self.enabled_by]
 
         super().__post_init__(**kwargs)
 
@@ -3837,7 +3864,7 @@ class Genotype(BiologicalEntity):
             self.id = GenotypeId(self.id)
 
         if self.has_zygosity is not None and not isinstance(self.has_zygosity, Zygosity):
-            self.has_zygosity = Zygosity(**self.has_zygosity)
+            self.has_zygosity = Zygosity(**as_dict(self.has_zygosity))
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
@@ -4800,7 +4827,7 @@ class Association(Entity):
 
         if not isinstance(self.qualifiers, list):
             self.qualifiers = [self.qualifiers] if self.qualifiers is not None else []
-        self.qualifiers = [v if isinstance(v, OntologyClass) else OntologyClass(**v) for v in self.qualifiers]
+        self.qualifiers = [v if isinstance(v, OntologyClass) else OntologyClass(**as_dict(v)) for v in self.qualifiers]
 
         if not isinstance(self.publications, list):
             self.publications = [self.publications] if self.publications is not None else []
@@ -4857,7 +4884,7 @@ class ContributorAssociation(Association):
 
         if not isinstance(self.qualifiers, list):
             self.qualifiers = [self.qualifiers] if self.qualifiers is not None else []
-        self.qualifiers = [v if isinstance(v, OntologyClass) else OntologyClass(**v) for v in self.qualifiers]
+        self.qualifiers = [v if isinstance(v, OntologyClass) else OntologyClass(**as_dict(v)) for v in self.qualifiers]
 
         super().__post_init__(**kwargs)
 
@@ -5008,12 +5035,12 @@ class GeneToGeneAssociation(Association):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**self.subject)
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**self.object)
+            self.object = GeneOrGeneProduct(**as_dict(self.object))
 
         super().__post_init__(**kwargs)
 
@@ -5458,7 +5485,7 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**self.object)
+            self.object = GeneOrGeneProduct(**as_dict(self.object))
 
         super().__post_init__(**kwargs)
 
@@ -5512,7 +5539,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
 
         if not isinstance(self.catalyst_qualifier, list):
             self.catalyst_qualifier = [self.catalyst_qualifier] if self.catalyst_qualifier is not None else []
-        self.catalyst_qualifier = [v if isinstance(v, MacromolecularMachineMixin) else MacromolecularMachineMixin(**v) for v in self.catalyst_qualifier]
+        self.catalyst_qualifier = [v if isinstance(v, MacromolecularMachineMixin) else MacromolecularMachineMixin(**as_dict(v)) for v in self.catalyst_qualifier]
 
         super().__post_init__(**kwargs)
 
@@ -5606,7 +5633,7 @@ class ChemicalToGeneAssociation(Association):
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**self.object)
+            self.object = GeneOrGeneProduct(**as_dict(self.object))
 
         super().__post_init__(**kwargs)
 
@@ -5637,7 +5664,7 @@ class DrugToGeneAssociation(Association):
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**self.object)
+            self.object = GeneOrGeneProduct(**as_dict(self.object))
 
         super().__post_init__(**kwargs)
 
@@ -5770,7 +5797,7 @@ class EntityToExposureEventAssociationMixin(YAMLRoot):
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, ExposureEvent):
-            self.object = ExposureEvent(**self.object)
+            self.object = ExposureEvent(**as_dict(self.object))
 
         super().__post_init__(**kwargs)
 
@@ -5905,10 +5932,10 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.severity_qualifier is not None and not isinstance(self.severity_qualifier, SeverityValue):
-            self.severity_qualifier = SeverityValue(**self.severity_qualifier)
+            self.severity_qualifier = SeverityValue(**as_dict(self.severity_qualifier))
 
         if self.onset_qualifier is not None and not isinstance(self.onset_qualifier, Onset):
-            self.onset_qualifier = Onset(**self.onset_qualifier)
+            self.onset_qualifier = Onset(**as_dict(self.onset_qualifier))
 
         super().__post_init__(**kwargs)
 
@@ -5933,7 +5960,7 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
             self.object = PhenotypicFeatureId(self.object)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
-            self.sex_qualifier = BiologicalSex(**self.sex_qualifier)
+            self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
 
         if self.description is not None and not isinstance(self.description, NarrativeText):
             self.description = NarrativeText(self.description)
@@ -6138,7 +6165,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
             self.subject = GenotypeId(self.subject)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
-            self.sex_qualifier = BiologicalSex(**self.sex_qualifier)
+            self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
 
         super().__post_init__(**kwargs)
 
@@ -6171,10 +6198,10 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, ExposureEvent):
-            self.subject = ExposureEvent(**self.subject)
+            self.subject = ExposureEvent(**as_dict(self.subject))
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
-            self.sex_qualifier = BiologicalSex(**self.sex_qualifier)
+            self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
 
         super().__post_init__(**kwargs)
 
@@ -6205,7 +6232,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
             self.id = DiseaseToPhenotypicFeatureAssociationId(self.id)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
-            self.sex_qualifier = BiologicalSex(**self.sex_qualifier)
+            self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
 
         super().__post_init__(**kwargs)
 
@@ -6236,7 +6263,7 @@ class CaseToPhenotypicFeatureAssociation(Association):
             self.id = CaseToPhenotypicFeatureAssociationId(self.id)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
-            self.sex_qualifier = BiologicalSex(**self.sex_qualifier)
+            self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
 
         super().__post_init__(**kwargs)
 
@@ -6277,7 +6304,7 @@ class BehaviorToBehavioralFeatureAssociation(Association):
             self.object = BehavioralFeatureId(self.object)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
-            self.sex_qualifier = BiologicalSex(**self.sex_qualifier)
+            self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
 
         super().__post_init__(**kwargs)
 
@@ -6297,7 +6324,7 @@ class GeneToEntityAssociationMixin(YAMLRoot):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**self.subject)
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
         super().__post_init__(**kwargs)
 
@@ -6346,10 +6373,10 @@ class GeneToPhenotypicFeatureAssociation(Association):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**self.subject)
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
-            self.sex_qualifier = BiologicalSex(**self.sex_qualifier)
+            self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
 
         super().__post_init__(**kwargs)
 
@@ -6377,7 +6404,7 @@ class GeneToDiseaseAssociation(Association):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**self.subject)
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
         super().__post_init__(**kwargs)
 
@@ -6590,7 +6617,7 @@ class VariantToPhenotypicFeatureAssociation(Association):
             self.subject = SequenceVariantId(self.subject)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
-            self.sex_qualifier = BiologicalSex(**self.sex_qualifier)
+            self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
 
         super().__post_init__(**kwargs)
 
@@ -6725,7 +6752,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**self.subject)
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
         super().__post_init__(**kwargs)
 
@@ -6940,7 +6967,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**self.subject)
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
         if self.sequence_variant_qualifier is not None and not isinstance(self.sequence_variant_qualifier, SequenceVariantId):
             self.sequence_variant_qualifier = SequenceVariantId(self.sequence_variant_qualifier)
@@ -6976,7 +7003,7 @@ class GeneToExpressionSiteAssociation(Association):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**self.subject)
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -7056,7 +7083,7 @@ class FunctionalAssociation(Association):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, MacromolecularMachineMixin):
-            self.subject = MacromolecularMachineMixin(**self.subject)
+            self.subject = MacromolecularMachineMixin(**as_dict(self.subject))
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -7466,7 +7493,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, GeneProductMixin):
-            self.object = GeneProductMixin(**self.object)
+            self.object = GeneProductMixin(**as_dict(self.object))
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -7543,12 +7570,12 @@ class GeneRegulatoryRelationship(Association):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**self.subject)
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**self.object)
+            self.object = GeneOrGeneProduct(**as_dict(self.object))
 
         super().__post_init__(**kwargs)
 
@@ -8301,9 +8328,6 @@ slots.opposite_of = Slot(uri=BIOLINK.opposite_of, name="opposite of", curie=BIOL
 
 slots.has_real_world_evidence_of_association_with = Slot(uri=BIOLINK.has_real_world_evidence_of_association_with, name="has real world evidence of association with", curie=BIOLINK.curie('has_real_world_evidence_of_association_with'),
                    model_uri=BIOLINK.has_real_world_evidence_of_association_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.associated_with_real_world_evidence = Slot(uri=BIOLINK.associated_with_real_world_evidence, name="associated with real world evidence", curie=BIOLINK.curie('associated_with_real_world_evidence'),
-                   model_uri=BIOLINK.associated_with_real_world_evidence, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.active_in = Slot(uri=BIOLINK.active_in, name="active in", curie=BIOLINK.curie('active_in'),
                    model_uri=BIOLINK.active_in, domain=None, range=Optional[Union[Union[str, CellularComponentId], List[Union[str, CellularComponentId]]]])

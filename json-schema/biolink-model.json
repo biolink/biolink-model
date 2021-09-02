@@ -1,6 +1,7 @@
 {
    "$id": "https://w3id.org/biolink/biolink-model",
    "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
    "definitions": {
       "Activity": {
          "additionalProperties": false,
@@ -384,6 +385,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -809,6 +811,7 @@
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -1082,6 +1085,7 @@
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -1108,6 +1112,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -1221,6 +1226,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -1867,7 +1873,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -1931,6 +1937,7 @@
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -1944,7 +1951,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -2861,7 +2868,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -3010,7 +3017,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -3087,6 +3094,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -3246,6 +3254,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -3314,6 +3323,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -3385,6 +3395,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -3459,6 +3470,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -3709,6 +3721,7 @@
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -4019,7 +4032,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -4084,12 +4097,22 @@
          "title": "Drug",
          "type": "object"
       },
+      "DrugAvailabilityEnum": {
+         "description": "",
+         "enum": [
+            "over the counter",
+            "prescription"
+         ],
+         "title": "DrugAvailabilityEnum",
+         "type": "string"
+      },
       "DrugExposure": {
          "additionalProperties": false,
          "description": "A drug exposure is an intake of a particular drug.",
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -4201,6 +4224,7 @@
             },
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -4213,7 +4237,7 @@
          "description": "",
          "properties": {
             "FDA_approval_status": {
-               "type": "string"
+               "$ref": "#/definitions/FDAApprovalStatusEnum"
             },
             "category": {
                "items": {
@@ -4307,7 +4331,7 @@
          "description": "",
          "properties": {
             "FDA_approval_status": {
-               "type": "string"
+               "$ref": "#/definitions/FDAApprovalStatusEnum"
             },
             "category": {
                "items": {
@@ -4402,6 +4426,7 @@
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -4470,7 +4495,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -4658,6 +4683,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -4720,7 +4746,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -4917,6 +4943,7 @@
             },
             "has_temporal_context": {
                "description": "a constraint of time placed upon the truth value of an association.",
+               "format": "time",
                "type": "string"
             },
             "id": {
@@ -5095,13 +5122,35 @@
          "title": "ExposureEventToPhenotypicFeatureAssociation",
          "type": "object"
       },
+      "FDAApprovalStatusEnum": {
+         "description": "",
+         "enum": [
+            "Discovery & Development Phase",
+            "Preclinical Research Phase",
+            "FDA Clinical Research Phase",
+            "FDA Review Phase 4",
+            "FDA Post-Market Safety Monitoring",
+            "FDA Clinical Research Phase 1",
+            "FDA Clinical Research Phase 2",
+            "FDA Clinical Research Phase 3",
+            "FDA Clinical Research Phase 4",
+            "FDA Fast Track",
+            "FDA Breakthrough Therapy",
+            "FDA Accelerated Approval",
+            "FDA Priority Review",
+            "regular approval",
+            "post-approval withdrawal"
+         ],
+         "title": "FDAApprovalStatusEnum",
+         "type": "string"
+      },
       "Food": {
          "additionalProperties": false,
          "description": "A substance consumed by a living organism as a source of nutrition",
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -5172,7 +5221,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -6541,6 +6590,7 @@
             },
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -6567,8 +6617,8 @@
                "type": "integer"
             },
             "genome_build": {
-               "description": "The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.",
-               "type": "string"
+               "$ref": "#/definitions/StrandEnum",
+               "description": "The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens."
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
@@ -6597,8 +6647,8 @@
                "type": "string"
             },
             "phase": {
-               "description": "The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.",
-               "type": "string"
+               "$ref": "#/definitions/PhaseEnum",
+               "description": "The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2."
             },
             "predicate": {
                "type": "string"
@@ -6636,8 +6686,8 @@
                "type": "integer"
             },
             "strand": {
-               "description": "The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).",
-               "type": "string"
+               "$ref": "#/definitions/StrandEnum",
+               "description": "The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand)."
             },
             "subject": {
                "type": "string"
@@ -7353,6 +7403,7 @@
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -7477,6 +7528,7 @@
             },
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             },
             "type": {
@@ -7755,6 +7807,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -7910,6 +7963,16 @@
          ],
          "title": "LifeStage",
          "type": "object"
+      },
+      "LogicalInterpretationEnum": {
+         "description": "",
+         "enum": [
+            "SomeSome",
+            "AllSome",
+            "InverseAllSome"
+         ],
+         "title": "LogicalInterpretationEnum",
+         "type": "string"
       },
       "MacromolecularMachineToBiologicalProcessAssociation": {
          "additionalProperties": false,
@@ -8187,7 +8250,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8488,7 +8551,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8581,7 +8644,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8721,7 +8784,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8789,7 +8852,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -9011,7 +9074,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -9104,7 +9167,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -9183,7 +9246,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -9948,6 +10011,7 @@
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -10107,6 +10171,7 @@
          "properties": {
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -10197,6 +10262,16 @@
          ],
          "title": "Pathway",
          "type": "object"
+      },
+      "PhaseEnum": {
+         "description": "phase",
+         "enum": [
+            "0",
+            "1",
+            "2"
+         ],
+         "title": "PhaseEnum",
+         "type": "string"
       },
       "Phenomenon": {
          "additionalProperties": false,
@@ -10792,6 +10867,19 @@
          "title": "PopulationToPopulationAssociation",
          "type": "object"
       },
+      "PredicateQualifierEnum": {
+         "description": "constrained list of qualifying terms that soften or expand the definition of the predicate used. can be used to constrain or qualify any predicate (any child of related_to).",
+         "enum": [
+            "predicted",
+            "possibly",
+            "hypothesized",
+            "validated",
+            "supported by real-world evidence",
+            "supported by clinical evidence"
+         ],
+         "title": "PredicateQualifierEnum",
+         "type": "string"
+      },
       "Procedure": {
          "additionalProperties": false,
          "description": "A series of actions conducted in a certain order or manner",
@@ -10853,7 +10941,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -11089,6 +11177,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -11202,7 +11291,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -11295,7 +11384,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -11382,6 +11471,26 @@
          "title": "RNAProductIsoform",
          "type": "object"
       },
+      "ReactionDirectionEnum": {
+         "description": "",
+         "enum": [
+            "left_to_right",
+            "right_to_left",
+            "bidirectional",
+            "neutral"
+         ],
+         "title": "ReactionDirectionEnum",
+         "type": "string"
+      },
+      "ReactionSideEnum": {
+         "description": "",
+         "enum": [
+            "left",
+            "right"
+         ],
+         "title": "ReactionSideEnum",
+         "type": "string"
+      },
       "ReactionToCatalystAssociation": {
          "additionalProperties": false,
          "description": "",
@@ -11448,12 +11557,12 @@
                "type": "array"
             },
             "reaction_direction": {
-               "description": "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)",
-               "type": "string"
+               "$ref": "#/definitions/ReactionDirectionEnum",
+               "description": "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)"
             },
             "reaction_side": {
-               "description": "the side of a reaction being modeled (ie: left or right)",
-               "type": "string"
+               "$ref": "#/definitions/ReactionSideEnum",
+               "description": "the side of a reaction being modeled (ie: left or right)"
             },
             "relation": {
                "type": "string"
@@ -11550,12 +11659,12 @@
                "type": "array"
             },
             "reaction_direction": {
-               "description": "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)",
-               "type": "string"
+               "$ref": "#/definitions/ReactionDirectionEnum",
+               "description": "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)"
             },
             "reaction_side": {
-               "description": "the side of a reaction being modeled (ie: left or right)",
-               "type": "string"
+               "$ref": "#/definitions/ReactionSideEnum",
+               "description": "the side of a reaction being modeled (ie: left or right)"
             },
             "relation": {
                "type": "string"
@@ -11750,6 +11859,15 @@
          "title": "SequenceAssociation",
          "type": "object"
       },
+      "SequenceEnum": {
+         "description": "type of sequence",
+         "enum": [
+            "NA",
+            "AA"
+         ],
+         "title": "SequenceEnum",
+         "type": "string"
+      },
       "SequenceFeatureRelationship": {
          "additionalProperties": false,
          "description": "For example, a particular exon is part of a particular transcript or gene",
@@ -11930,6 +12048,7 @@
             },
             "creation_date": {
                "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
                "type": "string"
             },
             "description": {
@@ -12076,7 +12195,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -12169,7 +12288,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -12352,6 +12471,7 @@
             },
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             }
          },
@@ -12368,6 +12488,17 @@
          "required": [],
          "title": "SocioeconomicOutcome",
          "type": "object"
+      },
+      "StrandEnum": {
+         "description": "strand",
+         "enum": [
+            "+",
+            "-",
+            ".",
+            "?"
+         ],
+         "title": "StrandEnum",
+         "type": "string"
       },
       "StudyPopulation": {
          "additionalProperties": false,
@@ -12535,7 +12666,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -12764,6 +12895,7 @@
             },
             "timepoint": {
                "description": "a point in time",
+               "format": "time",
                "type": "string"
             },
             "type": {
@@ -13401,7 +13533,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/definitions/DrugAvailabilityEnum"
                },
                "type": "array"
             },

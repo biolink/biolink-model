@@ -1780,7 +1780,7 @@ type GenomicSequenceLocalization
     predicate: PredicateType!
   }
 
-type Genotype implements PhysicalEssence, GenomicEntity, PhysicalEssence, OntologyClass
+type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
   {
     id: String!
     iri: IriType
