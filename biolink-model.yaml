@@ -1572,13 +1572,10 @@ slots:
       clinical data such as EHR data, survey data, etc
     in_subset:
       - translator_minimal
+    symmetric: true
     annotations:
       tag: biolink:canonical_predicate
       value: true
-
-  associated with real world evidence:
-    is_a: related to
-    inverse: has real world evidence of association with
 
   active in:
     is_a: related to
