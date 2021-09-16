@@ -1225,6 +1225,12 @@ slots:
     multivalued: true
     range: drug_availability_enum
 
+  is toxic:
+    description: >-
+    is_a: node property
+    multivalued: false
+    range: boolean
+
   max tolerated dose:
     descriotion: >-
       The highest dose of a drug or treatment that does not cause unacceptable side effects.
@@ -7303,6 +7309,7 @@ classes:
       - trade name
       - available from
       - max tolerated dose
+      - is toxic
     exact_mappings:
       - CHEBI:24431
       - SIO:010004 # Chemical entity
