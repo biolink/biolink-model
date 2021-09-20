@@ -30,7 +30,6 @@ Refer to the following resources for a quick introduction to the Biolink Model:
 See also [Biolink Model Guidelines](guidelines/README.md) for understanding, curating, and working with the model.
 
 
-
 ## Introduction
 
 The purpose of the Biolink Model is to provide a high-level datamodel of
