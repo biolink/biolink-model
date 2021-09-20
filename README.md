@@ -13,6 +13,8 @@
 
 Quickstart docs:
 
+For a good overview of the biolink-model, [watch Chris Mungall's talk](https://www.youtube.com/watch?v=RE1hFm8lvJA&t=2s) at ICBO 2020.
+
 - Browse the model: [https://biolink.github.io/biolink-model](https://biolink.github.io/biolink-model)
   - [named thing](https://biolink.github.io/biolink-model/docs/NamedThing.html)
   - [association](https://biolink.github.io/biolink-model/docs/Association.html)
