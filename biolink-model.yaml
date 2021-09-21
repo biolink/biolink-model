@@ -1839,6 +1839,9 @@ slots:
     range: gene
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     symmetric: true
     exact_mappings:
       - RO:0002435
