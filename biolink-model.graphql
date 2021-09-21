@@ -495,6 +495,8 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 interface ChemicalEntityOrGeneOrGeneProduct
@@ -528,6 +530,8 @@ type ChemicalMixture
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
   }
@@ -752,6 +756,8 @@ type CodingSequence
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -788,6 +794,8 @@ type ComplexMolecularMixture
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
   }
@@ -1040,6 +1048,8 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
   }
@@ -1206,6 +1216,8 @@ type EnvironmentalFoodContaminant
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 type EnvironmentalProcess implements Occurrent
@@ -1268,6 +1280,8 @@ type Exon
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -1361,6 +1375,8 @@ type Food
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
   }
@@ -1378,6 +1394,8 @@ type FoodAdditive
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 interface FrequencyQualifierMixin
@@ -2183,6 +2201,8 @@ type Macronutrient
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 type MaterialSample implements SubjectOfInvestigation
@@ -2256,6 +2276,8 @@ type Micronutrient
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 type MicroRNA
@@ -2271,6 +2293,8 @@ type MicroRNA
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -2313,6 +2337,8 @@ type MolecularEntity
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
   }
 
@@ -2329,6 +2355,8 @@ type MolecularMixture
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
   }
@@ -2383,6 +2411,8 @@ type NoncodingRNAProduct
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -2403,6 +2433,8 @@ type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -2421,6 +2453,8 @@ type Nutrient
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 interface Occurrent
@@ -2896,6 +2930,8 @@ type ProcessedMaterial
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
   }
@@ -3043,6 +3079,8 @@ type RNAProduct implements GeneProductMixin
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -3063,6 +3101,8 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -3199,6 +3239,8 @@ type SiRNA
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -3218,6 +3260,8 @@ type SmallMolecule
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     id: String!
   }
@@ -3322,6 +3366,8 @@ type Transcript
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -3525,6 +3571,8 @@ type Vitamin
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 type Zygosity
