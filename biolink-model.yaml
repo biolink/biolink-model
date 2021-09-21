@@ -1226,6 +1226,22 @@ slots:
     multivalued: true
     range: drug_availability_enum
 
+  is toxic:
+    description: >-
+    is_a: node property
+    multivalued: false
+    range: boolean
+
+  max tolerated dose:
+    descriotion: >-
+      The highest dose of a drug or treatment that does not cause unacceptable side effects.
+      The maximum tolerated dose is determined in clinical trials by testing increasing doses
+      on different groups of people until the highest dose with acceptable side effects is
+      found. Also called MTD.
+    is_a: node property
+    multivalued: false
+    range: string
+
   animal model available from:
     description: >-
     is_a: node property
@@ -5398,6 +5414,7 @@ slots:
       - RO:0004009
 
   consumed by:
+    is_a: is input of
     inverse: consumes
 
   temporally related to:
@@ -7295,6 +7312,8 @@ classes:
     slots:
       - trade name
       - available from
+      - max tolerated dose
+      - is toxic
     exact_mappings:
       - CHEBI:24431
       - SIO:010004 # Chemical entity
