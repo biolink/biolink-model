@@ -54,6 +54,7 @@ prefixes:
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
   foodb.compound: 'http://foodb.ca/compounds/'
+  FYPO: 'http://purl.obolibrary.org/obo/FYPO_'  # Fission Yeast Phenotype Ontology
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
@@ -116,6 +117,8 @@ prefixes:
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
+  SNOMED: 'http://www.snomedbrowser.com/Codes/Details/'
+  SNOMEDCT: 'http://www.snomedbrowser.com/Codes/Details/'
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
@@ -1225,6 +1228,22 @@ slots:
     multivalued: true
     range: drug_availability_enum
 
+  is toxic:
+    description: >-
+    is_a: node property
+    multivalued: false
+    range: boolean
+
+  max tolerated dose:
+    descriotion: >-
+      The highest dose of a drug or treatment that does not cause unacceptable side effects.
+      The maximum tolerated dose is determined in clinical trials by testing increasing doses
+      on different groups of people until the highest dose with acceptable side effects is
+      found. Also called MTD.
+    is_a: node property
+    multivalued: false
+    range: string
+
   animal model available from:
     description: >-
     is_a: node property
@@ -1838,6 +1857,9 @@ slots:
     range: gene
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     symmetric: true
     exact_mappings:
       - RO:0002435
@@ -5394,6 +5416,7 @@ slots:
       - RO:0004009
 
   consumed by:
+    is_a: is input of
     inverse: consumes
 
   temporally related to:
@@ -7291,6 +7314,8 @@ classes:
     slots:
       - trade name
       - available from
+      - max tolerated dose
+      - is toxic
     exact_mappings:
       - CHEBI:24431
       - SIO:010004 # Chemical entity
@@ -7928,6 +7953,7 @@ classes:
       - SNOMEDCT
       - MESH
       - XPO
+      - FYPO
     in_subset:
       - model_organism_database
 
