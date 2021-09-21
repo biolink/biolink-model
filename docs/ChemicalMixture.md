@@ -15,7 +15,7 @@ URI: [biolink:ChemicalMixture](https://w3id.org/biolink/vocab/ChemicalMixture)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[NamedThing],[MolecularMixture],[Food],[ComplexMolecularMixture],[ChemicalMixture]%3Cis%20supplement%200..1-%20[ChemicalMixture%7Chighest_FDA_approval_status:string%20%3F;available_from(i):drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalMixture]%5E-[ProcessedMaterial],[ChemicalMixture]%5E-[MolecularMixture],[ChemicalMixture]%5E-[Food],[ChemicalMixture]%5E-[ComplexMolecularMixture],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[NamedThing],[MolecularMixture],[Food],[ComplexMolecularMixture],[ChemicalMixture]%3Cis%20supplement%200..1-%20[ChemicalMixture%7Chighest_FDA_approval_status:string%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalMixture]%5E-[ProcessedMaterial],[ChemicalMixture]%5E-[MolecularMixture],[ChemicalMixture]%5E-[Food],[ChemicalMixture]%5E-[ComplexMolecularMixture],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -76,6 +76,11 @@ URI: [biolink:ChemicalMixture](https://w3id.org/biolink/vocab/ChemicalMixture)
      * Range: [ChemicalEntity](ChemicalEntity.md)
  * [available from](available_from.md)  <sub>0..\*</sub>
      * Range: [drug_availability_enum](drug_availability_enum.md)
+ * [max tolerated dose](max_tolerated_dose.md)  <sub>0..1</sub>
+     * Description: The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.
+     * Range: [String](types/String.md)
+ * [is toxic](is_toxic.md)  <sub>0..1</sub>
+     * Range: [Boolean](types/Boolean.md)
 
 ### Inherited from entity:
 

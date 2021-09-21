@@ -25,6 +25,7 @@ URI: [biolink:is_input_of](https://w3id.org/biolink/vocab/is_input_of)
 
 ## Children
 
+ *  [consumed by](consumed_by.md)
 
 ## Used by
 

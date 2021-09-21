@@ -41,7 +41,7 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
  *  **[MolecularActivity](MolecularActivity.md)** *[actively involved in](actively_involved_in.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[capable of](capable_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[NamedThing](NamedThing.md)** *[catalyzes](catalyzes.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
- *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[consumed by](consumed_by.md)*  <sub>0..1</sub>  **[Occurrent](Occurrent.md)**
+ *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[consumed by](consumed_by.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[is input of](is_input_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[is output of](is_output_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[NamedThing](NamedThing.md)** *[is substrate of](is_substrate_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**

@@ -15,7 +15,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[FoodAdditive],[EnvironmentalFoodContaminant],[DiseaseOrPhenotypicFeature],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]%3Ctrade%20name%200..1-%20[ChemicalEntity%7Cavailable_from:drug_availability_enum%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalEntityToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[NamedThing]%5E-[ChemicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[FoodAdditive],[EnvironmentalFoodContaminant],[DiseaseOrPhenotypicFeature],[ChemicalToEntityAssociationMixin],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]%3Ctrade%20name%200..1-%20[ChemicalEntity%7Cavailable_from:drug_availability_enum%20%2A;max_tolerated_dose:string%20%3F;is_toxic:boolean%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ChemicalEntityToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToEntityAssociationMixin]-%20subject%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[NamedThing]%5E-[ChemicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -158,6 +158,11 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
  * [available from](available_from.md)  <sub>0..\*</sub>
      * Range: [drug_availability_enum](drug_availability_enum.md)
+ * [is toxic](is_toxic.md)  <sub>0..1</sub>
+     * Range: [Boolean](types/Boolean.md)
+ * [max tolerated dose](max_tolerated_dose.md)  <sub>0..1</sub>
+     * Description: The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.
+     * Range: [String](types/String.md)
  * [trade name](trade_name.md)  <sub>0..1</sub>
      * Range: [ChemicalEntity](ChemicalEntity.md)
 

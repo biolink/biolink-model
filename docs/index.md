@@ -690,6 +690,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
  * [completed by](completed_by.md)
  * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
+ * [consumed by](consumed_by.md)
  * [consumes](consumes.md)
  * [contains process](contains_process.md)
  * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
@@ -886,6 +887,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
  * [is input of](is_input_of.md)
+     * [consumed by](consumed_by.md)
  * [is metabolite of](is_metabolite_of.md) - holds between two molecular entities in which the first one is derived from the second one as a product of metabolism
  * [is missense variant of](is_missense_variant_of.md) - holds between a gene  and a sequence variant, such the sequence variant results in a different amino acid sequence but where the length is preserved.
  * [is molecular consequence of](is_molecular_consequence_of.md)
@@ -972,6 +974,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [catalyzes](catalyzes.md)
      * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
      * [is input of](is_input_of.md)
+         * [consumed by](consumed_by.md)
      * [is output of](is_output_of.md)
      * [is substrate of](is_substrate_of.md)
  * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
@@ -1261,6 +1264,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [catalyzes](catalyzes.md)
          * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
          * [is input of](is_input_of.md)
+             * [consumed by](consumed_by.md)
          * [is output of](is_output_of.md)
          * [is substrate of](is_substrate_of.md)
      * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
@@ -1393,12 +1397,14 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [ingest date](ingest_date.md)
  * [is metabolite](is_metabolite.md) - indicates whether a molecular entity is a metabolite
  * [is supplement](is_supplement.md)
+ * [is toxic](is_toxic.md)
  * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
  * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
  * [keywords](keywords.md) - keywords tagging a publication
  * [latitude](latitude.md) - latitude
  * [license](license.md)
  * [longitude](longitude.md) - longitude
+ * [max tolerated dose](max_tolerated_dose.md) - The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.
  * [mesh terms](mesh_terms.md) - mesh terms tagging a publication
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
      * [address](address.md) - the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
@@ -1437,12 +1443,14 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [ingest date](ingest_date.md)
      * [is metabolite](is_metabolite.md) - indicates whether a molecular entity is a metabolite
      * [is supplement](is_supplement.md)
+     * [is toxic](is_toxic.md)
      * [iso abbreviation](iso_abbreviation.md) - Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
      * [issue](issue.md) - issue of a newspaper, a scientific journal or magazine for reference purpose
      * [keywords](keywords.md) - keywords tagging a publication
      * [latitude](latitude.md) - latitude
      * [license](license.md)
      * [longitude](longitude.md) - longitude
+     * [max tolerated dose](max_tolerated_dose.md) - The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.
      * [mesh terms](mesh_terms.md) - mesh terms tagging a publication
      * [pages](pages.md) - page number of source referenced for statement or publication
      * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
@@ -1618,7 +1626,6 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Other Slots
 
  * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * [consumed by](consumed_by.md)
  * [description](description.md) - a human-readable description of an entity
  * [has attribute](has_attribute.md) - connects any entity to an attribute
  * [has attribute type](has_attribute_type.md) - connects an attribute to a class that describes it
