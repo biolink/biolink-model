@@ -1,8 +1,5 @@
 {
-   "$id": "https://w3id.org/biolink/biolink-model",
-   "$schema": "http://json-schema.org/draft-07/schema#",
-   "additionalProperties": true,
-   "definitions": {
+   "$defs": {
       "Activity": {
          "additionalProperties": false,
          "description": "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.",
@@ -20,7 +17,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -86,7 +83,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -141,7 +138,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -203,7 +200,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -247,7 +244,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -293,7 +290,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -337,7 +334,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -398,7 +395,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -510,7 +507,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -555,7 +552,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -589,7 +586,7 @@
          "description": "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -599,7 +596,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -646,7 +643,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -719,7 +716,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -744,7 +741,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -768,7 +765,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -776,11 +773,11 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "$ref": "#/definitions/BiologicalSex",
+               "$ref": "#/$defs/BiologicalSex",
                "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "source": {
@@ -836,7 +833,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -913,7 +910,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -989,7 +986,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1046,7 +1043,7 @@
          "description": "",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -1056,7 +1053,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -1125,7 +1122,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1239,7 +1236,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1343,7 +1340,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1409,7 +1406,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1434,7 +1431,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -1458,7 +1455,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -1466,11 +1463,11 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "$ref": "#/definitions/BiologicalSex",
+               "$ref": "#/$defs/BiologicalSex",
                "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "source": {
@@ -1512,7 +1509,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1574,7 +1571,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1633,7 +1630,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1658,7 +1655,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -1682,7 +1679,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -1690,7 +1687,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -1732,7 +1729,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1777,7 +1774,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -1822,7 +1819,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1873,7 +1870,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -1890,7 +1887,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1900,6 +1897,13 @@
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -1951,7 +1955,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -1968,7 +1972,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -1985,6 +1989,13 @@
                "type": "string"
             },
             "is_supplement": {
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -2041,7 +2052,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2086,7 +2097,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -2122,7 +2133,7 @@
             "catalyst_qualifier": {
                "description": "this connects the derivation edge to the chemical entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical.",
                "items": {
-                  "$ref": "#/definitions/MacromolecularMachineMixin"
+                  "$ref": "#/$defs/MacromolecularMachineMixin"
                },
                "type": "array"
             },
@@ -2139,7 +2150,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2183,7 +2194,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -2229,7 +2240,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2274,7 +2285,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -2320,7 +2331,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2341,7 +2352,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the gene or gene product that is affected by the chemical."
             },
             "predicate": {
@@ -2365,7 +2376,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -2411,7 +2422,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2456,7 +2467,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -2490,7 +2501,7 @@
          "description": "Attributes relating to a clinical manifestation",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -2500,7 +2511,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -2528,7 +2539,7 @@
          "description": "The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -2538,7 +2549,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -2578,7 +2589,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2632,7 +2643,7 @@
             },
             "has_attribute": {
                "items": {
-                  "$ref": "#/definitions/ClinicalAttribute"
+                  "$ref": "#/$defs/ClinicalAttribute"
                },
                "type": "array"
             },
@@ -2694,7 +2705,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2737,7 +2748,7 @@
          "description": "A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass"
+               "$ref": "#/$defs/OntologyClass"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -2746,7 +2757,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -2774,7 +2785,7 @@
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -2784,7 +2795,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -2824,7 +2835,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2868,7 +2879,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -2885,7 +2896,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -2911,6 +2922,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -2958,7 +2976,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3017,7 +3035,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -3034,7 +3052,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3051,6 +3069,13 @@
                "type": "string"
             },
             "is_supplement": {
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -3107,7 +3132,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3168,7 +3193,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3213,7 +3238,7 @@
             "qualifiers": {
                "description": "this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -3267,7 +3292,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3339,7 +3364,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3408,7 +3433,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3483,7 +3508,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3553,7 +3578,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3608,7 +3633,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3670,7 +3695,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3754,7 +3779,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3799,7 +3824,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -3845,7 +3870,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3890,7 +3915,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -3940,7 +3965,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -3965,7 +3990,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -3989,7 +4014,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -3997,11 +4022,11 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "$ref": "#/definitions/BiologicalSex",
+               "$ref": "#/$defs/BiologicalSex",
                "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "source": {
@@ -4032,7 +4057,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -4049,7 +4074,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4066,6 +4091,13 @@
                "type": "string"
             },
             "is_supplement": {
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -4137,7 +4169,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4158,7 +4190,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the gene or gene product that is affected by the drug"
             },
             "predicate": {
@@ -4182,7 +4214,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -4237,7 +4269,7 @@
          "description": "",
          "properties": {
             "FDA_approval_status": {
-               "$ref": "#/definitions/FDAApprovalStatusEnum"
+               "$ref": "#/$defs/FDAApprovalStatusEnum"
             },
             "category": {
                "items": {
@@ -4252,7 +4284,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4297,7 +4329,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -4331,7 +4363,7 @@
          "description": "",
          "properties": {
             "FDA_approval_status": {
-               "$ref": "#/definitions/FDAApprovalStatusEnum"
+               "$ref": "#/$defs/FDAApprovalStatusEnum"
             },
             "category": {
                "items": {
@@ -4346,7 +4378,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4391,7 +4423,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -4451,7 +4483,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4495,7 +4527,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -4512,7 +4544,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4522,6 +4554,13 @@
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -4570,7 +4609,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4633,7 +4672,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4696,7 +4735,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4746,7 +4785,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -4763,7 +4802,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4789,6 +4828,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -4836,7 +4882,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4880,7 +4926,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -4933,7 +4979,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -4987,7 +5033,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -5037,7 +5083,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5062,7 +5108,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -5086,7 +5132,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -5094,11 +5140,11 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "$ref": "#/definitions/BiologicalSex",
+               "$ref": "#/$defs/BiologicalSex",
                "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "source": {
@@ -5106,7 +5152,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/ExposureEvent"
+               "$ref": "#/$defs/ExposureEvent"
             },
             "type": {
                "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
@@ -5150,7 +5196,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -5167,7 +5213,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5184,6 +5230,13 @@
                "type": "string"
             },
             "is_supplement": {
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -5221,7 +5274,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -5238,7 +5291,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5248,6 +5301,13 @@
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -5296,7 +5356,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5317,7 +5377,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOntologyClass",
+               "$ref": "#/$defs/GeneOntologyClass",
                "description": "class describing the activity, process or localization of the gene product"
             },
             "predicate": {
@@ -5341,7 +5401,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -5353,7 +5413,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/MacromolecularMachineMixin",
+               "$ref": "#/$defs/MacromolecularMachineMixin",
                "description": "gene, product or macromolecular complex mixin that has the function associated with the GO term"
             },
             "type": {
@@ -5387,7 +5447,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5475,7 +5535,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5500,7 +5560,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -5524,7 +5584,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -5532,7 +5592,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -5540,7 +5600,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease."
             },
             "type": {
@@ -5574,7 +5634,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5640,7 +5700,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5665,7 +5725,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -5689,7 +5749,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -5701,7 +5761,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -5709,7 +5769,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease."
             },
             "type": {
@@ -5743,7 +5803,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5764,7 +5824,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOrGeneProduct"
+               "$ref": "#/$defs/GeneOrGeneProduct"
             },
             "predicate": {
                "description": "the direction is always from regulator to regulated",
@@ -5787,7 +5847,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -5799,7 +5859,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct"
+               "$ref": "#/$defs/GeneOrGeneProduct"
             },
             "type": {
                "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
@@ -5836,7 +5896,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5861,7 +5921,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -5885,7 +5945,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -5893,7 +5953,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -5901,7 +5961,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model"
             },
             "type": {
@@ -5935,7 +5995,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -5980,12 +6040,12 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "can be used to indicate magnitude, or also ranking"
             },
             "relation": {
@@ -6000,7 +6060,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "gene in which variation is correlated with the phenotypic feature"
             },
             "type": {
@@ -6038,7 +6098,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6059,7 +6119,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
             "phenotypic_state": {
@@ -6086,12 +6146,12 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "Optional quantitative value indicating degree of expression."
             },
             "relation": {
@@ -6106,7 +6166,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
             "type": {
@@ -6140,7 +6200,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6161,7 +6221,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
             "predicate": {
@@ -6185,7 +6245,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -6197,7 +6257,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
             "type": {
@@ -6231,7 +6291,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6252,7 +6312,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneProductMixin"
+               "$ref": "#/$defs/GeneProductMixin"
             },
             "predicate": {
                "type": "string"
@@ -6274,7 +6334,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -6319,7 +6379,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6340,7 +6400,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOntologyClass",
+               "$ref": "#/$defs/GeneOntologyClass",
                "description": "class describing the activity, process or localization of the gene product"
             },
             "predicate": {
@@ -6364,7 +6424,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -6414,7 +6474,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6439,7 +6499,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -6463,7 +6523,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -6471,11 +6531,11 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "$ref": "#/definitions/BiologicalSex",
+               "$ref": "#/$defs/BiologicalSex",
                "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "source": {
@@ -6483,7 +6543,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "gene in which variation is correlated with the phenotypic feature"
             },
             "type": {
@@ -6517,7 +6577,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6617,13 +6677,13 @@
                "type": "integer"
             },
             "genome_build": {
-               "$ref": "#/definitions/StrandEnum",
+               "$ref": "#/$defs/StrandEnum",
                "description": "The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens."
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6647,7 +6707,7 @@
                "type": "string"
             },
             "phase": {
-               "$ref": "#/definitions/PhaseEnum",
+               "$ref": "#/$defs/PhaseEnum",
                "description": "The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2."
             },
             "predicate": {
@@ -6670,7 +6730,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -6686,7 +6746,7 @@
                "type": "integer"
             },
             "strand": {
-               "$ref": "#/definitions/StrandEnum",
+               "$ref": "#/$defs/StrandEnum",
                "description": "The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand)."
             },
             "subject": {
@@ -6723,7 +6783,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6732,7 +6792,7 @@
                "type": "string"
             },
             "has_zygosity": {
-               "$ref": "#/definitions/Zygosity"
+               "$ref": "#/$defs/Zygosity"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -6796,7 +6856,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6821,7 +6881,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -6845,7 +6905,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -6853,7 +6913,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -6899,7 +6959,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -6924,7 +6984,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -6948,7 +7008,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -6956,7 +7016,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -6998,7 +7058,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7043,7 +7103,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -7089,7 +7149,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7133,7 +7193,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -7183,7 +7243,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7208,7 +7268,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -7231,7 +7291,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -7239,11 +7299,11 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "$ref": "#/definitions/BiologicalSex",
+               "$ref": "#/$defs/BiologicalSex",
                "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "source": {
@@ -7285,7 +7345,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7330,7 +7390,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -7364,7 +7424,7 @@
          "description": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -7374,7 +7434,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -7428,7 +7488,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7491,7 +7551,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7559,7 +7619,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7621,7 +7681,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7687,7 +7747,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7750,7 +7810,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7820,7 +7880,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7869,7 +7929,7 @@
          "description": "The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -7879,7 +7939,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -7919,7 +7979,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -7991,7 +8051,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8035,7 +8095,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -8047,7 +8107,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/MacromolecularMachineMixin",
+               "$ref": "#/$defs/MacromolecularMachineMixin",
                "description": "gene, product or macromolecular complex mixin that has the function associated with the GO term"
             },
             "type": {
@@ -8081,7 +8141,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8125,7 +8185,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -8137,7 +8197,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/MacromolecularMachineMixin",
+               "$ref": "#/$defs/MacromolecularMachineMixin",
                "description": "gene, product or macromolecular complex mixin that has the function associated with the GO term"
             },
             "type": {
@@ -8171,7 +8231,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8215,7 +8275,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -8227,7 +8287,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/MacromolecularMachineMixin",
+               "$ref": "#/$defs/MacromolecularMachineMixin",
                "description": "gene, product or macromolecular complex mixin that has the function associated with the GO term"
             },
             "type": {
@@ -8250,7 +8310,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8267,7 +8327,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8277,6 +8337,13 @@
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -8325,7 +8392,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8380,7 +8447,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8425,7 +8492,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -8471,7 +8538,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8516,7 +8583,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -8551,7 +8618,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8568,7 +8635,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8594,6 +8661,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -8644,7 +8718,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8661,7 +8735,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8671,6 +8745,13 @@
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -8719,14 +8800,14 @@
             "enabled_by": {
                "description": "The gene product, gene, or complex that catalyzes the reaction",
                "items": {
-                  "$ref": "#/definitions/MacromolecularMachineMixin"
+                  "$ref": "#/$defs/MacromolecularMachineMixin"
                },
                "type": "array"
             },
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8784,7 +8865,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8801,7 +8882,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8816,6 +8897,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -8852,7 +8940,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -8869,7 +8957,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8886,6 +8974,13 @@
                "type": "string"
             },
             "is_supplement": {
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -8942,7 +9037,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -8997,7 +9092,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9040,7 +9135,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -9074,7 +9169,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -9091,7 +9186,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9117,6 +9212,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9167,7 +9269,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -9184,7 +9286,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9210,6 +9312,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9246,7 +9355,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -9263,7 +9372,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9273,6 +9382,13 @@
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -9309,7 +9425,7 @@
          "description": "The age group in which (disease) symptom manifestations appear",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -9319,7 +9435,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -9347,7 +9463,7 @@
          "description": "describes a characteristic of an organismal entity.",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -9357,7 +9473,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -9397,12 +9513,12 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
             "has_taxonomic_rank": {
-               "$ref": "#/definitions/TaxonomicRank"
+               "$ref": "#/$defs/TaxonomicRank"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -9466,7 +9582,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9510,7 +9626,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -9556,7 +9672,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9600,7 +9716,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -9646,7 +9762,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9691,7 +9807,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -9740,7 +9856,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9765,7 +9881,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -9789,7 +9905,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -9797,7 +9913,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -9839,7 +9955,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9860,7 +9976,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
             "predicate": {
@@ -9883,7 +9999,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -9896,7 +10012,7 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/definitions/GeneOrGeneProduct",
+               "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
             "type": {
@@ -9930,7 +10046,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -9939,7 +10055,7 @@
                "type": "string"
             },
             "interacting_molecules_category": {
-               "$ref": "#/definitions/OntologyClass"
+               "$ref": "#/$defs/OntologyClass"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -9976,7 +10092,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -10044,7 +10160,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10113,7 +10229,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10211,7 +10327,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10290,7 +10406,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10345,7 +10461,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10395,7 +10511,7 @@
          "description": "A property of a phenotype",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -10405,7 +10521,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -10433,7 +10549,7 @@
          "description": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -10443,7 +10559,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -10483,7 +10599,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10545,7 +10661,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10614,7 +10730,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10669,7 +10785,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10731,7 +10847,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10793,7 +10909,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10838,7 +10954,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -10897,7 +11013,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10941,7 +11057,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -10958,7 +11074,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -10975,6 +11091,13 @@
                "type": "string"
             },
             "is_supplement": {
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -11023,7 +11146,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11099,7 +11222,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11190,7 +11313,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11291,7 +11414,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -11308,7 +11431,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11334,6 +11457,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11384,7 +11514,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -11401,7 +11531,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11427,6 +11557,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11508,7 +11645,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11529,7 +11666,7 @@
                "type": "boolean"
             },
             "object": {
-               "$ref": "#/definitions/GeneOrGeneProduct"
+               "$ref": "#/$defs/GeneOrGeneProduct"
             },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
@@ -11552,16 +11689,16 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
             "reaction_direction": {
-               "$ref": "#/definitions/ReactionDirectionEnum",
+               "$ref": "#/$defs/ReactionDirectionEnum",
                "description": "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)"
             },
             "reaction_side": {
-               "$ref": "#/definitions/ReactionSideEnum",
+               "$ref": "#/$defs/ReactionSideEnum",
                "description": "the side of a reaction being modeled (ie: left or right)"
             },
             "relation": {
@@ -11609,7 +11746,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11654,16 +11791,16 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
             "reaction_direction": {
-               "$ref": "#/definitions/ReactionDirectionEnum",
+               "$ref": "#/$defs/ReactionDirectionEnum",
                "description": "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)"
             },
             "reaction_side": {
-               "$ref": "#/definitions/ReactionSideEnum",
+               "$ref": "#/$defs/ReactionSideEnum",
                "description": "the side of a reaction being modeled (ie: left or right)"
             },
             "relation": {
@@ -11711,7 +11848,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11785,7 +11922,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11830,7 +11967,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -11885,7 +12022,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -11929,7 +12066,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -11974,7 +12111,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12061,7 +12198,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12156,7 +12293,7 @@
          "description": "describes the severity of a phenotypic feature or disease",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -12166,7 +12303,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -12195,7 +12332,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -12212,7 +12349,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12238,6 +12375,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12288,7 +12432,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -12305,7 +12449,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12319,6 +12463,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12366,7 +12517,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12426,7 +12577,7 @@
          "description": "Attributes relating to a socioeconomic manifestation",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -12436,7 +12587,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -12465,7 +12616,7 @@
          "properties": {
             "has_attribute": {
                "items": {
-                  "$ref": "#/definitions/SocioeconomicAttribute"
+                  "$ref": "#/$defs/SocioeconomicAttribute"
                },
                "type": "array"
             },
@@ -12517,7 +12668,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12579,7 +12730,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12624,7 +12775,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -12666,7 +12817,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -12683,7 +12834,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12709,6 +12860,13 @@
             "is_metabolite": {
                "description": "indicates whether a molecular entity is a metabolite",
                "type": "boolean"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12756,7 +12914,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12800,7 +12958,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -12845,7 +13003,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12930,7 +13088,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -12955,7 +13113,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -12979,7 +13137,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -12987,7 +13145,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -13033,7 +13191,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -13058,7 +13216,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -13082,7 +13240,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -13090,7 +13248,7 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "source": {
@@ -13132,7 +13290,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -13175,7 +13333,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -13225,7 +13383,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -13272,12 +13430,12 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "Optional quantitative value indicating degree of expression."
             },
             "relation": {
@@ -13330,7 +13488,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -13355,7 +13513,7 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/definitions/Onset",
+               "$ref": "#/$defs/Onset",
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
             },
             "predicate": {
@@ -13379,7 +13537,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -13387,11 +13545,11 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/definitions/SeverityValue",
+               "$ref": "#/$defs/SeverityValue",
                "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
             },
             "sex_qualifier": {
-               "$ref": "#/definitions/BiologicalSex",
+               "$ref": "#/$defs/BiologicalSex",
                "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
             },
             "source": {
@@ -13437,7 +13595,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -13498,7 +13656,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/definitions/OntologyClass"
+                  "$ref": "#/$defs/OntologyClass"
                },
                "type": "array"
             },
@@ -13533,7 +13691,7 @@
          "properties": {
             "available_from": {
                "items": {
-                  "$ref": "#/definitions/DrugAvailabilityEnum"
+                  "$ref": "#/$defs/DrugAvailabilityEnum"
                },
                "type": "array"
             },
@@ -13550,7 +13708,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/definitions/Attribute"
+                  "$ref": "#/$defs/Attribute"
                },
                "type": "array"
             },
@@ -13560,6 +13718,13 @@
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "is_toxic": {
+               "type": "boolean"
+            },
+            "max_tolerated_dose": {
+               "description": "The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.",
                "type": "string"
             },
             "name": {
@@ -13596,7 +13761,7 @@
          "description": "",
          "properties": {
             "has_attribute_type": {
-               "$ref": "#/definitions/OntologyClass",
+               "$ref": "#/$defs/OntologyClass",
                "description": "connects an attribute to a class that describes it"
             },
             "has_qualitative_value": {
@@ -13606,7 +13771,7 @@
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
-                  "$ref": "#/definitions/QuantityValue"
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -13630,6 +13795,9 @@
          "type": "object"
       }
    },
+   "$id": "https://w3id.org/biolink/biolink-model",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
    "properties": {},
    "title": "Biolink-Model",
    "type": "object"

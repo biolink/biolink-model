@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-09-02 18:53\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-09-21 22:44\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -145,6 +145,10 @@
       },
       "FOODON": {
          "@id": "http://purl.obolibrary.org/obo/FOODON_",
+         "@prefix": true
+      },
+      "FYPO": {
+         "@id": "http://purl.obolibrary.org/obo/FYPO_",
          "@prefix": true
       },
       "GAMMA": {
@@ -387,11 +391,8 @@
       },
       "SMART": "http://identifiers.org/smart/",
       "SMPDB": "http://identifiers.org/smpdb/",
-      "SNOMED": {
-         "@id": "http://purl.obolibrary.org/obo/SNOMED_",
-         "@prefix": true
-      },
-      "SNOMEDCT": "http://identifiers.org/snomedct/",
+      "SNOMED": "http://www.snomedbrowser.com/Codes/Details/",
+      "SNOMEDCT": "http://www.snomedbrowser.com/Codes/Details/",
       "SNPEFF": {
          "@id": "http://translator.ncats.nih.gov/SNPEFF_",
          "@prefix": true
@@ -1272,6 +1273,9 @@
       },
       "is_synonymous_variant_of": {
          "@type": "@id"
+      },
+      "is_toxic": {
+         "@type": "xsd:boolean"
       },
       "knowledge_source": {
          "@type": "@id"

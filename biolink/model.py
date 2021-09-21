@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-09-02 18:54
+# Generation date: 2021-09-21 22:45
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -84,6 +84,7 @@ FB = CurieNamespace('FB', 'http://identifiers.org/fb/')
 FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
 FMA = CurieNamespace('FMA', 'http://purl.obolibrary.org/obo/FMA_')
 FOODON = CurieNamespace('FOODON', 'http://purl.obolibrary.org/obo/FOODON_')
+FYPO = CurieNamespace('FYPO', 'http://purl.obolibrary.org/obo/FYPO_')
 GAMMA = CurieNamespace('GAMMA', 'http://translator.renci.org/GAMMA_')
 GENEPIO = CurieNamespace('GENEPIO', 'http://purl.obolibrary.org/obo/GENEPIO_')
 GENO = CurieNamespace('GENO', 'http://purl.obolibrary.org/obo/GENO_')
@@ -195,8 +196,8 @@ SIDER_DRUG = CurieNamespace('SIDER_DRUG', 'http://identifiers.org/sider.drug/')
 SIO = CurieNamespace('SIO', 'http://semanticscience.org/resource/SIO_')
 SMART = CurieNamespace('SMART', 'http://identifiers.org/smart/')
 SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
-SNOMED = CurieNamespace('SNOMED', 'http://purl.obolibrary.org/obo/SNOMED_')
-SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://identifiers.org/snomedct/')
+SNOMED = CurieNamespace('SNOMED', 'http://www.snomedbrowser.com/Codes/Details/')
+SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://www.snomedbrowser.com/Codes/Details/')
 SNPEFF = CurieNamespace('SNPEFF', 'http://translator.ncats.nih.gov/SNPEFF_')
 SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
 STATO = CurieNamespace('STATO', 'http://purl.obolibrary.org/obo/STATO_')
@@ -2352,6 +2353,8 @@ class ChemicalEntity(NamedThing):
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     trade_name: Optional[Union[str, ChemicalEntityId]] = None
     available_from: Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]] = empty_list()
+    max_tolerated_dose: Optional[str] = None
+    is_toxic: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2365,6 +2368,12 @@ class ChemicalEntity(NamedThing):
         if not isinstance(self.available_from, list):
             self.available_from = [self.available_from] if self.available_from is not None else []
         self.available_from = [v if isinstance(v, DrugAvailabilityEnum) else DrugAvailabilityEnum(v) for v in self.available_from]
+
+        if self.max_tolerated_dose is not None and not isinstance(self.max_tolerated_dose, str):
+            self.max_tolerated_dose = str(self.max_tolerated_dose)
+
+        if self.is_toxic is not None and not isinstance(self.is_toxic, Bool):
+            self.is_toxic = Bool(self.is_toxic)
 
         super().__post_init__(**kwargs)
 
@@ -8293,6 +8302,12 @@ slots.trade_name = Slot(uri=BIOLINK.trade_name, name="trade name", curie=BIOLINK
 slots.available_from = Slot(uri=BIOLINK.available_from, name="available from", curie=BIOLINK.curie('available_from'),
                    model_uri=BIOLINK.available_from, domain=NamedThing, range=Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]])
 
+slots.is_toxic = Slot(uri=BIOLINK.is_toxic, name="is toxic", curie=BIOLINK.curie('is_toxic'),
+                   model_uri=BIOLINK.is_toxic, domain=NamedThing, range=Optional[Union[bool, Bool]])
+
+slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolerated dose", curie=BIOLINK.curie('max_tolerated_dose'),
+                   model_uri=BIOLINK.max_tolerated_dose, domain=NamedThing, range=Optional[str])
+
 slots.animal_model_available_from = Slot(uri=BIOLINK.animal_model_available_from, name="animal model available from", curie=BIOLINK.curie('animal_model_available_from'),
                    model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
@@ -9035,7 +9050,7 @@ slots.consumes = Slot(uri=BIOLINK.consumes, name="consumes", curie=BIOLINK.curie
                    model_uri=BIOLINK.consumes, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.consumed_by = Slot(uri=BIOLINK.consumed_by, name="consumed by", curie=BIOLINK.curie('consumed_by'),
-                   model_uri=BIOLINK.consumed_by, domain=BiologicalProcessOrActivity, range=Optional[Union[dict, Occurrent]])
+                   model_uri=BIOLINK.consumed_by, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
 
 slots.temporally_related_to = Slot(uri=BIOLINK.temporally_related_to, name="temporally related to", curie=BIOLINK.curie('temporally_related_to'),
                    model_uri=BIOLINK.temporally_related_to, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])

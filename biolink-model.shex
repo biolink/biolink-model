@@ -469,7 +469,9 @@ linkml:Nodeidentifier NONLITERAL
              &<ChemicalEntityOrProteinOrPolypeptide_tes> ;
              rdf:type [ <ChemicalEntityOrProteinOrPolypeptide> ] ? ;
              <trade_name> @<ChemicalEntity> ? ;
-             <available_from> @<DrugAvailabilityEnum> *
+             <available_from> @<DrugAvailabilityEnum> * ;
+             <max_tolerated_dose> @linkml:String ? ;
+             <is_toxic> @linkml:Boolean ?
           ) ;
           rdf:type [ <ChemicalEntity> ]
        )
