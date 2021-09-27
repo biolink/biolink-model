@@ -5979,6 +5979,8 @@ slots:
   taxon of:
     is_a: related to
     inverse: in taxon
+    domain: organism taxon
+    range: thing with taxon
 
   has molecular consequence:
     is_a: related to
@@ -6598,6 +6600,7 @@ classes:
       - source
       - provided by
       - has attribute
+      # evidence code(s)?
 
   named thing:
     is_a: entity
@@ -8962,6 +8965,7 @@ classes:
       - negated
       - qualifiers
       - publications
+      # evidence code(s)?
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
