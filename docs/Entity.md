@@ -72,6 +72,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
+     * in subsets: (translator_minimal,samples)
 
 ### Domain for slot:
 

@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OrganismTaxon]%3Cobject%201..1-%20[OrganismTaxonToOrganismTaxonInteraction%7Cassociated_environmental_context:string%20%3F;predicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation]%5E-[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxon],[OntologyClass],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OrganismTaxon]%3Cobject%201..1-%20[OrganismTaxonToOrganismTaxonInteraction%7Cassociated_environmental_context:string%20%3F;predicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation]%5E-[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxon],[OntologyClass],[EvidenceType],[Attribute],[Agent])
 
 ---
 
@@ -39,6 +39,7 @@ URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/
      * Description: the taxon that is the subject of the association
      * Range: [OrganismTaxon](OrganismTaxon.md)
  * [organism taxon to organism taxon interaction➞predicate](organism_taxon_to_organism_taxon_interaction_predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [organism taxon to organism taxon interaction➞subject](organism_taxon_to_organism_taxon_interaction_subject.md)  <sub>1..1</sub>
      * Description: the taxon that is the subject of the association
@@ -66,11 +67,20 @@ URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: connects an association to publications supporting the association
      * Range: [Publication](Publication.md)
+ * [has evidence](has_evidence.md)  <sub>0..\*</sub>
+     * Description: connects an association to an instance of supporting evidence
+     * Range: [EvidenceType](EvidenceType.md)
  * [association➞type](association_type.md)  <sub>0..1</sub>
      * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
      * Range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..\*</sub>
+     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from entity:
 
@@ -113,6 +123,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
+     * in subsets: (translator_minimal,samples)
 
 ### Domain for slot:
 
@@ -123,6 +134,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: the taxon that is the subject of the association
      * Range: [OrganismTaxon](OrganismTaxon.md)
  * [organism taxon to organism taxon interaction➞predicate](organism_taxon_to_organism_taxon_interaction_predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [organism taxon to organism taxon interaction➞subject](organism_taxon_to_organism_taxon_interaction_subject.md)  <sub>1..1</sub>
      * Description: the taxon that is the subject of the association

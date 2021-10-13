@@ -15,7 +15,7 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[GeneOrGeneProduct]%3Cobject%201..1-++[GeneRegulatoryRelationship%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneRegulatoryRelationship],[Association]%5E-[GeneRegulatoryRelationship],[GeneOrGeneProduct],[Attribute],[Association],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[GeneOrGeneProduct]%3Cobject%201..1-++[GeneRegulatoryRelationship%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneRegulatoryRelationship],[Association]%5E-[GeneRegulatoryRelationship],[GeneOrGeneProduct],[EvidenceType],[Attribute],[Association],[Agent])
 
 ---
 
@@ -33,11 +33,13 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
 ### Own
 
  * [gene regulatory relationship➞object](gene_regulatory_relationship_object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [gene regulatory relationship➞predicate](gene_regulatory_relationship_predicate.md)  <sub>1..1</sub>
      * Description: the direction is always from regulator to regulated
      * Range: [PredicateType](types/PredicateType.md)
  * [gene regulatory relationship➞subject](gene_regulatory_relationship_subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
 ### Inherited from association:
@@ -62,11 +64,20 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: connects an association to publications supporting the association
      * Range: [Publication](Publication.md)
+ * [has evidence](has_evidence.md)  <sub>0..\*</sub>
+     * Description: connects an association to an instance of supporting evidence
+     * Range: [EvidenceType](EvidenceType.md)
  * [association➞type](association_type.md)  <sub>0..1</sub>
      * Description: rdf:type of biolink:Association should be fixed at rdf:Statement
      * Range: [String](types/String.md)
  * [association➞category](association_category.md)  <sub>0..\*</sub>
+     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from entity:
 
@@ -109,13 +120,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
      * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * Range: [SymbolType](types/SymbolType.md)
+     * in subsets: (translator_minimal,samples)
 
 ### Domain for slot:
 
  * [gene regulatory relationship➞object](gene_regulatory_relationship_object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [gene regulatory relationship➞predicate](gene_regulatory_relationship_predicate.md)  <sub>1..1</sub>
      * Description: the direction is always from regulator to regulated
      * Range: [PredicateType](types/PredicateType.md)
  * [gene regulatory relationship➞subject](gene_regulatory_relationship_subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)

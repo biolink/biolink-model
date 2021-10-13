@@ -33,7 +33,9 @@ URI: [biolink:SocioeconomicExposure](https://w3id.org/biolink/vocab/Socioeconomi
 ### Own
 
  * [socioeconomic exposure➞has attribute](socioeconomic_exposure_has_attribute.md)  <sub>1..\*</sub>
+     * Description: connects any entity to an attribute
      * Range: [SocioeconomicAttribute](SocioeconomicAttribute.md)
+     * in subsets: (samples)
 
 ### Inherited from exposure event:
 
@@ -44,4 +46,6 @@ URI: [biolink:SocioeconomicExposure](https://w3id.org/biolink/vocab/Socioeconomi
 ### Domain for slot:
 
  * [socioeconomic exposure➞has attribute](socioeconomic_exposure_has_attribute.md)  <sub>1..\*</sub>
+     * Description: connects any entity to an attribute
      * Range: [SocioeconomicAttribute](SocioeconomicAttribute.md)
+     * in subsets: (samples)
