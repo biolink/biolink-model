@@ -71,6 +71,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -90,6 +91,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -110,6 +112,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -164,6 +167,7 @@ type Association
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
   }
@@ -208,6 +212,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Behavior!
@@ -385,6 +390,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -435,6 +441,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: CellLine!
@@ -458,6 +465,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: DiseaseOrPhenotypicFeature!
@@ -559,6 +567,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: ChemicalEntity!
@@ -577,6 +586,7 @@ type ChemicalToChemicalDerivationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     catalystQualifier: [MacromolecularMachineMixin]
@@ -600,6 +610,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: DiseaseOrPhenotypicFeature!
@@ -625,6 +636,7 @@ type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: GeneOrGeneProduct!
@@ -645,6 +657,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: Pathway!
@@ -829,6 +842,7 @@ type ContributorAssociation
     relation: String
     negated: Boolean
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: InformationContentEntity!
@@ -981,6 +995,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: AnatomicalEntity!
@@ -1007,6 +1022,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
   }
@@ -1027,6 +1043,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -1079,6 +1096,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: GeneOrGeneProduct!
@@ -1119,6 +1137,7 @@ type EntityToDiseaseAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1170,6 +1189,7 @@ type EntityToPhenotypicFeatureAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1301,6 +1321,7 @@ type ExonToTranscriptRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Exon!
@@ -1332,6 +1353,7 @@ type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociati
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     hasPopulationContext: PopulationOfIndividualOrganisms
@@ -1353,6 +1375,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: ExposureEvent!
@@ -1425,6 +1448,7 @@ type FunctionalAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -1464,6 +1488,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -1514,6 +1539,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -1559,6 +1585,7 @@ type GeneRegulatoryRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1581,6 +1608,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1607,6 +1635,7 @@ type GeneToExpressionSiteAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     stageQualifier: LifeStage
@@ -1630,6 +1659,7 @@ interface GeneToGeneAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1649,6 +1679,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1673,6 +1704,7 @@ type GeneToGeneHomologyAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1693,6 +1725,7 @@ type GeneToGeneProductRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -1714,6 +1747,7 @@ type GeneToGoTermAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -1735,6 +1769,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1786,6 +1821,7 @@ type GenomicSequenceLocalization
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     startInterbaseCoordinate: Integer
@@ -1827,6 +1863,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1850,6 +1887,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -1878,6 +1916,7 @@ type GenotypeToGeneAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1898,6 +1937,7 @@ type GenotypeToGenotypePartAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1919,6 +1959,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1942,6 +1983,7 @@ type GenotypeToVariantAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2137,6 +2179,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2157,6 +2200,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2182,6 +2226,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2231,6 +2276,7 @@ type MaterialSampleDerivationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MaterialSample!
@@ -2254,6 +2300,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
   }
@@ -2391,6 +2438,7 @@ type NamedThingToInformationContentEntityAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -2518,6 +2566,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -2539,6 +2588,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -2558,6 +2608,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     associatedEnvironmentalContext: String
@@ -2579,6 +2630,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -2599,6 +2651,7 @@ type OrganismToOrganismAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: IndividualOrganism!
@@ -2634,6 +2687,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismalEntity!
@@ -2658,6 +2712,7 @@ type PairwiseGeneToGeneInteraction
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2677,6 +2732,7 @@ type PairwiseMolecularInteraction
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     interactingMoleculesCategory: OntologyClass
@@ -2897,6 +2953,7 @@ type PopulationToPopulationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: PopulationOfIndividualOrganisms!
@@ -3011,6 +3068,7 @@ type ReactionToCatalystAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     stoichiometry: Integer
@@ -3034,6 +3092,7 @@ type ReactionToParticipantAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: ChemicalEntity!
@@ -3130,6 +3189,7 @@ type SequenceAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
   }
@@ -3148,6 +3208,7 @@ type SequenceFeatureRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: NucleicAcidEntity!
@@ -3184,6 +3245,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -3337,6 +3399,7 @@ type TaxonToTaxonAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3387,6 +3450,7 @@ type TranscriptToGeneRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Transcript!
@@ -3427,6 +3491,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -3450,6 +3515,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -3479,6 +3545,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: Gene!
@@ -3499,6 +3566,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: Gene!
@@ -3524,6 +3592,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -3547,6 +3616,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
