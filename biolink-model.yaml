@@ -125,7 +125,7 @@ prefixes:
   # The UMLS Semantic types and groups namespaces don't have a directly
   # resolvable Base URI, but we point to a pair of sensible web documents
   STY: 'http://purl.bioontology.org/ontology/STY/'
-  UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
+  UMLSSG: 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
   # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
@@ -318,8 +318,8 @@ enums:
           Review. A Priority Review designation means FDA’s goal is to take action on an application
           within 6 months (compared to 10 months under standard review).
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
-      "regular approval":
-      "post-approval withdrawal":
+      "Regular FDA Approval":
+      "Post-Approval Withdrawal":
 
 subsets:
 
