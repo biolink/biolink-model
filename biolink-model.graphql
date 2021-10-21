@@ -141,7 +141,7 @@ type Article
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     id: String!
     name: LabelType
     type: String!
@@ -323,7 +323,7 @@ type Book
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     name: LabelType
     id: String!
     type: String!
@@ -346,7 +346,7 @@ type BookChapter
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     id: String!
     name: LabelType
     type: String!
@@ -1468,7 +1468,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     category: [NamedThing]!
     symbol: String
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
@@ -1562,14 +1562,14 @@ interface GeneProductIsoformMixin
   {
     name: SymbolType
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 interface GeneProductMixin
   {
     name: SymbolType
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type GeneRegulatoryRelationship
@@ -2346,7 +2346,7 @@ type MicroRNA
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 interface ModelToDiseaseAssociationMixin
@@ -2465,7 +2465,7 @@ type NoncodingRNAProduct
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
@@ -3006,7 +3006,7 @@ type Protein implements GeneProductMixin, ThingWithTaxon
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type ProteinIsoform implements GeneProductIsoformMixin
@@ -3022,7 +3022,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type Publication
@@ -3042,7 +3042,7 @@ type Publication
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     id: String!
     name: LabelType
     type: String!
@@ -3144,7 +3144,7 @@ type RNAProduct implements GeneProductMixin
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type RNAProductIsoform implements GeneProductIsoformMixin
@@ -3166,7 +3166,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 interface SensitivityQuantifier
@@ -3269,7 +3269,7 @@ type Serial
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     name: LabelType
     isoAbbreviation: String
     volume: String
@@ -3307,7 +3307,7 @@ type SiRNA
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type SmallMolecule

@@ -769,7 +769,7 @@ slots:
     is_a: node property
     aliases: ['dbxref', 'Dbxref', 'DbXref']
     domain: named thing
-    range: iri type
+    range: uriorcurie
     description: >-
       Alternate CURIEs for a thing
     multivalued: true
@@ -5979,6 +5979,8 @@ slots:
   taxon of:
     is_a: related to
     inverse: in taxon
+    domain: organism taxon
+    range: thing with taxon
 
   has molecular consequence:
     is_a: related to
@@ -6599,6 +6601,7 @@ classes:
       - source
       - provided by
       - has attribute
+      # evidence code(s)?
 
   named thing:
     is_a: entity
