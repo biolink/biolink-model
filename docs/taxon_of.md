@@ -14,7 +14,7 @@ URI: [biolink:taxon_of](https://w3id.org/biolink/vocab/taxon_of)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+[OrganismTaxon](OrganismTaxon.md) ->  <sub>0..\*</sub> [ThingWithTaxon](ThingWithTaxon.md)
 
 ## Parents
 

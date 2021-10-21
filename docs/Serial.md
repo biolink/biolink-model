@@ -15,7 +15,7 @@ URI: [biolink:Serial](https://w3id.org/biolink/vocab/Serial)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication]%5E-[Serial%7Ciso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;id:string;type:string;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;xref(i):iri_type%20%2A;name(i):label_type%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Publication],[NamedThing],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication]%5E-[Serial%7Ciso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;id:string;type:string;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;xref(i):uriorcurie%20%2A;name(i):label_type%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Publication],[NamedThing],[Attribute],[Agent])
 
 ---
 

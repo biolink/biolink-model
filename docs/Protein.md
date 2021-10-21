@@ -15,7 +15,7 @@ URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ThingWithTaxon],[ProteinIsoform],[Protein%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductMixin],[Protein]uses%20-.-%3E[ThingWithTaxon],[Protein]%5E-[ProteinIsoform],[Polypeptide]%5E-[Protein],[Polypeptide],[OrganismTaxon],[NamedThing],[GeneProductMixin],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ThingWithTaxon],[ProteinIsoform],[Protein%7Csynonym:label_type%20%2A;xref:uriorcurie%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneProductMixin],[Protein]uses%20-.-%3E[ThingWithTaxon],[Protein]%5E-[ProteinIsoform],[Polypeptide]%5E-[Protein],[Polypeptide],[OrganismTaxon],[NamedThing],[GeneProductMixin],[Attribute],[Agent])
 
 ---
 

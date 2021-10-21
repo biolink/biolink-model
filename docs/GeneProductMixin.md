@@ -15,7 +15,7 @@ URI: [biolink:GeneProductMixin](https://w3id.org/biolink/vocab/GeneProductMixin)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneToGeneProductRelationship],[GeneToGeneProductRelationship]++-%20object%201..1%3E[GeneProductMixin%7Csynonym:label_type%20%2A;xref:iri_type%20%2A;name(i):symbol_type%20%3F],[Protein]uses%20-.-%3E[GeneProductMixin],[RNAProduct]uses%20-.-%3E[GeneProductMixin],[GeneProductMixin]%5E-[GeneProductIsoformMixin],[GeneOrGeneProduct]%5E-[GeneProductMixin],[Protein],[GeneProductIsoformMixin],[GeneOrGeneProduct],[Gene],[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneToGeneProductRelationship],[GeneToGeneProductRelationship]++-%20object%201..1%3E[GeneProductMixin%7Csynonym:label_type%20%2A;xref:uriorcurie%20%2A;name(i):symbol_type%20%3F],[Protein]uses%20-.-%3E[GeneProductMixin],[RNAProduct]uses%20-.-%3E[GeneProductMixin],[GeneProductMixin]%5E-[GeneProductIsoformMixin],[GeneOrGeneProduct]%5E-[GeneProductMixin],[Protein],[GeneProductIsoformMixin],[GeneOrGeneProduct],[Gene],[RNAProduct])
 
 ---
 

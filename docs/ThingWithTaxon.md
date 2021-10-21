@@ -36,6 +36,7 @@ URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
 
 ## Referenced by class
 
+ *  **[OrganismTaxon](OrganismTaxon.md)** *[taxon of](taxon_of.md)*  <sub>0..\*</sub>  **[ThingWithTaxon](ThingWithTaxon.md)**
 
 ## Attributes
 
