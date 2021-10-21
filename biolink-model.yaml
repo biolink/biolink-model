@@ -1401,8 +1401,11 @@ slots:
       - UMLS:mapped_to
       - UMLS:owning_section_of
 
+  related to at concept level:
+  related to at instance level:
+
   superclass of:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       holds between two classes where the domain class is a super class of the range class
     domain: ontology class
@@ -1429,7 +1432,7 @@ slots:
       - UMLS:RB
 
   subclass of:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       holds between two classes where the domain class is a specialization of the range class
     domain: ontology class
@@ -1505,7 +1508,7 @@ slots:
       - DRUGBANK:external-identifier
 
   close match:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       a list of terms from different schemas or terminology systems that have
       a semantically similar but not strictly equivalent, broader, or narrower
@@ -1553,7 +1556,7 @@ slots:
       a list of terms from different schemas or terminology systems
       that have a broader, more general meaning. Broader terms are
       typically shown as parents in a hierarchy or tree.
-    is_a: related to
+    is_a: related to at concept level
     in_subset:
       - translator_minimal
     annotations:
@@ -1568,7 +1571,7 @@ slots:
       a list of terms from different schemas or terminology systems
       that have a narrower, more specific meaning. Narrower terms are
       typically shown as children in a hierarchy or tree.
-    is_a: related to
+    is_a: related to at concept level
     inverse: broad match
     in_subset:
       - translator_minimal
@@ -1580,7 +1583,7 @@ slots:
     description: >-
       x is the opposite of y if there exists some distance metric M, and there exists
       no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
-    is_a: related to
+    is_a: related to at concept level
     symmetric: true
     annotations:
       tag: biolink:canonical_predicate
@@ -1592,7 +1595,7 @@ slots:
       - https://github.com/biolink/biolink-model/issues/657
 
   has real world evidence of association with:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       this means that the assertion was derived by applying statistical and machine learning models to
       clinical data such as EHR data, survey data, etc
@@ -1604,7 +1607,7 @@ slots:
       value: true
 
   active in:
-    is_a: related to
+    is_a: related to at concept level
     domain: gene or gene product
     range: cellular component
     annotations:
@@ -1614,7 +1617,7 @@ slots:
       - RO:0002432
 
   acts upstream of:
-    is_a: related to
+    is_a: related to at concept level
     domain: gene or gene product
     range: biological process
     annotations:
@@ -1624,7 +1627,7 @@ slots:
       - RO:0002263
 
   has upstream actor:
-    is_a: related to
+    is_a: related to at concept level
     inverse: acts upstream of
     domain: biological process
     range: gene or gene product
@@ -1714,7 +1717,7 @@ slots:
     description: >-
       refers to is a relation between one information content entity and the named thing
       that it makes reference to.
-    is_a: related to
+    is_a: related to at concept level
     exact_mappings:
       - IAO:0000142
     narrow_mappings:
@@ -1723,7 +1726,7 @@ slots:
   ## Publication related predicates
 
   contributor:
-    is_a: related to
+    is_a: related to at concept level
     domain: information content entity
     range: agent
     comments:
@@ -1778,7 +1781,7 @@ slots:
     range: named thing
     description: >-
       holds between any two entities that directly or indirectly interact with each other
-    is_a: related to
+    is_a: related to at concept level
     in_subset:
       - translator_minimal
     symmetric: true
@@ -1870,7 +1873,7 @@ slots:
       - RO:0002435
 
   affects:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       describes an entity that has a direct affect on the state or quality
       of another existing entity. Use of the 'affects' predicate implies that
@@ -1922,21 +1925,21 @@ slots:
       - SNOMED:has_pathological_process
 
   affected by:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       describes an entity of which the state or quality is affected by
       another existing entity.
     inverse: affects
 
   increases amount or activity of:
-    is_a: related to
+    is_a: related to at concept level
     mixin: true
     description: >-
       A grouping mixin to help with searching for all the predicates that increase the amount
       or activity of the object.
 
   decreases amount or activity of:
-    is_a: related to
+    is_a: related to at concept level
     mixin: true
     description: >-
       A grouping mixin to help with searching for all the predicates that decrease the amount
@@ -3616,7 +3619,7 @@ slots:
     inverse: disrupts
 
   gene product of:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       definition x has gene product of y if and only if y is a gene (SO:0000704)
       that participates in some gene expression process (GO:0010467) where the output of thatf
@@ -3633,7 +3636,7 @@ slots:
       - translator_minimal
 
   has gene product:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       holds between a gene and a transcribed and/or
       translated product generated from it
@@ -3653,7 +3656,7 @@ slots:
       - NCIT:R178
 
   transcribed to:
-    is_a: related to
+    is_a: related to at concept level
     domain: gene
     range: transcript
     description: >-
@@ -3664,7 +3667,7 @@ slots:
       - SIO:010080
 
   transcribed from:
-    is_a: related to
+    is_a: related to at concept level
     domain: transcript
     range: gene
     annotations:
@@ -3677,7 +3680,7 @@ slots:
       - SIO:010081
 
   translates to:
-    is_a: related to
+    is_a: related to at concept level
     domain: transcript
     range: protein
     annotations:
@@ -3692,7 +3695,7 @@ slots:
       - SIO:010082
 
   translation of:
-    is_a: related to
+    is_a: related to at concept level
     domain: protein
     range: transcript
     description: >-
@@ -3763,7 +3766,7 @@ slots:
       - RO:HOM0000018
 
   coexists with:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     in_subset:
@@ -4018,7 +4021,7 @@ slots:
   # Despite the name, note that this particular entity is
   # NOT a biolink:Association but rather, a biolink:predicate
   genetic association:
-    is_a: related to
+    is_a: related to at concept level
     symmetric: true
     annotations:
       tag: biolink:canonical_predicate
@@ -4068,7 +4071,7 @@ slots:
       - hetio:ASSOCIATES_DaG
 
   affects risk for:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other
     annotations:
@@ -4078,7 +4081,7 @@ slots:
       - translator_minimal
 
   risk affected by:
-    is_a: related to
+    is_a: related to at concept level
     inverse: affects risk for
 
   predisposes:
@@ -4097,7 +4100,7 @@ slots:
   # TODO: inverse of predisposes
 
   contributes to:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the
       occurrence or generation of the other
@@ -4120,7 +4123,7 @@ slots:
       - RO:0003304
 
   contribution from:
-    is_a: related to
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     inverse: contributes to
@@ -4179,7 +4182,7 @@ slots:
     description: >-
       holds between two entities where the occurrence, existence,
       or activity of one is caused by the occurrence or generation of the other
-    is_a: related to
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     inverse: causes
@@ -4281,7 +4284,7 @@ slots:
       - SNOMED:plays_role
 
   treated by:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a disease or phenotypic feature and a therapeutic
       process or chemical entity that is used to treat the condition
@@ -4375,7 +4378,7 @@ slots:
     inverse: prevents
 
   correlated with:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between any two named thing entities. For example, correlated_with
       holds between a disease or phenotypic feature and a measurable molecular
@@ -4497,7 +4500,7 @@ slots:
   # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
   # which are biological which have manifestation in an anatomical site, e.g. RO:0004026, RO:0004027 and others
   expressed in:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
@@ -4515,7 +4518,7 @@ slots:
       - RTXKG1:expressed_in
 
   expresses:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
@@ -4528,7 +4531,7 @@ slots:
       - hetio:EXPRESSES_AeG
 
   has phenotype:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a biological entity and a phenotype, where a phenotype
       is construed broadly as any kind of quality of an organism part,
@@ -4561,7 +4564,7 @@ slots:
       - RO:0004022
 
   phenotype of:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a phenotype and a biological entity, where a phenotype
       is construed broadly as any kind of quality of an organism part,
@@ -4577,7 +4580,7 @@ slots:
 
   # TODO: predicate inverse for occurs in
   occurs in:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a process and a material entity or site within which the process occurs
     in_subset:
@@ -4612,11 +4615,11 @@ slots:
       - SNOMED:has_procedure_site
 
   contains process:
-    is_a: related to
+    is_a: related to at instance level
     inverse: occurs in
 
   located in:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a material entity and a material entity or site
       within which it is located (but of which it is not considered a part)
@@ -4674,7 +4677,7 @@ slots:
       - SNOMED:has_inherent_location
 
   location of:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between material entity or site and a material entity
       that is located within it (but not considered a part of it)
@@ -4693,7 +4696,7 @@ slots:
       - SNOMED:inherent_location_of
 
   similar to:
-      is_a: related to
+      is_a: related to at instance level
       description: >-
         holds between an entity and some other entity with similar features.
       in_subset:
@@ -4728,7 +4731,7 @@ slots:
       - NCIT:has_salt_form
 
   has sequence location:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between two nucleic acid entities when the subject can be localized
       in sequence coordinates on the object. For example, between
@@ -4742,13 +4745,13 @@ slots:
       - faldo:location
 
   sequence location of:
-    is_a: related to
+    is_a: related to at instance level
     domain: nucleic acid entity
     range: nucleic acid entity
     inverse: has sequence location
 
   model of:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a thing and some other thing it approximates
       for purposes of scientific study, in virtue of its exhibiting
@@ -4764,11 +4767,11 @@ slots:
       - FOODON:00001301
 
   models:
-    is_a: related to
+    is_a: related to at instance level
     inverse: model of
 
   overlaps:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between entities that overlap in their extents (materials or processes)
     in_subset:
@@ -4993,7 +4996,7 @@ slots:
       - translator_minimal
 
   has participant:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: occurrent
@@ -5056,7 +5059,7 @@ slots:
     inverse: has substrate
 
   participates in:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a continuant and a process, where the continuant is somehow involved
       in the process
@@ -5174,7 +5177,7 @@ slots:
       - RO:0002333
 
   derives into:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between two distinct material entities, the old entity and
       the new entity, in which the new entity begins to exist when
@@ -5193,7 +5196,7 @@ slots:
       - NCIT:may_be_normal_cell_origin_of_disease
 
   derives from:
-    is_a: related to
+    is_a: related to at instance level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5357,7 +5360,7 @@ slots:
       - WIKIDATA:Q902638
 
   manifestation of:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       that part of a phenomenon which is directly observable or
       visibly expressed, or which gives evidence to the underlying
@@ -5380,12 +5383,12 @@ slots:
       - SNOMED:has_definitional_manifestation
 
   has manifestation:
-    is_a: related to
+    is_a: related to at instance level
     domain: disease
     inverse: manifestation of
 
   produces:
-    is_a: related to
+    is_a: related to at instance level
     description: >-
       holds between a material entity and a product that is generated
       through the intentional actions or functioning of the material entity
@@ -5407,7 +5410,7 @@ slots:
       - SNOMED:specimen_procedure_of
 
   produced by:
-    is_a: related to
+    is_a: related to at instance level
     inverse: produces
     exact_mappings:
       - RO:0003001
@@ -5425,7 +5428,7 @@ slots:
     inverse: consumes
 
   temporally related to:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       holds between two entities with a temporal relationship
     domain: occurrent
@@ -5570,7 +5573,7 @@ slots:
     inverse: has variant part
 
   related condition:
-    is_a: related to
+    is_a: related to at concept level
     symmetric: true
     annotations:
       tag: biolink:canonical_predicate
@@ -5581,7 +5584,7 @@ slots:
   ## Predicates relating variants to genes
 
   is sequence variant of:
-    is_a: related to
+    is_a: related to at concept level
     description: holds between a sequence variant and a nucleic acid entity
     domain: sequence variant
     range: nucleic acid entity
@@ -5596,7 +5599,7 @@ slots:
       - WIKIDATA:P3433
 
   has sequence variant:
-    is_a: related to
+    is_a: related to at concept level
     inverse: is sequence variant of
     domain: nucleic acid entity
     range: sequence variant
@@ -5766,7 +5769,7 @@ slots:
   disease has basis in:
     description: A relation that holds between a disease and an entity where the state
       of the entity has contribution to the disease.
-    is_a: related to
+    is_a: related to at concept level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5799,7 +5802,7 @@ slots:
     inverse: causes adverse event
 
   contraindicated for:
-    is_a: related to
+    is_a: related to at concept level
     description: Holds between a drug and a disease or phenotype, such that a person
       with that disease should not be treated with the drug.
     domain: drug
@@ -5812,7 +5815,7 @@ slots:
       - RTXKG1:contraindicated_for
 
   has contraindication:
-    is_a: related to
+    is_a: related to at concept level
     domain: disease or phenotypic feature
     range: drug
     inverse: contraindicated for
@@ -5821,7 +5824,7 @@ slots:
   # they didn't seem to map well to anything else.
 
   has not completed:
-    is_a: related to
+    is_a: related to at concept level
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
     exact_mappings:
@@ -5831,11 +5834,11 @@ slots:
       value: true
 
   not completed by:
-    is_a: related to
+    is_a: related to at concept level
     inverse: has not completed
 
   has completed:
-    is_a: related to
+    is_a: related to at concept level
     description: holds between an entity and a process that the entity is capable of
       and has completed
     annotations:
@@ -5846,7 +5849,7 @@ slots:
       - RTXKG1:has_completed
 
   completed by:
-    is_a: related to
+    is_a: related to at concept level
     inverse: has completed
 
   decreases molecular interaction:
@@ -5882,7 +5885,7 @@ slots:
     inverse: increases molecular interaction
 
   in linkage disequilibrium with:
-    is_a: related to
+    is_a: related to at concept level
     description: holds between two sequence variants, the presence of which are correlated
       in a population
     symmetric: true
@@ -5893,7 +5896,7 @@ slots:
       - NCIT:C16798
 
   has increased amount:
-    is_a: related to
+    is_a: related to at concept level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5901,11 +5904,11 @@ slots:
       - CL:has_high_plasma_membrane_amount
 
   increased amount of:
-    is_a: related to
+    is_a: related to at concept level
     inverse: has increased amount
 
   has decreased amount:
-    is_a: related to
+    is_a: related to at instance level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5913,11 +5916,11 @@ slots:
       - CL:has_low_plasma_membrane_amount
 
   decreased amount in:
-    is_a: related to
+    is_a: related to at concept level
     inverse: has decreased amount
 
   lacks part:
-    is_a: related to
+    is_a: related to at concept level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5929,11 +5932,11 @@ slots:
       - CL:lacks_plasma_membrane_part
 
   missing from:
-    is_a: related to
+    is_a: related to at concept level
     inverse: lacks part
 
   develops from:
-    is_a: related to
+    is_a: related to at concept level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5952,13 +5955,13 @@ slots:
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
   develops into:
-     is_a: related to
+     is_a: related to at concept level
      inverse: develops from
 
   in taxon:
     aliases:
       - instance of
-    is_a: related to
+    is_a: related to at concept level
     domain: thing with taxon
     range: organism taxon
     annotations:
@@ -5982,13 +5985,13 @@ slots:
       - RO:0002160
 
   taxon of:
-    is_a: related to
+    is_a: related to at concept level
     inverse: in taxon
     domain: organism taxon
     range: thing with taxon
 
   has molecular consequence:
-    is_a: related to
+    is_a: related to at concept level
     description: >-
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
@@ -6000,7 +6003,7 @@ slots:
       - NCIT:allele_has_activity
 
   is molecular consequence of:
-    is_a: related to
+    is_a: related to at concept level
     domain: ontology class
     inverse: has molecular consequence
 
@@ -7580,6 +7583,7 @@ classes:
       - KEGG.REACTION  ## R number
       - KEGG.RCLASS    ## RC number
       - KEGG.ENZYME    ## EC number
+      - KEGG.ORTHOLOGY ## in particular for gut microbiome use case in issue #888
       - UMLS
       - BIGG.REACTION
 
@@ -10238,6 +10242,29 @@ classes:
     slot_usage:
       object:
         range: cellular component
+
+  molecular activity to chemical entity association:
+    is_a: association
+    description: >-
+      Added in response to capturing relationship between microbiome activities as measured via
+      measurements of blood analytes as collected via blood and stool samples
+    slot_usage:
+      subject:
+        range: molecular activity
+      object:
+        range: chemical entity
+
+  molecular activity to molecular activity association:
+    is_a: association
+      description: >-
+        Added in response to capturing relationship between microbiome activities as measured via
+        measurements of blood analytes as collected via blood and stool samples
+    slot_usage:
+      subject:
+        range: molecular activity
+      object:
+        range: molecular activity
+
 
   gene to go term association:
     aliases: ['functional association']
