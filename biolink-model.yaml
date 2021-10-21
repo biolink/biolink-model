@@ -1256,6 +1256,11 @@ slots:
       disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
 
+  drug regulatory status world wide:
+    aliases: ['max phase']
+    description: >-
+      An agglomeration of drug regulatory status worldwide. Not specific to FDA.
+
 ## --------------------
 ## PREDICATES/RELATIONS
 ## --------------------
@@ -7391,6 +7396,7 @@ classes:
     slots:
       - is supplement
       - highest FDA approval status
+      - drug regulatory status world wide
     in_subset:
       - translator_minimal
     id_prefixes:
