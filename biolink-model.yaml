@@ -1960,8 +1960,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -1971,8 +1971,8 @@ slots:
   abundance affected by:
     is_a: affected by
     inverse: affects abundance of
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
 
   increases abundance of:
     description: >-
@@ -1982,8 +1982,8 @@ slots:
       - translator_minimal
     mixins:
       - increases amount or activity of
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -1995,8 +1995,8 @@ slots:
   abundance increased by:
     is_a: abundance affected by
     inverse: increases abundance of
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
 
   decreases abundance of:
     description: >-
@@ -2004,8 +2004,8 @@ slots:
     is_a: affects abundance of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -2019,8 +2019,8 @@ slots:
   abundance decreased by:
     is_a: abundance affected by
     inverse: decreases abundance of
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
 
   increases activity of:
     description: >-
@@ -2028,8 +2028,8 @@ slots:
     is_a: affects activity of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     related_mappings:
@@ -2068,8 +2068,8 @@ slots:
       value: true
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     exact_mappings:
       - CTD:affects_activity_of
     narrow_mappings:
@@ -2084,16 +2084,16 @@ slots:
       holds between two chemical entities where the action or effect of one is changed by the
       activity of the other within a system of interest
     is_a: affected by
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects activity of
 
   activity increased by:
     is_a: activity affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases activity of
 
   decreases activity of:
@@ -2103,8 +2103,8 @@ slots:
     is_a: affects activity of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     related_mappings:
@@ -2147,8 +2147,8 @@ slots:
     is_a: activity affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases activity of
 
 
@@ -2159,7 +2159,7 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: nucleic acid entity
     exact_mappings:
       - CTD:affects_expression_of
@@ -2179,7 +2179,7 @@ slots:
     is_a: affects expression of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: nucleic acid entity
     mixins:
       - increases amount or activity of
@@ -2205,7 +2205,7 @@ slots:
     is_a: affects expression of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: nucleic acid entity
     mixins:
       - decreases amount or activity of
@@ -2233,7 +2233,7 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: nucleic acid entity
     annotations:
       tag: biolink:canonical_predicate
@@ -2254,7 +2254,7 @@ slots:
     is_a: affects folding of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: nucleic acid entity
     mixins:
       - increases amount or activity of
@@ -2277,7 +2277,7 @@ slots:
     is_a: affects folding of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: nucleic acid entity
     mixins:
       - decreases amount or activity of
@@ -2300,8 +2300,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2315,8 +2315,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects localization of
 
   increases localization of:
@@ -2326,8 +2326,8 @@ slots:
     is_a: affects localization of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -2340,8 +2340,8 @@ slots:
     is_a: localization affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases localization of
 
   decreases localization of:
@@ -2350,8 +2350,8 @@ slots:
     is_a: affects localization of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -2364,8 +2364,8 @@ slots:
     is_a: localization affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases localization of
 
   affects metabolic processing of:
@@ -2373,8 +2373,8 @@ slots:
       holds between two chemical entities where the action or effect of one impacts the
       metabolic processing of the other within a system of interest
     is_a: affects
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     in_subset:
       - translator_minimal
     annotations:
@@ -2389,8 +2389,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects metabolic processing of
 
   increases metabolic processing of:
@@ -2400,8 +2400,8 @@ slots:
     is_a: affects metabolic processing of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -2416,8 +2416,8 @@ slots:
     is_a: metabolic processing affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases metabolic processing of
 
   decreases metabolic processing of:
@@ -2427,8 +2427,8 @@ slots:
     is_a: affects metabolic processing of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -2441,8 +2441,8 @@ slots:
     is_a: metabolic processing affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases metabolic processing of
 
   affects molecular modification of:
@@ -2453,8 +2453,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2497,8 +2497,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects molecular modification of
 
   increases molecular modification of:
@@ -2509,8 +2509,8 @@ slots:
     is_a: affects molecular modification of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -2625,8 +2625,8 @@ slots:
       holds between two chemical entities where the action or effect 
       of one impacts the rate of chemical synthesis of the other
     is_a: affects
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     annotations:
@@ -2637,8 +2637,8 @@ slots:
 
   synthesis affected by:
     is_a: affected by
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     inverse: affects synthesis of
     in_subset:
       - translator_minimal
@@ -2650,8 +2650,8 @@ slots:
     is_a: affects synthesis of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     mixins:
       - increases amount or activity of
     annotations:
@@ -2664,8 +2664,8 @@ slots:
     is_a: synthesis affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     inverse: increases synthesis of
 
   decreases synthesis of:
@@ -2673,8 +2673,8 @@ slots:
       holds between two chemical entities where the action or effect
       of one decreases the rate of chemical synthesis of the other
     is_a: affects synthesis of
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     mixins:
       - decreases amount or activity of
     in_subset:
@@ -2690,8 +2690,8 @@ slots:
     is_a: synthesis affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     inverse: decreases synthesis of
 
   affects degradation of:
@@ -2702,8 +2702,8 @@ slots:
       down a molecule into smaller parts, either naturally or artificially
       (Oxford English Dictionary, UK, 1995)
     is_a: affects
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     in_subset:
       - translator_minimal
     annotations:
@@ -2719,8 +2719,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     inverse: affects degradation of
 
   increases degradation of:
@@ -2730,8 +2730,8 @@ slots:
     is_a: affects degradation of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     mixins:
       - decreases amount or activity of
     annotations:
@@ -2760,8 +2760,8 @@ slots:
     is_a: degradation affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     inverse: increases degradation of
 
   decreases degradation of:
@@ -2771,8 +2771,8 @@ slots:
     is_a: affects degradation of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     mixins:
       - increases amount or activity of
     annotations:
@@ -2788,8 +2788,8 @@ slots:
     is_a: degradation affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity
+    range: chemical entity
     inverse: decreases degradation of
 
   affects mutation rate of:
@@ -2885,7 +2885,7 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: chemical entity
     inverse: response affected by
     exact_mappings:
@@ -2900,7 +2900,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity
-    range: small molecule or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -2914,7 +2914,7 @@ slots:
     is_a: affects response to
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: chemical entity
     mixins:
       - increases amount or activity of
@@ -2929,7 +2929,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity
-    range: small molecule or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases response to
 
   decreases response to:
@@ -2941,7 +2941,7 @@ slots:
     is_a: affects response to
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: chemical entity
     mixins:
       - decreases amount or activity of
@@ -2959,7 +2959,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity
-    range: small molecule or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases response to
 
   affects splicing of:
@@ -2969,7 +2969,7 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: transcript
     annotations:
       tag: biolink:canonical_predicate
@@ -2984,7 +2984,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: transcript
-    range: small molecule or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects splicing of
 
   increases splicing of:
@@ -2994,7 +2994,7 @@ slots:
     is_a: affects splicing of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: transcript
     mixins:
       - increases amount or activity of
@@ -3011,7 +3011,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: transcript
-    range: small molecule or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases splicing of
 
   decreases splicing of:
@@ -3021,7 +3021,7 @@ slots:
     is_a: affects splicing of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: transcript
     mixins:
       - decreases amount or activity of
@@ -3038,7 +3038,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: transcript
-    range: small molecule or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases splicing of
 
   affects stability of:
@@ -3048,8 +3048,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3062,8 +3062,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects stability of
 
   increases stability of:
@@ -3073,8 +3073,8 @@ slots:
     is_a: affects stability of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -3090,8 +3090,8 @@ slots:
     is_a: stability affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases stability of
 
   decreases stability of:
@@ -3099,8 +3099,8 @@ slots:
       holds between two chemical entities where the action or effect of one decreases
       the stability of the other within a system of interest
     is_a: affects stability of
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     in_subset:
@@ -3115,8 +3115,8 @@ slots:
     is_a: stability affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases stability of
 
   affects transport of:
@@ -3126,8 +3126,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3142,8 +3142,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects transport of
 
   increases transport of:
@@ -3153,8 +3153,8 @@ slots:
     is_a: affects transport of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -3170,8 +3170,8 @@ slots:
     is_a: transport affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases transport of
 
   decreases transport of:
@@ -3181,8 +3181,8 @@ slots:
     is_a: affects transport of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -3195,8 +3195,8 @@ slots:
     is_a: transport affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases transport of
 
   affects secretion of:
@@ -3206,8 +3206,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3221,8 +3221,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects secretion of
 
   increases secretion of:
@@ -3232,8 +3232,8 @@ slots:
     is_a: affects secretion of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -3249,8 +3249,8 @@ slots:
     is_a: secretion affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases secretion of
 
   decreases secretion of:
@@ -3260,8 +3260,8 @@ slots:
     is_a: affects secretion of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -3277,8 +3277,8 @@ slots:
     is_a: secretion affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases secretion of
 
   affects uptake of:
@@ -3288,8 +3288,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -3303,8 +3303,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects uptake of
 
   increases uptake of:
@@ -3314,8 +3314,8 @@ slots:
     is_a: affects uptake of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -3331,8 +3331,8 @@ slots:
     is_a: uptake affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases uptake of
 
   decreases uptake of:
@@ -3342,8 +3342,8 @@ slots:
     is_a: affects uptake of
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -3359,8 +3359,8 @@ slots:
     is_a: uptake affected by
     in_subset:
       - translator_minimal
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases uptake of
 
   regulates:
@@ -3503,8 +3503,8 @@ slots:
     is_a: affects
     mixins:
       - regulates
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: entity regulated by entity
     annotations:
       tag: biolink:canonical_predicate
@@ -3525,8 +3525,8 @@ slots:
 
   entity regulated by entity:
     is_a: affected by
-    domain: small molecule or gene or gene product
-    range: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: entity regulates entity
 
   entity positively regulates entity:
@@ -4473,7 +4473,7 @@ slots:
       holds between a measurable chemical entity and a disease
       or phenotypic feature, where the entity is used as an indicator
       of the presence or state of the disease or feature.
-    domain: small molecule or gene or gene product
+    domain: chemical entity or gene or gene product
     range: disease or phenotypic feature
     annotations:
       tag: biolink:canonical_predicate
@@ -8069,12 +8069,6 @@ classes:
       
 
   ## entity mixins
-
-  small molecule or gene or gene product:
-    description: >-
-      A union of small molecules and children, and gene or gene product.
-      This mixin is helpful to use to help understand the usage of predicates like 'affects response to'
-    mixin: true
 
   chemical entity or gene or gene product:
     description: >-
