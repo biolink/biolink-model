@@ -99,7 +99,7 @@ message Article
   optional summary String = 13
   repeated keywords String = 14
   repeated meshTerms Uriorcurie = 15
-  repeated xref IriType = 16
+  repeated xref Uriorcurie = 16
   id String = 17
   optional name LabelType = 18
   type String = 19
@@ -262,7 +262,7 @@ message Book
   optional summary String = 13
   repeated keywords String = 14
   repeated meshTerms Uriorcurie = 15
-  repeated xref IriType = 16
+  repeated xref Uriorcurie = 16
   optional name LabelType = 17
   id String = 18
   type String = 19
@@ -284,7 +284,7 @@ message BookChapter
   optional summary String = 13
   repeated keywords String = 14
   repeated meshTerms Uriorcurie = 15
-  repeated xref IriType = 16
+  repeated xref Uriorcurie = 16
   id String = 17
   optional name LabelType = 18
   type String = 19
@@ -1262,7 +1262,7 @@ message Gene
   repeated category NamedThing = 9
   optional symbol String = 10
   repeated synonym LabelType = 11
-  repeated xref IriType = 12
+  repeated xref Uriorcurie = 12
   repeated inTaxon OrganismTaxon = 13
   optional hasBiologicalSequence BiologicalSequence = 14
  }
@@ -2014,7 +2014,7 @@ message MicroRNA
   repeated inTaxon OrganismTaxon = 15
   optional hasBiologicalSequence BiologicalSequence = 16
   repeated synonym LabelType = 17
-  repeated xref IriType = 18
+  repeated xref Uriorcurie = 18
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
 message MolecularActivity
@@ -2122,7 +2122,7 @@ message NoncodingRNAProduct
   repeated inTaxon OrganismTaxon = 15
   optional hasBiologicalSequence BiologicalSequence = 16
   repeated synonym LabelType = 17
-  repeated xref IriType = 18
+  repeated xref Uriorcurie = 18
  }
 // A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
 message NucleicAcidEntity
@@ -2561,7 +2561,7 @@ message Protein
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
   repeated synonym LabelType = 11
-  repeated xref IriType = 12
+  repeated xref Uriorcurie = 12
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
@@ -2577,7 +2577,7 @@ message ProteinIsoform
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
   repeated synonym LabelType = 11
-  repeated xref IriType = 12
+  repeated xref Uriorcurie = 12
  }
 // Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
 message Publication
@@ -2597,7 +2597,7 @@ message Publication
   optional summary String = 13
   repeated keywords String = 14
   repeated meshTerms Uriorcurie = 15
-  repeated xref IriType = 16
+  repeated xref Uriorcurie = 16
   id String = 17
   optional name LabelType = 18
   type String = 19
@@ -2688,7 +2688,7 @@ message RNAProduct
   repeated inTaxon OrganismTaxon = 15
   optional hasBiologicalSequence BiologicalSequence = 16
   repeated synonym LabelType = 17
-  repeated xref IriType = 18
+  repeated xref Uriorcurie = 18
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
 message RNAProductIsoform
@@ -2710,7 +2710,7 @@ message RNAProductIsoform
   repeated inTaxon OrganismTaxon = 15
   optional hasBiologicalSequence BiologicalSequence = 16
   repeated synonym LabelType = 17
-  repeated xref IriType = 18
+  repeated xref Uriorcurie = 18
  }
 // An association between a sequence feature and a nucleic acid entity it is localized to.
 message SequenceAssociation
@@ -2788,7 +2788,7 @@ message Serial
   optional summary String = 13
   repeated keywords String = 14
   repeated meshTerms Uriorcurie = 15
-  repeated xref IriType = 16
+  repeated xref Uriorcurie = 16
   optional name LabelType = 17
   optional isoAbbreviation String = 18
   optional volume String = 19
@@ -2826,7 +2826,7 @@ message SiRNA
   repeated inTaxon OrganismTaxon = 15
   optional hasBiologicalSequence BiologicalSequence = 16
   repeated synonym LabelType = 17
-  repeated xref IriType = 18
+  repeated xref Uriorcurie = 18
  }
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
 message SmallMolecule
