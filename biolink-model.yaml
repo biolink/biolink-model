@@ -86,6 +86,7 @@ prefixes:
   MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
@@ -115,6 +116,7 @@ prefixes:
   RXCUI: 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm='
   schema: 'http://schema.org/'
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
+  SEED.REACTION: 'https://modelseed.org/biochem/reactions/'
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
   SIO: 'http://semanticscience.org/resource/SIO_'
   SNOMED: 'http://www.snomedbrowser.com/Codes/Details/'
@@ -7581,6 +7583,8 @@ classes:
       - KEGG.ENZYME    ## EC number
       - UMLS
       - BIGG.REACTION
+      - SEED.REACTION
+      - METANETX.REACTION
 
   biological process:
     is_a: biological process or activity
