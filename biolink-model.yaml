@@ -1402,7 +1402,15 @@ slots:
       - UMLS:owning_section_of
 
   related to at concept level:
+    is_a: related to
+    description: >-
+      Represents a relationship held between terminology components that describe the conceptual model of a domain.
+
   related to at instance level:
+    is_a: related to
+      description: >-
+        Represents a relationship held between two instances of a data classes.  Much like an assertion component,
+        in an ABox, these represent facts associated with the conceptual model.
 
   superclass of:
     is_a: related to at concept level
