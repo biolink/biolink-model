@@ -2900,12 +2900,21 @@ slots:
     inverse: decreases mutation rate of
 
   affects response to:
-    description: >-
-      holds between two chemical entities where the action or effect
-      of one impacts the susceptibility of a biological entity or system
-      (e.g. an organism, cell, cellular component, macromolecular machine mixin,
-      biological or pathological process) to the other
     is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: chemical entity
+    range: chemical entity
+    inverse: response affected by
+    exact_mappings:
+      - CTD:affects_response_to
+
+  response affected by:
+    description: >-
+      holds between two chemical entities where the susceptibility of a biological entity or system
+      (e.g. an organism, cell, cellular component, macromolecular machine mixin,
+      biological or pathological process) action or effect is affected by the other.
+    is_a: affected by
     in_subset:
       - translator_minimal
     domain: chemical entity
@@ -2913,15 +2922,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_response_to
-
-  response affected by:
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity
-    range: chemical entity
     inverse: affects response to
 
   increases response to:
