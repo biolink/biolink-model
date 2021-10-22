@@ -81,6 +81,7 @@ prefixes:
   KEGG.DGROUP: 'http://www.kegg.jp/entry/'
   KEGG.ENZYME: 'http://www.kegg.jp/entry/'
   KEGG.GENE: 'http://www.kegg.jp/entry/'
+  KEGG.PATHWAY: 'https://www.kegg.jp/entry/'
   KEGG.RCLASS: 'http://www.kegg.jp/entry/'
   LOINC: 'http://loinc.org/rdf/'
   MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
@@ -7625,6 +7626,7 @@ classes:
       - WIKIPATHWAYS
       - FB  # FlyBase FBgg*
       - PANTHER.PATHWAY
+      - KEGG.PATHWAY
 
   physiological process:
     aliases: ['physiology']
