@@ -1611,7 +1611,7 @@ slots:
       - https://github.com/biolink/biolink-model/issues/657
 
   has real world evidence of association with:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       this means that the assertion was derived by applying statistical and machine learning models to
       clinical data such as EHR data, survey data, etc
@@ -1623,7 +1623,7 @@ slots:
       value: true
 
   active in:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: gene or gene product
     range: cellular component
     annotations:
@@ -1633,7 +1633,7 @@ slots:
       - RO:0002432
 
   acts upstream of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: gene or gene product
     range: biological process
     annotations:
@@ -1643,7 +1643,7 @@ slots:
       - RO:0002263
 
   has upstream actor:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: acts upstream of
     domain: biological process
     range: gene or gene product
@@ -1733,7 +1733,7 @@ slots:
     description: >-
       refers to is a relation between one information content entity and the named thing
       that it makes reference to.
-    is_a: related to at concept level
+    is_a: related to at instance level
     exact_mappings:
       - IAO:0000142
     narrow_mappings:
@@ -1742,7 +1742,7 @@ slots:
   ## Publication related predicates
 
   contributor:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: information content entity
     range: agent
     comments:
@@ -1797,7 +1797,7 @@ slots:
     range: named thing
     description: >-
       holds between any two entities that directly or indirectly interact with each other
-    is_a: related to at concept level
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     symmetric: true
@@ -1889,7 +1889,7 @@ slots:
       - RO:0002435
 
   affects:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       describes an entity that has a direct affect on the state or quality
       of another existing entity. Use of the 'affects' predicate implies that
@@ -1941,21 +1941,21 @@ slots:
       - SNOMED:has_pathological_process
 
   affected by:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       describes an entity of which the state or quality is affected by
       another existing entity.
     inverse: affects
 
   increases amount or activity of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     mixin: true
     description: >-
       A grouping mixin to help with searching for all the predicates that increase the amount
       or activity of the object.
 
   decreases amount or activity of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     mixin: true
     description: >-
       A grouping mixin to help with searching for all the predicates that decrease the amount
@@ -3635,7 +3635,7 @@ slots:
     inverse: disrupts
 
   gene product of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       definition x has gene product of y if and only if y is a gene (SO:0000704)
       that participates in some gene expression process (GO:0010467) where the output of thatf
@@ -3652,7 +3652,7 @@ slots:
       - translator_minimal
 
   has gene product:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       holds between a gene and a transcribed and/or
       translated product generated from it
@@ -3672,7 +3672,7 @@ slots:
       - NCIT:R178
 
   transcribed to:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: gene
     range: transcript
     description: >-
@@ -3683,7 +3683,7 @@ slots:
       - SIO:010080
 
   transcribed from:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: transcript
     range: gene
     annotations:
@@ -3696,7 +3696,7 @@ slots:
       - SIO:010081
 
   translates to:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: transcript
     range: protein
     annotations:
@@ -3711,7 +3711,7 @@ slots:
       - SIO:010082
 
   translation of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: protein
     range: transcript
     description: >-
@@ -3782,7 +3782,7 @@ slots:
       - RO:HOM0000018
 
   coexists with:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     in_subset:
@@ -4037,7 +4037,7 @@ slots:
   # Despite the name, note that this particular entity is
   # NOT a biolink:Association but rather, a biolink:predicate
   genetic association:
-    is_a: related to at concept level
+    is_a: related to at instance level
     symmetric: true
     annotations:
       tag: biolink:canonical_predicate
@@ -4087,7 +4087,7 @@ slots:
       - hetio:ASSOCIATES_DaG
 
   affects risk for:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other
     annotations:
@@ -4097,7 +4097,7 @@ slots:
       - translator_minimal
 
   risk affected by:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: affects risk for
 
   predisposes:
@@ -5444,7 +5444,7 @@ slots:
     inverse: consumes
 
   temporally related to:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       holds between two entities with a temporal relationship
     domain: occurrent
@@ -5589,7 +5589,7 @@ slots:
     inverse: has variant part
 
   related condition:
-    is_a: related to at concept level
+    is_a: related to at instance level
     symmetric: true
     annotations:
       tag: biolink:canonical_predicate
@@ -5600,7 +5600,7 @@ slots:
   ## Predicates relating variants to genes
 
   is sequence variant of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: holds between a sequence variant and a nucleic acid entity
     domain: sequence variant
     range: nucleic acid entity
@@ -5615,7 +5615,7 @@ slots:
       - WIKIDATA:P3433
 
   has sequence variant:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: is sequence variant of
     domain: nucleic acid entity
     range: sequence variant
@@ -5785,7 +5785,7 @@ slots:
   disease has basis in:
     description: A relation that holds between a disease and an entity where the state
       of the entity has contribution to the disease.
-    is_a: related to at concept level
+    is_a: related to at instance level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5818,7 +5818,7 @@ slots:
     inverse: causes adverse event
 
   contraindicated for:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: Holds between a drug and a disease or phenotype, such that a person
       with that disease should not be treated with the drug.
     domain: drug
@@ -5831,7 +5831,7 @@ slots:
       - RTXKG1:contraindicated_for
 
   has contraindication:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: disease or phenotypic feature
     range: drug
     inverse: contraindicated for
@@ -5840,7 +5840,7 @@ slots:
   # they didn't seem to map well to anything else.
 
   has not completed:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: holds between an entity and a process that the entity is capable of,
       but has not completed
     exact_mappings:
@@ -5850,11 +5850,11 @@ slots:
       value: true
 
   not completed by:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: has not completed
 
   has completed:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: holds between an entity and a process that the entity is capable of
       and has completed
     annotations:
@@ -5865,7 +5865,7 @@ slots:
       - RTXKG1:has_completed
 
   completed by:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: has completed
 
   decreases molecular interaction:
@@ -5901,7 +5901,7 @@ slots:
     inverse: increases molecular interaction
 
   in linkage disequilibrium with:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: holds between two sequence variants, the presence of which are correlated
       in a population
     symmetric: true
@@ -5912,7 +5912,7 @@ slots:
       - NCIT:C16798
 
   has increased amount:
-    is_a: related to at concept level
+    is_a: related to at instance level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5920,7 +5920,7 @@ slots:
       - CL:has_high_plasma_membrane_amount
 
   increased amount of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: has increased amount
 
   has decreased amount:
@@ -5932,11 +5932,11 @@ slots:
       - CL:has_low_plasma_membrane_amount
 
   decreased amount in:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: has decreased amount
 
   lacks part:
-    is_a: related to at concept level
+    is_a: related to at instance level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5948,11 +5948,11 @@ slots:
       - CL:lacks_plasma_membrane_part
 
   missing from:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: lacks part
 
   develops from:
-    is_a: related to at concept level
+    is_a: related to at instance level
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5971,13 +5971,13 @@ slots:
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
   develops into:
-     is_a: related to at concept level
+     is_a: related to at instance level
      inverse: develops from
 
   in taxon:
     aliases:
       - instance of
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: thing with taxon
     range: organism taxon
     annotations:
@@ -6001,13 +6001,13 @@ slots:
       - RO:0002160
 
   taxon of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     inverse: in taxon
     domain: organism taxon
     range: thing with taxon
 
   has molecular consequence:
-    is_a: related to at concept level
+    is_a: related to at instance level
     description: >-
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
@@ -6019,7 +6019,7 @@ slots:
       - NCIT:allele_has_activity
 
   is molecular consequence of:
-    is_a: related to at concept level
+    is_a: related to at instance level
     domain: ontology class
     inverse: has molecular consequence
 
