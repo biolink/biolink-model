@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-10-21 16:02
+# Generation date: 2021-10-21 16:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -211,7 +211,7 @@ UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-a
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
 UMLS = CurieNamespace('UMLS', 'http://identifiers.org/umls/')
-UMLSSG = CurieNamespace('UMLSSG', 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#')
+UMLSSG = CurieNamespace('UMLSSG', 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt')
 UNII = CurieNamespace('UNII', 'http://identifiers.org/unii/')
 UNIPROT_ISOFORM = CurieNamespace('UNIPROT_ISOFORM', 'http://identifiers.org/uniprot.isoform/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
@@ -8058,10 +8058,10 @@ class FDAApprovalStatusEnum(EnumDefinitionImpl):
         setattr(cls, "FDA Priority Review",
                 PermissibleValue(text="FDA Priority Review",
                                  description="Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review") )
-        setattr(cls, "regular approval",
-                PermissibleValue(text="regular approval") )
-        setattr(cls, "post-approval withdrawal",
-                PermissibleValue(text="post-approval withdrawal") )
+        setattr(cls, "Regular FDA Approval",
+                PermissibleValue(text="Regular FDA Approval") )
+        setattr(cls, "Post-Approval Withdrawal",
+                PermissibleValue(text="Post-Approval Withdrawal") )
 
 # Slots
 class slots:
