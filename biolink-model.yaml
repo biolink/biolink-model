@@ -4432,6 +4432,19 @@ slots:
     exact_mappings:
       - CTD:negative_correlation
 
+  co-occurs in literature with:
+    is_a: correlated with
+    descriptions: >-
+      holds between two entities where their co-occurrence is correlated by counts of publications
+      in which both occur, using some threshold of occurrence as defined by the edge provider.
+    domain: named thing
+    range: named thing
+    in_subset: translator_minimal
+    symmetric: true
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    
   coexpressed with:
     is_a: correlated with
     description: >-
