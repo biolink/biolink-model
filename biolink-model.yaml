@@ -25,6 +25,7 @@ prefixes:
   alliancegenome: 'https://www.alliancegenome.org/'
   apollo: 'https://github.com/GMOD/Apollo'
   biolink: 'https://w3id.org/biolink/vocab/'
+  bioschemas: 'https://bioschemas.org/'
   linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
   # Placeholder: just points to GMOD Chado wiki
@@ -6719,6 +6720,7 @@ classes:
     exact_mappings:
       - WIKIDATA:Q16521
       - STY:T001
+      - bioschemas:Taxon
     id_prefixes:
       - NCBITaxon
       - MESH
@@ -7324,6 +7326,9 @@ classes:
     narrow_mappings:
       - STY:T088 # Carbohydrate
       - STY:T085 # Molecular Sequence
+      - CHEBI:23367 # Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical,
+                    # radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
+      - bioschemas:MolecularEntity
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -7397,6 +7402,8 @@ classes:
         included, even if it is not strictly molecular (e.g., sodium ion).
     narrow_mappings:
       - STY:T196 # Element, Ion, or Isotope
+      - CHEBI:59999
+      - bioschemas:ChemicalSubstance
     id_prefixes:
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
@@ -7893,10 +7900,9 @@ classes:
       A collection of individuals from the same taxonomic class
       distinguished by one or more characteristics.  Characteristics can
       include, but are not limited to, shared geographic location, genetics,
-      phenotypes [Alliance for Genome Resources]
+      phenotypes.
     local_names:
       ga4gh: population
-      agr: population
     mixins:
       - thing with taxon
     is_a: organismal entity
@@ -8168,6 +8174,8 @@ classes:
       - symbol
       - synonym
       - xref
+    narrow_mappings:
+      - bioschemas:gene
     exact_mappings:
       - SO:0000704
       - SIO:010035
@@ -8330,6 +8338,8 @@ classes:
       - FB      # FlyBase FBpp*
       - UMLS
       - MESH
+    broad_mappings:
+      - bioschemas:Protein
     exact_mappings:
       - PR:000000001
       - SIO:010043
