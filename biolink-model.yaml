@@ -44,7 +44,7 @@ prefixes:
   dcat: 'http://www.w3.org/ns/dcat#'
   dct: 'http://purl.org/dc/terms/'
   doi: 'https://doi.org/'
-  DOID_PROPERTY: 'http://purl.obolibrary.org/obo/doid#'
+  DOID-PROPERTY: 'http://purl.obolibrary.org/obo/doid#'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   EDAM-DATA: 'http://edamontology.org/data_'
@@ -94,7 +94,7 @@ prefixes:
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
-  NBO_PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
+  NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
   NCBIGene: 'http://identifiers.org/ncbigene/'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
@@ -1337,7 +1337,7 @@ slots:
       - UBERON.NONAMESPACE:innervated_by
       - PATO-PROPERTY:has_increased_levels_of
       - OBO:has_role
-      - NBO_PROPERTY:is_about
+      - NBO-PROPERTY:is_about
       - RO:0000053 # bearer_of
       - PATO-PROPERTY:decreased_in_magnitude_relative_to
       - PATO-PROPERTY:has_cross_section
@@ -4185,7 +4185,7 @@ slots:
       - NCIT:process_initiates_biological_process
       - NCIT:chromosome_mapped_to_disease
       - NCIT:disease_has_normal_tissue_origin
-      - NBO_PROPERTY:in_response_to
+      - NBO-PROPERTY:in_response_to
       - ORPHA:317343
       - ORPHA:317344
       - ORPHA:317346
@@ -4601,7 +4601,7 @@ slots:
       - OMIM:has_phenotype
     narrow_mappings:
       - NCIT:R89
-      - DOID_PROPERTY:has_symptom
+      - DOID-PROPERTY:has_symptom
       - RO:0004022
 
   phenotype of:
@@ -5058,7 +5058,7 @@ slots:
       - LOINC:has_subject
       - NCIT:pathway_has_gene_element
       - NCIT:process_involves_gene
-      - NBO_PROPERTY:has_participant
+      - NBO-PROPERTY:has_participant
       - PathWhiz:has_bound
       - PathWhiz:has_compound
       - PathWhiz:has_element_collection
@@ -5153,7 +5153,7 @@ slots:
     narrow_mappings:
       # RTX contribute mapping, may belong somewhere else?
       - NCIT:gene_involved_in_molecular_abnormality
-      - NBO_PROPERTY:by_means
+      - NBO-ROPERTY:by_means
       - ORPHA:317348
       - ORPHA:317349
       - ORPHA:327767
@@ -5254,7 +5254,7 @@ slots:
     exact_mappings:
       - RO:0001000
       - FMA:derives_from
-      - DOID_PROPERTY:derives_from
+      - DOID-PROPERTY:derives_from
     narrow_mappings:
       - CHEBI:has_functional_parent
       - SNOMED:has_specimen_source_topography
