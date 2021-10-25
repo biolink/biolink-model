@@ -1,8 +1,10 @@
-id: food
+id: molecular_activity_to_chemical_entity_association
 schema_generating: true
-description: A substance consumed by a living organism as a source of nutrition
-display_name: food
-document_category: food
+description: Added in response to capturing relationship between microbiome activities
+  as measured via measurements of blood analytes as collected via blood and stool
+  samples
+display_name: molecular activity to chemical entity association
+document_category: molecular activity to chemical entity association
 weight: 20
 fields:
 - id: id
@@ -13,8 +15,6 @@ fields:
   description: An IRI for an entity. This is determined by the id using expansion
     rules.
   display_name: iri
-- id: type
-  display_name: type
 - id: name
   description: A human-readable name for an attribute or entity.
   display_name: name
@@ -35,6 +35,31 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
+- id: predicate
+  description: A high-level grouping for the relationship type. AKA minimal predicate.
+    This is analogous to category for nodes.
+  display_name: predicate
+- id: relation
+  display_name: relation
+- id: negated
+  description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+- id: qualifiers
+  description: connects an association to qualifiers that modify or qualify the meaning
+    of that association
+  display_name: qualifiers
+  cardinality: multi
+- id: publications
+  description: connects an association to publications supporting the association
+  display_name: publications
+  cardinality: multi
+- id: has_evidence
+  description: connects an association to an instance of supporting evidence
+  display_name: has evidence
+  cardinality: multi
+- id: type
+  description: rdf:type of biolink:Association should be fixed at rdf:Statement
+  display_name: association_type
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\
@@ -48,34 +73,13 @@ fields:
     \ assertion to a SO class such as TF_binding_site, which is more specific than\
     \ anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity,\
     \ biolink:NamedThing}"
-  display_name: named thing_category
+  display_name: association_category
   cardinality: multi
-- id: trade_name
-  description: ''
-  display_name: trade name
-- id: available_from
-  description: ''
-  display_name: available from
-  cardinality: multi
-- id: max_tolerated_dose
-  description: The highest dose of a drug or treatment that does not cause unacceptable
-    side effects. The maximum tolerated dose is determined in clinical trials by testing
-    increasing doses on different groups of people until the highest dose with acceptable
-    side effects is found. Also called MTD.
-  display_name: max tolerated dose
-- id: is_toxic
-  description: ''
-  display_name: is toxic
-- id: is_supplement
-  description: ''
-  display_name: is supplement
-- id: highest_FDA_approval_status
-  description: Should be the highest level of FDA approval this chemical entity or
-    device has, regardless of which disease, condition or phenotype it is currently
-    being reviewed to treat.  For specific levels of FDA approval for a specific condition,
-    disease, phenotype, etc., see the association slot, 'FDA approval status.'
-  display_name: highest FDA approval status
-- id: drug_regulatory_status_world_wide
-  description: An agglomeration of drug regulatory status worldwide. Not specific
-    to FDA.
-  display_name: drug regulatory status world wide
+- id: subject
+  description: connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: molecular activity to chemical entity association_subject
+- id: object
+  description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: molecular activity to chemical entity association_object

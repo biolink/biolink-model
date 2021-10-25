@@ -454,6 +454,7 @@ message ChemicalMixture
   optional isToxic Boolean = 13
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
@@ -710,6 +711,7 @@ message ComplexMolecularMixture
   optional isToxic Boolean = 13
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -953,6 +955,7 @@ message Drug
   optional isToxic Boolean = 13
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -1210,6 +1213,7 @@ message Food
   optional isToxic Boolean = 13
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
  }
 message FoodAdditive
  {
@@ -2032,6 +2036,48 @@ message MolecularActivity
   repeated hasOutput MolecularEntity = 11
   repeated enabledBy MacromolecularMachineMixin = 12
  }
+// Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
+message MolecularActivityToChemicalEntityAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  predicate PredicateType = 8
+  optional relation String = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  repeated hasEvidence EvidenceType = 13
+  optional type String = 14
+  repeated category CategoryType = 15
+  subject MolecularActivity = 16
+  object ChemicalEntity = 17
+ }
+// Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
+message MolecularActivityToMolecularActivityAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  predicate PredicateType = 8
+  optional relation String = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  repeated hasEvidence EvidenceType = 13
+  optional type String = 14
+  repeated category CategoryType = 15
+  subject MolecularActivity = 16
+  object MolecularActivity = 17
+ }
 // A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
 message MolecularEntity
  {
@@ -2068,6 +2114,7 @@ message MolecularMixture
   optional isToxic Boolean = 13
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
  }
 // a databased entity or concept/class
 message NamedThing
@@ -2546,6 +2593,7 @@ message ProcessedMaterial
   optional isToxic Boolean = 13
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein

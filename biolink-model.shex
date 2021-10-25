@@ -203,6 +203,7 @@ linkml:Nodeidentifier NONLITERAL
     @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR
     @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToVariantAssociation> OR
     @<MaterialSampleDerivationAssociation> OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR
+    @<MolecularActivityToChemicalEntityAssociation> OR @<MolecularActivityToMolecularActivityAssociation> OR
     @<NamedThingToInformationContentEntityAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
     @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
     @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR
@@ -496,7 +497,7 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <ChemicalEntityToEntityAssociationMixin_struct> {
-    (  $<ChemicalEntityToEntityAssociationMixin_tes> rdf:subject @<ChemicalEntity> ;
+    (  $<ChemicalEntityToEntityAssociationMixin_tes> rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
        rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ?
     )
 }
@@ -517,7 +518,8 @@ linkml:Nodeidentifier NONLITERAL
        (  $<ChemicalMixture_tes> (  &<ChemicalEntity_tes> ;
              rdf:type [ <ChemicalEntity> ] ? ;
              <is_supplement> @<ChemicalMixture> ? ;
-             <highest_FDA_approval_status> @linkml:String ?
+             <highest_FDA_approval_status> @linkml:String ? ;
+             <drug_regulatory_status_world_wide> @linkml:String ?
           ) ;
           rdf:type [ <ChemicalMixture> ]
        )
@@ -577,7 +579,7 @@ linkml:Nodeidentifier NONLITERAL
 <ChemicalToEntityAssociationMixin> {
     (  $<ChemicalToEntityAssociationMixin_tes> (  &<ChemicalEntityToEntityAssociationMixin_tes> ;
           rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ? ;
-          rdf:subject @<ChemicalEntity>
+          rdf:subject @<ChemicalEntityOrGeneOrGeneProduct>
        ) ;
        rdf:type [ <ChemicalToEntityAssociationMixin> ] ?
     )
@@ -1861,6 +1863,26 @@ linkml:Nodeidentifier NONLITERAL
           <enabled_by> @<MacromolecularMachineMixin> *
        ) ;
        rdf:type [ <MolecularActivity> ]
+    )
+}
+
+<MolecularActivityToChemicalEntityAssociation> CLOSED {
+    (  $<MolecularActivityToChemicalEntityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<MolecularActivity> ;
+          rdf:object @<ChemicalEntity>
+       ) ;
+       rdf:type [ <MolecularActivityToChemicalEntityAssociation> ]
+    )
+}
+
+<MolecularActivityToMolecularActivityAssociation> CLOSED {
+    (  $<MolecularActivityToMolecularActivityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<MolecularActivity> ;
+          rdf:object @<MolecularActivity>
+       ) ;
+       rdf:type [ <MolecularActivityToMolecularActivityAssociation> ]
     )
 }
 

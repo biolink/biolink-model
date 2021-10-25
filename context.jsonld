@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-10-21 16:33\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-10-25 15:43\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -239,6 +239,7 @@
       "KEGG.GLYCAN": "http://identifiers.org/kegg.glycan/",
       "KEGG.MODULE": "http://identifiers.org/kegg.module/",
       "KEGG.ORTHOLOGY": "http://identifiers.org/kegg.orthology/",
+      "KEGG.PATHWAY": "https://www.kegg.jp/entry/",
       "KEGG.RCLASS": "http://www.kegg.jp/entry/",
       "KEGG.REACTION": "http://identifiers.org/kegg.reaction/",
       "LOINC": "http://loinc.org/rdf/",
@@ -248,6 +249,7 @@
       },
       "MEDDRA": "http://identifiers.org/meddra/",
       "MESH": "http://id.nlm.nih.gov/mesh/",
+      "METANETX.REACTION": "https://www.metanetx.org/equa_info/",
       "MGI": "http://identifiers.org/mgi/",
       "MI": {
          "@id": "http://purl.obolibrary.org/obo/MI_",
@@ -331,7 +333,6 @@
       },
       "PDQ": "https://www.cancer.gov/publications/pdq#",
       "PFAM": "http://identifiers.org/pfam/",
-      "PHARMGKB.DRUG": "http://identifiers.org/pharmgkb.drug/",
       "PHARMGKB.PATHWAYS": "http://identifiers.org/pharmgkb.pathways/",
       "PHAROS": {
          "@id": "http://pharos.nih.gov",
@@ -375,6 +376,7 @@
       },
       "RXNORM": "http://purl.bioontology.org/ontology/RXNORM/",
       "ResearchID": "https://publons.com/researcher/",
+      "SEED.REACTION": "https://modelseed.org/biochem/reactions/",
       "SEMMEDDB": {
          "@id": "https://skr3.nlm.nih.gov/SemMedDB",
          "@prefix": true
@@ -713,6 +715,9 @@
          "@type": "@id"
       },
       "close_match": {
+         "@type": "@id"
+      },
+      "co_occurs_in_literature_with": {
          "@type": "@id"
       },
       "coexists_with": {
@@ -1566,6 +1571,12 @@
          "@type": "@id"
       },
       "related_to": {
+         "@type": "@id"
+      },
+      "related_to_at_concept_level": {
+         "@type": "@id"
+      },
+      "related_to_at_instance_level": {
          "@type": "@id"
       },
       "response_affected_by": {

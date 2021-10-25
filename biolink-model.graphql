@@ -517,7 +517,7 @@ interface ChemicalEntityOrProteinOrPolypeptide
 
 interface ChemicalEntityToEntityAssociationMixin
   {
-    subject: ChemicalEntity!
+    subject: ChemicalEntityOrGeneOrGeneProduct!
   }
 
 type ChemicalExposure implements ExposureEvent
@@ -542,6 +542,7 @@ type ChemicalMixture
     isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 interface ChemicalOrDrugOrTreatment
@@ -618,7 +619,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
 
 interface ChemicalToEntityAssociationMixin
   {
-    subject: ChemicalEntity!
+    subject: ChemicalEntityOrGeneOrGeneProduct!
   }
 
 type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
@@ -811,6 +812,7 @@ type ComplexMolecularMixture
     isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type ConfidenceLevel
@@ -1069,6 +1071,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type DrugExposure implements ExposureEvent
@@ -1402,6 +1405,7 @@ type Food
     isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type FoodAdditive
@@ -2371,6 +2375,48 @@ type MolecularActivity implements Occurrent, OntologyClass
     enabledBy: [MacromolecularMachineMixin]
   }
 
+type MolecularActivityToChemicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    predicate: PredicateType!
+    relation: String
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    type: String
+    category: [CategoryType]
+    subject: MolecularActivity!
+    object: ChemicalEntity!
+  }
+
+type MolecularActivityToMolecularActivityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    predicate: PredicateType!
+    relation: String
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    type: String
+    category: [CategoryType]
+    subject: MolecularActivity!
+    object: MolecularActivity!
+  }
+
 type MolecularEntity
   {
     id: String!
@@ -2406,6 +2452,7 @@ type MolecularMixture
     isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type MortalityOutcome implements Outcome
@@ -2991,6 +3038,7 @@ type ProcessedMaterial
     isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type Protein implements GeneProductMixin, ThingWithTaxon
