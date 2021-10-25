@@ -1602,7 +1602,7 @@ slots:
     description: >-
       x is the opposite of y if there exists some distance metric M, and there exists
       no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
-    is_a: related to at concept level
+    is_a: related to at entity level
     symmetric: true
     annotations:
       tag: biolink:canonical_predicate
@@ -4730,7 +4730,7 @@ slots:
       - SNOMED:inherent_location_of
 
   similar to:
-      is_a: related to at class level
+      is_a: related to at instance level
       description: >-
         holds between an entity and some other entity with similar features.
       in_subset:
