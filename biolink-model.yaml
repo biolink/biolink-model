@@ -2196,7 +2196,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
     inverse: affects expression of
 
   increases expression of:
@@ -2223,7 +2223,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
     inverse: increases expression of
 
   decreases expression of:
@@ -2251,7 +2251,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
     inverse: decreases expression of
 
   affects folding of:
@@ -2273,7 +2273,7 @@ slots:
     is_a: affected by
     inverse: affects folding of
     domain: nucleic acid entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
 
   increases folding of:
     description: >-
@@ -2296,7 +2296,7 @@ slots:
     is_a: folding affected by
     inverse: increases folding of
     domain: nucleic acid entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
 
   decreases folding of:
     description: >-
@@ -2320,7 +2320,7 @@ slots:
     is_a: folding affected by
     inverse: decreases folding of
     domain: nucleic acid entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
 
   affects localization of:
     description: >-
@@ -2586,8 +2586,8 @@ slots:
     is_a: molecular modification affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases molecular modification of
 
   decreases molecular modification of:
@@ -2598,8 +2598,8 @@ slots:
     is_a: affects molecular modification of
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -2645,8 +2645,8 @@ slots:
     is_a: molecular modification affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases molecular modification of
 
   affects synthesis of:
@@ -2654,8 +2654,8 @@ slots:
       holds between two chemical entities where the action or effect 
       of one impacts the rate of chemical synthesis of the other
     is_a: affects
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     in_subset:
       - translator_minimal
     annotations:
@@ -2666,8 +2666,8 @@ slots:
 
   synthesis affected by:
     is_a: affected by
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects synthesis of
     in_subset:
       - translator_minimal
@@ -2679,8 +2679,8 @@ slots:
     is_a: affects synthesis of
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -2693,8 +2693,8 @@ slots:
     is_a: synthesis affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases synthesis of
 
   decreases synthesis of:
@@ -2702,8 +2702,8 @@ slots:
       holds between two chemical entities where the action or effect
       of one decreases the rate of chemical synthesis of the other
     is_a: affects synthesis of
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     in_subset:
@@ -2719,8 +2719,8 @@ slots:
     is_a: synthesis affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases synthesis of
 
   affects degradation of:
@@ -2731,8 +2731,8 @@ slots:
       down a molecule into smaller parts, either naturally or artificially
       (Oxford English Dictionary, UK, 1995)
     is_a: affects
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     in_subset:
       - translator_minimal
     annotations:
@@ -2748,8 +2748,8 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: affects degradation of
 
   increases degradation of:
@@ -2759,8 +2759,8 @@ slots:
     is_a: affects degradation of
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -2789,8 +2789,8 @@ slots:
     is_a: degradation affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: increases degradation of
 
   decreases degradation of:
@@ -2800,8 +2800,8 @@ slots:
     is_a: affects degradation of
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -2817,8 +2817,8 @@ slots:
     is_a: degradation affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     inverse: decreases degradation of
 
   affects mutation rate of:
@@ -2826,7 +2826,7 @@ slots:
       holds between a chemical entity and a nucleic acid entity where the action or effect of the
       chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
     is_a: affects
-    domain: chemical entity
+    domain: chemical entity or gene or gene product
     range: nucleic acid entity
     broad_mappings:
       # Term 'mutagenesis' generally speaks generally of the process of
@@ -2845,7 +2845,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
     inverse: affects mutation rate of
 
   increases mutation rate of:
@@ -2901,7 +2901,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
     inverse: decreases mutation rate of
 
   # original definition of this predicate used molecular entity which was a
@@ -2910,7 +2910,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity
+    range: chemical entity or gene or gene product
     inverse: response affected by
     exact_mappings:
       - CTD:affects_response_to
@@ -4494,7 +4494,7 @@ slots:
       or state of the disease or feature.
       # metabolite
     domain: disease or phenotypic feature
-    range: chemical entity
+    range: chemical entity or gene or gene product
     in_subset:
       - translator_minimal
     inverse: biomarker for
@@ -5083,7 +5083,7 @@ slots:
   has substrate:
     is_a: has participant
     # domain: molecular activity
-    # range: chemical entity
+    # range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -5289,7 +5289,7 @@ slots:
       holds between a one or more chemical entities present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
     domain: chemical entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
     in_subset:
       - translator_minimal
     inverse: has food component
@@ -5545,7 +5545,7 @@ slots:
     description: Holds between chemical entities that physically and directly interact
       with each other
     domain: chemical entity
-    range: chemical entity
+    range: chemical entity or gene or gene product
     symmetric: true
     annotations:
       tag: biolink:canonical_predicate
@@ -9274,7 +9274,7 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: chemical entity
+        range: chemical entity or gene or gene product
         description: "the chemical entity that is an interactor"
 
   drug to entity association mixin:
@@ -9298,7 +9298,7 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: chemical entity
+        range: chemical entity or gene or gene product
         description: "the chemical entity or entity that is an interactor"
 
   case to entity association mixin:
