@@ -31,7 +31,7 @@ setup(
     classifiers=[
         'Intended Audience :: Science/Research',
         'Intended Audience :: Developers',
-        'Intended Audience :: Healthcare Industry'
+        'Intended Audience :: Healthcare Industry',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'Programming Language :: Python :: 3 :: Only',
