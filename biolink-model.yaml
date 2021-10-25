@@ -1602,7 +1602,7 @@ slots:
     description: >-
       x is the opposite of y if there exists some distance metric M, and there exists
       no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
-    is_a: related to at entity level
+    is_a: related to at instance level
     symmetric: true
     annotations:
       tag: biolink:canonical_predicate
@@ -7346,6 +7346,7 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - UMLS
 
   chemical entity:
     is_a: named thing
@@ -7375,6 +7376,7 @@ classes:
       - UNII
       - MESH
       - CAS #CAS numbers are given for things like plant extracts as well.
+      - UMLS
 
   chemical substance:
     deprecated: >-
@@ -7416,6 +7418,7 @@ classes:
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
       - BIGG.METABOLITE
+      - UMLS
     slot_usage:
       id:
         examples:
@@ -7460,6 +7463,7 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - UMLS
 
   nucleic acid entity:
     is_a: molecular entity
@@ -7532,6 +7536,7 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - UMLS
 
   complex molecular mixture:
     is_a: chemical mixture
@@ -7564,6 +7569,7 @@ classes:
       - KEGG.DRUG    ## D number
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - UMLS
 
   biological process or activity:
     description: >-
@@ -7714,6 +7720,8 @@ classes:
       Is a material entity that is created or changed during material processing.
     exact_mappings:
       - OBI:0000047
+    id_prefixes:
+      - UMLS
 
   drug:
     is_a: molecular mixture
@@ -7740,6 +7748,7 @@ classes:
     id_prefixes:
       - RXCUI
       - NDC
+      - UMLS
 
   ## Food
 
