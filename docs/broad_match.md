@@ -21,7 +21,7 @@ URI: [biolink:broad_match](https://w3id.org/biolink/vocab/broad_match)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [related to at concept level](related_to_at_concept_level.md)
 
 ## Children
 

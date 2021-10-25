@@ -43,6 +43,7 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  * KEGG.DRUG
  * KEGG.DGROUP
  * KEGG.ENVIRON
+ * UMLS
 
 ## Parents
 

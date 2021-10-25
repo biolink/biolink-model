@@ -14,7 +14,7 @@ URI: [biolink:folding_increased_by](https://w3id.org/biolink/vocab/folding_incre
 
 ## Domain and Range
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

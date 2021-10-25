@@ -44,6 +44,7 @@ URI: [biolink:SmallMolecule](https://w3id.org/biolink/vocab/SmallMolecule)
  * KEGG.DGROUP
  * KEGG.ENVIRON
  * BIGG.METABOLITE
+ * UMLS
 
 ## Parents
 

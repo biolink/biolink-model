@@ -18,7 +18,7 @@ URI: [biolink:develops_from](https://w3id.org/biolink/vocab/develops_from)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
 
 ## Children
 

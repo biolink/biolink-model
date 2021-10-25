@@ -17,7 +17,7 @@ URI: [biolink:has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
 
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

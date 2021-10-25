@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two chemical entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+holds between two chemical or gene/gene product entities  where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
 
 URI: [biolink:increases_molecular_modification_of](https://w3id.org/biolink/vocab/increases_molecular_modification_of)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

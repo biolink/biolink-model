@@ -172,6 +172,8 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
      * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) - An association between a material sample and the material entity from which it is derived.
      * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a material sample and a disease or phenotype.
+     * [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) - Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
+     * [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) - Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
      * [NamedThingToInformationContentEntityAssociation](NamedThingToInformationContentEntityAssociation.md) - association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
      * [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md)
      * [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) - A relationship between two organism taxon nodes
@@ -328,6 +330,8 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
          * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) - An association between a material sample and the material entity from which it is derived.
          * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a material sample and a disease or phenotype.
+         * [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) - Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
+         * [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) - Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
          * [NamedThingToInformationContentEntityAssociation](NamedThingToInformationContentEntityAssociation.md) - association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
          * [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md)
          * [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) - A relationship between two organism taxon nodes
@@ -474,7 +478,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [actively involves](actively_involves.md)
      * [capability of](capability_of.md)
- * [activity affected by](activity_affected_by.md) - holds between two chemical entities where the action or effect of one is changed by the activity of the other within a system of interest
+ * [activity affected by](activity_affected_by.md) - holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
      * [activity decreased by](activity_decreased_by.md)
      * [activity increased by](activity_increased_by.md)
  * [activity decreased by](activity_decreased_by.md)
@@ -495,7 +499,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [abundance affected by](abundance_affected_by.md)
          * [abundance decreased by](abundance_decreased_by.md)
          * [abundance increased by](abundance_increased_by.md)
-     * [activity affected by](activity_affected_by.md) - holds between two chemical entities where the action or effect of one is changed by the activity of the other within a system of interest
+     * [activity affected by](activity_affected_by.md) - holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
          * [activity decreased by](activity_decreased_by.md)
          * [activity increased by](activity_increased_by.md)
      * [degradation affected by](degradation_affected_by.md)
@@ -526,7 +530,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [process regulated by process](process_regulated_by_process.md)
          * [process negatively regulated by process](process_negatively_regulated_by_process.md)
          * [process positively regulated by process](process_positively_regulated_by_process.md)
-     * [response affected by](response_affected_by.md)
+     * [response affected by](response_affected_by.md) - holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
          * [response decreased by](response_decreased_by.md)
          * [response increased by](response_increased_by.md)
      * [secretion affected by](secretion_affected_by.md)
@@ -548,55 +552,55 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [uptake decreased by](uptake_decreased_by.md)
          * [uptake increased by](uptake_increased_by.md)
  * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-     * [affects abundance of](affects_abundance_of.md) - holds between two chemical entities where the action or effect of one changes the amount of the  other within a system of interest
-         * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical entities where the action or effect of one decreases the amount of the other within a system of interest
-         * [increases abundance of](increases_abundance_of.md) - holds between two chemical entities where the action or effect of one increases the amount of the other within a system of interest
-     * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the other within a system of interest
-         * [decreases activity of](decreases_activity_of.md) - holds between two chemical entities where the action or effect of one decreases the  activity of the other within a system of interest
-         * [increases activity of](increases_activity_of.md) - holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
+     * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
+         * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
+         * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+     * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
+         * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
+         * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
      * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
          * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
          * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
      * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
-     * [affects expression of](affects_expression_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
-         * [decreases expression of](decreases_expression_of.md) - holds between two chemical entities where the action or effect of one decreases the level of expression of the other within a system of interest
-         * [increases expression of](increases_expression_of.md) - holds between two chemical entities where the action or effect of one increases the level of expression of the other within a system of interest
-     * [affects folding of](affects_folding_of.md) - holds between two chemical entities where the action or effect of one changes the rate or quality of folding of the other
-         * [decreases folding of](decreases_folding_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
-         * [increases folding of](increases_folding_of.md) - holds between two chemical entities where the action or effect of one  increases the rate or quality of folding of the other
-     * [affects localization of](affects_localization_of.md) - holds between two chemical entities where the action or effect of one changes the localization of the other within a system of interest
-         * [decreases localization of](decreases_localization_of.md) - holds between two chemical entities where the action or effect of one decreases the proper localization of the other within a system of interest
-         * [increases localization of](increases_localization_of.md) - holds between two chemical entities where the action or effect of one increases the proper localization of the other within a system of interest
-     * [affects metabolic processing of](affects_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
-         * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
-         * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
-     * [affects molecular modification of](affects_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
-         * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
-         * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+     * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+         * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
+         * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
+     * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
+         * [decreases folding of](decreases_folding_of.md) - holds between a chemical or gene or gene product entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
+         * [increases folding of](increases_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the rate or quality of folding of the other
+     * [affects localization of](affects_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the localization of the other within a system of interest
+         * [decreases localization of](decreases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one decreases the proper localization of the other within a system of interest
+         * [increases localization of](increases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the proper localization of the other within a system of interest
+     * [affects metabolic processing of](affects_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the metabolic processing of the other within a system of interest
+         * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
+         * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
+     * [affects molecular modification of](affects_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+         * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities  where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+         * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
      * [affects mutation rate of](affects_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
          * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity decreases the rate of mutation of the nucleic acid entity within a system of interest
          * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity increases the rate of mutation of the nucleic acid entity within a system of interest
-     * [affects response to](affects_response_to.md) - holds between two chemical entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+     * [affects response to](affects_response_to.md)
          * [decreases response to](decreases_response_to.md) - holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
          * [increases response to](increases_response_to.md) - holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
-     * [affects secretion of](affects_secretion_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
-         * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
-         * [increases secretion of](increases_secretion_of.md) - holds between two chemical entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
+     * [affects secretion of](affects_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
+         * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
+         * [increases secretion of](increases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
      * [affects splicing of](affects_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity impacts the splicing of the mRNA
          * [decreases splicing of](decreases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity decreases the proper splicing of the mRNA
          * [increases splicing of](increases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity increases the proper splicing of the mRNA
-     * [affects stability of](affects_stability_of.md) - holds between two chemical entities where the action or effect of one impacts the stability of the other within a system of interest
-         * [decreases stability of](decreases_stability_of.md) - holds between two chemical entities where the action or effect of one decreases the stability of the other within a system of interest
-         * [increases stability of](increases_stability_of.md) - holds between two chemical entities where the action or effect of one increases the stability of the other within a system of interest
+     * [affects stability of](affects_stability_of.md) - holds between two entities where the action or effect of one impacts the stability of the other within a system of interest
+         * [decreases stability of](decreases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the stability of the other within a system of interest
+         * [increases stability of](increases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the stability of the other within a system of interest
      * [affects synthesis of](affects_synthesis_of.md) - holds between two chemical entities where the action or effect  of one impacts the rate of chemical synthesis of the other
          * [decreases synthesis of](decreases_synthesis_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of chemical synthesis of the other
          * [increases synthesis of](increases_synthesis_of.md) - holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other
-     * [affects transport of](affects_transport_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
-         * [decreases transport of](decreases_transport_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
-         * [increases transport of](increases_transport_of.md) - holds between two chemical entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
-     * [affects uptake of](affects_uptake_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
-         * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
-         * [increases uptake of](increases_uptake_of.md) - holds between two chemical entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+     * [affects transport of](affects_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+         * [decreases transport of](decreases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+         * [increases transport of](increases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
+     * [affects uptake of](affects_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
+         * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+         * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
      * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
          * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
              * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
@@ -608,58 +612,58 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [process regulates process](process_regulates_process.md)
          * [process negatively regulates process](process_negatively_regulates_process.md)
          * [process positively regulates process](process_positively_regulates_process.md)
- * [affects abundance of](affects_abundance_of.md) - holds between two chemical entities where the action or effect of one changes the amount of the  other within a system of interest
-     * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical entities where the action or effect of one decreases the amount of the other within a system of interest
-     * [increases abundance of](increases_abundance_of.md) - holds between two chemical entities where the action or effect of one increases the amount of the other within a system of interest
- * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the other within a system of interest
-     * [decreases activity of](decreases_activity_of.md) - holds between two chemical entities where the action or effect of one decreases the  activity of the other within a system of interest
-     * [increases activity of](increases_activity_of.md) - holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
+ * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
+     * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
+     * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+ * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
+     * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
+     * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
  * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
      * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
      * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
  * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
- * [affects expression of](affects_expression_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
-     * [decreases expression of](decreases_expression_of.md) - holds between two chemical entities where the action or effect of one decreases the level of expression of the other within a system of interest
-     * [increases expression of](increases_expression_of.md) - holds between two chemical entities where the action or effect of one increases the level of expression of the other within a system of interest
- * [affects folding of](affects_folding_of.md) - holds between two chemical entities where the action or effect of one changes the rate or quality of folding of the other
-     * [decreases folding of](decreases_folding_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
-     * [increases folding of](increases_folding_of.md) - holds between two chemical entities where the action or effect of one  increases the rate or quality of folding of the other
- * [affects localization of](affects_localization_of.md) - holds between two chemical entities where the action or effect of one changes the localization of the other within a system of interest
-     * [decreases localization of](decreases_localization_of.md) - holds between two chemical entities where the action or effect of one decreases the proper localization of the other within a system of interest
-     * [increases localization of](increases_localization_of.md) - holds between two chemical entities where the action or effect of one increases the proper localization of the other within a system of interest
- * [affects metabolic processing of](affects_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
-     * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
-     * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
- * [affects molecular modification of](affects_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
-     * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
-     * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+ * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+     * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
+     * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
+ * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
+     * [decreases folding of](decreases_folding_of.md) - holds between a chemical or gene or gene product entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
+     * [increases folding of](increases_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the rate or quality of folding of the other
+ * [affects localization of](affects_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the localization of the other within a system of interest
+     * [decreases localization of](decreases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one decreases the proper localization of the other within a system of interest
+     * [increases localization of](increases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the proper localization of the other within a system of interest
+ * [affects metabolic processing of](affects_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the metabolic processing of the other within a system of interest
+     * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
+     * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
+ * [affects molecular modification of](affects_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+     * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities  where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+     * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
  * [affects mutation rate of](affects_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
      * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity decreases the rate of mutation of the nucleic acid entity within a system of interest
      * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity increases the rate of mutation of the nucleic acid entity within a system of interest
- * [affects response to](affects_response_to.md) - holds between two chemical entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+ * [affects response to](affects_response_to.md)
      * [decreases response to](decreases_response_to.md) - holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
      * [increases response to](increases_response_to.md) - holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
  * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
      * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
      * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
- * [affects secretion of](affects_secretion_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
-     * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
-     * [increases secretion of](increases_secretion_of.md) - holds between two chemical entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
+ * [affects secretion of](affects_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
+     * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
+     * [increases secretion of](increases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
  * [affects splicing of](affects_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity impacts the splicing of the mRNA
      * [decreases splicing of](decreases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity decreases the proper splicing of the mRNA
      * [increases splicing of](increases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity increases the proper splicing of the mRNA
- * [affects stability of](affects_stability_of.md) - holds between two chemical entities where the action or effect of one impacts the stability of the other within a system of interest
-     * [decreases stability of](decreases_stability_of.md) - holds between two chemical entities where the action or effect of one decreases the stability of the other within a system of interest
-     * [increases stability of](increases_stability_of.md) - holds between two chemical entities where the action or effect of one increases the stability of the other within a system of interest
+ * [affects stability of](affects_stability_of.md) - holds between two entities where the action or effect of one impacts the stability of the other within a system of interest
+     * [decreases stability of](decreases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the stability of the other within a system of interest
+     * [increases stability of](increases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the stability of the other within a system of interest
  * [affects synthesis of](affects_synthesis_of.md) - holds between two chemical entities where the action or effect  of one impacts the rate of chemical synthesis of the other
      * [decreases synthesis of](decreases_synthesis_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of chemical synthesis of the other
      * [increases synthesis of](increases_synthesis_of.md) - holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other
- * [affects transport of](affects_transport_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
-     * [decreases transport of](decreases_transport_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
-     * [increases transport of](increases_transport_of.md) - holds between two chemical entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
- * [affects uptake of](affects_uptake_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
-     * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
-     * [increases uptake of](increases_uptake_of.md) - holds between two chemical entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+ * [affects transport of](affects_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+     * [decreases transport of](decreases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+     * [increases transport of](increases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
+ * [affects uptake of](affects_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
+     * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+     * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
  * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
      * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
          * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
@@ -681,6 +685,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
      * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
          * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
+ * [co-occurs in literature with](co_occurs_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
  * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
      * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
      * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
@@ -706,28 +711,29 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
  * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
      * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+     * [co-occurs in literature with](co_occurs_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
      * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
      * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
      * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
      * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
  * [decreased amount in](decreased_amount_in.md)
- * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical entities where the action or effect of one decreases the amount of the other within a system of interest
- * [decreases activity of](decreases_activity_of.md) - holds between two chemical entities where the action or effect of one decreases the  activity of the other within a system of interest
+ * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
+ * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
  * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
- * [decreases expression of](decreases_expression_of.md) - holds between two chemical entities where the action or effect of one decreases the level of expression of the other within a system of interest
- * [decreases folding of](decreases_folding_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
- * [decreases localization of](decreases_localization_of.md) - holds between two chemical entities where the action or effect of one decreases the proper localization of the other within a system of interest
- * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
+ * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
+ * [decreases folding of](decreases_folding_of.md) - holds between a chemical or gene or gene product entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
+ * [decreases localization of](decreases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one decreases the proper localization of the other within a system of interest
+ * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
  * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
- * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+ * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities  where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
  * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity decreases the rate of mutation of the nucleic acid entity within a system of interest
  * [decreases response to](decreases_response_to.md) - holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
- * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
+ * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
  * [decreases splicing of](decreases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity decreases the proper splicing of the mRNA
- * [decreases stability of](decreases_stability_of.md) - holds between two chemical entities where the action or effect of one decreases the stability of the other within a system of interest
+ * [decreases stability of](decreases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the stability of the other within a system of interest
  * [decreases synthesis of](decreases_synthesis_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of chemical synthesis of the other
- * [decreases transport of](decreases_transport_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
- * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+ * [decreases transport of](decreases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+ * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
  * [degradation affected by](degradation_affected_by.md)
      * [degradation decreased by](degradation_decreased_by.md)
      * [degradation increased by](degradation_increased_by.md)
@@ -856,23 +862,23 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
  * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
  * [increased amount of](increased_amount_of.md)
- * [increases abundance of](increases_abundance_of.md) - holds between two chemical entities where the action or effect of one increases the amount of the other within a system of interest
- * [increases activity of](increases_activity_of.md) - holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
+ * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+ * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
  * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
- * [increases expression of](increases_expression_of.md) - holds between two chemical entities where the action or effect of one increases the level of expression of the other within a system of interest
- * [increases folding of](increases_folding_of.md) - holds between two chemical entities where the action or effect of one  increases the rate or quality of folding of the other
- * [increases localization of](increases_localization_of.md) - holds between two chemical entities where the action or effect of one increases the proper localization of the other within a system of interest
- * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
+ * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
+ * [increases folding of](increases_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the rate or quality of folding of the other
+ * [increases localization of](increases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the proper localization of the other within a system of interest
+ * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
  * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
- * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+ * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
  * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity increases the rate of mutation of the nucleic acid entity within a system of interest
  * [increases response to](increases_response_to.md) - holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
- * [increases secretion of](increases_secretion_of.md) - holds between two chemical entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
+ * [increases secretion of](increases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
  * [increases splicing of](increases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity increases the proper splicing of the mRNA
- * [increases stability of](increases_stability_of.md) - holds between two chemical entities where the action or effect of one increases the stability of the other within a system of interest
+ * [increases stability of](increases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the stability of the other within a system of interest
  * [increases synthesis of](increases_synthesis_of.md) - holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other
- * [increases transport of](increases_transport_of.md) - holds between two chemical entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
- * [increases uptake of](increases_uptake_of.md) - holds between two chemical entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+ * [increases transport of](increases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
+ * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
  * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
      * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
      * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
@@ -1007,6 +1013,303 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
  * [related condition](related_condition.md)
  * [related to](related_to.md) - A relationship that is asserted between two named things
+     * [related to at concept level](related_to_at_concept_level.md) - Represents a relationship held between terminology components that describe the conceptual model of a domain.
+         * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+         * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+             * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
+                 * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
+         * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+         * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
+         * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
+     * [related to at instance level](related_to_at_instance_level.md) - Represents a relationship held between two instances of a data classes.  Much like an assertion component, in an ABox, these represent facts associated with the conceptual model.
+         * [active in](active_in.md)
+         * [acts upstream of](acts_upstream_of.md)
+             * [acts upstream of negative effect](acts_upstream_of_negative_effect.md)
+             * [acts upstream of or within](acts_upstream_of_or_within.md)
+             * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
+             * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
+             * [acts upstream of positive effect](acts_upstream_of_positive_effect.md)
+         * [affected by](affected_by.md) - describes an entity of which the state or quality is affected by another existing entity.
+             * [abundance affected by](abundance_affected_by.md)
+                 * [abundance decreased by](abundance_decreased_by.md)
+                 * [abundance increased by](abundance_increased_by.md)
+             * [activity affected by](activity_affected_by.md) - holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
+                 * [activity decreased by](activity_decreased_by.md)
+                 * [activity increased by](activity_increased_by.md)
+             * [degradation affected by](degradation_affected_by.md)
+                 * [degradation decreased by](degradation_decreased_by.md)
+                 * [degradation increased by](degradation_increased_by.md)
+             * [disrupted by](disrupted_by.md) - describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
+             * [entity regulated by entity](entity_regulated_by_entity.md)
+                 * [entity negatively regulated by entity](entity_negatively_regulated_by_entity.md)
+                 * [entity positively regulated by entity](entity_positively_regulated_by_entity.md)
+             * [expression affected by](expression_affected_by.md)
+                 * [expression decreased by](expression_decreased_by.md)
+                 * [expression increased by](expression_increased_by.md)
+             * [folding affected by](folding_affected_by.md)
+                 * [folding decreased by](folding_decreased_by.md)
+                 * [folding increased by](folding_increased_by.md)
+             * [localization affected by](localization_affected_by.md)
+                 * [localization decreased by](localization_decreased_by.md)
+                 * [localization increased by](localization_increased_by.md)
+             * [metabolic processing affected by](metabolic_processing_affected_by.md)
+                 * [metabolic processing decreased by](metabolic_processing_decreased_by.md)
+                 * [metabolic processing increased by](metabolic_processing_increased_by.md)
+             * [molecular modification affected by](molecular_modification_affected_by.md)
+                 * [molecular modification decreased by](molecular_modification_decreased_by.md)
+                 * [molecular modification increased by](molecular_modification_increased_by.md)
+             * [mutation rate affected by](mutation_rate_affected_by.md)
+                 * [mutation rate decreased by](mutation_rate_decreased_by.md)
+                 * [mutation rate increased by](mutation_rate_increased_by.md)
+             * [process regulated by process](process_regulated_by_process.md)
+                 * [process negatively regulated by process](process_negatively_regulated_by_process.md)
+                 * [process positively regulated by process](process_positively_regulated_by_process.md)
+             * [response affected by](response_affected_by.md) - holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
+                 * [response decreased by](response_decreased_by.md)
+                 * [response increased by](response_increased_by.md)
+             * [secretion affected by](secretion_affected_by.md)
+                 * [secretion decreased by](secretion_decreased_by.md)
+                 * [secretion increased by](secretion_increased_by.md)
+             * [splicing affected by](splicing_affected_by.md)
+                 * [splicing decreased by](splicing_decreased_by.md)
+                 * [splicing increased by](splicing_increased_by.md)
+             * [stability affected by](stability_affected_by.md)
+                 * [stability decreased by](stability_decreased_by.md)
+                 * [stability increased by](stability_increased_by.md)
+             * [synthesis affected by](synthesis_affected_by.md)
+                 * [synthesis decreased by](synthesis_decreased_by.md)
+                 * [synthesis increased by](synthesis_increased_by.md)
+             * [transport affected by](transport_affected_by.md)
+                 * [transport decreased by](transport_decreased_by.md)
+                 * [transport increased by](transport_increased_by.md)
+             * [uptake affected by](uptake_affected_by.md)
+                 * [uptake decreased by](uptake_decreased_by.md)
+                 * [uptake increased by](uptake_increased_by.md)
+         * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
+             * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
+                 * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
+                 * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+             * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
+                 * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
+                 * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
+             * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
+                 * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
+                 * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
+             * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
+             * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+                 * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
+                 * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
+             * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
+                 * [decreases folding of](decreases_folding_of.md) - holds between a chemical or gene or gene product entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
+                 * [increases folding of](increases_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the rate or quality of folding of the other
+             * [affects localization of](affects_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the localization of the other within a system of interest
+                 * [decreases localization of](decreases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one decreases the proper localization of the other within a system of interest
+                 * [increases localization of](increases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the proper localization of the other within a system of interest
+             * [affects metabolic processing of](affects_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the metabolic processing of the other within a system of interest
+                 * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
+                 * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
+             * [affects molecular modification of](affects_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+                 * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities  where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+                 * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+             * [affects mutation rate of](affects_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
+                 * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity decreases the rate of mutation of the nucleic acid entity within a system of interest
+                 * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity increases the rate of mutation of the nucleic acid entity within a system of interest
+             * [affects response to](affects_response_to.md)
+                 * [decreases response to](decreases_response_to.md) - holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+                 * [increases response to](increases_response_to.md) - holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+             * [affects secretion of](affects_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
+                 * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
+                 * [increases secretion of](increases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
+             * [affects splicing of](affects_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity impacts the splicing of the mRNA
+                 * [decreases splicing of](decreases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity decreases the proper splicing of the mRNA
+                 * [increases splicing of](increases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity increases the proper splicing of the mRNA
+             * [affects stability of](affects_stability_of.md) - holds between two entities where the action or effect of one impacts the stability of the other within a system of interest
+                 * [decreases stability of](decreases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the stability of the other within a system of interest
+                 * [increases stability of](increases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the stability of the other within a system of interest
+             * [affects synthesis of](affects_synthesis_of.md) - holds between two chemical entities where the action or effect  of one impacts the rate of chemical synthesis of the other
+                 * [decreases synthesis of](decreases_synthesis_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of chemical synthesis of the other
+                 * [increases synthesis of](increases_synthesis_of.md) - holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other
+             * [affects transport of](affects_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+                 * [decreases transport of](decreases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+                 * [increases transport of](increases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
+             * [affects uptake of](affects_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
+                 * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+                 * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+             * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+                 * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
+                     * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
+             * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
+             * [entity regulates entity](entity_regulates_entity.md)
+                 * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
+                 * [entity positively regulates entity](entity_positively_regulates_entity.md)
+             * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+             * [process regulates process](process_regulates_process.md)
+                 * [process negatively regulates process](process_negatively_regulates_process.md)
+                 * [process positively regulates process](process_positively_regulates_process.md)
+         * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
+             * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
+             * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
+         * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
+         * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
+             * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
+             * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
+             * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex mixin
+             * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
+         * [completed by](completed_by.md)
+         * [contains process](contains_process.md)
+         * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
+         * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+             * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
+                 * [adverse event caused by](adverse_event_caused_by.md)
+                 * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
+         * [contribution from](contribution_from.md)
+         * [contributor](contributor.md)
+             * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
+             * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
+             * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
+             * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
+         * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+             * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+             * [co-occurs in literature with](co_occurs_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
+             * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
+             * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
+             * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
+             * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
+         * [decreased amount in](decreased_amount_in.md)
+         * [derives from](derives_from.md) - holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+             * [is metabolite of](is_metabolite_of.md) - holds between two molecular entities in which the first one is derived from the second one as a product of metabolism
+         * [derives into](derives_into.md) - holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+             * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
+         * [develops from](develops_from.md)
+         * [develops into](develops_into.md)
+         * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
+         * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
+         * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
+         * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
+         * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
+             * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
+             * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
+         * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
+         * [has contraindication](has_contraindication.md)
+         * [has decreased amount](has_decreased_amount.md)
+         * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
+         * [has increased amount](has_increased_amount.md)
+         * [has manifestation](has_manifestation.md)
+         * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
+         * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
+         * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
+             * [actively involves](actively_involves.md)
+                 * [capability of](capability_of.md)
+             * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
+             * [has catalyst](has_catalyst.md)
+             * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
+                 * [consumes](consumes.md)
+             * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
+             * [has substrate](has_substrate.md)
+         * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+         * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
+         * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
+         * [has sequence variant](has_sequence_variant.md)
+             * [has frameshift variant](has_frameshift_variant.md)
+             * [has missense variant](has_missense_variant.md)
+             * [has nearby variant](has_nearby_variant.md)
+             * [has non coding variant](has_non_coding_variant.md)
+             * [has nonsense variant](has_nonsense_variant.md)
+             * [has splice site variant](has_splice_site_variant.md)
+             * [has synonymous variant](has_synonymous_variant.md)
+         * [has upstream actor](has_upstream_actor.md)
+             * [has negative upstream actor](has_negative_upstream_actor.md)
+             * [has positive upstream actor](has_positive_upstream_actor.md)
+             * [has upstream or within actor](has_upstream_or_within_actor.md)
+                 * [has negative upstream or within actor](has_negative_upstream_or_within_actor.md)
+                 * [has positive upstream or within actor](has_positive_upstream_or_within_actor.md)
+         * [in linkage disequilibrium with](in_linkage_disequilibrium_with.md) - holds between two sequence variants, the presence of which are correlated in a population
+         * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+         * [increased amount of](increased_amount_of.md)
+         * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
+             * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
+             * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
+             * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
+                 * [chemically interacts with](chemically_interacts_with.md)
+                 * [molecularly interacts with](molecularly_interacts_with.md)
+                     * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
+                     * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
+                     * [molecular interaction decreased by](molecular_interaction_decreased_by.md)
+                     * [molecular interaction increased by](molecular_interaction_increased_by.md)
+         * [is molecular consequence of](is_molecular_consequence_of.md)
+         * [is sequence variant of](is_sequence_variant_of.md) - holds between a sequence variant and a nucleic acid entity
+             * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
+             * [is missense variant of](is_missense_variant_of.md) - holds between a gene  and a sequence variant, such the sequence variant results in a different amino acid sequence but where the length is preserved.
+             * [is nearby variant of](is_nearby_variant_of.md) - holds between a sequence variant and a gene sequence that the variant is genomically close to.
+             * [is non coding variant of](is_non_coding_variant_of.md) - holds between a sequence variant and a gene, where the variant does not affect the coding sequence
+             * [is nonsense variant of](is_nonsense_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
+             * [is splice site variant of](is_splice_site_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.
+             * [is synonymous variant of](is_synonymous_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
+         * [lacks part](lacks_part.md)
+         * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
+         * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
+         * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
+         * [mentions](mentions.md) - refers to is a relation between one information content entity and the named thing that it makes reference to.
+         * [missing from](missing_from.md)
+         * [model of](model_of.md) - holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
+         * [models](models.md)
+         * [not completed by](not_completed_by.md)
+         * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
+         * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
+         * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
+             * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
+                 * [has active ingredient](has_active_ingredient.md) - holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component
+                 * [has excipient](has_excipient.md) - holds between a drug and a molecular entities in which the latter is a part of the former, and is a biologically inactive component
+                 * [has food component](has_food_component.md) - holds between food and one or more chemical entities composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+                     * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
+                 * [has variant part](has_variant_part.md) - holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
+             * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
+                 * [food component of](food_component_of.md) - holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+                     * [nutrient of](nutrient_of.md)
+                 * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
+                 * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
+                 * [variant part of](variant_part_of.md)
+         * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
+             * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
+                 * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
+             * [catalyzes](catalyzes.md)
+             * [enables](enables.md) - holds between a physical entity and a process, where the physical entity executes the process
+             * [is input of](is_input_of.md)
+                 * [consumed by](consumed_by.md)
+             * [is output of](is_output_of.md)
+             * [is substrate of](is_substrate_of.md)
+         * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+         * [produced by](produced_by.md)
+         * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
+         * [related condition](related_condition.md)
+         * [risk affected by](risk_affected_by.md)
+             * [prevented by](prevented_by.md) - holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
+         * [sequence location of](sequence_location_of.md)
+         * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
+             * [chemically similar to](chemically_similar_to.md) - holds between one small molecule entity and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
+             * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
+                 * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
+                 * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
+                 * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
+         * [taxon of](taxon_of.md)
+         * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
+             * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
+             * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
+         * [transcribed from](transcribed_from.md) - x is transcribed from y if and only if x is synthesized from template y
+         * [transcribed to](transcribed_to.md) - inverse of transcribed from
+         * [translates to](translates_to.md) - x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)
+         * [translation of](translation_of.md) - inverse of translates to
+         * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
+             * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
+ * [related to at concept level](related_to_at_concept_level.md) - Represents a relationship held between terminology components that describe the conceptual model of a domain.
+     * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+     * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+         * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
+             * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
+     * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+     * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
+     * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
+ * [related to at instance level](related_to_at_instance_level.md) - Represents a relationship held between two instances of a data classes.  Much like an assertion component, in an ABox, these represent facts associated with the conceptual model.
      * [active in](active_in.md)
      * [acts upstream of](acts_upstream_of.md)
          * [acts upstream of negative effect](acts_upstream_of_negative_effect.md)
@@ -1018,7 +1321,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [abundance affected by](abundance_affected_by.md)
              * [abundance decreased by](abundance_decreased_by.md)
              * [abundance increased by](abundance_increased_by.md)
-         * [activity affected by](activity_affected_by.md) - holds between two chemical entities where the action or effect of one is changed by the activity of the other within a system of interest
+         * [activity affected by](activity_affected_by.md) - holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
              * [activity decreased by](activity_decreased_by.md)
              * [activity increased by](activity_increased_by.md)
          * [degradation affected by](degradation_affected_by.md)
@@ -1049,7 +1352,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [process regulated by process](process_regulated_by_process.md)
              * [process negatively regulated by process](process_negatively_regulated_by_process.md)
              * [process positively regulated by process](process_positively_regulated_by_process.md)
-         * [response affected by](response_affected_by.md)
+         * [response affected by](response_affected_by.md) - holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
              * [response decreased by](response_decreased_by.md)
              * [response increased by](response_increased_by.md)
          * [secretion affected by](secretion_affected_by.md)
@@ -1071,55 +1374,55 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [uptake decreased by](uptake_decreased_by.md)
              * [uptake increased by](uptake_increased_by.md)
      * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-         * [affects abundance of](affects_abundance_of.md) - holds between two chemical entities where the action or effect of one changes the amount of the  other within a system of interest
-             * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical entities where the action or effect of one decreases the amount of the other within a system of interest
-             * [increases abundance of](increases_abundance_of.md) - holds between two chemical entities where the action or effect of one increases the amount of the other within a system of interest
-         * [affects activity of](affects_activity_of.md) - holds between two chemical entities where the action or effect of one changes the activity of the other within a system of interest
-             * [decreases activity of](decreases_activity_of.md) - holds between two chemical entities where the action or effect of one decreases the  activity of the other within a system of interest
-             * [increases activity of](increases_activity_of.md) - holds between two chemical entities where the action or effect of one increases the activity of the other within a system of interest
+         * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
+             * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
+             * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+         * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
+             * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
+             * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
          * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
              * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
              * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
          * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
-         * [affects expression of](affects_expression_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
-             * [decreases expression of](decreases_expression_of.md) - holds between two chemical entities where the action or effect of one decreases the level of expression of the other within a system of interest
-             * [increases expression of](increases_expression_of.md) - holds between two chemical entities where the action or effect of one increases the level of expression of the other within a system of interest
-         * [affects folding of](affects_folding_of.md) - holds between two chemical entities where the action or effect of one changes the rate or quality of folding of the other
-             * [decreases folding of](decreases_folding_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
-             * [increases folding of](increases_folding_of.md) - holds between two chemical entities where the action or effect of one  increases the rate or quality of folding of the other
-         * [affects localization of](affects_localization_of.md) - holds between two chemical entities where the action or effect of one changes the localization of the other within a system of interest
-             * [decreases localization of](decreases_localization_of.md) - holds between two chemical entities where the action or effect of one decreases the proper localization of the other within a system of interest
-             * [increases localization of](increases_localization_of.md) - holds between two chemical entities where the action or effect of one increases the proper localization of the other within a system of interest
-         * [affects metabolic processing of](affects_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
-             * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
-             * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
-         * [affects molecular modification of](affects_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
-             * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
-             * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+         * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+             * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
+             * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
+         * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
+             * [decreases folding of](decreases_folding_of.md) - holds between a chemical or gene or gene product entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
+             * [increases folding of](increases_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the rate or quality of folding of the other
+         * [affects localization of](affects_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the localization of the other within a system of interest
+             * [decreases localization of](decreases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one decreases the proper localization of the other within a system of interest
+             * [increases localization of](increases_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the proper localization of the other within a system of interest
+         * [affects metabolic processing of](affects_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the metabolic processing of the other within a system of interest
+             * [decreases metabolic processing of](decreases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
+             * [increases metabolic processing of](increases_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
+         * [affects molecular modification of](affects_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+             * [decreases molecular modification of](decreases_molecular_modification_of.md) - holds between two chemical entities  where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+             * [increases molecular modification of](increases_molecular_modification_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
          * [affects mutation rate of](affects_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
              * [decreases mutation rate of](decreases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity decreases the rate of mutation of the nucleic acid entity within a system of interest
              * [increases mutation rate of](increases_mutation_rate_of.md) - holds between a chemical entity and a nucleic acid entity where the action or effect of the chemical entity increases the rate of mutation of the nucleic acid entity within a system of interest
-         * [affects response to](affects_response_to.md) - holds between two chemical entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
+         * [affects response to](affects_response_to.md)
              * [decreases response to](decreases_response_to.md) - holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
              * [increases response to](increases_response_to.md) - holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
-         * [affects secretion of](affects_secretion_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
-             * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
-             * [increases secretion of](increases_secretion_of.md) - holds between two chemical entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
+         * [affects secretion of](affects_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
+             * [decreases secretion of](decreases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
+             * [increases secretion of](increases_secretion_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
          * [affects splicing of](affects_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity impacts the splicing of the mRNA
              * [decreases splicing of](decreases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity decreases the proper splicing of the mRNA
              * [increases splicing of](increases_splicing_of.md) - holds between a chemical entity and an mRNA where the action or effect of the chemical entity increases the proper splicing of the mRNA
-         * [affects stability of](affects_stability_of.md) - holds between two chemical entities where the action or effect of one impacts the stability of the other within a system of interest
-             * [decreases stability of](decreases_stability_of.md) - holds between two chemical entities where the action or effect of one decreases the stability of the other within a system of interest
-             * [increases stability of](increases_stability_of.md) - holds between two chemical entities where the action or effect of one increases the stability of the other within a system of interest
+         * [affects stability of](affects_stability_of.md) - holds between two entities where the action or effect of one impacts the stability of the other within a system of interest
+             * [decreases stability of](decreases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the stability of the other within a system of interest
+             * [increases stability of](increases_stability_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the stability of the other within a system of interest
          * [affects synthesis of](affects_synthesis_of.md) - holds between two chemical entities where the action or effect  of one impacts the rate of chemical synthesis of the other
              * [decreases synthesis of](decreases_synthesis_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of chemical synthesis of the other
              * [increases synthesis of](increases_synthesis_of.md) - holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other
-         * [affects transport of](affects_transport_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
-             * [decreases transport of](decreases_transport_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
-             * [increases transport of](increases_transport_of.md) - holds between two chemical entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
-         * [affects uptake of](affects_uptake_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
-             * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
-             * [increases uptake of](increases_uptake_of.md) - holds between two chemical entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+         * [affects transport of](affects_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+             * [decreases transport of](decreases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+             * [increases transport of](increases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
+         * [affects uptake of](affects_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
+             * [decreases uptake of](decreases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+             * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
          * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
              * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
                  * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
@@ -1134,11 +1437,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
          * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
          * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
-     * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
      * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
-     * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
-         * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
-             * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
      * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
          * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
          * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
@@ -1159,6 +1458,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
      * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
          * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+         * [co-occurs in literature with](co_occurs_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
          * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
          * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
          * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
@@ -1241,7 +1541,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [missing from](missing_from.md)
      * [model of](model_of.md) - holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
      * [models](models.md)
-     * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
      * [not completed by](not_completed_by.md)
      * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
      * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
@@ -1280,8 +1579,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
              * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
              * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
-     * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
-     * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
      * [taxon of](taxon_of.md)
      * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
          * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
@@ -1292,7 +1589,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [translation of](translation_of.md) - inverse of translates to
      * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
          * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
- * [response affected by](response_affected_by.md)
+ * [response affected by](response_affected_by.md) - holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
      * [response decreased by](response_decreased_by.md)
      * [response increased by](response_increased_by.md)
  * [response decreased by](response_decreased_by.md)
@@ -1627,6 +1924,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * [description](description.md) - a human-readable description of an entity
+ * [drug regulatory status world wide](drug_regulatory_status_world_wide.md) - An agglomeration of drug regulatory status worldwide. Not specific to FDA.
  * [has attribute](has_attribute.md) - connects any entity to an attribute
  * [has attribute type](has_attribute_type.md) - connects an attribute to a class that describes it
  * [has numeric value](has_numeric_value.md) - connects a quantity value to a number

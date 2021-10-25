@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two chemical entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
+holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
 
 URI: [biolink:affects_secretion_of](https://w3id.org/biolink/vocab/affects_secretion_of)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

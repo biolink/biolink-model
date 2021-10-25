@@ -17,7 +17,7 @@ URI: [biolink:affects_mutation_rate_of](https://w3id.org/biolink/vocab/affects_m
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

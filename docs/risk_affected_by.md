@@ -18,7 +18,7 @@ URI: [biolink:risk_affected_by](https://w3id.org/biolink/vocab/risk_affected_by)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
 
 ## Children
 

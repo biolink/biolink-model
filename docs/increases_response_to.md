@@ -17,7 +17,7 @@ URI: [biolink:increases_response_to](https://w3id.org/biolink/vocab/increases_re
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

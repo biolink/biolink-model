@@ -17,7 +17,7 @@ URI: [biolink:decreases_synthesis_of](https://w3id.org/biolink/vocab/decreases_s
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

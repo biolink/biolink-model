@@ -17,7 +17,7 @@ URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splici
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
 
 ## Parents
 

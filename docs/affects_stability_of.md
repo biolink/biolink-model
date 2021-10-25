@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two chemical entities where the action or effect of one impacts the stability of the other within a system of interest
+holds between two entities where the action or effect of one impacts the stability of the other within a system of interest
 
 URI: [biolink:affects_stability_of](https://w3id.org/biolink/vocab/affects_stability_of)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

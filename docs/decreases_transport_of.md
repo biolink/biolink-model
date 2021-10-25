@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two chemical entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
 
 URI: [biolink:decreases_transport_of](https://w3id.org/biolink/vocab/decreases_transport_of)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

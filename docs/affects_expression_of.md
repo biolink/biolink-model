@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a chemical entity and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
 
 URI: [biolink:affects_expression_of](https://w3id.org/biolink/vocab/affects_expression_of)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

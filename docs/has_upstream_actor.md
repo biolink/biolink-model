@@ -18,7 +18,7 @@ URI: [biolink:has_upstream_actor](https://w3id.org/biolink/vocab/has_upstream_ac
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
 
 ## Children
 

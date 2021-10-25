@@ -21,11 +21,12 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
 
 ## Children
 
  *  [biomarker for](biomarker_for.md)
+ *  [co-occurs in literature with](co_occurs_in_literature_with.md)
  *  [coexpressed with](coexpressed_with.md)
  *  [has biomarker](has_biomarker.md)
  *  [negatively correlated with](negatively_correlated_with.md)

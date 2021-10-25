@@ -15,7 +15,7 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[Occurrent],[NamedThing],[MolecularEntity],[MacromolecularMachineMixin]%3Cenabled%20by%200..%2A-++[MolecularActivity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Chas%20output%200..%2A-%20[MolecularActivity],[MolecularEntity]%3Chas%20input%200..%2A-%20[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivity]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineMixin],[BiologicalProcessOrActivity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[Occurrent],[NamedThing],[MolecularEntity],[MolecularActivityToMolecularActivityAssociation],[MolecularActivityToChemicalEntityAssociation],[MacromolecularMachineMixin]%3Cenabled%20by%200..%2A-++[MolecularActivity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Chas%20output%200..%2A-%20[MolecularActivity],[MolecularEntity]%3Chas%20input%200..%2A-%20[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivityToChemicalEntityAssociation]-%20subject%201..1%3E[MolecularActivity],[MolecularActivityToMolecularActivityAssociation]-%20object%201..1%3E[MolecularActivity],[MolecularActivityToMolecularActivityAssociation]-%20subject%201..1%3E[MolecularActivity],[MolecularActivity]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineMixin],[BiologicalProcessOrActivity],[Attribute],[Agent])
 
 ---
 
@@ -31,8 +31,11 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
  * KEGG.REACTION
  * KEGG.RCLASS
  * KEGG.ENZYME
+ * KEGG.ORTHOLOGY
  * UMLS
  * BIGG.REACTION
+ * SEED.REACTION
+ * METANETX.REACTION
 
 ## Parents
 
@@ -48,6 +51,9 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
  *  **[Occurrent](Occurrent.md)** *[actively involves](actively_involves.md)*  <sub>0..\*</sub>  **[MolecularActivity](MolecularActivity.md)**
  *  **[Occurrent](Occurrent.md)** *[capability of](capability_of.md)*  <sub>0..\*</sub>  **[MolecularActivity](MolecularActivity.md)**
  *  **[MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)** *[macromolecular machine to molecular activity association➞object](macromolecular_machine_to_molecular_activity_association_object.md)*  <sub>1..1</sub>  **[MolecularActivity](MolecularActivity.md)**
+ *  **[MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md)** *[molecular activity to chemical entity association➞subject](molecular_activity_to_chemical_entity_association_subject.md)*  <sub>1..1</sub>  **[MolecularActivity](MolecularActivity.md)**
+ *  **[MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md)** *[molecular activity to molecular activity association➞object](molecular_activity_to_molecular_activity_association_object.md)*  <sub>1..1</sub>  **[MolecularActivity](MolecularActivity.md)**
+ *  **[MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md)** *[molecular activity to molecular activity association➞subject](molecular_activity_to_molecular_activity_association_subject.md)*  <sub>1..1</sub>  **[MolecularActivity](MolecularActivity.md)**
 
 ## Attributes
 

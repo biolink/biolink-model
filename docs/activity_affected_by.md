@@ -8,13 +8,13 @@ layout: default
 # Relation: activity_affected_by
 
 
-holds between two chemical entities where the action or effect of one is changed by the activity of the other within a system of interest
+holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
 
 URI: [biolink:activity_affected_by](https://w3id.org/biolink/vocab/activity_affected_by)
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ## Parents
 

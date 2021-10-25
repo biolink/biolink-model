@@ -15,7 +15,7 @@ URI: [biolink:ChemicalToEntityAssociationMixin](https://w3id.org/biolink/vocab/C
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalEntity]%3Csubject%201..1-%20[ChemicalToEntityAssociationMixin],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[ChemicalToEntityAssociationMixin],[ChemicalToPathwayAssociation],[ChemicalToGeneAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalEntityOrGeneOrGeneProduct]%3Csubject%201..1-++[ChemicalToEntityAssociationMixin],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[ChemicalToEntityAssociationMixin],[ChemicalToPathwayAssociation],[ChemicalToGeneAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityOrGeneOrGeneProduct])
 
 ---
 
@@ -41,10 +41,10 @@ URI: [biolink:ChemicalToEntityAssociationMixin](https://w3id.org/biolink/vocab/C
 
  * [chemical to entity association mixin➞subject](chemical_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the chemical entity or entity that is an interactor
-     * Range: [ChemicalEntity](ChemicalEntity.md)
+     * Range: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
 ### Domain for slot:
 
  * [chemical to entity association mixin➞subject](chemical_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
      * Description: the chemical entity or entity that is an interactor
-     * Range: [ChemicalEntity](ChemicalEntity.md)
+     * Range: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)

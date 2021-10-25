@@ -17,7 +17,7 @@ URI: [biolink:increases_splicing_of](https://w3id.org/biolink/vocab/increases_sp
 
 ## Domain and Range
 
-[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
 
 ## Parents
 

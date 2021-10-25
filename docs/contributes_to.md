@@ -21,7 +21,7 @@ URI: [biolink:contributes_to](https://w3id.org/biolink/vocab/contributes_to)
 
 ## Parents
 
- *  is_a: [related to](related_to.md)
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
 
 ## Children
 
