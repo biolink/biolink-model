@@ -1,5 +1,21 @@
 CHANGES
 =======
+2.2.6
+-----
+small new additions: several new prefixes, UMLS for chemical entity hierarchy, reactions and pathway additions.
+remove drugbank, drugcentral from some members of the chemical hierarchy
+added drug regulatory status world wide
+added two new predicates under related to, related to at concept level, related to at instance level to
+add ways of excluding concept level triples from instance level ones.
+fixed chemical entity domain/range constraints after second round of chemical hierarchy refactor
+added two new associations that help relate wellness gut/blood microbiome sampling to blood analytes
+added literature co-occurence
+added has_evidence to association object
+fix KGX warnings
+fix doc links
+added pypi github action
+
+
 2.2.5
 -----
 bug fixes: add FYPO prefix, add toxicant, add canonical tag to genetically_interacts_with
