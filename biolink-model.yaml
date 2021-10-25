@@ -44,6 +44,7 @@ prefixes:
   dcat: 'http://www.w3.org/ns/dcat#'
   dct: 'http://purl.org/dc/terms/'
   doi: 'https://doi.org/'
+  DOID_PROPERTY: 'http://purl.obolibrary.org/obo/doid#'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   EDAM-DATA: 'http://edamontology.org/data_'
@@ -93,11 +94,12 @@ prefixes:
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
+  NBO_PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
   NCBIGene: 'http://identifiers.org/ncbigene/'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
-  oboformat: 'http://www.geneontology.org/formats/oboInOWL#'
+  oboformat: 'http://www.geneontology.org/formats/oboInOwl#'
   OBOREL: 'http://purl.obolibrary.org/obo/RO_'
   ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
@@ -126,11 +128,13 @@ prefixes:
   SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
+  UBERON_NONAMESPACE: 'http://purl.obolibrary.org/obo/core#'
   # The UMLS Semantic types and groups namespaces don't have a directly
   # resolvable Base URI, but we point to a pair of sensible web documents
   STY: 'http://purl.bioontology.org/ontology/STY/'
   UMLSSG: 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
+  UO-PROPERTY: 'http://purl.obolibrary.org/obo/uo#'
   # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
   # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
   # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
@@ -588,7 +592,7 @@ slots:
     close_mappings:
       # These RTX contributed terms mean "is unit of" which is the semantic inverse of this biolink:has_unit term
       - EFO:0001697
-      - OBO:uo#is_unit_of
+      - UO_PROPERTY:is_unit_of
     exact_mappings:
       - qud:unit
       - IAO:0000039
@@ -1329,11 +1333,11 @@ slots:
       - NCIT:human_disease_maps_to_eo_disease
       - NCIT:is_abnormal_cell_of_disease
       - NCIT:is_related_to_endogenous_product
-      - OBO:core#connected_to
-      - OBO:core#innervated_by
-      - OBO:envo#has_increased_levels_of
+      - UBERON.NONAMESPACE:connected_to
+      - UBERON.NONAMESPACE:innervated_by
+      - PATO-PROPERTY:has_increased_levels_of
       - OBO:has_role
-      - OBO:nbo#is_about
+      - NBO_PROPERTY:is_about
       - RO:0000053 # bearer_of
       - PATO-PROPERTY:decreased_in_magnitude_relative_to
       - PATO-PROPERTY:has_cross_section
@@ -1493,7 +1497,6 @@ slots:
       - NCIT:A14
       - NCIT:A3
       - NDDF:has_dose_form
-      - OBO:intersection_of
       - RXNORM:has_dose_form
       - RXNORM:has_doseformgroup
       - SNOMED:entire_anatomy_structure_of
@@ -1550,7 +1553,7 @@ slots:
       - CHEBI:is_enantiomer_of
       - CHEBI:is_tautomer_of
       - MEDDRA:classified_as
-      - OBO:xref
+      - OIO:hasDbXref
       - oboformat:xref
       - RXNORM:has_quantified_form
       - UMLS:SY
@@ -3950,8 +3953,8 @@ slots:
       # but seem more aligned to the FMA entries in this biolink term, so I leave them here for now
       - LOINC:has_lateral_anatomic_location
       - LOINC:has_lateral_location_presence
-      - OBO:core#distally_connected_to
-      - OBO:core#subdivision_of
+      - UBERON.NONAMESPACE:distally_connected_to
+      - UBERON.NONAMESPACE:subdivision_of
       # These RO terms seem similar to the FMA terms above, so I place them here rather than under 'biolink:related_to'
       - RO:0002219
       - RO:0002220
@@ -4182,7 +4185,7 @@ slots:
       - NCIT:process_initiates_biological_process
       - NCIT:chromosome_mapped_to_disease
       - NCIT:disease_has_normal_tissue_origin
-      - OBO:nbo#in_response_to
+      - NBO_PROPERTY:in_response_to
       - ORPHA:317343
       - ORPHA:317344
       - ORPHA:317346
@@ -4598,7 +4601,7 @@ slots:
       - OMIM:has_phenotype
     narrow_mappings:
       - NCIT:R89
-      - OBO:doid#has_symptom
+      - DOID_PROPERTY:has_symptom
       - RO:0004022
 
   phenotype of:
@@ -5055,7 +5058,7 @@ slots:
       - LOINC:has_subject
       - NCIT:pathway_has_gene_element
       - NCIT:process_involves_gene
-      - OBO:nbo#has_participant
+      - NBO_PROPERTY:has_participant
       - PathWhiz:has_bound
       - PathWhiz:has_compound
       - PathWhiz:has_element_collection
@@ -5150,7 +5153,7 @@ slots:
     narrow_mappings:
       # RTX contribute mapping, may belong somewhere else?
       - NCIT:gene_involved_in_molecular_abnormality
-      - OBO:nbo#by_means
+      - NBO_PROPERTY:by_means
       - ORPHA:317348
       - ORPHA:317349
       - ORPHA:327767
@@ -5251,7 +5254,7 @@ slots:
     exact_mappings:
       - RO:0001000
       - FMA:derives_from
-      - OBO:doid#derives_from
+      - DOID_PROPERTY:derives_from
     narrow_mappings:
       - CHEBI:has_functional_parent
       - SNOMED:has_specimen_source_topography
