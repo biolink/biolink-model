@@ -4539,6 +4539,7 @@ slots:
       holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
     range: anatomical entity
+    multivalued: true
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -4557,6 +4558,7 @@ slots:
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
     range: gene or gene product
+    multivalued: true
     in_subset:
       - translator_minimal
     inverse: expressed in
@@ -4573,6 +4575,7 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
+    multivalued: true
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -4606,6 +4609,7 @@ slots:
       (e.g. abnormally increased temperature).
     domain: phenotypic feature
     range: biological entity
+    multivalued: true
     inverse: has phenotype
     notes:
       - check the domain
@@ -7941,10 +7945,6 @@ classes:
       - STY:T019
       # Acquired Abnormality
       - STY:T020
-      # Injury or Poisoning
-      - STY:T037
-      # Pathologic Function
-      - STY:T046
       # Mental or Behavioral Dysfunction
       - STY:T048
       # Cell or Molecular Dysfunction
@@ -8789,6 +8789,8 @@ classes:
       # metastasis
       - NCIT:C19151
       - EFO:0009708
+      - STY:T046
+      - STY:T037
 
   pathological process exposure:
     mixins:
