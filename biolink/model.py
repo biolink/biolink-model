@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-10-13 19:31
+# Generation date: 2021-10-21 16:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -211,7 +211,7 @@ UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-a
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
 UMLS = CurieNamespace('UMLS', 'http://identifiers.org/umls/')
-UMLSSG = CurieNamespace('UMLSSG', 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#')
+UMLSSG = CurieNamespace('UMLSSG', 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt')
 UNII = CurieNamespace('UNII', 'http://identifiers.org/unii/')
 UNIPROT_ISOFORM = CurieNamespace('UNIPROT_ISOFORM', 'http://identifiers.org/uniprot.isoform/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
@@ -1760,7 +1760,7 @@ class Publication(InformationContentEntity):
     summary: Optional[str] = None
     keywords: Optional[Union[str, List[str]]] = empty_list()
     mesh_terms: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
     name: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1795,7 +1795,7 @@ class Publication(InformationContentEntity):
 
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
+        self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
 
         if self.name is not None and not isinstance(self.name, LabelType):
             self.name = LabelType(self.name)
@@ -3388,7 +3388,7 @@ class Gene(BiologicalEntity):
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     symbol: Optional[str] = None
     synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3406,7 +3406,7 @@ class Gene(BiologicalEntity):
 
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
+        self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
@@ -3428,7 +3428,7 @@ class GeneProductMixin(GeneOrGeneProduct):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneProductMixin
 
     synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.synonym, list):
@@ -3437,7 +3437,7 @@ class GeneProductMixin(GeneOrGeneProduct):
 
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
+        self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
 
         super().__post_init__(**kwargs)
 
@@ -3615,7 +3615,7 @@ class Protein(Polypeptide):
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
     synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -3633,7 +3633,7 @@ class Protein(Polypeptide):
 
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
+        self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
 
         super().__post_init__(**kwargs)
 
@@ -3675,7 +3675,7 @@ class RNAProduct(Transcript):
     id: Union[str, RNAProductId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -3689,7 +3689,7 @@ class RNAProduct(Transcript):
 
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
+        self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
 
         super().__post_init__(**kwargs)
 
@@ -8058,10 +8058,10 @@ class FDAApprovalStatusEnum(EnumDefinitionImpl):
         setattr(cls, "FDA Priority Review",
                 PermissibleValue(text="FDA Priority Review",
                                  description="Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review") )
-        setattr(cls, "regular approval",
-                PermissibleValue(text="regular approval") )
-        setattr(cls, "post-approval withdrawal",
-                PermissibleValue(text="post-approval withdrawal") )
+        setattr(cls, "Regular FDA Approval",
+                PermissibleValue(text="Regular FDA Approval") )
+        setattr(cls, "Post-Approval Withdrawal",
+                PermissibleValue(text="Post-Approval Withdrawal") )
 
 # Slots
 class slots:
@@ -8131,7 +8131,7 @@ slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.cu
                    model_uri=BIOLINK.has_topic, domain=NamedThing, range=Optional[Union[dict, OntologyClass]])
 
 slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
-                   model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, IriType], List[Union[str, IriType]]]])
+                   model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
 
 slots.full_name = Slot(uri=BIOLINK.full_name, name="full name", curie=BIOLINK.curie('full_name'),
                    model_uri=BIOLINK.full_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
@@ -9199,7 +9199,7 @@ slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie
                    model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
 
 slots.taxon_of = Slot(uri=BIOLINK.taxon_of, name="taxon of", curie=BIOLINK.curie('taxon_of'),
-                   model_uri=BIOLINK.taxon_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.taxon_of, domain=OrganismTaxon, range=Optional[Union[Union[dict, "ThingWithTaxon"], List[Union[dict, "ThingWithTaxon"]]]])
 
 slots.has_molecular_consequence = Slot(uri=BIOLINK.has_molecular_consequence, name="has molecular consequence", curie=BIOLINK.curie('has_molecular_consequence'),
                    model_uri=BIOLINK.has_molecular_consequence, domain=NamedThing, range=Optional[Union[Union[dict, OntologyClass], List[Union[dict, OntologyClass]]]])
