@@ -2901,7 +2901,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity or gene or gene product
+    range: chemical entity
     inverse: decreases mutation rate of
 
   # original definition of this predicate used molecular entity which was a
@@ -2923,7 +2923,7 @@ slots:
     is_a: affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
+    domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       tag: biolink:canonical_predicate
@@ -2939,7 +2939,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity
+    range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
     annotations:
@@ -2952,7 +2952,7 @@ slots:
     is_a: response affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
+    domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     inverse: increases response to
 
@@ -2966,7 +2966,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity
+    range: chemical entity or gene or gene product
     mixins:
       - decreases amount or activity of
     annotations:
@@ -2982,7 +2982,7 @@ slots:
     is_a: response affected by
     in_subset:
       - translator_minimal
-    domain: chemical entity
+    domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     inverse: decreases response to
 
@@ -5289,7 +5289,7 @@ slots:
       holds between a one or more chemical entities present in food,
       irrespective of nutritional value (i.e. could also be a contaminant or additive)
     domain: chemical entity
-    range: chemical entity or gene or gene product
+    range: chemical entity
     in_subset:
       - translator_minimal
     inverse: has food component
