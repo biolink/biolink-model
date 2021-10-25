@@ -6,7 +6,7 @@ with open("requirements.txt", "r") as FH:
     REQUIREMENTS = FH.readlines()
 
 NAME = 'biolink-model'
-VERSION = '2.2.6'
+VERSION = '2.2.7'
 DESCRIPTION = 'Biolink Model: A high level datamodel of biological entities and associations'
 URL = 'https://github.com/biolink/biolink-model'
 AUTHOR = 'Deepak Unni', 'Sierra Moxon'
@@ -31,7 +31,7 @@ setup(
     classifiers=[
         'Intended Audience :: Science/Research',
         'Intended Audience :: Developers',
-        'Intended Audience :: Healthcare Industry'
+        'Intended Audience :: Healthcare Industry',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'Programming Language :: Python :: 3 :: Only',
