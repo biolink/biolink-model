@@ -1483,7 +1483,7 @@ slots:
       - LOINC:has_archetype
       - LOINC:has_parent_group
       - LOINC:is_presence_guidance_for
-      - NCIT:gene_product_has_chemical_classification
+      # NCIT:gene_product_has_chemical_classification
       # RTX mapped terms classes for biomarkers
       - NCIT:R36
       - NCIT:R42
@@ -1934,7 +1934,7 @@ slots:
       - NCIT:R113
       - NCIT:R23
       - NCIT:R25
-      - NCIT:gene_mapped_to_disease
+      # - NCIT:gene_mapped_to_disease
       - NCIT:R133
       - RO:0002343
       - RO:0002355
@@ -3672,7 +3672,7 @@ slots:
     exact_mappings:
       - RO:0002205
       - WIKIDATA_PROPERTY:P688
-      - NCIT:gene_encodes_gene_product
+      # NCIT:gene_encodes_gene_product
     narrow_mappings:
       - NCIT:R178
 
@@ -4525,8 +4525,8 @@ slots:
     narrow_mappings:
       - NCIT:R47
       # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
-      - NCIT:genetic_biomarker_related_to
-      - NCIT:is_molecular_abnormality_of_disease
+      # - NCIT:genetic_biomarker_related_to
+      # - NCIT:is_molecular_abnormality_of_disease
       - ORPHA:465410
       - SEMMEDDB:diagnoses
 
@@ -5133,9 +5133,6 @@ slots:
       value: true
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX term tagged as inverse
-      - NCIT:biological_process_involves_chemical_or_drug
     broad_mappings:
       # could the involvement be either active or passive?
       - RTXKG1:involved_in
@@ -5143,8 +5140,6 @@ slots:
       - RO:0002331
       - RO:0002432
     narrow_mappings:
-      # RTX contribute mapping, may belong somewhere else?
-      - NCIT:gene_involved_in_molecular_abnormality
       - OBO:nbo#by_means
       - ORPHA:317348
       - ORPHA:317349
@@ -5626,9 +5621,7 @@ slots:
       tag: biolink:canonical_predicate
       value: true
     narrow_mappings:
-      # RTX contributed term mappings tagged elsewhere but mapped better here
-      - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
-      - NCIT:gene_product_variant_of_gene_product
+      - NCIT:C97928
       - OMIM:allelic_variant_of
       - WIKIDATA:P3433
 
@@ -6008,14 +6001,15 @@ slots:
       - translator_minimal
     close_mappings:
       # RTX contributed term is an inverse mapping
-      - NCIT:is_organism_source_of_gene_product
-      - NCIT:organism_has_gene
+      # NCIT:is_organism_source_of_gene_product
+      # NCIT:organism_has_gene
     exact_mappings:
       - RO:0002162
       - WIKIDATA_PROPERTY:P703
     narrow_mappings:
-      - NCIT:gene_found_in_organism
-      - NCIT:gene_product_has_organism_source
+      # commenting out for now, can't find in OLS
+      # - NCIT:gene_found_in_organism
+      # - NCIT:gene_product_has_organism_source
       - RO:0002160
 
   taxon of:
