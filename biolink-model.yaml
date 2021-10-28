@@ -96,6 +96,7 @@ prefixes:
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
   NCBIGene: 'http://identifiers.org/ncbigene/'
+  NCIT-PROPERTY: 'http://purl.obolibrary.org/obo/ncit#'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
@@ -106,7 +107,6 @@ prefixes:
   os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
   PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
-  PATO-PROPERTY: 'http://purl.obolibrary.org/obo/pato#'  # Phenotypic Quality Ontology properties, not core terms
   pav: 'http://purl.org/pav/'
   PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
@@ -470,8 +470,8 @@ slots:
       - LOINC:has_time_aspect
       - LOINC:has_time_modifier
       - LOINC:has_timing_of
-      - NCIT:disease_is_grade
-      - NCIT:disease_is_stage
+      # disease is stage
+      - NCIT:R88
       - NCIT:eo_disease_has_property_or_attribute
       - NCIT:has_data_element
       - NCIT:has_pharmaceutical_administration_method
@@ -592,7 +592,7 @@ slots:
     close_mappings:
       # These RTX contributed terms mean "is unit of" which is the semantic inverse of this biolink:has_unit term
       - EFO:0001697
-      - UO_PROPERTY:is_unit_of
+      - UO-PROPERTY:is_unit_of
     exact_mappings:
       - qud:unit
       - IAO:0000039
@@ -1286,8 +1286,6 @@ slots:
       value: true
     exact_mappings:
       - skos:relatedMatch
-      - SEMMEDDB:ASSOCIATED_WITH
-      - SEMMEDDB:associated_with
       - UMLS:related_to
     broad_mappings:
       - owl:topObjectProperty
@@ -1335,15 +1333,9 @@ slots:
       - NCIT:is_related_to_endogenous_product
       - UBERON.NONAMESPACE:connected_to
       - UBERON.NONAMESPACE:innervated_by
-      - PATO-PROPERTY:has_increased_levels_of
-      - OBO:has_role
       - NBO-PROPERTY:is_about
       - RO:0000053 # bearer_of
-      - PATO-PROPERTY:decreased_in_magnitude_relative_to
-      - PATO-PROPERTY:has_cross_section
-      - PATO-PROPERTY:has_relative_magnitude
-      - PATO-PROPERTY:increased_in_magnitude_relative_to
-      - PATO-PROPERTY:reciprocal_of
+      - PATO:reciprocal_of
       - RO:0000052
       - RO:0002001
       - RO:0002002
@@ -1358,6 +1350,7 @@ slots:
       - RO:0002179
       - RO:0002314
       - RO:0002322
+      # functionally related to
       - RO:0002328
       - RO:0002332
       - RO:0002338
@@ -1383,7 +1376,6 @@ slots:
       - RO:0004027
       - RO:0009001
       - RO:0009004
-      - RTXKG1:functionally_related_to
       - RXNORM:has_form
       - RXNORM:reformulated_to
       - SNOMED:has_associated_morphology
@@ -1441,13 +1433,11 @@ slots:
     exact_mappings:
       - WIKIDATA:Q66088480
       - CHEMBL.MECHANISM:superset_of
-      # RTX terms tagged as inverse of 'biolink:subclass_of'
       - GO:inverse_isa
       - MESH:inverse_isa
       - RXNORM:inverse_isa
       - VANDF:inverse_isa
     narrow_mappings:
-      # RTX terms tagged as inverse of 'biolink:subclass_of'
       - NCIT:cdrh_parent_of
       - NCIT:ctcae_5_parent_of
       - NCIT:subset_includes_concept
@@ -1468,8 +1458,7 @@ slots:
       tag: biolink:canonical_predicate
       value: true
     close_mappings:
-      # RTX mapped terms, would this rather mean that a 'class A' class of an 'instance B'
-      # and a an 'instance B' has class 'class A' (inverse term)
+      # RTX
       - LOINC:class_of
       - LOINC:has_class
     exact_mappings:
@@ -1480,7 +1469,6 @@ slots:
       - CHEMBL.MECHANISM:subset_of
       - GO:isa
       - MESH:isa
-      - RTXKG1:subclass_of
       - RXNORM:isa
       - VANDF:isa
     narrow_mappings:
@@ -1832,7 +1820,6 @@ slots:
       value: true
     exact_mappings:
       - WIKIDATA_PROPERTY:P129
-      - RTXKG1:physically_interacts_with
     close_mappings:
       # Agents of some interaction but not the relationship of interaction
       # These RTX mapped terms may need to be reclassified to more meaningful terms (perhaps not yet created)
@@ -1862,6 +1849,7 @@ slots:
 
   molecularly interacts with:
     is_a: physically interacts with
+    aliases: ['RTXKG1:targets']
     domain: molecular entity
     range: molecular entity
     in_subset:
@@ -1875,7 +1863,6 @@ slots:
     exact_mappings:
       - RO:0002436
       - CTD:molecularly_interacts_with
-      - RTXKG1:targets
 
   genetically interacts with:
     is_a: interacts with
@@ -1915,7 +1902,6 @@ slots:
       - SEMMEDDB:AFFECTS
       - SEMMEDDB:affects
       - DGIdb:affects
-      - RTXKG1:affects
     narrow_mappings:
       - SEMMEDDB:administered_to
       - CTD:prediction_hypothesis
@@ -3415,6 +3401,7 @@ slots:
       - RO:0002295
       - RO:0002332
       - RO:0002578
+      # these two won't actually resolve: where do they go? aliases? new RO term?
       - RTXKG1:regulates_activity_of
       - RTXKG1:regulates_expression_of
   
@@ -4067,11 +4054,8 @@ slots:
       value: true
     in_subset:
       - translator_minimal
-    exact_mappings:
-      - RTXKG1:gene_associated_with_condition
     broad_mappings:
-      # broader than a single gene: 'genotype' pathogenic for condition?
-      - GENO:0000840
+      - GENO:0000840 # broader than a single gene: 'genotype' pathogenic for condition
       - GENO:0000841
     narrow_mappings:
       # narrower: just diseases, not phenotypic features as well
@@ -4195,8 +4179,6 @@ slots:
       - RO:0002507
       - RO:0002509
       - RO:0004001
-      # RTX mapping
-      - RTXKG1:capable_of_part_of
       - SNOMED:causative_agent_of
       - SNOMED:has_realization
       - UMLS:has_physiologic_effect
@@ -4420,9 +4402,6 @@ slots:
     narrow_mappings:
       # RTX contributed term: note that association is not always correlation?
       - LOINC:associated_with
-      - NCIT:is_associated_disease_of
-      # RTX term deemed inverse of this biolink term?
-      - NCIT:is_cytogenetic_abnormality_of_disease
       - ORPHA:317345
       - PDQ:associated_disease
       # RTX mapping for this term was just 'related_to' but there seems to be a stronger correlation implied
@@ -4502,7 +4481,6 @@ slots:
     inverse: biomarker for
     narrow_mappings:
       # some RTX terms contributed as inverses of 'biolink:biomarker_for'
-      - NCIT:disease_has_finding
       - NCIT:disease_has_molecular_abnormality
       - NCIT:disease_is_marked_by_gene
 
@@ -4597,6 +4575,7 @@ slots:
       - hetio:PRESENTS_DpS
       - NCIT:R115
       - OMIM:has_phenotype
+      - NCIT:R108
     narrow_mappings:
       - NCIT:R89
       - DOID-PROPERTY:has_symptom
@@ -4657,6 +4636,8 @@ slots:
   contains process:
     is_a: related to at instance level
     inverse: occurs in
+    exact_mappings:
+      - RTXKG1:contains_process
 
   located in:
     is_a: related to at instance level
@@ -4702,7 +4683,6 @@ slots:
       - NCIT:R155
       - NCIT:R145
       - NCIT:R40
-      - NCIT:is_location_of_anatomic_structure
       - NCIT:R171
       - NCIT:R167
       - NCIT:R165
@@ -4711,13 +4691,13 @@ slots:
       - NCIT:R166
       - NCIT:R168
       - RO:0002303
-      - RTXKG1:disease_has_location
       - SNOMED:has_finding_site
       - SNOMED:has_indirect_procedure_site
       - SNOMED:has_inherent_location
 
   location of:
     is_a: related to at instance level
+    aliases: ['RTXKG1:site_of']
     description: >-
       holds between material entity or site and a material entity
       that is located within it (but not considered a part of it)
@@ -4731,9 +4711,18 @@ slots:
       - WIKIDATA_PROPERTY:P276
       # RTX tagged this as an inverse of biolink:located_in
       - FMA:location_of
-      - RTXKG1:site_of
     narrow_mappings:
       - SNOMED:inherent_location_of
+      - NCIT:Anatomic_Structure_Has_Location_Role
+
+  disease_has_location:
+    description: >-
+      A relationship between a disease and an anatomical entity where the
+      disease has one or more features that are located in that entity.
+    is_a: related_to
+    exact_mappings:
+      - RO:0004026
+      - MONDO:disease_has_location
 
   similar to:
       is_a: related to at instance level
@@ -4844,7 +4833,6 @@ slots:
       - BFO:0000055
       - WIKIDATA_PROPERTY:P527
       - RO:0001019
-      - RTXKG1:has_part
       - RXNORM:consists_of
       - RXNORM:has_part
     broad_mappings:
@@ -4878,12 +4866,41 @@ slots:
       - RO:0002473
       - RO:0002524
       - RO:0002551
-      - RTXKG1:composed_primarily_of
-      - RTXKG1:contains_process
       - RTXKG1:has_plasma_membrane_part
       - RXNORM:has_ingredient
       - SNOMED:has_component
       - UMLS:has_component
+
+  has plasma membrane part:
+    is_a: has part
+    aliases: ['RTXKG1:has_plasma_membrane_part']
+    description: >-
+      Holds between a cell c and a protein complex or protein p if
+      and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
+    exact_mappings:
+      - RO:0002104
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+
+  composed_primarily_of:
+    is_a: related to
+    description: >-
+      x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.
+    aliases: ['RTXKG1:composed_primarily_of']
+    exact_mappings:
+      - RO:0002473
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    in_subset:
+      - translator_minimal
+
+  plasma membrane part of:
+    is_a: part of
+    inverse: has plasma membrane part
 
   part of:
     is_a: overlaps
@@ -5010,10 +5027,8 @@ slots:
     in_subset:
       - translator_minimal
     close_mappings:
-      # RTX inverse mapping to to 'biolink:has_output'
       - RO:0002353
       - RO:0002354
-      - RTXKG1:output_of
     exact_mappings:
       - RO:0002234
     narrow_mappings:
@@ -5029,6 +5044,7 @@ slots:
 
   is output of:
     is_a: participates in
+    aliases: ['RTXKG1:output_of']
     range: occurrent
     domain: biological process or activity
     inverse: has output
@@ -5100,6 +5116,7 @@ slots:
 
   participates in:
     is_a: related to at instance level
+    aliases: ['RTXKG1:participates_in']
     description: >-
       holds between a continuant and a process, where the continuant is somehow involved
       in the process
@@ -5110,7 +5127,6 @@ slots:
     exact_mappings:
       - RO:0000056
       - BFO:0000056
-      - RTXKG1:participates_in
     narrow_mappings:
       - DRUGBANK:pathway
       - HMDB:in_pathway
@@ -5128,6 +5144,7 @@ slots:
 
   actively involved in:
     is_a: participates in
+    aliases: ['RTXKG1:involved_in']
     description: >-
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
@@ -5142,9 +5159,6 @@ slots:
     close_mappings:
       # RTX term tagged as inverse
       - NCIT:biological_process_involves_chemical_or_drug
-    broad_mappings:
-      # could the involvement be either active or passive?
-      - RTXKG1:involved_in
     exact_mappings:
       - RO:0002331
       - RO:0002432
@@ -5169,6 +5183,7 @@ slots:
 
   capable of:
     is_a: actively involved in
+    aliases: ['RTXKG1:capable_of']
     description: >-
       holds between a physical entity and process or function, where the
       continuant alone has the ability to carry out the process or function.
@@ -5180,7 +5195,6 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002215
-      - RTXKG1:capable_of
     narrow_mappings:
       - NCIT:R52
       - RO:0002500
@@ -5843,6 +5857,7 @@ slots:
 
   contraindicated for:
     is_a: related to at instance level
+    aliases: ['RTXKG1:contraindicated_for']
     description: Holds between a drug and a disease or phenotype, such that a person
       with that disease should not be treated with the drug.
     domain: drug
@@ -5852,7 +5867,6 @@ slots:
       value: true
     exact_mappings:
       - NCIT:C37933
-      - RTXKG1:contraindicated_for
 
   has contraindication:
     is_a: related to at instance level
@@ -5879,14 +5893,12 @@ slots:
 
   has completed:
     is_a: related to at instance level
+    aliases: ['RTXKG1:has_completed']
     description: holds between an entity and a process that the entity is capable of
       and has completed
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CL:has_completed
-      - RTXKG1:has_completed
 
   completed by:
     is_a: related to at instance level
@@ -5961,15 +5973,10 @@ slots:
 
   lacks part:
     is_a: related to at instance level
+    aliases: ['RTXKG1:lacks_part']
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CL:lacks_part
-      - PR:lacks_part
-      - RTXKG1:lacks_part
-    narrow_mappings:
-      - CL:lacks_plasma_membrane_part
 
   missing from:
     is_a: related to at instance level
