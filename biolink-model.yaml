@@ -2181,13 +2181,15 @@ slots:
 
   affects expression of:
     description: >-
-      holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the
+      holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an
+      environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the
       level of expression of the other within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: chemical entity or gene or gene product
+    domain: named thing
     range: nucleic acid entity
+
     exact_mappings:
       - CTD:affects_expression_of
 
@@ -2196,7 +2198,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity or gene or gene product
+    range: named thing
     inverse: affects expression of
 
   increases expression of:
@@ -2207,7 +2209,7 @@ slots:
     is_a: affects expression of
     in_subset:
       - translator_minimal
-    domain: chemical entity or gene or gene product
+    domain: named thing
     range: nucleic acid entity
     mixins:
       - increases amount or activity of
@@ -2223,7 +2225,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity or gene or gene product
+    range: named thing
     inverse: increases expression of
 
   decreases expression of:
@@ -2233,7 +2235,7 @@ slots:
     is_a: affects expression of
     in_subset:
       - translator_minimal
-    domain: chemical entity or gene or gene product
+    domain: named thing
     range: nucleic acid entity
     mixins:
       - decreases amount or activity of
@@ -2251,7 +2253,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: nucleic acid entity
-    range: chemical entity or gene or gene product
+    range: named thing
     inverse: decreases expression of
 
   affects folding of:
