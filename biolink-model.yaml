@@ -2756,18 +2756,9 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    related_mappings:
-      # An enzyme or reagent acts upon a substrate but that substrate may
-      # not necessarily be "degraded", i.e. broken into smaller parts
-      - GAMMA:substrate
-      # RTX put this under "biolink:physically_interacts_with" but rather we also put next to the GAMMA mapping
-      # That said, neither mapping feels like a comfortable fit here
-      - CHEMBL.MECHANISM:substrate
     close_mappings:
       # terms refer less to the action or effect than the agent of that action or effect
       - CHEMBL.MECHANISM:degrader
-      - CHEMBL.MECHANISM:proteolytic_enzyme
-      - CHEMBL.MECHANISM:hydrolytic_enzyme
     exact_mappings:
       - CTD:increases_degradation_of
     narrow_mappings:
