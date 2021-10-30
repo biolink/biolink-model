@@ -6145,6 +6145,717 @@ slots:
     description: >-
       if set to true, then the association is negated i.e. is not true
 
+  concept count subject:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      the concept in the subject slot of an association.
+    range: integer
+    examples:
+      - value: '489'
+
+  concept count object:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      the concept in the object slot of an association.
+    range: string
+
+  concept pair count:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      both the subject and object concept of an association.
+    range: integer
+    examples:
+      - value: '1731'
+
+  relative frequency subject:
+    is_a: association slot
+    description: >-
+      The frequency at which subject and object concepts co-occur in EHR
+      records within a dataset/cohort, relative to the frequency at which the subject
+      concept appears in these same records.
+    range: float
+    examples:
+      - value: '0.01840490798'
+
+  relative frequency object:
+    is_a: association slot
+    description: >-
+      The frequency at which subject and object concepts co-occur in EHR
+      records within a dataset/cohort, relative to the frequency at which the object
+      concept appears in these same records.
+    range: string
+
+  relative frequency subject confidence interval:
+    is_a: association slot
+    description: >-
+      The 99% confidence interval for the relative_frequency_subject calculation
+      (i.e. the range of values within which the true value has a 99% chance of falling)
+    range: string
+
+  relative frequency object confidence interval:
+    is_a: association slot
+    description: >-
+      The 99% confidence interval for the relative_frequency_object calculation
+      (i.e. the range of values within which the true value has a 99% chance of falling)
+    range: string
+
+
+  adjusted p value:
+    is_a: association slot
+    description: >-
+      The adjusted p-value is the probability of obtaining test results
+      at least as extreme as the results actually observed, under the assumption that
+      the null hypothesis is correct, adjusted for multiple comparisons.
+    range: string
+
+  score:
+    is_a: association slot
+    description: >-
+      The calculated probability value for a drug treating a disease association
+      generated from a machine learning model.
+    range: float
+    examples:
+      - value: '0.82'
+
+  tmkp result confidence score:
+    is_a: association slot
+    description: >-
+      A score indicating overall confidence of a Text Mining Result whose
+      evidence is in the form of a segment of text extracted from a document that
+      supports a text-mined assertion. The score ranges from 0 to 1, where 1 indicates
+      100% confidence and 0 indicates no confidence. Note that the confidence expressed
+      here is in relation to the accuracy with which the natural language processing
+      tools have interpreted the words in the text. This confidence makes no claims
+      about the factual truthfulness of the assertion itself.
+    range: float
+    examples:
+      - value: '0.99871'
+
+  supporting text:
+    is_a: association slot
+    description: The segment of text from a document that supports the mined assertion.
+    range: measurement
+    examples:
+      - value: The administration of 50 \xB5g/ml bupivacaine promoted maximum breast cancer.
+
+  supporting document:
+    is_a: association slot
+    description: The document that contains the supporting text of a Text Mining Result.
+    range: PMID identifier
+    examples:
+      - value: PMID:12345678
+
+  subject location in text:
+    is_a: association slot
+    description: >-
+      Character offsets for the text span(s) in the supporting text corresponding
+      to the subject concept of the extracted assertion.
+    range: string
+    examples:
+      - value: 0|15;20|25
+    multivalued: true
+
+  object location in text:
+    is_a: association slot
+    description: >-
+      Character offsets for the text span(s) in the supporting text corresponding
+      to the object concept of the extracted assertion
+    range: integer
+    examples:
+      - value: 0|15
+    multivalued: true
+
+  tmkp aggregate confidence score:
+    is_a: association slot
+    description: >-
+      The aggregate confidence score for an assertion supported by text-mined
+      evidence. This score is calculated by taking into account each of the Text Mining
+      Result confidence scores for a given assertion, and ranges from 0 to 1, where
+      1 indicates 100% confidence and 0 indicates no confidence. Note that the confidence
+      expressed here is in relation to the accuracy with which the natural language
+      processing tools have interpreted the words in the text. This confidence makes
+      no claims about the factual truthfulness of the assertion itself.
+    range: float
+    examples:
+      - value: '0.876'
+
+  supporting document type:
+    is_a: association slot
+    description: >-
+      The document type (e.g., Journal Article, Case Study, Preprint) for
+      the supporting document used in a Text Mining Result.
+    range: string
+    examples:
+      - value: Journal Article
+
+  supporting document year:
+    is_a: association slot
+    description: >-
+      The document year (typically the publication year) for the supporting
+      document used in a Text Mining Result.
+    range: integer
+    examples:
+      - value: '1999'
+
+  supporting text section type:
+    is_a: association slot
+    description: >-
+      The section of the supporting text of a Text Mining Result within
+      the supporting document. This is in the form of the name of the document section
+      (e.g., Abstract, Introduction) that contains the supporting text.
+    range: string
+    examples:
+      - value: Introduction
+
+  normalized google distance:
+    is_a: association slot
+    description: >-
+      The Normalized Google Distance (NGD) computed for the subject and
+      object concepts of the assertion. NGD is a measure of semantic similarity between
+      two concepts derived from counts of the number of times they appear in a corpus
+      of text. Concepts with the same or similar meaning will have an NGD score close
+      to 0, while completely dissimilar concepts (those that never appear together)
+      will have an infinite NGD score. For details see https://en.wikipedia.org/wiki/Normalized_Google_distance.
+    range: float
+    examples:
+      - value: '0.352'
+
+  pointwise mutual information:
+    is_a: association slot
+    description: >-
+     Pointwise mutual information is an information theoretic measure
+      of association between two concepts based on the probabilities of observing
+      the concepts in isolation and together. Mathematically, pmi(x,y) = log(p(x,y)/(p(x)p(y))).
+      For details see: Bouma, G. (2009). Normalized (pointwise) mutual information
+      in collocation extraction. Proceedings of GSCL, 30, 31-40.
+      https://svn.spraakdata.gu.se/repos/gerlof/pub/www/Docs/npmi-pfd.pdf
+    range: string
+
+  normalized pointwise mutual information:
+    is_a: association slot
+    description: >-
+      Normalized Pointwise Mutual Information (NPMI) is PMI normalized
+      to the range [1, -1]. When two concepts only occur together, NPMI = 1. When
+      two concepts are observed to occur separately but never together, NPMI = -1.
+      For details see: Bouma, G. (2009). Normalized (pointwise) mutual information
+      in collocation extraction. Proceedings of GSCL, 30, 31-40.
+      https://svn.spraakdata.gu.se/repos/gerlof/pub/www/Docs/npmi-pfd.pdf
+    range: string
+
+  normalized pointwise mutual information max:
+    is_a: association slot
+    description: >-
+      Normalized Pointwise Mutual Information Max is a variant of NPMI
+      proposed by Bouma 2009 whereby the PMI is normalized by -ln(max(p(x),p(y))).
+      Using this normalization factor will result in an asymmetric measure whereby
+      NPMImax=1 when one concept is occurs only in the context of another, but not
+      necessarily the other way around. For details see: Bouma, G. (2009). Normalized
+      (pointwise) mutual information in collocation extraction. Proceedings of GSCL,
+      30, 31-40. https://svn.spraakdata.gu.se/repos/gerlof/pub/www/Docs/npmi-pfd.pdf
+    range: string
+
+  mutual dependence:
+    is_a: association slot
+    description: >-
+      Mutual Dependency (MD), often also known as PMI\xB2, is a variant
+      of PMI that attempts to overcome PMI's preference for rare events. For details,
+      see Thanopoulos, A., Fakotakis, N., & Kokkinakis, G. (2002, May). Comparative
+      Evaluation of Collocation Extraction Metrics. In LREC (Vol. 2, pp. 620-625).
+      http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.11.8101&rep=rep1&type=pdf
+    range: string
+
+  log frequency biased mutual dependence:
+    is_a: association slot
+    description: >-
+      Log-Frequency-Biased Mutual Dependency is a variant of Mutual Dependency
+      that results in favoring the more frequently occuring pairs when ranking. For
+      details, see Thanopoulos, A., Fakotakis, N., & Kokkinakis, G. (2002, May). Comparative
+      Evaluation of Collocation Extraction Metrics. In LREC (Vol. 2, pp. 620-625).
+      http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.11.8101&rep=rep1&type=pdf
+    range: string
+
+  tmkp concept1 count:
+    is_a: association slot
+    description: The raw count of observations of one member (concept1) of a cooccurring
+      pair of concepts in a text corpus.
+    range: string
+
+  tmkp concept2 count:
+    is_a: association slot
+    description: The raw count of observations of one member (concept2) of a cooccurring
+      pair of concepts in a text corpus.
+    range: string
+
+  tmkp concept cooccurrence count:
+    is_a: association slot
+    description: The raw count of observations of two concepts cooccurring in the
+      same document (or part of a document) in a text corpus.
+    range: string
+
+  contribution towards patient survival:
+    is_a: association slot
+    description: >-
+      Contribution is a summary statistic indicating the level of contribution
+      an entity has on patient survival time as measured by its quantifiable impact
+      on a distribution of patient survival time.
+    range: integer
+    examples:
+      - value: '[-1,1]: e.g. -0.23, 1, 0.75'
+
+  probability of prolonged survival:
+    is_a: association slot
+    description: Reflects the posterior distribution for likliehood of survival past
+      a specified period of time, given some evidence established in the connecting
+      nodes.
+    range: integer
+    examples:
+      - value: 'e.g., .57, 1, .01'
+
+  half maximal inhibitory concentration:
+    is_a: association slot
+    description: IC50 indicates how much drug is needed to inhibit a biological process
+      by half, thus providing a measure of potency of an antagonist drug in pharmacological
+      research
+    range: datetime
+    examples:
+      - value: '-2.112848714'
+
+  binding constant:
+    is_a: association slot
+    description: measure of how likely the ligand and moelcule are to bind
+    range: integer
+    examples:
+      - value: '421'
+
+  inhibitor constant:
+    is_a: association slot
+    description: Ki, is an indication of how potent an inhibitor is; it is the concentration
+      required to produce half maximum inhibition.
+    range: integer
+    examples:
+      - value: '3000'
+
+  dissociation constant:
+    is_a: association slot
+    description: The Kd is a useful way to present the affinity of a drug for its
+      biological target. Kd tells us the concentration of drug that is required to
+      yield a significant amount of interaction with the target protein.
+    range: integer
+    examples:
+      - value: '6800'
+
+  z score:
+    is_a: association slot
+    description: zscore is the measure of how many standard deviations below or above
+      the population mean, a raw score is.
+    range: datetime
+    examples:
+      - value: '27.52733542'
+
+  log fold change:
+    is_a: association slot
+    description: The log2(fold-change) is the log-ratio of a gene's or a transcript's
+      expression values in two different conditions.
+    range: datetime
+    examples:
+      - value: '1.655759833'
+
+  false discovery rate:
+    is_a: association slot
+    description: false discovery rate is the ratio of the number of false positive
+      results to the number of total positive test results.
+    range: integer
+    examples:
+      - value: '0'
+
+  co-occurrence:
+    is_a: association slot
+    description: the number of articles in which the two terms co-occurred
+    range: integer
+    examples:
+      - value: '56'
+
+  fisher exact test:
+    is_a: association slot
+    description: >-
+      Fisher's exact test is a statistical test used to determine if there
+      are nonrandom associations between two categorical variables
+    range: float
+    examples:
+      - value: '0.00001507078716'
+
+  enrichment:
+    is_a: association slot
+    description: >-
+      co-occurrence divided by expected. "expected" is the number of expected
+      co-occurrences by chance based on each term's marginal frequency
+    range: datetime
+    examples:
+      - value: '2.922827136'
+
+  odds ratio:
+    is_a: association slot
+    description: the odds of cooccurrence divided by the odds of expected
+    range: datetime
+    examples:
+      - value: '2.94257537'
+
+  confidence score:
+    is_a: association slot
+    description: >-
+      numeric score that represents the confidence of disease association
+      with gene
+    range: datetime
+    examples:
+      - value: '3.103'
+
+  mass spectrometry interaction statistic:
+    is_a: association slot
+    description: >-
+       The MiST score is a weighted sum of three measures: protein abundance
+      measured by peak intensities from the mass spectrum (abundance); invariability
+      of abundance over replicated experiments (reproducibility); and uniqueness
+      of an observed host/pathogen interaction across all viral purifications (specificity)
+    range: float
+    examples:
+      - value: '0.969888009'
+
+  Significance Analysis of INTeractome bayesian false discovery rate:
+    is_a: association slot
+    description: >-
+      statistical method for probabilistically scoring protein-protein
+      interaction data from affinity purification-mass spectrometry (AP-MS) experiments
+    range: float
+    examples:
+      - value: '0.03'
+
+  fold change:
+    is_a: association slot
+    description: >-
+      fold-change is the ratio of a gene's or a transcript's expression
+      values in two different conditions.
+    range: integer
+    examples:
+      - value: '150'
+
+  has p value:
+    is_a: association slot
+    description: >-
+      The calculated probability value for an observed association between
+      two feature variables within a cohort of a given size
+    range: float
+    examples:
+      - value: '0.05'
+
+  has adjusted p value:
+    is_a: association slot
+    description: >-
+      The calculated adjusted probability value for an observed association
+      between two feature variables within a cohort of a given size, adjusted by a
+      multiple comparison correction selected by the user (default is no correction)
+    range: float
+    examples:
+      - value: '0.1'
+
+  has chi square statistic:
+    is_a: association slot
+    description: >-
+      The statistic used to calculate the probability value for an observed
+      association between two feature variables within a cohort of a given size
+    range: integer
+    examples:
+      - value: '100'
+
+  multivariate model auroc:
+    is_a: association slot
+    description: >-
+      The area under the receiver operating characteristics (AUROC) is
+      a measure of the predictive quality of a machine learning model
+    range: float
+    examples:
+      - value: '0.846'
+
+  multivariate model feature importance:
+    is_a: association slot
+    description: >-
+      Feature importance is a measure of how useful an input feature in
+      a machine learning model is in predicting the target variable of the model.
+    range: datetime
+    examples:
+      - value: '1.88'
+
+  multivariate model feature importance type:
+    is_a: association slot
+    description: ''
+    range: string
+    examples:
+      - value: SHAP, magnitude of co-efficient
+
+  multivariate model feature coeffcient:
+    is_a: association slot
+    description: >-
+      A feature coefficient (in a linear or logistic regression model)
+      indicates the size (coefficient magnitude) and direction (coefficient sign)
+      of influence of an input feature on the model prediction.
+    range: datetime
+    examples:
+      - value: '1.2'
+
+  model classifier type:
+    is_a: association slot
+    description: >-
+      A machine learning classifier is the type of model used to make
+      categorical outcome predictions. Examples include: decision tree, random forest,
+      gradient boosting, logistic regression, support vector machine.'
+    range: string
+    examples:
+      - value: logistic regression
+
+  mutation frequency:
+    is_a: association slot
+    description: Mutation frequency for one gene in a disease contect
+    range: float
+    examples:
+      - value: '0.3'
+
+  effect size:
+    is_a: association slot
+    description: The difference of the IC50 values between mutated group and wild
+      type group  using cohen's distance
+    range: float
+    examples:
+      - value: '2.00E-03'
+
+  ic50 in mutation group:
+    is_a: association slot
+    description: A list of log-transformed IC50 values for cell lines with mutation
+      of the gene
+    range: string
+    examples:
+      - value: '[-1.85, -1.518, -0.109]'
+
+  ic50 in wildtype group:
+    is_a: association slot
+    description: A list of log-transformed IC50 values for cell lines without mutation
+      of the gene
+    range: string
+    examples:
+      - value: '[-1.39, -1.16, 0.024, 0.24]'
+
+  median ic50 in mutation group:
+    is_a: association slot
+    description: The median IC50 values for cell lines with mutation of the geen
+    range: float
+    examples:
+      - value: '-0.814'
+
+  median ic50 in wildtype group:
+    is_a: association slot
+    description: The median IC50 values for cell lines without mutation of the gene
+    range: datetime
+    examples:
+      - value: '1.504'
+
+  p-value:
+    is_a: association slot
+    description: p-value from t-test
+    range: float
+    examples:
+      - value: '0.000219281'
+
+  tumor types or tissue types:
+    is_a: association slot
+    description: Disease type for the samples
+    range: string
+    examples:
+      - value: Lung or Lung cancer
+
+  correlation coeffiency:
+    is_a: association slot
+    description: Correlation coeffiency from the spearman correlation
+    range: float
+    examples:
+      - value: '0.621'
+
+  sample size:
+    is_a: association slot
+    description: Number of samples for the samples being used
+    range: integer
+    examples:
+      - value: '300'
+
+  bonferroni corrected pvalue:
+    is_a: association slot
+    description: >-
+      Bonferroni adjustment to a p-value compensates for testing multiple
+      hypotheses. It essentially lowers the level of significance by a factor of n,
+      where n is no. of hypotheses being tested.
+    range: float
+    examples:
+      - value: '0.018'
+
+  statistical model type:
+    is_a: association slot
+    description: >-
+      The statistical model embodying the relationship between the variables
+      in the dataset; e.g., correlation coefficient, regression coefficient.
+    range: string
+    examples:
+      - value: Spearman Correlation, Ridge regression coefficient
+
+  strength of relationship:
+    is_a: association slot
+    description: >-
+      A coefficient that indicates the size (coefficient magnitude) and
+      direction (coefficient sign) of influence between two variables.
+    range: float
+    examples:
+      - value: '0.65'
+
+  qualifier value:
+    is_a: association slot
+    description: >-
+      A qualifier in Biolink has range OntologyClass which has three permissible
+      identifier prefixes. A qualifier _value presents an easily intrepretable meaning
+      of the qualifier on an edge.
+    range: string
+    examples:
+      - value: female, white, less_than_35
+
+  enrichment p:
+    is_a: association slot
+    description: >-
+      a p-value measuring the association between the two terms calculated
+      using an enrichment approach against the CORD19 dataset.
+    range: float
+    examples:
+      - value: '0.00002358560424'
+
+  num publications:
+    is_a: association slot
+    description: >-
+      The count of publications attributed to the source/object relationship
+      in an edge
+    range: integer
+    examples:
+      - value: '0'
+
+  in clinical trial for:
+    is_a: association slot
+    description: Count of how many clinical trials this drug is part of.
+    range: integer
+    examples:
+      - value: '1'
+
+  slope:
+    is_a: association slot
+    description: >-
+      Within the context of GTEx data, this value represents the change
+      in gene expression due the presence of a variant. a positive slope is interpreted
+      as an increase of gene expression. conversly, a negative slope indicates a reduction
+      in gene expression.
+    range: float
+    examples:
+      - value: '0.0960802'
+
+  affinity:
+    is_a: association slot
+    description: >-
+      Within the context of pharmaceutical data, affinity is a measure
+      of the effect (positive or negative and magnitude) that a chemical substance
+      has on a gene receptor. a positive increase of affinity represents a positive
+      affect of the chemical compound on gene expression. th econverse is true for
+      negative affinity.
+    range: integer
+    examples:
+      - value: '0'
+
+  affinity parameter:
+    is_a: association slot
+    description: >-
+      Within the context of pharmaceutical data, the affinity_parameter
+      is the unit of measurement of affinity. Affinity can be expressed in EC50, IC50,
+      Ki, pKi or Kd units.
+    range: IC identifier
+    examples:
+      - value: IC:50
+
+  FAERS llr:
+    is_a: association slot
+    description: >-
+      The ratio of the (log) likelihood of an adverse event associateed
+      to the comsumption of a pharmaceutical.
+    range: integer
+    examples:
+      - value: '0'
+
+  endogenous:
+    is_a: association slot
+    description: >-
+      Endogenous compounds are drugs that are already present in the body
+      either because the body produces them or they are present in the normal diet.
+    range: string
+    examples:
+      - value: True/False
+
+  primaryTarget:
+    is_a: association slot
+    description: >-
+      True/False flag to indicate if the pharmaceutical was attempting
+      to target a specific gene.
+    range: string
+    examples:
+      - value: Tru/False
+
+  similarity bin:
+    is_a: association slot
+    description: >-
+      UniRef provides genetic sequence data organized into 3 "percentage
+      of sequence cluster " similarity bins (UniRef 50/90/100). Each bin specifies
+      the percentage of fragment proteins that can also be found in other sequence
+      clusters.
+    range: string
+    examples:
+      - value: UniRef100, UniRef90 or UniRef50
+
+  jaccard index:
+    is_a: association slot
+    description: >-
+      Knowledge graph proximity between two search terms as measured by
+      nearest-neighbor Jaccard Index.
+    range: float
+    examples:
+      - value: '0.816'
+
+  fisher exact test p-value:
+    is_a: association slot
+    description: >-
+      A value between 0 and 1 computed using the Hypergeometric distribution
+      according to the formula for Fisher's Exact Test; measures the probability of
+      an odds ratio (of association between two categorical variables) occurring that
+      is at least as large as the observed odds ratio.
+    range: float
+    examples:
+      - value: '0.000949'
+
+  probability:
+    is_a: association slot
+    description: numeric score that represents the confidence of disease association
+      with gene
+    range: float
+    examples:
+      - value: '0.5'
+
+  standard error:
+    is_a: association slot
+    description: the standard error calculation of the effect size of the association
+    range: float
+    examples:
+      - value: '2.00E-03'
+
   has confidence level:
     is_a: association slot
     range: confidence level
