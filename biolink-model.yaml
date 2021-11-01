@@ -9599,7 +9599,7 @@ classes:
     slots:
       - sex qualifier
 
-  named thing to information content entity association:
+  information content entity to named thing association:
     description: >-
       association between a named thing and a information content entity where the specific context
       of the relationship between that named thing and the publication is unknown. For
@@ -9614,9 +9614,9 @@ classes:
       - object
     slot_usage:
       subject:
-        domain: named thing
+        domain: publication
       object:
-        range: publication
+        range: named thing
       predicate:
         subproperty_of: mentions
     in_subset:
