@@ -20,10 +20,11 @@ docs: docs/index.md
 jekyll-docs: docs/Classes.md
 shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
 json-schema: json-schema/biolink-model.json
+prefix-map: prefix-map/biolink-model-prefix-map.json
 
 build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz java context.jsonld contextn.jsonld \
 json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto biolink-model.shex biolink-model.ttl \
-prefix-map/biolink-model-prefix-map.txt
+prefix-map/biolink-model-prefix-map.json
 
 # TODO: Get this working
 build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
