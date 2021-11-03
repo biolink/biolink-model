@@ -18,6 +18,7 @@ all: install tests build
 python: biolink/model.py
 docs: docs/index.md
 jekyll-docs: docs/Classes.md
+
 shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
 json-schema: json-schema/biolink-model.json
 prefix-map: prefix-map/biolink-model-prefix-map.json
