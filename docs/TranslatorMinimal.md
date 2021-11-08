@@ -60,7 +60,6 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [chemically interacts with](chemically_interacts_with.md)
  * [chemically similar to](chemically_similar_to.md) - holds between one small molecule entity and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
  * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
- * [co-occurs in literature with](co_occurs_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
  * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
  * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
  * [composed_primarily_of](composed_primarily_of.md) - x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.
@@ -177,6 +176,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
  * [nutrient of](nutrient_of.md)
  * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
+ * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
  * [organism taxon➞subclass of](organism_taxon_subclass_of.md) - subclass of holds between two taxa, e.g. human subclass of mammal
  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
  * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)

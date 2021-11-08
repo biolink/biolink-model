@@ -52,7 +52,6 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[causes](causes.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[chemically similar to](chemically_similar_to.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[close match](close_match.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[co-occurs in literature with](co_occurs_in_literature_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[coexists with](coexists_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[colocalizes with](colocalizes_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[completed by](completed_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
@@ -116,6 +115,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[not completed by](not_completed_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Association](Association.md)** *[object](object.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[occurs in](occurs_in.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[occurs together in literature with](occurs_together_in_literature_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[opposite of](opposite_of.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md)** *[organism taxon to environment association➞object](organism_taxon_to_environment_association_object.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[orthologous to](orthologous_to.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**

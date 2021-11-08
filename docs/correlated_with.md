@@ -26,10 +26,10 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 ## Children
 
  *  [biomarker for](biomarker_for.md)
- *  [co-occurs in literature with](co_occurs_in_literature_with.md)
  *  [coexpressed with](coexpressed_with.md)
  *  [has biomarker](has_biomarker.md)
  *  [negatively correlated with](negatively_correlated_with.md)
+ *  [occurs together in literature with](occurs_together_in_literature_with.md)
  *  [positively correlated with](positively_correlated_with.md)
 
 ## Used by
