@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-08T21:23:50
+# Generation date: 2021-11-08T21:40:42
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -65,6 +65,7 @@ DBSNP = CurieNamespace('DBSNP', 'http://identifiers.org/dbsnp/')
 DDANAT = CurieNamespace('DDANAT', 'http://purl.obolibrary.org/obo/DDANAT_')
 DGIDB = CurieNamespace('DGIdb', 'https://www.dgidb.org/interaction_types')
 DOID = CurieNamespace('DOID', 'http://purl.obolibrary.org/obo/DOID_')
+DOID_PROPERTY = CurieNamespace('DOID-PROPERTY', 'http://purl.obolibrary.org/obo/doid#')
 DRUGBANK = CurieNamespace('DRUGBANK', 'http://identifiers.org/drugbank/')
 DRUGCENTRAL = CurieNamespace('DrugCentral', 'http://translator.ncats.nih.gov/DrugCentral_')
 EC = CurieNamespace('EC', 'http://www.enzyme-database.org/query.php?ec=')
@@ -142,15 +143,16 @@ MPATH = CurieNamespace('MPATH', 'http://purl.obolibrary.org/obo/MPATH_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
 METACYC = CurieNamespace('MetaCyc', 'http://translator.ncats.nih.gov/MetaCyc_')
 NBO = CurieNamespace('NBO', 'http://purl.obolibrary.org/obo/NBO_')
+NBO_PROPERTY = CurieNamespace('NBO-PROPERTY', 'http://purl.obolibrary.org/obo/nbo#')
 NCBIGENE = CurieNamespace('NCBIGene', 'http://identifiers.org/ncbigene/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
+NCIT_OBO = CurieNamespace('NCIT-OBO', 'http://purl.obolibrary.org/obo/ncit#')
 NDC = CurieNamespace('NDC', 'http://identifiers.org/ndc/')
 NDDF = CurieNamespace('NDDF', 'http://purl.bioontology.org/ontology/NDDF/')
 NLMID = CurieNamespace('NLMID', 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=')
 OBAN = CurieNamespace('OBAN', 'http://purl.org/oban/')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
-OBO = CurieNamespace('OBO', 'http://purl.obolibrary.org/obo/')
 OBOREL = CurieNamespace('OBOREL', 'http://purl.obolibrary.org/obo/RO_')
 OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
 OIO = CurieNamespace('OIO', 'http://www.geneontology.org/formats/oboInOwl#')
@@ -161,7 +163,6 @@ ORPHANET = CurieNamespace('ORPHANET', 'http://identifiers.org/orphanet/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://www.pantherdb.org/panther/family.do?clsAccession=')
 PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/panther.pathway/')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
-PATO_PROPERTY = CurieNamespace('PATO-PROPERTY', 'http://purl.obolibrary.org/obo/pato#')
 PCO = CurieNamespace('PCO', 'http://purl.obolibrary.org/obo/PCO_')
 PDQ = CurieNamespace('PDQ', 'https://www.cancer.gov/publications/pdq#')
 PFAM = CurieNamespace('PFAM', 'http://identifiers.org/pfam/')
@@ -212,11 +213,13 @@ TIGRFAM = CurieNamespace('TIGRFAM', 'http://identifiers.org/tigrfam/')
 UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-axioms.ofn#')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
+UBERON_NONAMESPACE = CurieNamespace('UBERON_NONAMESPACE', 'http://purl.obolibrary.org/obo/core#')
 UMLS = CurieNamespace('UMLS', 'http://identifiers.org/umls/')
 UMLSSG = CurieNamespace('UMLSSG', 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt')
 UNII = CurieNamespace('UNII', 'http://identifiers.org/unii/')
 UNIPROT_ISOFORM = CurieNamespace('UNIPROT_ISOFORM', 'http://identifiers.org/uniprot.isoform/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
+UO_PROPERTY = CurieNamespace('UO-PROPERTY', 'http://purl.obolibrary.org/obo/uo#')
 UPHENO = CurieNamespace('UPHENO', 'http://purl.obolibrary.org/obo/UPHENO_')
 UNIPROTKB = CurieNamespace('UniProtKB', 'http://identifiers.org/uniprot/')
 VANDF = CurieNamespace('VANDF', 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/')
@@ -259,7 +262,7 @@ LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 MIRBASE = CurieNamespace('mirbase', 'http://identifiers.org/mirbase')
 OBOINOWL = CurieNamespace('oboInOwl', 'http://www.geneontology.org/formats/oboInOwl#')
-OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOWL#')
+OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOwl#')
 OS = CurieNamespace('os', 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
@@ -8670,22 +8673,22 @@ slots.activity_decreased_by = Slot(uri=BIOLINK.activity_decreased_by, name="acti
                    model_uri=BIOLINK.activity_decreased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.affects_expression_of = Slot(uri=BIOLINK.affects_expression_of, name="affects expression of", curie=BIOLINK.curie('affects_expression_of'),
-                   model_uri=BIOLINK.affects_expression_of, domain=None, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
+                   model_uri=BIOLINK.affects_expression_of, domain=NamedThing, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
 
 slots.expression_affected_by = Slot(uri=BIOLINK.expression_affected_by, name="expression affected by", curie=BIOLINK.curie('expression_affected_by'),
-                   model_uri=BIOLINK.expression_affected_by, domain=NucleicAcidEntity, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.expression_affected_by, domain=NucleicAcidEntity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.increases_expression_of = Slot(uri=BIOLINK.increases_expression_of, name="increases expression of", curie=BIOLINK.curie('increases_expression_of'),
-                   model_uri=BIOLINK.increases_expression_of, domain=None, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
+                   model_uri=BIOLINK.increases_expression_of, domain=NamedThing, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
 
 slots.expression_increased_by = Slot(uri=BIOLINK.expression_increased_by, name="expression increased by", curie=BIOLINK.curie('expression_increased_by'),
-                   model_uri=BIOLINK.expression_increased_by, domain=NucleicAcidEntity, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.expression_increased_by, domain=NucleicAcidEntity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.decreases_expression_of = Slot(uri=BIOLINK.decreases_expression_of, name="decreases expression of", curie=BIOLINK.curie('decreases_expression_of'),
-                   model_uri=BIOLINK.decreases_expression_of, domain=None, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
+                   model_uri=BIOLINK.decreases_expression_of, domain=NamedThing, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
 
 slots.expression_decreased_by = Slot(uri=BIOLINK.expression_decreased_by, name="expression decreased by", curie=BIOLINK.curie('expression_decreased_by'),
-                   model_uri=BIOLINK.expression_decreased_by, domain=NucleicAcidEntity, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.expression_decreased_by, domain=NucleicAcidEntity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.affects_folding_of = Slot(uri=BIOLINK.affects_folding_of, name="affects folding of", curie=BIOLINK.curie('affects_folding_of'),
                    model_uri=BIOLINK.affects_folding_of, domain=None, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
@@ -9125,6 +9128,9 @@ slots.located_in = Slot(uri=BIOLINK.located_in, name="located in", curie=BIOLINK
 slots.location_of = Slot(uri=BIOLINK.location_of, name="location of", curie=BIOLINK.curie('location_of'),
                    model_uri=BIOLINK.location_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.disease_has_location = Slot(uri=BIOLINK.disease_has_location, name="disease has location", curie=BIOLINK.curie('disease_has_location'),
+                   model_uri=BIOLINK.disease_has_location, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.similar_to = Slot(uri=BIOLINK.similar_to, name="similar to", curie=BIOLINK.curie('similar_to'),
                    model_uri=BIOLINK.similar_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
@@ -9148,6 +9154,15 @@ slots.overlaps = Slot(uri=BIOLINK.overlaps, name="overlaps", curie=BIOLINK.curie
 
 slots.has_part = Slot(uri=BIOLINK.has_part, name="has part", curie=BIOLINK.curie('has_part'),
                    model_uri=BIOLINK.has_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.has_plasma_membrane_part = Slot(uri=BIOLINK.has_plasma_membrane_part, name="has plasma membrane part", curie=BIOLINK.curie('has_plasma_membrane_part'),
+                   model_uri=BIOLINK.has_plasma_membrane_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.composed_primarily_of = Slot(uri=BIOLINK.composed_primarily_of, name="composed_primarily_of", curie=BIOLINK.curie('composed_primarily_of'),
+                   model_uri=BIOLINK.composed_primarily_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.plasma_membrane_part_of = Slot(uri=BIOLINK.plasma_membrane_part_of, name="plasma membrane part of", curie=BIOLINK.curie('plasma_membrane_part_of'),
+                   model_uri=BIOLINK.plasma_membrane_part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.part_of = Slot(uri=BIOLINK.part_of, name="part of", curie=BIOLINK.curie('part_of'),
                    model_uri=BIOLINK.part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
