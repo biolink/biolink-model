@@ -6401,7 +6401,7 @@ slots:
       Contribution is a summary statistic indicating the level of contribution
       an entity has on patient survival time as measured by its quantifiable impact
       on a distribution of patient survival time.
-    range: integer
+    range: float
     examples:
       - value: '[-1,1]: e.g. -0.23, 1, 0.75'
 
@@ -6429,6 +6429,9 @@ slots:
     range: integer
     examples:
       - value: '421'
+    exact_mappings:
+      - BAO:0000587
+      - OBI:0001144
 
   inhibitor constant:
     is_a: association slot
@@ -6451,7 +6454,7 @@ slots:
     is_a: association slot
     description: zscore is the measure of how many standard deviations below or above
       the population mean, a raw score is.
-    range: datetime
+    range: float
     examples:
       - value: '27.52733542'
 
