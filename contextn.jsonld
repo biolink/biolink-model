@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-08T21:23:06\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-08T21:39:56\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -83,6 +83,7 @@
          "@id": "http://purl.obolibrary.org/obo/DOID_",
          "@prefix": true
       },
+      "DOID-PROPERTY": "http://purl.obolibrary.org/obo/doid#",
       "DRUGBANK": "http://identifiers.org/drugbank/",
       "DrugCentral": {
          "@id": "http://translator.ncats.nih.gov/DrugCentral_",
@@ -277,6 +278,7 @@
          "@id": "http://purl.obolibrary.org/obo/NBO_",
          "@prefix": true
       },
+      "NBO-PROPERTY": "http://purl.obolibrary.org/obo/nbo#",
       "NCBIGene": "http://identifiers.org/ncbigene/",
       "NCBITaxon": {
          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_",
@@ -286,6 +288,7 @@
          "@id": "http://purl.obolibrary.org/obo/NCIT_",
          "@prefix": true
       },
+      "NCIT-OBO": "http://purl.obolibrary.org/obo/ncit#",
       "NDC": "http://identifiers.org/ndc/",
       "NDDF": "http://purl.bioontology.org/ontology/NDDF/",
       "NLMID": {
@@ -297,7 +300,6 @@
          "@id": "http://purl.obolibrary.org/obo/OBI_",
          "@prefix": true
       },
-      "OBO": "http://purl.obolibrary.org/obo/",
       "OBOREL": {
          "@id": "http://purl.obolibrary.org/obo/RO_",
          "@prefix": true
@@ -326,7 +328,6 @@
          "@id": "http://purl.obolibrary.org/obo/PATO_",
          "@prefix": true
       },
-      "PATO-PROPERTY": "http://purl.obolibrary.org/obo/pato#",
       "PCO": {
          "@id": "http://purl.obolibrary.org/obo/PCO_",
          "@prefix": true
@@ -425,6 +426,7 @@
          "@prefix": true
       },
       "UBERON_CORE": "http://purl.obolibrary.org/obo/uberon/core#",
+      "UBERON_NONAMESPACE": "http://purl.obolibrary.org/obo/core#",
       "UMLS": "http://identifiers.org/umls/",
       "UMLSSG": {
          "@id": "https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt",
@@ -432,6 +434,7 @@
       },
       "UNII": "http://identifiers.org/unii/",
       "UNIPROT.ISOFORM": "http://identifiers.org/uniprot.isoform/",
+      "UO-PROPERTY": "http://purl.obolibrary.org/obo/uo#",
       "UPHENO": {
          "@id": "http://purl.obolibrary.org/obo/UPHENO_",
          "@prefix": true
@@ -510,7 +513,7 @@
          "@prefix": true
       },
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
-      "oboformat": "http://www.geneontology.org/formats/oboInOWL#",
+      "oboformat": "http://www.geneontology.org/formats/oboInOwl#",
       "os": {
          "@id": "https://github.com/cmungall/owlstar/blob/master/owlstar.ttl",
          "@prefix": true
@@ -733,6 +736,9 @@
       "completed_by": {
          "@type": "@id"
       },
+      "composed_primarily_of": {
+         "@type": "@id"
+      },
       "condition_associated_with_gene": {
          "@type": "@id"
       },
@@ -845,6 +851,9 @@
          "@type": "@id"
       },
       "disease_has_basis_in": {
+         "@type": "@id"
+      },
+      "disease_has_location": {
          "@type": "@id"
       },
       "disrupted_by": {
@@ -1074,6 +1083,9 @@
          "@type": "xsd:double"
       },
       "has_phenotype": {
+         "@type": "@id"
+      },
+      "has_plasma_membrane_part": {
          "@type": "@id"
       },
       "has_population_context": {
@@ -1450,6 +1462,9 @@
          "@type": "@id"
       },
       "physically_interacts_with": {
+         "@type": "@id"
+      },
+      "plasma_membrane_part_of": {
          "@type": "@id"
       },
       "positively_correlated_with": {
