@@ -8361,6 +8361,42 @@ classes:
       - PR
       - ENSEMBL
 
+  protein domain:
+    is_a: biological entity
+    description: >-
+      A conserved part of protein sequence and (tertiary) structure that can evolve,
+      function, and exist independently of the rest of the protein chain.
+      Protein domains maintain their structure and function independently of the proteins in which they are found.
+      e.g. an SH3 domain.
+    mixins:
+      - gene grouping mixin
+      - chemical entity or gene or gene product
+    exact_mappings:
+      - NCIT:C13379
+      - SIO:001379
+      - UMLS:C1514562
+
+  protein family:
+    is_a: biological entity
+    exact_mappings:
+      - NCIT:C26004
+      - WIKIDATA:Q2278983
+    narrow_mappings:
+      - SIO:001380
+      - NCIT:C20130
+      - WIKIDATA:Q417841
+    mixins:
+      - gene grouping mixin
+      - chemical entity or gene or gene product
+
+  nucleic acid sequence motif:
+    aliases: ['consensus sequence']
+    is_a: biological entity
+    description: >-
+      A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have,
+      a biological significance. e.g. the TATA box promoter motif, transcription factor binding
+      consensus sequences.
+
   RNA product:
     is_a: transcript
     mixins:
