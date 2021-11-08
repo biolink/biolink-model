@@ -1331,8 +1331,8 @@ slots:
       - NCIT:human_disease_maps_to_eo_disease
       - NCIT:is_abnormal_cell_of_disease
       - NCIT:is_related_to_endogenous_product
-      - UBERON.NONAMESPACE:connected_to
-      - UBERON.NONAMESPACE:innervated_by
+      - UBERON_NONAMESPACE:connected_to
+      - UBERON_NONAMESPACE:innervated_by
       - NBO-PROPERTY:is_about
       - RO:0000053 # bearer_of
       - PATO:reciprocal_of
@@ -3938,8 +3938,8 @@ slots:
       # but seem more aligned to the FMA entries in this biolink term, so I leave them here for now
       - LOINC:has_lateral_anatomic_location
       - LOINC:has_lateral_location_presence
-      - UBERON.NONAMESPACE:distally_connected_to
-      - UBERON.NONAMESPACE:subdivision_of
+      - UBERON_NONAMESPACE:distally_connected_to
+      - UBERON_NONAMESPACE:subdivision_of
       # These RO terms seem similar to the FMA terms above, so I place them here rather than under 'biolink:related_to'
       - RO:0002219
       - RO:0002220
