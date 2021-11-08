@@ -4715,11 +4715,11 @@ slots:
       - SNOMED:inherent_location_of
       - NCIT:Anatomic_Structure_Has_Location_Role
 
-  disease_has_location:
+  disease has location:
     description: >-
       A relationship between a disease and an anatomical entity where the
       disease has one or more features that are located in that entity.
-    is_a: related_to
+    is_a: related to
     exact_mappings:
       - RO:0004026
       - MONDO:disease_has_location
