@@ -212,8 +212,7 @@ URI: [biolink:has_attribute](https://w3id.org/biolink/vocab/has_attribute)
 |  | | LOINC:has_time_aspect |
 |  | | LOINC:has_time_modifier |
 |  | | LOINC:has_timing_of |
-|  | | NCIT:disease_is_grade |
-|  | | NCIT:disease_is_stage |
+|  | | NCIT:R88 |
 |  | | NCIT:eo_disease_has_property_or_attribute |
 |  | | NCIT:has_data_element |
 |  | | NCIT:has_pharmaceutical_administration_method |

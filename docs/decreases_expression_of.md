@@ -17,7 +17,7 @@ URI: [biolink:decreases_expression_of](https://w3id.org/biolink/vocab/decreases_
 
 ## Domain and Range
 
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

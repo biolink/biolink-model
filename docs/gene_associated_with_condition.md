@@ -34,7 +34,6 @@ URI: [biolink:gene_associated_with_condition](https://w3id.org/biolink/vocab/gen
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RTXKG1:gene_associated_with_condition |
 | **Narrow Mappings:** | | NCIT:R38 |
 |  | | NCIT:R175 |
 |  | | NCIT:R48 |

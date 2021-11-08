@@ -47,7 +47,7 @@ URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 |  | | LOINC:has_subject |
 |  | | NCIT:pathway_has_gene_element |
 |  | | NCIT:process_involves_gene |
-|  | | OBO:nbo#has_participant |
+|  | | NBO-PROPERTY:has_participant |
 |  | | PathWhiz:has_bound |
 |  | | PathWhiz:has_compound |
 |  | | PathWhiz:has_element_collection |

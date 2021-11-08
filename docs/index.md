@@ -568,7 +568,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
          * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
      * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
-     * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+     * [affects expression of](affects_expression_of.md) - holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
          * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
          * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
      * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
@@ -628,7 +628,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
      * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
  * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
- * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+ * [affects expression of](affects_expression_of.md) - holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
      * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
      * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
  * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
@@ -700,6 +700,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
  * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
  * [completed by](completed_by.md)
+ * [composed_primarily_of](composed_primarily_of.md) - x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.
  * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
  * [consumed by](consumed_by.md)
  * [consumes](consumes.md)
@@ -753,6 +754,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [develops into](develops_into.md)
  * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
  * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
+ * [disease has location](disease_has_location.md) - A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity.
  * [disrupted by](disrupted_by.md) - describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
  * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
  * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
@@ -822,6 +824,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has excipient](has_excipient.md) - holds between a drug and a molecular entities in which the latter is a part of the former, and is a biologically inactive component
      * [has food component](has_food_component.md) - holds between food and one or more chemical entities composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
          * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
+     * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
      * [has variant part](has_variant_part.md) - holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
      * [actively involves](actively_involves.md)
@@ -833,6 +836,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
      * [has substrate](has_substrate.md)
  * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+ * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
  * [has positive upstream actor](has_positive_upstream_actor.md)
  * [has positive upstream or within actor](has_positive_upstream_or_within_actor.md)
  * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
@@ -967,12 +971,14 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has excipient](has_excipient.md) - holds between a drug and a molecular entities in which the latter is a part of the former, and is a biologically inactive component
          * [has food component](has_food_component.md) - holds between food and one or more chemical entities composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
              * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
+         * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
          * [has variant part](has_variant_part.md) - holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
      * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
          * [food component of](food_component_of.md) - holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
              * [nutrient of](nutrient_of.md)
          * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
          * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
+         * [plasma membrane part of](plasma_membrane_part_of.md)
          * [variant part of](variant_part_of.md)
  * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
  * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
@@ -980,6 +986,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [nutrient of](nutrient_of.md)
      * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
      * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
+     * [plasma membrane part of](plasma_membrane_part_of.md)
      * [variant part of](variant_part_of.md)
  * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
      * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
@@ -998,6 +1005,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
          * [molecular interaction decreased by](molecular_interaction_decreased_by.md)
          * [molecular interaction increased by](molecular_interaction_increased_by.md)
+ * [plasma membrane part of](plasma_membrane_part_of.md)
  * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
  * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
  * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
@@ -1020,6 +1028,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
  * [related condition](related_condition.md)
  * [related to](related_to.md) - A relationship that is asserted between two named things
+     * [composed_primarily_of](composed_primarily_of.md) - x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.
+     * [disease has location](disease_has_location.md) - A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity.
      * [related to at concept level](related_to_at_concept_level.md) - Represents a relationship held between terminology components that describe the conceptual model of a domain.
          * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
          * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
@@ -1103,7 +1113,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
                  * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
              * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
-             * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+             * [affects expression of](affects_expression_of.md) - holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
                  * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
                  * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
              * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
@@ -1270,12 +1280,14 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [has excipient](has_excipient.md) - holds between a drug and a molecular entities in which the latter is a part of the former, and is a biologically inactive component
                  * [has food component](has_food_component.md) - holds between food and one or more chemical entities composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
                      * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
+                 * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
                  * [has variant part](has_variant_part.md) - holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
              * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
                  * [food component of](food_component_of.md) - holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
                      * [nutrient of](nutrient_of.md)
                  * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
                  * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
+                 * [plasma membrane part of](plasma_membrane_part_of.md)
                  * [variant part of](variant_part_of.md)
          * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
              * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
@@ -1392,7 +1404,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
              * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
          * [affects expression in](affects_expression_in.md) - Holds between a variant and an anatomical entity where the expression of the variant is located in.
-         * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+         * [affects expression of](affects_expression_of.md) - holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
              * [decreases expression of](decreases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
              * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
          * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
@@ -1559,12 +1571,14 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [has excipient](has_excipient.md) - holds between a drug and a molecular entities in which the latter is a part of the former, and is a biologically inactive component
              * [has food component](has_food_component.md) - holds between food and one or more chemical entities composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
                  * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
+             * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
              * [has variant part](has_variant_part.md) - holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
          * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
              * [food component of](food_component_of.md) - holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
                  * [nutrient of](nutrient_of.md)
              * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
              * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
+             * [plasma membrane part of](plasma_membrane_part_of.md)
              * [variant part of](variant_part_of.md)
      * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
          * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes

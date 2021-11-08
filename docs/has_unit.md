@@ -37,7 +37,7 @@ URI: [biolink:has_unit](https://w3id.org/biolink/vocab/has_unit)
 | **Exact Mappings:** | | qud:unit |
 |  | | IAO:0000039 |
 | **Close Mappings:** | | EFO:0001697 |
-|  | | OBO:uo#is_unit_of |
+|  | | UO-PROPERTY:is_unit_of |
 | **Narrow Mappings:** | | SNOMED:has_concentration_strength_denominator_unit |
 |  | | SNOMED:has_concentration_strength_numerator_unit |
 |  | | SNOMED:has_presentation_strength_denominator_unit |

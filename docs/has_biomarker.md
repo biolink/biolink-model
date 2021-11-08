@@ -34,7 +34,6 @@ URI: [biolink:has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Narrow Mappings:** | | NCIT:disease_has_finding |
-|  | | NCIT:disease_has_molecular_abnormality |
+| **Narrow Mappings:** | | NCIT:disease_has_molecular_abnormality |
 |  | | NCIT:disease_is_marked_by_gene |
 

@@ -43,8 +43,6 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 | **Exact Mappings:** | | RO:0002610 |
 |  | | PATO:correlates_with |
 | **Narrow Mappings:** | | LOINC:associated_with |
-|  | | NCIT:is_associated_disease_of |
-|  | | NCIT:is_cytogenetic_abnormality_of_disease |
 |  | | ORPHA:317345 |
 |  | | PDQ:associated_disease |
 |  | | RO:0004029 |

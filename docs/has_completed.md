@@ -30,6 +30,5 @@ URI: [biolink:has_completed](https://w3id.org/biolink/vocab/has_completed)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | CL:has_completed |
-|  | | RTXKG1:has_completed |
+| **Aliases:** | | RTXKG1:has_completed |
 

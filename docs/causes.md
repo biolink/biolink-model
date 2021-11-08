@@ -52,7 +52,7 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 |  | | NCIT:process_initiates_biological_process |
 |  | | NCIT:chromosome_mapped_to_disease |
 |  | | NCIT:disease_has_normal_tissue_origin |
-|  | | OBO:nbo#in_response_to |
+|  | | NBO-PROPERTY:in_response_to |
 |  | | ORPHA:317343 |
 |  | | ORPHA:317344 |
 |  | | ORPHA:317346 |
@@ -63,7 +63,6 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 |  | | RO:0002507 |
 |  | | RO:0002509 |
 |  | | RO:0004001 |
-|  | | RTXKG1:capable_of_part_of |
 |  | | SNOMED:causative_agent_of |
 |  | | SNOMED:has_realization |
 |  | | UMLS:has_physiologic_effect |

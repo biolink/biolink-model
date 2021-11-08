@@ -66,7 +66,6 @@ URI: [biolink:located_in](https://w3id.org/biolink/vocab/located_in)
 |  | | NCIT:R155 |
 |  | | NCIT:R145 |
 |  | | NCIT:R40 |
-|  | | NCIT:is_location_of_anatomic_structure |
 |  | | NCIT:R171 |
 |  | | NCIT:R167 |
 |  | | NCIT:R165 |
@@ -75,7 +74,6 @@ URI: [biolink:located_in](https://w3id.org/biolink/vocab/located_in)
 |  | | NCIT:R166 |
 |  | | NCIT:R168 |
 |  | | RO:0002303 |
-|  | | RTXKG1:disease_has_location |
 |  | | SNOMED:has_finding_site |
 |  | | SNOMED:has_indirect_procedure_site |
 |  | | SNOMED:has_inherent_location |

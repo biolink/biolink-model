@@ -28,6 +28,7 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
  *  [has active ingredient](has_active_ingredient.md)
  *  [has excipient](has_excipient.md)
  *  [has food component](has_food_component.md)
+ *  [has plasma membrane part](has_plasma_membrane_part.md)
  *  [has variant part](has_variant_part.md)
 
 ## Used by
@@ -42,7 +43,6 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
 |  | | BFO:0000055 |
 |  | | WIKIDATA_PROPERTY:P527 |
 |  | | RO:0001019 |
-|  | | RTXKG1:has_part |
 |  | | RXNORM:consists_of |
 |  | | RXNORM:has_part |
 | **Narrow Mappings:** | | BFO:0000117 |
@@ -67,8 +67,6 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
 |  | | RO:0002473 |
 |  | | RO:0002524 |
 |  | | RO:0002551 |
-|  | | RTXKG1:composed_primarily_of |
-|  | | RTXKG1:contains_process |
 |  | | RTXKG1:has_plasma_membrane_part |
 |  | | RXNORM:has_ingredient |
 |  | | SNOMED:has_component |

@@ -32,7 +32,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
  * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
  * [affects degradation of](affects_degradation_of.md) - holds between two chemical entities where the action or effect of one impacts the rate of degradation of the other within a system of interest, where chemical degradation is defined act or process of simplifying or breaking down a molecule into smaller parts, either naturally or artificially (Oxford English Dictionary, UK, 1995)
- * [affects expression of](affects_expression_of.md) - holds between a chemical or gene/gene product entities and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
+ * [affects expression of](affects_expression_of.md) - holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the level of expression of the other within a system of interest
  * [affects folding of](affects_folding_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate or quality of folding of the other
  * [affects localization of](affects_localization_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the localization of the other within a system of interest
  * [affects metabolic processing of](affects_metabolic_processing_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the metabolic processing of the other within a system of interest
@@ -63,6 +63,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [co-occurs in literature with](co_occurs_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
  * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
  * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
+ * [composed_primarily_of](composed_primarily_of.md) - x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.
  * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
  * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
  * [contribution from](contribution_from.md)
@@ -118,6 +119,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
  * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+ * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
  * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
  * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
  * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI

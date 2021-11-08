@@ -27,10 +27,3 @@ URI: [biolink:process_regulates_process](https://w3id.org/biolink/vocab/process_
 
 ## Used by
 
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | RO:0002211 |
-

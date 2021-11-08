@@ -41,7 +41,6 @@ URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
 |  | | CHEMBL.MECHANISM:subset_of |
 |  | | GO:isa |
 |  | | MESH:isa |
-|  | | RTXKG1:subclass_of |
 |  | | RXNORM:isa |
 |  | | VANDF:isa |
 | **Close Mappings:** | | LOINC:class_of |
@@ -58,7 +57,6 @@ URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
 |  | | NCIT:A14 |
 |  | | NCIT:A3 |
 |  | | NDDF:has_dose_form |
-|  | | OBO:intersection_of |
 |  | | RXNORM:has_dose_form |
 |  | | RXNORM:has_doseformgroup |
 |  | | SNOMED:entire_anatomy_structure_of |

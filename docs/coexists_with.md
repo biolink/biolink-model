@@ -182,8 +182,8 @@ URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
 |  | | FMA:venous_drainage_of |
 |  | | LOINC:has_lateral_anatomic_location |
 |  | | LOINC:has_lateral_location_presence |
-|  | | OBO:core#distally_connected_to |
-|  | | OBO:core#subdivision_of |
+|  | | UBERON_NONAMESPACE:distally_connected_to |
+|  | | UBERON_NONAMESPACE:subdivision_of |
 |  | | RO:0002219 |
 |  | | RO:0002220 |
 |  | | RO:0002221 |

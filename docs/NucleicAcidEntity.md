@@ -57,16 +57,16 @@ URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntit
 
 ## Referenced by class
 
- *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[affects expression of](affects_expression_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
+ *  **[NamedThing](NamedThing.md)** *[affects expression of](affects_expression_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[affects folding of](affects_folding_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[affects mutation rate of](affects_mutation_rate_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
- *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[decreases expression of](decreases_expression_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
+ *  **[NamedThing](NamedThing.md)** *[decreases expression of](decreases_expression_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[decreases folding of](decreases_folding_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[decreases mutation rate of](decreases_mutation_rate_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[genomic sequence localization➞object](genomic_sequence_localization_object.md)*  <sub>1..1</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[genomic sequence localization➞subject](genomic_sequence_localization_subject.md)*  <sub>1..1</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[has sequence location](has_sequence_location.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
- *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[increases expression of](increases_expression_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
+ *  **[NamedThing](NamedThing.md)** *[increases expression of](increases_expression_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[increases folding of](increases_folding_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[increases mutation rate of](increases_mutation_rate_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**
  *  **[SequenceVariant](SequenceVariant.md)** *[is sequence variant of](is_sequence_variant_of.md)*  <sub>0..\*</sub>  **[NucleicAcidEntity](NucleicAcidEntity.md)**

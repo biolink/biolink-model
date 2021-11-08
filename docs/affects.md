@@ -59,7 +59,6 @@ URI: [biolink:affects](https://w3id.org/biolink/vocab/affects)
 | **Exact Mappings:** | | SEMMEDDB:AFFECTS |
 |  | | SEMMEDDB:affects |
 |  | | DGIdb:affects |
-|  | | RTXKG1:affects |
 | **Narrow Mappings:** | | SEMMEDDB:administered_to |
 |  | | CTD:prediction_hypothesis |
 |  | | GOREL:0001006 |

@@ -39,10 +39,10 @@ URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | RTXKG1:participates_in |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0000056 |
 |  | | BFO:0000056 |
-|  | | RTXKG1:participates_in |
 | **Narrow Mappings:** | | DRUGBANK:pathway |
 |  | | HMDB:in_pathway |
 |  | | LOINC:is_given_pharmaceutical_substance_for |

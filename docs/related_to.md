@@ -21,6 +21,8 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 
 ## Children
 
+ *  [composed_primarily_of](composed_primarily_of.md)
+ *  [disease has location](disease_has_location.md)
  *  [related to at concept level](related_to_at_concept_level.md)
  *  [related to at instance level](related_to_at_instance_level.md)
 
@@ -32,8 +34,6 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | skos:relatedMatch |
-|  | | SEMMEDDB:ASSOCIATED_WITH |
-|  | | SEMMEDDB:associated_with |
 |  | | UMLS:related_to |
 | **Narrow Mappings:** | | SEMMEDDB:compared_with |
 |  | | SEMMEDDB:higher_than |
@@ -74,17 +74,11 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 |  | | NCIT:human_disease_maps_to_eo_disease |
 |  | | NCIT:is_abnormal_cell_of_disease |
 |  | | NCIT:is_related_to_endogenous_product |
-|  | | OBO:core#connected_to |
-|  | | OBO:core#innervated_by |
-|  | | OBO:envo#has_increased_levels_of |
-|  | | OBO:has_role |
-|  | | OBO:nbo#is_about |
+|  | | UBERON_NONAMESPACE:connected_to |
+|  | | UBERON_NONAMESPACE:innervated_by |
+|  | | NBO-PROPERTY:is_about |
 |  | | RO:0000053 |
-|  | | PATO-PROPERTY:decreased_in_magnitude_relative_to |
-|  | | PATO-PROPERTY:has_cross_section |
-|  | | PATO-PROPERTY:has_relative_magnitude |
-|  | | PATO-PROPERTY:increased_in_magnitude_relative_to |
-|  | | PATO-PROPERTY:reciprocal_of |
+|  | | PATO:reciprocal_of |
 |  | | RO:0000052 |
 |  | | RO:0002001 |
 |  | | RO:0002002 |
@@ -124,7 +118,6 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 |  | | RO:0004027 |
 |  | | RO:0009001 |
 |  | | RO:0009004 |
-|  | | RTXKG1:functionally_related_to |
 |  | | RXNORM:has_form |
 |  | | RXNORM:reformulated_to |
 |  | | SNOMED:has_associated_morphology |

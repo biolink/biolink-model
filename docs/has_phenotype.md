@@ -39,9 +39,10 @@ URI: [biolink:has_phenotype](https://w3id.org/biolink/vocab/has_phenotype)
 |  | | SNOMED:characterized_by |
 | **Close Mappings:** | | OMIM:phenotype_of |
 | **Narrow Mappings:** | | NCIT:R89 |
-|  | | OBO:doid#has_symptom |
+|  | | DOID-PROPERTY:has_symptom |
 |  | | RO:0004022 |
 | **Broad Mappings:** | | hetio:PRESENTS_DpS |
 |  | | NCIT:R115 |
 |  | | OMIM:has_phenotype |
+|  | | NCIT:R108 |
 

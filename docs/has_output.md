@@ -43,7 +43,6 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 | **Exact Mappings:** | | RO:0002234 |
 | **Close Mappings:** | | RO:0002353 |
 |  | | RO:0002354 |
-|  | | RTXKG1:output_of |
 | **Narrow Mappings:** | | NCIT:R31 |
 |  | | OBI:0000299 |
 |  | | PathWhiz:has_right_element |

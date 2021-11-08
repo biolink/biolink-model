@@ -37,7 +37,6 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | WIKIDATA_PROPERTY:P129 |
-|  | | RTXKG1:physically_interacts_with |
 | **Close Mappings:** | | CHEMBL.MECHANISM:binding_agent |
 |  | | CHEMBL.MECHANISM:chelating_agent |
 |  | | CHEMBL.MECHANISM:cross-linking_agent |
