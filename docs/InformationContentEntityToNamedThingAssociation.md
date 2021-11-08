@@ -1,21 +1,21 @@
 ---
 parent: Associations
-title: biolink:NamedThingToInformationContentEntityAssociation
+title: biolink:InformationContentEntityToNamedThingAssociation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: NamedThingToInformationContentEntityAssociation
+# Class: InformationContentEntityToNamedThingAssociation
 
 
 association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
 
-URI: [biolink:NamedThingToInformationContentEntityAssociation](https://w3id.org/biolink/vocab/NamedThingToInformationContentEntityAssociation)
+URI: [biolink:InformationContentEntityToNamedThingAssociation](https://w3id.org/biolink/vocab/InformationContentEntityToNamedThingAssociation)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[Publication]%3Cobject%201..1-%20[NamedThingToInformationContentEntityAssociation%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing]%3Csubject%201..1-%20[NamedThingToInformationContentEntityAssociation],[Association]%5E-[NamedThingToInformationContentEntityAssociation],[NamedThing],[EvidenceType],[Attribute],[Association],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[NamedThing]%3Cobject%201..1-%20[InformationContentEntityToNamedThingAssociation%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[NamedThing]%3Csubject%201..1-%20[InformationContentEntityToNamedThingAssociation],[Association]%5E-[InformationContentEntityToNamedThingAssociation],[EvidenceType],[Attribute],[Association],[Agent])
 
 ---
 
@@ -32,13 +32,13 @@ URI: [biolink:NamedThingToInformationContentEntityAssociation](https://w3id.org/
 
 ### Own
 
- * [named thing to information content entity association➞object](named_thing_to_information_content_entity_association_object.md)  <sub>1..1</sub>
+ * [information content entity to named thing association➞object](information_content_entity_to_named_thing_association_object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [Publication](Publication.md)
- * [named thing to information content entity association➞predicate](named_thing_to_information_content_entity_association_predicate.md)  <sub>1..1</sub>
+     * Range: [NamedThing](NamedThing.md)
+ * [information content entity to named thing association➞predicate](information_content_entity_to_named_thing_association_predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
- * [named thing to information content entity association➞subject](named_thing_to_information_content_entity_association_subject.md)  <sub>1..1</sub>
+ * [information content entity to named thing association➞subject](information_content_entity_to_named_thing_association_subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
 
@@ -124,13 +124,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [named thing to information content entity association➞object](named_thing_to_information_content_entity_association_object.md)  <sub>1..1</sub>
+ * [information content entity to named thing association➞object](information_content_entity_to_named_thing_association_object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [Publication](Publication.md)
- * [named thing to information content entity association➞predicate](named_thing_to_information_content_entity_association_predicate.md)  <sub>1..1</sub>
+     * Range: [NamedThing](NamedThing.md)
+ * [information content entity to named thing association➞predicate](information_content_entity_to_named_thing_association_predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
- * [named thing to information content entity association➞subject](named_thing_to_information_content_entity_association_subject.md)  <sub>1..1</sub>
+ * [information content entity to named thing association➞subject](information_content_entity_to_named_thing_association_subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
 

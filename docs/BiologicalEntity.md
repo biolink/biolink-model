@@ -15,7 +15,7 @@ URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[ReagentTargetedGene],[Polypeptide],[PhenotypicFeature],[OrganismalEntity],[NamedThing],[Haplotype],[Genotype],[Genome],[GeneFamily],[Gene],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SequenceVariant],[BiologicalEntity]%5E-[ReagentTargetedGene],[BiologicalEntity]%5E-[Polypeptide],[BiologicalEntity]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[Haplotype],[BiologicalEntity]%5E-[Genotype],[BiologicalEntity]%5E-[Genome],[BiologicalEntity]%5E-[GeneFamily],[BiologicalEntity]%5E-[Gene],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[ReagentTargetedGene],[ProteinFamily],[ProteinDomain],[Polypeptide],[PhenotypicFeature],[OrganismalEntity],[NucleicAcidSequenceMotif],[NamedThing],[Haplotype],[Genotype],[Genome],[GeneFamily],[Gene],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[SequenceVariant],[BiologicalEntity]%5E-[ReagentTargetedGene],[BiologicalEntity]%5E-[ProteinFamily],[BiologicalEntity]%5E-[ProteinDomain],[BiologicalEntity]%5E-[Polypeptide],[BiologicalEntity]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[NucleicAcidSequenceMotif],[BiologicalEntity]%5E-[Haplotype],[BiologicalEntity]%5E-[Genotype],[BiologicalEntity]%5E-[Genome],[BiologicalEntity]%5E-[GeneFamily],[BiologicalEntity]%5E-[Gene],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
@@ -33,8 +33,11 @@ URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
  * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
  * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
  * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
+ * [NucleicAcidSequenceMotif](NucleicAcidSequenceMotif.md) - A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
  * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
  * [Polypeptide](Polypeptide.md) - A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+ * [ProteinDomain](ProteinDomain.md) - A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
+ * [ProteinFamily](ProteinFamily.md)
  * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
  * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
 

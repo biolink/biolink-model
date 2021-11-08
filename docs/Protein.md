@@ -119,4 +119,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | WIKIDATA:Q8054 |
 | **Narrow Mappings:** | | STY:T126 |
 |  | | STY:T192 |
+| **Broad Mappings:** | | bioschemas:Protein |
 

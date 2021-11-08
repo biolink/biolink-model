@@ -72,6 +72,7 @@ URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/relat
  *  [located in](located_in.md)
  *  [location of](location_of.md)
  *  [manifestation of](manifestation_of.md)
+ *  [mentioned by](mentioned_by.md)
  *  [mentions](mentions.md)
  *  [missing from](missing_from.md)
  *  [model of](model_of.md)

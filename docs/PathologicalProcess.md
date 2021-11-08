@@ -100,4 +100,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | NCIT:C16956 |
 | **Narrow Mappings:** | | NCIT:C19151 |
 |  | | EFO:0009708 |
+|  | | STY:T046 |
+|  | | STY:T037 |
 

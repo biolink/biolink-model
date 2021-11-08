@@ -160,4 +160,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **In Subsets:** | | translator_minimal |
 | **Narrow Mappings:** | | STY:T088 |
 |  | | STY:T085 |
+|  | | CHEBI:23367 |
+|  | | bioschemas:MolecularEntity |
 

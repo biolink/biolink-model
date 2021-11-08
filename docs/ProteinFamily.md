@@ -1,47 +1,33 @@
 ---
 parent: Entities
-title: biolink:PopulationOfIndividualOrganisms
+title: biolink:ProteinFamily
 grand_parent: Classes
 layout: default
 ---
 
-# Class: PopulationOfIndividualOrganisms
+# Class: ProteinFamily
 
 
-A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
 
-URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
+
+URI: [biolink:ProteinFamily](https://w3id.org/biolink/vocab/ProteinFamily)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[ThingWithTaxon],[StudyPopulation],[PopulationToPopulationAssociation],[ExposureEventToOutcomeAssociation]-%20has%20population%20context%200..1%3E[PopulationOfIndividualOrganisms%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[PopulationToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],[PopulationToPopulationAssociation]-%20subject%201..1%3E[PopulationOfIndividualOrganisms],[VariantToPopulationAssociation]-%20object%201..1%3E[PopulationOfIndividualOrganisms],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[PopulationOfIndividualOrganisms]%5E-[StudyPopulation],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity],[OrganismTaxon],[NamedThing],[ExposureEventToOutcomeAssociation],[Attribute],[Association],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProteinFamily%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[GeneGroupingMixin],[ProteinFamily]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity]%5E-[ProteinFamily],[NamedThing],[GeneGroupingMixin],[Gene],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute],[Agent])
 
 ---
 
-
-## Identifier prefixes
-
- * HANCESTRO
 
 ## Parents
 
- *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
+ *  is_a: [BiologicalEntity](BiologicalEntity.md)
 
 ## Uses Mixins
 
- *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
-
-## Children
-
- * [StudyPopulation](StudyPopulation.md) - A group of people banded together or treated as a group as participants in a research study.
-
-## Referenced by class
-
- *  **[Association](Association.md)** *[has population context](has_population_context.md)*  <sub>0..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
- *  **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association➞object](population_to_population_association_object.md)*  <sub>1..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
- *  **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association➞subject](population_to_population_association_subject.md)*  <sub>1..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
- *  **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[variant to population association➞object](variant_to_population_association_object.md)*  <sub>1..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
+ *  mixin: [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
+ *  mixin: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) - A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
 
 ## Attributes
 
@@ -82,6 +68,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
+### Inherited from gene grouping mixin:
+
+ * [has gene or gene product](has_gene_or_gene_product.md)  <sub>0..\*</sub>
+     * Description: connects an entity with one or more gene or gene products
+     * Range: [Gene](Gene.md)
+
 ### Inherited from macromolecular machine mixin:
 
  * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
@@ -100,28 +92,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
 
-### Inherited from organismal entity:
-
- * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..\*</sub>
-     * Description: may often be an organism attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..\*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * Range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
-
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Local names:** | | population (ga4gh) |
-| **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | PCO:0000001 |
-|  | | SIO:001061 |
-|  | | STY:T098 |
-|  | | OBI:0000181 |
+| **Exact Mappings:** | | NCIT:C26004 |
+|  | | WIKIDATA:Q2278983 |
+| **Narrow Mappings:** | | SIO:001380 |
+|  | | NCIT:C20130 |
+|  | | WIKIDATA:Q417841 |
 
