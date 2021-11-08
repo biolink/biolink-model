@@ -1742,6 +1742,13 @@ slots:
     narrow_mappings:
       - SIO:000628
 
+  mentioned by:
+    description: >-
+      refers to is a relation between one named thing and the information content entity
+      that it makes reference to.
+    is_a: related to at instance level
+    inverse: mentions
+
   ## Publication related predicates
 
   contributor:
@@ -9599,7 +9606,7 @@ classes:
     slots:
       - sex qualifier
 
-  named thing to information content entity association:
+  information content entity to named thing association:
     description: >-
       association between a named thing and a information content entity where the specific context
       of the relationship between that named thing and the publication is unknown. For
@@ -9614,9 +9621,9 @@ classes:
       - object
     slot_usage:
       subject:
-        domain: named thing
+        domain: publication
       object:
-        range: publication
+        range: named thing
       predicate:
         subproperty_of: mentions
     in_subset:
