@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.2.7
+version: 2.2.8
 
 ## ------------
 ## PREFIXES
@@ -1733,6 +1733,13 @@ slots:
       - IAO:0000142
     narrow_mappings:
       - SIO:000628
+
+  mentioned by:
+    description: >-
+      refers to is a relation between one named thing and the information content entity
+      that it makes reference to.
+    is_a: related to at instance level
+    inverse: mentions
 
   ## Publication related predicates
 
@@ -6052,7 +6059,7 @@ slots:
   association slot:
     abstract: true
     domain: association
-    aliases: ['edge property', 'statement property']
+    aliases: ['edge property','statement property']
     description: >-
       any slot that relates an association to another entity
 
@@ -8363,6 +8370,42 @@ classes:
       - PR
       - ENSEMBL
 
+  protein domain:
+    is_a: biological entity
+    description: >-
+      A conserved part of protein sequence and (tertiary) structure that can evolve,
+      function, and exist independently of the rest of the protein chain.
+      Protein domains maintain their structure and function independently of the proteins in which they are found.
+      e.g. an SH3 domain.
+    mixins:
+      - gene grouping mixin
+      - chemical entity or gene or gene product
+    exact_mappings:
+      - NCIT:C13379
+      - SIO:001379
+      - UMLS:C1514562
+
+  protein family:
+    is_a: biological entity
+    exact_mappings:
+      - NCIT:C26004
+      - WIKIDATA:Q2278983
+    narrow_mappings:
+      - SIO:001380
+      - NCIT:C20130
+      - WIKIDATA:Q417841
+    mixins:
+      - gene grouping mixin
+      - chemical entity or gene or gene product
+
+  nucleic acid sequence motif:
+    aliases: ['consensus sequence']
+    is_a: biological entity
+    description: >-
+      A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have,
+      a biological significance. e.g. the TATA box promoter motif, transcription factor binding
+      consensus sequences.
+
   RNA product:
     is_a: transcript
     mixins:
@@ -9610,7 +9653,7 @@ classes:
     slots:
       - sex qualifier
 
-  named thing to information content entity association:
+  information content entity to named thing association:
     description: >-
       association between a named thing and a information content entity where the specific context
       of the relationship between that named thing and the publication is unknown. For
@@ -9625,9 +9668,9 @@ classes:
       - object
     slot_usage:
       subject:
-        domain: named thing
+        domain: publication
       object:
-        range: publication
+        range: named thing
       predicate:
         subproperty_of: mentions
     in_subset:
