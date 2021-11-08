@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-03 00:03\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-08T21:23:00\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -478,6 +478,7 @@
          "@prefix": true
       },
       "biolink": "https://w3id.org/biolink/vocab/",
+      "bioschemas": "https://bioschemas.org/",
       "chembio": {
          "@id": "http://translator.ncats.nih.gov/chembio_",
          "@prefix": true
@@ -1335,6 +1336,9 @@
          "@type": "xsd:float"
       },
       "manifestation_of": {
+         "@type": "@id"
+      },
+      "mentioned_by": {
          "@type": "@id"
       },
       "mentions": {

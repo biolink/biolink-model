@@ -1,10 +1,11 @@
-id: population_of_individual_organisms
+id: protein_domain
 schema_generating: true
-description: A collection of individuals from the same taxonomic class distinguished
-  by one or more characteristics.  Characteristics can include, but are not limited
-  to, shared geographic location, genetics, phenotypes.
-display_name: population of individual organisms
-document_category: population of individual organisms
+description: A conserved part of protein sequence and (tertiary) structure that can
+  evolve, function, and exist independently of the rest of the protein chain. Protein
+  domains maintain their structure and function independently of the proteins in which
+  they are found. e.g. an SH3 domain.
+display_name: protein domain
+document_category: protein domain
 weight: 20
 fields:
 - id: id
@@ -33,6 +34,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any entity to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\
@@ -48,12 +53,7 @@ fields:
     \ biolink:NamedThing}"
   display_name: named thing_category
   cardinality: multi
-- id: has_attribute
-  description: may often be an organism attribute
-  display_name: organismal entity_has attribute
-  cardinality: multi
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
+- id: has_gene_or_gene_product
+  description: connects an entity with one or more gene or gene products
+  display_name: has gene or gene product
   cardinality: multi

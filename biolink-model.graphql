@@ -2118,6 +2118,27 @@ interface InformationContentEntity
     creationDate: Date
   }
 
+type InformationContentEntityToNamedThingAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    relation: String
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    type: String
+    category: [CategoryType]
+    subject: NamedThing!
+    object: NamedThing!
+    predicate: PredicateType!
+  }
+
 type InformationResource
   {
     id: String!
@@ -2472,27 +2493,6 @@ type NamedThing
     category: [NamedThing]!
   }
 
-type NamedThingToInformationContentEntityAssociation
-  {
-    id: String!
-    iri: IriType
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    relation: String
-    negated: Boolean
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    hasEvidence: [EvidenceType]
-    type: String
-    category: [CategoryType]
-    subject: NamedThing!
-    object: Publication!
-    predicate: PredicateType!
-  }
-
 type NoncodingRNAProduct
   {
     id: String!
@@ -2533,6 +2533,19 @@ type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+  }
+
+type NucleicAcidSequenceMotif
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
   }
 
 type Nutrient
@@ -3055,6 +3068,34 @@ type Protein implements GeneProductMixin, ThingWithTaxon
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
     xref: [Uriorcurie]
+  }
+
+type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasGeneOrGeneProduct: [Gene]
+  }
+
+type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasGeneOrGeneProduct: [Gene]
   }
 
 type ProteinIsoform implements GeneProductIsoformMixin
