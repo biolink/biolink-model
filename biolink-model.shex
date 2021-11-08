@@ -202,9 +202,9 @@ linkml:Nodeidentifier NONLITERAL
     @<GeneToDiseaseAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR
     @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR
     @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToVariantAssociation> OR
-    @<MaterialSampleDerivationAssociation> OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<MolecularActivityToChemicalEntityAssociation> OR @<MolecularActivityToMolecularActivityAssociation> OR
-    @<NamedThingToInformationContentEntityAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
+    @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation> OR
+    @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
+    @<MolecularActivityToMolecularActivityAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
     @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
     @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR
     @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR @<TaxonToTaxonAssociation> OR
@@ -286,7 +286,8 @@ linkml:Nodeidentifier NONLITERAL
 
 <BiologicalEntity>  (
     @<BiologicalProcessOrActivity> OR @<DiseaseOrPhenotypicFeature> OR @<Gene> OR @<GeneFamily> OR @<Genome> OR @<Genotype> OR
-    @<Haplotype> OR @<OrganismalEntity> OR @<Polypeptide> OR @<ReagentTargetedGene> OR @<SequenceVariant>
+    @<Haplotype> OR @<NucleicAcidSequenceMotif> OR @<OrganismalEntity> OR @<Polypeptide> OR @<ProteinDomain> OR @<ProteinFamily> OR
+    @<ReagentTargetedGene> OR @<SequenceVariant>
 )
 
 <BiologicalEntity_struct> {
@@ -1694,6 +1695,17 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<InformationContentEntityToNamedThingAssociation> CLOSED {
+    (  $<InformationContentEntityToNamedThingAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<NamedThing> ;
+          rdf:object @<NamedThing> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <InformationContentEntityToNamedThingAssociation> ]
+    )
+}
+
 <InformationResource> CLOSED {
     (  $<InformationResource_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ?
@@ -1928,17 +1940,6 @@ linkml:Nodeidentifier NONLITERAL
     @<Procedure> OR @<Treatment>
 )
 
-<NamedThingToInformationContentEntityAssociation> CLOSED {
-    (  $<NamedThingToInformationContentEntityAssociation_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ? ;
-          rdf:subject @<NamedThing> ;
-          rdf:object @<Publication> ;
-          rdf:predicate @<PredicateType>
-       ) ;
-       rdf:type [ <NamedThingToInformationContentEntityAssociation> ]
-    )
-}
-
 <NoncodingRNAProduct>  (
     CLOSED {
        (  $<NoncodingRNAProduct_tes> (  &<RNAProduct_tes> ;
@@ -1966,6 +1967,14 @@ linkml:Nodeidentifier NONLITERAL
        )
     } OR @<CodingSequence> OR @<Exon> OR @<Transcript>
 )
+
+<NucleicAcidSequenceMotif> CLOSED {
+    (  $<NucleicAcidSequenceMotif_tes> (  &<BiologicalEntity_tes> ;
+          rdf:type [ <BiologicalEntity> ] ?
+       ) ;
+       rdf:type [ <NucleicAcidSequenceMotif> ]
+    )
+}
 
 <Nutrient>  (
     CLOSED {
@@ -2392,6 +2401,32 @@ linkml:Nodeidentifier NONLITERAL
        )
     } OR @<ProteinIsoform>
 )
+
+<ProteinDomain> CLOSED {
+    (  $<ProteinDomain_tes> (  &<BiologicalEntity_tes> ;
+          rdf:type [ <BiologicalEntity> ] ? ;
+          &<GeneGroupingMixin_tes> ;
+          rdf:type [ <GeneGroupingMixin> ] ? ;
+          &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
+          rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
+          <has_gene_or_gene_product> @<Gene> *
+       ) ;
+       rdf:type [ <ProteinDomain> ]
+    )
+}
+
+<ProteinFamily> CLOSED {
+    (  $<ProteinFamily_tes> (  &<BiologicalEntity_tes> ;
+          rdf:type [ <BiologicalEntity> ] ? ;
+          &<GeneGroupingMixin_tes> ;
+          rdf:type [ <GeneGroupingMixin> ] ? ;
+          &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
+          rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
+          <has_gene_or_gene_product> @<Gene> *
+       ) ;
+       rdf:type [ <ProteinFamily> ]
+    )
+}
 
 <ProteinIsoform> CLOSED {
     (  $<ProteinIsoform_tes> (  &<Protein_tes> ;

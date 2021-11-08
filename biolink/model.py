@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-03 00:04
+# Generation date: 2021-11-08T21:23:50
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -236,6 +236,7 @@ ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
 ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.org/')
 APOLLO = CurieNamespace('apollo', 'https://github.com/GMOD/Apollo')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
+BIOSCHEMAS = CurieNamespace('bioschemas', 'https://bioschemas.org/')
 CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
 DCT = CurieNamespace('dct', 'http://purl.org/dc/terms/')
@@ -672,6 +673,18 @@ class ProteinIsoformId(ProteinId):
     pass
 
 
+class ProteinDomainId(BiologicalEntityId):
+    pass
+
+
+class ProteinFamilyId(BiologicalEntityId):
+    pass
+
+
+class NucleicAcidSequenceMotifId(BiologicalEntityId):
+    pass
+
+
 class RNAProductId(TranscriptId):
     pass
 
@@ -848,7 +861,7 @@ class ExposureEventToOutcomeAssociationId(AssociationId):
     pass
 
 
-class NamedThingToInformationContentEntityAssociationId(AssociationId):
+class InformationContentEntityToNamedThingAssociationId(AssociationId):
     pass
 
 
@@ -3062,8 +3075,7 @@ class IndividualOrganism(OrganismalEntity):
 class PopulationOfIndividualOrganisms(OrganismalEntity):
     """
     A collection of individuals from the same taxonomic class distinguished by one or more characteristics.
-    Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance
-    for Genome Resources]
+    Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -3673,6 +3685,88 @@ class ProteinIsoform(Protein):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProteinIsoformId):
             self.id = ProteinIsoformId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ProteinDomain(BiologicalEntity):
+    """
+    A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently
+    of the rest of the protein chain. Protein domains maintain their structure and function independently of the
+    proteins in which they are found. e.g. an SH3 domain.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ProteinDomain
+    class_class_curie: ClassVar[str] = "biolink:ProteinDomain"
+    class_name: ClassVar[str] = "protein domain"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinDomain
+
+    id: Union[str, ProteinDomainId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ProteinDomainId):
+            self.id = ProteinDomainId(self.id)
+
+        if not isinstance(self.has_gene_or_gene_product, list):
+            self.has_gene_or_gene_product = [self.has_gene_or_gene_product] if self.has_gene_or_gene_product is not None else []
+        self.has_gene_or_gene_product = [v if isinstance(v, GeneId) else GeneId(v) for v in self.has_gene_or_gene_product]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ProteinFamily(BiologicalEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ProteinFamily
+    class_class_curie: ClassVar[str] = "biolink:ProteinFamily"
+    class_name: ClassVar[str] = "protein family"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinFamily
+
+    id: Union[str, ProteinFamilyId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ProteinFamilyId):
+            self.id = ProteinFamilyId(self.id)
+
+        if not isinstance(self.has_gene_or_gene_product, list):
+            self.has_gene_or_gene_product = [self.has_gene_or_gene_product] if self.has_gene_or_gene_product is not None else []
+        self.has_gene_or_gene_product = [v if isinstance(v, GeneId) else GeneId(v) for v in self.has_gene_or_gene_product]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class NucleicAcidSequenceMotif(BiologicalEntity):
+    """
+    A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological
+    significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidSequenceMotif
+    class_class_curie: ClassVar[str] = "biolink:NucleicAcidSequenceMotif"
+    class_name: ClassVar[str] = "nucleic acid sequence motif"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidSequenceMotif
+
+    id: Union[str, NucleicAcidSequenceMotifId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NucleicAcidSequenceMotifId):
+            self.id = NucleicAcidSequenceMotifId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -5997,7 +6091,7 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
 
 @dataclass
-class NamedThingToInformationContentEntityAssociation(Association):
+class InformationContentEntityToNamedThingAssociation(Association):
     """
     association between a named thing and a information content entity where the specific context of the relationship
     between that named thing and the publication is unknown. For example, model organisms databases often capture the
@@ -6008,21 +6102,21 @@ class NamedThingToInformationContentEntityAssociation(Association):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.NamedThingToInformationContentEntityAssociation
-    class_class_curie: ClassVar[str] = "biolink:NamedThingToInformationContentEntityAssociation"
-    class_name: ClassVar[str] = "named thing to information content entity association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.NamedThingToInformationContentEntityAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntityToNamedThingAssociation
+    class_class_curie: ClassVar[str] = "biolink:InformationContentEntityToNamedThingAssociation"
+    class_name: ClassVar[str] = "information content entity to named thing association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntityToNamedThingAssociation
 
-    id: Union[str, NamedThingToInformationContentEntityAssociationId] = None
+    id: Union[str, InformationContentEntityToNamedThingAssociationId] = None
     subject: Union[str, NamedThingId] = None
-    object: Union[str, PublicationId] = None
+    object: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, NamedThingToInformationContentEntityAssociationId):
-            self.id = NamedThingToInformationContentEntityAssociationId(self.id)
+        if not isinstance(self.id, InformationContentEntityToNamedThingAssociationId):
+            self.id = InformationContentEntityToNamedThingAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -6031,8 +6125,8 @@ class NamedThingToInformationContentEntityAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, PublicationId):
-            self.object = PublicationId(self.object)
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -8488,6 +8582,9 @@ slots.has_negative_upstream_or_within_actor = Slot(uri=BIOLINK.has_negative_upst
 slots.mentions = Slot(uri=BIOLINK.mentions, name="mentions", curie=BIOLINK.curie('mentions'),
                    model_uri=BIOLINK.mentions, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.mentioned_by = Slot(uri=BIOLINK.mentioned_by, name="mentioned by", curie=BIOLINK.curie('mentioned_by'),
+                   model_uri=BIOLINK.mentioned_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.contributor = Slot(uri=BIOLINK.contributor, name="contributor", curie=BIOLINK.curie('contributor'),
                    model_uri=BIOLINK.contributor, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
@@ -9694,14 +9791,14 @@ slots.entity_to_phenotypic_feature_association_mixin_description = Slot(uri=DCT.
 slots.entity_to_phenotypic_feature_association_mixin_object = Slot(uri=RDF.object, name="entity to phenotypic feature association mixin_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.entity_to_phenotypic_feature_association_mixin_object, domain=None, range=Union[str, PhenotypicFeatureId])
 
-slots.named_thing_to_information_content_entity_association_subject = Slot(uri=RDF.subject, name="named thing to information content entity association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.named_thing_to_information_content_entity_association_subject, domain=NamedThingToInformationContentEntityAssociation, range=Union[str, NamedThingId])
+slots.information_content_entity_to_named_thing_association_subject = Slot(uri=RDF.subject, name="information content entity to named thing association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.information_content_entity_to_named_thing_association_subject, domain=InformationContentEntityToNamedThingAssociation, range=Union[str, NamedThingId])
 
-slots.named_thing_to_information_content_entity_association_object = Slot(uri=RDF.object, name="named thing to information content entity association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.named_thing_to_information_content_entity_association_object, domain=NamedThingToInformationContentEntityAssociation, range=Union[str, PublicationId])
+slots.information_content_entity_to_named_thing_association_object = Slot(uri=RDF.object, name="information content entity to named thing association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.information_content_entity_to_named_thing_association_object, domain=InformationContentEntityToNamedThingAssociation, range=Union[str, NamedThingId])
 
-slots.named_thing_to_information_content_entity_association_predicate = Slot(uri=RDF.predicate, name="named thing to information content entity association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.named_thing_to_information_content_entity_association_predicate, domain=NamedThingToInformationContentEntityAssociation, range=Union[str, PredicateType])
+slots.information_content_entity_to_named_thing_association_predicate = Slot(uri=RDF.predicate, name="information content entity to named thing association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.information_content_entity_to_named_thing_association_predicate, domain=InformationContentEntityToNamedThingAssociation, range=Union[str, PredicateType])
 
 slots.entity_to_disease_association_mixin_object = Slot(uri=RDF.object, name="entity to disease association mixin_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.entity_to_disease_association_mixin_object, domain=None, range=Union[str, DiseaseId])

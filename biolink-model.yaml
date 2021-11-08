@@ -25,6 +25,7 @@ prefixes:
   alliancegenome: 'https://www.alliancegenome.org/'
   apollo: 'https://github.com/GMOD/Apollo'
   biolink: 'https://w3id.org/biolink/vocab/'
+  bioschemas: 'https://bioschemas.org/'
   linkml: 'https://w3id.org/linkml/'
   CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
   # Placeholder: just points to GMOD Chado wiki
@@ -1741,6 +1742,13 @@ slots:
       - IAO:0000142
     narrow_mappings:
       - SIO:000628
+
+  mentioned by:
+    description: >-
+      refers to is a relation between one named thing and the information content entity
+      that it makes reference to.
+    is_a: related to at instance level
+    inverse: mentions
 
   ## Publication related predicates
 
@@ -4539,6 +4547,7 @@ slots:
       holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
     range: anatomical entity
+    multivalued: true
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -4557,6 +4566,7 @@ slots:
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
     range: gene or gene product
+    multivalued: true
     in_subset:
       - translator_minimal
     inverse: expressed in
@@ -4573,6 +4583,7 @@ slots:
       (e.g. abnormally increased temperature).
     domain: biological entity
     range: phenotypic feature
+    multivalued: true
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -4606,6 +4617,7 @@ slots:
       (e.g. abnormally increased temperature).
     domain: phenotypic feature
     range: biological entity
+    multivalued: true
     inverse: has phenotype
     notes:
       - check the domain
@@ -6715,6 +6727,7 @@ classes:
     exact_mappings:
       - WIKIDATA:Q16521
       - STY:T001
+      - bioschemas:Taxon
     id_prefixes:
       - NCBITaxon
       - MESH
@@ -7320,6 +7333,9 @@ classes:
     narrow_mappings:
       - STY:T088 # Carbohydrate
       - STY:T085 # Molecular Sequence
+      - CHEBI:23367 # Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical,
+                    # radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
+      - bioschemas:MolecularEntity
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -7393,6 +7409,8 @@ classes:
         included, even if it is not strictly molecular (e.g., sodium ion).
     narrow_mappings:
       - STY:T196 # Element, Ion, or Isotope
+      - CHEBI:59999
+      - bioschemas:ChemicalSubstance
     id_prefixes:
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
@@ -7889,10 +7907,9 @@ classes:
       A collection of individuals from the same taxonomic class
       distinguished by one or more characteristics.  Characteristics can
       include, but are not limited to, shared geographic location, genetics,
-      phenotypes [Alliance for Genome Resources]
+      phenotypes.
     local_names:
       ga4gh: population
-      agr: population
     mixins:
       - thing with taxon
     is_a: organismal entity
@@ -7941,10 +7958,6 @@ classes:
       - STY:T019
       # Acquired Abnormality
       - STY:T020
-      # Injury or Poisoning
-      - STY:T037
-      # Pathologic Function
-      - STY:T046
       # Mental or Behavioral Dysfunction
       - STY:T048
       # Cell or Molecular Dysfunction
@@ -8168,6 +8181,8 @@ classes:
       - symbol
       - synonym
       - xref
+    narrow_mappings:
+      - bioschemas:gene
     exact_mappings:
       - SO:0000704
       - SIO:010035
@@ -8330,6 +8345,8 @@ classes:
       - FB      # FlyBase FBpp*
       - UMLS
       - MESH
+    broad_mappings:
+      - bioschemas:Protein
     exact_mappings:
       - PR:000000001
       - SIO:010043
@@ -8353,6 +8370,42 @@ classes:
       - UNIPROT.ISOFORM 
       - PR
       - ENSEMBL
+
+  protein domain:
+    is_a: biological entity
+    description: >-
+      A conserved part of protein sequence and (tertiary) structure that can evolve,
+      function, and exist independently of the rest of the protein chain.
+      Protein domains maintain their structure and function independently of the proteins in which they are found.
+      e.g. an SH3 domain.
+    mixins:
+      - gene grouping mixin
+      - chemical entity or gene or gene product
+    exact_mappings:
+      - NCIT:C13379
+      - SIO:001379
+      - UMLS:C1514562
+
+  protein family:
+    is_a: biological entity
+    exact_mappings:
+      - NCIT:C26004
+      - WIKIDATA:Q2278983
+    narrow_mappings:
+      - SIO:001380
+      - NCIT:C20130
+      - WIKIDATA:Q417841
+    mixins:
+      - gene grouping mixin
+      - chemical entity or gene or gene product
+
+  nucleic acid sequence motif:
+    aliases: ['consensus sequence']
+    is_a: biological entity
+    description: >-
+      A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have,
+      a biological significance. e.g. the TATA box promoter motif, transcription factor binding
+      consensus sequences.
 
   RNA product:
     is_a: transcript
@@ -8789,6 +8842,8 @@ classes:
       # metastasis
       - NCIT:C19151
       - EFO:0009708
+      - STY:T046
+      - STY:T037
 
   pathological process exposure:
     mixins:
@@ -9599,7 +9654,7 @@ classes:
     slots:
       - sex qualifier
 
-  named thing to information content entity association:
+  information content entity to named thing association:
     description: >-
       association between a named thing and a information content entity where the specific context
       of the relationship between that named thing and the publication is unknown. For
@@ -9614,9 +9669,9 @@ classes:
       - object
     slot_usage:
       subject:
-        domain: named thing
+        domain: publication
       object:
-        range: publication
+        range: named thing
       predicate:
         subproperty_of: mentions
     in_subset:

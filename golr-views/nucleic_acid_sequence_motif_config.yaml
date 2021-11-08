@@ -1,10 +1,10 @@
-id: population_of_individual_organisms
+id: nucleic_acid_sequence_motif
 schema_generating: true
-description: A collection of individuals from the same taxonomic class distinguished
-  by one or more characteristics.  Characteristics can include, but are not limited
-  to, shared geographic location, genetics, phenotypes.
-display_name: population of individual organisms
-document_category: population of individual organisms
+description: A linear nucleotide sequence pattern that is widespread and has, or is
+  conjectured to have, a biological significance. e.g. the TATA box promoter motif,
+  transcription factor binding consensus sequences.
+display_name: nucleic acid sequence motif
+document_category: nucleic acid sequence motif
 weight: 20
 fields:
 - id: id
@@ -33,6 +33,10 @@ fields:
     that provided it
   display_name: provided by
   cardinality: multi
+- id: has_attribute
+  description: connects any entity to an attribute
+  display_name: has attribute
+  cardinality: multi
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\
@@ -47,13 +51,4 @@ fields:
     \ anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity,\
     \ biolink:NamedThing}"
   display_name: named thing_category
-  cardinality: multi
-- id: has_attribute
-  description: may often be an organism attribute
-  display_name: organismal entity_has attribute
-  cardinality: multi
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
   cardinality: multi

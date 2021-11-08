@@ -1808,6 +1808,27 @@ message IndividualOrganism
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
+// association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
+message InformationContentEntityToNamedThingAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source LabelType = 5
+  repeated providedBy Agent = 6
+  repeated hasAttribute Attribute = 7
+  optional relation String = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  repeated hasEvidence EvidenceType = 12
+  optional type String = 13
+  repeated category CategoryType = 14
+  subject NamedThing = 15
+  object NamedThing = 16
+  predicate PredicateType = 17
+ }
 // A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
 message InformationResource
  {
@@ -2129,27 +2150,6 @@ message NamedThing
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
-// association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
-message NamedThingToInformationContentEntityAssociation
- {
-  id String = 1
-  optional iri IriType = 2
-  optional name LabelType = 3
-  optional description NarrativeText = 4
-  optional source LabelType = 5
-  repeated providedBy Agent = 6
-  repeated hasAttribute Attribute = 7
-  optional relation String = 8
-  optional negated Boolean = 9
-  repeated qualifiers OntologyClass = 10
-  repeated publications Publication = 11
-  repeated hasEvidence EvidenceType = 12
-  optional type String = 13
-  repeated category CategoryType = 14
-  subject NamedThing = 15
-  object Publication = 16
-  predicate PredicateType = 17
- }
 message NoncodingRNAProduct
  {
   id String = 1
@@ -2190,6 +2190,19 @@ message NucleicAcidEntity
   optional isMetabolite Boolean = 14
   repeated inTaxon OrganismTaxon = 15
   optional hasBiologicalSequence BiologicalSequence = 16
+ }
+// A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
+message NucleicAcidSequenceMotif
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
  }
 message Nutrient
  {
@@ -2527,7 +2540,7 @@ message Polypeptide
   repeated category NamedThing = 9
   repeated inTaxon OrganismTaxon = 10
  }
-// A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+// A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
 message PopulationOfIndividualOrganisms
  {
   id String = 1
@@ -2610,6 +2623,33 @@ message Protein
   repeated inTaxon OrganismTaxon = 10
   repeated synonym LabelType = 11
   repeated xref Uriorcurie = 12
+ }
+// A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
+message ProteinDomain
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasGeneOrGeneProduct Gene = 10
+ }
+message ProteinFamily
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional type String = 3
+  optional name LabelType = 4
+  optional description NarrativeText = 5
+  optional source LabelType = 6
+  repeated providedBy Agent = 7
+  repeated hasAttribute Attribute = 8
+  repeated category NamedThing = 9
+  repeated hasGeneOrGeneProduct Gene = 10
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
