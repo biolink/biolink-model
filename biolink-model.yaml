@@ -6173,6 +6173,17 @@ slots:
       - RO:0002558
     multivalued: true
 
+  mechanism of action:
+    is_a: association slot
+    range: boolean
+    description: >-
+      a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes
+      the mechanism of action for a result.
+    exact_mappings:
+      - NCIT:C54680
+      - MI:2044
+      - LOINC:MTHU019741
+
   knowledge source:
     is_a: association slot
     description: >-
