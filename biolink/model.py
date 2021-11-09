@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-08T22:05:28
+# Generation date: 2021-11-09T16:59:43
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9454,6 +9454,9 @@ slots.has_confidence_level = Slot(uri=BIOLINK.has_confidence_level, name="has co
 
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]])
+
+slots.mechanism_of_action = Slot(uri=BIOLINK.mechanism_of_action, name="mechanism of action", curie=BIOLINK.curie('mechanism_of_action'),
+                   model_uri=BIOLINK.mechanism_of_action, domain=Association, range=Optional[Union[bool, Bool]])
 
 slots.knowledge_source = Slot(uri=BIOLINK.knowledge_source, name="knowledge source", curie=BIOLINK.curie('knowledge_source'),
                    model_uri=BIOLINK.knowledge_source, domain=Association, range=Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]])
