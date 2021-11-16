@@ -1981,6 +1981,8 @@ slots:
   sensitivity associated with:
     is_a: associated with
     inverse: associated with sensitivity to
+    range: named thing
+    domain: chemical entity
 
   associated with resistance to:
     is_a: associated with
@@ -1989,7 +1991,7 @@ slots:
       that specifies that the change in the named
       thing is found to be associated with the degree of resistance to treatment by the chemical.
     domain: named thing
-    range: chemical enitity
+    range: chemical entity
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -1997,6 +1999,8 @@ slots:
   resistance associated with:
     is_a: associated with
     inverse: associated with resistance to
+    range: named thing
+    domain: chemical entity
 
   diagnoses:
     is_a: related to at instance level
@@ -2014,7 +2018,7 @@ slots:
       - DrugCentral:5271
 
   is diagnosed by:
-    is_a: related at instance level
+    is_a: related to at instance level
     inverse: diagnoses
 
   increases amount or activity of:
