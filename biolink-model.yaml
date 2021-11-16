@@ -1996,6 +1996,24 @@ slots:
     is_a: associated with
     inverse: associated with resistance to
 
+  diagnoses:
+    is_a: related to at instance level
+    description: >-
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    close_mappings:
+      - NCIT:C15220 # diagnosis
+      - SIO:001331 # diagnosis
+    exact_mappings:
+      - DrugCentral:5271
+
+  is diagnosed by:
+    is_a: related at instance level
+    inverse: diagnoses
+
   increases amount or activity of:
     is_a: related to at instance level
     mixin: true
