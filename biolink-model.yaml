@@ -108,7 +108,6 @@ prefixes:
   PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   pav: 'http://purl.org/pav/'
-  PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   prov: 'http://www.w3.org/ns/prov#'
   qud: 'http://qudt.org/1.1/schema/qudt#'
@@ -1420,6 +1419,22 @@ slots:
       value: true
     symmetric: true
 
+  associated with:
+    is_a: related to at instance level
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
+      'related to'.
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    symmetric: true
+    domain: named thing
+    range: named thing
+    narrow_mappings:
+      - RO:0004029
+      - SNOMEDCT:47429007
+
   superclass of:
     is_a: related to at concept level
     description: >-
@@ -1946,6 +1961,40 @@ slots:
       describes an entity of which the state or quality is affected by
       another existing entity.
     inverse: affects
+
+  associated with sensitivity to:
+    is_a: associated with
+    description: >-
+      A relation that holds between a named thing and a chemical that specifies that the change in the named
+      thing is found to be associated with the degree of sensitivity to treatment by a drug.
+    domain: named thing
+    range: chemical or gene or gene product
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    broad_mappings:
+      - PATO:0000085 # sensitivity toward
+    narrow_mappings:
+      - SNOMEDCT:418038007 # propensity to adverse reaction
+
+  sensitivity associated with:
+    is_a: associated with
+    inverse: associated with sensitivity
+
+  associated with resistance to:
+    is_a: associated with
+    description: >-
+      A relation that holds between a named thing and a chemical that specifies that the change in the named
+      thing is found to be associated with the degree of resistance to treatment by a drug.
+    domain: named thing
+    range: chemical or gene or gene product
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  resistance associated with:
+    is_a: associated with
+    inverse: associated with resistance to
 
   increases amount or activity of:
     is_a: related to at instance level
@@ -4383,7 +4432,7 @@ slots:
     inverse: prevents
 
   correlated with:
-    is_a: related to at instance level
+    is_a: associated with
     description: >-
       holds between any two named thing entities. For example, correlated_with
       holds between a disease or phenotypic feature and a measurable molecular
@@ -4399,16 +4448,6 @@ slots:
     exact_mappings:
       - RO:0002610
       - PATO:correlates_with
-    narrow_mappings:
-      # RTX contributed term: note that association is not always correlation?
-      - LOINC:associated_with
-      - ORPHA:317345
-      - PDQ:associated_disease
-      # RTX mapping for this term was just 'related_to' but there seems to be a stronger correlation implied
-      - RO:0004029
-      - RTXKG1:associated_with_disease
-      - SNOMED:associated_with
-      - SNOMED:has_associated_finding
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -4858,7 +4897,6 @@ slots:
       - PathWhiz:has_element_in_bound
       # This RTX contributed term was tagged as 'biolink:has_gene_product' but seems more compositional in nature
       - NCIT:R50
-      - PDQ:has_component
       - PathWhiz:has_protein_in_complex
       - RO:0002104
       - RO:0002180
@@ -4948,7 +4986,6 @@ slots:
       - NCIT:R27
       - NCIT:is_component_of_chemotherapy_regimen
       - NDDF:ingredient_of
-      - PDQ:component_of
       - RO:0002007
       - RO:0002350
       - RO:0002376
@@ -8614,7 +8651,7 @@ classes:
       # - HGVS needs IRI mapping
       - MGI
       - ZFIN # ZFIN:ZDB-ALT-*
-      - FB   # FlyBase FBa*
+      - FB   # FlyBase FBal*
       - WB
       - WormBase ## WormBase:WBVar*
     alt_descriptions:
