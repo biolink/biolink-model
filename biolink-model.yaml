@@ -1965,10 +1965,11 @@ slots:
   associated with sensitivity to:
     is_a: associated with
     description: >-
-      A relation that holds between a named thing and a chemical that specifies that the change in the named
-      thing is found to be associated with the degree of sensitivity to treatment by a drug.
+      A relation that holds between a named thing and a chemical
+      that specifies that the change in the named
+      thing is found to be associated with the degree of sensitivity to treatment by the chemical.
     domain: named thing
-    range: chemical or gene or gene product
+    range: chemical entity
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -1984,10 +1985,11 @@ slots:
   associated with resistance to:
     is_a: associated with
     description: >-
-      A relation that holds between a named thing and a chemical that specifies that the change in the named
-      thing is found to be associated with the degree of resistance to treatment by a drug.
+      A relation that holds between a named thing and a chemical
+      that specifies that the change in the named
+      thing is found to be associated with the degree of resistance to treatment by the chemical.
     domain: named thing
-    range: chemical or gene or gene product
+    range: chemical enitity
     annotations:
       tag: biolink:canonical_predicate
       value: true
@@ -1999,6 +2001,7 @@ slots:
   diagnoses:
     is_a: related to at instance level
     description: >-
+      a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
