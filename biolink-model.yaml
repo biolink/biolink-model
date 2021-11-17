@@ -31,7 +31,6 @@ prefixes:
   CHADO: 'http://gmod.org/wiki/Chado/'
   # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
   ChemBank: 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid='
-  chembio: 'http://translator.ncats.nih.gov/chembio_'
   CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
   CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
   CLINVAR: 'http://identifiers.org/clinvar'
@@ -115,7 +114,6 @@ prefixes:
   REPODB: 'http://apps.chiragjpgroup.org/repoDB/'
   ResearchID: 'https://publons.com/researcher/'
   RO: 'http://purl.obolibrary.org/obo/RO_'
-  RTXKG1: 'http://kg1endpoint.rtx.ai/'
   RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
   RXCUI: 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm='
   schema: 'http://schema.org/'
@@ -1871,7 +1869,7 @@ slots:
 
   molecularly interacts with:
     is_a: physically interacts with
-    aliases: ['RTXKG1:targets']
+    aliases: ['targets']
     domain: molecular entity
     range: molecular entity
     in_subset:
@@ -3363,6 +3361,7 @@ slots:
     # direct is_a inheritance from a non-mixin class is not allowed
     # we defer this inheritance to the classes which this mixin in its mixins
     # is_a: affects
+    aliases: ['regulates activity of', 'regulates expression of']
     comments:
       - This is a grouping for process-process and entity-entity regulation.
     mixin: true
@@ -3379,13 +3378,9 @@ slots:
       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
       - WIKIDATA_PROPERTY:P128
       - CHEMBL.MECHANISM:modulator
-      # RTX mapping was 'biolink:related_to' but this term seems a more precise mapping?
       - RO:0002295
       - RO:0002332
       - RO:0002578
-      # these two won't actually resolve: where do they go? aliases? new RO term?
-      - RTXKG1:regulates_activity_of
-      - RTXKG1:regulates_expression_of
   
   regulated by:
     domain: physical essence or occurrent
@@ -3586,7 +3581,7 @@ slots:
 
   disrupts:
     is_a: affects
-    aliases: ['RTXKG1:disease_causes_disruption_of']
+    aliases: ['disease causes disruption of']
     description: >-
       describes a relationship where one entity degrades or interferes
       with the structure, function, or occurrence of another.
@@ -4170,6 +4165,7 @@ slots:
       holds between two entities where the occurrence, existence,
       or activity of one is caused by the occurrence or generation of the other
     is_a: related to at instance level
+    aliases: ['disease caused by disruption of', 'disease has basis in dysfunction of', 'realized in response to', 'realized in response to stimulus']
     in_subset:
       - translator_minimal
     inverse: causes
@@ -4182,10 +4178,6 @@ slots:
       - RO:0004020
       - RO:0004028
       - RO:0009501
-      - RTXKG1:disease_caused_by_disruption_of
-      - RTXKG1:disease_has_basis_in_dysfunction_of
-      - RTXKG1:realized_in_response_to
-      - RTXKG1:realized_in_response_to_stimulus
 
   # TODO: ameliorates and exacerbates inverses.
   ameliorates:
@@ -4222,7 +4214,7 @@ slots:
       - RO:0003309
 
   treats:
-    aliases: ['is substance that treats']
+    aliases: ['is substance that treats', 'indicated for']
     is_a: ameliorates
     description: >-
       holds between a therapeutic procedure or chemical entity
@@ -4266,7 +4258,6 @@ slots:
       - REPODB:clinically_tested_withdrawn_phase_2
       - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
       - REPODB:clinically_tested_withdrawn_phase_3
-      - RTXKG1:indicated_for
       - SNOMED:plays_role
 
   treated by:
@@ -4497,7 +4488,6 @@ slots:
     narrow_mappings:
       - NCIT:R49
       - NCIT:R46
-      - RTXKG1:expressed_in
 
   expresses:
     is_a: related to at instance level
@@ -4535,7 +4525,6 @@ slots:
       - OMIM:phenotype_of
     exact_mappings:
       - RO:0002200
-      - RTXKG1:has_phenotype
       - SNOMED:characterized_by
     broad_mappings:
       # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
@@ -4603,8 +4592,6 @@ slots:
   contains process:
     is_a: related to at instance level
     inverse: occurs in
-    exact_mappings:
-      - RTXKG1:contains_process
 
   located in:
     is_a: related to at instance level
@@ -4664,7 +4651,7 @@ slots:
 
   location of:
     is_a: related to at instance level
-    aliases: ['RTXKG1:site_of']
+    aliases: ['site of']
     description: >-
       holds between material entity or site and a material entity
       that is located within it (but not considered a part of it)
@@ -4832,14 +4819,12 @@ slots:
       - RO:0002473
       - RO:0002524
       - RO:0002551
-      - RTXKG1:has_plasma_membrane_part
       - RXNORM:has_ingredient
       - SNOMED:has_component
       - UMLS:has_component
 
   has plasma membrane part:
     is_a: has part
-    aliases: ['RTXKG1:has_plasma_membrane_part']
     description: >-
       Holds between a cell c and a protein complex or protein p if
       and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
@@ -4855,7 +4840,6 @@ slots:
     is_a: related to
     description: >-
       x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.
-    aliases: ['RTXKG1:composed_primarily_of']
     exact_mappings:
       - RO:0002473
     annotations:
@@ -5009,7 +4993,6 @@ slots:
 
   is output of:
     is_a: participates in
-    aliases: ['RTXKG1:output_of']
     range: occurrent
     domain: biological process or activity
     inverse: has output
@@ -5081,7 +5064,6 @@ slots:
 
   participates in:
     is_a: related to at instance level
-    aliases: ['RTXKG1:participates_in']
     description: >-
       holds between a continuant and a process, where the continuant is somehow involved
       in the process
@@ -5109,7 +5091,7 @@ slots:
 
   actively involved in:
     is_a: participates in
-    aliases: ['RTXKG1:involved_in']
+    aliases: ['involved in']
     description: >-
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
@@ -5148,7 +5130,6 @@ slots:
 
   capable of:
     is_a: actively involved in
-    aliases: ['RTXKG1:capable_of']
     description: >-
       holds between a physical entity and process or function, where the
       continuant alone has the ability to carry out the process or function.
@@ -5540,7 +5521,6 @@ slots:
       - GAMMA:kb
       - GAMMA:potency
     exact_mappings:
-      - chembio:interacts
       - GAMMA:interacts_with
     broad_mappings:
       # Definition of this term is more generic than direct physical molecular interactions:
@@ -5789,7 +5769,6 @@ slots:
 
   contraindicated for:
     is_a: related to at instance level
-    aliases: ['RTXKG1:contraindicated_for']
     description: Holds between a drug and a disease or phenotype, such that a person
       with that disease should not be treated with the drug.
     domain: drug
@@ -5825,7 +5804,6 @@ slots:
 
   has completed:
     is_a: related to at instance level
-    aliases: ['RTXKG1:has_completed']
     description: holds between an entity and a process that the entity is capable of
       and has completed
     annotations:
@@ -5901,7 +5879,6 @@ slots:
 
   lacks part:
     is_a: related to at instance level
-    aliases: ['RTXKG1:lacks_part']
     annotations:
       tag: biolink:canonical_predicate
       value: true
