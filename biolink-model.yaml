@@ -21,7 +21,6 @@ version: 2.2.9
 # 1. The following 'prefixes:' delimited list has first precedence in resolution.
 #
 prefixes:
-  Aeolus: 'http://translator.ncats.nih.gov/Aeolus_'
   alliancegenome: 'https://www.alliancegenome.org/'
   apollo: 'https://github.com/GMOD/Apollo'
   biolink: 'https://w3id.org/biolink/vocab/'
@@ -39,13 +38,16 @@ prefixes:
   COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
   COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
-  CTD: 'http://translator.ncats.nih.gov/CTD_'
+  CTD.CHEMICAL: 'http://ctdbase.org/detail.go?type=chem&acc='
+  CTD.DISEASE: 'http://ctdbase.org/detail.go?type=disease&db=MESH&acc='
+  CTD.GENE: 'http://ctdbase.org/detail.go?type=gene&acc='
+  CTD: 'http://ctdbase.org/'
   DGIdb: 'https://www.dgidb.org/interaction_types'
   dcat: 'http://www.w3.org/ns/dcat#'
   dct: 'http://purl.org/dc/terms/'
   doi: 'https://doi.org/'
   DOID-PROPERTY: 'http://purl.obolibrary.org/obo/doid#'
-  DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
+  DrugCentral: 'http://drugcentral.org/drugcard/'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
   EDAM-DATA: 'http://edamontology.org/data_'
   EDAM-FORMAT: 'http://edamontology.org/format_'
@@ -71,8 +73,7 @@ prefixes:
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
   hetio: 'http://translator.ncats.nih.gov/hetio_'
   HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
-  ICD0: 'http://translator.ncats.nih.gov/ICD0_'
-  ICD10: 'http://translator.ncats.nih.gov/ICD10_'
+  ICD10: ' https://icd.codes/icd9cm/'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   interpro: 'https://www.ebi.ac.uk/interpro/entry/'
   INO: 'http://purl.obolibrary.org/obo/INO_'
@@ -88,7 +89,7 @@ prefixes:
   LOINC: 'http://loinc.org/rdf/'
   MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
-  MetaCyc: 'http://translator.ncats.nih.gov/MetaCyc_'
+  metacyc.reaction: 'https://identifiers.org/metacyc.reaction:'
   METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
@@ -108,7 +109,6 @@ prefixes:
   PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   pav: 'http://purl.org/pav/'
-  PDQ: 'https://www.cancer.gov/publications/pdq#'   # Physician Data Query
   PHAROS: 'http://pharos.nih.gov'
   prov: 'http://www.w3.org/ns/prov#'
   qud: 'http://qudt.org/1.1/schema/qudt#'
@@ -125,7 +125,6 @@ prefixes:
   SIO: 'http://semanticscience.org/resource/SIO_'
   SNOMED: 'http://www.snomedbrowser.com/Codes/Details/'
   SNOMEDCT: 'http://www.snomedbrowser.com/Codes/Details/'
-  SNPEFF: 'http://translator.ncats.nih.gov/SNPEFF_'
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
   UBERON_NONAMESPACE: 'http://purl.obolibrary.org/obo/core#'
@@ -1420,6 +1419,22 @@ slots:
       value: true
     symmetric: true
 
+  associated with:
+    is_a: related to at instance level
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
+      'related to'.
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    symmetric: true
+    domain: named thing
+    range: named thing
+    narrow_mappings:
+      - RO:0004029
+      - SNOMEDCT:47429007
+
   superclass of:
     is_a: related to at concept level
     description: >-
@@ -1869,7 +1884,6 @@ slots:
       - DGIdb:antibody
     exact_mappings:
       - RO:0002436
-      - CTD:molecularly_interacts_with
 
   genetically interacts with:
     is_a: interacts with
@@ -1947,6 +1961,65 @@ slots:
       another existing entity.
     inverse: affects
 
+  associated with sensitivity to:
+    is_a: associated with
+    description: >-
+      A relation that holds between a named thing and a chemical
+      that specifies that the change in the named
+      thing is found to be associated with the degree of sensitivity to treatment by the chemical.
+    domain: named thing
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    broad_mappings:
+      - PATO:0000085 # sensitivity toward
+    narrow_mappings:
+      - SNOMEDCT:418038007 # propensity to adverse reaction
+
+  sensitivity associated with:
+    is_a: associated with
+    inverse: associated with sensitivity to
+    range: named thing
+    domain: chemical entity
+
+  associated with resistance to:
+    is_a: associated with
+    description: >-
+      A relation that holds between a named thing and a chemical
+      that specifies that the change in the named
+      thing is found to be associated with the degree of resistance to treatment by the chemical.
+    domain: named thing
+    range: chemical entity
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+
+  resistance associated with:
+    is_a: associated with
+    inverse: associated with resistance to
+    range: named thing
+    domain: chemical entity
+
+  diagnoses:
+    is_a: related to at instance level
+    description: >-
+      a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
+    close_mappings:
+      - NCIT:C15220 # diagnosis
+      - SIO:001331 # diagnosis
+    exact_mappings:
+      - DrugCentral:5271
+
+  is diagnosed by:
+    is_a: related to at instance level
+    inverse: diagnoses
+
   increases amount or activity of:
     is_a: related to at instance level
     mixin: true
@@ -1989,8 +2062,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_abundance_of
 
   abundance affected by:
     is_a: affected by
@@ -2013,8 +2084,6 @@ slots:
       value: true
     related_mappings:
       - UBERGRAPH:is_increase_of
-    exact_mappings:
-      - CTD:increases_abundance_of
 
   abundance increased by:
     is_a: abundance affected by
@@ -2024,7 +2093,8 @@ slots:
 
   decreases abundance of:
     description: >-
-      holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
+      holds between two chemical or gene/gene product where the action or effect of one
+      decreases the amount of the other within a system of interest
     is_a: affects abundance of
     in_subset:
       - translator_minimal
@@ -2037,8 +2107,6 @@ slots:
         value: true
     related_mappings:
       - UBERGRAPH:is_decrease_of
-    exact_mappings:
-      - CTD:decreases_abundance_of
 
   abundance decreased by:
     is_a: abundance affected by
@@ -2048,7 +2116,8 @@ slots:
 
   increases activity of:
     description: >-
-      holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
+      holds between two chemical or gene/gene product where the action or effect of one
+      increases the activity of the other within a system of interest
     is_a: affects activity of
     in_subset:
       - translator_minimal
@@ -2059,8 +2128,6 @@ slots:
     related_mappings:
       - GAMMA:ec50
       - GAMMA:ac50
-    exact_mappings:
-      - CTD:increases_activity_of
     narrow_mappings:
       - GAMMA:activator
       - GAMMA:partial_agonist
@@ -2094,8 +2161,6 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    exact_mappings:
-      - CTD:affects_activity_of
     narrow_mappings:
       - GAMMA:allosteric_modulator
       - GAMMA:modulator
@@ -2135,8 +2200,6 @@ slots:
       - GAMMA:ic50
       - GAMMA:ki
       - DGIdb:vaccine
-    exact_mappings:
-      - CTD:decreases_activity_of
     narrow_mappings:
       - GAMMA:allosteric_antagonist
       - GAMMA:partial_antagonist
@@ -2187,9 +2250,6 @@ slots:
     domain: named thing
     range: nucleic acid entity
 
-    exact_mappings:
-      - CTD:affects_expression_of
-
   expression affected by:
     is_a: affected by
     in_subset:
@@ -2215,7 +2275,6 @@ slots:
       - CHEMBL.MECHANISM:releasing_agent
     exact_mappings:
       - RO:0003003
-      - CTD:increases_expression_of
 
   expression increased by:
     is_a: expression affected by
@@ -2241,7 +2300,6 @@ slots:
       - DGIdb:antisense_oligonucleotide
     exact_mappings:
       - RO:0003002
-      - CTD:decreases_expression_of
     narrow_mappings:
       - CHEMBL.MECHANISM:antisense_inhibitor
 
@@ -2265,8 +2323,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_folding_of
 
   folding affected by:
     is_a: affected by
@@ -2288,8 +2344,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_folding_of
 
   folding increased by:
     is_a: folding affected by
@@ -2312,8 +2366,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_folding_of
 
   folding decreased by:
     is_a: folding affected by
@@ -2336,7 +2388,6 @@ slots:
     related_mappings:
       - GAMMA:storage
     exact_mappings:
-      - CTD:affects_localization_of
       - GOREL:0002003
 
   localization affected by:
@@ -2361,8 +2412,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_localization_of
 
   localization increased by:
     is_a: localization affected by
@@ -2385,8 +2434,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_localization_of
 
   localization decreased by:
     is_a: localization affected by
@@ -2410,8 +2457,6 @@ slots:
       value: true
     related_mappings:
       - GAMMA:catalytic_activity
-    exact_mappings:
-      - CTD:affects_metabolic_processing_of
 
   metabolic processing affected by:
     is_a: affected by
@@ -2435,8 +2480,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_metabolic_processing_of
     narrow_mappings:
       - NCIT:enzyme_metabolizes_chemical_or_drug
 
@@ -2462,8 +2505,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_metabolic_processing_of
 
   metabolic processing decreased by:
     is_a: metabolic processing affected by
@@ -2486,8 +2527,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_molecular_modification_of
     narrow_mappings:
       - CTD:affects_acetylation
       - CTD:affects_acylation
@@ -2544,8 +2583,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_molecular_modification_of
     narrow_mappings:
       - CTD:increases_acetylation
       - CTD:increases_acylation
@@ -2604,8 +2641,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_molecular_modification_of
     narrow_mappings:
       - CTD:decreases_acetylation
       - CTD:decreases_acylation
@@ -2660,8 +2695,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_synthesis_of
 
   synthesis affected by:
     is_a: affected by
@@ -2685,8 +2718,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_synthesis_of
 
   synthesis increased by:
     is_a: synthesis affected by
@@ -2711,7 +2742,6 @@ slots:
       tag: biolink:canonical_predicate
       value: true
     exact_mappings:
-      - CTD:decreases_synthesis_of
       - GAMMA:inhibition_of_synthesis
 
   synthesis decreased by:
@@ -2737,8 +2767,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_degradation_of
     narrow_mappings:
       - CTD:affects_cleavage
       - CTD:affects_hydrolysis
@@ -2768,8 +2796,6 @@ slots:
     close_mappings:
       # terms refer less to the action or effect than the agent of that action or effect
       - CHEMBL.MECHANISM:degrader
-    exact_mappings:
-      - CTD:increases_degradation_of
     narrow_mappings:
       - CTD:increases_cleavage
       - CTD:increases_hydrolysis
@@ -2797,8 +2823,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_degradation_of
     narrow_mappings:
       - CTD:decreases_cleavage
       - CTD:decreases_hydrolysis
@@ -2827,8 +2851,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_mutation_rate_of
 
   mutation rate affected by:
     is_a: affected by
@@ -2852,8 +2874,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_mutation_rate_of
     broad_mappings:
       # See 'affects mutation rate of' above
       - CTD:increases_mutagenesis
@@ -2880,8 +2900,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_mutation_rate_of
     broad_mappings:
       # See 'affects mutation rate of' above
       - CTD:decreases_mutagenesis
@@ -2902,8 +2920,6 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     inverse: response affected by
-    exact_mappings:
-      - CTD:affects_response_to
 
   response affected by:
     description: >-
@@ -2935,8 +2951,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_response_to
 
   response increased by:
     is_a: response affected by
@@ -2962,8 +2976,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_response_to
     narrow_mappings:
       - CTD:decreases_response_to_substance
       - GAMMA:desensitize_the_target
@@ -2988,8 +3000,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_RNA_splicing
     broad_mappings:
       - CTD:affects_splicing_of
 
@@ -3015,8 +3025,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_RNA_splicing
     broad_mappings:
       - CTD:increases_splicing_of
 
@@ -3042,8 +3050,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_RNA_splicing
     broad_mappings:
       - CTD:decreases_splicing_of
 
@@ -3069,8 +3075,6 @@ slots:
       value: true
     close_mappings:
       - GAMMA:stabilization
-    exact_mappings:
-      - CTD:affects_stability_of
 
   stability affected by:
     is_a: affected by
@@ -3097,8 +3101,6 @@ slots:
     close_mappings:
       # agent of the action or effect, not the relationship
       - CHEMBL.MECHANISM:stabiliser
-    exact_mappings:
-      - CTD:increases_stability_of
 
   stability increased by:
     is_a: stability affected by
@@ -3122,8 +3124,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_stability_of
 
   stability decreased by:
     is_a: stability affected by
@@ -3145,8 +3145,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_transport_of
     narrow_mappings:
       - RO:0002313
       - RO:0002340
@@ -3177,8 +3175,6 @@ slots:
     close_mappings:
       - GAMMA:carrier
       - GAMMA:transporter
-    exact_mappings:
-      - CTD:increases_transport_of
 
   transport increased by:
     is_a: transport affected by
@@ -3202,8 +3198,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_transport_of
 
   transport decreased by:
     is_a: transport affected by
@@ -3225,8 +3219,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:affects_export
@@ -3253,8 +3245,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:increases_export
@@ -3281,8 +3271,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_secretion_of
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:decreases_export
@@ -3307,8 +3295,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:affects_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:affects_import
@@ -3335,8 +3321,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:increases_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:increases_import
@@ -3363,8 +3347,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:decreases_uptake_of
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:decreases_import
@@ -3604,6 +3586,7 @@ slots:
 
   disrupts:
     is_a: affects
+    aliases: ['RTXKG1:disease_causes_disruption_of']
     description: >-
       describes a relationship where one entity degrades or interferes
       with the structure, function, or occurrence of another.
@@ -3619,7 +3602,6 @@ slots:
     narrow_mappings:
       - RO:0004024
       - RO:0004025
-      - RTXKG1:disease_causes_disruption_of
 
   disrupted by:
     is_a: affected by
@@ -4222,7 +4204,6 @@ slots:
       value: true
     exact_mappings:
       - RO:0003307
-      - CTD:therapeutic
 
   exacerbates:
     is_a: affects
@@ -4383,7 +4364,7 @@ slots:
     inverse: prevents
 
   correlated with:
-    is_a: related to at instance level
+    is_a: associated with
     description: >-
       holds between any two named thing entities. For example, correlated_with
       holds between a disease or phenotypic feature and a measurable molecular
@@ -4399,16 +4380,6 @@ slots:
     exact_mappings:
       - RO:0002610
       - PATO:correlates_with
-    narrow_mappings:
-      # RTX contributed term: note that association is not always correlation?
-      - LOINC:associated_with
-      - ORPHA:317345
-      - PDQ:associated_disease
-      # RTX mapping for this term was just 'related_to' but there seems to be a stronger correlation implied
-      - RO:0004029
-      - RTXKG1:associated_with_disease
-      - SNOMED:associated_with
-      - SNOMED:has_associated_finding
 
   # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
@@ -4424,8 +4395,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:positive_correlation
 
   negatively correlated with:
     is_a: correlated with
@@ -4439,8 +4408,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - CTD:negative_correlation
 
   occurs together in literature with:
     is_a: correlated with
@@ -4858,7 +4825,6 @@ slots:
       - PathWhiz:has_element_in_bound
       # This RTX contributed term was tagged as 'biolink:has_gene_product' but seems more compositional in nature
       - NCIT:R50
-      - PDQ:has_component
       - PathWhiz:has_protein_in_complex
       - RO:0002104
       - RO:0002180
@@ -4948,7 +4914,6 @@ slots:
       - NCIT:R27
       - NCIT:is_component_of_chemotherapy_regimen
       - NDDF:ingredient_of
-      - PDQ:component_of
       - RO:0002007
       - RO:0002350
       - RO:0002376
@@ -5576,7 +5541,6 @@ slots:
       - GAMMA:potency
     exact_mappings:
       - chembio:interacts
-      - CTD:interacts_with
       - GAMMA:interacts_with
     broad_mappings:
       # Definition of this term is more generic than direct physical molecular interactions:
@@ -5669,10 +5633,6 @@ slots:
       value: true
     exact_mappings:
       - SO:0001583
-      - SNPEFF:missense_variant
-    narrow_mappings:
-      - SNPEFF:initiator_codon_variant
-      - SNPEFF:structural_interaction_variant
 
   has missense variant:
     is_a: has sequence variant
@@ -5691,10 +5651,6 @@ slots:
       value: true
     exact_mappings:
       - SO:0001819
-      - SNPEFF:synonymous_variant
-    narrow_mappings:
-      - SNPEFF:start_retained
-      - SNPEFF:stop_retained_variant
 
   has synonymous variant:
     is_a: has sequence variant
@@ -5711,8 +5667,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - SNPEFF:stop_gained
     broad_mappings:
       # Term definition broader than nonsense codon: A sequence variant whereby
       # the gene product has diminished or abolished function.
@@ -5736,11 +5690,6 @@ slots:
       value: true
     exact_mappings:
       - SO:0001589
-      - SNPEFF:frameshift_variant
-    narrow_mappings:
-      # These are particular narrow consequences of a frameshift variant?
-      - SNPEFF:start_lost
-      - SNPEFF:stop_lost
 
   has frameshift variant:
     is_a: has sequence variant
@@ -5759,11 +5708,7 @@ slots:
       value: true
     exact_mappings:
       - SO:0001629
-    narrow_mappings:
-      # These are particular narrow consequences of a splice site variant
-      - SNPEFF:splice_region_variant
-      - SNPEFF:splice_acceptor_variant
-      - SNPEFF:splice_donor_variant
+
 
   has splice site variant:
     is_a: has sequence variant
@@ -5782,10 +5727,6 @@ slots:
       value: true
     exact_mappings:
       - GAMMA:0000102
-    narrow_mappings:
-      # these are more precisely positioned 'nearby variant' locations
-      - SNPEFF:downstream_gene_variant
-      - SNPEFF:upstream_gene_variant
 
   has nearby variant:
     is_a: has sequence variant
@@ -5804,13 +5745,6 @@ slots:
       value: true
     exact_mappings:
       - GAMMA:0000103
-    narrow_mappings:
-      # More narrow but precisely defined instances of non coding sequence variants
-      - SNPEFF:3_prime_UTR_variant
-      - SNPEFF:5_prime_UTR_variant
-      - SNPEFF:5_prime_UTR_premature_start_codon_gain_variant
-      - SNPEFF:non_coding_transcript_exon_variant
-      - SNPEFF:intron_variant
 
   has non coding variant:
     is_a: has sequence variant
@@ -5846,8 +5780,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    exact_mappings:
-      - Aeolus:0000001
 
   adverse event caused by:
     is_a: causes
@@ -5913,8 +5845,6 @@ slots:
       value: true
     mixins:
       - decreases amount or activity of
-    exact_mappings:
-      - CTD:decreases_molecular_interaction_with
 
   molecular interaction decreased by:
     is_a: molecularly interacts with
@@ -5929,8 +5859,6 @@ slots:
       value: true
     mixins:
       - increases amount or activity of
-    exact_mappings:
-      - CTD:increases_molecular_interaction_with
 
   molecular interaction increased by:
     is_a: molecularly interacts with
@@ -7647,7 +7575,7 @@ classes:
       - GO
       - REACT
       - RHEA
-      - MetaCyc
+      - metacyc.reaction
       - EC
       - TCDB
       - KEGG.REACTION  ## R number
@@ -7675,7 +7603,7 @@ classes:
     id_prefixes:
       - GO
       - REACT
-      - MetaCyc
+      - metacyc.reaction
       - KEGG.MODULE ## M number
 
   pathway:
@@ -7847,6 +7775,9 @@ classes:
     is_a: organism attribute
     description: >-
       A property of a phenotype
+    examples:
+      - value: weight
+
     mappings:
       - PATO:0000001
 
@@ -7992,7 +7923,6 @@ classes:
       - medgen
       - ICD10
       - ICD9
-      - ICD0
       - KEGG.DISEASE ## H number
       - HP
       - MP
@@ -8002,6 +7932,11 @@ classes:
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
+    description: >-
+      A combination of entity and quality that makes up a phenotyping statement.
+    examples:
+      - value: MP:0001262
+        description: decreased body weight
     exact_mappings:
       - UPHENO:0001001
       - SIO:010056
@@ -8614,7 +8549,7 @@ classes:
       # - HGVS needs IRI mapping
       - MGI
       - ZFIN # ZFIN:ZDB-ALT-*
-      - FB   # FlyBase FBa*
+      - FB   # FlyBase FBal*
       - WB
       - WormBase ## WormBase:WBVar*
     alt_descriptions:
