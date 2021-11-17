@@ -3520,7 +3520,7 @@ slots:
     inverse: entity regulates entity
 
   entity positively regulates entity:
-    aliases: ['activity directly positively regulates activity of']
+    aliases: ['activity directly positively regulates activity of', 'anatomy upregulates gene', 'disease upregulates gene']
     is_a: entity regulates entity
     mixins:
       - positively regulates
@@ -3542,17 +3542,13 @@ slots:
       # action or function of a "substance interaction", where "substance" is deemed a subclass of possible entity
       - SEMMEDDB:STIMULATES
       - SEMMEDDB:stimulates
-      # Positive regulation is defined more narrowly here, as "Anatomy upregulates Gene"
-      - hetio:UPREGULATES_AuG
-      # Positive regulation is defined more narrowly here, as "Disease upregulates Gene"
-      - hetio:UPREGULATES_DuG
 
   entity positively regulated by entity:
     is_a: entity regulated by entity
     inverse: entity positively regulates entity
 
   entity negatively regulates entity:
-    aliases: ['activity directly negatively regulates activity of']
+    aliases: ['activity directly negatively regulates activity of', 'anatomy downregulates gene', 'disease downregulates gene']
     is_a: entity regulates entity
     mixins:
       - negatively regulates
@@ -3570,10 +3566,6 @@ slots:
       # SemMedDb definition focuses on (chemical?) "substance interactions" which is a bit narrower?
       - SEMMEDDB:INHIBITS
       - SEMMEDDB:inhibits
-      # Down regulation is defined more narrowly here, as "Anatomy downregulates Gene"
-      - hetio:DOWNREGULATES_AdG
-      # Down regulation is defined more narrowly here, as "Disease downregulates Gene"
-      - hetio:DOWNREGULATES_DdG
 
   entity negatively regulated by entity:
     is_a: entity regulated by entity
@@ -4042,6 +4034,7 @@ slots:
 
   condition associated with gene:
     is_a: genetic association
+    aliases: ['disease associated with gene']
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
     domain: disease or phenotypic feature
@@ -4052,7 +4045,6 @@ slots:
     narrow_mappings:
       # narrower since just diseases, not phenotypic features as well
       - NCIT:R176
-      - hetio:ASSOCIATES_DaG
 
   affects risk for:
     is_a: related to at instance level
@@ -4491,6 +4483,7 @@ slots:
 
   expresses:
     is_a: related to at instance level
+    aliases: ['anatomy expresses gene']
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
@@ -4501,10 +4494,10 @@ slots:
     inverse: expressed in
     exact_mappings:
       - RO:0002292
-      - hetio:EXPRESSES_AeG
 
   has phenotype:
     is_a: related to at instance level
+    aliases: ['disease presents symptom']
     description: >-
       holds between a biological entity and a phenotype, where a phenotype
       is construed broadly as any kind of quality of an organism part,
@@ -4527,10 +4520,7 @@ slots:
       - RO:0002200
       - SNOMED:characterized_by
     broad_mappings:
-      # Disease–presents–Symptom; symptom or finding may be a phenotype but not necessarily
-      - hetio:PRESENTS_DpS
       - NCIT:R115
-      - OMIM:has_phenotype
       - NCIT:R108
     narrow_mappings:
       - NCIT:R89
@@ -5018,15 +5008,12 @@ slots:
       - BFO:0000167
       # Several of the following RTX terms tagged as inverse to 'biolink:participates_in'
       - LOINC:has_subject
-      - NCIT:pathway_has_gene_element
       - NCIT:process_involves_gene
       - NBO-PROPERTY:has_participant
       - PathWhiz:has_bound
       - PathWhiz:has_compound
       - PathWhiz:has_element_collection
       - PathWhiz:has_enzyme
-      # RTX mapped the following term as 'biolink:superclass_of' but term seem compositional in nature
-      - NCIT:process_includes_biological_process
       - OBI:0000293
       - PathWhiz:has_nucleic_acid
       - PathWhiz:has_protein
@@ -5103,15 +5090,10 @@ slots:
       value: true
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX term tagged as inverse
-      - NCIT:biological_process_involves_chemical_or_drug
     exact_mappings:
       - RO:0002331
       - RO:0002432
     narrow_mappings:
-      # RTX contribute mapping, may belong somewhere else?
-      - NCIT:gene_involved_in_molecular_abnormality
       - NBO-PROPERTY:by_means
       - ORPHA:317348
       - ORPHA:317349
@@ -5178,6 +5160,7 @@ slots:
 
   derives into:
     is_a: related to at instance level
+    aliases: ['is normal cell origin of disease','may be normal cell origin of disease']
     description: >-
       holds between two distinct material entities, the old entity and
       the new entity, in which the new entity begins to exist when
@@ -5192,8 +5175,6 @@ slots:
       - SEMMEDDB:converts_to
       # RTX posted terms as inverse of 'biolink:derives_from'
       - FMA:derives
-      - NCIT:is_normal_cell_origin_of_disease
-      - NCIT:may_be_normal_cell_origin_of_disease
 
   derives from:
     is_a: related to at instance level
@@ -5583,6 +5564,7 @@ slots:
 
   is sequence variant of:
     is_a: related to at instance level
+    aliases: ['gene product sequence variation encoded by gene mutant', 'allelic variant of', 'gene product variant of gene product']
     description: holds between a sequence variant and a nucleic acid entity
     domain: sequence variant
     range: nucleic acid entity
@@ -5590,10 +5572,6 @@ slots:
       tag: biolink:canonical_predicate
       value: true
     narrow_mappings:
-      # RTX contributed term mappings tagged elsewhere but mapped better here
-      - NCIT:gene_product_sequence_variation_encoded_by_gene_mutant
-      - NCIT:gene_product_variant_of_gene_product
-      - OMIM:allelic_variant_of
       - WIKIDATA:P3433
 
   has sequence variant:
@@ -5916,7 +5894,7 @@ slots:
      inverse: develops from
 
   in taxon:
-    aliases: ['instance of']
+    aliases: ['instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism',' gene product has organism source']
     is_a: related to at instance level
     domain: thing with taxon
     range: organism taxon
@@ -5928,16 +5906,10 @@ slots:
       of entities can be taxonomically classified; see 'thing with taxon'
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX contributed term is an inverse mapping
-      - NCIT:is_organism_source_of_gene_product
-      - NCIT:organism_has_gene
     exact_mappings:
       - RO:0002162
       - WIKIDATA_PROPERTY:P703
     narrow_mappings:
-      - NCIT:gene_found_in_organism
-      - NCIT:gene_product_has_organism_source
       - RO:0002160
 
   taxon of:
@@ -5948,6 +5920,7 @@ slots:
 
   has molecular consequence:
     is_a: related to at instance level
+    aliases: ['allele has activity']
     description: >-
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
@@ -5955,8 +5928,6 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
-    narrow_mappings:
-      - NCIT:allele_has_activity
 
   is molecular consequence of:
     is_a: related to at instance level
