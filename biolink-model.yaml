@@ -7909,6 +7909,9 @@ classes:
     is_a: organism attribute
     description: >-
       A property of a phenotype
+    examples:
+      - value: weight
+
     mappings:
       - PATO:0000001
 
@@ -8064,6 +8067,11 @@ classes:
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
+    description: >-
+      A combination of entity and quality that makes up a phenotyping statement.
+    examples:
+      - value: MP:0001262
+        description: decreased body weight
     exact_mappings:
       - UPHENO:0001001
       - SIO:010056
