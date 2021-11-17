@@ -5637,6 +5637,7 @@ slots:
     domain: gene
     range: sequence variant
     inverse: is synonymous variant of
+    aliases: ['stop gained']
 
   is nonsense variant of:
     is_a: is sequence variant of
@@ -5670,12 +5671,14 @@ slots:
       value: true
     exact_mappings:
       - SO:0001589
+    aliases: ['frameshift variant', 'start lost', 'stop lost']
 
   has frameshift variant:
     is_a: has sequence variant
     inverse: is frameshift variant of
     domain: gene
     range: sequence variant
+    aliases: ['splice region variant', 'splice acceptor variant', 'splice donor variant']
 
   is splice site variant of:
     is_a: is sequence variant of
@@ -5695,6 +5698,7 @@ slots:
     domain: gene
     range: sequence variant
     inverse: is splice site variant of
+    aliases: ['downstream gene variant', 'upstream gene variant']
 
   is nearby variant of:
     is_a: is sequence variant of
@@ -5713,6 +5717,7 @@ slots:
     domain: gene
     range: sequence variant
     inverse: is nearby variant of
+    aliases: ['intron variant', '3 prime UTR variant', '5 prime UTR variant', '5 prime UTR premature start codon gain variant', 'non coding transcript exon variant']
 
   is non coding variant of:
     is_a: is sequence variant of
