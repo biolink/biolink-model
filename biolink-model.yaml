@@ -44,6 +44,7 @@ prefixes:
   DGIdb: 'https://www.dgidb.org/interaction_types'
   dcat: 'http://www.w3.org/ns/dcat#'
   dct: 'http://purl.org/dc/terms/'
+  dcid: 'https://datacommons.org/browser/'
   doi: 'https://doi.org/'
   DOID-PROPERTY: 'http://purl.obolibrary.org/obo/doid#'
   DrugCentral: 'http://drugcentral.org/drugcard/'
@@ -1094,6 +1095,8 @@ slots:
     values_from:
       - MESH
     multivalued: true
+    exact_mappings:
+      - dcid:MeSHTerm
 
   ## Biology
 
@@ -6559,6 +6562,7 @@ classes:
       - UMLSSG:OBJC
       # Entity
       - STY:T071
+      - dcid:Thing
 
   relationship type:
     is_a: ontology class
@@ -6614,6 +6618,8 @@ classes:
       - WIKIDATA:Q16521
       - STY:T001
       - bioschemas:Taxon
+    narrow_mappings:
+      - dcid:BiologicalSpecies
     id_prefixes:
       - NCBITaxon
       - MESH
@@ -6747,6 +6753,7 @@ classes:
       - IAO:0000100
       - dctypes:Dataset
       - schema:dataset
+      - dcid:Dataset
 
   dataset distribution:
     is_a: information content entity
@@ -7053,6 +7060,7 @@ classes:
     exact_mappings:
       # Procedures
       - UMLSSG:PROC
+      - dcid:MedicalProcedure
     narrow_mappings:
       # Laboratory Procedure
       - STY:T059
@@ -7368,6 +7376,8 @@ classes:
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
       - UMLS
+    close_mappings:
+      - dcid:ChemicalCompound
 
   nucleic acid entity:
     is_a: molecular entity
@@ -7646,6 +7656,7 @@ classes:
       - CHEBI:23888
       # UMLS Semantic Type "Clinical Drug"
       - STY:T200
+      - dcid:Drug
     narrow_mappings:
       # Antibiotic
       - STY:T195
@@ -7841,6 +7852,7 @@ classes:
       - UMLSSG:DISO
       # Disease or Syndrome
       - STY:T047
+      - dcid:Disease
     narrow_mappings:
       # Congenital Abnormality
       - STY:T019
@@ -8077,6 +8089,7 @@ classes:
       - SO:0000704
       - SIO:010035
       - WIKIDATA:Q7187
+      - dcid:Gene
     id_prefixes:
       - NCBIGene
       - ENSEMBL
@@ -8159,6 +8172,8 @@ classes:
       - SO:0001026
       - SIO:000984
       - WIKIDATA:Q7020
+    close_mappings:
+      - dcid:GenomeAssemblyUnit
     in_subset:
       - model_organism_database
 
@@ -8180,6 +8195,7 @@ classes:
       - SO:0000673
       - SIO:010450
       - WIKIDATA:Q7243183
+      - dcid:RNATranscript
     id_prefixes:
       - ENSEMBL # ENSEMBL:ENST for human
       - FB      # FlyBase:FBtr
@@ -8480,6 +8496,8 @@ classes:
       - SIO:010277
       - VMC:Allele
       - SO:0001059
+    close_mappings:
+      - dcid:Allele
     id_prefixes:
       - CAID # ClinGen Allele Registry
       - CLINVAR
@@ -8845,6 +8863,23 @@ classes:
     description: >-
       A geographic exposure is a factor relating to geographic
       proximity to some impactful entity.
+    close_mappings:
+      - dcid:GeologicalEvent
+    narrow_mappings:
+      - dcid:IceStoremEvent
+      - dcid:LakeEffectSnowEvent
+      - dcid:LandslideEvent
+      - dcid:MarineDenseFogEvent
+      - dcid:MarineLighteningEvent
+      - dcid:MarineStrongWindEvent
+      - dcid:MarineThunderstormWindEvent
+      - dcid:StormEvent
+      - dcid:StormSurgeTideEvent
+      - dcid:StrongWindEvent
+      - dcid:ThunderstormWindEvent
+      - dcid:TornadoEvent
+      - dcid:TropicalDepressionEvent
+      - dcid:WinterStoremEvent
 
   environmental exposure:
     mixins:
@@ -9149,6 +9184,8 @@ classes:
           - ro
           - mi
         description: "interaction relationship type"
+    narrow_mappings:
+      - dcid:ProteinProteinInteraction
 
   pairwise molecular interaction:
     description: >-
@@ -9680,6 +9717,8 @@ classes:
     mixins:
       - entity to phenotypic feature association mixin
       - disease to entity association mixin
+    close_mappings:
+      - dcid:DiseaseSymptomAssociation
 
   case to phenotypic feature association:
     description: >-
@@ -9765,6 +9804,8 @@ classes:
       - NCIT:R176 refers to the inverse relationship
     exact_mappings:
       - SIO:000983
+    close_mappings:
+      - dcid:DiseaseGeneAssociation
     defining_slots:
       - subject
       - object
@@ -10327,6 +10368,10 @@ classes:
       - genome build
       - strand
       - phase
+    broad_mappings:
+      - dcid:Chromosome
+    exact_mappings:
+      - dcid:GenomeAnnotation
 
   sequence feature relationship:
     is_a: association
