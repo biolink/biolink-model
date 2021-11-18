@@ -4501,7 +4501,8 @@ slots:
       holds between a biological entity and a phenotype, where a phenotype
       is construed broadly as any kind of quality of an organism part,
       a collection of these qualities, or a change in quality or qualities
-      (e.g. abnormally increased temperature).
+      (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should
+      translate into this predicate.
     domain: biological entity
     range: phenotypic feature
     multivalued: true
@@ -4512,12 +4513,8 @@ slots:
       - check the range
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX contributed term tagged as 'inverse'
-      - OMIM:phenotype_of
     exact_mappings:
       - RO:0002200
-      - SNOMED:characterized_by
     broad_mappings:
       - NCIT:R115
       - NCIT:R108
