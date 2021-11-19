@@ -34,7 +34,6 @@ URI: [biolink:SmallMolecule](https://w3id.org/biolink/vocab/SmallMolecule)
  * HMDB
  * KEGG.COMPOUND
  * ChemBank
- * Aeolus
  * PUBCHEM.SUBSTANCE
  * SIDER.DRUG
  * INCHI

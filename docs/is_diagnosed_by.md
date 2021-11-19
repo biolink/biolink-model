@@ -14,7 +14,7 @@ URI: [biolink:is_diagnosed_by](https://w3id.org/biolink/vocab/is_diagnosed_by)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)
 
 ## Parents
 

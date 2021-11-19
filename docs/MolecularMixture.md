@@ -34,7 +34,6 @@ URI: [biolink:MolecularMixture](https://w3id.org/biolink/vocab/MolecularMixture)
  * HMDB
  * KEGG.COMPOUND
  * ChemBank
- * Aeolus
  * PUBCHEM.SUBSTANCE
  * SIDER.DRUG
  * INCHI

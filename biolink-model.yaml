@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.2.10
+version: 2.2.11
 
 ## ------------
 ## PREFIXES
@@ -2019,6 +2019,8 @@ slots:
   is diagnosed by:
     is_a: related to at instance level
     inverse: diagnoses
+    range: chemical or drug or treatment
+    domain: disease or phenotypic feature
 
   increases amount or activity of:
     is_a: related to at instance level
@@ -7317,7 +7319,6 @@ classes:
       - HMDB
       - KEGG.COMPOUND
       - ChemBank
-      - Aeolus
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
@@ -7363,7 +7364,6 @@ classes:
       - HMDB
       - KEGG.COMPOUND
       - ChemBank
-      - Aeolus
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
@@ -7409,7 +7409,6 @@ classes:
       - HMDB
       - KEGG.COMPOUND
       - ChemBank
-      - Aeolus
       - PUBCHEM.SUBSTANCE
       - INCHI
       - INCHIKEY
@@ -7438,7 +7437,6 @@ classes:
       - HMDB
       - KEGG.COMPOUND
       - ChemBank
-      - Aeolus
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
@@ -7471,7 +7469,6 @@ classes:
       - HMDB
       - KEGG.COMPOUND
       - ChemBank
-      - Aeolus
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI

@@ -98,7 +98,6 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md)** *[information content entity to named thing association➞object](information_content_entity_to_named_thing_association_object.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md)** *[information content entity to named thing association➞subject](information_content_entity_to_named_thing_association_subject.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[interacts with](interacts_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[is diagnosed by](is_diagnosed_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[OntologyClass](OntologyClass.md)** *[is molecular consequence of](is_molecular_consequence_of.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[lacks part](lacks_part.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[located in](located_in.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**

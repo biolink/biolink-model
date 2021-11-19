@@ -32,7 +32,6 @@ URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntit
  * HMDB
  * KEGG.COMPOUND
  * ChemBank
- * Aeolus
  * PUBCHEM.SUBSTANCE
  * INCHI
  * INCHIKEY

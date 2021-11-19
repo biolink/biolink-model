@@ -34,7 +34,6 @@ URI: [biolink:ComplexMolecularMixture](https://w3id.org/biolink/vocab/ComplexMol
  * HMDB
  * KEGG.COMPOUND
  * ChemBank
- * Aeolus
  * PUBCHEM.SUBSTANCE
  * SIDER.DRUG
  * INCHI
