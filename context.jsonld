@@ -1,14 +1,11 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-09T16:58:55\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-19T00:38:53\n    Schema: Biolink-Model\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
          "@prefix": true
       },
-      "Aeolus": {
-         "@id": "http://translator.ncats.nih.gov/Aeolus_",
-         "@prefix": true
-      },
+      "Aeolus": "http://example.org/UNKNOWN/Aeolus/",
       "BFO": {
          "@id": "http://purl.obolibrary.org/obo/BFO_",
          "@prefix": true
@@ -61,8 +58,17 @@
       "COAR_RESOURCE": "http://purl.org/coar/resource_type/",
       "COG": "https://www.ncbi.nlm.nih.gov/research/cog-project/",
       "CPT": "https://www.ama-assn.org/practice-management/cpt/",
-      "CTD": {
-         "@id": "http://translator.ncats.nih.gov/CTD_",
+      "CTD": "http://ctdbase.org/",
+      "CTD.CHEMICAL": {
+         "@id": "http://ctdbase.org/detail.go?type=chem&acc=",
+         "@prefix": true
+      },
+      "CTD.DISEASE": {
+         "@id": "http://ctdbase.org/detail.go?type=disease&db=MESH&acc=",
+         "@prefix": true
+      },
+      "CTD.GENE": {
+         "@id": "http://ctdbase.org/detail.go?type=gene&acc=",
          "@prefix": true
       },
       "ChemBank": {
@@ -85,10 +91,7 @@
       },
       "DOID-PROPERTY": "http://purl.obolibrary.org/obo/doid#",
       "DRUGBANK": "http://identifiers.org/drugbank/",
-      "DrugCentral": {
-         "@id": "http://translator.ncats.nih.gov/DrugCentral_",
-         "@prefix": true
-      },
+      "DrugCentral": "http://drugcentral.org/drugcard/",
       "EC": {
          "@id": "http://www.enzyme-database.org/query.php?ec=",
          "@prefix": true
@@ -204,14 +207,7 @@
          "@id": "http://purl.obolibrary.org/obo/IAO_",
          "@prefix": true
       },
-      "ICD0": {
-         "@id": "http://translator.ncats.nih.gov/ICD0_",
-         "@prefix": true
-      },
-      "ICD10": {
-         "@id": "http://translator.ncats.nih.gov/ICD10_",
-         "@prefix": true
-      },
+      "ICD10": "https://icd.codes/icd9cm/",
       "ICD9": {
          "@id": "http://translator.ncats.nih.gov/ICD9_",
          "@prefix": true
@@ -270,10 +266,6 @@
          "@prefix": true
       },
       "MSigDB": "https://www.gsea-msigdb.org/gsea/msigdb/",
-      "MetaCyc": {
-         "@id": "http://translator.ncats.nih.gov/MetaCyc_",
-         "@prefix": true
-      },
       "NBO": {
          "@id": "http://purl.obolibrary.org/obo/NBO_",
          "@prefix": true
@@ -332,7 +324,6 @@
          "@id": "http://purl.obolibrary.org/obo/PCO_",
          "@prefix": true
       },
-      "PDQ": "https://www.cancer.gov/publications/pdq#",
       "PFAM": "http://identifiers.org/pfam/",
       "PHARMGKB.PATHWAYS": "http://identifiers.org/pharmgkb.pathways/",
       "PHAROS": {
@@ -370,7 +361,6 @@
          "@id": "http://purl.obolibrary.org/obo/RO_",
          "@prefix": true
       },
-      "RTXKG1": "http://kg1endpoint.rtx.ai/",
       "RXCUI": {
          "@id": "https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=",
          "@prefix": true
@@ -396,10 +386,6 @@
       "SMPDB": "http://identifiers.org/smpdb/",
       "SNOMED": "http://www.snomedbrowser.com/Codes/Details/",
       "SNOMEDCT": "http://www.snomedbrowser.com/Codes/Details/",
-      "SNPEFF": {
-         "@id": "http://translator.ncats.nih.gov/SNPEFF_",
-         "@prefix": true
-      },
       "SO": {
          "@id": "http://purl.obolibrary.org/obo/SO_",
          "@prefix": true
@@ -482,11 +468,8 @@
       },
       "biolink": "https://w3id.org/biolink/vocab/",
       "bioschemas": "https://bioschemas.org/",
-      "chembio": {
-         "@id": "http://translator.ncats.nih.gov/chembio_",
-         "@prefix": true
-      },
       "dcat": "http://www.w3.org/ns/dcat#",
+      "dcid": "https://datacommons.org/browser/",
       "dct": "http://purl.org/dc/terms/",
       "dctypes": "http://purl.org/dc/dcmitype/",
       "dictyBase": "http://dictybase.org/gene/",
@@ -498,16 +481,13 @@
       "gff3": "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#",
       "gpi": "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#",
       "gtpo": "https://rdf.guidetopharmacology.org/ns/gtpo#",
-      "hetio": {
-         "@id": "http://translator.ncats.nih.gov/hetio_",
-         "@prefix": true
-      },
       "interpro": "https://www.ebi.ac.uk/interpro/entry/",
       "isbn": "https://www.isbn-international.org/identifier/",
       "isni": "https://isni.org/isni/",
       "issn": "https://portal.issn.org/resource/ISSN/",
       "linkml": "https://w3id.org/linkml/",
       "medgen": "https://www.ncbi.nlm.nih.gov/medgen/",
+      "metacyc.reaction": "https://identifiers.org/metacyc.reaction:",
       "mirbase": {
          "@id": "http://identifiers.org/mirbase",
          "@prefix": true
@@ -657,6 +637,15 @@
          "@type": "@id"
       },
       "approved_to_treat": {
+         "@type": "@id"
+      },
+      "associated_with": {
+         "@type": "@id"
+      },
+      "associated_with_resistance_to": {
+         "@type": "@id"
+      },
+      "associated_with_sensitivity_to": {
          "@type": "@id"
       },
       "association_type": {
@@ -848,6 +837,9 @@
          "@type": "@id"
       },
       "develops_into": {
+         "@type": "@id"
+      },
+      "diagnoses": {
          "@type": "@id"
       },
       "directly_interacts_with": {
@@ -1258,6 +1250,9 @@
       "is_active_ingredient_of": {
          "@type": "@id"
       },
+      "is_diagnosed_by": {
+         "@type": "@id"
+      },
       "is_excipient_of": {
          "@type": "@id"
       },
@@ -1601,6 +1596,9 @@
       "related_to_at_instance_level": {
          "@type": "@id"
       },
+      "resistance_associated_with": {
+         "@type": "@id"
+      },
       "response_affected_by": {
          "@type": "@id"
       },
@@ -1626,6 +1624,9 @@
          "@type": "@id"
       },
       "secretion_increased_by": {
+         "@type": "@id"
+      },
+      "sensitivity_associated_with": {
          "@type": "@id"
       },
       "sequence_location_of": {
