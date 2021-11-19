@@ -47,6 +47,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[affects](affects.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[affects expression in](affects_expression_in.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[affects risk for](affects_risk_for.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[associated with](associated_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[broad match](broad_match.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[caused by](caused_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[causes](causes.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
@@ -97,6 +98,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md)** *[information content entity to named thing association➞object](information_content_entity_to_named_thing_association_object.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md)** *[information content entity to named thing association➞subject](information_content_entity_to_named_thing_association_subject.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[interacts with](interacts_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[is diagnosed by](is_diagnosed_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[OntologyClass](OntologyClass.md)** *[is molecular consequence of](is_molecular_consequence_of.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[lacks part](lacks_part.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[located in](located_in.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
@@ -134,8 +136,10 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[related to](related_to.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[related to at concept level](related_to_at_concept_level.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[related to at instance level](related_to_at_instance_level.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[ChemicalEntity](ChemicalEntity.md)** *[resistance associated with](resistance_associated_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[risk affected by](risk_affected_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[same as](same_as.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[ChemicalEntity](ChemicalEntity.md)** *[sensitivity associated with](sensitivity_associated_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[similar to](similar_to.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Association](Association.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[variant part of](variant_part_of.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**

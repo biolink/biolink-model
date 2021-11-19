@@ -71,7 +71,6 @@ URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
 |  | | NCIT:R27 |
 |  | | NCIT:is_component_of_chemotherapy_regimen |
 |  | | NDDF:ingredient_of |
-|  | | PDQ:component_of |
 |  | | RO:0002007 |
 |  | | RO:0002350 |
 |  | | RO:0002376 |

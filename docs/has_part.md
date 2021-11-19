@@ -59,7 +59,6 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
 |  | | NDDF:has_ingredient |
 |  | | PathWhiz:has_element_in_bound |
 |  | | NCIT:R50 |
-|  | | PDQ:has_component |
 |  | | PathWhiz:has_protein_in_complex |
 |  | | RO:0002104 |
 |  | | RO:0002180 |

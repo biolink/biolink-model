@@ -28,7 +28,7 @@ URI: [biolink:ClinicalFinding](https://w3id.org/biolink/vocab/ClinicalFinding)
 
 ## Parents
 
- *  is_a: [PhenotypicFeature](PhenotypicFeature.md)
+ *  is_a: [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement.
 
 ## Referenced by class
 

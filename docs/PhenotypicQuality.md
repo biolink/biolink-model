@@ -91,4 +91,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | phenotypic properties |
 | **Mappings:** | | PATO:0000001 |
+| **Examples:** | | Example(value='weight', description=None) |
 

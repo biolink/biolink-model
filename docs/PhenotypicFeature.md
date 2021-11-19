@@ -8,7 +8,7 @@ layout: default
 # Class: PhenotypicFeature
 
 
-
+A combination of entity and quality that makes up a phenotyping statement.
 
 URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
 
@@ -125,6 +125,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | phenotype |
 |  | | trait |
 |  | | endophenotype |
+| **Examples:** | | Example(value='MP:0001262', description='decreased body weight') |
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |

@@ -210,7 +210,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
      * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
          * [Disease](Disease.md)
-         * [PhenotypicFeature](PhenotypicFeature.md)
+         * [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement.
              * [BehavioralFeature](BehavioralFeature.md) - A phenotypic feature which is behavioral in nature.
              * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
      * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
@@ -371,7 +371,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
              * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
                  * [Disease](Disease.md)
-                 * [PhenotypicFeature](PhenotypicFeature.md)
+                 * [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement.
                      * [BehavioralFeature](BehavioralFeature.md) - A phenotypic feature which is behavioral in nature.
                      * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
              * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
@@ -675,6 +675,20 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
+ * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+     * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
+     * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
+     * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+         * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+         * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
+         * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
+         * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
+         * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
+         * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
+     * [resistance associated with](resistance_associated_with.md)
+     * [sensitivity associated with](sensitivity_associated_with.md)
+ * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
+ * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
  * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
  * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
  * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
@@ -751,6 +765,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
  * [develops from](develops_from.md)
  * [develops into](develops_into.md)
+ * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
  * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
  * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
  * [disease has location](disease_has_location.md) - A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity.
@@ -899,6 +914,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [molecular interaction decreased by](molecular_interaction_decreased_by.md)
              * [molecular interaction increased by](molecular_interaction_increased_by.md)
  * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
+ * [is diagnosed by](is_diagnosed_by.md)
  * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
  * [is input of](is_input_of.md)
@@ -1166,6 +1182,18 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
              * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
              * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
+         * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+             * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
+             * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
+             * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+                 * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+                 * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
+                 * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
+                 * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
+                 * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
+                 * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
+             * [resistance associated with](resistance_associated_with.md)
+             * [sensitivity associated with](sensitivity_associated_with.md)
          * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
          * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
              * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
@@ -1185,13 +1213,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
              * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
              * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
-         * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-             * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
-             * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
-             * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
-             * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
-             * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
-             * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
          * [decreased amount in](decreased_amount_in.md)
          * [derives from](derives_from.md) - holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
              * [is metabolite of](is_metabolite_of.md) - holds between two molecular entities in which the first one is derived from the second one as a product of metabolism
@@ -1199,6 +1220,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
          * [develops from](develops_from.md)
          * [develops into](develops_into.md)
+         * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
          * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
          * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
          * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
@@ -1253,6 +1275,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                      * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
                      * [molecular interaction decreased by](molecular_interaction_decreased_by.md)
                      * [molecular interaction increased by](molecular_interaction_increased_by.md)
+         * [is diagnosed by](is_diagnosed_by.md)
          * [is molecular consequence of](is_molecular_consequence_of.md)
          * [is sequence variant of](is_sequence_variant_of.md) - holds between a sequence variant and a nucleic acid entity
              * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
@@ -1457,6 +1480,18 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
          * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
          * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
+     * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+         * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
+         * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
+         * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+             * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+             * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
+             * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
+             * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
+             * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
+             * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
+         * [resistance associated with](resistance_associated_with.md)
+         * [sensitivity associated with](sensitivity_associated_with.md)
      * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
      * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
          * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
@@ -1476,13 +1511,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
          * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
          * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
-     * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-         * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
-         * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
-         * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
-         * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
-         * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
-         * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
      * [decreased amount in](decreased_amount_in.md)
      * [derives from](derives_from.md) - holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
          * [is metabolite of](is_metabolite_of.md) - holds between two molecular entities in which the first one is derived from the second one as a product of metabolism
@@ -1490,6 +1518,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
      * [develops from](develops_from.md)
      * [develops into](develops_into.md)
+     * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
      * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
      * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
      * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
@@ -1544,6 +1573,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
                  * [molecular interaction decreased by](molecular_interaction_decreased_by.md)
                  * [molecular interaction increased by](molecular_interaction_increased_by.md)
+     * [is diagnosed by](is_diagnosed_by.md)
      * [is molecular consequence of](is_molecular_consequence_of.md)
      * [is sequence variant of](is_sequence_variant_of.md) - holds between a sequence variant and a nucleic acid entity
          * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
@@ -1612,6 +1642,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [translation of](translation_of.md) - inverse of translates to
      * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
          * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
+ * [resistance associated with](resistance_associated_with.md)
  * [response affected by](response_affected_by.md) - holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
      * [response decreased by](response_decreased_by.md)
      * [response increased by](response_increased_by.md)
@@ -1625,6 +1656,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [secretion increased by](secretion_increased_by.md)
  * [secretion decreased by](secretion_decreased_by.md)
  * [secretion increased by](secretion_increased_by.md)
+ * [sensitivity associated with](sensitivity_associated_with.md)
  * [sequence location of](sequence_location_of.md)
  * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
      * [chemically similar to](chemically_similar_to.md) - holds between one small molecule entity and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.

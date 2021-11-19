@@ -21,7 +21,7 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 
 ## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+ *  is_a: [associated with](associated_with.md)
 
 ## Children
 
@@ -42,11 +42,4 @@ URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002610 |
 |  | | PATO:correlates_with |
-| **Narrow Mappings:** | | LOINC:associated_with |
-|  | | ORPHA:317345 |
-|  | | PDQ:associated_disease |
-|  | | RO:0004029 |
-|  | | RTXKG1:associated_with_disease |
-|  | | SNOMED:associated_with |
-|  | | SNOMED:has_associated_finding |
 

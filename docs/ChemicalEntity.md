@@ -48,6 +48,8 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
 ## Referenced by class
 
+ *  **[NamedThing](NamedThing.md)** *[associated with resistance to](associated_with_resistance_to.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
+ *  **[NamedThing](NamedThing.md)** *[associated with sensitivity to](associated_with_sensitivity_to.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)** *[chemical to chemical association➞object](chemical_to_chemical_association_object.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞object](chemical_to_chemical_derivation_association_object.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
