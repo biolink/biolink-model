@@ -6,8 +6,10 @@ on:
   push:
     branches:
     - master
+    - test_actions
     paths:
     - 'biolink-model.yaml'
+    - '.github/workflows/regenerate_artifacts.yml'
   repository_dispatch:
     types: trigger-build-artifacts
 
