@@ -4,9 +4,7 @@ name: Regenerate Biolink Model Artifacts
 # event but only for the master branch, and specifically on the biolink-model.yaml
 on:
   push:
-    branches:
-    - master
-    - test_actions
+    branches: ['master', 'test_actions']
     paths:
     - 'biolink-model.yaml'
     - '.github/workflows/regenerate_artifacts.yml'
