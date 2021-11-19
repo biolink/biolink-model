@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.2.9
+version: 2.2.10
 
 ## ------------
 ## PREFIXES
@@ -72,7 +72,7 @@ prefixes:
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
   HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
-  ICD10: ' https://icd.codes/icd9cm/'
+  ICD10: 'https://icd.codes/icd9cm/'
   ICD9: 'http://translator.ncats.nih.gov/ICD9_'
   interpro: 'https://www.ebi.ac.uk/interpro/entry/'
   INO: 'http://purl.obolibrary.org/obo/INO_'
@@ -7245,7 +7245,6 @@ classes:
       - HMDB
       - KEGG.COMPOUND
       - ChemBank
-      - Aeolus
       - PUBCHEM.SUBSTANCE
       - SIDER.DRUG
       - INCHI
