@@ -27,8 +27,6 @@ jobs:
         with:
           type: now
           target_branch: gh-pages
-        env:
-          GITHUB_TOKEN: ${{secrets.API_TOKEN}}
 
   build:
     # The type of runner that the job will run on
@@ -39,8 +37,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.API_TOKEN }}
 
     - name: Setup Python Environment
       uses: actions/setup-python@v2

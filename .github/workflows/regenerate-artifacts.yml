@@ -23,8 +23,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.API_TOKEN }}
 
     - name: Setup Python Environment
       uses: actions/setup-python@v2
@@ -49,6 +47,8 @@ jobs:
         export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
         make -B install build
         if [ $? -eq 0 ]; then
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git config --global user.name "$GITHUB_NAME"
           git config --global user.email "$GITHUB_EMAIL"
           git add biolink-model.*
@@ -65,6 +65,3 @@ jobs:
         else
           echo "'make' failed to finish successfully"
         fi
-      env:
-        GITHUB_NAME: ${{ secrets.WORKFLOW_USERNAME }}
-        GITHUB_EMAIL: ${{ secrets.WORKFLOW_EMAIL }}
