@@ -63,3 +63,19 @@ jobs:
         else
           echo "'make' failed to finish successfully"
         fi
+
+    - name: Build documentation
+      run: |
+        python3 -m venv env
+        source env/bin/activate
+        pip install linkml
+        python script/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
+
+    - name: Deploy to gh-pages branch
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ github.token }}
+        REPOSITORY_NAME: biolink/biolink-model # The repository the action should deploy to
+        BRANCH: gh-pages # The branch the action should deploy to.
+        COMMIT_MESSAGE: 'Update documentation'
+        FOLDER: . # The folder the action should deploy.
