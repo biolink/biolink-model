@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-19T17:09:27
+# Generation date: 2021-11-19T17:17:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -32,7 +32,6 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 APO = CurieNamespace('APO', 'http://purl.obolibrary.org/obo/APO_')
-AEOLUS = CurieNamespace('Aeolus', 'http://example.org/UNKNOWN/Aeolus/')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 BIGG_METABOLITE = CurieNamespace('BIGG_METABOLITE', 'http://identifiers.org/bigg.metabolite/')
 BIGG_REACTION = CurieNamespace('BIGG_REACTION', 'http://identifiers.org/bigg.reaction/')
