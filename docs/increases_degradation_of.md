@@ -34,7 +34,6 @@ URI: [biolink:increases_degradation_of](https://w3id.org/biolink/vocab/increases
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_degradation_of |
 | **Close Mappings:** | | CHEMBL.MECHANISM:degrader |
 | **Narrow Mappings:** | | CTD:increases_cleavage |
 |  | | CTD:increases_hydrolysis |

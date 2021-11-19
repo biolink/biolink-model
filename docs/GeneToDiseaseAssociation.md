@@ -153,4 +153,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Comments:** | | NCIT:R176 refers to the inverse relationship |
 | **Exact Mappings:** | | SIO:000983 |
+| **Close Mappings:** | | dcid:DiseaseGeneAssociation |
 

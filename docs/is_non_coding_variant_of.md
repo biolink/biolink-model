@@ -31,9 +31,4 @@ URI: [biolink:is_non_coding_variant_of](https://w3id.org/biolink/vocab/is_non_co
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | GAMMA:0000103 |
-| **Narrow Mappings:** | | SNPEFF:3_prime_UTR_variant |
-|  | | SNPEFF:5_prime_UTR_variant |
-|  | | SNPEFF:5_prime_UTR_premature_start_codon_gain_variant |
-|  | | SNPEFF:non_coding_transcript_exon_variant |
-|  | | SNPEFF:intron_variant |
 

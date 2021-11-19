@@ -223,4 +223,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | WIKIDATA:Q35120 |
 |  | | UMLSSG:OBJC |
 |  | | STY:T071 |
+|  | | dcid:Thing |
 

@@ -140,3 +140,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>0..1</sub>
      * Description: interaction relationship type
      * Range: [String](types/String.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Narrow Mappings:** | | dcid:ProteinProteinInteraction |
+

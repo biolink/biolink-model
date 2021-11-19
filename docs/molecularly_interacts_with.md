@@ -37,9 +37,8 @@ URI: [biolink:molecularly_interacts_with](https://w3id.org/biolink/vocab/molecul
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | RTXKG1:targets |
+| **Aliases:** | | targets |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002436 |
-|  | | CTD:molecularly_interacts_with |
 | **Related Mappings:** | | DGIdb:antibody |
 

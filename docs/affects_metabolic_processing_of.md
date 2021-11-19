@@ -36,6 +36,5 @@ URI: [biolink:affects_metabolic_processing_of](https://w3id.org/biolink/vocab/af
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_metabolic_processing_of |
 | **Related Mappings:** | | GAMMA:catalytic_activity |
 

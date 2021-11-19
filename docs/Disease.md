@@ -35,7 +35,6 @@ URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
  * medgen
  * ICD10
  * ICD9
- * ICD0
  * KEGG.DISEASE
  * HP
  * MP
@@ -129,6 +128,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | SIO:010299 |
 |  | | UMLSSG:DISO |
 |  | | STY:T047 |
+|  | | dcid:Disease |
 | **Narrow Mappings:** | | STY:T019 |
 |  | | STY:T020 |
 |  | | STY:T048 |

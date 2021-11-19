@@ -132,6 +132,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | WIKIDATA:Q12140 |
 |  | | CHEBI:23888 |
 |  | | STY:T200 |
+|  | | dcid:Drug |
 | **Narrow Mappings:** | | STY:T195 |
 | **Broad Mappings:** | | STY:T121 |
 

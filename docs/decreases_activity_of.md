@@ -34,7 +34,6 @@ URI: [biolink:decreases_activity_of](https://w3id.org/biolink/vocab/decreases_ac
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_activity_of |
 | **Narrow Mappings:** | | GAMMA:allosteric_antagonist |
 |  | | GAMMA:partial_antagonist |
 |  | | GAMMA:antagonist |

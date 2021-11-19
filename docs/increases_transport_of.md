@@ -34,7 +34,6 @@ URI: [biolink:increases_transport_of](https://w3id.org/biolink/vocab/increases_t
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_transport_of |
 | **Close Mappings:** | | GAMMA:carrier |
 |  | | GAMMA:transporter |
 

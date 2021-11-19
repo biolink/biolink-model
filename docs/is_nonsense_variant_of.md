@@ -30,6 +30,5 @@ URI: [biolink:is_nonsense_variant_of](https://w3id.org/biolink/vocab/is_nonsense
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | SNPEFF:stop_gained |
 | **Broad Mappings:** | | SO:0002054 |
 

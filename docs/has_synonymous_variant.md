@@ -25,3 +25,10 @@ URI: [biolink:has_synonymous_variant](https://w3id.org/biolink/vocab/has_synonym
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | stop gained |
+

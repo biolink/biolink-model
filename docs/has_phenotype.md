@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
 
 URI: [biolink:has_phenotype](https://w3id.org/biolink/vocab/has_phenotype)
 
@@ -33,16 +33,12 @@ URI: [biolink:has_phenotype](https://w3id.org/biolink/vocab/has_phenotype)
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | disease presents symptom |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002200 |
-|  | | RTXKG1:has_phenotype |
-|  | | SNOMED:characterized_by |
-| **Close Mappings:** | | OMIM:phenotype_of |
 | **Narrow Mappings:** | | NCIT:R89 |
 |  | | DOID-PROPERTY:has_symptom |
 |  | | RO:0004022 |
-| **Broad Mappings:** | | hetio:PRESENTS_DpS |
-|  | | NCIT:R115 |
-|  | | OMIM:has_phenotype |
+| **Broad Mappings:** | | NCIT:R115 |
 |  | | NCIT:R108 |
 

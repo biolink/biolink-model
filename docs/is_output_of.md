@@ -33,6 +33,5 @@ URI: [biolink:is_output_of](https://w3id.org/biolink/vocab/is_output_of)
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | RTXKG1:output_of |
 | **In Subsets:** | | translator_minimal |
 

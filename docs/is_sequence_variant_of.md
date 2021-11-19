@@ -37,8 +37,8 @@ URI: [biolink:is_sequence_variant_of](https://w3id.org/biolink/vocab/is_sequence
 
 |  |  |  |
 | --- | --- | --- |
-| **Narrow Mappings:** | | NCIT:gene_product_sequence_variation_encoded_by_gene_mutant |
-|  | | NCIT:gene_product_variant_of_gene_product |
-|  | | OMIM:allelic_variant_of |
-|  | | WIKIDATA:P3433 |
+| **Aliases:** | | gene product sequence variation encoded by gene mutant |
+|  | | allelic variant of |
+|  | | gene product variant of gene product |
+| **Narrow Mappings:** | | WIKIDATA:P3433 |
 

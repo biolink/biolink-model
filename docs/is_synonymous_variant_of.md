@@ -31,7 +31,4 @@ URI: [biolink:is_synonymous_variant_of](https://w3id.org/biolink/vocab/is_synony
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | SO:0001819 |
-|  | | SNPEFF:synonymous_variant |
-| **Narrow Mappings:** | | SNPEFF:start_retained |
-|  | | SNPEFF:stop_retained_variant |
 

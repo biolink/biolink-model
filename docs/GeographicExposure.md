@@ -36,3 +36,24 @@ URI: [biolink:GeographicExposure](https://w3id.org/biolink/vocab/GeographicExpos
  * [timepoint](timepoint.md)  <sub>0..1</sub>
      * Description: a point in time
      * Range: [TimeType](types/TimeType.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Close Mappings:** | | dcid:GeologicalEvent |
+| **Narrow Mappings:** | | dcid:IceStoremEvent |
+|  | | dcid:LakeEffectSnowEvent |
+|  | | dcid:LandslideEvent |
+|  | | dcid:MarineDenseFogEvent |
+|  | | dcid:MarineLighteningEvent |
+|  | | dcid:MarineStrongWindEvent |
+|  | | dcid:MarineThunderstormWindEvent |
+|  | | dcid:StormEvent |
+|  | | dcid:StormSurgeTideEvent |
+|  | | dcid:StrongWindEvent |
+|  | | dcid:ThunderstormWindEvent |
+|  | | dcid:TornadoEvent |
+|  | | dcid:TropicalDepressionEvent |
+|  | | dcid:WinterStoremEvent |
+

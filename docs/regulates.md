@@ -31,6 +31,8 @@ URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | regulates activity of |
+|  | | regulates expression of |
 | **Comments:** | | This is a grouping for process-process and entity-entity regulation. |
 | **Exact Mappings:** | | RO:0002211 |
 | **Close Mappings:** | | RO:0002334 |
@@ -39,6 +41,4 @@ URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 |  | | RO:0002295 |
 |  | | RO:0002332 |
 |  | | RO:0002578 |
-|  | | RTXKG1:regulates_activity_of |
-|  | | RTXKG1:regulates_expression_of |
 

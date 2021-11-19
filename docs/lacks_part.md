@@ -25,10 +25,3 @@ URI: [biolink:lacks_part](https://w3id.org/biolink/vocab/lacks_part)
 
 ## Used by
 
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | RTXKG1:lacks_part |
-

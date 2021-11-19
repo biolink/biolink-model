@@ -31,7 +31,4 @@ URI: [biolink:is_splice_site_variant_of](https://w3id.org/biolink/vocab/is_splic
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | SO:0001629 |
-| **Narrow Mappings:** | | SNPEFF:splice_region_variant |
-|  | | SNPEFF:splice_acceptor_variant |
-|  | | SNPEFF:splice_donor_variant |
 

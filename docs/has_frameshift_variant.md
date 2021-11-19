@@ -25,3 +25,12 @@ URI: [biolink:has_frameshift_variant](https://w3id.org/biolink/vocab/has_framesh
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | splice region variant |
+|  | | splice acceptor variant |
+|  | | splice donor variant |
+

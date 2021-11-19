@@ -34,5 +34,4 @@ URI: [biolink:decreases_transport_of](https://w3id.org/biolink/vocab/decreases_t
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_transport_of |
 

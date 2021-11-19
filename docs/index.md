@@ -849,7 +849,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [consumes](consumes.md)
      * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
      * [has substrate](has_substrate.md)
- * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+ * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
  * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
  * [has positive upstream actor](has_positive_upstream_actor.md)
  * [has positive upstream or within actor](has_positive_upstream_or_within_actor.md)
@@ -1245,7 +1245,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [consumes](consumes.md)
              * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
              * [has substrate](has_substrate.md)
-         * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+         * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
          * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
          * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
          * [has sequence variant](has_sequence_variant.md)
@@ -1543,7 +1543,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [consumes](consumes.md)
          * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
          * [has substrate](has_substrate.md)
-     * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+     * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
      * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
      * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
      * [has sequence variant](has_sequence_variant.md)

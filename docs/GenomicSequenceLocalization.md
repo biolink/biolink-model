@@ -157,3 +157,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [strand](strand.md)  <sub>0..1</sub>
      * Description: The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
      * Range: [strand_enum](strand_enum.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | dcid:GenomeAnnotation |
+| **Broad Mappings:** | | dcid:Chromosome |
+

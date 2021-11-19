@@ -39,7 +39,6 @@ URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | RTXKG1:participates_in |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0000056 |
 |  | | BFO:0000056 |

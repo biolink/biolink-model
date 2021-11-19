@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-09T16:59:43
+# Generation date: 2021-11-19T00:39:41
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -32,7 +32,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 APO = CurieNamespace('APO', 'http://purl.obolibrary.org/obo/APO_')
-AEOLUS = CurieNamespace('Aeolus', 'http://translator.ncats.nih.gov/Aeolus_')
+AEOLUS = CurieNamespace('Aeolus', 'http://example.org/UNKNOWN/Aeolus/')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 BIGG_METABOLITE = CurieNamespace('BIGG_METABOLITE', 'http://identifiers.org/bigg.metabolite/')
 BIGG_REACTION = CurieNamespace('BIGG_REACTION', 'http://identifiers.org/bigg.reaction/')
@@ -58,7 +58,10 @@ CLO = CurieNamespace('CLO', 'http://purl.obolibrary.org/obo/CLO_')
 COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://purl.org/coar/resource_type/')
 COG = CurieNamespace('COG', 'https://www.ncbi.nlm.nih.gov/research/cog-project/')
 CPT = CurieNamespace('CPT', 'https://www.ama-assn.org/practice-management/cpt/')
-CTD = CurieNamespace('CTD', 'http://translator.ncats.nih.gov/CTD_')
+CTD = CurieNamespace('CTD', 'http://ctdbase.org/')
+CTD_CHEMICAL = CurieNamespace('CTD_CHEMICAL', 'http://ctdbase.org/detail.go?type=chem&acc=')
+CTD_DISEASE = CurieNamespace('CTD_DISEASE', 'http://ctdbase.org/detail.go?type=disease&db=MESH&acc=')
+CTD_GENE = CurieNamespace('CTD_GENE', 'http://ctdbase.org/detail.go?type=gene&acc=')
 CHEMBANK = CurieNamespace('ChemBank', 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=')
 CLINVARVARIANT = CurieNamespace('ClinVarVariant', 'http://www.ncbi.nlm.nih.gov/clinvar/variation/')
 DBSNP = CurieNamespace('DBSNP', 'http://identifiers.org/dbsnp/')
@@ -67,7 +70,7 @@ DGIDB = CurieNamespace('DGIdb', 'https://www.dgidb.org/interaction_types')
 DOID = CurieNamespace('DOID', 'http://purl.obolibrary.org/obo/DOID_')
 DOID_PROPERTY = CurieNamespace('DOID-PROPERTY', 'http://purl.obolibrary.org/obo/doid#')
 DRUGBANK = CurieNamespace('DRUGBANK', 'http://identifiers.org/drugbank/')
-DRUGCENTRAL = CurieNamespace('DrugCentral', 'http://translator.ncats.nih.gov/DrugCentral_')
+DRUGCENTRAL = CurieNamespace('DrugCentral', 'http://drugcentral.org/drugcard/')
 EC = CurieNamespace('EC', 'http://www.enzyme-database.org/query.php?ec=')
 ECO = CurieNamespace('ECO', 'http://purl.obolibrary.org/obo/ECO_')
 ECTO = CurieNamespace('ECTO', 'http://purl.obolibrary.org/obo/ECTO_')
@@ -105,8 +108,7 @@ HMDB = CurieNamespace('HMDB', 'http://identifiers.org/hmdb/')
 HP = CurieNamespace('HP', 'http://purl.obolibrary.org/obo/HP_')
 HSAPDV = CurieNamespace('HsapDv', 'http://purl.obolibrary.org/obo/HsapDv_')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
-ICD0 = CurieNamespace('ICD0', 'http://translator.ncats.nih.gov/ICD0_')
-ICD10 = CurieNamespace('ICD10', 'http://translator.ncats.nih.gov/ICD10_')
+ICD10 = CurieNamespace('ICD10', 'https://icd.codes/icd9cm/')
 ICD9 = CurieNamespace('ICD9', 'http://translator.ncats.nih.gov/ICD9_')
 IDO = CurieNamespace('IDO', 'http://purl.obolibrary.org/obo/IDO_')
 INCHI = CurieNamespace('INCHI', 'http://identifiers.org/inchi/')
@@ -141,7 +143,6 @@ MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
 MPATH = CurieNamespace('MPATH', 'http://purl.obolibrary.org/obo/MPATH_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
-METACYC = CurieNamespace('MetaCyc', 'http://translator.ncats.nih.gov/MetaCyc_')
 NBO = CurieNamespace('NBO', 'http://purl.obolibrary.org/obo/NBO_')
 NBO_PROPERTY = CurieNamespace('NBO-PROPERTY', 'http://purl.obolibrary.org/obo/nbo#')
 NCBIGENE = CurieNamespace('NCBIGene', 'http://identifiers.org/ncbigene/')
@@ -164,7 +165,6 @@ PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://www.pantherdb.org/pant
 PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/panther.pathway/')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 PCO = CurieNamespace('PCO', 'http://purl.obolibrary.org/obo/PCO_')
-PDQ = CurieNamespace('PDQ', 'https://www.cancer.gov/publications/pdq#')
 PFAM = CurieNamespace('PFAM', 'http://identifiers.org/pfam/')
 PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'http://identifiers.org/pharmgkb.pathways/')
 PHAROS = CurieNamespace('PHAROS', 'http://pharos.nih.gov')
@@ -187,7 +187,6 @@ RGD = CurieNamespace('RGD', 'http://identifiers.org/rgd/')
 RHEA = CurieNamespace('RHEA', 'http://identifiers.org/rhea/')
 RNACENTRAL = CurieNamespace('RNACENTRAL', 'http://identifiers.org/rnacentral/')
 RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
-RTXKG1 = CurieNamespace('RTXKG1', 'http://kg1endpoint.rtx.ai/')
 RXCUI = CurieNamespace('RXCUI', 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=')
 RXNORM = CurieNamespace('RXNORM', 'http://purl.bioontology.org/ontology/RXNORM/')
 RESEARCHID = CurieNamespace('ResearchID', 'https://publons.com/researcher/')
@@ -201,7 +200,6 @@ SMART = CurieNamespace('SMART', 'http://identifiers.org/smart/')
 SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
 SNOMED = CurieNamespace('SNOMED', 'http://www.snomedbrowser.com/Codes/Details/')
 SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://www.snomedbrowser.com/Codes/Details/')
-SNPEFF = CurieNamespace('SNPEFF', 'http://translator.ncats.nih.gov/SNPEFF_')
 SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
 STATO = CurieNamespace('STATO', 'http://purl.obolibrary.org/obo/STATO_')
 STY = CurieNamespace('STY', 'http://purl.bioontology.org/ontology/STY/')
@@ -240,8 +238,8 @@ ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.or
 APOLLO = CurieNamespace('apollo', 'https://github.com/GMOD/Apollo')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOSCHEMAS = CurieNamespace('bioschemas', 'https://bioschemas.org/')
-CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
+DCID = CurieNamespace('dcid', 'https://datacommons.org/browser/')
 DCT = CurieNamespace('dct', 'http://purl.org/dc/terms/')
 DCTYPES = CurieNamespace('dctypes', 'http://purl.org/dc/dcmitype/')
 DICTYBASE = CurieNamespace('dictyBase', 'http://dictybase.org/gene/')
@@ -253,13 +251,13 @@ FOODB_COMPOUND = CurieNamespace('foodb_compound', 'http://foodb.ca/compounds/')
 GFF3 = CurieNamespace('gff3', 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#')
 GPI = CurieNamespace('gpi', 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#')
 GTPO = CurieNamespace('gtpo', 'https://rdf.guidetopharmacology.org/ns/gtpo#')
-HETIO = CurieNamespace('hetio', 'http://translator.ncats.nih.gov/hetio_')
 INTERPRO = CurieNamespace('interpro', 'https://www.ebi.ac.uk/interpro/entry/')
 ISBN = CurieNamespace('isbn', 'https://www.isbn-international.org/identifier/')
 ISNI = CurieNamespace('isni', 'https://isni.org/isni/')
 ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
+METACYC_REACTION = CurieNamespace('metacyc_reaction', 'https://identifiers.org/metacyc.reaction:')
 MIRBASE = CurieNamespace('mirbase', 'http://identifiers.org/mirbase')
 OBOINOWL = CurieNamespace('oboInOwl', 'http://www.geneontology.org/formats/oboInOwl#')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOwl#')
@@ -3181,6 +3179,9 @@ class Disease(DiseaseOrPhenotypicFeature):
 
 @dataclass
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
+    """
+    A combination of entity and quality that makes up a phenotyping statement.
+    """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicFeature
@@ -8516,6 +8517,9 @@ slots.related_to_at_concept_level = Slot(uri=BIOLINK.related_to_at_concept_level
 slots.related_to_at_instance_level = Slot(uri=BIOLINK.related_to_at_instance_level, name="related to at instance level", curie=BIOLINK.curie('related_to_at_instance_level'),
                    model_uri=BIOLINK.related_to_at_instance_level, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.associated_with = Slot(uri=BIOLINK.associated_with, name="associated with", curie=BIOLINK.curie('associated_with'),
+                   model_uri=BIOLINK.associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.superclass_of = Slot(uri=BIOLINK.superclass_of, name="superclass of", curie=BIOLINK.curie('superclass_of'),
                    model_uri=BIOLINK.superclass_of, domain=None, range=Optional[Union[Union[dict, "OntologyClass"], List[Union[dict, "OntologyClass"]]]])
 
@@ -8623,6 +8627,24 @@ slots.affects = Slot(uri=BIOLINK.affects, name="affects", curie=BIOLINK.curie('a
 
 slots.affected_by = Slot(uri=BIOLINK.affected_by, name="affected by", curie=BIOLINK.curie('affected_by'),
                    model_uri=BIOLINK.affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.associated_with_sensitivity_to = Slot(uri=BIOLINK.associated_with_sensitivity_to, name="associated with sensitivity to", curie=BIOLINK.curie('associated_with_sensitivity_to'),
+                   model_uri=BIOLINK.associated_with_sensitivity_to, domain=NamedThing, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+
+slots.sensitivity_associated_with = Slot(uri=BIOLINK.sensitivity_associated_with, name="sensitivity associated with", curie=BIOLINK.curie('sensitivity_associated_with'),
+                   model_uri=BIOLINK.sensitivity_associated_with, domain=ChemicalEntity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.associated_with_resistance_to = Slot(uri=BIOLINK.associated_with_resistance_to, name="associated with resistance to", curie=BIOLINK.curie('associated_with_resistance_to'),
+                   model_uri=BIOLINK.associated_with_resistance_to, domain=NamedThing, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
+
+slots.resistance_associated_with = Slot(uri=BIOLINK.resistance_associated_with, name="resistance associated with", curie=BIOLINK.curie('resistance_associated_with'),
+                   model_uri=BIOLINK.resistance_associated_with, domain=ChemicalEntity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.diagnoses = Slot(uri=BIOLINK.diagnoses, name="diagnoses", curie=BIOLINK.curie('diagnoses'),
+                   model_uri=BIOLINK.diagnoses, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+
+slots.is_diagnosed_by = Slot(uri=BIOLINK.is_diagnosed_by, name="is diagnosed by", curie=BIOLINK.curie('is_diagnosed_by'),
+                   model_uri=BIOLINK.is_diagnosed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.increases_amount_or_activity_of = Slot(uri=BIOLINK.increases_amount_or_activity_of, name="increases amount or activity of", curie=BIOLINK.curie('increases_amount_or_activity_of'),
                    model_uri=BIOLINK.increases_amount_or_activity_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])

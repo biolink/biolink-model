@@ -35,6 +35,7 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | is substance that treats |
+|  | | indicated for |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | DRUGBANK:treats |
 |  | | SEMMEDDB:TREATS |
@@ -61,7 +62,6 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 |  | | REPODB:clinically_tested_withdrawn_phase_2 |
 |  | | REPODB:clinically_tested_withdrawn_phase_2_or_phase_3 |
 |  | | REPODB:clinically_tested_withdrawn_phase_3 |
-|  | | RTXKG1:indicated_for |
 |  | | SNOMED:plays_role |
 | **Related Mappings:** | | MONDO:disease_responds_to |
 

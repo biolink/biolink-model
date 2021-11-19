@@ -34,6 +34,5 @@ URI: [biolink:increases_metabolic_processing_of](https://w3id.org/biolink/vocab/
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_metabolic_processing_of |
 | **Narrow Mappings:** | | NCIT:enzyme_metabolizes_chemical_or_drug |
 

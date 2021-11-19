@@ -66,7 +66,6 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
 |  | | RO:0002473 |
 |  | | RO:0002524 |
 |  | | RO:0002551 |
-|  | | RTXKG1:has_plasma_membrane_part |
 |  | | RXNORM:has_ingredient |
 |  | | SNOMED:has_component |
 |  | | UMLS:has_component |

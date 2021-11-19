@@ -33,7 +33,6 @@ URI: [biolink:capable_of](https://w3id.org/biolink/vocab/capable_of)
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | RTXKG1:capable_of |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002215 |
 | **Narrow Mappings:** | | NCIT:R52 |

@@ -25,3 +25,11 @@ URI: [biolink:has_splice_site_variant](https://w3id.org/biolink/vocab/has_splice
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | downstream gene variant |
+|  | | upstream gene variant |
+

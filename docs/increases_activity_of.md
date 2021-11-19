@@ -34,7 +34,6 @@ URI: [biolink:increases_activity_of](https://w3id.org/biolink/vocab/increases_ac
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_activity_of |
 | **Narrow Mappings:** | | GAMMA:activator |
 |  | | GAMMA:partial_agonist |
 |  | | GAMMA:agonist |

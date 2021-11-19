@@ -117,7 +117,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
  * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
- * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+ * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
  * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
  * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
  * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin

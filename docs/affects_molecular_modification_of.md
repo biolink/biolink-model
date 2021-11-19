@@ -36,7 +36,6 @@ URI: [biolink:affects_molecular_modification_of](https://w3id.org/biolink/vocab/
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_molecular_modification_of |
 | **Narrow Mappings:** | | CTD:affects_acetylation |
 |  | | CTD:affects_acylation |
 |  | | CTD:affects_alkylation |

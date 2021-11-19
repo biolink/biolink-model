@@ -31,7 +31,4 @@ URI: [biolink:is_missense_variant_of](https://w3id.org/biolink/vocab/is_missense
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | SO:0001583 |
-|  | | SNPEFF:missense_variant |
-| **Narrow Mappings:** | | SNPEFF:initiator_codon_variant |
-|  | | SNPEFF:structural_interaction_variant |
 

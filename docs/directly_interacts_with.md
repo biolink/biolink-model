@@ -30,9 +30,7 @@ URI: [biolink:directly_interacts_with](https://w3id.org/biolink/vocab/directly_i
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | chembio:interacts |
-|  | | CTD:interacts_with |
-|  | | GAMMA:interacts_with |
+| **Exact Mappings:** | | GAMMA:interacts_with |
 | **Narrow Mappings:** | | PHAROS:drug_targets |
 |  | | DRUGBANK:chelator |
 |  | | GAMMA:antibody_binding |

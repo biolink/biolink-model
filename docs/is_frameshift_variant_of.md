@@ -30,8 +30,8 @@ URI: [biolink:is_frameshift_variant_of](https://w3id.org/biolink/vocab/is_frames
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | frameshift variant |
+|  | | start lost |
+|  | | stop lost |
 | **Exact Mappings:** | | SO:0001589 |
-|  | | SNPEFF:frameshift_variant |
-| **Narrow Mappings:** | | SNPEFF:start_lost |
-|  | | SNPEFF:stop_lost |
 

@@ -33,7 +33,6 @@ URI: [biolink:has_plasma_membrane_part](https://w3id.org/biolink/vocab/has_plasm
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | RTXKG1:has_plasma_membrane_part |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002104 |
 

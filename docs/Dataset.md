@@ -104,4 +104,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | IAO:0000100 |
 |  | | dctypes:Dataset |
 |  | | schema:dataset |
+|  | | dcid:Dataset |
 

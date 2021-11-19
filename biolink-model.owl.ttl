@@ -16,6 +16,7 @@
 @prefix biolink: <https://w3id.org/biolink/vocab/> .
 @prefix bioschemas: <https://bioschemas.org/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcid: <https://datacommons.org/browser/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix linkml: <https://w3id.org/linkml/> .
@@ -75,13 +76,13 @@ dcat:downloadURL a owl:ObjectProperty .
         biolink:ThingWithTaxon,
         biolink:VariantToEntityAssociationMixin ;
     dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    pav:version "2.2.9" ;
+    pav:version "2.2.10" ;
     skos:definition "Entity and association taxonomy and datamodel for life-sciences data" ;
-    linkml:generation_date "2021-11-09T16:59:06" ;
+    linkml:generation_date "2021-11-19T00:39:04" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "biolink-model.yaml" ;
-    linkml:source_file_date "2021-11-09T16:56:29" ;
-    linkml:source_file_size 325387 .
+    linkml:source_file_date "2021-11-19T00:36:21" ;
+    linkml:source_file_size 322598 .
 
 biolink:Activity a owl:Class ;
     rdfs:label "activity" ;
@@ -102,16 +103,16 @@ biolink:Activity a owl:Class ;
 biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation a owl:Class ;
     rdfs:label "anatomical entity to anatomical entity ontogenic association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:AnatomicalEntity ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:AnatomicalEntityToAnatomicalEntityAssociation ;
     skos:definition "A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship." .
@@ -119,16 +120,16 @@ biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation a owl:Class ;
 biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a owl:Class ;
     rdfs:label "anatomical entity to anatomical entity part of association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:AnatomicalEntity ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty rdf:subject ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:AnatomicalEntityToAnatomicalEntityAssociation ;
     skos:definition "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms" .
@@ -136,9 +137,9 @@ biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a owl:Class ;
 biolink:Article a owl:Class ;
     rdfs:label "article" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:iso_abbreviation ],
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty biolink:published_in ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -148,18 +149,14 @@ biolink:Article a owl:Class ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:issue ],
         [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty biolink:published_in ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:iso_abbreviation ],
         biolink:Publication .
 
 biolink:BehaviorToBehavioralFeatureAssociation a owl:Class ;
     rdfs:label "behavior to behavioral feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:BehavioralFeature ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FrequencyValue ;
             owl:onProperty biolink:frequency_qualifier ],
@@ -173,12 +170,16 @@ biolink:BehaviorToBehavioralFeatureAssociation a owl:Class ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
+            owl:onClass biolink:BehavioralFeature ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:EntityToPhenotypicFeatureAssociationMixin ;
     skos:definition "An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior." .
@@ -212,11 +213,11 @@ biolink:Book a owl:Class ;
     rdfs:label "book" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:id ;
+            owl:onProperty rdf:type ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty rdf:type ;
+            owl:onProperty biolink:id ;
             owl:qualifiedCardinality 1 ],
         biolink:Publication ;
     skos:definition "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility." .
@@ -225,20 +226,20 @@ biolink:CaseToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "case to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
         biolink:Association,
         biolink:CaseToEntityAssociationMixin,
         biolink:EntityToPhenotypicFeatureAssociationMixin ;
@@ -257,20 +258,20 @@ biolink:CellLineAsAModelOfDiseaseAssociation a owl:Class ;
     rdfs:label "cell line as a model of disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
             owl:onClass biolink:CellLine ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation,
         biolink:EntityToDiseaseAssociationMixin,
         biolink:ModelToDiseaseAssociationMixin .
@@ -278,20 +279,20 @@ biolink:CellLineAsAModelOfDiseaseAssociation a owl:Class ;
 biolink:ChemicalToChemicalDerivationAssociation a owl:Class ;
     rdfs:label "chemical to chemical derivation association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:ChemicalEntity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:MacromolecularMachineMixin ;
-            owl:onProperty biolink:catalyst_qualifier ],
+            owl:onClass biolink:ChemicalEntity ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:ChemicalEntity ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:MacromolecularMachineMixin ;
+            owl:onProperty biolink:catalyst_qualifier ],
         biolink:ChemicalToChemicalAssociation ;
     skos:definition """A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
   IF
@@ -376,19 +377,19 @@ biolink:ComplexMolecularMixture a owl:Class ;
 biolink:ContributorAssociation a owl:Class ;
     rdfs:label "contributor association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom biolink:OntologyClass ;
-            owl:onProperty biolink:qualifiers ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
+            owl:onClass biolink:Agent ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:InformationContentEntity ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:Agent ;
-            owl:onProperty rdf:object ;
+            owl:allValuesFrom biolink:OntologyClass ;
+            owl:onProperty biolink:qualifiers ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Any association between an entity (such as a publication) and various agents that contribute to its realisation" .
@@ -433,19 +434,20 @@ biolink:DiseaseToPhenotypicFeatureAssociation a owl:Class ;
             owl:onProperty biolink:sex_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         biolink:Association,
         biolink:DiseaseToEntityAssociationMixin,
         biolink:EntityToPhenotypicFeatureAssociationMixin ;
+    skos:closeMatch dcid:DiseaseSymptomAssociation ;
     skos:definition "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way." .
 
 biolink:DrugToGeneAssociation a owl:Class ;
@@ -544,14 +546,6 @@ biolink:ExposureEventToOutcomeAssociation a owl:Class ;
 biolink:ExposureEventToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "exposure event to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:ExposureEvent ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
@@ -560,9 +554,17 @@ biolink:ExposureEventToPhenotypicFeatureAssociation a owl:Class ;
             owl:onClass biolink:BiologicalSex ;
             owl:onProperty biolink:sex_qualifier ],
         [ a owl:Restriction ;
+            owl:onClass biolink:ExposureEvent ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         biolink:Association,
         biolink:EntityToPhenotypicFeatureAssociationMixin ;
     skos:definition "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype." .
@@ -620,16 +622,16 @@ biolink:GeneHasVariantThatContributesToDiseaseAssociation a owl:Class ;
 biolink:GeneRegulatoryRelationship a owl:Class ;
     rdfs:label "gene regulatory relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
+            owl:onClass biolink:GeneOrGeneProduct ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:GeneOrGeneProduct ;
-            owl:onProperty rdf:subject ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "A regulatory relationship between two genes" .
@@ -638,9 +640,17 @@ biolink:GeneToExpressionSiteAssociation a owl:Class ;
     rdfs:label "gene to expression site association" ;
     rdfs:seeAlso "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:LifeStage ;
+            owl:onProperty biolink:stage_qualifier ],
+        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:OntologyClass ;
+            owl:onProperty biolink:quantifier_qualifier ],
         [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
             owl:onProperty rdf:subject ;
@@ -649,14 +659,6 @@ biolink:GeneToExpressionSiteAssociation a owl:Class ;
             owl:onClass biolink:AnatomicalEntity ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LifeStage ;
-            owl:onProperty biolink:stage_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:OntologyClass ;
-            owl:onProperty biolink:quantifier_qualifier ],
         biolink:Association ;
     skos:definition "An association between a gene and an expression site, possibly qualified by stage/timing info." ;
     skos:editorialNote "TBD: introduce subclasses for distinction between wild-type and experimental conditions?" .
@@ -665,24 +667,24 @@ biolink:GeneToGeneCoexpressionAssociation a owl:Class ;
     rdfs:label "gene to gene coexpression association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LifeStage ;
-            owl:onProperty biolink:stage_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:DiseaseOrPhenotypicFeature ;
             owl:onProperty biolink:phenotypic_state ],
         [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:expression_site ],
+            owl:onClass biolink:LifeStage ;
+            owl:onProperty biolink:stage_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:quantifier_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:expression_site ],
         biolink:GeneExpressionMixin,
         biolink:GeneToGeneAssociation ;
     skos:definition "Indicates that two genes are co-expressed, generally under the same conditions." .
@@ -703,12 +705,12 @@ biolink:GeneToGeneProductRelationship a owl:Class ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:GeneProductMixin ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:Gene ;
             owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:GeneProductMixin ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:SequenceFeatureRelationship ;
     skos:definition "A gene is transcribed and potentially translated to a gene product" .
@@ -730,25 +732,25 @@ biolink:GeneToGoTermAssociation a owl:Class ;
 biolink:GeneToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "gene to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass biolink:GeneOrGeneProduct ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSex ;
             owl:onProperty biolink:sex_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:GeneOrGeneProduct ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         biolink:Association,
         biolink:EntityToPhenotypicFeatureAssociationMixin,
         biolink:GeneToEntityAssociationMixin ;
@@ -757,16 +759,17 @@ biolink:GeneToPhenotypicFeatureAssociation a owl:Class ;
 biolink:Genome a owl:Class ;
     rdfs:label "genome" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom biolink:OrganismTaxon ;
-            owl:onProperty biolink:in_taxon ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSequence ;
             owl:onProperty biolink:has_biological_sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:OrganismTaxon ;
+            owl:onProperty biolink:in_taxon ],
         biolink:BiologicalEntity,
         biolink:GenomicEntity,
         biolink:OntologyClass,
         biolink:PhysicalEssence ;
+    skos:closeMatch dcid:GenomeAssemblyUnit ;
     skos:definition "A genome is the sum of genetic material within a cell or virion." ;
     skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001026>,
         SIO:000984,
@@ -808,16 +811,16 @@ biolink:GenotypeAsAModelOfDiseaseAssociation a owl:Class ;
 biolink:GenotypeToGeneAssociation a owl:Class ;
     rdfs:label "genotype to gene association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:Genotype ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:Gene ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:Genotype ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality" .
@@ -826,11 +829,11 @@ biolink:GenotypeToGenotypePartAssociation a owl:Class ;
     rdfs:label "genotype to genotype part association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biolink:Genotype ;
-            owl:onProperty rdf:object ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:Genotype ;
-            owl:onProperty rdf:subject ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
@@ -842,29 +845,29 @@ biolink:GenotypeToGenotypePartAssociation a owl:Class ;
 biolink:GenotypeToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "genotype to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:Genotype ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FrequencyValue ;
             owl:onProperty biolink:frequency_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:EntityToPhenotypicFeatureAssociationMixin,
         biolink:GenotypeToEntityAssociationMixin ;
@@ -873,12 +876,12 @@ biolink:GenotypeToPhenotypicFeatureAssociation a owl:Class ;
 biolink:GenotypeToVariantAssociation a owl:Class ;
     rdfs:label "genotype to variant association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:Genotype ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:Genotype ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:SequenceVariant ;
@@ -897,7 +900,22 @@ biolink:GeographicExposure a owl:Class ;
     rdfs:label "geographic exposure" ;
     rdfs:subClassOf biolink:EnvironmentalExposure,
         biolink:ExposureEvent ;
-    skos:definition "A geographic exposure is a factor relating to geographic proximity to some impactful entity." .
+    skos:closeMatch dcid:GeologicalEvent ;
+    skos:definition "A geographic exposure is a factor relating to geographic proximity to some impactful entity." ;
+    skos:narrowMatch dcid:IceStoremEvent,
+        dcid:LakeEffectSnowEvent,
+        dcid:LandslideEvent,
+        dcid:MarineDenseFogEvent,
+        dcid:MarineLighteningEvent,
+        dcid:MarineStrongWindEvent,
+        dcid:MarineThunderstormWindEvent,
+        dcid:StormEvent,
+        dcid:StormSurgeTideEvent,
+        dcid:StrongWindEvent,
+        dcid:ThunderstormWindEvent,
+        dcid:TornadoEvent,
+        dcid:TropicalDepressionEvent,
+        dcid:WinterStoremEvent .
 
 biolink:GeographicLocationAtTime a owl:Class ;
     rdfs:label "geographic location at time" ;
@@ -1019,16 +1037,16 @@ biolink:Macronutrient a owl:Class ;
 biolink:MaterialSampleDerivationAssociation a owl:Class ;
     rdfs:label "material sample derivation association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:MaterialSample ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "An association between a material sample and the material entity from which it is derived." .
@@ -1050,12 +1068,12 @@ biolink:MicroRNA a owl:Class ;
 biolink:MolecularActivityToChemicalEntityAssociation a owl:Class ;
     rdfs:label "molecular activity to chemical entity association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:ChemicalEntity ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:MolecularActivity ;
             owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:ChemicalEntity ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples" .
@@ -1064,11 +1082,11 @@ biolink:MolecularActivityToMolecularActivityAssociation a owl:Class ;
     rdfs:label "molecular activity to molecular activity association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biolink:MolecularActivity ;
-            owl:onProperty rdf:object ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:MolecularActivity ;
-            owl:onProperty rdf:subject ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples" .
@@ -1091,12 +1109,12 @@ biolink:OrganismTaxonToEnvironmentAssociation a owl:Class ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:OrganismTaxon ;
             owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:OrganismTaxonToEntityAssociation .
@@ -1125,16 +1143,16 @@ biolink:OrganismTaxonToOrganismTaxonInteraction a owl:Class ;
 biolink:OrganismTaxonToOrganismTaxonSpecialization a owl:Class ;
     rdfs:label "organism taxon to organism taxon specialization" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
+            owl:onClass biolink:OrganismTaxon ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:OrganismTaxon ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:OrganismTaxon ;
-            owl:onProperty rdf:subject ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:OrganismTaxonToOrganismTaxonAssociation ;
     skos:definition "A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo" .
@@ -1142,6 +1160,10 @@ biolink:OrganismTaxonToOrganismTaxonSpecialization a owl:Class ;
 biolink:OrganismToOrganismAssociation a owl:Class ;
     rdfs:label "organism to organism association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass biolink:IndividualOrganism ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:relation ],
@@ -1149,30 +1171,26 @@ biolink:OrganismToOrganismAssociation a owl:Class ;
             owl:onClass biolink:IndividualOrganism ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:IndividualOrganism ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
         biolink:Association .
 
 biolink:OrganismalEntityAsAModelOfDiseaseAssociation a owl:Class ;
     rdfs:label "organismal entity as a model of disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
             owl:onClass biolink:OrganismalEntity ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         biolink:Association,
         biolink:EntityToDiseaseAssociationMixin,
         biolink:ModelToDiseaseAssociationMixin .
@@ -1184,10 +1202,6 @@ biolink:PairwiseMolecularInteraction a owl:Class ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:interacting_molecules_category ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:relation ],
-        [ a owl:Restriction ;
             owl:onClass biolink:MolecularEntity ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
@@ -1195,6 +1209,10 @@ biolink:PairwiseMolecularInteraction a owl:Class ;
             owl:onClass biolink:MolecularEntity ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:relation ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
@@ -1280,7 +1298,8 @@ biolink:PhenotypicQuality a owl:Class ;
     rdfs:subClassOf biolink:OrganismAttribute ;
     skos:altLabel "phenotypic properties" ;
     skos:definition "A property of a phenotype" ;
-    skos:exactMatch <http://purl.obolibrary.org/obo/PATO_0000001> .
+    skos:exactMatch <http://purl.obolibrary.org/obo/PATO_0000001> ;
+    linkml:examples "Example(value='weight', description=None)" .
 
 biolink:PhenotypicSex a owl:Class ;
     rdfs:label "phenotypic sex" ;
@@ -1304,7 +1323,7 @@ biolink:PopulationToPopulationAssociation a owl:Class ;
     rdfs:label "population to population association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biolink:PopulationOfIndividualOrganisms ;
-            owl:onProperty rdf:subject ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
@@ -1312,7 +1331,7 @@ biolink:PopulationToPopulationAssociation a owl:Class ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PopulationOfIndividualOrganisms ;
-            owl:onProperty rdf:object ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "An association between a two populations" .
@@ -1405,12 +1424,12 @@ biolink:SensitivityQuantifier a owl:Class ;
 biolink:SequenceVariantModulatesTreatmentAssociation a owl:Class ;
     rdfs:label "sequence variant modulates treatment association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:Treatment ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:SequenceVariant ;
             owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:Treatment ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used." ;
@@ -1421,7 +1440,7 @@ biolink:Serial a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:volume ],
+            owl:onProperty biolink:iso_abbreviation ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -1431,13 +1450,13 @@ biolink:Serial a owl:Class ;
             owl:onProperty rdf:type ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:volume ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:id ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:iso_abbreviation ],
         biolink:Publication ;
     skos:altLabel "journal" ;
     skos:definition "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility." .
@@ -1497,27 +1516,27 @@ biolink:TaxonToTaxonAssociation a owl:Class ;
     rdfs:label "taxon to taxon association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biolink:OrganismTaxon ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:OrganismTaxon ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:relation ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:OrganismTaxon ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
         biolink:Association .
 
 biolink:TranscriptToGeneRelationship a owl:Class ;
     rdfs:label "transcript to gene relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:Transcript ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:Gene ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:Transcript ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:SequenceFeatureRelationship ;
     skos:definition "A gene is a collection of transcripts" .
@@ -1542,14 +1561,6 @@ biolink:VariantToGeneExpressionAssociation a owl:Class ;
     rdfs:label "variant to gene expression association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LifeStage ;
-            owl:onProperty biolink:stage_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:OntologyClass ;
-            owl:onProperty biolink:quantifier_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:AnatomicalEntity ;
             owl:onProperty biolink:expression_site ],
         [ a owl:Restriction ;
@@ -1560,6 +1571,14 @@ biolink:VariantToGeneExpressionAssociation a owl:Class ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:DiseaseOrPhenotypicFeature ;
             owl:onProperty biolink:phenotypic_state ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:LifeStage ;
+            owl:onProperty biolink:stage_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:OntologyClass ;
+            owl:onProperty biolink:quantifier_qualifier ],
         biolink:GeneExpressionMixin,
         biolink:VariantToGeneAssociation ;
     skos:definition "An association between a variant and expression of a gene (i.e. e-QTL)" .
@@ -1567,21 +1586,21 @@ biolink:VariantToGeneExpressionAssociation a owl:Class ;
 biolink:VariantToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "variant to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:SequenceVariant ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
+            owl:onClass biolink:SequenceVariant ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FrequencyValue ;
@@ -1594,8 +1613,12 @@ biolink:VariantToPopulationAssociation a owl:Class ;
     rdfs:label "variant to population association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty biolink:has_total ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PopulationOfIndividualOrganisms ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
@@ -1603,23 +1626,19 @@ biolink:VariantToPopulationAssociation a owl:Class ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Double ;
-            owl:onProperty biolink:has_quotient ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty biolink:has_total ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Double ;
             owl:onProperty biolink:has_percentage ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:PopulationOfIndividualOrganisms ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:SequenceVariant ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Double ;
+            owl:onProperty biolink:has_quotient ],
         biolink:Association,
         biolink:FrequencyQualifierMixin,
         biolink:FrequencyQuantifier,
@@ -2150,13 +2169,13 @@ biolink:BookChapter a owl:Class ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:chapter ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:volume ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty biolink:published_in ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:volume ],
         biolink:Publication .
 
 biolink:Case a owl:Class ;
@@ -2276,26 +2295,34 @@ biolink:FrequencyQuantifier a owl:Class ;
     rdfs:label "frequency quantifier" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Double ;
-            owl:onProperty biolink:has_percentage ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty biolink:has_count ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
-            owl:onProperty biolink:has_count ],
+            owl:onProperty biolink:has_total ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Double ;
             owl:onProperty biolink:has_quotient ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty biolink:has_total ],
+            owl:onClass linkml:Double ;
+            owl:onProperty biolink:has_percentage ],
         biolink:RelationshipQuantifier,
         linkml:mixin .
 
 biolink:GenotypeToDiseaseAssociation a owl:Class ;
     rdfs:label "genotype to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
+        [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
@@ -2304,21 +2331,13 @@ biolink:GenotypeToDiseaseAssociation a owl:Class ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FrequencyValue ;
             owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:EntityToDiseaseAssociationMixin,
         biolink:GenotypeToEntityAssociationMixin ;
@@ -2329,11 +2348,11 @@ biolink:GeographicLocation a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
-            owl:onProperty biolink:longitude ],
+            owl:onProperty biolink:latitude ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
-            owl:onProperty biolink:latitude ],
+            owl:onProperty biolink:longitude ],
         biolink:PlanetaryEntity ;
     skos:definition "a location that can be described in lat/long coordinates" ;
     skos:exactMatch STY:T083,
@@ -2352,15 +2371,16 @@ biolink:MolecularMixture a owl:Class ;
 biolink:PairwiseGeneToGeneInteraction a owl:Class ;
     rdfs:label "pairwise gene to gene interaction" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:relation ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
         biolink:GeneToGeneAssociation ;
-    skos:definition "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" .
+    skos:definition "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" ;
+    skos:narrowMatch dcid:ProteinProteinInteraction .
 
 biolink:Pathway a owl:Class ;
     rdfs:label "pathway" ;
@@ -2390,20 +2410,20 @@ biolink:ReactionToParticipantAssociation a owl:Class ;
     rdfs:label "reaction to participant association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty biolink:stoichiometry ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:MolecularEntity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
+            owl:onClass <http://UNKNOWN.org/reaction_direction_enum> ;
+            owl:onProperty biolink:reaction_direction ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <http://UNKNOWN.org/reaction_side_enum> ;
             owl:onProperty biolink:reaction_side ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <http://UNKNOWN.org/reaction_direction_enum> ;
-            owl:onProperty biolink:reaction_direction ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty biolink:stoichiometry ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:MolecularEntity ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         biolink:ChemicalToChemicalAssociation .
 
 biolink:SequenceAssociation a owl:Class ;
@@ -2438,15 +2458,15 @@ biolink:Treatment a owl:Class ;
             owl:allValuesFrom biolink:Device ;
             owl:onProperty biolink:has_device ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:TimeType ;
-            owl:onProperty biolink:timepoint ],
+            owl:allValuesFrom biolink:Procedure ;
+            owl:onProperty biolink:has_procedure ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:Drug ;
             owl:onProperty biolink:has_drug ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Procedure ;
-            owl:onProperty biolink:has_procedure ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:TimeType ;
+            owl:onProperty biolink:timepoint ],
         biolink:ChemicalOrDrugOrTreatment,
         biolink:ExposureEvent,
         biolink:NamedThing ;
@@ -2460,29 +2480,29 @@ biolink:Treatment a owl:Class ;
 biolink:VariantToDiseaseAssociation a owl:Class ;
     rdfs:label "variant to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
-        [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FrequencyValue ;
             owl:onProperty biolink:frequency_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         biolink:Association,
         biolink:EntityToDiseaseAssociationMixin,
         biolink:VariantToEntityAssociationMixin ;
@@ -2616,6 +2636,22 @@ biolink:approved_to_treat a owl:ObjectProperty ;
     skos:definition "holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted." .
 
 biolink:associated_environmental_context a owl:ObjectProperty .
+
+biolink:associated_with_resistance_to a owl:ObjectProperty ;
+    rdfs:label "associated with resistance to" ;
+    rdfs:domain biolink:NamedThing ;
+    rdfs:range biolink:ChemicalEntity ;
+    rdfs:subPropertyOf biolink:associated_with ;
+    owl:inverseOf biolink:resistance_associated_with ;
+    skos:definition "A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical." .
+
+biolink:associated_with_sensitivity_to a owl:ObjectProperty ;
+    rdfs:label "associated with sensitivity to" ;
+    rdfs:domain biolink:NamedThing ;
+    rdfs:range biolink:ChemicalEntity ;
+    rdfs:subPropertyOf biolink:associated_with ;
+    owl:inverseOf biolink:sensitivity_associated_with ;
+    skos:definition "A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical." .
 
 biolink:authors a owl:ObjectProperty ;
     rdfs:label "authors" ;
@@ -2947,6 +2983,14 @@ biolink:develops_into a owl:ObjectProperty ;
     rdfs:range biolink:NamedThing ;
     rdfs:subPropertyOf biolink:related_to_at_instance_level ;
     owl:inverseOf biolink:develops_from .
+
+biolink:diagnoses a owl:ObjectProperty ;
+    rdfs:label "diagnoses" ;
+    rdfs:domain biolink:ChemicalOrDrugOrTreatment ;
+    rdfs:range biolink:DiseaseOrPhenotypicFeature ;
+    rdfs:subPropertyOf biolink:related_to_at_instance_level ;
+    owl:inverseOf biolink:is_diagnosed_by ;
+    skos:definition "a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms." .
 
 biolink:disrupted_by a owl:ObjectProperty ;
     rdfs:label "disrupted by" ;
@@ -3285,7 +3329,7 @@ biolink:has_phenotype a owl:ObjectProperty ;
     rdfs:range biolink:PhenotypicFeature ;
     rdfs:subPropertyOf biolink:related_to_at_instance_level ;
     owl:inverseOf biolink:phenotype_of ;
-    skos:definition "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature)." ;
+    skos:definition "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate." ;
     skos:editorialNote "check the range" .
 
 biolink:has_plasma_membrane_part a owl:ObjectProperty ;
@@ -3573,6 +3617,13 @@ biolink:is_active_ingredient_of a owl:ObjectProperty ;
     rdfs:subPropertyOf biolink:part_of ;
     owl:inverseOf biolink:has_active_ingredient ;
     skos:definition "holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component" .
+
+biolink:is_diagnosed_by a owl:ObjectProperty ;
+    rdfs:label "is diagnosed by" ;
+    rdfs:domain biolink:NamedThing ;
+    rdfs:range biolink:NamedThing ;
+    rdfs:subPropertyOf biolink:related_to_at_instance_level ;
+    owl:inverseOf biolink:diagnoses .
 
 biolink:is_excipient_of a owl:ObjectProperty ;
     rdfs:label "is excipient of" ;
@@ -4058,6 +4109,13 @@ biolink:reaction_side a owl:ObjectProperty ;
     rdfs:subPropertyOf biolink:association_slot ;
     skos:definition "the side of a reaction being modeled (ie: left or right)" .
 
+biolink:resistance_associated_with a owl:ObjectProperty ;
+    rdfs:label "resistance associated with" ;
+    rdfs:domain biolink:ChemicalEntity ;
+    rdfs:range biolink:NamedThing ;
+    rdfs:subPropertyOf biolink:associated_with ;
+    owl:inverseOf biolink:associated_with_resistance_to .
+
 biolink:response_decreased_by a owl:ObjectProperty ;
     rdfs:label "response decreased by" ;
     rdfs:domain biolink:ChemicalEntityOrGeneOrGeneProduct ;
@@ -4091,6 +4149,13 @@ biolink:secretion_increased_by a owl:ObjectProperty ;
     rdfs:range biolink:ChemicalEntityOrGeneOrGeneProduct ;
     rdfs:subPropertyOf biolink:secretion_affected_by ;
     owl:inverseOf biolink:increases_secretion_of .
+
+biolink:sensitivity_associated_with a owl:ObjectProperty ;
+    rdfs:label "sensitivity associated with" ;
+    rdfs:domain biolink:ChemicalEntity ;
+    rdfs:range biolink:NamedThing ;
+    rdfs:subPropertyOf biolink:associated_with ;
+    owl:inverseOf biolink:associated_with_sensitivity_to .
 
 biolink:sequence_location_of a owl:ObjectProperty ;
     rdfs:label "sequence location of" ;
@@ -4368,12 +4433,12 @@ biolink:EntityToFeatureOrDiseaseQualifiersMixin a owl:Class ;
     rdfs:label "entity to feature or disease qualifiers mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
         biolink:FrequencyQualifierMixin,
         linkml:mixin ;
     skos:definition "Qualifiers for entity to disease or phenotype associations." .
@@ -4420,23 +4485,24 @@ biolink:GeneToDiseaseAssociation a owl:Class ;
     rdfs:label "gene to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
         biolink:Association,
         biolink:EntityToDiseaseAssociationMixin,
         biolink:GeneToEntityAssociationMixin ;
+    skos:closeMatch dcid:DiseaseGeneAssociation ;
     skos:exactMatch SIO:000983 ;
     skos:note "NCIT:R176 refers to the inverse relationship" .
 
@@ -4502,7 +4568,8 @@ biolink:Procedure a owl:Class ;
     rdfs:subClassOf biolink:ActivityAndBehavior,
         biolink:NamedThing ;
     skos:definition "A series of actions conducted in a certain order or manner" ;
-    skos:exactMatch UMLSSG:PROC ;
+    skos:exactMatch dcid:MedicalProcedure,
+        UMLSSG:PROC ;
     skos:narrowMatch STY:T059,
         STY:T060,
         STY:T061,
@@ -4511,11 +4578,11 @@ biolink:Procedure a owl:Class ;
 biolink:RNAProduct a owl:Class ;
     rdfs:label "RNA product" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty biolink:xref ],
-        [ a owl:Restriction ;
             owl:allValuesFrom biolink:LabelType ;
             owl:onProperty biolink:synonym ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty biolink:xref ],
         biolink:GeneProductMixin,
         biolink:Transcript ;
     skos:exactMatch <http://purl.obolibrary.org/obo/CHEBI_33697>,
@@ -4784,14 +4851,15 @@ biolink:Entity a owl:Class ;
     rdfs:label "entity" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:NarrativeText ;
-            owl:onProperty dct:description ],
+            owl:onClass biolink:LabelType ;
+            owl:onProperty biolink:source ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Agent ;
-            owl:onProperty biolink:provided_by ],
+            owl:allValuesFrom biolink:CategoryType ;
+            owl:onProperty biolink:category ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Attribute ;
-            owl:onProperty biolink:has_attribute ],
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -4801,16 +4869,15 @@ biolink:Entity a owl:Class ;
             owl:onClass biolink:IriType ;
             owl:onProperty biolink:iri ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:CategoryType ;
-            owl:onProperty biolink:category ],
+            owl:allValuesFrom biolink:Agent ;
+            owl:onProperty biolink:provided_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:Attribute ;
+            owl:onProperty biolink:has_attribute ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LabelType ;
-            owl:onProperty biolink:source ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:id ;
-            owl:qualifiedCardinality 1 ],
+            owl:onClass biolink:NarrativeText ;
+            owl:onProperty dct:description ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:LabelType ;
@@ -4830,20 +4897,20 @@ biolink:GeneExpressionMixin a owl:Class ;
     rdfs:label "gene expression mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:DiseaseOrPhenotypicFeature ;
-            owl:onProperty biolink:phenotypic_state ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:expression_site ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:LifeStage ;
             owl:onProperty biolink:stage_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:quantifier_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:expression_site ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:DiseaseOrPhenotypicFeature ;
+            owl:onProperty biolink:phenotypic_state ],
         linkml:mixin ;
     skos:definition "Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs." .
 
@@ -5332,16 +5399,16 @@ biolink:DatasetVersion a owl:Class ;
     rdfs:label "dataset version" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty pav:version ],
+            owl:onClass biolink:DatasetDistribution ;
+            owl:onProperty dct:distribution ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Dataset ;
             owl:onProperty dct:source ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:DatasetDistribution ;
-            owl:onProperty dct:distribution ],
+            owl:onClass linkml:String ;
+            owl:onProperty pav:version ],
         biolink:InformationContentEntity ;
     skos:definition "an item that holds version level information about a dataset." .
 
@@ -5356,6 +5423,7 @@ biolink:Disease a owl:Class ;
         <http://purl.obolibrary.org/obo/MONDO_0000001>,
         <http://purl.obolibrary.org/obo/NCIT_C2991>,
         SIO:010299,
+        dcid:Disease,
         UMLSSG:DISO,
         WIKIDATA:Q12136 ;
     skos:narrowMatch STY:T019,
@@ -5417,12 +5485,12 @@ biolink:QuantityValue a owl:Class ;
     rdfs:label "quantity value" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Unit ;
-            owl:onProperty biolink:has_unit ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Double ;
             owl:onProperty biolink:has_numeric_value ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Unit ;
+            owl:onProperty biolink:has_unit ],
         biolink:Annotation ;
     skos:definition "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value" .
 
@@ -5505,7 +5573,8 @@ biolink:Dataset a owl:Class ;
     skos:definition "an item that refers to a collection of data from a data source." ;
     skos:exactMatch IAO:0000100,
         <http://purl.org/dc/dcmitype/Dataset>,
-        schema:dataset .
+        schema:dataset,
+        dcid:Dataset .
 
 biolink:InformationResource a owl:Class ;
     rdfs:label "information resource" ;
@@ -5521,12 +5590,14 @@ biolink:PhenotypicFeature a owl:Class ;
         "sign",
         "symptom",
         "trait" ;
+    skos:definition "A combination of entity and quality that makes up a phenotyping statement." ;
     skos:exactMatch <http://purl.obolibrary.org/obo/UPHENO_0001001>,
         SIO:010056,
         WIKIDATA:Q104053 ;
     skos:narrowMatch STY:T184,
         WIKIDATA:Q169872,
-        WIKIDATA:Q25203551 .
+        WIKIDATA:Q25203551 ;
+    linkml:examples "Example(value='MP:0001262', description='decreased body weight')" .
 
 biolink:VariantToEntityAssociationMixin a owl:Class ;
     rdfs:label "variant to entity association mixin" ;
@@ -5535,6 +5606,14 @@ biolink:VariantToEntityAssociationMixin a owl:Class ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         linkml:mixin .
+
+biolink:associated_with a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "associated with" ;
+    rdfs:domain biolink:NamedThing ;
+    rdfs:range biolink:NamedThing ;
+    rdfs:subPropertyOf biolink:related_to_at_instance_level ;
+    skos:definition "Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'." .
 
 biolink:has_attribute a owl:ObjectProperty .
 
@@ -5565,17 +5644,18 @@ biolink:ChemicalMixture a owl:Class ;
     rdfs:label "chemical mixture" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:ChemicalMixture ;
-            owl:onProperty biolink:is_supplement ],
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:drug_regulatory_status_world_wide ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:highest_FDA_approval_status ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:drug_regulatory_status_world_wide ],
+            owl:onClass biolink:ChemicalMixture ;
+            owl:onProperty biolink:is_supplement ],
         biolink:ChemicalEntity ;
+    skos:closeMatch dcid:ChemicalCompound ;
     skos:definition "A chemical mixture is a chemical entity composed of two or more molecular entities." .
 
 biolink:GeneGroupingMixin a owl:Class ;
@@ -5589,11 +5669,11 @@ biolink:GeneGroupingMixin a owl:Class ;
 biolink:GeneProductMixin a owl:Class ;
     rdfs:label "gene product mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty biolink:xref ],
-        [ a owl:Restriction ;
             owl:allValuesFrom biolink:LabelType ;
             owl:onProperty biolink:synonym ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty biolink:xref ],
         biolink:GeneOrGeneProduct,
         linkml:mixin ;
     skos:definition "The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules." ;
@@ -5613,12 +5693,12 @@ biolink:MacromolecularMachineMixin a owl:Class ;
 biolink:ModelToDiseaseAssociationMixin a owl:Class ;
     rdfs:label "model to disease association mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         linkml:mixin ;
     skos:definition "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease" .
@@ -5648,7 +5728,7 @@ biolink:correlated_with a owl:ObjectProperty,
     rdfs:label "correlated with" ;
     rdfs:domain biolink:NamedThing ;
     rdfs:range biolink:NamedThing ;
-    rdfs:subPropertyOf biolink:related_to_at_instance_level ;
+    rdfs:subPropertyOf biolink:associated_with ;
     skos:definition "holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." .
 
 biolink:has_gene_or_gene_product a owl:ObjectProperty ;
@@ -5677,17 +5757,17 @@ biolink:part_of a owl:ObjectProperty ;
 biolink:EntityToPhenotypicFeatureAssociationMixin a owl:Class ;
     rdfs:label "entity to phenotypic feature association mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:NarrativeText ;
-            owl:onProperty dct:description ],
+            owl:onClass biolink:PhenotypicFeature ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSex ;
             owl:onProperty biolink:sex_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:PhenotypicFeature ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:NarrativeText ;
+            owl:onProperty dct:description ],
         biolink:EntityToFeatureOrDiseaseQualifiersMixin,
         linkml:mixin .
 
@@ -5695,12 +5775,12 @@ biolink:Genotype a owl:Class ;
     rdfs:label "genotype" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Zygosity ;
-            owl:onProperty biolink:has_zygosity ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSequence ;
             owl:onProperty biolink:has_biological_sequence ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Zygosity ;
+            owl:onProperty biolink:has_zygosity ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:OrganismTaxon ;
             owl:onProperty biolink:in_taxon ],
@@ -5731,10 +5811,6 @@ biolink:participates_in a owl:ObjectProperty ;
     owl:inverseOf biolink:has_participant ;
     skos:definition "holds between a continuant and a process, where the continuant is somehow involved in the process" .
 
-biolink:ChemicalOrDrugOrTreatment a owl:Class ;
-    rdfs:label "chemical or drug or treatment" ;
-    rdfs:subClassOf linkml:mixin .
-
 biolink:EntityToDiseaseAssociationMixin a owl:Class ;
     rdfs:label "entity to disease association mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -5762,11 +5838,11 @@ biolink:MolecularActivity a owl:Class ;
             owl:allValuesFrom biolink:MolecularEntity ;
             owl:onProperty biolink:has_input ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:MacromolecularMachineMixin ;
-            owl:onProperty biolink:enabled_by ],
-        [ a owl:Restriction ;
             owl:allValuesFrom biolink:MolecularEntity ;
             owl:onProperty biolink:has_output ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:MacromolecularMachineMixin ;
+            owl:onProperty biolink:enabled_by ],
         biolink:BiologicalProcessOrActivity,
         biolink:Occurrent,
         biolink:OntologyClass ;
@@ -5804,20 +5880,20 @@ biolink:sex_qualifier a owl:ObjectProperty ;
 biolink:Agent a owl:Class ;
     rdfs:label "agent" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty biolink:affiliation ],
+            owl:onProperty biolink:address ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:LabelType ;
             owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty biolink:affiliation ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:address ],
+            owl:onProperty biolink:id ;
+            owl:qualifiedCardinality 1 ],
         biolink:AdministrativeEntity ;
     skos:altLabel "group" ;
     skos:definition "person, group, organization or project that provides a piece of information (i.e. a knowledge association)" ;
@@ -5850,42 +5926,48 @@ biolink:BiologicalSequence a owl:Class ;
     rdfs:label "biological sequence" ;
     rdfs:subClassOf linkml:String .
 
+biolink:ChemicalOrDrugOrTreatment a owl:Class ;
+    rdfs:label "chemical or drug or treatment" ;
+    rdfs:subClassOf linkml:mixin .
+
 biolink:GenomicSequenceLocalization a owl:Class ;
     rdfs:label "genomic sequence localization" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:NucleicAcidEntity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:NucleicAcidEntity ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://UNKNOWN.org/strand_enum> ;
+            owl:onProperty biolink:strand ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <http://UNKNOWN.org/strand_enum> ;
             owl:onProperty biolink:genome_build ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <http://UNKNOWN.org/phase_enum> ;
-            owl:onProperty biolink:phase ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <http://UNKNOWN.org/strand_enum> ;
-            owl:onProperty biolink:strand ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty biolink:end_interbase_coordinate ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty biolink:start_interbase_coordinate ],
         [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty biolink:end_interbase_coordinate ],
+            owl:onClass <http://UNKNOWN.org/phase_enum> ;
+            owl:onProperty biolink:phase ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:NucleicAcidEntity ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:NucleicAcidEntity ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         biolink:SequenceAssociation ;
-    skos:definition "A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig." .
+    skos:broadMatch dcid:Chromosome ;
+    skos:definition "A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig." ;
+    skos:exactMatch dcid:GenomeAnnotation .
 
 biolink:has_biological_sequence a owl:ObjectProperty .
 
@@ -5893,27 +5975,27 @@ biolink:Attribute a owl:Class ;
     rdfs:label "attribute" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty biolink:has_qualitative_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:QuantityValue ;
-            owl:onProperty biolink:has_quantitative_value ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LabelType ;
-            owl:onProperty rdfs:label ],
+            owl:onClass biolink:IriType ;
+            owl:onProperty biolink:iri ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:LabelType ;
             owl:onProperty biolink:source ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:IriType ;
-            owl:onProperty biolink:iri ],
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty biolink:has_qualitative_value ],
         [ a owl:Restriction ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:has_attribute_type ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:LabelType ;
+            owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:QuantityValue ;
+            owl:onProperty biolink:has_quantitative_value ],
         biolink:Annotation,
         biolink:OntologyClass ;
     skos:definition "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material." ;
@@ -5938,6 +6020,7 @@ biolink:Drug a owl:Class ;
     skos:definition "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease" ;
     skos:exactMatch STY:T200,
         <http://purl.obolibrary.org/obo/CHEBI_23888>,
+        dcid:Drug,
         WIKIDATA:Q12140 ;
     skos:narrowMatch STY:T195 ;
     skos:note "The CHEBI ID represents a role rather than a substance" .
@@ -5969,6 +6052,7 @@ biolink:Transcript a owl:Class ;
     skos:definition "An RNA synthesized on a DNA or RNA template by an RNA polymerase." ;
     skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000673>,
         SIO:010450,
+        dcid:RNATranscript,
         WIKIDATA:Q7243183 .
 
 biolink:onset_qualifier a owl:ObjectProperty ;
@@ -5990,19 +6074,19 @@ biolink:InformationContentEntity a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:rights ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:license ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
             owl:onProperty biolink:format ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:rights ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Date ;
             owl:onProperty biolink:creation_date ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:license ],
         biolink:NamedThing ;
     skos:altLabel "information",
         "information artefact",
@@ -6058,15 +6142,11 @@ biolink:Publication a owl:Class ;
     rdfs:label "publication" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LabelType ;
-            owl:onProperty rdfs:label ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:summary ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty biolink:authors ],
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty biolink:mesh_terms ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty biolink:keywords ],
@@ -6075,8 +6155,15 @@ biolink:Publication a owl:Class ;
             owl:onProperty biolink:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:LabelType ;
+            owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty biolink:xref ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty biolink:authors ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty biolink:pages ],
@@ -6084,9 +6171,6 @@ biolink:Publication a owl:Class ;
             owl:onClass linkml:String ;
             owl:onProperty dct:type ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty biolink:mesh_terms ],
         biolink:InformationContentEntity ;
     skos:definition "Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses." ;
     skos:exactMatch IAO:0000311 ;
@@ -6180,6 +6264,37 @@ biolink:affects a owl:ObjectProperty ;
     owl:inverseOf biolink:affected_by ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
 
+biolink:SequenceVariant a owl:Class ;
+    rdfs:label "sequence variant" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:BiologicalSequence ;
+            owl:onProperty biolink:has_biological_sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:OrganismTaxon ;
+            owl:onProperty biolink:in_taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:Gene ;
+            owl:onProperty biolink:has_gene ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:id ;
+            owl:qualifiedCardinality 1 ],
+        biolink:BiologicalEntity,
+        biolink:GenomicEntity,
+        biolink:OntologyClass,
+        biolink:PhysicalEssence ;
+    skos:altLabel "allele" ;
+    skos:broadMatch <http://purl.obolibrary.org/obo/SO_0001060> ;
+    skos:closeMatch dcid:Allele ;
+    skos:definition "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/GENO_0000002>,
+        <http://purl.obolibrary.org/obo/SO_0001059>,
+        SIO:010277,
+        VMC:Allele,
+        WIKIDATA:Q15304597 ;
+    skos:note "This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" .
+
 biolink:DiseaseOrPhenotypicFeature a owl:Class ;
     rdfs:label "disease or phenotypic feature" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -6190,65 +6305,6 @@ biolink:DiseaseOrPhenotypicFeature a owl:Class ;
     skos:altLabel "phenome" ;
     skos:definition "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate." ;
     skos:narrowMatch STY:T033 .
-
-biolink:SequenceVariant a owl:Class ;
-    rdfs:label "sequence variant" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSequence ;
-            owl:onProperty biolink:has_biological_sequence ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:OrganismTaxon ;
-            owl:onProperty biolink:in_taxon ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Gene ;
-            owl:onProperty biolink:has_gene ],
-        biolink:BiologicalEntity,
-        biolink:GenomicEntity,
-        biolink:OntologyClass,
-        biolink:PhysicalEssence ;
-    skos:altLabel "allele" ;
-    skos:broadMatch <http://purl.obolibrary.org/obo/SO_0001060> ;
-    skos:definition "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
-    skos:exactMatch <http://purl.obolibrary.org/obo/GENO_0000002>,
-        <http://purl.obolibrary.org/obo/SO_0001059>,
-        SIO:010277,
-        VMC:Allele,
-        WIKIDATA:Q15304597 ;
-    skos:note "This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" .
-
-biolink:ChemicalEntity a owl:Class ;
-    rdfs:label "chemical entity" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:max_tolerated_dose ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://UNKNOWN.org/drug_availability_enum> ;
-            owl:onProperty biolink:available_from ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty biolink:is_toxic ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:ChemicalEntity ;
-            owl:onProperty biolink:trade_name ],
-        biolink:ChemicalEntityOrGeneOrGeneProduct,
-        biolink:ChemicalEntityOrProteinOrPolypeptide,
-        biolink:ChemicalOrDrugOrTreatment,
-        biolink:NamedThing,
-        biolink:PhysicalEssence ;
-    skos:definition "A chemical entity is a physical entity that pertains to chemistry or biochemistry." ;
-    skos:exactMatch STY:T103,
-        <http://purl.obolibrary.org/obo/CHEBI_24431>,
-        SIO:010004,
-        WIKIDATA:Q79529 ;
-    skos:narrowMatch WIKIDATA:Q43460564 .
 
 biolink:MolecularEntity a owl:Class ;
     rdfs:label "molecular entity" ;
@@ -6280,12 +6336,42 @@ biolink:OrganismTaxon a owl:Class ;
     skos:definition "A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies." ;
     skos:exactMatch STY:T001,
         bioschemas:Taxon,
-        WIKIDATA:Q16521 .
+        WIKIDATA:Q16521 ;
+    skos:narrowMatch dcid:BiologicalSpecies .
 
 biolink:PredicateType a owl:Class ;
     rdfs:label "predicate type" ;
     rdfs:subClassOf linkml:Uriorcurie ;
     skos:definition "A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats." .
+
+biolink:ChemicalEntity a owl:Class ;
+    rdfs:label "chemical entity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://UNKNOWN.org/drug_availability_enum> ;
+            owl:onProperty biolink:available_from ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty biolink:is_toxic ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:max_tolerated_dose ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:ChemicalEntity ;
+            owl:onProperty biolink:trade_name ],
+        biolink:ChemicalEntityOrGeneOrGeneProduct,
+        biolink:ChemicalEntityOrProteinOrPolypeptide,
+        biolink:ChemicalOrDrugOrTreatment,
+        biolink:NamedThing,
+        biolink:PhysicalEssence ;
+    skos:definition "A chemical entity is a physical entity that pertains to chemistry or biochemistry." ;
+    skos:exactMatch STY:T103,
+        <http://purl.obolibrary.org/obo/CHEBI_24431>,
+        SIO:010004,
+        WIKIDATA:Q79529 ;
+    skos:narrowMatch WIKIDATA:Q43460564 .
 
 biolink:NucleicAcidEntity a owl:Class ;
     rdfs:label "nucleic acid entity" ;
@@ -6317,21 +6403,21 @@ biolink:Gene a owl:Class ;
     rdfs:label "gene" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:symbol ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSequence ;
             owl:onProperty biolink:has_biological_sequence ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty biolink:xref ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:OrganismTaxon ;
             owl:onProperty biolink:in_taxon ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty biolink:xref ],
+        [ a owl:Restriction ;
             owl:allValuesFrom biolink:LabelType ;
             owl:onProperty biolink:synonym ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:symbol ],
         biolink:BiologicalEntity,
         biolink:ChemicalEntityOrGeneOrGeneProduct,
         biolink:GeneOrGeneProduct,
@@ -6342,6 +6428,7 @@ biolink:Gene a owl:Class ;
     skos:definition "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions." ;
     skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704>,
         SIO:010035,
+        dcid:Gene,
         WIKIDATA:Q7187 ;
     skos:narrowMatch bioschemas:gene .
 
@@ -6390,19 +6477,15 @@ biolink:related_to_at_instance_level a owl:ObjectProperty,
 biolink:Association a owl:Class ;
     rdfs:label "association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Publication ;
-            owl:onProperty biolink:publications ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:relation ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:allValuesFrom biolink:Publication ;
+            owl:onProperty biolink:publications ],
+        [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:object ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:CategoryType ;
@@ -6411,20 +6494,24 @@ biolink:Association a owl:Class ;
             owl:allValuesFrom biolink:OntologyClass ;
             owl:onProperty biolink:qualifiers ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:EvidenceType ;
-            owl:onProperty biolink:has_evidence ],
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty rdf:type ],
         [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Boolean ;
             owl:onProperty biolink:negated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:EvidenceType ;
+            owl:onProperty biolink:has_evidence ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:relation ],
         biolink:Entity ;
     skos:definition "A typed association between two entities, supported by evidence" ;
     skos:exactMatch OBAN:association,
@@ -6449,6 +6536,7 @@ biolink:NamedThing a owl:Class ;
     skos:definition "a databased entity or concept/class" ;
     skos:exactMatch STY:T071,
         <http://purl.obolibrary.org/obo/BFO_0000001>,
+        dcid:Thing,
         UMLSSG:OBJC,
         WIKIDATA:Q35120 .
 

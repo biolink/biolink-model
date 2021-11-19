@@ -36,6 +36,5 @@ URI: [biolink:affects_stability_of](https://w3id.org/biolink/vocab/affects_stabi
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_stability_of |
 | **Close Mappings:** | | GAMMA:stabilization |
 

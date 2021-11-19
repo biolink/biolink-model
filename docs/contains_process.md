@@ -25,10 +25,3 @@ URI: [biolink:contains_process](https://w3id.org/biolink/vocab/contains_process)
 
 ## Used by
 
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | RTXKG1:contains_process |
-

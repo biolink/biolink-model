@@ -34,6 +34,5 @@ URI: [biolink:increases_stability_of](https://w3id.org/biolink/vocab/increases_s
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_stability_of |
 | **Close Mappings:** | | CHEMBL.MECHANISM:stabiliser |
 

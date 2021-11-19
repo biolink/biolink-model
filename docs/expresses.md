@@ -33,7 +33,7 @@ URI: [biolink:expresses](https://w3id.org/biolink/vocab/expresses)
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | anatomy expresses gene |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002292 |
-|  | | hetio:EXPRESSES_AeG |
 

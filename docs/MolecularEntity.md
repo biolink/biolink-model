@@ -34,7 +34,6 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  * HMDB
  * KEGG.COMPOUND
  * ChemBank
- * Aeolus
  * PUBCHEM.SUBSTANCE
  * SIDER.DRUG
  * INCHI

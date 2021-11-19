@@ -33,7 +33,7 @@ URI: [biolink:location_of](https://w3id.org/biolink/vocab/location_of)
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | RTXKG1:site_of |
+| **Aliases:** | | site of |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0001015 |
 |  | | SEMMEDDB:LOCATION_OF |

@@ -24,7 +24,7 @@ URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProces
 
  * GO
  * REACT
- * MetaCyc
+ * metacyc.reaction
  * KEGG.MODULE
 
 ## Parents

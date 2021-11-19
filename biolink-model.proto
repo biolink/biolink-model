@@ -2452,6 +2452,7 @@ message Phenomenon
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
  }
+// A combination of entity and quality that makes up a phenotyping statement.
 message PhenotypicFeature
  {
   id String = 1

@@ -30,3 +30,10 @@ URI: [biolink:mesh_terms](https://w3id.org/biolink/vocab/mesh_terms)
  * [BookChapter](BookChapter.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | dcid:MeSHTerm |
+

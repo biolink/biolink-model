@@ -33,7 +33,6 @@ URI: [biolink:composed_primarily_of](https://w3id.org/biolink/vocab/composed_pri
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | RTXKG1:composed_primarily_of |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002473 |
 

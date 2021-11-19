@@ -174,5 +174,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | SIO:010277 |
 |  | | VMC:Allele |
 |  | | SO:0001059 |
+| **Close Mappings:** | | dcid:Allele |
 | **Broad Mappings:** | | SO:0001060 |
 

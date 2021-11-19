@@ -34,6 +34,5 @@ URI: [biolink:decreases_splicing_of](https://w3id.org/biolink/vocab/decreases_sp
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_RNA_splicing |
 | **Broad Mappings:** | | CTD:decreases_splicing_of |
 

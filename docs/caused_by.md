@@ -33,6 +33,10 @@ URI: [biolink:caused_by](https://w3id.org/biolink/vocab/caused_by)
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | disease caused by disruption of |
+|  | | disease has basis in dysfunction of |
+|  | | realized in response to |
+|  | | realized in response to stimulus |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | WIKIDATA_PROPERTY:P828 |
 | **Narrow Mappings:** | | RO:0001022 |
@@ -41,8 +45,4 @@ URI: [biolink:caused_by](https://w3id.org/biolink/vocab/caused_by)
 |  | | RO:0004020 |
 |  | | RO:0004028 |
 |  | | RO:0009501 |
-|  | | RTXKG1:disease_caused_by_disruption_of |
-|  | | RTXKG1:disease_has_basis_in_dysfunction_of |
-|  | | RTXKG1:realized_in_response_to |
-|  | | RTXKG1:realized_in_response_to_stimulus |
 

@@ -37,5 +37,4 @@ URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
 | **Exact Mappings:** | | RO:0002206 |
 | **Narrow Mappings:** | | NCIT:R49 |
 |  | | NCIT:R46 |
-|  | | RTXKG1:expressed_in |
 

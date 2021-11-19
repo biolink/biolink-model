@@ -94,6 +94,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | UMLSSG:PROC |
+|  | | dcid:MedicalProcedure |
 | **Narrow Mappings:** | | STY:T059 |
 |  | | STY:T060 |
 |  | | STY:T061 |

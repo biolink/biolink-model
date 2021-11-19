@@ -31,6 +31,4 @@ URI: [biolink:is_nearby_variant_of](https://w3id.org/biolink/vocab/is_nearby_var
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | GAMMA:0000102 |
-| **Narrow Mappings:** | | SNPEFF:downstream_gene_variant |
-|  | | SNPEFF:upstream_gene_variant |
 

@@ -25,10 +25,3 @@ URI: [biolink:increases_molecular_interaction](https://w3id.org/biolink/vocab/in
 
 ## Used by
 
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | CTD:increases_molecular_interaction_with |
-

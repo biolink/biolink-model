@@ -45,14 +45,12 @@ URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 | **Close Mappings:** | | WIKIDATA_PROPERTY:P2283 |
 | **Narrow Mappings:** | | BFO:0000167 |
 |  | | LOINC:has_subject |
-|  | | NCIT:pathway_has_gene_element |
 |  | | NCIT:process_involves_gene |
 |  | | NBO-PROPERTY:has_participant |
 |  | | PathWhiz:has_bound |
 |  | | PathWhiz:has_compound |
 |  | | PathWhiz:has_element_collection |
 |  | | PathWhiz:has_enzyme |
-|  | | NCIT:process_includes_biological_process |
 |  | | OBI:0000293 |
 |  | | PathWhiz:has_nucleic_acid |
 |  | | PathWhiz:has_protein |

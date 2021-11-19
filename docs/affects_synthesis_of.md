@@ -36,5 +36,4 @@ URI: [biolink:affects_synthesis_of](https://w3id.org/biolink/vocab/affects_synth
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_synthesis_of |
 

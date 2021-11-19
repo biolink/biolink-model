@@ -139,4 +139,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | SO:0000673 |
 |  | | SIO:010450 |
 |  | | WIKIDATA:Q7243183 |
+|  | | dcid:RNATranscript |
 

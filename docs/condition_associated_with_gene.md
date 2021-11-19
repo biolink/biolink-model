@@ -33,7 +33,7 @@ URI: [biolink:condition_associated_with_gene](https://w3id.org/biolink/vocab/con
 
 |  |  |  |
 | --- | --- | --- |
+| **Aliases:** | | disease associated with gene |
 | **In Subsets:** | | translator_minimal |
 | **Narrow Mappings:** | | NCIT:R176 |
-|  | | hetio:ASSOCIATES_DaG |
 

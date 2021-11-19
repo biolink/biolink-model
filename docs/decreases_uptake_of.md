@@ -34,6 +34,5 @@ URI: [biolink:decreases_uptake_of](https://w3id.org/biolink/vocab/decreases_upta
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_uptake_of |
 | **Broad Mappings:** | | CTD:decreases_import |
 
