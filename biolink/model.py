@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-19T18:15:30
+# Generation date: 2021-12-16T16:43:32
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1428,7 +1428,7 @@ class OrganismTaxon(NamedThing):
     A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
     Can also be used to represent strains or subspecies.
     """
-    _inherited_slots: ClassVar[List[str]] = ["subclass_of"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismTaxon
     class_class_curie: ClassVar[str] = "biolink:OrganismTaxon"
@@ -1438,7 +1438,6 @@ class OrganismTaxon(NamedThing):
     id: Union[str, OrganismTaxonId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     has_taxonomic_rank: Optional[Union[dict, TaxonomicRank]] = None
-    subclass_of: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1448,10 +1447,6 @@ class OrganismTaxon(NamedThing):
 
         if self.has_taxonomic_rank is not None and not isinstance(self.has_taxonomic_rank, TaxonomicRank):
             self.has_taxonomic_rank = TaxonomicRank()
-
-        if not isinstance(self.subclass_of, list):
-            self.subclass_of = [self.subclass_of] if self.subclass_of is not None else []
-        self.subclass_of = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.subclass_of]
 
         super().__post_init__(**kwargs)
 
@@ -5300,7 +5295,6 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     subject: Union[dict, GeneOrGeneProduct] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, PredicateType] = None
-    relation: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -5312,9 +5306,6 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
-
-        if self.relation is not None and not isinstance(self.relation, str):
-            self.relation = str(self.relation)
 
         super().__post_init__(**kwargs)
 
@@ -5336,7 +5327,6 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     predicate: Union[str, PredicateType] = None
     object: Union[str, MolecularEntityId] = None
     interacting_molecules_category: Optional[Union[dict, OntologyClass]] = None
-    relation: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -5361,9 +5351,6 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
 
         if self.interacting_molecules_category is not None and not isinstance(self.interacting_molecules_category, OntologyClass):
             self.interacting_molecules_category = OntologyClass()
-
-        if self.relation is not None and not isinstance(self.relation, str):
-            self.relation = str(self.relation)
 
         super().__post_init__(**kwargs)
 
@@ -7007,7 +6994,6 @@ class OrganismToOrganismAssociation(Association):
     predicate: Union[str, PredicateType] = None
     subject: Union[str, IndividualOrganismId] = None
     object: Union[str, IndividualOrganismId] = None
-    relation: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7025,9 +7011,6 @@ class OrganismToOrganismAssociation(Association):
         if not isinstance(self.object, IndividualOrganismId):
             self.object = IndividualOrganismId(self.object)
 
-        if self.relation is not None and not isinstance(self.relation, str):
-            self.relation = str(self.relation)
-
         super().__post_init__(**kwargs)
 
 
@@ -7044,7 +7027,6 @@ class TaxonToTaxonAssociation(Association):
     predicate: Union[str, PredicateType] = None
     subject: Union[str, OrganismTaxonId] = None
     object: Union[str, OrganismTaxonId] = None
-    relation: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7061,9 +7043,6 @@ class TaxonToTaxonAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, OrganismTaxonId):
             self.object = OrganismTaxonId(self.object)
-
-        if self.relation is not None and not isinstance(self.relation, str):
-            self.relation = str(self.relation)
 
         super().__post_init__(**kwargs)
 
@@ -9593,9 +9572,6 @@ slots.named_thing_category = Slot(uri=BIOLINK.category, name="named thing_catego
 slots.organism_taxon_has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="organism taxon_has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[dict, TaxonomicRank]], mappings = [WIKIDATA.P105])
 
-slots.organism_taxon_subclass_of = Slot(uri=BIOLINK.subclass_of, name="organism taxon_subclass of", curie=BIOLINK.curie('subclass_of'),
-                   model_uri=BIOLINK.organism_taxon_subclass_of, domain=OrganismTaxon, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
-
 slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])
 
@@ -9734,9 +9710,6 @@ slots.gene_to_gene_coexpression_association_predicate = Slot(uri=RDF.predicate, 
 slots.pairwise_gene_to_gene_interaction_predicate = Slot(uri=RDF.predicate, name="pairwise gene to gene interaction_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.pairwise_gene_to_gene_interaction_predicate, domain=PairwiseGeneToGeneInteraction, range=Union[str, PredicateType])
 
-slots.pairwise_gene_to_gene_interaction_relation = Slot(uri=BIOLINK.relation, name="pairwise gene to gene interaction_relation", curie=BIOLINK.curie('relation'),
-                   model_uri=BIOLINK.pairwise_gene_to_gene_interaction_relation, domain=PairwiseGeneToGeneInteraction, range=Optional[str])
-
 slots.pairwise_molecular_interaction_subject = Slot(uri=RDF.subject, name="pairwise molecular interaction_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.pairwise_molecular_interaction_subject, domain=PairwiseMolecularInteraction, range=Union[str, MolecularEntityId])
 
@@ -9745,9 +9718,6 @@ slots.pairwise_molecular_interaction_id = Slot(uri=BIOLINK.id, name="pairwise mo
 
 slots.pairwise_molecular_interaction_predicate = Slot(uri=RDF.predicate, name="pairwise molecular interaction_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.pairwise_molecular_interaction_predicate, domain=PairwiseMolecularInteraction, range=Union[str, PredicateType])
-
-slots.pairwise_molecular_interaction_relation = Slot(uri=BIOLINK.relation, name="pairwise molecular interaction_relation", curie=BIOLINK.curie('relation'),
-                   model_uri=BIOLINK.pairwise_molecular_interaction_relation, domain=PairwiseMolecularInteraction, range=Optional[str])
 
 slots.pairwise_molecular_interaction_object = Slot(uri=RDF.object, name="pairwise molecular interaction_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.pairwise_molecular_interaction_object, domain=PairwiseMolecularInteraction, range=Union[str, MolecularEntityId])
@@ -9959,17 +9929,11 @@ slots.organismal_entity_as_a_model_of_disease_association_subject = Slot(uri=RDF
 slots.organism_to_organism_association_subject = Slot(uri=RDF.subject, name="organism to organism association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.organism_to_organism_association_subject, domain=OrganismToOrganismAssociation, range=Union[str, IndividualOrganismId])
 
-slots.organism_to_organism_association_relation = Slot(uri=BIOLINK.relation, name="organism to organism association_relation", curie=BIOLINK.curie('relation'),
-                   model_uri=BIOLINK.organism_to_organism_association_relation, domain=OrganismToOrganismAssociation, range=Optional[str])
-
 slots.organism_to_organism_association_object = Slot(uri=RDF.object, name="organism to organism association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.organism_to_organism_association_object, domain=OrganismToOrganismAssociation, range=Union[str, IndividualOrganismId])
 
 slots.taxon_to_taxon_association_subject = Slot(uri=RDF.subject, name="taxon to taxon association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.taxon_to_taxon_association_subject, domain=TaxonToTaxonAssociation, range=Union[str, OrganismTaxonId])
-
-slots.taxon_to_taxon_association_relation = Slot(uri=BIOLINK.relation, name="taxon to taxon association_relation", curie=BIOLINK.curie('relation'),
-                   model_uri=BIOLINK.taxon_to_taxon_association_relation, domain=TaxonToTaxonAssociation, range=Optional[str])
 
 slots.taxon_to_taxon_association_object = Slot(uri=RDF.object, name="taxon to taxon association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.taxon_to_taxon_association_object, domain=TaxonToTaxonAssociation, range=Union[str, OrganismTaxonId])

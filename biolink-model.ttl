@@ -299,236 +299,236 @@
         <https://w3id.org/biolink/vocab/reaction_side_enum>,
         <https://w3id.org/biolink/vocab/sequence_enum>,
         <https://w3id.org/biolink/vocab/strand_enum> ;
-    linkml:generation_date "2021-11-19T18:15:16"^^xsd:dateTime ;
+    linkml:generation_date "2021-12-16T16:43:20"^^xsd:dateTime ;
     linkml:id <https://w3id.org/biolink/biolink-model> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
-    linkml:prefixes [ linkml:prefix_prefix "oboformat" ;
-            linkml:prefix_reference OIO: ],
-        [ linkml:prefix_prefix "SEED.REACTION" ;
-            linkml:prefix_reference <https://modelseed.org/biochem/reactions/> ],
-        [ linkml:prefix_prefix "METANETX.REACTION" ;
-            linkml:prefix_reference <https://www.metanetx.org/equa_info/> ],
-        [ linkml:prefix_prefix "NCIT-OBO" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/ncit#> ],
-        [ linkml:prefix_prefix "OBAN" ;
-            linkml:prefix_reference <http://purl.org/oban/> ],
-        [ linkml:prefix_prefix "KEGG.GENE" ;
-            linkml:prefix_reference <http://www.kegg.jp/entry/> ],
-        [ linkml:prefix_prefix "ExO" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/ExO_> ],
-        [ linkml:prefix_prefix "apollo" ;
-            linkml:prefix_reference <https://github.com/GMOD/Apollo> ],
-        [ linkml:prefix_prefix "UBERGRAPH" ;
-            linkml:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ],
-        [ linkml:prefix_prefix "pav" ;
-            linkml:prefix_reference pav: ],
-        [ linkml:prefix_prefix "OBOREL" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/RO_> ],
-        [ linkml:prefix_prefix "gtpo" ;
-            linkml:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ],
-        [ linkml:prefix_prefix "schema" ;
-            linkml:prefix_reference schema: ],
-        [ linkml:prefix_prefix "MI" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/MI_> ],
-        [ linkml:prefix_prefix "DGIdb" ;
-            linkml:prefix_reference <https://www.dgidb.org/interaction_types> ],
-        [ linkml:prefix_prefix "ORPHA" ;
-            linkml:prefix_reference <http://www.orpha.net/ORDO/Orphanet_> ],
-        [ linkml:prefix_prefix "NLMID" ;
-            linkml:prefix_reference <https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=> ],
-        [ linkml:prefix_prefix "qud" ;
-            linkml:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
-        [ linkml:prefix_prefix "INO" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/INO_> ],
-        [ linkml:prefix_prefix "alliancegenome" ;
-            linkml:prefix_reference <https://www.alliancegenome.org/> ],
+    linkml:prefixes [ linkml:prefix_prefix "LOINC" ;
+            linkml:prefix_reference <http://loinc.org/rdf/> ],
+        [ linkml:prefix_prefix "REPODB" ;
+            linkml:prefix_reference <http://apps.chiragjpgroup.org/repoDB/> ],
         [ linkml:prefix_prefix "dcat" ;
             linkml:prefix_reference <http://www.w3.org/ns/dcat#> ],
-        [ linkml:prefix_prefix "isbn" ;
-            linkml:prefix_reference <https://www.isbn-international.org/identifier/> ],
-        [ linkml:prefix_prefix "MAXO" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/MAXO_> ],
+        [ linkml:prefix_prefix "os" ;
+            linkml:prefix_reference <https://github.com/cmungall/owlstar/blob/master/owlstar.ttl> ],
+        [ linkml:prefix_prefix "dct" ;
+            linkml:prefix_reference dcterms: ],
+        [ linkml:prefix_prefix "gff3" ;
+            linkml:prefix_reference <https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#> ],
+        [ linkml:prefix_prefix "KEGG.RCLASS" ;
+            linkml:prefix_reference <http://www.kegg.jp/entry/> ],
+        [ linkml:prefix_prefix "OBAN" ;
+            linkml:prefix_reference <http://purl.org/oban/> ],
+        [ linkml:prefix_prefix "NCIT-OBO" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/ncit#> ],
+        [ linkml:prefix_prefix "UO-PROPERTY" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/uo#> ],
+        [ linkml:prefix_prefix "pav" ;
+            linkml:prefix_reference pav: ],
+        [ linkml:prefix_prefix "HCPCS" ;
+            linkml:prefix_reference <http://purl.bioontology.org/ontology/HCPCS/> ],
+        [ linkml:prefix_prefix "gpi" ;
+            linkml:prefix_reference <https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#> ],
+        [ linkml:prefix_prefix "ECTO" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/ECTO_> ],
+        [ linkml:prefix_prefix "biolink" ;
+            linkml:prefix_reference <https://w3id.org/biolink/vocab/> ],
+        [ linkml:prefix_prefix "WIKIDATA_PROPERTY" ;
+            linkml:prefix_reference <https://www.wikidata.org/wiki/Property:> ],
+        [ linkml:prefix_prefix "NBO-PROPERTY" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/nbo#> ],
+        [ linkml:prefix_prefix "interpro" ;
+            linkml:prefix_reference <https://www.ebi.ac.uk/interpro/entry/> ],
+        [ linkml:prefix_prefix "UMLSSG" ;
+            linkml:prefix_reference <https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt> ],
+        [ linkml:prefix_prefix "medgen" ;
+            linkml:prefix_reference <https://www.ncbi.nlm.nih.gov/medgen/> ],
+        [ linkml:prefix_prefix "CID" ;
+            linkml:prefix_reference <http://pubchem.ncbi.nlm.nih.gov/compound/> ],
+        [ linkml:prefix_prefix "RXCUI" ;
+            linkml:prefix_reference <https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=> ],
+        [ linkml:prefix_prefix "EDAM-FORMAT" ;
+            linkml:prefix_reference <http://edamontology.org/format_> ],
+        [ linkml:prefix_prefix "qud" ;
+            linkml:prefix_reference <http://qudt.org/1.1/schema/qudt#> ],
+        [ linkml:prefix_prefix "GSID" ;
+            linkml:prefix_reference <https://scholar.google.com/citations?user=> ],
+        [ linkml:prefix_prefix "VANDF" ;
+            linkml:prefix_reference <https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/> ],
+        [ linkml:prefix_prefix "GTEx" ;
+            linkml:prefix_reference <https://www.gtexportal.org/home/gene/> ],
+        [ linkml:prefix_prefix "RXNORM" ;
+            linkml:prefix_reference <http://purl.bioontology.org/ontology/RXNORM/> ],
         [ linkml:prefix_prefix "foodb.compound" ;
             linkml:prefix_reference <http://foodb.ca/compounds/> ],
-        [ linkml:prefix_prefix "EFO" ;
-            linkml:prefix_reference <http://www.ebi.ac.uk/efo/EFO_> ],
+        [ linkml:prefix_prefix "GOP" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/go#> ],
+        [ linkml:prefix_prefix "NDDF" ;
+            linkml:prefix_reference <http://purl.bioontology.org/ontology/NDDF/> ],
+        [ linkml:prefix_prefix "doi" ;
+            linkml:prefix_reference <https://doi.org/> ],
         [ linkml:prefix_prefix "CHEMBL.MECHANISM" ;
             linkml:prefix_reference <https://www.ebi.ac.uk/chembl/mechanism/inspect/> ],
         [ linkml:prefix_prefix "SNOMEDCT" ;
             linkml:prefix_reference <http://www.snomedbrowser.com/Codes/Details/> ],
-        [ linkml:prefix_prefix "WBVocab" ;
-            linkml:prefix_reference <http://bio2rdf.org/wormbase_vocabulary> ],
-        [ linkml:prefix_prefix "CTD.CHEMICAL" ;
-            linkml:prefix_reference <http://ctdbase.org/detail.go?type=chem&acc=> ],
-        [ linkml:prefix_prefix "FYPO" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/FYPO_> ],
-        [ linkml:prefix_prefix "ScopusID" ;
-            linkml:prefix_reference <https://www.scopus.com/authid/detail.uri?authorId=> ],
-        [ linkml:prefix_prefix "GTEx" ;
-            linkml:prefix_reference <https://www.gtexportal.org/home/gene/> ],
-        [ linkml:prefix_prefix "CID" ;
-            linkml:prefix_reference <http://pubchem.ncbi.nlm.nih.gov/compound/> ],
-        [ linkml:prefix_prefix "GOREL" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ],
-        [ linkml:prefix_prefix "RO" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/RO_> ],
-        [ linkml:prefix_prefix "KEGG.ENZYME" ;
-            linkml:prefix_reference <http://www.kegg.jp/entry/> ],
-        [ linkml:prefix_prefix "COG" ;
-            linkml:prefix_reference <https://www.ncbi.nlm.nih.gov/research/cog-project/> ],
-        [ linkml:prefix_prefix "prov" ;
-            linkml:prefix_reference <http://www.w3.org/ns/prov#> ],
-        [ linkml:prefix_prefix "UBERON_NONAMESPACE" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/core#> ],
-        [ linkml:prefix_prefix "CHADO" ;
-            linkml:prefix_reference <http://gmod.org/wiki/Chado/> ],
-        [ linkml:prefix_prefix "KEGG.BRITE" ;
-            linkml:prefix_reference <http://www.kegg.jp/entry/> ],
-        [ linkml:prefix_prefix "UO-PROPERTY" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/uo#> ],
-        [ linkml:prefix_prefix "ChemBank" ;
-            linkml:prefix_reference <http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=> ],
-        [ linkml:prefix_prefix "STY" ;
-            linkml:prefix_reference <http://purl.bioontology.org/ontology/STY/> ],
-        [ linkml:prefix_prefix "EDAM-TOPIC" ;
-            linkml:prefix_reference <http://edamontology.org/topic_> ],
-        [ linkml:prefix_prefix "CTD.GENE" ;
-            linkml:prefix_reference <http://ctdbase.org/detail.go?type=gene&acc=> ],
-        [ linkml:prefix_prefix "NCBIGene" ;
-            linkml:prefix_reference <http://identifiers.org/ncbigene/> ],
-        [ linkml:prefix_prefix "dct" ;
-            linkml:prefix_reference dcterms: ],
-        [ linkml:prefix_prefix "EDAM-FORMAT" ;
-            linkml:prefix_reference <http://edamontology.org/format_> ],
-        [ linkml:prefix_prefix "Xenbase" ;
-            linkml:prefix_reference <http://www.xenbase.org/gene/showgene.do?method=display&geneId=> ],
-        [ linkml:prefix_prefix "VMC" ;
-            linkml:prefix_reference <https://github.com/ga4gh/vr-spec/> ],
         [ linkml:prefix_prefix "ICD9" ;
             linkml:prefix_reference <http://translator.ncats.nih.gov/ICD9_> ],
-        [ linkml:prefix_prefix "HCPCS" ;
-            linkml:prefix_reference <http://purl.bioontology.org/ontology/HCPCS/> ],
-        [ linkml:prefix_prefix "foaf" ;
-            linkml:prefix_reference <http://xmlns.com/foaf/0.1/> ],
-        [ linkml:prefix_prefix "DOID-PROPERTY" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/doid#> ],
-        [ linkml:prefix_prefix "bioschemas" ;
-            linkml:prefix_reference <https://bioschemas.org/> ],
-        [ linkml:prefix_prefix "SEMMEDDB" ;
-            linkml:prefix_reference <https://skr3.nlm.nih.gov/SemMedDB> ],
-        [ linkml:prefix_prefix "interpro" ;
-            linkml:prefix_reference <https://www.ebi.ac.uk/interpro/entry/> ],
-        [ linkml:prefix_prefix "DrugCentral" ;
-            linkml:prefix_reference <http://drugcentral.org/drugcard/> ],
-        [ linkml:prefix_prefix "CPT" ;
-            linkml:prefix_reference <https://www.ama-assn.org/practice-management/cpt/> ],
-        [ linkml:prefix_prefix "gff3" ;
-            linkml:prefix_reference <https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#> ],
-        [ linkml:prefix_prefix "isni" ;
-            linkml:prefix_reference <https://isni.org/isni/> ],
-        [ linkml:prefix_prefix "os" ;
-            linkml:prefix_reference <https://github.com/cmungall/owlstar/blob/master/owlstar.ttl> ],
-        [ linkml:prefix_prefix "doi" ;
-            linkml:prefix_reference <https://doi.org/> ],
-        [ linkml:prefix_prefix "medgen" ;
-            linkml:prefix_reference <https://www.ncbi.nlm.nih.gov/medgen/> ],
-        [ linkml:prefix_prefix "UBERON_CORE" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/uberon/core#> ],
-        [ linkml:prefix_prefix "EDAM-DATA" ;
-            linkml:prefix_reference <http://edamontology.org/data_> ],
-        [ linkml:prefix_prefix "KEGG.RCLASS" ;
-            linkml:prefix_reference <http://www.kegg.jp/entry/> ],
-        [ linkml:prefix_prefix "ORCID" ;
-            linkml:prefix_reference <https://orcid.org/> ],
-        [ linkml:prefix_prefix "GTOPDB" ;
-            linkml:prefix_reference <https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=> ],
-        [ linkml:prefix_prefix "NBO-PROPERTY" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/nbo#> ],
-        [ linkml:prefix_prefix "RXNORM" ;
-            linkml:prefix_reference <http://purl.bioontology.org/ontology/RXNORM/> ],
-        [ linkml:prefix_prefix "gpi" ;
-            linkml:prefix_reference <https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#> ],
-        [ linkml:prefix_prefix "REPODB" ;
-            linkml:prefix_reference <http://apps.chiragjpgroup.org/repoDB/> ],
-        [ linkml:prefix_prefix "issn" ;
-            linkml:prefix_reference <https://portal.issn.org/resource/ISSN/> ],
-        [ linkml:prefix_prefix "GSID" ;
-            linkml:prefix_reference <https://scholar.google.com/citations?user=> ],
-        [ linkml:prefix_prefix "PANTHER.FAMILY" ;
-            linkml:prefix_reference <http://www.pantherdb.org/panther/family.do?clsAccession=> ],
-        [ linkml:prefix_prefix "ICD10" ;
-            linkml:prefix_reference <https://icd.codes/icd9cm/> ],
-        [ linkml:prefix_prefix "MSigDB" ;
-            linkml:prefix_reference <https://www.gsea-msigdb.org/gsea/msigdb/> ],
-        [ linkml:prefix_prefix "linkml" ;
-            linkml:prefix_reference linkml: ],
-        [ linkml:prefix_prefix "ResearchID" ;
-            linkml:prefix_reference <https://publons.com/researcher/> ],
-        [ linkml:prefix_prefix "CTD.DISEASE" ;
-            linkml:prefix_reference <http://ctdbase.org/detail.go?type=disease&db=MESH&acc=> ],
-        [ linkml:prefix_prefix "HsapDv" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/HsapDv_> ],
-        [ linkml:prefix_prefix "CLINVAR" ;
-            linkml:prefix_reference <http://identifiers.org/clinvar> ],
-        [ linkml:prefix_prefix "GAMMA" ;
-            linkml:prefix_reference <http://translator.renci.org/GAMMA_> ],
-        [ linkml:prefix_prefix "biolink" ;
-            linkml:prefix_reference <https://w3id.org/biolink/vocab/> ],
-        [ linkml:prefix_prefix "NDDF" ;
-            linkml:prefix_reference <http://purl.bioontology.org/ontology/NDDF/> ],
-        [ linkml:prefix_prefix "fabio" ;
-            linkml:prefix_reference <http://purl.org/spar/fabio/> ],
-        [ linkml:prefix_prefix "WIKIDATA_PROPERTY" ;
-            linkml:prefix_reference <https://www.wikidata.org/wiki/Property:> ],
-        [ linkml:prefix_prefix "COAR_RESOURCE" ;
-            linkml:prefix_reference <http://purl.org/coar/resource_type/> ],
-        [ linkml:prefix_prefix "KEGG.PATHWAY" ;
-            linkml:prefix_reference <https://www.kegg.jp/entry/> ],
-        [ linkml:prefix_prefix "CTD" ;
-            linkml:prefix_reference <http://ctdbase.org/> ],
-        [ linkml:prefix_prefix "dcid" ;
-            linkml:prefix_reference <https://datacommons.org/browser/> ],
-        [ linkml:prefix_prefix "HANCESTRO" ;
-            linkml:prefix_reference <http://www.ebi.ac.uk/ancestro/ancestro_> ],
-        [ linkml:prefix_prefix "EDAM-OPERATION" ;
-            linkml:prefix_reference <http://edamontology.org/operation_> ],
-        [ linkml:prefix_prefix "LOINC" ;
-            linkml:prefix_reference <http://loinc.org/rdf/> ],
-        [ linkml:prefix_prefix "metacyc.reaction" ;
-            linkml:prefix_reference <https://identifiers.org/metacyc.reaction:> ],
-        [ linkml:prefix_prefix "MESH" ;
-            linkml:prefix_reference <http://id.nlm.nih.gov/mesh/> ],
-        [ linkml:prefix_prefix "PHAROS" ;
-            linkml:prefix_reference <http://pharos.nih.gov/> ],
-        [ linkml:prefix_prefix "RXCUI" ;
-            linkml:prefix_reference <https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=> ],
-        [ linkml:prefix_prefix "SNOMED" ;
-            linkml:prefix_reference <http://www.snomedbrowser.com/Codes/Details/> ],
-        [ linkml:prefix_prefix "GOP" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/go#> ],
-        [ linkml:prefix_prefix "XPO" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/XPO_> ],
-        [ linkml:prefix_prefix "UMLSSG" ;
-            linkml:prefix_reference <https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt> ],
-        [ linkml:prefix_prefix "ECTO" ;
-            linkml:prefix_reference <http://purl.obolibrary.org/obo/ECTO_> ],
         [ linkml:prefix_prefix "mirbase" ;
             linkml:prefix_reference <http://identifiers.org/mirbase> ],
+        [ linkml:prefix_prefix "MESH" ;
+            linkml:prefix_reference <http://id.nlm.nih.gov/mesh/> ],
+        [ linkml:prefix_prefix "PANTHER.FAMILY" ;
+            linkml:prefix_reference <http://www.pantherdb.org/panther/family.do?clsAccession=> ],
+        [ linkml:prefix_prefix "linkml" ;
+            linkml:prefix_reference linkml: ],
+        [ linkml:prefix_prefix "ICD10" ;
+            linkml:prefix_reference <https://icd.codes/icd9cm/> ],
+        [ linkml:prefix_prefix "EDAM-OPERATION" ;
+            linkml:prefix_reference <http://edamontology.org/operation_> ],
+        [ linkml:prefix_prefix "issn" ;
+            linkml:prefix_reference <https://portal.issn.org/resource/ISSN/> ],
+        [ linkml:prefix_prefix "NCBIGene" ;
+            linkml:prefix_reference <http://identifiers.org/ncbigene/> ],
+        [ linkml:prefix_prefix "ExO" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/ExO_> ],
+        [ linkml:prefix_prefix "CTD" ;
+            linkml:prefix_reference <http://ctdbase.org/> ],
+        [ linkml:prefix_prefix "GAMMA" ;
+            linkml:prefix_reference <http://translator.renci.org/GAMMA_> ],
+        [ linkml:prefix_prefix "gtpo" ;
+            linkml:prefix_reference <https://rdf.guidetopharmacology.org/ns/gtpo#> ],
+        [ linkml:prefix_prefix "XPO" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/XPO_> ],
+        [ linkml:prefix_prefix "SIO" ;
+            linkml:prefix_reference <http://semanticscience.org/resource/SIO_> ],
+        [ linkml:prefix_prefix "isbn" ;
+            linkml:prefix_reference <https://www.isbn-international.org/identifier/> ],
         [ linkml:prefix_prefix "KEGG.DGROUP" ;
             linkml:prefix_reference <http://www.kegg.jp/entry/> ],
         [ linkml:prefix_prefix "CAID" ;
             linkml:prefix_reference <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=> ],
-        [ linkml:prefix_prefix "SIO" ;
-            linkml:prefix_reference <http://semanticscience.org/resource/SIO_> ],
-        [ linkml:prefix_prefix "VANDF" ;
-            linkml:prefix_reference <https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/> ],
-        [ linkml:prefix_prefix "WIKIDATA" ;
-            linkml:prefix_reference <https://www.wikidata.org/wiki/> ],
+        [ linkml:prefix_prefix "DOID-PROPERTY" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/doid#> ],
+        [ linkml:prefix_prefix "MSigDB" ;
+            linkml:prefix_reference <https://www.gsea-msigdb.org/gsea/msigdb/> ],
+        [ linkml:prefix_prefix "METANETX.REACTION" ;
+            linkml:prefix_reference <https://www.metanetx.org/equa_info/> ],
+        [ linkml:prefix_prefix "Xenbase" ;
+            linkml:prefix_reference <http://www.xenbase.org/gene/showgene.do?method=display&geneId=> ],
+        [ linkml:prefix_prefix "COAR_RESOURCE" ;
+            linkml:prefix_reference <http://purl.org/coar/resource_type/> ],
+        [ linkml:prefix_prefix "KEGG.ENZYME" ;
+            linkml:prefix_reference <http://www.kegg.jp/entry/> ],
+        [ linkml:prefix_prefix "ScopusID" ;
+            linkml:prefix_reference <https://www.scopus.com/authid/detail.uri?authorId=> ],
+        [ linkml:prefix_prefix "CTD.CHEMICAL" ;
+            linkml:prefix_reference <http://ctdbase.org/detail.go?type=chem&acc=> ],
+        [ linkml:prefix_prefix "alliancegenome" ;
+            linkml:prefix_reference <https://www.alliancegenome.org/> ],
+        [ linkml:prefix_prefix "UBERON_CORE" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/uberon/core#> ],
+        [ linkml:prefix_prefix "UBERON_NONAMESPACE" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/core#> ],
+        [ linkml:prefix_prefix "EFO" ;
+            linkml:prefix_reference <http://www.ebi.ac.uk/efo/EFO_> ],
+        [ linkml:prefix_prefix "HANCESTRO" ;
+            linkml:prefix_reference <http://www.ebi.ac.uk/ancestro/ancestro_> ],
+        [ linkml:prefix_prefix "KEGG.GENE" ;
+            linkml:prefix_reference <http://www.kegg.jp/entry/> ],
+        [ linkml:prefix_prefix "ORPHA" ;
+            linkml:prefix_reference <http://www.orpha.net/ORDO/Orphanet_> ],
+        [ linkml:prefix_prefix "metacyc.reaction" ;
+            linkml:prefix_reference <https://identifiers.org/metacyc.reaction:> ],
+        [ linkml:prefix_prefix "INO" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/INO_> ],
+        [ linkml:prefix_prefix "CPT" ;
+            linkml:prefix_reference <https://www.ama-assn.org/practice-management/cpt/> ],
+        [ linkml:prefix_prefix "PHAROS" ;
+            linkml:prefix_reference <http://pharos.nih.gov/> ],
+        [ linkml:prefix_prefix "OBOREL" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/RO_> ],
+        [ linkml:prefix_prefix "ResearchID" ;
+            linkml:prefix_reference <https://publons.com/researcher/> ],
+        [ linkml:prefix_prefix "KEGG.BRITE" ;
+            linkml:prefix_reference <http://www.kegg.jp/entry/> ],
+        [ linkml:prefix_prefix "UBERGRAPH" ;
+            linkml:prefix_reference <http://translator.renci.org/ubergraph-axioms.ofn#> ],
+        [ linkml:prefix_prefix "GOREL" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/GOREL_> ],
+        [ linkml:prefix_prefix "HsapDv" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/HsapDv_> ],
         [ linkml:prefix_prefix "PathWhiz" ;
             linkml:prefix_reference <http://smpdb.ca/pathways/#> ],
+        [ linkml:prefix_prefix "ChemBank" ;
+            linkml:prefix_reference <http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=> ],
+        [ linkml:prefix_prefix "NLMID" ;
+            linkml:prefix_reference <https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=> ],
+        [ linkml:prefix_prefix "SNOMED" ;
+            linkml:prefix_reference <http://www.snomedbrowser.com/Codes/Details/> ],
+        [ linkml:prefix_prefix "FYPO" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/FYPO_> ],
+        [ linkml:prefix_prefix "WIKIDATA" ;
+            linkml:prefix_reference <https://www.wikidata.org/wiki/> ],
+        [ linkml:prefix_prefix "prov" ;
+            linkml:prefix_reference <http://www.w3.org/ns/prov#> ],
+        [ linkml:prefix_prefix "MAXO" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/MAXO_> ],
+        [ linkml:prefix_prefix "foaf" ;
+            linkml:prefix_reference <http://xmlns.com/foaf/0.1/> ],
+        [ linkml:prefix_prefix "oboformat" ;
+            linkml:prefix_reference OIO: ],
+        [ linkml:prefix_prefix "STY" ;
+            linkml:prefix_reference <http://purl.bioontology.org/ontology/STY/> ],
+        [ linkml:prefix_prefix "CTD.GENE" ;
+            linkml:prefix_reference <http://ctdbase.org/detail.go?type=gene&acc=> ],
+        [ linkml:prefix_prefix "CTD.DISEASE" ;
+            linkml:prefix_reference <http://ctdbase.org/detail.go?type=disease&db=MESH&acc=> ],
+        [ linkml:prefix_prefix "CHADO" ;
+            linkml:prefix_reference <http://gmod.org/wiki/Chado/> ],
+        [ linkml:prefix_prefix "RO" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/RO_> ],
+        [ linkml:prefix_prefix "SEED.REACTION" ;
+            linkml:prefix_reference <https://modelseed.org/biochem/reactions/> ],
+        [ linkml:prefix_prefix "MI" ;
+            linkml:prefix_reference <http://purl.obolibrary.org/obo/MI_> ],
+        [ linkml:prefix_prefix "VMC" ;
+            linkml:prefix_reference <https://github.com/ga4gh/vr-spec/> ],
+        [ linkml:prefix_prefix "dcid" ;
+            linkml:prefix_reference <https://datacommons.org/browser/> ],
+        [ linkml:prefix_prefix "EDAM-TOPIC" ;
+            linkml:prefix_reference <http://edamontology.org/topic_> ],
+        [ linkml:prefix_prefix "EDAM-DATA" ;
+            linkml:prefix_reference <http://edamontology.org/data_> ],
+        [ linkml:prefix_prefix "COG" ;
+            linkml:prefix_reference <https://www.ncbi.nlm.nih.gov/research/cog-project/> ],
+        [ linkml:prefix_prefix "schema" ;
+            linkml:prefix_reference schema: ],
+        [ linkml:prefix_prefix "KEGG.PATHWAY" ;
+            linkml:prefix_reference <https://www.kegg.jp/entry/> ],
+        [ linkml:prefix_prefix "isni" ;
+            linkml:prefix_reference <https://isni.org/isni/> ],
+        [ linkml:prefix_prefix "bioschemas" ;
+            linkml:prefix_reference <https://bioschemas.org/> ],
+        [ linkml:prefix_prefix "DGIdb" ;
+            linkml:prefix_reference <https://www.dgidb.org/interaction_types> ],
+        [ linkml:prefix_prefix "ORCID" ;
+            linkml:prefix_reference <https://orcid.org/> ],
+        [ linkml:prefix_prefix "DrugCentral" ;
+            linkml:prefix_reference <http://drugcentral.org/drugcard/> ],
+        [ linkml:prefix_prefix "GTOPDB" ;
+            linkml:prefix_reference <https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=> ],
+        [ linkml:prefix_prefix "WBVocab" ;
+            linkml:prefix_reference <http://bio2rdf.org/wormbase_vocabulary> ],
+        [ linkml:prefix_prefix "SEMMEDDB" ;
+            linkml:prefix_reference <https://skr3.nlm.nih.gov/SemMedDB> ],
         [ linkml:prefix_prefix "wgs" ;
-            linkml:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ] ;
+            linkml:prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
+        [ linkml:prefix_prefix "apollo" ;
+            linkml:prefix_reference <https://github.com/GMOD/Apollo> ],
+        [ linkml:prefix_prefix "CLINVAR" ;
+            linkml:prefix_reference <http://identifiers.org/clinvar> ],
+        [ linkml:prefix_prefix "fabio" ;
+            linkml:prefix_reference <http://purl.org/spar/fabio/> ] ;
     linkml:slots <https://w3id.org/biolink/vocab/FDA_approval_status>,
         <https://w3id.org/biolink/vocab/abundance_affected_by>,
         <https://w3id.org/biolink/vocab/abundance_decreased_by>,
@@ -975,7 +975,6 @@
         <https://w3id.org/biolink/vocab/onset_qualifier>,
         <https://w3id.org/biolink/vocab/opposite_of>,
         <https://w3id.org/biolink/vocab/organism_taxon_has_taxonomic_rank>,
-        <https://w3id.org/biolink/vocab/organism_taxon_subclass_of>,
         <https://w3id.org/biolink/vocab/organism_taxon_to_entity_association_subject>,
         <https://w3id.org/biolink/vocab/organism_taxon_to_environment_association_object>,
         <https://w3id.org/biolink/vocab/organism_taxon_to_environment_association_predicate>,
@@ -990,7 +989,6 @@
         <https://w3id.org/biolink/vocab/organism_taxon_to_organism_taxon_specialization_predicate>,
         <https://w3id.org/biolink/vocab/organism_taxon_to_organism_taxon_specialization_subject>,
         <https://w3id.org/biolink/vocab/organism_to_organism_association_object>,
-        <https://w3id.org/biolink/vocab/organism_to_organism_association_relation>,
         <https://w3id.org/biolink/vocab/organism_to_organism_association_subject>,
         <https://w3id.org/biolink/vocab/organismal_entity_as_a_model_of_disease_association_subject>,
         <https://w3id.org/biolink/vocab/organismal_entity_has_attribute>,
@@ -1003,11 +1001,9 @@
         <https://w3id.org/biolink/vocab/p_value>,
         <https://w3id.org/biolink/vocab/pages>,
         <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_predicate>,
-        <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation>,
         <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_id>,
         <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_object>,
         <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_predicate>,
-        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_relation>,
         <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_subject>,
         <https://w3id.org/biolink/vocab/paralogous_to>,
         <https://w3id.org/biolink/vocab/part_of>,
@@ -1117,7 +1113,6 @@
         <https://w3id.org/biolink/vocab/systematic_synonym>,
         <https://w3id.org/biolink/vocab/taxon_of>,
         <https://w3id.org/biolink/vocab/taxon_to_taxon_association_object>,
-        <https://w3id.org/biolink/vocab/taxon_to_taxon_association_relation>,
         <https://w3id.org/biolink/vocab/taxon_to_taxon_association_subject>,
         <https://w3id.org/biolink/vocab/temporally_related_to>,
         <https://w3id.org/biolink/vocab/timepoint>,
@@ -1159,8 +1154,8 @@
         <https://w3id.org/biolink/vocab/xenologous_to>,
         <https://w3id.org/biolink/vocab/xref> ;
     linkml:source_file "biolink-model.yaml" ;
-    linkml:source_file_date "2021-11-19T18:12:12"^^xsd:dateTime ;
-    linkml:source_file_size 322606 ;
+    linkml:source_file_date "2021-12-16T16:40:48"^^xsd:dateTime ;
+    linkml:source_file_size 322676 ;
     linkml:subsets <https://w3id.org/biolink/vocab/model_organism_database>,
         <https://w3id.org/biolink/vocab/samples>,
         <https://w3id.org/biolink/vocab/testing>,
@@ -2127,11 +2122,11 @@
     linkml:domain <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin> ;
     linkml:domain_of <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin> ;
     linkml:examples [ a linkml:Example ;
-            skos:definition "abnormal brain ventricle size" ;
-            skos:example "MP:0013229" ],
-        [ a linkml:Example ;
             skos:definition "Ehlers-Danlos syndrome, vascular type" ;
-            skos:example "MONDO:0017314" ] ;
+            skos:example "MONDO:0017314" ],
+        [ a linkml:Example ;
+            skos:definition "abnormal brain ventricle size" ;
+            skos:example "MP:0013229" ] ;
     linkml:is_a <https://w3id.org/biolink/vocab/subject> ;
     linkml:is_usage_slot true ;
     linkml:local_names [ linkml:ga4gh [ skos:altLabel "annotation subject" ;
@@ -2380,11 +2375,11 @@
     linkml:domain <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin> ;
     linkml:domain_of <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin> ;
     linkml:examples [ a linkml:Example ;
-            skos:definition "Hyperkinesis" ;
-            skos:example "HP:0002487" ],
-        [ a linkml:Example ;
             skos:definition "axon morphology variant" ;
             skos:example "WBPhenotype:0000180" ],
+        [ a linkml:Example ;
+            skos:definition "Hyperkinesis" ;
+            skos:example "HP:0002487" ],
         [ a linkml:Example ;
             skos:definition "abnormal circulating bilirubin level" ;
             skos:example "MP:0001569" ] ;
@@ -3785,55 +3780,6 @@
     linkml:slot_uri <https://w3id.org/biolink/vocab/has_taxonomic_rank> ;
     linkml:usage_slot_name "has taxonomic rank" .
 
-<https://w3id.org/biolink/vocab/organism_taxon_subclass_of> a linkml:SlotDefinition ;
-    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
-    skos:closeMatch <http://loinc.org/rdf/class_of>,
-        <http://loinc.org/rdf/has_class> ;
-    skos:definition "subclass of holds between two taxa, e.g. human subclass of mammal" ;
-    skos:exactMatch <http://id.nlm.nih.gov/mesh/isa>,
-        <http://purl.bioontology.org/ontology/RXNORM/isa>,
-        <http://purl.obolibrary.org/obo/GO_isa>,
-        rdfs:subClassOf,
-        <https://skr3.nlm.nih.gov/SemMedDBIS_A>,
-        <https://skr3.nlm.nih.gov/SemMedDBisa>,
-        <https://www.ebi.ac.uk/chembl/mechanism/inspect/subset_of>,
-        <https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/isa>,
-        <https://www.wikidata.org/wiki/Property:P279> ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:narrowMatch <http://loinc.org/rdf/has_archetype>,
-        <http://loinc.org/rdf/has_parent_group>,
-        <http://loinc.org/rdf/is_presence_guidance_for>,
-        <http://purl.bioontology.org/ontology/NDDF/has_dose_form>,
-        <http://purl.bioontology.org/ontology/RXNORM/has_dose_form>,
-        <http://purl.bioontology.org/ontology/RXNORM/has_doseformgroup>,
-        <http://purl.obolibrary.org/obo/CHEBI_has_parent_hydride>,
-        <http://purl.obolibrary.org/obo/NCIT_A11>,
-        <http://purl.obolibrary.org/obo/NCIT_A14>,
-        <http://purl.obolibrary.org/obo/NCIT_A16>,
-        <http://purl.obolibrary.org/obo/NCIT_A3>,
-        <http://purl.obolibrary.org/obo/NCIT_R36>,
-        <http://purl.obolibrary.org/obo/NCIT_R42>,
-        <http://purl.obolibrary.org/obo/NCIT_gene_product_has_chemical_classification>,
-        <http://www.snomedbrowser.com/Codes/Details/entire_anatomy_structure_of>,
-        <http://www.snomedbrowser.com/Codes/Details/has_dose_form>,
-        rdfs:subPropertyOf ;
-    linkml:alias "subclass of" ;
-    linkml:annotations [ <biolink:canonical_predicate> [ skos:example "True" ;
-                    linkml:annotations [ ] ;
-                    linkml:extensions [ ] ;
-                    linkml:tag <biolink:canonical_predicate> ] ] ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/subclass_of> ;
-    linkml:domain <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-    linkml:domain_of <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-    linkml:inherited true ;
-    linkml:is_a <https://w3id.org/biolink/vocab/subclass_of> ;
-    linkml:is_usage_slot true ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-    linkml:range <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-    linkml:slot_uri <https://w3id.org/biolink/vocab/subclass_of> ;
-    linkml:usage_slot_name "subclass of" .
-
 <https://w3id.org/biolink/vocab/organism_taxon_to_entity_association_subject> a linkml:SlotDefinition ;
     skos:definition "organism taxon that is the subject of the association" ;
     skos:exactMatch <http://purl.org/oban/association_has_subject>,
@@ -4102,21 +4048,6 @@
     linkml:slot_uri rdf:object ;
     linkml:usage_slot_name "object" .
 
-<https://w3id.org/biolink/vocab/organism_to_organism_association_relation> a linkml:SlotDefinition ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    linkml:alias "relation" ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:deprecated "True" ;
-    linkml:domain <https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> ;
-    linkml:domain_of <https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> ;
-    linkml:is_a <https://w3id.org/biolink/vocab/relation> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> ;
-    linkml:range <https://w3id.org/biolink/vocab/string> ;
-    linkml:slot_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:usage_slot_name "relation" ;
-    linkml:values_from <https://w3id.org/biolink/vocab/ro> .
-
 <https://w3id.org/biolink/vocab/organism_to_organism_association_subject> a linkml:SlotDefinition ;
     skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
     skos:exactMatch <http://purl.org/oban/association_has_subject>,
@@ -4209,7 +4140,7 @@
 
 <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_predicate> a linkml:SlotDefinition ;
     rdfs:subPropertyOf <https://w3id.org/biolink/vocab/molecularly_interacts_with> ;
-    skos:definition "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes." ;
+    skos:definition "interaction relationship type" ;
     skos:editorialNote "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats" ;
     skos:exactMatch <http://purl.org/oban/association_has_predicate>,
         owl:annotatedProperty ;
@@ -4219,6 +4150,9 @@
     linkml:definition_uri <https://w3id.org/biolink/vocab/predicate> ;
     linkml:domain <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
     linkml:domain_of <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
+    linkml:examples [ a linkml:Example ;
+            skos:definition "the subject molecular phosphorylates the object molecule" ;
+            skos:example "RO:0002447" ] ;
     linkml:is_a <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_predicate> ;
     linkml:is_usage_slot true ;
     linkml:local_names [ linkml:ga4gh [ skos:altLabel "annotation predicate" ;
@@ -4230,26 +4164,6 @@
     linkml:required true ;
     linkml:slot_uri rdf:predicate ;
     linkml:usage_slot_name "predicate" .
-
-<https://w3id.org/biolink/vocab/pairwise_molecular_interaction_relation> a linkml:SlotDefinition ;
-    skos:definition "interaction relationship type" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    linkml:alias "relation" ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:deprecated "True" ;
-    linkml:domain <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
-    linkml:domain_of <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
-    linkml:examples [ a linkml:Example ;
-            skos:definition "the subject molecular phosphorylates the object molecule" ;
-            skos:example "RO:0002447" ] ;
-    linkml:is_a <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
-    linkml:range <https://w3id.org/biolink/vocab/string> ;
-    linkml:slot_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:usage_slot_name "relation" ;
-    linkml:values_from <https://w3id.org/biolink/vocab/mi>,
-        <https://w3id.org/biolink/vocab/ro> .
 
 <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_subject> a linkml:SlotDefinition ;
     skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
@@ -4610,21 +4524,6 @@
     linkml:required true ;
     linkml:slot_uri rdf:object ;
     linkml:usage_slot_name "object" .
-
-<https://w3id.org/biolink/vocab/taxon_to_taxon_association_relation> a linkml:SlotDefinition ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    linkml:alias "relation" ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:deprecated "True" ;
-    linkml:domain <https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> ;
-    linkml:domain_of <https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> ;
-    linkml:is_a <https://w3id.org/biolink/vocab/relation> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> ;
-    linkml:range <https://w3id.org/biolink/vocab/string> ;
-    linkml:slot_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:usage_slot_name "relation" ;
-    linkml:values_from <https://w3id.org/biolink/vocab/ro> .
 
 <https://w3id.org/biolink/vocab/taxon_to_taxon_association_subject> a linkml:SlotDefinition ;
     skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
@@ -6325,7 +6224,7 @@
 
 <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_predicate> a linkml:SlotDefinition ;
     rdfs:subPropertyOf <https://w3id.org/biolink/vocab/interacts_with> ;
-    skos:definition "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes." ;
+    skos:definition "interaction relationship type" ;
     skos:editorialNote "Has a value from the Biolink related_to hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats" ;
     skos:exactMatch <http://purl.org/oban/association_has_predicate>,
         owl:annotatedProperty ;
@@ -6347,23 +6246,6 @@
     linkml:slot_uri rdf:predicate ;
     linkml:symmetric true ;
     linkml:usage_slot_name "predicate" .
-
-<https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation> a linkml:SlotDefinition ;
-    skos:definition "interaction relationship type" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    linkml:alias "relation" ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:deprecated "True" ;
-    linkml:domain <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
-    linkml:domain_of <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
-    linkml:is_a <https://w3id.org/biolink/vocab/relation> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
-    linkml:range <https://w3id.org/biolink/vocab/string> ;
-    linkml:slot_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:usage_slot_name "relation" ;
-    linkml:values_from <https://w3id.org/biolink/vocab/mi>,
-        <https://w3id.org/biolink/vocab/ro> .
 
 <https://w3id.org/biolink/vocab/reaction_to_participant_association_subject> a linkml:SlotDefinition ;
     skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
@@ -6428,11 +6310,11 @@
     linkml:domain <https://w3id.org/biolink/vocab/SequenceVariant> ;
     linkml:domain_of <https://w3id.org/biolink/vocab/SequenceVariant> ;
     linkml:examples [ a linkml:Example ;
-            skos:definition "NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)" ;
-            skos:example "ClinVarVariant:17681" ],
-        [ a linkml:Example ;
             skos:definition "ti282a allele from ZFIN" ;
-            skos:example "ZFIN:ZDB-ALT-980203-1091" ] ;
+            skos:example "ZFIN:ZDB-ALT-980203-1091" ],
+        [ a linkml:Example ;
+            skos:definition "NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)" ;
+            skos:example "ClinVarVariant:17681" ] ;
     linkml:identifier true ;
     linkml:is_a <https://w3id.org/biolink/vocab/id> ;
     linkml:is_usage_slot true ;
@@ -9365,6 +9247,9 @@
     skos:relatedMatch <http://translator.renci.org/GAMMA_ic50>,
         <http://translator.renci.org/GAMMA_ki>,
         <https://www.dgidb.org/interaction_typesvaccine> ;
+    linkml:annotations [ a linkml:Annotation ;
+            skos:example "True" ;
+            linkml:tag <biolink:canonical_predicate> ] ;
     linkml:definition_uri <https://w3id.org/biolink/vocab/decreases_activity_of> ;
     linkml:domain <https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProduct> ;
     linkml:inherited true ;
@@ -9842,11 +9727,11 @@
     linkml:inlined true ;
     linkml:is_a <https://w3id.org/biolink/vocab/entity_regulates_entity> ;
     linkml:local_names [ a linkml:LocalName ;
-            skos:altLabel "activity directly negatively regulates activity of" ;
-            linkml:local_name_source "ro" ],
-        [ a linkml:LocalName ;
             skos:altLabel "negatively regulates" ;
-            linkml:local_name_source "translator" ] ;
+            linkml:local_name_source "translator" ],
+        [ a linkml:LocalName ;
+            skos:altLabel "activity directly negatively regulates activity of" ;
+            linkml:local_name_source "ro" ] ;
     linkml:mixins <https://w3id.org/biolink/vocab/negatively_regulates> ;
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/biolink/vocab/entity_negatively_regulates_entity> ;
@@ -10503,6 +10388,9 @@
         <https://www.ebi.ac.uk/chembl/mechanism/inspect/positive_modulator> ;
     skos:relatedMatch <http://translator.renci.org/GAMMA_ac50>,
         <http://translator.renci.org/GAMMA_ec50> ;
+    linkml:annotations [ a linkml:Annotation ;
+            skos:example "True" ;
+            linkml:tag <biolink:canonical_predicate> ] ;
     linkml:definition_uri <https://w3id.org/biolink/vocab/increases_activity_of> ;
     linkml:domain <https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProduct> ;
     linkml:inherited true ;
@@ -13685,6 +13573,52 @@
     linkml:slot_uri <https://w3id.org/biolink/vocab/similar_to> ;
     linkml:symmetric true .
 
+<https://w3id.org/biolink/vocab/subclass_of> a linkml:SlotDefinition ;
+    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
+    owl:inverseOf <https://w3id.org/biolink/vocab/superclass_of> ;
+    skos:closeMatch <http://loinc.org/rdf/class_of>,
+        <http://loinc.org/rdf/has_class> ;
+    skos:definition "holds between two classes where the domain class is a specialization of the range class" ;
+    skos:exactMatch <http://id.nlm.nih.gov/mesh/isa>,
+        <http://purl.bioontology.org/ontology/RXNORM/isa>,
+        <http://purl.obolibrary.org/obo/GO_isa>,
+        rdfs:subClassOf,
+        <https://skr3.nlm.nih.gov/SemMedDBIS_A>,
+        <https://skr3.nlm.nih.gov/SemMedDBisa>,
+        <https://www.ebi.ac.uk/chembl/mechanism/inspect/subset_of>,
+        <https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/isa>,
+        <https://www.wikidata.org/wiki/Property:P279> ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:narrowMatch <http://loinc.org/rdf/has_archetype>,
+        <http://loinc.org/rdf/has_parent_group>,
+        <http://loinc.org/rdf/is_presence_guidance_for>,
+        <http://purl.bioontology.org/ontology/NDDF/has_dose_form>,
+        <http://purl.bioontology.org/ontology/RXNORM/has_dose_form>,
+        <http://purl.bioontology.org/ontology/RXNORM/has_doseformgroup>,
+        <http://purl.obolibrary.org/obo/CHEBI_has_parent_hydride>,
+        <http://purl.obolibrary.org/obo/NCIT_A11>,
+        <http://purl.obolibrary.org/obo/NCIT_A14>,
+        <http://purl.obolibrary.org/obo/NCIT_A16>,
+        <http://purl.obolibrary.org/obo/NCIT_A3>,
+        <http://purl.obolibrary.org/obo/NCIT_R36>,
+        <http://purl.obolibrary.org/obo/NCIT_R42>,
+        <http://purl.obolibrary.org/obo/NCIT_gene_product_has_chemical_classification>,
+        <http://www.snomedbrowser.com/Codes/Details/entire_anatomy_structure_of>,
+        <http://www.snomedbrowser.com/Codes/Details/has_dose_form>,
+        rdfs:subPropertyOf ;
+    linkml:annotations [ a linkml:Annotation ;
+            skos:example "True" ;
+            linkml:tag <biolink:canonical_predicate> ] ;
+    linkml:definition_uri <https://w3id.org/biolink/vocab/subclass_of> ;
+    linkml:domain <https://w3id.org/biolink/vocab/OntologyClass> ;
+    linkml:inherited true ;
+    linkml:inlined true ;
+    linkml:is_a <https://w3id.org/biolink/vocab/related_to_at_concept_level> ;
+    linkml:multivalued true ;
+    linkml:owner <https://w3id.org/biolink/vocab/subclass_of> ;
+    linkml:range <https://w3id.org/biolink/vocab/OntologyClass> ;
+    linkml:slot_uri <https://w3id.org/biolink/vocab/subclass_of> .
+
 <https://w3id.org/biolink/vocab/temporally_related_to> a linkml:SlotDefinition ;
     skos:definition "holds between two entities with a temporal relationship" ;
     skos:exactMatch <http://www.snomedbrowser.com/Codes/Details/temporally_related_to> ;
@@ -13955,6 +13889,35 @@
     linkml:mixin true ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/biolink/vocab/material_sample_to_entity_association_mixin_subject> .
+
+<https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> a linkml:ClassDefinition ;
+    skos:definition "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:narrowMatch <dcid:ProteinProteinInteraction> ;
+    linkml:class_uri <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
+    linkml:defining_slots <https://w3id.org/biolink/vocab/object>,
+        <https://w3id.org/biolink/vocab/predicate>,
+        <https://w3id.org/biolink/vocab/subject> ;
+    linkml:definition_uri <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
+    linkml:is_a <https://w3id.org/biolink/vocab/GeneToGeneAssociation> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/biolink/vocab/association_category>,
+        <https://w3id.org/biolink/vocab/association_type>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/gene_to_gene_association_object>,
+        <https://w3id.org/biolink/vocab/gene_to_gene_association_subject>,
+        <https://w3id.org/biolink/vocab/has_attribute>,
+        <https://w3id.org/biolink/vocab/has_evidence>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/negated>,
+        <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_predicate>,
+        <https://w3id.org/biolink/vocab/provided_by>,
+        <https://w3id.org/biolink/vocab/publications>,
+        <https://w3id.org/biolink/vocab/qualifiers>,
+        <https://w3id.org/biolink/vocab/relation>,
+        <https://w3id.org/biolink/vocab/source> .
 
 <https://w3id.org/biolink/vocab/abundance_affected_by> a linkml:SlotDefinition ;
     owl:inverseOf <https://w3id.org/biolink/vocab/affects_abundance_of> ;
@@ -14892,7 +14855,8 @@
         <umlssg:DISO>,
         <wikidata:Q12136> ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:narrowMatch <sty:T019>,
+    skos:narrowMatch <https://w3id.org/biolink/vocab/MONDO:0042489>,
+        <sty:T019>,
         <sty:T020>,
         <sty:T048>,
         <sty:T049>,
@@ -15766,6 +15730,33 @@
         <https://w3id.org/biolink/vocab/relation>,
         <https://w3id.org/biolink/vocab/source> .
 
+<https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> a linkml:ClassDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    linkml:class_uri <https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> ;
+    linkml:defining_slots <https://w3id.org/biolink/vocab/object>,
+        <https://w3id.org/biolink/vocab/predicate>,
+        <https://w3id.org/biolink/vocab/subject> ;
+    linkml:definition_uri <https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> ;
+    linkml:is_a <https://w3id.org/biolink/vocab/Association> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/biolink/vocab/association_category>,
+        <https://w3id.org/biolink/vocab/association_type>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/has_attribute>,
+        <https://w3id.org/biolink/vocab/has_evidence>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/negated>,
+        <https://w3id.org/biolink/vocab/organism_to_organism_association_object>,
+        <https://w3id.org/biolink/vocab/organism_to_organism_association_subject>,
+        <https://w3id.org/biolink/vocab/predicate>,
+        <https://w3id.org/biolink/vocab/provided_by>,
+        <https://w3id.org/biolink/vocab/publications>,
+        <https://w3id.org/biolink/vocab/qualifiers>,
+        <https://w3id.org/biolink/vocab/relation>,
+        <https://w3id.org/biolink/vocab/source> .
+
 <https://w3id.org/biolink/vocab/PhenotypicFeature> a linkml:ClassDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/model_organism_database> ;
     skos:altLabel "endophenotype",
@@ -15842,6 +15833,33 @@
         <https://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_object>,
         <https://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_subject>,
         <https://w3id.org/biolink/vocab/source> .
+
+<https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> a linkml:ClassDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    linkml:class_uri <https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> ;
+    linkml:defining_slots <https://w3id.org/biolink/vocab/object>,
+        <https://w3id.org/biolink/vocab/predicate>,
+        <https://w3id.org/biolink/vocab/subject> ;
+    linkml:definition_uri <https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> ;
+    linkml:is_a <https://w3id.org/biolink/vocab/Association> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/biolink/vocab/association_category>,
+        <https://w3id.org/biolink/vocab/association_type>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/has_attribute>,
+        <https://w3id.org/biolink/vocab/has_evidence>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/negated>,
+        <https://w3id.org/biolink/vocab/predicate>,
+        <https://w3id.org/biolink/vocab/provided_by>,
+        <https://w3id.org/biolink/vocab/publications>,
+        <https://w3id.org/biolink/vocab/qualifiers>,
+        <https://w3id.org/biolink/vocab/relation>,
+        <https://w3id.org/biolink/vocab/source>,
+        <https://w3id.org/biolink/vocab/taxon_to_taxon_association_object>,
+        <https://w3id.org/biolink/vocab/taxon_to_taxon_association_subject> .
 
 <https://w3id.org/biolink/vocab/TranscriptToGeneRelationship> a linkml:ClassDefinition ;
     skos:definition "A gene is a collection of transcripts" ;
@@ -16064,52 +16082,6 @@
     linkml:range <https://w3id.org/biolink/vocab/LifeStage> ;
     linkml:slot_uri <https://w3id.org/biolink/vocab/stage_qualifier> .
 
-<https://w3id.org/biolink/vocab/subclass_of> a linkml:SlotDefinition ;
-    OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
-    owl:inverseOf <https://w3id.org/biolink/vocab/superclass_of> ;
-    skos:closeMatch <http://loinc.org/rdf/class_of>,
-        <http://loinc.org/rdf/has_class> ;
-    skos:definition "holds between two classes where the domain class is a specialization of the range class" ;
-    skos:exactMatch <http://id.nlm.nih.gov/mesh/isa>,
-        <http://purl.bioontology.org/ontology/RXNORM/isa>,
-        <http://purl.obolibrary.org/obo/GO_isa>,
-        rdfs:subClassOf,
-        <https://skr3.nlm.nih.gov/SemMedDBIS_A>,
-        <https://skr3.nlm.nih.gov/SemMedDBisa>,
-        <https://www.ebi.ac.uk/chembl/mechanism/inspect/subset_of>,
-        <https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/isa>,
-        <https://www.wikidata.org/wiki/Property:P279> ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:narrowMatch <http://loinc.org/rdf/has_archetype>,
-        <http://loinc.org/rdf/has_parent_group>,
-        <http://loinc.org/rdf/is_presence_guidance_for>,
-        <http://purl.bioontology.org/ontology/NDDF/has_dose_form>,
-        <http://purl.bioontology.org/ontology/RXNORM/has_dose_form>,
-        <http://purl.bioontology.org/ontology/RXNORM/has_doseformgroup>,
-        <http://purl.obolibrary.org/obo/CHEBI_has_parent_hydride>,
-        <http://purl.obolibrary.org/obo/NCIT_A11>,
-        <http://purl.obolibrary.org/obo/NCIT_A14>,
-        <http://purl.obolibrary.org/obo/NCIT_A16>,
-        <http://purl.obolibrary.org/obo/NCIT_A3>,
-        <http://purl.obolibrary.org/obo/NCIT_R36>,
-        <http://purl.obolibrary.org/obo/NCIT_R42>,
-        <http://purl.obolibrary.org/obo/NCIT_gene_product_has_chemical_classification>,
-        <http://www.snomedbrowser.com/Codes/Details/entire_anatomy_structure_of>,
-        <http://www.snomedbrowser.com/Codes/Details/has_dose_form>,
-        rdfs:subPropertyOf ;
-    linkml:annotations [ a linkml:Annotation ;
-            skos:example "True" ;
-            linkml:tag <biolink:canonical_predicate> ] ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/subclass_of> ;
-    linkml:domain <https://w3id.org/biolink/vocab/OntologyClass> ;
-    linkml:inherited true ;
-    linkml:inlined true ;
-    linkml:is_a <https://w3id.org/biolink/vocab/related_to_at_concept_level> ;
-    linkml:multivalued true ;
-    linkml:owner <https://w3id.org/biolink/vocab/subclass_of> ;
-    linkml:range <https://w3id.org/biolink/vocab/OntologyClass> ;
-    linkml:slot_uri <https://w3id.org/biolink/vocab/subclass_of> .
-
 <https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin> a linkml:ClassDefinition ;
     skos:definition "An interaction between a chemical entity and another entity" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -16152,35 +16124,6 @@
     linkml:mixin true ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://w3id.org/biolink/vocab/has_gene_or_gene_product> .
-
-<https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> a linkml:ClassDefinition ;
-    skos:definition "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:narrowMatch <dcid:ProteinProteinInteraction> ;
-    linkml:class_uri <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
-    linkml:defining_slots <https://w3id.org/biolink/vocab/object>,
-        <https://w3id.org/biolink/vocab/predicate>,
-        <https://w3id.org/biolink/vocab/subject> ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
-    linkml:is_a <https://w3id.org/biolink/vocab/GeneToGeneAssociation> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/biolink/vocab/association_category>,
-        <https://w3id.org/biolink/vocab/association_type>,
-        <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/gene_to_gene_association_object>,
-        <https://w3id.org/biolink/vocab/gene_to_gene_association_subject>,
-        <https://w3id.org/biolink/vocab/has_attribute>,
-        <https://w3id.org/biolink/vocab/has_evidence>,
-        <https://w3id.org/biolink/vocab/id>,
-        <https://w3id.org/biolink/vocab/iri>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/negated>,
-        <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_predicate>,
-        <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation>,
-        <https://w3id.org/biolink/vocab/provided_by>,
-        <https://w3id.org/biolink/vocab/publications>,
-        <https://w3id.org/biolink/vocab/qualifiers>,
-        <https://w3id.org/biolink/vocab/source> .
 
 <https://w3id.org/biolink/vocab/QuantityValue> a linkml:ClassDefinition ;
     skos:definition "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value" ;
@@ -17028,33 +16971,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
         <https://w3id.org/biolink/vocab/relation>,
         <https://w3id.org/biolink/vocab/source> .
 
-<https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> a linkml:ClassDefinition ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    linkml:class_uri <https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> ;
-    linkml:defining_slots <https://w3id.org/biolink/vocab/object>,
-        <https://w3id.org/biolink/vocab/predicate>,
-        <https://w3id.org/biolink/vocab/subject> ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/OrganismToOrganismAssociation> ;
-    linkml:is_a <https://w3id.org/biolink/vocab/Association> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/biolink/vocab/association_category>,
-        <https://w3id.org/biolink/vocab/association_type>,
-        <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/has_attribute>,
-        <https://w3id.org/biolink/vocab/has_evidence>,
-        <https://w3id.org/biolink/vocab/id>,
-        <https://w3id.org/biolink/vocab/iri>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/negated>,
-        <https://w3id.org/biolink/vocab/organism_to_organism_association_object>,
-        <https://w3id.org/biolink/vocab/organism_to_organism_association_relation>,
-        <https://w3id.org/biolink/vocab/organism_to_organism_association_subject>,
-        <https://w3id.org/biolink/vocab/predicate>,
-        <https://w3id.org/biolink/vocab/provided_by>,
-        <https://w3id.org/biolink/vocab/publications>,
-        <https://w3id.org/biolink/vocab/qualifiers>,
-        <https://w3id.org/biolink/vocab/source> .
-
 <https://w3id.org/biolink/vocab/Outcome> a linkml:ClassDefinition ;
     skos:definition "An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -17151,33 +17067,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
         <https://w3id.org/biolink/vocab/summary>,
         <https://w3id.org/biolink/vocab/volume>,
         <https://w3id.org/biolink/vocab/xref> .
-
-<https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> a linkml:ClassDefinition ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    linkml:class_uri <https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> ;
-    linkml:defining_slots <https://w3id.org/biolink/vocab/object>,
-        <https://w3id.org/biolink/vocab/predicate>,
-        <https://w3id.org/biolink/vocab/subject> ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/TaxonToTaxonAssociation> ;
-    linkml:is_a <https://w3id.org/biolink/vocab/Association> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/biolink/vocab/association_category>,
-        <https://w3id.org/biolink/vocab/association_type>,
-        <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/has_attribute>,
-        <https://w3id.org/biolink/vocab/has_evidence>,
-        <https://w3id.org/biolink/vocab/id>,
-        <https://w3id.org/biolink/vocab/iri>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/negated>,
-        <https://w3id.org/biolink/vocab/predicate>,
-        <https://w3id.org/biolink/vocab/provided_by>,
-        <https://w3id.org/biolink/vocab/publications>,
-        <https://w3id.org/biolink/vocab/qualifiers>,
-        <https://w3id.org/biolink/vocab/source>,
-        <https://w3id.org/biolink/vocab/taxon_to_taxon_association_object>,
-        <https://w3id.org/biolink/vocab/taxon_to_taxon_association_relation>,
-        <https://w3id.org/biolink/vocab/taxon_to_taxon_association_subject> .
 
 <https://w3id.org/biolink/vocab/has_sequence_variant> a linkml:SlotDefinition ;
     owl:inverseOf <https://w3id.org/biolink/vocab/is_sequence_variant_of> ;
@@ -18004,6 +17893,35 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
         <https://w3id.org/biolink/vocab/relation>,
         <https://w3id.org/biolink/vocab/source> .
 
+<https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> a linkml:ClassDefinition ;
+    skos:definition "An interaction at the molecular level between two physical entities" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    linkml:class_uri <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
+    linkml:defining_slots <https://w3id.org/biolink/vocab/object>,
+        <https://w3id.org/biolink/vocab/predicate>,
+        <https://w3id.org/biolink/vocab/subject> ;
+    linkml:definition_uri <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
+    linkml:is_a <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/biolink/vocab/association_category>,
+        <https://w3id.org/biolink/vocab/association_type>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/has_attribute>,
+        <https://w3id.org/biolink/vocab/has_evidence>,
+        <https://w3id.org/biolink/vocab/interacting_molecules_category>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/negated>,
+        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_id>,
+        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_object>,
+        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_predicate>,
+        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_subject>,
+        <https://w3id.org/biolink/vocab/provided_by>,
+        <https://w3id.org/biolink/vocab/publications>,
+        <https://w3id.org/biolink/vocab/qualifiers>,
+        <https://w3id.org/biolink/vocab/relation>,
+        <https://w3id.org/biolink/vocab/source> .
+
 <https://w3id.org/biolink/vocab/PhysicalEssenceOrOccurrent> a linkml:ClassDefinition ;
     skos:definition "Either a physical or processual entity." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -18057,6 +17975,34 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
         <https://w3id.org/biolink/vocab/onset_qualifier>,
         <https://w3id.org/biolink/vocab/severity_qualifier>,
         <https://w3id.org/biolink/vocab/sex_qualifier> .
+
+<https://w3id.org/biolink/vocab/OrganismTaxon> a linkml:ClassDefinition ;
+    OIO:inSubset <https://w3id.org/biolink/vocab/model_organism_database> ;
+    skos:altLabel "taxon",
+        "taxonomic classification" ;
+    skos:definition "A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies." ;
+    skos:exactMatch <bioschemas:Taxon>,
+        <sty:T001>,
+        <wikidata:Q16521> ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:narrowMatch <dcid:BiologicalSpecies> ;
+    linkml:class_uri <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+    linkml:definition_uri <https://w3id.org/biolink/vocab/OrganismTaxon> ;
+    linkml:id_prefixes "MESH",
+        "NCBITaxon" ;
+    linkml:is_a <https://w3id.org/biolink/vocab/NamedThing> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/has_attribute>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/named_thing_category>,
+        <https://w3id.org/biolink/vocab/organism_taxon_has_taxonomic_rank>,
+        <https://w3id.org/biolink/vocab/provided_by>,
+        <https://w3id.org/biolink/vocab/source>,
+        <https://w3id.org/biolink/vocab/type> ;
+    linkml:values_from <https://w3id.org/biolink/vocab/NCBITaxon> .
 
 <https://w3id.org/biolink/vocab/VariantToPopulationAssociation> a linkml:ClassDefinition ;
     skos:definition "An association between a variant and a population, where the variant has particular frequency in the population" ;
@@ -18229,35 +18175,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
         <https://w3id.org/biolink/vocab/source>,
         <https://w3id.org/biolink/vocab/type> .
 
-<https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> a linkml:ClassDefinition ;
-    skos:definition "An interaction at the molecular level between two physical entities" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    linkml:class_uri <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
-    linkml:defining_slots <https://w3id.org/biolink/vocab/object>,
-        <https://w3id.org/biolink/vocab/predicate>,
-        <https://w3id.org/biolink/vocab/subject> ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/PairwiseMolecularInteraction> ;
-    linkml:is_a <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/biolink/vocab/association_category>,
-        <https://w3id.org/biolink/vocab/association_type>,
-        <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/has_attribute>,
-        <https://w3id.org/biolink/vocab/has_evidence>,
-        <https://w3id.org/biolink/vocab/interacting_molecules_category>,
-        <https://w3id.org/biolink/vocab/iri>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/negated>,
-        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_id>,
-        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_object>,
-        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_predicate>,
-        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_relation>,
-        <https://w3id.org/biolink/vocab/pairwise_molecular_interaction_subject>,
-        <https://w3id.org/biolink/vocab/provided_by>,
-        <https://w3id.org/biolink/vocab/publications>,
-        <https://w3id.org/biolink/vocab/qualifiers>,
-        <https://w3id.org/biolink/vocab/source> .
-
 <https://w3id.org/biolink/vocab/has_attribute_type> a linkml:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/samples> ;
     skos:definition "connects an attribute to a class that describes it" ;
@@ -18398,35 +18315,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
         <https://w3id.org/biolink/vocab/qualifiers>,
         <https://w3id.org/biolink/vocab/relation>,
         <https://w3id.org/biolink/vocab/source> .
-
-<https://w3id.org/biolink/vocab/OrganismTaxon> a linkml:ClassDefinition ;
-    OIO:inSubset <https://w3id.org/biolink/vocab/model_organism_database> ;
-    skos:altLabel "taxon",
-        "taxonomic classification" ;
-    skos:definition "A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies." ;
-    skos:exactMatch <bioschemas:Taxon>,
-        <sty:T001>,
-        <wikidata:Q16521> ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:narrowMatch <dcid:BiologicalSpecies> ;
-    linkml:class_uri <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/OrganismTaxon> ;
-    linkml:id_prefixes "MESH",
-        "NCBITaxon" ;
-    linkml:is_a <https://w3id.org/biolink/vocab/NamedThing> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/has_attribute>,
-        <https://w3id.org/biolink/vocab/id>,
-        <https://w3id.org/biolink/vocab/iri>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/named_thing_category>,
-        <https://w3id.org/biolink/vocab/organism_taxon_has_taxonomic_rank>,
-        <https://w3id.org/biolink/vocab/organism_taxon_subclass_of>,
-        <https://w3id.org/biolink/vocab/provided_by>,
-        <https://w3id.org/biolink/vocab/source>,
-        <https://w3id.org/biolink/vocab/type> ;
-    linkml:values_from <https://w3id.org/biolink/vocab/NCBITaxon> .
 
 <https://w3id.org/biolink/vocab/has_biological_sequence> a linkml:SlotDefinition ;
     skos:definition "connects a genomic feature to its sequence" ;
@@ -19073,6 +18961,14 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:range <https://w3id.org/biolink/vocab/string> ;
     linkml:slot_uri <https://w3id.org/biolink/vocab/association_slot> .
 
+<https://w3id.org/biolink/vocab/string> a linkml:TypeDefinition ;
+    skos:definition "A character string" ;
+    skos:inScheme linkml:types ;
+    linkml:base "str" ;
+    linkml:definition_uri linkml:String ;
+    linkml:imported_from "linkml:types" ;
+    linkml:uri xsd:string .
+
 <https://w3id.org/biolink/vocab/node_property> a linkml:SlotDefinition ;
     skos:definition "A grouping for any property that holds between a node and a value" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -19081,14 +18977,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:owner <https://w3id.org/biolink/vocab/node_property> ;
     linkml:range <https://w3id.org/biolink/vocab/string> ;
     linkml:slot_uri <https://w3id.org/biolink/vocab/node_property> .
-
-<https://w3id.org/biolink/vocab/string> a linkml:TypeDefinition ;
-    skos:definition "A character string" ;
-    skos:inScheme linkml:types ;
-    linkml:base "str" ;
-    linkml:definition_uri linkml:String ;
-    linkml:imported_from "linkml:types" ;
-    linkml:uri xsd:string .
 
 <https://w3id.org/biolink/vocab/association_category> a linkml:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -19149,6 +19037,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:range <https://w3id.org/biolink/vocab/Publication> ;
     linkml:slot_uri <https://w3id.org/biolink/vocab/publications> .
 
+<https://w3id.org/biolink/vocab/relation> a linkml:SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    linkml:definition_uri <https://w3id.org/biolink/vocab/relation> ;
+    linkml:deprecated "True" ;
+    linkml:domain_of <https://w3id.org/biolink/vocab/Association> ;
+    linkml:owner <https://w3id.org/biolink/vocab/Association> ;
+    linkml:range <https://w3id.org/biolink/vocab/string> ;
+    linkml:slot_uri <https://w3id.org/biolink/vocab/relation> .
+
 <https://w3id.org/biolink/vocab/association_type> a linkml:SlotDefinition ;
     skos:definition "connects an association to the category of association (e.g. gene to phenotype)",
         "rdf:type of biolink:Association should be fixed at rdf:Statement" ;
@@ -19207,15 +19104,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:range <https://w3id.org/biolink/vocab/NamedThing> ;
     linkml:slot_uri <https://w3id.org/biolink/vocab/related_to_at_instance_level> ;
     linkml:symmetric true .
-
-<https://w3id.org/biolink/vocab/relation> a linkml:SlotDefinition ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    linkml:definition_uri <https://w3id.org/biolink/vocab/relation> ;
-    linkml:deprecated "True" ;
-    linkml:domain_of <https://w3id.org/biolink/vocab/Association> ;
-    linkml:owner <https://w3id.org/biolink/vocab/Association> ;
-    linkml:range <https://w3id.org/biolink/vocab/string> ;
-    linkml:slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/named_thing_category> a linkml:SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -19314,11 +19202,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:domain_of <https://w3id.org/biolink/vocab/Association> ;
     linkml:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     linkml:local_names [ a linkml:LocalName ;
-            skos:altLabel "descriptor" ;
-            linkml:local_name_source "ga4gh" ],
-        [ a linkml:LocalName ;
             skos:altLabel "node with incoming relationship" ;
-            linkml:local_name_source "neo4j" ] ;
+            linkml:local_name_source "neo4j" ],
+        [ a linkml:LocalName ;
+            skos:altLabel "descriptor" ;
+            linkml:local_name_source "ga4gh" ] ;
     linkml:owner <https://w3id.org/biolink/vocab/Association> ;
     linkml:range <https://w3id.org/biolink/vocab/NamedThing> ;
     linkml:required true ;
@@ -19521,11 +19409,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:domain_of <https://w3id.org/biolink/vocab/Association> ;
     linkml:is_a <https://w3id.org/biolink/vocab/association_slot> ;
     linkml:local_names [ a linkml:LocalName ;
-            skos:altLabel "annotation subject" ;
-            linkml:local_name_source "ga4gh" ],
-        [ a linkml:LocalName ;
             skos:altLabel "node with outgoing relationship" ;
-            linkml:local_name_source "neo4j" ] ;
+            linkml:local_name_source "neo4j" ],
+        [ a linkml:LocalName ;
+            skos:altLabel "annotation subject" ;
+            linkml:local_name_source "ga4gh" ] ;
     linkml:owner <https://w3id.org/biolink/vocab/Association> ;
     linkml:range <https://w3id.org/biolink/vocab/NamedThing> ;
     linkml:required true ;

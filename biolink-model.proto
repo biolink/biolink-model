@@ -2253,7 +2253,6 @@ message OrganismTaxon
   repeated hasAttribute Attribute = 8
   repeated category NamedThing = 9
   optional hasTaxonomicRank TaxonomicRank = 10
-  repeated subclassOf OrganismTaxon = 11
  }
 // An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
 message OrganismTaxonToOrganismTaxonInteraction
@@ -2308,14 +2307,14 @@ message OrganismToOrganismAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional negated Boolean = 9
-  repeated qualifiers OntologyClass = 10
-  repeated publications Publication = 11
-  repeated hasEvidence EvidenceType = 12
-  optional type String = 13
-  repeated category CategoryType = 14
-  subject IndividualOrganism = 15
-  optional relation String = 16
+  optional relation String = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  repeated hasEvidence EvidenceType = 13
+  optional type String = 14
+  repeated category CategoryType = 15
+  subject IndividualOrganism = 16
   object IndividualOrganism = 17
  }
 message OrganismalEntityAsAModelOfDiseaseAssociation
@@ -2351,16 +2350,16 @@ message PairwiseGeneToGeneInteraction
   optional source LabelType = 5
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
-  optional negated Boolean = 8
-  repeated qualifiers OntologyClass = 9
-  repeated publications Publication = 10
-  repeated hasEvidence EvidenceType = 11
-  optional type String = 12
-  repeated category CategoryType = 13
-  subject GeneOrGeneProduct = 14
-  object GeneOrGeneProduct = 15
-  predicate PredicateType = 16
-  optional relation String = 17
+  optional relation String = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  repeated hasEvidence EvidenceType = 12
+  optional type String = 13
+  repeated category CategoryType = 14
+  subject GeneOrGeneProduct = 15
+  object GeneOrGeneProduct = 16
+  predicate PredicateType = 17
  }
 // An interaction at the molecular level between two physical entities
 message PairwiseMolecularInteraction
@@ -2371,17 +2370,17 @@ message PairwiseMolecularInteraction
   optional source LabelType = 4
   repeated providedBy Agent = 5
   repeated hasAttribute Attribute = 6
-  optional negated Boolean = 7
-  repeated qualifiers OntologyClass = 8
-  repeated publications Publication = 9
-  repeated hasEvidence EvidenceType = 10
-  optional type String = 11
-  repeated category CategoryType = 12
-  optional interactingMoleculesCategory OntologyClass = 13
-  subject MolecularEntity = 14
-  id String = 15
-  predicate PredicateType = 16
-  optional relation String = 17
+  optional relation String = 7
+  optional negated Boolean = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  repeated hasEvidence EvidenceType = 11
+  optional type String = 12
+  repeated category CategoryType = 13
+  optional interactingMoleculesCategory OntologyClass = 14
+  subject MolecularEntity = 15
+  id String = 16
+  predicate PredicateType = 17
   object MolecularEntity = 18
  }
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
@@ -2991,14 +2990,14 @@ message TaxonToTaxonAssociation
   repeated providedBy Agent = 6
   repeated hasAttribute Attribute = 7
   predicate PredicateType = 8
-  optional negated Boolean = 9
-  repeated qualifiers OntologyClass = 10
-  repeated publications Publication = 11
-  repeated hasEvidence EvidenceType = 12
-  optional type String = 13
-  repeated category CategoryType = 14
-  subject OrganismTaxon = 15
-  optional relation String = 16
+  optional relation String = 9
+  optional negated Boolean = 10
+  repeated qualifiers OntologyClass = 11
+  repeated publications Publication = 12
+  repeated hasEvidence EvidenceType = 13
+  optional type String = 14
+  repeated category CategoryType = 15
+  subject OrganismTaxon = 16
   object OrganismTaxon = 17
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.

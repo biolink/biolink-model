@@ -2027,8 +2027,7 @@ linkml:Nodeidentifier NONLITERAL
 <OrganismTaxon> CLOSED {
     (  $<OrganismTaxon_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <has_taxonomic_rank> @<TaxonomicRank> ? ;
-          <subclass_of> @<OrganismTaxon> *
+          <has_taxonomic_rank> @<TaxonomicRank> ?
        ) ;
        rdf:type [ <OrganismTaxon> ]
     )
@@ -2096,7 +2095,6 @@ linkml:Nodeidentifier NONLITERAL
     (  $<OrganismToOrganismAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           rdf:subject @<IndividualOrganism> ;
-          <relation> @linkml:String ? ;
           rdf:object @<IndividualOrganism>
        ) ;
        rdf:type [ <OrganismToOrganismAssociation> ]
@@ -2142,8 +2140,7 @@ linkml:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<PairwiseGeneToGeneInteraction_tes> (  &<GeneToGeneAssociation_tes> ;
              rdf:type [ <GeneToGeneAssociation> ] ? ;
-             rdf:predicate @<PredicateType> ;
-             <relation> @linkml:String ?
+             rdf:predicate @<PredicateType>
           ) ;
           rdf:type [ <PairwiseGeneToGeneInteraction> ]
        )
@@ -2156,7 +2153,6 @@ linkml:Nodeidentifier NONLITERAL
           <interacting_molecules_category> @<OntologyClass> ? ;
           rdf:subject @<MolecularEntity> ;
           rdf:predicate @<PredicateType> ;
-          <relation> @linkml:String ? ;
           rdf:object @<MolecularEntity>
        ) ;
        rdf:type [ <PairwiseMolecularInteraction> ]
@@ -2706,7 +2702,6 @@ linkml:Nodeidentifier NONLITERAL
     (  $<TaxonToTaxonAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           rdf:subject @<OrganismTaxon> ;
-          <relation> @linkml:String ? ;
           rdf:object @<OrganismTaxon>
        ) ;
        rdf:type [ <TaxonToTaxonAssociation> ]
