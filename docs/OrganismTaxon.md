@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[TaxonToTaxonAssociation],[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[OrganismTaxon]%3Csubclass%20of%200..%2A-%20[OrganismTaxon%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-++[OrganismTaxon],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OrganismTaxonToEntityAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToEnvironmentAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20subject%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[NamedThing]%5E-[OrganismTaxon],[NamedThing],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[TaxonToTaxonAssociation],[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-++[OrganismTaxon%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OrganismTaxonToEntityAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToEnvironmentAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20subject%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[NamedThing]%5E-[OrganismTaxon],[NamedThing],[Attribute],[Agent])
 
 ---
 
@@ -40,7 +40,6 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
  *  **[OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md)** *[organism taxon to organism taxon interaction➞subject](organism_taxon_to_organism_taxon_interaction_subject.md)*  <sub>1..1</sub>  **[OrganismTaxon](OrganismTaxon.md)**
  *  **[OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md)** *[organism taxon to organism taxon specialization➞object](organism_taxon_to_organism_taxon_specialization_object.md)*  <sub>1..1</sub>  **[OrganismTaxon](OrganismTaxon.md)**
  *  **[OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md)** *[organism taxon to organism taxon specialization➞subject](organism_taxon_to_organism_taxon_specialization_subject.md)*  <sub>1..1</sub>  **[OrganismTaxon](OrganismTaxon.md)**
- *  **[OrganismTaxon](OrganismTaxon.md)** *[organism taxon➞subclass of](organism_taxon_subclass_of.md)*  <sub>0..\*</sub>  **[OrganismTaxon](OrganismTaxon.md)**
  *  **[TaxonToTaxonAssociation](TaxonToTaxonAssociation.md)** *[taxon to taxon association➞object](taxon_to_taxon_association_object.md)*  <sub>1..1</sub>  **[OrganismTaxon](OrganismTaxon.md)**
  *  **[TaxonToTaxonAssociation](TaxonToTaxonAssociation.md)** *[taxon to taxon association➞subject](taxon_to_taxon_association_subject.md)*  <sub>1..1</sub>  **[OrganismTaxon](OrganismTaxon.md)**
 
@@ -51,10 +50,6 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
  * [organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)  <sub>0..1</sub>
      * Range: [TaxonomicRank](TaxonomicRank.md)
- * [organism taxon➞subclass of](organism_taxon_subclass_of.md)  <sub>0..\*</sub>
-     * Description: subclass of holds between two taxa, e.g. human subclass of mammal
-     * Range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ### Inherited from entity:
 
@@ -114,10 +109,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)  <sub>0..1</sub>
      * Range: [TaxonomicRank](TaxonomicRank.md)
- * [organism taxon➞subclass of](organism_taxon_subclass_of.md)  <sub>0..\*</sub>
-     * Description: subclass of holds between two taxa, e.g. human subclass of mammal
-     * Range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ## Other properties
 

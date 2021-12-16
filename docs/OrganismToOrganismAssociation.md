@@ -15,7 +15,7 @@ URI: [biolink:OrganismToOrganismAssociation](https://w3id.org/biolink/vocab/Orga
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[IndividualOrganism]%3Cobject%201..1-%20[OrganismToOrganismAssociation%7Crelation:string%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[IndividualOrganism]%3Csubject%201..1-%20[OrganismToOrganismAssociation],[Association]%5E-[OrganismToOrganismAssociation],[OntologyClass],[IndividualOrganism],[EvidenceType],[Attribute],[Association],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[IndividualOrganism]%3Cobject%201..1-%20[OrganismToOrganismAssociation%7Cpredicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[IndividualOrganism]%3Csubject%201..1-%20[OrganismToOrganismAssociation],[Association]%5E-[OrganismToOrganismAssociation],[OntologyClass],[IndividualOrganism],[EvidenceType],[Attribute],[Association],[Agent])
 
 ---
 
@@ -35,8 +35,6 @@ URI: [biolink:OrganismToOrganismAssociation](https://w3id.org/biolink/vocab/Orga
  * [organism to organism association➞object](organism_to_organism_association_object.md)  <sub>1..1</sub>
      * Description: An association between two individual organisms.
      * Range: [IndividualOrganism](IndividualOrganism.md)
- * [organism to organism association➞relation](organism_to_organism_association_relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [organism to organism association➞subject](organism_to_organism_association_subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [IndividualOrganism](IndividualOrganism.md)
@@ -126,8 +124,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [organism to organism association➞object](organism_to_organism_association_object.md)  <sub>1..1</sub>
      * Description: An association between two individual organisms.
      * Range: [IndividualOrganism](IndividualOrganism.md)
- * [organism to organism association➞relation](organism_to_organism_association_relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [organism to organism association➞subject](organism_to_organism_association_subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [IndividualOrganism](IndividualOrganism.md)

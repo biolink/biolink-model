@@ -135,4 +135,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | STY:T049 |
 |  | | STY:T190 |
 |  | | STY:T191 |
+|  | | MONDO:0042489 |
 

@@ -2123,6 +2123,9 @@ slots:
     is_a: affects activity of
     in_subset:
       - translator_minimal
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     mixins:
@@ -2196,6 +2199,9 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
+    annotations:
+      tag: biolink:canonical_predicate
+      value: true
     mixins:
       - decreases amount or activity of
     related_mappings:
@@ -6610,10 +6616,6 @@ classes:
         multivalued: false
         mappings:
           - WIKIDATA:P105
-      subclass of:
-        description: >-
-          subclass of holds between two taxa, e.g. human subclass of mammal
-        range: organism taxon
     values_from:
       - NCBITaxon
     exact_mappings:
@@ -7862,6 +7864,8 @@ classes:
       - STY:T190
       # Neoplastic Process
       - STY:T191
+      # disease susceptibility
+      - MONDO:0042489
     id_prefixes:
       - MONDO
       - DOID
@@ -9175,10 +9179,10 @@ classes:
       predicate:
         subproperty_of: interacts with
         symmetric: true
-      relation:
-        values_from:
-          - ro
-          - mi
+      # relation:
+      #  values_from:
+      #    - ro
+      #    - mi
         description: "interaction relationship type"
     narrow_mappings:
       - dcid:ProteinProteinInteraction
@@ -9208,10 +9212,10 @@ classes:
           - BioGRID
       predicate:
         subproperty_of: molecularly interacts with
-      relation:
-        values_from:
-          - ro
-          - mi
+      # relation:
+       # values_from:
+        #  - ro
+        #  - mi
         description: "interaction relationship type"
         examples:
           - value: RO:0002447
@@ -10092,9 +10096,9 @@ classes:
     slot_usage:
       subject:
         range: individual organism
-      relation:
-        values_from:
-          - ro
+      # relation:
+      #  values_from:
+      #    - ro
       object:
         range: individual organism
         description: >-
@@ -10109,9 +10113,9 @@ classes:
     slot_usage:
       subject:
         range: organism taxon
-      relation:
-        values_from:
-          - ro
+      # relation:
+      #  values_from:
+      #    - ro
       object:
         range: organism taxon
         description: >-

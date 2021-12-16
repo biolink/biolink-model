@@ -42,14 +42,14 @@
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='927' y='-34.3'>name(i):label_type ?</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='927' y='-19.3'>description(i):narrative_text ?</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='927' y='-4.3'>source(i):label_type ?</text>
-</g><g class='edge' id='edge3'><title>ThingWithTaxon-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge2'><title>ThingWithTaxon-&gt;OrganismTaxon</title>
 <path d='M122.776,-197.846C125.552,-197.205 128.302,-196.587 131,-196 376.887,-142.533 668.709,-94.3196 821.577,-70.2177' fill='none' stroke='black'/>
 <polygon fill='black' points='831.892,-68.5948 822.713,-74.5945 826.952,-69.372 822.013,-70.1491 822.013,-70.1491 822.013,-70.1491 826.952,-69.372 821.314,-65.7038 831.892,-68.5948 831.892,-68.5948' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='812.263' y='-61.0586'> in taxon 0..*</text>
 </g><g class='node' id='node2'><title>TaxonomicRank</title>
 <polygon fill='white' points='140.5,-197 140.5,-233 259.5,-233 259.5,-197 140.5,-197' stroke='black'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='200' y='-211.3'>TaxonomicRank</text>
-</g><g class='edge' id='edge2'><title>TaxonomicRank-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge1'><title>TaxonomicRank-&gt;OrganismTaxon</title>
 <path d='M269.603,-195.901C469.396,-148.472 691.379,-101.963 819.783,-75.6738' fill='none' stroke='black'/>
 <polygon fill='black' points='259.8,-198.233 268.487,-191.541 264.664,-197.076 269.529,-195.919 269.529,-195.919 269.529,-195.919 264.664,-197.076 270.57,-200.297 259.8,-198.233 259.8,-198.233' stroke='black'/>
 <polygon fill='black' points='820.157,-75.5975 825.234,-70.4765 831.913,-73.1934 826.836,-78.3144 820.157,-75.5975' stroke='black'/>
@@ -57,70 +57,65 @@
 </g><g class='node' id='node3'><title>TaxonToTaxonAssociation</title>
 <polygon fill='white' points='278,-197 278,-233 454,-233 454,-197 278,-197' stroke='black'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='366' y='-211.3'>TaxonToTaxonAssociation</text>
-</g><g class='edge' id='edge12'><title>TaxonToTaxonAssociation-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge11'><title>TaxonToTaxonAssociation-&gt;OrganismTaxon</title>
 <path d='M421.409,-196.953C514.417,-169.619 703.185,-115.692 821.943,-82.4497' fill='none' stroke='black'/>
 <polygon fill='black' points='831.789,-79.6962 823.37,-86.7232 826.973,-81.0428 822.158,-82.3895 822.158,-82.3895 822.158,-82.3895 826.973,-81.0428 820.946,-78.0558 831.789,-79.6962 831.789,-79.6962' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='811.847' y='-74.4701'> object 1..1</text>
-</g><g class='edge' id='edge13'><title>TaxonToTaxonAssociation-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge12'><title>TaxonToTaxonAssociation-&gt;OrganismTaxon</title>
 <path d='M430.134,-196.953C525.807,-170.449 706.787,-118.941 821.941,-85.5317' fill='none' stroke='black'/>
 <polygon fill='black' points='831.838,-82.6577 823.49,-89.7679 827.037,-84.052 822.235,-85.4464 822.235,-85.4464 822.235,-85.4464 827.037,-84.052 820.98,-81.1249 831.838,-82.6577 831.838,-82.6577' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='811.883' y='-77.6295'> subject 1..1</text>
 </g><g class='node' id='node4'><title>OrganismTaxonToOrganismTaxonSpecialization</title>
 <polygon fill='white' points='472.5,-197 472.5,-233 769.5,-233 769.5,-197 472.5,-197' stroke='black'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='621' y='-211.3'>OrganismTaxonToOrganismTaxonSpecialization</text>
-</g><g class='edge' id='edge10'><title>OrganismTaxonToOrganismTaxonSpecialization-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge9'><title>OrganismTaxonToOrganismTaxonSpecialization-&gt;OrganismTaxon</title>
 <path d='M649.377,-196.877C688.721,-175.132 761.672,-136.644 822.95,-105.089' fill='none' stroke='black'/>
 <polygon fill='black' points='831.901,-100.487 825.065,-109.062 827.454,-102.773 823.007,-105.06 823.007,-105.06 823.007,-105.06 827.454,-102.773 820.95,-101.058 831.901,-100.487 831.901,-100.487' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='812.059' y='-99.2977'> object 1..1</text>
-</g><g class='edge' id='edge11'><title>OrganismTaxonToOrganismTaxonSpecialization-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge10'><title>OrganismTaxonToOrganismTaxonSpecialization-&gt;OrganismTaxon</title>
 <path d='M658.118,-196.877C699.532,-176.331 768.119,-140.836 825.679,-110.367' fill='none' stroke='black'/>
 <polygon fill='black' points='834.817,-105.523 828.089,-114.183 830.399,-107.865 825.982,-110.207 825.982,-110.207 825.982,-110.207 830.399,-107.865 823.874,-106.231 834.817,-105.523 834.817,-105.523' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='815.008' y='-104.582'> subject 1..1</text>
 </g><g class='node' id='node5'><title>OrganismTaxonToOrganismTaxonInteraction</title>
 <polygon fill='white' points='787.5,-197 787.5,-233 1066.5,-233 1066.5,-197 787.5,-197' stroke='black'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='927' y='-211.3'>OrganismTaxonToOrganismTaxonInteraction</text>
-</g><g class='edge' id='edge8'><title>OrganismTaxonToOrganismTaxonInteraction-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge7'><title>OrganismTaxonToOrganismTaxonInteraction-&gt;OrganismTaxon</title>
 <path d='M922.63,-196.877C920.636,-177.551 919.895,-144.998 920.407,-115.843' fill='none' stroke='black'/>
 <polygon fill='black' points='920.64,-105.699 924.909,-115.8 920.525,-110.698 920.41,-115.696 920.41,-115.696 920.41,-115.696 920.525,-110.698 915.911,-115.593 920.64,-105.699 920.64,-105.699' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='913.369' y='-120.63'> object 1..1</text>
-</g><g class='edge' id='edge9'><title>OrganismTaxonToOrganismTaxonInteraction-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge8'><title>OrganismTaxonToOrganismTaxonInteraction-&gt;OrganismTaxon</title>
 <path d='M931.37,-196.877C933.364,-177.551 934.105,-144.998 933.593,-115.843' fill='none' stroke='black'/>
 <polygon fill='black' points='933.36,-105.699 938.089,-115.593 933.475,-110.698 933.59,-115.696 933.59,-115.696 933.59,-115.696 933.475,-110.698 929.091,-115.8 933.36,-105.699 933.36,-105.699' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='926.953' y='-120.945'> subject 1..1</text>
 </g><g class='node' id='node6'><title>OrganismTaxonToOrganismTaxonAssociation</title>
 <polygon fill='white' points='1085,-197 1085,-233 1369,-233 1369,-197 1085,-197' stroke='black'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1227' y='-211.3'>OrganismTaxonToOrganismTaxonAssociation</text>
-</g><g class='edge' id='edge6'><title>OrganismTaxonToOrganismTaxonAssociation-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge5'><title>OrganismTaxonToOrganismTaxonAssociation-&gt;OrganismTaxon</title>
 <path d='M1190.52,-196.877C1149.88,-176.331 1082.62,-140.836 1026.21,-110.367' fill='none' stroke='black'/>
 <polygon fill='black' points='1017.25,-105.523 1028.19,-106.322 1021.65,-107.902 1026.05,-110.28 1026.05,-110.28 1026.05,-110.28 1021.65,-107.902 1023.91,-114.239 1017.25,-105.523 1017.25,-105.523' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1030.53' y='-116.781'> object 1..1</text>
-</g><g class='edge' id='edge7'><title>OrganismTaxonToOrganismTaxonAssociation-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge6'><title>OrganismTaxonToOrganismTaxonAssociation-&gt;OrganismTaxon</title>
 <path d='M1199.27,-196.877C1161.22,-175.407 1091.03,-137.613 1031.42,-106.288' fill='none' stroke='black'/>
 <polygon fill='black' points='1022.33,-101.518 1033.27,-102.179 1026.75,-103.841 1031.18,-106.164 1031.18,-106.164 1031.18,-106.164 1026.75,-103.841 1029.09,-110.149 1022.33,-101.518 1022.33,-101.518' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1035.79' y='-112.607'> subject 1..1</text>
 </g><g class='node' id='node7'><title>OrganismTaxonToEnvironmentAssociation</title>
 <polygon fill='white' points='1387.5,-197 1387.5,-233 1654.5,-233 1654.5,-197 1387.5,-197' stroke='black'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1521' y='-211.3'>OrganismTaxonToEnvironmentAssociation</text>
-</g><g class='edge' id='edge5'><title>OrganismTaxonToEnvironmentAssociation-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge4'><title>OrganismTaxonToEnvironmentAssociation-&gt;OrganismTaxon</title>
 <path d='M1457.71,-196.953C1356.06,-169.572 1155.34,-115.507 1031.98,-82.2782' fill='none' stroke='black'/>
 <polygon fill='black' points='1022.13,-79.6254 1032.96,-77.8813 1026.96,-80.9259 1031.79,-82.2264 1031.79,-82.2264 1031.79,-82.2264 1026.96,-80.9259 1030.62,-86.5715 1022.13,-79.6254 1022.13,-79.6254' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1038.5' y='-87.4185'> subject 1..1</text>
 </g><g class='node' id='node8'><title>OrganismTaxonToEntityAssociation</title>
 <polygon fill='white' points='1672.5,-197 1672.5,-233 1901.5,-233 1901.5,-197 1672.5,-197' stroke='black'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1787' y='-211.3'>OrganismTaxonToEntityAssociation</text>
-</g><g class='edge' id='edge4'><title>OrganismTaxonToEntityAssociation-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge3'><title>OrganismTaxonToEntityAssociation-&gt;OrganismTaxon</title>
 <path d='M1695.37,-196.953C1534.44,-167.012 1201.99,-105.16 1032.03,-73.5411' fill='none' stroke='black'/>
 <polygon fill='black' points='1022.07,-71.688 1032.73,-69.093 1026.99,-72.6026 1031.9,-73.5171 1031.9,-73.5171 1031.9,-73.5171 1026.99,-72.6026 1031.08,-77.9412 1022.07,-71.688 1022.07,-71.688' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1039.3' y='-78.1505'> subject 1..1</text>
-</g><g class='edge' id='edge1'><title>OrganismTaxon-&gt;OrganismTaxon</title>
-<path d='M1030.74,-73.453C1036.54,-68.4941 1040,-61.6765 1040,-53 1040,-40.6602 1033.01,-32.0801 1022.22,-27.2599' fill='none' stroke='black'/>
-<polygon fill='black' points='1022.22,-78.7401 1028.34,-69.6446 1026.46,-76.1044 1030.71,-73.4686 1030.71,-73.4686 1030.71,-73.4686 1026.46,-76.1044 1033.09,-77.2926 1022.22,-78.7401 1022.22,-78.7401' stroke='black'/>
-<text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1035.97' y='-38.0788'> </text>
-<text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1041.79' y='-70.9457'>subclass of 0..*</text>
 </g><g class='node' id='node10'><title>NamedThing</title>
 <polygon fill='white' points='1919.5,-197 1919.5,-233 2020.5,-233 2020.5,-197 1919.5,-197' stroke='black'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='1970' y='-211.3'>NamedThing</text>
-</g><g class='edge' id='edge14'><title>NamedThing-&gt;OrganismTaxon</title>
+</g><g class='edge' id='edge13'><title>NamedThing-&gt;OrganismTaxon</title>
 <path d='M1909.19,-195.997C1580.03,-123.95 1196.67,-80.5744 1022.05,-63.0024' fill='none' stroke='black'/>
 <polygon fill='none' points='1908.88,-199.514 1919.4,-198.246 1910.39,-192.677 1908.88,-199.514' stroke='black'/>
 </g><g class='node' id='node11'><title>Attribute</title>

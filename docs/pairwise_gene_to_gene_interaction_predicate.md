@@ -2,7 +2,7 @@
 # Slot: predicate
 
 
-A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+interaction relationship type
 
 URI: [biolink:pairwise_gene_to_gene_interaction_predicate](https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_predicate)
 

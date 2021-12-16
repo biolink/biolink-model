@@ -15,7 +15,7 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;relation:string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-++[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[EvidenceType],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-++[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[EvidenceType],[Attribute],[Agent])
 
 ---
 
@@ -44,11 +44,8 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [MolecularEntity](MolecularEntity.md)
  * [pairwise molecular interaction➞predicate](pairwise_molecular_interaction_predicate.md)  <sub>1..1</sub>
-     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
-     * Range: [PredicateType](types/PredicateType.md)
- * [pairwise molecular interaction➞relation](pairwise_molecular_interaction_relation.md)  <sub>0..1</sub>
      * Description: interaction relationship type
-     * Range: [String](types/String.md)
+     * Range: [PredicateType](types/PredicateType.md)
      * Example: RO:0002447 the subject molecular phosphorylates the object molecule
  * [pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -145,11 +142,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [MolecularEntity](MolecularEntity.md)
  * [pairwise molecular interaction➞predicate](pairwise_molecular_interaction_predicate.md)  <sub>1..1</sub>
-     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
-     * Range: [PredicateType](types/PredicateType.md)
- * [pairwise molecular interaction➞relation](pairwise_molecular_interaction_relation.md)  <sub>0..1</sub>
      * Description: interaction relationship type
-     * Range: [String](types/String.md)
+     * Range: [PredicateType](types/PredicateType.md)
      * Example: RO:0002447 the subject molecular phosphorylates the object molecule
  * [pairwise molecular interaction➞subject](pairwise_molecular_interaction_subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.

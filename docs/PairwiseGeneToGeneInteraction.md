@@ -15,7 +15,7 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction%7Cpredicate:predicate_type;relation:string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[PairwiseMolecularInteraction],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneAssociation],[GeneOrGeneProduct],[EvidenceType],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[PairwiseMolecularInteraction],[GeneToGeneAssociation]%5E-[PairwiseGeneToGeneInteraction],[OntologyClass],[GeneToGeneAssociation],[GeneOrGeneProduct],[EvidenceType],[Attribute],[Agent])
 
 ---
 
@@ -37,11 +37,8 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
 ### Own
 
  * [pairwise gene to gene interaction➞predicate](pairwise_gene_to_gene_interaction_predicate.md)  <sub>1..1</sub>
-     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
-     * Range: [PredicateType](types/PredicateType.md)
- * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>0..1</sub>
      * Description: interaction relationship type
-     * Range: [String](types/String.md)
+     * Range: [PredicateType](types/PredicateType.md)
 
 ### Inherited from association:
 
@@ -135,11 +132,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Domain for slot:
 
  * [pairwise gene to gene interaction➞predicate](pairwise_gene_to_gene_interaction_predicate.md)  <sub>1..1</sub>
-     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
-     * Range: [PredicateType](types/PredicateType.md)
- * [pairwise gene to gene interaction➞relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>0..1</sub>
      * Description: interaction relationship type
-     * Range: [String](types/String.md)
+     * Range: [PredicateType](types/PredicateType.md)
 
 ## Other properties
 

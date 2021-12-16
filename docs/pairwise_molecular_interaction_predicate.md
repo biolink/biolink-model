@@ -2,7 +2,7 @@
 # Slot: predicate
 
 
-A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+interaction relationship type
 
 URI: [biolink:pairwise_molecular_interaction_predicate](https://w3id.org/biolink/vocab/pairwise_molecular_interaction_predicate)
 
@@ -29,6 +29,7 @@ URI: [biolink:pairwise_molecular_interaction_predicate](https://w3id.org/biolink
 | **Local names:** | | annotation predicate (ga4gh) |
 |  | | predicate (translator) |
 | **Mappings:** | | rdf:predicate |
+| **Examples:** | | Example(value='RO:0002447', description='the subject molecular phosphorylates the object molecule') |
 | **Exact Mappings:** | | owl:annotatedProperty |
 |  | | OBAN:association_has_predicate |
 

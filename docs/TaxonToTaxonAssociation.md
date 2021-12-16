@@ -15,7 +15,7 @@ URI: [biolink:TaxonToTaxonAssociation](https://w3id.org/biolink/vocab/TaxonToTax
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cobject%201..1-%20[TaxonToTaxonAssociation%7Crelation:string%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[TaxonToTaxonAssociation],[Association]%5E-[TaxonToTaxonAssociation],[Publication],[OrganismTaxon],[OntologyClass],[EvidenceType],[Attribute],[Association],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cobject%201..1-%20[TaxonToTaxonAssociation%7Cpredicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[TaxonToTaxonAssociation],[Association]%5E-[TaxonToTaxonAssociation],[Publication],[OrganismTaxon],[OntologyClass],[EvidenceType],[Attribute],[Association],[Agent])
 
 ---
 
@@ -35,8 +35,6 @@ URI: [biolink:TaxonToTaxonAssociation](https://w3id.org/biolink/vocab/TaxonToTax
  * [taxon to taxon association➞object](taxon_to_taxon_association_object.md)  <sub>1..1</sub>
      * Description: An association between individuals of different taxa.
      * Range: [OrganismTaxon](OrganismTaxon.md)
- * [taxon to taxon association➞relation](taxon_to_taxon_association_relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [taxon to taxon association➞subject](taxon_to_taxon_association_subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [OrganismTaxon](OrganismTaxon.md)
@@ -126,8 +124,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [taxon to taxon association➞object](taxon_to_taxon_association_object.md)  <sub>1..1</sub>
      * Description: An association between individuals of different taxa.
      * Range: [OrganismTaxon](OrganismTaxon.md)
- * [taxon to taxon association➞relation](taxon_to_taxon_association_relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [taxon to taxon association➞subject](taxon_to_taxon_association_subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [OrganismTaxon](OrganismTaxon.md)

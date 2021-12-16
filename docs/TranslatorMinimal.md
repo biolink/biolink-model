@@ -177,7 +177,6 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [nutrient of](nutrient_of.md)
  * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
  * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
- * [organism taxon➞subclass of](organism_taxon_subclass_of.md) - subclass of holds between two taxa, e.g. human subclass of mammal
  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
  * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
  * [pairwise molecular interaction➞id](pairwise_molecular_interaction_id.md) - identifier for the interaction. This may come from an interaction database such as IMEX.
