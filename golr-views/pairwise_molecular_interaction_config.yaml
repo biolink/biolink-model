@@ -29,6 +29,8 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
+- id: relation
+  display_name: relation
 - id: negated
   description: if set to true, then the association is negated i.e. is not true
   display_name: negated
@@ -74,12 +76,8 @@ fields:
     such as IMEX.
   display_name: pairwise molecular interaction_id
 - id: predicate
-  description: A high-level grouping for the relationship type. AKA minimal predicate.
-    This is analogous to category for nodes.
-  display_name: pairwise molecular interaction_predicate
-- id: relation
   description: interaction relationship type
-  display_name: pairwise molecular interaction_relation
+  display_name: pairwise molecular interaction_predicate
 - id: object
   description: connects an association to the object of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
