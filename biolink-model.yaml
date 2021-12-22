@@ -9562,10 +9562,10 @@ classes:
     is_a: entity to feature or disease qualifiers mixin
     defining_slots:
       - object
+    description: >-
+      A description of specific aspects of this phenotype, not otherwise
+      covered by the phenotype ontology class
     slot_usage:
-      description: >-
-        A description of specific aspects of this phenotype, not otherwise
-        covered by the phenotype ontology class
       object:
         range: phenotypic feature
         description: "phenotypic class"
