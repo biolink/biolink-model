@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-12-22T23:32:02
+# Generation date: 2021-12-22T23:40:15
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -6054,9 +6054,6 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
 
 @dataclass
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
-    """
-    A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
-    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociationMixin
