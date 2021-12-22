@@ -1005,7 +1005,6 @@ linkml:Nodeidentifier NONLITERAL
     (  $<EntityToPhenotypicFeatureAssociationMixin_tes> (  &<EntityToFeatureOrDiseaseQualifiersMixin_tes> ;
           rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          dcterms:description @<NarrativeText> ? ;
           rdf:object @<PhenotypicFeature>
        ) ;
        rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ?
