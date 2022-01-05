@@ -95,7 +95,6 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
  * [entity positively regulates entity](entity_positively_regulates_entity.md)
  * [entity regulates entity](entity_regulates_entity.md)
- * [entity to phenotypic feature association mixin➞description](entity_to_phenotypic_feature_association_mixin_description.md) - A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
  * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
  * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
  * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there

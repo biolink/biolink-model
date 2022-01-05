@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.2.12
+version: 2.2.13
 
 ## ------------
 ## PREFIXES
@@ -9563,13 +9563,8 @@ classes:
     defining_slots:
       - object
     slot_usage:
-      description:
-        description: >-
-          A description of specific aspects of this phenotype, not otherwise
-          covered by the phenotype ontology class
       object:
         range: phenotypic feature
-        description: "phenotypic class"
         values_from: ['upheno', 'hp', 'mp', 'wbphenotype']
         examples:
           - value: HP:0002487

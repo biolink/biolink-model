@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-12-16T16:43:32
+# Generation date: 2022-01-05T00:55:47
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -6063,7 +6063,6 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
     object: Union[str, PhenotypicFeatureId] = None
     sex_qualifier: Optional[Union[dict, BiologicalSex]] = None
-    description: Optional[Union[str, NarrativeText]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.object):
@@ -6073,9 +6072,6 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSex):
             self.sex_qualifier = BiologicalSex(**as_dict(self.sex_qualifier))
-
-        if self.description is not None and not isinstance(self.description, NarrativeText):
-            self.description = NarrativeText(self.description)
 
         super().__post_init__(**kwargs)
 
@@ -9793,9 +9789,6 @@ slots.entity_to_exposure_event_association_mixin_object = Slot(uri=RDF.object, n
 
 slots.entity_to_outcome_association_mixin_object = Slot(uri=RDF.object, name="entity to outcome association mixin_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.entity_to_outcome_association_mixin_object, domain=None, range=Union[dict, Outcome])
-
-slots.entity_to_phenotypic_feature_association_mixin_description = Slot(uri=DCT.description, name="entity to phenotypic feature association mixin_description", curie=DCT.curie('description'),
-                   model_uri=BIOLINK.entity_to_phenotypic_feature_association_mixin_description, domain=None, range=Optional[Union[str, NarrativeText]])
 
 slots.entity_to_phenotypic_feature_association_mixin_object = Slot(uri=RDF.object, name="entity to phenotypic feature association mixin_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.entity_to_phenotypic_feature_association_mixin_object, domain=None, range=Union[str, PhenotypicFeatureId])

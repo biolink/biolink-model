@@ -2,7 +2,7 @@
 # Slot: object
 
 
-phenotypic class
+connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
 URI: [biolink:entity_to_phenotypic_feature_association_mixin_object](https://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_mixin_object)
 

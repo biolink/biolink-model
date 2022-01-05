@@ -130,12 +130,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [sex qualifier](sex_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
      * Range: [BiologicalSex](BiologicalSex.md)
- * [entity to phenotypic feature association mixin➞description](entity_to_phenotypic_feature_association_mixin_description.md)  <sub>0..1</sub>
-     * Description: A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
  * [entity to phenotypic feature association mixin➞object](entity_to_phenotypic_feature_association_mixin_object.md)  <sub>1..1</sub>
-     * Description: phenotypic class
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [PhenotypicFeature](PhenotypicFeature.md)
      * Example: HP:0002487 Hyperkinesis
      * Example: WBPhenotype:0000180 axon morphology variant
