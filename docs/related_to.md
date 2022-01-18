@@ -55,8 +55,6 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 |  | | RO:0002093 |
 |  | | RO:0002092 |
 |  | | RO:0002084 |
-|  | | GOREL:0002005 |
-|  | | GOREL:0012006 |
 |  | | HCPCS:mapped_to |
 |  | | HMDB:disease |
 |  | | HMDB:has_protein_association |
