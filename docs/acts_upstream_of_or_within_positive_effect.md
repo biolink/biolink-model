@@ -30,5 +30,5 @@ URI: [biolink:acts_upstream_of_or_within_positive_effect](https://w3id.org/bioli
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | RO:0002264 |
+| **Exact Mappings:** | | RO:0004032 |
 

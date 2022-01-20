@@ -30,5 +30,5 @@ URI: [biolink:acts_upstream_of_or_within](https://w3id.org/biolink/vocab/acts_up
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | RO:0004032 |
+| **Exact Mappings:** | | RO:0002264 |
 
