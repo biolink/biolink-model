@@ -71,6 +71,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -90,6 +91,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -110,6 +112,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -138,7 +141,7 @@ type Article
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     id: String!
     name: LabelType
     type: String!
@@ -164,6 +167,7 @@ type Association
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
   }
@@ -208,6 +212,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Behavior!
@@ -318,7 +323,7 @@ type Book
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     name: LabelType
     id: String!
     type: String!
@@ -341,7 +346,7 @@ type BookChapter
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     id: String!
     name: LabelType
     type: String!
@@ -385,6 +390,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -435,6 +441,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: CellLine!
@@ -458,6 +465,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: DiseaseOrPhenotypicFeature!
@@ -495,6 +503,8 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 interface ChemicalEntityOrGeneOrGeneProduct
@@ -507,7 +517,7 @@ interface ChemicalEntityOrProteinOrPolypeptide
 
 interface ChemicalEntityToEntityAssociationMixin
   {
-    subject: ChemicalEntity!
+    subject: ChemicalEntityOrGeneOrGeneProduct!
   }
 
 type ChemicalExposure implements ExposureEvent
@@ -528,8 +538,11 @@ type ChemicalMixture
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 interface ChemicalOrDrugOrTreatment
@@ -555,6 +568,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: ChemicalEntity!
@@ -573,6 +587,7 @@ type ChemicalToChemicalDerivationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     catalystQualifier: [MacromolecularMachineMixin]
@@ -596,6 +611,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: DiseaseOrPhenotypicFeature!
@@ -603,7 +619,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
 
 interface ChemicalToEntityAssociationMixin
   {
-    subject: ChemicalEntity!
+    subject: ChemicalEntityOrGeneOrGeneProduct!
   }
 
 type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
@@ -621,6 +637,7 @@ type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: GeneOrGeneProduct!
@@ -641,6 +658,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: Pathway!
@@ -752,6 +770,8 @@ type CodingSequence
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -788,8 +808,11 @@ type ComplexMolecularMixture
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type ConfidenceLevel
@@ -821,6 +844,7 @@ type ContributorAssociation
     relation: String
     negated: Boolean
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: InformationContentEntity!
@@ -973,6 +997,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: AnatomicalEntity!
@@ -999,6 +1024,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
   }
@@ -1019,6 +1045,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -1040,8 +1067,11 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type DrugExposure implements ExposureEvent
@@ -1069,6 +1099,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: GeneOrGeneProduct!
@@ -1109,6 +1140,7 @@ type EntityToDiseaseAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1160,6 +1192,7 @@ type EntityToPhenotypicFeatureAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1171,7 +1204,6 @@ interface EntityToPhenotypicFeatureAssociationMixin
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
-    description: NarrativeText
     object: PhenotypicFeature!
   }
 
@@ -1206,6 +1238,8 @@ type EnvironmentalFoodContaminant
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 type EnvironmentalProcess implements Occurrent
@@ -1268,6 +1302,8 @@ type Exon
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -1287,6 +1323,7 @@ type ExonToTranscriptRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Exon!
@@ -1318,6 +1355,7 @@ type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociati
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     hasPopulationContext: PopulationOfIndividualOrganisms
@@ -1339,6 +1377,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: ExposureEvent!
@@ -1361,8 +1400,11 @@ type Food
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type FoodAdditive
@@ -1378,6 +1420,8 @@ type FoodAdditive
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 interface FrequencyQualifierMixin
@@ -1407,6 +1451,7 @@ type FunctionalAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -1426,7 +1471,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     category: [NamedThing]!
     symbol: String
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
@@ -1446,6 +1491,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -1496,6 +1542,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -1518,14 +1565,14 @@ interface GeneProductIsoformMixin
   {
     name: SymbolType
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 interface GeneProductMixin
   {
     name: SymbolType
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type GeneRegulatoryRelationship
@@ -1541,6 +1588,7 @@ type GeneRegulatoryRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1563,6 +1611,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1589,6 +1638,7 @@ type GeneToExpressionSiteAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     stageQualifier: LifeStage
@@ -1612,6 +1662,7 @@ interface GeneToGeneAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1631,6 +1682,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1655,6 +1707,7 @@ type GeneToGeneHomologyAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1675,6 +1728,7 @@ type GeneToGeneProductRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -1696,6 +1750,7 @@ type GeneToGoTermAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -1717,6 +1772,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1768,6 +1824,7 @@ type GenomicSequenceLocalization
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     startInterbaseCoordinate: Integer
@@ -1780,7 +1837,7 @@ type GenomicSequenceLocalization
     predicate: PredicateType!
   }
 
-type Genotype implements PhysicalEssence, GenomicEntity, PhysicalEssence, OntologyClass
+type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
   {
     id: String!
     iri: IriType
@@ -1809,6 +1866,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1832,6 +1890,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -1860,6 +1919,7 @@ type GenotypeToGeneAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1880,6 +1940,7 @@ type GenotypeToGenotypePartAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1901,6 +1962,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1924,6 +1986,7 @@ type GenotypeToVariantAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2054,6 +2117,27 @@ interface InformationContentEntity
     creationDate: Date
   }
 
+type InformationContentEntityToNamedThingAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    relation: String
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    type: String
+    category: [CategoryType]
+    subject: NamedThing!
+    object: NamedThing!
+    predicate: PredicateType!
+  }
+
 type InformationResource
   {
     id: String!
@@ -2119,6 +2203,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2139,6 +2224,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2164,6 +2250,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2183,6 +2270,8 @@ type Macronutrient
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 type MaterialSample implements SubjectOfInvestigation
@@ -2211,6 +2300,7 @@ type MaterialSampleDerivationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: MaterialSample!
@@ -2234,6 +2324,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
   }
@@ -2256,6 +2347,8 @@ type Micronutrient
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 type MicroRNA
@@ -2271,11 +2364,13 @@ type MicroRNA
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 interface ModelToDiseaseAssociationMixin
@@ -2300,6 +2395,48 @@ type MolecularActivity implements Occurrent, OntologyClass
     enabledBy: [MacromolecularMachineMixin]
   }
 
+type MolecularActivityToChemicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    predicate: PredicateType!
+    relation: String
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    type: String
+    category: [CategoryType]
+    subject: MolecularActivity!
+    object: ChemicalEntity!
+  }
+
+type MolecularActivityToMolecularActivityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    predicate: PredicateType!
+    relation: String
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    type: String
+    category: [CategoryType]
+    subject: MolecularActivity!
+    object: MolecularActivity!
+  }
+
 type MolecularEntity
   {
     id: String!
@@ -2313,6 +2450,8 @@ type MolecularEntity
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
   }
 
@@ -2329,8 +2468,11 @@ type MolecularMixture
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type MortalityOutcome implements Outcome
@@ -2350,26 +2492,6 @@ type NamedThing
     category: [NamedThing]!
   }
 
-type NamedThingToInformationContentEntityAssociation
-  {
-    id: String!
-    iri: IriType
-    name: LabelType
-    description: NarrativeText
-    source: LabelType
-    providedBy: [Agent]
-    hasAttribute: [Attribute]
-    relation: String
-    negated: Boolean
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    type: String
-    category: [CategoryType]
-    subject: NamedThing!
-    object: Publication!
-    predicate: PredicateType!
-  }
-
 type NoncodingRNAProduct
   {
     id: String!
@@ -2383,11 +2505,13 @@ type NoncodingRNAProduct
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
@@ -2403,9 +2527,24 @@ type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+  }
+
+type NucleicAcidSequenceMotif
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
   }
 
 type Nutrient
@@ -2421,6 +2560,8 @@ type Nutrient
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 interface Occurrent
@@ -2463,7 +2604,6 @@ type OrganismTaxon
     hasAttribute: [Attribute]
     category: [NamedThing]!
     hasTaxonomicRank: TaxonomicRank
-    subclassOf: [OrganismTaxon]
   }
 
 interface OrganismTaxonToEntityAssociation
@@ -2484,6 +2624,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -2505,6 +2646,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -2524,6 +2666,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     associatedEnvironmentalContext: String
@@ -2545,6 +2688,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -2562,13 +2706,14 @@ type OrganismToOrganismAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: IndividualOrganism!
-    relation: String
     object: IndividualOrganism!
   }
 
@@ -2600,6 +2745,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismalEntity!
@@ -2621,15 +2767,16 @@ type PairwiseGeneToGeneInteraction
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
     predicate: PredicateType!
-    relation: String
   }
 
 type PairwiseMolecularInteraction
@@ -2640,16 +2787,17 @@ type PairwiseMolecularInteraction
     source: LabelType
     providedBy: [Agent]
     hasAttribute: [Attribute]
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     interactingMoleculesCategory: OntologyClass
     subject: MolecularEntity!
     id: String!
     predicate: PredicateType!
-    relation: String
     object: MolecularEntity!
   }
 
@@ -2863,6 +3011,7 @@ type PopulationToPopulationAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: PopulationOfIndividualOrganisms!
@@ -2896,8 +3045,11 @@ type ProcessedMaterial
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
+    drugRegulatoryStatusWorldWide: String
   }
 
 type Protein implements GeneProductMixin, ThingWithTaxon
@@ -2913,7 +3065,35 @@ type Protein implements GeneProductMixin, ThingWithTaxon
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
+  }
+
+type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasGeneOrGeneProduct: [Gene]
+  }
+
+type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: LabelType
+    providedBy: [Agent]
+    hasAttribute: [Attribute]
+    category: [NamedThing]!
+    hasGeneOrGeneProduct: [Gene]
   }
 
 type ProteinIsoform implements GeneProductIsoformMixin
@@ -2929,7 +3109,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     category: [NamedThing]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type Publication
@@ -2949,7 +3129,7 @@ type Publication
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     id: String!
     name: LabelType
     type: String!
@@ -2975,6 +3155,7 @@ type ReactionToCatalystAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     stoichiometry: Integer
@@ -2998,6 +3179,7 @@ type ReactionToParticipantAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: ChemicalEntity!
@@ -3043,11 +3225,13 @@ type RNAProduct implements GeneProductMixin
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type RNAProductIsoform implements GeneProductIsoformMixin
@@ -3063,11 +3247,13 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 interface SensitivityQuantifier
@@ -3090,6 +3276,7 @@ type SequenceAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
   }
@@ -3108,6 +3295,7 @@ type SequenceFeatureRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: NucleicAcidEntity!
@@ -3144,6 +3332,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -3167,7 +3356,7 @@ type Serial
     summary: String
     keywords: [String]
     meshTerms: [Uriorcurie]
-    xref: [IriType]
+    xref: [Uriorcurie]
     name: LabelType
     isoAbbreviation: String
     volume: String
@@ -3199,11 +3388,13 @@ type SiRNA
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [IriType]
+    xref: [Uriorcurie]
   }
 
 type SmallMolecule
@@ -3218,6 +3409,8 @@ type SmallMolecule
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     id: String!
   }
@@ -3290,13 +3483,14 @@ type TaxonToTaxonAssociation
     providedBy: [Agent]
     hasAttribute: [Attribute]
     predicate: PredicateType!
+    relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
-    relation: String
     object: OrganismTaxon!
   }
 
@@ -3322,6 +3516,8 @@ type Transcript
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
     isMetabolite: Boolean
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -3341,6 +3537,7 @@ type TranscriptToGeneRelationship
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: Transcript!
@@ -3381,6 +3578,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -3404,6 +3602,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -3433,6 +3632,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: Gene!
@@ -3453,6 +3653,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     object: Gene!
@@ -3478,6 +3679,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -3501,6 +3703,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
+    hasEvidence: [EvidenceType]
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -3525,6 +3728,8 @@ type Vitamin
     category: [NamedThing]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
+    maxToleratedDose: String
+    isToxic: Boolean
   }
 
 type Zygosity

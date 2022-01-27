@@ -29,7 +29,7 @@ Alternatively, for a more structured representation it is recommended to use the
 
 ### What is the serialized form of Biolink Model?
 
-Refer to [Working with the Model[working-with-the-model.md] for an example on how a Biolink Model graph can be represented as labelled property graphs and RDF graphs.
+Refer to [Working with the Model](working-with-the-model.md) for an example on how a Biolink Model graph can be represented as labelled property graphs and RDF graphs.
 
 ### What is the difference between `predicate`, `relation`, `category`?
 
