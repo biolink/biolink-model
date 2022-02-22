@@ -25,8 +25,8 @@ fields:
   description: a human-readable description of an entity
   display_name: description
 - id: source
-  description: a lightweight analog to the association class 'has provider' slot,
-    which is the string name, or the authoritative (i.e. database) namespace, designating
+  description: a lightweight analog to the association class 'provided by' slot, which
+    is the string name, or the authoritative (i.e. database) namespace, designating
     the origin of the entity to which the slot belongs.
   display_name: source
 - id: provided_by
