@@ -94,7 +94,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
  * [source](source.md)  <sub>0..1</sub>
-     * Description: a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
+     * Description: a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..\*</sub>
