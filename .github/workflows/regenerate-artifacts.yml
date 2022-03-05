@@ -23,8 +23,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.API_TOKEN }}
 
     - name: Setup Python Environment
       uses: actions/setup-python@v2
@@ -49,8 +47,8 @@ jobs:
         export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
         make -B install build
         if [ $? -eq 0 ]; then
-          git config --global user.name "$GITHUB_NAME"
-          git config --global user.email "$GITHUB_EMAIL"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add biolink-model.*
           git add biolink-modeln.*
           git add context*
@@ -59,11 +57,25 @@ jobs:
           git add graphviz/*
           git add golr-views/*
           git add json-schema/biolink-model.json
+          git add prefix-map/biolink-model-prefix-map.json
           git commit -m "Regenerate artifacts from biolink-model.yaml"
           git push
         else
           echo "'make' failed to finish successfully"
         fi
-      env:
-        GITHUB_NAME: ${{ secrets.WORKFLOW_USERNAME }}
-        GITHUB_EMAIL: ${{ secrets.WORKFLOW_EMAIL }}
+
+    - name: Build documentation
+      run: |
+        python3 -m venv env
+        source env/bin/activate
+        pip install linkml
+        python script/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
+
+    - name: Deploy to gh-pages branch
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ github.token }}
+        REPOSITORY_NAME: biolink/biolink-model # The repository the action should deploy to
+        BRANCH: gh-pages # The branch the action should deploy to.
+        COMMIT_MESSAGE: 'Update documentation'
+        FOLDER: . # The folder the action should deploy.

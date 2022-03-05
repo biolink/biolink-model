@@ -18,11 +18,14 @@ all: install tests build
 python: biolink/model.py
 docs: docs/index.md
 jekyll-docs: docs/Classes.md
+
 shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
 json-schema: json-schema/biolink-model.json
+prefix-map: prefix-map/biolink-model-prefix-map.json
 
 build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz java context.jsonld contextn.jsonld \
-json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto biolink-model.shex biolink-model.ttl
+json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex biolink-model.ttl \
+prefix-map/biolink-model-prefix-map.json
 
 # TODO: Get this working
 build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
@@ -46,6 +49,7 @@ env.lock:
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
 biolink/model.py: biolink-model.yaml env.lock
+	mkdir biolink 2>/dev/null || true
 	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp &&  mv $@.tmp $@
 
 
@@ -95,9 +99,11 @@ java: json-schema/biolink-model.json dir-java env.lock
 # JSON-LD CONTEXT
 # ~~~~~~~~~~~~~~~~~~~~
 context.jsonld: biolink-model.yaml env.lock
+	touch $@
 	pipenv run gen-jsonld-context $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 contextn.jsonld: biolink-model.yaml env.lock
+	touch $@
 	pipenv run gen-jsonld-context --metauris $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 
@@ -109,10 +115,17 @@ json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
 
 
 # ~~~~~~~~~~~~~~~~~~~~
+# prefix-map
+# ~~~~~~~~~~~~~~~~~~~~
+
+prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.lock
+	pipenv run gen-prefix-map $< > $@
+
+# ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.owl.ttl: biolink-model.yaml env.lock
-	pipenv run gen-owl -o $@ $<
+	pipenv run gen-owl --no-metaclasses -o $@ $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -133,10 +146,13 @@ biolink-model.ttl: biolink-model.yaml env.lock
 biolink-model.shex: biolink-model.yaml
 	pipenv run gen-shex $< > $@
 biolink-modeln.shex: biolink-model.yaml
+	touch $@
 	pipenv run gen-shex --metauris $< > $@
 biolink-model.shexj: biolink-model.yaml
+	touch $@
 	pipenv run gen-shex --format json $< > $@
 biolink-modeln.shexj: biolink-model.yaml
+	touch $@
 	pipenv run gen-shex --metauris --format json $< > $@
 
 
