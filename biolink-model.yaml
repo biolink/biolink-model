@@ -2073,8 +2073,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       - tag: biolink:canonical_predicate
         value: true
