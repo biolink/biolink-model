@@ -2006,8 +2006,8 @@ slots:
     domain: named thing
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   resistance associated with:
     is_a: associated with
@@ -2022,8 +2022,8 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       - NCIT:C15220 # diagnosis
       - SIO:001331 # diagnosis
@@ -2223,6 +2223,8 @@ slots:
     annotations:
       - tag: biolink:canonical_predicate
         value: true
+      - tag: biolink:opposite of
+        value: biolink:increases activity of
     mixins:
       - decreases amount or activity of
     related_mappings:
@@ -2258,9 +2260,6 @@ slots:
       - DGIdb:negative_modulator
       - DGIdb:inhibitory_allosteric_modulator
       - DGIdb:inverse_agonist
-    annotations:
-      - tag: biolink:opposite of
-        value: biolink:increases activity of
 
   activity decreased by:
     is_a: activity affected by
