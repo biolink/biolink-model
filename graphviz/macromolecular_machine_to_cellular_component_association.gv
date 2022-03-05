@@ -1,22 +1,22 @@
 digraph {
-	graph [bb="0,0,2711.2,283"];
+	graph [bb="0,0,2785.2,283"];
 	node [label="\N"];
 	"macromolecular machine to cellular component association"	[height=0.5,
 		label="macromolecular machine to cellular component association",
-		pos="1616.8,265",
+		pos="1690.8,265",
 		width=7.9437];
 	"functional association"	[height=0.5,
 		pos="111.79,178",
 		width=3.1053];
 	"macromolecular machine to cellular component association" -> "functional association"	[label=is_a,
-		lp="626.79,221.5",
-		pos="e,190.45,190.88 1344.6,259.44 1065.1,252.69 617.56,236.15 232.79,196 222.29,194.9 211.3,193.59 200.41,192.19"];
+		lp="646.79,221.5",
+		pos="e,190.45,190.88 1413.6,260.53 1119.8,254.65 642.5,238.78 232.79,196 222.29,194.9 211.3,193.59 200.41,192.19"];
 	"macromolecular machine to entity association mixin"	[height=0.5,
 		pos="494.79,178",
 		width=7.023];
 	"macromolecular machine to cellular component association" -> "macromolecular machine to entity association mixin"	[label=uses,
-		lp="903.29,221.5",
-		pos="e,598.13,194.44 1362.7,256.74 1222.2,251.49 1044.6,242.83 886.79,229 792.77,220.76 686.59,206.94 608.48,195.91"];
+		lp="901.29,221.5",
+		pos="e,597.18,194.52 1426.3,258.12 1268.9,253.22 1065.2,244.45 884.79,229 791.06,220.97 685.22,207.1 607.48,196"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -24,9 +24,9 @@ digraph {
 		width=1.0652];
 	"macromolecular machine to cellular component association" -> id	[color=blue,
 		label=id,
-		lp="1019.8,221.5",
-		pos="e,832.78,189.99 1358.5,257.23 1251.2,252.3 1125.7,243.76 1012.8,229 940.36,219.53 922.16,215.57 851.79,196 848.68,195.14 845.48,\
-194.17 842.28,193.15",
+		lp="1020.8,221.5",
+		pos="e,832.77,190 1419.8,259.24 1295.7,254.69 1146.9,245.9 1013.8,229 940.9,219.74 922.59,215.65 851.79,196 848.68,195.14 845.48,194.17 \
+842.28,193.16",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -35,9 +35,9 @@ digraph {
 		width=1.2277];
 	"macromolecular machine to cellular component association" -> iri	[color=blue,
 		label=iri,
-		lp="1127.8,221.5",
-		pos="e,937.7,190.17 1388.2,254.17 1303.6,248.89 1207.1,240.92 1119.8,229 1047,219.06 1028.9,214.58 957.79,196 954.42,195.12 950.94,194.15 \
-947.46,193.13",
+		lp="1129.8,221.5",
+		pos="e,937.7,190.19 1441.9,256.09 1342.1,251 1226.2,242.65 1121.8,229 1048.1,219.36 1029.7,214.72 957.79,196 954.41,195.12 950.94,194.15 \
+947.45,193.14",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -46,8 +46,8 @@ digraph {
 		width=1.5707];
 	"macromolecular machine to cellular component association" -> name	[color=blue,
 		label=name,
-		lp="1224.8,221.5",
-		pos="e,1061.5,191.6 1400.6,253.19 1337.2,247.98 1267.9,240.31 1204.8,229 1158.7,220.76 1107.4,206.04 1071.2,194.7",
+		lp="1227.8,221.5",
+		pos="e,1061.4,191.51 1447.4,255.54 1370.4,250.42 1285.2,242.19 1207.8,229 1160.7,220.97 1108.1,206.08 1071.3,194.64",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -56,8 +56,8 @@ digraph {
 		width=2.0943];
 	"macromolecular machine to cellular component association" -> description	[color=blue,
 		label=description,
-		lp="1332.3,221.5",
-		pos="e,1204,194.71 1418.3,251.98 1376.1,246.83 1332.2,239.48 1291.8,229 1264.7,221.95 1235.6,209.73 1213.2,199.14",
+		lp="1336.3,221.5",
+		pos="e,1204.5,194.62 1455.2,254.79 1402.3,249.51 1346.7,241.39 1295.8,229 1267.4,222.1 1237.1,209.68 1213.7,198.95",
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -66,8 +66,8 @@ digraph {
 		width=1.5707];
 	"macromolecular machine to cellular component association" -> source	[color=blue,
 		label=source,
-		lp="1431.8,221.5",
-		pos="e,1345.1,194.74 1482.5,249.08 1457.2,244.17 1431.4,237.64 1407.8,229 1388.7,222.02 1369.2,210.65 1353.7,200.52",
+		lp="1437.8,221.5",
+		pos="e,1346.4,194.74 1508.7,251.05 1476.6,245.94 1443.8,238.84 1413.8,229 1393.2,222.24 1371.8,210.64 1355.1,200.31",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -76,8 +76,8 @@ digraph {
 		width=1.0291];
 	"macromolecular machine to cellular component association" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="1518.3,221.5",
-		pos="e,1445.2,195.8 1517.4,248.1 1502.8,243.32 1488.4,237.09 1475.8,229 1466,222.73 1457.5,213.24 1450.9,204.2",
+		lp="1528.3,221.5",
+		pos="e,1447.5,195.15 1541.1,249.6 1521.9,244.57 1502.9,237.87 1485.8,229 1473.7,222.74 1462.7,212.52 1454.1,202.94",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -86,8 +86,8 @@ digraph {
 		width=1.4443];
 	"macromolecular machine to cellular component association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1621.8,221.5",
-		pos="e,1552,196.11 1593.8,247.02 1587.3,241.64 1580.4,235.41 1574.8,229 1568.4,221.7 1562.3,212.98 1557.2,204.88",
+		lp="1639.8,221.5",
+		pos="e,1556.1,195.77 1630.8,247.31 1617.7,242.41 1604.4,236.34 1592.8,229 1581.9,222.09 1571.5,212.42 1563,203.42",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -96,19 +96,19 @@ digraph {
 		width=2.1665];
 	"macromolecular machine to cellular component association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1711.8,221.5",
-		pos="e,1686,196.07 1648.3,246.96 1655.7,241.9 1663.1,235.85 1668.8,229 1674.5,222.17 1679,213.63 1682.4,205.55",
+		lp="1724.8,221.5",
+		pos="e,1690.8,196.18 1690.8,246.8 1690.8,235.16 1690.8,219.55 1690.8,206.24",
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
-		label=uriorcurie,
-		pos="2450.8,18",
-		width=1.5887];
+		label=string,
+		pos="2619.8,18",
+		width=1.0652];
 	"macromolecular machine to cellular component association" -> relation	[color=blue,
 		label=relation,
-		lp="1907.8,134.5",
-		pos="e,2393.8,20.724 1705.7,247.89 1721,243.11 1736.3,236.94 1749.8,229 1786.4,207.46 1778.8,180.83 1815.8,160 2002.9,54.568 2262.5,27.969 \
-2383.6,21.261",
+		lp="1921.8,134.5",
+		pos="e,2582.1,21.986 1733.9,247.08 1743.9,242.08 1754.2,236.03 1762.8,229 1792.8,204.56 1782.7,180.04 1815.8,160 1945.4,81.489 2419.4,\
+35.759 2572.1,22.825",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -117,8 +117,8 @@ digraph {
 		width=1.2999];
 	"macromolecular machine to cellular component association" -> negated	[color=blue,
 		label=negated,
-		lp="1863.8,221.5",
-		pos="e,1856.8,195.07 1750.8,249.07 1771.4,244.16 1792.1,237.64 1810.8,229 1825,222.44 1838.7,211.78 1849.5,201.98",
+		lp="1861.8,221.5",
+		pos="e,1856,194.99 1764.7,247.54 1780.3,242.66 1796.5,236.54 1810.8,229 1824.3,221.88 1837.6,211.46 1848.4,201.98",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -127,8 +127,8 @@ digraph {
 		width=2.1304];
 	"macromolecular machine to cellular component association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1973.3,221.5",
-		pos="e,1982.6,194.81 1787.1,250.51 1823.7,245.46 1861.8,238.52 1896.8,229 1923.3,221.8 1951.6,209.69 1973.6,199.19",
+		lp="1968.3,221.5",
+		pos="e,1981.5,194.62 1808.6,248.54 1837.1,243.5 1867.3,237.07 1894.8,229 1921.3,221.22 1949.9,209.21 1972.3,198.91",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -137,69 +137,80 @@ digraph {
 		width=1.7332];
 	"macromolecular machine to cellular component association" -> publications	[color=blue,
 		label=publications,
-		lp="2112.8,221.5",
-		pos="e,2133.7,192.8 1833.2,253.23 1891.2,248.05 1953.7,240.37 2010.8,229 2049.7,221.25 2092.6,207.45 2124,196.31",
+		lp="2109.8,221.5",
+		pos="e,2132.5,192.53 1863.8,250.61 1910.2,245.43 1960.1,238.41 2005.8,229 2045.9,220.72 2090.4,206.88 2122.8,195.85",
+		style=solid];
+	"has evidence"	[color=blue,
+		height=0.5,
+		label="evidence type",
+		pos="2325.8,178",
+		width=2.0943];
+	"macromolecular machine to cellular component association" -> "has evidence"	[color=blue,
+		label="has evidence",
+		lp="2265.3,221.5",
+		pos="e,2286.3,193.37 1900,252.69 2000.2,246.38 2108.9,238 2157.8,229 2198.5,221.51 2243.3,207.88 2276.4,196.74",
 		style=solid];
 	type	[height=0.5,
-		pos="2281.8,178",
+		pos="2450.8,178",
 		width=0.86659];
 	"macromolecular machine to cellular component association" -> type	[color=blue,
 		label=type,
-		lp="2221.8,221.5",
-		pos="e,2259.3,190.91 1814.9,252 1966.9,242.68 2152.1,231 2160.8,229 2192.3,221.69 2226.2,207.05 2250.1,195.49",
+		lp="2385.8,221.5",
+		pos="e,2427.6,190.2 1893.1,252.26 1924.2,250.48 1955.8,248.68 1985.8,247 2132.4,238.77 2171.7,257.61 2315.8,229 2352,221.8 2391.4,206.24 \
+2418.3,194.38",
 		style=solid];
 	category	[height=0.5,
-		pos="2382.8,178",
+		pos="2551.8,178",
 		width=1.4263];
 	"macromolecular machine to cellular component association" -> category	[color=blue,
 		label=category,
-		lp="2325.3,221.5",
-		pos="e,2352.4,192.63 1819.1,252.26 1850.2,250.48 1881.8,248.68 1911.8,247 2058.4,238.77 2097.8,257.84 2241.8,229 2277,221.95 2315.3,207.94 \
-2343.1,196.54",
+		lp="2491.3,221.5",
+		pos="e,2520.9,192.5 1890.3,252.1 1922.2,250.31 1954.9,248.55 1985.8,247 2079.1,242.31 2314,246.31 2405.8,229 2442.6,222.06 2482.7,207.81 \
+2511.5,196.29",
 		style=solid];
 	subject	[height=0.5,
-		pos="2496.8,178",
+		pos="2665.8,178",
 		width=1.2277];
 	"macromolecular machine to cellular component association" -> subject	[color=blue,
 		label=subject,
-		lp="2435.8,221.5",
-		pos="e,2469.1,192.08 1815.9,252.05 1848,250.26 1880.8,248.51 1911.8,247 2011.5,242.13 2262.8,248.47 2360.8,229 2395.4,222.12 2432.9,207.77 \
-2459.8,196.2",
+		lp="2606.8,221.5",
+		pos="e,2637.8,192.02 1888.3,251.95 1920.9,250.16 1954.3,248.43 1985.8,247 2106,241.54 2408.6,251.63 2526.8,229 2562.4,222.18 2601,207.65 \
+2628.5,196",
 		style=solid];
 	object	[height=0.5,
-		pos="2517.8,91",
+		pos="2686.8,91",
 		width=1.0832];
 	"macromolecular machine to cellular component association" -> object	[color=blue,
 		label=object,
-		lp="2590.8,178",
-		pos="e,2542.7,105.25 1813.9,251.95 1846.6,250.15 1880.1,248.43 1911.8,247 2034.8,241.46 2345.2,253.88 2465.8,229 2505.1,220.9 2523.5,\
-226.25 2549.8,196 2570.3,172.46 2576.5,155.03 2562.8,127 2559.9,121.17 2555.6,116.02 2550.7,111.6",
+		lp="2759.8,178",
+		pos="e,2711.7,105.25 1886.7,251.89 1919.8,250.08 1953.8,248.37 1985.8,247 2130.4,240.84 2495.1,258.48 2636.8,229 2675.3,221 2693.1,225.74 \
+2718.8,196 2739.2,172.38 2745.5,155.03 2731.8,127 2728.9,121.17 2724.6,116.02 2719.7,111.6",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1958.8,265",
+		pos="2032.8,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2089.8,265",
+		pos="2163.8,265",
 		width=2.0762];
-	subject -> relation	[pos="e,2453.5,36.136 2489.2,160.24 2483.3,146.64 2475.2,126.88 2469.8,109 2463.5,88.265 2458.6,64.241 2455.3,46.231",
+	subject -> relation	[pos="e,2622.5,36.136 2658.2,160.24 2652.3,146.64 2644.2,126.88 2638.8,109 2632.5,88.265 2627.6,64.241 2624.3,46.231",
 		style=dotted];
 	subject -> object	[label=relation,
-		lp="2534.8,134.5",
-		pos="e,2512,108.98 2499.8,159.77 2501.6,150.09 2504,137.8 2506.8,127 2507.5,124.32 2508.2,121.53 2509.1,118.76"];
+		lp="2703.8,134.5",
+		pos="e,2681,108.98 2668.8,159.77 2670.6,150.09 2673,137.8 2675.8,127 2676.5,124.32 2677.2,121.53 2678.1,118.76"];
 	"functional association_subject"	[color=blue,
 		height=0.5,
 		label="macromolecular machine mixin",
-		pos="2338.8,265",
+		pos="2412.8,265",
 		width=4.3329];
-	object -> relation	[pos="e,2466.6,35.702 2502.9,74.243 2494.3,65.127 2483.3,53.465 2473.6,43.208",
+	object -> relation	[pos="e,2634.6,34.713 2671.9,74.243 2663,64.775 2651.5,52.56 2641.5,42.024",
 		style=dotted];
 	"macromolecular machine to cellular component association_object"	[color=blue,
 		height=0.5,
 		label="cellular component",
-		pos="2611.8,265",
+		pos="2685.8,265",
 		width=2.7623];
 }

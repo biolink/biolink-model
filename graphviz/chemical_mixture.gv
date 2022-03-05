@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,1226.2,123"];
+	graph [bb="0,0,2536.9,123"];
 	node [label="\N"];
 	"chemical mixture"	[height=0.5,
 		label="chemical mixture",
-		pos="609.89,105",
+		pos="1054.9,105",
 		width=2.5276];
 	"chemical entity"	[height=0.5,
 		pos="81.893,18",
 		width=2.2748];
 	"chemical mixture" -> "chemical entity"	[label=is_a,
-		lp="323.89,61.5",
-		pos="e,134.13,32.011 528.73,96.742 468.19,90.794 383.59,81.348 309.89,69 253.3,59.517 189.55,45.226 143.88,34.348"];
+		lp="321.89,61.5",
+		pos="e,131.28,32.486 963.89,104.73 822.78,104.74 542.92,100.27 307.89,69 250.68,61.387 186.52,46.577 141.22,35.042"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,8 +18,9 @@ digraph {
 		width=1.0652];
 	"chemical mixture" -> id	[color=blue,
 		label=id,
-		lp="405.89,61.5",
-		pos="e,248.9,29.922 539.66,93.506 469.95,82.282 360.44,62.458 267.89,36 264.79,35.113 261.6,34.133 258.4,33.106",
+		lp="434.89,61.5",
+		pos="e,248.88,29.984 964.17,103.13 841.89,101 617.63,93.724 427.89,69 355.89,59.618 337.83,55.499 267.89,36 264.78,35.133 261.59,34.168 \
+258.39,33.151",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -28,9 +29,8 @@ digraph {
 		width=1.2277];
 	"chemical mixture" -> iri	[color=blue,
 		label=iri,
-		lp="492.89,61.5",
-		pos="e,354.57,29.681 559.05,89.993 536.33,83.675 509.24,76.061 484.89,69 435.87,54.785 423.68,50.997 374.89,36 371.4,34.926 367.78,33.805 \
-364.15,32.674",
+		lp="523.89,61.5",
+		pos="e,354.28,29.82 964.29,102.67 856.79,100.05 672.42,92.237 515.89,69 462.78,61.116 403.19,44.688 364.02,32.81",
 		style=solid];
 	type	[color=blue,
 		height=0.5,
@@ -39,8 +39,9 @@ digraph {
 		width=1.0652];
 	"chemical mixture" -> type	[color=blue,
 		label=type,
-		lp="543.89,61.5",
-		pos="e,448.43,31 574.97,88.211 541.63,73.136 491.61,50.52 457.91,35.282",
+		lp="628.89,61.5",
+		pos="e,450.54,29.989 966.4,100.8 876.85,96.672 734.63,87.667 612.89,69 547.99,59.049 531.88,54.534 468.89,36 465.99,35.146 463.01,34.209 \
+460.02,33.227",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -49,8 +50,8 @@ digraph {
 		width=1.5707];
 	"chemical mixture" -> name	[color=blue,
 		label=name,
-		lp="596.89,61.5",
-		pos="e,549.42,35.469 595.08,87.207 584.01,74.669 568.73,57.35 556.34,43.302",
+		lp="731.89,61.5",
+		pos="e,572.42,31.655 968.31,99.335 898.59,94.581 798.33,85.488 711.89,69 667.17,60.468 617.35,45.928 581.99,34.72",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -59,8 +60,8 @@ digraph {
 		width=2.0943];
 	"chemical mixture" -> description	[color=blue,
 		label=description,
-		lp="692.39,61.5",
-		pos="e,670.11,35.758 624.71,87.207 635.7,74.75 650.86,57.573 663.21,43.574",
+		lp="836.39,61.5",
+		pos="e,713.7,34.764 969.64,98.706 918.5,94.004 852.6,85.232 795.89,69 770.69,61.788 743.86,49.83 722.89,39.417",
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -69,8 +70,8 @@ digraph {
 		width=1.5707];
 	"chemical mixture" -> source	[color=blue,
 		label=source,
-		lp="794.89,61.5",
-		pos="e,808.94,34.075 666.96,90.906 689.12,85.141 714.51,77.692 736.89,69 758.52,60.602 781.69,48.916 800.07,38.953",
+		lp="928.89,61.5",
+		pos="e,853.25,35.187 984.71,93.523 958.89,88.156 929.87,80.295 904.89,69 889.41,61.999 873.87,51.348 861.38,41.673",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -79,9 +80,8 @@ digraph {
 		width=1.0291];
 	"chemical mixture" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="907.39,61.5",
-		pos="e,921.36,31.278 676.31,92.61 687.51,90.716 699.03,88.788 709.89,87 760.07,78.738 773.89,82.595 822.89,69 853.89,60.399 887.67,46.455 \
-912.14,35.475",
+		lp="1008.4,61.5",
+		pos="e,949.76,36.214 999.78,90.512 987.42,85.407 975.23,78.446 965.89,69 959.67,62.709 955.45,54.176 952.6,45.94",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -90,22 +90,96 @@ digraph {
 		width=1.4443];
 	"chemical mixture" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1038.9,61.5",
-		pos="e,1030.3,34.117 674.05,92.169 685.93,90.24 698.27,88.414 709.89,87 817.84,73.873 849.05,97.862 953.89,69 977.69,62.447 1002.5,50.064 \
-1021.5,39.261",
+		lp="1101.9,61.5",
+		pos="e,1054.1,36.175 1054.7,86.799 1054.6,75.163 1054.4,59.548 1054.2,46.237",
 		style=solid];
 	category	[height=0.5,
 		pos="1174.9,18",
 		width=1.4263];
 	"chemical mixture" -> category	[color=blue,
 		label=category,
-		lp="1153.4,61.5",
-		pos="e,1154.6,34.808 673.21,92.047 685.35,90.093 697.99,88.289 709.89,87 793.94,77.899 1008.9,93.136 1089.9,69 1110.1,62.979 1130.5,51.175 \
-1146.3,40.547",
+		lp="1195.4,61.5",
+		pos="e,1171,36.344 1114.4,91.368 1128.3,86.225 1142.1,79.033 1152.9,69 1159.6,62.776 1164.3,54.158 1167.7,45.829",
+		style=solid];
+	"trade name"	[color=blue,
+		height=0.5,
+		label="chemical entity",
+		pos="1325.9,18",
+		width=2.2748];
+	"chemical mixture" -> "trade name"	[color=blue,
+		label="trade name",
+		lp="1304.9,61.5",
+		pos="e,1300.2,35.129 1121.9,92.72 1162.9,85.439 1211,76.047 1230.9,69 1251.8,61.582 1273.9,50.229 1291.5,40.215",
+		style=solid];
+	"available from"	[color=blue,
+		height=0.5,
+		label=drug_availability_enum,
+		pos="1543.9,18",
+		width=3.2858];
+	"chemical mixture" -> "available from"	[color=blue,
+		label="available from",
+		lp="1471.4,61.5",
+		pos="e,1493.3,34.411 1119.6,92.257 1131.3,90.342 1143.5,88.498 1154.9,87 1241.2,75.698 1264.1,83.909 1349.9,69 1395.2,61.124 1445.4,48.051 \
+1483.4,37.247",
+		style=solid];
+	"max tolerated dose"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1718.9,18",
+		width=1.0652];
+	"chemical mixture" -> "max tolerated dose"	[color=blue,
+		label="max tolerated dose",
+		lp="1675.9,61.5",
+		pos="e,1689.9,29.88 1118.2,92.057 1130.4,90.102 1143,88.295 1154.9,87 1319.4,69.097 1362.9,91.576 1526.9,69 1591.9,60.045 1607.8,54.324 \
+1670.9,36 1674,35.099 1677.2,34.11 1680.4,33.076",
+		style=solid];
+	"is toxic"	[color=blue,
+		height=0.5,
+		label=boolean,
+		pos="1821.9,18",
+		width=1.2999];
+	"chemical mixture" -> "is toxic"	[color=blue,
+		label="is toxic",
+		lp="1805.9,61.5",
+		pos="e,1804.9,34.908 1117.9,91.926 1130.1,89.97 1142.9,88.196 1154.9,87 1220.6,80.451 1686.1,89.483 1748.9,69 1766.5,63.238 1783.8,51.766 \
+1797.1,41.263",
+		style=solid];
+	"is supplement"	[color=blue,
+		height=0.5,
+		label="chemical mixture",
+		pos="1977.9,18",
+		width=2.5276];
+	"chemical mixture" -> "is supplement"	[color=blue,
+		label="is supplement",
+		lp="1942.4,61.5",
+		pos="e,1943.1,34.682 1117.7,91.931 1130,89.961 1142.8,88.182 1154.9,87 1305.6,72.277 1687,96.473 1835.9,69 1869.7,62.763 1906.2,49.741 \
+1933.8,38.55",
+		style=solid];
+	"highest FDA approval status"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2124.9,18",
+		width=1.0652];
+	"chemical mixture" -> "highest FDA approval status"	[color=blue,
+		label="highest FDA approval status",
+		lp="2150.4,61.5",
+		pos="e,2099.7,31.899 1117.7,91.882 1130,89.917 1142.8,88.151 1154.9,87 1341.2,69.269 1813.4,105.61 1996.9,69 2029.9,62.42 2065.4,47.922 \
+2090.6,36.224",
+		style=solid];
+	"drug regulatory status world wide"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2340.9,18",
+		width=1.0652];
+	"chemical mixture" -> "drug regulatory status world wide"	[color=blue,
+		label="drug regulatory status world wide",
+		lp="2413.9,61.5",
+		pos="e,2322.2,34.042 1117.4,91.876 1129.8,89.898 1142.7,88.129 1154.9,87 1276.8,75.705 2139.1,102.44 2256.9,69 2277.6,63.134 2298.3,50.847 \
+2314,39.922",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="788.89,105",
+		pos="1233.9,105",
 		width=1.9318];
 }

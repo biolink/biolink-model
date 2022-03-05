@@ -1,0 +1,15 @@
+id: socioeconomic_exposure
+schema_generating: true
+description: A socioeconomic exposure is a factor relating to social and financial
+  status of an affected individual (e.g. poverty).
+display_name: socioeconomic exposure
+document_category: socioeconomic exposure
+weight: 20
+fields:
+- id: has_attribute
+  description: connects any entity to an attribute
+  display_name: socioeconomic exposure_has attribute
+  cardinality: multi
+- id: timepoint
+  description: a point in time
+  display_name: timepoint

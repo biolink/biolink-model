@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,1226.2,123"];
+	graph [bb="0,0,1901.7,123"];
 	node [label="\N"];
 	"environmental food contaminant"	[height=0.5,
 		label="environmental food contaminant",
-		pos="609.89,105",
+		pos="889.89,105",
 		width=4.4954];
 	"chemical entity"	[height=0.5,
 		pos="81.893,18",
 		width=2.2748];
 	"environmental food contaminant" -> "chemical entity"	[label=is_a,
-		lp="323.89,61.5",
-		pos="e,134.13,32.011 490.52,92.835 435.37,86.97 369.11,78.922 309.89,69 253.3,59.517 189.55,45.226 143.88,34.348"];
+		lp="321.89,61.5",
+		pos="e,131.75,32.407 731.44,101.21 614.03,97.508 450.37,88.918 307.89,69 250.91,61.034 186.98,46.34 141.69,34.934"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,8 +18,9 @@ digraph {
 		width=1.0652];
 	"environmental food contaminant" -> id	[color=blue,
 		label=id,
-		lp="405.89,61.5",
-		pos="e,248.9,29.922 518.92,90.101 449.44,78.483 351.71,59.962 267.89,36 264.79,35.113 261.6,34.133 258.4,33.106",
+		lp="434.89,61.5",
+		pos="e,248.88,29.984 742.17,97.625 651.23,92.508 532.44,83.681 427.89,69 355.99,58.904 337.83,55.499 267.89,36 264.78,35.133 261.59,34.168 \
+258.39,33.151",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -28,9 +29,9 @@ digraph {
 		width=1.2277];
 	"environmental food contaminant" -> iri	[color=blue,
 		label=iri,
-		lp="492.89,61.5",
-		pos="e,354.57,29.681 552.27,88.104 531.06,82.191 506.86,75.37 484.89,69 435.87,54.785 423.68,50.997 374.89,36 371.4,34.926 367.78,33.805 \
-364.15,32.674",
+		lp="535.89,61.5",
+		pos="e,354.17,30.005 756.19,94.798 687.68,89.142 603.07,80.701 527.89,69 459.16,58.301 442.14,53.797 374.89,36 371.31,35.052 367.61,34.014 \
+363.9,32.933",
 		style=solid];
 	type	[color=blue,
 		height=0.5,
@@ -39,8 +40,8 @@ digraph {
 		width=1.0652];
 	"environmental food contaminant" -> type	[color=blue,
 		label=type,
-		lp="543.89,61.5",
-		pos="e,448.48,31.023 573.2,87.409 539.84,72.327 490.91,50.204 457.8,35.234",
+		lp="621.89,61.5",
+		pos="e,450.55,29.968 769.66,92.879 684.44,82.999 568.08,65.436 468.89,36 465.99,35.139 463.01,34.197 460.02,33.212",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -49,8 +50,8 @@ digraph {
 		width=1.5707];
 	"environmental food contaminant" -> name	[color=blue,
 		label=name,
-		lp="596.89,61.5",
-		pos="e,549.54,35.597 594.72,86.799 583.69,74.309 568.63,57.236 556.38,43.348",
+		lp="720.89,61.5",
+		pos="e,572.48,31.607 801.96,89.778 769.98,84.064 733.65,76.941 700.89,69 660.47,59.2 615.31,45.409 582.31,34.792",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -59,8 +60,8 @@ digraph {
 		width=2.0943];
 	"environmental food contaminant" -> description	[color=blue,
 		label=description,
-		lp="692.39,61.5",
-		pos="e,669.99,35.885 625.07,86.799 636.02,74.39 650.96,57.458 663.17,43.618",
+		lp="815.39,61.5",
+		pos="e,710.54,35.167 829.65,88.279 811.75,82.912 792.28,76.377 774.89,69 755.87,60.93 735.68,49.953 719.25,40.34",
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -69,8 +70,8 @@ digraph {
 		width=1.5707];
 	"environmental food contaminant" -> source	[color=blue,
 		label=source,
-		lp="794.89,61.5",
-		pos="e,808.94,34.075 675.98,88.511 695.84,83.133 717.49,76.533 736.89,69 758.52,60.602 781.69,48.916 800.07,38.953",
+		lp="889.89,61.5",
+		pos="e,845.82,35.885 878.76,86.799 870.88,74.622 860.19,58.089 851.33,44.398",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -79,8 +80,8 @@ digraph {
 		width=1.0291];
 	"environmental food contaminant" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="907.39,61.5",
-		pos="e,921.35,31.24 715.72,91.318 750.24,85.935 788.52,78.627 822.89,69 853.87,60.323 887.65,46.386 912.12,35.427",
+		lp="970.39,61.5",
+		pos="e,938.09,35.59 904.38,86.943 908.89,81.359 913.76,75.036 917.89,69 923.19,61.262 928.48,52.512 933.07,44.519",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -89,21 +90,63 @@ digraph {
 		width=1.4443];
 	"environmental food contaminant" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1038.9,61.5",
-		pos="e,1029.8,34.148 725.71,92.337 825.05,82.316 952.49,69.408 953.89,69 977.44,62.164 1002.1,49.899 1021,39.228",
+		lp="1078.9,61.5",
+		pos="e,1045.1,36.182 973.36,89.548 988.66,84.585 1003.9,77.928 1016.9,69 1026,62.769 1033.7,53.565 1039.7,44.747",
 		style=solid];
 	category	[height=0.5,
 		pos="1174.9,18",
 		width=1.4263];
 	"environmental food contaminant" -> category	[color=blue,
 		label=category,
-		lp="1153.4,61.5",
-		pos="e,1154.5,34.738 722.77,92.047 741.82,90.22 761.41,88.46 779.89,87 848.68,81.566 1023.9,89.053 1089.9,69 1110.1,62.871 1130.5,51.063 \
-1146.3,40.46",
+		lp="1180.4,61.5",
+		pos="e,1164.4,35.743 998.31,91.603 1056.1,84.382 1117.8,75.457 1129.9,69 1141,63.033 1150.8,53.169 1158.4,43.771",
+		style=solid];
+	"trade name"	[color=blue,
+		height=0.5,
+		label="chemical entity",
+		pos="1325.9,18",
+		width=2.2748];
+	"environmental food contaminant" -> "trade name"	[color=blue,
+		label="trade name",
+		lp="1297.9,61.5",
+		pos="e,1297.4,35.003 1006,92.415 1095.4,83.346 1205.6,71.814 1215.9,69 1241,62.142 1267.6,50.195 1288.3,39.7",
+		style=solid];
+	"available from"	[color=blue,
+		height=0.5,
+		label=drug_availability_enum,
+		pos="1543.9,18",
+		width=3.2858];
+	"environmental food contaminant" -> "available from"	[color=blue,
+		label="available from",
+		lp="1467.4,61.5",
+		pos="e,1493.2,34.31 1003.2,92.091 1022.1,90.269 1041.6,88.499 1059.9,87 1185.5,76.728 1218.3,88.29 1342.9,69 1390.7,61.592 1443.8,48.153 \
+1483.4,37.072",
+		style=solid];
+	"max tolerated dose"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1718.9,18",
+		width=1.0652];
+	"environmental food contaminant" -> "max tolerated dose"	[color=blue,
+		label="max tolerated dose",
+		lp="1674.9,61.5",
+		pos="e,1689.9,29.908 1001.4,91.873 1020.9,90.033 1041,88.314 1059.9,87 1265.3,72.748 1318.7,95.516 1522.9,69 1589.7,60.322 1606.1,54.617 \
+1670.9,36 1674,35.109 1677.2,34.126 1680.4,33.096",
+		style=solid];
+	"is toxic"	[color=blue,
+		height=0.5,
+		label=boolean,
+		pos="1854.9,18",
+		width=1.2999];
+	"environmental food contaminant" -> "is toxic"	[color=blue,
+		label="is toxic",
+		lp="1815.9,61.5",
+		pos="e,1830.9,33.747 999.99,91.798 1019.9,89.931 1040.5,88.221 1059.9,87 1136.2,82.192 1673.5,86.556 1747.9,69 1774,62.836 1801.4,49.896 \
+1821.9,38.724",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="858.89,105",
+		pos="1138.9,105",
 		width=1.9318];
 }

@@ -11,4 +11,4 @@ assignees: ''
 **Question:**
 Please replace this text with a clear and concise description of what your question or issue is. Please include any relevant links.
 
-(After you create this ticket, you are welcome to come to our Help Desk office hours (currently Mondays at 1pm PT) to discuss your question.)
+(After you create this ticket, you are welcome to come to our Help Desk office hours (currently Mondays at 10am PT / 1pm ET) to discuss your question.)

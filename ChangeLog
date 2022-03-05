@@ -1,5 +1,100 @@
 CHANGES
 =======
+2.2.13
+------
+small refactors to better use description field consistently.
+
+2.2.12
+------
+fix dependebot security announcement
+remove subclass of from slot_usage
+add canonical inverse for increased/decreased activity of pairs
+and mondo disease susceptibility term to narrow mappings of disease
+update license to apache 2.0
+
+2.2.11
+------
+Update actions to use github user
+
+2.2.10
+------
+mapping fixes - remove obsolete mappings, swap text based mappings with ids where applicable
+add associated with predicate along with associated with sensitivity to predicates. 
+
+2.2.9
+-----
+many fixes to mappings
+
+2.2.8
+-----
+add a prefix mapping file artifact generated with LinkML upgrade.
+
+2.2.7
+-----
+get pypi releases working via github actions
+
+2.2.6
+-----
+small new additions: several new prefixes, UMLS for chemical entity hierarchy, reactions and pathway additions.
+remove drugbank, drugcentral from some members of the chemical hierarchy
+added drug regulatory status world wide
+added two new predicates under related to, related to at concept level, related to at instance level to
+add ways of excluding concept level triples from instance level ones.
+fixed chemical entity domain/range constraints after second round of chemical hierarchy refactor
+added two new associations that help relate wellness gut/blood microbiome sampling to blood analytes
+added literature co-occurence
+added has_evidence to association object
+fix KGX warnings
+fix doc links
+added pypi github action
+
+
+2.2.5
+-----
+bug fixes: add FYPO prefix, add toxicant, add canonical tag to genetically_interacts_with
+setup.py to include name variable in order to enable dependents graph
+add README info including link to presention on biolink.
+
+
+2.2.4
+-----
+bug fixes: various ID expansion cleanups, remove redundancy in ID prefixes (ie: DBSNP)
+upgrade to linkml-1.0.5 to address some issues with the context.jsonld file
+
+
+2.2.3
+-----
+bug fixes: inverse predicate is_a hierarchy for 'affects' vs. 'affected by'
+
+
+2.2.2
+-----
+UMLS->STY prefix management
+adding back in missing mixins for increases/decreases amount activity of.
+
+
+2.2.1
+-----
+bug fixes: handling one-off prefix requests
+added epistemic qualifier enumeration
+
+
+2.2.0
+-----
+add original_subject and original_object edge properties
+refactor id prefixes in chemical hierarchy
+remove spurious mapping
+
+
+2.1.0
+-----
+remove gene and polypeptide (and children) from chemical entity is_a hierarchy
+add chemical entity and gene or gene product mixin
+add chemical entity and polypeptide and protein mixin
+add fda approval status enumeration and definitions
+remove is_a parents from exposure classes
+add prefixes back to protein
+
 2.0.2
 -----
 

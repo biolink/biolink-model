@@ -13,6 +13,8 @@
 
 Quickstart docs:
 
+For a good overview of the biolink-model, [watch Chris Mungall's talk](https://www.youtube.com/watch?v=RE1hFm8lvJA&t=2s) at ICBO 2020.
+
 - Browse the model: [https://biolink.github.io/biolink-model](https://biolink.github.io/biolink-model)
   - [named thing](https://biolink.github.io/biolink-model/docs/NamedThing.html)
   - [association](https://biolink.github.io/biolink-model/docs/Association.html)
@@ -26,7 +28,6 @@ Refer to the following resources for a quick introduction to the Biolink Model:
     - Video: https://www.youtube.com/watch?v=RE1hFm8lvJA
 
 See also [Biolink Model Guidelines](guidelines/README.md) for understanding, curating, and working with the model.
-
 
 
 ## Introduction
@@ -119,7 +120,12 @@ If you are on a Mac, it can be installed using `brew`:
 ```sh
 brew install jsonschema2pojo
 ```
-For other OS environments, download the latest release then extract it into your execution path.
+For other OS environments, download the latest release then extract it into your execution path. eg
+```sh
+wget https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.0.2/jsonschema2pojo-1.0.2.tar.gz
+tar -xvzf jsonschema2pojo-1.0.2.tar.gz
+export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
+```
 
 ### GraphViz
 
