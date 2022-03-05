@@ -1409,8 +1409,8 @@ slots:
     description: >-
       Represents a relationship held between terminology components that describe the conceptual model of a domain.
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     symmetric: true
 
   related to at instance level:
@@ -1419,8 +1419,8 @@ slots:
       Represents a relationship held between two instances of a data classes.  Much like an assertion component,
       in an ABox, these represent facts associated with the conceptual model.
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     symmetric: true
 
   associated with:
@@ -1430,8 +1430,8 @@ slots:
       (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
       'related to'.
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     symmetric: true
     domain: named thing
     range: named thing
@@ -1984,8 +1984,8 @@ slots:
     domain: named thing
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     broad_mappings:
       - PATO:0000085 # sensitivity toward
     narrow_mappings:
@@ -2006,8 +2006,8 @@ slots:
     domain: named thing
     range: chemical entity
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   resistance associated with:
     is_a: associated with
@@ -2022,8 +2022,8 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     close_mappings:
       - NCIT:C15220 # diagnosis
       - SIO:001331 # diagnosis
@@ -2144,9 +2144,6 @@ slots:
     is_a: affects activity of
     in_subset:
       - translator_minimal
-    annotations:
-      tag: biolink:canonical_predicate
-      value: true
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     mixins:
@@ -2184,8 +2181,8 @@ slots:
       other within a system of interest
     is_a: affects
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
@@ -2224,8 +2221,10 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
+      - tag: biolink:opposite of
+        value: biolink:increases activity of
     mixins:
       - decreases amount or activity of
     related_mappings:
@@ -3043,8 +3042,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   increases response to:
     description: >-
@@ -5037,8 +5036,8 @@ slots:
     exact_mappings:
       - RO:0002104
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
 
@@ -5049,8 +5048,8 @@ slots:
     exact_mappings:
       - RO:0002473
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
     in_subset:
       - translator_minimal
 
@@ -6021,8 +6020,8 @@ slots:
     annotations:
       - tag: biolink:opposite of
         value: biolink:has completed
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   not completed by:
     is_a: related to at instance level
