@@ -6021,8 +6021,8 @@ slots:
     annotations:
       - tag: biolink:opposite of
         value: biolink:has completed
-      tag: biolink:canonical_predicate
-      value: true
+      - tag: biolink:canonical_predicate
+        value: true
 
   not completed by:
     is_a: related to at instance level
