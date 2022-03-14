@@ -36,6 +36,7 @@ URI: [biolink:affects_degradation_of](https://w3id.org/biolink/vocab/affects_deg
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_degradation_of |
 | **Narrow Mappings:** | | CTD:affects_cleavage |
 |  | | CTD:affects_hydrolysis |
 

@@ -34,5 +34,6 @@ URI: [biolink:decreases_mutation_rate_of](https://w3id.org/biolink/vocab/decreas
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_mutation_rate_of |
 | **Broad Mappings:** | | CTD:decreases_mutagenesis |
 

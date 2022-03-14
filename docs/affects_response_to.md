@@ -36,4 +36,5 @@ URI: [biolink:affects_response_to](https://w3id.org/biolink/vocab/affects_respon
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_response_to |
 

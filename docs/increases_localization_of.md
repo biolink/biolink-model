@@ -34,4 +34,5 @@ URI: [biolink:increases_localization_of](https://w3id.org/biolink/vocab/increase
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_localization_of |
 

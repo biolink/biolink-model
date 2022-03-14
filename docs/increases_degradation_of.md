@@ -38,4 +38,6 @@ URI: [biolink:increases_degradation_of](https://w3id.org/biolink/vocab/increases
 | **Narrow Mappings:** | | CTD:increases_cleavage |
 |  | | CTD:increases_hydrolysis |
 |  | | GOREL:0002004 |
+| **Related Mappings:** | | GAMMA:substrate |
+|  | | CHEMBL.MECHANISM:substrate |
 

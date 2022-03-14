@@ -31,4 +31,5 @@ URI: [biolink:has_molecular_consequence](https://w3id.org/biolink/vocab/has_mole
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | allele has activity |
+| **Narrow Mappings:** | | NCIT:allele_has_activity |
 

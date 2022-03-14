@@ -34,4 +34,5 @@ URI: [biolink:decreases_folding_of](https://w3id.org/biolink/vocab/decreases_fol
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_folding_of |
 

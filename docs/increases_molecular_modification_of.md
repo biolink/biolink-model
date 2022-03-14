@@ -34,6 +34,7 @@ URI: [biolink:increases_molecular_modification_of](https://w3id.org/biolink/voca
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_molecular_modification_of |
 | **Narrow Mappings:** | | CTD:increases_acetylation |
 |  | | CTD:increases_acylation |
 |  | | CTD:increases_alkylation |

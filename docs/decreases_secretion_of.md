@@ -34,5 +34,6 @@ URI: [biolink:decreases_secretion_of](https://w3id.org/biolink/vocab/decreases_s
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_secretion_of |
 | **Broad Mappings:** | | CTD:decreases_export |
 

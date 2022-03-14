@@ -36,5 +36,6 @@ URI: [biolink:affects_uptake_of](https://w3id.org/biolink/vocab/affects_uptake_o
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_uptake_of |
 | **Broad Mappings:** | | CTD:affects_import |
 

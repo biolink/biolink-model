@@ -34,4 +34,5 @@ URI: [biolink:increases_response_to](https://w3id.org/biolink/vocab/increases_re
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_response_to |
 

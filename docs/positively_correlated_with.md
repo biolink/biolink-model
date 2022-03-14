@@ -34,4 +34,5 @@ URI: [biolink:positively_correlated_with](https://w3id.org/biolink/vocab/positiv
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:positive_correlation |
 

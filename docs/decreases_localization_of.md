@@ -34,4 +34,5 @@ URI: [biolink:decreases_localization_of](https://w3id.org/biolink/vocab/decrease
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_localization_of |
 

@@ -25,3 +25,10 @@ URI: [biolink:has_completed](https://w3id.org/biolink/vocab/has_completed)
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | CL:has_completed |
+

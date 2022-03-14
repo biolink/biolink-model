@@ -34,6 +34,7 @@ URI: [biolink:decreases_response_to](https://w3id.org/biolink/vocab/decreases_re
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_response_to |
 | **Narrow Mappings:** | | CTD:decreases_response_to_substance |
 |  | | GAMMA:desensitize_the_target |
 

@@ -25,3 +25,12 @@ URI: [biolink:lacks_part](https://w3id.org/biolink/vocab/lacks_part)
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | CL:lacks_part |
+|  | | PR:lacks_part |
+| **Narrow Mappings:** | | CL:lacks_plasma_membrane_part |
+
