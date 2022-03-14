@@ -4526,10 +4526,6 @@ slots:
         value: true
       - tag: biolink:opposite_of
         value: biolink:predisposes
-      - tag: biolink:opposite_of
-        value: biolink:contraindicated for
-      - tag: biolink:opposite_of
-        value: biolink:causes
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5356,8 +5352,6 @@ slots:
         value: true
       - tag: biolink:opposite_of
         value: biolink:prevents
-      - tag: biolink:opposite_of
-        value: biolink:disrupts
     in_subset:
       - translator_minimal
     inverse: enabled by
