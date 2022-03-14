@@ -2073,8 +2073,8 @@ slots:
     is_a: affects
     in_subset:
       - translator_minimal
-    domain: chemical entity
-    range: chemical entity
+    domain: chemical entity or gene or gene product
+    range: chemical entity or gene or gene product
     annotations:
       - tag: biolink:canonical_predicate
         value: true
@@ -2260,9 +2260,6 @@ slots:
       - DGIdb:negative_modulator
       - DGIdb:inhibitory_allosteric_modulator
       - DGIdb:inverse_agonist
-    annotations:
-      - tag: biolink:opposite of
-        value: biolink:increases activity of
 
   activity decreased by:
     is_a: activity affected by
