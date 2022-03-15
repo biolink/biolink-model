@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-15T15:51:46
+# Generation date: 2022-03-15T22:59:53
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "2.2.13"
+version = "2.2.14"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -180,7 +180,7 @@ PUBCHEM_COMPOUND = CurieNamespace('PUBCHEM_COMPOUND', 'http://identifiers.org/pu
 PUBCHEM_SUBSTANCE = CurieNamespace('PUBCHEM_SUBSTANCE', 'http://identifiers.org/pubchem.substance/')
 PW = CurieNamespace('PW', 'http://purl.obolibrary.org/obo/PW_')
 PATHWHIZ = CurieNamespace('PathWhiz', 'http://smpdb.ca/pathways/#')
-POMBASE = CurieNamespace('PomBase', 'http://identifiers.org/pombase/')
+POMBASE = CurieNamespace('PomBase', 'https://www.pombase.org/gene/')
 REACT = CurieNamespace('REACT', 'http://www.reactome.org/PathwayBrowser/#/')
 REPODB = CurieNamespace('REPODB', 'http://apps.chiragjpgroup.org/repoDB/')
 RFAM = CurieNamespace('RFAM', 'http://identifiers.org/rfam/')
