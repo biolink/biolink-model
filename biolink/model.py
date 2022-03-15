@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-14T18:25:40
+# Generation date: 2022-03-15T15:51:46
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -33,6 +33,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 APO = CurieNamespace('APO', 'http://purl.obolibrary.org/obo/APO_')
+ASPGD = CurieNamespace('AspGD', 'http://example.org/UNKNOWN/AspGD/')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 BIGG_METABOLITE = CurieNamespace('BIGG_METABOLITE', 'http://identifiers.org/bigg.metabolite/')
 BIGG_REACTION = CurieNamespace('BIGG_REACTION', 'http://identifiers.org/bigg.reaction/')
@@ -171,7 +172,6 @@ PHAROS = CurieNamespace('PHAROS', 'http://pharos.nih.gov')
 PIRSF = CurieNamespace('PIRSF', 'http://identifiers.org/pirsf/')
 PMID = CurieNamespace('PMID', 'http://www.ncbi.nlm.nih.gov/pubmed/')
 PO = CurieNamespace('PO', 'http://purl.obolibrary.org/obo/PO_')
-POMBASE = CurieNamespace('POMBASE', 'http://identifiers.org/pombase/')
 PR = CurieNamespace('PR', 'http://purl.obolibrary.org/obo/PR_')
 PRINTS = CurieNamespace('PRINTS', 'http://identifiers.org/prints/')
 PRODOM = CurieNamespace('PRODOM', 'http://identifiers.org/prodom/')
@@ -180,6 +180,7 @@ PUBCHEM_COMPOUND = CurieNamespace('PUBCHEM_COMPOUND', 'http://identifiers.org/pu
 PUBCHEM_SUBSTANCE = CurieNamespace('PUBCHEM_SUBSTANCE', 'http://identifiers.org/pubchem.substance/')
 PW = CurieNamespace('PW', 'http://purl.obolibrary.org/obo/PW_')
 PATHWHIZ = CurieNamespace('PathWhiz', 'http://smpdb.ca/pathways/#')
+POMBASE = CurieNamespace('PomBase', 'http://identifiers.org/pombase/')
 REACT = CurieNamespace('REACT', 'http://www.reactome.org/PathwayBrowser/#/')
 REPODB = CurieNamespace('REPODB', 'http://apps.chiragjpgroup.org/repoDB/')
 RFAM = CurieNamespace('RFAM', 'http://identifiers.org/rfam/')
