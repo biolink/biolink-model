@@ -54,7 +54,7 @@ jobs:
       run: |
         python3 -m venv env
         source env/bin/activate
-        pip install linkml
+        pip install linkml==1.1.20
 
     - name: Build documentation
       run: |
