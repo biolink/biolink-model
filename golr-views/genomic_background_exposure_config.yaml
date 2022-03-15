@@ -1,0 +1,24 @@
+# metamodel_version: 1.7.0# version: 2.2.14id: genomic_background_exposure
+schema_generating: true
+description: A genomic background exposure is where an individual's specific genomic
+  background of genes, sequence variants or other pre-existing genomic conditions
+  constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
+display_name: genomic background exposure
+document_category: genomic background exposure
+weight: 20
+fields:
+- id: timepoint
+  description: a point in time
+  display_name: timepoint
+- id: has_gene_or_gene_product
+  description: connects an entity with one or more gene or gene products
+  display_name: has gene or gene product
+  cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
+  cardinality: multi
+- id: has_biological_sequence
+  description: connects a genomic feature to its sequence
+  display_name: has biological sequence

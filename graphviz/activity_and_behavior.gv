@@ -1,0 +1,14 @@
+digraph {
+	graph [bb="0,0,217.08,123"];
+	node [label="\N"];
+	"activity and behavior"	[height=0.5,
+		label="activity and behavior",
+		pos="108.54,105",
+		width=3.015];
+	occurrent	[height=0.5,
+		pos="108.54,18",
+		width=1.5526];
+	"activity and behavior" -> occurrent	[label=is_a,
+		lp="122.54,61.5",
+		pos="e,108.54,36.175 108.54,86.799 108.54,75.163 108.54,59.548 108.54,46.237"];
+}

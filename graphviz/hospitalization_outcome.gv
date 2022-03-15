@@ -1,0 +1,14 @@
+digraph {
+	graph [bb="0,0,243.08,123"];
+	node [label="\N"];
+	"hospitalization outcome"	[height=0.5,
+		label="hospitalization outcome",
+		pos="121.54,105",
+		width=3.3761];
+	outcome	[height=0.5,
+		pos="121.54,18",
+		width=1.3902];
+	"hospitalization outcome" -> outcome	[label=uses,
+		lp="138.04,61.5",
+		pos="e,121.54,36.175 121.54,86.799 121.54,75.163 121.54,59.548 121.54,46.237"];
+}
