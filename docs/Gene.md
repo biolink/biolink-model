@@ -22,6 +22,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
 ## Identifier prefixes
 
+ * AspGD
  * NCBIGene
  * ENSEMBL
  * HGNC
@@ -33,7 +34,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
  * FB
  * RGD
  * SGD
- * POMBASE
+ * PomBase
  * OMIM
  * KEGG.GENE
  * UMLS
