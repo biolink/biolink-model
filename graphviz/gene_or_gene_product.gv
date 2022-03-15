@@ -1,0 +1,27 @@
+digraph {
+	graph [bb="0,0,524.58,123"];
+	node [label="\N"];
+	"gene or gene product"	[height=0.5,
+		label="gene or gene product",
+		pos="260.99,105",
+		width=3.0692];
+	"macromolecular machine mixin"	[height=0.5,
+		pos="155.99,18",
+		width=4.3329];
+	"gene or gene product" -> "macromolecular machine mixin"	[label=is_a,
+		lp="228.99,61.5",
+		pos="e,177.05,36.049 240.24,87.207 224.52,74.484 202.73,56.837 185.24,42.681"];
+	name	[height=0.5,
+		pos="365.99,18",
+		width=1.011];
+	"gene or gene product" -> name	[color=blue,
+		label=name,
+		lp="338.99,61.5",
+		pos="e,347.74,33.771 281.73,87.207 298.42,73.697 321.97,54.636 339.93,40.097",
+		style=solid];
+	"macromolecular machine mixin_name"	[color=blue,
+		height=0.5,
+		label="symbol type",
+		pos="456.99,105",
+		width=1.8776];
+}
