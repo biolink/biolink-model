@@ -215,7 +215,7 @@ contrib/%/%.shex: contrib-dir-% contrib/%.yaml
 # TESTS
 # ----------------------------------------
 test: tests
-tests: biolink-model.yaml env.lock pytest jsonschema_test
+tests: biolink-model.yaml env.lock pytest #jsonschema_test
 	pipenv run python -m unittest discover -p 'test_*.py'
 
 pytest: biolink/model.py
