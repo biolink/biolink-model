@@ -1,19 +1,19 @@
-import logging
 import os
 from contextlib import redirect_stdout
-from io import StringIO
-from typing import Union, TextIO, Optional, Set, List, Any, Callable, Dict
+from typing import Union, TextIO, Set, Dict
 
-from linkml.generators.markdowngen import MarkdownGenerator
+from linkml.generators.docgen import DocGenerator
 from linkml.generators.yumlgen import YumlGenerator
+
 from linkml_runtime.utils.schemaview import SchemaView
 from linkml_runtime.linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, SubsetDefinition, EnumDefinition, Element, ClassDefinitionName, \
+
     TypeDefinition
 from linkml_runtime.utils.formatutils import camelcase, be, underscore, sfx
 import argparse
 
 
-class JekyllMarkdownGenerator(MarkdownGenerator):
+class JekyllMarkdownGenerator(DocGenerator):
     """
     Extends linkml.generators.markdowngen.MarkdownGenerator to add new styles
     and override certain existing styles.
@@ -29,7 +29,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         super().__init__(schema, **kwargs)
         self.schemaview = SchemaView(schema)
 
-    def visit_schema(self, directory: str = None, classes: Set[ClassDefinitionName] = None, image_dir: bool = False, noimages: bool = False, **_) -> None:
+    def visit_schema(self, directory: str = None, classes: Set[ClassDefinitionName] = None, image_dir: bool = False,
+                     noimages: bool = False, **_) -> None:
         """
         Visit the schema and generate Markdown for each ClassDefinition, SlotDefinition,
         and TypeDefinition.
@@ -70,7 +71,9 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
             # Create the data model index
             with redirect_stdout(ixfile):
-                self.frontmatter(**{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2, 'layout': 'default', 'has_toc': 'false'})
+                self.frontmatter(
+                    **{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2, 'layout': 'default',
+                       'has_toc': 'false'})
                 self.para(be(self.schema.description))
 
                 self.header(2, 'Classes')
@@ -175,6 +178,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         with open(os.path.join(directory, 'named_things.md'), 'w') as file:
             file.write(
                 f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Named Things\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+
         with open(os.path.join(directory, 'associations.md'), 'w') as file:
             file.write(
                 f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Associations\nhas_children: true\nnav_order: 2\nlayout: default\n---')
@@ -273,7 +277,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 else:
                     parent = 'Other Classes'
                     grand_parent = 'Classes'
-                self.frontmatter(**{'parent': parent, 'title': class_curi, 'grand_parent': grand_parent, 'layout': 'default'})
+                self.frontmatter(
+                    **{'parent': parent, 'title': class_curi, 'grand_parent': grand_parent, 'layout': 'default'})
                 self.element_header(cls, cls.name, class_curi, class_uri)
                 for m in cls.mappings:
                     self.badges(m, 'mapping-label')
@@ -419,7 +424,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             parent = 'Other Slots'
                         grand_parent = 'Slots'
                         slot_type = 'Slot'
-                    self.frontmatter(**{'parent': parent, 'title': slot_curie, 'grand_parent': grand_parent, 'layout': 'default'})
+                    self.frontmatter(
+                        **{'parent': parent, 'title': slot_curie, 'grand_parent': grand_parent, 'layout': 'default'})
                     simple_name = slot_curie.split(':', 1)[1]
                     self.header(1, f"{slot_type}: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
                     for s in slot.in_subset:
@@ -449,7 +455,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             self.bullet(f'{self.class_link(rc)}')
                     if aliased_slot_name == 'relation':
                         if slot.subproperty_of:
-                            self.bullet(f' reifies: {self.slot_link(slot.subproperty_of) if slot.subproperty_of in self.schema.slots else slot.subproperty_of}')
+                            self.bullet(
+                                f' reifies: {self.slot_link(slot.subproperty_of) if slot.subproperty_of in self.schema.slots else slot.subproperty_of}')
                     self.element_properties(slot)
 
     def visit_subset(self, subset: SubsetDefinition) -> None:
@@ -547,7 +554,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         if cls.name in sorted(self.synopsis.isarefs):
             for child in sorted(self.synopsis.isarefs[cls.name].classrefs):
                 self.seen_elements.add(child)
-                self.class_hier(self.schema.classes[child], level+1)
+                self.class_hier(self.schema.classes[child], level + 1)
 
     def pred_hier(self, slot: SlotDefinition, level: int = 0) -> None:
         """
@@ -567,7 +574,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 child_slot = self.schema.slots[child]
                 if not child_slot.alias and not child_slot.mixin:
                     self.seen_elements.add(child)
-                    self.pred_hier(child_slot, level+1)
+                    self.pred_hier(child_slot, level + 1)
 
     def visit_type(self, typ: TypeDefinition) -> None:
         """
@@ -602,7 +609,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     parent = 'Built-in Types'
                 else:
                     parent = 'Defined Types'
-                self.frontmatter(**{'parent': parent, 'grand_parent': 'Types', 'title': type_curie, 'layout': 'default'})
+                self.frontmatter(
+                    **{'parent': parent, 'grand_parent': 'Types', 'title': type_curie, 'layout': 'default'})
                 self.element_header(typ, typ.name, type_curie, type_uri)
 
                 print("|  |  |  |")
@@ -624,7 +632,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         """
         print('---')
-        for k,v in kwargs.items():
+        for k, v in kwargs.items():
             print(f'{k}: {v}')
         print('---')
 
@@ -691,7 +699,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='A generator for creating Jekyll style markdown')
-    parser.add_argument('--yaml',  help='the YAML file', required=True)
+    parser.add_argument('--yaml', help='the YAML file', required=True)
     parser.add_argument('--dir', help='the destination folder', required=True)
     args = parser.parse_args()
     JekyllMarkdownGenerator(yamlfile=args.yaml, schema=args.yaml).serialize(directory=args.dir)
