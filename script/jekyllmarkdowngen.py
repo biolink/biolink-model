@@ -6,9 +6,8 @@ from linkml.generators.docgen import DocGenerator
 from linkml.generators.yumlgen import YumlGenerator
 
 from linkml_runtime.utils.schemaview import SchemaView
-from linkml_runtime.linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, SubsetDefinition, EnumDefinition, Element, ClassDefinitionName, \
-
-    TypeDefinition
+from linkml_runtime.linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, SubsetDefinition, \
+    EnumDefinition, Element, ClassDefinitionName, TypeDefinition
 from linkml_runtime.utils.formatutils import camelcase, be, underscore, sfx
 import argparse
 
