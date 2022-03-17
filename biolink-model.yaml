@@ -692,12 +692,7 @@ slots:
       - WIKIDATA_PROPERTY:P1476
 
   source:
-    description: >-
-      a lightweight analog to the association class 'provided by' slot, which is the string name, or
-      the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
-    range: label type
-    in_subset:
-      - translator_minimal
+    deprecated: true
 
   stoichiometry:
     description: >-
@@ -6331,19 +6326,12 @@ slots:
       - pav:providedBy
 
   provided by:
-    is_a: association slot
-    deprecated: >-
-      This slot is deprecated and replaced by a set of more precise slots for describing
-      the source retrieval provenance of an Association.  These include 'knowledge source'
-      and its descendants 'primary knowledge source', 'original knowledge source', and
-      'aggregator knowledge source'.
-    # deprecated_element_has_exact_replacement: knowledge source
+    is_a: node property
     description: >-
-      connects an association to the agent (person, organization or group) that provided it
-    range: agent
+      The value in this node property represents the knowledge provider that created or assembled the
+      node and all of its attributes.  Used internally to represent how a particular node made its way into a
+      knowledge provider or graph.
     multivalued: true
-    exact_mappings:
-      - pav:providedBy
 
   primary knowledge source:
      is_a: knowledge source
@@ -6805,13 +6793,13 @@ classes:
       - name
       - description
       - source
-      - provided by
       - has attribute
       # evidence code(s)?
 
-  named thing:
     is_a: entity
     description: "a databased entity or concept/class"
+    slots:
+      - provided by
     slot_usage:
       category:
         range: named thing
@@ -9246,6 +9234,10 @@ classes:
       - qualifiers
       - publications
       - has evidence
+      - knowledge source
+      - original knowledge source
+      - primary knowledge source
+      - aggregator knowledge source
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
