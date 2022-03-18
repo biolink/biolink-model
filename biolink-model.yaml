@@ -1709,7 +1709,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0002264
@@ -1911,8 +1912,9 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
     symmetric: true
     exact_mappings:
       - RO:0002435
@@ -2181,7 +2183,8 @@ slots:
       other within a system of interest
     is_a: affects
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -2352,7 +2355,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: nucleic acid entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_folding_of
@@ -2425,7 +2429,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     related_mappings:
       - GAMMA:storage
@@ -2504,7 +2509,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     related_mappings:
       - GAMMA:catalytic_activity
@@ -2584,7 +2590,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_molecular_modification_of
@@ -2762,7 +2769,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_synthesis_of
@@ -2842,7 +2850,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_degradation_of
