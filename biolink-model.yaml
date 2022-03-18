@@ -5660,7 +5660,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     related_mappings:
       - GOREL:0001010
@@ -5683,7 +5684,8 @@ slots:
   consumes:
     is_a: has input
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     narrow_mappings:
       - RO:0004009
@@ -5700,7 +5702,8 @@ slots:
     range: occurrent
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - SNOMED:temporally_related_to
@@ -5781,7 +5784,8 @@ slots:
     range: chemical entity or gene or gene product
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     related_mappings:
       - GAMMA:kd
@@ -5817,7 +5821,8 @@ slots:
   affects expression in:
     is_a: affects
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     description: Holds between a variant and an anatomical entity where the expression of the variant
        is located in.
@@ -5828,7 +5833,8 @@ slots:
     is_a: has part
     description: holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - GENO:0000382
@@ -5841,7 +5847,8 @@ slots:
     is_a: related to at instance level
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - GENO:0000790
@@ -5855,7 +5862,8 @@ slots:
     domain: sequence variant
     range: nucleic acid entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     narrow_mappings:
       - WIKIDATA:P3433
@@ -5873,7 +5881,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - SO:0001583
@@ -5891,7 +5900,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - SO:0001819
@@ -5910,7 +5920,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     broad_mappings:
       # Term definition broader than nonsense codon: A sequence variant whereby
@@ -5931,7 +5942,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - SO:0001589
@@ -5951,7 +5963,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - SO:0001629
@@ -5971,7 +5984,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - GAMMA:0000102
@@ -5990,7 +6004,8 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - GAMMA:0000103
@@ -6008,7 +6023,8 @@ slots:
       of the entity has contribution to the disease.
     is_a: related to at instance level
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     narrow_mappings:
       # These two MONDO terms seem more particular than the predicate
@@ -6027,7 +6043,8 @@ slots:
     domain: drug
     range: disease or phenotypic feature
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
 
   adverse event caused by:
@@ -6134,7 +6151,8 @@ slots:
       in a population
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - NCIT:C16798
@@ -6188,7 +6206,8 @@ slots:
   develops from:
     is_a: related to at instance level
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     close_mappings:
       # RTX mapping seems to be inverse of 'biolink:develops_from'
@@ -6214,7 +6233,8 @@ slots:
     domain: thing with taxon
     range: organism taxon
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     description: >-
       connects an entity to its taxonomic classification. Only certain kinds
@@ -6241,7 +6261,8 @@ slots:
       consequence. E.g.  SO:0001583
     range: ontology class
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     narrow_mappings:
       - NCIT:allele_has_activity
