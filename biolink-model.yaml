@@ -912,6 +912,13 @@ slots:
 
   ## Properties for Information Content Entity and Publication Nodes
 
+  has taxonomic rank:
+    is_a: node property
+    range: taxonomic rank
+    multivalued: false
+    mappings:
+      - WIKIDATA:P105
+
   has dataset:
     is_a: node property
     domain: dataset version
