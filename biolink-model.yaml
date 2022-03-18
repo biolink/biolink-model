@@ -840,7 +840,8 @@ slots:
     exact_mappings:
       - wgs:lat
     annotations:
-      - tag: biolink:opposite_of
+      biolink:opposite_of:
+        tag: biolink:opposite_of
         value: biolink:longitude
 
   longitude:
@@ -851,7 +852,8 @@ slots:
     exact_mappings:
       - wgs:long
     annotations:
-      - tag: biolink:opposite_of
+      biolink:opposite_of:
+        tag: biolink:opposite_of
         value: biolink:lattitude
 
   ## Time
@@ -1287,7 +1289,8 @@ slots:
     inherited: true
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - skos:relatedMatch
@@ -1409,7 +1412,8 @@ slots:
     description: >-
       Represents a relationship held between terminology components that describe the conceptual model of a domain.
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     symmetric: true
 
@@ -1419,7 +1423,8 @@ slots:
       Represents a relationship held between two instances of a data classes.  Much like an assertion component,
       in an ABox, these represent facts associated with the conceptual model.
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     symmetric: true
 
@@ -1430,7 +1435,8 @@ slots:
       (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
       'related to'.
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     symmetric: true
     domain: named thing
