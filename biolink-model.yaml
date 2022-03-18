@@ -4963,7 +4963,8 @@ slots:
     domain: nucleic acid entity
     range: nucleic acid entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - faldo:location
@@ -4981,7 +4982,8 @@ slots:
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5002,7 +5004,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0002131
@@ -5074,7 +5077,8 @@ slots:
     exact_mappings:
       - RO:0002104
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5086,7 +5090,8 @@ slots:
     exact_mappings:
       - RO:0002473
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5252,7 +5257,8 @@ slots:
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: occurrent
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5287,7 +5293,8 @@ slots:
     # domain: nucleic acid entity
     # range: molecular activity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
 
   has catalyst:
@@ -5299,7 +5306,8 @@ slots:
     # domain: molecular activity
     # range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
 
   is substrate of:
@@ -5343,7 +5351,8 @@ slots:
     domain: molecular activity
     range: occurrent
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5374,7 +5383,8 @@ slots:
       continuant alone has the ability to carry out the process or function.
     range: occurrent
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5445,7 +5455,8 @@ slots:
   derives from:
     is_a: related to at instance level
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     description: >-
       holds between two distinct material entities, the new entity
@@ -5487,7 +5498,8 @@ slots:
     domain: molecular entity
     range: molecular entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5517,7 +5529,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5542,7 +5555,8 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5601,7 +5615,8 @@ slots:
     domain: drug
     range: molecular entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -5617,7 +5632,8 @@ slots:
       and processes to some disease or syndrome
     range: disease
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
