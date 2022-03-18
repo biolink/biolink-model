@@ -221,8 +221,8 @@ tests: biolink-model.yaml env.lock pytest jsonschema_test
 pytest: biolink/model.py
 	pipenv run python $<
 
-jsonschema_test: json-schema/biolink-model.json
-	jsonschema $<
+# jsonschema_test: json-schema/biolink-model.json
+#	jsonschema $<
 
 # ----------------------------------------
 # CLEAN
